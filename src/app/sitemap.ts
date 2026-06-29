@@ -1,23 +1,26 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://aeobility.com.au";
+  const currentDate = new Date().toISOString();
+
   return [
     {
-      url: 'https://aeobility.com.au',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: 'https://aeobility.com.au/privacy',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: 'https://aeobility.com.au/terms',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/terms`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
       priority: 0.3,
     },
   ];
