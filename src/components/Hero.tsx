@@ -37,7 +37,7 @@ export function GraphVisual() {
       label?: string;
     }> = [];
 
-    const labels = ['AI Search', 'ChatGPT', 'Google Maps', 'Claude', 'Perplexity', 'LinkedIn', 'Social Leads', 'New Customers'];
+    const labels = ['AI Search', 'ChatGPT', 'Google Maps', 'Claude', 'Perplexity', 'LinkedIn', 'Social Leads', 'New Clients'];
     
     for (let i = 0; i < nodeCount; i++) {
       const isLabeled = i < labels.length;

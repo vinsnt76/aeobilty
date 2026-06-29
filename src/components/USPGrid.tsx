@@ -31,22 +31,22 @@ export default function USPGrid() {
     {
       icon: <Target className="w-6 h-6" />,
       title: 'More Leads',
-      description: 'Attract interested buyers ready to engage with your products or services. Optimize your pages to align with what customers actually type and ask.',
+      description: 'Attract interested buyers ready to engage with your products or services. Optimise your pages to match what clients actually search for.',
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: 'More Enquiries',
-      description: 'Convert online attention into direct customer enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
+      description: 'Convert online attention into direct client enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: 'Time Saved',
-      description: 'Automate content preparation, online profile optimization, and regular reports. Focus on running your business while we handle your digital presence.',
+      description: 'Automate content preparation, online profile optimisation, and regular reports. Focus on running your business while we handle your digital presence.',
     },
     {
       icon: <ArrowUpRight className="w-6 h-6" />,
       title: 'Money Saved',
-      description: 'Improve your organic visibility and reduce wasted effort. Build a lasting foundation that attracts customers naturally without recurring costs.',
+      description: 'Improve your organic visibility and reduce wasted effort. Build a lasting foundation that attracts clients naturally without recurring costs.',
     },
     {
       icon: <Cpu className="w-6 h-6" />,
@@ -56,7 +56,7 @@ export default function USPGrid() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Local Visibility',
-      description: 'Put your business on the map. Optimize your listings and content to rank first when local customers search for immediate nearby solutions.',
+      description: 'Put your business on the map. Optimise your listings and content to rank first when local clients search for immediate nearby solutions.',
     },
   ];
 

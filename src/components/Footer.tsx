@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-8 text-xs font-medium">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-xs font-medium">
           <a href="#how-it-works" className="hover:text-white transition-colors">
             How It Works
           </a>
@@ -46,6 +47,12 @@ export default function Footer() {
           <a href="#audit-form" className="hover:text-white transition-colors">
             Contact
           </a>
+          <Link href="/privacy" className="hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="hover:text-white transition-colors">
+            Terms & Conditions
+          </Link>
         </div>
 
         {/* Copyright */}

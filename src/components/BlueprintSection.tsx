@@ -6,12 +6,12 @@ export default function BlueprintSection() {
     {
       icon: <Compass className="w-5 h-5 text-aeo-cyan" />,
       title: 'Days 1-30: Foundation & Online Profile Setup',
-      description: 'Audit existing assets and organize business details so Google, map providers, and modern AI tools can find and display your business accurately.',
+      description: 'Audit existing assets and organise business details so Google, map services, and modern AI tools can find and display your business accurately.',
     },
     {
       icon: <Milestone className="w-5 h-5 text-aeo-cyan" />,
-      title: 'Days 31-60: Local Presence & Search Optimization',
-      description: 'Optimize local listings, map pins, and structure targeted question-and-answer resources that capture nearby customer intent.',
+      title: 'Days 31-60: Local Presence & Search Optimisation',
+      description: 'Optimise local listings, map pins, and structure targeted question-and-answer resources that capture nearby client intent.',
     },
     {
       icon: <Layers className="w-5 h-5 text-aeo-cyan" />,
