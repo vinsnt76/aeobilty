@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Mail } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Mail, Phone } from 'lucide-react';
 
 export default function HowItWorks() {
   const [url, setUrl] = useState('');
@@ -19,17 +19,22 @@ export default function HowItWorks() {
     {
       num: '01',
       title: 'Enter Your Website URL',
-      description: 'Provide your primary business domain name so our engine can analyze your existing online presence and AI index status.',
+      description: 'Provide your primary business domain name so our engine can analyze your existing online presence across search and social channels.',
     },
     {
       num: '02',
       title: 'Get Your Free Audit',
-      description: 'Receive an instant report identifying visibility gaps across Google, ChatGPT citations, and social discovery engines.',
+      description: 'Receive an instant report identifying visibility gaps, including your local search listings, map presence, and AI search readiness.',
     },
     {
       num: '03',
-      title: 'Receive Your 90‑Day AI Success Blueprint',
-      description: 'Get an actionable, step-by-step blueprint detailing how to secure more leads and make your brand AI-discoverable.',
+      title: 'Complimentary 15‑Minute Call',
+      description: 'Book a quick review call with our strategist to walk through the findings and isolate immediate growth opportunities.',
+    },
+    {
+      num: '04',
+      title: '90‑Day AI Success Blueprint',
+      description: 'Get an actionable, step-by-step roadmap to secure more leads. If you choose to stay with us, we credit the $995 blueprint fee back into your plan.',
     },
   ];
 
@@ -38,13 +43,13 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
-            Simple 3‑Step Process
+            Simple 4‑Step Funnel
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">
             How It Works
           </h3>
           <p className="text-base text-neutral-600 font-light">
-            No technical skills or complex setups required. We analyze your site and deliver the strategy directly.
+            No technical skills or complex setups required. We analyze your site and walk you through the strategy.
           </p>
         </div>
 
@@ -78,13 +83,27 @@ export default function HowItWorks() {
                 <p className="text-sm text-neutral-500 font-light max-w-xs mx-auto">
                   We are analyzing <span className="font-semibold text-neutral-800">{url}</span>. Your visibility report will be sent to <span className="font-semibold text-neutral-800">{email}</span> shortly.
                 </p>
+                
+                <div className="pt-4 border-t border-neutral-100 mt-4">
+                  <p className="text-xs text-neutral-500 mb-3">Next step: Book your complimentary call.</p>
+                  <a
+                    href="https://calendly.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-aeo-purple text-white text-xs font-semibold rounded-lg hover:bg-opacity-90 transition-all"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    Schedule Call
+                  </a>
+                </div>
+
                 <button
                   onClick={() => {
                     setSubmitted(false);
                     setUrl('');
                     setEmail('');
                   }}
-                  className="mt-4 text-xs font-semibold text-aeo-purple hover:underline"
+                  className="block mt-4 mx-auto text-xs font-semibold text-neutral-400 hover:text-neutral-600 hover:underline"
                 >
                   Request another audit
                 </button>

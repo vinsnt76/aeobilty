@@ -17,6 +17,7 @@ function LogoBadge({ name }: LogoItemProps) {
 export default function SocialProof() {
   const platforms = [
     'GOOGLE',
+    'GOOGLE MAPS',
     'BING',
     'LINKEDIN',
     'FACEBOOK',
@@ -35,7 +36,7 @@ export default function SocialProof() {
         </p>
 
         {/* Mobile Horizontal Scroll / Desktop Grid */}
-        <div className="flex gap-4 overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:grid md:grid-cols-3 lg:grid-cols-9 scrollbar-none justify-start md:justify-items-stretch">
+        <div className="flex gap-4 overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:grid md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-10 scrollbar-none justify-start md:justify-items-stretch">
           {platforms.map((platform, idx) => (
             <LogoBadge key={idx} name={platform} />
           ))}

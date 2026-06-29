@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Target, MessageSquare, Clock, ArrowUpRight, Cpu } from 'lucide-react';
+import { Eye, Target, MessageSquare, Clock, ArrowUpRight, Cpu, MapPin } from 'lucide-react';
 
 interface USPCardProps {
   icon: React.ReactNode;
@@ -17,10 +17,6 @@ function USPCard({ icon, title, description }: USPCardProps) {
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-sm text-black/60 font-light leading-relaxed">{description}</p>
       </div>
-      <div className="mt-8 flex items-center gap-1.5 text-xs font-semibold text-black/80 group-hover:text-aeo-purple transition-colors duration-300">
-        <span>Learn more</span>
-        <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </div>
     </div>
   );
 }
@@ -30,32 +26,37 @@ export default function USPGrid() {
     {
       icon: <Eye className="w-6 h-6" />,
       title: 'More Visibility',
-      description: 'Show up where your potential clients are looking. Gain strong exposure across modern AI search engines, messaging platforms, and traditional channels.',
+      description: 'Show up where your potential clients are looking. Gain strong exposure across modern search, map results, and social networks.',
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: 'More Leads',
-      description: 'Attract high-intent buyers ready to engage with your products or services. Optimize your pages to align with specific customer queries.',
+      description: 'Attract interested buyers ready to engage with your products or services. Optimize your pages to align with what customers actually type and ask.',
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: 'More Enquiries',
-      description: 'Convert search attention into qualified direct enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
+      description: 'Convert online attention into direct customer enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: 'Time Saved',
-      description: 'Automate content preparation, keyword optimization, and audit generation. Get back to running your business while we build your brand.',
+      description: 'Automate content preparation, online profile optimization, and regular reports. Focus on running your business while we handle your digital presence.',
     },
     {
       icon: <ArrowUpRight className="w-6 h-6" />,
       title: 'Money Saved',
-      description: 'Ditch bloated ad spends and expensive agency fees. Invest in highly efficient organic positioning that compound returns over time.',
+      description: 'Improve your organic visibility and reduce wasted effort. Build a lasting foundation that attracts customers naturally without recurring costs.',
     },
     {
       icon: <Cpu className="w-6 h-6" />,
       title: 'AI‑Ready Content',
-      description: 'Structure your brand, assets, and text to be easily parsed and cited by Large Language Models like ChatGPT, Claude, and Gemini.',
+      description: 'Format your brand info, service details, and articles so they are easily found, cited, and recommended by modern AI search assistants.',
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: 'Local Visibility',
+      description: 'Put your business on the map. Optimize your listings and content to rank first when local customers search for immediate nearby solutions.',
     },
   ];
 
@@ -70,10 +71,10 @@ export default function USPGrid() {
             Why AEObility
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Engineered for Digital Dominance
+            Engineered for Organic Growth
           </h3>
           <p className="text-base text-white/60 font-light">
-            We focus on tangible business outcomes, giving you the foundation to out-reach and out-convert competition.
+            We focus on real outcomes, giving your business the foundation to get found and get chosen.
           </p>
         </div>
 

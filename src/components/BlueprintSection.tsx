@@ -5,18 +5,18 @@ export default function BlueprintSection() {
   const blueprintPhases = [
     {
       icon: <Compass className="w-5 h-5 text-aeo-cyan" />,
-      title: 'Days 1-30: Foundation & Schema Upgrade',
-      description: 'Audit existing assets and structure data tags so Google and modern AI LLMs can parse and map your business entities accurately.',
+      title: 'Days 1-30: Foundation & Online Profile Setup',
+      description: 'Audit existing assets and organize business details so Google, map providers, and modern AI tools can find and display your business accurately.',
     },
     {
       icon: <Milestone className="w-5 h-5 text-aeo-cyan" />,
-      title: 'Days 31-60: Content & Discovery Engine Integration',
-      description: 'Deploy targeted question-answer resources, blog structures, and brand citations that address direct client searches.',
+      title: 'Days 31-60: Local Presence & Search Optimization',
+      description: 'Optimize local listings, map pins, and structure targeted question-and-answer resources that capture nearby customer intent.',
     },
     {
       icon: <Layers className="w-5 h-5 text-aeo-cyan" />,
-      title: 'Days 61-90: Scaling Mentions & Authority Building',
-      description: 'Acquire high-quality references and brand connections across key platforms to solidifying authority and rank positions.',
+      title: 'Days 61-90: Scaling Authority & AI Citations',
+      description: 'Acquire high-quality local mentions and citations across search engines, directories, and AI assistants to solidify your top ranking positions.',
     },
   ];
 
@@ -39,7 +39,7 @@ export default function BlueprintSection() {
             </h2>
 
             <p className="text-lg text-white/70 font-light leading-relaxed">
-              A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for the future of AI search.
+              A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.
             </p>
 
             <div className="space-y-4 pt-4">

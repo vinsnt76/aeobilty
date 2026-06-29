@@ -37,7 +37,7 @@ export function GraphVisual() {
       label?: string;
     }> = [];
 
-    const labels = ['AI Search', 'ChatGPT', 'Google AEO', 'Claude', 'Perplexity', 'LinkedIn', 'Social Leads', 'SEO 2.0'];
+    const labels = ['AI Search', 'ChatGPT', 'Google Maps', 'Claude', 'Perplexity', 'LinkedIn', 'Social Leads', 'New Customers'];
     
     for (let i = 0; i < nodeCount; i++) {
       const isLabeled = i < labels.length;
@@ -200,7 +200,7 @@ export default function Hero() {
           <div className="lg:col-span-7 text-left space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/80 font-medium">
               <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
-              <span>AI Search Engine Optimization (AEO) Landing</span>
+              <span>Get Found. Get Chosen.</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">

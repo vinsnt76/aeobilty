@@ -19,7 +19,7 @@ export default function FinalCTA() {
         </h2>
 
         <p className="text-base sm:text-lg text-white/60 font-light max-w-xl mx-auto leading-relaxed">
-          Get absolute clarity on your digital footprint and see exactly what it takes to show up first across Search, AI, and Social.
+          Improve your organic visibility and reduce wasted effort. See exactly what it takes to show up first across Search, Maps, and AI assistants.
         </p>
 
         <div className="pt-4">
