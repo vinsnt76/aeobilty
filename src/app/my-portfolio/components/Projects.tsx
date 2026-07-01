@@ -143,15 +143,6 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      title: "AEO Guide Engine: Data Object Embeddings",
-      date: "Jun 2026 — Baby Bento",
-      summary: "Transformed a Shopify blog post into a modular, agent‑optimised JSON data object rendered via a custom Guide Engine hook. This shift from static HTML to structured, machine‑readable content delivered measurable AEO gains.",
-      outcomes: ["Organic clicks 4×", "Impressions 2×", "Avg. position 59%", "Active users 233%"],
-      skills: ["Semantic Data Modelling", "AEO", "JSON Architecture", "Shopify Theme Engineering", "AI Search Optimisation"],
-      videoSrc: "/videos/aeo-engine-demo.mp4",
-      imageSrc: "/projects/aeo-guide.jpg"
-    },
-    {
       title: "AI Video Engine: Content Automation",
       date: "Mar 2026 — AEObility",
       summary: "Architected an automated video generation engine that translates brand assets, scripts, and synthetic voiceovers into high‑converting, platform‑ready marketing assets at scale.",
