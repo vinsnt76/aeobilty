@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
             If you have any questions or complaints about this Privacy Policy, please contact us:
           </p>
           <p className="font-semibold text-aeo-cyan">
-            Email: compliance@aeobility.com.au
+            Email: vince.yumi@gmail.com
           </p>
         </div>
       </div>
