@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-// Trigger redeploy to load Vercel environment variables
 export async function GET() {
   const issuerId = process.env.GOOGLE_WALLET_ISSUER_ID;
   const serviceAccount = process.env.GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL;
@@ -9,7 +8,6 @@ export async function GET() {
 
   if (!issuerId || !serviceAccount || !privateKey) {
     console.warn("Google Wallet credentials not fully configured. Returning a mock URL for testing.");
-    // Return a mock demo pass URL that handles fallback gracefully
     return NextResponse.json({
       url: "https://pay.google.com/gp/v/save/mock-pass-not-configured",
       isMock: true
@@ -20,17 +18,14 @@ export async function GET() {
     const classId = `${issuerId}.vince_baker_card`;
     const objectId = `${issuerId}.vince_baker_card_v2`;
 
+    // Generic Class (using default template layout)
     const genericClass = {
       id: classId,
-      classTemplateInfo: {
-        cardTemplateAssociation: {
-          cardTemplateId: "vince_baker_template"
-        }
-      },
       issuerName: "AEObility",
       reviewStatus: "UNDER_REVIEW"
     };
 
+    // Generic Object
     const genericObject = {
       id: objectId,
       classId: classId,
@@ -135,7 +130,14 @@ export async function GET() {
     const jwt = `${tokenHeader}.${tokenPayload}.${tokenSignature}`;
     const url = `https://pay.google.com/gp/v/save/${jwt}`;
 
-    return NextResponse.json({ url, isMock: false });
+    // Return both the live URL and a ready-to-use QR code image URL
+    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
+
+    return NextResponse.json({ 
+      url, 
+      qrCodeUrl,
+      isMock: false 
+    });
   } catch (error: any) {
     console.error("Failed to generate Google Wallet JWT:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
