@@ -3,8 +3,14 @@ import crypto from 'crypto';
 
 export async function GET() {
   const issuerId = process.env.GOOGLE_WALLET_ISSUER_ID;
-  const serviceAccount = process.env.GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL;
+  const serviceAccount = process.env.GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL || process.env.GOOGLE_WALLET_CLIENT_EMAIL;
   const privateKey = process.env.GOOGLE_WALLET_PRIVATE_KEY;
+
+  console.log("Wallet Config Check:", {
+    hasIssuerId: !!issuerId,
+    hasServiceAccount: !!serviceAccount,
+    hasPrivateKey: !!privateKey,
+  });
 
   if (!issuerId || !serviceAccount || !privateKey) {
     console.warn("Google Wallet credentials not fully configured. Returning a mock URL for testing.");
@@ -130,6 +136,8 @@ export async function GET() {
 
     const jwt = `${tokenHeader}.${tokenPayload}.${tokenSignature}`;
     const url = `https://pay.google.com/gp/v/save/${jwt}`;
+
+    console.log("JWT Generated Successfully.");
 
     // Return both the live URL and a ready-to-use QR code image URL
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
