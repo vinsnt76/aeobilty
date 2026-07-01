@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+// Trigger redeploy to load Vercel environment variables
 export async function GET() {
   const issuerId = process.env.GOOGLE_WALLET_ISSUER_ID;
   const serviceAccount = process.env.GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL;
