@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
                 className="google-wallet-btn"
               >
                 <img
-                  src="https://developers.google.com/static/wallet/images/add-to-google-wallet-button.svg"
+                  src="/google-wallet-icon.png"
                   alt="Add to Google Wallet"
                 />
               </a>
