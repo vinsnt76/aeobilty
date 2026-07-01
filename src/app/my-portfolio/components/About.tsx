@@ -128,7 +128,6 @@ const About: React.FC = () => {
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-10 text-left">My Evolution: A Digital Odyssey</h3>
             {/* Timeline line */}
-            <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-blue-500 hidden md:block" />
             <div className="space-y-12 pl-8 md:pl-0"> 
               {timelineItems.map((step, index) => (
                 <motion.div
@@ -159,12 +158,12 @@ const About: React.FC = () => {
           className="mt-24 text-center"
         >
           <motion.h3 variants={itemVariants} className="text-3xl font-bold mb-12">
-            My Superpowers for Your Growth
+            How I help Businesses grow
           </motion.h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-neutral-900">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-white">
             {superpowers.map((power) => (
-              <motion.div variants={itemVariants} key={power.name} className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
-                <power.icon size={48} className="text-blue-500 mb-4" />
+              <motion.div variants={itemVariants} key={power.name} className="flex flex-col items-center p-6 bg-neutral-900 text-white rounded-lg shadow-lg border border-neutral-800">
+                <power.icon size={48} className="text-blue-400 mb-4" />
                 <h4 className="text-xl font-semibold">{power.name}</h4>
               </motion.div>
             ))}
