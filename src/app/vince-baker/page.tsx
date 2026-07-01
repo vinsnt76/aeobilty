@@ -10,12 +10,12 @@ export default function VinceBakerPage() {
         </div>
         <div className="card-description">
           <h1>Vince Baker</h1>
-          <h2>Founder & Managing Director, AEObility</h2>
+          <h2>Founder, AEO & AI Automation Specialist</h2>
           
           <div className="card-about">
-            <span className="greeting">Hi there! I'm Vince, Founder of AEObility.</span>
+            <span className="greeting">Hi there! I'm Vince</span>
             <p className="value-statement">
-              I help Australian small businesses get found and chosen across Search, Maps, and AI platforms. With a focus on AI Search Optimisation (AEO) and local SEO, I help brands build visible, trustworthy digital footprints.
+              I help Australian small businesses get found and chosen across Search, Maps, and AI platforms. With a focus on AI Search Optimisation (AEO), local SEO, and practical AI automation, I help brands build visible, trustworthy digital footprints.
             </p>
           </div>
           
