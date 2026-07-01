@@ -142,14 +142,40 @@ const Projects: React.FC = () => {
       imageSrc: "/projects/aeo-guide.jpg"
     },
     {
-      title: "AEO Measurement Dashboard",
-      date: "Jan 2026 – Present",
-      summary: "Designed and built a full‑stack AEO Measurement Dashboard that translates complex retrieval signals into an executive‑ready view of AEO Strategic Health, Intent Fan‑Out, Merchant POS & Model Authority, Knowledge Node Performance, and Retrieval Lift.",
-      outcomes: [], // Placeholder or leave empty as per requirements
-      value: "Currently ingests CSV‑based GSC data with full capability for API‑driven dynamic ingestion. Built with Next.js, Tailwind, and Vercel, fully responsive and print‑optimised.",
-      skills: ["AEO", "Semantic Search", "Data Visualisation", "Next.js", "Tailwind", "Vercel"],
-      videoSrc: "/videos/aeo-dashboard.mp4",
-      imageSrc: "/projects/aeo-dashboard.jpg"
+      title: "AI Video Engine: Content Automation",
+      date: "Mar 2026 — AEObility",
+      summary: "Architected an automated video generation engine that translates brand assets, scripts, and synthetic voiceovers into high‑converting, platform‑ready marketing assets at scale.",
+      outcomes: ["Production time -90%", "Creative output 10×", "Cost per video -85%", "Engagement rate +40%"],
+      value: "Empowers brands to deploy hyper-personalized video campaigns within minutes rather than weeks.",
+      skills: ["AI Video Synthesis", "Speech Synthesis", "FFmpeg Automation", "Python Orchestration", "Branded Content"],
+      imageSrc: "/projects/video-engine.jpg"
+    },
+    {
+      title: "Baby Bento Social Reel Generator",
+      date: "Apr 2026 — Baby Bento",
+      summary: "Engineered a workflow automation tool for Baby Bento that compiles raw product imagery, user‑generated reviews, and trending audio tracks into polished, high‑impact Instagram Reels and TikToks.",
+      outcomes: ["Weekly reels +300%", "Production workflow -95%", "Reel views +150%", "Audience growth +45%"],
+      value: "Seamlessly scales social media marketing pipelines through programmatic content synthesis.",
+      skills: ["Social Automation", "Video Synthesis APIs", "Node.js", "Instagram Graph API", "Content Generation"],
+      imageSrc: "/projects/baby-bento-reels.jpg"
+    },
+    {
+      title: "Local SEO & Maps Accelerator",
+      date: "Jan 2026 — AEObility",
+      summary: "Developed a local signals automation tool that synchronizes business metadata, local citations, and geo-targeted landing pages to dominate search engines' local Map Packs.",
+      outcomes: ["Maps visibility +180%", "Local enquiries +85%", "Map Pack ranks #1-3", "Search traffic +120%"],
+      value: "Ensures Australian small businesses capture high-intent local search queries at the exact moment of purchase intent.",
+      skills: ["Local SEO", "Google Maps API", "Schema Markups", "Geo-Targeting", "Lead Generation"],
+      imageSrc: "/projects/maps-accelerator.jpg"
+    },
+    {
+      title: "AI Onboarding Automation",
+      date: "May 2026 — AEObility",
+      summary: "Built a zero‑touch client onboarding funnel that uses AI to analyze client domains, generate instant SEO/AEO visibility reports, and configure personalized roadmaps in under 60 seconds.",
+      outcomes: ["Onboarding time -98%", "Conversion rate +35%", "Instant reports 100%", "Manual hours saved 40/mo"],
+      value: "Eliminates traditional sales friction by delivering deep, customized value before the first discovery call.",
+      skills: ["Workflow Automation", "API Integrations", "OpenAI API", "PDF Generation", "Next.js"],
+      imageSrc: "/projects/onboarding-engine.jpg"
     }
   ];
 
