@@ -94,6 +94,7 @@ export async function GET() {
       aud: "google",
       typ: "savetowallet",
       iat: Math.floor(Date.now() / 1000),
+      origins: ["http://localhost:3000", "https://aeobility.com.au"],
       payload: {
         genericClasses: [genericClass],
         genericObjects: [genericObject]
@@ -115,8 +116,8 @@ export async function GET() {
     const tokenPayload = base64UrlEncode(JSON.stringify(payload));
     const signInput = `${tokenHeader}.${tokenPayload}`;
 
-    // Handle newline formatting for environment keys
-    const formattedPrivateKey = privateKey.replace(/\\n/g, '\n');
+    // Handle newline formatting and strip surrounding quotes for environment keys
+    const formattedPrivateKey = privateKey.replace(/^"|"$/g, '').replace(/\\n/g, '\n');
 
     const signer = crypto.createSign('RSA-SHA256');
     signer.update(signInput);
