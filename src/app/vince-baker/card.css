@@ -13,6 +13,7 @@
     text-align: center;
     object-fit: cover;
     object-position: center;
+    flex-shrink: 0;
 }
 
 /* CONTAINER */
@@ -29,6 +30,7 @@
 /* CARD */
 .card-container{
     display: flex;
+    align-items: center;
     width: 650px;
     height: auto;
     background: linear-gradient(to right,#024945, #12a89c); /* #2FEBD4, #DEFFFD*/
