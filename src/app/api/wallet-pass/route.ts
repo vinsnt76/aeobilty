@@ -17,7 +17,7 @@ export async function GET() {
 
   try {
     const classId = `${issuerId}.vince_baker_card`;
-    const objectId = `${issuerId}.vince_baker_card_v1`;
+    const objectId = `${issuerId}.vince_baker_card_v2`;
 
     const genericClass = {
       id: classId,
