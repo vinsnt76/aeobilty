@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
       </h2>
       <div className="card-container scale-95 md:scale-100 hover:scale-[1.02] transition-transform duration-300">
         <div className="card-image">
-          <img src="/business-card-profile.jpg" alt="Vince Baker" />
+          <img src="/Profile-Picture-Vinnie.png" alt="Vince Baker" />
         </div>
         <div className="card-description">
           <h1>Vince Baker</h1>
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
               </svg>
             </a>
             <a
-              href="/files/resume-cv.pdf"
+              href="/my-portfolio"
               className="card-hover-text"
               target="_blank"
               rel="noopener noreferrer"

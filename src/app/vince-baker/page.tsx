@@ -6,7 +6,7 @@ export default function VinceBakerPage() {
     <main className="card-page-container">
       <div className="card-container">
         <div className="card-image">
-          <img src="/business-card-profile.jpg" alt="Vince Baker" />
+          <img src="/Profile-Picture-Vinnie.png" alt="Vince Baker" />
         </div>
         <div className="card-description">
           <h1>Vince Baker</h1>
@@ -70,7 +70,7 @@ export default function VinceBakerPage() {
               </svg>
             </a>
             <a
-              href="/files/resume-cv.pdf"
+              href="/my-portfolio"
               className="card-hover-text"
               target="_blank"
               rel="noopener noreferrer"
