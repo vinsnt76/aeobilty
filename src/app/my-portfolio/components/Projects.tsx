@@ -13,6 +13,7 @@ interface ProjectCardProps {
   skills?: string[];
   imageSrc?: string;
   videoSrc?: string;
+  iframeSrc?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -24,6 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   skills,
   imageSrc,
   videoSrc,
+  iframeSrc,
 }) => {
   return (
     <motion.article
@@ -35,7 +37,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* Media Block */}
       <div className="relative w-full aspect-video bg-neutral-900 overflow-hidden">
-        {videoSrc ? (
+        {iframeSrc ? (
+          <iframe
+            src={iframeSrc}
+            width="100%"
+            height="100%"
+            className="w-full h-full border-0"
+            allow="autoplay"
+          />
+        ) : videoSrc ? (
           <video
             src={videoSrc}
             autoPlay
@@ -148,7 +158,16 @@ const Projects: React.FC = () => {
       outcomes: ["Production time -90%", "Creative output 10×", "Cost per video -85%", "Engagement rate +40%"],
       value: "Empowers brands to deploy hyper-personalized video campaigns within minutes rather than weeks.",
       skills: ["AI Video Synthesis", "Speech Synthesis", "FFmpeg Automation", "Python Orchestration", "Branded Content"],
-      imageSrc: "/projects/video-engine.jpg"
+      iframeSrc: "https://drive.google.com/file/d/13TJucyE9G28aRUVRdNHWC_1HgkuC8kr-/preview"
+    },
+    {
+      title: "Analytics Performance Report",
+      date: "Feb 2026 — AEObility",
+      summary: "A comprehensive SEO & AEO visibility report demonstrating performance lift, attribution signals, and search volume growth across Google and AI search engines.",
+      outcomes: ["Search volume +140%", "AI mentions +85%", "Traffic attribution 3×", "Visibility index +92%"],
+      value: "Translates raw model retrieval metrics into a clear, actionable visibility roadmap.",
+      skills: ["Data Analytics", "Performance Tracking", "Search Intelligence", "Client Reporting", "AEO Attribution"],
+      iframeSrc: "https://drive.google.com/file/d/1m03il0l5T3H8W8ZqaoSK7DnmL-35YZpL/preview"
     },
     {
       title: "Baby Bento Social Reel Generator",
