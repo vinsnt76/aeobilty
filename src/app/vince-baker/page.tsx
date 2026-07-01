@@ -1,7 +1,22 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import './card.css';
 
 export default function VinceBakerPage() {
+  const [walletUrl, setWalletUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/wallet-pass')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.url) {
+          setWalletUrl(data.url);
+        }
+      })
+      .catch((err) => console.error("Error fetching Google Wallet pass link:", err));
+  }, []);
+
   return (
     <main className="card-page-container">
       <div className="card-container">
@@ -85,6 +100,22 @@ export default function VinceBakerPage() {
               </svg>
             </a>
           </div>
+
+          {walletUrl && (
+            <div className="google-wallet-btn-container">
+              <a
+                href={walletUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="google-wallet-btn"
+              >
+                <img
+                  src="https://developers.google.com/static/wallet/images/add-to-google-wallet-button.svg"
+                  alt="Add to Google Wallet"
+                />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </main>

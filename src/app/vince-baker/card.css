@@ -190,3 +190,26 @@
         font-size: 13px;
     }
 }
+
+.google-wallet-btn-container {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.google-wallet-btn {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.google-wallet-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.google-wallet-btn img {
+    height: 44px;
+    width: auto;
+    display: block;
+}

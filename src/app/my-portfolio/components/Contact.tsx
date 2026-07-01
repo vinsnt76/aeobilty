@@ -1,9 +1,22 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../vince-baker/card.css';
 
 const Contact: React.FC = () => {
+  const [walletUrl, setWalletUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/wallet-pass')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.url) {
+          setWalletUrl(data.url);
+        }
+      })
+      .catch((err) => console.error("Error fetching Google Wallet pass link:", err));
+  }, []);
+
   return (
     <section id="contact" className="w-full flex flex-col items-center py-20 scroll-mt-24 bg-black text-white">
       <h2 className="text-3xl md:text-5xl font-black text-white mb-12 text-center">
@@ -90,6 +103,22 @@ const Contact: React.FC = () => {
               </svg>
             </a>
           </div>
+
+          {walletUrl && (
+            <div className="google-wallet-btn-container">
+              <a
+                href={walletUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="google-wallet-btn"
+              >
+                <img
+                  src="https://developers.google.com/static/wallet/images/add-to-google-wallet-button.svg"
+                  alt="Add to Google Wallet"
+                />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>
