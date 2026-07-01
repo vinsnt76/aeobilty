@@ -85,6 +85,11 @@ export async function GET() {
             description: "LinkedIn"
           }
         ]
+      },
+      barcode: {
+        type: "QR_CODE",
+        value: "https://aeobility.com.au/vince-baker.vcf",
+        alternateText: "Scan to save contact info"
       }
     };
 
