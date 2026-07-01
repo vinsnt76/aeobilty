@@ -41,7 +41,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               <button
                 type="button"
                 onClick={() => handleLinkClick(item.href)}
-                className="block w-full text-lg text-gray-100 py-2 hover:text-blue-400 transition-colors text-center"
+                className="block w-full text-lg text-gray-100 py-2 hover:text-aeo-cyan transition-colors text-center"
               >
                 {item.name}
               </button>

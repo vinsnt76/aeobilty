@@ -13,7 +13,7 @@ export default function Header() {
         
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-aeo-cyan"
           aria-label="Toggle Theme"
         >
           {theme === 'dark' ? (

@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #0b0d0e;
+    background-color: #030303;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     padding: 40px 20px;
 }
@@ -18,13 +18,14 @@
     align-items: center;
     width: 100%;
     max-width: 440px;
-    background: linear-gradient(135deg, #024945 0%, #12a89c 100%);
+    background: linear-gradient(135deg, #07070a 0%, #150821 100%);
     border-radius: 24px;
-    box-shadow: 0 20px 40px 2px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.05), 0 0 0 1px rgba(0, 240, 255, 0.15) inset;
     padding: 40px 32px;
     text-align: center;
     overflow: hidden;
     position: relative;
+    border: 1px solid rgba(0, 240, 255, 0.1);
 }
 
 /* IMAGE */
@@ -41,8 +42,8 @@
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 3px solid #00f0ff;
+    box-shadow: 0 8px 24px rgba(0, 240, 255, 0.15);
     flex-shrink: 0;
 }
 
@@ -66,7 +67,7 @@
 .card-description h2 {
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
+    color: #00f0ff;
     margin: 0;
     letter-spacing: 0.2px;
 }
@@ -112,17 +113,18 @@
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 240, 255, 0.05);
     color: #ffffff;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 240, 255, 0.15);
 }
 
 .card-description .icons a:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 240, 255, 0.4);
+    color: #00f0ff;
 }
 
 .card-description .icons svg {
@@ -146,13 +148,13 @@
     white-space: nowrap;
     color: #ffffff;
     font-size: 11px;
-    background-color: #192733;
+    background-color: #bd00ff;
     border-radius: 6px;
     padding: 4px 8px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s, bottom 0.2s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(189, 0, 255, 0.2);
 }
 
 .card-hover-text:hover .card-tooltip-text {

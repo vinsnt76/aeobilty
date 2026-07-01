@@ -46,7 +46,7 @@ const Experience: React.FC = () => {
           {...fadeInUp}
           className="flex items-center gap-3 mb-10"
         >
-          <Briefcase className="w-7 h-7 text-blue-500" />
+          <Briefcase className="w-7 h-7 text-aeo-cyan" />
           <h3 className="text-3xl md:text-4xl font-bold">
             Experience, Education & Skills
           </h3>
@@ -60,8 +60,8 @@ const Experience: React.FC = () => {
             {/* Education */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <GraduationCap className="w-5 h-5 text-blue-400" />
-                <h4 className="text-xl font-semibold text-blue-400">Education</h4>
+                <GraduationCap className="w-5 h-5 text-aeo-cyan" />
+                <h4 className="text-xl font-semibold text-aeo-cyan">Education</h4>
               </div>
               <ul className="space-y-4">
                 <li className="border-l-2 border-neutral-800 pl-4">
@@ -78,8 +78,8 @@ const Experience: React.FC = () => {
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Award className="w-5 h-5 text-blue-400" />
-                <h4 className="text-xl font-semibold text-blue-400">Certifications & Training</h4>
+                <Award className="w-5 h-5 text-aeo-cyan" />
+                <h4 className="text-xl font-semibold text-aeo-cyan">Certifications & Training</h4>
               </div>
               <ul className="grid grid-cols-1 gap-3">
                 {[
@@ -90,7 +90,7 @@ const Experience: React.FC = () => {
                   "Open Colleges Professional Communications"
                 ].map((cert, index) => (
                   <li key={index} className="flex items-start gap-2 text-neutral-300">
-                    <span className="text-blue-500 mt-1.5 min-w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    <span className="text-aeo-cyan mt-1.5 min-w-1.5 h-1.5 rounded-full bg-aeo-cyan" />
                     <span>{cert}</span>
                   </li>
                 ))}
@@ -102,8 +102,8 @@ const Experience: React.FC = () => {
           {/* Column 2: Skills Grid */}
           <motion.div {...fadeInUp}>
             <div className="flex items-center gap-2 mb-6">
-              <Zap className="w-5 h-5 text-blue-400" />
-              <h4 className="text-xl font-semibold text-blue-400">Core Skills</h4>
+              <Zap className="w-5 h-5 text-aeo-cyan" />
+              <h4 className="text-xl font-semibold text-aeo-cyan">Core Skills</h4>
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -117,7 +117,7 @@ const Experience: React.FC = () => {
                   whileHover={{ scale: 1.05, backgroundColor: "#171717" }}
                   className="bg-neutral-900 border border-neutral-800 p-4 rounded-lg flex flex-col items-center justify-center text-center gap-3 transition-colors group"
                 >
-                  <skill.icon className="w-6 h-6 text-blue-500 group-hover:text-blue-400 transition-colors" />
+                  <skill.icon className="w-6 h-6 text-aeo-cyan group-hover:text-aeo-purple transition-colors" />
                   <span className="text-xs font-medium leading-tight">
                     {skill.name}
                   </span>
@@ -126,7 +126,7 @@ const Experience: React.FC = () => {
             </div>
 
             {/* Experience Narrative Summary */}
-            <div className="mt-10 p-6 rounded-lg bg-blue-500/5 border border-blue-500/10">
+            <div className="mt-10 p-6 rounded-lg bg-aeo-cyan/5 border border-aeo-cyan/10">
               <p className="text-sm text-neutral-400 leading-relaxed italic">
                 "Leveraging a background in travel-sector business development and award-winning agency experience to deliver high-performance digital architecture."
               </p>

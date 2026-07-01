@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex-shrink-0 w-[85vw] md:w-[600px] bg-white border border-neutral-200 rounded-3xl overflow-hidden shadow-2xl transition-all hover:border-blue-500/50 flex flex-col"
+      className="flex-shrink-0 w-[85vw] md:w-[600px] bg-white border border-neutral-200 rounded-3xl overflow-hidden shadow-2xl transition-all hover:border-aeo-cyan/50 flex flex-col"
     >
       {/* Media Block */}
       <div className="relative w-full aspect-video bg-neutral-900 overflow-hidden">
@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Content Block */}
       <div className="p-6 md:p-8 flex flex-col flex-grow space-y-6">
         <header className="space-y-1">
-          <div className="flex items-center gap-2 text-blue-500 font-bold text-sm tracking-widest uppercase">
+          <div className="flex items-center gap-2 text-aeo-cyan font-bold text-sm tracking-widest uppercase">
             <Cpu size={16} />
             <span>{date}</span>
           </div>
@@ -90,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="grid grid-cols-2 gap-4 py-4 border-y border-neutral-200">
               {outcomes.map((outcome, index) => (
                 <div key={index} className="flex flex-col gap-0.5">
-                  <div className="flex items-center gap-2 text-blue-500">
+                  <div className="flex items-center gap-2 text-aeo-cyan">
                     <TrendingUp size={16} />
                     <span className="font-bold text-neutral-900">
                       {outcome.split(" ").slice(-1)}
@@ -106,7 +106,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
           {/* Core Value */}
           {value && (
-            <div className="bg-blue-500/5 border-l-2 border-blue-600 p-4 rounded-r-xl">
+            <div className="bg-aeo-cyan/5 border-l-2 border-aeo-cyan p-4 rounded-r-xl">
               <p className="text-neutral-700 text-sm italic leading-relaxed">{value}</p>
             </div>
           )}
@@ -118,9 +118,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="flex items-center gap-1 px-3 py-1 bg-neutral-100 border border-neutral-200 text-neutral-600 text-[10px] font-bold rounded-full uppercase tracking-tighter transition-colors group-hover:border-blue-500/30"
+                className="flex items-center gap-1 px-3 py-1 bg-neutral-100 border border-neutral-200 text-neutral-600 text-[10px] font-bold rounded-full uppercase tracking-tighter transition-colors group-hover:border-aeo-cyan/30"
               >
-                <Code size={10} className="text-blue-500" />
+                <Code size={10} className="text-aeo-cyan" />
                 {skill}
               </span>
             ))}
@@ -206,27 +206,27 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-6">
         <header className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-blue-500 font-bold text-sm tracking-widest uppercase">
+            <div className="flex items-center gap-2 text-aeo-cyan font-bold text-sm tracking-widest uppercase">
               <BarChart3 size={18} />
               <span>Portfolio</span>
             </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Featured <span className="text-blue-600">Impact.</span>
+            Featured <span className="text-gradient-aeo">Impact.</span>
           </h2>
-          <div className="h-1.5 w-24 bg-blue-600 rounded-full" />
+          <div className="h-1.5 w-24 bg-gradient-to-r from-aeo-cyan to-aeo-purple rounded-full" />
           </div>
 
           <div className="hidden md:flex gap-4">
             <button 
               onClick={scrollPrev}
-              className="p-4 rounded-full border border-neutral-800 text-white hover:bg-neutral-900 hover:border-blue-500 transition-all"
+              className="p-4 rounded-full border border-neutral-800 text-white hover:bg-neutral-900 hover:border-aeo-cyan transition-all"
               aria-label="Previous project"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={scrollNext}
-              className="p-4 rounded-full border border-neutral-800 text-white hover:bg-neutral-900 hover:border-blue-500 transition-all"
+              className="p-4 rounded-full border border-neutral-800 text-white hover:bg-neutral-900 hover:border-aeo-cyan transition-all"
               aria-label="Next project"
             >
               <ChevronRight size={24} />

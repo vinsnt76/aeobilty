@@ -17,8 +17,8 @@ const Welcome: React.FC = () => {
 
       {/* Optional: Animated Glows */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/20 blur-[160px] animate-pulse-slow rounded-full" />
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-400/20 blur-[140px] animate-pulse-slower rounded-full" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-aeo-cyan/20 blur-[160px] animate-pulse-slow rounded-full" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-aeo-purple/20 blur-[140px] animate-pulse-slower rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16">
@@ -31,9 +31,9 @@ const Welcome: React.FC = () => {
           className="relative order-1 md:order-1"
         >
           {/* 4. Glow pulse identity element */}
-          <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute inset-0 bg-aeo-cyan/20 rounded-full blur-3xl animate-pulse" />
           
-          <div className="group relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-800 ring-offset-4 ring-offset-blue-400/20">
+          <div className="group relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-800 ring-offset-4 ring-offset-aeo-cyan/20">
             <img
               src="/Profile-Picture-Vinnie.png" 
               alt="Vinnie Baker"
@@ -48,7 +48,7 @@ const Welcome: React.FC = () => {
             transition={{ delay: 1 }}
             className="absolute -bottom-2 -right-2 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hidden md:block"
           >
-             <p className="text-[10px] font-bold text-blue-500 uppercase tracking-[0.2em]">
+             <p className="text-[10px] font-bold text-aeo-cyan uppercase tracking-[0.2em]">
                SEO. AI. PPC + SEM
              </p>
           </motion.div>
@@ -63,13 +63,13 @@ const Welcome: React.FC = () => {
             className="space-y-6"
           >
             {/* Personal Tagline */}
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide border border-blue-100 dark:border-blue-800">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-aeo-cyan/10 text-aeo-cyan text-sm font-semibold tracking-wide border border-aeo-cyan/20">
               AI & Digital Specialist
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
               Turning search campaigns & content <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-aeo-cyan to-aeo-purple">
                 into AEO‑driven growth.
               </span>
             </h1>
@@ -88,7 +88,7 @@ const Welcome: React.FC = () => {
             <button 
               type="button"
               onClick={() => scrollToSection('projects')}
-              className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-blue-500/30 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300"
+              className="bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-8 py-4 rounded-2xl font-bold shadow-xl shadow-aeo-cyan/20 hover:scale-[1.02] transition-all duration-300"
             >
               View My Work
             </button>
@@ -120,7 +120,7 @@ const Welcome: React.FC = () => {
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         onClick={() => scrollToSection('about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-gray-400 hover:text-blue-500 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-gray-400 hover:text-aeo-cyan transition-colors"
         aria-label="Scroll down to About section"
       >
         <ChevronDown size={32} />

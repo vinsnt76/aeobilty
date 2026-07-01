@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="w-full flex flex-col items-center py-20 scroll-mt-24 bg-black text-white">
       <h2 className="text-3xl md:text-5xl font-black text-white mb-12 text-center">
-        Get in <span className="text-blue-600">Touch.</span>
+        Get in <span className="text-gradient-aeo">Touch.</span>
       </h2>
       <div className="card-container scale-95 md:scale-100 hover:scale-[1.02] transition-transform duration-300">
         <div className="card-image">
