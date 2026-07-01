@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AEObility Web & Portfolio Platform
 
-## Getting Started
+A modern, high-performance web platform built with **Next.js 16 (App Router)**. This repository houses the main AEObility corporate platform, Vincent Baker's professional portfolio, and a native Google Wallet digital business card pass integration.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Key Modules & Routes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. **Corporate Hub (`/`)**
+The landing page and primary site structure for **AEObility**—focusing on AI Search Optimisation (AEO), Local SEO, and practical AI workflow automation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. **Professional Portfolio (`/my-portfolio`)**
+Vincent Baker's complete professional resume, core competencies, and featured case studies detailing high-impact AI and automation projects (such as the *AI Video Engine* and *Baby Bento Social Reel Generator*). 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. **Digital Business Card (`/vince-baker`)**
+A mobile-optimised, brand-aligned digital business card featuring interactive contact triggers, direct links, and a native wallet integration.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 💳 Google Wallet Pass Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The platform features a custom, dependency-free Google Wallet Pass implementation, allowing visitors to save Vincent's business card directly to their Google Wallet.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Technical Architecture:
+* **Serverless Pass Generator (`/api/wallet-pass`)**: A Next.js API Route Handler that dynamically compiles a Google Wallet `GenericObject` and signs the payload into an **RS256 JWT** using Node's native `crypto` module.
+* **Dynamic vCard Server (`/vince-baker.vcf`)**: A route handler that outputs the raw vCard data with explicit `Content-Type: text/vcard; charset=utf-8` and inline disposition headers.
+* **Front-of-Pass QR Code**: The Google Wallet pass embeds a QR code linked directly to `https://aeobility.com.au/vince-baker.vcf`. Scanning this QR code from the wallet pass instantly triggers the smartphone's native **"Add to Contacts"** drawer.
+* **Adblock-Resilient Icon**: Uses a locally hosted `google-wallet-icon.png` asset to prevent adblockers or privacy extensions from incorrectly hiding the button.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Local Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Create a local environment variables file:
+   Create a `.env.local` file in the root directory:
+   ```env
+   GOOGLE_WALLET_ISSUER_ID=3388000000023168657
+   GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL=wallet-service-account@wallet-businesscard.iam.gserviceaccount.com
+   GOOGLE_WALLET_PROJECT_ID=wallet-businesscard
+   GOOGLE_WALLET_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
+   ```
+
+3. Launch the development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+---
+
+## ⚙️ Production Configuration (Vercel)
+
+To enable the Google Wallet pass generation on the live site, configure the following Environment Variables in your Vercel project settings:
+
+| Variable Name | Description |
+|---|---|
+| `GOOGLE_WALLET_ISSUER_ID` | Your Issuer ID from Google Pay & Wallet Console |
+| `GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL` | Service Account Client Email |
+| `GOOGLE_WALLET_PROJECT_ID` | Google Cloud Project ID |
+| `GOOGLE_WALLET_PRIVATE_KEY` | Full service account Private Key (with `\n` linebreaks) |
+
+*After adding variables, trigger a redeployment on Vercel to rebuild the Serverless Functions.*
