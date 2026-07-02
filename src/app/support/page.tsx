@@ -123,8 +123,8 @@ export default function SupportPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all duration-300">
               <div className="text-aeo-cyan text-sm font-semibold uppercase tracking-wider mb-2">Email Support</div>
-              <a href="mailto:vince.yumi@gmail.com" className="text-white hover:text-aeo-cyan transition-colors font-medium">
-                vince.yumi@gmail.com
+              <a href="mailto:support@aeobility.com.au" className="text-white hover:text-aeo-cyan transition-colors font-medium">
+                support@aeobility.com.au
               </a>
               <div className="text-xs text-white/40 mt-1">Typical response under 24 hours</div>
             </div>

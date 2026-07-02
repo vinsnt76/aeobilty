@@ -72,7 +72,7 @@ export async function GET() {
         },
         {
           header: "Contact",
-          body: "Email: vince.yumi@gmail.com\nPhone: 0480 286 282",
+          body: "Email: vince@aeobility.com.au\nPhone: 0480 286 282",
           id: "contact"
         }
       ],

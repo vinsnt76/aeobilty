@@ -7,7 +7,7 @@ FN:Vince Baker
 ORG:AEObility
 TITLE:Founder & AI Automation Specialist
 TEL;TYPE=CELL,VOICE:0480 286 282
-EMAIL;TYPE=PREF,INTERNET:vince.yumi@gmail.com
+EMAIL;TYPE=PREF,INTERNET:vince@aeobility.com.au
 URL:https://aeobility.com.au
 END:VCARD`;
 

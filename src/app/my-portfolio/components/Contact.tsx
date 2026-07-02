@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
               </svg>
             </a>
             <a
-              href="mailto:vince.yumi@gmail.com"
+              href="mailto:vince@aeobility.com.au"
               className="card-hover-text"
             >
               <span className="card-tooltip-text" id="fade">
