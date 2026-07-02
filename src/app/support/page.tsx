@@ -44,7 +44,7 @@ export default function SupportPage() {
     },
     {
       question: "What is your typical support response time?",
-      answer: "We aim to respond to all general support inquiries and partnership requests within 24 to 48 business hours."
+      answer: "We aim to respond to all general support enquiries and partnership requests within 24 to 48 business hours."
     }
   ];
 
@@ -121,20 +121,30 @@ export default function SupportPage() {
 
           {/* Quick Contact Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all duration-300">
-              <div className="text-aeo-cyan text-sm font-semibold uppercase tracking-wider mb-2">Email Support</div>
-              <a href="mailto:support@aeobility.com.au" className="text-white hover:text-aeo-cyan transition-colors font-medium">
-                support@aeobility.com.au
-              </a>
-              <div className="text-xs text-white/40 mt-1">Typical response under 24 hours</div>
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all duration-300 flex items-start gap-4">
+              <div className="p-3 bg-white/5 rounded-xl">
+                <img src="/email.png" alt="Email" className="w-6 h-6 object-contain" />
+              </div>
+              <div>
+                <div className="text-aeo-cyan text-sm font-semibold uppercase tracking-wider mb-2">Email Support</div>
+                <a href="mailto:support@aeobility.com.au" className="text-white hover:text-aeo-cyan transition-colors font-medium">
+                  support@aeobility.com.au
+                </a>
+                <div className="text-xs text-white/40 mt-1">Typical response under 24 hours</div>
+              </div>
             </div>
 
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-purple/20 transition-all duration-300">
-              <div className="text-aeo-purple text-sm font-semibold uppercase tracking-wider mb-2">Direct Phone</div>
-              <a href="tel:0480286282" className="text-white hover:text-aeo-purple transition-colors font-medium">
-                0480 286 282
-              </a>
-              <div className="text-xs text-white/40 mt-1">Mon-Fri 9:00 AM - 5:00 PM AEST</div>
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-purple/20 transition-all duration-300 flex items-start gap-4">
+              <div className="p-3 bg-white/5 rounded-xl">
+                <img src="/telephone.png" alt="Phone" className="w-6 h-6 object-contain" />
+              </div>
+              <div>
+                <div className="text-aeo-purple text-sm font-semibold uppercase tracking-wider mb-2">Direct Phone</div>
+                <a href="tel:0480286282" className="text-white hover:text-aeo-purple transition-colors font-medium">
+                  0480 286 282
+                </a>
+                <div className="text-xs text-white/40 mt-1">Mon-Fri 9:00 AM - 5:00 PM AEST</div>
+              </div>
             </div>
           </div>
 
@@ -176,7 +186,7 @@ export default function SupportPage() {
         {/* Right Side: Contact Support Form */}
         <section className="lg:col-span-5 bg-white/[0.01] border border-white/5 p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm self-start">
           <div className="absolute top-0 right-0 w-32 h-32 bg-aeo-cyan/5 rounded-full filter blur-2xl -z-10" />
-          <h2 className="text-2xl font-bold mb-6">Send an Inquiry</h2>
+          <h2 className="text-2xl font-bold mb-6">Send an Enquiry</h2>
 
           {formSubmitted ? (
             <div className="p-6 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-2xl flex flex-col items-center text-center gap-4 animate-fade-in">
@@ -185,7 +195,7 @@ export default function SupportPage() {
               </svg>
               <h3 className="font-bold text-lg">Message Sent</h3>
               <p className="text-xs text-white/60">
-                Thank you for reaching out. We have received your inquiry and Vince will contact you shortly.
+                Thank you for reaching out. We have received your enquiry and Vince will contact you shortly.
               </p>
             </div>
           ) : (
@@ -222,7 +232,7 @@ export default function SupportPage() {
 
               <div>
                 <label className="block text-xs font-semibold text-white/40 uppercase tracking-wider mb-2" htmlFor="subject">
-                  Inquiry Category
+                  Enquiry Category
                 </label>
                 <select
                   id="subject"
@@ -233,7 +243,7 @@ export default function SupportPage() {
                   <option value="General Support">General Support</option>
                   <option value="Wallet Pass Help">Google Wallet Pass Help</option>
                   <option value="Visibility Audit">Free Visibility Audit</option>
-                  <option value="Business Inquiries">Business Inquiries</option>
+                  <option value="Business Enquiries">Business Enquiries</option>
                 </select>
               </div>
 
@@ -248,7 +258,7 @@ export default function SupportPage() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all resize-none"
-                  placeholder="Describe your inquiry here..."
+                  placeholder="Describe your enquiry here..."
                 />
               </div>
 
