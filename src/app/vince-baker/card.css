@@ -106,7 +106,8 @@
     width: 100%;
 }
 
-.card-description .icons a {
+.card-description .icons a,
+.card-description .icons button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,9 +118,13 @@
     color: #ffffff;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 240, 255, 0.15);
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
 }
 
-.card-description .icons a:hover {
+.card-description .icons a:hover,
+.card-description .icons button:hover {
     transform: translateY(-3px);
     background: rgba(0, 240, 255, 0.15);
     box-shadow: 0 6px 12px rgba(0, 240, 255, 0.2);

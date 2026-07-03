@@ -5,6 +5,7 @@ import './card.css';
 
 export default function VinceBakerPage() {
   const [walletUrl, setWalletUrl] = useState<string | null>(null);
+  const [shareTooltip, setShareTooltip] = useState('Share');
 
   useEffect(() => {
     fetch('/api/wallet-pass')
@@ -16,6 +17,33 @@ export default function VinceBakerPage() {
       })
       .catch((err) => console.error("Error fetching Google Wallet pass link:", err));
   }, []);
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Vince Baker - AEObility',
+      text: 'Vince Baker - Founder, AEO & AI Automation Specialist',
+      url: window.location.href,
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      // Fallback: Copy link to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        setShareTooltip('Link Copied!');
+        setTimeout(() => {
+          setShareTooltip('Share');
+        }, 2000);
+      } catch (err) {
+        console.error('Clipboard copy failed:', err);
+      }
+    }
+  };
 
   return (
     <main className="card-page-container">
@@ -99,6 +127,21 @@ export default function VinceBakerPage() {
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
             </a>
+            <button
+              onClick={handleShare}
+              className="card-hover-text"
+            >
+              <span className="card-tooltip-text" id="fade">
+                {shareTooltip}
+              </span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
+            </button>
           </div>
 
           {walletUrl && (
