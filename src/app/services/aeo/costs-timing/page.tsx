@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: "AEO Pricing, Timelines & Market Metrics — AEObility",
-  description: "Transparent pricing structures, implementation timelines, and search market metrics for Answer Engine Optimization (AEO) packages.",
+  description: "Transparent pricing structures, implementation timelines, and search market metrics for Answer Engine Optimisation (AEO) packages.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/costs-timing",
   },
@@ -18,10 +18,10 @@ export default function AEOPricingPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How much do professional AEO optimization services cost?",
+        "name": "How much do professional AEO optimisation services cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard AEO optimization sprints for mid-sized websites range from $5,000 to $15,000, which includes a comprehensive 50-query prompt-set audit, semantic chunking of core service and product pages, schema integration, and structured XML sitemap generation."
+          "text": "Standard AEO optimisation sprints for mid-sized websites range from $5,000 to $15,000, which includes a comprehensive 50-query prompt-set audit, semantic chunking of core service and product pages, schema integration, and structured XML sitemap generation."
         }
       },
       {
@@ -29,7 +29,7 @@ export default function AEOPricingPage() {
         "name": "How long does it take to see measurable results from AEO?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most websites see a measurable lift in AI citations, featured snippet wins, and zero-click brand mentions within 6 to 12 weeks of completing an AEO optimization sprint. While temporary retrieval-augmented generation (RAG) caching updates occur within days, embedding your brand permanently into foundational LLM training datasets can take up to 8 months."
+          "text": "Most websites see a measurable lift in AI citations, featured snippet wins, and zero-click brand mentions within 6 to 12 weeks of completing an AEO optimisation sprint. While temporary retrieval-augmented generation (RAG) caching updates occur within days, embedding your brand permanently into foundational LLM training datasets can take up to 8 months."
         }
       }
     ]
@@ -82,9 +82,7 @@ export default function AEOPricingPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
-            </span>
+            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
           </Link>
           <div className="flex gap-4">
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
@@ -117,13 +115,13 @@ export default function AEOPricingPage() {
                 2. AEO vs. Traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                3. Technical Execution
+                3. Technical Optimisation Workflow
               </Link>
               <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
               <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
-                5. Pricing & Timelines
+                5. Costs & Timelines
               </Link>
             </nav>
           </div>
@@ -178,16 +176,16 @@ export default function AEOPricingPage() {
             <h2 className="text-xl font-bold">Pricing & Timelines FAQ</h2>
             <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01] divide-y divide-white/5">
               <div className="p-6">
-                <h3 id="how-much-do-professional-aeo-optimization-services-cost" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How much do professional AEO optimization services cost?</h3>
+                <h3 id="how-much-do-professional-aeo-optimisation-services-cost" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How much do professional AEO optimisation services cost?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Standard AEO optimization sprints for mid-sized websites range from $5,000 to $15,000, which includes a comprehensive 50-query prompt-set audit, semantic chunking of core service and product pages, schema integration, and structured XML sitemap generation.
+                  Standard AEO optimisation sprints for mid-sized websites range from $5,000 to $15,000, which includes a comprehensive 50-query prompt-set audit, semantic chunking of core service and product pages, schema integration, and structured XML sitemap generation.
                 </p>
               </div>
 
               <div className="p-6">
                 <h3 id="how-long-does-it-take-to-see-measurable-results" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How long does it take to see measurable results from AEO?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Most websites see a measurable lift in AI citations, featured snippet wins, and zero-click brand mentions within 6 to 12 weeks of completing an AEO optimization sprint. While temporary retrieval-augmented generation (RAG) caching updates occur within days, embedding your brand permanently into foundational LLM training datasets can take up to 8 months.
+                  Most websites see a measurable lift in AI citations, featured snippet wins, and zero-click brand mentions within 6 to 12 weeks of completing an AEO optimisation sprint. While temporary retrieval-augmented generation (RAG) caching updates occur within days, embedding your brand permanently into foundational LLM training datasets can take up to 8 months.
                 </p>
               </div>
             </div>
@@ -198,7 +196,7 @@ export default function AEOPricingPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Technical execution steps included in our optimization packages
+                Technical execution steps included in our optimisation packages
               </Link>
               <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 Eligibility criteria and topical authority requirements

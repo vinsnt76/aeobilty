@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: "Answer Engine Optimization (AEO) Services — AEObility",
-  description: "Professional content engineering solutions that restructure, format, and optimize digital assets for conversational AI engines and RAG systems.",
+  title: "Answer Engine Optimisation (AEO) Services — AEObility",
+  description: "Professional content engineering solutions that restructure, format, and optimise digital assets for conversational AI engines and RAG systems.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo",
   },
@@ -17,8 +17,8 @@ export default function AEORootPage() {
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/aeo#service",
-        "name": "Answer Engine Optimization (AEO) Services",
-        "description": "Professional content engineering solutions that restructure, format, and optimize digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and retrieval-augmented generation (RAG) systems.",
+        "name": "Answer Engine Optimisation (AEO) Services",
+        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and retrieval-augmented generation (RAG) systems.",
         "provider": {
           "@type": "Organization",
           "@id": "https://aeobility.com.au/#organization",
@@ -70,9 +70,7 @@ export default function AEORootPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
-            </span>
+            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
           </Link>
           <div className="flex gap-4">
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
@@ -105,13 +103,13 @@ export default function AEORootPage() {
                 2. AEO vs. Traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                3. Technical Execution
+                3. Technical Optimisation Workflow
               </Link>
               <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
               <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                5. Pricing & Timelines
+                5. Costs & Timelines
               </Link>
             </nav>
           </div>
@@ -121,10 +119,10 @@ export default function AEORootPage() {
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              Answer Engine <span className="text-gradient-aeo">Optimization</span>
+              Answer Engine <span className="text-gradient-aeo">Optimisation</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Restructure and engineering solutions designed to secure brand citations, drive semantic relevance, and ensure conversational AI systems surface your business.
+              Answer Engine Optimisation services engineered to secure brand citations, strengthen semantic relevance, and ensure conversational AI systems surface your business clearly and consistently.
             </p>
           </div>
 
@@ -143,7 +141,7 @@ export default function AEORootPage() {
               </Link>
 
               <Link href="/services/aeo/procedures" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
-                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO optimization procedures for LLM ingestion</span>
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO optimisation procedures for LLM ingestion</span>
                 <span className="text-aeo-cyan">→</span>
               </Link>
 

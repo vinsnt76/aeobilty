@@ -21,7 +21,7 @@ export default function AEODefinitionPage() {
         "name": "What are AEO services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "AEO services are professional digital marketing solutions that restructure, format, and optimize website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries."
+          "text": "AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries."
         }
       }
     ]
@@ -64,9 +64,7 @@ export default function AEODefinitionPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
-            </span>
+            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
           </Link>
           <div className="flex gap-4">
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
@@ -99,13 +97,13 @@ export default function AEODefinitionPage() {
                 2. AEO vs. Traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                3. Technical Execution
+                3. Technical Optimisation Workflow
               </Link>
               <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
               <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                5. Pricing & Timelines
+                5. Costs & Timelines
               </Link>
             </nav>
           </div>
@@ -118,7 +116,7 @@ export default function AEODefinitionPage() {
               AEO <span className="text-gradient-aeo">Definitions</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              An overview of Answer Engine Optimization, semantic density, and structured syntax mappings.
+              An overview of Answer Engine Optimisation, semantic density, and structured syntax mappings.
             </p>
           </div>
 
@@ -128,7 +126,7 @@ export default function AEODefinitionPage() {
               <div className="p-6">
                 <h3 id="what-are-aeo-services" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are AEO services?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  AEO services are professional digital marketing solutions that restructure, format, and optimize website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries.
+                  AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries.
                 </p>
               </div>
             </div>

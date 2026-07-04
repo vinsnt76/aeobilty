@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: "AEO Eligibility & Constraints — AEObility",
-  description: "FAQ on eligibility criteria for Answer Engine Optimization (AEO) and the technical risks of remaining unoptimized in conversational AI environments.",
+  description: "FAQ on eligibility criteria for Answer Engine Optimisation (AEO) and the technical risks of remaining unoptimised in conversational AI environments.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/constraints",
   },
@@ -26,10 +26,10 @@ export default function AEOConstraintsPage() {
       },
       {
         "@type": "Question",
-        "name": "What are the primary risks of not optimizing for AEO in 2026?",
+        "name": "What are the primary risks of not optimising for AEO in 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Failing to optimize content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimized pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries."
+          "text": "Failing to optimise content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries."
         }
       }
     ]
@@ -72,9 +72,7 @@ export default function AEOConstraintsPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
-            </span>
+            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
           </Link>
           <div className="flex gap-4">
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
@@ -107,13 +105,13 @@ export default function AEOConstraintsPage() {
                 2. AEO vs. Traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                3. Technical Execution
+                3. Technical Optimisation Workflow
               </Link>
               <Link href="/services/aeo/constraints" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
               <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                5. Pricing & Timelines
+                5. Costs & Timelines
               </Link>
             </nav>
           </div>
@@ -126,7 +124,7 @@ export default function AEOConstraintsPage() {
               Eligibility & <span className="text-gradient-aeo">Constraints</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Who benefits most from Answer Engine Optimization, and what are the immediate technical risks of remaining unoptimized?
+              Who benefits most from Answer Engine Optimisation, and what are the immediate technical risks of remaining unoptimised?
             </p>
           </div>
 
@@ -142,9 +140,9 @@ export default function AEOConstraintsPage() {
               </div>
 
               <div className="p-6">
-                <h3 id="what-are-the-primary-risks-of-not-optimizing" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are the primary risks of not optimizing for AEO in 2026?</h3>
+                <h3 id="what-are-the-primary-risks-of-not-optimising" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are the primary risks of not optimising for AEO in 2026?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Failing to optimize content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimized pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries.
+                  Failing to optimise content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries.
                 </p>
               </div>
             </div>

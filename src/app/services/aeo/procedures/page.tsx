@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: "How to Optimize Website Content for AI Ingestion — AEObility",
+  title: "How to Optimise Website Content for AI Ingestion — AEObility",
   description: "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/procedures",
@@ -15,7 +15,7 @@ export default function AEOHowToPage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "@id": "https://aeobility.com.au/services/aeo/procedures#howto",
-    "name": "How to Optimize Website Content for AI Ingestion and Citations",
+    "name": "How to Optimise Website Content for AI Ingestion and Citations",
     "description": "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
     "step": [
       {
@@ -76,9 +76,7 @@ export default function AEOHowToPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
-            </span>
+            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
           </Link>
           <div className="flex gap-4">
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
@@ -111,13 +109,13 @@ export default function AEOHowToPage() {
                 2. AEO vs. Traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
-                3. Technical Execution
+                3. Technical Optimisation Workflow
               </Link>
               <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
               <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                5. Pricing & Timelines
+                5. Costs & Timelines
               </Link>
             </nav>
           </div>
@@ -127,7 +125,7 @@ export default function AEOHowToPage() {
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              How to Optimize Content for <span className="text-gradient-aeo">AI Ingestion</span>
+              How to Optimise Content for <span className="text-gradient-aeo">AI Ingestion</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
               A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).
