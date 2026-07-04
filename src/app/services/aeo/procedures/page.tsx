@@ -181,7 +181,7 @@ export default function AEOHowToPage() {
           {/* Bottom-Up Link to Root Hub */}
           <div className="pt-4 flex">
             <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
-              ← Back to <strong className="text-white hover:underline">AEO Services</strong> (Root Node)
+              ← Back to <strong className="text-white hover:underline">AEO Services</strong>
             </Link>
           </div>
         </section>

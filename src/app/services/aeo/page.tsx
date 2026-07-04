@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { ArrowRight, Eye, Brain, CheckCircle2, MapPin, ShieldCheck } from 'lucide-react';
 
 export const metadata = {
   title: "Answer Engine Optimisation (AEO) Services — AEObility",
@@ -116,14 +117,96 @@ export default function AEORootPage() {
         </aside>
 
         {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-8">
+        <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
+              <span>Brand Promise: Get Found. Get Chosen.</span>
+            </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
               Answer Engine <span className="text-gradient-aeo">Optimisation</span>
             </h1>
-            <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Answer Engine Optimisation services engineered to secure brand citations, strengthen semantic relevance, and ensure conversational AI systems surface your business clearly and consistently.
+            <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
+              AEObility helps your business appear, make sense, and stand out across Search, Maps & AI — so you get more enquiries without the complexity.
             </p>
+          </div>
+
+          {/* Value Pillars Section */}
+          <div className="space-y-6">
+            <h2 className="text-xl font-bold text-white">Our Five Value Pillars</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+                <div className="flex items-center gap-2 text-aeo-cyan">
+                  <Eye className="w-5 h-5" />
+                  <h3 className="font-bold text-sm">Visibility</h3>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Show up more often across AI search engines, digital maps, and conversational assistants.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+                <div className="flex items-center gap-2 text-aeo-cyan">
+                  <Brain className="w-5 h-5" />
+                  <h3 className="font-bold text-sm">Understanding</h3>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Ensure machines interpret your business correctly. Instead of just keyword matching, pages are structured so answer engines can read, chunk, and comprehend them.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+                <div className="flex items-center gap-2 text-aeo-cyan">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <h3 className="font-bold text-sm">Selection</h3>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Provide AI systems with high-confidence data so they actively recommend and select your brand for search queries.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+                <div className="flex items-center gap-2 text-aeo-cyan">
+                  <MapPin className="w-5 h-5" />
+                  <h3 className="font-bold text-sm">Local Intent</h3>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Optimise digital footprints so your business appears consistently for nearby customers looking to purchase.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 md:col-span-2">
+                <div className="flex items-center gap-2 text-aeo-cyan">
+                  <ShieldCheck className="w-5 h-5" />
+                  <h3 className="font-bold text-sm">Trust</h3>
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Establish clarity, consistency, and transparency. Building deeper machine understanding leads to stronger direct trust from AI search and retrieval networks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick CTAs */}
+          <div className="p-6 bg-gradient-to-r from-aeo-purple/10 to-aeo-cyan/10 border border-white/5 rounded-2xl space-y-4">
+            <h3 className="text-base font-bold text-white">Get Started with AEObility</h3>
+            <p className="text-xs text-white/70 leading-relaxed">
+              Enter your website URL to get a free visibility audit delivered straight to your inbox, or secure our 90-day technical roadmap.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <Link
+                href="/#audit-form"
+                className="group flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-100 transition-all"
+              >
+                Generate My Free Audit
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                href="/services/aeo/costs-timing"
+                className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all"
+              >
+                View Pricing & Blueprint Offer
+              </Link>
+            </div>
           </div>
 
           {/* Hub Top-Down Navigation Corridors (Fidelity Rule verified) */}
