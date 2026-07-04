@@ -21,7 +21,7 @@ export default function AEODefinitionPage() {
         "name": "What are AEO services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries."
+          "text": "AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesised, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search — the effort AI systems spend interpreting unclear content — and secure brand citations inside conversational AI summaries."
         }
       }
     ]
@@ -116,7 +116,7 @@ export default function AEODefinitionPage() {
               AEO <span className="text-gradient-aeo">Definitions</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              An overview of Answer Engine Optimisation, semantic density, and structured syntax mappings.
+              Understanding the foundational mechanics of Answer Engine Optimisation, including semantic density and the structured syntax that helps AI systems accurately parse your content.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function AEODefinitionPage() {
               <div className="p-6">
                 <h3 id="what-are-aeo-services" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are AEO services?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries.
+                  AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesised, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search — the effort AI systems spend interpreting unclear content — and secure brand citations inside conversational AI summaries.
                 </p>
               </div>
             </div>
@@ -137,10 +137,10 @@ export default function AEODefinitionPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
               <Link href="/services/aeo/comparison" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Compare semantic retrieval with traditional lexical SEO
+                How AEO works differently to traditional SEO
               </Link>
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Step-by-step technical procedures for LLM ingestion
+                How we prepare your content so AI systems can read it properly
               </Link>
             </div>
           </div>
