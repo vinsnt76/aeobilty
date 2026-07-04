@@ -30,6 +30,18 @@ export default function AEORootPage() {
             "https://www.crunchbase.com/organization/aeobility"
           ]
         }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://aeobility.com.au/services/aeo#video",
+        "name": "AEObility Explainer Video: Get Found. Get Chosen.",
+        "description": "Learn how Answer Engine Optimisation (AEO) connects your business services directly to conversational AI engines like ChatGPT, Gemini, and Perplexity.",
+        "thumbnailUrl": [
+          "https://aeobility.com.au/assets/images/video-thumbnail.jpg"
+        ],
+        "uploadDate": "2026-07-05T00:00:00+08:00",
+        "contentUrl": "https://drive.google.com/file/d/18ovn8vhv8zCui-dnioUP_N45nT0sGhQD/view?usp=sharing",
+        "embedUrl": "https://drive.google.com/file/d/18ovn8vhv8zCui-dnioUP_N45nT0sGhQD/preview"
       }
     ]
   };
@@ -113,6 +125,22 @@ export default function AEORootPage() {
                 5. How much does AEO cost & what do I get?
               </Link>
             </nav>
+          </div>
+
+          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">AEO Explainer Video</h3>
+            <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+              <iframe
+                src="https://drive.google.com/file/d/18ovn8vhv8zCui-dnioUP_N45nT0sGhQD/preview"
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="AEO Explainer Video"
+              ></iframe>
+            </div>
+            <p className="text-[11px] text-white/50 leading-relaxed font-light">
+              See how AEO flips traditional search by introducing your business directly into conversational AI recommendations.
+            </p>
           </div>
         </aside>
 
