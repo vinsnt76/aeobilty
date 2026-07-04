@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export function GraphVisual() {
@@ -183,6 +184,9 @@ export default function Hero() {
             <a href="#usp" className="hover:text-aeo-cyan transition-colors">
               USP
             </a>
+            <Link href="/services/aeo" className="hover:text-aeo-cyan transition-colors">
+              AEO Services
+            </Link>
           </div>
 
           <div>

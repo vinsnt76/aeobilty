@@ -6,7 +6,7 @@ export const metadata = {
   title: "How to Optimize Website Content for AI Ingestion — AEObility",
   description: "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/how-to-optimize",
+    canonical: "https://aeobility.com.au/services/aeo/procedures",
   },
 };
 
@@ -14,7 +14,7 @@ export default function AEOHowToPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "@id": "https://aeobility.com.au/services/aeo/how-to-optimize#howto",
+    "@id": "https://aeobility.com.au/services/aeo/procedures#howto",
     "name": "How to Optimize Website Content for AI Ingestion and Citations",
     "description": "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
     "step": [
@@ -22,19 +22,19 @@ export default function AEOHowToPage() {
         "@type": "HowToStep",
         "name": "Establish Semantic Boundaries with Question-Based Headings",
         "text": "Structure your content using H3 headings phrased as natural-language questions (e.g., 'What are the benefits of X?'). This creates explicit, machine-readable conceptual maps that allow AI crawlers to easily identify topic shifts and prevent context dilution.",
-        "url": "https://aeobility.com.au/services/aeo/how-to-optimize#step1"
+        "url": "https://aeobility.com.au/services/aeo/procedures#step1"
       },
       {
         "@type": "HowToStep",
         "name": "Write Standalone, Atomic Answer Blocks",
         "text": "Keep your answer blocks within a tight sweet spot of 90 to 120 tokens (max 250). Lead with a concise, direct 1-2 sentence definition or answer immediately beneath your heading before elaborating with supporting technical details to prevent important qualifications from being lost in the middle of long contexts.",
-        "url": "https://aeobility.com.au/services/aeo/how-to-optimize#step2"
+        "url": "https://aeobility.com.au/services/aeo/procedures#step2"
       },
       {
         "@type": "HowToStep",
         "name": "Implement Relationship-Rich Internal Linking",
         "text": "Upgrade your internal links to use anchor text that explicitly declares semantic relationships (e.g., 'how adaptive chunking resolves context limitations') rather than generic phrases. This context provides a rich map of entity connections that LLMs can traverse to establish your domain authority.",
-        "url": "https://aeobility.com.au/services/aeo/how-to-optimize#step3"
+        "url": "https://aeobility.com.au/services/aeo/procedures#step3"
       }
     ]
   };
@@ -84,6 +84,9 @@ export default function AEOHowToPage() {
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Home
             </Link>
+            <Link href="/services/aeo" className="text-xs font-semibold text-aeo-cyan py-2 px-3">
+              AEO Services
+            </Link>
             <Link href="/support" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Support
             </Link>
@@ -99,18 +102,21 @@ export default function AEOHowToPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
             <nav className="flex flex-col gap-3">
               <Link href="/services/aeo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                1. Canonical Hub (Overview)
+                Hub Overview
               </Link>
-              <Link href="/services/aeo/vs-traditional-seo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+                1. Definition
+              </Link>
+              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 2. AEO vs. Traditional SEO
               </Link>
-              <Link href="/services/aeo/how-to-optimize" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
                 3. Technical Execution
               </Link>
-              <Link href="/services/aeo/eligibility-and-constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
-              <Link href="/services/aeo/pricing-and-timelines" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 5. Pricing & Timelines
               </Link>
             </nav>
@@ -159,6 +165,26 @@ export default function AEOHowToPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
+          <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+              <Link href="/services/aeo/definition" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Core definitions and syntax rules for RAG Ingestion
+              </Link>
+              <Link href="/services/aeo/costs-timing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Costs, pricing models, and implementation timelines
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom-Up Link to Root Hub */}
+          <div className="pt-4 flex">
+            <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
+              ← Back to <strong className="text-white hover:underline">AEO Services</strong> (Root Node)
+            </Link>
           </div>
         </section>
       </main>

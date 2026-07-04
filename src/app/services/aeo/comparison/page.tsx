@@ -6,7 +6,7 @@ export const metadata = {
   title: "AEO vs. Traditional SEO — AEObility",
   description: "Learn how Answer Engine Optimization (AEO) compares with traditional Search Engine Optimization (SEO). Lexical retrieval vs dense semantic vector matching.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/vs-traditional-seo",
+    canonical: "https://aeobility.com.au/services/aeo/comparison",
   },
 };
 
@@ -14,7 +14,7 @@ export default function AEOVsSEOPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "https://aeobility.com.au/services/aeo/vs-traditional-seo#faq",
+    "@id": "https://aeobility.com.au/services/aeo/comparison#faq",
     "mainEntity": [
       {
         "@type": "Question",
@@ -80,6 +80,9 @@ export default function AEOVsSEOPage() {
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Home
             </Link>
+            <Link href="/services/aeo" className="text-xs font-semibold text-aeo-cyan py-2 px-3">
+              AEO Services
+            </Link>
             <Link href="/support" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Support
             </Link>
@@ -95,18 +98,21 @@ export default function AEOVsSEOPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
             <nav className="flex flex-col gap-3">
               <Link href="/services/aeo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                1. Canonical Hub (Overview)
+                Hub Overview
               </Link>
-              <Link href="/services/aeo/vs-traditional-seo" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+                1. Definition
+              </Link>
+              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
                 2. AEO vs. Traditional SEO
               </Link>
-              <Link href="/services/aeo/how-to-optimize" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 3. Technical Execution
               </Link>
-              <Link href="/services/aeo/eligibility-and-constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
-              <Link href="/services/aeo/pricing-and-timelines" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 5. Pricing & Timelines
               </Link>
             </nav>
@@ -146,19 +152,39 @@ export default function AEOVsSEOPage() {
             <h2 className="text-xl font-bold">Structural Differences FAQ</h2>
             <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01] divide-y divide-white/5">
               <div className="p-6">
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">How does AEO differ from traditional SEO?</h3>
+                <h3 id="how-does-aeo-differ-from-traditional-seo" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How does AEO differ from traditional SEO?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                   While traditional SEO optimizes entire URLs for keyword relevance and search engine result pages (SERPs) to win human clicks, AEO optimizes at the atomic passage level (90–120 token chunks) to win selection and synthesis in dense vector indexes using semantic similarity, ensuring your content is quoted and cited directly in zero-click conversational AI summaries.
                 </p>
               </div>
 
               <div className="p-6">
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">How do AI answer engines choose their sources compared to traditional algorithms?</h3>
+                <h3 id="how-do-ai-answer-engines-choose-their-sources" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How do AI answer engines choose their sources compared to traditional algorithms?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                   Traditional search engines rely on sparse retrieval models like BM25 that prioritize exact keyword frequency and link equity. AI answer engines use dense retrieval models powered by vector embeddings and cosine similarity to map the conceptual meaning of content, selecting passages that directly fit the model's internal reasoning chains and Knowledge Graphs.
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
+          <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+              <Link href="/services/aeo/definition" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Core concepts and definitions of Answer Engine Optimization
+              </Link>
+              <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Topical authority constraints and optimization thresholds
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom-Up Link to Root Hub */}
+          <div className="pt-4 flex">
+            <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
+              ← Back to <strong className="text-white hover:underline">AEO Services</strong> (Root Node)
+            </Link>
           </div>
         </section>
       </main>

@@ -91,6 +91,12 @@ export default function SupportPage() {
               Home
             </Link>
             <Link
+              href="/services/aeo"
+              className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3"
+            >
+              AEO Services
+            </Link>
+            <Link
               href="/my-portfolio"
               className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3"
             >

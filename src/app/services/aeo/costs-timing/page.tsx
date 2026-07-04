@@ -6,7 +6,7 @@ export const metadata = {
   title: "AEO Pricing, Timelines & Market Metrics — AEObility",
   description: "Transparent pricing structures, implementation timelines, and search market metrics for Answer Engine Optimization (AEO) packages.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/pricing-and-timelines",
+    canonical: "https://aeobility.com.au/services/aeo/costs-timing",
   },
 };
 
@@ -14,7 +14,7 @@ export default function AEOPricingPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "https://aeobility.com.au/services/aeo/pricing-and-timelines#faq",
+    "@id": "https://aeobility.com.au/services/aeo/costs-timing#faq",
     "mainEntity": [
       {
         "@type": "Question",
@@ -90,6 +90,9 @@ export default function AEOPricingPage() {
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Home
             </Link>
+            <Link href="/services/aeo" className="text-xs font-semibold text-aeo-cyan py-2 px-3">
+              AEO Services
+            </Link>
             <Link href="/support" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Support
             </Link>
@@ -105,18 +108,21 @@ export default function AEOPricingPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
             <nav className="flex flex-col gap-3">
               <Link href="/services/aeo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                1. Canonical Hub (Overview)
+                Hub Overview
               </Link>
-              <Link href="/services/aeo/vs-traditional-seo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+                1. Definition
+              </Link>
+              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 2. AEO vs. Traditional SEO
               </Link>
-              <Link href="/services/aeo/how-to-optimize" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 3. Technical Execution
               </Link>
-              <Link href="/services/aeo/eligibility-and-constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
-              <Link href="/services/aeo/pricing-and-timelines" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
                 5. Pricing & Timelines
               </Link>
             </nav>
@@ -172,19 +178,39 @@ export default function AEOPricingPage() {
             <h2 className="text-xl font-bold">Pricing & Timelines FAQ</h2>
             <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01] divide-y divide-white/5">
               <div className="p-6">
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">How much do professional AEO optimization services cost?</h3>
+                <h3 id="how-much-do-professional-aeo-optimization-services-cost" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How much do professional AEO optimization services cost?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                   Standard AEO optimization sprints for mid-sized websites range from $5,000 to $15,000, which includes a comprehensive 50-query prompt-set audit, semantic chunking of core service and product pages, schema integration, and structured XML sitemap generation.
                 </p>
               </div>
 
               <div className="p-6">
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">How long does it take to see measurable results from AEO?</h3>
+                <h3 id="how-long-does-it-take-to-see-measurable-results" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How long does it take to see measurable results from AEO?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                   Most websites see a measurable lift in AI citations, featured snippet wins, and zero-click brand mentions within 6 to 12 weeks of completing an AEO optimization sprint. While temporary retrieval-augmented generation (RAG) caching updates occur within days, embedding your brand permanently into foundational LLM training datasets can take up to 8 months.
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
+          <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Technical execution steps included in our optimization packages
+              </Link>
+              <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Eligibility criteria and topical authority requirements
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom-Up Link to Root Hub */}
+          <div className="pt-4 flex">
+            <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
+              ← Back to <strong className="text-white hover:underline">AEO Services</strong> (Root Node)
+            </Link>
           </div>
         </section>
       </main>

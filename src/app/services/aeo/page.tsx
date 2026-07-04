@@ -29,20 +29,6 @@ export default function AEORootPage() {
             "https://www.crunchbase.com/organization/aeobility"
           ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services/aeo#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are AEO services?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AEO services are professional digital marketing solutions that restructure, format, and optimize website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries."
-            }
-          }
-        ]
       }
     ]
   };
@@ -92,6 +78,9 @@ export default function AEORootPage() {
             <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Home
             </Link>
+            <Link href="/services/aeo" className="text-xs font-semibold text-aeo-cyan py-2 px-3">
+              AEO Services
+            </Link>
             <Link href="/support" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
               Support
             </Link>
@@ -107,18 +96,21 @@ export default function AEORootPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
             <nav className="flex flex-col gap-3">
               <Link href="/services/aeo" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
-                1. Canonical Hub (Overview)
+                Hub Overview
               </Link>
-              <Link href="/services/aeo/vs-traditional-seo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+                1. Definition
+              </Link>
+              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 2. AEO vs. Traditional SEO
               </Link>
-              <Link href="/services/aeo/how-to-optimize" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 3. Technical Execution
               </Link>
-              <Link href="/services/aeo/eligibility-and-constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 4. Eligibility & Constraints
               </Link>
-              <Link href="/services/aeo/pricing-and-timelines" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 5. Pricing & Timelines
               </Link>
             </nav>
@@ -136,30 +128,34 @@ export default function AEORootPage() {
             </p>
           </div>
 
-          {/* Core Service definition block (Fidelity Rule verified) */}
-          <div className="p-8 bg-white/[0.01] border border-white/5 rounded-3xl relative overflow-hidden backdrop-blur-sm">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-aeo-cyan to-aeo-purple" />
-            <h2 className="text-xl font-bold mb-4 text-white">Answer Engine Optimization (AEO) Services</h2>
-            <p className="text-white/80 text-sm leading-relaxed mb-6">
-              Professional content engineering solutions that restructure, format, and optimize digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and retrieval-augmented generation (RAG) systems.
-            </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-white/50 border-t border-white/5 pt-4">
-              <span>Provider: <strong className="text-white">AEObility</strong></span>
-              <span>•</span>
-              <span>Entity Ref: <strong className="text-white">https://aeobility.com.au</strong></span>
-            </div>
-          </div>
-
-          {/* FAQ section matching the FAQPage Schema exactly (Fidelity Rule verified) */}
+          {/* Hub Top-Down Navigation Corridors (Fidelity Rule verified) */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl font-bold">Frequently Asked Questions</h2>
-            <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01] divide-y divide-white/5">
-              <div className="p-6">
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are AEO services?</h3>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  AEO services are professional digital marketing solutions that restructure, format, and optimize website content to be accurately ingested, synthesized, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search and secure brand citations inside conversational AI summaries.
-                </p>
-              </div>
+            <h2 className="text-xl font-bold">Topical Corridors</h2>
+            <div className="grid grid-cols-1 gap-4">
+              <Link href="/services/aeo/definition" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO definitions and core concepts</span>
+                <span className="text-aeo-cyan">→</span>
+              </Link>
+
+              <Link href="/services/aeo/comparison" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO vs SEO comparison</span>
+                <span className="text-aeo-cyan">→</span>
+              </Link>
+
+              <Link href="/services/aeo/procedures" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO optimization procedures for LLM ingestion</span>
+                <span className="text-aeo-cyan">→</span>
+              </Link>
+
+              <Link href="/services/aeo/constraints" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO constraints, authority thresholds, and edge cases</span>
+                <span className="text-aeo-cyan">→</span>
+              </Link>
+
+              <Link href="/services/aeo/costs-timing" className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex justify-between items-center group">
+                <span className="text-sm font-semibold text-white group-hover:text-aeo-cyan transition-colors">AEO pricing, costs, and timelines</span>
+                <span className="text-aeo-cyan">→</span>
+              </Link>
             </div>
           </div>
         </section>
