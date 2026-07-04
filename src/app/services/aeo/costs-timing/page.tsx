@@ -4,8 +4,8 @@ import Footer from '@/components/Footer';
 import { DollarSign, Clock, Info, ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: "AEO Pricing, Timelines & Market Metrics — AEObility",
-  description: "Transparent pricing structures, implementation timelines, and search market metrics for Answer Engine Optimisation (AEO) packages.",
+  title: "How much does AEO cost and what do I get? — AEObility",
+  description: "Transparent pricing structures, Strategic Blueprint MVP details, and timeline information for Answer Engine Optimisation (AEO) services.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/costs-timing",
   },
@@ -113,24 +113,24 @@ export default function AEOPricingPage() {
         <aside className="lg:col-span-4 flex flex-col gap-6">
           <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
-            <nav className="flex flex-col gap-3">
-              <Link href="/services/aeo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
+              <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 Hub Overview
               </Link>
-              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                1. Definition
+              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                1. What is AEO and why does it matter?
               </Link>
-              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                2. AEO vs. Traditional SEO
+              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                2. Is AEO just SEO with a new name?
               </Link>
-              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                3. Technical Optimisation Workflow
+              <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                4. Eligibility & Constraints
+              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                4. What stops my business from showing up?
               </Link>
-              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
-                5. Costs & Timelines
+              <Link href="/services/aeo/costs-timing" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
+                5. How much does AEO cost & what do I get?
               </Link>
             </nav>
           </div>
@@ -139,11 +139,11 @@ export default function AEOPricingPage() {
         {/* Right Side: Core Content */}
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              Pricing, Timelines & <span className="text-gradient-aeo">Blueprint Offer</span>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+              How Much Does AEO Cost and <span className="text-gradient-aeo">What Do I Get?</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Transparent packages, risk reversal credit plans, and Australian search market indicators for Answer Engine Optimisation.
+              Let’s talk about cost in plain English. Review package pricing, free visibility audits, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.
             </p>
           </div>
 
@@ -282,10 +282,10 @@ export default function AEOPricingPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Technical execution steps included in our optimisation packages
+                How do I make my business easier for AI to understand?
               </Link>
               <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Eligibility criteria and topical authority requirements
+                What stops my business from showing up?
               </Link>
             </div>
           </div>

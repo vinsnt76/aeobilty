@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: "How to Optimise Website Content for AI Ingestion — AEObility",
-  description: "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
+  title: "How do I make my business easier for AI to understand? — AEObility",
+  description: "A technical step-by-step guide to structuring content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/procedures",
   },
@@ -98,24 +98,24 @@ export default function AEOHowToPage() {
         <aside className="lg:col-span-4 flex flex-col gap-6">
           <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
-            <nav className="flex flex-col gap-3">
-              <Link href="/services/aeo" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
+            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
+              <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 Hub Overview
               </Link>
-              <Link href="/services/aeo/definition" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                1. Definition
+              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                1. What is AEO and why does it matter?
               </Link>
-              <Link href="/services/aeo/comparison" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                2. AEO vs. Traditional SEO
+              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                2. Is AEO just SEO with a new name?
               </Link>
-              <Link href="/services/aeo/procedures" className="text-sm font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
-                3. Technical Optimisation Workflow
+              <Link href="/services/aeo/procedures" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
+                3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/aeo/constraints" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                4. Eligibility & Constraints
+              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                4. What stops my business from showing up?
               </Link>
-              <Link href="/services/aeo/costs-timing" className="text-sm font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                5. Costs & Timelines
+              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                5. How much does AEO cost & what do I get?
               </Link>
             </nav>
           </div>
@@ -124,11 +124,11 @@ export default function AEOHowToPage() {
         {/* Right Side: Core Content */}
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              How to Optimise Content for <span className="text-gradient-aeo">AI Ingestion</span>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+              How do I make my business easier for <span className="text-gradient-aeo">AI to understand?</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).
+              Here’s how machines actually read your business. Follow these steps to optimize content structure for Large Language Model (LLM) ingestion and citation.
             </p>
           </div>
 
@@ -170,10 +170,10 @@ export default function AEOHowToPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
               <Link href="/services/aeo/definition" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Core definitions and syntax rules for RAG Ingestion
+                What is AEO and why does it matter?
               </Link>
               <Link href="/services/aeo/costs-timing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Costs, pricing models, and implementation timelines
+                How much does AEO cost and what do I get?
               </Link>
             </div>
           </div>
