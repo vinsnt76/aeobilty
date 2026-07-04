@@ -7,11 +7,33 @@ export default function HowItWorks() {
   const [url, setUrl] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (url && email) {
-      setSubmitted(true);
+    if (!url || !email) return;
+
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, website: url }),
+      });
+
+      const data = await res.json();
+      if (data.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || 'Failed to submit audit request.');
+      }
+    } catch (err: any) {
+      setError('An unexpected error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -200,11 +222,15 @@ export default function HowItWorks() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all"
+                    disabled={loading}
+                    className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50"
                   >
-                    Generate My Free Audit
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    {loading ? 'Sending...' : 'Generate My Free Audit'}
+                    {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                   </button>
+                  {error && (
+                    <p className="text-xs text-rose-500 text-center font-semibold mt-3">{error}</p>
+                  )}
                   <p className="text-[11px] text-center text-neutral-500 font-medium mt-3">
                     * Your audit will be delivered manually within 24 hours.
                   </p>
