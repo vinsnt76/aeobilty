@@ -1,21 +1,69 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      setIsMobileSubmenuOpen(false);
+    }
+  };
+
+  const toggleMobileSubmenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMobileSubmenuOpen(!isMobileSubmenuOpen);
+  };
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const navLinks = [
     { name: 'How It Works', href: '/#how-it-works' },
     { name: '90-Day Blueprint', href: '/#blueprint' },
     { name: 'USP', href: '/#usp' },
-    { name: 'AEO Services', href: '/services/aeo' },
+    {
+      name: 'AEO Services',
+      href: '/services/aeo',
+      dropdownItems: [
+        { name: 'Hub Overview', href: '/services/aeo' },
+        { name: '1. What is AEO?', href: '/services/aeo/definition' },
+        { name: '2. Is AEO just SEO?', href: '/services/aeo/comparison' },
+        { name: '3. How to Make AI-Readable', href: '/services/aeo/procedures' },
+        { name: '4. What Stops AI Showing Up', href: '/services/aeo/constraints' },
+        { name: '5. Costs & Timing', href: '/services/aeo/costs-timing' },
+      ],
+    },
     { name: 'Support', href: '/support' },
   ];
+
+  // Helper to check if a link is active
+  const isActive = (href: string, exact = false) => {
+    if (exact) return pathname === href;
+    if (href === '/') return pathname === '/';
+    // If it's a hash link, we don't treat it as active page unless pathname is '/'
+    if (href.startsWith('/#')) return pathname === '/';
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav className="w-full bg-black/60 backdrop-blur-md border-b border-white/5 sticky top-0 z-50 transition-all duration-300">
@@ -56,15 +104,69 @@ export default function Navbar() {
 
         {/* Desktop Menu links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/75">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="hover:text-aeo-cyan transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.dropdownItems) {
+              const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href);
+              return (
+                <div
+                  key={link.name}
+                  ref={dropdownRef}
+                  className="relative group"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1.5 py-2 hover:text-aeo-cyan transition-colors focus:outline-none cursor-pointer ${
+                      isAnySubActive ? 'text-aeo-cyan' : ''
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  <div
+                    className={`absolute left-0 mt-1 w-64 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
+                      isDropdownOpen
+                        ? 'opacity-100 scale-100 translate-y-0 visible'
+                        : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
+                    }`}
+                  >
+                    {link.dropdownItems.map((subItem) => {
+                      const isSubActive = pathname === subItem.href;
+                      return (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          onClick={() => setIsDropdownOpen(false)}
+                          className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                            isSubActive
+                              ? 'bg-aeo-cyan/10 text-aeo-cyan'
+                              : 'text-white/70 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          {subItem.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`hover:text-aeo-cyan transition-colors ${
+                  active ? 'text-aeo-cyan' : ''
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA Button */}
@@ -80,7 +182,9 @@ export default function Navbar() {
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-white/80 hover:text-white transition-colors relative z-50"
+          className={`md:hidden p-2 transition-colors relative z-50 ${
+            isOpen ? 'text-black hover:text-black/70' : 'text-white/80 hover:text-white'
+          }`}
           aria-label="Toggle mobile menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,22 +193,65 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/95 z-40 flex flex-col justify-center items-center md:hidden transition-all duration-300">
-          <div className="flex flex-col items-center gap-8 text-lg font-bold text-white/85">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="hover:text-aeo-cyan transition-all duration-200 py-2 border-b border-transparent hover:border-aeo-cyan"
-              >
-                {link.name}
-              </Link>
-            ))}
+        <div className="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center md:hidden transition-all duration-300">
+          <div className="flex flex-col items-center gap-6 text-base font-bold text-black max-h-screen overflow-y-auto py-10 w-full px-8">
+            {navLinks.map((link) => {
+              if (link.dropdownItems) {
+                const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href);
+                return (
+                  <div key={link.name} className="w-full flex flex-col items-center">
+                    <button
+                      onClick={toggleMobileSubmenu}
+                      className={`flex items-center gap-1.5 py-2 hover:text-aeo-purple transition-all duration-200 text-lg ${
+                        isAnySubActive ? 'text-aeo-purple' : 'text-black'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileSubmenuOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {/* Collapsible Accordion items */}
+                    {isMobileSubmenuOpen && (
+                      <div className="flex flex-col items-center gap-3 mt-2 bg-black/[0.03] border border-black/5 rounded-xl py-3 px-4 w-full max-w-xs transition-all duration-300">
+                        {link.dropdownItems.map((subItem) => {
+                          const isSubActive = pathname === subItem.href;
+                          return (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`text-sm py-1 transition-colors ${
+                                isSubActive ? 'text-aeo-purple font-bold' : 'text-black/60 hover:text-black'
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`hover:text-aeo-purple transition-all duration-200 py-2 text-lg ${
+                    active ? 'text-aeo-purple' : 'text-black'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <Link
               href="/#audit-form"
               onClick={() => setIsOpen(false)}
-              className="mt-4 px-8 py-3.5 text-sm font-bold tracking-wider uppercase border border-aeo-cyan text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black transition-all"
+              className="mt-4 px-8 py-3.5 text-sm font-bold tracking-wider uppercase bg-black border border-aeo-cyan text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black transition-all"
             >
               Get Free Audit
             </Link>
@@ -114,3 +261,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

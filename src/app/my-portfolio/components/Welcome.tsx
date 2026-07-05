@@ -109,7 +109,7 @@ const Welcome: React.FC = () => {
             className="pt-6 border-t border-gray-100 dark:border-gray-800"
           >
             <p className="text-sm text-gray-400 font-medium italic">
-              "Building systems that scale impact and automate revenue."
+              &quot;Building systems that scale impact and automate revenue.&quot;
             </p>
           </motion.div>
         </div>

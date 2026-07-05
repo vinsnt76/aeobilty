@@ -121,7 +121,7 @@ export default function AEOVsSEOPage() {
               <div className="p-6">
                 <h3 id="how-do-ai-answer-engines-choose-their-sources" className="font-semibold text-sm sm:text-base text-white/95 mb-2">How do AI answer engines choose their sources compared to traditional algorithms?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Traditional search engines rely on sparse retrieval models like BM25 that prioritize exact keyword frequency and link equity. AI answer engines use dense retrieval models powered by vector embeddings and cosine similarity to map the conceptual meaning of content, selecting passages that directly fit the model's internal reasoning chains and Knowledge Graphs.
+                  Traditional search engines rely on sparse retrieval models like BM25 that prioritize exact keyword frequency and link equity. AI answer engines use dense retrieval models powered by vector embeddings and cosine similarity to map the conceptual meaning of content, selecting passages that directly fit the model&apos;s internal reasoning chains and Knowledge Graphs.
                 </p>
               </div>
             </div>

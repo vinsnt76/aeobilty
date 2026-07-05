@@ -15,7 +15,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const { theme, toggleTheme, isLoaded } = useTheme();
 
   // Memoize the context value to prevent unnecessary re-renders of consumers
-  const value = useMemo(() => ({ theme, toggleTheme, isLoaded }), [theme, isLoaded]);
+  const value = useMemo(() => ({ theme, toggleTheme, isLoaded }), [theme, toggleTheme, isLoaded]);
 
   return (
     <ThemeContext.Provider value={value}>

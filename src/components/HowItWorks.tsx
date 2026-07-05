@@ -30,7 +30,7 @@ export default function HowItWorks() {
       } else {
         setError(data.error || 'Failed to submit audit request.');
       }
-    } catch (err: any) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
     } finally {
       setLoading(false);

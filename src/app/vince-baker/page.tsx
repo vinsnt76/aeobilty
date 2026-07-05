@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import './card.css';
 
 export default function VinceBakerPage() {
@@ -49,14 +50,21 @@ export default function VinceBakerPage() {
     <main className="card-page-container">
       <div className="card-container">
         <div className="card-image">
-          <img src="/Profile-Picture-Vinnie.png" alt="Vince Baker" />
+          <Image
+            src="/Profile-Picture-Vinnie.png"
+            alt="Vince Baker"
+            width={320}
+            height={320}
+            priority
+            className="object-cover"
+          />
         </div>
         <div className="card-description">
           <h1>Vince Baker</h1>
           <h2>Founder, AEO & AI Automation Specialist</h2>
           
           <div className="card-about">
-            <span className="greeting">Hi there! I'm Vince</span>
+            <span className="greeting">Hi there! I&apos;m Vince</span>
             <p className="value-statement">
               I help Australian small businesses get found and chosen across Search, Maps, and AI platforms. With a focus on AI Search Optimisation (AEO), local SEO, and practical AI automation, I help brands build visible, trustworthy digital footprints.
             </p>
@@ -152,9 +160,11 @@ export default function VinceBakerPage() {
                 rel="noopener noreferrer"
                 className="google-wallet-btn"
               >
-                <img
+                <Image
                   src="/google-wallet-icon.png"
                   alt="Add to Google Wallet"
+                  width={150}
+                  height={47}
                 />
               </a>
             </div>

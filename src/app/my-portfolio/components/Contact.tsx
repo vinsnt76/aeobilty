@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import '../../vince-baker/card.css';
 
 const Contact: React.FC = () => {
@@ -24,14 +25,20 @@ const Contact: React.FC = () => {
       </h2>
       <div className="card-container scale-95 md:scale-100 hover:scale-[1.02] transition-transform duration-300">
         <div className="card-image">
-          <img src="/Profile-Picture-Vinnie.png" alt="Vince Baker" />
+          <Image
+            src="/Profile-Picture-Vinnie.png"
+            alt="Vince Baker"
+            width={320}
+            height={320}
+            className="object-cover"
+          />
         </div>
         <div className="card-description">
           <h1>Vince Baker</h1>
           <h2>Founder, AEO & AI Automation Specialist</h2>
           
           <div className="card-about">
-            <span className="greeting">Hi there! I'm Vince</span>
+            <span className="greeting">Hi there! I&apos;m Vince</span>
             <p className="value-statement">
               I help Australian small businesses get found and chosen across Search, Maps, and AI platforms. With a focus on AI Search Optimisation (AEO), local SEO, and practical AI automation, I help brands build visible, trustworthy digital footprints.
             </p>
@@ -112,9 +119,11 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className="google-wallet-btn"
               >
-                <img
+                <Image
                   src="/google-wallet-icon.png"
                   alt="Add to Google Wallet"
+                  width={150}
+                  height={47}
                 />
               </a>
             </div>

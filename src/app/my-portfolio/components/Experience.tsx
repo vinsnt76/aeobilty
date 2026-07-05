@@ -128,7 +128,7 @@ const Experience: React.FC = () => {
             {/* Experience Narrative Summary */}
             <div className="mt-10 p-6 rounded-lg bg-aeo-cyan/5 border border-aeo-cyan/10">
               <p className="text-sm text-neutral-400 leading-relaxed italic">
-                "Leveraging a background in travel-sector business development and award-winning agency experience to deliver high-performance digital architecture."
+                &quot;Leveraging a background in travel-sector business development and award-winning agency experience to deliver high-performance digital architecture.&quot;
               </p>
             </div>
           </motion.div>

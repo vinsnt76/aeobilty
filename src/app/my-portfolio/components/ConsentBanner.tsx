@@ -7,7 +7,9 @@ export default function ConsentBanner({ onConsent }: { onConsent: () => void }) 
 
   useEffect(() => {
     const consent = window.localStorage.getItem('userConsent');
-    if (!consent) setVisible(true);
+    if (!consent) {
+      Promise.resolve().then(() => setVisible(true));
+    }
   }, []);
 
   const handleAccept = () => {

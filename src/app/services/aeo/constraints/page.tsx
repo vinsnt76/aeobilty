@@ -104,7 +104,7 @@ export default function AEOConstraintsPage() {
               <div className="p-6">
                 <h3 id="what-are-the-primary-risks-of-not-optimising" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are the primary risks of not optimising for AEO in 2026?</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Failing to optimise content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries.
+                  Failing to optimise content structure results in &apos;attention dilution&apos; and the &apos;lost in the middle&apos; effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand&apos;s facts or completely ignore your products in personalized conversational summaries.
                 </p>
               </div>
             </div>

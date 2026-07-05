@@ -101,7 +101,7 @@ export default function AEOHowToPage() {
               <div>
                 <h3 className="text-white font-semibold text-base mb-2">Establish Semantic Boundaries with Question-Based Headings</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Structure your content using H3 headings phrased as natural-language questions (e.g., 'What are the benefits of X?'). This creates explicit, machine-readable conceptual maps that allow AI crawlers to easily identify topic shifts and prevent context dilution.
+                  Structure your content using H3 headings phrased as natural-language questions (e.g., &apos;What are the benefits of X?&apos;). This creates explicit, machine-readable conceptual maps that allow AI crawlers to easily identify topic shifts and prevent context dilution.
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function AEOHowToPage() {
               <div>
                 <h3 className="text-white font-semibold text-base mb-2">Implement Relationship-Rich Internal Linking</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Upgrade your internal links to use anchor text that explicitly declares semantic relationships (e.g., 'how adaptive chunking resolves context limitations') rather than generic phrases. This context provides a rich map of entity connections that LLMs can traverse to establish your domain authority.
+                  Upgrade your internal links to use anchor text that explicitly declares semantic relationships (e.g., &apos;how adaptive chunking resolves context limitations&apos;) rather than generic phrases. This context provides a rich map of entity connections that LLMs can traverse to establish your domain authority.
                 </p>
               </div>
             </div>

@@ -147,8 +147,9 @@ export async function GET() {
       qrCodeUrl,
       isMock: false 
     });
-  } catch (error: any) {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
     console.error("Failed to generate Google Wallet JWT:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

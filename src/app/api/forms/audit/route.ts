@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Forms } from "@/antigravity/modules/forms";
+import { Forms } from "@/lib/forms";
 
 const forms = Forms.wire();
 
@@ -11,9 +11,10 @@ export async function POST(req: Request) {
     await forms.submitAuditForm({ name, email, website });
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(
-      { ok: false, error: err.message },
+      { ok: false, error: message },
       { status: 400 }
     );
   }
