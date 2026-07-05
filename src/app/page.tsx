@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
+import VideoExplainer from '@/components/VideoExplainer';
 import USPGrid from '@/components/USPGrid';
 import HowItWorks from '@/components/HowItWorks';
 import BlueprintSection from '@/components/BlueprintSection';
@@ -99,6 +100,19 @@ export default function Home() {
     }
   };
 
+  const videoJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Our Approach to Answer Engine Search",
+    "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
+    "thumbnailUrl": [
+      "https://aeobility.com.au/Profile-Picture-Vinnie.png"
+    ],
+    "uploadDate": "2026-07-05T00:00:00+08:00",
+    "contentUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/view?usp=sharing",
+    "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview"
+  };
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* JSON-LD Schemas */}
@@ -118,10 +132,15 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+      />
 
       <Navbar />
       <Hero />
       <SocialProof />
+      <VideoExplainer />
       <USPGrid />
       <HowItWorks />
       <BlueprintSection />
