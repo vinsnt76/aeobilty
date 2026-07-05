@@ -78,7 +78,7 @@ export default function Navbar() {
           >
             <path
               d="M16 2L2 10L16 18L30 10L16 2Z"
-              stroke="currentColor"
+              stroke={isOpen ? '#000000' : 'currentColor'}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -92,12 +92,12 @@ export default function Navbar() {
             />
             <path
               d="M2 16L16 24L30 16"
-              stroke="currentColor"
+              stroke={isOpen ? '#000000' : 'currentColor'}
               strokeWidth="1.5"
               strokeDasharray="2 2"
             />
           </svg>
-          <span className="text-xl font-bold tracking-wider text-white">
+          <span className={`text-xl font-bold tracking-wider transition-colors ${isOpen ? 'text-black' : 'text-white'}`}>
             AEO<span className="text-aeo-cyan font-light">bility</span>
           </span>
         </Link>
@@ -193,8 +193,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center md:hidden transition-all duration-300">
-          <div className="flex flex-col items-center gap-6 text-base font-bold text-black max-h-screen overflow-y-auto py-10 w-full px-8">
+        <div className="fixed inset-0 bg-white z-40 flex flex-col justify-start items-center md:hidden overflow-y-auto pt-24 pb-12 transition-all duration-300">
+          <div className="flex flex-col items-center gap-6 text-base font-bold text-black w-full px-8">
             {navLinks.map((link) => {
               if (link.dropdownItems) {
                 const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href);
