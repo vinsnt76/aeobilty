@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AboutUsContent from '@/components/AboutUsContent';
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "About Us: Automation Consultants & Architects | AEObility",
@@ -83,6 +84,7 @@ export default function AboutPage() {
       />
 
       <Navbar />
+      <Breadcrumbs />
       <AboutUsContent />
       <Footer />
     </div>

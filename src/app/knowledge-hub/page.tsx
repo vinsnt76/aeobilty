@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck } from 'lucide-react';
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "AEO, GEO & AI Search Knowledge Hub | AEObility",
@@ -87,6 +88,7 @@ export default function KnowledgeHubPage() {
       />
 
       <Navbar />
+      <Breadcrumbs />
 
       <main className="flex-grow w-full py-16">
         <div className="max-w-6xl mx-auto px-6 space-y-24">

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import './card.css';
 
 export default function VinceBakerPage() {

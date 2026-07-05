@@ -5,6 +5,7 @@ import { CheckCircle2, ArrowRight, DollarSign, HelpCircle, Compass, Target, Rock
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "AEO Service Costs, Packages & Sprints | AEObility",
@@ -217,6 +218,7 @@ export default function SolutionsPage() {
       />
 
       <Navbar />
+      <Breadcrumbs />
 
       <main className="flex-grow w-full py-16">
         <div className="max-w-6xl mx-auto px-6 space-y-24">

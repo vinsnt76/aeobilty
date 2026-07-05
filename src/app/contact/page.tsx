@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "Contact an Expert AEO Consultant in Perth | AEObility",
@@ -66,6 +67,7 @@ export default function ContactPage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
+      <Breadcrumbs />
       <ContactForm />
       <Footer />
     </div>

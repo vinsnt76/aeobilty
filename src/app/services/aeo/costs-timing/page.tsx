@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { DollarSign, Clock, Info, ArrowRight } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: "How much does AEO cost and what do I get? — AEObility",
@@ -68,6 +69,7 @@ export default function AEOPricingPage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
+      <Breadcrumbs />
 
       {/* Main Container */}
       <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
