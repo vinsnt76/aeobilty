@@ -27,7 +27,13 @@ export default function AboutPage() {
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
     "founder": {
       "@type": "Person",
-      "name": "Vince Baker"
+      "name": "Vince Baker",
+      "jobTitle": "Founder & AEO Specialist",
+      "url": "https://aeobility.com.au/vince-baker",
+      "sameAs": [
+        "https://www.linkedin.com/in/vince-baker/",
+        "https://www.reddit.com/user/Bluebird-Flat/"
+      ]
     }
   };
 
@@ -49,6 +55,16 @@ export default function AboutPage() {
       "@type": "GeoCoordinates",
       "latitude": -31.9505,
       "longitude": 115.8605
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & AEO Specialist",
+      "url": "https://aeobility.com.au/vince-baker",
+      "sameAs": [
+        "https://www.linkedin.com/in/vince-baker/",
+        "https://www.reddit.com/user/Bluebird-Flat/"
+      ]
     }
   };
 
