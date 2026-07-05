@@ -9,13 +9,13 @@ interface USPCardProps {
 
 function USPCard({ icon, title, description }: USPCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between p-8 rounded-2xl bg-white text-black border border-white/20 shadow-lg hover:shadow-[0_20px_40px_rgba(0,240,255,0.12)] hover:-translate-y-1 transition-all duration-300">
+    <div className="group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 text-white border border-white/5 shadow-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 hover:-translate-y-1 transition-all duration-300">
       <div>
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-black/5 text-black mb-6 group-hover:bg-gradient-to-r group-hover:from-aeo-cyan/20 group-hover:to-aeo-purple/20 transition-all duration-300">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 group-hover:scale-105 transition-transform duration-300">
           {icon}
         </div>
         <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-sm text-black/60 font-light leading-relaxed">{description}</p>
+        <p className="text-sm text-white/60 font-light leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -24,39 +24,19 @@ function USPCard({ icon, title, description }: USPCardProps) {
 export default function USPGrid() {
   const usps = [
     {
-      icon: <Eye className="w-6 h-6" />,
+      icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" />,
       title: 'More Visibility',
       description: 'Show up where your potential clients are looking. Gain strong exposure across modern search, map results, and social networks.',
     },
     {
-      icon: <Target className="w-6 h-6" />,
+      icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
       title: 'More Leads',
       description: 'Attract interested buyers ready to engage with your products or services. Optimise your pages to match what clients actually search for.',
     },
     {
-      icon: <MessageSquare className="w-6 h-6" />,
+      icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
       title: 'More Enquiries',
       description: 'Convert online attention into direct client enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: 'Time Saved',
-      description: 'Automate content preparation, online profile optimisation, and regular reports. Focus on running your business while we handle your digital presence.',
-    },
-    {
-      icon: <ArrowUpRight className="w-6 h-6" />,
-      title: 'Money Saved',
-      description: 'Improve your organic visibility and reduce wasted effort. Build a lasting foundation that attracts clients naturally without recurring costs.',
-    },
-    {
-      icon: <Cpu className="w-6 h-6" />,
-      title: 'AI‑Ready Content from Day One',
-      description: 'Format your brand info, service details, and articles so they are easily found, cited, and recommended by modern AI search assistants.',
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Put Your Business on the Map',
-      description: 'Put your business on the map. Optimise your listings and content to rank first when local clients search for immediate nearby solutions.',
     },
   ];
 
@@ -78,7 +58,7 @@ export default function USPGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {usps.map((usp, idx) => (
             <USPCard
               key={idx}
