@@ -38,22 +38,23 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'How It Works', href: '/#how-it-works' },
-    { name: '90-Day Blueprint', href: '/#blueprint' },
-    { name: 'USP', href: '/#usp' },
+    { name: 'Homepage', href: '/' },
+    { name: 'AEO Services', href: '/services' },
+    { name: 'AEO Packages', href: '/solutions' },
     {
-      name: 'AEO Services',
-      href: '/services/aeo',
+      name: 'Knowledge Hub',
+      href: '/knowledge-hub',
       dropdownItems: [
-        { name: 'Hub Overview', href: '/services/aeo' },
-        { name: '1. What is AEO?', href: '/services/aeo/definition' },
-        { name: '2. Is AEO just SEO?', href: '/services/aeo/comparison' },
-        { name: '3. How to Make AI-Readable', href: '/services/aeo/procedures' },
-        { name: '4. What Stops AI Showing Up', href: '/services/aeo/constraints' },
-        { name: '5. Costs & Timing', href: '/services/aeo/costs-timing' },
+        { name: 'Hub Overview', href: '/knowledge-hub' },
+        { name: 'What is AEO?', href: '/services/aeo/definition' },
+        { name: 'Is AEO just SEO?', href: '/services/aeo/comparison' },
+        { name: 'How to Make AI-Readable', href: '/services/aeo/procedures' },
+        { name: 'What Stops AI Showing Up', href: '/services/aeo/constraints' },
+        { name: 'Costs & Timing', href: '/services/aeo/costs-timing' },
       ],
     },
-    { name: 'Support', href: '/support' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact & Support', href: '/contact' },
   ];
 
   // Helper to check if a link is active
