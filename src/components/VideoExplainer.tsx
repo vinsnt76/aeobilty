@@ -10,13 +10,13 @@ export default function VideoExplainer() {
       <div className="max-w-4xl mx-auto px-6 text-center space-y-10">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-            <span>Video Explainer</span>
+            <span>Why Choose Us</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Our Approach to <span className="text-gradient-aeo">Answer Engine Search</span>
           </h2>
           <p className="text-base text-white/60 font-light max-w-xl mx-auto leading-relaxed">
-            See how AEO pivots traditional organic search by structuring your brand details directly for ingestion by LLMs and conversational AI assistants.
+            Search has changed more in the last year than it has since the introduction of mobile phones, see our approach to this fundamental shift
           </p>
         </div>
 

@@ -106,7 +106,7 @@ export default function Home() {
     "name": "Our Approach to Answer Engine Search",
     "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
     "thumbnailUrl": [
-      "https://aeobility.com.au/Profile-Picture-Vinnie.png"
+      "https://aeobility.com.au/aeobility-video-explainer-thubnail_1.1.2.png"
     ],
     "uploadDate": "2026-07-05T00:00:00+08:00",
     "contentUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/view?usp=sharing",
