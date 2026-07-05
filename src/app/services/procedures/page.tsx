@@ -7,7 +7,7 @@ export const metadata = {
   title: "How do I make my business easier for AI to understand? — AEObility",
   description: "A technical step-by-step guide to structuring content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/procedures",
+    canonical: "https://aeobility.com.au/services/procedures",
   },
 };
 
@@ -15,7 +15,7 @@ export default function AEOHowToPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "@id": "https://aeobility.com.au/services/aeo/procedures#howto",
+    "@id": "https://aeobility.com.au/services/procedures#howto",
     "name": "How to Optimise Website Content for AI Ingestion and Citations",
     "description": "A technical step-by-step guide to structuring your digital content to be easily parsed, chunked, and retrieved by RAG pipelines and Large Language Models (LLMs).",
     "step": [
@@ -23,19 +23,19 @@ export default function AEOHowToPage() {
         "@type": "HowToStep",
         "name": "Establish Semantic Boundaries with Question-Based Headings",
         "text": "Structure your content using H3 headings phrased as natural-language questions (e.g., 'What are the benefits of X?'). This creates explicit, machine-readable conceptual maps that allow AI crawlers to easily identify topic shifts and prevent context dilution.",
-        "url": "https://aeobility.com.au/services/aeo/procedures#step1"
+        "url": "https://aeobility.com.au/services/procedures#step1"
       },
       {
         "@type": "HowToStep",
         "name": "Write Standalone, Atomic Answer Blocks",
         "text": "Keep your answer blocks within a tight sweet spot of 90 to 120 tokens (max 250). Lead with a concise, direct 1-2 sentence definition or answer immediately beneath your heading before elaborating with supporting technical details to prevent important qualifications from being lost in the middle of long contexts.",
-        "url": "https://aeobility.com.au/services/aeo/procedures#step2"
+        "url": "https://aeobility.com.au/services/procedures#step2"
       },
       {
         "@type": "HowToStep",
         "name": "Implement Relationship-Rich Internal Linking",
         "text": "Upgrade your internal links to use anchor text that explicitly declares semantic relationships (e.g., 'how adaptive chunking resolves context limitations') rather than generic phrases. This context provides a rich map of entity connections that LLMs can traverse to establish your domain authority.",
-        "url": "https://aeobility.com.au/services/aeo/procedures#step3"
+        "url": "https://aeobility.com.au/services/procedures#step3"
       }
     ]
   };
@@ -64,19 +64,19 @@ export default function AEOHowToPage() {
               <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 Hub Overview
               </Link>
-              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 1. What is AEO and why does it matter?
               </Link>
-              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 2. Is AEO just SEO with a new name?
               </Link>
-              <Link href="/services/aeo/procedures" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/procedures" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
               </Link>
-              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 5. How much does AEO cost & what do I get?
               </Link>
             </nav>
@@ -131,10 +131,10 @@ export default function AEOHowToPage() {
           <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
-              <Link href="/services/aeo/definition" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+              <Link href="/services/definition" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 What is AEO and why does it matter?
               </Link>
-              <Link href="/services/aeo/costs-timing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+              <Link href="/services/costs-timing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 How much does AEO cost and what do I get?
               </Link>
             </div>

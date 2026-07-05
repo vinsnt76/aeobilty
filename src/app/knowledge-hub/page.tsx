@@ -49,31 +49,31 @@ export default function KnowledgeHubPage() {
   const guides = [
     {
       name: "What is AEO and why does it matter?",
-      href: "/services/aeo/definition",
+      href: "/services/definition",
       description: "Understand the core concepts of Answer Engine Optimisation and how generative AI models represent your brand entities.",
       icon: <BookOpen className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "Is AEO just SEO with a new name?",
-      href: "/services/aeo/comparison",
+      href: "/services/comparison",
       description: "Compare traditional keyword density search optimization with vector embeddings, neural search, and RAG pipelines.",
       icon: <Brain className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "How do I make my business AI-readable?",
-      href: "/services/aeo/procedures",
+      href: "/services/procedures",
       description: "Step-by-step technical guide to structuring answers, optimizing schemas, and building clean topical entity maps.",
       icon: <FileCode2 className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "What stops my business from showing up?",
-      href: "/services/aeo/constraints",
+      href: "/services/constraints",
       description: "Identify indexation limits, entity ambiguity, conflicting web data sources, and trust parameters in LLM reasoning.",
       icon: <ShieldAlert className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "How much does AEO cost & what do I get?",
-      href: "/services/aeo/costs-timing",
+      href: "/services/costs-timing",
       description: "Transparent pricing breakdown of the AEObility Blueprint package and long-term retainer implementation plans.",
       icon: <BadgeDollarSign className="w-5 h-5 text-aeo-cyan" />
     }
