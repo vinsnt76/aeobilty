@@ -33,10 +33,14 @@ export default function BlueprintSection() {
               <span>Full Roadmap Strategy</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
+              AI‑Ready Content from Day One
+            </h2>
+
+            <h3 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
               Your 90‑Day AI<br />
               <span className="text-gradient-aeo">Success Blueprint</span>
-            </h2>
+            </h3>
 
             <p className="text-lg text-white/70 font-light leading-relaxed">
               A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.

@@ -50,12 +50,12 @@ export default function USPGrid() {
     },
     {
       icon: <Cpu className="w-6 h-6" />,
-      title: 'AI‑Ready Content',
+      title: 'AI‑Ready Content from Day One',
       description: 'Format your brand info, service details, and articles so they are easily found, cited, and recommended by modern AI search assistants.',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Local Visibility',
+      title: 'Put Your Business on the Map',
       description: 'Put your business on the map. Optimise your listings and content to rank first when local clients search for immediate nearby solutions.',
     },
   ];
@@ -68,10 +68,10 @@ export default function USPGrid() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
-            Why AEObility
+            Why AEObility?
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Engineered for Organic Growth
+            Put Your Business on the Map
           </h3>
           <p className="text-base text-white/60 font-light">
             We focus on real outcomes, giving your business the foundation to get found and get chosen.

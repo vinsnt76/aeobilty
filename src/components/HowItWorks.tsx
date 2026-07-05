@@ -44,9 +44,9 @@ export default function HowItWorks() {
           <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
             Simple 4‑Step Funnel
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">
-            How It Works
-          </h3>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">
+            How We Help You Show Up in AI Search
+          </h2>
           <p className="text-base text-neutral-600 font-light">
             We manually review your online presence and walk you through the findings.
           </p>
