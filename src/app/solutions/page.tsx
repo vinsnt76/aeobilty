@@ -22,6 +22,73 @@ export const metadata: Metadata = {
   ]
 };
 
+function GanttChart() {
+  const tasks = [
+    { name: "S1: Schema & Semantic Mapping", startDay: 1, endDay: 30, color: "from-aeo-cyan to-aeo-purple" },
+    { name: "S2: Atomic Answer Blocks", startDay: 31, endDay: 60, color: "from-aeo-purple to-aeo-cyan" },
+    { name: "S3: Semantic Lattice Linking", startDay: 61, endDay: 75, color: "from-aeo-cyan to-neutral-800" },
+    { name: "S4: Brand Facts & Consensus", startDay: 76, endDay: 90, color: "from-aeo-purple to-neutral-800" }
+  ];
+
+  return (
+    <div className="w-full bg-neutral-950/80 border border-white/10 rounded-2xl p-6 space-y-6 shadow-2xl backdrop-blur-xl">
+      <div className="flex justify-between items-center border-b border-white/10 pb-3">
+        <h3 className="text-sm font-bold tracking-wider text-white uppercase">90-Day Execution Timeline</h3>
+        <span className="text-[10px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/20">Australia Focus</span>
+      </div>
+
+      {/* Grid Timeline Header */}
+      <div className="grid grid-cols-6 text-center text-[10px] font-mono text-white/40 border-b border-white/5 pb-2">
+        <div>Day 1</div>
+        <div>Day 15</div>
+        <div>Day 30</div>
+        <div>Day 60</div>
+        <div>Day 75</div>
+        <div>Day 90</div>
+      </div>
+
+      {/* Rows */}
+      <div className="space-y-4 relative">
+        {/* Background Grid Lines */}
+        <div className="absolute inset-0 grid grid-cols-6 pointer-events-none">
+          <div className="border-r border-white/5 h-full"></div>
+          <div className="border-r border-white/5 h-full"></div>
+          <div className="border-r border-white/5 h-full"></div>
+          <div className="border-r border-white/5 h-full"></div>
+          <div className="border-r border-white/5 h-full"></div>
+          <div className="h-full"></div>
+        </div>
+
+        {tasks.map((task, idx) => {
+          let colStart = 1;
+          let colSpan = 2;
+          if (task.startDay === 1) { colStart = 1; colSpan = 2; }
+          else if (task.startDay === 31) { colStart = 3; colSpan = 2; }
+          else if (task.startDay === 61) { colStart = 5; colSpan = 1; }
+          else if (task.startDay === 76) { colStart = 6; colSpan = 1; }
+
+          return (
+            <div key={idx} className="space-y-1.5 relative z-10">
+              <div className="flex justify-between text-xs font-semibold text-white/80">
+                <span>{task.name}</span>
+                <span className="text-[10px] text-white/40 font-mono">Days {task.startDay}-{task.endDay}</span>
+              </div>
+              <div className="w-full bg-white/[0.02] border border-white/5 h-6 rounded-lg overflow-hidden p-0.5">
+                <div className="grid grid-cols-6 h-full w-full">
+                  <div 
+                    style={{ gridColumnStart: colStart, gridColumnEnd: `span ${colSpan}` }}
+                    className={`h-full rounded-md bg-gradient-to-r ${task.color} opacity-85 hover:opacity-100 transition-opacity shadow-[0_0_12px_rgba(0,240,255,0.15)]`}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function SprintFlowChart() {
   const sprints = [
     {
@@ -180,7 +247,7 @@ export default function SolutionsPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <SprintFlowChart />
+              <GanttChart />
             </div>
           </section>
 
@@ -249,29 +316,10 @@ export default function SolutionsPage() {
             </div>
             <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl font-bold text-white">Transparent Sprints</h2>
-              <p className="text-base text-white/70 font-light leading-relaxed">
+              <p className="text-base text-white/70 font-light leading-relaxed mb-6">
                 We believe in structured, transparent sprints. Our onboarding workflow guides you through concrete <span className="font-semibold text-white">sprint milestones</span> to build and format your business entity model. You receive regular status updates on all project deliverables.
               </p>
-              <div className="space-y-4">
-                <div className="flex gap-3 items-start">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 mt-1">
-                    <Target className="w-4 h-4 text-aeo-cyan" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Sprint 1: Schema & Semantic Mapping</h4>
-                    <p className="text-xs text-white/60 font-light leading-relaxed">Defining your business nodes and setting up microdata formats.</p>
-                  </div>
-                </div>
-                <div className="flex gap-3 items-start">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 mt-1">
-                    <Rocket className="w-4 h-4 text-aeo-cyan" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Sprint 2: Vector Sync & Map Indexing</h4>
-                    <p className="text-xs text-white/60 font-light leading-relaxed">Pinning addresses across major map interfaces and pushing to local systems.</p>
-                  </div>
-                </div>
-              </div>
+              <SprintFlowChart />
             </div>
           </section>
 
