@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle2, ArrowRight, DollarSign, HelpCircle, Compass, Target, Rocket } from 'lucide-react';
+import { CheckCircle2, ArrowRight, DollarSign, HelpCircle, Compass, Target, Rocket, Layers, Boxes, Network, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
@@ -21,6 +21,73 @@ export const metadata: Metadata = {
     "sprint milestones"
   ]
 };
+
+function SprintFlowChart() {
+  const sprints = [
+    {
+      id: "S1",
+      title: "Schema & Semantic Mapping",
+      human: "We define exactly what your business offers so AI stops guessing.",
+      tech: "Entity salience, schema markup, relationship definitions.",
+      icon: <Layers className="w-5 h-5" />
+    },
+    {
+      id: "S2",
+      title: "Atomic Answer Block Structuring",
+      human: "We rewrite your pages into short, clear answers that AI can actually use.",
+      tech: "90–120 token passages, conversational query alignment.",
+      icon: <Boxes className="w-5 h-5" />
+    },
+    {
+      id: "S3",
+      title: "Semantic Lattice Linking",
+      human: "We connect your ideas with descriptive links so AI understands how everything fits together.",
+      tech: "Relationship graph, anchor‑text signalling, contextual pathways.",
+      icon: <Network className="w-5 h-5" />
+    },
+    {
+      id: "S4",
+      title: "Brand Facts & Consensus Signals",
+      human: "We publish one canonical source of truth so AI stops contradicting your brand.",
+      tech: "Fact consolidation, consistency signals, hallucination reduction.",
+      icon: <ShieldCheck className="w-5 h-5" />
+    }
+  ];
+
+  return (
+    <div className="relative w-full max-w-[900px] mx-auto flex flex-col gap-6 pr-4">
+      {/* Connector Line */}
+      <div className="absolute left-[31px] md:left-[35px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-aeo-cyan via-aeo-purple to-neutral-800 pointer-events-none" />
+
+      {sprints.map((sprint) => (
+        <div 
+          key={sprint.id}
+          className="relative flex gap-4 md:gap-6 items-start p-5 bg-neutral-900/40 backdrop-blur-xl border border-white/5 rounded-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 transition-all duration-300 group"
+        >
+          {/* Node Icon */}
+          <div className="relative z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black border border-white/10 text-aeo-cyan flex-shrink-0 group-hover:scale-105 transition-transform">
+            {sprint.icon}
+            <span className="absolute -top-1.5 -right-1.5 text-[8px] font-extrabold px-1.5 py-0.5 rounded-full bg-aeo-purple text-white shadow-sm shadow-black/80">
+              {sprint.id}
+            </span>
+          </div>
+
+          <div className="space-y-1">
+            <h3 className="text-sm md:text-base font-bold text-white group-hover:text-aeo-cyan transition-colors">
+              {sprint.title}
+            </h3>
+            <p className="text-xs md:text-sm text-white/70 font-light leading-relaxed">
+              {sprint.human}
+            </p>
+            <p className="text-[10px] text-white/40 font-mono tracking-tight pt-1">
+              {sprint.tech}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function SolutionsPage() {
   const schema = {
@@ -104,7 +171,7 @@ export default function SolutionsPage() {
               <div className="pt-4">
                 <Link
                   href="/#audit-form"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold rounded-xl hover:opacity-90 transition-opacity animate-pulse"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
                 >
                   <span>Get My Free Audit</span>
                   <ArrowRight className="w-4 h-4" />
@@ -113,16 +180,7 @@ export default function SolutionsPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
-                <Image
-                  src="/pricing-tiered-modules.png"
-                  alt="Tiered pricing modules showing deliverables and inclusions"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                />
-              </div>
+              <SprintFlowChart />
             </div>
           </section>
 
