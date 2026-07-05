@@ -133,71 +133,11 @@ export function GraphVisual() {
 
 export default function Hero() {
   return (
-    <header className="relative w-full overflow-hidden bg-black pt-6 pb-16 md:pb-24">
+    <header className="relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* Navigation / Header bar */}
-        <nav className="flex items-center justify-between mb-16 relative z-10">
-          <div className="flex items-center gap-2">
-            {/* Logo (SVG) */}
-            <svg
-              className="w-8 h-8 text-aeo-cyan"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 22L16 30L30 22"
-                stroke="#bd00ff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 16L16 24L30 16"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeDasharray="2 2"
-              />
-            </svg>
-            <span className="text-xl font-bold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan">bility</span>
-            </span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
-            <a href="#how-it-works" className="hover:text-aeo-cyan transition-colors">
-              How It Works
-            </a>
-            <a href="#blueprint" className="hover:text-aeo-cyan transition-colors">
-              90-Day Blueprint
-            </a>
-            <a href="#usp" className="hover:text-aeo-cyan transition-colors">
-              USP
-            </a>
-            <Link href="/services/aeo" className="hover:text-aeo-cyan transition-colors">
-              AEO Services
-            </Link>
-          </div>
-
-          <div>
-            <a
-              href="#audit-form"
-              className="px-4 py-2 text-xs font-semibold tracking-wide uppercase border rounded-full border-aeo-cyan text-aeo-cyan hover:bg-aeo-cyan hover:text-black transition-all"
-            >
-              Get Free Audit
-            </a>
-          </div>
-        </nav>
 
         {/* Hero Body */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import USPGrid from '@/components/USPGrid';
@@ -59,6 +60,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
+      <Navbar />
       <Hero />
       <SocialProof />
       <USPGrid />

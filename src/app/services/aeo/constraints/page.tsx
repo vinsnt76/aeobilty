@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: "What stops my business from showing up? — AEObility",
@@ -47,46 +48,7 @@ export default function AEOConstraintsPage() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
-      {/* Navigation Header */}
-      <header className="py-6 border-b border-white/5 bg-black/50 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <svg
-              className="w-6 h-6 text-aeo-cyan group-hover:scale-105 transition-transform"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 22L16 30L30 22"
-                stroke="#bd00ff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="text-sm font-semibold tracking-wider text-white">AEO<span className="text-aeo-cyan font-light">bility</span></span>
-          </Link>
-          <div className="flex gap-4">
-            <Link href="/" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
-              Home
-            </Link>
-            <Link href="/services/aeo" className="text-xs font-semibold text-aeo-cyan py-2 px-3">
-              AEO Services
-            </Link>
-            <Link href="/support" className="text-xs font-semibold text-white/60 hover:text-white transition-colors py-2 px-3">
-              Support
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Main Container */}
       <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
