@@ -1,7 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Compass, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Compass, ShieldCheck } from 'lucide-react';
+
+function TransitionFlowChart() {
+  const steps = [
+    { title: "Traditional SEO", desc: "Keywords & PageRank", color: "border-white/10" },
+    { title: "Entity Extraction", desc: "JSON-LD & Schema", color: "border-aeo-cyan/30" },
+    { title: "Vector Embedding", desc: "Semantic Search & RAG", color: "border-aeo-purple/30" },
+    { title: "AEO Optimization", desc: "Citations & AI Answers", color: "border-aeo-cyan" }
+  ];
+
+  return (
+    <div className="w-full flex flex-col gap-3 py-4">
+      {steps.map((step, idx) => (
+        <div key={idx} className="flex flex-col items-center">
+          <div className={`w-full max-w-[280px] p-4 bg-neutral-950/85 border ${step.color} rounded-xl text-center shadow-lg backdrop-blur-xl group hover:border-aeo-cyan/20 transition-all`}>
+            <div className="text-xs font-bold text-white group-hover:text-aeo-cyan transition-colors">{step.title}</div>
+            <div className="text-[10px] text-white/50 font-light mt-1">{step.desc}</div>
+          </div>
+          {idx < steps.length - 1 && (
+            <div className="h-4 w-[2px] bg-gradient-to-b from-aeo-cyan to-aeo-purple" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function AboutUsContent() {
   return (
@@ -16,30 +41,24 @@ export default function AboutUsContent() {
           <span className="text-gradient-aeo font-extrabold">Specialists in Perth</span>
         </h1>
         <p className="text-white/60 text-lg leading-relaxed font-light max-w-2xl mx-auto">
-          Meet the technical architects behind AEObility. Over 15 years engineering custom code, business automations, and AEO systems in Perth.
+          Meet the technical architects behind AEObility. Over several years engineering custom code, business automations, and AEO systems in Perth.
         </p>
       </div>
 
-      {/* Our Core Engineering Background */}
+      {/* AI Systems Architect */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center border-t border-white/5 pt-12">
         <div className="md:col-span-7 space-y-4">
-          <h2 className="text-2xl font-bold text-white">Our Core Engineering Background</h2>
+          <h2 className="text-2xl font-bold text-white">AI Systems Architect</h2>
           <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed">
-            With over 15 years of technical marketing experience in Western Australia, our background bridges traditional web systems with new data structured content agency requirements. We build clean, modular architectures that align with local indexing engines.
+            specialty is Google Search Console, Bing Webmaster Tools, SEMrush, and structured data validators. SEO → AEO transition frameworks, focusing on entity clarity, local intent, and machine‑readable content.
           </p>
           <div className="text-xs text-white/50 font-mono space-y-1">
-            <div>Tech Architecture: Next.js / React / REST APIs</div>
+            <div>Tech Architecture: Search Engine APIs & Semantic Mappers</div>
             <div>Clear Background Credentials: Certified Systems Architects</div>
           </div>
         </div>
-        <div className="md:col-span-5 relative aspect-video md:aspect-square rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
-          <Image
-            src="/about-hero.png"
-            alt="Modern Australian team office workspace featuring smart displays and digital tracking screens"
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 300px"
-          />
+        <div className="md:col-span-5">
+          <TransitionFlowChart />
         </div>
       </section>
 
