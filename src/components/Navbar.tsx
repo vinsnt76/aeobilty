@@ -39,20 +39,15 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Homepage', href: '/' },
-    { name: 'AEO Services', href: '/services' },
-    { name: 'AEO Packages', href: '/solutions' },
     {
-      name: 'Knowledge Hub',
-      href: '/knowledge-hub',
+      name: 'AEO Services',
+      href: '/services',
       dropdownItems: [
-        { name: 'Hub Overview', href: '/knowledge-hub' },
-        { name: 'What is AEO?', href: '/services/definition' },
-        { name: 'Is AEO just SEO?', href: '/services/comparison' },
-        { name: 'How to Make AI-Readable', href: '/services/procedures' },
-        { name: 'What Stops AI Showing Up', href: '/services/constraints' },
-        { name: 'Costs & Timing', href: '/services/costs-timing' },
-      ],
+        { name: 'AEO', href: '/services/aeo' }
+      ]
     },
+    { name: 'AEO Packages', href: '/solutions' },
+    { name: 'Knowledge Hub', href: '/knowledge-hub' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact & Support', href: '/contact' },
   ];

@@ -71,19 +71,19 @@ export default function AEORootPage() {
               <Link href="/services/aeo" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg">
                 Hub Overview
               </Link>
-              <Link href="/services/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 1. What is AEO and why does it matter?
               </Link>
-              <Link href="/services/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 2. Is AEO just SEO with a new name?
               </Link>
-              <Link href="/services/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
               </Link>
-              <Link href="/services/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 5. How much does AEO cost & what do I get?
               </Link>
             </nav>
@@ -191,7 +191,7 @@ export default function AEORootPage() {
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
-                href="/services/costs-timing"
+                href="/services/aeo/costs-timing"
                 className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all"
               >
                 View Pricing & Blueprint Offer
@@ -203,7 +203,7 @@ export default function AEORootPage() {
           <div className="flex flex-col gap-6">
             <h2 className="text-xl font-bold">Conversational Pathways</h2>
             <div className="grid grid-cols-1 gap-6">
-              <Link href="/services/definition" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
+              <Link href="/services/aeo/definition" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
                 <div className="w-full flex justify-between items-center">
                   <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">1. “What is AEO and why does it matter for my business?”</span>
                   <span className="text-aeo-cyan">→</span>
@@ -214,7 +214,7 @@ export default function AEORootPage() {
                 <span className="text-[10px] text-aeo-cyan/70 font-semibold uppercase tracking-wider">“Let’s make this easy to understand.”</span>
               </Link>
 
-              <Link href="/services/comparison" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
+              <Link href="/services/aeo/comparison" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
                 <div className="w-full flex justify-between items-center">
                   <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">2. “Is AEO just SEO with a new name?”</span>
                   <span className="text-aeo-cyan">→</span>
@@ -225,7 +225,7 @@ export default function AEORootPage() {
                 <span className="text-[10px] text-aeo-cyan/70 font-semibold uppercase tracking-wider">“Here’s the part nobody explains.”</span>
               </Link>
 
-              <Link href="/services/procedures" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
+              <Link href="/services/aeo/procedures" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
                 <div className="w-full flex justify-between items-center">
                   <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">3. “How do I make my business easier for AI to understand?”</span>
                   <span className="text-aeo-cyan">→</span>
@@ -236,7 +236,7 @@ export default function AEORootPage() {
                 <span className="text-[10px] text-aeo-cyan/70 font-semibold uppercase tracking-wider">“Here’s how machines actually read your business.”</span>
               </Link>
 
-              <Link href="/services/constraints" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
+              <Link href="/services/aeo/constraints" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
                 <div className="w-full flex justify-between items-center">
                   <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">4. “What stops my business from showing up?”</span>
                   <span className="text-aeo-cyan">→</span>
@@ -247,7 +247,7 @@ export default function AEORootPage() {
                 <span className="text-[10px] text-aeo-cyan/70 font-semibold uppercase tracking-wider">“Here’s what’s actually blocking your visibility.”</span>
               </Link>
 
-              <Link href="/services/costs-timing" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
+              <Link href="/services/aeo/costs-timing" className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-4 group">
                 <div className="w-full flex justify-between items-center">
                   <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">5. “How much does AEO cost and what do I get?”</span>
                   <span className="text-aeo-cyan">→</span>

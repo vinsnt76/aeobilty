@@ -8,7 +8,7 @@ export const metadata = {
   title: "How much does AEO cost and what do I get? — AEObility",
   description: "Transparent pricing structures, Strategic Blueprint MVP details, and timeline information for Answer Engine Optimisation (AEO) services.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/costs-timing",
+    canonical: "https://aeobility.com.au/services/aeo/costs-timing",
   },
 };
 
@@ -16,7 +16,7 @@ export default function AEOPricingPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "https://aeobility.com.au/services/costs-timing#faq",
+    "@id": "https://aeobility.com.au/services/aeo/costs-timing#faq",
     "mainEntity": [
       {
         "@type": "Question",
@@ -79,19 +79,19 @@ export default function AEOPricingPage() {
               <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
                 Hub Overview
               </Link>
-              <Link href="/services/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 1. What is AEO and why does it matter?
               </Link>
-              <Link href="/services/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 2. Is AEO just SEO with a new name?
               </Link>
-              <Link href="/services/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
               </Link>
-              <Link href="/services/costs-timing" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/costs-timing" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 5. How much does AEO cost & what do I get?
               </Link>
             </nav>
@@ -243,10 +243,10 @@ export default function AEOPricingPage() {
           <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
-              <Link href="/services/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 How do I make my business easier for AI to understand?
               </Link>
-              <Link href="/services/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+              <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 What stops my business from showing up?
               </Link>
             </div>
