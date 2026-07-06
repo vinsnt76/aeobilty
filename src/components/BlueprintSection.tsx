@@ -27,44 +27,48 @@ export default function BlueprintSection() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-              <Rocket className="w-3.5 h-3.5" />
-              <span>Full Roadmap Strategy</span>
-            </div>
+          <div className="lg:col-span-6 relative">
+            {/* Geometric Grid Background Motif */}
+            <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
+            <div className="relative z-10 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+                <Rocket className="w-3.5 h-3.5" />
+                <span>Full Roadmap Strategy</span>
+              </div>
 
-            <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
-              AI‑Ready Content from Day One
-            </h2>
+              <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
+                AI‑Ready Content from Day One
+              </h2>
 
-            <h3 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Your 90‑Day AI<br />
-              <span className="text-gradient-aeo">Success Blueprint</span>
-            </h3>
+              <h3 className="text-4xl sm:text-5xl font-extrabold leading-tight font-soehne-breit">
+                Your 90‑Day AI<br />
+                <span className="text-gradient-aeo">Success Blueprint</span>
+              </h3>
 
-            <p className="text-lg text-white/70 font-light leading-relaxed">
-              A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.
-            </p>
-
-            <div className="space-y-4 pt-4">
-              <a
-                href="#audit-form"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-semibold hover:bg-neutral-100 transition-all duration-300"
-              >
-                Get My Blueprint
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-
-              <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
-                <span className="font-semibold text-white">Pricing note:</span> Take the strategy with you, or stay with us for the 90 days — and we credit the $995 blueprint fee back into your plan.
+              <p className="text-lg text-white/70 font-light leading-relaxed font-serif">
+                A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.
               </p>
+
+              <div className="space-y-4 pt-4">
+                <a
+                  href="#audit-form"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-semibold hover:bg-neutral-100 transition-all duration-300"
+                >
+                  Get My Blueprint
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </a>
+
+                <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
+                  <span className="font-semibold text-white">Pricing note:</span> Take the strategy with you, or stay with us for the 90 days — and we credit the $995 blueprint fee back into your plan.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="lg:col-span-6 space-y-6">
             <div className="p-1 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-2xl">
               <div className="p-8 space-y-8 bg-neutral-950/80 rounded-xl">
-                <h3 className="text-xl font-bold border-b border-white/10 pb-4">
+                <h3 className="text-xl font-bold border-b border-white/10 pb-4 font-soehne-breit">
                   What is included in the plan?
                 </h3>
                 
@@ -75,8 +79,8 @@ export default function BlueprintSection() {
                         {phase.icon}
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-white">{phase.title}</h4>
-                        <p className="text-xs text-white/60 font-light leading-relaxed">{phase.description}</p>
+                        <h4 className="text-sm font-bold text-white font-soehne-breit">{phase.title}</h4>
+                        <p className="text-xs text-white/60 font-light leading-relaxed font-serif">{phase.description}</p>
                       </div>
                     </div>
                   ))}

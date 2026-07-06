@@ -14,8 +14,8 @@ function USPCard({ icon, title, description }: USPCardProps) {
         <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 group-hover:scale-105 transition-transform duration-300">
           {icon}
         </div>
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-sm text-white/60 font-light leading-relaxed">{description}</p>
+        <h3 className="text-xl font-bold mb-3 font-soehne-breit">{title}</h3>
+        <p className="text-sm text-white/60 font-light leading-relaxed font-serif">{description}</p>
       </div>
     </div>
   );
@@ -46,16 +46,20 @@ export default function USPGrid() {
       <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
-            Why AEObility?
-          </h2>
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Put Your Business on the Map
-          </h3>
-          <p className="text-base text-white/60 font-light">
-            We focus on real outcomes, giving your business the foundation to get found and get chosen.
-          </p>
+        <div className="relative text-center max-w-2xl mx-auto mb-16">
+          {/* Geometric Grid Background Motif */}
+          <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
+          <div className="relative z-10 space-y-4">
+            <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
+              Why AEObility?
+            </h2>
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
+              Put Your Business on the Map
+            </h3>
+            <p className="text-base text-white/60 font-light font-serif">
+              We focus on real outcomes, giving your business the foundation to get found and get chosen.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

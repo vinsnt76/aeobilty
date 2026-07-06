@@ -95,3 +95,19 @@
 *   **The Solution:** Optimizing so AI can reliably use your business as a source.
 *   **The Outcome:** When AI knows your services and authority, it can confidently recommend you.
 *   **CTA:** Get Your Free Visibility Audit.
+
+---
+
+## 9. Design System & Typography
+
+*   **Primary Typeface:** Söhne (or Söhne Breit for wide headlines).
+    *   *Role:* Used for main site branding, hero titles, section headers, and key buttons.
+    *   *Intent:* Conveys absolute modern structure, technical clarity, and high-performance precision.
+    *   *Fallback Stack:* Geist Sans, Inter, system-ui, sans-serif.
+*   **Secondary Typeface:** IBM Plex Serif.
+    *   *Role:* Used for section subheadings, step guides, body text paragraphs, and editorial details.
+    *   *Intent:* Establishes a "machine-readable but human-built" authority. The editorial serif contrasts with the clean neo-grotesque sans-serif to show engineering authenticity.
+    *   *Fallback Stack:* Georgia, serif.
+*   **Visual Motifs:**
+    *   *Subtle Geometric Grid:* A faint, light, almost invisible grid background placed behind titles and header columns. It reinforces the theme of backend entity mapping, network relationships, and structural clarity without impacting copy readability.
+

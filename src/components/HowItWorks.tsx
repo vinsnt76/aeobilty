@@ -40,16 +40,20 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 bg-neutral-50 text-black">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
-            Simple 4‑Step Funnel
-          </h2>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">
-            How We Help You Show Up in AI Search
-          </h2>
-          <p className="text-base text-neutral-600 font-light">
-            We manually review your online presence and walk you through the findings.
-          </p>
+        <div className="relative text-center max-w-2xl mx-auto mb-16">
+          {/* Geometric Grid Background Motif */}
+          <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-light opacity-60 z-0" />
+          <div className="relative z-10 space-y-4">
+            <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
+              Simple 4‑Step Funnel
+            </h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
+              How We Help You Show Up in AI Search
+            </h2>
+            <p className="text-base text-neutral-600 font-light font-serif">
+              We manually review your online presence and walk you through the findings.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -61,8 +65,8 @@ export default function HowItWorks() {
                 01
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950">Enter Your Website URL</h4>
-                <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Enter Your Website URL</h4>
+                <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Provide your primary business domain name so we can review your existing online presence across search and social channels.
                 </p>
               </div>
@@ -74,8 +78,8 @@ export default function HowItWorks() {
                 02
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950">Get Your Free Audit</h4>
-                <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Get Your Free Audit</h4>
+                <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Receive your free audit within 24 hours. We’ll manually review your visibility across search, maps, and AI platforms.
                 </p>
               </div>
@@ -87,8 +91,8 @@ export default function HowItWorks() {
                 03
               </div>
               <div className="space-y-3 w-full">
-                <h4 className="text-lg font-bold text-neutral-950">Book a Complimentary 15‑Minute Call</h4>
-                <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Book a Complimentary 15‑Minute Call</h4>
+                <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Book a complimentary 15‑minute call using our Google Calendar link, or call us directly on **0480 286 282**.
                 </p>
                 <div className="flex flex-wrap gap-3 pt-1">
@@ -118,8 +122,8 @@ export default function HowItWorks() {
                 04
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950">Choose Your 90‑Day AI Success Blueprint</h4>
-                <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Choose Your 90‑Day AI Success Blueprint</h4>
+                <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Get an actionable, step-by-step roadmap to secure more leads. If you choose to stay with us, we credit the $995 blueprint fee back into your plan.
                 </p>
               </div>

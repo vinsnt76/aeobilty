@@ -46,23 +46,27 @@ export default function ContactForm() {
     <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
       {/* Left Side: Contact Info, Location Profile & FAQ */}
       <section className="lg:col-span-7 flex flex-col gap-12">
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-            <span>AEO Consultant Perth</span>
+        <div className="relative py-4">
+          {/* Geometric Grid Background Motif */}
+          <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
+          <div className="relative z-10 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
+              <span>AEO Consultant Perth</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight font-soehne-breit">
+              Let&apos;s Talk Strategy. <br />
+              <span className="text-gradient-aeo">No Jargon. No Pressure.</span>
+            </h1>
+            <p className="text-white/60 text-base max-w-lg font-light leading-relaxed font-serif">
+              Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-            Let&apos;s Talk Strategy. <br />
-            <span className="text-gradient-aeo">No Jargon. No Pressure.</span>
-          </h1>
-          <p className="text-white/60 text-base max-w-lg font-light leading-relaxed">
-            Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.
-          </p>
         </div>
 
         {/* What Happens on Your Discovery Strategy Call */}
         <div className="p-8 bg-white/[0.01] border border-white/5 rounded-3xl space-y-6">
-          <h2 className="text-xl font-bold text-white">What Happens on Your Discovery Strategy Call</h2>
-          <p className="text-sm text-white/60 font-light leading-relaxed">
+          <h2 className="text-xl font-bold text-white font-soehne-breit">What Happens on Your Discovery Strategy Call</h2>
+          <p className="text-sm text-white/60 font-light leading-relaxed font-serif">
             We will walk through your free visibility audit results and review how conversational search engines see your brand. You will get a clear overview of our strategic sprints with zero hard sales tactics.
           </p>
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
@@ -78,7 +82,7 @@ export default function ContactForm() {
 
         {/* Submit Your Operational Questions */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-2xl font-bold tracking-tight">Submit Your Operational Questions</h2>
+          <h2 className="text-2xl font-bold tracking-tight font-soehne-breit">Submit Your Operational Questions</h2>
           <div className="flex flex-col border border-white/5 rounded-2xl divide-y divide-white/5 overflow-hidden bg-white/[0.01]">
             {faqs.map((faq, index) => {
               const isOpen = activeFaq === index;
@@ -102,7 +106,7 @@ export default function ContactForm() {
                   <div
                     className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-60 border-t border-white/5 bg-white/[0.01]' : 'max-h-0'}`}
                   >
-                    <p className="p-6 text-sm text-white/60 leading-relaxed font-light">{faq.answer}</p>
+                    <p className="p-6 text-sm text-white/60 leading-relaxed font-light font-serif">{faq.answer}</p>
                   </div>
                 </div>
               );
@@ -113,8 +117,8 @@ export default function ContactForm() {
         {/* Our Location Profile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center p-8 bg-white/[0.01] border border-white/5 rounded-3xl">
           <div className="space-y-4">
-            <h2 className="text-xl font-bold text-white">Our Location Profile</h2>
-            <p className="text-sm text-white/60 font-light leading-relaxed">
+            <h2 className="text-xl font-bold text-white font-soehne-breit">Our Location Profile</h2>
+            <p className="text-sm text-white/60 font-light leading-relaxed font-serif">
               We coordinate office data for businesses across Perth, Western Australia, ensuring maps coordinates align exactly with machine-readable metadata.
             </p>
             <div className="text-xs space-y-1 font-mono text-white/40">
@@ -138,7 +142,7 @@ export default function ContactForm() {
       {/* Right Side: Direct Routing Inquiry Form */}
       <section className="lg:col-span-5 bg-white/[0.01] border border-white/5 p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm self-start">
         <div className="absolute top-0 right-0 w-32 h-32 bg-aeo-cyan/5 rounded-full filter blur-2xl -z-10" />
-        <h2 className="text-2xl font-bold mb-6">Send an Enquiry</h2>
+        <h2 className="text-2xl font-bold mb-6 font-soehne-breit">Send an Enquiry</h2>
 
         {formSubmitted ? (
           <div className="p-6 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-2xl flex flex-col items-center text-center gap-4 animate-fade-in">

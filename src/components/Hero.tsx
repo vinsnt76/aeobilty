@@ -141,42 +141,46 @@ export default function Hero() {
 
         {/* Hero Body */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-7 text-left space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/80 font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
-              <span>AI Search Engine Marketing</span>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Get Found.<br />
-              Get Chosen.<br />
-              <span className="text-gradient-aeo">Grow Faster.</span>
-            </h1>
+          <div className="lg:col-span-7 text-left relative">
+            {/* Geometric Grid Background Motif */}
+            <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
+            <div className="relative z-10 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/80 font-medium">
+                <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
+                <span>AI Search Engine Marketing</span>
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
+                Get Found.<br />
+                Get Chosen.<br />
+                <span className="text-gradient-aeo">Grow Faster.</span>
+              </h1>
 
-            <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl">
-              AEObility helps your business show up more often across search, social, and AI — so you get more leads and more enquiries without the complexity.
-            </p>
+              <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
+                AEObility helps your business show up more often across search, social, and AI — so you get more leads and more enquiries without the complexity.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a
-                href="#audit-form"
-                className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
-              >
-                Get My Free Visibility Audit
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <a
+                  href="#audit-form"
+                  className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+                >
+                  Get My Free Visibility Audit
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </a>
 
-              <a
-                href="#blueprint"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-all"
-              >
-                See the 90-Day Blueprint
-              </a>
-            </div>
+                <a
+                  href="#blueprint"
+                  className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-all"
+                >
+                  See the 90-Day Blueprint
+                </a>
+              </div>
 
-            <div className="flex items-center gap-2 text-xs text-white/40 pt-4">
-              <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
-              <span>No credit card required. Free 5-minute setup.</span>
+              <div className="flex items-center gap-2 text-xs text-white/40 pt-4">
+                <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
+                <span>No credit card required. Free 5-minute setup.</span>
+              </div>
             </div>
           </div>
 
