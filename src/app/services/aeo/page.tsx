@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { ArrowRight, Eye, Brain, CheckCircle2, MapPin, ShieldCheck, Award } from 'lucide-react';
@@ -92,31 +93,36 @@ export default function AEORootPage() {
       title: "What is AEO and why does it matter?",
       desc: "Understand what AEO actually is, why search visibility is changing, and how AI assistants read and interpret your business.",
       href: "/services/aeo/definition",
-      hook: "Unlock the machine logic"
+      hook: "Unlock the machine logic",
+      image: "/service-dashboard-layers.png"
     },
     {
       title: "Is AEO just SEO with a new name?",
       desc: "How SEO and AEO overlap, how they differ, and why structured clarity matters more than old search engine ranking tricks.",
       href: "/services/aeo/comparison",
-      hook: "Expose search differences"
+      hook: "Expose search differences",
+      image: "/services-intent-matrix.png"
     },
     {
       title: "How do I make my business AI-readable?",
       desc: "Explore how Large Language Models (LLMs) ingest, interpret, and cite content, and how to structure pages so they are machine-readable.",
       href: "/services/aeo/procedures",
-      hook: "Command crawler authority"
+      hook: "Command crawler authority",
+      image: "/structured-search-audit-wireframe.png"
     },
     {
       title: "What stops my business from showing up?",
       desc: "Identify trust signals, authority thresholds, conflicting business profiles, and key blockers that prevent conversational AI tools from citation.",
       href: "/services/aeo/constraints",
-      hook: "Eradicate hidden blockers"
+      hook: "Eradicate hidden blockers",
+      image: "/contact-map-coordinates.png"
     },
     {
       title: "How much does AEO cost & what do I get?",
       desc: "Find package options, initial free visibility audits, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.",
       href: "/services/aeo/costs-timing",
-      hook: "Explore blueprint pricing"
+      hook: "Explore blueprint pricing",
+      image: "/client-milestones-onboarding.png"
     }
   ];
 
@@ -237,7 +243,7 @@ export default function AEORootPage() {
 
           {/* SECTION 3 — What You Get (Service Modules) */}
           <div className="space-y-6">
-            <h2 className="text-xl font-bold">What You Get (Service Modules)</h2>
+            <h2 className="text-xl font-bold">Services We Offer</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {serviceModules.map((module, idx) => (
                 <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl flex flex-col justify-between hover:border-white/10 transition-colors">
@@ -308,14 +314,17 @@ export default function AEORootPage() {
                 >
                   <div>
                     {/* Image Insert */}
-                    <div className="h-40 w-full relative bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center overflow-hidden border-b border-neutral-100">
-                      {/* Decorative abstract mesh shapes to feel high-end */}
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.15),transparent_60%)]" />
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(147,51,234,0.15),transparent_60%)]" />
-                      <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-aeo-cyan/10 rounded-full blur-xl" />
-                      <div className="absolute -top-6 -left-6 w-24 h-24 bg-aeo-purple/10 rounded-full blur-xl" />
+                    <div className="h-40 w-full relative bg-neutral-950 overflow-hidden border-b border-neutral-100">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, 320px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                       
-                      <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase border border-neutral-200/60 rounded px-2.5 py-1 bg-white/80 shadow-sm backdrop-blur-sm">
+                      <span className="absolute top-3 left-3 text-[9px] font-mono tracking-widest text-neutral-400 uppercase border border-neutral-200/60 rounded px-2 py-0.5 bg-white/80 shadow-sm backdrop-blur-sm z-10">
                         AEObility Article
                       </span>
                     </div>
