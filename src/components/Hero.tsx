@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export function GraphVisual() {

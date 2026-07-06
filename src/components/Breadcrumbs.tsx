@@ -83,7 +83,7 @@ export default function Breadcrumbs() {
           <span>Home</span>
         </Link>
         
-        {breadcrumbs.map((crumb, index) => (
+        {breadcrumbs.map((crumb) => (
           <React.Fragment key={crumb.href}>
             <ChevronRight className="w-3 h-3 text-white/20" />
             {crumb.isLast ? (

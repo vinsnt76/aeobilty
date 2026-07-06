@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Target, MessageSquare, Clock, ArrowUpRight, Cpu, MapPin } from 'lucide-react';
+import { Eye, Target, MessageSquare } from 'lucide-react';
 
 interface USPCardProps {
   icon: React.ReactNode;

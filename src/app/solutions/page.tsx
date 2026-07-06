@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle2, ArrowRight, DollarSign, HelpCircle, Compass, Target, Rocket, Layers, Boxes, Network, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, ArrowRight, HelpCircle, Compass, Layers, Boxes, Network, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';

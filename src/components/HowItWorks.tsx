@@ -18,12 +18,15 @@ export default function HowItWorks() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (typeof window !== 'undefined' && (window as any).dataLayer) {
-            (window as any).dataLayer.push({
-              event: 'audit_form_view',
-              form_id: 'audit',
-              page: window.location.pathname
-            });
+          if (typeof window !== 'undefined') {
+            const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
+            if (win.dataLayer) {
+              win.dataLayer.push({
+                event: 'audit_form_view',
+                form_id: 'audit',
+                page: window.location.pathname
+              });
+            }
           }
           observer.disconnect(); // Track once per page load
         }
@@ -41,12 +44,15 @@ export default function HowItWorks() {
   const handleFieldStart = (fieldName: string) => {
     if (!started) {
       setStarted(true);
-      if (typeof window !== 'undefined' && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
-          event: 'audit_form_start',
-          form_id: 'audit',
-          field_started: fieldName
-        });
+      if (typeof window !== 'undefined') {
+        const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        if (win.dataLayer) {
+          win.dataLayer.push({
+            event: 'audit_form_start',
+            form_id: 'audit',
+            field_started: fieldName
+          });
+        }
       }
     }
   };
@@ -82,13 +88,16 @@ export default function HowItWorks() {
           websiteDomain = url.replace('www.', '');
         }
 
-        if (typeof window !== 'undefined' && (window as any).dataLayer) {
-          (window as any).dataLayer.push({
-            event: 'audit_form_submit',
-            form_id: 'audit',
-            email_domain: emailDomain,
-            website_domain: websiteDomain
-          });
+        if (typeof window !== 'undefined') {
+          const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
+          if (win.dataLayer) {
+            win.dataLayer.push({
+              event: 'audit_form_submit',
+              form_id: 'audit',
+              email_domain: emailDomain,
+              website_domain: websiteDomain
+            });
+          }
         }
       } else {
         setError(data.error || 'Failed to submit audit request.');
