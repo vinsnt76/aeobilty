@@ -90,7 +90,7 @@ export default function AEOKnowledgeNodePage() {
               <span>Answer Engine Optimization (AEO) Deep Dive</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              AEO Core <span className="text-gradient-aeo">Principles</span>
+              What is AEO in <span className="text-gradient-aeo">Digital Marketing?</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
               Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.

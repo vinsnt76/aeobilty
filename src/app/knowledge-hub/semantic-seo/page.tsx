@@ -87,7 +87,7 @@ export default function SemanticSEONodePage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>AI Semantic SEO & Entity-Driven Content Models</span>
+              <span>AI Semantic SEO & Entity Based Optimization</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
               AI Semantic <span className="text-gradient-aeo">SEO</span>

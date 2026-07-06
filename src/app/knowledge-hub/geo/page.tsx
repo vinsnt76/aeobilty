@@ -87,10 +87,10 @@ export default function GEOKnowledgeNodePage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>GEO and SEO: Merging Local Signals with AI Search</span>
+              <span>GEO vs SEO: Local Discovery Matrix</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              GEO and SEO <span className="text-gradient-aeo">Matrix</span>
+              GEO vs SEO <span className="text-gradient-aeo">Matrix</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
               Advanced techniques balancing localized map rankings and systemic generative visibility rules without triggering focus dilution gaps.
