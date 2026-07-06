@@ -1,0 +1,52 @@
+# AEObility: Answer Engine Optimisation (AEO) Systems
+
+AEObility is a specialized agency based in Perth, Western Australia, providing Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing services. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
+
+## Core Terminology & Concepts
+- **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
+- **GEO (Geographic Engine Optimization)**: Optimizing localized map pack matrices and location-aware AI systems.
+- **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual snippets into LLM prompt spaces.
+- **Positional Bias**: The tendency of retrieval models to prioritize answers at the absolute beginning or end of text blocks.
+- **Atomic Answer Blocks**: Text passages structured within 90-120 token bounds to maximize attention scores and semantic clarity.
+- **Entity Salience**: The mathematical confidence of an LLM in identifying the subject-predicate relationship of a brand node.
+
+---
+
+## Complete Route Directory
+
+### Services (What We Optimize)
+- `/services`: Overview of our content engineering capability.
+- `/services/aeo`: L2 hub detailing token optimizations and semantic audits.
+  - `/services/aeo/definition`: Explains what AEO is and why it replaces legacy SEO.
+  - `/services/aeo/comparison`: Breakdown of traditional keywords vs vector embeddings.
+  - `/services/aeo/procedures`: Step-by-step technical guides for AI readiness.
+  - `/services/aeo/constraints`: Details on indexation limits and citation boundaries.
+  - `/services/aeo/costs-timing`: Pricing structures and packages.
+- `/services/ai-search-marketing`: L2 page for Gemini, Perplexity, and conversational query targeting.
+- `/services/geo-marketing`: L2 page for geographic engines, Apple Maps, and local voice search.
+
+### Solutions (How We Deliver)
+- `/solutions`: Packages and flat-rate sprints.
+- `/solutions/aeo-blueprint`: The $995 Clarity Phase deep strategic audit.
+- `/solutions/aeo-sprint`: Programmatic structured schemas and refactoring deployments.
+- `/solutions/geo-services`: coordinate precision map and location salience sync.
+
+### Knowledge Hub (Our Research Nodes)
+- `/knowledge-hub`: Directory of guides and frameworks.
+- `/knowledge-hub/aeo`: RAG citation mechanics and positional bias rules.
+- `/knowledge-hub/semantic-seo`: Mapping RDF triples and semantic vector dimensions.
+- `/knowledge-hub/geo`: Resolving local maps proximity vs LLM global consensus friction.
+
+### Support & Brand Details
+- `/about`: Company background and our team.
+- `/contact`: Booking inquiries and audit request forms.
+- `/support`: Technical documentation and support.
+- `/vince-baker`: Profile card and vCard contact info for Vinnie Baker.
+
+---
+
+## Structured Data Schema Standards
+We utilize schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
+- **Brand ID**: `https://aeobility.com.au/#organization`
+- **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
+- **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`
