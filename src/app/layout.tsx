@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import GlobalConsentBanner from "@/components/GlobalConsentBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +69,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <GlobalConsentBanner />
 
         {/* Google Analytics Global Site Tag (gtag.js) */}
         <Script
@@ -78,6 +80,15 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            
+            // Set default consent state
+            gtag('consent', 'default', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+            
             gtag('js', new Date());
             gtag('config', 'G-3WVLWVG6VH');
           `}
