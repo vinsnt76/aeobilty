@@ -89,34 +89,34 @@ export default function AEORootPage() {
 
   const featuredArticles = [
     {
-      title: "1. What is AEO and why does it matter?",
+      title: "What is AEO and why does it matter?",
       desc: "Understand what AEO actually is, why search visibility is changing, and how AI assistants read and interpret your business.",
       href: "/services/aeo/definition",
-      tagline: "Let's make this easy to understand."
+      hook: "Unlock the machine logic"
     },
     {
-      title: "2. Is AEO just SEO with a new name?",
+      title: "Is AEO just SEO with a new name?",
       desc: "How SEO and AEO overlap, how they differ, and why structured clarity matters more than old search engine ranking tricks.",
       href: "/services/aeo/comparison",
-      tagline: "Here's the part nobody explains."
+      hook: "Expose search differences"
     },
     {
-      title: "3. How do I make my business easier for AI to understand?",
+      title: "How do I make my business AI-readable?",
       desc: "Explore how Large Language Models (LLMs) ingest, interpret, and cite content, and how to structure pages so they are machine-readable.",
       href: "/services/aeo/procedures",
-      tagline: "Here's how machines actually read your business."
+      hook: "Command crawler authority"
     },
     {
-      title: "4. What stops my business from showing up?",
+      title: "What stops my business from showing up?",
       desc: "Identify trust signals, authority thresholds, conflicting business profiles, and key blockers that prevent conversational AI tools from citation.",
       href: "/services/aeo/constraints",
-      tagline: "Here's what's actually blocking your visibility."
+      hook: "Eradicate hidden blockers"
     },
     {
-      title: "5. How much does AEO cost and what do I get?",
+      title: "How much does AEO cost & what do I get?",
       desc: "Find package options, initial free visibility audits, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.",
       href: "/services/aeo/costs-timing",
-      tagline: "Let's talk about cost in plain English."
+      hook: "Explore blueprint pricing"
     }
   ];
 
@@ -299,19 +299,43 @@ export default function AEORootPage() {
           {/* SECTION 5 — Featured Articles (L3 pages) */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-xl font-bold">Featured Articles</h2>
-            <div className="flex flex-col gap-4">
+            <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {featuredArticles.map((article, idx) => (
                 <Link
                   key={idx}
                   href={article.href}
-                  className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between items-start gap-3 group"
+                  className="w-[280px] sm:w-[320px] bg-white text-black rounded-2xl overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 flex-shrink-0 snap-start shadow-xl border border-neutral-200 group"
                 >
-                  <div className="w-full flex justify-between items-center">
-                    <span className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">{article.title}</span>
-                    <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-aeo-cyan group-hover:translate-x-0.5 transition-all" />
+                  <div>
+                    {/* Image Insert */}
+                    <div className="h-40 w-full relative bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center overflow-hidden border-b border-neutral-100">
+                      {/* Decorative abstract mesh shapes to feel high-end */}
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.15),transparent_60%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(147,51,234,0.15),transparent_60%)]" />
+                      <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-aeo-cyan/10 rounded-full blur-xl" />
+                      <div className="absolute -top-6 -left-6 w-24 h-24 bg-aeo-purple/10 rounded-full blur-xl" />
+                      
+                      <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase border border-neutral-200/60 rounded px-2.5 py-1 bg-white/80 shadow-sm backdrop-blur-sm">
+                        AEObility Article
+                      </span>
+                    </div>
+
+                    <div className="p-5 space-y-3">
+                      <h3 className="text-base font-bold text-neutral-900 leading-snug group-hover:text-aeo-cyan transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="text-xs text-neutral-500 leading-relaxed font-light">
+                        {article.desc}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-white/60 font-light leading-relaxed">{article.desc}</p>
-                  <span className="text-[10px] text-aeo-cyan/70 font-semibold uppercase tracking-wider font-mono">{article.tagline}</span>
+
+                  <div className="p-5 pt-0">
+                    <div className="text-[11px] font-bold text-aeo-cyan uppercase tracking-wider font-mono border-t border-neutral-100 pt-4 flex justify-between items-center w-full">
+                      <span>{article.hook}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-aeo-cyan group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>
