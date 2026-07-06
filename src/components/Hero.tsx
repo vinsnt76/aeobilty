@@ -152,8 +152,8 @@ export default function Hero() {
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
                 Get Found.<br />
-                Get Chosen.<br />
-                <span className="text-gradient-aeo">Grow Faster.</span>
+                Get <span className="text-aeo-cyan font-normal">[</span>Chosen<span className="text-aeo-cyan font-normal">]</span>.<br />
+                Grow Faster.
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
