@@ -294,7 +294,7 @@ export default function AEORootPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {workflowSteps.map((step, idx) => (
                 <div key={idx} className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl relative">
-                  <span className="absolute top-4 right-6 text-2xl font-mono font-bold text-white/10">{step.step}</span>
+                  <span className="absolute top-4 right-6 text-2xl font-mono font-bold text-aeo-purple/30">{step.step}</span>
                   <h3 className="text-sm font-bold text-white mb-2">{step.name}</h3>
                   <p className="text-xs text-white/60 leading-relaxed font-light">{step.desc}</p>
                 </div>
@@ -324,7 +324,7 @@ export default function AEORootPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                       
-                      <span className="absolute top-3 left-3 text-[9px] font-mono tracking-widest text-neutral-400 uppercase border border-neutral-200/60 rounded px-2 py-0.5 bg-white/80 shadow-sm backdrop-blur-sm z-10">
+                      <span className="absolute top-3 left-3 text-[9px] font-mono tracking-widest text-aeo-purple uppercase border border-neutral-200/60 rounded px-2 py-0.5 bg-white/80 shadow-sm backdrop-blur-sm z-10">
                         AEObility Article
                       </span>
                     </div>
@@ -340,9 +340,9 @@ export default function AEORootPage() {
                   </div>
 
                   <div className="p-5 pt-0">
-                    <div className="text-[11px] font-bold text-aeo-cyan uppercase tracking-wider font-mono border-t border-neutral-100 pt-4 flex justify-between items-center w-full">
+                    <div className="text-[11px] font-bold text-aeo-purple uppercase tracking-wider font-mono border-t border-neutral-100 pt-4 flex justify-between items-center w-full">
                       <span>{article.hook}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-aeo-cyan group-hover:translate-x-0.5 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 text-aeo-purple group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
                 </Link>
