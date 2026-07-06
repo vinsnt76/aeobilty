@@ -61,19 +61,22 @@ export default function ServicesPage() {
       title: "Answer Engine Optimisation (AEO)",
       tagline: "Be the answer LLMs retrieve.",
       desc: "Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
-      bullets: ["Structured schema markup", "Neural vector alignment", "Semantic question architecture"]
+      bullets: ["Structured schema markup", "Neural vector alignment", "Semantic question architecture"],
+      href: "/services/aeo"
     },
     {
       title: "Local & GEO Map Marketing",
       tagline: "Put your business on the map.",
       desc: "Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries in Perth and across Australia.",
-      bullets: ["Optimised pins & citations", "GBP profile authority", "Local entity link building"]
+      bullets: ["Optimised pins & citations", "GBP profile authority", "Local entity link building"],
+      href: "/services/geo-marketing"
     },
     {
       title: "AI Search Strategy",
       tagline: "Own the conversational search corridors.",
       desc: "Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
-      bullets: ["Intent-to-product mapping", "LLM indexing checks", "Competitor gap analysis"]
+      bullets: ["Intent-to-product mapping", "LLM indexing checks", "Competitor gap analysis"],
+      href: "/services/ai-search-marketing"
     }
   ];
 
@@ -139,9 +142,16 @@ export default function ServicesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {layers.map((layer, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between">
+                <Link
+                  key={idx}
+                  href={layer.href}
+                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between group cursor-pointer"
+                >
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-white">{layer.title}</h3>
+                    <div className="flex justify-between items-start gap-2">
+                      <h3 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors">{layer.title}</h3>
+                      <ArrowRight className="w-5 h-5 text-white/25 group-hover:text-aeo-cyan group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                    </div>
                     <p className="text-xs text-aeo-cyan font-medium uppercase tracking-wider">{layer.tagline}</p>
                     <p className="text-sm text-white/60 font-light leading-relaxed">{layer.desc}</p>
                   </div>
@@ -153,7 +163,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Link>
               ))}
             </div>
           </section>

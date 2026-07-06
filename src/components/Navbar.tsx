@@ -44,7 +44,9 @@ export default function Navbar() {
       href: '/services',
       dropdownItems: [
         { name: 'Services Overview', href: '/services' },
-        { name: 'AEO', href: '/services/aeo' }
+        { name: 'AEO', href: '/services/aeo' },
+        { name: 'AI Search Marketing', href: '/services/ai-search-marketing' },
+        { name: 'Local & GEO Map Marketing', href: '/services/geo-marketing' }
       ]
     },
     { name: 'AEO Packages', href: '/solutions' },
