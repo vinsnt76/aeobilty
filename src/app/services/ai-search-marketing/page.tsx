@@ -26,6 +26,12 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au"
+      },
+      {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/ai-search-marketing#service",
         "name": "AI Search Marketing",
@@ -35,10 +41,7 @@ export default function AISearchMarketingPage() {
           "name": "Australia"
         },
         "provider": {
-          "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     ]

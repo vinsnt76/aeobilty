@@ -26,6 +26,12 @@ export default function GEOMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au"
+      },
+      {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/geo-marketing#service",
         "name": "GEO Marketing",
@@ -35,10 +41,7 @@ export default function GEOMarketingPage() {
           "name": "Australia"
         },
         "provider": {
-          "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     ]

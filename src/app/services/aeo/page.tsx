@@ -19,15 +19,18 @@ export default function AEORootPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au"
+      },
+      {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/aeo#service",
         "name": "Answer Engine Optimisation (AEO) Services",
         "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and retrieval-augmented generation (RAG) systems.",
         "provider": {
-          "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     ]
