@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar } from 'lucide-react';
 
 export default function HowItWorks() {
@@ -9,6 +9,47 @@ export default function HowItWorks() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [started, setStarted] = useState(false);
+
+  const formRef = useRef<HTMLDivElement>(null);
+
+  // 1. audit_form_view - Triggered when the audit form becomes visible in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (typeof window !== 'undefined' && (window as any).dataLayer) {
+            (window as any).dataLayer.push({
+              event: 'audit_form_view',
+              form_id: 'audit',
+              page: window.location.pathname
+            });
+          }
+          observer.disconnect(); // Track once per page load
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (formRef.current) {
+      observer.observe(formRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  // 2. audit_form_start - Triggered once when the user begins typing in any field
+  const handleFieldStart = (fieldName: string) => {
+    if (!started) {
+      setStarted(true);
+      if (typeof window !== 'undefined' && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: 'audit_form_start',
+          form_id: 'audit',
+          field_started: fieldName
+        });
+      }
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +68,28 @@ export default function HowItWorks() {
       const data = await res.json();
       if (data.ok) {
         setSubmitted(true);
+
+        // 3. audit_form_submit - Triggered on successful form submission
+        let emailDomain = '';
+        if (email.includes('@')) {
+          emailDomain = email.split('@')[1];
+        }
+        let websiteDomain = '';
+        try {
+          const parsedUrl = new URL(url.startsWith('http') ? url : `https://${url}`);
+          websiteDomain = parsedUrl.hostname.replace('www.', '');
+        } catch {
+          websiteDomain = url.replace('www.', '');
+        }
+
+        if (typeof window !== 'undefined' && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'audit_form_submit',
+            form_id: 'audit',
+            email_domain: emailDomain,
+            website_domain: websiteDomain
+          });
+        }
       } else {
         setError(data.error || 'Failed to submit audit request.');
       }
@@ -131,7 +194,7 @@ export default function HowItWorks() {
           </div>
 
           {/* Form Card */}
-          <div id="audit-form" className="lg:col-span-5 bg-white p-8 rounded-2xl border border-neutral-200/80 shadow-xl relative overflow-hidden">
+          <div id="audit-form" ref={formRef} className="lg:col-span-5 bg-white p-8 rounded-2xl border border-neutral-200/80 shadow-xl relative overflow-hidden">
             {/* Top decorative stripe */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple"></div>
 
@@ -170,6 +233,7 @@ export default function HowItWorks() {
                 <button
                   onClick={() => {
                     setSubmitted(false);
+                    setStarted(false);
                     setUrl('');
                     setEmail('');
                   }}
@@ -199,7 +263,10 @@ export default function HowItWorks() {
                         required
                         placeholder="https://example.com.au"
                         value={url}
-                        onChange={(e) => setUrl(e.target.value)}
+                        onChange={(e) => {
+                          setUrl(e.target.value);
+                          handleFieldStart('website');
+                        }}
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                       />
                     </div>
@@ -216,7 +283,10 @@ export default function HowItWorks() {
                         required
                         placeholder="you@company.com.au"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          handleFieldStart('email');
+                        }}
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                       />
                     </div>
