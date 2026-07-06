@@ -189,24 +189,39 @@ export default function SolutionsPage() {
         "Vector indexing compatibility check",
         "100% credit back if you stay with us"
       ],
-      cta: "Claim Strategic Blueprint",
-      href: "/#audit-form",
+      cta: "Explore Blueprint Solution",
+      href: "/solutions/aeo-blueprint",
       highlighted: false
     },
     {
-      name: "Full AEO Implementation Plan",
-      price: "$2,495 AUD / mo",
-      description: "Complete execution, deployment, and management of your brand entity profile across all conversational search engines.",
+      name: "AEO Technical Sprints",
+      price: "Execution Sprints",
+      description: "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
       features: [
-        "Full schema markup deployment",
-        "Weekly vector indexing checks",
-        "AI-optimised content generation",
-        "Google & Apple Maps pin sync",
+        "JSON-LD graph nesting",
+        "HTML refactoring rules",
+        "Passage level extraction setup",
+        "Token optimization passes",
         "No locked-in commitments"
       ],
-      cta: "Secure Partner Slot",
-      href: "/contact",
+      cta: "Explore AEO Sprints",
+      href: "/solutions/aeo-sprint",
       highlighted: true
+    },
+    {
+      name: "GEO Services Sprint",
+      price: "Location Domination",
+      description: "Deploy location-aware optimization rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
+      features: [
+        "Coordinate precision mapping",
+        "Verified map pack foundations",
+        "Regional intent frameworks",
+        "Proximity signal validation",
+        "No contracts, no locking"
+      ],
+      cta: "Explore GEO Sprints",
+      href: "/solutions/geo-services",
+      highlighted: false
     }
   ];
 
@@ -262,7 +277,7 @@ export default function SolutionsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {packages.map((pkg, idx) => (
                 <div 
                   key={idx}
