@@ -150,10 +150,21 @@ export default function AEOBlueprintPage() {
             </div>
           </div>
 
-          {/* Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((pillar, idx) => (
               <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors">
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Product",
+                      "name": pillar.title,
+                      "description": pillar.desc,
+                      "category": "Strategic Blueprint Pillar"
+                    })
+                  }}
+                />
                 <div className="p-2.5 bg-white/5 rounded-xl w-fit">
                   <Sparkles className="w-5 h-5 text-aeo-cyan" />
                 </div>
