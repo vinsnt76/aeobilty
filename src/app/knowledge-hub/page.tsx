@@ -47,6 +47,27 @@ export default function KnowledgeHubPage() {
     ]
   };
 
+  const articles = [
+    {
+      name: "Answer Engine Optimization Core Principles",
+      href: "/knowledge-hub/aeo",
+      description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
+      icon: <GraduationCap className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "AI Semantic SEO & Entity-Based Layout Frameworks",
+      href: "/knowledge-hub/semantic-seo",
+      description: "Transition from legacy keyword strings to relational topic graphs. Learn to map RDF triples and build contextual entity salience.",
+      icon: <Compass className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "GEO and SEO: Local Discovery Matrix",
+      href: "/knowledge-hub/geo",
+      description: "Advanced techniques balancing localized map rankings and systemic generative visibility rules without focus dilution.",
+      icon: <BookOpenCheck className="w-5 h-5 text-aeo-cyan" />
+    }
+  ];
+
   const guides = [
     {
       name: "What is AEO and why does it matter?",
@@ -159,6 +180,40 @@ export default function KnowledgeHubPage() {
                     <p className="text-sm text-white/60 font-light leading-relaxed">
                       {item.description}
                     </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* Advanced Knowledge Nodes */}
+          <section className="space-y-12 border-t border-white/5 pt-16">
+            <div className="text-center max-w-2xl mx-auto space-y-4">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Advanced Knowledge Nodes</h2>
+              <p className="text-white/60 font-light leading-relaxed">
+                Relational search layouts and coordinate matrices to map local brands to AI intent dimensions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+              {articles.map((item, idx) => (
+                <Link 
+                  key={idx}
+                  href={item.href}
+                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 hover:bg-white/[0.04] transition-all flex flex-col justify-between group h-full"
+                >
+                  <div className="space-y-4">
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex-shrink-0 w-fit">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white group-hover:text-aeo-cyan transition-colors">{item.name}</h3>
+                    <p className="text-sm text-white/60 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 flex justify-between items-center text-xs font-semibold text-aeo-cyan">
+                    <span>Read Node Article</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
               ))}
