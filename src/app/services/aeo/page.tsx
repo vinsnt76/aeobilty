@@ -228,12 +228,12 @@ export default function AEORootPage() {
           </div>
 
           {/* SECTION 2 — Atomic Answer Block (Keep for IA/SLM) */}
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-            <p className="text-xs text-white/50 uppercase tracking-wider font-semibold mb-2 font-mono">Atomic Answer Block</p>
+          <section className="atomic-answer-block p-6 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
+            <p className="text-xs text-white/50 uppercase tracking-wider font-semibold mb-2 font-mono">WHAT IS ANSWER ENGINE OPTIMISATION (AEO)?</p>
             <p className="text-sm text-white/80 leading-relaxed font-light">
-              Answer Engine Optimisation (AEO) is a content architecture service that restructures and formats digital assets so vector-based AI retrieval models (like Perplexity, ChatGPT, and Gemini) can reliably parse, understand, and cite your local brand recommendations.
+              Answer Engine Optimisation (AEO) is a method for structuring your digital content so AI search systems can read it accurately. It helps engines like Perplexity, ChatGPT and Google Gemini interpret your information, classify your services correctly, and retrieve your brand as a relevant local recommendation.
             </p>
-          </div>
+          </section>
 
           {/* SECTION 3 — What You Get (Service Modules) */}
           <div className="space-y-6">
