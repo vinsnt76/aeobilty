@@ -1,34 +1,34 @@
-'use client';
+"use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (isOpen) {
-      setIsMobileSubmenuOpen(false);
+      setOpenMobileSubmenu(null);
     }
   };
 
-  const toggleMobileSubmenu = (e: React.MouseEvent) => {
+  const handleMobileSubmenuToggle = (name: string, e: React.MouseEvent) => {
     e.preventDefault();
-    setIsMobileSubmenuOpen(!isMobileSubmenuOpen);
+    setOpenMobileSubmenu(openMobileSubmenu === name ? null : name);
   };
 
   // Close dropdown on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+        setActiveDropdown(null);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -49,8 +49,26 @@ export default function Navbar() {
         { name: 'Local & GEO Map Marketing', href: '/services/geo-marketing' }
       ]
     },
-    { name: 'AEO Packages', href: '/solutions' },
-    { name: 'Knowledge Hub', href: '/knowledge-hub' },
+    {
+      name: 'AEO Packages',
+      href: '/solutions',
+      dropdownItems: [
+        { name: 'Solutions Overview', href: '/solutions' },
+        { name: 'The AEObility Blueprint', href: '/solutions/aeo-blueprint' },
+        { name: 'AEO Sprints', href: '/solutions/aeo-sprint' },
+        { name: 'GEO Services Sprint', href: '/solutions/geo-services' }
+      ]
+    },
+    {
+      name: 'Knowledge Hub',
+      href: '/knowledge-hub',
+      dropdownItems: [
+        { name: 'Hub Overview', href: '/knowledge-hub' },
+        { name: 'AEO Core Principles', href: '/knowledge-hub/aeo' },
+        { name: 'AI Semantic SEO', href: '/knowledge-hub/semantic-seo' },
+        { name: 'GEO & SEO Local Matrix', href: '/knowledge-hub/geo' }
+      ]
+    },
     { name: 'About Us', href: '/about' },
     { name: 'Contact & Support', href: '/contact' },
   ];
@@ -103,17 +121,17 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu links */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/75">
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/75" ref={dropdownRef}>
             {navLinks.map((link) => {
               if (link.dropdownItems) {
                 const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
+                const isCurrentDropdownOpen = activeDropdown === link.name;
                 return (
                   <div
                     key={link.name}
-                    ref={dropdownRef}
                     className="relative group"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
+                    onMouseEnter={() => setActiveDropdown(link.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <Link
                       href={link.href}
@@ -122,13 +140,13 @@ export default function Navbar() {
                       }`}
                     >
                       <span>{link.name}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrentDropdownOpen ? 'rotate-180' : ''}`} />
                     </Link>
 
                     {/* Dropdown Menu */}
                     <div
                       className={`absolute left-0 mt-1 w-64 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
-                        isDropdownOpen
+                        isCurrentDropdownOpen
                           ? 'opacity-100 scale-100 translate-y-0 visible'
                           : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
                       }`}
@@ -139,7 +157,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            onClick={() => setIsDropdownOpen(false)}
+                            onClick={() => setActiveDropdown(null)}
                             className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
                               isSubActive
                                 ? 'bg-aeo-cyan/10 text-aeo-cyan'
@@ -200,20 +218,21 @@ export default function Navbar() {
             {navLinks.map((link) => {
               if (link.dropdownItems) {
                 const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href);
+                const isMobileSubMenuOpen = openMobileSubmenu === link.name;
                 return (
                   <div key={link.name} className="w-full flex flex-col items-center">
                     <button
-                      onClick={toggleMobileSubmenu}
+                      onClick={(e) => handleMobileSubmenuToggle(link.name, e)}
                       className={`flex items-center gap-1.5 py-2 hover:text-aeo-purple transition-all duration-200 text-lg ${
                         isAnySubActive ? 'text-aeo-purple' : 'text-black'
                       }`}
                     >
                       <span>{link.name}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileSubmenuOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileSubMenuOpen ? 'rotate-180' : ''}`} />
                     </button>
                     
                     {/* Collapsible Accordion items */}
-                    {isMobileSubmenuOpen && (
+                    {isMobileSubMenuOpen && (
                       <div className="flex flex-col items-center gap-3 mt-2 bg-black/[0.03] border border-black/5 rounded-xl py-3 px-4 w-full max-w-xs transition-all duration-300">
                         {link.dropdownItems.map((subItem) => {
                           const isSubActive = pathname === subItem.href;
@@ -263,4 +282,3 @@ export default function Navbar() {
     </>
   );
 }
-
