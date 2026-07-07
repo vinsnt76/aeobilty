@@ -209,11 +209,10 @@ export default function AEOSprintPage() {
             </p>
             <div className="flex justify-center gap-3">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all"
+                href="/book"
+                className="btn-primary"
               >
-                <span>Book a Technical Call</span>
-                <ArrowRight className="w-4 h-4" />
+                Book a Call
               </Link>
             </div>
           </div>

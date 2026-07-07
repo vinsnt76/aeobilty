@@ -221,11 +221,10 @@ export default function AEORootPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/contact"
-                className="px-5 py-3 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-100 transition-all flex items-center gap-1.5"
+                href="/book"
+                className="btn-primary"
               >
-                Book a Clarity Call
-                <ArrowRight className="w-3.5 h-3.5" />
+                Book a Call
               </Link>
               <Link
                 href="/solutions"

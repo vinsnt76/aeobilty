@@ -38,7 +38,6 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Homepage', href: '/' },
     {
       name: 'AEO Services',
       href: '/services',
@@ -188,8 +187,14 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/book"
+              className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-aeo-cyan text-black rounded-full hover:bg-white transition-all shadow-[0_0_12px_rgba(0,240,255,0.2)]"
+            >
+              Book a Call
+            </Link>
             <Link
               href="/#audit-form"
               className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase border border-aeo-cyan/35 text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black hover:border-aeo-cyan transition-all"
@@ -269,13 +274,36 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link
-              href="/#audit-form"
-              onClick={() => setIsOpen(false)}
-              className="mt-4 px-8 py-3.5 text-sm font-bold tracking-wider uppercase bg-black border border-aeo-cyan text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black transition-all"
-            >
-              Get Free Audit
-            </Link>
+            {/* Discovery Strategy Call Section */}
+            <div className="w-full border-t border-neutral-100 pt-6 mt-4 flex flex-col gap-3 items-center">
+              <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1">
+                Discovery & Strategy
+              </span>
+              
+              <Link
+                href="/book"
+                onClick={() => setIsOpen(false)}
+                className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold bg-aeo-purple text-white rounded-xl hover:bg-opacity-90 transition-all shadow-md"
+              >
+                Book a Call
+              </Link>
+              
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold border border-neutral-200 text-neutral-800 rounded-xl hover:bg-neutral-50 transition-all"
+              >
+                Contact Page
+              </Link>
+              
+              <Link
+                href="/#audit-form"
+                onClick={() => setIsOpen(false)}
+                className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold bg-black border border-aeo-cyan text-aeo-cyan rounded-xl hover:bg-aeo-cyan hover:text-black transition-all"
+              >
+                Get Free Audit
+              </Link>
+            </div>
           </div>
         </div>
       )}

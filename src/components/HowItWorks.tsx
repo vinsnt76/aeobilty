@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HowItWorks() {
   const [url, setUrl] = useState('');
@@ -168,15 +169,9 @@ export default function HowItWorks() {
                   Book a complimentary 15‑minute call using our Google Calendar link, or call us directly on **0480 286 282**.
                 </p>
                 <div className="flex flex-wrap gap-3 pt-1">
-                  <a
-                    href="https://calendar.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-xs font-semibold rounded-lg hover:bg-neutral-800 transition-all shadow-sm"
-                  >
-                    <Calendar className="w-3.5 h-3.5" />
+                  <Link href="/book" className="btn-primary">
                     Book a Call
-                  </a>
+                  </Link>
                   <a
                     href="tel:0480286282"
                     className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 bg-white text-neutral-800 text-xs font-semibold rounded-lg hover:bg-neutral-50 transition-all shadow-sm"
@@ -220,15 +215,9 @@ export default function HowItWorks() {
                 <div className="pt-4 border-t border-neutral-100 mt-4 space-y-3">
                   <p className="text-xs text-neutral-500">Next step: Book your complimentary call.</p>
                   <div className="flex flex-col gap-2">
-                    <a
-                      href="https://calendar.google.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-3 bg-aeo-purple text-white text-sm font-semibold rounded-xl hover:bg-opacity-90 transition-all"
-                    >
-                      <Calendar className="w-4 h-4" />
+                    <Link href="/book" className="btn-primary w-full text-center">
                       Book a Call
-                    </a>
+                    </Link>
                     <a
                       href="tel:0480286282"
                       className="flex items-center justify-center gap-2 py-3 border border-neutral-200 text-neutral-800 text-sm font-semibold rounded-xl hover:bg-neutral-50 transition-all"
