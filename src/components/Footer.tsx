@@ -1,63 +1,216 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setLoading(true);
+    
+    // Simulate API registration
+    setTimeout(() => {
+      setLoading(false);
+      setSubscribed(true);
+      setEmail('');
+    }, 1000);
+  };
+
   return (
-    <footer className="py-12 bg-black border-t border-white/5 text-white/40">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Brand Logo / Text */}
-        <div className="flex items-center gap-2">
-          <svg
-            className="w-6 h-6 text-aeo-cyan"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16 2L2 10L16 18L30 10L16 2Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M2 22L16 30L30 22"
-              stroke="#bd00ff"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="text-sm font-semibold tracking-wider text-white">
-            AEO<span className="text-aeo-cyan font-light">bility</span>
-          </span>
+    <footer className="bg-black border-t border-white/5 text-white/50 py-16 font-sans">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+        
+        {/* Brand & Social Column */}
+        <div className="md:col-span-4 space-y-6">
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-6 h-6 text-aeo-cyan"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 2L2 10L16 18L30 10L16 2Z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M2 22L16 30L30 22"
+                stroke="#bd00ff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="text-base font-bold tracking-wider text-white">
+              AEO<span className="text-aeo-cyan font-light">bility</span>
+            </span>
+          </div>
+          
+          <p className="text-xs text-white/40 leading-relaxed font-light font-serif max-w-sm">
+            Optimising Australian small businesses for the future of search. Discoverable, understandable, and recommended across maps, search, and generative AI corridors.
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-4 pt-2">
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/133445734/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-aeo-cyan transition-colors"
+              aria-label="LinkedIn"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/aeo.bility/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-aeo-cyan transition-colors"
+              aria-label="Instagram"
+            >
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61591781069830"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-aeo-cyan transition-colors"
+              aria-label="Facebook"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8v-6.9H7.5v-2.9H10V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.24 0-1.63.77-1.63 1.56v1.8h2.7l-.43 2.9H13v6.9c4.56-.93 8-4.96 8-9.8z"/>
+              </svg>
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-aeo-cyan transition-colors"
+              aria-label="YouTube"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.163c-.272-1.016-1.07-1.815-2.085-2.087-1.839-.496-9.213-.496-9.213-.496s-7.373 0-9.213.496c-1.016.272-1.813 1.07-2.086 2.087-.496 1.839-.496 5.673-.496 5.673s0 3.834.496 5.673c.273 1.016 1.07 1.815 2.086 2.086 1.84.497 9.213.497 9.213.497s7.374 0 9.213-.497c1.016-.271 1.813-1.07 2.086-2.086.496-1.839.496-5.673.496-5.673s0-3.834-.496-5.673zm-14.28 9.387v-7.103l6.23 3.557-6.23 3.546z"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        {/* Links */}
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-xs font-medium">
-          <a href="#how-it-works" className="hover:text-white transition-colors">
-            How It Works
-          </a>
-          <a href="#blueprint" className="hover:text-white transition-colors">
-            Blueprint
-          </a>
-          <a href="#usp" className="hover:text-white transition-colors">
-            USP
-          </a>
-          <a href="#audit-form" className="hover:text-white transition-colors">
-            Contact
-          </a>
-          <Link href="/privacy" className="hover:text-white transition-colors">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="hover:text-white transition-colors">
-            Terms & Conditions
-          </Link>
+        {/* Quick Links Column */}
+        <div className="md:col-span-2 space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white">Services</h4>
+          <ul className="space-y-2 text-xs font-medium">
+            <li>
+              <Link href="/services/aeo" className="hover:text-white transition-colors">
+                Answer Optimisation
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/ai-search-marketing" className="hover:text-white transition-colors">
+                AI Search Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/geo-marketing" className="hover:text-white transition-colors">
+                GEO Map Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/solutions" className="hover:text-white transition-colors">
+                Overview & Sprints
+              </Link>
+            </li>
+          </ul>
         </div>
 
-        {/* Copyright */}
-        <div className="text-[10px] text-white/30 font-light">
+        {/* Helpful Info Column */}
+        <div className="md:col-span-2 space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white">Helpful Info</h4>
+          <ul className="space-y-2 text-xs font-medium">
+            <li>
+              <Link href="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link href="/support" className="hover:text-white transition-colors">
+                Support & Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-white transition-colors">
+                About Our Team
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Newsletter Signup Column */}
+        <div className="md:col-span-4 space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white">Stay Ahead</h4>
+          <p className="text-xs text-white/40 leading-relaxed font-light font-serif">
+            Subscribe to receive actionable AEO insights, entity mapping updates, and visibility recommendations.
+          </p>
+          
+          {subscribed ? (
+            <div className="text-xs text-emerald-400 font-semibold bg-emerald-500/5 border border-emerald-500/10 rounded-xl p-3">
+              Thanks for subscribing! Check your inbox soon.
+            </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="flex gap-2">
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-grow px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-all"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-4 py-2.5 bg-aeo-cyan hover:bg-white text-black font-semibold rounded-xl text-xs transition-all disabled:opacity-50 shrink-0"
+              >
+                {loading ? '...' : 'Subscribe'}
+              </button>
+            </form>
+          )}
+        </div>
+
+      </div>
+
+      {/* Copyright row */}
+      <div className="max-w-6xl mx-auto px-6 border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-white/30 font-light">
+        <div>
           © {new Date().getFullYear()} AEObility. All rights reserved.
+        </div>
+        <div>
+          Built for Australian local entities.
         </div>
       </div>
     </footer>

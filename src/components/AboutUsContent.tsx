@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Compass, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Compass, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 function TransitionFlowChart() {
   const steps = [
@@ -66,42 +66,78 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* Eliminating Costly Agency Complexity */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center border-t border-white/5 pt-12">
-        <div className="md:col-span-4 flex justify-center order-2 md:order-1">
-          <div className="relative w-48 h-48 rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
+      {/* Restructured Founder Section */}
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start border-t border-white/5 pt-12">
+        <div className="md:col-span-4 flex justify-center md:justify-start order-2 md:order-1">
+          <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-lg">
             <Image
               src="/Profile-Picture-Vinnie.png"
-              alt="Portrait layout frame highlighting official developer certifications and workspace tokens"
+              alt="Vinnie Baker — Founder of AEObility"
               fill
               priority
               className="object-cover"
-              sizes="192px"
+              sizes="(max-width: 768px) 100vw, 280px"
             />
           </div>
         </div>
-        <div className="md:col-span-8 order-1 md:order-2 space-y-4">
-          <h2 className="text-2xl font-bold text-white font-soehne-breit">Eliminating Costly Agency Complexity</h2>
-          <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
-            As jargon-free optimization specialists, we focus on what works. We eliminate convoluted reports and hidden retainers. Instead, we offer a transparent sprint blueprint method that provides professional framework proof to verify results.
-          </p>
-          <ul className="space-y-2 text-xs text-white/60 font-light">
-            <li className="flex gap-2 items-center">
-              <Compass className="w-4 h-4 text-aeo-cyan" />
-              <span>Direct corporate entity verification</span>
-            </li>
-            <li className="flex gap-2 items-center">
-              <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
-              <span>Custom RAG ingestion blueprints</span>
-            </li>
-          </ul>
-          <Link
-            href="/vince-baker"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-aeo-cyan hover:underline mt-2"
-          >
-            <span>View Vince&apos;s Digital Business Card</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+        
+        <div className="md:col-span-8 order-1 md:order-2 space-y-5">
+          <div>
+            <h2 className="text-3xl font-bold text-white font-soehne-breit">Vinnie Baker</h2>
+            <p className="text-sm font-semibold text-aeo-cyan">Founder & Principal Consultant</p>
+          </div>
+
+          <blockquote className="border-l-2 border-aeo-purple pl-4 my-4">
+            <p className="text-sm md:text-base text-white/80 italic font-serif leading-relaxed">
+              &ldquo;The internet is changing. I founded AEObility to ensure Australian small and medium businesses are found inside AI answers—not lost behind their competitors.&rdquo;
+            </p>
+          </blockquote>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white font-soehne-breit">About Vinnie</h3>
+            <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
+              Vinnie bridges the critical gap between traditional SEO and the new era of AI-driven search. With over 15 years of commercial and sales development experience, he designs scalable data strategies that ensure local brands are understood, trusted, and confidently recommended by generative AI platforms like ChatGPT, Gemini, and Perplexity.
+            </p>
+            <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
+              As the driving force behind AEObility&apos;s frameworks, Vinnie works directly with WA business owners to turn complex web data into clear, machine-readable assets, securing their visibility in the future of search.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white/50 font-sans">Core Expertise:</h4>
+            <ul className="grid grid-cols-1 gap-2 text-xs text-white/70 font-light font-sans">
+              <li className="flex gap-2 items-start">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>Answer Engine Optimisation (AEO) & Generative Engine Optimisation (GEO)</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>Structured Data Architectures (JSON / JSON-LD Schema Markup)</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>AI Search Visibility Strategies & Entity Brand Mapping</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>B2B Sales Integration & Strategic Partnerships</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="pt-2">
+            <a
+              href="https://www.linkedin.com/in/vince-baker/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-aeo-cyan hover:underline hover:text-white transition-colors"
+            >
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>Connect with Vinnie Baker on LinkedIn</span>
+            </a>
+          </div>
         </div>
       </section>
 

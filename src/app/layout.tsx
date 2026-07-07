@@ -69,6 +69,41 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Global Entity Schema */}
+        <script
+          id="global-brand-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://aeobility.com.au/#organization",
+                  "name": "AEObility",
+                  "url": "https://aeobility.com.au",
+                  "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+                  "sameAs": [
+                    "https://www.linkedin.com/company/aeobility"
+                  ]
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://aeobility.com.au/#person",
+                  "name": "Vince Baker",
+                  "jobTitle": "Founder & AEO Specialist",
+                  "url": "https://aeobility.com.au/vince-baker",
+                  "sameAs": [
+                    "https://www.linkedin.com/in/vince-baker/"
+                  ],
+                  "worksFor": {
+                    "@id": "https://aeobility.com.au/#organization"
+                  }
+                }
+              ]
+            })
+          }}
+        />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

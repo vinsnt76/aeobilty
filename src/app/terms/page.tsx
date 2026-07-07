@@ -56,7 +56,7 @@ export default function TermsAndConditions() {
             If you have any questions regarding these terms, please contact us:
           </p>
           <p className="font-semibold text-aeo-cyan">
-            Email: legal@aeobility.com.au
+            Email: support@aeobility.com.au
           </p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function AboutPage() {
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
     "founder": {
       "@type": "Person",
-      "name": "Vince Baker",
+      "name": "Vinnie Baker",
       "jobTitle": "Founder & AEO Specialist",
       "url": "https://aeobility.com.au/vince-baker",
       "sameAs": [
@@ -59,7 +59,7 @@ export default function AboutPage() {
     },
     "founder": {
       "@type": "Person",
-      "name": "Vince Baker",
+      "name": "Vinnie Baker",
       "jobTitle": "Founder & AEO Specialist",
       "url": "https://aeobility.com.au/vince-baker",
       "sameAs": [
@@ -67,6 +67,21 @@ export default function AboutPage() {
         "https://www.reddit.com/user/Bluebird-Flat/"
       ]
     }
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vinnie Baker",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/vince-baker/"
+    ]
   };
 
   return (
@@ -81,6 +96,11 @@ export default function AboutPage() {
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
+      <script
+        id="person-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
       <Navbar />

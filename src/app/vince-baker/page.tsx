@@ -21,8 +21,8 @@ export default function VinceBakerPage() {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'Vince Baker - AEObility',
-      text: 'Vince Baker - Founder, AEO & AI Automation Specialist',
+      title: 'Vinnie Baker - AEObility',
+      text: 'Vinnie Baker - Founder, AEO & AI Automation Specialist',
       url: window.location.href,
     };
 
@@ -48,11 +48,32 @@ export default function VinceBakerPage() {
 
   return (
     <main className="card-page-container">
+      {/* Hidden Entity Schema */}
+      <script
+        id="vince-baker-person-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Vinnie Baker",
+            "jobTitle": "Founder",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "AEObility",
+              "url": "https://aeobility.com.au"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/vince-baker/"
+            ]
+          })
+        }}
+      />
       <div className="card-container">
         <div className="card-image">
           <Image
             src="/Profile-Picture-Vinnie.png"
-            alt="Vince Baker"
+            alt="Vinnie Baker"
             width={320}
             height={320}
             priority
@@ -60,14 +81,25 @@ export default function VinceBakerPage() {
           />
         </div>
         <div className="card-description">
-          <h1>Vince Baker</h1>
+          <h1>Vinnie Baker</h1>
           <h2>Founder, AEO & AI Automation Specialist</h2>
           
           <div className="card-about">
-            <span className="greeting">Hi there! I&apos;m Vince</span>
+            <span className="greeting">Hi there! I&apos;m Vinnie</span>
             <p className="value-statement">
               I help Australian small businesses get found and chosen across Search, Maps, and AI platforms. With a focus on AI Search Optimisation (AEO), local SEO, and practical AI automation, I help brands build visible, trustworthy digital footprints.
             </p>
+            <div className="linkedin-follow-link" style={{ marginTop: '1rem' }}>
+              <a
+                href="https://www.linkedin.com/in/vince-baker/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkedin-link-text"
+                style={{ color: '#00f0ff', fontSize: '0.85rem', fontWeight: '600', textDecoration: 'underline' }}
+              >
+                Connect with Vinnie Baker on LinkedIn
+              </a>
+            </div>
           </div>
           
           <div className="icons">
