@@ -30,13 +30,13 @@ export default function USPGrid() {
     },
     {
       icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
-      title: 'Get Consistent Inquiries',
-      description: 'No more relying on outdated tricks. We construct a clear, understandable digital presence that turns online searches into real customer inquiries.',
+      title: 'Get Consistent Enquiries',
+      description: 'No more relying on outdated tricks. We construct a clear, understandable digital presence that turns online searches into real customer enquiries.',
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
       title: 'Straight to Your Inbox',
-      description: 'We focus on real outcomes. Receive direct phone calls, email inquiries, and booking requests straight to your day-to-day business pipeline.',
+      description: 'We focus on real outcomes. Receive direct phone calls, email enquiries, and booking requests straight to your day-to-day business pipeline.',
     },
   ];
 
