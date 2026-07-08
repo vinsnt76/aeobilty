@@ -115,7 +115,7 @@ export default function Home() {
       "https://aeobility.com.au/aeobility-video-explainer-thubnail_1.1.2.png"
     ],
     "uploadDate": "2026-07-05T00:00:00+08:00",
-    "contentUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/view?usp=sharing",
+    "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
     "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview"
   };
 

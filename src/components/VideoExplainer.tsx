@@ -1,11 +1,6 @@
-"use client";
-
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Play } from 'lucide-react';
+import React from 'react';
 
 export default function VideoExplainer() {
-  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <section id="explainer-video" className="py-20 bg-black relative border-t border-white/5">
@@ -31,36 +26,16 @@ export default function VideoExplainer() {
         </div>
 
         {/* Video Player Container */}
-        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,240,255,0.05)] group cursor-pointer">
-          {isPlaying ? (
-            <iframe
-              src="https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview?autoplay=1"
-              className="absolute inset-0 w-full h-full"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Our Approach to Answer Engine Search"
-            ></iframe>
-          ) : (
-            <div 
-              className="absolute inset-0 w-full h-full flex items-center justify-center"
-              onClick={() => setIsPlaying(true)}
-            >
-              <Image
-                src="/aeobility-video-explainer-thubnail_1.1.2.png"
-                alt="Our Approach to Answer Engine Search Explainer Video Thumbnail"
-                fill
-                priority
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 900px"
-              />
-              
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-              
-              <div className="relative z-10 w-20 h-20 flex items-center justify-center rounded-full bg-white text-black shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-aeo-cyan group-hover:text-black">
-                <Play className="w-8 h-8 fill-current ml-1" />
-              </div>
-            </div>
-          )}
+        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,240,255,0.05)]">
+          <video
+            controls
+            preload="metadata"
+            poster="/aeobility-video-explainer-thubnail_1.1.2.png"
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/explainer.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
