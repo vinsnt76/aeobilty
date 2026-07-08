@@ -25,18 +25,18 @@ export default function USPGrid() {
   const usps = [
     {
       icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" />,
-      title: 'More Visibility',
-      description: 'Show up where your potential clients are looking. Gain strong exposure across modern search, map results, and social networks.',
+      title: 'Stop Losing Traffic on Google, Maps and AI',
+      description: 'We get your brand positioned clearly across Google, Maps, and emerging AI answer engines so local customers actually see your name first.',
     },
     {
       icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
-      title: 'More Leads',
-      description: 'Attract interested buyers ready to engage with your products or services. Optimise your pages to match what clients actually search for.',
+      title: 'Get Consistent Inquiries',
+      description: 'No more relying on outdated tricks. We construct a clear, understandable digital presence that turns online searches into real customer inquiries.',
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
-      title: 'More Enquiries',
-      description: 'Convert online attention into direct client enquiries. Drive targeted interactions straight to your inbox or sales pipeline.',
+      title: 'Straight to Your Inbox',
+      description: 'We focus on real outcomes. Receive direct phone calls, email inquiries, and booking requests straight to your day-to-day business pipeline.',
     },
   ];
 

@@ -14,13 +14,13 @@ export default function VideoExplainer() {
           <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <span>Why Choose Us</span>
+              <span>Our Mission</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
-              Our Approach to <span className="text-gradient-aeo">Answer Engine Search</span>
+              Why Aussie Businesses Partner with AEObility
             </h2>
             <p className="text-base text-white/60 font-light max-w-xl mx-auto leading-relaxed font-serif">
-              Search has changed more in the last year than it has since the introduction of mobile phones, see our approach to this fundamental shift
+              If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today.
             </p>
           </div>
         </div>
