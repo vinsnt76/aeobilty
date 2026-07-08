@@ -116,7 +116,7 @@ export default function RootLayout({
                   "@id": "https://aeobility.com.au/#video",
                   "name": "Our Approach to Answer Engine Search",
                   "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
-                  "thumbnailUrl": "https://aeobility.com.au/aeobility-video-explainer-thubnail_1.1.2.png", 
+                  "thumbnailUrl": "https://aeobility.com.au/aeobility-video-explainer.webp", 
                   "uploadDate": "2026-01-01T08:00:00Z",
                   "contentUrl": "https://aeobility.com.au/videos/explainer.mp4", 
                   "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",

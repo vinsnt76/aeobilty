@@ -30,7 +30,7 @@ export default function VideoExplainer() {
           <video
             controls
             preload="metadata"
-            poster="/aeobility-video-explainer-thubnail_1.1.2.png"
+            poster="/aeobility-video-explainer.webp"
             className="w-full h-full object-cover"
           >
             <source src="/videos/explainer.mp4" type="video/mp4" />
