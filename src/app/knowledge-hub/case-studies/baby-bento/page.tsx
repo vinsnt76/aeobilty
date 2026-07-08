@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "Case Study: How AEO reversed declining traffic trend | AEObility",
-  description: "Learn how AEObility reversed Baby Bento's declining organic momentum, recording +17-18% sales uplift and +95% CTR improvement through structural search alignment.",
+  title: "Case Study: Structural Search Alignment | AEObility",
+  description: "See how structural search alignment reversed declining organic momentum and delivered a +17% sales uplift for a prominent ecommerce store.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
   },
@@ -108,15 +109,27 @@ export default function BabyBentoCaseStudyPage() {
         <section className="lg:col-span-8 flex flex-col gap-12">
           
           {/* Header Block */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <span>Case Study: E-Commerce Growth</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
-              Shifting Trends: How Structural Search Alignment Reversed Organic Momentum for <span className="text-gradient-aeo">Baby Bento</span>
+            
+            <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
+              <Image
+                src="/case-study-aeo-lifts-traffic.webp"
+                alt="Graph illustrating improved CTR, ranking position, and qualified organic traffic following AEObility’s structural optimisation."
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 800px"
+              />
+            </div>
+
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              How Structural Search Alignment Drove a +17% Sales Uplift
             </h1>
             <p className="text-white/80 text-lg leading-relaxed font-light font-serif">
-              An architectural optimisation analysis demonstrating how Baby Bento achieved significant improvements in organic visibility, engagement, and sales velocity.
+              A real‑world case study showing how AEObility rebuilt clarity, intent alignment, and organic momentum for a prominent ecommerce store.
             </p>
           </div>
 
