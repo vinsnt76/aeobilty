@@ -241,7 +241,7 @@ export default function HowItWorks() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" aria-label="Local Business Visibility Audit Form">
                 <div>
                   <h4 className="text-lg font-bold text-neutral-950">Claim Your Free Audit</h4>
                   <p className="text-xs text-neutral-500 font-light mt-1">
@@ -251,13 +251,18 @@ export default function HowItWorks() {
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
-                      Website URL
+                    <label 
+                      htmlFor="australian-business-url"
+                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2"
+                    >
+                      Australian Business URL
                     </label>
                     <div className="relative">
                       <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
                       <input
                         type="url"
+                        id="australian-business-url"
+                        name="australian_business_url"
                         required
                         placeholder="https://example.com.au"
                         value={url}
@@ -266,18 +271,24 @@ export default function HowItWorks() {
                           handleFieldStart('website');
                         }}
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
+                        aria-required="true"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
-                      Email Address
+                    <label 
+                      htmlFor="business-contact-email"
+                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2"
+                    >
+                      Business Contact Email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
                       <input
                         type="email"
+                        id="business-contact-email"
+                        name="business_contact_email"
                         required
                         placeholder="you@company.com.au"
                         value={email}
@@ -286,6 +297,7 @@ export default function HowItWorks() {
                           handleFieldStart('email');
                         }}
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
+                        aria-required="true"
                       />
                     </div>
                   </div>
@@ -297,7 +309,7 @@ export default function HowItWorks() {
                     disabled={loading}
                     className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50"
                   >
-                    {loading ? 'Sending...' : 'Generate My Free Audit'}
+                    {loading ? 'Sending...' : 'Audit My Local Visibility'}
                     {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                   </button>
                   {error && (
