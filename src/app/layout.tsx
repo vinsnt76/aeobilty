@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-AU"
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -79,25 +79,51 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://aeobility.com.au/#organization",
+                  "@id": "https://aeobility.com.au",
                   "name": "AEObility",
+                  "legalName": "Trekaboutoz trading as AEObility",
                   "url": "https://aeobility.com.au",
                   "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+                  "telephone": "0480286282",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "AU"
+                  },
+                  "taxID": "61029803255",
                   "sameAs": [
-                    "https://www.linkedin.com/company/aeobility"
+                    "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
+                    "https://www.linkedin.com/company/133445734/",
+                    "https://www.instagram.com/aeo.bility/",
+                    "https://www.facebook.com/profile.php?id=61591781069830",
+                    "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
                   ]
                 },
                 {
                   "@type": "Person",
                   "@id": "https://aeobility.com.au/#person",
-                  "name": "Vince Baker",
+                  "name": "Vinnie Baker",
                   "jobTitle": "Founder & AEO Specialist",
                   "url": "https://aeobility.com.au/vince-baker",
                   "sameAs": [
                     "https://www.linkedin.com/in/vince-baker/"
                   ],
                   "worksFor": {
-                    "@id": "https://aeobility.com.au/#organization"
+                    "@id": "https://aeobility.com.au"
+                  }
+                },
+                {
+                  "@type": "VideoObject",
+                  "@id": "https://aeobility.com.au/#video",
+                  "name": "Our Approach to Answer Engine Search",
+                  "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
+                  "thumbnailUrl": "https://aeobility.com.au/aeobility-video-explainer-thubnail_1.1.2.png", 
+                  "uploadDate": "2026-01-01T08:00:00Z",
+                  "contentUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/view?usp=sharing", 
+                  "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "AEObility",
+                    "@id": "https://aeobility.com.au"
                   }
                 }
               ]

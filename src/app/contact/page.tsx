@@ -22,11 +22,17 @@ export default function ContactPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://aeobility.com.au/#localbusiness",
     "name": "AEObility",
+    "legalName": "Trekaboutoz trading as AEObility",
     "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
     "url": "https://aeobility.com.au/contact",
     "telephone": "0480 286 282",
     "email": "support@aeobility.com.au",
+    "taxID": "61029803255",
+    "sameAs": [
+      "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Perth St",
