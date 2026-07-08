@@ -50,7 +50,7 @@ export default function Footer() {
               />
             </svg>
             <span className="text-base font-bold tracking-wider text-white">
-              AEO<span className="text-aeo-cyan font-light">bility</span>
+              AEObility
             </span>
           </div>
           

@@ -115,7 +115,7 @@ export default function Navbar() {
               />
             </svg>
             <span className={`text-xl font-bold tracking-wider transition-colors ${isOpen ? 'text-black' : 'text-white'}`}>
-              AEO<span className="text-aeo-cyan font-light">bility</span>
+              AEObility
             </span>
           </Link>
 
