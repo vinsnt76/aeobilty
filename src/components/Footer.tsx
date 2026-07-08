@@ -113,6 +113,20 @@ export default function Footer() {
                 <path d="M23.498 6.163c-.272-1.016-1.07-1.815-2.085-2.087-1.839-.496-9.213-.496-9.213-.496s-7.373 0-9.213.496c-1.016.272-1.813 1.07-2.086 2.087-.496 1.839-.496 5.673-.496 5.673s0 3.834.496 5.673c.273 1.016 1.07 1.815 2.086 2.086 1.84.497 9.213.497 9.213.497s7.374 0 9.213-.497c1.016-.271 1.813-1.07 2.086-2.086.496-1.839.496-5.673.496-5.673s0-3.834-.496-5.673zm-14.28 9.387v-7.103l6.23 3.557-6.23 3.546z"/>
               </svg>
             </a>
+
+            {/* Google Maps */}
+            <a
+              href="https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-aeo-cyan transition-colors"
+              aria-label="Google Maps"
+            >
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </a>
           </div>
         </div>
 
