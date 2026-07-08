@@ -206,8 +206,9 @@ export default function Footer() {
 
       {/* Copyright row */}
       <div className="max-w-6xl mx-auto px-6 border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-white/30 font-light">
-        <div>
-          © {new Date().getFullYear()} AEObility. All rights reserved.
+        <div className="space-y-1">
+          <div>© {new Date().getFullYear()} AEObility. All rights reserved.</div>
+          <div>Trekaboutoz trading as AEObility | ABN: 61 029 803 255</div>
         </div>
         <div>
           Built for Australian local entities.
