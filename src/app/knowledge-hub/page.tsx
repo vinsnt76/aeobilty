@@ -186,10 +186,10 @@ export default function KnowledgeHubPage() {
             </div>
           </section>
 
-          {/* Advanced Knowledge Nodes */}
+          {/* Advanced Knowledge Hub */}
           <section className="space-y-12 border-t border-white/5 pt-16">
             <div className="text-center max-w-2xl mx-auto space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Advanced Knowledge Nodes</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Advanced Knowledge Hub</h2>
               <p className="text-white/60 font-light leading-relaxed">
                 Relational search layouts and coordinate matrices to map local brands to AI intent dimensions.
               </p>

@@ -65,7 +65,7 @@ export default function SemanticSEONodePage() {
         {/* Left Side: Navigation Links & Entity Map */}
         <aside className="lg:col-span-4 flex flex-col gap-6">
           <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Knowledge Nodes</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Knowledge Hub</h3>
             <nav className="flex flex-col gap-3 text-xs sm:text-sm">
               <Link href="/knowledge-hub" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 Hub Overview
