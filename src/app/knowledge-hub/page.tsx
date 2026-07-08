@@ -67,9 +67,9 @@ export default function KnowledgeHubPage() {
       icon: <BookOpenCheck className="w-5 h-5 text-aeo-cyan" />
     },
     {
-      name: "Case Study: Structural Search Alignment",
-      href: "/knowledge-hub/case-studies/baby-bento",
-      description: "A real‑world ecommerce case study showing how structural search alignment reversed declining organic momentum and drove a +17% sales uplift.",
+      name: "Client Case Studies",
+      href: "/knowledge-hub/case-studies",
+      description: "Real-world evidence of structural search optimisation, AEO implementations, and organic search momentum recovery.",
       icon: <TrendingUp className="w-5 h-5 text-aeo-cyan" />
     }
   ];
