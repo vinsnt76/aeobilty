@@ -35,6 +35,11 @@ export default function BabyBentoCaseStudyPage() {
       "name": "Baby Bento Case Study",
       "url": "https://aeobility.com.au/case-studies/baby-bento"
     },
+    "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://aeobility.com.au/knowledge-hub"
+    },
     "performanceMetrics": {
       "search": {
         "clicksIncreasePercent": 54.8,
@@ -111,7 +116,7 @@ export default function BabyBentoCaseStudyPage() {
           {/* Header Block */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <span>Case Study: E-Commerce Growth</span>
+              <span>Case Studies &rarr; <Link href="/knowledge-hub" className="hover:underline">Knowledge Hub</Link></span>
             </div>
             
             <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
@@ -424,6 +429,19 @@ export default function BabyBentoCaseStudyPage() {
             <p className="text-base text-aeo-cyan font-bold font-soehne-breit mt-2">
               &ldquo;When AI understands your business, your customers finally can.&rdquo;
             </p>
+          </div>
+
+          {/* Back Navigation & Cross-Linking */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6 border-t border-white/5">
+            <Link href="/knowledge-hub" className="group text-sm font-semibold text-aeo-cyan hover:text-white transition-colors flex items-center gap-1">
+              &larr; Back to Knowledge Hub
+            </Link>
+            <div className="flex flex-wrap gap-4 text-xs text-white/40">
+              <span>Explore other nodes:</span>
+              <Link href="/knowledge-hub/aeo" className="hover:text-aeo-cyan transition-colors">AEO Principles</Link>
+              <Link href="/knowledge-hub/semantic-seo" className="hover:text-aeo-cyan transition-colors">Semantic SEO</Link>
+              <Link href="/knowledge-hub/geo" className="hover:text-aeo-cyan transition-colors">GEO Local Matrix</Link>
+            </div>
           </div>
 
         </section>

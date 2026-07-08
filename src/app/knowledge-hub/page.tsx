@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck, TrendingUp } from 'lucide-react';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -65,6 +65,12 @@ export default function KnowledgeHubPage() {
       href: "/knowledge-hub/geo",
       description: "Advanced techniques balancing localized map rankings and systemic generative visibility rules without focus dilution.",
       icon: <BookOpenCheck className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "Case Study: Structural Search Alignment",
+      href: "/knowledge-hub/case-studies/baby-bento",
+      description: "A real‑world ecommerce case study showing how structural search alignment reversed declining organic momentum and drove a +17% sales uplift.",
+      icon: <TrendingUp className="w-5 h-5 text-aeo-cyan" />
     }
   ];
 
