@@ -55,9 +55,9 @@ export default function Home() {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Vince Baker",
+    "name": "Vinnie Baker",
     "jobTitle": "Founder",
-    "url": "https://aeobility.com.au",
+    "url": "https://aeobility.com.au/vince-baker",
     "sameAs": [
       "https://www.linkedin.com/in/vince-baker/"
     ],
@@ -96,8 +96,14 @@ export default function Home() {
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
     "founder": {
       "@type": "Person",
-      "name": "Vince Baker"
-    }
+      "name": "Vinnie Baker"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/133445734/",
+      "https://www.instagram.com/aeo.bility/",
+      "https://www.facebook.com/profile.php?id=61591781069830",
+      "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
+    ]
   };
 
   const videoJsonLd = {
