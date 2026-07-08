@@ -47,6 +47,27 @@
 
 ## Structured Data Schema Standards
 We utilize schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
-- **Brand ID**: `https://aeobility.com.au/#organization`
+- **Brand ID**: `https://aeobility.com.au`
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
 - **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`
+
+---
+
+## Brand Guidelines & Core Messaging
+- **Brand Promise**: Get Found. Get Chosen.
+- **Primary Message**: AEObility helps your business appear, make sense, and stand out across Search, Maps & AI — so you get more enquiries without the complexity.
+- **Value Pillars**:
+  - **Visibility**: Show up more often.
+  - **Understanding**: Restructure digital content so answer engines can easily read, chunk, and cite it.
+  - **Selection**: Build conversion trust to ensure customers choose you.
+  - **Local Intent**: Target local prospects using geographic coordinates and location maps.
+  - **Trust**: Establish entity consistency to build search engine reputation.
+
+---
+
+## Verified Profiles & Social Nodes
+- **Google Maps & Business Profile**: [Google Maps Profile](https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA)
+- **LinkedIn**: [LinkedIn Company Page](https://www.linkedin.com/company/133445734/)
+- **Instagram**: [Instagram Profile](https://www.instagram.com/aeo.bility/)
+- **Facebook**: [Facebook Page](https://www.facebook.com/profile.php?id=61591781069830)
+- **YouTube**: [YouTube Channel](https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg)
