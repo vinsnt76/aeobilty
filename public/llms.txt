@@ -1,10 +1,10 @@
 # AEObility: Answer Engine Optimisation (AEO) Systems
 
-[AEObility](https://aeobility.com.au) is a specialized agency based in Perth, Western Australia, providing Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing services. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
+[AEObility](https://aeobility.com.au) is a specialised agency based in Perth, Western Australia, providing Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing services. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
 
 ## Core Terminology & Concepts
 - **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
-- **GEO (Geographic Engine Optimization)**: Optimizing localized map pack matrices and location-aware AI systems.
+- **GEO (Geographic Engine Optimisation)**: Optimising localised map pack matrices and location-aware AI systems.
 - **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual snippets into LLM prompt spaces.
 - **Positional Bias**: The tendency of retrieval models to prioritize answers at the absolute beginning or end of text blocks.
 - **Atomic Answer Blocks**: Text passages structured within 90-120 token bounds to maximize attention scores and semantic clarity.
@@ -14,9 +14,9 @@
 
 ## Complete Route Directory
 
-### Services (What We Optimize)
+### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): Overview of our content engineering capability.
-- [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimizations and semantic audits.
+- [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimisations and semantic audits.
   - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): Explains what AEO is and why it replaces legacy SEO.
   - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings.
   - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Step-by-step technical guides for AI readiness.
@@ -29,13 +29,15 @@
 - [`/solutions`](https://aeobility.com.au/solutions): Packages and flat-rate sprints.
 - [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The $995 Clarity Phase deep strategic audit.
 - [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): Programmatic structured schemas and refactoring deployments.
-- [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): coordinate precision map and location salience sync.
+- [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): Coordinate precision map and location salience sync.
 
 ### Knowledge Hub (Our Research Nodes)
 - [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides and frameworks.
 - [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
+- [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
+- [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
 
 ### Support & Brand Details
 - [`/about`](https://aeobility.com.au/about): Company background and our team.
@@ -46,7 +48,7 @@
 ---
 
 ## Structured Data Schema Standards
-We utilize schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
+We utilise schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
 - **Brand ID**: `https://aeobility.com.au`
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
 - **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`
