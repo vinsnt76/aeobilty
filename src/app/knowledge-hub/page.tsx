@@ -146,15 +146,25 @@ export default function KnowledgeHubPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
-                <Image
-                  src="/knowledge-hub-hero.png"
-                  alt="Grid interface showing templates, guides, and learning modules"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                />
+              <div className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl space-y-6 max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Knowledge Hub</h3>
+                <nav className="flex flex-col gap-3">
+                  <div className="font-semibold text-aeo-cyan bg-white/5 py-3 px-4 rounded-xl leading-snug">
+                    Hub Overview
+                  </div>
+                  <Link href="/knowledge-hub/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
+                    AEO Core Principles
+                  </Link>
+                  <Link href="/knowledge-hub/semantic-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
+                    AI Semantic SEO
+                  </Link>
+                  <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
+                    GEO & SEO Local Matrix
+                  </Link>
+                  <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
+                    Client Case Studies
+                  </Link>
+                </nav>
               </div>
             </div>
           </section>
