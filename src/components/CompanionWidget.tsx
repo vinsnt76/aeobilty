@@ -10,6 +10,16 @@ interface ChatMessage {
   telemetry?: any;
 }
 
+export function extractDomainLabel(url: string): string {
+  try {
+    const parsed = new URL(url.startsWith('http') ? url : `https://${url}`);
+    const domain = parsed.hostname.replace('www.', '').split('.')[0];
+    return domain.charAt(0).toUpperCase() + domain.slice(1);
+  } catch {
+    return 'Target Site';
+  }
+}
+
 export default function CompanionWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -195,22 +205,10 @@ export default function CompanionWidget() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-white/5 px-4 py-3 bg-white/[0.02]">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-white">AG Shapeshifter</span>
+            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Diagnostic Engine</span>
           </div>
           <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
-        </div>
-
-        {/* Character Visual Avatar Area */}
-        <div className="h-28 border-b border-white/5 flex items-center justify-center bg-black/60 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.15),transparent_65%)]" />
-          <Image
-            src={isSpeaking ? "/char-mouth-open.png" : "/char-mouth-closed.png"}
-            alt="AG Shapeshifter"
-            width={96}
-            height={96}
-            className="h-24 object-contain relative z-10 transition-transform duration-150"
-          />
         </div>
 
         {/* Messages list */}
@@ -244,10 +242,11 @@ export default function CompanionWidget() {
                       const isWinner = clientNode && node.similarity <= clientNode.similarity;
                       const percentage = Math.min(100, Math.max(0, Math.round(node.similarity * 100)));
                       
+                      const domainName = isClient && msg.telemetry.clientUrl ? extractDomainLabel(msg.telemetry.clientUrl) : '';
                       return (
                         <div key={idx} className="space-y-0.5">
                           <div className="flex justify-between text-[9px]">
-                            <span>{isClient ? '[Your Site]' : `[Competitor ${idx}]`}</span>
+                            <span>{isClient ? (domainName ? `[${domainName}]` : '[Your Site]') : `[Competitor ${idx}]`}</span>
                             <span className={isClient ? 'text-aeo-cyan' : ''}>
                               {node.similarity.toFixed(3)} {isClient && '🌟'}
                             </span>
