@@ -17,8 +17,8 @@ export function useTelemetryScan() {
           intent: targetIntent,
           clientText: `Website audit for ${url}. This business provides services optimized for localized search intent, local maps, and answer engines. AEObility ensures pages are easily read, chunked, and indexable.`,
           competitors: [
-            'Traditional marketing competitor focus on raw backlinks and density',
-            'Template AEO SEO optimization agency and generic directory results'
+            'https://www.bentobuzz.com.au/ - bento lunchboxes and accessories',
+            'https://www.littlelunchboxco.com.au/ - kids lunchboxes and leakproof bento boxes'
           ]
         }),
       });

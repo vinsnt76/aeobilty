@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar, Search } from 'lucide-react';
 import Link from 'next/link';
 import { useTelemetryScan } from '@/hooks/useTelemetryScan';
+import { extractDomainLabel } from './CompanionWidget';
 
 export default function HowItWorks() {
   const [url, setUrl] = useState('');
@@ -215,13 +216,17 @@ export default function HowItWorks() {
                   {/* Proximity Track */}
                   <div className="space-y-1.5">
                     <div className="text-[9px] uppercase tracking-wider text-white/40">Vector Proximity (Cosine)</div>
-                    {telemetryResult.nodes?.slice(0, 2).map((node, idx) => {
+                    {telemetryResult.nodes?.slice(0, 3).map((node, idx) => {
                       const isClient = node.label === 'Client';
                       const percentage = Math.round(node.similarity * 100);
+                      const displayLabel = isClient 
+                        ? (url ? `[${extractDomainLabel(url)}]` : '[Your Site]') 
+                        : `[${extractDomainLabel(node.text)}]`;
+                      
                       return (
                         <div key={idx} className="space-y-0.5">
                           <div className="flex justify-between text-[9px]">
-                            <span>{isClient ? '[Your Site]' : '[Competitor 1]'}</span>
+                            <span>{displayLabel}</span>
                             <span className={isClient ? 'text-aeo-cyan' : 'text-neutral-400'}>{node.similarity.toFixed(3)}</span>
                           </div>
                           <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
@@ -262,7 +267,7 @@ export default function HowItWorks() {
 
                 <div className="pt-2 border-t border-neutral-100 space-y-3">
                   <p className="text-xs text-neutral-500 text-center font-light leading-relaxed">
-                    💡 <strong>Open the Chat Companion</strong> at the bottom right to let <strong>AG Shapeshifter</strong> review this context and walk you through fixes!
+                    💡 <strong>Open the Chat Companion</strong> at the bottom right to let <strong>AI Bill</strong> review this context and walk you through fixes!
                   </p>
                   <div className="flex flex-col gap-2">
                     <Link href="/book" className="btn-primary w-full text-center py-3 text-xs">
