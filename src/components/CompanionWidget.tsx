@@ -287,17 +287,15 @@ export default function CompanionWidget() {
       {/* Floating Toggle Button */}
       <button
         onClick={toggleWidget}
-        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 ${
+        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden ${
           isOpen ? 'border-aeo-purple text-aeo-purple' : 'border-aeo-cyan text-aeo-cyan'
         }`}
-        title="Chat with AG Shapeshifter"
+        title="Chat with AI Bill"
       >
         {isOpen ? (
           <X className="w-6 h-6" />
         ) : (
-          <svg className="w-6 h-6 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
+          <img src="/char-mouth-closed.png" alt="AI Bill" className="w-full h-full object-cover animate-pulse" />
         )}
       </button>
 
@@ -310,7 +308,10 @@ export default function CompanionWidget() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-white/5 px-4 py-3 bg-white/[0.02]">
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="relative h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 flex-shrink-0">
+              <img src="/char-mouth-closed.png" alt="AI Bill Profile" className="h-full w-full object-cover" />
+              <div className="absolute bottom-0 right-0 h-1.5 w-1.5 rounded-full bg-emerald-500 border border-black" />
+            </div>
             <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Diagnostic Engine</span>
           </div>
           <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
@@ -379,22 +380,30 @@ export default function CompanionWidget() {
             </div>
           ) : (
             <>
-              {messages.map((msg, i) => (
-                <div
-                  key={i}
-                  className={`flex flex-col max-w-[85%] ${
-                    msg.sender === 'user' ? 'ml-auto items-end' : 'items-start'
-                  }`}
-                >
+              {messages.map((msg, i) => {
+                const isUser = msg.sender === 'user';
+                return (
                   <div
-                    className={`p-3 rounded-xl leading-relaxed ${
-                      msg.sender === 'user'
-                        ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
-                        : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
+                    key={i}
+                    className={`flex gap-2 max-w-[85%] ${
+                      isUser ? 'ml-auto flex-row-reverse' : 'mr-auto flex-row'
                     }`}
                   >
-                    {msg.text}
-                  </div>
+                    {!isUser && (
+                      <div className="flex-shrink-0 h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 mt-1">
+                        <img src="/char-mouth-closed.png" alt="AI Bill" className="h-full w-full object-cover" />
+                      </div>
+                    )}
+                    <div className="flex flex-col flex-grow">
+                      <div
+                        className={`p-3 rounded-xl leading-relaxed text-[11px] ${
+                          isUser
+                            ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
+                            : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
+                        }`}
+                      >
+                        {msg.text}
+                      </div>
 
                   {/* Dynamic Telemetry Display */}
                   {msg.telemetry && (
@@ -471,7 +480,9 @@ export default function CompanionWidget() {
                     </div>
                   )}
                 </div>
-              ))}
+              </div>
+            );
+          })}
 
               {isThinking && (
                 <div className="flex items-start max-w-[85%]">
