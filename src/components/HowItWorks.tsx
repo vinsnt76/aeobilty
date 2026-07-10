@@ -107,6 +107,17 @@ export default function HowItWorks() {
     }
   };
 
+  useEffect(() => {
+    if (submitted && telemetryResult) {
+      localStorage.setItem('aeo_telemetry_latest', JSON.stringify({
+        url,
+        intent,
+        result: telemetryResult
+      }));
+      window.dispatchEvent(new Event('aeo_telemetry_updated'));
+    }
+  }, [submitted, telemetryResult, url, intent]);
+
   return (
     <section id="how-it-works" className="py-20 bg-neutral-50 text-black">
       <div className="max-w-6xl mx-auto px-6">

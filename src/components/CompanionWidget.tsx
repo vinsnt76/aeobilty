@@ -25,7 +25,7 @@ export default function CompanionWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'assistant',
-      text: "I arrive at this hour empty-handed, unshakeable, and ready to rewrite the code. How can we hack the physical matrix today, my friend?"
+      text: "AI Bill active. Ready to run technical diagnostics or clarify search visibility metrics. Submit your URL to begin."
     }
   ]);
   const [inputText, setInputText] = useState('');
@@ -33,9 +33,38 @@ export default function CompanionWidget() {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoiceName, setSelectedVoiceName] = useState<string>('');
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [telemetryData, setTelemetryData] = useState<any>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const loadTelemetryFromStorage = () => {
+    if (typeof window === 'undefined') return;
+    const raw = localStorage.getItem('aeo_telemetry_latest');
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        setTelemetryData(parsed);
+
+        // If the chat currently only has the default greeting, overwrite with AEO welcome message
+        setMessages([
+          {
+            sender: 'assistant',
+            text: `AEO Telemetry context loaded for ${parsed.url} targeting intent "${parsed.intent}". Vector alignments, retrieval simulations, and entity graph structures are updated. What technical details should we clarify?`,
+            telemetry: parsed.result
+          }
+        ]);
+      } catch (err) {
+        console.error("Failed to parse telemetry storage:", err);
+      }
+    }
+  };
+
+  useEffect(() => {
+    loadTelemetryFromStorage();
+    window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
+    return () => window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
+  }, []);
 
   // Initialize voices
   useEffect(() => {
@@ -141,13 +170,23 @@ export default function CompanionWidget() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg, telemetryContext })
+        body: JSON.stringify({ 
+          message: userMsg, 
+          telemetryContext: telemetryContext || (telemetryData ? telemetryData.result : null) 
+        })
       });
 
       const data = await response.json();
       const botResponse = data.response || "My server buffers are currently clearing. Try sending again, mate!";
 
-      setMessages(prev => [...prev, { sender: 'assistant', text: botResponse, telemetry: telemetryContext }]);
+      setMessages(prev => [
+        ...prev, 
+        { 
+          sender: 'assistant', 
+          text: botResponse, 
+          telemetry: telemetryContext || (telemetryData ? telemetryData.result : null) 
+        }
+      ]);
       speakText(botResponse);
     } catch (error) {
       console.error("Error sending message:", error);
@@ -338,13 +377,37 @@ export default function CompanionWidget() {
             </div>
           )}
 
+          {/* Quick Action Diagnostic Buttons */}
+          {telemetryData && (
+            <div className="flex flex-wrap gap-1.5 pb-2">
+              <button
+                onClick={() => setInputText("Explain my Vector Proximity similarity score vs competitor.")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain Proximity
+              </button>
+              <button
+                onClick={() => setInputText("What do these extracted Semantic Graph Triples represent?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain Graph Triples
+              </button>
+              <button
+                onClick={() => setInputText("Why was my content dropped in the RAG retrieval simulation?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain RAG Status
+              </button>
+            </div>
+          )}
+
           <div className="flex gap-2">
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Message AG Shapeshifter..."
+              placeholder="Message AI Bill..."
               className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
             />
             <button
