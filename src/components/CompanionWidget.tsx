@@ -7,6 +7,7 @@ import { X, Send } from 'lucide-react';
 interface ChatMessage {
   sender: 'user' | 'assistant';
   text: string;
+  telemetry?: any;
 }
 
 export default function CompanionWidget() {
@@ -136,7 +137,7 @@ export default function CompanionWidget() {
       const data = await response.json();
       const botResponse = data.response || "My server buffers are currently clearing. Try sending again, mate!";
 
-      setMessages(prev => [...prev, { sender: 'assistant', text: botResponse }]);
+      setMessages(prev => [...prev, { sender: 'assistant', text: botResponse, telemetry: telemetryContext }]);
       speakText(botResponse);
     } catch (error) {
       console.error("Error sending message:", error);
@@ -230,6 +231,80 @@ export default function CompanionWidget() {
               >
                 {msg.text}
               </div>
+
+              {/* Dynamic Telemetry Display */}
+              {msg.telemetry && (
+                <div className="mt-2 w-full bg-black/60 border border-white/10 rounded-xl p-3 font-mono text-[10px] text-white/90 space-y-3">
+                  {/* Vector Proximity Chart */}
+                  <div className="space-y-1">
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">Vector Proximity (Cosine)</div>
+                    {msg.telemetry.nodes?.map((node: any, idx: number) => {
+                      const clientNode = msg.telemetry.nodes.find((n: any) => n.label === 'Client');
+                      const isClient = node.label === 'Client';
+                      const isWinner = clientNode && node.similarity <= clientNode.similarity;
+                      const percentage = Math.min(100, Math.max(0, Math.round(node.similarity * 100)));
+                      
+                      return (
+                        <div key={idx} className="space-y-0.5">
+                          <div className="flex justify-between text-[9px]">
+                            <span>{isClient ? '[Your Site]' : `[Competitor ${idx}]`}</span>
+                            <span className={isClient ? 'text-aeo-cyan' : ''}>
+                              {node.similarity.toFixed(3)} {isClient && '🌟'}
+                            </span>
+                          </div>
+                          <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
+                            <div 
+                              className={`h-full rounded transition-all duration-500 ${
+                                isClient 
+                                  ? 'bg-aeo-cyan shadow-[0_0_8px_rgba(6,182,212,0.5)]' 
+                                  : isWinner ? 'bg-zinc-600' : 'bg-amber-600'
+                              }`}
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Retrieval Verdict */}
+                  <div className="border-t border-white/5 pt-2">
+                    <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">RAG Retrieval Verdict</div>
+                    {msg.telemetry.simulations?.slice(0, 1).map((sim: any, idx: number) => (
+                      <div key={idx} className="bg-white/[0.02] border border-white/5 rounded p-2 space-y-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className={sim.survived ? 'text-emerald-500' : 'text-rose-500'}>
+                            {sim.survived ? '● ALIGNED' : '● DROPPED'}
+                          </span>
+                          <span className="text-white/30">|</span>
+                          <span className="text-[8px] truncate text-white/60">Sim: "{sim.syntheticQuery.slice(0, 30)}..."</span>
+                        </div>
+                        {!sim.survived && (
+                          <div className="text-[8px] text-rose-300">
+                            Reason: Information dilution / low semantic density.
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Knowledge Graph Edges */}
+                  {msg.telemetry.triples && msg.telemetry.triples.length > 0 && (
+                    <div className="border-t border-white/5 pt-2 space-y-1">
+                      <div className="text-[9px] uppercase tracking-wider text-white/40">Extracted Graph Triples</div>
+                      <div className="max-h-20 overflow-y-auto space-y-1 pr-1">
+                        {msg.telemetry.triples.slice(0, 3).map((triple: any, idx: number) => (
+                          <div key={idx} className="text-[8px] bg-white/[0.01] border border-white/5 rounded px-1.5 py-0.5 text-white/70 truncate">
+                            <span className="text-aeo-cyan">{triple.subject}</span>
+                            <span className="text-white/30"> ──► ({triple.predicate}) ──► </span>
+                            <span className="text-white/80">{triple.object}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           ))}
 
