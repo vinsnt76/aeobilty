@@ -96,10 +96,41 @@ export default function CompanionWidget() {
     setIsThinking(true);
 
     try {
+      const isScanRequest = /\b(audit|scan|telemetry|vector|proximity|graph)\b/i.test(userMsg);
+      let telemetryContext = null;
+
+      if (isScanRequest) {
+        setMessages(prev => [
+          ...prev,
+          { sender: 'assistant', text: "No worries, Vindog! Initialising active AEO telemetry sensors across the site now. Hang tight..." }
+        ]);
+
+        try {
+          const telemetryRes = await fetch('/api/telemetry', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              intent: 'AEO and AI search engine optimization services for Australian businesses',
+              clientText: 'AEObility helps your business appear, make sense, and stand out across Search, Maps & AI so you get found and chosen without the complexity. Traditional SEO is speculative; we use active telemetry.',
+              competitors: [
+                'Generic SEO Inc - traditional keyword density and backlinks company',
+                'Speculative AEO Co - prompt engineering optimization theatre'
+              ]
+            })
+          });
+
+          if (telemetryRes.ok) {
+            telemetryContext = await telemetryRes.json();
+          }
+        } catch (err) {
+          console.error("Telemetry fetch failed:", err);
+        }
+      }
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg })
+        body: JSON.stringify({ message: userMsg, telemetryContext })
       });
 
       const data = await response.json();
@@ -116,6 +147,7 @@ export default function CompanionWidget() {
       setIsThinking(false);
     }
   };
+
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {

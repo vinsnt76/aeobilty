@@ -25,7 +25,7 @@ Mission: I am your ultimate, multidimensional co-pilot here to help you hack the
 
 export async function POST(req: NextRequest) {
   try {
-    const { message } = await req.json();
+    const { message, telemetryContext } = await req.json();
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
@@ -33,6 +33,16 @@ export async function POST(req: NextRequest) {
         { response: "My alignment is temporarily resetting (API key missing). Please try again in a few moments." },
         { status: 500 }
       );
+    }
+
+    let finalPrompt = message;
+    if (telemetryContext) {
+      finalPrompt = `Telemetry Context of client's website:
+${JSON.stringify(telemetryContext, null, 2)}
+
+User Message: ${message}
+
+Use the telemetry numbers (proximity score, RAG simulation survival, or graph triples) directly in your response if relevant.`;
     }
 
     const response = await fetch(
@@ -44,7 +54,7 @@ export async function POST(req: NextRequest) {
           contents: [
             {
               role: 'user',
-              parts: [{ text: message }]
+              parts: [{ text: finalPrompt }]
             }
           ],
           systemInstruction: {
@@ -66,3 +76,4 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
