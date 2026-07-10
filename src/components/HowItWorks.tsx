@@ -1,16 +1,18 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar, Search } from 'lucide-react';
 import Link from 'next/link';
+import { useTelemetryScan } from '@/hooks/useTelemetryScan';
 
 export default function HowItWorks() {
   const [url, setUrl] = useState('');
   const [email, setEmail] = useState('');
+  const [intent, setIntent] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
   const [started, setStarted] = useState(false);
+
+  const { runScan, result: telemetryResult, loading, error: telemetryError } = useTelemetryScan();
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -60,53 +62,47 @@ export default function HowItWorks() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!url || !email) return;
-
-    setLoading(true);
-    setError('');
+    if (!url || !email || !intent) return;
 
     try {
-      const res = await fetch('/api/forms/audit', {
+      // 1. Trigger real-time AEO/GEO telemetry scan via hook
+      await runScan(url, intent);
+
+      // 2. Submit email/lead form
+      await fetch('/api/forms/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website: url }),
+        body: JSON.stringify({ email, website: url, intent }),
       });
 
-      const data = await res.json();
-      if (data.ok) {
-        setSubmitted(true);
+      setSubmitted(true);
 
-        // 3. audit_form_submit - Triggered on successful form submission
-        let emailDomain = '';
-        if (email.includes('@')) {
-          emailDomain = email.split('@')[1];
-        }
-        let websiteDomain = '';
-        try {
-          const parsedUrl = new URL(url.startsWith('http') ? url : `https://${url}`);
-          websiteDomain = parsedUrl.hostname.replace('www.', '');
-        } catch {
-          websiteDomain = url.replace('www.', '');
-        }
-
-        if (typeof window !== 'undefined') {
-          const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
-          if (win.dataLayer) {
-            win.dataLayer.push({
-              event: 'audit_form_submit',
-              form_id: 'audit',
-              email_domain: emailDomain,
-              website_domain: websiteDomain
-            });
-          }
-        }
-      } else {
-        setError(data.error || 'Failed to submit audit request.');
+      // 3. Trigger Analytics DataLayer Events
+      let emailDomain = '';
+      if (email.includes('@')) {
+        emailDomain = email.split('@')[1];
       }
-    } catch {
-      setError('An unexpected error occurred. Please try again.');
-    } finally {
-      setLoading(false);
+      let websiteDomain = '';
+      try {
+        const parsedUrl = new URL(url.startsWith('http') ? url : `https://${url}`);
+        websiteDomain = parsedUrl.hostname.replace('www.', '');
+      } catch {
+        websiteDomain = url.replace('www.', '');
+      }
+
+      if (typeof window !== 'undefined') {
+        const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        if (win.dataLayer) {
+          win.dataLayer.push({
+            event: 'audit_form_submit',
+            form_id: 'audit',
+            email_domain: emailDomain,
+            website_domain: websiteDomain
+          });
+        }
+      }
+    } catch (err) {
+      console.error('Audit run error:', err);
     }
   };
 
@@ -202,29 +198,76 @@ export default function HowItWorks() {
             {/* Top decorative stripe */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple"></div>
 
-            {submitted ? (
-              <div className="text-center py-10 space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-500 mb-2">
-                  <CheckCircle2 className="w-8 h-8" />
+            {submitted && telemetryResult ? (
+              <div className="py-6 space-y-5 animate-fade-in">
+                <div className="text-center space-y-1.5">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-emerald-500">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base font-bold text-neutral-900">Telemetry Scan Complete</h4>
+                  <p className="text-[11px] text-neutral-500 font-light max-w-xs mx-auto">
+                    Real-time AEO indicators compiled for <span className="font-semibold text-neutral-800">{url}</span>.
+                  </p>
                 </div>
-                <h4 className="text-xl font-bold text-neutral-900">Audit Requested!</h4>
-                <p className="text-sm text-neutral-500 font-light max-w-xs mx-auto">
-                  We are reviewing <span className="font-semibold text-neutral-800">{url}</span>. Your visibility report will be sent to <span className="font-semibold text-neutral-800">{email}</span> within 24 hours.
-                </p>
-                
-                <div className="pt-4 border-t border-neutral-100 mt-4 space-y-3">
-                  <p className="text-xs text-neutral-500">Next step: Book your complimentary call.</p>
+
+                {/* Inline Telemetry View */}
+                <div className="bg-neutral-950 text-white border border-neutral-800 rounded-xl p-4 font-mono text-[10px] space-y-4">
+                  {/* Proximity Track */}
+                  <div className="space-y-1.5">
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">Vector Proximity (Cosine)</div>
+                    {telemetryResult.nodes?.slice(0, 2).map((node, idx) => {
+                      const isClient = node.label === 'Client';
+                      const percentage = Math.round(node.similarity * 100);
+                      return (
+                        <div key={idx} className="space-y-0.5">
+                          <div className="flex justify-between text-[9px]">
+                            <span>{isClient ? '[Your Site]' : '[Competitor 1]'}</span>
+                            <span className={isClient ? 'text-aeo-cyan' : 'text-neutral-400'}>{node.similarity.toFixed(3)}</span>
+                          </div>
+                          <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
+                            <div 
+                              className={`h-full rounded ${isClient ? 'bg-aeo-cyan' : 'bg-zinc-500'}`}
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* RAG Verdict */}
+                  <div className="border-t border-white/5 pt-2 flex items-center justify-between text-[9px]">
+                    <span className="text-white/40 uppercase">RAG Simulation:</span>
+                    {telemetryResult.simulations?.[0] && (
+                      <span className={telemetryResult.simulations[0].survived ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold'}>
+                        {telemetryResult.simulations[0].survived ? '● ALIGNED' : '● DROPPED'}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Schema Triples */}
+                  {telemetryResult.triples && telemetryResult.triples.length > 0 && (
+                    <div className="border-t border-white/5 pt-2 space-y-1">
+                      <div className="text-[9px] uppercase tracking-wider text-white/40">Knowledge Graph Triples</div>
+                      <div className="space-y-0.5">
+                        {telemetryResult.triples.slice(0, 2).map((t, idx) => (
+                          <div key={idx} className="text-[8px] text-white/70 truncate">
+                            <span className="text-aeo-cyan">{t.subject}</span> ──► {t.predicate} ──► {t.object}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="pt-2 border-t border-neutral-100 space-y-3">
+                  <p className="text-xs text-neutral-500 text-center font-light leading-relaxed">
+                    💡 <strong>Open the Chat Companion</strong> at the bottom right to let <strong>AG Shapeshifter</strong> review this context and walk you through fixes!
+                  </p>
                   <div className="flex flex-col gap-2">
-                    <Link href="/book" className="btn-primary w-full text-center">
-                      Book a Call
+                    <Link href="/book" className="btn-primary w-full text-center py-3 text-xs">
+                      Book 15‑Min Clarity Call
                     </Link>
-                    <a
-                      href="tel:0480286282"
-                      className="flex items-center justify-center gap-2 py-3 border border-neutral-200 text-neutral-800 text-sm font-semibold rounded-xl hover:bg-neutral-50 transition-all"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call Us: 0480 286 282
-                    </a>
                   </div>
                 </div>
 
@@ -235,13 +278,13 @@ export default function HowItWorks() {
                     setUrl('');
                     setEmail('');
                   }}
-                  className="block mt-4 mx-auto text-xs font-semibold text-neutral-400 hover:text-neutral-600 hover:underline"
+                  className="block mt-2 mx-auto text-[10px] font-semibold text-neutral-400 hover:text-neutral-600 hover:underline"
                 >
                   Request another audit
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6" aria-label="Local Business Visibility Audit Form">
+              <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
                 <div>
                   <h4 className="text-lg font-bold text-neutral-950">Claim Your Free Audit</h4>
                   <p className="text-xs text-neutral-500 font-light mt-1">
@@ -249,11 +292,11 @@ export default function HowItWorks() {
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   <div>
                     <label 
                       htmlFor="australian-business-url"
-                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2"
+                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
                     >
                       Australian Business URL
                     </label>
@@ -270,7 +313,33 @@ export default function HowItWorks() {
                           setUrl(e.target.value);
                           handleFieldStart('website');
                         }}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
+                        aria-required="true"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label 
+                      htmlFor="target-search-intent"
+                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
+                    >
+                      Primary Search Intent
+                    </label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
+                      <input
+                        type="text"
+                        id="target-search-intent"
+                        name="target_search_intent"
+                        required
+                        placeholder="e.g. best solar installer Brisbane"
+                        value={intent}
+                        onChange={(e) => {
+                          setIntent(e.target.value);
+                          handleFieldStart('intent');
+                        }}
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                         aria-required="true"
                       />
                     </div>
@@ -279,7 +348,7 @@ export default function HowItWorks() {
                   <div>
                     <label 
                       htmlFor="business-contact-email"
-                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2"
+                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
                     >
                       Business Contact Email
                     </label>
@@ -296,7 +365,7 @@ export default function HowItWorks() {
                           setEmail(e.target.value);
                           handleFieldStart('email');
                         }}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                         aria-required="true"
                       />
                     </div>
@@ -307,20 +376,20 @@ export default function HowItWorks() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full group flex items-center justify-center gap-2 py-4 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50"
+                    className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50 cursor-pointer"
                   >
-                    {loading ? 'Sending...' : 'Audit My Local Visibility'}
+                    {loading ? 'Running Telemetry Scan...' : 'Audit My Local Visibility'}
                     {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                   </button>
-                  {error && (
-                    <p className="text-xs text-rose-500 text-center font-semibold mt-3">{error}</p>
+                  {telemetryError && (
+                    <p className="text-xs text-rose-500 text-center font-semibold mt-3">{telemetryError}</p>
                   )}
-                  <p className="text-[11px] text-center text-neutral-500 font-medium mt-3">
-                    * Your audit will be delivered manually within 24 hours.
+                  <p className="text-[10px] text-center text-neutral-500 font-medium mt-2.5">
+                    * The scan executes a real-time vector analysis using Gemini.
                   </p>
                 </div>
 
-                <p className="text-[10px] text-center text-neutral-400 font-light">
+                <p className="text-[9px] text-center text-neutral-400 font-light">
                   By clicking, you agree to our terms. Your privacy is guaranteed.
                 </p>
               </form>
