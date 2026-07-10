@@ -539,6 +539,21 @@ export default function CompanionWidget() {
                 >
                   Explain RAG Status
                 </button>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('aeo_telemetry_latest');
+                    setTelemetryData(null);
+                    setMessages([
+                      {
+                        sender: 'assistant',
+                        text: "AI Bill active. Ready to run technical diagnostics or clarify search visibility metrics. Submit your URL to begin."
+                      }
+                    ]);
+                  }}
+                  className="text-[9px] bg-rose-950/40 border border-rose-500/20 hover:bg-rose-950/80 px-2.5 py-1 rounded-lg text-rose-300 transition-colors cursor-pointer ml-auto"
+                >
+                  Reset Audit
+                </button>
               </div>
             )}
 
