@@ -235,7 +235,7 @@ export default function CompanionWidget() {
                 <div className="mt-2 w-full bg-black/60 border border-white/10 rounded-xl p-3 font-mono text-[10px] text-white/90 space-y-3">
                   {/* Vector Proximity Chart */}
                   <div className="space-y-1">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40">Vector Proximity (Cosine)</div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
                     {msg.telemetry.nodes?.map((node: any, idx: number) => {
                       const clientNode = msg.telemetry.nodes.find((n: any) => n.label === 'Client');
                       const isClient = node.label === 'Client';
@@ -268,7 +268,7 @@ export default function CompanionWidget() {
 
                   {/* Retrieval Verdict */}
                   <div className="border-t border-white/5 pt-2">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">RAG Retrieval Verdict</div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">AI Retrieval Status (Simulation)</div>
                     {msg.telemetry.simulations?.slice(0, 1).map((sim: any, idx: number) => (
                       <div key={idx} className="bg-white/[0.02] border border-white/5 rounded p-2 space-y-1">
                         <div className="flex items-center gap-1.5">
@@ -290,7 +290,7 @@ export default function CompanionWidget() {
                   {/* Knowledge Graph Edges */}
                   {msg.telemetry.triples && msg.telemetry.triples.length > 0 && (
                     <div className="border-t border-white/5 pt-2 space-y-1">
-                      <div className="text-[9px] uppercase tracking-wider text-white/40">Extracted Graph Triples</div>
+                      <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
                       <div className="max-h-20 overflow-y-auto space-y-1 pr-1">
                         {msg.telemetry.triples.slice(0, 3).map((triple: any, idx: number) => (
                           <div key={idx} className="text-[8px] bg-white/[0.01] border border-white/5 rounded px-1.5 py-0.5 text-white/70 truncate">

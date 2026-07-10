@@ -88,8 +88,8 @@ export async function computeProximity(
     console.error('Error in computeProximity:', error);
     // Return fallback mock/placeholder data if API fails to avoid breaking UI
     return [
-      { label: 'Client', text: 'Error generating live data, fallback loaded.', similarity: 0.65 },
-      { label: 'Competitor 1', text: 'Competitor content fallback representation.', similarity: 0.72 }
+      { label: 'Client', text: 'https://aeobility.com.au/ - default fallback client domain', similarity: 0.65 },
+      { label: 'Competitor 1', text: 'https://www.littlelunchboxco.com.au/ - kids lunchboxes', similarity: 0.72 }
     ];
   }
 }

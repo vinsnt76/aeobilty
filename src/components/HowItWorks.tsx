@@ -215,7 +215,7 @@ export default function HowItWorks() {
                 <div className="bg-neutral-950 text-white border border-neutral-800 rounded-xl p-4 font-mono text-[10px] space-y-4">
                   {/* Proximity Track */}
                   <div className="space-y-1.5">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40">Vector Proximity (Cosine)</div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
                     {telemetryResult.nodes?.slice(0, 3).map((node, idx) => {
                       const isClient = node.label === 'Client';
                       const percentage = Math.round(node.similarity * 100);
@@ -242,7 +242,7 @@ export default function HowItWorks() {
 
                   {/* RAG Verdict */}
                   <div className="border-t border-white/5 pt-2 flex items-center justify-between text-[9px]">
-                    <span className="text-white/40 uppercase">RAG Simulation:</span>
+                    <span className="text-white/40 uppercase">AI Retrieval Status (Simulation):</span>
                     {telemetryResult.simulations?.[0] && (
                       <span className={telemetryResult.simulations[0].survived ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold'}>
                         {telemetryResult.simulations[0].survived ? '● ALIGNED' : '● DROPPED'}
@@ -253,7 +253,7 @@ export default function HowItWorks() {
                   {/* Schema Triples */}
                   {telemetryResult.triples && telemetryResult.triples.length > 0 && (
                     <div className="border-t border-white/5 pt-2 space-y-1">
-                      <div className="text-[9px] uppercase tracking-wider text-white/40">Knowledge Graph Triples</div>
+                      <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
                       <div className="space-y-0.5">
                         {telemetryResult.triples.slice(0, 2).map((t, idx) => (
                           <div key={idx} className="text-[8px] text-white/70 truncate">
