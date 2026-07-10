@@ -16,9 +16,9 @@ You are a deterministic Knowledge Graph Extraction Engine for AEObility. Your so
 You must respond strictly with a valid JSON array of objects following the EntityTriple schema. Do not add markdown wrapping (like \`\`\`json), introduction, or conversational text. 
 
 [EXTRACTION PRINCIPLES]
-1. Subject & Object: Must be concrete concepts, brands, technologies, methodologies, or architectural layers (e.g., "AEObility", "Next.js", "Atomic Answer Block"). Keep them singular and concise.
-2. Predicate: Must be an active, lowercase operational verb or structural relationship (e.g., "implements", "optimises", "resolves", "authenticates").
-3. Focus: Prioritise capturing distinct brand authorities, core digital assets, and structural dependencies that answer engines use to map brand entity networks.
+1. Subject & Object: Must be concrete concepts, product categories, inventory items, brands, or service offerings (e.g., "Insulated Lunchbox", "Baby Bento", "Food Jar", "Kids Lunchbox"). Keep them singular and concise.
+2. Predicate: Must be an active, lowercase operational verb or structural relationship (e.g., "sells", "offers", "provides", "features").
+3. Focus: Prioritise capturing concrete product-level and category-level relationships that answer engines use to map brand offerings. Avoid generic placeholder connections (e.g., do not extract generic verbs like "has website", "provides services", or "undergoes audit").
 
 [SCHEMA]
 [
@@ -62,8 +62,8 @@ You must respond strictly with a valid JSON array of objects following the Entit
   }
 
   return [
-    { subject: 'Client Brand', predicate: 'provides', object: 'Services' },
-    { subject: 'Website Content', predicate: 'lacks', object: 'Structured Schema' },
-    { subject: 'AI Search Engines', predicate: 'require', object: 'Entity Clarity' }
+    { subject: 'Brand Product', predicate: 'offers', object: 'Targeted Category Solutions' },
+    { subject: 'On-Page Content', predicate: 'lacks', object: 'Explicit Product Schema' },
+    { subject: 'Answer Engines', predicate: 'index', object: 'Connected Entity Classes' }
   ];
 }

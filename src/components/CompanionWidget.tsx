@@ -35,6 +35,72 @@ export default function CompanionWidget() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [telemetryData, setTelemetryData] = useState<any>(null);
 
+  // Gatekeeper Mode states
+  const [onboardUrl, setOnboardUrl] = useState('');
+  const [onboardIntent, setOnboardIntent] = useState('');
+  const [onboardEmail, setOnboardEmail] = useState('');
+  const [onboardLoading, setOnboardLoading] = useState(false);
+  const [onboardError, setOnboardError] = useState('');
+
+  const handleOnboardSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!onboardUrl || !onboardIntent || !onboardEmail) return;
+
+    setOnboardLoading(true);
+    setOnboardError('');
+
+    try {
+      // 1. Run the telemetry scan using `/api/telemetry`
+      const scanRes = await fetch('/api/telemetry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          intent: onboardIntent,
+          clientText: `Website audit for ${onboardUrl}. Optimized for local search and answer engines.`,
+          competitors: [
+            'https://www.bentobuzz.com.au/ - bento boxes and kids accessories',
+            'https://www.littlelunchboxco.com.au/ - leakproof bento lunchboxes for kids'
+          ]
+        })
+      });
+
+      if (!scanRes.ok) {
+        throw new Error('Onboarding telemetry scan failed.');
+      }
+
+      const resultData = await scanRes.json();
+
+      // 2. Submit the lead/enquiry form
+      await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: onboardEmail, website: onboardUrl, intent: onboardIntent })
+      });
+
+      // 3. Write to localStorage and bootstrap chat context
+      const latestData = {
+        url: onboardUrl,
+        intent: onboardIntent,
+        result: resultData
+      };
+      localStorage.setItem('aeo_telemetry_latest', JSON.stringify(latestData));
+      
+      setTelemetryData(latestData);
+      setMessages([
+        {
+          sender: 'assistant',
+          text: `AEO Telemetry context loaded for ${onboardUrl} targeting intent "${onboardIntent}". Vector alignments, retrieval simulations, and entity graph structures are updated. What technical details should we clarify?`,
+          telemetry: resultData
+        }
+      ]);
+    } catch (err: any) {
+      console.error(err);
+      setOnboardError(err.message || 'Diagnostic failed. Verify connection.');
+    } finally {
+      setOnboardLoading(false);
+    }
+  };
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -250,175 +316,240 @@ export default function CompanionWidget() {
           <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
         </div>
 
-        {/* Messages list */}
+        {/* Messages list OR Onboarding Gatekeeper Card */}
         <div className="flex-grow overflow-y-auto p-4 space-y-4 text-xs">
-          {messages.map((msg, i) => (
-            <div
-              key={i}
-              className={`flex flex-col max-w-[85%] ${
-                msg.sender === 'user' ? 'ml-auto items-end' : 'items-start'
-              }`}
-            >
-              <div
-                className={`p-3 rounded-xl leading-relaxed ${
-                  msg.sender === 'user'
-                    ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
-                    : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
-                }`}
-              >
-                {msg.text}
+          {!telemetryData ? (
+            <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 space-y-4 text-white">
+              <div>
+                <h4 className="text-sm font-bold text-white font-mono uppercase tracking-wider text-aeo-cyan">Initialise AI Bill</h4>
+                <p className="text-[10px] text-zinc-400 mt-1">
+                  Enter your business details below to run an active AEO telemetry scan and activate the diagnostic co-pilot.
+                </p>
               </div>
 
-              {/* Dynamic Telemetry Display */}
-              {msg.telemetry && (
-                <div className="mt-2 w-full bg-black/60 border border-white/10 rounded-xl p-3 font-mono text-[10px] text-white/90 space-y-3">
-                  {/* Vector Proximity Chart */}
-                  <div className="space-y-1">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
-                    {msg.telemetry.nodes?.map((node: any, idx: number) => {
-                      const clientNode = msg.telemetry.nodes.find((n: any) => n.label === 'Client');
-                      const isClient = node.label === 'Client';
-                      const isWinner = clientNode && node.similarity <= clientNode.similarity;
-                      const percentage = Math.min(100, Math.max(0, Math.round(node.similarity * 100)));
-                      
-                      const domainName = isClient && msg.telemetry.clientUrl ? extractDomainLabel(msg.telemetry.clientUrl) : '';
-                      return (
-                        <div key={idx} className="space-y-0.5">
-                          <div className="flex justify-between text-[9px]">
-                            <span>{isClient ? (domainName ? `[${domainName}]` : '[Your Site]') : `[Competitor ${idx}]`}</span>
-                            <span className={isClient ? 'text-aeo-cyan' : ''}>
-                              {node.similarity.toFixed(3)} {isClient && '🌟'}
-                            </span>
-                          </div>
-                          <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
-                            <div 
-                              className={`h-full rounded transition-all duration-500 ${
-                                isClient 
-                                  ? 'bg-aeo-cyan shadow-[0_0_8px_rgba(6,182,212,0.5)]' 
-                                  : isWinner ? 'bg-zinc-600' : 'bg-amber-600'
-                              }`}
-                              style={{ width: `${percentage}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
+              <form onSubmit={handleOnboardSubmit} className="space-y-3 font-mono text-[10px]">
+                <div className="space-y-1">
+                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Business URL</label>
+                  <input
+                    type="url"
+                    required
+                    placeholder="https://example.com.au"
+                    value={onboardUrl}
+                    onChange={(e) => setOnboardUrl(e.target.value)}
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Primary Search Intent</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. best solar installer Perth"
+                    value={onboardIntent}
+                    onChange={(e) => setOnboardIntent(e.target.value)}
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Contact Email</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="you@company.com.au"
+                    value={onboardEmail}
+                    onChange={(e) => setOnboardEmail(e.target.value)}
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={onboardLoading}
+                  className="w-full bg-aeo-cyan text-black py-2.5 rounded-lg font-bold text-[10px] hover:bg-aeo-cyan/90 disabled:opacity-50 transition-all cursor-pointer uppercase tracking-wider mt-2"
+                >
+                  {onboardLoading ? 'Running Diagnostic Scan...' : 'Run Diagnostic Scan'}
+                </button>
+
+                {onboardError && (
+                  <p className="text-[9px] text-rose-400 text-center mt-2">{onboardError}</p>
+                )}
+              </form>
+            </div>
+          ) : (
+            <>
+              {messages.map((msg, i) => (
+                <div
+                  key={i}
+                  className={`flex flex-col max-w-[85%] ${
+                    msg.sender === 'user' ? 'ml-auto items-end' : 'items-start'
+                  }`}
+                >
+                  <div
+                    className={`p-3 rounded-xl leading-relaxed ${
+                      msg.sender === 'user'
+                        ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
+                        : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
+                    }`}
+                  >
+                    {msg.text}
                   </div>
 
-                  {/* Retrieval Verdict */}
-                  <div className="border-t border-white/5 pt-2">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">AI Retrieval Status (Simulation)</div>
-                    {msg.telemetry.simulations?.slice(0, 1).map((sim: any, idx: number) => (
-                      <div key={idx} className="bg-white/[0.02] border border-white/5 rounded p-2 space-y-1">
-                        <div className="flex items-center gap-1.5">
-                          <span className={sim.survived ? 'text-emerald-500' : 'text-rose-500'}>
-                            {sim.survived ? '● ALIGNED' : '● DROPPED'}
-                          </span>
-                          <span className="text-white/30">|</span>
-                          <span className="text-[8px] truncate text-white/60">Sim: "{sim.syntheticQuery.slice(0, 30)}..."</span>
-                        </div>
-                        {!sim.survived && (
-                          <div className="text-[8px] text-rose-300">
-                            Reason: Information dilution / low semantic density.
-                          </div>
-                        )}
+                  {/* Dynamic Telemetry Display */}
+                  {msg.telemetry && (
+                    <div className="mt-2 w-full bg-black/60 border border-white/10 rounded-xl p-3 font-mono text-[10px] text-white/90 space-y-3">
+                      {/* Vector Proximity Chart */}
+                      <div className="space-y-1">
+                        <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
+                        {msg.telemetry.nodes?.map((node: any, idx: number) => {
+                          const clientNode = msg.telemetry.nodes.find((n: any) => n.label === 'Client');
+                          const isClient = node.label === 'Client';
+                          const isWinner = clientNode && node.similarity <= clientNode.similarity;
+                          const percentage = Math.min(100, Math.max(0, Math.round(node.similarity * 100)));
+                          
+                          const domainName = isClient && msg.telemetry.clientUrl ? extractDomainLabel(msg.telemetry.clientUrl) : '';
+                          return (
+                            <div key={idx} className="space-y-0.5">
+                              <div className="flex justify-between text-[9px]">
+                                <span>{isClient ? (domainName ? `[${domainName}]` : '[Your Site]') : `[Competitor ${idx}]`}</span>
+                                <span className={isClient ? 'text-aeo-cyan' : ''}>
+                                  {node.similarity.toFixed(3)} {isClient && '🌟'}
+                                </span>
+                              </div>
+                              <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
+                                <div 
+                                  className={`h-full rounded transition-all duration-500 ${
+                                    isClient 
+                                      ? 'bg-aeo-cyan shadow-[0_0_8px_rgba(6,182,212,0.5)]' 
+                                      : isWinner ? 'bg-zinc-600' : 'bg-amber-600'
+                                  }`}
+                                  style={{ width: `${percentage}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Knowledge Graph Edges */}
-                  {msg.telemetry.triples && msg.telemetry.triples.length > 0 && (
-                    <div className="border-t border-white/5 pt-2 space-y-1">
-                      <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
-                      <div className="max-h-20 overflow-y-auto space-y-1 pr-1">
-                        {msg.telemetry.triples.slice(0, 3).map((triple: any, idx: number) => (
-                          <div key={idx} className="text-[8px] bg-white/[0.01] border border-white/5 rounded px-1.5 py-0.5 text-white/70 truncate">
-                            <span className="text-aeo-cyan">{triple.subject}</span>
-                            <span className="text-white/30"> ──► ({triple.predicate}) ──► </span>
-                            <span className="text-white/80">{triple.object}</span>
+                      {/* Retrieval Verdict */}
+                      <div className="border-t border-white/5 pt-2">
+                        <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">AI Retrieval Status (Simulation)</div>
+                        {msg.telemetry.simulations?.slice(0, 1).map((sim: any, idx: number) => (
+                          <div key={idx} className="bg-white/[0.02] border border-white/5 rounded p-2 space-y-1">
+                            <div className="flex items-center gap-1.5">
+                              <span className={sim.survived ? 'text-emerald-500' : 'text-rose-500'}>
+                                {sim.survived ? '● ALIGNED' : '● DROPPED'}
+                              </span>
+                              <span className="text-white/30">|</span>
+                              <span className="text-[8px] truncate text-white/60">Sim: "{sim.syntheticQuery.slice(0, 30)}..."</span>
+                            </div>
+                            {!sim.survived && (
+                              <div className="text-[8px] text-rose-300">
+                                Reason: Information dilution / low semantic density.
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
+
+                      {/* Knowledge Graph Edges */}
+                      {msg.telemetry.triples && msg.telemetry.triples.length > 0 && (
+                        <div className="border-t border-white/5 pt-2 space-y-1">
+                          <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
+                          <div className="max-h-20 overflow-y-auto space-y-1 pr-1">
+                            {msg.telemetry.triples.slice(0, 3).map((triple: any, idx: number) => (
+                              <div key={idx} className="text-[8px] bg-white/[0.01] border border-white/5 rounded px-1.5 py-0.5 text-white/70 truncate">
+                                <span className="text-aeo-cyan">{triple.subject}</span>
+                                <span className="text-white/30"> ──► ({triple.predicate}) ──► </span>
+                                <span className="text-white/80">{triple.object}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
-              )}
-            </div>
-          ))}
+              ))}
 
-          {isThinking && (
-            <div className="flex items-start max-w-[85%]">
-              <div className="p-3 bg-white/[0.03] text-white/50 rounded-xl rounded-tl-none border border-white/5 flex items-center gap-1.5 font-mono text-[10px]">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '0ms' }} />
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '150ms' }} />
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '300ms' }} />
-              </div>
-            </div>
+              {isThinking && (
+                <div className="flex items-start max-w-[85%]">
+                  <div className="p-3 bg-white/[0.03] text-white/50 rounded-xl rounded-tl-none border border-white/5 flex items-center gap-1.5 font-mono text-[10px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </div>
+              )}
+            </>
           )}
           <div ref={messagesEndRef} />
         </div>
 
         {/* Footer actions and voice selector */}
-        <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
-          {voices.length > 0 && (
-            <div className="flex items-center gap-2 bg-black/40 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px] text-white/50">
-              <span className="font-semibold uppercase tracking-wider text-[8px]">Voice</span>
-              <select
-                value={selectedVoiceName}
-                onChange={(e) => setSelectedVoiceName(e.target.value)}
-                className="bg-transparent border-none text-white focus:outline-none flex-grow text-[9px] cursor-pointer"
-              >
-                {voices.map((voice) => (
-                  <option key={voice.name} value={voice.name} className="bg-neutral-900 text-white">
-                    {voice.name} ({voice.lang})
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
+        {telemetryData && (
+          <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
+            {voices.length > 0 && (
+              <div className="flex items-center gap-2 bg-black/40 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px] text-white/50">
+                <span className="font-semibold uppercase tracking-wider text-[8px]">Voice</span>
+                <select
+                  value={selectedVoiceName}
+                  onChange={(e) => setSelectedVoiceName(e.target.value)}
+                  className="bg-transparent border-none text-white focus:outline-none flex-grow text-[9px] cursor-pointer"
+                >
+                  {voices.map((voice) => (
+                    <option key={voice.name} value={voice.name} className="bg-neutral-900 text-white">
+                      {voice.name} ({voice.lang})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-          {/* Quick Action Diagnostic Buttons */}
-          {telemetryData && (
-            <div className="flex flex-wrap gap-1.5 pb-2">
+            {/* Quick Action Diagnostic Buttons */}
+            {telemetryData && (
+              <div className="flex flex-wrap gap-1.5 pb-2">
+                <button
+                  onClick={() => setInputText("Explain my Vector Proximity similarity score vs competitor.")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                >
+                  Explain Proximity
+                </button>
+                <button
+                  onClick={() => setInputText("What do these extracted Semantic Graph Triples represent?")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                >
+                  Explain Graph Triples
+                </button>
+                <button
+                  onClick={() => setInputText("Why was my content dropped in the RAG retrieval simulation?")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                >
+                  Explain RAG Status
+                </button>
+              </div>
+            )}
+
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Message AI Bill..."
+                className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
+              />
               <button
-                onClick={() => setInputText("Explain my Vector Proximity similarity score vs competitor.")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                onClick={handleSendMessage}
+                className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 transition-colors"
+                title="Send Message"
               >
-                Explain Proximity
-              </button>
-              <button
-                onClick={() => setInputText("What do these extracted Semantic Graph Triples represent?")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
-              >
-                Explain Graph Triples
-              </button>
-              <button
-                onClick={() => setInputText("Why was my content dropped in the RAG retrieval simulation?")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
-              >
-                Explain RAG Status
+                <Send className="w-4 h-4" />
               </button>
             </div>
-          )}
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Message AI Bill..."
-              className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
-            />
-            <button
-              onClick={handleSendMessage}
-              className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 transition-colors"
-              title="Send Message"
-            >
-              <Send className="w-4 h-4" />
-            </button>
           </div>
-        </div>
+        )}
       </div>
     </>
   );
