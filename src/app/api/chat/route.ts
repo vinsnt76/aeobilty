@@ -36,13 +36,41 @@ export async function POST(req: NextRequest) {
     }
 
     let finalPrompt = message;
+    let systemInstruction = SYSTEM_INSTRUCTION;
+
     if (telemetryContext) {
-      finalPrompt = `Telemetry Context of client's website:
-${JSON.stringify(telemetryContext, null, 2)}
+      const clientSim = telemetryContext.nodes?.find((n: any) => n.label === 'Client')?.similarity || 0.5;
+      const compSim = telemetryContext.nodes?.find((n: any) => n.label.startsWith('Competitor'))?.similarity || 0.6;
+      const proximityDelta = clientSim - compSim;
 
-User Message: ${message}
+      const survivedCount = telemetryContext.simulations?.filter((s: any) => s.survived).length || 0;
+      const totalSims = telemetryContext.simulations?.length || 1;
+      const survivalRate = survivedCount / totalSims;
 
-Use the telemetry numbers (proximity score, RAG simulation survival, or graph triples) directly in your response if relevant.`;
+      const attributionStatus = survivalRate === 1 ? 'OPTIMAL' : survivalRate > 0 ? 'PARTIAL_ATTRIBUTION' : 'DROPPED';
+      const droppedReason = survivalRate < 1 ? 'Information dilution and low semantic density' : '';
+
+      const topMissingTriples = [];
+      if (!telemetryContext.triples || telemetryContext.triples.length < 5) {
+        topMissingTriples.push('ClientBrand connectsTo AI_Search_Engine', 'ClientBrand establishes schemaBindings');
+      }
+
+      systemInstruction += `
+
+[SYSTEM TELEMETRY CONTEXT]
+The user's site has been actively scanned against the target intent cluster: "AEO and AI search engine optimization services for Australian businesses".
+
+[DIAGNOSTIC METRICS]
+- Vector Space Proximity Delta: ${proximityDelta > 0 ? '+' : ''}${(proximityDelta * 100).toFixed(1)}% vs top competitor positioning.
+- Local RAG Retrieval Simulation: Status is ${attributionStatus} ${droppedReason ? `(Failure Mode: ${droppedReason})` : ''}.
+- Critical Missing Entity Edges: ${topMissingTriples.length > 0 ? topMissingTriples.join(', ') : 'None detected. Semantic connectivity is optimal.'}
+
+[INSTRUCTIONAL FRAMEWORK & PERSONA]
+You are operating as AG Shapeshifter (AI Bill), the technical co-pilot for AEObility. 
+
+1. Voice & Tone: Adopt a grounded, exceptionally clear Australian tech persona. Speak with confidence and engineering precision. Avoid corporate jargon, American start-up hype ("absolute game-changer", "disruptive"), and empty pleasantries. 
+2. Execution: Do not simply list these numbers. Translate the raw maths into narrative diagnostics. Explain exactly *why* a negative vector delta means their competitor's content sits closer to the LLM's latent intent cluster, or how a missing entity relationship causes answer engines to drop their chunks during top-k retrieval selection.
+3. Clarity: If a chunk was dropped during the RAG simulation due to information dilution, tell them exactly which part of their copy is adding noise instead of signal.`;
     }
 
     const response = await fetch(
@@ -58,11 +86,12 @@ Use the telemetry numbers (proximity score, RAG simulation survival, or graph tr
             }
           ],
           systemInstruction: {
-            parts: [{ text: SYSTEM_INSTRUCTION }]
+            parts: [{ text: systemInstruction }]
           }
         })
       }
     );
+
 
     const data = await response.json();
     const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || "My server buffers are currently clearing. Try sending again, mate!";

@@ -9,18 +9,29 @@ export async function extractEntityGraph(clientText: string): Promise<EntityTrip
   }
 
   try {
-    const prompt = `Analyze the following website content and extract key semantic Subject-Predicate-Object (SPO) entity triples representing the business, its offerings, target audience, and key brand pillars.
-Format the output strictly as a JSON array of objects, each containing "subject", "predicate", and "object" keys. Max 8 triples.
-Example:
+    const prompt = `[SYSTEM PURPOSE]
+You are a deterministic Knowledge Graph Extraction Engine for AEObility. Your sole task is to process the provided unstructured client text and decompose it into an explicit semantic web of Subject-Predicate-Object (SPO) entity triples.
+
+[OUTPUT SPECIFICATION]
+You must respond strictly with a valid JSON array of objects following the EntityTriple schema. Do not add markdown wrapping (like \`\`\`json), introduction, or conversational text. 
+
+[EXTRACTION PRINCIPLES]
+1. Subject & Object: Must be concrete concepts, brands, technologies, methodologies, or architectural layers (e.g., "AEObility", "Next.js", "Atomic Answer Block"). Keep them singular and concise.
+2. Predicate: Must be an active, lowercase operational verb or structural relationship (e.g., "implements", "optimises", "resolves", "authenticates").
+3. Focus: Prioritise capturing distinct brand authorities, core digital assets, and structural dependencies that answer engines use to map brand entity networks.
+
+[SCHEMA]
 [
-  {"subject": "AEObility", "predicate": "specializes in", "object": "Answer Engine Optimization"},
-  {"subject": "AEO Services", "predicate": "helps", "object": "Australian businesses"}
+  {
+    "subject": "string",
+    "predicate": "string",
+    "object": "string"
+  }
 ]
 
-Content to analyze:
-"""
-${clientText.slice(0, 2000)}
-"""`;
+[CLIENT TEXT TO PROCESS]
+"${clientText.slice(0, 2000)}"`;
+
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
