@@ -4,6 +4,8 @@ import { runSimulation } from '@/lib/telemetry/rag-sim';
 import { extractEntityGraph } from '@/lib/telemetry/graph';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
+import { fetchCompetitorsViaSearch } from '@/lib/telemetry/search';
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -16,7 +18,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const competitorList = Array.isArray(competitors) ? competitors : [];
+    // Dynamically retrieve top competitors from Google Search via Gemini Grounding
+    let competitorList = [];
+    try {
+      competitorList = await fetchCompetitorsViaSearch(intent);
+    } catch (searchErr) {
+      console.error('Dynamic competitor search failed, falling back:', searchErr);
+      competitorList = Array.isArray(competitors) ? competitors : [];
+    }
 
     // Run telemetry engines concurrently
     const [proximityNodes, simulations, triples] = await Promise.all([
@@ -24,6 +33,7 @@ export async function POST(req: NextRequest) {
       runSimulation(intent, clientText),
       extractEntityGraph(clientText)
     ]);
+
 
     // Calculate proximityScore based on Client similarity
     const clientNode = proximityNodes.find(n => n.label === 'Client');
