@@ -126,13 +126,13 @@ export default function HowItWorks() {
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-light opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
             <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
-              Simple 4‑Step Funnel
+              The AI Visibility Telemetry Engine
             </h2>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
-              How We Help You Show Up in AI Search
+              How It Works
             </h2>
             <p className="text-base text-neutral-600 font-light font-serif">
-              We manually review your online presence and walk you through the findings.
+              Measure, understand, and activate your AI search visibility.
             </p>
           </div>
         </div>
@@ -146,9 +146,9 @@ export default function HowItWorks() {
                 01
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Enter Your Website URL</h4>
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Tell Us What You Want To Be Found For</h4>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Provide your primary business domain name so we can review your existing online presence across search and social channels.
+                  Enter your website and your primary customer search intent.
                 </p>
               </div>
             </div>
@@ -159,9 +159,9 @@ export default function HowItWorks() {
                 02
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Get Your Free Audit</h4>
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Measure Your AI Visibility</h4>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Receive your free audit within 24 hours. We’ll manually review your visibility across search, maps, and AI platforms.
+                  Our telemetry engine analyses how AI systems understand, retrieve, and recommend your business.
                 </p>
               </div>
             </div>
@@ -172,22 +172,10 @@ export default function HowItWorks() {
                 03
               </div>
               <div className="space-y-3 w-full">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Book a Complimentary 15‑Minute Call</h4>
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Discover Your Opportunities</h4>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Book a complimentary 15‑minute call using our Google Calendar link, or call us directly on **0480 286 282**.
+                  Receive your AI Visibility Score, confidence signals, and the biggest opportunities to improve.
                 </p>
-                <div className="flex flex-wrap gap-3 pt-1">
-                  <Link href="/book" className="btn-primary">
-                    Book a Call
-                  </Link>
-                  <a
-                    href="tel:0480286282"
-                    className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 bg-white text-neutral-800 text-xs font-semibold rounded-lg hover:bg-neutral-50 transition-all shadow-sm"
-                  >
-                    <Phone className="w-3.5 h-3.5" />
-                    Call Us
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -197,9 +185,9 @@ export default function HowItWorks() {
                 04
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Choose Your 90‑Day AI Success Blueprint</h4>
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Create Your AI Growth Blueprint</h4>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Get an actionable, step-by-step roadmap to secure more leads. If you choose to stay with us, we credit the $995 blueprint fee back into your plan.
+                  Turn your insights into an actionable 90-day roadmap.
                 </p>
               </div>
             </div>
@@ -274,6 +262,36 @@ export default function HowItWorks() {
                       </div>
                     </div>
                   )}
+
+                  {/* V2: Technical Health & Schema */}
+                  {(telemetryResult.technicalSEO || telemetryResult.performance) && (
+                    <div className="border-t border-white/5 pt-2 flex items-start justify-between text-[9px]">
+                      <div className="space-y-1">
+                        <div className="text-white/40 uppercase">Technical Health</div>
+                        {telemetryResult.performance && (
+                          <div className={telemetryResult.performance.coreWebVitalsScore > 80 ? 'text-emerald-400' : 'text-amber-400'}>
+                            CWV Score: {telemetryResult.performance.coreWebVitalsScore}
+                          </div>
+                        )}
+                        {telemetryResult.technicalSEO && (
+                          <div className="text-white/70">
+                            Links: {telemetryResult.technicalSEO.internalLinksCount}
+                          </div>
+                        )}
+                      </div>
+                      <div className="space-y-1 text-right">
+                        <div className="text-white/40 uppercase">Schema (JSON-LD)</div>
+                        {telemetryResult.schemaValidation && (
+                          <div className={telemetryResult.schemaValidation.hasValidSchema ? 'text-emerald-400' : 'text-rose-400'}>
+                            {telemetryResult.schemaValidation.hasValidSchema ? '● DETECTED' : '● MISSING'}
+                          </div>
+                        )}
+                        <div className="text-[8px] text-aeo-cyan truncate max-w-[80px]">
+                           {telemetryResult.schemaValidation?.typesFound?.[0] || 'None'}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-2 border-t border-neutral-100 space-y-3">
@@ -302,9 +320,9 @@ export default function HowItWorks() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
                 <div>
-                  <h4 className="text-lg font-bold text-neutral-950">Claim Your Free Audit</h4>
+                  <h4 className="text-lg font-bold text-neutral-950">Measure Your AI Visibility</h4>
                   <p className="text-xs text-neutral-500 font-light mt-1">
-                    See how your business performs across search, maps, and AI discovery platforms today.
+                    See how AI search engines understand your business today.
                   </p>
                 </div>
 
@@ -394,7 +412,7 @@ export default function HowItWorks() {
                     disabled={loading}
                     className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50 cursor-pointer"
                   >
-                    {loading ? 'Running Telemetry Scan...' : 'Audit My Local Visibility'}
+                    {loading ? 'Running Telemetry Scan...' : 'Generate My AI Visibility Score'}
                     {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                   </button>
                   {telemetryError && (

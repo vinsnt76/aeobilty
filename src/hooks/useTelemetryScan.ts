@@ -15,11 +15,7 @@ export function useTelemetryScan() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           intent: targetIntent,
-          clientText: `Website audit for ${url}. This business provides services optimized for localized search intent, local maps, and answer engines. AEObility ensures pages are easily read, chunked, and indexable.`,
-          competitors: [
-            'https://www.bentobuzz.com.au/ - bento lunchboxes and accessories',
-            'https://www.littlelunchboxco.com.au/ - kids lunchboxes and leakproof bento boxes'
-          ]
+          url: url
         }),
       });
 

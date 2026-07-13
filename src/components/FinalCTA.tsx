@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FinalCTA() {
   return (
@@ -9,8 +10,8 @@ export default function FinalCTA() {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-8">
         <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Limited Audit Slots Available This Month</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan animate-pulse" />
+          <span>Check Your AI Visibility Score Now</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -22,14 +23,14 @@ export default function FinalCTA() {
           Improve your organic visibility and reduce wasted effort. See exactly what it takes to show up first across Search, Maps, and AI assistants.
         </p>
 
-        <div className="pt-4">
-          <a
-            href="#audit-form"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base shadow-[0_0_30px_rgba(0,240,255,0.25)] hover:scale-[1.02] transition-transform duration-200"
-          >
-            Request My Free Audit
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/diagnostic"
+              className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-aeo-cyan text-black font-bold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+            >
+              Generate My Score
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
         </div>
 
         <p className="text-xs text-white/30 font-light">

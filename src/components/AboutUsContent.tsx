@@ -153,16 +153,16 @@ export default function AboutUsContent() {
 
       {/* Call to Action */}
       <section className="p-8 bg-gradient-to-r from-aeo-cyan/10 to-aeo-purple/10 border border-white/5 rounded-3xl text-center space-y-6">
-        <h2 className="text-xl sm:text-2xl font-extrabold text-white font-soehne-breit">Ready to Audit Your Brand Visibility?</h2>
-        <p className="text-sm text-white/60 font-light max-w-md mx-auto font-serif">
-          Get a free visibility and entity structure audit delivered within 24 hours. No lock-ins. Just clarity.
+        <h2 className="text-xl sm:text-2xl font-extrabold text-white font-soehne-breit">Ready to Measure Your AI Visibility?</h2>
+        <p className="text-white/60 font-light max-w-xl mx-auto mb-6 text-sm">
+          Get your AI Visibility Score delivered within 24 hours. No lock-ins. Just clarity.
         </p>
-        <div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/#audit-form"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
+            href="/diagnostic"
+            className="group flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-sm transition-transform hover:scale-105 shadow-[0_0_15px_rgba(0,240,255,0.2)]"
           >
-            <span>Get Free Visibility Audit</span>
+            <span>Generate Visibility Score</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

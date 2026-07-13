@@ -214,12 +214,12 @@ export default function AEOBlueprintPage() {
             <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
               Order your Standalone $995 Clarity Phase. We build the roadmap, and credit the fee back in full if you hire us to implement it.
             </p>
-            <div className="flex justify-center gap-3">
+            <div className="pt-4 flex justify-center">
               <Link
-                href="/#audit-form"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all"
+                href="/diagnostic"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(0,240,255,0.2)]"
               >
-                <span>Get Started (Audit Form)</span>
+                <span>Get Visibility Score</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

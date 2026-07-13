@@ -184,11 +184,11 @@ export default function GEOKnowledgeNodePage() {
               Ensure you capture nearby client queries. Secure your manual map and local search visibility check today.
             </p>
             <div className="flex justify-center gap-3">
-              <Link
-                href="/#audit-form"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all"
-              >
-                <span>Request Free Audit</span>
+                <Link
+                  href="/diagnostic"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-black text-sm font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
+                >
+                  <span>Get Visibility Score</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

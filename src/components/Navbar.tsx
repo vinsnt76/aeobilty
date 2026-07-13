@@ -196,10 +196,10 @@ export default function Navbar() {
               Book a Call
             </Link>
             <Link
-              href="/#audit-form"
+              href="/diagnostic"
               className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase border border-aeo-cyan/35 text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black hover:border-aeo-cyan transition-all"
             >
-              Free Audit
+              Get Visibility Score
             </Link>
           </div>
 
@@ -297,11 +297,11 @@ export default function Navbar() {
               </Link>
               
               <Link
-                href="/#audit-form"
+                href="/diagnostic"
                 onClick={() => setIsOpen(false)}
                 className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold bg-black border border-aeo-cyan text-aeo-cyan rounded-xl hover:bg-aeo-cyan hover:text-black transition-all"
               >
-                Get Free Audit
+                Get Visibility Score
               </Link>
             </div>
           </div>

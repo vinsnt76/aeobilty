@@ -364,10 +364,10 @@ export default function SolutionsPage() {
               </p>
               <div>
                 <Link
-                  href="/#audit-form"
+                  href="/diagnostic"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
                 >
-                  <span>Start Audit Request</span>
+                  <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

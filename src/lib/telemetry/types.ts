@@ -19,6 +19,50 @@ export interface SimulationRun {
   selectedChunk: string;
 }
 
+export interface TechnicalSEO {
+  title: string | null;
+  metaDescription: string | null;
+  headingsCount: { h1: number; h2: number; h3: number };
+  internalLinksCount: number;
+}
+
+export interface SchemaValidation {
+  hasValidSchema: boolean;
+  typesFound: string[];
+}
+
+export interface PerformanceMetrics {
+  coreWebVitalsScore: number; // 0 to 100
+  lcp: number | null; // Largest Contentful Paint in ms
+  cls: number | null; // Cumulative Layout Shift
+}
+
+export interface ScoreExplanation {
+  category: string;
+  delta: number;
+  reason: string;
+  confidence: number; // 0 to 100
+}
+
+export interface EntityConfidence {
+  score: number; // 0 to 100
+  type: 'Verified' | 'Brand' | 'Emerging' | 'Unknown';
+}
+
+export interface EngineeredFeatures {
+  semanticDominance: number; // Comparative score vs competitors
+  technicalAdvantage: number;
+  contentLengthRatio: number;
+  schemaCompleteness: number;
+  entityAuthority: number;
+}
+
+export interface CrawlQuality {
+  score: number; // 0 to 100
+  method: 'Readability' | 'Cheerio' | 'Fallback';
+  hydrationRequired: boolean;
+}
+
 export interface TelemetryResult {
   clientUrl?: string;
   proximityScore: number; // 0 to 100
@@ -26,4 +70,14 @@ export interface TelemetryResult {
   triples: EntityTriple[];
   simulations: SimulationRun[];
   readinessScore: number;
+  explanations?: ScoreExplanation[];
+  
+  technicalSEO?: TechnicalSEO;
+  schemaValidation?: SchemaValidation;
+  performance?: PerformanceMetrics;
+  entityConfidence?: EntityConfidence;
+  
+  // V3 specific
+  engineeredFeatures?: EngineeredFeatures;
+  crawlQuality?: CrawlQuality;
 }

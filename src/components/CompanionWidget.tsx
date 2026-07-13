@@ -36,68 +36,66 @@ export default function CompanionWidget() {
   const [telemetryData, setTelemetryData] = useState<any>(null);
 
   // Gatekeeper Mode states
+  const [onboardStage, setOnboardStage] = useState<'URL' | 'INTENT' | 'EMAIL' | 'DONE'>('URL');
   const [onboardUrl, setOnboardUrl] = useState('');
   const [onboardIntent, setOnboardIntent] = useState('');
   const [onboardEmail, setOnboardEmail] = useState('');
   const [onboardLoading, setOnboardLoading] = useState(false);
   const [onboardError, setOnboardError] = useState('');
 
-  const handleOnboardSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!onboardUrl || !onboardIntent || !onboardEmail) return;
-
+  const runTelemetryScan = async (url: string, intent: string) => {
     setOnboardLoading(true);
     setOnboardError('');
 
     try {
-      // 1. Run the telemetry scan using `/api/telemetry`
+      // 1. Run the telemetry scan
       const scanRes = await fetch('/api/telemetry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          intent: onboardIntent,
-          clientText: `Website audit for ${onboardUrl}. Optimized for local search and answer engines.`,
-          competitors: [
-            'https://www.bentobuzz.com.au/ - bento boxes and kids accessories',
-            'https://www.littlelunchboxco.com.au/ - leakproof bento lunchboxes for kids'
-          ]
-        })
+        body: JSON.stringify({ url, intent })
       });
 
-      if (!scanRes.ok) {
-        throw new Error('Onboarding telemetry scan failed.');
-      }
-
+      if (!scanRes.ok) throw new Error('Visibility telemetry scan failed.');
       const resultData = await scanRes.json();
-
-      // 2. Submit the lead/enquiry form
-      await fetch('/api/forms/audit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: onboardEmail, website: onboardUrl, intent: onboardIntent })
-      });
-
-      // 3. Write to localStorage and bootstrap chat context
-      const latestData = {
-        url: onboardUrl,
-        intent: onboardIntent,
-        result: resultData
-      };
-      localStorage.setItem('aeo_telemetry_latest', JSON.stringify(latestData));
       
+      const latestData = { url, intent, result: resultData };
+      localStorage.setItem('aeo_telemetry_latest', JSON.stringify(latestData));
       setTelemetryData(latestData);
-      setMessages([
+      
+      setMessages(prev => [
+        ...prev,
         {
           sender: 'assistant',
-          text: `AEO Telemetry context loaded for ${onboardUrl} targeting intent "${onboardIntent}". Vector alignments, retrieval simulations, and entity graph structures are updated. What technical details should we clarify?`,
+          text: `Your AI Visibility Score: ${resultData.readinessScore}/100.\n\nI found important opportunities across Semantic, Entity, and Technical signals.\n\nTo reveal your personalised recommendations, where should I send your report?`,
           telemetry: resultData
         }
       ]);
+      setOnboardStage('EMAIL');
     } catch (err: any) {
       console.error(err);
       setOnboardError(err.message || 'Diagnostic failed. Verify connection.');
+      setMessages(prev => [...prev, { sender: 'assistant', text: 'Sorry, the diagnostic scan failed. Please try again.' }]);
     } finally {
       setOnboardLoading(false);
+    }
+  };
+
+  const handleEmailCapture = async (email: string) => {
+    setOnboardEmail(email);
+    try {
+      await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, website: onboardUrl, intent: onboardIntent })
+      });
+      setOnboardStage('DONE');
+      setMessages(prev => [
+        ...prev,
+        { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me any questions about your visibility metrics above.` }
+      ]);
+    } catch (e) {
+      // ignore
+      setOnboardStage('DONE');
     }
   };
 
@@ -129,6 +127,20 @@ export default function CompanionWidget() {
   useEffect(() => {
     loadTelemetryFromStorage();
     window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
+    
+    // Initial greeting if no telemetry
+    if (!localStorage.getItem('aeo_telemetry_latest')) {
+      setMessages([
+        {
+          sender: 'assistant',
+          text: "👋 Hi, I'm Bill.\n\nI help businesses understand how AI search engines see their website.\n\nI can run a quick visibility check.\n\nWhat's your website URL?"
+        }
+      ]);
+      setOnboardStage('URL');
+    } else {
+      setOnboardStage('DONE');
+    }
+    
     return () => window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
   }, []);
 
@@ -202,6 +214,23 @@ export default function CompanionWidget() {
     setIsThinking(true);
 
     try {
+      // Conversational Onboarding Interception
+      if (onboardStage !== 'DONE') {
+        if (onboardStage === 'URL') {
+          setOnboardUrl(userMsg);
+          setMessages(prev => [...prev, { sender: 'assistant', text: `Thanks.\n\nWhat search would you like customers to find you for?\n\nExample:\n"best mortgage broker Perth"\n"industrial storage solutions"` }]);
+          setOnboardStage('INTENT');
+        } else if (onboardStage === 'INTENT') {
+          setOnboardIntent(userMsg);
+          setMessages(prev => [...prev, { sender: 'assistant', text: `Perfect.\n\nI'll analyse how AI search engines understand:\n\nWebsite: ${onboardUrl}\nIntent: ${userMsg}\n\nRunning visibility telemetry now...` }]);
+          runTelemetryScan(onboardUrl, userMsg);
+        } else if (onboardStage === 'EMAIL') {
+          handleEmailCapture(userMsg);
+        }
+        setIsThinking(false);
+        return;
+      }
+
       const isScanRequest = /\b(audit|scan|telemetry|vector|proximity|graph)\b/i.test(userMsg);
       let telemetryContext = null;
 
@@ -317,68 +346,7 @@ export default function CompanionWidget() {
           <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
         </div>
 
-        {/* Messages list OR Onboarding Gatekeeper Card */}
         <div className="flex-grow overflow-y-auto p-4 space-y-4 text-xs">
-          {!telemetryData ? (
-            <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 space-y-4 text-white">
-              <div>
-                <h4 className="text-sm font-bold text-white font-mono uppercase tracking-wider text-aeo-cyan">Initialise AI Bill</h4>
-                <p className="text-[10px] text-zinc-400 mt-1">
-                  Enter your business details below to run an active AEO telemetry scan and activate the diagnostic co-pilot.
-                </p>
-              </div>
-
-              <form onSubmit={handleOnboardSubmit} className="space-y-3 font-mono text-[10px]">
-                <div className="space-y-1">
-                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Business URL</label>
-                  <input
-                    type="url"
-                    required
-                    placeholder="https://example.com.au"
-                    value={onboardUrl}
-                    onChange={(e) => setOnboardUrl(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Primary Search Intent</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. best solar installer Perth"
-                    value={onboardIntent}
-                    onChange={(e) => setOnboardIntent(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="block text-[9px] uppercase tracking-wider text-zinc-500">Contact Email</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="you@company.com.au"
-                    value={onboardEmail}
-                    onChange={(e) => setOnboardEmail(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-aeo-cyan/50 text-[10px] transition-colors"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={onboardLoading}
-                  className="w-full bg-aeo-cyan text-black py-2.5 rounded-lg font-bold text-[10px] hover:bg-aeo-cyan/90 disabled:opacity-50 transition-all cursor-pointer uppercase tracking-wider mt-2"
-                >
-                  {onboardLoading ? 'Running Diagnostic Scan...' : 'Run Diagnostic Scan'}
-                </button>
-
-                {onboardError && (
-                  <p className="text-[9px] text-rose-400 text-center mt-2">{onboardError}</p>
-                )}
-              </form>
-            </div>
-          ) : (
             <>
               {messages.map((msg, i) => {
                 const isUser = msg.sender === 'user';
@@ -395,13 +363,13 @@ export default function CompanionWidget() {
                       </div>
                     )}
                     <div className="flex flex-col flex-grow">
-                      <div
-                        className={`p-3 rounded-xl leading-relaxed text-[11px] ${
-                          isUser
-                            ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
-                            : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
-                        }`}
-                      >
+                        <div
+                          className={`p-3 rounded-xl leading-relaxed text-[11px] whitespace-pre-wrap ${
+                            isUser
+                              ? 'bg-aeo-cyan/15 text-aeo-cyan rounded-tr-none border border-aeo-cyan/15'
+                              : 'bg-white/[0.03] text-white/90 rounded-tl-none border border-white/5'
+                          }`}
+                        >
                         {msg.text}
                       </div>
 
@@ -494,13 +462,11 @@ export default function CompanionWidget() {
                 </div>
               )}
             </>
-          )}
           <div ref={messagesEndRef} />
         </div>
 
         {/* Footer actions and voice selector */}
-        {telemetryData && (
-          <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
+        <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
             {voices.length > 0 && (
               <div className="flex items-center gap-2 bg-black/40 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px] text-white/50">
                 <span className="font-semibold uppercase tracking-wider text-[8px]">Voice</span>
@@ -575,7 +541,6 @@ export default function CompanionWidget() {
               </button>
             </div>
           </div>
-        )}
       </div>
     </>
   );

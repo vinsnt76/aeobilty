@@ -136,10 +136,10 @@ export default function KnowledgeHubPage() {
               </p>
               <div className="pt-4">
                 <Link
-                  href="/#audit-form"
+                  href="/diagnostic"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
                 >
-                  <span>Request Free Audit Checklist</span>
+                  <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -298,10 +298,10 @@ export default function KnowledgeHubPage() {
               </p>
               <div>
                 <Link
-                  href="/#audit-form"
+                  href="/diagnostic"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
                 >
-                  <span>Start Audit Request</span>
+                  <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

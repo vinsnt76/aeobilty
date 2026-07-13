@@ -52,7 +52,7 @@ export default function ServicesPage() {
         "name": "Australia"
       }
     ],
-    "description": "Professional Answer Engine Optimisation (AEO), local GEO map marketing, and conversational AI search readiness audits.",
+    "description": "Professional Answer Engine Optimisation (AEO), local GEO map marketing, and conversational AI search readiness telemetry.",
     "serviceType": "Search & AI Visibility Marketing"
   };
 
@@ -108,10 +108,10 @@ export default function ServicesPage() {
               </p>
               <div className="pt-4">
                 <Link
-                  href="/#audit-form"
+                  href="/diagnostic"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  <span>Request Free Audit</span>
+                  <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -233,10 +233,10 @@ export default function ServicesPage() {
               </p>
               <div>
                 <Link
-                  href="/#audit-form"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
+                  href="/diagnostic"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-aeo-cyan text-black text-xs font-bold rounded-lg hover:bg-white transition-all shadow-[0_0_15px_rgba(0,240,255,0.2)]"
                 >
-                  <span>Claim Your Free Audit</span>
+                  <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

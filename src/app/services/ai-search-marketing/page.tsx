@@ -108,10 +108,10 @@ export default function AISearchMarketingPage() {
               Get a custom-crafted report looking at how Perplexity, ChatGPT, and Google Maps currently see your business.
             </p>
             <Link
-              href="/#audit-form"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-aeo-cyan hover:underline"
+              href="/diagnostic"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
             >
-              <span>Get your Free Audit</span>
+              <span>Get Visibility Score</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

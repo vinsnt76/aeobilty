@@ -150,9 +150,9 @@ export default function Hero() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
-                Get Found.<br />
-                Get <span className="text-aeo-cyan font-normal">[</span>Chosen<span className="text-aeo-cyan font-normal">]</span>.<br />
-                Grow Faster.
+                Measure Your<br />
+                <span className="text-aeo-cyan font-normal">[</span>AI Search<span className="text-aeo-cyan font-normal">]</span><br />
+                Visibility.
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
@@ -161,19 +161,19 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="#audit-form"
+                  href="/diagnostic"
                   className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
                 >
-                  Get My Free Visibility Audit
+                  ▶ Generate Your AI Visibility Score
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <a
-                  href="#blueprint"
+                <button
+                  onClick={() => document.getElementById('companion-widget-toggle')?.click()}
                   className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-all"
                 >
-                  See the 90-Day Blueprint
-                </a>
+                  💬 Ask AI Bill How AI Search Sees Your Business
+                </button>
               </div>
 
               <div className="flex items-center gap-2 text-xs text-white/40 pt-4">

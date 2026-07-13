@@ -1,0 +1,103 @@
+{
+  "clientUrl": "https://www.bentobuzz.com.au",
+  "proximityScore": 65,
+  "nodes": [
+    {
+      "label": "Client",
+      "text": "https://aeobility.com.au/ - default fallback client domain",
+      "similarity": 0.65
+    },
+    {
+      "label": "Competitor 1",
+      "text": "https://www.littlelunchboxco.com.au/ - kids lunchboxes",
+      "similarity": 0.72
+    }
+  ],
+  "triples": [],
+  "simulations": [
+    {
+      "syntheticQuery": "kids bento lunch boxes",
+      "bestSimilarity": 0,
+      "survived": false,
+      "attributionRank": 0,
+      "selectedChunk": "Crawl failed. fetch failed"
+    },
+    {
+      "syntheticQuery": "best leak-proof bento box for children's school lunches",
+      "bestSimilarity": 0,
+      "survived": false,
+      "attributionRank": 0,
+      "selectedChunk": "Crawl failed. fetch failed"
+    },
+    {
+      "syntheticQuery": "toddler bento lunch containers with easy open",
+      "bestSimilarity": 0,
+      "survived": false,
+      "attributionRank": 0,
+      "selectedChunk": "Crawl failed. fetch failed"
+    }
+  ],
+  "readinessScore": 8,
+  "explanations": [
+    {
+      "category": "Semantic",
+      "delta": 20,
+      "reason": "Moderate vector proximity, but lags top competitors",
+      "confidence": 85
+    },
+    {
+      "category": "RAG Simulation",
+      "delta": -8,
+      "reason": "Content frequently dropped during RAG retrieval",
+      "confidence": 80
+    },
+    {
+      "category": "Knowledge Graph",
+      "delta": -4,
+      "reason": "Sparse semantic graph structure",
+      "confidence": 90
+    },
+    {
+      "category": "Competitor Analysis",
+      "delta": -10,
+      "reason": "Thin content compared to top ranking competitors",
+      "confidence": 95
+    },
+    {
+      "category": "Technical SEO",
+      "delta": -10,
+      "reason": "Missing explicit JSON-LD schema",
+      "confidence": 100
+    }
+  ],
+  "technicalSEO": {
+    "title": null,
+    "metaDescription": null,
+    "headingsCount": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0
+    },
+    "internalLinksCount": 0
+  },
+  "schemaValidation": {
+    "hasValidSchema": false,
+    "typesFound": []
+  },
+  "performance": {
+    "coreWebVitalsScore": 85,
+    "lcp": 1200,
+    "cls": 0.05
+  },
+  "entityConfidence": {
+    "score": 0,
+    "type": "Unknown"
+  },
+  "engineeredFeatures": {
+    "semanticDominance": 0,
+    "technicalAdvantage": 0,
+    "contentLengthRatio": 0.002585649644473174,
+    "schemaCompleteness": 0,
+    "entityAuthority": 0
+  }
+}

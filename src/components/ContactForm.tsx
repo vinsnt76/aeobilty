@@ -37,7 +37,7 @@ export default function ContactForm() {
       answer: "We offer responsive implementation support for all Australian businesses. Direct support messages are normally replied to within 24 business hours."
     },
     {
-      question: "Can I use the $995 audit credit towards monthly retention packages?",
+      question: "Can I use the $995 Strategic Blueprint credit towards monthly retention packages?",
       answer: "Yes, 100% of the strategic blueprint method cost is credited back if you choose to transition to our full AEO implementation plan."
     }
   ];
@@ -58,7 +58,7 @@ export default function ContactForm() {
               <span className="text-gradient-aeo">No Jargon. No Pressure.</span>
             </h1>
             <p className="text-white/60 text-base max-w-lg font-light leading-relaxed font-serif">
-              Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.
+              Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 Blueprint.
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
         <div className="p-8 bg-white/[0.01] border border-white/5 rounded-3xl space-y-6">
           <h2 className="text-xl font-bold text-white font-soehne-breit">What Happens on Your Discovery Strategy Call</h2>
           <p className="text-sm text-white/60 font-light leading-relaxed font-serif">
-            We will walk through your free visibility audit results and review how conversational search engines see your brand. You will get a clear overview of our strategic sprints with zero hard sales tactics.
+            We will walk through your AI Visibility Telemetry results and review how conversational search engines see your brand. You will get a clear overview of our strategic sprints with zero hard sales tactics.
           </p>
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
             <Image

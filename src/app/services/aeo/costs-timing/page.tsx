@@ -37,10 +37,10 @@ export default function AEOPricingPage() {
       },
       {
         "@type": "Question",
-        "name": "How long does it take to receive the Free Visibility Audit?",
+        "name": "How long does it take to get my AI Visibility Score?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our initial Free Visibility Audit is delivered straight to your inbox within 24 hours of submitting your website URL."
+          "text": "Our AI Visibility Score is generated instantly via our telemetry engine from your provided website URL and primary search intent."
         }
       }
     ]
@@ -107,7 +107,7 @@ export default function AEOPricingPage() {
               How Much Does AEO Cost and <span className="text-gradient-aeo">What Do I Get?</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Let’s talk about cost in plain English. Review package pricing, free visibility audits, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.
+              Let’s talk about cost in plain English. Review package pricing, AI visibility telemetry checks, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export default function AEOPricingPage() {
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-aeo-cyan font-semibold">
                   Step 1-3
                 </div>
-                <h3 className="text-lg font-bold text-white">Free Visibility Audit</h3>
+                <h3 className="text-lg font-bold text-white">AI Visibility Score</h3>
                 <p className="text-xs text-white/60 leading-relaxed">
                   Enter your website URL for a quick check on visibility, entity clarity, local signals, and AI-readiness. No jargon. No pressure.
                 </p>
@@ -134,10 +134,10 @@ export default function AEOPricingPage() {
                   <span className="text-xs text-white/80 font-semibold">Within 24 Hours</span>
                 </div>
                 <Link
-                  href="/#audit-form"
+                  href="/diagnostic"
                   className="group flex items-center justify-center gap-1.5 w-full py-3 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-100 transition-all text-center"
                 >
-                  Generate My Free Audit
+                  Generate My Score
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>

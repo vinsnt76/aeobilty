@@ -38,7 +38,7 @@ export default function AEORootPage() {
 
   const serviceModules = [
     {
-      title: "AEO Audit",
+      title: "AEO Visibility Check",
       bullets: ["Comprehensive crawl compatibility scan", "LLM citation index baseline assessment", "Entity validation & visibility report"],
       linkText: "Explore AI Search Integration",
       linkHref: "/services/ai-search-marketing"
@@ -122,7 +122,7 @@ export default function AEORootPage() {
     },
     {
       title: "How much does AEO cost & what do I get?",
-      desc: "Find package options, initial free visibility audits, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.",
+      desc: "Find package options, initial AI visibility telemetry checks, our $995 Strategic Blueprint MVP, credit back options, and delivery timelines.",
       href: "/services/aeo/costs-timing",
       hook: "Explore blueprint pricing",
       image: "/client-milestones-onboarding.png"
@@ -139,7 +139,7 @@ export default function AEORootPage() {
   ];
 
   const workflowSteps = [
-    { step: "01", name: "Audit", desc: "Assess crawling index authorizations and baseline citation share rates." },
+    { step: "01", name: "Telemetry Scan", desc: "Assess crawling index authorizations and baseline citation share rates." },
     { step: "02", name: "Strategy", desc: "Map semantic category graphs and construct conversational answer grids." },
     { step: "03", name: "Implementation", desc: "Deploy JSON-LD schemas and restructure website copy into context chunks." }
   ];

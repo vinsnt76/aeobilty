@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowRight, Compass, Milestone, Layers, Rocket } from 'lucide-react';
+import Link from 'next/link';
 
 export default function BlueprintSection() {
   const blueprintPhases = [
     {
       icon: <Compass className="w-5 h-5 text-aeo-cyan" />,
       title: 'Days 1-30: Foundation & Online Profile Setup',
-      description: 'Audit existing assets and organise business details so Google, map services, and modern AI tools can find and display your business accurately.',
+      description: 'Analyze existing assets and organise business details so Google, map services, and modern AI tools can find and display your business accurately.',
     },
     {
       icon: <Milestone className="w-5 h-5 text-aeo-cyan" />,
@@ -50,13 +51,13 @@ export default function BlueprintSection() {
               </p>
 
               <div className="space-y-4 pt-4">
-                <a
-                  href="#audit-form"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-semibold hover:bg-neutral-100 transition-all duration-300"
+                <Link
+                  href="/diagnostic"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-aeo-cyan text-black font-bold text-sm shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:bg-white transition-all"
                 >
-                  Get My Blueprint
+                  Get Visibility Score
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
 
                 <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
                   <span className="font-semibold text-white">Pricing note:</span> Take the strategy with you, or stay with us for the 90 days — and we credit the $995 blueprint fee back into your plan.
