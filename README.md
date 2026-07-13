@@ -6,8 +6,8 @@ A modern, high-performance web platform built with **Next.js 16 (App Router)**. 
 
 ## 🚀 Key Modules & Routes
 
-### 1. **Corporate Hub (`/`)**
-The landing page and primary site structure for **AEObility**—focusing on AI Search Optimisation (AEO), Local SEO, and practical AI workflow automation.
+### 1. **Corporate Hub (`/`) & Diagnostic Engine (`/diagnostic`)**
+The primary site structure for **AEObility**—focusing on Answer Engine Optimisation (AEO), Local SEO, and the proprietary **AI Visibility Telemetry Engine**. The platform drives users away from legacy "SEO Audits" and instead offers instant, automated scoring of their visibility across ChatGPT, Gemini, and Claude.
 
 ### 2. **Professional Portfolio (`/my-portfolio`)**
 Vincent Baker's complete professional resume, core competencies, and featured case studies detailing high-impact AI and automation projects (such as the *AI Video Engine* and *Baby Bento Social Reel Generator*). 
