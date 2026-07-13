@@ -11,6 +11,9 @@ import { calculateReadinessScore } from '@/lib/telemetry/scoring';
 import { getTelemetryCache, setTelemetryCache } from '@/lib/telemetry/cache';
 import { extractFeatures } from '@/lib/telemetry/features';
 
+// Allow maximum duration (60s on Vercel Hobby) for telemetry processing
+export const maxDuration = 60;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
