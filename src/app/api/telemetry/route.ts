@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     // 1. Kick off Stage 1: Crawl Client, Tech SEO, and find competitors via abstractions
     const [clientCrawl, performance, competitorUrls] = await Promise.all([
-      url ? crawlUrl(url) : Promise.resolve({ textContent: fallbackText, technicalSEO: undefined, schemaValidation: undefined, crawlQuality: { score: 0, method: 'Fallback', hydrationRequired: false } }),
+      url ? crawlUrl(url) : Promise.resolve({ textContent: fallbackText, technicalSEO: undefined, schemaValidation: undefined, crawlQuality: { score: 0, method: 'Fallback' as const, hydrationRequired: false } }),
       url ? fetchPerformanceMetrics(url) : Promise.resolve(undefined),
       fetchCompetitorsViaSearch(intent)
     ]);
