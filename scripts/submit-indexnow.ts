@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+
 
 const HOST = "www.aeobility.com.au"; // Replace with your actual domain
 const KEY = "99f72a3935774040b8814ad6a76e6e59";
