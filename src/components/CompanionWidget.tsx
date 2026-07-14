@@ -45,6 +45,22 @@ export default function CompanionWidget() {
       setMessages(prev => [...prev, { sender: 'assistant', text: "That doesn't look like a valid email address. Could you double-check it for me?" }]);
       return;
     }
+
+    // Domain validation against crawled site
+    const emailDomain = email.split('@')[1]?.toLowerCase();
+    const siteUrl = telemetryData?.clientUrl || telemetryData?.url || '';
+    let siteDomain = '';
+    try {
+      siteDomain = new URL(siteUrl.startsWith('http') ? siteUrl : `https://${siteUrl}`).hostname.replace('www.', '').toLowerCase();
+    } catch {
+      siteDomain = '';
+    }
+
+    if (siteDomain && emailDomain !== siteDomain) {
+      setMessages(prev => [...prev, { sender: 'assistant', text: `For security reasons, please use an email address ending in @${siteDomain} to access this proprietary report.` }]);
+      return;
+    }
+
     setOnboardEmail(email);
     window.dispatchEvent(new Event('bill_email_submitted'));
     try {
@@ -85,6 +101,7 @@ export default function CompanionWidget() {
   useEffect(() => {
     // Event listener for external triggers to open a new fresh session
     const handleOpenNewSession = () => {
+      // Open the drawer when triggered
       setIsOpen(true);
       window.dispatchEvent(new Event('bill_opened'));
       const raw = localStorage.getItem('aeo_telemetry_latest');
