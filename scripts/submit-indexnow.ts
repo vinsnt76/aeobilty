@@ -4,11 +4,8 @@ const HOST = "www.aeobility.com.au"; // Replace with your actual domain
 const KEY = "99f72a3935774040b8814ad6a76e6e59";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
-// List of URLs to submit to IndexNow
 const urlList = [
-  `https://${HOST}/`,
-  `https://${HOST}/about`,
-  `https://${HOST}/knowledge-hub`
+  `https://${HOST}/knowledge-hub/case-studies`
 ];
 
 async function submitToIndexNow() {
