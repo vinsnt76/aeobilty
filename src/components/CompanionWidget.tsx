@@ -112,7 +112,7 @@ export default function CompanionWidget() {
           setTimeout(() => {
             setMessages(prev => [...prev, {
               sender: 'assistant',
-              text: `I've identified 5 more opportunities.\n\nWould you like the complete breakdown?`
+              text: `I've uncovered 5 more opportunities that could improve how AI understands and recommends your business.\n\nI'll prepare your full AI Visibility Report, including:\n✓ Competitor gaps\n✓ Missing business entities\n✓ Content opportunities\n✓ Priority recommendations\n\nWhere should I send it?`
             }]);
             setBillState('EMAIL_CAPTURE');
             window.dispatchEvent(new Event('bill_email_requested'));
@@ -435,11 +435,10 @@ export default function CompanionWidget() {
               
               {billState === 'EMAIL_CAPTURE' && (
                 <div className="mt-4 p-4 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/20 rounded-xl space-y-3 shadow-[0_0_15px_rgba(0,240,255,0.05)] max-w-[90%]">
-                  <div className="text-[11px] font-semibold text-white">Unlock Full Report & Consultation</div>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="email"
-                      placeholder="Enter email..."
+                      placeholder="Email Address"
                       value={onboardEmail}
                       onChange={e => setOnboardEmail(e.target.value)}
                       className="flex-grow bg-black/60 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-aeo-cyan text-[11px]"
@@ -451,7 +450,7 @@ export default function CompanionWidget() {
                       onClick={() => handleEmailCapture(onboardEmail)}
                       className="px-4 py-2 bg-white text-black font-semibold rounded-lg text-[11px] hover:bg-white/90 transition-colors"
                     >
-                      Unlock
+                      Send My Report & Continue With Bill
                     </button>
                   </div>
                 </div>
