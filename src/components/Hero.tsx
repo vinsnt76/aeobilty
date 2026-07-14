@@ -151,12 +151,11 @@ export default function Hero() {
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
                 Measure Your<br />
-                <span className="text-aeo-cyan font-normal">[</span>AI Search<span className="text-aeo-cyan font-normal">]</span><br />
-                Visibility.
+                AI Search Visibility
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
-                AEObility helps your business show up more often across search, social, and AI — so you get more leads and more enquiries without the complexity.
+                AEObility helps your business show up more often across search, social, and AI so you get more leads and more enquiries without the complexity.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -164,16 +163,9 @@ export default function Hero() {
                   href="/diagnostic"
                   className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
                 >
-                  ▶ Generate Your AI Visibility Score
+                  ▶ Generate My AI Visibility Score
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
-
-                <button
-                  onClick={() => window.dispatchEvent(new Event('open_new_bill_session'))}
-                  className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-all"
-                >
-                  💬 Ask AI Bill How AI Search Sees Your Business
-                </button>
               </div>
 
               <div className="flex items-center gap-2 text-xs text-white/40 pt-4">

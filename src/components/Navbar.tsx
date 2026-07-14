@@ -39,7 +39,7 @@ export default function Navbar() {
 
   const navLinks = [
     {
-      name: 'AEO Services',
+      name: 'Services',
       href: '/services',
       dropdownItems: [
         { name: 'Services Overview', href: '/services' },
@@ -49,7 +49,7 @@ export default function Navbar() {
       ]
     },
     {
-      name: 'AEO Packages',
+      name: 'Packages',
       href: '/solutions',
       dropdownItems: [
         { name: 'Solutions Overview', href: '/solutions' },
@@ -68,8 +68,7 @@ export default function Navbar() {
         { name: 'GEO & SEO Local Matrix', href: '/knowledge-hub/geo' }
       ]
     },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact & Support', href: '/contact' },
+    { name: 'Support', href: '/support' }
   ];
 
   // Helper to check if a link is active
@@ -83,19 +82,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-black/60 backdrop-blur-md border-b border-white/5 sticky top-0 z-50 transition-all duration-300">
+      <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Brand Logo & Name */}
           <Link href="/" className="flex items-center gap-2 group relative z-50">
             <svg
-              className="w-8 h-8 text-aeo-cyan group-hover:scale-105 transition-transform"
+              className="w-8 h-8 text-black group-hover:scale-105 transition-transform"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke={isOpen ? '#000000' : 'currentColor'}
+                stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -109,106 +108,107 @@ export default function Navbar() {
               />
               <path
                 d="M2 16L16 24L30 16"
-                stroke={isOpen ? '#000000' : 'currentColor'}
+                stroke="currentColor"
                 strokeWidth="1.5"
                 strokeDasharray="2 2"
               />
             </svg>
-            <span className={`text-xl font-bold tracking-wider transition-colors ${isOpen ? 'text-black' : 'text-white'}`}>
+            <span className="text-xl font-bold tracking-wider text-black">
               AEObility
             </span>
           </Link>
 
-          {/* Desktop Menu links */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm font-semibold text-white/75" ref={dropdownRef}>
-            {navLinks.map((link) => {
-              if (link.dropdownItems) {
-                const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
-                const isCurrentDropdownOpen = activeDropdown === link.name;
-                return (
-                  <div
-                    key={link.name}
-                    className="relative group"
-                    onMouseEnter={() => setActiveDropdown(link.name)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <Link
-                      href={link.href}
-                      className={`flex items-center gap-1.5 py-2 hover:text-aeo-cyan transition-colors focus:outline-none cursor-pointer ${
-                        isAnySubActive ? 'text-aeo-cyan' : ''
-                      }`}
-                    >
-                      <span>{link.name}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrentDropdownOpen ? 'rotate-180' : ''}`} />
-                    </Link>
-
-                    {/* Dropdown Menu */}
+          {/* Right Aligned Container */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto">
+            {/* Desktop Menu links */}
+            <div className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-black/80" ref={dropdownRef}>
+              {navLinks.map((link) => {
+                if (link.dropdownItems) {
+                  const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
+                  const isCurrentDropdownOpen = activeDropdown === link.name;
+                  return (
                     <div
-                      className={`absolute left-0 mt-1 w-64 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
-                        isCurrentDropdownOpen
-                          ? 'opacity-100 scale-100 translate-y-0 visible'
-                          : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
-                      }`}
+                      key={link.name}
+                      className="relative group"
+                      onMouseEnter={() => setActiveDropdown(link.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      {link.dropdownItems.map((subItem) => {
-                        const isSubActive = pathname === subItem.href;
-                        return (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                              isSubActive
-                                ? 'bg-aeo-cyan/10 text-aeo-cyan'
-                                : 'text-white/70 hover:text-white hover:bg-white/5'
-                            }`}
-                          >
-                            {subItem.name}
-                          </Link>
-                        );
-                      })}
+                      <Link
+                        href={link.href}
+                        className={`flex items-center gap-1.5 py-2 hover:text-aeo-purple transition-colors focus:outline-none cursor-pointer ${
+                          isAnySubActive ? 'text-aeo-purple' : ''
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrentDropdownOpen ? 'rotate-180' : ''}`} />
+                      </Link>
+
+                      {/* Dropdown Menu */}
+                      <div
+                        className={`absolute left-0 mt-1 w-64 bg-white/95 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
+                          isCurrentDropdownOpen
+                            ? 'opacity-100 scale-100 translate-y-0 visible'
+                            : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
+                        }`}
+                      >
+                        {link.dropdownItems.map((subItem) => {
+                          const isSubActive = pathname === subItem.href;
+                          return (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                                isSubActive
+                                  ? 'bg-aeo-purple/10 text-aeo-purple'
+                                  : 'text-black/70 hover:text-black hover:bg-black/5'
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  );
+                }
+
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`hover:text-aeo-purple transition-colors ${
+                      active ? 'text-aeo-purple' : ''
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
                 );
-              }
+              })}
+            </div>
 
-              const active = isActive(link.href);
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`hover:text-aeo-cyan transition-colors ${
-                    active ? 'text-aeo-cyan' : ''
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-            <Link
-              href="/book"
-              className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-aeo-cyan text-black rounded-full hover:bg-white transition-all shadow-[0_0_12px_rgba(0,240,255,0.2)]"
-            >
-              Book a Call
-            </Link>
-            <Link
-              href="/diagnostic"
-              className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase border border-aeo-cyan/35 text-aeo-cyan rounded-full hover:bg-aeo-cyan hover:text-black hover:border-aeo-cyan transition-all"
-            >
-              Get Visibility Score
-            </Link>
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-2 xl:gap-3">
+              <Link
+                href="/book"
+                className="px-5 py-2 text-sm font-semibold text-black hover:text-aeo-purple transition-colors"
+              >
+                Call
+              </Link>
+              <Link
+                href="/diagnostic"
+                className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-black text-white rounded-full hover:bg-black/80 transition-all shadow-md"
+              >
+                Visibility Score
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Hamburger Menu Toggle */}
           <button
             onClick={toggleMenu}
-            className={`lg:hidden p-2 transition-colors relative z-50 ${
-              isOpen ? 'text-black hover:text-black/70' : 'text-white/80 hover:text-white'
-            }`}
+            className={`lg:hidden p-2 transition-colors relative z-50 text-black hover:text-black/70`}
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
