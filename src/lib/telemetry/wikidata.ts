@@ -8,8 +8,7 @@ export async function validateGraphWithWikidata(triples: EntityTriple[]): Promis
   const entitiesToCheck = triples.map(t => t.subject).slice(0, 3); 
   
   try {
-    for (const entity of entitiesToCheck) {
-      // Basic SPARQL query: does this label exist in English Wikidata?
+    const fetchPromises = entitiesToCheck.map(async (entity) => {
       const query = `
         SELECT ?item WHERE {
           ?item rdfs:label "${entity}"@en.
@@ -28,10 +27,14 @@ export async function validateGraphWithWikidata(triples: EntityTriple[]): Promis
       if (res.ok) {
         const data = await res.json();
         if (data.results?.bindings?.length > 0) {
-          validEntities++;
+          return true;
         }
       }
-    }
+      return false;
+    });
+
+    const results = await Promise.all(fetchPromises);
+    validEntities = results.filter(r => r).length;
   } catch (err) {
     console.error('Wikidata SPARQL validation error:', err);
     // Mock a fallback if offline or rate limited

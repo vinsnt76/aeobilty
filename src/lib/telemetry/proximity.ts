@@ -69,19 +69,24 @@ export async function computeProximity(
       }
     ];
 
-    for (let i = 0; i < competitorTexts.length; i++) {
-      const compText = competitorTexts[i];
-      if (!compText.trim()) continue;
+    const compPromises = competitorTexts.map(async (compText, i) => {
+      if (!compText.trim()) return null;
       try {
         const compEmbedding = await getEmbedding(compText);
-        nodes.push({
+        return {
           label: `Competitor ${i + 1}`,
           text: compText.slice(0, 100) + '...',
           similarity: cosineSimilarity(intentEmbedding, compEmbedding)
-        });
+        };
       } catch (err) {
         console.error(`Error embedding competitor ${i + 1}:`, err);
+        return null;
       }
+    });
+
+    const compResults = await Promise.all(compPromises);
+    for (const res of compResults) {
+      if (res) nodes.push(res);
     }
 
     return nodes;

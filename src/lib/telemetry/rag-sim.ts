@@ -75,8 +75,11 @@ export async function runSimulation(intent: string, clientText: string): Promise
     const simulations: SimulationRun[] = [];
 
     // 3. For each synthetic query, check similarity to chunks
-    for (const query of queries) {
-      const queryEmbedding = await getEmbedding(query);
+    const queryEmbeddings = await Promise.all(queries.map(q => getEmbedding(q)));
+
+    for (let j = 0; j < queries.length; j++) {
+      const query = queries[j];
+      const queryEmbedding = queryEmbeddings[j];
 
       let bestSimilarity = -1;
       let bestChunkIndex = 0;
