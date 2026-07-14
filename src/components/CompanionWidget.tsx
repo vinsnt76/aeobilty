@@ -46,17 +46,44 @@ export default function CompanionWidget() {
   const runTelemetryScan = async (url: string, intent: string) => {
     setOnboardLoading(true);
     setOnboardError('');
+    setIsThinking(true);
+
+    // Start background fetch
+    const fetchPromise = fetch('/api/diagnostic', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, intent })
+    }).then(async (res) => {
+      if (!res.ok) {
+        let errMsg = 'Visibility telemetry scan failed.';
+        try {
+          const errData = await res.json();
+          if (errData.error) errMsg = errData.error;
+        } catch(e) {}
+        throw new Error(errMsg);
+      }
+      return res.json();
+    });
+
+    const steps = [
+      "🔎 Reading your homepage...",
+      "✓ Found your primary navigation",
+      "🔎 Identifying your products...",
+      "✓ Detected commercial entities",
+      "🔎 Measuring topical relevance...",
+      "✓ Comparing against similar businesses",
+      "🔎 Checking technical accessibility...",
+      "✓ Analysing structured data",
+      "🧠 Building your AI visibility profile..."
+    ];
+    
+    for (const stepMsg of steps) {
+      setMessages(prev => [...prev, { sender: 'assistant', text: stepMsg }]);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
 
     try {
-      // 1. Run the telemetry scan
-      const scanRes = await fetch('/api/telemetry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url, intent })
-      });
-
-      if (!scanRes.ok) throw new Error('Visibility telemetry scan failed.');
-      const resultData = await scanRes.json();
+      const resultData = await fetchPromise;
       
       const latestData = { url, intent, result: resultData };
       localStorage.setItem('aeo_telemetry_latest', JSON.stringify(latestData));
@@ -66,7 +93,7 @@ export default function CompanionWidget() {
         ...prev,
         {
           sender: 'assistant',
-          text: `Your AI Visibility Score: ${resultData.readinessScore}/100.\n\nI found important opportunities across Semantic, Entity, and Technical signals.\n\nTo reveal your personalised recommendations, where should I send your report?`,
+          text: `I've already identified your biggest visibility opportunity.\n\nWould you like me to send the full executive report with every recommendation to your email?`,
           telemetry: resultData
         }
       ]);
@@ -77,6 +104,7 @@ export default function CompanionWidget() {
       setMessages(prev => [...prev, { sender: 'assistant', text: 'Sorry, the diagnostic scan failed. Please try again.' }]);
     } finally {
       setOnboardLoading(false);
+      setIsThinking(false);
     }
   };
 
@@ -133,7 +161,7 @@ export default function CompanionWidget() {
       setMessages([
         {
           sender: 'assistant',
-          text: "👋 Hi, I'm Bill.\n\nI help businesses understand how AI search engines see their website.\n\nI can run a quick visibility check.\n\nWhat's your website URL?"
+          text: "👋 Hi, I'm Bill.\n\nI don't optimise websites. I measure how AI systems understand them.\n\nLet's see how your business looks through the eyes of ChatGPT and Gemini.\n\nWhat's your website URL?"
         }
       ]);
       setOnboardStage('URL');
@@ -141,7 +169,29 @@ export default function CompanionWidget() {
       setOnboardStage('DONE');
     }
     
-    return () => window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
+    // Event listener for external triggers to open a new fresh session
+    const handleOpenNewSession = () => {
+      setIsOpen(true);
+      localStorage.removeItem('aeo_telemetry_latest');
+      setTelemetryData(null);
+      setOnboardStage('URL');
+      setOnboardUrl('');
+      setOnboardIntent('');
+      setOnboardEmail('');
+      setMessages([
+        {
+          sender: 'assistant',
+          text: "👋 Hi, I'm Bill.\n\nI don't optimise websites. I measure how AI systems understand them.\n\nLet's see how your business looks through the eyes of ChatGPT and Gemini.\n\nWhat's your website URL?"
+        }
+      ]);
+    };
+
+    window.addEventListener('open_new_bill_session', handleOpenNewSession);
+
+    return () => {
+      window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
+      window.removeEventListener('open_new_bill_session', handleOpenNewSession);
+    };
   }, []);
 
   // Initialize voices
@@ -222,7 +272,7 @@ export default function CompanionWidget() {
           setOnboardStage('INTENT');
         } else if (onboardStage === 'INTENT') {
           setOnboardIntent(userMsg);
-          setMessages(prev => [...prev, { sender: 'assistant', text: `Perfect.\n\nI'll analyse how AI search engines understand:\n\nWebsite: ${onboardUrl}\nIntent: ${userMsg}\n\nRunning visibility telemetry now...` }]);
+          setMessages(prev => [...prev, { sender: 'assistant', text: `Perfect.\n\nI'll analyse how AI search engines understand:\n\nWebsite: ${onboardUrl}\nIntent: ${userMsg}` }]);
           runTelemetryScan(onboardUrl, userMsg);
         } else if (onboardStage === 'EMAIL') {
           handleEmailCapture(userMsg);
@@ -241,7 +291,7 @@ export default function CompanionWidget() {
         ]);
 
         try {
-          const telemetryRes = await fetch('/api/telemetry', {
+          const telemetryRes = await fetch('/api/diagnostic', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -315,6 +365,7 @@ export default function CompanionWidget() {
     <>
       {/* Floating Toggle Button */}
       <button
+        id="companion-widget-toggle"
         onClick={toggleWidget}
         className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden ${
           isOpen ? 'border-aeo-purple text-aeo-purple' : 'border-aeo-cyan text-aeo-cyan'
@@ -374,77 +425,45 @@ export default function CompanionWidget() {
                       </div>
 
                   {/* Dynamic Telemetry Display */}
-                  {msg.telemetry && (
-                    <div className="mt-2 w-full bg-black/60 border border-white/10 rounded-xl p-3 font-mono text-[10px] text-white/90 space-y-3">
-                      {/* Vector Proximity Chart */}
-                      <div className="space-y-1">
-                        <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
-                        {msg.telemetry.nodes?.map((node: any, idx: number) => {
-                          const clientNode = msg.telemetry.nodes.find((n: any) => n.label === 'Client');
-                          const isClient = node.label === 'Client';
-                          const isWinner = clientNode && node.similarity <= clientNode.similarity;
-                          const percentage = Math.min(100, Math.max(0, Math.round(node.similarity * 100)));
-                          
-                          const domainName = isClient && msg.telemetry.clientUrl ? extractDomainLabel(msg.telemetry.clientUrl) : '';
-                          return (
-                            <div key={idx} className="space-y-0.5">
-                              <div className="flex justify-between text-[9px]">
-                                <span>{isClient ? (domainName ? `[${domainName}]` : '[Your Site]') : `[Competitor ${idx}]`}</span>
-                                <span className={isClient ? 'text-aeo-cyan' : ''}>
-                                  {node.similarity.toFixed(3)} {isClient && '🌟'}
-                                </span>
-                              </div>
-                              <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
-                                <div 
-                                  className={`h-full rounded transition-all duration-500 ${
-                                    isClient 
-                                      ? 'bg-aeo-cyan shadow-[0_0_8px_rgba(6,182,212,0.5)]' 
-                                      : isWinner ? 'bg-zinc-600' : 'bg-amber-600'
-                                  }`}
-                                  style={{ width: `${percentage}%` }}
-                                />
-                              </div>
-                            </div>
-                          );
-                        })}
+                  {msg.telemetry?.insightResult && (
+                    <div className="mt-2 w-full space-y-4">
+                      
+                      {/* Signature: AI First Impression */}
+                      <div className="bg-black/60 border border-aeo-cyan/20 rounded-xl p-3 font-mono text-[10px] text-white/90 shadow-[0_0_15px_rgba(0,240,255,0.05)]">
+                        <div className="text-[9px] uppercase tracking-wider text-aeo-cyan mb-2">AI First Impression</div>
+                        <div className="text-[11px] leading-relaxed italic text-white/80">
+                          "{msg.telemetry.insightResult.firstImpression.headline}"
+                        </div>
+                        <div className="mt-2 space-y-1">
+                          {msg.telemetry.insightResult.firstImpression.reasoning.map((r: string, i: number) => (
+                            <div key={i} className="text-[10px] text-white/60">{r}</div>
+                          ))}
+                        </div>
                       </div>
 
-                      {/* Retrieval Verdict */}
-                      <div className="border-t border-white/5 pt-2">
-                        <div className="text-[9px] uppercase tracking-wider text-white/40 mb-1">AI Retrieval Status (Simulation)</div>
-                        {msg.telemetry.simulations?.slice(0, 1).map((sim: any, idx: number) => (
-                          <div key={idx} className="bg-white/[0.02] border border-white/5 rounded p-2 space-y-1">
-                            <div className="flex items-center gap-1.5">
-                              <span className={sim.survived ? 'text-emerald-500' : 'text-rose-500'}>
-                                {sim.survived ? '● ALIGNED' : '● DROPPED'}
-                              </span>
-                              <span className="text-white/30">|</span>
-                              <span className="text-[8px] truncate text-white/60">Sim: "{sim.syntheticQuery.slice(0, 30)}..."</span>
-                            </div>
-                            {!sim.survived && (
-                              <div className="text-[8px] text-rose-300">
-                                Reason: Information dilution / low semantic density.
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                      {/* Blind Spot & Recommendation Test */}
+                      <div className="bg-black/60 border border-white/10 rounded-xl p-3 space-y-3">
+                        <div>
+                          <div className="text-[9px] uppercase tracking-wider text-amber-400 mb-1">Biggest Blind Spot</div>
+                          <div className="text-[10px] font-semibold text-white/90">{msg.telemetry.insightResult.blindSpot.title}</div>
+                          <div className="text-[10px] text-white/70">{msg.telemetry.insightResult.blindSpot.description}</div>
+                        </div>
 
-                      {/* Knowledge Graph Edges */}
-                      {msg.telemetry.triples && msg.telemetry.triples.length > 0 && (
-                        <div className="border-t border-white/5 pt-2 space-y-1">
-                          <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
-                          <div className="max-h-20 overflow-y-auto space-y-1 pr-1">
-                            {msg.telemetry.triples.slice(0, 3).map((triple: any, idx: number) => (
-                              <div key={idx} className="text-[8px] bg-white/[0.01] border border-white/5 rounded px-1.5 py-0.5 text-white/70 truncate">
-                                <span className="text-aeo-cyan">{triple.subject}</span>
-                                <span className="text-white/30"> ──► ({triple.predicate}) ──► </span>
-                                <span className="text-white/80">{triple.object}</span>
-                              </div>
-                            ))}
+                        <div className="pt-3 border-t border-white/5">
+                          <div className="text-[9px] uppercase tracking-wider text-aeo-purple mb-2">AI Recommendation Test</div>
+                          <div className="text-[10px] text-white/60 mb-1">"If someone asked an AI about this, would it recommend you?"</div>
+                          <div className="flex gap-2 items-start mt-1.5">
+                            <span className="text-lg leading-none">
+                              {msg.telemetry.insightResult.recommendationTest.wouldRecommend ? '✅' : '❌'}
+                            </span>
+                            <div>
+                              <div className="text-[11px] font-bold text-white leading-none">{msg.telemetry.insightResult.recommendationTest.verdict}</div>
+                              <div className="text-[10px] text-white/70 mt-1">{msg.telemetry.insightResult.recommendationTest.reasoning}</div>
+                            </div>
                           </div>
                         </div>
-                      )}
+                      </div>
+                      
                     </div>
                   )}
                 </div>

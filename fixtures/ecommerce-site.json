@@ -15,51 +15,411 @@
   ],
   "triples": [
     {
-      "subject": "Brand Product",
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Automotive"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Hand Tool"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Heavy Lifting Equipment"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Power Tool"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Safety Equipment & Workwear"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Tool Storage"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Tool Accessory"
+    },
+    {
+      "subject": "Tools",
+      "predicate": "features",
+      "object": "Welding & Soldering Iron"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Timber"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Building Material & Supply"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Insulation"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Ladder"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Concrete & Cementing"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Door"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Door Hardware"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Window"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Fencing & Gate"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Fastener & Fixing"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "General Hardware"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Security & Safety Product"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Roofing"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Steel & Aluminium Section"
+    },
+    {
+      "subject": "Building & Hardware",
+      "predicate": "features",
+      "object": "Building Board"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Power Tool"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Hand Tool"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Landscaping Supply"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Supply & Maintenance"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Pest Control"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Plant"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Seed & Propagation"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Turf, Grass & Lawn Care"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Plant Pot, Planter & Basket"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Hose, Sprinkler & Accessory"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Irrigation"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Decor & Feature"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Letterbox"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden & Outdoor Structure"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Shed"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Water Conservation & Rain Harvesting"
+    },
+    {
+      "subject": "Garden",
+      "predicate": "features",
+      "object": "Garden Clothing & Safety Gear"
+    },
+    {
+      "subject": "Garden",
       "predicate": "offers",
-      "object": "Targeted Category Solutions"
+      "object": "Lawn Mower"
     },
     {
-      "subject": "On-Page Content",
-      "predicate": "lacks",
-      "object": "Explicit Product Schema"
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Outdoor Furniture"
     },
     {
-      "subject": "Answer Engines",
-      "predicate": "index",
-      "object": "Connected Entity Classes"
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "BBQ"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Camping & Recreation"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Cooler, Ice Box & Eskie"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Outdoor Play Equipment"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Outdoor Heater"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Swimming Pool & Spa"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Outdoor Shade"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Outdoor Activity"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Sunscreen & Insect Repellent"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "features",
+      "object": "Beach Essential"
+    },
+    {
+      "subject": "Outdoor Living",
+      "predicate": "provides",
+      "object": "BBQ Assembly"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Dog"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Cat"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Bird"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Fish & Reptile"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Small Pet"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Horse"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Chicken"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "for",
+      "object": "Farm Animal"
+    },
+    {
+      "subject": "Pet Supplies",
+      "predicate": "offers",
+      "object": "Pet Essential"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Kitchen Appliance"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Benchtop"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Kitchen Cabinet & Pantry"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Kitchen Tap, Sink & Filtration"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Splashback"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Kitchen Storage & Organisation"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Kitchenware"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Small Appliance"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Tableware & Bar"
+    },
+    {
+      "subject": "Kitchen",
+      "predicate": "features",
+      "object": "Commercial Kitchen"
+    },
+    {
+      "subject": "Bathroom & Plumbing",
+      "predicate": "features",
+      "object": "Bathroom"
+    },
+    {
+      "subject": "Bathroom & Plumbing",
+      "predicate": "features",
+      "object": "Plumbing"
+    },
+    {
+      "subject": "AEObility",
+      "predicate": "offers",
+      "object": "Assisted Living"
     }
   ],
   "simulations": [
     {
-      "syntheticQuery": "how do I find hardware and garden supplies",
+      "syntheticQuery": "What stores offer both hardware and garden supplies?",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Javascript is required for this pageSkip to main contentProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberBunnings Warehouse - Australia DIY, Garden & Hardware StoreSearchSign inNotifications Red DotListsCartSign in or sign upSign in with BunningsNo Bunnings account? Sign uporSign in withPowerPass customer?Visit the dedicated trade websiteProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberServicesStoresCatalogueSearchLowest Price Policy^Free delivery* with4 hour Click & CollectEasy in-store ReturnsLiving room refresh on a budgetWatch Steph & Gian's easy living room projectWatch now52L Heavy Duty Moving CartonView the rangeExplore our laundry appliances rangeShop nowNEW Bunnings Mini Bears are here!Now available online with Click & Collect and Delivery.Shop nowPreviousView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallsNextShop our rangeView all categoriesOutdoor LivingGardenIndoor LivingBuilding & HardwareStorage & CleaningToolsSmart Home & ElectricalLightingKitchenBathroom & PlumbingPet SuppliesFlooringPaint & WoodcareAssisted LivingHire ShopInspiring ideas to update your spaceHome ImprovementTrending ProjectsKids & CraftCleaningStorageGarden HubPaintOutdoor LivingD.I.Y. SkillsPlanting and growingBuilding and ConstructionClick on the below for our trending projectsTrending categories this weekView all categoriesInterior PaintPaint PreparationCleaning ChemicalsLaundryInternal Lining BoardsRugsSmall AppliancesMoving & Packing SuppliesVehicle & Trailer HireWe offer a number of options to get your products home safely and securely.Hire nowSupercharge your shop with OnePassFind out moreCheck out the Bunnings magazineRead nowWhere you find a competitor's lower price on the same in-stock item, we'll beat it by 10%*.*Conditions and Exclusions Apply which you can read more about here.View Price Policy Shop online any way you choose Shop products online from our wide range. Access same day* Click & Collect or choose Click & Deliver and select from a range of delivery services to get your order home that suit your needs. Learn more Make your project more rewarding with Flybuys Earn 1 point per $1 spent when you shop with Flybuys. Plus, use your Flybuys points for money off your shop in store by scanning your Flybuys or Flybuys linked Bunnings QR code in the Bunnings App at the register (exclusions apply). Find out more Projects everyone’s loving this week Find what’s trending for the weekend. From quick weekend wins to great‑value upgrades, our trending projects include practical ideas, products you need and tips to help you get started with confidence. Explore trending projectsLeading brandsView all brandsLet’s keep in touch!​Be the first to hear about the latest products, D.I.Y. projects and ideas.Email addressEmail addressI consent to receiving newsletters and updates from Bunnings in accordance with Bunnings' Privacy Policy.Subscribego to topCustomer Serviceto expandHelp CentreReturns & RefundsStore Entry InformationStore AccessibilityTrack your orderClick & CollectDeliveryProduct RecallsServicesto expandProductsGift CardsGift IdeasCatalogueBunnings MagazineBunnings AppBunnings ServicesBunnings TradeMarketplaceRedemptionsOnePassWorkshop Communitylink-outTool Kit Depotlink-outBeaumont Tileslink-outZeloralink-outAbout Bunningsto expandAbout usCommunity SupportMedia centreFacial Recognition TechnologyPrice GuaranteePoliciesCareersSausage SizzlesWorkshops & ActivitiesSustainabilityWebsite AccessibilityTerms & ConditionsFor suppliersFor contractorsCommunityContact UsFeedbackCareersCommunityContact UsFeedbackCareersFollow Us{\"props\":{\"pageProps\":{\"initialProps\":{\"isServer\":true},\"initialState\":{\"myAccount\":{\"data\":[],\"errors\":\"\",\"isLoadingWorkshop\":false,\"status\":\"\"},\"addAddressForm\":{\"data\":{},\"errors\":{},\"hasError\":false,\"isAddAddressFormPosting\":false,\"status\":\"\"},\"addPaymentForm\":{\"data\":{},\"errors\":null,\"isAddPaymentFormPosting\":false,\"status\":\"\"},\"addressDashboard\":{\"data\":[],\"error\":{},\"isError\":false,\"isLoading\":false,\"selectedAddress\":{},\"selectedAddressPricingRegion\":{\"isLoadingPricingRegion\":false},\"status\":\"\"},\"DIY_ARTICLE_LIST\":{},\"storedetails\":{},\"bpointState\":{\"authKeyState\":{\"authKey\":\"\",\"error\":null,\"isLoading\":false},\"processTxnState\":{\"error\":null,\"isDisabled\":false,\"isLoading\":false}},\"bundleDetails\":{\"bannerData\":{},\"bannerDataCalled\":false,\"bundleData\":{},\"error\":\"\"},\"CartLoaderState\":{\"isSwappedItem\":false,\"open\":false},\"ChangePasswordForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingChangePasswordForm\":false,\"status\":\"\"},\"DIY_ARTICLE_CONTENT_RECOMMENDATIONS\":{},\"coveoNotifications\":{\"articleStoreNameData\":{},\"bannerDataError\":{},\"bannerDataRegion\":[],\"bannerDataState\":[],\"bannerDataStoreName\":[],\"bannerSearchTemplateIds\":{},\"categoryList\":{},\"error\":{},\"services\":{},\"staticEDDMessages\":{},\"status\":\"\"},\"customerDetails\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingCustomerDetailsForm\":false},\"dashboardRecentOrders\":{\"data\":{},\"error\":\"\",\"isImageLoading\":false,\"isLoading\":false,\"orderImages\":{}},\"editAddressForm\":{\"data\":{},\"error\":{},\"isEditAddressFormPosting\":false,\"isSuccess\":false,\"status\":\"\"},\"eventsBanner\":{\"error\":{},\"events\":{},\"eventsBannerSearchTemplateIds\":{},\"eventsCountry\":{},\"eventsRegion\":{},\"status\":\"\"},\"FEATURED_ARTICLE_DATA\":{},\"receiptHistory\":{\"data\":{\"data\":{\"items\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemReceiptStatus\":\"\",\"lineItemsOfReceipt\":{},\"receiptSearchData\":[],\"searchReceiptActionStatus\":\"\",\"sortData\":{},\"sortReceiptsActionStatus\":\"\",\"status\":\"\"},\"sellerDetails\":{\"error\":\"\",\"isLoading\":true,\"sellerData\":{}},\"DIY_NLF\":{},\"OrderConfirmation\":{},\"paymentDashboard\":{\"data\":[],\"errors\":{},\"selectedCard\":{},\"status\":\"\"},\"paypalData\":{\"authorize\":{},\"data\":{},\"error\":{},\"status\":\"\"},\"previousOrderDetail\":{\"data\":{},\"errors\":\"\",\"isLoading\":false},\"orderHistory\":{\"data\":{\"data\":{\"results\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemOrderStatus\":{},\"lineItemsImages\":{},\"lineItemsImagesActionStatus\":{},\"lineItemsOfOrder\":{},\"orderImageActionStatus\":\"\",\"orderImages\":{},\"orderSearchData\":[],\"searchOrderActionStatus\":\"\",\"sortData\":{},\"sortOrdersActionStatus\":\"\",\"status\":\"\"},\"ProductCompare\":{},\"productDetails\":{\"currentSlide\":1,\"error\":\"\",\"isPDPFooterVisible\":true,\"productDetailsLoader\":false,\"stockAvailabilityLoading\":false},\"DIY_ARTICLE_PRODUCT_RECOMMENDATIONS\":{\"loadingQueries\":{}},\"DIY_RELATED_ARTICLE_LIST\":{},\"DIY_ARTICLE_RELATED_PRODUCTS\":{},\"retailSignUpForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingSignupForm\":false,\"status\":\"\"},\"reviewMarketlinkSeller\":{\"data\":{},\"error\":false,\"errors\":{},\"feedbackExists\":false,\"submittedSuccessfully\":false},\"SERVICES_CAROUSEL\":{\"isLoading\":false},\"CONTACT_US\":{\"error\":{},\"isLoading\":false,\"orderEnquiryNumber\":\"\",\"requestId\":\"\",\"status\":\"\"},\"availableStore\":{\"error\":{},\"services\":{},\"status\":\"\"},\"store\":{\"collectionOfStores\":[],\"data\":{},\"error\":{},\"isStoreSearchPosting\":false,\"manualStore\":\"\",\"selectedStoreAddress\":\"\",\"selectedStoreTile\":{},\"selectedStoreTileIndex\":-1,\"status\":\"\",\"storeStatus\":{}},\"storePreferences\":{\"data\":{},\"error\":{},\"isStorePreferencePosting\":false,\"status\":\"\",\"withinDistanceDetails\":{\"data\":{},\"error\":null,\"isLoading\":false}},\"updateContact\":{\"data\":{},\"error\":{},\"isContactUpdatePosting\":false,\"status\":\"\",\"updateStatus\":{\"message\":\"\",\"updated\":false}},\"ZipPay\":{\"error\":\"\",\"paymentStatus\":\"\",\"success\":\"\"},\"cartData\":{\"billingAddress\":{},\"billingAddressEditMode\":false,\"cartTileError\":{},\"commercialCustomerDetails\":{},\"data\":{},\"deleteCartItem\":{\"isError\":false},\"deliveryAddressSaved\":false,\"deliveryCostUpdated\":false,\"deliveryData\":{},\"deliveryInstruction\":\"\",\"emptyBillingAddress\":false,\"errorNotifications\":null,\"estimationData\":{},\"fromCartPage\":false,\"inventoryStatus\":{},\"isAwaitingCosDeliveryOptions\":false,\"isDisabled\":false,\"isDrawerVisible\":false,\"isOrderSummaryOpen\":false,\"makePrimaryAddress\":false,\"nuDetectScoreZone\":true,\"paymentData\":{},\"resetPaymentsPanel\":false,\"restrictionDetails\":{},\"saveDeliveryAddress\":false,\"unableToDeliverAtPostcode\":false,\"validateCart\":{}},\"global\":{\"compareProducts\":{\"isCompareDrawerOpen\":false,\"maxLimitErrorMessage\":false,\"productData\":{}},\"globalData\":{\"deviceType\":\"desktop\",\"globalConfigData\":{\"address\":{\"maxAddressLimit\":\"10\"},\"apiConfig\":{\"global\":{\"bpointAddToken\":\"/v1/bpoint/dvtokens/adddvtokenauthkey\",\"bpointAuthKey\":\"/v1/bpoint/txns/processtxnauthkey\",\"bpointProcessTxn\":\"/v1/bpoint/txns/processiframetxn/{authKey}\",\"checkActiveStore\":\"/v1/stores/checkActiveStore\",\"globalDefaultStore\":\"/v1/stores/defaultStore?deliveryPostCode={postCode}\",\"globalStore\":\"/v1/carts/{cartId}/defaultStore\",\"navigationUrl\":\"/v1/products/regionalCategory\",\"newsletterEndPoint\":\"/v1/customer-management/users\",\"newsletterGuestEndPoint\":\"/v1/sfmc/rest/key:Customer_Master_ANZ_Test\",\"notFoundRoute\":\"/not-found\",\"nuDetect\":{\"nuDetectAPI\":\"/v1/post/cart/send\",\"nuDetectLoginScore\":\"/v1/post/login/result\",\"nuDetectPush\":\"/v1/post/cart/send\",\"nuDetectUpdateAPI\":\"/v1/post/cart/refresh\"},\"orderConfirmationRouterKey\":\"/order-confirmation\",\"paypalAuthorizePayment\":\"/v1/paypal/capture\",\"paypalClientToken\":\"/v1/paypal/clientToken\",\"paypalPreAuthorizePayment\":\"/v1/paypal/authorize\",\"registerActivationAPI\":\"/v1/emails/verify\",\"resendVerificationAPI\":\"/v1/emails/resendVerification\",\"salesforceAPI\":\"/marketing-preferences/customers/{{customerId}}\",\"storeFinderAPI\":\"/v1/stores/products/stock?latitude={latitude}\\u0026longitude={longitude}\\u0026currentPage={currentPage}\\u0026fields={fields}\\u0026pageSize={pageSize}\",\"storePreferenceAPI\":\"/v1/stores?latitude={latitude}\\u0026longitude={longitude}\",\"tokenValidation\":\"/v1/customer-management/users/activation/status\",\"usersAPI\":\"/v1/customer-management/users\",\"workshopAPIUrl\":\"/v1/workshops/custom.workshop.feed-bunnings-related-endpoint\",\"workshopCarouselSize\":\"12\",\"zipPayAPIUrl\":\"/v1/zip-money/checkouts\",\"zipPayChargesAPIUrl\":\"/v1/zip-money/charges\",\"zipPayCheckoutAPIUrl\":\"/v1/zip-checkout\",\"trnType\":\"2\"}},\"campaign\":{\"fathersDayCampaignName\":\"fathers-day-gifting-2025\"},\"cart\":{\"addFailMessage\":\"Add to cart failed, Please try again!\",\"addToCartLabel\":\"Add to Cart\",\"ageRestrictionLabels\":{\"ageRestrictionMessage\":\"This product is age restricted. By clicking yes, you agree that you are over the age of {age} years and you may be asked for ID on collection.\",\"ageRestrictionOrderInfoMessage\":\"By purchasing this item you are declaring that you are 18 years or over.\",\"ageRestrictionPrimaryButtonText\":\"Yes\",\"ageRestrictionSecondaryButtonText\":\"No\",\"ageRestrictionTitle\":\"Please confirm that you are {age} years old or over\"},\"cartExpiry\":\"720\",\"cartUnavailableProcessingError\":\"\\u003cdiv\\u003ePlease remove the unavailable items in your cart to proceed through the checkout.\\u003c/div\\u003e\",\"decreaseQuantity\":\"Decrease Quantity\",\"deliveryEstimationLabels\":{\"collectBetweenInfoLabel\":\"Collect Between %\",\"collectOnInfoLabel\":\"Collect on % from 9am. \",\"cutOffTime\":\"4pm\",\"deliveredBetweenDateInfo\":\"Estimated delivery between %. \",\"deliveredOnInfo\":\"Delivered on % .\",\"orderByAndCollectByInfo\":\"Order by 4pm to collect after 9am the next day\",\"orderByAndCollectByInfoAfterCutOff\":\"Orders after 4pm will be processed the next day.\"},\"disableZippayDoubleCharge\":false,\"increaseQuantity\":\"Increase Quantity\",\"inputQuantity\":\"Input Quantity\",\"itemNotAvailable\":\"Item not available\",\"maxCartQuantity\":\"999\",\"notSoldAtThisStore\":\"Item not available at this store\",\"outOfStockLabel\":\"Out of stock\",\"recommendation\":{\"continueShoppingLabel\":\"Continue shopping\",\"frequentlyBoughtTogetherLabel\":\"Frequently bought together\",\"itemAddedToYourCartLabel\":\"Item added to your cart\",\"reviewAndCheckoutButton\":{\"target\":\"\",\"href\":\"/cart\",\"text\":\"Review cart\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{33432D19-1E32-41E2-BF06-D1794E76660D}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"showRecommendationIterationCounter\":\"3\"},\"storeOnlyLabel\":\"In-store only\",\"updateFailMessage\":\"Updating cart failed, Please try again!\",\"updateSuccessMessage\":\"Item quantity updated to {quantity} in cart\"},\"compare\":{\"clearAllLabel\":\"Clear All\",\"closeDrawerLabel\":\"Close\",\"compareButton\":{\"target\":\"\",\"href\":\"/compare\",\"text\":\"Compare\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{82EF9C39-5742-4684-A80C-BB71E9BAFFAD}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"compareDrawerTitle\":\"Compare Products\",\"maxItemMe"
     },
     {
-      "syntheticQuery": "best options for hardware and garden supplies",
+      "syntheticQuery": "Where to buy home improvement tools, building materials, and gardening equipment?",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Javascript is required for this pageSkip to main contentProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberBunnings Warehouse - Australia DIY, Garden & Hardware StoreSearchSign inNotifications Red DotListsCartSign in or sign upSign in with BunningsNo Bunnings account? Sign uporSign in withPowerPass customer?Visit the dedicated trade websiteProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberServicesStoresCatalogueSearchLowest Price Policy^Free delivery* with4 hour Click & CollectEasy in-store ReturnsLiving room refresh on a budgetWatch Steph & Gian's easy living room projectWatch now52L Heavy Duty Moving CartonView the rangeExplore our laundry appliances rangeShop nowNEW Bunnings Mini Bears are here!Now available online with Click & Collect and Delivery.Shop nowPreviousView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallsNextShop our rangeView all categoriesOutdoor LivingGardenIndoor LivingBuilding & HardwareStorage & CleaningToolsSmart Home & ElectricalLightingKitchenBathroom & PlumbingPet SuppliesFlooringPaint & WoodcareAssisted LivingHire ShopInspiring ideas to update your spaceHome ImprovementTrending ProjectsKids & CraftCleaningStorageGarden HubPaintOutdoor LivingD.I.Y. SkillsPlanting and growingBuilding and ConstructionClick on the below for our trending projectsTrending categories this weekView all categoriesInterior PaintPaint PreparationCleaning ChemicalsLaundryInternal Lining BoardsRugsSmall AppliancesMoving & Packing SuppliesVehicle & Trailer HireWe offer a number of options to get your products home safely and securely.Hire nowSupercharge your shop with OnePassFind out moreCheck out the Bunnings magazineRead nowWhere you find a competitor's lower price on the same in-stock item, we'll beat it by 10%*.*Conditions and Exclusions Apply which you can read more about here.View Price Policy Shop online any way you choose Shop products online from our wide range. Access same day* Click & Collect or choose Click & Deliver and select from a range of delivery services to get your order home that suit your needs. Learn more Make your project more rewarding with Flybuys Earn 1 point per $1 spent when you shop with Flybuys. Plus, use your Flybuys points for money off your shop in store by scanning your Flybuys or Flybuys linked Bunnings QR code in the Bunnings App at the register (exclusions apply). Find out more Projects everyone’s loving this week Find what’s trending for the weekend. From quick weekend wins to great‑value upgrades, our trending projects include practical ideas, products you need and tips to help you get started with confidence. Explore trending projectsLeading brandsView all brandsLet’s keep in touch!​Be the first to hear about the latest products, D.I.Y. projects and ideas.Email addressEmail addressI consent to receiving newsletters and updates from Bunnings in accordance with Bunnings' Privacy Policy.Subscribego to topCustomer Serviceto expandHelp CentreReturns & RefundsStore Entry InformationStore AccessibilityTrack your orderClick & CollectDeliveryProduct RecallsServicesto expandProductsGift CardsGift IdeasCatalogueBunnings MagazineBunnings AppBunnings ServicesBunnings TradeMarketplaceRedemptionsOnePassWorkshop Communitylink-outTool Kit Depotlink-outBeaumont Tileslink-outZeloralink-outAbout Bunningsto expandAbout usCommunity SupportMedia centreFacial Recognition TechnologyPrice GuaranteePoliciesCareersSausage SizzlesWorkshops & ActivitiesSustainabilityWebsite AccessibilityTerms & ConditionsFor suppliersFor contractorsCommunityContact UsFeedbackCareersCommunityContact UsFeedbackCareersFollow Us{\"props\":{\"pageProps\":{\"initialProps\":{\"isServer\":true},\"initialState\":{\"myAccount\":{\"data\":[],\"errors\":\"\",\"isLoadingWorkshop\":false,\"status\":\"\"},\"addAddressForm\":{\"data\":{},\"errors\":{},\"hasError\":false,\"isAddAddressFormPosting\":false,\"status\":\"\"},\"addPaymentForm\":{\"data\":{},\"errors\":null,\"isAddPaymentFormPosting\":false,\"status\":\"\"},\"addressDashboard\":{\"data\":[],\"error\":{},\"isError\":false,\"isLoading\":false,\"selectedAddress\":{},\"selectedAddressPricingRegion\":{\"isLoadingPricingRegion\":false},\"status\":\"\"},\"DIY_ARTICLE_LIST\":{},\"storedetails\":{},\"bpointState\":{\"authKeyState\":{\"authKey\":\"\",\"error\":null,\"isLoading\":false},\"processTxnState\":{\"error\":null,\"isDisabled\":false,\"isLoading\":false}},\"bundleDetails\":{\"bannerData\":{},\"bannerDataCalled\":false,\"bundleData\":{},\"error\":\"\"},\"CartLoaderState\":{\"isSwappedItem\":false,\"open\":false},\"ChangePasswordForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingChangePasswordForm\":false,\"status\":\"\"},\"DIY_ARTICLE_CONTENT_RECOMMENDATIONS\":{},\"coveoNotifications\":{\"articleStoreNameData\":{},\"bannerDataError\":{},\"bannerDataRegion\":[],\"bannerDataState\":[],\"bannerDataStoreName\":[],\"bannerSearchTemplateIds\":{},\"categoryList\":{},\"error\":{},\"services\":{},\"staticEDDMessages\":{},\"status\":\"\"},\"customerDetails\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingCustomerDetailsForm\":false},\"dashboardRecentOrders\":{\"data\":{},\"error\":\"\",\"isImageLoading\":false,\"isLoading\":false,\"orderImages\":{}},\"editAddressForm\":{\"data\":{},\"error\":{},\"isEditAddressFormPosting\":false,\"isSuccess\":false,\"status\":\"\"},\"eventsBanner\":{\"error\":{},\"events\":{},\"eventsBannerSearchTemplateIds\":{},\"eventsCountry\":{},\"eventsRegion\":{},\"status\":\"\"},\"FEATURED_ARTICLE_DATA\":{},\"receiptHistory\":{\"data\":{\"data\":{\"items\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemReceiptStatus\":\"\",\"lineItemsOfReceipt\":{},\"receiptSearchData\":[],\"searchReceiptActionStatus\":\"\",\"sortData\":{},\"sortReceiptsActionStatus\":\"\",\"status\":\"\"},\"sellerDetails\":{\"error\":\"\",\"isLoading\":true,\"sellerData\":{}},\"DIY_NLF\":{},\"OrderConfirmation\":{},\"paymentDashboard\":{\"data\":[],\"errors\":{},\"selectedCard\":{},\"status\":\"\"},\"paypalData\":{\"authorize\":{},\"data\":{},\"error\":{},\"status\":\"\"},\"previousOrderDetail\":{\"data\":{},\"errors\":\"\",\"isLoading\":false},\"orderHistory\":{\"data\":{\"data\":{\"results\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemOrderStatus\":{},\"lineItemsImages\":{},\"lineItemsImagesActionStatus\":{},\"lineItemsOfOrder\":{},\"orderImageActionStatus\":\"\",\"orderImages\":{},\"orderSearchData\":[],\"searchOrderActionStatus\":\"\",\"sortData\":{},\"sortOrdersActionStatus\":\"\",\"status\":\"\"},\"ProductCompare\":{},\"productDetails\":{\"currentSlide\":1,\"error\":\"\",\"isPDPFooterVisible\":true,\"productDetailsLoader\":false,\"stockAvailabilityLoading\":false},\"DIY_ARTICLE_PRODUCT_RECOMMENDATIONS\":{\"loadingQueries\":{}},\"DIY_RELATED_ARTICLE_LIST\":{},\"DIY_ARTICLE_RELATED_PRODUCTS\":{},\"retailSignUpForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingSignupForm\":false,\"status\":\"\"},\"reviewMarketlinkSeller\":{\"data\":{},\"error\":false,\"errors\":{},\"feedbackExists\":false,\"submittedSuccessfully\":false},\"SERVICES_CAROUSEL\":{\"isLoading\":false},\"CONTACT_US\":{\"error\":{},\"isLoading\":false,\"orderEnquiryNumber\":\"\",\"requestId\":\"\",\"status\":\"\"},\"availableStore\":{\"error\":{},\"services\":{},\"status\":\"\"},\"store\":{\"collectionOfStores\":[],\"data\":{},\"error\":{},\"isStoreSearchPosting\":false,\"manualStore\":\"\",\"selectedStoreAddress\":\"\",\"selectedStoreTile\":{},\"selectedStoreTileIndex\":-1,\"status\":\"\",\"storeStatus\":{}},\"storePreferences\":{\"data\":{},\"error\":{},\"isStorePreferencePosting\":false,\"status\":\"\",\"withinDistanceDetails\":{\"data\":{},\"error\":null,\"isLoading\":false}},\"updateContact\":{\"data\":{},\"error\":{},\"isContactUpdatePosting\":false,\"status\":\"\",\"updateStatus\":{\"message\":\"\",\"updated\":false}},\"ZipPay\":{\"error\":\"\",\"paymentStatus\":\"\",\"success\":\"\"},\"cartData\":{\"billingAddress\":{},\"billingAddressEditMode\":false,\"cartTileError\":{},\"commercialCustomerDetails\":{},\"data\":{},\"deleteCartItem\":{\"isError\":false},\"deliveryAddressSaved\":false,\"deliveryCostUpdated\":false,\"deliveryData\":{},\"deliveryInstruction\":\"\",\"emptyBillingAddress\":false,\"errorNotifications\":null,\"estimationData\":{},\"fromCartPage\":false,\"inventoryStatus\":{},\"isAwaitingCosDeliveryOptions\":false,\"isDisabled\":false,\"isDrawerVisible\":false,\"isOrderSummaryOpen\":false,\"makePrimaryAddress\":false,\"nuDetectScoreZone\":true,\"paymentData\":{},\"resetPaymentsPanel\":false,\"restrictionDetails\":{},\"saveDeliveryAddress\":false,\"unableToDeliverAtPostcode\":false,\"validateCart\":{}},\"global\":{\"compareProducts\":{\"isCompareDrawerOpen\":false,\"maxLimitErrorMessage\":false,\"productData\":{}},\"globalData\":{\"deviceType\":\"desktop\",\"globalConfigData\":{\"address\":{\"maxAddressLimit\":\"10\"},\"apiConfig\":{\"global\":{\"bpointAddToken\":\"/v1/bpoint/dvtokens/adddvtokenauthkey\",\"bpointAuthKey\":\"/v1/bpoint/txns/processtxnauthkey\",\"bpointProcessTxn\":\"/v1/bpoint/txns/processiframetxn/{authKey}\",\"checkActiveStore\":\"/v1/stores/checkActiveStore\",\"globalDefaultStore\":\"/v1/stores/defaultStore?deliveryPostCode={postCode}\",\"globalStore\":\"/v1/carts/{cartId}/defaultStore\",\"navigationUrl\":\"/v1/products/regionalCategory\",\"newsletterEndPoint\":\"/v1/customer-management/users\",\"newsletterGuestEndPoint\":\"/v1/sfmc/rest/key:Customer_Master_ANZ_Test\",\"notFoundRoute\":\"/not-found\",\"nuDetect\":{\"nuDetectAPI\":\"/v1/post/cart/send\",\"nuDetectLoginScore\":\"/v1/post/login/result\",\"nuDetectPush\":\"/v1/post/cart/send\",\"nuDetectUpdateAPI\":\"/v1/post/cart/refresh\"},\"orderConfirmationRouterKey\":\"/order-confirmation\",\"paypalAuthorizePayment\":\"/v1/paypal/capture\",\"paypalClientToken\":\"/v1/paypal/clientToken\",\"paypalPreAuthorizePayment\":\"/v1/paypal/authorize\",\"registerActivationAPI\":\"/v1/emails/verify\",\"resendVerificationAPI\":\"/v1/emails/resendVerification\",\"salesforceAPI\":\"/marketing-preferences/customers/{{customerId}}\",\"storeFinderAPI\":\"/v1/stores/products/stock?latitude={latitude}\\u0026longitude={longitude}\\u0026currentPage={currentPage}\\u0026fields={fields}\\u0026pageSize={pageSize}\",\"storePreferenceAPI\":\"/v1/stores?latitude={latitude}\\u0026longitude={longitude}\",\"tokenValidation\":\"/v1/customer-management/users/activation/status\",\"usersAPI\":\"/v1/customer-management/users\",\"workshopAPIUrl\":\"/v1/workshops/custom.workshop.feed-bunnings-related-endpoint\",\"workshopCarouselSize\":\"12\",\"zipPayAPIUrl\":\"/v1/zip-money/checkouts\",\"zipPayChargesAPIUrl\":\"/v1/zip-money/charges\",\"zipPayCheckoutAPIUrl\":\"/v1/zip-checkout\",\"trnType\":\"2\"}},\"campaign\":{\"fathersDayCampaignName\":\"fathers-day-gifting-2025\"},\"cart\":{\"addFailMessage\":\"Add to cart failed, Please try again!\",\"addToCartLabel\":\"Add to Cart\",\"ageRestrictionLabels\":{\"ageRestrictionMessage\":\"This product is age restricted. By clicking yes, you agree that you are over the age of {age} years and you may be asked for ID on collection.\",\"ageRestrictionOrderInfoMessage\":\"By purchasing this item you are declaring that you are 18 years or over.\",\"ageRestrictionPrimaryButtonText\":\"Yes\",\"ageRestrictionSecondaryButtonText\":\"No\",\"ageRestrictionTitle\":\"Please confirm that you are {age} years old or over\"},\"cartExpiry\":\"720\",\"cartUnavailableProcessingError\":\"\\u003cdiv\\u003ePlease remove the unavailable items in your cart to proceed through the checkout.\\u003c/div\\u003e\",\"decreaseQuantity\":\"Decrease Quantity\",\"deliveryEstimationLabels\":{\"collectBetweenInfoLabel\":\"Collect Between %\",\"collectOnInfoLabel\":\"Collect on % from 9am. \",\"cutOffTime\":\"4pm\",\"deliveredBetweenDateInfo\":\"Estimated delivery between %. \",\"deliveredOnInfo\":\"Delivered on % .\",\"orderByAndCollectByInfo\":\"Order by 4pm to collect after 9am the next day\",\"orderByAndCollectByInfoAfterCutOff\":\"Orders after 4pm will be processed the next day.\"},\"disableZippayDoubleCharge\":false,\"increaseQuantity\":\"Increase Quantity\",\"inputQuantity\":\"Input Quantity\",\"itemNotAvailable\":\"Item not available\",\"maxCartQuantity\":\"999\",\"notSoldAtThisStore\":\"Item not available at this store\",\"outOfStockLabel\":\"Out of stock\",\"recommendation\":{\"continueShoppingLabel\":\"Continue shopping\",\"frequentlyBoughtTogetherLabel\":\"Frequently bought together\",\"itemAddedToYourCartLabel\":\"Item added to your cart\",\"reviewAndCheckoutButton\":{\"target\":\"\",\"href\":\"/cart\",\"text\":\"Review cart\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{33432D19-1E32-41E2-BF06-D1794E76660D}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"showRecommendationIterationCounter\":\"3\"},\"storeOnlyLabel\":\"In-store only\",\"updateFailMessage\":\"Updating cart failed, Please try again!\",\"updateSuccessMessage\":\"Item quantity updated to {quantity} in cart\"},\"compare\":{\"clearAllLabel\":\"Clear All\",\"closeDrawerLabel\":\"Close\",\"compareButton\":{\"target\":\"\",\"href\":\"/compare\",\"text\":\"Compare\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{82EF9C39-5742-4684-A80C-BB71E9BAFFAD}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"compareDrawerTitle\":\"Compare Products\",\"maxItemMe"
     },
     {
-      "syntheticQuery": "recommendations for hardware and garden supplies",
+      "syntheticQuery": "I need to fix a fence and plant some flowers, what kind of supplies and stores should I look for?",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Javascript is required for this pageSkip to main contentProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberBunnings Warehouse - Australia DIY, Garden & Hardware StoreSearchSign inNotifications Red DotListsCartSign in or sign upSign in with BunningsNo Bunnings account? Sign uporSign in withPowerPass customer?Visit the dedicated trade websiteProductsMenuAsk BuddyBackToolsBackToolsView all AutomotiveHand ToolsHeavy Lifting EquipmentPower ToolsSafety Equipment & WorkwearTool StorageTool AccessoriesWelding & Soldering IronsRedemption offers from our leading brandsExplore the rangeBuilding & HardwareBackBuilding & HardwareView all TimberBuilding Materials & SuppliesInsulationLaddersConcrete & CementingDoorsDoor HardwareWindowsFencing & GatesFasteners & FixingsGeneral HardwareSecurity & Safety ProductsRoofingSteel & Aluminium SectionsBuilding BoardsBuilding InspirationCheck out what's New!Shop NowGardenBackGardenView all Garden Power ToolsGarden Hand ToolsLandscaping SuppliesGarden Supplies & MaintenancePest ControlPlantsSeeds & PropagationTurf, Grass & Lawn CarePlant Pots, Planters & BasketsGarden Hoses, Sprinklers & AccessoriesIrrigationGarden Decor & FeaturesLetterboxesGarden & Outdoor StructuresShedsWater Conservation & Rain HarvestingGarden Clothing & Safety GearCheck out our wide range of lawn mowers at lowest pricesShop NowOutdoor LivingBackOutdoor LivingView all Outdoor FurnitureBBQsCamping & RecreationCoolers, Ice Boxes & EskiesOutdoor Play EquipmentOutdoor HeatersSwimming Pools & SpasOutdoor ShadeOutdoor ActivitiesSunscreen & Insect RepellentsBeach EssentialsWe can assemble your BBQ for only $160Shop NowPet SuppliesBackPet SuppliesView all DogsCatsBirdsFish & ReptilesSmall PetsHorsesChickensFarm AnimalsMake sure your pets have the right essentials.- Nick, Team MemberKitchenBackKitchenView all Kitchen AppliancesBenchtopsKitchen Cabinets & PantriesKitchen Taps, Sinks & FiltrationSplashbacksKitchen Storage & OrganisationKitchenwareSmall AppliancesTableware & BarCommercial KitchenKitchen InspirationDreaming of a new kitchen? Here are our D.I.Y. ideas.- Andrew, Team MemberBathroom & PlumbingBackBathroom & PlumbingView all BathroomPlumbingBathroom InspirationDreaming of a new bathroom? Here are our D.I.Y. ideas.- Matthew, Team MemberAssisted LivingBackAssisted LivingView all Bathroom SafetyMobility AidsDaily Living AidsHome SafetyHome ModificationsHealth & WellnessGarden LivingBedroom SupportWe can help with Assisted Living- Sharon, Team MemberPaint & WoodcareBackPaint & WoodcareView all PaintWoodcarePaint AccessoriesCraft SuppliesWallpaperA Colour Consultant can help you pick the perfect paint.- Terran, Team MemberFlooringBackFlooringView all CarpetMatsRugsTilesTimber FlooringVinyl FlooringFlooring ToolsFlooring AccessoriesBig flooring job ahead? Our Hire Shop has what you need.- Emma, Team MemberStorage & CleaningBackStorage & CleaningView all LaundryCleaning ChemicalsCleaning EquipmentCar Care ProductsStorage & ShelvingGarage StorageMoving Boxes & Packing SuppliesWardrobes & ClosetsStorage InspirationOur best-selling 50L storage container.Shop NowLightingBackLightingView all Outdoor LightingIndoor LightingLight Bulbs & GlobesSmart Lighting & PowerCheck out our range of smart lighting!Shop NowElectrical & Smart HomeBackElectrical & Smart HomeView all Air TreatmentAir Conditioning, Fans & CoolingIndoor HeatersElectricalSmart Home SecuritySmart Lighting & PowerSmart Home DevicesHome Internet & WifiSolar & EV ChargingWe can install your new split system.Find Out MoreIndoor LivingBackIndoor LivingView all ElectronicsBedroomDining RoomHome DecorLiving RoomHome OfficeKids & Baby FurnitureHealth & FitnessHallwayCommercial OfficeCostumesCurtains & BlindsWider choice available online with Bunnings MarketplaceHire ShopBackHire ShopView all Carpet Cleaning EquipmentFloor Sanding EquipmentGeneral Hire EquipmentTrailer, Vehicle, Storage & Skip HireLots to buy? We have safe and secure options to help you Get It Home.- Chelsea, Team MemberServicesStoresCatalogueSearchLowest Price Policy^Free delivery* with4 hour Click & CollectEasy in-store ReturnsLiving room refresh on a budgetWatch Steph & Gian's easy living room projectWatch now52L Heavy Duty Moving CartonView the rangeExplore our laundry appliances rangeShop nowNEW Bunnings Mini Bears are here!Now available online with Click & Collect and Delivery.Shop nowPreviousView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallswarning iconProduct Recall: Draw n Wipe Tabletwarning iconProduct Recall: Mistral Barrel Vacuum Cleanerswarning iconProduct Recall: Makita Cordless Grease GunView all product recallsNextShop our rangeView all categoriesOutdoor LivingGardenIndoor LivingBuilding & HardwareStorage & CleaningToolsSmart Home & ElectricalLightingKitchenBathroom & PlumbingPet SuppliesFlooringPaint & WoodcareAssisted LivingHire ShopInspiring ideas to update your spaceHome ImprovementTrending ProjectsKids & CraftCleaningStorageGarden HubPaintOutdoor LivingD.I.Y. SkillsPlanting and growingBuilding and ConstructionClick on the below for our trending projectsTrending categories this weekView all categoriesInterior PaintPaint PreparationCleaning ChemicalsLaundryInternal Lining BoardsRugsSmall AppliancesMoving & Packing SuppliesVehicle & Trailer HireWe offer a number of options to get your products home safely and securely.Hire nowSupercharge your shop with OnePassFind out moreCheck out the Bunnings magazineRead nowWhere you find a competitor's lower price on the same in-stock item, we'll beat it by 10%*.*Conditions and Exclusions Apply which you can read more about here.View Price Policy Shop online any way you choose Shop products online from our wide range. Access same day* Click & Collect or choose Click & Deliver and select from a range of delivery services to get your order home that suit your needs. Learn more Make your project more rewarding with Flybuys Earn 1 point per $1 spent when you shop with Flybuys. Plus, use your Flybuys points for money off your shop in store by scanning your Flybuys or Flybuys linked Bunnings QR code in the Bunnings App at the register (exclusions apply). Find out more Projects everyone’s loving this week Find what’s trending for the weekend. From quick weekend wins to great‑value upgrades, our trending projects include practical ideas, products you need and tips to help you get started with confidence. Explore trending projectsLeading brandsView all brandsLet’s keep in touch!​Be the first to hear about the latest products, D.I.Y. projects and ideas.Email addressEmail addressI consent to receiving newsletters and updates from Bunnings in accordance with Bunnings' Privacy Policy.Subscribego to topCustomer Serviceto expandHelp CentreReturns & RefundsStore Entry InformationStore AccessibilityTrack your orderClick & CollectDeliveryProduct RecallsServicesto expandProductsGift CardsGift IdeasCatalogueBunnings MagazineBunnings AppBunnings ServicesBunnings TradeMarketplaceRedemptionsOnePassWorkshop Communitylink-outTool Kit Depotlink-outBeaumont Tileslink-outZeloralink-outAbout Bunningsto expandAbout usCommunity SupportMedia centreFacial Recognition TechnologyPrice GuaranteePoliciesCareersSausage SizzlesWorkshops & ActivitiesSustainabilityWebsite AccessibilityTerms & ConditionsFor suppliersFor contractorsCommunityContact UsFeedbackCareersCommunityContact UsFeedbackCareersFollow Us{\"props\":{\"pageProps\":{\"initialProps\":{\"isServer\":true},\"initialState\":{\"myAccount\":{\"data\":[],\"errors\":\"\",\"isLoadingWorkshop\":false,\"status\":\"\"},\"addAddressForm\":{\"data\":{},\"errors\":{},\"hasError\":false,\"isAddAddressFormPosting\":false,\"status\":\"\"},\"addPaymentForm\":{\"data\":{},\"errors\":null,\"isAddPaymentFormPosting\":false,\"status\":\"\"},\"addressDashboard\":{\"data\":[],\"error\":{},\"isError\":false,\"isLoading\":false,\"selectedAddress\":{},\"selectedAddressPricingRegion\":{\"isLoadingPricingRegion\":false},\"status\":\"\"},\"DIY_ARTICLE_LIST\":{},\"storedetails\":{},\"bpointState\":{\"authKeyState\":{\"authKey\":\"\",\"error\":null,\"isLoading\":false},\"processTxnState\":{\"error\":null,\"isDisabled\":false,\"isLoading\":false}},\"bundleDetails\":{\"bannerData\":{},\"bannerDataCalled\":false,\"bundleData\":{},\"error\":\"\"},\"CartLoaderState\":{\"isSwappedItem\":false,\"open\":false},\"ChangePasswordForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingChangePasswordForm\":false,\"status\":\"\"},\"DIY_ARTICLE_CONTENT_RECOMMENDATIONS\":{},\"coveoNotifications\":{\"articleStoreNameData\":{},\"bannerDataError\":{},\"bannerDataRegion\":[],\"bannerDataState\":[],\"bannerDataStoreName\":[],\"bannerSearchTemplateIds\":{},\"categoryList\":{},\"error\":{},\"services\":{},\"staticEDDMessages\":{},\"status\":\"\"},\"customerDetails\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingCustomerDetailsForm\":false},\"dashboardRecentOrders\":{\"data\":{},\"error\":\"\",\"isImageLoading\":false,\"isLoading\":false,\"orderImages\":{}},\"editAddressForm\":{\"data\":{},\"error\":{},\"isEditAddressFormPosting\":false,\"isSuccess\":false,\"status\":\"\"},\"eventsBanner\":{\"error\":{},\"events\":{},\"eventsBannerSearchTemplateIds\":{},\"eventsCountry\":{},\"eventsRegion\":{},\"status\":\"\"},\"FEATURED_ARTICLE_DATA\":{},\"receiptHistory\":{\"data\":{\"data\":{\"items\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemReceiptStatus\":\"\",\"lineItemsOfReceipt\":{},\"receiptSearchData\":[],\"searchReceiptActionStatus\":\"\",\"sortData\":{},\"sortReceiptsActionStatus\":\"\",\"status\":\"\"},\"sellerDetails\":{\"error\":\"\",\"isLoading\":true,\"sellerData\":{}},\"DIY_NLF\":{},\"OrderConfirmation\":{},\"paymentDashboard\":{\"data\":[],\"errors\":{},\"selectedCard\":{},\"status\":\"\"},\"paypalData\":{\"authorize\":{},\"data\":{},\"error\":{},\"status\":\"\"},\"previousOrderDetail\":{\"data\":{},\"errors\":\"\",\"isLoading\":false},\"orderHistory\":{\"data\":{\"data\":{\"results\":[]}},\"errors\":\"\",\"isLoading\":false,\"isSearchDetailsLoading\":false,\"lineItemOrderStatus\":{},\"lineItemsImages\":{},\"lineItemsImagesActionStatus\":{},\"lineItemsOfOrder\":{},\"orderImageActionStatus\":\"\",\"orderImages\":{},\"orderSearchData\":[],\"searchOrderActionStatus\":\"\",\"sortData\":{},\"sortOrdersActionStatus\":\"\",\"status\":\"\"},\"ProductCompare\":{},\"productDetails\":{\"currentSlide\":1,\"error\":\"\",\"isPDPFooterVisible\":true,\"productDetailsLoader\":false,\"stockAvailabilityLoading\":false},\"DIY_ARTICLE_PRODUCT_RECOMMENDATIONS\":{\"loadingQueries\":{}},\"DIY_RELATED_ARTICLE_LIST\":{},\"DIY_ARTICLE_RELATED_PRODUCTS\":{},\"retailSignUpForm\":{\"errors\":{},\"formData\":{},\"hasError\":false,\"isPostingSignupForm\":false,\"status\":\"\"},\"reviewMarketlinkSeller\":{\"data\":{},\"error\":false,\"errors\":{},\"feedbackExists\":false,\"submittedSuccessfully\":false},\"SERVICES_CAROUSEL\":{\"isLoading\":false},\"CONTACT_US\":{\"error\":{},\"isLoading\":false,\"orderEnquiryNumber\":\"\",\"requestId\":\"\",\"status\":\"\"},\"availableStore\":{\"error\":{},\"services\":{},\"status\":\"\"},\"store\":{\"collectionOfStores\":[],\"data\":{},\"error\":{},\"isStoreSearchPosting\":false,\"manualStore\":\"\",\"selectedStoreAddress\":\"\",\"selectedStoreTile\":{},\"selectedStoreTileIndex\":-1,\"status\":\"\",\"storeStatus\":{}},\"storePreferences\":{\"data\":{},\"error\":{},\"isStorePreferencePosting\":false,\"status\":\"\",\"withinDistanceDetails\":{\"data\":{},\"error\":null,\"isLoading\":false}},\"updateContact\":{\"data\":{},\"error\":{},\"isContactUpdatePosting\":false,\"status\":\"\",\"updateStatus\":{\"message\":\"\",\"updated\":false}},\"ZipPay\":{\"error\":\"\",\"paymentStatus\":\"\",\"success\":\"\"},\"cartData\":{\"billingAddress\":{},\"billingAddressEditMode\":false,\"cartTileError\":{},\"commercialCustomerDetails\":{},\"data\":{},\"deleteCartItem\":{\"isError\":false},\"deliveryAddressSaved\":false,\"deliveryCostUpdated\":false,\"deliveryData\":{},\"deliveryInstruction\":\"\",\"emptyBillingAddress\":false,\"errorNotifications\":null,\"estimationData\":{},\"fromCartPage\":false,\"inventoryStatus\":{},\"isAwaitingCosDeliveryOptions\":false,\"isDisabled\":false,\"isDrawerVisible\":false,\"isOrderSummaryOpen\":false,\"makePrimaryAddress\":false,\"nuDetectScoreZone\":true,\"paymentData\":{},\"resetPaymentsPanel\":false,\"restrictionDetails\":{},\"saveDeliveryAddress\":false,\"unableToDeliverAtPostcode\":false,\"validateCart\":{}},\"global\":{\"compareProducts\":{\"isCompareDrawerOpen\":false,\"maxLimitErrorMessage\":false,\"productData\":{}},\"globalData\":{\"deviceType\":\"desktop\",\"globalConfigData\":{\"address\":{\"maxAddressLimit\":\"10\"},\"apiConfig\":{\"global\":{\"bpointAddToken\":\"/v1/bpoint/dvtokens/adddvtokenauthkey\",\"bpointAuthKey\":\"/v1/bpoint/txns/processtxnauthkey\",\"bpointProcessTxn\":\"/v1/bpoint/txns/processiframetxn/{authKey}\",\"checkActiveStore\":\"/v1/stores/checkActiveStore\",\"globalDefaultStore\":\"/v1/stores/defaultStore?deliveryPostCode={postCode}\",\"globalStore\":\"/v1/carts/{cartId}/defaultStore\",\"navigationUrl\":\"/v1/products/regionalCategory\",\"newsletterEndPoint\":\"/v1/customer-management/users\",\"newsletterGuestEndPoint\":\"/v1/sfmc/rest/key:Customer_Master_ANZ_Test\",\"notFoundRoute\":\"/not-found\",\"nuDetect\":{\"nuDetectAPI\":\"/v1/post/cart/send\",\"nuDetectLoginScore\":\"/v1/post/login/result\",\"nuDetectPush\":\"/v1/post/cart/send\",\"nuDetectUpdateAPI\":\"/v1/post/cart/refresh\"},\"orderConfirmationRouterKey\":\"/order-confirmation\",\"paypalAuthorizePayment\":\"/v1/paypal/capture\",\"paypalClientToken\":\"/v1/paypal/clientToken\",\"paypalPreAuthorizePayment\":\"/v1/paypal/authorize\",\"registerActivationAPI\":\"/v1/emails/verify\",\"resendVerificationAPI\":\"/v1/emails/resendVerification\",\"salesforceAPI\":\"/marketing-preferences/customers/{{customerId}}\",\"storeFinderAPI\":\"/v1/stores/products/stock?latitude={latitude}\\u0026longitude={longitude}\\u0026currentPage={currentPage}\\u0026fields={fields}\\u0026pageSize={pageSize}\",\"storePreferenceAPI\":\"/v1/stores?latitude={latitude}\\u0026longitude={longitude}\",\"tokenValidation\":\"/v1/customer-management/users/activation/status\",\"usersAPI\":\"/v1/customer-management/users\",\"workshopAPIUrl\":\"/v1/workshops/custom.workshop.feed-bunnings-related-endpoint\",\"workshopCarouselSize\":\"12\",\"zipPayAPIUrl\":\"/v1/zip-money/checkouts\",\"zipPayChargesAPIUrl\":\"/v1/zip-money/charges\",\"zipPayCheckoutAPIUrl\":\"/v1/zip-checkout\",\"trnType\":\"2\"}},\"campaign\":{\"fathersDayCampaignName\":\"fathers-day-gifting-2025\"},\"cart\":{\"addFailMessage\":\"Add to cart failed, Please try again!\",\"addToCartLabel\":\"Add to Cart\",\"ageRestrictionLabels\":{\"ageRestrictionMessage\":\"This product is age restricted. By clicking yes, you agree that you are over the age of {age} years and you may be asked for ID on collection.\",\"ageRestrictionOrderInfoMessage\":\"By purchasing this item you are declaring that you are 18 years or over.\",\"ageRestrictionPrimaryButtonText\":\"Yes\",\"ageRestrictionSecondaryButtonText\":\"No\",\"ageRestrictionTitle\":\"Please confirm that you are {age} years old or over\"},\"cartExpiry\":\"720\",\"cartUnavailableProcessingError\":\"\\u003cdiv\\u003ePlease remove the unavailable items in your cart to proceed through the checkout.\\u003c/div\\u003e\",\"decreaseQuantity\":\"Decrease Quantity\",\"deliveryEstimationLabels\":{\"collectBetweenInfoLabel\":\"Collect Between %\",\"collectOnInfoLabel\":\"Collect on % from 9am. \",\"cutOffTime\":\"4pm\",\"deliveredBetweenDateInfo\":\"Estimated delivery between %. \",\"deliveredOnInfo\":\"Delivered on % .\",\"orderByAndCollectByInfo\":\"Order by 4pm to collect after 9am the next day\",\"orderByAndCollectByInfoAfterCutOff\":\"Orders after 4pm will be processed the next day.\"},\"disableZippayDoubleCharge\":false,\"increaseQuantity\":\"Increase Quantity\",\"inputQuantity\":\"Input Quantity\",\"itemNotAvailable\":\"Item not available\",\"maxCartQuantity\":\"999\",\"notSoldAtThisStore\":\"Item not available at this store\",\"outOfStockLabel\":\"Out of stock\",\"recommendation\":{\"continueShoppingLabel\":\"Continue shopping\",\"frequentlyBoughtTogetherLabel\":\"Frequently bought together\",\"itemAddedToYourCartLabel\":\"Item added to your cart\",\"reviewAndCheckoutButton\":{\"target\":\"\",\"href\":\"/cart\",\"text\":\"Review cart\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{33432D19-1E32-41E2-BF06-D1794E76660D}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"showRecommendationIterationCounter\":\"3\"},\"storeOnlyLabel\":\"In-store only\",\"updateFailMessage\":\"Updating cart failed, Please try again!\",\"updateSuccessMessage\":\"Item quantity updated to {quantity} in cart\"},\"compare\":{\"clearAllLabel\":\"Clear All\",\"closeDrawerLabel\":\"Close\",\"compareButton\":{\"target\":\"\",\"href\":\"/compare\",\"text\":\"Compare\",\"anchor\":\"\",\"linktype\":\"internal\",\"class\":\"\",\"title\":\"\",\"querystring\":\"\",\"id\":\"{82EF9C39-5742-4684-A80C-BB71E9BAFFAD}\",\"imagesrc\":\"\",\"imagealt\":\"icon\"},\"compareDrawerTitle\":\"Compare Products\",\"maxItemMe"
     }
   ],
-  "readinessScore": 22,
+  "readinessScore": 49,
   "explanations": [
     {
       "category": "Semantic",
-      "delta": 20,
-      "reason": "Moderate vector proximity, but lags top competitors",
-      "confidence": 85
+      "delta": 32,
+      "reason": "Strong vector proximity compared to competitors",
+      "confidence": 95
     },
     {
       "category": "RAG Simulation",
@@ -69,9 +429,9 @@
     },
     {
       "category": "Knowledge Graph",
-      "delta": 0,
-      "reason": "Clear entity relationships established (Emerging)",
-      "confidence": 0
+      "delta": 15,
+      "reason": "Clear entity relationships established (Verified)",
+      "confidence": 100
     },
     {
       "category": "Technical SEO",
@@ -100,14 +460,19 @@
     "cls": 0.05
   },
   "entityConfidence": {
-    "score": 0,
-    "type": "Emerging"
+    "score": 100,
+    "type": "Verified"
   },
   "engineeredFeatures": {
-    "semanticDominance": 0,
+    "semanticDominance": 45.13888888888889,
     "technicalAdvantage": 10,
     "contentLengthRatio": 1,
     "schemaCompleteness": 0,
-    "entityAuthority": 0
+    "entityAuthority": 100
+  },
+  "crawlQuality": {
+    "score": 80,
+    "method": "Cheerio",
+    "hydrationRequired": false
   }
 }

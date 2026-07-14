@@ -16,34 +16,34 @@
   "triples": [],
   "simulations": [
     {
-      "syntheticQuery": "kids bento lunch boxes",
+      "syntheticQuery": "Best bento lunch boxes for kids reviews",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Crawl failed. fetch failed"
     },
     {
-      "syntheticQuery": "best leak-proof bento box for children's school lunches",
+      "syntheticQuery": "Leak-proof bento containers for children's school lunches",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Crawl failed. fetch failed"
     },
     {
-      "syntheticQuery": "toddler bento lunch containers with easy open",
+      "syntheticQuery": "Where to buy durable bento boxes for picky eaters?",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Crawl failed. fetch failed"
     }
   ],
-  "readinessScore": 8,
+  "readinessScore": 20,
   "explanations": [
     {
       "category": "Semantic",
-      "delta": 20,
-      "reason": "Moderate vector proximity, but lags top competitors",
-      "confidence": 85
+      "delta": 32,
+      "reason": "Strong vector proximity compared to competitors",
+      "confidence": 95
     },
     {
       "category": "RAG Simulation",
@@ -94,10 +94,15 @@
     "type": "Unknown"
   },
   "engineeredFeatures": {
-    "semanticDominance": 0,
+    "semanticDominance": 45.13888888888889,
     "technicalAdvantage": 0,
     "contentLengthRatio": 0.002585649644473174,
     "schemaCompleteness": 0,
     "entityAuthority": 0
+  },
+  "crawlQuality": {
+    "score": 0,
+    "method": "Fallback",
+    "hydrationRequired": false
   }
 }

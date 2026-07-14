@@ -63,6 +63,45 @@ export interface CrawlQuality {
   hydrationRequired: boolean;
 }
 
+export interface FirstImpression {
+  headline: string;
+  reasoning: string[];
+}
+
+export interface StrategicSummary {
+  problem: string;
+  opportunity: string;
+  nextAction: string;
+}
+
+export interface BlindSpot {
+  title: string;
+  description: string;
+}
+
+export interface BusinessDiagnosis {
+  currentState: string;
+  desiredState: string;
+  gap: string;
+}
+
+export interface AIRecommendationTest {
+  wouldRecommend: boolean;
+  verdict: string;
+  reasoning: string;
+}
+
+export interface InsightEngineResult {
+  verdict: 'Highly Visible' | 'Visible' | 'Growing' | 'Limited' | 'At Risk';
+  measurementConfidence: { score: number; reasons: string[] };
+  recommendationConfidence: { score: number; reasons: string[] };
+  firstImpression: FirstImpression;
+  blindSpot: BlindSpot;
+  diagnosis: BusinessDiagnosis;
+  summary: StrategicSummary;
+  recommendationTest: AIRecommendationTest;
+}
+
 export interface TelemetryResult {
   clientUrl?: string;
   proximityScore: number; // 0 to 100
@@ -80,4 +119,7 @@ export interface TelemetryResult {
   // V3 specific
   engineeredFeatures?: EngineeredFeatures;
   crawlQuality?: CrawlQuality;
+  
+  // Insight Engine Extension
+  insightResult?: InsightEngineResult;
 }

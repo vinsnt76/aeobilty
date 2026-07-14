@@ -42,7 +42,7 @@ async function runTests() {
     
     try {
       const startTime = Date.now();
-      const response = await fetch('http://localhost:3000/api/telemetry', {
+      const response = await fetch('http://localhost:3000/api/diagnostic', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

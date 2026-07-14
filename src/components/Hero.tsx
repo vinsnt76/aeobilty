@@ -169,7 +169,7 @@ export default function Hero() {
                 </a>
 
                 <button
-                  onClick={() => document.getElementById('companion-widget-toggle')?.click()}
+                  onClick={() => window.dispatchEvent(new Event('open_new_bill_session'))}
                   className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 transition-all"
                 >
                   💬 Ask AI Bill How AI Search Sees Your Business

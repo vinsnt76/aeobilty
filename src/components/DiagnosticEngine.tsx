@@ -32,7 +32,7 @@ export default function DiagnosticEngine() {
     setProcessingStage(0);
 
     // Start background fetch
-    const fetchPromise = fetch('/api/telemetry', {
+    const fetchPromise = fetch('/api/diagnostic', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url, intent }),
@@ -46,11 +46,17 @@ export default function DiagnosticEngine() {
 
     try {
       const data = await fetchPromise;
+      if (data.error) {
+        throw new Error(data.error);
+      }
       setTelemetry(data);
-    } catch (e) {
-      console.error(e);
+    } catch (e: any) {
+      console.error('Diagnostic engine fetch error:', e);
       // fallback for demo if fails
-      setTelemetry({ readinessScore: 45 } as any);
+      setTelemetry({ 
+        readinessScore: 0,
+        error: e.message || 'Failed to fetch telemetry'
+      } as any);
     }
 
     setStep('SCORE_REVEAL');
@@ -150,40 +156,95 @@ export default function DiagnosticEngine() {
         {(step === 'SCORE_REVEAL' || step === 'EMAIL_GATE') && telemetry && (
           <div className="space-y-8 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
             
-            <div className="text-center space-y-4 pb-8 border-b border-white/10">
-              <h2 className="text-xl text-white/60 font-medium">AI Visibility Score</h2>
-              <div className="text-7xl font-black bg-clip-text text-transparent bg-gradient-to-r from-aeo-cyan to-aeo-purple">
-                {telemetry.readinessScore} <span className="text-4xl text-white/20">/ 100</span>
+            <div className="text-center space-y-8 pb-8 border-b border-white/10">
+              
+              {/* AI First Impression Signature Box */}
+              <div className="max-w-xl mx-auto bg-black/40 border border-aeo-cyan/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(0,240,255,0.1)]">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <Sparkles className="w-5 h-5 text-aeo-cyan" />
+                  <h2 className="text-sm uppercase tracking-wider font-bold text-aeo-cyan">AI First Impression</h2>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xl text-white/90 font-medium italic text-center">
+                    "{telemetry.insightResult?.firstImpression.headline}"
+                  </p>
+                  <div className="space-y-2">
+                    {telemetry.insightResult?.firstImpression.reasoning.map((r, i) => (
+                      <p key={i} className="text-sm text-white/70 text-center">{r}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <p className="text-lg text-white/80">
-                {telemetry.readinessScore > 70 ? 'Your website is well understood by AI engines.' : 
-                 telemetry.readinessScore > 40 ? 'Your website is partially understood by AI engines.' : 
-                 'Your website is poorly understood by AI engines.'}
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-black/30 p-4 rounded-xl border border-white/5">
-                <div className="text-sm text-white/50 mb-1">Semantic Understanding</div>
-                <div className="text-2xl font-bold text-white mb-2">{telemetry.proximityScore}%</div>
-                <div className="text-xs text-white/40">Topic alignment with intent</div>
+              {/* Strategic Summary & Diagnosis */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                
+                <div className="space-y-4">
+                  <div className="bg-black/30 p-5 rounded-xl border border-white/5 space-y-4 h-full">
+                    <h3 className="text-sm text-white/50 uppercase tracking-wider">Business Diagnosis</h3>
+                    <div>
+                      <div className="text-[10px] text-white/40 uppercase mb-1">Current State</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis.currentState}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-white/40 uppercase mb-1">Desired State</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis.desiredState}</div>
+                    </div>
+                    <div className="pt-2 border-t border-white/5">
+                      <div className="text-[10px] text-aeo-purple uppercase mb-1">The Gap</div>
+                      <div className="text-sm text-white/90">{telemetry.insightResult?.diagnosis.gap}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-black/30 p-5 rounded-xl border border-white/5 space-y-4 h-full">
+                    <h3 className="text-sm text-white/50 uppercase tracking-wider">Executive Summary</h3>
+                    <div>
+                      <div className="text-[10px] text-white/40 uppercase mb-1">Core Problem</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary.problem}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-emerald-400/70 uppercase mb-1">Biggest Opportunity</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary.opportunity}</div>
+                    </div>
+                    <div className="pt-2 border-t border-white/5">
+                      <div className="text-[10px] text-aeo-cyan uppercase mb-1">Next Action</div>
+                      <div className="text-sm text-white/90 font-medium">{telemetry.insightResult?.summary.nextAction}</div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div className="bg-black/30 p-4 rounded-xl border border-white/5">
-                <div className="text-sm text-white/50 mb-1">Entity Recognition</div>
-                <div className="text-2xl font-bold text-white mb-2">{telemetry.entityConfidence?.score || 0}%</div>
-                <div className="text-xs text-white/40">Knowledge graph clarity</div>
+
+              {/* Blind Spot & Recommendation Test Climax */}
+              <div className="bg-black/30 border border-white/5 rounded-xl p-6 mt-6">
+                <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+                  
+                  <div className="flex-1 space-y-2 text-center md:text-left">
+                    <div className="text-[10px] uppercase tracking-wider text-amber-400">Biggest Blind Spot</div>
+                    <div className="text-lg font-bold text-white/90">{telemetry.insightResult?.blindSpot.title}</div>
+                    <div className="text-sm text-white/70">{telemetry.insightResult?.blindSpot.description}</div>
+                  </div>
+
+                  <div className="w-px h-16 bg-white/10 hidden md:block"></div>
+
+                  <div className="flex-1 space-y-3 text-center md:text-left">
+                    <div className="text-[10px] uppercase tracking-wider text-aeo-purple">AI Recommendation Test</div>
+                    <div className="text-xs text-white/50">"If someone asked ChatGPT for the best {intent}, would I recommend you?"</div>
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 mt-2">
+                      <span className="text-3xl leading-none">
+                        {telemetry.insightResult?.recommendationTest.wouldRecommend ? '✅' : '❌'}
+                      </span>
+                      <div>
+                        <div className="text-lg font-bold text-white mb-1">{telemetry.insightResult?.recommendationTest.verdict}</div>
+                        <div className="text-sm text-white/70">{telemetry.insightResult?.recommendationTest.reasoning}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              <div className="bg-black/30 p-4 rounded-xl border border-white/5">
-                <div className="text-sm text-white/50 mb-1">Technical Accessibility</div>
-                <div className="text-2xl font-bold text-white mb-2">{telemetry.performance?.coreWebVitalsScore || 0}%</div>
-                <div className="text-xs text-white/40">Crawlability & structure</div>
-              </div>
-              <div className="bg-black/30 p-4 rounded-xl border border-white/5">
-                <div className="text-sm text-white/50 mb-1">Competitive Position</div>
-                <div className="text-2xl font-bold text-white mb-2">{(telemetry.engineeredFeatures?.semanticDominance || 0).toFixed(0)}%</div>
-                <div className="text-xs text-white/40">Vs. top search results</div>
-              </div>
-            </div>
 
             {/* Email Gate */}
             <div className="mt-8 pt-8 border-t border-white/10">

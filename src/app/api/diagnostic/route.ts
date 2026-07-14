@@ -10,6 +10,7 @@ import { TelemetryResult } from '@/lib/telemetry/types';
 import { calculateReadinessScore } from '@/lib/telemetry/scoring';
 import { getTelemetryCache, setTelemetryCache } from '@/lib/telemetry/cache';
 import { extractFeatures } from '@/lib/telemetry/features';
+import { generateInsightEngineResult } from '@/lib/telemetry/insight-engine';
 
 // Allow maximum duration (60s on Vercel Hobby) for telemetry processing
 export const maxDuration = 60;
@@ -86,14 +87,17 @@ export async function POST(req: NextRequest) {
       crawlQuality: clientCrawl.crawlQuality
     };
 
+    // 6. Generate Insight Engine Result
+    result.insightResult = await generateInsightEngineResult(intent, result, clientText);
+
     // Save to Cache
     await setTelemetryCache(url || '', intent, result);
 
     return NextResponse.json(result);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Telemetry run error:', error);
     return NextResponse.json(
-      { error: 'Internal server error running telemetry.' },
+      { error: error.message || 'Internal server error running telemetry.', stack: error.stack },
       { status: 500 }
     );
   }

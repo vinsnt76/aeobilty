@@ -120,7 +120,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu links */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/75" ref={dropdownRef}>
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm font-semibold text-white/75" ref={dropdownRef}>
             {navLinks.map((link) => {
               if (link.dropdownItems) {
                 const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
@@ -188,7 +188,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             <Link
               href="/book"
               className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-aeo-cyan text-black rounded-full hover:bg-white transition-all shadow-[0_0_12px_rgba(0,240,255,0.2)]"
@@ -206,7 +206,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Menu Toggle */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden p-2 transition-colors relative z-50 ${
+            className={`lg:hidden p-2 transition-colors relative z-50 ${
               isOpen ? 'text-black hover:text-black/70' : 'text-white/80 hover:text-white'
             }`}
             aria-label="Toggle mobile menu"
@@ -218,7 +218,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col justify-start items-center md:hidden overflow-y-auto pt-24 pb-12 transition-all duration-300">
+        <div className="fixed inset-0 bg-white z-40 flex flex-col justify-start items-center lg:hidden overflow-y-auto pt-24 pb-12 transition-all duration-300">
           <div className="flex flex-col items-center gap-6 text-base font-bold text-black w-full px-8">
             {navLinks.map((link) => {
               if (link.dropdownItems) {
