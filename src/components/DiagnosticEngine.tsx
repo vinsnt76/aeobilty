@@ -40,6 +40,11 @@ export default function DiagnosticEngine() {
     }
     setUrl(normalizedUrl);
     
+    // Dispatch scan started event
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('aeo_scan_started'));
+    }
+
     setStep('PROCESSING');
     setProcessingStage(0);
 
@@ -65,8 +70,13 @@ export default function DiagnosticEngine() {
       
       // Dispatch events to notify AI Bill (CompanionWidget)
       if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('aeo_scan_completed'));
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
-        window.dispatchEvent(new Event('open_new_bill_session'));
+        
+        // 2.5 second delay to feel like he's analysing before popping up
+        setTimeout(() => {
+          window.dispatchEvent(new Event('open_new_bill_session'));
+        }, 2500);
       }
     } catch (e: any) {
       console.error('Diagnostic engine fetch error:', e);

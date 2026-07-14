@@ -29,32 +29,29 @@ export async function POST(req: NextRequest) {
     let finalPrompt = message;
     let systemInstruction = SYSTEM_INSTRUCTION;
 
-    if (telemetryContext) {
-      const clientSim = telemetryContext.nodes?.find((n: any) => n.label === 'Client')?.similarity || 0.5;
-      const compSim = telemetryContext.nodes?.find((n: any) => n.label.startsWith('Competitor'))?.similarity || 0.6;
-      const proximityDelta = clientSim - compSim;
+    if (telemetryContext && telemetryContext.insightResult) {
+      const insight = telemetryContext.insightResult;
+      const metricsContext = `
+Here is the deterministic analysis you must base your advice on:
 
-      const survivedCount = telemetryContext.simulations?.filter((s: any) => s.survived).length || 0;
-      const totalSims = telemetryContext.simulations?.length || 1;
-      const survivalRate = survivedCount / totalSims;
+1. Business Status:
+- Current Perception: ${insight.diagnosis.currentState}
+- Ideal Authority: ${insight.diagnosis.desiredState}
+- The Gap: ${insight.diagnosis.gap}
 
-      const attributionStatus = survivalRate === 1 ? 'OPTIMAL' : survivalRate > 0 ? 'PARTIAL_ATTRIBUTION' : 'DROPPED';
-      const droppedReason = survivalRate < 1 ? 'Information dilution and low semantic density' : '';
+2. Blind Spot & Opportunity:
+- Problem: ${insight.summary.problem}
+- Opportunity: ${insight.summary.opportunity}
+- Next Action: ${insight.summary.nextAction}
+- Biggest Blind Spot: ${insight.blindSpot.title} - ${insight.blindSpot.description}
 
-      const topMissingTriples = [];
-      if (!telemetryContext.triples || telemetryContext.triples.length < 5) {
-        topMissingTriples.push('ClientBrand connectsTo AI_Search_Engine', 'ClientBrand establishes schemaBindings');
-      }
+3. AI Recommendation Test:
+- Verdict: ${insight.recommendationTest.verdict}
+- Reasoning: ${insight.recommendationTest.reasoning}
 
-      const scannedDomain = telemetryContext.clientUrl || 'aeobility.com.au';
+Use this specific context to answer user questions about their score, their blind spot, or how to improve their AI visibility.`;
 
-      systemInstruction = generateSystemTelemetryPrompt({
-        intent: 'AEO and AI search engine optimization services for Australian businesses',
-        proximityDelta,
-        attributionStatus,
-        droppedReason,
-        topMissingTriples
-      }, scannedDomain);
+      systemInstruction = SYSTEM_INSTRUCTION + "\n\n" + metricsContext;
     }
 
     const response = await fetch(

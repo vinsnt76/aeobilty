@@ -35,26 +35,29 @@ export default function CompanionWidget() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [telemetryData, setTelemetryData] = useState<any>(null);
 
-  // Gatekeeper Mode states
-  const [onboardStage, setOnboardStage] = useState<'INTRO' | 'EMAIL' | 'DONE'>('DONE');
+  type BillState = "HIDDEN" | "ANALYSING" | "INTRODUCTION" | "INSIGHT_REVEAL" | "EMAIL_CAPTURE" | "CONSULTANT" | "FOLLOW_UP";
+  const [billState, setBillState] = useState<BillState>('HIDDEN');
   const [onboardEmail, setOnboardEmail] = useState('');
 
   const handleEmailCapture = async (email: string) => {
     setOnboardEmail(email);
+    window.dispatchEvent(new Event('bill_email_submitted'));
     try {
       await fetch('/api/forms/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, website: telemetryData?.url, intent: telemetryData?.intent })
       });
-      setOnboardStage('DONE');
+      setBillState('CONSULTANT');
+      window.dispatchEvent(new Event('bill_consultation_started'));
       setMessages(prev => [
         ...prev,
         { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression\n• Build my 90-day roadmap` }
       ]);
     } catch (e) {
       // ignore
-      setOnboardStage('DONE');
+      setBillState('CONSULTANT');
+      window.dispatchEvent(new Event('bill_consultation_started'));
     }
   };
 
@@ -80,20 +83,40 @@ export default function CompanionWidget() {
     // Event listener for external triggers to open a new fresh session
     const handleOpenNewSession = () => {
       setIsOpen(true);
+      window.dispatchEvent(new Event('bill_opened'));
       const raw = localStorage.getItem('aeo_telemetry_latest');
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
           setTelemetryData(parsed);
           const blindSpot = parsed.result?.insightResult?.blindSpot;
+          const intent = parsed.intent;
           
+          setBillState('INTRODUCTION');
           setMessages([
             {
               sender: 'assistant',
-              text: `👋 Hi, I'm Bill.\n\nI've just finished reviewing your website.\n\nThe single biggest issue I found is ${blindSpot?.title || 'an alignment gap'}:\n${blindSpot?.description || 'Your semantic signals are weak.'}\n\nI've found five more opportunities.\n\nWhere should I send the complete report?`
+              text: `👋 Hi, I'm Bill.\nI've finished reviewing your website.`
+            },
+            {
+              sender: 'assistant',
+              text: `A quick note:\nThis isn't an SEO ranking score.\nI'm measuring how clearly AI systems can understand your business, products, and expertise.`
+            },
+            {
+              sender: 'assistant',
+              text: `The biggest thing I noticed:\n${blindSpot?.title || 'An alignment gap'}\n\n${blindSpot?.description || 'Your semantic signals are weak.'}\n\nThis means you may appear when someone searches for "${intent}", but you lose authority for related semantic searches.`
             }
           ]);
-          setOnboardStage('EMAIL');
+          window.dispatchEvent(new Event('bill_first_insight_viewed'));
+
+          setTimeout(() => {
+            setMessages(prev => [...prev, {
+              sender: 'assistant',
+              text: `I've identified 5 more opportunities.\n\nWould you like the complete breakdown?`
+            }]);
+            setBillState('EMAIL_CAPTURE');
+            window.dispatchEvent(new Event('bill_email_requested'));
+          }, 4000);
         } catch (e) {
           console.error(e);
         }
@@ -180,8 +203,8 @@ export default function CompanionWidget() {
 
     try {
       // Conversational Onboarding Interception
-      if (onboardStage !== 'DONE') {
-        if (onboardStage === 'EMAIL') {
+      if (billState !== 'CONSULTANT') {
+        if (billState === 'EMAIL_CAPTURE') {
           handleEmailCapture(userMsg);
         }
         setIsThinking(false);
@@ -306,6 +329,26 @@ export default function CompanionWidget() {
           <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
         </div>
 
+        {billState === 'CONSULTANT' && telemetryData && (
+          <div className="bg-black/60 border-b border-white/10 p-3 text-[10px] space-y-2 relative z-10 shadow-md">
+            <div className="flex justify-between items-center text-white/50 uppercase tracking-wider mb-1">
+              <span>AI Bill's Summary</span>
+            </div>
+            <div>
+              <span className="text-white/40">Current perception:</span>
+              <div className="text-white/90">"{telemetryData.result?.insightResult?.diagnosis?.currentState}"</div>
+            </div>
+            <div>
+              <span className="text-white/40">Opportunity:</span>
+              <div className="text-aeo-cyan">"{telemetryData.result?.insightResult?.diagnosis?.desiredState}"</div>
+            </div>
+            <div>
+              <span className="text-white/40">Biggest improvement:</span>
+              <div className="text-white/90">{telemetryData.result?.insightResult?.summary?.nextAction}</div>
+            </div>
+          </div>
+        )}
+
         <div className="flex-grow overflow-y-auto p-4 space-y-4 text-xs">
             <>
               {messages.map((msg, i) => {
@@ -389,6 +432,30 @@ export default function CompanionWidget() {
                   </div>
                 </div>
               )}
+              
+              {billState === 'EMAIL_CAPTURE' && (
+                <div className="mt-4 p-4 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/20 rounded-xl space-y-3 shadow-[0_0_15px_rgba(0,240,255,0.05)] max-w-[90%]">
+                  <div className="text-[11px] font-semibold text-white">Unlock Full Report & Consultation</div>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <input
+                      type="email"
+                      placeholder="Enter email..."
+                      value={onboardEmail}
+                      onChange={e => setOnboardEmail(e.target.value)}
+                      className="flex-grow bg-black/60 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-aeo-cyan text-[11px]"
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') handleEmailCapture(onboardEmail);
+                      }}
+                    />
+                    <button
+                      onClick={() => handleEmailCapture(onboardEmail)}
+                      className="px-4 py-2 bg-white text-black font-semibold rounded-lg text-[11px] hover:bg-white/90 transition-colors"
+                    >
+                      Unlock
+                    </button>
+                  </div>
+                </div>
+              )}
             </>
           <div ref={messagesEndRef} />
         </div>
@@ -413,7 +480,7 @@ export default function CompanionWidget() {
             )}
 
             {/* Quick Action Diagnostic Buttons */}
-            {telemetryData && (
+            {billState === 'CONSULTANT' && telemetryData && (
               <div className="flex flex-wrap gap-1.5 pb-2">
                 <button
                   onClick={() => setInputText("Explain my Vector Proximity similarity score vs competitor.")}
@@ -451,23 +518,25 @@ export default function CompanionWidget() {
               </div>
             )}
 
-            <div className="flex gap-2">
-              <input
-                type={onboardStage === 'EMAIL' ? "email" : "text"}
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={onboardStage === 'EMAIL' ? "Enter your email for the full report..." : "Message AI Bill..."}
-                className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
-              />
-              <button
-                onClick={handleSendMessage}
-                className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 transition-colors"
-                title="Send Message"
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </div>
+            {billState === 'CONSULTANT' && (
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Message AI Bill..."
+                  className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 transition-colors"
+                  title="Send Message"
+                >
+                  <Send className="w-4 h-4" />
+                </button>
+              </div>
+            )}
           </div>
       </div>
     </>
