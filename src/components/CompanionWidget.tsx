@@ -83,8 +83,6 @@ export default function CompanionWidget() {
   };
 
   useEffect(() => {
-    loadTelemetryFromStorage();
-    
     // Event listener for external triggers to open a new fresh session
     const handleOpenNewSession = () => {
       setIsOpen(true);
