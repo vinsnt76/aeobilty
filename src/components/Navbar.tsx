@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,8 +84,105 @@ export default function Navbar() {
     <>
       <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          {/* Right Aligned Container */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {/* Desktop Menu links */}
+            <div className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-black/80" ref={dropdownRef}>
+              {navLinks.map((link) => {
+                if (link.dropdownItems) {
+                  const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
+                  const isCurrentDropdownOpen = activeDropdown === link.name;
+                  return (
+                    <div
+                      key={link.name}
+                      className="relative group"
+                      onMouseEnter={() => setActiveDropdown(link.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <Link
+                        href={link.href}
+                        className={`flex items-center gap-1.5 py-2 hover:text-aeo-cyan transition-colors focus:outline-none cursor-pointer ${
+                          isAnySubActive ? 'text-aeo-cyan' : ''
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrentDropdownOpen ? 'rotate-180' : ''}`} />
+                      </Link>
+
+                      {/* Dropdown Menu */}
+                      <div
+                        className={`absolute left-0 mt-1 w-64 bg-white/95 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
+                          isCurrentDropdownOpen
+                            ? 'opacity-100 scale-100 translate-y-0 visible'
+                            : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
+                        }`}
+                      >
+                        {link.dropdownItems.map((subItem) => {
+                          const isSubActive = pathname === subItem.href;
+                          return (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                                isSubActive
+                                  ? 'bg-aeo-cyan/10 text-aeo-cyan'
+                                  : 'text-black/70 hover:text-black hover:bg-black/5'
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`hover:text-aeo-cyan transition-colors ${
+                      active ? 'text-aeo-cyan' : ''
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-2 xl:gap-3">
+              <Link
+                href="/book"
+                className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-black hover:text-aeo-cyan transition-colors"
+              >
+                <Calendar className="w-4 h-4" />
+                Call
+              </Link>
+              <Link
+                href="/diagnostic"
+                className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-pink-500 to-aeo-purple text-white rounded-full hover:opacity-90 transition-all shadow-md border-0"
+              >
+                Visibility Score
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile Hamburger Menu Toggle */}
+          <button
+            onClick={toggleMenu}
+            className={`lg:hidden p-2 transition-colors relative z-50 text-black hover:text-black/70`}
+            aria-label="Toggle mobile menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
           {/* Brand Logo & Name */}
-          <Link href="/" className="flex items-center gap-2 group relative z-50">
+          <Link href="/" className="flex items-center gap-2 group relative z-50 ml-auto lg:ml-0">
             <svg
               className="w-8 h-8 text-black group-hover:scale-105 transition-transform"
               viewBox="0 0 32 32"
@@ -117,102 +214,6 @@ export default function Navbar() {
               AEObility
             </span>
           </Link>
-
-          {/* Right Aligned Container */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto">
-            {/* Desktop Menu links */}
-            <div className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-black/80" ref={dropdownRef}>
-              {navLinks.map((link) => {
-                if (link.dropdownItems) {
-                  const isAnySubActive = link.dropdownItems.some(sub => pathname === sub.href) || pathname === link.href;
-                  const isCurrentDropdownOpen = activeDropdown === link.name;
-                  return (
-                    <div
-                      key={link.name}
-                      className="relative group"
-                      onMouseEnter={() => setActiveDropdown(link.name)}
-                      onMouseLeave={() => setActiveDropdown(null)}
-                    >
-                      <Link
-                        href={link.href}
-                        className={`flex items-center gap-1.5 py-2 hover:text-aeo-purple transition-colors focus:outline-none cursor-pointer ${
-                          isAnySubActive ? 'text-aeo-purple' : ''
-                        }`}
-                      >
-                        <span>{link.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrentDropdownOpen ? 'rotate-180' : ''}`} />
-                      </Link>
-
-                      {/* Dropdown Menu */}
-                      <div
-                        className={`absolute left-0 mt-1 w-64 bg-white/95 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
-                          isCurrentDropdownOpen
-                            ? 'opacity-100 scale-100 translate-y-0 visible'
-                            : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
-                        }`}
-                      >
-                        {link.dropdownItems.map((subItem) => {
-                          const isSubActive = pathname === subItem.href;
-                          return (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className={`block px-4 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                                isSubActive
-                                  ? 'bg-aeo-purple/10 text-aeo-purple'
-                                  : 'text-black/70 hover:text-black hover:bg-black/5'
-                              }`}
-                            >
-                              {subItem.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                }
-
-                const active = isActive(link.href);
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`hover:text-aeo-purple transition-colors ${
-                      active ? 'text-aeo-purple' : ''
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex items-center gap-2 xl:gap-3">
-              <Link
-                href="/book"
-                className="px-5 py-2 text-sm font-semibold text-black hover:text-aeo-purple transition-colors"
-              >
-                Call
-              </Link>
-              <Link
-                href="/diagnostic"
-                className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-black text-white rounded-full hover:bg-black/80 transition-all shadow-md"
-              >
-                Visibility Score
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile Hamburger Menu Toggle */}
-          <button
-            onClick={toggleMenu}
-            className={`lg:hidden p-2 transition-colors relative z-50 text-black hover:text-black/70`}
-            aria-label="Toggle mobile menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </nav>
 
@@ -228,8 +229,8 @@ export default function Navbar() {
                   <div key={link.name} className="w-full flex flex-col items-center">
                     <button
                       onClick={(e) => handleMobileSubmenuToggle(link.name, e)}
-                      className={`flex items-center gap-1.5 py-2 hover:text-aeo-purple transition-all duration-200 text-lg ${
-                        isAnySubActive ? 'text-aeo-purple' : 'text-black'
+                      className={`flex items-center gap-1.5 py-2 hover:text-aeo-cyan transition-all duration-200 text-lg ${
+                        isAnySubActive ? 'text-aeo-cyan' : 'text-black'
                       }`}
                     >
                       <span>{link.name}</span>
@@ -247,7 +248,7 @@ export default function Navbar() {
                               href={subItem.href}
                               onClick={() => setIsOpen(false)}
                               className={`text-sm py-1 transition-colors ${
-                                isSubActive ? 'text-aeo-purple font-bold' : 'text-black/60 hover:text-black'
+                                isSubActive ? 'text-aeo-cyan font-bold' : 'text-black/60 hover:text-black'
                               }`}
                             >
                               {subItem.name}
@@ -266,8 +267,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`hover:text-aeo-purple transition-all duration-200 py-2 text-lg ${
-                    active ? 'text-aeo-purple' : 'text-black'
+                  className={`hover:text-aeo-cyan transition-all duration-200 py-2 text-lg ${
+                    active ? 'text-aeo-cyan' : 'text-black'
                   }`}
                 >
                   {link.name}
