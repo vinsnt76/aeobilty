@@ -4,13 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, Mail, Lock } from 'lucide-react';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
-type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL' | 'EMAIL_GATE';
+type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
 
 export default function DiagnosticEngine() {
   const [step, setStep] = useState<Step>('INPUT');
   const [url, setUrl] = useState('');
   const [intent, setIntent] = useState('');
-  const [email, setEmail] = useState('');
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
   
   const [processingStage, setProcessingStage] = useState(0);
@@ -63,6 +62,12 @@ export default function DiagnosticEngine() {
         throw new Error(data.error);
       }
       setTelemetry(data);
+      
+      // Dispatch events to notify AI Bill (CompanionWidget)
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('aeo_telemetry_updated'));
+        window.dispatchEvent(new Event('open_new_bill_session'));
+      }
     } catch (e: any) {
       console.error('Diagnostic engine fetch error:', e);
       // fallback for demo if fails
@@ -73,14 +78,6 @@ export default function DiagnosticEngine() {
     }
 
     setStep('SCORE_REVEAL');
-  };
-
-  const handleUnlock = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    // In real app, submit email to CRM and route to full dashboard
-    setStep('EMAIL_GATE'); 
-    alert(`Report will be sent to ${email} (Full dashboard routing would happen here)`);
   };
 
   return (
@@ -166,7 +163,7 @@ export default function DiagnosticEngine() {
           </div>
         )}
 
-        {(step === 'SCORE_REVEAL' || step === 'EMAIL_GATE') && telemetry && (
+        {step === 'SCORE_REVEAL' && telemetry && (
           <div className="space-y-8 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
             
             <div className="text-center space-y-8 pb-8 border-b border-white/10">
@@ -259,42 +256,6 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
             </div>
-
-            {/* Email Gate */}
-            <div className="mt-8 pt-8 border-t border-white/10">
-              <div className="bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/20 rounded-xl p-6 text-center space-y-4 relative overflow-hidden">
-                <Lock className="w-24 h-24 text-white/5 absolute -top-4 -right-4 -rotate-12 pointer-events-none" />
-                
-                <h3 className="text-xl font-semibold text-white relative z-10">Unlock your full AI Visibility Report</h3>
-                <ul className="text-sm text-left text-white/70 space-y-2 max-w-sm mx-auto relative z-10">
-                  <li className="flex gap-2">✓ <span>Missing entity opportunities</span></li>
-                  <li className="flex gap-2">✓ <span>Competitor comparison breakdown</span></li>
-                  <li className="flex gap-2">✓ <span>Content gaps</span></li>
-                  <li className="flex gap-2">✓ <span>Priority actions</span></li>
-                </ul>
-                
-                <form onSubmit={handleUnlock} className="flex gap-2 pt-4 relative z-10 max-w-sm mx-auto">
-                  <div className="relative flex-1">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="w-full bg-black/60 border border-white/20 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="px-4 py-2.5 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-colors shrink-0"
-                  >
-                    Send Report
-                  </button>
-                </form>
-              </div>
-            </div>
-
           </div>
         )}
 

@@ -36,77 +36,8 @@ export default function CompanionWidget() {
   const [telemetryData, setTelemetryData] = useState<any>(null);
 
   // Gatekeeper Mode states
-  const [onboardStage, setOnboardStage] = useState<'URL' | 'INTENT' | 'EMAIL' | 'DONE'>('URL');
-  const [onboardUrl, setOnboardUrl] = useState('');
-  const [onboardIntent, setOnboardIntent] = useState('');
+  const [onboardStage, setOnboardStage] = useState<'INTRO' | 'EMAIL' | 'DONE'>('DONE');
   const [onboardEmail, setOnboardEmail] = useState('');
-  const [onboardLoading, setOnboardLoading] = useState(false);
-  const [onboardError, setOnboardError] = useState('');
-
-  const runTelemetryScan = async (url: string, intent: string) => {
-    setOnboardLoading(true);
-    setOnboardError('');
-    setIsThinking(true);
-
-    // Start background fetch
-    const fetchPromise = fetch('/api/diagnostic', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, intent })
-    }).then(async (res) => {
-      if (!res.ok) {
-        let errMsg = 'Visibility telemetry scan failed.';
-        try {
-          const errData = await res.json();
-          if (errData.error) errMsg = errData.error;
-        } catch(e) {}
-        throw new Error(errMsg);
-      }
-      return res.json();
-    });
-
-    const steps = [
-      "🔎 Reading your homepage...",
-      "✓ Found your primary navigation",
-      "🔎 Identifying your products...",
-      "✓ Detected commercial entities",
-      "🔎 Measuring topical relevance...",
-      "✓ Comparing against similar businesses",
-      "🔎 Checking technical accessibility...",
-      "✓ Analysing structured data",
-      "🧠 Building your AI visibility profile..."
-    ];
-    
-    for (const stepMsg of steps) {
-      setMessages(prev => [...prev, { sender: 'assistant', text: stepMsg }]);
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-
-    try {
-      const resultData = await fetchPromise;
-      
-      const latestData = { url, intent, result: resultData };
-      localStorage.setItem('aeo_telemetry_latest', JSON.stringify(latestData));
-      setTelemetryData(latestData);
-      
-      setMessages(prev => [
-        ...prev,
-        {
-          sender: 'assistant',
-          text: `I've already identified your biggest visibility opportunity.\n\nWould you like me to send the full executive report with every recommendation to your email?`,
-          telemetry: resultData
-        }
-      ]);
-      setOnboardStage('EMAIL');
-    } catch (err: any) {
-      console.error(err);
-      setOnboardError(err.message || 'Diagnostic failed. Verify connection.');
-      setMessages(prev => [...prev, { sender: 'assistant', text: 'Sorry, the diagnostic scan failed. Please try again.' }]);
-    } finally {
-      setOnboardLoading(false);
-      setIsThinking(false);
-    }
-  };
 
   const handleEmailCapture = async (email: string) => {
     setOnboardEmail(email);
@@ -114,12 +45,12 @@ export default function CompanionWidget() {
       await fetch('/api/forms/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website: onboardUrl, intent: onboardIntent })
+        body: JSON.stringify({ email, website: telemetryData?.url, intent: telemetryData?.intent })
       });
       setOnboardStage('DONE');
       setMessages(prev => [
         ...prev,
-        { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me any questions about your visibility metrics above.` }
+        { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression\n• Build my 90-day roadmap` }
       ]);
     } catch (e) {
       // ignore
@@ -137,15 +68,6 @@ export default function CompanionWidget() {
       try {
         const parsed = JSON.parse(raw);
         setTelemetryData(parsed);
-
-        // If the chat currently only has the default greeting, overwrite with AEO welcome message
-        setMessages([
-          {
-            sender: 'assistant',
-            text: `AEO Telemetry context loaded for ${parsed.url} targeting intent "${parsed.intent}". Vector alignments, retrieval simulations, and entity graph structures are updated. What technical details should we clarify?`,
-            telemetry: parsed.result
-          }
-        ]);
       } catch (err) {
         console.error("Failed to parse telemetry storage:", err);
       }
@@ -154,38 +76,31 @@ export default function CompanionWidget() {
 
   useEffect(() => {
     loadTelemetryFromStorage();
-    window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
-    
-    // Initial greeting if no telemetry
-    if (!localStorage.getItem('aeo_telemetry_latest')) {
-      setMessages([
-        {
-          sender: 'assistant',
-          text: "👋 Hi, I'm Bill.\n\nI don't optimise websites. I measure how AI systems understand them.\n\nLet's see how your business looks through the eyes of ChatGPT and Gemini.\n\nWhat's your website URL?"
-        }
-      ]);
-      setOnboardStage('URL');
-    } else {
-      setOnboardStage('DONE');
-    }
     
     // Event listener for external triggers to open a new fresh session
     const handleOpenNewSession = () => {
       setIsOpen(true);
-      localStorage.removeItem('aeo_telemetry_latest');
-      setTelemetryData(null);
-      setOnboardStage('URL');
-      setOnboardUrl('');
-      setOnboardIntent('');
-      setOnboardEmail('');
-      setMessages([
-        {
-          sender: 'assistant',
-          text: "👋 Hi, I'm Bill.\n\nI don't optimise websites. I measure how AI systems understand them.\n\nLet's see how your business looks through the eyes of ChatGPT and Gemini.\n\nWhat's your website URL?"
+      const raw = localStorage.getItem('aeo_telemetry_latest');
+      if (raw) {
+        try {
+          const parsed = JSON.parse(raw);
+          setTelemetryData(parsed);
+          const blindSpot = parsed.result?.insightResult?.blindSpot;
+          
+          setMessages([
+            {
+              sender: 'assistant',
+              text: `👋 Hi, I'm Bill.\n\nI've just finished reviewing your website.\n\nThe single biggest issue I found is ${blindSpot?.title || 'an alignment gap'}:\n${blindSpot?.description || 'Your semantic signals are weak.'}\n\nI've found five more opportunities.\n\nWhere should I send the complete report?`
+            }
+          ]);
+          setOnboardStage('EMAIL');
+        } catch (e) {
+          console.error(e);
         }
-      ]);
+      }
     };
 
+    window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
     window.addEventListener('open_new_bill_session', handleOpenNewSession);
 
     return () => {
@@ -266,25 +181,7 @@ export default function CompanionWidget() {
     try {
       // Conversational Onboarding Interception
       if (onboardStage !== 'DONE') {
-        if (onboardStage === 'URL') {
-          let normalizedUrl = userMsg.trim();
-          if (!normalizedUrl.startsWith('http://') && !normalizedUrl.startsWith('https://')) {
-            if (normalizedUrl.startsWith('https') && !normalizedUrl.includes('://')) {
-              normalizedUrl = normalizedUrl.replace(/^https[^a-zA-Z0-9]*/i, 'https://');
-            } else if (normalizedUrl.startsWith('http') && !normalizedUrl.includes('://')) {
-              normalizedUrl = normalizedUrl.replace(/^http[^a-zA-Z0-9]*/i, 'http://');
-            } else {
-              normalizedUrl = 'https://' + normalizedUrl;
-            }
-          }
-          setOnboardUrl(normalizedUrl);
-          setMessages(prev => [...prev, { sender: 'assistant', text: `Thanks.\n\nWhat search would you like customers to find you for?\n\nExample:\n"best mortgage broker Perth"\n"industrial storage solutions"` }]);
-          setOnboardStage('INTENT');
-        } else if (onboardStage === 'INTENT') {
-          setOnboardIntent(userMsg);
-          setMessages(prev => [...prev, { sender: 'assistant', text: `Perfect.\n\nI'll analyse how AI search engines understand:\n\nWebsite: ${onboardUrl}\nIntent: ${userMsg}` }]);
-          runTelemetryScan(onboardUrl, userMsg);
-        } else if (onboardStage === 'EMAIL') {
+        if (onboardStage === 'EMAIL') {
           handleEmailCapture(userMsg);
         }
         setIsThinking(false);
@@ -370,6 +267,8 @@ export default function CompanionWidget() {
       stopLipSync();
     }
   };
+
+  if (!telemetryData) return null;
 
   return (
     <>
@@ -554,11 +453,11 @@ export default function CompanionWidget() {
 
             <div className="flex gap-2">
               <input
-                type="text"
+                type={onboardStage === 'EMAIL' ? "email" : "text"}
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Message AI Bill..."
+                placeholder={onboardStage === 'EMAIL' ? "Enter your email for the full report..." : "Message AI Bill..."}
                 className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
               />
               <button
