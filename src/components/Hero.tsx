@@ -151,7 +151,7 @@ export default function Hero() {
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
                 Measure Your<br />
-                AI Search Visibility
+                <span className="text-aeo-cyan font-normal">[</span>AI Search Visibility<span className="text-aeo-cyan font-normal">]</span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
@@ -163,14 +163,14 @@ export default function Hero() {
                   href="/diagnostic"
                   className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
                 >
-                  ▶ Generate My AI Visibility Score
+                  Measure Your AI Visibility
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
 
               <div className="flex items-center gap-2 text-xs text-white/40 pt-4">
                 <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
-                <span>No credit card required. Free 5-minute setup.</span>
+                <span>Add your website to See how AI search engines understand your business</span>
               </div>
             </div>
           </div>
