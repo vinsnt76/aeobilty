@@ -26,7 +26,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/diagnostic"
-              className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-aeo-cyan text-black font-bold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+              className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-aeo-cyan text-black font-bold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
             >
               Generate My Score
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

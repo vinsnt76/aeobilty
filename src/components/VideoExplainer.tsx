@@ -26,7 +26,7 @@ export default function VideoExplainer() {
         </div>
 
         {/* Video Player Container */}
-        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,240,255,0.05)]">
+        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.05)]">
           <video
             controls
             preload="metadata"

@@ -24,7 +24,7 @@ function USPCard({ icon, title, description }: USPCardProps) {
 export default function USPGrid() {
   const usps = [
     {
-      icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" />,
+      icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,205,216,0.4)]" />,
       title: 'Stop Losing Traffic on Google, Maps and AI',
       description: 'We get your brand positioned clearly across Google, Maps, and emerging AI answer engines so local customers actually see your name first.',
     },

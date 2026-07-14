@@ -78,7 +78,7 @@ function GanttChart() {
                 <div className="grid grid-cols-6 h-full w-full">
                   <div 
                     style={{ gridColumnStart: colStart, gridColumnEnd: `span ${colSpan}` }}
-                    className={`h-full rounded-md bg-gradient-to-r ${task.color} opacity-85 hover:opacity-100 transition-opacity shadow-[0_0_12px_rgba(0,240,255,0.15)]`}
+                    className={`h-full rounded-md bg-gradient-to-r ${task.color} opacity-85 hover:opacity-100 transition-opacity shadow-[0_0_12px_rgba(0,205,216,0.15)]`}
                   ></div>
                 </div>
               </div>
@@ -255,7 +255,7 @@ export default function SolutionsPage() {
               <div className="pt-4">
                 <Link
                   href="/#audit-form"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
                 >
                   <span>Get My Free Audit</span>
                   <ArrowRight className="w-4 h-4" />
@@ -283,7 +283,7 @@ export default function SolutionsPage() {
                   key={idx}
                   className={`p-1 rounded-2xl bg-gradient-to-br transition-all duration-300 ${
                     pkg.highlighted 
-                      ? 'from-aeo-cyan via-aeo-purple to-black shadow-[0_0_30px_rgba(0,240,255,0.15)] scale-105' 
+                      ? 'from-aeo-cyan via-aeo-purple to-black shadow-[0_0_30px_rgba(0,205,216,0.15)] scale-105' 
                       : 'from-white/10 to-white/5 border border-white/5'
                   }`}
                 >

@@ -160,7 +160,7 @@ export default function AboutUsContent() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/diagnostic"
-            className="group flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-sm transition-transform hover:scale-105 shadow-[0_0_15px_rgba(0,240,255,0.2)]"
+            className="group flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-sm transition-transform hover:scale-105 shadow-[0_0_15px_rgba(0,205,216,0.2)]"
           >
             <span>Generate Visibility Score</span>
             <ArrowRight className="w-4 h-4" />

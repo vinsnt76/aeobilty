@@ -53,7 +53,7 @@ export default function BlueprintSection() {
               <div className="space-y-4 pt-4">
                 <Link
                   href="/diagnostic"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-aeo-cyan text-black font-bold text-sm shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:bg-white transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-aeo-cyan text-black font-bold text-sm shadow-[0_0_15px_rgba(0,205,216,0.2)] hover:bg-white transition-all"
                 >
                   Get Visibility Score
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

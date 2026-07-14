@@ -191,7 +191,7 @@ export default function Navbar() {
             >
               <path
                 d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke="#00f0ff"
+                stroke="#00cdd8"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

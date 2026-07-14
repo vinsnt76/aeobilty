@@ -234,7 +234,7 @@ export default function ServicesPage() {
               <div>
                 <Link
                   href="/diagnostic"
-                  className="flex items-center gap-2 px-5 py-2.5 bg-aeo-cyan text-black text-xs font-bold rounded-lg hover:bg-white transition-all shadow-[0_0_15px_rgba(0,240,255,0.2)]"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-aeo-cyan text-black text-xs font-bold rounded-lg hover:bg-white transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
                 >
                   <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />

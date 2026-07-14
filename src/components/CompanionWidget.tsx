@@ -381,7 +381,7 @@ export default function CompanionWidget() {
                     <div className="mt-2 w-full space-y-4">
                       
                       {/* Signature: AI First Impression */}
-                      <div className="bg-black/60 border border-aeo-cyan/20 rounded-xl p-3 font-mono text-[10px] text-white/90 shadow-[0_0_15px_rgba(0,240,255,0.05)]">
+                      <div className="bg-black/60 border border-aeo-cyan/20 rounded-xl p-3 font-mono text-[10px] text-white/90 shadow-[0_0_15px_rgba(0,205,216,0.05)]">
                         <div className="text-[9px] uppercase tracking-wider text-aeo-cyan mb-2">AI First Impression</div>
                         <div className="text-[11px] leading-relaxed italic text-white/80">
                           "{msg.telemetry.insightResult.firstImpression.headline}"
@@ -434,7 +434,7 @@ export default function CompanionWidget() {
               )}
               
               {billState === 'EMAIL_CAPTURE' && (
-                <div className="mt-4 p-4 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/20 rounded-xl space-y-3 shadow-[0_0_15px_rgba(0,240,255,0.05)] max-w-[90%]">
+                <div className="mt-4 p-4 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/20 rounded-xl space-y-3 shadow-[0_0_15px_rgba(0,205,216,0.05)] max-w-[90%]">
                   <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="email"

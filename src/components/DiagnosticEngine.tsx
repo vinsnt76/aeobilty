@@ -133,7 +133,7 @@ export default function DiagnosticEngine() {
             
             <button
               type="submit"
-              className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-lg transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,240,255,0.2)] mt-8"
+              className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-lg transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.2)] mt-8"
             >
               Generate My Visibility Score
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -179,7 +179,7 @@ export default function DiagnosticEngine() {
             <div className="text-center space-y-8 pb-8 border-b border-white/10">
               
               {/* AI First Impression Signature Box */}
-              <div className="max-w-xl mx-auto bg-black/40 border border-aeo-cyan/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(0,240,255,0.1)]">
+              <div className="max-w-xl mx-auto bg-black/40 border border-aeo-cyan/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(0,205,216,0.1)]">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-aeo-cyan" />
                   <h2 className="text-sm uppercase tracking-wider font-bold text-aeo-cyan">AI First Impression</h2>
