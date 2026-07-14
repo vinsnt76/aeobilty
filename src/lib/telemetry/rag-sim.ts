@@ -9,7 +9,7 @@ async function generateSyntheticQueries(intent: string): Promise<string[]> {
     const prompt = `Given the core search intent: "${intent}", generate exactly 3 diverse, realistic search queries or questions that a human would ask an AI search engine (like Perplexity or ChatGPT) to find this. Reply with a simple JSON list of strings and nothing else. No markdown, no formatting. Example: ["query1", "query2", "query3"]`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -1,6 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Readability } from '@mozilla/readability';
-import { JSDOM } from 'jsdom';
+
 import { TechnicalSEO, CrawlQuality } from './types';
 
 export async function crawlUrl(url: string): Promise<{ textContent: string; technicalSEO: TechnicalSEO; schemaValidation: import('./types').SchemaValidation; crawlQuality: CrawlQuality }> {
@@ -93,26 +92,16 @@ export async function crawlUrl(url: string): Promise<{ textContent: string; tech
       typesFound
     };
 
-    // 2. Semantic Content Extraction via Readability
-    const doc = new JSDOM(html, { url });
-    const reader = new Readability(doc.window.document);
-    const article = reader.parse();
-    
-    const readabilityText = article?.textContent ? article.textContent.trim() : '';
+    // 2. Semantic Content Extraction via Cheerio (Serverless safe)
+    // Remove non-content elements to simulate Readability
+    $('script, style, noscript, iframe, svg, nav, footer, header, aside').remove();
     const cheerioText = $('body').text().replace(/\s+/g, ' ').trim();
     
-    // V3: Fallback heuristic for SaaS landing pages
-    // If Readability stripped too much content (less than 50% of raw text), fallback to Cheerio's raw text
-    let textContent = readabilityText;
-    let method: CrawlQuality['method'] = 'Readability';
-    
-    if (cheerioText.length > 0 && (readabilityText.length / cheerioText.length) < 0.5) {
-      textContent = cheerioText;
-      method = 'Cheerio';
-    }
+    let textContent = cheerioText;
+    let method: CrawlQuality['method'] = 'Cheerio';
     
     if (!textContent) {
-      textContent = cheerioText || "No readable content found.";
+      textContent = "No readable content found.";
       method = 'Fallback';
     }
     
