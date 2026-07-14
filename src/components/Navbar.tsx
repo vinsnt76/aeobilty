@@ -211,7 +211,7 @@ export default function Navbar() {
               />
             </svg>
             <span className="text-xl font-bold tracking-wider text-black">
-              AEO<span className="text-aeo-cyan">bility</span>
+              AEO<span className="text-aeo-cyan" style={{ WebkitTextStroke: '1px rgba(26, 26, 26, 0.25)' }}>bility</span>
             </span>
           </Link>
         </div>
