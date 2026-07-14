@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-end gap-10">
           {/* Right Aligned Container */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {/* Desktop Menu links */}
