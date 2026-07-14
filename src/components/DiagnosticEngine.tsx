@@ -258,6 +258,7 @@ export default function DiagnosticEngine() {
 
                 </div>
               </div>
+            </div>
 
             {/* Email Gate */}
             <div className="mt-8 pt-8 border-t border-white/10">
