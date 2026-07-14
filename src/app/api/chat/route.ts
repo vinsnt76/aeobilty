@@ -55,7 +55,7 @@ Use this specific context to answer user questions about their score, their blin
     }
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -76,13 +76,13 @@ Use this specific context to answer user questions about their score, their blin
 
 
     const data = await response.json();
-    const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || "My server buffers are currently clearing. Try sending again, mate!";
+    const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I am currently unable to reach the telemetry servers. Please try again in a moment.";
 
     return NextResponse.json({ response: replyText });
   } catch (error) {
     console.error("API Chat route error:", error);
     return NextResponse.json(
-      { response: "My connection sequence glitched, V Man. Let's run a quick 68-second Ctrl+Alt+Delete!" },
+      { response: "I encountered an error connecting to the diagnostic engine. Please try again." },
       { status: 500 }
     );
   }

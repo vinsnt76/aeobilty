@@ -40,6 +40,11 @@ export default function CompanionWidget() {
   const [onboardEmail, setOnboardEmail] = useState('');
 
   const handleEmailCapture = async (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessages(prev => [...prev, { sender: 'assistant', text: "That doesn't look like a valid email address. Could you double-check it for me?" }]);
+      return;
+    }
     setOnboardEmail(email);
     window.dispatchEvent(new Event('bill_email_submitted'));
     try {
@@ -52,7 +57,7 @@ export default function CompanionWidget() {
       window.dispatchEvent(new Event('bill_consultation_started'));
       setMessages(prev => [
         ...prev,
-        { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression\n• Build my 90-day roadmap` }
+        { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression` }
       ]);
     } catch (e) {
       // ignore
@@ -217,7 +222,7 @@ export default function CompanionWidget() {
       if (isScanRequest) {
         setMessages(prev => [
           ...prev,
-          { sender: 'assistant', text: "No worries, Vindog! Initialising active AEO telemetry sensors across the site now. Hang tight..." }
+          { sender: 'assistant', text: "Understood. Initiating active AEO telemetry sensors across the site now. Hang tight..." }
         ]);
 
         try {
