@@ -70,6 +70,7 @@ export default function DiagnosticEngine() {
       
       // Dispatch events to notify AI Bill (CompanionWidget)
       if (typeof window !== 'undefined') {
+        localStorage.setItem('aeo_telemetry_latest', JSON.stringify({ url: normalizedUrl, intent, result: data }));
         window.dispatchEvent(new Event('aeo_scan_completed'));
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
         

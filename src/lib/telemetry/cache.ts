@@ -14,7 +14,7 @@ interface CacheEntry {
 const cache = new Map<string, CacheEntry>();
 
 const TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
-const CACHE_VERSION = 4; // Bump this to invalidate old cache shapes when we deploy new telemetry features
+const CACHE_VERSION = 5; // Bump this to invalidate old cache shapes when we deploy new telemetry features
 
 function generateCacheKey(url: string, intent: string): string {
   const normalizedUrl = url ? url.toLowerCase().trim() : 'no_url';
