@@ -384,10 +384,10 @@ export default function CompanionWidget() {
                       <div className="bg-black/60 border border-aeo-cyan/20 rounded-xl p-3 font-mono text-[10px] text-white/90 shadow-[0_0_15px_rgba(0,205,216,0.05)]">
                         <div className="text-[9px] uppercase tracking-wider text-aeo-cyan mb-2">AI First Impression</div>
                         <div className="text-[11px] leading-relaxed italic text-white/80">
-                          "{msg.telemetry.insightResult.firstImpression.headline}"
+                          "{msg.telemetry.insightResult?.firstImpression?.headline}"
                         </div>
                         <div className="mt-2 space-y-1">
-                          {msg.telemetry.insightResult.firstImpression.reasoning.map((r: string, i: number) => (
+                          {msg.telemetry.insightResult?.firstImpression?.reasoning?.map((r: string, i: number) => (
                             <div key={i} className="text-[10px] text-white/60">{r}</div>
                           ))}
                         </div>
@@ -397,8 +397,8 @@ export default function CompanionWidget() {
                       <div className="bg-black/60 border border-white/10 rounded-xl p-3 space-y-3">
                         <div>
                           <div className="text-[9px] uppercase tracking-wider text-amber-400 mb-1">Biggest Blind Spot</div>
-                          <div className="text-[10px] font-semibold text-white/90">{msg.telemetry.insightResult.blindSpot.title}</div>
-                          <div className="text-[10px] text-white/70">{msg.telemetry.insightResult.blindSpot.description}</div>
+                          <div className="text-[10px] font-semibold text-white/90">{msg.telemetry.insightResult?.blindSpot?.title}</div>
+                          <div className="text-[10px] text-white/70">{msg.telemetry.insightResult?.blindSpot?.description}</div>
                         </div>
 
                         <div className="pt-3 border-t border-white/5">
@@ -406,11 +406,11 @@ export default function CompanionWidget() {
                           <div className="text-[10px] text-white/60 mb-1">"If someone asked an AI about this, would it recommend you?"</div>
                           <div className="flex gap-2 items-start mt-1.5">
                             <span className="text-lg leading-none">
-                              {msg.telemetry.insightResult.recommendationTest.wouldRecommend ? '✅' : '❌'}
+                              {msg.telemetry.insightResult?.recommendationTest?.wouldRecommend ? '✅' : '❌'}
                             </span>
                             <div>
-                              <div className="text-[11px] font-bold text-white leading-none">{msg.telemetry.insightResult.recommendationTest.verdict}</div>
-                              <div className="text-[10px] text-white/70 mt-1">{msg.telemetry.insightResult.recommendationTest.reasoning}</div>
+                              <div className="text-[11px] font-bold text-white leading-none">{msg.telemetry.insightResult?.recommendationTest?.verdict}</div>
+                              <div className="text-[10px] text-white/70 mt-1">{msg.telemetry.insightResult?.recommendationTest?.reasoning}</div>
                             </div>
                           </div>
                         </div>

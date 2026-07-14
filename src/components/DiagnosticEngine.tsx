@@ -186,10 +186,10 @@ export default function DiagnosticEngine() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-xl text-white/90 font-medium italic text-center">
-                    "{telemetry.insightResult?.firstImpression.headline}"
+                    "{telemetry.insightResult?.firstImpression?.headline}"
                   </p>
                   <div className="space-y-2">
-                    {telemetry.insightResult?.firstImpression.reasoning.map((r, i) => (
+                    {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
                       <p key={i} className="text-sm text-white/70 text-center">{r}</p>
                     ))}
                   </div>
@@ -204,15 +204,15 @@ export default function DiagnosticEngine() {
                     <h3 className="text-sm text-white/50 uppercase tracking-wider">Business Diagnosis</h3>
                     <div>
                       <div className="text-[10px] text-white/40 uppercase mb-1">Current State</div>
-                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis.currentState}</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis?.currentState}</div>
                     </div>
                     <div>
                       <div className="text-[10px] text-white/40 uppercase mb-1">Desired State</div>
-                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis.desiredState}</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.diagnosis?.desiredState}</div>
                     </div>
                     <div className="pt-2 border-t border-white/5">
                       <div className="text-[10px] text-aeo-purple uppercase mb-1">The Gap</div>
-                      <div className="text-sm text-white/90">{telemetry.insightResult?.diagnosis.gap}</div>
+                      <div className="text-sm text-white/90">{telemetry.insightResult?.diagnosis?.gap}</div>
                     </div>
                   </div>
                 </div>
@@ -222,15 +222,15 @@ export default function DiagnosticEngine() {
                     <h3 className="text-sm text-white/50 uppercase tracking-wider">Executive Summary</h3>
                     <div>
                       <div className="text-[10px] text-white/40 uppercase mb-1">Core Problem</div>
-                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary.problem}</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary?.problem}</div>
                     </div>
                     <div>
                       <div className="text-[10px] text-emerald-400/70 uppercase mb-1">Biggest Opportunity</div>
-                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary.opportunity}</div>
+                      <div className="text-sm text-white/80">{telemetry.insightResult?.summary?.opportunity}</div>
                     </div>
                     <div className="pt-2 border-t border-white/5">
                       <div className="text-[10px] text-aeo-cyan uppercase mb-1">Next Action</div>
-                      <div className="text-sm text-white/90 font-medium">{telemetry.insightResult?.summary.nextAction}</div>
+                      <div className="text-sm text-white/90 font-medium">{telemetry.insightResult?.summary?.nextAction}</div>
                     </div>
                   </div>
                 </div>
@@ -243,8 +243,8 @@ export default function DiagnosticEngine() {
                   
                   <div className="flex-1 space-y-2 text-center md:text-left">
                     <div className="text-[10px] uppercase tracking-wider text-amber-400">Biggest Blind Spot</div>
-                    <div className="text-lg font-bold text-white/90">{telemetry.insightResult?.blindSpot.title}</div>
-                    <div className="text-sm text-white/70">{telemetry.insightResult?.blindSpot.description}</div>
+                    <div className="text-lg font-bold text-white/90">{telemetry.insightResult?.blindSpot?.title}</div>
+                    <div className="text-sm text-white/70">{telemetry.insightResult?.blindSpot?.description}</div>
                   </div>
 
                   <div className="w-px h-16 bg-white/10 hidden md:block"></div>
@@ -254,11 +254,11 @@ export default function DiagnosticEngine() {
                     <div className="text-xs text-white/50">"If someone asked ChatGPT for the best {intent}, would I recommend you?"</div>
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 mt-2">
                       <span className="text-3xl leading-none">
-                        {telemetry.insightResult?.recommendationTest.wouldRecommend ? '✅' : '❌'}
+                        {telemetry.insightResult?.recommendationTest?.wouldRecommend ? '✅' : '❌'}
                       </span>
                       <div>
-                        <div className="text-lg font-bold text-white mb-1">{telemetry.insightResult?.recommendationTest.verdict}</div>
-                        <div className="text-sm text-white/70">{telemetry.insightResult?.recommendationTest.reasoning}</div>
+                        <div className="text-lg font-bold text-white mb-1">{telemetry.insightResult?.recommendationTest?.verdict}</div>
+                        <div className="text-sm text-white/70">{telemetry.insightResult?.recommendationTest?.reasoning}</div>
                       </div>
                     </div>
                   </div>
