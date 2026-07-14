@@ -28,6 +28,19 @@ export default function DiagnosticEngine() {
     e.preventDefault();
     if (!url || !intent) return;
     
+    // Normalize URL
+    let normalizedUrl = url.trim();
+    if (!normalizedUrl.startsWith('http://') && !normalizedUrl.startsWith('https://')) {
+      if (normalizedUrl.startsWith('https') && !normalizedUrl.includes('://')) {
+        normalizedUrl = normalizedUrl.replace(/^https[^a-zA-Z0-9]*/i, 'https://');
+      } else if (normalizedUrl.startsWith('http') && !normalizedUrl.includes('://')) {
+        normalizedUrl = normalizedUrl.replace(/^http[^a-zA-Z0-9]*/i, 'http://');
+      } else {
+        normalizedUrl = 'https://' + normalizedUrl;
+      }
+    }
+    setUrl(normalizedUrl);
+    
     setStep('PROCESSING');
     setProcessingStage(0);
 
@@ -35,7 +48,7 @@ export default function DiagnosticEngine() {
     const fetchPromise = fetch('/api/diagnostic', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, intent }),
+      body: JSON.stringify({ url: normalizedUrl, intent }),
     }).then(res => res.json());
 
     // Fake visual progress for UX
@@ -90,7 +103,7 @@ export default function DiagnosticEngine() {
             <div>
               <label className="block text-sm font-medium text-white/80 mb-2">Website URL</label>
               <input
-                type="url"
+                type="text"
                 required
                 value={url}
                 onChange={e => setUrl(e.target.value)}

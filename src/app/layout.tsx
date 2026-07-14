@@ -135,7 +135,7 @@ export default function RootLayout({
 
         {children}
         <GlobalConsentBanner />
-        {process.env.NODE_ENV === 'development' && <CompanionWidget />}
+        <CompanionWidget />
 
         {/* Initialize Consent Mode Defaults */}
         <script

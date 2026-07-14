@@ -267,7 +267,17 @@ export default function CompanionWidget() {
       // Conversational Onboarding Interception
       if (onboardStage !== 'DONE') {
         if (onboardStage === 'URL') {
-          setOnboardUrl(userMsg);
+          let normalizedUrl = userMsg.trim();
+          if (!normalizedUrl.startsWith('http://') && !normalizedUrl.startsWith('https://')) {
+            if (normalizedUrl.startsWith('https') && !normalizedUrl.includes('://')) {
+              normalizedUrl = normalizedUrl.replace(/^https[^a-zA-Z0-9]*/i, 'https://');
+            } else if (normalizedUrl.startsWith('http') && !normalizedUrl.includes('://')) {
+              normalizedUrl = normalizedUrl.replace(/^http[^a-zA-Z0-9]*/i, 'http://');
+            } else {
+              normalizedUrl = 'https://' + normalizedUrl;
+            }
+          }
+          setOnboardUrl(normalizedUrl);
           setMessages(prev => [...prev, { sender: 'assistant', text: `Thanks.\n\nWhat search would you like customers to find you for?\n\nExample:\n"best mortgage broker Perth"\n"industrial storage solutions"` }]);
           setOnboardStage('INTENT');
         } else if (onboardStage === 'INTENT') {
