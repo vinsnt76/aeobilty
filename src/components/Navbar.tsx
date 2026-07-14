@@ -191,7 +191,7 @@ export default function Navbar() {
             >
               <path
                 d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke="currentColor"
+                stroke="#00f0ff"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -211,7 +211,7 @@ export default function Navbar() {
               />
             </svg>
             <span className="text-xl font-bold tracking-wider text-black">
-              AEObility
+              AEO<span className="text-aeo-cyan">bility</span>
             </span>
           </Link>
         </div>
