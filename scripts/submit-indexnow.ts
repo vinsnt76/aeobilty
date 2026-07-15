@@ -5,7 +5,8 @@ const KEY = "99f72a3935774040b8814ad6a76e6e59";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
-  `https://${HOST}/knowledge-hub/case-studies`
+  `https://${HOST}/knowledge-hub/case-studies`,
+  `https://${HOST}/knowledge-hub/digital-services`
 ];
 
 async function submitToIndexNow() {
