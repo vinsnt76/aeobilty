@@ -181,9 +181,9 @@ const Projects: React.FC = () => {
     {
       title: "AI Onboarding Automation",
       date: "May 2026 — AEObility",
-      summary: "Built a zero‑touch client onboarding funnel that uses AI to analyze client domains, generate instant SEO/AEO visibility reports, and configure personalized roadmaps in under 60 seconds.",
+      summary: "Built a zero‑touch client onboarding funnel that uses AI to analyse client domains, generate instant SEO/AEO visibility reports, and configure personalised roadmaps in under 60 seconds.",
       outcomes: ["Onboarding time -98%", "Conversion rate +35%", "Instant reports 100%", "Manual hours saved 40/mo"],
-      value: "Eliminates traditional sales friction by delivering deep, customized value before the first discovery call.",
+      value: "Eliminates traditional sales friction by delivering deep, customised value before the first discovery call.",
       skills: ["Workflow Automation", "API Integrations", "OpenAI API", "PDF Generation", "Next.js"],
       imageSrc: "/projects/onboarding-engine.jpg"
     }

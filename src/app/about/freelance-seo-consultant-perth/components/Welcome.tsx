@@ -68,14 +68,14 @@ const Welcome: React.FC = () => {
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-              Turning search campaigns & content <br />
+              Freelance SEO <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-aeo-cyan to-aeo-purple">
-                into AEO‑driven growth.
+                Consultant Perth
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-              I build campaigns and AEO strategies engineered for visibility, clarity, and measurable growth.
+              Moving beyond keyword stuffing. Engineering semantic architectures, technical website audits, and data attribution systems that align with modern LLM models and traditional search algorithms.
             </p>
           </motion.div>
 

@@ -151,6 +151,27 @@ export default function AboutUsContent() {
         </div>
       </section>
 
+      {/* Specialists Directory */}
+      <section className="space-y-6 border-t border-white/5 pt-12">
+        <div className="max-w-2xl space-y-4">
+          <h2 className="text-2xl font-bold text-white font-soehne-breit">Team & Specialties</h2>
+          <div className="flex flex-col gap-4">
+            <Link
+              href="/about/freelance-digital-specialist-perth"
+              className="group bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-aeo-cyan/20 transition-all flex items-center justify-between"
+            >
+              <div>
+                <h3 className="text-lg font-bold text-white group-hover:text-aeo-cyan transition-colors">
+                  Digital Specialist
+                </h3>
+                <p className="text-sm text-white/50 font-light font-serif">View portfolio and specialty areas</p>
+              </div>
+              <ArrowRight className="w-5 h-5 text-white/30 group-hover:text-aeo-cyan transition-colors" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="p-8 bg-gradient-to-r from-aeo-cyan/10 to-aeo-purple/10 border border-white/5 rounded-3xl text-center space-y-6">
         <h2 className="text-xl sm:text-2xl font-extrabold text-white font-soehne-breit">Ready to Measure Your AI Visibility?</h2>

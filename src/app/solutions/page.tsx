@@ -201,7 +201,7 @@ export default function SolutionsPage() {
         "JSON-LD graph nesting",
         "HTML refactoring rules",
         "Passage level extraction setup",
-        "Token optimization passes",
+        "Token optimisation passes",
         "No locked-in commitments"
       ],
       cta: "Explore AEO Sprints",
@@ -211,7 +211,7 @@ export default function SolutionsPage() {
     {
       name: "GEO Services Sprint",
       price: "Location Domination",
-      description: "Deploy location-aware optimization rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
+      description: "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
       features: [
         "Coordinate precision mapping",
         "Verified map pack foundations",

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import '../../vince-baker/card.css';
+import '../../../vince-baker/card.css';
 
 const Contact: React.FC = () => {
   const [walletUrl, setWalletUrl] = useState<string | null>(null);

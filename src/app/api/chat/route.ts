@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    let finalPrompt = message;
+    const finalPrompt = message;
     let systemInstruction = SYSTEM_INSTRUCTION;
 
     if (telemetryContext && telemetryContext.insightResult) {

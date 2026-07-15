@@ -41,6 +41,10 @@
 
 ### Support & Brand Details
 - [`/about`](https://aeobility.com.au/about): Company background and our team.
+  - [`/about/freelance-digital-specialist-perth`](https://aeobility.com.au/about/freelance-digital-specialist-perth): Portfolio and digital systems architect overview.
+  - [`/about/freelance-seo-consultant-perth`](https://aeobility.com.au/about/freelance-seo-consultant-perth): Technical & semantic SEO consulting.
+  - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
+  - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
 - [`/contact`](https://aeobility.com.au/contact): Booking inquiries and audit request forms.
 - [`/support`](https://aeobility.com.au/support): Technical documentation and support.
 - [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and vCard contact info for Vinnie Baker.

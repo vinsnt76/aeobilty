@@ -30,6 +30,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/about/freelance-digital-specialist-perth`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about/freelance-seo-consultant-perth`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about/freelance-google-ads-consultant-perth`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about/freelance-ai-consultant-perth`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: "monthly",

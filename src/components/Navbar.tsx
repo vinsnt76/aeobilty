@@ -68,7 +68,14 @@ export default function Navbar() {
         { name: 'GEO & SEO Local Matrix', href: '/knowledge-hub/geo' }
       ]
     },
-    { name: 'Support', href: '/support' }
+    {
+      name: 'About',
+      href: '/about',
+      dropdownItems: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Support', href: '/support' }
+      ]
+    }
   ];
 
   // Helper to check if a link is active

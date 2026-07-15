@@ -114,8 +114,8 @@ const Experience: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "#171717" }}
-                  className="bg-neutral-900 border border-neutral-800 p-4 rounded-lg flex flex-col items-center justify-center text-center gap-3 transition-colors group"
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-neutral-900 hover:bg-[#171717] border border-neutral-800 p-4 rounded-lg flex flex-col items-center justify-center text-center gap-3 transition-colors group"
                 >
                   <skill.icon className="w-6 h-6 text-aeo-cyan group-hover:text-aeo-purple transition-colors" />
                   <span className="text-xs font-medium leading-tight">
