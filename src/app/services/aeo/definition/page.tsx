@@ -147,12 +147,13 @@ export default function AEODefinitionPage() {
         {/* Right Side: Core Content */}
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
-            <div className="w-full h-[250px] sm:h-[350px] relative rounded-2xl overflow-hidden mb-8 border border-white/10">
+            <div className="w-full relative rounded-2xl overflow-hidden mb-8 border border-white/10 bg-white/[0.02]">
               <Image 
                 src="/what-is-definiton-of-aeo_AEObility.webp" 
                 alt="Definition of Answer Engine Optimisation (AEO)" 
-                fill 
-                className="object-cover"
+                width={1200}
+                height={630}
+                className="w-full h-auto object-cover"
                 priority
               />
             </div>
