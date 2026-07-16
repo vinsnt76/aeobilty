@@ -16,82 +16,136 @@ export const metadata = {
 export default function AEODefinitionPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://aeobility.com.au/services/aeo/definition#faq",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What does AEO mean in digital marketing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AEO (Answer Engine Optimisation) is the process of structuring your content so AI systems, LLMs, and modern search engines can accurately read, index, and cite your business information. It focuses on machine understanding rather than traditional keyword ranking."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is AEO different from SEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SEO optimises for link-based search results. AEO optimises for answer generation, semantic retrieval, and citation inclusion inside AI-driven platforms like ChatGPT, Claude, Gemini, and Perplexity. It prioritises entities, embeddings, and structured content."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does AEO matter now?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AI-first search engines increasingly bypass classic search results and generate direct answers. If your content isn’t machine-readable, you won’t be included or cited. AEO ensures your business is visible inside these new answer environments."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do modern AI systems read and index content?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AI systems break your content into semantic chunks, convert them into embeddings, and store them in vector databases. Retrieval engines then match user queries to your content using dense similarity scoring and passage-level extraction."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is semantic chunking?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Semantic chunking is the process of dividing your content into small, meaningful units that AI systems can ingest and retrieve. Clean chunking improves accuracy, reduces hallucination, and increases your likelihood of being cited."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are embeddings and why are they important?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Embeddings are numerical representations of meaning. They allow AI systems to compare your content to user queries using vector similarity. Strong embeddings improve your visibility in AI-driven search and recommendation engines."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does AEO help my business get cited by AI platforms?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AEO clarifies your entities, restructures your content into machine-readable formats, and aligns your information with the retrieval patterns used by LLMs. This increases your chances of being selected as a trusted citation source."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is AEO relevant for small Australian businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. AEO is especially valuable for local service providers who rely on visibility across maps, search engines, and AI platforms. Clear entity signals help AI systems understand your location, services, and relevance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where should I start with AEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Begin by understanding how AI systems interpret your content. Then apply structured schema, semantic chunking, and entity optimisation. AEObility’s AEO services provide a complete framework for this process."
-        }
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/services/aeo/definition"
+    },
+    "headline": "What is AEO in Digital Marketing? Meaning & Concepts",
+    "description": "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
+    "inLanguage": "en-AU",
+    "author": {
+      "@type": "Organization",
+      "name": "AEObility"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AEObility",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aeobility.com.au/logo.png"
       }
-    ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Answer Engine Optimisation",
+        "description": "AEO is the practice of structuring business information so AI systems can read it, understand it, and cite it in generated answers."
+      },
+      {
+        "@type": "Thing",
+        "name": "Semantic Retrieval",
+        "description": "AI systems use embeddings and vector similarity to match concepts rather than keywords."
+      }
+    ],
+    "articleSection": [
+      "What is AEO and why does it matter?",
+      "AEO shifts search from pages to passages",
+      "AEO aligns content with semantic retrieval",
+      "AEO prepares content for query expansion",
+      "AEO prevents context loss during retrieval",
+      "AEO strengthens trust and citation signals",
+      "AEO vs SEO comparison"
+    ],
+    "keywords": [
+      "AEO",
+      "AEO marketing",
+      "semantic retrieval",
+      "what is AEO in digital marketing",
+      "AEO vs SEO meaning",
+      "dense retrieval",
+      "embeddings",
+      "vector similarity",
+      "passage-level extraction"
+    ],
+    "isPartOf": {
+      "@type": "Service",
+      "name": "AEO Services",
+      "serviceType": "Answer Engine Optimisation",
+      "provider": {
+        "@type": "Organization",
+        "name": "AEObility"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Services",
+          "item": "https://aeobility.com.au/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AEO Services",
+          "item": "https://aeobility.com.au/services/aeo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What is AEO (Definition)",
+          "item": "https://aeobility.com.au/services/aeo/definition"
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "name": "AEO Definition FAQs",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does AEO mean in digital marketing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AEO means structuring business information so AI systems can read it, understand it, and cite it in generated answers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AEO different from SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO ranks pages in search results. AEO structures content into semantic passages so AI systems can retrieve and cite it in generated answers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do modern AI systems read and index content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI systems convert text into embeddings, compare meaning using vector similarity, and extract small passages that match user intent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is semantic chunking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Semantic chunking organises content into small, meaningful blocks that AI systems can ingest, retrieve, and cite accurately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is AEO relevant for small Australian businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AEO helps local businesses become discoverable, understandable, and recommended across maps, search, and generative AI platforms."
+          }
+        }
+      ]
+    }
   };
 
   return (
