@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     "machine-readable content",
     "conversational search",
     "intent matching"
-  ]
+  ],
+  alternates: {
+    canonical: '/',
+  }
 };
 
 export default function Home() {

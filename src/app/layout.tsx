@@ -28,9 +28,6 @@ export const metadata: Metadata = {
   keywords: ["visibility audit", "local SEO", "AI search", "Perth SEO", "small business marketing", "get more leads", "map rankings", "Google Business Profile optimisation"],
   authors: [{ name: "AEObility" }],
   robots: "index, follow",
-  alternates: {
-    canonical: "https://aeobility.com.au",
-  },
   openGraph: {
     title: "AEObility | Get Found. Get Chosen.",
     description: "Show up across Search, Maps, and AI. Free audit + 15-minute call.",

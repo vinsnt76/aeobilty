@@ -9,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "AEO, GEO & AI Search Knowledge Hub | AEObility",
-  description: "Access practical guides, schema templates, and machine‑ingestion strategies for modern search.",
+  description: "Explore our AI Search Knowledge Hub for practical AEO guides, schema templates, and modern machine-ingestion strategies to boost your digital visibility.",
   keywords: [
     "AI Search Marketing Course",
     "ai search marketing examples",

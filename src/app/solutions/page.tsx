@@ -9,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "AEO Service Costs, Packages & Sprints | AEObility",
-  description: "Explore clear pricing models — from the $995 Strategic Blueprint to targeted optimisation sprints.",
+  description: "Explore transparent AEO service costs and pricing models. From our $995 Strategic Blueprint to targeted optimisation sprints, boost your local visibility.",
   keywords: [
     "AEO Service Cost",
     "aeo services vs seo services",
