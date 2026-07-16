@@ -76,39 +76,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Tag Gateway – GA4 */}
-        <script
-          async
-          src={`/metrics/gtag/js?id=G-3WVLWVG6VH`}
-        />
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-3WVLWVG6VH', { send_page_view: false });
-            `,
-          }}
-        />
-
-        {/* Google Tag Gateway – GTM */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){
-                w[l]=w[l]||[];
-                w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-                var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-                j.async=true;
-                j.src='/metrics/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-M9F4DT3Q');
-            `,
-          }}
-        />
       </head>
       <body className="min-h-full flex flex-col">
         {/* Global Entity Schema */}
@@ -172,15 +140,7 @@ export default function RootLayout({
             })
           }}
         />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src={`/metrics/ns.html?id=GTM-M9F4DT3Q`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
-        </noscript>
+
 
         {children}
         <GlobalConsentBanner />
