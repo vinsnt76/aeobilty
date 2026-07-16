@@ -371,6 +371,58 @@ export default function AEORootPage() {
             </div>
           </div>
 
+          {/* SECTION 7.5 — FAQ Block */}
+          <div className="space-y-6 border-t border-white/5 pt-10">
+            <h2 className="text-xl font-bold">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+                <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                  How long does AEO take to show results?
+                  <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                  Most businesses see improvements within 30–60 days as AI engines re-crawl structured content. Full optimisation across all pillars typically occurs over 90 days, depending on site size and complexity.
+                </p>
+              </details>
+              <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+                <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                  Does AEO help with Google Maps and local visibility?
+                  <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                  Yes. AEO strengthens entity clarity, which directly improves GEO signals, map visibility, and local intent matching. AI systems rely heavily on location and entity consistency.
+                </p>
+              </details>
+              <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+                <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                  What deliverables are included in AEO consulting and implementation?
+                  <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                  Deliverables include entity salience mapping, context chunk refactoring, structured schema markup, answer block creation, AI engine visibility checks, and optimisation tables outlining sprint progress.
+                </p>
+              </details>
+              <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+                <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                  Is AEO suitable for small Australian businesses?
+                  <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                  Absolutely. AEO is designed for local entities that need to be discoverable across AI platforms, maps, and search engines. It’s especially effective for service-based businesses in Perth and across Australia.
+                </p>
+              </details>
+              <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+                <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                  How do I get started with AEO?
+                  <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                  You can begin with a Visibility Check, book a strategy call, or choose one of our AEO packages. Each option helps you understand where your business stands across AI engines and what optimisation is needed.
+                </p>
+              </details>
+            </div>
+          </div>
+
           {/* SECTION 8 — Pricing & Packages CTA */}
           <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6 border-t pt-10">
             <h3 className="text-2xl font-bold text-white">Pricing & Strategic Blueprint</h3>
