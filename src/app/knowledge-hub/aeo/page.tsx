@@ -79,6 +79,13 @@ export default function AEOKnowledgeNodePage() {
               <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 GEO & SEO Local Matrix
               </Link>
+              <div className="h-px bg-white/5 my-2" />
+              <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                Articles & Guides
+              </Link>
+              <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                Client Case Studies
+              </Link>
             </nav>
           </div>
         </aside>

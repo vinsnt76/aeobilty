@@ -4,23 +4,23 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { ArrowRight, TrendingUp, BarChart2 } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 
 export const metadata = {
-  title: "AEO Case Studies & Visibility Reports | AEObility",
-  description: "Explore real-world case studies demonstrating how structural search optimisation, schema markup, and intent alignment drive organic growth and revenue.",
+  title: "AI Search Articles & Technical Guides | AEObility",
+  description: "Read our latest articles on Answer Engine Optimisation (AEO), generative search, and semantic content structuring.",
   alternates: {
-    canonical: "https://aeobility.com.au/knowledge-hub/case-studies",
+    canonical: "https://aeobility.com.au/knowledge-hub/articles",
   },
 };
 
-export default function CaseStudiesHubPage() {
+export default function ArticlesHubPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "AEObility Structural Search Optimisation Case Studies",
-    "description": "Explore real-world case studies demonstrating how structural search optimisation, schema markup, and intent alignment drive organic growth and revenue.",
-    "url": "https://aeobility.com.au/knowledge-hub/case-studies",
+    "name": "AEObility AI Search Articles & Technical Guides",
+    "description": "Read our latest articles on Answer Engine Optimisation (AEO), generative search, and semantic content structuring.",
+    "url": "https://aeobility.com.au/knowledge-hub/articles",
     "publisher": {
       "@type": "Organization",
       "name": "AEObility",
@@ -28,18 +28,17 @@ export default function CaseStudiesHubPage() {
     }
   };
 
-  const caseStudies = [
+  const articles = [
     {
-      title: "How Structural Search Alignment Drove a +17% Sales Uplift",
-      client: "Baby Bento",
-      description: "A real-world ecommerce case study showing how AEObility rebuilt clarity, intent alignment, and organic momentum to reverse declining traffic trends.",
-      href: "/knowledge-hub/case-studies/baby-bento",
-      image: "/case-study-aeo-lifts-traffic.webp",
-      alt: "Graph illustrating improved CTR, ranking position, and qualified organic traffic following AEObility’s structural optimisation.",
+      title: "AEO vs SEO: The Complete Guide to AI Search",
+      category: "Generative Search",
+      description: "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
+      href: "/knowledge-hub/articles/aeo-vs-seo",
+      image: "/traditional-seo-vs-aeo_AEObility.webp",
+      alt: "Abstract visualisation of traditional SEO versus AEO semantic retrieval using AEObility gradient palette.",
       metrics: [
-        { label: "Sales Uplift", value: "+17%" },
-        { label: "CTR Improvement", value: "+95%" },
-        { label: "Qualified Clicks", value: "+55%" }
+        { label: "Type", value: "Technical Guide" },
+        { label: "Read Time", value: "5 min" }
       ]
     }
   ];
@@ -80,37 +79,41 @@ export default function CaseStudiesHubPage() {
                 GEO & SEO Local Matrix
               </Link>
               <div className="h-px bg-white/5 my-2" />
-              <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Articles & Guides
-              </Link>
               <div className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                Client Case Studies
+                Articles & Guides
               </div>
+              <Link href="/knowledge-hub/articles/aeo-vs-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
+                AEO vs SEO
+              </Link>
+              <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                Client Case Studies
+              </Link>
             </nav>
           </div>
         </aside>
 
-        {/* Right Side: Case Studies Directory */}
+        {/* Right Side: Articles Directory */}
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>Performance Proof</span>
+              <FileText className="w-3.5 h-3.5" />
+              <span>Technical Reading</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              AEO & Structural Optimisation <span className="text-gradient-aeo">Case Studies</span>
+              AI Search <span className="text-gradient-aeo">Articles</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed font-light font-serif">
-              Real evidence of how structuring content schemas, resolving search intent models, and re-engineering system layout assets transforms organic business metrics.
+              Deep dives into generative search, entity modelling, and the strategies shaping modern machine readability.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8">
-            {caseStudies.map((cs, idx) => (
+            {articles.map((article, idx) => (
               <div key={idx} className="group relative bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-aeo-cyan/20 transition-all flex flex-col md:flex-row h-full">
                 <div className="relative aspect-video md:w-2/5 w-full bg-neutral-950 flex-shrink-0 min-h-[220px]">
                   <Image
-                    src={cs.image}
-                    alt={cs.alt}
+                    src={article.image}
+                    alt={article.alt}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 350px"
@@ -120,19 +123,19 @@ export default function CaseStudiesHubPage() {
                 <div className="p-6 flex flex-col justify-between flex-grow">
                   <div className="space-y-4">
                     <div className="text-[10px] text-aeo-cyan uppercase tracking-widest font-bold">
-                      {cs.client}
+                      {article.category}
                     </div>
                     <h3 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors leading-snug">
-                      {cs.title}
+                      {article.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed font-serif">
-                      {cs.description}
+                      {article.description}
                     </p>
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex gap-4">
-                      {cs.metrics.map((metric, mIdx) => (
+                      {article.metrics.map((metric, mIdx) => (
                         <div key={mIdx}>
                           <div className="text-sm font-extrabold text-white">{metric.value}</div>
                           <div className="text-[9px] text-white/40 uppercase tracking-wider">{metric.label}</div>
@@ -140,10 +143,10 @@ export default function CaseStudiesHubPage() {
                       ))}
                     </div>
                     <Link
-                      href={cs.href}
+                      href={article.href}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-aeo-cyan hover:text-white transition-colors"
                     >
-                      Read Case Study <ArrowRight className="w-3 h-3" />
+                      Read Article <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>

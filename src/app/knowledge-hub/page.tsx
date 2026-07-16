@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck, TrendingUp } from 'lucide-react';
+import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck, TrendingUp, FileText } from 'lucide-react';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -65,6 +65,12 @@ export default function KnowledgeHubPage() {
       href: "/knowledge-hub/geo",
       description: "Advanced techniques balancing localized map rankings and systemic generative visibility rules without focus dilution.",
       icon: <BookOpenCheck className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "Articles & Technical Guides",
+      href: "/knowledge-hub/articles",
+      description: "Deep dives into generative search, entity modelling, and the strategies shaping modern machine readability.",
+      icon: <FileText className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "Client Case Studies",
@@ -160,6 +166,9 @@ export default function KnowledgeHubPage() {
                   </Link>
                   <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
                     GEO & SEO Local Matrix
+                  </Link>
+                  <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
+                    Articles & Guides
                   </Link>
                   <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
                     Client Case Studies
