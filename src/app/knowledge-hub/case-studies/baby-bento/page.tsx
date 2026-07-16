@@ -94,23 +94,6 @@ export default function BabyBentoCaseStudyPage() {
       }
     ],
 
-    "relatedLink": [
-      "https://aeobility.com.au/services/aeo",
-      "https://aeobility.com.au/services/aeo/shopify"
-    ],
-
-    "isRelatedTo": [
-      {
-        "@type": "Service",
-        "name": "Answer Engine Optimisation",
-        "url": "https://aeobility.com.au/services/aeo"
-      },
-      {
-        "@type": "Service",
-        "name": "Shopify AEO Structural Optimisation",
-        "url": "https://aeobility.com.au/services/aeo/shopify"
-      }
-    ],
 
     "articleBody": {
       "executiveSummary": {
