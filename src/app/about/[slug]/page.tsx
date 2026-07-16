@@ -1,29 +1,53 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Welcome from './components/Welcome';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Welcome from '@/components/about/Welcome';
+import About from '@/components/about/About';
+import Experience from '@/components/about/Experience';
+import Projects from '@/components/about/Projects';
+import Contact from '@/components/about/Contact';
 import { ArrowLeft } from 'lucide-react';
+import { roleConfigs } from '../config';
+import { notFound } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Freelance SEO Consultant Perth | Vince Baker',
-  description: 'Perth Freelance SEO Specialist building semantic & technical search frameworks. If I can fix it straight away, no charge. Call 0480 286 282.',
-};
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
-export default function Page() {
+export function generateStaticParams() {
+  return Object.keys(roleConfigs).map((slug) => ({
+    slug,
+  }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const config = roleConfigs[params.slug];
+  if (!config) return {};
+  
+  return {
+    title: config.metadata.title,
+    description: config.metadata.description,
+  };
+}
+
+export default function Page({ params }: PageProps) {
+  const config = roleConfigs[params.slug];
+  if (!config) {
+    notFound();
+  }
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "ProfessionalService",
-        "@id": "https://vincebaker.dev/about/freelance-seo-consultant-perth#service",
-        "name": "Vince Baker – Freelance SEO Consultant Perth",
+        "@id": `https://vincebaker.dev/about/${config.slug}#service`,
+        "name": config.metadata.title.split('|')[0].trim(),
         "image": "https://vincebaker.dev/images/vince-baker-seo-specialist.jpg",
-        "description": "Freelance SEO Consultant based in Perth, specialising in technical SEO audits, semantic search engineering, and Answer Engine Optimisation (AEO) frameworks.",
-        "url": "https://vincebaker.dev/about/freelance-seo-consultant-perth",
+        "description": config.metadata.description,
+        "url": `https://vincebaker.dev/about/${config.slug}`,
         "telephone": "", 
         "priceRange": "$$",
         "address": {
@@ -38,35 +62,15 @@ export default function Page() {
           "latitude": "-31.9167",
           "longitude": "115.8500"
         },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:30",
-          "closes": "17:30"
-        },
         "founder": {
           "@id": "https://vincebaker.dev/#person"
-        },
-        "knowsAbout": [
-          "Search Engine Optimisation",
-          "Technical SEO",
-          "Answer Engine Optimisation (AEO)",
-          "Semantic Web",
-          "Schema Markup",
-          "Google Search Console",
-          "SEMrush",
-          "Data Tracking & Attribution"
-        ]
+        }
       },
       {
         "@type": "Person",
         "@id": "https://vincebaker.dev/#person",
         "name": "Vince Baker",
-        "jobTitle": "Technical Architect & SEO Consultant",
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Central TAFE"
-        },
+        "jobTitle": "Technical Architect & Consultant",
         "worksFor": {
           "@type": "Organization",
           "name": "Freelance"
@@ -90,7 +94,14 @@ export default function Page() {
           Back to About Hub
         </Link>
       </div>
-      <Welcome />
+      
+      {/* We pass the config to Welcome to customize the Hero Section */}
+      <Welcome config={config} />
+      
+      {/* 
+        The rest of the components use the unified AEObility narrative 
+        ("Sharper, diagnostic, AEO > SEO theatre").
+      */}
       <About />
       <Experience />
       <Projects />

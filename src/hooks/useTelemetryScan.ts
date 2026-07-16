@@ -23,8 +23,8 @@ export function useTelemetryScan() {
 
       const data = await response.json();
       setResult(data);
-    } catch (err: any) {
-      setError(err.message || 'An unexpected diagnostic error occurred.');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An unexpected diagnostic error occurred.');
     } finally {
       setLoading(false);
     }

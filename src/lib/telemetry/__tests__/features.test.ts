@@ -99,7 +99,7 @@ describe('Feature Engineering Layer', () => {
       schemaValidation: { hasValidSchema: true, typesFound: ['Organization'] }, // 1 type
     };
 
-    const competitorCrawls: any[] = []; // Empty
+    const competitorCrawls: Parameters<typeof extractFeatures>[3] = []; // Empty
 
     const entityConfidence: EntityConfidence = { score: 100, type: 'Brand' }; // 100 * 1.0 = 100
 

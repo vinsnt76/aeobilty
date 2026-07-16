@@ -43,7 +43,7 @@ export default function BookingPage() {
               </h1>
               
               <p className="text-white/70 text-sm md:text-base leading-relaxed font-serif">
-                Select a time below for a complimentary 15-minute call. Let's discuss how to make your business discoverable and trusted across Search, Maps & AI.
+                Select a time below for a complimentary 15-minute call. Let&apos;s discuss how to make your business discoverable and trusted across Search, Maps & AI.
               </p>
             </div>
           </div>

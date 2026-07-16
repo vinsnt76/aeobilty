@@ -3,11 +3,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { X, Send } from 'lucide-react';
+import { TelemetryResult } from '@/lib/telemetry/types';
 
 interface ChatMessage {
   sender: 'user' | 'assistant';
   text: string;
-  telemetry?: any;
+  telemetry?: TelemetryResult;
 }
 
 export function extractDomainLabel(url: string): string {
@@ -32,8 +33,7 @@ export default function CompanionWidget() {
   const [isThinking, setIsThinking] = useState(false);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoiceName, setSelectedVoiceName] = useState<string>('');
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [telemetryData, setTelemetryData] = useState<any>(null);
+  const [telemetryData, setTelemetryData] = useState<{ url?: string; clientUrl?: string; intent?: string; result?: TelemetryResult } | null>(null);
 
   type BillState = "HIDDEN" | "ANALYSING" | "INTRODUCTION" | "INSIGHT_REVEAL" | "EMAIL_CAPTURE" | "CONSULTANT" | "FOLLOW_UP";
   const [billState, setBillState] = useState<BillState>('HIDDEN');
@@ -75,7 +75,8 @@ export default function CompanionWidget() {
         ...prev,
         { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression` }
       ]);
-    } catch (e) {
+    } catch (e: unknown) {
+      console.error(e);
       // ignore
       setBillState('CONSULTANT');
       window.dispatchEvent(new Event('bill_consultation_started'));
@@ -180,15 +181,13 @@ export default function CompanionWidget() {
 
   // Simulate lip sync / mouth movement when speaking
   const startLipSync = () => {
-    setIsSpeaking(true);
     if (audioIntervalRef.current) clearInterval(audioIntervalRef.current);
     audioIntervalRef.current = setInterval(() => {
-      setIsSpeaking(prev => !prev);
+      // simulate lip sync
     }, 250);
   };
 
   const stopLipSync = () => {
-    setIsSpeaking(false);
     if (audioIntervalRef.current) {
       clearInterval(audioIntervalRef.current);
       audioIntervalRef.current = null;
@@ -327,7 +326,7 @@ export default function CompanionWidget() {
         {isOpen ? (
           <X className="w-6 h-6" />
         ) : (
-          <img src="/char-mouth-closed.png" alt="AI Bill" className="w-full h-full object-cover animate-pulse" />
+          <Image src="/char-mouth-closed.png" alt="AI Bill" fill sizes="56px" className="object-cover animate-pulse" />
         )}
       </button>
 
@@ -341,8 +340,8 @@ export default function CompanionWidget() {
         <div className="flex items-center justify-between border-b border-white/5 px-4 py-3 bg-white/[0.02]">
           <div className="flex items-center gap-2">
             <div className="relative h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 flex-shrink-0">
-              <img src="/char-mouth-closed.png" alt="AI Bill Profile" className="h-full w-full object-cover" />
-              <div className="absolute bottom-0 right-0 h-1.5 w-1.5 rounded-full bg-emerald-500 border border-black" />
+              <Image src="/char-mouth-closed.png" alt="AI Bill Profile" fill sizes="24px" className="object-cover" />
+              <div className="absolute bottom-0 right-0 h-1.5 w-1.5 rounded-full bg-emerald-500 border border-black z-10" />
             </div>
             <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Diagnostic Engine</span>
           </div>
@@ -352,15 +351,15 @@ export default function CompanionWidget() {
         {billState === 'CONSULTANT' && telemetryData && (
           <div className="bg-black/60 border-b border-white/10 p-3 text-[10px] space-y-2 relative z-10 shadow-md">
             <div className="flex justify-between items-center text-white/50 uppercase tracking-wider mb-1">
-              <span>AI Bill's Summary</span>
+              <span>AI Bill&apos;s Summary</span>
             </div>
             <div>
               <span className="text-white/40">Current perception:</span>
-              <div className="text-white/90">"{telemetryData.result?.insightResult?.diagnosis?.currentState}"</div>
+              <div className="text-white/90">&quot;{telemetryData.result?.insightResult?.diagnosis?.currentState}&quot;</div>
             </div>
             <div>
               <span className="text-white/40">Opportunity:</span>
-              <div className="text-aeo-cyan">"{telemetryData.result?.insightResult?.diagnosis?.desiredState}"</div>
+              <div className="text-aeo-cyan">&quot;{telemetryData.result?.insightResult?.diagnosis?.desiredState}&quot;</div>
             </div>
             <div>
               <span className="text-white/40">Biggest improvement:</span>
@@ -381,8 +380,8 @@ export default function CompanionWidget() {
                     }`}
                   >
                     {!isUser && (
-                      <div className="flex-shrink-0 h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 mt-1">
-                        <img src="/char-mouth-closed.png" alt="AI Bill" className="h-full w-full object-cover" />
+                      <div className="flex-shrink-0 relative h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 mt-1">
+                        <Image src="/char-mouth-closed.png" alt="AI Bill" fill sizes="24px" className="object-cover" />
                       </div>
                     )}
                     <div className="flex flex-col flex-grow">
@@ -404,7 +403,7 @@ export default function CompanionWidget() {
                       <div className="bg-black/60 border border-aeo-cyan/20 rounded-xl p-3 font-mono text-[10px] text-white/90 shadow-[0_0_15px_rgba(0,205,216,0.05)]">
                         <div className="text-[9px] uppercase tracking-wider text-aeo-cyan mb-2">AI First Impression</div>
                         <div className="text-[11px] leading-relaxed italic text-white/80">
-                          "{msg.telemetry.insightResult?.firstImpression?.headline}"
+                          &quot;{msg.telemetry.insightResult?.firstImpression?.headline}&quot;
                         </div>
                         <div className="mt-2 space-y-1">
                           {msg.telemetry.insightResult?.firstImpression?.reasoning?.map((r: string, i: number) => (
@@ -423,7 +422,7 @@ export default function CompanionWidget() {
 
                         <div className="pt-3 border-t border-white/5">
                           <div className="text-[9px] uppercase tracking-wider text-aeo-purple mb-2">AI Recommendation Test</div>
-                          <div className="text-[10px] text-white/60 mb-1">"If someone asked an AI about this, would it recommend you?"</div>
+                          <div className="text-[10px] text-white/60 mb-1">&quot;If someone asked an AI about this, would it recommend you?&quot;</div>
                           <div className="flex gap-2 items-start mt-1.5">
                             <span className="text-lg leading-none">
                               {msg.telemetry.insightResult?.recommendationTest?.wouldRecommend ? '✅' : '❌'}

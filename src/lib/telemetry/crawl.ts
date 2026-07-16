@@ -30,7 +30,7 @@ export async function crawlUrl(url: string): Promise<{ textContent: string; tech
     try {
       const urlObj = new URL(url);
       internalDomain = urlObj.origin;
-    } catch (e) {
+    } catch {
       // Ignore
     }
     
@@ -60,7 +60,7 @@ export async function crawlUrl(url: string): Promise<{ textContent: string; tech
           const cleanContent = content.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'");
           const parsed = JSON.parse(cleanContent);
           
-          const extractTypes = (obj: any) => {
+          const extractTypes = (obj: Record<string, unknown> | null) => {
             if (!obj) return;
             
             // Handle @type which can be a string or array of strings
@@ -74,7 +74,7 @@ export async function crawlUrl(url: string): Promise<{ textContent: string; tech
             
             // Handle @graph which contains nested schema objects
             if (obj['@graph'] && Array.isArray(obj['@graph'])) {
-              obj['@graph'].forEach((item: any) => extractTypes(item));
+              obj['@graph'].forEach((item: Record<string, unknown>) => extractTypes(item));
             }
           };
 
@@ -82,7 +82,7 @@ export async function crawlUrl(url: string): Promise<{ textContent: string; tech
           const schemas = Array.isArray(parsed) ? parsed : [parsed];
           schemas.forEach(s => extractTypes(s));
         }
-      } catch (e) {
+      } catch {
         // Ignore parse errors for individual scripts
       }
     });

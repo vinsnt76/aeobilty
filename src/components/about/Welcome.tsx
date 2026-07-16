@@ -5,8 +5,13 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { scrollToSection } from '../navigation';
 import clsx from 'clsx';
+import { RoleConfig } from '@/app/about/config';
 
-const Welcome: React.FC = () => {
+interface WelcomeProps {
+  config?: RoleConfig;
+}
+
+const Welcome: React.FC<WelcomeProps> = ({ config }) => {
   return (
     <section 
       id="welcome" 
@@ -64,18 +69,18 @@ const Welcome: React.FC = () => {
           >
             {/* Personal Tagline */}
             <span className="inline-block px-4 py-1.5 rounded-full bg-aeo-cyan/10 text-aeo-cyan text-sm font-semibold tracking-wide border border-aeo-cyan/20">
-              AI & Digital Specialist
+              {config?.hero.tagline || 'Digital Consultant'}
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-              Freelance SEO <br />
+              {config?.hero.titlePart1 || 'Freelance '} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-aeo-cyan to-aeo-purple">
-                Consultant Perth
+                {config?.hero.titleGradient || 'Consultant Perth'}
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-              Moving beyond keyword stuffing. Engineering semantic architectures, technical website audits, and data attribution systems that align with modern LLM models and traditional search algorithms.
+              {config?.hero.description || 'Delivering modern, scalable, technical solutions.'}
             </p>
           </motion.div>
 

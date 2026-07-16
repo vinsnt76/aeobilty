@@ -20,7 +20,7 @@ export class BraveSearchProvider implements SearchProvider {
         const data = await response.json();
         const results = data.web?.results || [];
         return results
-          .map((r: any) => r.url)
+          .map((r: { url: string }) => r.url)
           .filter((url: string) => !url.includes('yelp.') && !url.includes('wikipedia.') && !url.includes('facebook.'))
           .slice(0, 2);
       }

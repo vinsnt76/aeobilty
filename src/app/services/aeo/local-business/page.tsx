@@ -100,7 +100,7 @@ export default function LocalBusinessAEOPage() {
                 </p>
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Voice & Conversational Assistant Proximity</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
-                  When a user asks Siri or Google Assistant for "a plumber near me," proximity algorithms kick in. We structure your digital footprint to target hyper-local coordinates and conversational queries, ensuring AI assistants readily recommend your services.
+                  When a user asks Siri or Google Assistant for &quot;a plumber near me,&quot; proximity algorithms kick in. We structure your digital footprint to target hyper-local coordinates and conversational queries, ensuring AI assistants readily recommend your services.
                 </p>
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Clear Entity Signals for Local Trades</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">

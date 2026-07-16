@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, Mail, Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles } from 'lucide-react';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
@@ -75,13 +75,13 @@ export default function DiagnosticEngine() {
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
         // We no longer auto-open the chat. The user must explicitly click the guided action button.
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('Diagnostic engine fetch error:', e);
       // fallback for demo if fails
       setTelemetry({ 
         readinessScore: 0,
-        error: e.message || 'Failed to fetch telemetry'
-      } as any);
+        error: e instanceof Error ? e.message : 'Failed to fetch telemetry'
+      } as unknown as TelemetryResult);
     }
 
     setStep('SCORE_REVEAL');
@@ -122,10 +122,10 @@ export default function DiagnosticEngine() {
                 required
                 value={intent}
                 onChange={e => setIntent(e.target.value)}
-                placeholder='e.g. "solar installers Perth"'
+                placeholder="e.g. &quot;solar installers Perth&quot;"
                 className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-aeo-purple transition-colors"
               />
-              <p className="text-xs text-white/40 mt-2">Example: "best accounting software", "commercial electricians"</p>
+              <p className="text-xs text-white/40 mt-2">Example: &quot;best accounting software&quot;, &quot;commercial electricians&quot;</p>
             </div>
             
             <button
@@ -183,7 +183,7 @@ export default function DiagnosticEngine() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-xl text-white/90 font-medium italic text-center">
-                    "{telemetry.insightResult?.firstImpression?.headline}"
+                    &quot;{telemetry.insightResult?.firstImpression?.headline}&quot;
                   </p>
                   <div className="space-y-2">
                     {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
@@ -248,7 +248,7 @@ export default function DiagnosticEngine() {
 
                   <div className="flex-1 space-y-3 text-center md:text-left">
                     <div className="text-[10px] uppercase tracking-wider text-aeo-purple">AI Recommendation Test</div>
-                    <div className="text-xs text-white/50">"If someone asked ChatGPT for the best {intent}, would I recommend you?"</div>
+                    <div className="text-xs text-white/50">&quot;If someone asked ChatGPT for the best {intent}, would I recommend you?&quot;</div>
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 mt-2">
                       <span className="text-3xl leading-none">
                         {telemetry.insightResult?.recommendationTest?.wouldRecommend ? '✅' : '❌'}

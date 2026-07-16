@@ -94,10 +94,10 @@ export async function POST(req: NextRequest) {
     await setTelemetryCache(url || '', intent, result);
 
     return NextResponse.json(result);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Telemetry run error:', error);
     return NextResponse.json(
-      { error: error.message || 'Internal server error running telemetry.', stack: error.stack },
+      { error: error instanceof Error ? error.message : 'Internal server error running telemetry.', stack: error instanceof Error ? error.stack : undefined },
       { status: 500 }
     );
   }

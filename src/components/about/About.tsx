@@ -3,8 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass } from 'lucide-react';
-import { scrollToSection } from '../navigation';
-import clsx from 'clsx';
+import Link from 'next/link';
 
 const About: React.FC = () => {
   const containerVariants = {
@@ -95,19 +94,13 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-6 text-left" // Left-aligned, spacing, and text color
+            className="text-lg md:text-xl text-neutral-700 leading-relaxed space-y-6 text-left" // Left-aligned, spacing, and text color
           >
             <p>
-              As an independent <strong className="text-aeo-cyan font-bold">digital systems architect</strong>, I bridge the gap between <strong className="text-aeo-purple font-bold">messy backend IT infrastructure</strong> and <strong className="text-aeo-cyan font-bold">client‑facing digital marketing</strong>.
+              Most SEO agencies hand you a boilerplate blog strategy and a monthly traffic graph that doesn&apos;t track bottom-line growth. I look at SEO through an <strong className="text-aeo-cyan font-bold">architectural lens</strong>.
             </p>
             <p>
-              Across 15+ years in commercial digital roles, I’ve learned that most Perth businesses don’t fail because of strategy, they fail because their <strong className="font-bold">systems don’t talk to each other</strong>.
-            </p>
-            <p>
-              I step in to <strong className="text-aeo-cyan font-bold">turn raw commercial web data into structured, machine-readable digital assets</strong>, ensuring your website, analytics, CRM, advertising, and AI-driven search surfaces all operate as a unified, profitable ecosystem.
-            </p>
-            <p>
-              This lets local brands scale <strong className="text-aeo-purple font-bold">without agency overhead</strong>, without technical bottlenecks, and without the chaos of disconnected tools.
+              Drawing on my technical background as a digital systems architect, I build more than just rankings. By executing advanced reporting pipelines, API webhook architectures, and running comprehensive site audits via SEMrush and Google Search Console, I pinpoint the <strong className="font-bold">exact code block or crawl bottleneck</strong> holding your site back.
             </p>
           </motion.div>
 
@@ -124,53 +117,24 @@ const About: React.FC = () => {
             
             <div className="space-y-6">
               <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">1. Digital Systems Architecture & Automation</h4>
-                <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300 space-y-1 mb-3">
-                  <li>n8n, Make, Airtable workflow engineering</li>
-                  <li>API orchestration using Postman, GCF, webhooks</li>
-                  <li>CRM implementation (HubSpot, Agile CRM, Zoho)</li>
-                  <li>Cross-domain tracking, event mapping, GA4 + GTM</li>
-                  <li>Automated reporting pipelines + Looker Studio dashboards</li>
-                  <li>Voiceflow conversational agent design (voice + text)</li>
-                </ul>
-                <blockquote className="border-l-2 border-aeo-purple pl-3 text-xs italic text-neutral-500">“Designed and deployed internal automation workflows using n8n, Airtable, and various no-code platforms.”</blockquote>
+                <h4 className="text-lg font-bold text-aeo-cyan mb-2">1. Technical & Crawl Engineering</h4>
+                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  Deep dive audits using SEMrush, Google Search Console, and Bing Webmaster Tools. Resolving structural indexation errors, programmatic redirection maps, and fixing internal linking pipelines.
+                </p>
               </div>
 
               <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">2. Technical SEO, AEO & Semantic Optimisation</h4>
-                <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300 space-y-1 mb-3">
-                  <li>SEMrush, Ubersuggest, Ahrefs audits</li>
-                  <li>Entity-based SEO + schema markup</li>
-                  <li>AEO/GEO alignment for AI search engines</li>
-                  <li>Reverse, one-shot, and graph prompting for AI agents</li>
-                  <li>Structured content briefs + long-tail keyword mapping</li>
-                  <li>UX/CRO analysis using Microsoft Clarity + GA4</li>
-                </ul>
-                <blockquote className="border-l-2 border-aeo-purple pl-3 text-xs italic text-neutral-500">“Developed SEO content briefs… identifying long-tail keyword opportunities, internal linking, and backlink outreach strategies.”</blockquote>
+                <h4 className="text-lg font-bold text-aeo-cyan mb-2">2. Semantic Data Integration</h4>
+                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  Setting up precise GA4 event configurations, cross-domain tracking arrays, and server-side pixel tracking through Google Tag Manager to prove exactly where organic conversions originate.
+                </p>
               </div>
 
               <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">3. Digital Marketing Execution</h4>
-                <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300 space-y-1 mb-3">
-                  <li>Google Ads (Search, Shopping, Performance Max)</li>
-                  <li>Meta, LinkedIn, TikTok campaign setup</li>
-                  <li>Email automation (Campaign Monitor, Klaviyo, Mailchimp)</li>
-                  <li>PPC forecasting, ROAS optimisation, A/B testing</li>
-                  <li>Funnel design + lead nurturing pipelines</li>
-                </ul>
-                <blockquote className="border-l-2 border-aeo-purple pl-3 text-xs italic text-neutral-500">“Implemented and developed paid search campaigns using measurement and forecasting tools in Google Ads.”</blockquote>
-              </div>
-
-              <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">4. AI & Data Engineering for Business Growth</h4>
-                <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300 space-y-1 mb-3">
-                  <li>Prompt engineering (reverse, one-shot, graph)</li>
-                  <li>AI agent design for marketing + operations</li>
-                  <li>Semantic schema mapping for AEO/GEO</li>
-                  <li>Data cleaning + machine-readable asset creation</li>
-                  <li>Google AI Studio + Firebase integrations</li>
-                </ul>
-                <blockquote className="border-l-2 border-aeo-purple pl-3 text-xs italic text-neutral-500">“Engineered advanced prompts for AI agents using reverse, one-shot, and graph prompting techniques.”</blockquote>
+                <h4 className="text-lg font-bold text-aeo-cyan mb-2">3. AEO & Modern Strategy</h4>
+                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  Building semantic content frameworks designed for direct ingestion by conversational AI agents, utilising advanced entity mapping schemas.
+                </p>
               </div>
             </div>
           </motion.div>
@@ -237,29 +201,20 @@ const About: React.FC = () => {
           <div className="space-y-4 max-w-3xl mx-auto text-left">
             <details className="group bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
               <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                What does a Digital Systems Architect actually do?
+                What is the difference between a traditional SEO agency and a Freelance Technical SEO Specialist?
                 <span className="group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <p className="mt-4 text-neutral-700 dark:text-neutral-400 text-sm leading-relaxed">
-                A digital systems architect connects your fragmented software, like your website, CRM, and advertising platforms, into a single, automated ecosystem. Instead of manual data entry or disjointed marketing campaigns, I ensure data flows automatically and is structured so that both your team and AI search engines can read it clearly.
+                Agencies frequently lean on high-volume content production. A technical specialist rewrites the structural foundation, resolves code bloat, ensures proper schema node logic, and builds clean tracking frameworks.
               </p>
             </details>
             <details className="group bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
               <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                How is this different from hiring a traditional digital marketing agency?
+                Do you implement GA4 and cross-domain tracking as part of SEO?
                 <span className="group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <p className="mt-4 text-neutral-700 dark:text-neutral-400 text-sm leading-relaxed">
-                Traditional agencies focus on front-end campaigns (ads, content). I focus on the entire pipeline. Without a solid technical foundation, your campaigns will leak leads and waste budget. By working directly with me, you skip the account managers and get senior-level technical expertise that integrates both the marketing strategy and the backend systems.
-              </p>
-            </details>
-            <details className="group bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
-              <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                What is AEO and why does my business need it?
-                <span className="group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p className="mt-4 text-neutral-700 dark:text-neutral-400 text-sm leading-relaxed">
-                AEO (Answer Engine Optimisation) ensures your business appears in AI-driven search results like ChatGPT, Perplexity, and Google AI Overviews. Traditional SEO relied on keywords; AEO relies on structured semantic data (like JSON-LD schemas) that AI engines can easily read and verify as facts. If your business isn't optimised for AEO, you will be invisible in the next generation of search.
+                Yes. Search visibility means nothing if data attribution is broken. Every project maps traffic milestones directly to financial conversions via Google Tag Manager and Looker Studio dashboards.
               </p>
             </details>
           </div>
@@ -275,10 +230,10 @@ const About: React.FC = () => {
         >
           <h3 className="text-xl font-bold mb-6 text-neutral-500 dark:text-neutral-400 uppercase tracking-widest text-sm">Browse my other digital specialities</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/about/freelance-seo-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance SEO Consultant Perth</a>
-            <a href="/about/freelance-google-ads-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Google Ads Consultant Perth</a>
-            <a href="/about/freelance-digital-specialist-perth" className="px-5 py-2.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan text-aeo-cyan text-sm font-semibold shadow-sm">Freelance Digital Specialist Perth</a>
-            <a href="/about/freelance-ai-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance AI Consultant Perth</a>
+            <Link href="/about/freelance-seo-consultant-perth" className="px-5 py-2.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan text-aeo-cyan text-sm font-semibold shadow-sm">Freelance SEO Consultant Perth</Link>
+            <Link href="/about/freelance-google-ads-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Google Ads Consultant Perth</Link>
+            <Link href="/about/freelance-digital-specialist-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Digital Specialist Perth</Link>
+            <Link href="/about/freelance-ai-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance AI Consultant Perth</Link>
           </div>
         </motion.div>
 
