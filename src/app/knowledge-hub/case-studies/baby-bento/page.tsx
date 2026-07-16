@@ -16,46 +16,166 @@ export const metadata = {
 export default function BabyBentoCaseStudyPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "CaseStudy",
-    "name": "Baby Bento Structural Search Optimisation Case Study",
-    "description": "A structural search optimisation case study showing how Baby Bento achieved significant improvements in organic visibility, engagement, and sales velocity after implementing AEObility’s architectural framework.",
-    "datePublished": "2026-07-08",
+    "@type": "Article",
+
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento"
+    },
+
+    "headline": "Case Study: Baby Bento — Structural Search Alignment & AI Visibility Recovery",
+    "alternativeHeadline": "How AEObility Rebuilt Clarity and Drove a +17% Sales Uplift",
+
+    "description": "Discover how AEObility restored structural clarity, rebuilt intent alignment, and lifted Baby Bento’s AI search visibility — resulting in a 17–18% sales uplift, 95% CTR improvement, and reduced discount dependency.",
+
+    "keywords": [
+      "Baby Bento case study",
+      "AI search visibility",
+      "AEO case study",
+      "Australian ecommerce",
+      "structural optimisation",
+      "organic growth study",
+      "answer engine optimisation"
+    ],
+
+    "image": "https://aeobility.com.au/_next/image?url=%2Fcase-study-aeo-lifts-traffic.webp&w=750&q=75",
+
     "author": {
+      "@type": "Person",
+      "name": "Vinnie Baker",
+      "url": "https://aeobility.com.au/vince-baker"
+    },
+
+    "publisher": {
       "@type": "Organization",
       "name": "AEObility",
-      "url": "https://aeobility.com.au"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aeobility.com.au/android-chrome-192x192.png"
+      }
     },
+
+    "datePublished": "2026-07-16",
+    "dateCreated": "2026-07-16",
+    "dateModified": "2026-07-16",
+
+    "inLanguage": "en-AU",
+    "articleSection": "Case Studies",
+
     "about": {
-      "@type": "Organization",
+      "@type": "Thing",
       "name": "Baby Bento",
-      "url": "https://babybento.com.au"
+      "description": "Australian ecommerce brand specialising in kids’ lunchboxes, insulated food jars, and eco-friendly lunch solutions."
     },
-    "mainEntity": {
-      "@type": "WebPage",
-      "name": "Baby Bento Case Study",
-      "url": "https://aeobility.com.au/case-studies/baby-bento"
+
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Australian ecommerce operators"
     },
-    "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub",
+
+    "genre": "AI Search Visibility Case Study",
+
     "isPartOf": {
-      "@type": "WebSite",
+      "@type": "CreativeWorkSeries",
+      "name": "AEObility Knowledge Hub",
       "url": "https://aeobility.com.au/knowledge-hub"
     },
-    "performanceMetrics": {
-      "search": {
-        "clicksIncreasePercent": 54.8,
-        "ctrIncreasePercent": 94.15,
-        "rankingImprovementPercent": 28.62,
-        "impressionsChangePercent": -20.26
+
+    "mentions": [
+      {
+        "@type": "WebPage",
+        "url": "https://aeobility.com.au/services/aeo",
+        "name": "AEO Services"
       },
-      "engagement": {
-        "engagementTimeIncreasePercent": 28,
-        "eventCountIncreasePercent": 24.86
-      },
-      "commercial": {
-        "h2SalesIncreasePercent": 17,
-        "discountGrowthModerationPercent": 28,
-        "returnsScalingPercent": 40
+      {
+        "@type": "WebPage",
+        "url": "https://aeobility.com.au/services/aeo/shopify",
+        "name": "AEO for Shopify"
       }
+    ],
+
+    "relatedLink": [
+      "https://aeobility.com.au/services/aeo",
+      "https://aeobility.com.au/services/aeo/shopify"
+    ],
+
+    "isRelatedTo": [
+      {
+        "@type": "Service",
+        "name": "Answer Engine Optimisation",
+        "url": "https://aeobility.com.au/services/aeo"
+      },
+      {
+        "@type": "Service",
+        "name": "Shopify AEO Structural Optimisation",
+        "url": "https://aeobility.com.au/services/aeo/shopify"
+      }
+    ],
+
+    "articleBody": {
+      "executiveSummary": {
+        "problem": "Organic momentum was slipping, discount dependency was rising, and search engines had lost clarity around Baby Bento’s entity structure.",
+        "solution": "AEObility rebuilt structural clarity using schema injection, intent‑aligned routing, and conversational content alignment.",
+        "outcome": {
+          "salesUplift": "+17–18%",
+          "ctrImprovement": "+95%",
+          "qualifiedClicks": "+55%",
+          "rankingPosition": "+29%",
+          "engagement": "+28%"
+        }
+      },
+
+      "baselineChallenge": {
+        "discountGrowthYoY": "+46%",
+        "returnGrowthYoY": "+39%",
+        "organicMomentum": "Declining",
+        "quote": "When search engines lose clarity, your high‑intent traffic disappears. Promotions become the only lever left."
+      },
+
+      "structuralPivot": {
+        "pillars": [
+          {
+            "name": "Product Schema Injector",
+            "description": "Mapped detailed schema.org attributes to make product specifications readable to modern AI ranking systems."
+          },
+          {
+            "name": "Collection Architecture Re‑engineering",
+            "description": "Rebuilt routing and hierarchy around intent clusters instead of legacy keyword structures."
+          },
+          {
+            "name": "Guide Engine JS Deployment",
+            "description": "Introduced interactive decision assistants that created strong crawl signals and improved user clarity."
+          },
+          {
+            "name": "Intent‑Driven Content Alignment",
+            "description": "Pruned unhelpful nodes and aligned product copy to conversational search criteria."
+          }
+        ]
+      },
+
+      "technicalSignals": {
+        "impressions": "-20%",
+        "ctr": "+94%",
+        "quote": "Fewer impressions. Better impressions. Search engines stopped serving low‑intent queries and focused on conversion intent."
+      },
+
+      "engagementSignals": {
+        "engagementTime": "+28%",
+        "eventCount": "+24.8%"
+      },
+
+      "commercialInflection": {
+        "salesGrowth": "+17%",
+        "discountModeration": "+28%",
+        "quote": "When search engines understand your business value, customers find you without needing a constant discount."
+      },
+
+      "conclusion": "Baby Bento’s turnaround wasn’t driven by more content, more keywords, or more ads. It was driven by structural clarity, intent alignment, and answer‑engine readability."
+    },
+
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento"
     }
   };
 
@@ -150,20 +270,26 @@ export default function BabyBentoCaseStudyPage() {
 
           {/* Executive Summary */}
           <div className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">Executive Summary</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Baby Bento entered the fiscal period with stable baseline activity but declining organic momentum. Promotions were doing the heavy lifting, margins were tightening, and product returns were rising. In the second half of the year, everything changed.
+              Baby Bento entered the year with steady activity but fading organic momentum. Search engines were losing clarity, high‑intent traffic was slipping, and promotions were doing most of the heavy lifting. Margins tightened. Returns crept up. The business was working harder for the same results.
             </p>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              After implementing AEObility’s structural optimisation framework, Baby Bento recorded a **17–18% uplift** across core sales metrics and a **95% CTR improvement**, all while **reducing discount dependency**. This case study shows how structural clarity — not keyword volume — created the commercial inflection point.
+              In the second half of the year, everything changed.
+            </p>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
+              After implementing AEObility’s structural optimisation framework, Baby Bento recorded a 17–18% uplift in core sales, a 95% CTR improvement, and a clear reduction in discount dependency. This wasn’t achieved through more content, more keywords, or more ads. It was achieved by rebuilding clarity — the thing modern AI search engines rely on most.
             </p>
           </div>
 
           {/* Baseline Challenge */}
           <div className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">The Baseline Challenge: Momentum Loss & Promotional Pressure</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">The Baseline Problem: Search Engines Had Lost the Plot</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Baby Bento’s full-year data showed organic momentum slipping while promotional dependency was rising. Discount volume had expanded by **+46% YoY** and returns had increased by **+39% YoY**.
+              Full‑year telemetry showed a simple truth:<br />
+              <strong>search engines no longer understood the business.</strong>
+            </p>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
+              Discount volume had blown out by +46% YoY, returns were up +39% YoY, and organic momentum was sliding. When clarity drops, high‑intent traffic disappears. Promotions become the only lever left.
             </p>
             <blockquote className="border-l-2 border-aeo-cyan pl-4 my-6 text-sm text-white/50 font-serif italic">
               &ldquo;When search engines lose clarity, your high‑intent traffic disappears. Promotions become the only lever left to hit targets.&rdquo;
@@ -211,45 +337,56 @@ export default function BabyBentoCaseStudyPage() {
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white">The Pivot: Structural Alignment Over Keyword Volume</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Baby Bento replaced legacy SEO tactics with AEObility’s structural optimisation pillars to build clear entity authority:
+              Baby Bento replaced legacy SEO tactics with AEObility’s structural optimisation pillars — a clarity‑first rebuild designed for modern AI engines:
             </p>
             <ul className="space-y-4 pl-4 pt-2">
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
                 <span className="text-aeo-cyan font-bold">1.</span>
                 <div>
-                  <strong className="text-white">Product Schema Injector:</strong> Mapped detailed schema.org attributes to make product specifications highly readable to modern AI query systems.
+                  <strong className="text-white">Product Schema Injector:</strong> Rich schema attributes made product specifications readable to AI systems that rank based on entity understanding, not keyword density.
                 </div>
               </li>
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
                 <span className="text-aeo-cyan font-bold">2.</span>
                 <div>
-                  <strong className="text-white">Collection Architecture Re-engineering:</strong> Re-structured website routing and navigational hierarchies around high-intent clusters rather than keywords.
+                  <strong className="text-white">Collection Architecture Re‑engineering:</strong> Routing and hierarchy were rebuilt around intent clusters, giving search engines a clean, interpretable structure.
                 </div>
               </li>
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
                 <span className="text-aeo-cyan font-bold">3.</span>
                 <div>
-                  <strong className="text-white">Guide Engine JS Deployment:</strong> Integrated interactive decision assistants that created clear, structured crawl signals while aiding users.
+                  <strong className="text-white">Guide Engine JS Deployment:</strong> Interactive decision assistants created strong crawl signals and helped users choose products with confidence.
                 </div>
               </li>
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
                 <span className="text-aeo-cyan font-bold">4.</span>
                 <div>
-                  <strong className="text-white">Intent-Driven Content Alignment:</strong> Pruned unhelpful content nodes and aligned product copy to answer conversational search engine criteria.
+                  <strong className="text-white">Intent‑Driven Content Alignment:</strong> Unhelpful content nodes were pruned. Product copy was aligned to conversational search criteria — the way AI actually evaluates relevance.
                 </div>
               </li>
             </ul>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif mt-4">
+              This wasn’t “more SEO.”<br />
+              It was structural clarity.
+            </p>
           </div>
 
           {/* Technical Performance */}
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white">Technical Performance Signals: Refinement Over Reach</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Google Search Console telemetry revealed a clear refinement pattern. Although total impressions dropped, targeted engagement increased dramatically:
+              Google Search Console showed a clear refinement pattern. Total impressions dropped, but qualified engagement surged.
             </p>
             <blockquote className="border-l-2 border-aeo-purple pl-4 my-6 text-sm text-white/50 font-serif italic">
-              &ldquo;Fewer impressions. Better impressions. Search engines stopped serving low-intent queries, maximizing conversion intent.&rdquo;
+              &ldquo;Fewer impressions. Better impressions. Search engines stopped serving low‑intent queries and focused on conversion intent.&rdquo;
             </blockquote>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
+              <strong>CTR:</strong> +94%<br />
+              <strong>Impressions:</strong> &ndash;20%
+            </p>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
+              This is what happens when AI engines finally understand what a business is and who it serves.
+            </p>
           </div>
 
           {/* Chart 2: Search Quality Shift (Line Chart) */}
@@ -307,9 +444,9 @@ export default function BabyBentoCaseStudyPage() {
 
           {/* On-Site Behaviour */}
           <div className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">On‑Site Behaviour: Deeper Engagement</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">On‑Site Behaviour: Deeper, More Intent‑Aligned Engagement</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              GA4 metrics verified that qualified traffic stayed longer and took more key conversion actions:
+              GA4 confirmed the shift:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
@@ -321,6 +458,9 @@ export default function BabyBentoCaseStudyPage() {
                 <div className="text-lg font-bold text-aeo-cyan mt-1">+24.8%</div>
               </div>
             </div>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif mt-2">
+              Users stayed longer, explored more, and took more meaningful actions. High‑intent traffic behaves differently when the structure matches the intent.
+            </p>
           </div>
 
           {/* Chart 3: Engagement Depth (Bar Chart) */}
@@ -354,11 +494,18 @@ export default function BabyBentoCaseStudyPage() {
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white">Commercial Inflection: H2 Recovery</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              The second half of the year showed a clear commercial recovery: sales volume stabilised with an upward scaling trend, and promotional markdown growth moderated from **+46% to +28%**.
+              The second half of the year showed a clear commercial reversal:
             </p>
+            <ul className="list-disc pl-5 text-sm text-white/70 font-light leading-relaxed font-serif space-y-1">
+              <li><strong>Sales:</strong> +17%</li>
+              <li><strong>Discount growth moderated:</strong> from +46% &rarr; +28%</li>
+            </ul>
             <blockquote className="border-l-2 border-pink-500 pl-4 my-6 text-sm text-white/50 font-serif italic">
-              &ldquo;When search engines understand your business value, your customers find you without needing a constant discount.&rdquo;
+              &ldquo;When search engines understand your business value, customers find you without needing a constant discount.&rdquo;
             </blockquote>
+            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
+              Returns rose in H2, but only in proportion to increased sales volume — normal scaling behaviour, not a regression.
+            </p>
           </div>
 
           {/* Chart 4: H2 Inflection Point (Line Chart) */}
@@ -412,19 +559,11 @@ export default function BabyBentoCaseStudyPage() {
             </div>
           </div>
 
-          {/* Balanced Parameters */}
-          <div className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">Balanced Parameters & Operational Context</h2>
-            <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Returns rose in H2, but only in proportion to increased sales volume. This is normal scaling behaviour—not a strategic regression. While promotional pressure eased, structural optimisation does not eliminate promotions entirely; it reduces reliance on them.
-            </p>
-          </div>
-
           {/* Conclusion */}
           <div className="p-8 bg-gradient-to-r from-aeo-cyan/5 to-aeo-purple/5 border border-white/10 rounded-2xl space-y-4">
             <h3 className="text-xl font-bold text-white">Conclusion</h3>
             <p className="text-sm text-white/80 leading-relaxed font-serif font-light">
-              Baby Bento’s turnaround was not driven by publishing more content, targeting more generic keywords, or increasing ad spend. It was driven by structural clarity, intent alignment, and answer-engine readability.
+              Baby Bento’s turnaround wasn’t driven by publishing more content, chasing keywords, or increasing ad spend. It was driven by structural clarity, intent alignment, and answer‑engine readability.
             </p>
             <p className="text-base text-aeo-cyan font-bold font-soehne-breit mt-2">
               &ldquo;When AI understands your business, your customers finally can.&rdquo;
