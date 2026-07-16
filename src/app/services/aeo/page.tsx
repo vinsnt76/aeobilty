@@ -22,16 +22,260 @@ export default function AEORootPage() {
         "@type": "Organization",
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
-        "url": "https://aeobility.com.au"
+        "url": "https://aeobility.com.au",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/android-chrome-512x512.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services/aeo#faq",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/services/aeo#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does AEO take to show results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most businesses see improvements within 30–60 days as AI engines re-crawl structured content. Full optimisation across all pillars typically occurs over 90 days, depending on site size and complexity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does AEO help with Google Maps and local visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. AEO strengthens entity clarity, which directly improves GEO signals, map visibility, and local intent matching. AI systems rely heavily on location and entity consistency."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What deliverables are included in AEO consulting and implementation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Deliverables include entity salience mapping, context chunk refactoring, structured schema markup, answer block creation, AI engine visibility checks, and optimisation tables outlining sprint progress."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is AEO suitable for small Australian businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. AEO is designed for local entities that need to be discoverable across AI platforms, maps, and search engines. It’s especially effective for service-based businesses in Perth and across Australia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get started with AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can begin with a Visibility Check, book a strategy call, or choose one of our AEO packages. Each option helps you understand where your business stands across AI engines and what optimisation is needed."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/aeo#webpage",
+        "url": "https://aeobility.com.au/services/aeo",
+        "name": "Answer Engine Optimisation (AEO) Services — AEObility",
+        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets for conversational AI engines and RAG systems.",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "about": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
+        "mentions": [
+          { "@type": "Thing", "name": "Artificial Intelligence" },
+          { "@type": "Thing", "name": "Search Engine Optimisation" },
+          { "@type": "Thing", "name": "Large Language Models" }
+        ],
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/services/aeo#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
+        "hasPart": [
+          { "@id": "https://aeobility.com.au/services/aeo#howto" },
+          { "@id": "https://aeobility.com.au/services/aeo#glossary" },
+          { "@id": "https://aeobility.com.au/services/aeo#benefits" },
+          { "@id": "https://aeobility.com.au/services/aeo#faq" }
+        ]
       },
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/aeo#service",
-        "name": "Answer Engine Optimisation (AEO) Services",
-        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and retrieval-augmented generation (RAG) systems.",
+        "name": "Answer Engine Optimisation (AEO)",
+        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and RAG systems.",
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/services/aeo#webpage"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AEO Service Pillars",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AEO Visibility Check"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AEO Strategy"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AEO Implementation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AEO Sprints"
+              }
+            }
+          ]
         }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://aeobility.com.au/services/aeo#benefits",
+        "name": "Why AEO Matters",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Get Found"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Get Understood"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Get Chosen"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Get Local Visibility"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Build Trust Signals"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://aeobility.com.au/services/aeo#howto",
+        "name": "How We Work (AEO Workflow)",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "01 Telemetry Scan",
+            "text": "Assess crawling index authorizations and baseline citation share rates."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "02 Strategy",
+            "text": "Map semantic category graphs and construct conversational answer grids."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "03 Implementation",
+            "text": "Deploy JSON-LD schemas and restructure website copy into context chunks."
+          }
+        ]
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": "https://aeobility.com.au/services/aeo#glossary",
+        "name": "AEO Glossary of Terms",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "name": "Entity",
+            "description": "A distinct, well-defined conceptual object (like a business, person, or location) that machines recognize and link."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Salience",
+            "description": "A mathematical score reflecting how relevant a specific entity is within a given body of content."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Atomic Answer Block",
+            "description": "A concise, direct text response structured specifically for extraction, indexing, and synthesis by LLMs."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Context Chunk",
+            "description": "A section of text parsed by crawlers containing enough semantic relationships to convey a complete answer."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Citation Index",
+            "description": "A metric that scores how often and how confidently conversational search engines quote your business."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "RAG (Retrieval-Augmented Generation)",
+            "description": "The technical framework of pulling external site data to enrich LLM response generations."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services/aeo#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://aeobility.com.au/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AEO Services",
+            "item": "https://aeobility.com.au/services/aeo"
+          }
+        ]
       }
     ]
   };
