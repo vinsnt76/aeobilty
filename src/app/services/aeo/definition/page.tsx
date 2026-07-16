@@ -20,10 +20,74 @@ export default function AEODefinitionPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What are AEO services?",
+        "name": "What does AEO mean in digital marketing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesised, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search — the effort AI systems spend interpreting unclear content — and secure brand citations inside conversational AI summaries."
+          "text": "AEO (Answer Engine Optimisation) is the process of structuring your content so AI systems, LLMs, and modern search engines can accurately read, index, and cite your business information. It focuses on machine understanding rather than traditional keyword ranking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is AEO different from SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO optimises for link-based search results. AEO optimises for answer generation, semantic retrieval, and citation inclusion inside AI-driven platforms like ChatGPT, Claude, Gemini, and Perplexity. It prioritises entities, embeddings, and structured content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does AEO matter now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI-first search engines increasingly bypass classic search results and generate direct answers. If your content isn’t machine-readable, you won’t be included or cited. AEO ensures your business is visible inside these new answer environments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do modern AI systems read and index content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI systems break your content into semantic chunks, convert them into embeddings, and store them in vector databases. Retrieval engines then match user queries to your content using dense similarity scoring and passage-level extraction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is semantic chunking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Semantic chunking is the process of dividing your content into small, meaningful units that AI systems can ingest and retrieve. Clean chunking improves accuracy, reduces hallucination, and increases your likelihood of being cited."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are embeddings and why are they important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Embeddings are numerical representations of meaning. They allow AI systems to compare your content to user queries using vector similarity. Strong embeddings improve your visibility in AI-driven search and recommendation engines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does AEO help my business get cited by AI platforms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AEO clarifies your entities, restructures your content into machine-readable formats, and aligns your information with the retrieval patterns used by LLMs. This increases your chances of being selected as a trusted citation source."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AEO relevant for small Australian businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AEO is especially valuable for local service providers who rely on visibility across maps, search engines, and AI platforms. Clear entity signals help AI systems understand your location, services, and relevance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where should I start with AEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Begin by understanding how AI systems interpret your content. Then apply structured schema, semantic chunking, and entity optimisation. AEObility’s AEO services provide a complete framework for this process."
         }
       }
     ]
@@ -91,15 +155,88 @@ export default function AEODefinitionPage() {
           </div>
 
           {/* FAQ section matching the FAQPage Schema exactly (Fidelity Rule verified) */}
-          <div className="flex flex-col gap-4">
-            <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01]">
-              <div className="p-6">
-                <h3 id="what-are-aeo-services" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are AEO services?</h3>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  AEO services are professional digital marketing solutions that restructure, format, and optimise website content to be accurately ingested, synthesised, and cited by AI answer engines like ChatGPT, Gemini, and Perplexity. By refactoring information into modular, high-density chunks, these services reduce the Delphic Cost of search — the effort AI systems spend interpreting unclear content — and secure brand citations inside conversational AI summaries.
-                </p>
-              </div>
-            </div>
+          <div className="space-y-4">
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                What does AEO mean in digital marketing?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                AEO (Answer Engine Optimisation) is the process of structuring your content so AI systems, LLMs, and modern search engines can accurately read, index, and cite your business information. It focuses on machine understanding rather than traditional keyword ranking.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                How is AEO different from SEO?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                SEO optimises for link-based search results. AEO optimises for answer generation, semantic retrieval, and citation inclusion inside AI-driven platforms like ChatGPT, Claude, Gemini, and Perplexity. It prioritises entities, embeddings, and structured content.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                Why does AEO matter now?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                AI-first search engines increasingly bypass classic search results and generate direct answers. If your content isn’t machine-readable, you won’t be included or cited. AEO ensures your business is visible inside these new answer environments.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                How do modern AI systems read and index content?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                AI systems break your content into semantic chunks, convert them into embeddings, and store them in vector databases. Retrieval engines then match user queries to your content using dense similarity scoring and passage-level extraction.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                What is semantic chunking?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                Semantic chunking is the process of dividing your content into small, meaningful units that AI systems can ingest and retrieve. Clean chunking improves accuracy, reduces hallucination, and increases your likelihood of being cited.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                What are embeddings and why are they important?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                Embeddings are numerical representations of meaning. They allow AI systems to compare your content to user queries using vector similarity. Strong embeddings improve your visibility in AI-driven search and recommendation engines.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                How does AEO help my business get cited by AI platforms?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                AEO clarifies your entities, restructures your content into machine-readable formats, and aligns your information with the retrieval patterns used by LLMs. This increases your chances of being selected as a trusted citation source.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                Is AEO relevant for small Australian businesses?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                Yes. AEO is especially valuable for local service providers who rely on visibility across maps, search engines, and AI platforms. Clear entity signals help AI systems understand your location, services, and relevance.
+              </p>
+            </details>
+            <details className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors">
+              <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
+                Where should I start with AEO?
+                <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                Begin by understanding how AI systems interpret your content. Then apply structured schema, semantic chunking, and entity optimisation. AEObility’s AEO services provide a complete framework for this process.
+              </p>
+            </details>
           </div>
 
           {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
