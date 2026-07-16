@@ -243,6 +243,42 @@ export default function ServicesPage() {
             </div>
           </section>
 
+          {/* FAQ Section */}
+          <section className="border-t border-white/5 pt-16">
+            <div className="max-w-3xl mx-auto space-y-8">
+              <h2 className="text-3xl font-bold text-white text-center">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
+                    Do AI Search and GEO Marketing work together?
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                  </summary>
+                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                    Absolutely. AI systems use location data to personalise answers. Strong GEO signals help AI understand where your business operates, while AI Search optimisation helps AI understand what you do.
+                  </p>
+                </details>
+                <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
+                    Will this help me appear in AI-generated answers for local queries?
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                  </summary>
+                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                    Yes. When someone asks an AI system for a local service, your structured data, GEO signals, and semantic clarity determine whether your business is included in the generated answer.
+                  </p>
+                </details>
+                <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
+                    Is this relevant for service-based businesses in Australia?
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                  </summary>
+                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                    More than ever. AI systems are rapidly replacing traditional search for local queries. Businesses in WA and across Australia need both GEO and AI Search optimisation to stay visible.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </section>
+
         </div>
       </main>
 
