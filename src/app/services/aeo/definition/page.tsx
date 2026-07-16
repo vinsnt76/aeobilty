@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -146,12 +147,130 @@ export default function AEODefinitionPage() {
         {/* Right Side: Core Content */}
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
+            <div className="w-full h-[250px] sm:h-[350px] relative rounded-2xl overflow-hidden mb-8 border border-white/10">
+              <Image 
+                src="/what-is-definiton-of-aeo_AEObility.webp" 
+                alt="Definition of Answer Engine Optimisation (AEO)" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
               What is AEO and <span className="text-gradient-aeo">Why Does It Matter?</span>
             </h1>
-            <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Let’s make this easy to understand. Here is why search visibility is changing, why AI assistants recommend businesses, and how machines interpret information.
+            <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light mb-8">
+              Answer Engine Optimisation is the practice of structuring business information so AI systems can read it, understand it, and cite it in generated answers. It matters because modern search behaviour is shifting to AI‑first discovery, where brands are selected as data sources rather than clicked as web pages.
             </p>
+
+            <div className="space-y-6 mb-10">
+              {/* Block 1 */}
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">1. AEO shifts search from pages to passages</h3>
+                <p className="text-sm text-white/60 leading-relaxed font-light">
+                  AEO optimises content at the passage level so AI engines can extract specific fragments. Traditional SEO ranks full URLs. AI systems retrieve small chunks, convert them into embeddings, and match them to user intent. Businesses need concise, structured answer blocks to appear in these generated responses.
+                </p>
+              </div>
+
+              {/* Block 2 */}
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">2. AEO aligns content with semantic retrieval</h3>
+                <p className="text-sm text-white/60 leading-relaxed font-light">
+                  AI systems use embeddings and vector similarity to understand meaning. They match concepts rather than keywords. This allows related ideas to be retrieved even when phrasing differs. Brands that structure content into clear semantic units are more likely to be selected and cited by AI engines.
+                </p>
+              </div>
+
+              {/* Block 3 */}
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">3. AEO prepares content for query expansion</h3>
+                <p className="text-sm text-white/60 leading-relaxed font-light">
+                  AI engines expand each user query into multiple hidden subqueries. They search for definitions, comparisons, constraints, and procedures. Pages that contain modular, answer‑ready sections satisfy this expanded intent tree. This increases the chance of being included in the final generated answer.
+                </p>
+              </div>
+
+              {/* Block 4 */}
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">4. AEO prevents context loss during retrieval</h3>
+                <p className="text-sm text-white/60 leading-relaxed font-light">
+                  AI systems struggle with long, unstructured text. They often miss qualifiers or exceptions buried in the middle of paragraphs. Adaptive chunking keeps directives and conditions together. This improves retrieval accuracy and reduces the risk of misinterpretation in generated answers.
+                </p>
+              </div>
+
+              {/* Block 5 */}
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">5. AEO strengthens trust and citation signals</h3>
+                <p className="text-sm text-white/60 leading-relaxed font-light">
+                  AI engines prefer sources with clear provenance and consistent facts. Structured schema, visible updates, and aligned terminology help models verify information. Brands that maintain clean, unambiguous data across their domain earn higher confidence scores and more frequent citations.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-2xl text-center mb-10">
+              <p className="text-base text-white/90 font-semibold leading-relaxed">
+                AEO formats business information into short, structured, semantically aligned chunks that AI systems can ingest as embeddings, retrieve through vector similarity, and cite confidently in generated answers.
+              </p>
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-xl font-bold mb-4">AEO vs SEO</h2>
+              <div className="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.02]">
+                <table className="w-full text-left text-sm text-white/70">
+                  <thead className="bg-white/5 text-white/90">
+                    <tr>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">Concept</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">SEO</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10 text-aeo-cyan">AEO</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5 font-light">
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-white/80">Retrieval</td>
+                      <td className="px-6 py-4">lexical</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">semantic</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-white/80">Ranking</td>
+                      <td className="px-6 py-4">links</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">embeddings</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-white/80">Output</td>
+                      <td className="px-6 py-4">SERP</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">generated answers</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-white/80">Optimisation</td>
+                      <td className="px-6 py-4">whole page</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">passage level</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-xl font-bold mb-4">Why AEO Matters</h2>
+              <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">
+                AI systems generate answers instead of listing links. If your content is not machine readable, you will not be included or cited. AEO ensures visibility, understanding, and selection across AI platforms.
+              </p>
+              <div className="p-5 bg-white/[0.01] border border-white/10 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-aeo-purple"></div>
+                <h4 className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2 font-mono">Example</h4>
+                <p className="text-sm text-white/80 italic font-light leading-relaxed">
+                  "When a user asks for the best electrician in Perth, the AI converts the query into a vector and compares it to your content using cosine similarity. If your content has strong entity clarity and adaptive chunking, your passage scores higher and is selected for the generated answer."
+                </p>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 mb-10">
+              <Link href="/contact" className="btn-primary">
+                Let's Talk AEO
+              </Link>
+              <Link href="/book" className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all">
+                Jump on a Quick Call
+              </Link>
+            </div>
           </div>
 
           {/* FAQ section matching the FAQPage Schema exactly (Fidelity Rule verified) */}
