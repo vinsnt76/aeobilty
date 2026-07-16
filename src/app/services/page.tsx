@@ -227,8 +227,8 @@ export default function ServicesPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/service-dashboard-layers.png"
-                  alt="AEObility service dashboard showing optimisation layers"
+                  src="/aeo-services-perth_AEObilty.webp"
+                  alt="AEObility services for local businesses in Perth and across Australia, highlighting Answer Engine Optimisation (AEO), AI Search, and GEO Marketing to improve visibility in AI models and search engines."
                   fill
                   priority
                   className="object-cover"
