@@ -25,35 +25,142 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AEO, AI Search & GEO Marketing Services",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Perth",
-        "addressRegion": "Western Australia",
-        "addressCountry": "Australia"
-      }
-    },
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Perth"
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/android-chrome-512x512.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "Western Australia",
+          "addressCountry": "Australia"
+        }
       },
       {
-        "@type": "AdministrativeArea",
-        "name": "Western Australia"
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au/",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
       },
       {
-        "@type": "Country",
-        "name": "Australia"
+        "@type": ["WebPage", "AboutPage"],
+        "@id": "https://aeobility.com.au/services#webpage",
+        "url": "https://aeobility.com.au/services",
+        "name": "Our Services: AEO, AI Search & GEO Marketing | AEObility",
+        "description": "See how AEObility helps Australian small businesses become discoverable, understandable, and chosen across search engines, maps, and AI platforms.",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/services#breadcrumb"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Our Core Service Layers",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Service",
+                "name": "Answer Engine Optimisation (AEO)",
+                "url": "https://aeobility.com.au/services/aeo",
+                "description": "Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
+                "provider": {
+                  "@id": "https://aeobility.com.au/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Service",
+                "name": "Local & GEO Map Marketing",
+                "url": "https://aeobility.com.au/services/geo-marketing",
+                "description": "Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries in Perth and across Australia.",
+                "provider": {
+                  "@id": "https://aeobility.com.au/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Service",
+                "name": "AI Search Strategy",
+                "url": "https://aeobility.com.au/services/ai-search-marketing",
+                "description": "Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
+                "provider": {
+                  "@id": "https://aeobility.com.au/#organization"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services#faq",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/services#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do AI Search and GEO Marketing work together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. AI systems use location data to personalise answers. Strong GEO signals help AI understand where your business operates, while AI Search optimisation helps AI understand what you do."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this help me appear in AI-generated answers for local queries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. When someone asks an AI system for a local service, your structured data, GEO signals, and semantic clarity determine whether your business is included in the generated answer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this relevant for service-based businesses in Australia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "More than ever. AI systems are rapidly replacing traditional search for local queries. Businesses in WA and across Australia need both GEO and AI Search optimisation to stay visible."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://aeobility.com.au/services"
+          }
+        ]
       }
-    ],
-    "description": "Professional Answer Engine Optimisation (AEO), local GEO map marketing, and conversational AI search readiness telemetry.",
-    "serviceType": "Search & AI Visibility Marketing"
+    ]
   };
 
   const layers = [
