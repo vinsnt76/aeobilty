@@ -95,66 +95,7 @@ export default function BabyBentoCaseStudyPage() {
     ],
 
 
-    "articleBody": {
-      "executiveSummary": {
-        "problem": "Organic momentum was slipping, discount dependency was rising, and search engines had lost clarity around Baby Bento’s entity structure.",
-        "solution": "AEObility rebuilt structural clarity using schema injection, intent‑aligned routing, and conversational content alignment.",
-        "outcome": {
-          "salesUplift": "+17–18%",
-          "ctrImprovement": "+95%",
-          "qualifiedClicks": "+55%",
-          "rankingPosition": "+29%",
-          "engagement": "+28%"
-        }
-      },
-
-      "baselineChallenge": {
-        "discountGrowthYoY": "+46%",
-        "returnGrowthYoY": "+39%",
-        "organicMomentum": "Declining",
-        "quote": "When search engines lose clarity, your high‑intent traffic disappears. Promotions become the only lever left."
-      },
-
-      "structuralPivot": {
-        "pillars": [
-          {
-            "name": "Product Schema Injector",
-            "description": "Mapped detailed schema.org attributes to make product specifications readable to modern AI ranking systems."
-          },
-          {
-            "name": "Collection Architecture Re‑engineering",
-            "description": "Rebuilt routing and hierarchy around intent clusters instead of legacy keyword structures."
-          },
-          {
-            "name": "Guide Engine JS Deployment",
-            "description": "Introduced interactive decision assistants that created strong crawl signals and improved user clarity."
-          },
-          {
-            "name": "Intent‑Driven Content Alignment",
-            "description": "Pruned unhelpful nodes and aligned product copy to conversational search criteria."
-          }
-        ]
-      },
-
-      "technicalSignals": {
-        "impressions": "-20%",
-        "ctr": "+94%",
-        "quote": "Fewer impressions. Better impressions. Search engines stopped serving low‑intent queries and focused on conversion intent."
-      },
-
-      "engagementSignals": {
-        "engagementTime": "+28%",
-        "eventCount": "+24.8%"
-      },
-
-      "commercialInflection": {
-        "salesGrowth": "+17%",
-        "discountModeration": "+28%",
-        "quote": "When search engines understand your business value, customers find you without needing a constant discount."
-      },
-
-      "conclusion": "Baby Bento’s turnaround wasn’t driven by more content, more keywords, or more ads. It was driven by structural clarity, intent alignment, and answer‑engine readability."
-    },
+    "articleBody": "Organic momentum was slipping, discount dependency was rising, and search engines had lost clarity around Baby Bento’s entity structure. AEObility rebuilt structural clarity using schema injection, intent-aligned routing, and conversational content alignment. This led to a 17–18% sales uplift, 95% CTR improvement, and +55% qualified clicks. Baby Bento’s turnaround wasn’t driven by more content, more keywords, or more ads. It was driven by structural clarity, intent alignment, and answer-engine readability.",
 
     "potentialAction": {
       "@type": "ReadAction",
