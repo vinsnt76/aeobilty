@@ -24,7 +24,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aeobility.com.au"),
   title: "AEObility | Get Found. Get Chosen.",
-  description: "AEObility helps Australian small businesses get found across Search, Maps, and AI. Get a free visibility audit, a complimentary 15-minute call, and a 90-Day AI Success Blueprint.",
+  description: "AEObility helps Australian small businesses get found across Search, Maps, and AI platforms. Get a free visibility audit, a complimentary 15-minute call, and a 90-Day AI Success Blueprint.",
   keywords: ["visibility audit", "local SEO", "AI search", "Perth SEO", "small business marketing", "get more leads", "map rankings", "Google Business Profile optimisation"],
   authors: [{ name: "AEObility" }],
   robots: "index, follow",
