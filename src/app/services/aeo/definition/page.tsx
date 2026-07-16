@@ -204,7 +204,7 @@ export default function AEODefinitionPage() {
             <div className="w-full relative rounded-2xl overflow-hidden mb-8 border border-white/10 bg-white/[0.02]">
               <Image 
                 src="/what-is-definiton-of-aeo_AEObility.webp" 
-                alt="Definition of Answer Engine Optimisation (AEO)" 
+                alt="Answer Engine Optimisation (AEO) defined by AEObility. Illustration showing how AI systems and LLMs use semantic chunking, embeddings, and vector similarity to retrieve and cite business data." 
                 width={1200}
                 height={630}
                 className="w-full h-auto object-cover"
