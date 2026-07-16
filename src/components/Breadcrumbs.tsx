@@ -12,26 +12,9 @@ export default function Breadcrumbs() {
   // Split paths and build breadcrumb trail
   const pathParts = pathname.split('/').filter(Boolean);
   
-  // Format labels nicely
+  // Format labels to match the literal lowercase path segments as requested
   const formatLabel = (part: string) => {
-    const customLabels: Record<string, string> = {
-      'aeo': 'AEO Services',
-      'definition': 'Definition',
-      'comparison': 'Comparison',
-      'procedures': 'Procedures',
-      'constraints': 'Constraints',
-      'costs-timing': 'Costs & Timing',
-      'knowledge-hub': 'Knowledge Hub',
-      'solutions': 'Solutions',
-      'about': 'About Us',
-      'contact': 'Contact & Support',
-      'vince-baker': 'Vince Baker'
-    };
-
-    if (customLabels[part]) return customLabels[part];
-    return part
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, (char) => char.toUpperCase());
+    return part.toLowerCase();
   };
 
   const breadcrumbs = pathParts.map((part, index) => {

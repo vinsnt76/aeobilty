@@ -5,36 +5,29 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "What stops my business from showing up? — AEObility",
-  description: "FAQ on eligibility criteria for Answer Engine Optimisation (AEO) and what blockers stop your business from showing up in AI search engines.",
+  title: "Local Business Visibility across Maps & AI Search",
+  description: "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/constraints",
+    canonical: "https://aeobility.com.au/services/aeo/local-business",
   },
 };
 
-export default function AEOConstraintsPage() {
+export default function LocalBusinessAEOPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://aeobility.com.au/services/aeo/constraints#faq",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Can a small website benefit from AEO services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, smaller sites can benefit disproportionately because every high-density page carries massive weight in how models understand your domain. By building a clean, highly structured topic graph of core entities and explicit relationships, small sites can establish tight, authoritative semantic nodes that get cited for niche, long-tail queries even without a massive backlink profile."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the primary risks of not optimising for AEO in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Failing to optimise content structure results in 'attention dilution' and the 'lost in the middle' effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand's facts or completely ignore your products in personalized conversational summaries."
-        }
-      }
-    ]
+    "@type": "Service",
+    "@id": "https://aeobility.com.au/services/aeo/local-business#service",
+    "name": "Local Business Visibility",
+    "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
+    "provider": {
+      "@type": "Organization",
+      "name": "AEObility",
+      "@id": "https://aeobility.com.au"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Australia"
+    }
   };
 
   return (
@@ -71,7 +64,7 @@ export default function AEOConstraintsPage() {
               <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 3. How do I make my business AI-readable?
               </Link>
-              <Link href="/services/aeo/constraints" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
               </Link>
               <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
@@ -80,7 +73,7 @@ export default function AEOConstraintsPage() {
               <Link href="/services/aeo/shopify" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 6. Shopify AEO Services
               </Link>
-              <Link href="/services/aeo/local-business" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+              <Link href="/services/aeo/local-business" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 7. Local Business Visibility
               </Link>
             </nav>
@@ -91,28 +84,27 @@ export default function AEOConstraintsPage() {
         <section className="lg:col-span-8 flex flex-col gap-8">
           <div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-              What Stops My Business from <span className="text-gradient-aeo">Showing Up?</span>
+              Local Business Visibility: <span className="text-gradient-aeo">GEO & AI Search System</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Here’s what’s actually blocking your visibility. Review authority thresholds, trust signals, weak entities, and local intent mismatches.
+              Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.
             </p>
           </div>
 
-          {/* FAQ section matching the FAQPage Schema exactly (Fidelity Rule verified) */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl font-bold">Eligibility & Trust FAQ</h2>
-            <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01] divide-y divide-white/5">
+            <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01]">
               <div className="p-6">
-                <h3 id="can-a-small-website-benefit-from-aeo" className="font-semibold text-sm sm:text-base text-white/95 mb-2">Can a small website benefit from AEO services?</h3>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Yes, smaller sites can benefit disproportionately because every high-density page carries massive weight in how models understand your domain. By building a clean, highly structured topic graph of core entities and explicit relationships, small sites can establish tight, authoritative semantic nodes that get cited for niche, long-tail queries even without a massive backlink profile.
+                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Dominating Local Map Packs</h3>
+                <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
+                  Appearing in the top 3 Map Pack results is critical for local businesses. We optimize your Google Business Profile, ensure NAP (Name, Address, Phone) consistency across the web, and build robust local entity profiles to cement your geographic authority.
                 </p>
-              </div>
-
-              <div className="p-6">
-                <h3 id="what-are-the-primary-risks-of-not-optimising" className="font-semibold text-sm sm:text-base text-white/95 mb-2">What are the primary risks of not optimising for AEO in 2026?</h3>
+                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Voice & Conversational Assistant Proximity</h3>
+                <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
+                  When a user asks Siri or Google Assistant for "a plumber near me," proximity algorithms kick in. We structure your digital footprint to target hyper-local coordinates and conversational queries, ensuring AI assistants readily recommend your services.
+                </p>
+                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Clear Entity Signals for Local Trades</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Failing to optimise content structure results in &apos;attention dilution&apos; and the &apos;lost in the middle&apos; effect, where LLMs fail to retrieve critical caveats and safety qualifiers. Furthermore, unoptimised pages produce noisy, averaged vector embeddings, causing generative engines to misinterpret your brand&apos;s facts or completely ignore your products in personalized conversational summaries.
+                  We deploy specific ServiceArea and LocalBusiness schemas to explicitly define your coverage zones and service offerings. By providing clean, structured data, we eliminate ambiguity for search engines and increase your likelihood of appearing for highly targeted, location-based searches.
                 </p>
               </div>
             </div>
@@ -122,11 +114,11 @@ export default function AEOConstraintsPage() {
           <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
-              <Link href="/services/aeo/comparison" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Is AEO just SEO with a new name?
+              <Link href="/services/aeo/shopify" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Shopify AEO Services & Structured Feeds
               </Link>
-              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                How do I make my business easier for AI to understand?
+              <Link href="/services/geo-marketing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
+                Explore dedicated GEO Marketing Strategies
               </Link>
             </div>
           </div>

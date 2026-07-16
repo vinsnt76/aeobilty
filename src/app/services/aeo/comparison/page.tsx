@@ -77,6 +77,12 @@ export default function AEOVsSEOPage() {
               <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 5. How much does AEO cost & what do I get?
               </Link>
+              <Link href="/services/aeo/shopify" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                6. Shopify AEO Services
+              </Link>
+              <Link href="/services/aeo/local-business" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
+                7. Local Business Visibility
+              </Link>
             </nav>
           </div>
         </aside>
