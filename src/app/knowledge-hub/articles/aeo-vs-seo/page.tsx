@@ -28,6 +28,15 @@ export default function AeoVsSeoArticlePage() {
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au/",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
+      },
+      {
         "@type": "Person",
         "@id": "https://aeobility.com.au/vince-baker#author",
         "name": "Vinnie Baker",
@@ -44,7 +53,10 @@ export default function AeoVsSeoArticlePage() {
         "name": "AEO vs SEO: The Complete Guide to AI Search",
         "description": "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
         "isPartOf": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo#breadcrumb"
         }
       },
       {
@@ -58,7 +70,10 @@ export default function AeoVsSeoArticlePage() {
         },
         "headline": "AEO vs SEO: The Complete Guide to AI Search",
         "description": "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
-        "image": "https://aeobility.com.au/traditional-seo-vs-aeo_AEObility.webp",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/traditional-seo-vs-aeo_AEObility.webp"
+        },
         "author": {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
