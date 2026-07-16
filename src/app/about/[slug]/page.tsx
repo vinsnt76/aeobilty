@@ -11,9 +11,9 @@ import { roleConfigs } from '../config';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
@@ -23,7 +23,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const config = roleConfigs[params.slug];
+  const { slug } = await params;
+  const config = roleConfigs[slug];
   if (!config) return {};
   
   return {
@@ -32,8 +33,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const config = roleConfigs[params.slug];
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  const config = roleConfigs[slug];
   if (!config) {
     notFound();
   }
