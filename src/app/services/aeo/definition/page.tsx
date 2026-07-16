@@ -6,8 +6,8 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "What is AEO and why does it matter for my business? — AEObility",
-  description: "AEO services restructure website content to be ingested, synthesized, and cited by AI answer engines. Learn what AEO actually is and why it matters.",
+  title: "What is AEO in Digital Marketing? Meaning & Concepts — AEObility",
+  description: "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/definition",
   },
@@ -158,62 +158,82 @@ export default function AEODefinitionPage() {
               />
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-              What is AEO and <span className="text-gradient-aeo">Why Does It Matter?</span>
+              What is AEO in Digital Marketing? <span className="text-gradient-aeo">Meaning & Concepts</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light mb-8">
-              Answer Engine Optimisation is the practice of structuring business information so AI systems can read it, understand it, and cite it in generated answers. It matters because modern search behaviour is shifting to AI‑first discovery, where brands are selected as data sources rather than clicked as web pages.
+              AEO, or <strong className="text-white font-semibold">Answer Engine Optimisation</strong>, is the practice of organising your business information so AI systems can read it, understand it, and confidently cite it in generated answers.
             </p>
 
+            {/* Why AEO matters for your business */}
+            <div className="mb-10">
+              <h2 className="text-xl font-bold mb-4">Why AEO matters for your business</h2>
+              <div className="space-y-4 text-sm text-white/70 leading-relaxed font-light">
+                <p>
+                  Modern search behaviour is shifting. People are asking AI tools questions instead of clicking through pages. AI chooses which businesses to use as data sources, not just which links to show.
+                </p>
+                <p>
+                  Answer Engine Optimisation helps your business stay <strong className="text-white font-semibold">discoverable</strong>, <strong className="text-white font-semibold">understandable</strong>, and <strong className="text-white font-semibold">recommended</strong> across search, maps, and generative AI corridors.
+                </p>
+              </div>
+            </div>
+
             <div className="space-y-6 mb-10">
+              <h2 className="text-xl font-bold mb-2">The core principles of Answer Engine Optimisation</h2>
+              <p className="text-sm text-white/70 leading-relaxed font-light mb-6">
+                AEO focuses on how modern AI systems read, index, and cite business information. Four key concepts sit underneath: <strong className="text-white font-semibold">embeddings</strong>, <strong className="text-white font-semibold">vector similarity</strong>, <strong className="text-white font-semibold">dense retrieval</strong>, and <strong className="text-white font-semibold">passage-level extraction</strong>.
+              </p>
+
               {/* Block 1 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">1. AEO shifts search from pages to passages</h3>
-                <p className="text-sm text-white/60 leading-relaxed font-light">
-                  AEO optimises content at the passage level so AI engines can extract specific fragments. Traditional SEO ranks full URLs. AI systems retrieve small chunks, convert them into embeddings, and match them to user intent. Businesses need concise, structured answer blocks to appear in these generated responses.
-                </p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">1. Search has shifted from pages to passages</h3>
+                <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
+                  <p>Traditional SEO ranks whole pages and URLs. AI systems extract small, meaningful passages instead of reading an entire page.</p>
+                  <p>To be included in AI-generated answers, your content needs clear, structured answer blocks that can be lifted and reused as part of a response.</p>
+                </div>
               </div>
 
               {/* Block 2 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">2. AEO aligns content with semantic retrieval</h3>
-                <p className="text-sm text-white/60 leading-relaxed font-light">
-                  AI systems use embeddings and vector similarity to understand meaning. They match concepts rather than keywords. This allows related ideas to be retrieved even when phrasing differs. Brands that structure content into clear semantic units are more likely to be selected and cited by AI engines.
-                </p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">2. How modern AI systems read content</h3>
+                <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
+                  <p>AI systems convert text into <strong className="text-white font-medium">embeddings</strong> — mathematical representations of meaning. They don’t just match keywords; they match concepts.</p>
+                  <p>This allows AI to recognise related ideas even when the wording is different, as long as your content is organised into clear, meaningful sections.</p>
+                </div>
               </div>
 
               {/* Block 3 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">3. AEO prepares content for query expansion</h3>
-                <p className="text-sm text-white/60 leading-relaxed font-light">
-                  AI engines expand each user query into multiple hidden subqueries. They search for definitions, comparisons, constraints, and procedures. Pages that contain modular, answer‑ready sections satisfy this expanded intent tree. This increases the chance of being included in the final generated answer.
-                </p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">3. Semantic retrieval explained</h3>
+                <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
+                  <p><strong className="text-white font-medium">Semantic retrieval</strong> is the process of AI comparing the meaning of a question to the meaning inside your content.</p>
+                  <p>AEO uses <strong className="text-white font-medium">semantic chunking</strong> — organising content into small, meaningful blocks — so AI can easily ingest, understand, and select the right information when building an answer.</p>
+                </div>
               </div>
 
               {/* Block 4 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">4. AEO prevents context loss during retrieval</h3>
-                <p className="text-sm text-white/60 leading-relaxed font-light">
-                  AI systems struggle with long, unstructured text. They often miss qualifiers or exceptions buried in the middle of paragraphs. Adaptive chunking keeps directives and conditions together. This improves retrieval accuracy and reduces the risk of misinterpretation in generated answers.
-                </p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">4. Dense retrieval & query expansion</h3>
+                <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
+                  <p>When someone asks a question, AI expands it into multiple hidden sub-queries. It looks for definitions, comparisons, constraints, procedures, and local relevance.</p>
+                  <p>Pages with modular, answer-ready sections satisfy more of these sub-queries, increasing your chance of being included in the final generated answer.</p>
+                </div>
               </div>
 
               {/* Block 5 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">5. AEO strengthens trust and citation signals</h3>
-                <p className="text-sm text-white/60 leading-relaxed font-light">
-                  AI engines prefer sources with clear provenance and consistent facts. Structured schema, visible updates, and aligned terminology help models verify information. Brands that maintain clean, unambiguous data across their domain earn higher confidence scores and more frequent citations.
-                </p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">5. Passage-level extraction & context protection</h3>
+                <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
+                  <p>AI struggles with long, unstructured text. Important qualifiers and exceptions can be missed or misinterpreted.</p>
+                  <p>AEO uses adaptive chunking to keep related information together in tight, well-structured passages, protecting context and improving retrieval accuracy.</p>
+                </div>
               </div>
             </div>
 
-            <div className="p-6 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-2xl text-center mb-10">
-              <p className="text-base text-white/90 font-semibold leading-relaxed">
-                AEO formats business information into short, structured, semantically aligned chunks that AI systems can ingest as embeddings, retrieve through vector similarity, and cite confidently in generated answers.
-              </p>
-            </div>
-
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-4">AEO vs SEO</h2>
+              <h2 className="text-xl font-bold mb-4">AEO vs SEO: meaning & differences</h2>
+              <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">
+                SEO helps pages rank in search results. AEO helps answers form — and helps your business be chosen as a trusted source for those answers.
+              </p>
               <div className="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.02]">
                 <table className="w-full text-left text-sm text-white/70">
                   <thead className="bg-white/5 text-white/90">
@@ -226,23 +246,23 @@ export default function AEODefinitionPage() {
                   <tbody className="divide-y divide-white/5 font-light">
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Retrieval</td>
-                      <td className="px-6 py-4">lexical</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">semantic</td>
+                      <td className="px-6 py-4">Keyword-based (lexical)</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Meaning-based (semantic)</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Ranking</td>
-                      <td className="px-6 py-4">links</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">embeddings</td>
+                      <td className="px-6 py-4">Links & pages</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Embeddings & semantic clarity</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Output</td>
-                      <td className="px-6 py-4">SERP</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">generated answers</td>
+                      <td className="px-6 py-4">Search results (SERP)</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">AI-generated answers</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-white/80">Optimisation</td>
-                      <td className="px-6 py-4">whole page</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">passage level</td>
+                      <td className="px-6 py-4 font-medium text-white/80">Optimisation focus</td>
+                      <td className="px-6 py-4">Whole page</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Individual passages</td>
                     </tr>
                   </tbody>
                 </table>
@@ -250,17 +270,32 @@ export default function AEODefinitionPage() {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-4">Why AEO Matters</h2>
-              <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">
-                AI systems generate answers instead of listing links. If your content is not machine readable, you will not be included or cited. AEO ensures visibility, understanding, and selection across AI platforms.
-              </p>
+              <h2 className="text-xl font-bold mb-4">A simple example</h2>
               <div className="p-5 bg-white/[0.01] border border-white/10 rounded-xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-aeo-purple"></div>
-                <h4 className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2 font-mono">Example</h4>
-                <p className="text-sm text-white/80 italic font-light leading-relaxed">
-                  "When a user asks for the best electrician in Perth, the AI converts the query into a vector and compares it to your content using cosine similarity. If your content has strong entity clarity and adaptive chunking, your passage scores higher and is selected for the generated answer."
-                </p>
+                <div className="space-y-4 text-sm text-white/80 font-light leading-relaxed">
+                  <p>
+                    When someone asks, <strong className="text-white font-medium">“Who’s the best electrician in Perth?”</strong> AI compares the meaning of that question to the meaning inside your content.
+                  </p>
+                  <p>
+                    If your information clearly explains who you are, what you do, where you operate, and why you’re relevant, your passage is more likely to be selected and cited in the generated answer.
+                  </p>
+                </div>
               </div>
+            </div>
+            
+            <div className="mb-10">
+              <h2 className="text-xl font-bold mb-4">How classic search compares to AI system retrieval</h2>
+              <p className="text-sm text-white/70 leading-relaxed font-light mb-4">
+                The diagram for this page shows a clean technical layout comparing classic keyword search with modern AI retrieval:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 text-sm text-white/70 font-light mb-4 marker:text-aeo-cyan">
+                <li><strong className="text-white font-medium">Classic search:</strong> keyword matching → page ranking → search results (SERP).</li>
+                <li><strong className="text-white font-medium">AI retrieval:</strong> semantic chunking → embeddings → vector similarity → generated answer.</li>
+              </ul>
+              <p className="text-sm text-white/70 leading-relaxed font-light">
+                This visual reinforces how AEO shifts focus from whole pages to structured, semantic passages that AI can read and trust.
+              </p>
             </div>
             
             {/* CTA Buttons */}
