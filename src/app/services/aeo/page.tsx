@@ -95,9 +95,17 @@ export default function AEORootPage() {
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
         },
-        "about": {
-          "@id": "https://aeobility.com.au/services/aeo#service"
-        },
+        "about": [
+          {
+            "@id": "https://aeobility.com.au/services/aeo#service"
+          },
+          {
+            "@id": "https://aeobility.com.au/services/aeo#benefits"
+          },
+          {
+            "@id": "https://aeobility.com.au/services/aeo#glossary"
+          }
+        ],
         "mentions": [
           { "@type": "Thing", "name": "Artificial Intelligence" },
           { "@type": "Thing", "name": "Search Engine Optimisation" },
@@ -111,8 +119,6 @@ export default function AEORootPage() {
         },
         "hasPart": [
           { "@id": "https://aeobility.com.au/services/aeo#howto" },
-          { "@id": "https://aeobility.com.au/services/aeo#glossary" },
-          { "@id": "https://aeobility.com.au/services/aeo#benefits" },
           { "@id": "https://aeobility.com.au/services/aeo#faq" }
         ]
       },
