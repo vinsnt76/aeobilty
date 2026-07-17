@@ -1,0 +1,16 @@
+<svg viewBox="0 0 450 100" width="450" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .text-aeo { font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif; font-weight: 800; font-size: 52px; fill: #FFFFFF; letter-spacing: 1px; }
+      .text-bility { font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif; font-weight: 600; font-size: 47px; fill: #00D2D3; letter-spacing: 0px; }
+    </style>
+  </defs>
+  
+  <g stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 50 20 L 85 38 L 50 56 L 15 38 Z" stroke="#00D2D3" />
+    <path d="M 17 54 L 50 71 L 83 54" stroke="#FFFFFF" stroke-width="6" stroke-linecap="butt" stroke-dasharray="6, 8" />
+    <path d="M 15 70 L 50 88 L 85 70" stroke="#AF00FF" />
+  </g>
+  
+  <text x="110" y="73" class="text-aeo">AEO<tspan class="text-bility" dx="6">bility</tspan></text>
+</svg>
