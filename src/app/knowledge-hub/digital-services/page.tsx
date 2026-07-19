@@ -64,11 +64,25 @@ export default function DigitalServicesPage() {
             </h1>
             
             <div className="prose prose-invert max-w-none text-white/80 text-lg leading-relaxed font-light font-serif space-y-6">
-              <p>
-                Welcome to our premier digital solutions hub. We are a team of passionate, forward-thinking innovators dedicated to transforming the way you do business. Through our cutting-edge strategies and bespoke methodologies, we empower brands to scale new heights, unlock hidden potential, and achieve unparalleled synergy in a rapidly changing marketplace.
+              <h2>AEO Digital Services</h2>
+              <p className="font-semibold text-aeo-cyan text-sm sm:text-base not-prose mb-6">
+                SEO Services for Small Business &bull; SEO Consultancy Services &bull; SEO Digital Marketing
               </p>
               <p>
-                Since our inception, we have consistently pushed the envelope, delivering world-class results that drive meaningful engagement and foster sustainable growth. We believe in collaboration, excellence, and turning vision into reality. Partner with us today to future-proof your operations and experience the difference of true market leadership.
+                Welcome to our digital services hub. Here, you’ll find structured, modern solutions designed to help your small business get found, understood, and chosen across Search, Maps, and AI.
+              </p>
+              <p>
+                We provide SEO services for small business, SEO consultancy services, and SEO digital marketing that improve how your business appears online. Every step is practical, transparent, and built for real outcomes. You get clear guidance, contemporary technical frameworks, and support that fits your business.
+              </p>
+              <p>
+                Our work is straightforward. We optimise your visibility. We strengthen your search relevance. We help you show up where your customers are looking. No jargon. No pressure. Just clarity.
+              </p>
+              <p>
+                Since day one, we’ve focused on measurable improvements for Australian businesses. Better visibility. Stronger search signals. More consistent recommendations across AI systems. We build digital foundations that last.
+              </p>
+              <p>
+                If you want your business to be easier to find and easier to choose, we’re here to help.<br />
+                Future‑proof your digital presence with structured AEO, modern SEO, and practical digital marketing built for today’s search landscape.
               </p>
             </div>
           </div>
