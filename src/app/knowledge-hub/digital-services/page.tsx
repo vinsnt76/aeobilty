@@ -64,11 +64,12 @@ export default function DigitalServicesPage() {
             </h1>
             
             <div className="prose prose-invert max-w-none text-white/80 text-lg leading-relaxed font-light font-serif space-y-6">
+              <h2>AEO Digital Services</h2>
               <p>
-                Welcome to our premier digital solutions hub. We are a team of passionate, forward-thinking innovators dedicated to transforming the way you do business. Through our cutting-edge strategies and bespoke methodologies, we empower brands to scale new heights, unlock hidden potential, and achieve unparalleled synergy in a rapidly changing marketplace.
+                Welcome to the AEO Digital Services tutorial created by AEObility in Perth, Western Australia. This guide is authored by automation specialist Vince Baker, who focuses on transforming traditional digital content into machine‑readable knowledge structures that AI systems can accurately retrieve and interpret.
               </p>
               <p>
-                Since our inception, we have consistently pushed the envelope, delivering world-class results that drive meaningful engagement and foster sustainable growth. We believe in collaboration, excellence, and turning vision into reality. Partner with us today to future-proof your operations and experience the difference of true market leadership.
+                At AEObility, we replace vague corporate language with explicit entities, clear service definitions, and structured data signals. Our AEO Digital Services framework helps brands strengthen semantic density, reduce hallucination risk, and ensure their content is consistently understood by modern answer engines. With guidance from Vince Baker, this tutorial shows how to future‑proof your digital operations and build durable authority across AI‑driven search ecosystems.
               </p>
             </div>
           </div>
