@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Welcome from '@/components/about/Welcome';
 import About from '@/components/about/About';
-import Experience from '@/components/about/Experience';
 import Projects from '@/components/about/Projects';
 import Contact from '@/components/about/Contact';
 import { ArrowLeft } from 'lucide-react';
@@ -105,7 +104,6 @@ export default async function Page({ params }: PageProps) {
         ("Sharper, diagnostic, AEO > SEO theatre").
       */}
       <About />
-      <Experience />
       <Projects />
       <Contact />
     </>
