@@ -345,6 +345,7 @@ const About: React.FC = () => {
                     >
                       A post shared by Vincent Baker (@vinniiecent)
                     </a>
+                  </p>
                 </div>
               </blockquote>
             </div>
