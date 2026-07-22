@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart } from 'lucide-react';
+import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const About: React.FC = () => {
@@ -495,6 +495,110 @@ const About: React.FC = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Experience, Education & Skills Module */}
+        <motion.div 
+          id="experience"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-16 border-t border-neutral-200 dark:border-neutral-800 pt-12 scroll-mt-24"
+        >
+          <div className="flex items-center gap-3 mb-10">
+            <Briefcase className="w-7 h-7 text-aeo-cyan" />
+            <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
+              Experience, Education &amp; Skills
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            {/* Column 1: Education + Training */}
+            <div className="space-y-10">
+              {/* Education */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <GraduationCap className="w-5 h-5 text-aeo-cyan" />
+                  <h4 className="text-lg font-semibold text-aeo-cyan">Education</h4>
+                </div>
+                <ul className="space-y-4">
+                  <li className="border-l-2 border-neutral-800 pl-4">
+                    <p className="font-bold text-neutral-900 dark:text-neutral-100">Diploma in Public Relations</p>
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm">Central TAFE (2004)</p>
+                  </li>
+                  <li className="border-l-2 border-neutral-800 pl-4">
+                    <p className="font-bold text-neutral-900 dark:text-neutral-100">Cert IV Business Sales</p>
+                    <p className="text-neutral-500 dark:text-neutral-400 text-sm">William Angliss (2018)</p>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Certifications & Training */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Award className="w-5 h-5 text-aeo-cyan" />
+                  <h4 className="text-lg font-semibold text-aeo-cyan">Certifications &amp; Training</h4>
+                </div>
+                <ul className="grid grid-cols-1 gap-3">
+                  {[
+                    "Google Ads Search & Shopping Certifications",
+                    "HubSpot Digital Marketing & Sales Software",
+                    "Google Analytics & Tag Manager Fundamentals",
+                    "LinkedIn SEO, Email, Social Media, and Sales Foundations",
+                    "Open Colleges Professional Communications"
+                  ].map((cert, index) => (
+                    <li key={index} className="flex items-start gap-2 text-neutral-700 dark:text-neutral-300 text-sm">
+                      <span className="text-aeo-cyan mt-1.5 min-w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0" />
+                      <span>{cert}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Column 2: Core Skills Grid */}
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <Zap className="w-5 h-5 text-aeo-cyan" />
+                <h4 className="text-lg font-semibold text-aeo-cyan">Core Skills</h4>
+              </div>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { name: "SEO", icon: Search },
+                  { name: "PPC / SEM", icon: Target },
+                  { name: "AEO", icon: Brain },
+                  { name: "Campaign Management", icon: BarChart },
+                  { name: "CRO", icon: MousePointerClick },
+                  { name: "E-commerce Strategy", icon: ShoppingCart },
+                  { name: "Lead Generation", icon: Users },
+                  { name: "AI & Automation", icon: Zap },
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.04 }}
+                    whileHover={{ scale: 1.04 }}
+                    className="bg-neutral-900 hover:bg-[#171717] border border-neutral-800 p-3 rounded-lg flex flex-col items-center justify-center text-center gap-2 transition-colors group"
+                  >
+                    <skill.icon className="w-5 h-5 text-aeo-cyan group-hover:text-aeo-purple transition-colors shrink-0" />
+                    <span className="text-[11px] font-medium leading-tight text-white">
+                      {skill.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-8 p-4 rounded-xl bg-aeo-cyan/5 border border-aeo-cyan/20 text-xs text-neutral-600 dark:text-neutral-300 font-serif leading-relaxed italic">
+                &ldquo;Leveraging a background in travel-sector business development and award-winning agency experience to deliver high-performance digital architecture.&rdquo;
+              </div>
+            </div>
+
           </div>
         </motion.div>
 
