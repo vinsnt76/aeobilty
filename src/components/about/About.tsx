@@ -88,52 +88,74 @@ const About: React.FC = () => {
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left Column: Origin Story Paragraph */}
+          {/* Left Column: Refactored Story & Pivot */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-neutral-700 leading-relaxed space-y-6 text-left" // Left-aligned, spacing, and text color
+            className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-4 text-left font-serif"
           >
             <p>
-              Most SEO agencies hand you a boilerplate blog strategy and a monthly traffic graph that doesn&apos;t track bottom-line growth. I look at SEO through an <strong className="text-aeo-cyan font-bold">architectural lens</strong>.
+              I began my career in the travel industry, spending more than a decade across Qantas Holidays, Viva Holidays, Sunlover Holidays, and Seven Oceans. Those years built the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
             </p>
             <p>
-              Drawing on my technical background as a digital systems architect, I build more than just rankings. By executing advanced reporting pipelines, API webhook architectures, and running comprehensive site audits via SEMrush and Google Search Console, I pinpoint the <strong className="font-bold">exact code block or crawl bottleneck</strong> holding your site back.
+              When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing — first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations. What started as a survival pivot became a full technical reinvention.
             </p>
+            <div className="p-4 bg-neutral-900 text-white rounded-xl border border-neutral-800 font-sans text-sm space-y-1">
+              <p className="text-aeo-cyan font-semibold">From Travel to Digital Systems Architecture:</p>
+              <ul className="list-disc pl-5 space-y-1 text-xs text-neutral-300">
+                <li>Moved from optimising itineraries to optimising websites.</li>
+                <li>From resolving booking bottlenecks to resolving crawl bottlenecks.</li>
+                <li>From managing travel agents to managing data pipelines, automations, and AI agents.</li>
+              </ul>
+            </div>
           </motion.div>
 
-          {/* Right Column: What I Actually Do */}
+          {/* Right Column: Digital Career Progression */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: 0.4 }}
-            className="relative space-y-8"
+            className="relative space-y-6"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-left">What I Actually Do</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left font-soehne-breit">Digital Career Progression</h3>
             
-            <div className="space-y-6">
-              <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">1. Technical & Crawl Engineering</h4>
-                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Deep dive audits using SEMrush, Google Search Console, and Bing Webmaster Tools. Resolving structural indexation errors, programmatic redirection maps, and fixing internal linking pipelines.
+            <div className="space-y-4 text-left">
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <h4 className="text-base font-bold text-aeo-cyan mb-1">1. SEO (Technical + Content Architecture)</h4>
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
+                  Began with SEO fundamentals — audits, keyword research, content briefs — before gravitating toward the technical layer. SEMrush, Google Search Console, Bing Webmaster Tools, and structured data became my daily toolkit to diagnose exact code blocks, crawl bottlenecks, and semantic gaps holding sites back.
                 </p>
               </div>
 
-              <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">2. Semantic Data Integration</h4>
-                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Setting up precise GA4 event configurations, cross-domain tracking arrays, and server-side pixel tracking through Google Tag Manager to prove exactly where organic conversions originate.
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <h4 className="text-base font-bold text-aeo-cyan mb-1">2. PPC (Google Ads Search + Shopping)</h4>
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
+                  Built search and shopping campaigns, implemented conversion tracking, and optimised ROAS through structured measurement and forecasting.
                 </p>
               </div>
 
-              <div className="p-5 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
-                <h4 className="text-lg font-bold text-aeo-cyan mb-2">3. AEO & Modern Strategy</h4>
-                <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Building semantic content frameworks designed for direct ingestion by conversational AI agents, utilising advanced entity mapping schemas.
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <h4 className="text-base font-bold text-aeo-cyan mb-1">3. UX & CRO (Behavioural Analysis + Funnel Optimisation)</h4>
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
+                  Used Microsoft Clarity, GA4 exploration reports, and Looker Studio dashboards to turn user friction points into measurable conversion opportunities.
+                </p>
+              </div>
+
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <h4 className="text-base font-bold text-aeo-cyan mb-1">4. CRM Integrations (HubSpot, Agile CRM, Zoho, Airtable)</h4>
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
+                  Implemented CRMs end-to-end including requirements gathering, data migration, automation flows, and onboarding, merging systems thinking with marketing.
+                </p>
+              </div>
+
+              <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <h4 className="text-base font-bold text-aeo-cyan mb-1">5. Automation, AI & Agentic Development</h4>
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
+                  Engineered n8n workflows, API orchestration, Google Cloud Functions, Voiceflow agents, prompt engineering (reverse, one-shot, graph prompting), structured output pipelines, and AEO content systems.
                 </p>
               </div>
             </div>
