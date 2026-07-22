@@ -536,28 +536,6 @@ const About: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Certifications & Training */}
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <Award className="w-5 h-5 text-aeo-cyan" />
-                  <h4 className="text-lg font-semibold text-aeo-cyan">Certifications &amp; Training</h4>
-                </div>
-                <ul className="grid grid-cols-1 gap-3">
-                  {[
-                    "Google Ads Search & Shopping Certifications",
-                    "HubSpot Digital Marketing & Sales Software",
-                    "Google Analytics & Tag Manager Fundamentals",
-                    "LinkedIn SEO, Email, Social Media, and Sales Foundations",
-                    "Open Colleges Professional Communications"
-                  ].map((cert, index) => (
-                    <li key={index} className="flex items-start gap-2 text-neutral-700 dark:text-neutral-300 text-sm">
-                      <span className="text-aeo-cyan mt-1.5 min-w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0" />
-                      <span>{cert}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {/* Career Background */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
