@@ -854,34 +854,85 @@ const About: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* FAQs */}
+        {/* 2-Column Section: FAQs (Left) + Get in Touch (Right) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="mt-20 border-t border-neutral-200 dark:border-neutral-800 pt-16"
+          className="mt-20 border-t border-neutral-200 dark:border-neutral-800 pt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
-          <div className="space-y-4 max-w-3xl mx-auto text-left">
-            <details className="group bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
-              <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                What is the difference between a traditional SEO agency and a Freelance Technical SEO Specialist?
-                <span className="group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p className="mt-4 text-neutral-700 dark:text-neutral-400 text-sm leading-relaxed">
-                Agencies frequently lean on high-volume content production. A technical specialist rewrites the structural foundation, resolves code bloat, ensures proper schema node logic, and builds clean tracking frameworks.
+          {/* Column 1: FAQs (Left 7 Cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-aeo-cyan font-bold">Frequently Asked Questions</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
+              Got Questions? <span className="text-gradient-aeo">Answers Here.</span>
+            </h3>
+            <div className="space-y-4 text-left">
+              <details className="group bg-neutral-50 dark:bg-neutral-900 p-5 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <summary className="font-semibold text-base cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
+                  What is the difference between a traditional SEO agency and a Freelance Technical SEO Specialist?
+                  <span className="group-open:rotate-180 transition-transform text-aeo-cyan ml-2">▼</span>
+                </summary>
+                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed">
+                  Agencies frequently lean on high-volume content production. A technical specialist rewrites the structural foundation, resolves code bloat, ensures proper schema node logic, and builds clean tracking frameworks.
+                </p>
+              </details>
+
+              <details className="group bg-neutral-50 dark:bg-neutral-900 p-5 rounded-xl border border-neutral-200 dark:border-neutral-800">
+                <summary className="font-semibold text-base cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
+                  Do you implement GA4 and cross-domain tracking as part of SEO?
+                  <span className="group-open:rotate-180 transition-transform text-aeo-cyan ml-2">▼</span>
+                </summary>
+                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed">
+                  Yes. Search visibility means nothing if data attribution is broken. Every project maps traffic milestones directly to financial conversions via Google Tag Manager and Looker Studio dashboards.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          {/* Column 2: Get in Touch Card (Right 5 Cols) */}
+          <div id="contact" className="lg:col-span-5 p-6 bg-neutral-900 border border-neutral-800 rounded-2xl flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs font-mono text-aeo-cyan font-semibold">
+                <span>Let&apos;s Connect</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Get in <span className="text-gradient-aeo">Touch.</span>
+              </h3>
+              <p className="text-xs text-neutral-300 leading-relaxed font-serif">
+                Hi there! I&apos;m Vince. I help Australian businesses get found and chosen across Search, Maps, and AI platforms with AEO, local SEO, and intelligent automation.
               </p>
-            </details>
-            <details className="group bg-neutral-50 dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800">
-              <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                Do you implement GA4 and cross-domain tracking as part of SEO?
-                <span className="group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p className="mt-4 text-neutral-700 dark:text-neutral-400 text-sm leading-relaxed">
-                Yes. Search visibility means nothing if data attribution is broken. Every project maps traffic milestones directly to financial conversions via Google Tag Manager and Looker Studio dashboards.
-              </p>
-            </details>
+            </div>
+
+            <div className="space-y-3 border-t border-neutral-800 pt-4">
+              <div className="flex flex-col gap-2 text-xs font-mono text-neutral-300">
+                <div className="flex items-center gap-2">
+                  <span className="text-aeo-cyan">📍</span>
+                  <span>Perth, WA, Australia</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-aeo-cyan">✉️</span>
+                  <a href="mailto:vince@aeobility.com.au" className="hover:text-aeo-cyan transition-colors">vince@aeobility.com.au</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-aeo-cyan">📞</span>
+                  <a href="tel:0480286282" className="hover:text-aeo-cyan transition-colors">0480 286 282</a>
+                </div>
+              </div>
+
+              {/* Updated CTA Button */}
+              <div className="pt-2">
+                <a
+                  href="/book"
+                  className="w-full inline-flex items-center justify-center bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-aeo-cyan/20 hover:scale-[1.02] transition-all duration-300 text-center"
+                >
+                  Schedule a Quick Intro Call
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -900,22 +951,6 @@ const About: React.FC = () => {
             <Link href="/about/freelance-digital-specialist-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Digital Specialist Perth</Link>
             <Link href="/about/freelance-ai-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance AI Consultant Perth</Link>
           </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-24 text-center pb-10"
-        >
-          <a
-            href="/book"
-            className="inline-block bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-aeo-cyan/20 hover:scale-[1.02] transition-all duration-300"
-          >
-            Book a Strategy Call
-          </a>
         </motion.div>
       </motion.div>
     </section>
