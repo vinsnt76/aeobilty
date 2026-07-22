@@ -95,7 +95,7 @@ const About: React.FC = () => {
         >
           <Compass className="w-8 h-8 text-aeo-cyan mr-3" />
           <h3 className="text-3xl md:text-4xl font-bold leading-tight text-left">
-            From Traveller to Digital Architect
+            From Traveller to <span className="text-aeo-purple font-mono">[</span>Digital Architect<span className="text-aeo-purple font-mono">]</span>
           </h3>
         </motion.div>
 
@@ -352,7 +352,10 @@ const About: React.FC = () => {
           </div>
 
           <p>
-            After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays! Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
+            <span className="text-aeo-cyan font-bold text-xl mr-2">|</span>After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays!
+          </p>
+          <p>
+            Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
           </p>
           <p>
             When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
