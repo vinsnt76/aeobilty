@@ -557,6 +557,47 @@ const About: React.FC = () => {
                   ))}
                 </ul>
               </div>
+
+              {/* Career Background */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Briefcase className="w-5 h-5 text-aeo-cyan" />
+                  <h4 className="text-lg font-semibold text-aeo-cyan">Career Background</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+                    <div className="flex justify-between items-start flex-wrap gap-1">
+                      <div>
+                        <h5 className="font-bold text-white text-sm">SEO &amp; Google Ads Manager</h5>
+                        <p className="text-xs text-aeo-cyan font-mono">Concise Digital</p>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/60 text-neutral-400 border border-neutral-800">
+                        Jan 2026 – Present
+                      </span>
+                    </div>
+                    <ul className="list-disc pl-4 space-y-1 text-xs text-neutral-300 leading-relaxed">
+                      <li>Technical SEO audits</li>
+                      <li>Pre- and post-launch migration checks</li>
+                      <li>Information architecture blueprints</li>
+                    </ul>
+                  </div>
+
+                  <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+                    <div className="flex justify-between items-start flex-wrap gap-1">
+                      <div>
+                        <h5 className="font-bold text-white text-sm">Digital Specialist &amp; AI Automation Consultant</h5>
+                        <p className="text-xs text-aeo-cyan font-mono">Juicebox Creative</p>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/60 text-neutral-400 border border-neutral-800">
+                        May 2021 – Oct 2025
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-300 leading-relaxed font-sans">
+                      SEO, PPC, UX/CRO, CRM integrations, analytics, automation, and eventually AI and agentic development, often working across multiple disciplines at once.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Column 2: Core Skills Grid */}
