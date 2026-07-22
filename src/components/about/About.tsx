@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass } from 'lucide-react';
+import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart } from 'lucide-react';
 import Link from 'next/link';
 
 const About: React.FC = () => {
@@ -161,6 +161,95 @@ const About: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Certifications & Industry Badges (Animated on Scroll) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-16 border-t border-neutral-200 dark:border-neutral-800 pt-12"
+        >
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-aeo-cyan font-bold">Verified Credentials</span>
+              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mt-1">
+                Certifications & Industry Standards
+              </h3>
+            </div>
+            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-aeo-cyan/10 border border-aeo-cyan/30 rounded-full text-xs font-mono text-aeo-cyan">
+              <Award className="w-3.5 h-3.5" />
+              <span>Certified Professional</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              {
+                title: "Google Ads Certified",
+                category: "Search & Shopping",
+                issuer: "Google",
+                icon: Target,
+                badgeColor: "from-blue-500/20 to-blue-600/10 border-blue-500/30 text-blue-400"
+              },
+              {
+                title: "Google Analytics & GTM",
+                category: "GA4 Measurement",
+                issuer: "Google",
+                icon: BarChart,
+                badgeColor: "from-amber-500/20 to-amber-600/10 border-amber-500/30 text-amber-400"
+              },
+              {
+                title: "HubSpot Certified",
+                category: "Inbound & CRM",
+                issuer: "HubSpot Academy",
+                icon: CheckCircle2,
+                badgeColor: "from-orange-500/20 to-orange-600/10 border-orange-500/30 text-orange-400"
+              },
+              {
+                title: "LinkedIn SEO & Sales",
+                category: "Digital Foundations",
+                issuer: "LinkedIn Learning",
+                icon: Award,
+                badgeColor: "from-cyan-500/20 to-cyan-600/10 border-cyan-500/30 text-cyan-400"
+              },
+              {
+                title: "Cert IV & Diploma",
+                category: "Public Relations & Sales",
+                issuer: "Central TAFE / Angliss",
+                icon: ShieldCheck,
+                badgeColor: "from-purple-500/20 to-purple-600/10 border-purple-500/30 text-purple-400"
+              }
+            ].map((cert, idx) => (
+              <motion.div
+                key={cert.title}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: idx * 0.1, ease: "easeOut" }}
+                whileHover={{ y: -4 }}
+                className={`p-4 rounded-xl bg-gradient-to-br ${cert.badgeColor} border backdrop-blur-md flex flex-col justify-between space-y-3 group transition-all`}
+              >
+                <div className="flex items-center justify-between">
+                  <cert.icon className="w-6 h-6 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-black/40 text-white/70 border border-white/10">
+                    Verified
+                  </span>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-white transition-colors leading-snug">
+                    {cert.title}
+                  </h4>
+                  <p className="text-[11px] text-neutral-500 dark:text-neutral-400 mt-0.5">{cert.category}</p>
+                </div>
+                <div className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 border-t border-white/5 pt-2 flex items-center justify-between">
+                  <span>{cert.issuer}</span>
+                  <span className="text-aeo-cyan opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Why Perth Businesses Hire Me Instead of an Agency */}
         <motion.div
