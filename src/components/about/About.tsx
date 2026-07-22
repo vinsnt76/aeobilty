@@ -647,13 +647,16 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
-                title: "AI Video Engine: Content Automation",
-                date: "Mar 2026 — AEObility",
-                summary: "Architected an automated video generation engine that translates brand assets and synthetic voiceovers into platform-ready marketing assets at scale.",
-                outcomes: ["Production time -90%", "Creative output 10×", "Cost per video -85%"],
-                value: "Empowers brands to deploy hyper-personalized video campaigns in minutes.",
-                skills: ["AI Video", "Python", "FFmpeg"],
-                imageSrc: "/projects/ai-video-engine.jpg"
+                title: "Launched AEObility",
+                date: "Jul 2026 — AEObility",
+                summary: "Engineered AEObility using AEO best practices including Information Architecture and Semantic Lattice Mapping. Built a telemetry dashboard for real-time site auditing with an AI chatbot handover for intelligent data analysis.",
+                subNodes: [
+                  { label: "Information Architecture", highlight: true },
+                  { label: "Semantic Lattice", highlight: true },
+                  { label: "AI Handover", highlight: true }
+                ],
+                skills: ["Growth Cards", "Next.js", "React", "Antigravity"],
+                imageSrc: "/aeobility-icon-dark.svg"
               },
               {
                 title: "Analytics Performance Report",
