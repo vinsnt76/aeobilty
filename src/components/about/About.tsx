@@ -97,10 +97,10 @@ const About: React.FC = () => {
             className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-4 text-left font-serif"
           >
             <p>
-              I began my career in the travel industry, spending more than a decade across Qantas Holidays, Viva Holidays, Sunlover Holidays, and Seven Oceans. Those years built the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
+              After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays! Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
             </p>
             <p>
-              When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing — first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations. What started as a survival pivot became a full technical reinvention.
+              When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
             </p>
             <div className="p-4 bg-neutral-900 text-white rounded-xl border border-neutral-800 font-sans text-sm space-y-1">
               <p className="text-aeo-cyan font-semibold">From Travel to Digital Systems Architecture:</p>
