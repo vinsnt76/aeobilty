@@ -655,8 +655,8 @@ const About: React.FC = () => {
                   { label: "Semantic Lattice", highlight: true },
                   { label: "AI Handover", highlight: true }
                 ],
-                skills: ["Growth Cards", "Next.js", "React", "Antigravity"],
-                imageSrc: "/aeobility-icon-dark.svg"
+                skills: ["Next.js", "React", "Antigravity"],
+                imageSrc: "/aeobility-logo-dark.svg"
               },
               {
                 title: "Baby Bento — Structural Search Alignment",
