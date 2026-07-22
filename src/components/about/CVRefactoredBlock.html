@@ -1,0 +1,232 @@
+<div className="w-full max-w-5xl mx-auto p-6 md:p-10 bg-neutral-950 text-neutral-100 font-sans border border-neutral-800 rounded-2xl shadow-2xl space-y-12">
+  {/* Header Block */}
+  <header className="border-b border-neutral-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+    <div className="space-y-2">
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-400 font-medium">
+        Senior Technical SEO + Digital Systems Architect
+      </div>
+      <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Vince Baker</h1>
+      <p className="text-neutral-400 text-sm md:text-base max-w-2xl font-normal leading-relaxed">
+        Freelance Digital Specialist in Perth engineering search visibility, performance marketing, automation workflows, and AI content systems.
+      </p>
+    </div>
+    <div className="flex flex-wrap gap-2 text-xs font-mono text-neutral-400">
+      <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded-md">Perth, WA</span>
+      <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded-md">AU Grammar Standard</span>
+    </div>
+  </header>
+
+  {/* Technical Capabilities Micro-Grid */}
+  <section className="space-y-3">
+    <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Technical Capability Matrix</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+      {[
+        { name: "Technical SEO & AEO", detail: "Entity & Schema Logic" },
+        { name: "Google Ads & ROAS", detail: "Search, Shopping, Tracking" },
+        { name: "UX / CRO & Analytics", detail: "GA4, GTM, Clarity" },
+        { name: "CRM Architecture", detail: "HubSpot, Agile, Zoho" },
+        { name: "Automation Pipelines", detail: "n8n, Webhooks, APIs" },
+        { name: "Agentic & AI Search", detail: "Voiceflow, Prompt Logic" },
+      ].map((tech, idx) => (
+        <div key={idx} className="p-3 bg-neutral-900/80 border border-neutral-800 rounded-xl hover:border-cyan-500/40 transition-colors">
+          <div className="text-xs font-bold text-neutral-200">{tech.name}</div>
+          <div className="text-[11px] text-neutral-400 font-mono mt-1">{tech.detail}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Career Narrative Section */}
+  <section className="space-y-6 border-t border-neutral-800/80 pt-8">
+    <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+      <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block"></span>
+      Career Evolution: Travel Sector to Digital Architecture
+    </h2>
+    <div className="space-y-4 text-neutral-300 text-sm md:text-base leading-relaxed">
+      <p>
+        I began my career in the travel industry, spending more than a decade across Qantas Holidays, Viva Holidays, Sunlover Holidays, and Seven Oceans. Those years built the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
+      </p>
+      <p>
+        When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing — first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations. What started as a survival pivot became a full technical reinvention.
+      </p>
+      <div className="p-4 bg-neutral-900/50 border-l-2 border-cyan-400 rounded-r-xl font-mono text-xs md:text-sm text-neutral-300 space-y-1">
+        <div>I moved from optimising itineraries to optimising websites.</div>
+        <div>From resolving booking bottlenecks to resolving crawl bottlenecks.</div>
+        <div>From managing travel agents to managing data pipelines, automations, and AI agents.</div>
+      </div>
+    </div>
+  </section>
+
+  {/* Digital Career Progression Grid */}
+  <section className="space-y-4 border-t border-neutral-800/80 pt-8">
+    <h3 className="text-lg font-bold text-white">Digital Career Progression</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+        <h4 className="text-sm font-bold text-cyan-400 font-mono">1. SEO (Technical + Content Architecture)</h4>
+        <p className="text-xs text-neutral-300 leading-relaxed">
+          Began with SEO fundamentals — audits, keyword research, content briefs — before gravitating toward the technical layer. SEMrush, Google Search Console, Bing Webmaster Tools, and structured data became my daily toolkit to diagnose exact code blocks, crawl bottlenecks, and semantic gaps holding sites back.
+        </p>
+      </div>
+      <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+        <h4 className="text-sm font-bold text-cyan-400 font-mono">2. PPC (Google Ads Search + Shopping)</h4>
+        <p className="text-xs text-neutral-300 leading-relaxed">
+          Built search and shopping campaigns, implemented conversion tracking, and optimised ROAS through structured measurement and forecasting.
+        </p>
+      </div>
+      <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+        <h4 className="text-sm font-bold text-cyan-400 font-mono">3. UX & CRO (Behavioural Analysis + Funnel Optimisation)</h4>
+        <p className="text-xs text-neutral-300 leading-relaxed">
+          Leveraged Microsoft Clarity, GA4 exploration reports, and Looker Studio dashboards to turn user friction points into measurable conversion opportunities.
+        </p>
+      </div>
+      <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2">
+        <h4 className="text-sm font-bold text-cyan-400 font-mono">4. CRM Integrations (HubSpot, Agile CRM, Zoho, Airtable)</h4>
+        <p className="text-xs text-neutral-300 leading-relaxed">
+          Implemented CRMs end-to-end including requirements gathering, data migration, automation flows, and onboarding, merging systems thinking with marketing.
+        </p>
+      </div>
+      <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-2 md:col-span-2">
+        <h4 className="text-sm font-bold text-cyan-400 font-mono">5. Automation, AI & Agentic Development</h4>
+        <p className="text-xs text-neutral-300 leading-relaxed mb-2">
+          Transitioned into automation and AI engineering: n8n workflows, API orchestration, Google Cloud Functions, Voiceflow conversational agents, reverse/one-shot/graph prompting, structured output pipelines, and AEO-aligned content systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Recruiter-Friendly Refactored Experience Block */}
+  <section className="space-y-6 border-t border-neutral-800/80 pt-8">
+    <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+      <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block"></span>
+      Professional Experience
+    </h2>
+
+    {/* Current Role */}
+    <div className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl space-y-4">
+      <div className="flex flex-col md:flex-row justify-between md:items-center gap-1 border-b border-neutral-800 pb-3">
+        <div>
+          <h3 className="text-base font-bold text-white">SEO & Google Ads Manager</h3>
+          <p className="text-xs text-cyan-400 font-mono">Freelance Digital Specialist | Perth, WA</p>
+        </div>
+        <span className="text-xs font-mono text-neutral-400 bg-neutral-950 px-2.5 py-1 rounded-md border border-neutral-800 w-fit">
+          Jan 2026 – Present
+        </span>
+      </div>
+      <p className="text-xs md:text-sm text-neutral-300 leading-relaxed">
+        Helping Australian businesses build visibility across Search, Maps, and AI platforms by blending technical SEO, PPC, analytics, automation, and AI-driven content architecture.
+      </p>
+      <ul className="space-y-2 text-xs md:text-sm text-neutral-300">
+        <li className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Architect technical SEO, schema node structures, and crawl bottleneck fixes to maximise organic indexation.</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Deploy and manage high-intent Google Ads Search and Shopping campaigns with robust tracking frameworks.</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Build automated reporting pipelines and AEO-ready content assets tuned for LLM search ingestions.</span>
+        </li>
+      </ul>
+    </div>
+
+    {/* Juicebox Role */}
+    <div className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl space-y-4">
+      <div className="flex flex-col md:flex-row justify-between md:items-center gap-1 border-b border-neutral-800 pb-3">
+        <div>
+          <h3 className="text-base font-bold text-white">Digital Specialist & AI / Automation Consultant (Combined)</h3>
+          <p className="text-xs text-cyan-400 font-mono">Juicebox Creative</p>
+        </div>
+        <span className="text-xs font-mono text-neutral-400 bg-neutral-950 px-2.5 py-1 rounded-md border border-neutral-800 w-fit">
+          Juicebox Experience
+        </span>
+      </div>
+      <p className="text-xs md:text-sm text-neutral-300 leading-relaxed">
+        Executed full digital transformation strategies across digital marketing, analytics, CRM implementations, and modern AI engineering.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs md:text-sm text-neutral-300">
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Technical SEO audits and structured content frameworks</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Google Ads Search & Shopping campaigns</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>GA4 + GTM event tracking & cross-domain measurement</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>UX/CRO analysis using Clarity and GA4</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>CRM implementations (HubSpot, Agile CRM)</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Automation workflows (n8n, Airtable, webhooks)</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>API integrations and reporting pipelines</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Voiceflow conversational agents</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>Advanced prompt engineering (reverse, one-shot, graph prompting)</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-cyan-400 font-bold mt-0.5">•</span>
+          <span>AEO-aligned funnels and semantic content systems</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Side Projects Section */}
+  <section className="space-y-4 border-t border-neutral-800/80 pt-8">
+    <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+      <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block"></span>
+      Side Projects & Entrepreneurial Systems
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="p-5 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-3">
+        <h3 className="text-sm font-bold text-white flex justify-between items-center">
+          <span>Baby Bento</span>
+          <span className="text-[11px] font-mono text-cyan-400 font-normal">E-commerce Brand Owner</span>
+        </h3>
+        <ul className="space-y-1.5 text-xs text-neutral-300">
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>Shopify architecture & collection templates</li>
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>Structured metafields & metaobjects</li>
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>CRO product page design & asset pipelines</li>
+        </ul>
+      </div>
+      <div className="p-5 bg-neutral-900/60 border border-neutral-800 rounded-xl space-y-3">
+        <h3 className="text-sm font-bold text-white flex justify-between items-center">
+          <span>AEObility</span>
+          <span className="text-[11px] font-mono text-cyan-400 font-normal">Technical SEO & AI Search</span>
+        </h3>
+        <ul className="space-y-1.5 text-xs text-neutral-300">
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>Answer Engine Optimisation (AEO)</li>
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>Semantic entity architecture & retrieval</li>
+          <li className="flex items-center gap-1.5"><span className="w-1 h-1 bg-cyan-400 rounded-full"></span>Agentic automation for content & reporting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* CV-Friendly Summary Footer */}
+  <footer className="p-4 bg-cyan-950/30 border border-cyan-500/20 rounded-xl text-center">
+    <div className="text-xs font-mono text-cyan-300">
+      <span className="font-bold">Executive Summary: </span>
+      Travel industry → COVID pivot → SEO → PPC → UX/CRO → CRM → Automation → AI/Agentic Development. Operating as a freelance SEO & Google Ads Manager with side projects Baby Bento and AEObility.
+    </div>
+  </footer>
+</div>
