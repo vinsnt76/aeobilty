@@ -692,28 +692,32 @@ const About: React.FC = () => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-aeo-cyan/50 transition-all group"
               >
-                {/* Media Header (Reduced height) */}
-                <div className="relative w-full aspect-video bg-neutral-950 overflow-hidden">
+                {/* Media Header (Fully Responsive Asset Window) */}
+                <div className="relative w-full aspect-video bg-neutral-950/80 overflow-hidden flex items-center justify-center p-3">
                   {project.iframeSrc ? (
                     <iframe
                       src={project.iframeSrc}
                       width="100%"
                       height="100%"
-                      className="w-full h-full border-0 pointer-events-none"
+                      className="w-full h-full border-0 pointer-events-none rounded"
                       allow="autoplay"
                     />
                   ) : project.imageSrc ? (
                     <img
                       src={project.imageSrc}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                        project.imageSrc.endsWith('.svg')
+                          ? 'object-contain max-h-[85%] max-w-[85%] drop-shadow-md'
+                          : 'object-cover rounded'
+                      }`}
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-neutral-900">
+                    <div className="w-full h-full flex items-center justify-center bg-neutral-900 rounded">
                       <Layers className="w-8 h-8 text-neutral-600" />
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Compact Content Block */}
