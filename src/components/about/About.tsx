@@ -355,10 +355,13 @@ const About: React.FC = () => {
             <span className="text-aeo-cyan font-bold text-xl mr-2">|</span>After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays!
           </p>
           <p>
-            Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
+            Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today.
           </p>
           <p>
             When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
+          </p>
+          <p>
+            I pride myself on relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
           </p>
         </motion.div>
 
