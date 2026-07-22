@@ -634,7 +634,7 @@ const About: React.FC = () => {
                 outcomes: ["Production time -90%", "Creative output 10×", "Cost per video -85%"],
                 value: "Empowers brands to deploy hyper-personalized video campaigns in minutes.",
                 skills: ["AI Video", "Python", "FFmpeg"],
-                iframeSrc: "https://drive.google.com/file/d/13TJucyE9G28aRUVRdNHWC_1HgkuC8kr-/preview"
+                imageSrc: "/projects/ai-video-engine.jpg"
               },
               {
                 title: "Analytics Performance Report",
@@ -646,13 +646,16 @@ const About: React.FC = () => {
                 iframeSrc: "https://drive.google.com/file/d/1m03il0l5T3H8W8ZqaoSK7DnmL-35YZpL/preview"
               },
               {
-                title: "Baby Bento Social Reel Generator",
+                title: "Baby Bento — Brand Book & Messaging Framework",
                 date: "Apr 2026 — Baby Bento",
-                summary: "Engineered a workflow automation tool compiling product imagery, user reviews, and audio tracks into high-impact Instagram Reels and TikToks.",
-                outcomes: ["Weekly reels +300%", "Production workflow -95%", "Reel views +150%"],
-                value: "Seamlessly scales social media marketing pipelines through programmatic content synthesis.",
-                skills: ["Instagram API", "Node.js", "Automation"],
-                imageSrc: "/projects/baby-bento-reels.jpg"
+                summary: "Mission and purpose to support parents and kids with engaging, healthy mealtime solutions. Origin story of the founder, brand values (Creative Partner, Love Made Visible, Inspiring Prep, Confident Eating), visual identity standards (typography & color palettes), and key messaging pillars (durability, safety, ease of use).",
+                subNodes: [
+                  { label: "Growth Cards (MCP)", highlight: false },
+                  { label: "Social Media Gem", highlight: false },
+                  { label: "Airtable", highlight: true } // Cyan blue
+                ],
+                skills: ["Gemini", "Promelli", "AI Studio"],
+                iframeSrc: "https://drive.google.com/file/d/13TJucyE9G28aRUVRdNHWC_1HgkuC8kr-/preview"
               }
             ].map((project, idx) => (
               <motion.article
@@ -703,26 +706,43 @@ const About: React.FC = () => {
                     {project.summary}
                   </p>
 
-                  {/* Compact Metrics Pills */}
-                  <div className="grid grid-cols-3 gap-1.5 py-2 border-y border-neutral-800/80">
-                    {project.outcomes.map((metric, i) => (
-                      <div key={i} className="flex flex-col items-center justify-center p-1 bg-black/40 rounded border border-neutral-800 text-center">
-                        <span className="text-[10px] font-bold text-aeo-cyan font-mono">
-                          {metric.split(" ").slice(-1)}
-                        </span>
-                        <span className="text-[8px] text-neutral-500 font-sans tracking-tight truncate w-full">
-                          {metric.split(" ").slice(0, -1).join(" ")}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                  {/* Sub Nodes or Compact Metrics Pills */}
+                  {project.subNodes ? (
+                    <div className="grid grid-cols-3 gap-1.5 py-2 border-y border-neutral-800/80">
+                      {project.subNodes.map((node, i) => (
+                        <div
+                          key={i}
+                          className={`flex items-center justify-center p-1.5 rounded border text-center font-mono text-[9px] font-bold ${
+                            node.highlight
+                              ? "bg-aeo-cyan/15 border-aeo-cyan/50 text-aeo-cyan shadow-sm shadow-aeo-cyan/20"
+                              : "bg-black/40 border-neutral-800 text-neutral-300"
+                          }`}
+                        >
+                          <span className="truncate">{node.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : project.outcomes ? (
+                    <div className="grid grid-cols-3 gap-1.5 py-2 border-y border-neutral-800/80">
+                      {project.outcomes.map((metric, i) => (
+                        <div key={i} className="flex flex-col items-center justify-center p-1 bg-black/40 rounded border border-neutral-800 text-center">
+                          <span className="text-[10px] font-bold text-aeo-cyan font-mono">
+                            {metric.split(" ").slice(-1)}
+                          </span>
+                          <span className="text-[8px] text-neutral-500 font-sans tracking-tight truncate w-full">
+                            {metric.split(" ").slice(0, -1).join(" ")}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
 
                   {/* Compact Skills Tags */}
                   <div className="flex flex-wrap gap-1 pt-1 mt-auto">
                     {project.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2 py-0.5 bg-neutral-950 border border-neutral-800 text-neutral-400 text-[9px] font-mono rounded"
+                        className="px-2 py-0.5 bg-neutral-950 border border-neutral-800 text-neutral-300 text-[9px] font-mono rounded"
                       >
                         {skill}
                       </span>
