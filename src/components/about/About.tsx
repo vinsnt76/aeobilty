@@ -805,37 +805,40 @@ const About: React.FC = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800">
-              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Direct Senior Expertise</h4>
-              <p className="text-sm text-neutral-400">You work directly with the person doing the technical work, not an account manager.</p>
+              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Senior Expertise</h4>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Advanced reporting and analytics specialist with experience automating dashboards, improving data quality, and supporting decision-making.
+              </p>
             </motion.div>
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800">
-              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">No Lock-In Contracts</h4>
-              <p className="text-sm text-neutral-400">I operate transparently, project-by-project or month-to-month.</p>
+              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Technical Know How</h4>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Across complex systems, solving issues, shaping strategy, and delivering clear solutions.
+              </p>
             </motion.div>
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800">
-              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Systems + Marketing Hybrid Skillset</h4>
-              <p className="text-sm text-neutral-400">Most freelancers do marketing or tech. I do both, and integrate them.</p>
+              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Strong Marketing Skillset</h4>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Systems-minded marketer with a track record in strategy, communication, and implementation.
+              </p>
             </motion.div>
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800">
-              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">AI-Ready Digital Architecture</h4>
-              <p className="text-sm text-neutral-400 mb-2">Your digital footprint becomes fully structured for:</p>
-              <ul className="list-disc pl-5 text-sm text-neutral-400">
-                <li>ChatGPT & Perplexity</li>
-                <li>Google AI Overviews & Gemini</li>
-                <li>Local WA search surfaces</li>
-              </ul>
+              <h4 className="text-xl font-semibold text-aeo-cyan mb-3">AI-Ready Marketer</h4>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Delivering end-to-end automation with no-code tools, API integrations, and conversational agents.
+              </p>
             </motion.div>
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800 lg:col-span-2">
               <h4 className="text-xl font-semibold text-aeo-cyan mb-3">15+ Years of Commercial Experience</h4>
-              <p className="text-sm text-neutral-400 mb-2">Rare hybrid background across:</p>
+              <p className="text-sm text-neutral-400 mb-3">Rare hybrid background across:</p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-white/10 rounded-full">Travel industry enterprise systems</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">Digital marketing agencies</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">Automation consulting</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">AI prompting</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">CRM + analytics</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">SEO + PPC</span>
-                <span className="px-2 py-1 bg-white/10 rounded-full">UX/CRO</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">Travel industry enterprise systems</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">Digital marketing agencies</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">Automation consulting</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">AI prompting</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">CRM + analytics</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">SEO + PPC</span>
+                <span className="px-2.5 py-1 bg-white/10 rounded-full text-neutral-300">UX/CRO</span>
               </div>
             </motion.div>
           </div>
