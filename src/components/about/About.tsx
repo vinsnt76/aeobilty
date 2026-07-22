@@ -659,13 +659,17 @@ const About: React.FC = () => {
                 imageSrc: "/aeobility-icon-dark.svg"
               },
               {
-                title: "Analytics Performance Report",
-                date: "Feb 2026 — AEObility",
-                summary: "A comprehensive SEO & AEO visibility report demonstrating performance lift, attribution signals, and search volume growth across Google and AI search engines.",
-                outcomes: ["Search volume +140%", "AI mentions +85%", "Traffic attribution 3×"],
-                value: "Translates raw model retrieval metrics into a clear, actionable visibility roadmap.",
-                skills: ["GA4 / GTM", "Looker Studio", "AEO Metrics"],
-                iframeSrc: "https://drive.google.com/file/d/1m03il0l5T3H8W8ZqaoSK7DnmL-35YZpL/preview"
+                title: "Baby Bento — Structural Search Alignment",
+                date: "Jul 2026 — Case Study",
+                summary: "Rebuilt structural search clarity and intent alignment for Baby Bento ecommerce. Replaced discount dependency with schema injection and conversational AEO content alignment, reversing organic momentum drop.",
+                outcomes: ["Sales Uplift +17-18%", "CTR Lift +95%", "Qualified Clicks +55%"],
+                subNodes: [
+                  { label: "Sales +17%", highlight: true },
+                  { label: "CTR +95%", highlight: true },
+                  { label: "Clicks +55%", highlight: true }
+                ],
+                skills: ["Shopify AEO", "Schema Injection", "Intent Routing", "E-commerce Uplift"],
+                imageSrc: "/case-study-aeo-lifts-traffic.webp"
               },
               {
                 title: "Baby Bento — Brand Book & Messaging Framework",
