@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap } from 'lucide-react';
+import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap, BarChart3, Code, Cpu, Layers } from 'lucide-react';
 import Link from 'next/link';
 
 const About: React.FC = () => {
@@ -599,6 +599,138 @@ const About: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </motion.div>
+
+        {/* Featured Impact Section (Compact 3x1 Grid) */}
+        <motion.div
+          id="featured-impact"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-16 border-t border-neutral-200 dark:border-neutral-800 pt-12 scroll-mt-24"
+        >
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase">
+                <BarChart3 size={16} />
+                <span>Portfolio</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
+                Featured <span className="text-gradient-aeo font-extrabold">Impact.</span>
+              </h3>
+            </div>
+            <div className="h-1 w-20 bg-gradient-to-r from-aeo-cyan to-aeo-purple rounded-full hidden sm:block" />
+          </div>
+
+          {/* 3 x 1 Compact Grid (Reduced by 75%) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                title: "AI Video Engine: Content Automation",
+                date: "Mar 2026 — AEObility",
+                summary: "Architected an automated video generation engine that translates brand assets and synthetic voiceovers into platform-ready marketing assets at scale.",
+                outcomes: ["Production time -90%", "Creative output 10×", "Cost per video -85%"],
+                value: "Empowers brands to deploy hyper-personalized video campaigns in minutes.",
+                skills: ["AI Video", "Python", "FFmpeg"],
+                iframeSrc: "https://drive.google.com/file/d/13TJucyE9G28aRUVRdNHWC_1HgkuC8kr-/preview"
+              },
+              {
+                title: "Analytics Performance Report",
+                date: "Feb 2026 — AEObility",
+                summary: "A comprehensive SEO & AEO visibility report demonstrating performance lift, attribution signals, and search volume growth across Google and AI search engines.",
+                outcomes: ["Search volume +140%", "AI mentions +85%", "Traffic attribution 3×"],
+                value: "Translates raw model retrieval metrics into a clear, actionable visibility roadmap.",
+                skills: ["GA4 / GTM", "Looker Studio", "AEO Metrics"],
+                iframeSrc: "https://drive.google.com/file/d/1m03il0l5T3H8W8ZqaoSK7DnmL-35YZpL/preview"
+              },
+              {
+                title: "Baby Bento Social Reel Generator",
+                date: "Apr 2026 — Baby Bento",
+                summary: "Engineered a workflow automation tool compiling product imagery, user reviews, and audio tracks into high-impact Instagram Reels and TikToks.",
+                outcomes: ["Weekly reels +300%", "Production workflow -95%", "Reel views +150%"],
+                value: "Seamlessly scales social media marketing pipelines through programmatic content synthesis.",
+                skills: ["Instagram API", "Node.js", "Automation"],
+                imageSrc: "/projects/baby-bento-reels.jpg"
+              }
+            ].map((project, idx) => (
+              <motion.article
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-aeo-cyan/50 transition-all group"
+              >
+                {/* Media Header (Reduced height) */}
+                <div className="relative w-full aspect-video bg-neutral-950 overflow-hidden">
+                  {project.iframeSrc ? (
+                    <iframe
+                      src={project.iframeSrc}
+                      width="100%"
+                      height="100%"
+                      className="w-full h-full border-0 pointer-events-none"
+                      allow="autoplay"
+                    />
+                  ) : project.imageSrc ? (
+                    <img
+                      src={project.imageSrc}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-neutral-900">
+                      <Layers className="w-8 h-8 text-neutral-600" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60" />
+                </div>
+
+                {/* Compact Content Block */}
+                <div className="p-4 flex flex-col flex-grow space-y-3">
+                  <header className="space-y-0.5">
+                    <div className="flex items-center gap-1.5 text-aeo-cyan font-mono text-[10px] font-bold">
+                      <Cpu size={12} />
+                      <span>{project.date}</span>
+                    </div>
+                    <h4 className="text-sm font-bold text-white leading-snug group-hover:text-aeo-cyan transition-colors">
+                      {project.title}
+                    </h4>
+                  </header>
+
+                  <p className="text-xs text-neutral-400 leading-relaxed font-sans line-clamp-3">
+                    {project.summary}
+                  </p>
+
+                  {/* Compact Metrics Pills */}
+                  <div className="grid grid-cols-3 gap-1.5 py-2 border-y border-neutral-800/80">
+                    {project.outcomes.map((metric, i) => (
+                      <div key={i} className="flex flex-col items-center justify-center p-1 bg-black/40 rounded border border-neutral-800 text-center">
+                        <span className="text-[10px] font-bold text-aeo-cyan font-mono">
+                          {metric.split(" ").slice(-1)}
+                        </span>
+                        <span className="text-[8px] text-neutral-500 font-sans tracking-tight truncate w-full">
+                          {metric.split(" ").slice(0, -1).join(" ")}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Compact Skills Tags */}
+                  <div className="flex flex-wrap gap-1 pt-1 mt-auto">
+                    {project.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2 py-0.5 bg-neutral-950 border border-neutral-800 text-neutral-400 text-[9px] font-mono rounded"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </motion.div>
 

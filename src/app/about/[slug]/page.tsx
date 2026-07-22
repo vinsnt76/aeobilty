@@ -104,7 +104,6 @@ export default async function Page({ params }: PageProps) {
         ("Sharper, diagnostic, AEO > SEO theatre").
       */}
       <About />
-      <Projects />
       <Contact />
     </>
   );
