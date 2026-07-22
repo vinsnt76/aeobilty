@@ -650,9 +650,9 @@ const About: React.FC = () => {
                 date: "Apr 2026 — Baby Bento",
                 summary: "Mission and purpose to support parents and kids with engaging, healthy mealtime solutions. Origin story of the founder, brand values (Creative Partner, Love Made Visible, Inspiring Prep, Confident Eating), visual identity standards (typography & color palettes), and key messaging pillars (durability, safety, ease of use).",
                 subNodes: [
-                  { label: "Growth Cards (MCP)", highlight: false },
-                  { label: "Social Media Gem", highlight: false },
-                  { label: "Airtable", highlight: true } // Cyan blue
+                  { label: "MCP", highlight: true },
+                  { label: "AI Studio", highlight: true },
+                  { label: "Gemini", highlight: true }
                 ],
                 skills: ["Gemini", "Promelli", "AI Studio"],
                 iframeSrc: "https://drive.google.com/file/d/13TJucyE9G28aRUVRdNHWC_1HgkuC8kr-/preview"
