@@ -107,16 +107,11 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-4 text-left font-serif"
+            className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-4 text-left font-serif block"
           >
-            <p>
-              After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays! Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
-            </p>
-            <p>
-              When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
-            </p>
-            <div className="flex justify-center w-full my-2 overflow-hidden">
-              <div className="transform scale-50 origin-top -mb-[260px] max-w-[320px]">
+            {/* Floated Scaled Embed Wrapper */}
+            <div className="float-left mr-4 mb-2 -mt-2 overflow-hidden w-[180px] h-[310px] relative">
+              <div className="transform scale-[0.48] origin-top-left w-[360px]">
                 <blockquote
                   className="instagram-media"
                   data-instgrm-captioned
@@ -350,11 +345,17 @@ const About: React.FC = () => {
                     >
                       A post shared by Vincent Baker (@vinniiecent)
                     </a>
-                  </p>
                 </div>
               </blockquote>
             </div>
           </div>
+
+          <p>
+            After travelling Australia and the world, I naturally fell into the travel industry, beginning my career and spending more than a decade with Qantas &amp; Viva Holidays! Those years initiated a spark for digital marketing assisting clients with marketing briefs and started the foundation for everything I do today: relationship-driven communication, commercial accountability, operational precision, and the ability to diagnose problems quickly across complex systems.
+          </p>
+          <p>
+            When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
+          </p>
         </motion.div>
 
           {/* Right Column: Digital Career Progression */}
