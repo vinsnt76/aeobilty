@@ -419,7 +419,7 @@ const About: React.FC = () => {
         >
           <div className="flex items-center justify-between mb-8">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-aeo-cyan font-bold">Verified Credentials</span>
+              <span className="text-xs font-mono uppercase tracking-widest text-aeo-cyan font-bold">Credentials</span>
               <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mt-1">
                 Certifications & Industry Standards
               </h3>
