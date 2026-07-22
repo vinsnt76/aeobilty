@@ -115,24 +115,25 @@ const About: React.FC = () => {
             <p>
               When COVID hit and the travel sector collapsed overnight, I pivoted into digital marketing, first through SEO, then PPC, then deeper into UX, CRO, analytics, and CRM integrations leading to AI Automation and Agentic Development. What started as a survival career pivot became a full stack technical reinvention.
             </p>
-            <div className="flex justify-center w-full my-4">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/p/BDDrNUDAoTb/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14"
-                style={{
-                  background: '#FFF',
-                  border: 0,
-                  borderRadius: '12px',
-                  boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
-                  margin: '1px',
-                  maxWidth: '540px',
-                  minWidth: '326px',
-                  padding: 0,
-                  width: '99.375%',
-                }}
-              >
+            <div className="flex justify-center w-full my-2 overflow-hidden">
+              <div className="transform scale-50 origin-top -mb-[260px] max-w-[320px]">
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-captioned
+                  data-instgrm-permalink="https://www.instagram.com/p/BDDrNUDAoTb/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"
+                  style={{
+                    background: '#FFF',
+                    border: 0,
+                    borderRadius: '12px',
+                    boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
+                    margin: '1px',
+                    maxWidth: '540px',
+                    minWidth: '280px',
+                    padding: 0,
+                    width: '99.375%',
+                  }}
+                >
                 <div style={{ padding: '16px' }}>
                   <a
                     href="https://www.instagram.com/p/BDDrNUDAoTb/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -353,7 +354,8 @@ const About: React.FC = () => {
                 </div>
               </blockquote>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
           {/* Right Column: Digital Career Progression */}
           <motion.div
