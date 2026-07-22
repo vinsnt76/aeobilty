@@ -506,9 +506,17 @@ const About: React.FC = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="mt-20 border-t border-neutral-200 dark:border-neutral-800 pt-16"
         >
-          <motion.h3 variants={itemVariants} className="text-2xl md:text-3xl font-bold mb-10 text-center">
-            Why Perth Businesses Hire Me Instead of an Agency
-          </motion.h3>
+          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-10 space-y-4">
+            <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+              Why Perth Businesses Hire Me Instead of an Agency: A Career Built on Adaptability and Growth
+            </h3>
+            <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-serif leading-relaxed">
+              My background spans both marketing and technical systems, and I&apos;ve learned how to integrate them so they support each other. Whether it&apos;s SEO, PPC, UX/CRO, CRM workflows, analytics, or automation, I look at how each piece fits into the broader digital ecosystem.
+            </p>
+            <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-serif leading-relaxed">
+              This blend of skills helps me translate technical insights into practical actions which helps to understand why something matters, not just what needs to be done.
+            </p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div variants={itemVariants} className="p-6 bg-neutral-900 text-white rounded-xl shadow-lg border border-neutral-800">
               <h4 className="text-xl font-semibold text-aeo-cyan mb-3">Direct Senior Expertise</h4>
