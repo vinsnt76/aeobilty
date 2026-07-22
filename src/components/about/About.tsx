@@ -873,21 +873,21 @@ const About: React.FC = () => {
             <div className="space-y-4 text-left">
               <details className="group bg-neutral-50 dark:bg-neutral-900 p-5 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <summary className="font-semibold text-base cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                  What is the difference between a traditional SEO agency and a Freelance Technical SEO Specialist?
+                  What is your ideal role?
                   <span className="group-open:rotate-180 transition-transform text-aeo-cyan ml-2">▼</span>
                 </summary>
-                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed">
-                  Agencies frequently lean on high-volume content production. A technical specialist rewrites the structural foundation, resolves code bloat, ensures proper schema node logic, and builds clean tracking frameworks.
+                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed font-sans">
+                  I&apos;m looking for a part-time hybrid role, ideally up to four days a week, within an in-house marketing team or agency. I&apos;m open to full-time if the right opportunity comes along.
                 </p>
               </details>
 
               <details className="group bg-neutral-50 dark:bg-neutral-900 p-5 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <summary className="font-semibold text-base cursor-pointer flex justify-between items-center text-neutral-900 dark:text-neutral-100">
-                  Do you implement GA4 and cross-domain tracking as part of SEO?
+                  When can you start and what are your salary expectations?
                   <span className="group-open:rotate-180 transition-transform text-aeo-cyan ml-2">▼</span>
                 </summary>
-                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed">
-                  Yes. Search visibility means nothing if data attribution is broken. Every project maps traffic milestones directly to financial conversions via Google Tag Manager and Looker Studio dashboards.
+                <p className="mt-3 text-neutral-700 dark:text-neutral-400 text-xs leading-relaxed font-sans">
+                  I&apos;m available immediately. My current contracting rate is $70 + GST per hour, and I&apos;m seeking an employee package that is broadly equivalent once employment costs are considered.
                 </p>
               </details>
             </div>
