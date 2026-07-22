@@ -794,7 +794,11 @@ const About: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-10 space-y-4">
             <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-              A Career Built on <span className="text-aeo-cyan">[</span>Adaptability<span className="text-aeo-cyan">]</span> and <span className="underline decoration-gradient-to-r decoration-aeo-cyan to-aeo-purple underline-offset-8 decoration-2 font-extrabold">Growth</span>
+              A Career Built on <span className="text-aeo-cyan font-mono">[</span>Adaptability<span className="text-aeo-cyan font-mono">]</span> and{" "}
+              <span className="relative inline-block pb-2">
+                <span>Growth</span>
+                <span className="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-aeo-cyan to-aeo-purple rounded-full shadow-sm" />
+              </span>
             </h3>
             <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-serif leading-relaxed">
               My background spans both marketing and technical systems, and I&apos;ve learned how to integrate them so they support each other. Whether it&apos;s SEO, PPC, UX/CRO, CRM workflows, analytics, or automation, I look at how each piece fits into the broader digital ecosystem.
