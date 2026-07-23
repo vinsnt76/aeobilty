@@ -85,77 +85,84 @@ export default function RagArticlePage() {
       },
       {
         "@type": "Article",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#webpage"
         },
         "mainEntityOfPage": {
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#webpage"
+          "@type": "WebPage",
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
         },
-        "headline": "AI Search Optimisation: RAG, Answer Engines & Machine-Readable Content",
-        "description": "Master AI Search Optimisation with Retrieval-Augmented Generation (RAG). Learn how vector retrieval, passage chunking, and semantic schemas power brand visibility across ChatGPT, Gemini, and Perplexity.",
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
-          "caption": "AI Search Optimisation and Retrieval-Augmented Generation (RAG) visual diagram depicting vector retrieval, passage chunking, and semantic entity grounding by AEObility."
-        },
+        "headline": "AI Search Optimisation: RAG, Answer Engines & Content",
+        "description": "A technical guide explaining Retrieval-Augmented Generation (RAG) and its role in AI search optimisation. Learn how structured content, chunking, and entity clarity improve visibility and retrieval accuracy across answer engines.",
         "author": {
-          "@id": "https://aeobility.com.au/vince-baker#author"
+          "@type": "Person",
+          "name": "Vinnie Baker",
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@type": "Organization",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://aeobility.com.au/android-chrome-512x512.png",
+            "width": 512,
+            "height": 512
+          }
         },
-        "datePublished": "2026-07-23T00:00:00+08:00",
-        "dateModified": "2026-07-23T00:00:00+08:00",
+        "datePublished": "2026-07-23",
+        "dateModified": "2026-07-23",
         "inLanguage": "en-AU",
-        "articleSection": "Articles",
-        "genre": "AI Search Marketing & RAG Technical Guide",
+        "wordCount": "2600",
         "keywords": [
           "AI search optimisation",
           "Retrieval-Augmented Generation",
+          "RAG",
           "Answer Engine Optimisation",
-          "Vector Retrieval",
-          "Passage Chunking"
+          "AEO",
+          "structured content",
+          "chunking",
+          "entity optimisation",
+          "visibility audit",
+          "AEObility"
+        ],
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
+          "width": 1200,
+          "height": 630
+        },
+        "articleSection": [
+          "RAG Pipeline",
+          "Entity Matching & Passage Retrieval",
+          "AI Search Optimisation",
+          "RAG Misconceptions",
+          "Pre-Chunking vs Post-Chunking",
+          "FAQ: RAG & Answer Engine Search"
         ],
         "about": [
           {
             "@type": "Thing",
-            "name": "AI Search Optimisation"
+            "name": "Retrieval-Augmented Generation (RAG)",
+            "description": "A technical architecture enabling AI models to retrieve and cite live external content for accurate, grounded answers."
           },
           {
             "@type": "Thing",
-            "name": "Retrieval-Augmented Generation"
-          },
-          {
-            "@type": "Thing",
-            "name": "Answer Engine Optimisation"
-          },
-          {
-            "@type": "Thing",
-            "name": "Semantic Content Structuring"
-          },
-          {
-            "@type": "Thing",
-            "name": "Vector Embeddings & Chunking"
+            "name": "AI Search Optimisation",
+            "description": "Optimising content for AI-driven answer engines using structured data, semantic clarity, and passage-level retrieval."
           }
         ],
-        "mentions": [
-          {
-            "@type": "WebPage",
-            "url": "https://aeobility.com.au/services/aeo",
-            "name": "AEO Services"
-          },
-          {
-            "@type": "WebPage",
-            "url": "https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo",
-            "name": "AEO vs SEO"
-          },
-          {
-            "@type": "WebPage",
-            "url": "https://aeobility.com.au/knowledge-hub/semantic-seo",
-            "name": "Semantic SEO"
-          }
-        ]
+        "citation": [
+          "https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo",
+          "https://aeobility.com.au/knowledge-hub/semantic-seo"
+        ],
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": [
+            "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
+          ]
+        }
       },
       {
         "@type": "BreadcrumbList",
