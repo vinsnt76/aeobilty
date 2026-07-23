@@ -596,14 +596,15 @@ export default function AeoVsSeoArticlePage() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-8">Suggested Reading</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Link href="/knowledge-hub/case-studies/baby-bento" className="group flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-aeo-cyan/30 transition-all duration-300 relative overflow-hidden">
+                  <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="group flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-aeo-cyan/30 transition-all duration-300 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                     <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
-                      <Image src="/case-study-aeo-lifts-traffic.webp" alt="Baby Bento Case Study" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                      <Image src="/ai-search-optimisation-why-RAG-matters-AEObilty.webp" alt="RAG & Answer Engines Guide" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                     </div>
                     <div className="p-6 relative z-10 flex-grow">
-                      <h3 className="font-semibold text-white group-hover:text-aeo-cyan mb-3 transition-colors">Case Study: Baby Bento</h3>
-                      <p className="text-sm text-white/60">Structural Search Alignment and semantic uplift.</p>
+                      <div className="text-[10px] text-aeo-cyan uppercase font-bold tracking-wider mb-2">Technical Guide</div>
+                      <h3 className="font-semibold text-white group-hover:text-aeo-cyan mb-2 transition-colors">RAG & Answer Engines</h3>
+                      <p className="text-xs text-white/60 font-serif leading-relaxed">Why machine-readable content and passage chunking drive AI search visibility.</p>
                     </div>
                   </Link>
                   <Link href="/services/aeo/shopify" className="group flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-aeo-cyan/30 transition-all duration-300 relative overflow-hidden">

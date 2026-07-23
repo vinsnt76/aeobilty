@@ -83,6 +83,9 @@ export default function SemanticSEONodePage() {
               <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 Articles & Guides
               </Link>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
+                RAG & Answer Engines
+              </Link>
               <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 Client Case Studies
               </Link>

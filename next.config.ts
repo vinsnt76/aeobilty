@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         destination: '/about/freelance-digital-specialist-perth',
         permanent: true,
       },
+      {
+        source: '/knowledge-hub/aeo/rag-misconceptions',
+        destination: '/knowledge-hub/articles/retrieval-augmented-generation#rag-misconceptions',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/aeo/rag-faq',
+        destination: '/knowledge-hub/articles/retrieval-augmented-generation#rag-faq',
+        permanent: true,
+      },
     ];
   },
 };

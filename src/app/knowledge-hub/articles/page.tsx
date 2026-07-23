@@ -30,6 +30,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "RAG, Answer Engines & Why Machine‑Readable Content Matters",
+      category: "Vector Retrieval & RAG",
+      description: "Learn how Retrieval-Augmented Generation (RAG) works, why machine-readable content matters for AEO, and how chunking affects AI search visibility.",
+      href: "/knowledge-hub/articles/retrieval-augmented-generation",
+      image: "/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
+      alt: "AI Search Optimisation and Retrieval-Augmented Generation (RAG) visual diagram depicting vector retrieval, passage chunking, and semantic entity grounding by AEObility.",
+      metrics: [
+        { label: "Type", value: "Technical Guide" },
+        { label: "Read Time", value: "6 min" }
+      ]
+    },
+    {
       title: "AEO vs SEO: The Complete Guide to AI Search",
       category: "Generative Search",
       description: "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
@@ -85,6 +97,17 @@ export default function ArticlesHubPage() {
               <Link href="/knowledge-hub/articles/aeo-vs-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
                 AEO vs SEO
               </Link>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
+                RAG & Answer Engines
+              </Link>
+              <div className="flex flex-col gap-1 ml-8 pl-3 border-l border-white/10 text-xs">
+                <Link href="/knowledge-hub/articles/retrieval-augmented-generation#rag-misconceptions" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
+                  &bull; Misconceptions
+                </Link>
+                <Link href="/knowledge-hub/articles/retrieval-augmented-generation#rag-faq" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
+                  &bull; Technical FAQ
+                </Link>
+              </div>
               <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 Client Case Studies
               </Link>

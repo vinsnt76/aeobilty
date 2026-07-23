@@ -133,7 +133,7 @@ export default function AEOKnowledgeNodePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((pillar, idx) => (
-              <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors">
+              <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors flex flex-col justify-between">
                 <script
                   type="application/ld+json"
                   dangerouslySetInnerHTML={{
@@ -146,11 +146,30 @@ export default function AEOKnowledgeNodePage() {
                     })
                   }}
                 />
-                <div className="p-2.5 bg-white/5 rounded-xl w-fit">
-                  <BookOpen className="w-5 h-5 text-aeo-cyan" />
+                <div className="space-y-3">
+                  <div className="p-2.5 bg-white/5 rounded-xl w-fit">
+                    <BookOpen className="w-5 h-5 text-aeo-cyan" />
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">{pillar.title}</h3>
+                  <p className="text-xs text-white/60 leading-relaxed font-light">{pillar.desc}</p>
                 </div>
-                <h3 className="text-base font-bold text-white leading-snug">{pillar.title}</h3>
-                <p className="text-xs text-white/60 leading-relaxed font-light">{pillar.desc}</p>
+
+                {idx === 0 && (
+                  <div className="pt-3 border-t border-white/10 flex flex-col gap-1.5 text-[11px]">
+                    <Link 
+                      href="/knowledge-hub/articles/retrieval-augmented-generation#rag-misconceptions"
+                      className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1"
+                    >
+                      &rarr; Common RAG Misconceptions
+                    </Link>
+                    <Link 
+                      href="/knowledge-hub/articles/retrieval-augmented-generation#rag-faq"
+                      className="text-aeo-purple hover:underline font-semibold flex items-center gap-1"
+                    >
+                      &rarr; RAG Technical FAQ
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>

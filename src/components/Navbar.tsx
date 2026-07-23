@@ -65,7 +65,9 @@ export default function Navbar() {
         { name: 'Hub Overview', href: '/knowledge-hub' },
         { name: 'AEO Core Principles', href: '/knowledge-hub/aeo' },
         { name: 'AI Semantic SEO', href: '/knowledge-hub/semantic-seo' },
-        { name: 'GEO & SEO Local Matrix', href: '/knowledge-hub/geo' }
+        { name: 'GEO & SEO Local Matrix', href: '/knowledge-hub/geo' },
+        { name: 'Articles & Guides', href: '/knowledge-hub/articles' },
+        { name: 'RAG & Answer Engines', href: '/knowledge-hub/articles/retrieval-augmented-generation' }
       ]
     },
     {

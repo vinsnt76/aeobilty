@@ -504,6 +504,7 @@ export default function BabyBentoCaseStudyPage() {
             </Link>
             <div className="flex flex-wrap gap-4 text-xs text-white/40">
               <span>Explore other nodes:</span>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="hover:text-aeo-cyan transition-colors">RAG & Answer Engines</Link>
               <Link href="/knowledge-hub/aeo" className="hover:text-aeo-cyan transition-colors">AEO Principles</Link>
               <Link href="/knowledge-hub/semantic-seo" className="hover:text-aeo-cyan transition-colors">Semantic SEO</Link>
               <Link href="/knowledge-hub/geo" className="hover:text-aeo-cyan transition-colors">GEO Local Matrix</Link>
