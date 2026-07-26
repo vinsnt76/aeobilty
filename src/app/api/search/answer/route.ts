@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { KnowledgeNode, SearchQueryResponse } from '@/lib/search/types';
-import { buildVector, computeCosineSimilarity, generateGroundedAnswer } from '@/lib/search/vectorEngine';
+import { 
+  buildVector, 
+  computeCosineSimilarity, 
+  classifyQueryIntent, 
+  generateGroundedAnswer,
+  generateAmbiguousClarification,
+  generateGeneralKnowledgeAnswer 
+} from '@/lib/search/vectorEngine';
 import knowledgeBaseData from '@/lib/search/knowledgeBase.json';
 
 const knowledgeBase = knowledgeBaseData as KnowledgeNode[];
@@ -9,6 +16,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     const query = typeof body.query === 'string' ? body.query.trim() : '';
+    const offTopicCount = typeof body.previousOffTopicCount === 'number' ? body.previousOffTopicCount : 0;
 
     if (!query) {
       return NextResponse.json(
@@ -17,10 +25,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1. Vector calculation for query
+    // 1. Vector calculation & similarity matching (~1ms)
     const queryVector = buildVector(query);
-
-    // 2. Cosine similarity against pre-computed nodes (~1ms execution)
     let bestMatch: KnowledgeNode | null = null;
     let maxSimilarity = -1;
 
@@ -34,16 +40,28 @@ export async function POST(req: NextRequest) {
 
     const similarityScore = Math.max(0, Math.min(1, maxSimilarity));
 
-    // 3. Two-Tier Threshold Logic
-    // Hard Fallback (< 0.50): Off-topic or absent from site architecture
-    // Caution Band (0.50 <= sim < 0.65): Low confidence warning badge
-    // High Confidence (sim >= 0.65): High certainty match
-    const isFallback = similarityScore < 0.50;
-    const isCaution = similarityScore >= 0.50 && similarityScore < 0.65;
+    // 2. Classify Query Intent
+    const resultType = classifyQueryIntent(query, similarityScore, offTopicCount);
 
-    if (isFallback || !bestMatch) {
+    // Case A: Repeat Off-Topic Question -> "AI SEO is all I know."
+    if (resultType === 'off_topic_repeat') {
       const response: SearchQueryResponse = {
-        answer: "This query sits outside our core on-site architecture. Connect with AI Bill in the workspace for deeper diagnostic evaluation of your website.",
+        answer: "AI SEO is all I know.",
+        topMatch: null,
+        similarityScore,
+        isFallback: true,
+        isCaution: false,
+        resultType: 'off_topic_repeat',
+        offerDiagnosticTool: true
+      };
+      return NextResponse.json(response);
+    }
+
+    // Case B: Ambiguous Query -> Ask 1 short clarifying question
+    if (resultType === 'ambiguous') {
+      const clarification = generateAmbiguousClarification(query);
+      const response: SearchQueryResponse = {
+        answer: clarification.question,
         topMatch: bestMatch ? {
           pageName: bestMatch.pageName,
           url: bestMatch.url,
@@ -54,19 +72,68 @@ export async function POST(req: NextRequest) {
         } : null,
         similarityScore,
         isFallback: true,
-        isCaution: false
+        isCaution: false,
+        resultType: 'ambiguous',
+        clarifyingQuestion: clarification.question,
+        suggestedOptions: clarification.options
       };
       return NextResponse.json(response);
     }
 
-    // 4. Grounded Synthesis
-    let synthesizedAnswer = generateGroundedAnswer(bestMatch);
+    // Case C: General Knowledge & Off-topic harmless question
+    if (resultType === 'general_knowledge') {
+      let generalAnswer = generateGeneralKnowledgeAnswer(query);
+
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (apiKey) {
+        try {
+          const prompt = `You are a helpful AI assistant.
+Answer the following general query politely and directly in strictly 1 to 2 sentences. Do not force marketing pitch in the answer body.
+
+Query: "${query}"`;
+
+          const geminiRes = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                contents: [{ role: 'user', parts: [{ text: prompt }] }]
+              })
+            }
+          );
+
+          if (geminiRes.ok) {
+            const data = await geminiRes.json();
+            const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (text) generalAnswer = text.trim();
+          }
+        } catch (err) {
+          console.warn('Gemini general knowledge synthesis fallback:', err);
+        }
+      }
+
+      const response: SearchQueryResponse = {
+        answer: generalAnswer,
+        topMatch: null,
+        similarityScore,
+        isFallback: true,
+        isCaution: false,
+        resultType: 'general_knowledge',
+        offerDiagnosticTool: true
+      };
+      return NextResponse.json(response);
+    }
+
+    // Case D: Visibility / AEO / SEO Question (High Match or Caution)
+    const isCaution = similarityScore < 0.65;
+    let synthesizedAnswer = bestMatch ? generateGroundedAnswer(bestMatch) : "AEObility provides Answer Engine Optimisation (AEO) services to structure business content for LLMs and map engines.";
 
     const apiKey = process.env.GEMINI_API_KEY;
-    if (apiKey) {
+    if (apiKey && bestMatch) {
       try {
         const prompt = `You are the AEObility Answer Engine Search assistant.
-Provide a concise, strictly 2-sentence context-grounded response to the user query based ONLY on the provided entity context.
+Provide a concise, strictly 2-sentence context-grounded response to the user query based on the provided entity context.
 
 User Query: "${query}"
 Matched Entity Page: ${bestMatch.pageName} (${bestMatch.url})
@@ -78,8 +145,8 @@ Latent Keywords: ${bestMatch.latentKeywords}
 
 Rules:
 1. MUST be exactly 2 sentences long.
-2. Grounded strictly in the entity context above.
-3. Professional, clear, and direct Australian tech tone.`;
+2. Grounded in the entity context above with AEO diagnostic framing.
+3. Clear, direct Australian tech perspective.`;
 
         const geminiRes = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
@@ -95,28 +162,27 @@ Rules:
         if (geminiRes.ok) {
           const data = await geminiRes.json();
           const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (text) {
-            synthesizedAnswer = text.trim();
-          }
+          if (text) synthesizedAnswer = text.trim();
         }
       } catch (err) {
-        console.warn('Gemini live synthesis fallback to deterministic grounded answer:', err);
+        console.warn('Gemini live synthesis fallback:', err);
       }
     }
 
     const response: SearchQueryResponse = {
       answer: synthesizedAnswer,
-      topMatch: {
+      topMatch: bestMatch ? {
         pageName: bestMatch.pageName,
         url: bestMatch.url,
         h1: bestMatch.h1,
         focusKeyphrase: bestMatch.focusKeyphrase,
         schemaType: bestMatch.schemaType,
         description: bestMatch.description
-      },
+      } : null,
       similarityScore,
       isFallback: false,
-      isCaution
+      isCaution,
+      resultType: 'visibility'
     };
 
     return NextResponse.json(response);

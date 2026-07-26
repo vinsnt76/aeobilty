@@ -11,8 +11,15 @@ export interface KnowledgeNode {
   embedding: number[];
 }
 
+export type SearchQueryResultType = 
+  | 'visibility'
+  | 'general_knowledge'
+  | 'ambiguous'
+  | 'off_topic_repeat';
+
 export interface SearchQueryRequest {
   query: string;
+  previousQueryCount?: number;
 }
 
 export interface SearchQueryResponse {
@@ -28,4 +35,8 @@ export interface SearchQueryResponse {
   similarityScore: number;
   isFallback: boolean;
   isCaution: boolean;
+  resultType: SearchQueryResultType;
+  clarifyingQuestion?: string;
+  offerDiagnosticTool?: boolean;
+  suggestedOptions?: Array<{ label: string; query: string }>;
 }
