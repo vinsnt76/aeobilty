@@ -326,7 +326,7 @@ export default function CompanionWidget() {
     }
   };
 
-  if (!telemetryData) return null;
+  // Always render CompanionWidget so AI Bill is available for diagnostics & site search handoffs
 
   return (
     <>
