@@ -144,12 +144,28 @@ export default function CompanionWidget() {
       }
     };
 
+    const handleOpenWithQuery = (e: Event) => {
+      const customEvent = e as CustomEvent<{ query?: string }>;
+      const searchQuery = customEvent.detail?.query || 'Diagnostic Query';
+      setIsOpen(true);
+      setBillState('CONSULTANT');
+      window.dispatchEvent(new Event('bill_opened'));
+      window.dispatchEvent(new Event('bill_consultation_started'));
+      setMessages(prev => [
+        ...prev,
+        { sender: 'user', text: searchQuery },
+        { sender: 'assistant', text: `Diagnostic Inquiry Received: "${searchQuery}". Let's analyze how this topic connects to your site's AEO & GEO search architecture.` }
+      ]);
+    };
+
     window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
     window.addEventListener('open_new_bill_session', handleOpenNewSession);
+    window.addEventListener('open_bill_with_query', handleOpenWithQuery);
 
     return () => {
       window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
       window.removeEventListener('open_new_bill_session', handleOpenNewSession);
+      window.removeEventListener('open_bill_with_query', handleOpenWithQuery);
     };
   }, []);
 

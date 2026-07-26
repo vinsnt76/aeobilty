@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, Calendar } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar, Search } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -164,9 +164,21 @@ export default function Navbar() {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-2 xl:gap-3">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event('open_answer_search_modal'))}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:text-black bg-zinc-100 hover:bg-zinc-200/80 border border-zinc-300/80 rounded-lg transition-all cursor-pointer shadow-xs"
+                title="Search Site Entities (⌘K)"
+              >
+                <Search className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Search</span>
+                <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-white text-zinc-600 rounded border border-zinc-300">
+                  ⌘K
+                </kbd>
+              </button>
               <Link
                 href="/book"
-                className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-black hover:text-aeo-cyan transition-colors"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-black hover:text-aeo-cyan transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Call

@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import GlobalConsentBanner from "@/components/GlobalConsentBanner";
 import CompanionWidget from "@/components/CompanionWidget";
+import AnswerSearchModal from "@/components/AnswerSearchModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -145,6 +146,7 @@ export default function RootLayout({
         {children}
         <GlobalConsentBanner />
         <CompanionWidget />
+        <AnswerSearchModal />
 
 
       </body>
