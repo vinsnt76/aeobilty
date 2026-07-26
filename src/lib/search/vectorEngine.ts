@@ -133,7 +133,7 @@ export function generateGroundedAnswer(match: KnowledgeNode): string {
     return `${sentences[0]} ${sentences[1]}`;
   } else if (sentences.length === 1) {
     const secondSentence = match.focusKeyphrase 
-      ? `Our ${match.schemaType || 'Service'} architecture specifically targets ${match.focusKeyphrase} to maximize machine readability.`
+      ? `Our ${match.schemaType || 'Service'} architecture specifically targets ${match.focusKeyphrase} to maximise machine readability.`
       : `Explore our ${match.pageName} guide for comprehensive entity and schema specifications.`;
     return `${sentences[0]} ${secondSentence}`;
   } else {
@@ -146,7 +146,7 @@ export function generateAmbiguousClarification(query: string): {
   options: Array<{ label: string; query: string }>;
 } {
   return {
-    question: `Are you looking for information on AEO services, a free visibility audit, or specific search engine optimization pricing?`,
+    question: `Are you looking for information on AEO services, a free visibility audit, or specific search engine optimisation pricing?`,
     options: [
       { label: 'AEO & GEO Services', query: 'What are AEObility AEO services?' },
       { label: 'Free Visibility Audit', query: 'Free website visibility audit' },
@@ -164,7 +164,7 @@ export function generateGeneralKnowledgeAnswer(query: string): string {
     return "Current system time is tracked locally in your browser.";
   }
   if (q.includes('capital') || q.includes('city') || q.includes('where is')) {
-    return "That's a classic geography topic! AEObility focuses on geographic engine optimization (GEO) to help local businesses rank across location maps.";
+    return "That's a classic geography topic! AEObility focuses on geographic engine optimisation (GEO) to help local businesses rank across location maps.";
   }
-  return `That sounds like a general topic! AEObility specializes in AI Search Optimization (AEO) to help businesses build machine-readable entity networks.`;
+  return `That sounds like a general topic! AEObility specialises in AI Search Optimisation (AEO) to help businesses build machine-readable entity networks.`;
 }

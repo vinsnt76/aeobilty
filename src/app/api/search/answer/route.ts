@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
       if (apiKey) {
         try {
           const prompt = `You are a helpful AI assistant.
-Answer the following general query politely and directly in strictly 1 to 2 sentences. Do not force marketing pitch in the answer body.
+Answer the following general query politely and directly in strictly 1 to 2 sentences using Australian English spelling and grammar (e.g. optimisation, specialises, colour, behaviour). Do not force a marketing pitch in the answer body.
 
 Query: "${query}"`;
 
@@ -144,7 +144,7 @@ Latent Keywords: ${bestMatch.latentKeywords}
 Rules:
 1. MUST be exactly 2 sentences long.
 2. Grounded in the entity context above with AEO diagnostic framing.
-3. Clear, direct Australian tech perspective.`;
+3. Clear, direct Australian tech perspective using Australian English spelling and grammar (e.g. optimisation, specialises, organisation, behaviour).`;
 
         const geminiRes = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
