@@ -356,23 +356,15 @@ export default function AnswerSearchModal() {
                           </p>
                         </div>
 
-                        <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                        <div className="pt-2 border-t border-white/10 flex items-center justify-start">
                           <Link
                             href={result.topMatch.url}
                             onClick={() => setIsOpen(false)}
-                            className="inline-flex items-center space-x-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+                            className="w-full sm:w-auto px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 text-xs font-bold transition-all flex items-center justify-center space-x-2 border border-emerald-400 shadow-md"
                           >
                             <span>Explore {result.topMatch.pageName}</span>
                             <ExternalLink className="w-3.5 h-3.5" />
                           </Link>
-
-                          <button
-                            type="button"
-                            onClick={handleHandoffToAIBill}
-                            className="text-xs text-zinc-400 hover:text-white transition-colors"
-                          >
-                            Ask AI Bill for details →
-                          </button>
                         </div>
                       </div>
                     )
