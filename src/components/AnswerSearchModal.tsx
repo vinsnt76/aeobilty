@@ -74,6 +74,16 @@ export default function AnswerSearchModal() {
         if (data.resultType === 'general_knowledge' || data.resultType === 'off_topic_repeat') {
           setOffTopicCount(prev => prev + 1);
         }
+
+        // Dispatch GA4 internal search event
+        if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: Function }).gtag === 'function') {
+          (window as unknown as { gtag: Function }).gtag('event', 'search', {
+            search_term: searchQuery,
+            match_score: Math.round(data.similarityScore * 100),
+            result_type: data.resultType,
+            matched_entity: data.topMatch?.pageName || 'None'
+          });
+        }
       }
     } catch (err) {
       console.error('Search request failed:', err);
