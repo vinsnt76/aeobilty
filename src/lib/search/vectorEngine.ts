@@ -61,35 +61,37 @@ export function computeCosineSimilarity(a: number[], b: number[]): number {
   return dot;
 }
 
-export function computeHybridSimilarity(query: string, node: KnowledgeNode): number {
+export function computeUncappedScore(query: string, node: KnowledgeNode): { rawCos: number; rankingScore: number } {
   const qVec = buildVector(query);
   const rawCos = computeCosineSimilarity(qVec, node.embedding);
 
   const qLower = query.toLowerCase().trim();
   const qWords = qLower.split(/\s+/).filter(w => w.length >= 3);
 
-  const fieldsToSearch = [
-    node.pageName,
-    node.h1,
-    node.focusKeyphrase,
-    node.primaryKeywords,
-    node.secondaryKeywords,
-    node.latentKeywords,
-    node.url
-  ].filter(Boolean).map(f => String(f).toLowerCase());
+  const titleText = (node.pageName + ' ' + node.h1 + ' ' + (node.focusKeyphrase || '')).toLowerCase();
+  
+  let exactTitleHits = 0;
+  let keywordHits = 0;
 
-  let matchHits = 0;
   for (const w of qWords) {
-    if (fieldsToSearch.some(f => f.includes(w))) {
-      matchHits += 1;
+    if (titleText.includes(w)) {
+      exactTitleHits += 1;
+    }
+    const fullText = (
+      node.pageName + ' ' + node.h1 + ' ' + node.focusKeyphrase + ' ' +
+      node.primaryKeywords + ' ' + node.secondaryKeywords + ' ' + node.latentKeywords
+    ).toLowerCase();
+    if (fullText.includes(w)) {
+      keywordHits += 1;
     }
   }
 
-  const keywordBoost = qWords.length > 0 ? (matchHits / qWords.length) * 0.35 : 0;
-  const scaledCos = rawCos * 1.6;
-  const finalScore = Math.min(1.0, scaledCos + keywordBoost);
+  const titleBoost = qWords.length > 0 ? (exactTitleHits / qWords.length) * 0.40 : 0;
+  const keywordBoost = qWords.length > 0 ? (keywordHits / qWords.length) * 0.20 : 0;
+  
+  const rankingScore = rawCos * 1.5 + titleBoost + keywordBoost;
 
-  return finalScore;
+  return { rawCos, rankingScore };
 }
 
 export function classifyQueryIntent(
@@ -122,8 +124,7 @@ export function classifyQueryIntent(
 }
 
 export function generateGroundedAnswer(match: KnowledgeNode): string {
-  const desc = match.description || `${match.pageName} focuses on ${match.focusKeyphrase || match.h1}.`;
-  
+  const desc = match.description || '';
   const sentences = desc
     .split(/(?<=[.!?])\s+/)
     .map(s => s.trim())
@@ -132,12 +133,9 @@ export function generateGroundedAnswer(match: KnowledgeNode): string {
   if (sentences.length >= 2) {
     return `${sentences[0]} ${sentences[1]}`;
   } else if (sentences.length === 1) {
-    const secondSentence = match.focusKeyphrase 
-      ? `Our ${match.schemaType || 'Service'} architecture specifically targets ${match.focusKeyphrase} to maximise machine readability.`
-      : `Explore our ${match.pageName} guide for comprehensive entity and schema specifications.`;
-    return `${sentences[0]} ${secondSentence}`;
+    return `${sentences[0]} Explore our ${match.pageName} guide for comprehensive entity and schema specifications.`;
   } else {
-    return `AEObility provides ${match.h1} structured for conversational LLMs and search engines. Our ${match.schemaType || 'Service'} architecture ensures your business is discoverable, understandable, and chosen.`;
+    return `AEObility provides ${match.h1} structured for conversational LLMs and search engines. Discover how our ${match.schemaType || 'Service'} architecture enhances machine readability.`;
   }
 }
 

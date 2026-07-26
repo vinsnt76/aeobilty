@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { KnowledgeNode, SearchQueryResponse } from '@/lib/search/types';
 import { 
-  computeHybridSimilarity, 
+  computeUncappedScore, 
   classifyQueryIntent, 
   generateGroundedAnswer,
   generateAmbiguousClarification,
@@ -24,19 +24,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1. Hybrid similarity calculation (~1ms)
+    // 1. Uncapped ranking similarity calculation & tie-breaker (~1ms)
     let bestMatch: KnowledgeNode | null = null;
-    let maxSimilarity = -1;
+    let maxRankScore = -1;
+    let maxRawCos = -1;
 
     for (const node of knowledgeBase) {
-      const sim = computeHybridSimilarity(query, node);
-      if (sim > maxSimilarity) {
-        maxSimilarity = sim;
+      const { rawCos, rankingScore } = computeUncappedScore(query, node);
+      if (rankingScore > maxRankScore || (rankingScore === maxRankScore && rawCos > maxRawCos)) {
+        maxRankScore = rankingScore;
+        maxRawCos = rawCos;
         bestMatch = node;
       }
     }
 
-    const similarityScore = Math.max(0, Math.min(1, maxSimilarity));
+    // Cap display similarity score between 0 and 1.0 (0% - 100%)
+    const similarityScore = Math.max(0, Math.min(1.0, maxRankScore > 0.85 ? 1.0 : maxRankScore));
 
     // 2. Classify Query Intent
     const resultType = classifyQueryIntent(query, similarityScore, offTopicCount);

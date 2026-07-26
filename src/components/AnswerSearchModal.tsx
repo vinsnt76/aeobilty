@@ -82,8 +82,26 @@ export default function AnswerSearchModal() {
     }
   };
 
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleInputChange = (val: string) => {
+    setQuery(val);
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    if (val.trim().length > 2) {
+      debounceTimerRef.current = setTimeout(() => {
+        handleSearch(val);
+      }, 200);
+    } else if (val.trim().length === 0) {
+      setResult(null);
+    }
+  };
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
     handleSearch(query);
   };
 
@@ -120,14 +138,7 @@ export default function AnswerSearchModal() {
             ref={inputRef}
             type="text"
             value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              if (e.target.value.length > 2) {
-                handleSearch(e.target.value);
-              } else if (e.target.value.length === 0) {
-                setResult(null);
-              }
-            }}
+            onChange={(e) => handleInputChange(e.target.value)}
             placeholder="Ask AEObility... (e.g. What is AEO?, GEO Services, Shopify AEO)"
             className="w-full bg-transparent text-white placeholder-zinc-400 text-base focus:outline-none focus:ring-0"
           />
