@@ -9,7 +9,8 @@ const DOMAIN_KEYWORDS = new Set([
   'citation', 'keyphrase', 'liquid', 'shopify', 'geo', 'local', 'content',
   'author', 'vince', 'baker', 'aeobility', 'case', 'bento', 'contact', 'book',
   'support', 'ai', 'engine', 'optimisation', 'optimization', 'keyword', 'meta',
-  'site', 'website', 'web', 'conversion', 'lead', 'leads', 'client', 'agency'
+  'site', 'website', 'web', 'conversion', 'lead', 'leads', 'client', 'agency',
+  'semantic', 'salience', 'triples', 'rdf', 'vector', 'dense', 'retrieval'
 ]);
 
 export function buildVector(text: string, dim = VECTOR_DIM): number[] {
@@ -60,6 +61,37 @@ export function computeCosineSimilarity(a: number[], b: number[]): number {
   return dot;
 }
 
+export function computeHybridSimilarity(query: string, node: KnowledgeNode): number {
+  const qVec = buildVector(query);
+  const rawCos = computeCosineSimilarity(qVec, node.embedding);
+
+  const qLower = query.toLowerCase().trim();
+  const qWords = qLower.split(/\s+/).filter(w => w.length >= 3);
+
+  const fieldsToSearch = [
+    node.pageName,
+    node.h1,
+    node.focusKeyphrase,
+    node.primaryKeywords,
+    node.secondaryKeywords,
+    node.latentKeywords,
+    node.url
+  ].filter(Boolean).map(f => String(f).toLowerCase());
+
+  let matchHits = 0;
+  for (const w of qWords) {
+    if (fieldsToSearch.some(f => f.includes(w))) {
+      matchHits += 1;
+    }
+  }
+
+  const keywordBoost = qWords.length > 0 ? (matchHits / qWords.length) * 0.35 : 0;
+  const scaledCos = rawCos * 1.6;
+  const finalScore = Math.min(1.0, scaledCos + keywordBoost);
+
+  return finalScore;
+}
+
 export function classifyQueryIntent(
   query: string,
   similarityScore: number,
@@ -71,7 +103,7 @@ export function classifyQueryIntent(
   const hasDomainKeyword = words.some(w => DOMAIN_KEYWORDS.has(w));
 
   // 1. Repeat off-topic question check
-  if (!hasDomainKeyword && similarityScore < 0.35 && offTopicHistoryCount > 0) {
+  if (!hasDomainKeyword && similarityScore < 0.45 && offTopicHistoryCount > 0) {
     return 'off_topic_repeat';
   }
 
@@ -81,7 +113,7 @@ export function classifyQueryIntent(
   }
 
   // 3. Clear visibility / AEO / SEO / business question
-  if (hasDomainKeyword || similarityScore >= 0.40) {
+  if (hasDomainKeyword || similarityScore >= 0.50) {
     return 'visibility';
   }
 

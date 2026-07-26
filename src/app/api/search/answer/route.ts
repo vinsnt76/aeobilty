@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { KnowledgeNode, SearchQueryResponse } from '@/lib/search/types';
 import { 
-  buildVector, 
-  computeCosineSimilarity, 
+  computeHybridSimilarity, 
   classifyQueryIntent, 
   generateGroundedAnswer,
   generateAmbiguousClarification,
@@ -25,13 +24,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1. Vector calculation & similarity matching (~1ms)
-    const queryVector = buildVector(query);
+    // 1. Hybrid similarity calculation (~1ms)
     let bestMatch: KnowledgeNode | null = null;
     let maxSimilarity = -1;
 
     for (const node of knowledgeBase) {
-      const sim = computeCosineSimilarity(queryVector, node.embedding);
+      const sim = computeHybridSimilarity(query, node);
       if (sim > maxSimilarity) {
         maxSimilarity = sim;
         bestMatch = node;
