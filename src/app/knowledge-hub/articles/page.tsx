@@ -30,6 +30,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "Entity Authority: Why AI Search Ranks Entities, Not Pages",
+      category: "Entity Authority & AEO",
+      description: "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
+      href: "/knowledge-hub/articles/entity-authority-building",
+      image: "/ai-search-knowledge-hub.webp",
+      alt: "Entity Authority diagram illustrating Knowledge Graph node mapping, Answer Engine Optimisation, and semantic search relationships by AEObility.",
+      metrics: [
+        { label: "Type", value: "Core Guide" },
+        { label: "Read Time", value: "5 min" }
+      ]
+    },
+    {
       title: "RAG, Answer Engines & Why Machine‑Readable Content Matters",
       category: "Vector Retrieval & RAG",
       description: "Learn how Retrieval-Augmented Generation (RAG) works, why machine-readable content matters for AEO, and how chunking affects AI search visibility.",
@@ -94,6 +106,9 @@ export default function ArticlesHubPage() {
               <div className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 Articles & Guides
               </div>
+              <Link href="/knowledge-hub/articles/entity-authority-building" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
+                Entity Authority Building
+              </Link>
               <Link href="/knowledge-hub/articles/aeo-vs-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
                 AEO vs SEO
               </Link>

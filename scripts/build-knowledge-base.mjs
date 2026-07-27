@@ -4,6 +4,55 @@ import parse from 'csv-simple-parser';
 
 const VECTOR_DIM = 384;
 
+function toAustralianEnglish(text) {
+  if (!text) return text;
+  return text
+    .replace(/\bOptimization\b/g, 'Optimisation')
+    .replace(/\boptimization\b/g, 'optimisation')
+    .replace(/\bOptimizations\b/g, 'Optimisations')
+    .replace(/\boptimizations\b/g, 'optimisations')
+    .replace(/\bOptimize\b/g, 'Optimise')
+    .replace(/\boptimize\b/g, 'optimise')
+    .replace(/\bOptimized\b/g, 'Optimised')
+    .replace(/\boptimized\b/g, 'optimised')
+    .replace(/\bOptimizing\b/g, 'Optimising')
+    .replace(/\boptimizing\b/g, 'optimising')
+    .replace(/\bSynthesize\b/g, 'Synthesise')
+    .replace(/\bsynthesize\b/g, 'synthesise')
+    .replace(/\bSynthesized\b/g, 'Synthesised')
+    .replace(/\bsynthesized\b/g, 'synthesised')
+    .replace(/\bSynthesizing\b/g, 'Synthesising')
+    .replace(/\bsynthesizing\b/g, 'synthesising')
+    .replace(/\bSpecialized\b/g, 'Specialised')
+    .replace(/\bspecialized\b/g, 'specialised')
+    .replace(/\bSpecializing\b/g, 'Specialising')
+    .replace(/\bspecializing\b/g, 'specialising')
+    .replace(/\bSpecialize\b/g, 'Specialise')
+    .replace(/\bspecialize\b/g, 'specialise')
+    .replace(/\bAnalyze\b/g, 'Analyse')
+    .replace(/\banalyze\b/g, 'analyse')
+    .replace(/\bAnalyzed\b/g, 'Analysed')
+    .replace(/\banalyzed\b/g, 'analysed')
+    .replace(/\bAnalyzing\b/g, 'Analysing')
+    .replace(/\banalyzing\b/g, 'analysing')
+    .replace(/\bPrioritize\b/g, 'Prioritise')
+    .replace(/\bprioritize\b/g, 'prioritise')
+    .replace(/\bPrioritized\b/g, 'Prioritised')
+    .replace(/\bprioritized\b/g, 'prioritised')
+    .replace(/\bOrganize\b/g, 'Organise')
+    .replace(/\borganize\b/g, 'organise')
+    .replace(/\bOrganization\b/g, 'Organisation')
+    .replace(/\borganization\b/g, 'organisation')
+    .replace(/\bCustomization\b/g, 'Customisation')
+    .replace(/\bcustomization\b/g, 'customisation')
+    .replace(/\bCustomize\b/g, 'Customise')
+    .replace(/\bcustomize\b/g, 'customise')
+    .replace(/\bBehavior\b/g, 'Behaviour')
+    .replace(/\bbehavior\b/g, 'behaviour')
+    .replace(/\bColor\b/g, 'Colour')
+    .replace(/\bcolor\b/g, 'colour');
+}
+
 function buildVector(text, dim = VECTOR_DIM) {
   const vec = new Float64Array(dim);
   const clean = text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
@@ -74,16 +123,16 @@ async function main() {
 
   for (let i = 0; i < dataRows.length; i++) {
     const row = dataRows[i];
-    const pageName = row[0] ? row[0].trim() : '';
+    const pageName = toAustralianEnglish(row[0] ? row[0].trim() : '');
     const url = row[1] ? row[1].trim() : '';
     if (!pageName || !url) continue;
 
-    const focusKeyphrase = row[4] ? row[4].trim() : '';
-    const description = row[7] ? row[7].trim() : '';
-    const h1 = row[9] ? row[9].trim() : (row[5] ? row[5].trim() : pageName);
-    const primaryKeywords = row[10] ? row[10].replace(/\\n/g, ', ').trim() : '';
-    const secondaryKeywords = row[11] ? row[11].replace(/\\n/g, ', ').trim() : '';
-    const latentKeywords = row[13] ? row[13].trim() : '';
+    const focusKeyphrase = toAustralianEnglish(row[4] ? row[4].trim() : '');
+    const description = toAustralianEnglish(row[7] ? row[7].trim() : '');
+    const h1 = toAustralianEnglish(row[9] ? row[9].trim() : (row[5] ? row[5].trim() : pageName));
+    const primaryKeywords = toAustralianEnglish(row[10] ? row[10].replace(/\\n/g, ', ').trim() : '');
+    const secondaryKeywords = toAustralianEnglish(row[11] ? row[11].replace(/\\n/g, ', ').trim() : '');
+    const latentKeywords = toAustralianEnglish(row[13] ? row[13].trim() : '');
     const schemaType = row[14] ? row[14].trim() : 'WebPage';
 
     const textToEmbed = [

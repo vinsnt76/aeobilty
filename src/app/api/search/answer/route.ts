@@ -7,6 +7,7 @@ import {
   generateAmbiguousClarification,
   generateGeneralKnowledgeAnswer 
 } from '@/lib/search/vectorEngine';
+import { toAustralianEnglish } from '@/lib/search/auEnglish';
 import knowledgeBaseData from '@/lib/search/knowledgeBase.json';
 
 const knowledgeBase = knowledgeBaseData as KnowledgeNode[];
@@ -115,7 +116,7 @@ Query: "${query}"`;
       }
 
       const response: SearchQueryResponse = {
-        answer: generalAnswer,
+        answer: toAustralianEnglish(generalAnswer),
         topMatch: null,
         similarityScore,
         isFallback: true,
@@ -171,14 +172,14 @@ Rules:
     }
 
     const response: SearchQueryResponse = {
-      answer: synthesizedAnswer,
+      answer: toAustralianEnglish(synthesizedAnswer),
       topMatch: bestMatch ? {
-        pageName: bestMatch.pageName,
+        pageName: toAustralianEnglish(bestMatch.pageName),
         url: bestMatch.url,
-        h1: bestMatch.h1,
-        focusKeyphrase: bestMatch.focusKeyphrase,
+        h1: toAustralianEnglish(bestMatch.h1),
+        focusKeyphrase: toAustralianEnglish(bestMatch.focusKeyphrase),
         schemaType: bestMatch.schemaType,
-        description: bestMatch.description
+        description: toAustralianEnglish(bestMatch.description)
       } : null,
       similarityScore,
       isFallback: false,
