@@ -53,7 +53,7 @@ export default function EntityAuthorityArticlePage() {
           }
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
-        "image": "https://aeobility.com.au/ai-search-knowledge-hub.webp"
+        "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp"
       },
       {
         "@type": "FAQPage",
@@ -179,8 +179,8 @@ export default function EntityAuthorityArticlePage() {
           {/* Banner Graphic */}
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/60 shadow-2xl">
             <Image
-              src="/ai-search-knowledge-hub.webp"
-              alt="Entity Authority diagram illustrating Knowledge Graph node mapping, Answer Engine Optimisation, and semantic search relationships by AEObility"
+              src="/entity-visibilty-semantic-SEO_AEObility.webp"
+              alt="Entity visibility and AI semantic SEO architecture diagram illustrating Answer Engine Optimisation (AEO) entity node authority, Knowledge Graph relationships, and RAG retrieval vectors for Australian businesses by AEObility"
               fill
               priority
               className="object-cover"

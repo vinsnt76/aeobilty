@@ -34,8 +34,8 @@ export default function ArticlesHubPage() {
       category: "Entity Authority & AEO",
       description: "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
       href: "/knowledge-hub/articles/entity-authority-building",
-      image: "/ai-search-knowledge-hub.webp",
-      alt: "Entity Authority diagram illustrating Knowledge Graph node mapping, Answer Engine Optimisation, and semantic search relationships by AEObility.",
+      image: "/entity-visibilty-semantic-SEO_AEObility.webp",
+      alt: "Entity visibility and AI semantic SEO architecture diagram illustrating Answer Engine Optimisation (AEO) entity node authority, Knowledge Graph relationships, and RAG retrieval vectors for Australian businesses by AEObility.",
       metrics: [
         { label: "Type", value: "Core Guide" },
         { label: "Read Time", value: "5 min" }
