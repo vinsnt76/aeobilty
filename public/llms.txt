@@ -1,18 +1,22 @@
 # AEObility: Answer Engine Optimisation (AEO) Systems
 
-[AEObility](https://aeobility.com.au) is a specialised agency based in Perth, Western Australia, providing Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing services. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
+[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
 
 ## Core Terminology & Concepts
 - **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
 - **GEO (Geographic Engine Optimisation)**: Optimising localised map pack matrices and location-aware AI systems.
-- **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual snippets into LLM prompt spaces.
-- **Positional Bias**: The tendency of retrieval models to prioritize answers at the absolute beginning or end of text blocks.
+- **Entity Authority**: Establishing verifiable identity, semantic relevance, external validation, and knowledge graph consistency.
+- **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual passages into LLM prompt spaces.
+- **Positional Bias**: The tendency of retrieval models to prioritize answers placed at the absolute beginning or end of text blocks.
 - **Atomic Answer Blocks**: Text passages structured within 90-120 token bounds to maximize attention scores and semantic clarity.
 - **Entity Salience**: The mathematical confidence of an LLM in identifying the subject-predicate relationship of a brand node.
 
 ---
 
 ## Complete Route Directory
+
+### Diagnostic & Audit Tools
+- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool.
 
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): Overview of our content engineering capability.
@@ -21,21 +25,27 @@
   - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings.
   - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Step-by-step technical guides for AI readiness.
   - [`/services/aeo/constraints`](https://aeobility.com.au/services/aeo/constraints): Details on indexation limits and citation boundaries.
-  - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures and packages.
+  - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures and package timelines.
+  - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring.
+  - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimization.
 - [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting.
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
 
 ### Solutions (How We Deliver)
-- [`/solutions`](https://aeobility.com.au/solutions): Packages and flat-rate sprints.
+- [`/solutions`](https://aeobility.com.au/solutions): Packages and flat-rate sprints overview.
 - [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The $995 Clarity Phase deep strategic audit.
 - [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): Programmatic structured schemas and refactoring deployments.
 - [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): Coordinate precision map and location salience sync.
 
 ### Knowledge Hub (Our Research Nodes)
-- [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides and frameworks.
+- [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
 - [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
+- [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
+  - [`/knowledge-hub/articles/entity-authority-building`](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building): Entity Authority: Why AI Search Ranks Entities, Not Pages.
+  - [`/knowledge-hub/articles/aeo-vs-seo`](https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo): AEO vs SEO complete guide to AI search.
+  - [`/knowledge-hub/articles/retrieval-augmented-generation`](https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation): RAG, answer engines & machine-readable content.
 - [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
 - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
 
@@ -46,8 +56,17 @@
   - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
   - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
 - [`/contact`](https://aeobility.com.au/contact): Booking inquiries and audit request forms.
+- [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic session.
 - [`/support`](https://aeobility.com.au/support): Technical documentation and support.
-- [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and vCard contact info for Vinnie Baker.
+- [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and contact info for Vinnie Baker.
+
+---
+
+## Programmatic Answer API Endpoint
+AEObility exposes a vector-grounded Answer API for real-time site search & agent queries:
+- **Endpoint**: `POST https://aeobility.com.au/api/search/answer`
+- **Request Body**: `{ "query": "<user_search_string>" }`
+- **Response Format**: Returns similarity score, grounded 2-sentence response, matched entity node, and intent classification (`visibility` | `general_knowledge` | `ambiguous`).
 
 ---
 
