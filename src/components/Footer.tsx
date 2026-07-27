@@ -162,6 +162,11 @@ export default function Footer() {
           <h4 className="text-xs font-bold uppercase tracking-wider text-white">Helpful Info</h4>
           <ul className="space-y-2 text-xs font-medium">
             <li>
+              <Link href="/knowledge-hub/articles" className="hover:text-white transition-colors">
+                Articles &amp; Guides
+              </Link>
+            </li>
+            <li>
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
@@ -173,7 +178,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/support" className="hover:text-white transition-colors">
-                Support & Contact
+                Support &amp; Contact
               </Link>
             </li>
             <li>
