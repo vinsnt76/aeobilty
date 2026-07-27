@@ -1,14 +1,21 @@
-
-
-const HOST = "www.aeobility.com.au"; // Replace with your actual domain
+const HOST = "aeobility.com.au";
 const KEY = "99f72a3935774040b8814ad6a76e6e59";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
-  `https://${HOST}/about/freelance-digital-specialist-perth`,
-  `https://${HOST}/about/freelance-seo-consultant-perth`,
-  `https://${HOST}/about/freelance-google-ads-consultant-perth`,
-  `https://${HOST}/about/freelance-ai-consultant-perth`
+  `https://${HOST}/knowledge-hub`,
+  `https://${HOST}/knowledge-hub/aeo`,
+  `https://${HOST}/knowledge-hub/semantic-seo`,
+  `https://${HOST}/knowledge-hub/geo`,
+  `https://${HOST}/knowledge-hub/articles`,
+  `https://${HOST}/knowledge-hub/articles/entity-authority-building`,
+  `https://${HOST}/knowledge-hub/articles/aeo-vs-seo`,
+  `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
+  `https://${HOST}/knowledge-hub/case-studies`,
+  `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
+  `https://www.aeobility.com.au/knowledge-hub`,
+  `https://www.aeobility.com.au/knowledge-hub/articles`,
+  `https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building`
 ];
 
 async function submitToIndexNow() {
@@ -19,7 +26,7 @@ async function submitToIndexNow() {
     urlList: urlList,
   };
 
-  console.log(`Submitting ${urlList.length} URLs to IndexNow...`);
+  console.log(`Submitting ${urlList.length} Knowledge Hub URLs to IndexNow (${HOST})...`);
 
   try {
     const response = await fetch("https://api.indexnow.org/indexnow", {
@@ -30,12 +37,12 @@ async function submitToIndexNow() {
       body: JSON.stringify(payload),
     });
 
-    if (response.ok) {
-      console.log("Successfully submitted URLs to IndexNow!");
-    } else if (response.status === 202) {
-      console.log("Accepted: URLs are valid but key is pending validation.");
+    console.log(`IndexNow HTTP Status: ${response.status} ${response.statusText}`);
+
+    if (response.ok || response.status === 200 || response.status === 202) {
+      console.log("✅ Successfully submitted Knowledge Hub URLs to IndexNow!");
     } else {
-      console.error(`Failed to submit: ${response.status} ${response.statusText}`);
+      console.error(`❌ Failed to submit: ${response.status} ${response.statusText}`);
       const text = await response.text();
       console.error("Response:", text);
     }
