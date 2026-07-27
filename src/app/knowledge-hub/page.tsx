@@ -152,28 +152,20 @@ export default function KnowledgeHubPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl space-y-6 max-w-md mx-auto lg:mx-0 lg:ml-auto">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Knowledge Hub</h3>
-                <nav className="flex flex-col gap-3">
-                  <div className="font-semibold text-aeo-cyan bg-white/5 py-3 px-4 rounded-xl leading-snug">
-                    Hub Overview
-                  </div>
-                  <Link href="/knowledge-hub/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
-                    AEO Core Principles
-                  </Link>
-                  <Link href="/knowledge-hub/semantic-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
-                    AI Semantic SEO
-                  </Link>
-                  <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
-                    GEO & SEO Local Matrix
-                  </Link>
-                  <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
-                    Articles & Guides
-                  </Link>
-                  <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-3 px-4 rounded-xl leading-snug">
-                    Client Case Studies
-                  </Link>
-                </nav>
+              <div className="relative aspect-[16/10] w-full max-w-lg mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/60 shadow-[0_0_40px_rgba(0,205,216,0.2)] group transition-all">
+                <Image
+                  src="/ai-search-knowledge-hub.webp"
+                  alt="AEObility AI Search Knowledge Hub banner interface illustrating Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), structured content schemas, and RAG entity indexing matrices for Australian businesses"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs text-white/90">
+                  <span className="font-semibold text-aeo-cyan">AEO &amp; GEO Knowledge Index</span>
+                  <span className="text-[10px] font-mono uppercase bg-white/10 px-2 py-0.5 rounded text-white/70">Verified Schema Nodes</span>
+                </div>
               </div>
             </div>
           </section>
