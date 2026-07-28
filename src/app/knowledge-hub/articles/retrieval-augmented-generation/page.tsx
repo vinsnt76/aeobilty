@@ -641,7 +641,7 @@ export default function RagArticlePage() {
               </li>
               <li className="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
                 <strong className="text-aeo-purple font-bold block mb-1">2. Query translation</strong>
-                <span className="text-sm text-white/70">The user's query is converted into a vector representation so it can be compared mathematically against your stored content.</span>
+                <span className="text-sm text-white/70">The user&apos;s query is converted into a vector representation so it can be compared mathematically against your stored content.</span>
               </li>
               <li className="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
                 <strong className="text-emerald-400 font-bold block mb-1">3. Retrieval</strong>
@@ -1162,7 +1162,7 @@ export default function RagArticlePage() {
             </div>
 
             <p>
-              If you want clearer, more consistent visibility across answer engines, AEObility's <strong>AI search optimisation</strong> services help Australian businesses Get Found and Get Chosen across Search, Maps & AI.
+              If you want clearer, more consistent visibility across answer engines, AEObility&apos;s <strong>AI search optimisation</strong> services help Australian businesses Get Found and Get Chosen across Search, Maps & AI.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8 font-sans">

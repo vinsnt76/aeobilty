@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { TrendingUp, Code, Cpu, Layers, ChevronLeft, ChevronRight, BarChart3 } from "lucide-react";
 
 interface ProjectCardProps {

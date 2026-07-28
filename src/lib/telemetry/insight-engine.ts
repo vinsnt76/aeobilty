@@ -3,7 +3,7 @@ import { TelemetryResult, InsightEngineResult } from './types';
 export async function generateInsightEngineResult(
   intent: string,
   telemetry: TelemetryResult,
-  clientText: string
+  _clientText: string
 ): Promise<InsightEngineResult> {
   const apiKey = process.env.GEMINI_API_KEY;
 

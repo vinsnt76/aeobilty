@@ -355,7 +355,7 @@ export default function AEODefinitionPage() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
               <Link href="/contact" className="btn-primary">
-                Let's Talk AEO
+                Let&apos;s Talk AEO
               </Link>
               <Link href="/book" className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all">
                 Jump on a Quick Call

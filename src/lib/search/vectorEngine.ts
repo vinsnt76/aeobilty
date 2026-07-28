@@ -139,7 +139,7 @@ export function generateGroundedAnswer(match: KnowledgeNode): string {
   }
 }
 
-export function generateAmbiguousClarification(query: string): {
+export function generateAmbiguousClarification(_query: string): {
   question: string;
   options: Array<{ label: string; query: string }>;
 } {

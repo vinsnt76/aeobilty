@@ -13,14 +13,26 @@ export default function AnswerSearchModal() {
   const [offTopicCount, setOffTopicCount] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const closeModal = () => {
+    setIsOpen(false);
+    setQuery('');
+    setResult(null);
+    setLoading(false);
+    setOffTopicCount(0);
+  };
+
   // Global Keyboard & Custom Event Listener
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        setIsOpen(prev => !prev);
+        if (isOpen) {
+          closeModal();
+        } else {
+          setIsOpen(true);
+        }
       } else if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false);
+        closeModal();
       }
     };
 
@@ -40,14 +52,10 @@ export default function AnswerSearchModal() {
   // Auto focus input when opened
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         inputRef.current?.focus();
       }, 50);
-    } else {
-      setQuery('');
-      setResult(null);
-      setLoading(false);
-      setOffTopicCount(0);
+      return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
@@ -76,8 +84,8 @@ export default function AnswerSearchModal() {
         }
 
         // Dispatch GA4 internal search event
-        if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: Function }).gtag === 'function') {
-          (window as unknown as { gtag: Function }).gtag('event', 'search', {
+        if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === 'function') {
+          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'search', {
             search_term: searchQuery,
             match_score: Math.round(data.similarityScore * 100),
             result_type: data.resultType,
@@ -135,7 +143,7 @@ export default function AnswerSearchModal() {
       {/* Overlay Backdrop Click */}
       <div 
         className="fixed inset-0 -z-10" 
-        onClick={() => setIsOpen(false)} 
+        onClick={closeModal} 
         aria-hidden="true" 
       />
 

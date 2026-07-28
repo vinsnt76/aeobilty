@@ -2,15 +2,16 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap, BarChart3, Code, Cpu, Layers } from 'lucide-react';
+import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap, BarChart3, Cpu, Layers } from 'lucide-react';
 import Link from 'next/link';
 
 const About: React.FC = () => {
   useEffect(() => {
     // Process Instagram embed script dynamically in Next.js / React
     if (typeof window !== 'undefined') {
-      if ((window as any).instgrm) {
-        (window as any).instgrm.Embeds.process();
+      const win = window as unknown as { instgrm?: { Embeds: { process: () => void } } };
+      if (win.instgrm) {
+        win.instgrm.Embeds.process();
       } else {
         const script = document.createElement('script');
         script.src = '//www.instagram.com/embed.js';
@@ -33,48 +34,6 @@ const About: React.FC = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
   };
-
-  const timelineItems = [
-    {
-      icon: Globe,
-      title: "The Explorer",
-      period: "Early Years",
-      description: "My story began far from the digital realm, backpacking across continents, fueling a deep curiosity for diverse cultures and problem-solving.",
-    },
-    {
-      icon: Briefcase,
-      title: "Business Development",
-      period: "2010s",
-      description: "Landing in the dynamic world of business development, I honed my skills in strategy, negotiation, and understanding market needs.",
-    },
-    {
-      icon: ShoppingCart,
-      title: "E-commerce Builder",
-      period: "Post-Pandemic",
-      description: "Applying my newfound expertise, I even built a thriving e-commerce venture with my partner, experiencing the challenges and triumphs of online business firsthand.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Digital Marketing Pivot",
-      period: "COVID-19 Era",
-      description: "When the world shifted during COVID-19, I saw an opportunity, diving deep into digital marketing, mastering SEO and campaign strategies at an award-winning agency.",
-    },
-    {
-      icon: Brain,
-      title: "AI & Automation Era",
-      period: "Today",
-      description: "Today, my focus is sharper: harnessing the power of AI and automation to build high-performance campaigns and AEO strategies.",
-    },
-  ];
-
-  const superpowers = [
-    { icon: Search, name: "SEO Mastery" },
-    { icon: Target, name: "Campaign Management" },
-    { icon: Brain, name: "AI & Automation" },
-    { icon: LayoutGrid, name: "CRO Strategy" },
-    { icon: ShoppingCart, name: "E-commerce Strategy" },
-    { icon: DollarSign, name: "Lead Generation" },
-  ];
 
   return (
     <section id="about" className="py-20 md:py-32 scroll-mt-24">

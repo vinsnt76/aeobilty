@@ -28,8 +28,8 @@ export function extractFeatures(
     compAvgSim = competitorNodes.reduce((sum, n) => sum + n.similarity, 0) / competitorNodes.length;
   }
   
-  // If client = compAvg, score is 50%. If client is 2x compAvg, score is 100%. If client is 0.5x, score is 25%.
-  const semanticDominance = Math.min(100, Math.max(0, (clientSim / (compAvgSim || 0.001)) * 50));
+  // If client > compAvg, score is (client - compAvg) * 100 clamped to [0, 100].
+  const semanticDominance = Math.min(100, Math.max(0, (clientSim - compAvgSim) * 100));
 
   // 2. Technical Advantage
   // Compare internal links as a basic proxy for structure depth

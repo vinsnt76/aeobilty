@@ -74,13 +74,13 @@ async function testGooglePSI() {
 }
 
 async function runAll() {
-  try { await testGeminiEmbedding(); } catch (e: any) { console.error('❌', e.message); }
+  try { await testGeminiEmbedding(); } catch (e: unknown) { console.error('❌', (e as Error).message); }
   console.log('---');
-  try { await testGeminiFlash(); } catch (e: any) { console.error('❌', e.message); }
+  try { await testGeminiFlash(); } catch (e: unknown) { console.error('❌', (e as Error).message); }
   console.log('---');
-  try { await testBraveSearch(); } catch (e: any) { console.error('❌', e.message); }
+  try { await testBraveSearch(); } catch (e: unknown) { console.error('❌', (e as Error).message); }
   console.log('---');
-  try { await testGooglePSI(); } catch (e: any) { console.error('❌', e.message); }
+  try { await testGooglePSI(); } catch (e: unknown) { console.error('❌', (e as Error).message); }
 }
 
 runAll();

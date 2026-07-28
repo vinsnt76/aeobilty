@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Mail, Phone, Calendar, Search } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Mail, Search } from 'lucide-react';
 import Link from 'next/link';
 import { useTelemetryScan } from '@/hooks/useTelemetryScan';
 import { extractDomainLabel } from './CompanionWidget';

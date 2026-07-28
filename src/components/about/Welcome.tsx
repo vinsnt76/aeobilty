@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { scrollToSection } from './navigation';
-import clsx from 'clsx';
 import { RoleConfig } from '@/app/about/config';
 
 interface WelcomeProps {
