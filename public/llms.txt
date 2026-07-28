@@ -47,6 +47,8 @@
   - [`/knowledge-hub/articles/entity-authority-building`](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building): Entity Authority: Why AI Search Ranks Entities, Not Pages.
   - [`/knowledge-hub/articles/aeo-vs-seo`](https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo): AEO vs SEO complete guide to AI search.
   - [`/knowledge-hub/articles/retrieval-augmented-generation`](https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation): RAG, answer engines & machine-readable content.
+  - [`/knowledge-hub/articles/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out): How Structured Data Helps You Survive the Query Fan-Out.
+  - [`/knowledge-hub/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/structured-data-query-fan-out): Structured Data & Query Fan-Out direct guide.
 - [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
 - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
 

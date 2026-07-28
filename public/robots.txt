@@ -31,4 +31,4 @@ Allow: /
 
 # Indexing Resources
 Sitemap: https://aeobility.com.au/sitemap.xml
-# LLMs Manifest: https://aeobility.com.au/llms.txt
+LLMs-txt: https://aeobility.com.au/llms.txt

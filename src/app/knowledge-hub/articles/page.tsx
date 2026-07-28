@@ -30,6 +30,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "How Structured Data Helps You Survive the Query Fan-Out",
+      category: "AEO / Structured Data",
+      description: "Learn how structured data helps brands survive query fan-out in AI search by improving entity clarity, retrieval, and citation accuracy.",
+      href: "/knowledge-hub/articles/structured-data-query-fan-out",
+      image: "/semantic-seo-for-aeo-entities_AEObility.webp",
+      alt: "Laptop screen showing structured data markup and AI search results",
+      metrics: [
+        { label: "Type", value: "Technical Guide" },
+        { label: "Read Time", value: "5 min" }
+      ]
+    },
+    {
       title: "What Is Positional Bias in Retrieval and Answer Engines?",
       category: "Dense Retrieval & LLM Bias",
       description: "Learn how positional bias and the 'lost in the middle' phenomenon affect search visibility, and how Answer Engine Optimisation (AEO) structures content for machine clarity.",

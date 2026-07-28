@@ -162,6 +162,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/knowledge-hub/articles/structured-data-query-fan-out`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/knowledge-hub/structured-data-query-fan-out`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/case-studies`,
       lastModified: currentDate,
       changeFrequency: "weekly",
