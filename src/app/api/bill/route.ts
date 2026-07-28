@@ -1,10 +1,25 @@
 import { NextRequest } from 'next/server';
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
+// Dynamically import the compiled knowledge base containing all 38 site vector nodes
+import knowledgeBase from '@/lib/search/knowledgeBase.json';
 
 export const runtime = 'edge';
 
-// --- CLEAN SEGREGATED SEMANTIC LATTICE LAYER ---
+interface KnowledgeNode {
+  pageName: string;
+  url: string;
+  h1: string;
+  focusKeyphrase: string;
+  latentKeywords?: string;
+  schemaType?: string;
+  description: string;
+  primaryKeywords?: string;
+  secondaryKeywords?: string;
+  embedding?: number[];
+}
+
+// --- BASE ENTITY IDENTIFIER CONFIGURATION ---
 const orgGraph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -25,21 +40,6 @@ const orgGraph = {
       sameAs: ['https://linkedin.com/in/vincebaker']
     }
   ]
-};
-
-const queryFanoutArticle = {
-  '@context': 'https://schema.org',
-  '@type': 'TechArticle',
-  '@id': 'https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out/#article',
-  headline: 'What is Query Fan-out Resilience in AEO?',
-  mainEntity: {
-    '@type': 'Question',
-    name: 'How does AEObility solve query fan-out failures?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'AEObility counters query fan-out by structuring website nodes into a tight semantic lattice. This prevents LLMs from generating model contradictions when complex prompts break down into conflicting micro-queries.'
-    }
-  }
 };
 
 const blueprintService = {
@@ -64,8 +64,6 @@ You ground everything strictly in structured data and deterministic facts.`;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    
-    // Core Correction: Explicitly capture prompt parameter to avoid ReferenceError
     const { messages, prompt, audit, intent } = body;
     
     const userQuery = prompt || (messages && messages[messages.length - 1]?.content) || '';
@@ -74,8 +72,9 @@ export async function POST(req: NextRequest) {
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
 
-    // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Bill's Skill Router)
+    // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Dynamic Skill Slicing)
     if (audit || intent === 'telemetry') {
+      // SKILL 1: Telemetry Guide
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
 Diagnose Entity Clarity, Citation Share, Retrieval Confidence, and Hallucination Risks.
@@ -87,27 +86,41 @@ Identify the visibility gaps transparently and anchor your structural fixes back
       normalizedQuery.includes('improve visibility') || normalizedQuery.includes('buy') || 
       normalizedQuery.includes('blueprint')
     ) {
+      // SKILL 3: Blueprint Funnel
       systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
 The user wants to resolve visibility gaps or explore action steps. Smoothly funnel them into our core offering: The 90-Day AI Success Blueprint.
 Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: converting loose text into deterministic semantic schemas.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
-    } else if (
-      normalizedQuery.includes('what is') || normalizedQuery.includes('schema') || 
-      normalizedQuery.includes('lattice') || normalizedQuery.includes('fan-out') || 
-      normalizedQuery.includes('aeo')
-    ) {
-      systemPrompt += `\n\n[ACTIVE SKILL: Entity Graph Explainer]
-The user is querying conceptual or mechanical elements of AEO.
-Explain how AEObility implements machine-readable data infrastructure using our knowledge graph nodes below.`;
-      injectionContext = `\nKNOWLEDGE NODE INDEX:\n${JSON.stringify(queryFanoutArticle)}\n${JSON.stringify(orgGraph)}`;
-
     } else {
-      systemPrompt += `\n\n[ACTIVE SKILL: General NLWeb Schema Agent]
-Address general inquiries concisely using the organisational identity graph definitions below. Do not deviate from this data boundary.`;
-      injectionContext = `\nORGANISATION GRAPH:\n${JSON.stringify(orgGraph)}`;
+      // SKILL 2 & 4: General Agent & Concept Explainer Integration
+      systemPrompt += `\n\n[ACTIVE SKILL: Dynamic Knowledge Graph Node Explainer]
+The user is querying conceptual, technical, or mechanical elements of AEO, schemas, or site services. 
+Synthesise your response using the verified dynamic knowledge base node captures provided below.`;
+
+      // Dynamic Node Matcher: Scans knowledgeBase.json for keyword overlaps across all 38 nodes
+      const rawNodes = (knowledgeBase as KnowledgeNode[]) || [];
+      const matchedNodes = rawNodes
+        .filter((node) => {
+          const pageNameMatch = Boolean(node.pageName?.toLowerCase() && normalizedQuery.includes(node.pageName.toLowerCase()));
+          const h1Match = Boolean(node.h1?.toLowerCase() && normalizedQuery.includes(node.h1.toLowerCase()));
+          const keyphraseMatch = Boolean(node.focusKeyphrase?.toLowerCase() && normalizedQuery.includes(node.focusKeyphrase.toLowerCase()));
+          const descWords = node.description?.toLowerCase()?.split(' ') || [];
+          const descMatch = descWords.some((word) => word.length > 4 && normalizedQuery.includes(word));
+          return pageNameMatch || h1Match || keyphraseMatch || descMatch;
+        })
+        .slice(0, 3)
+        // Strip heavy vector embedding array to minimize context tokens
+        .map(({ embedding: _embedding, ...lightweightNode }) => lightweightNode);
+
+      injectionContext = `\nCANONICAL IDENTITY LAYER:\n${JSON.stringify(orgGraph)}`;
+      
+      if (matchedNodes.length > 0) {
+        injectionContext += `\n\nDYNAMIC KNOWLEDGE MATCHES:\n${JSON.stringify(matchedNodes)}`;
+      }
     }
 
+    // Execute low-latency token streaming
     const result = streamText({
       model: openai('gpt-4o-mini'),
       system: `${systemPrompt}\n\nAUTHORITATIVE KNOWLEDGE TRUTH LAYER:\n${injectionContext}`,
@@ -117,7 +130,7 @@ Address general inquiries concisely using the organisational identity graph defi
     return result.toTextStreamResponse();
   } catch (error) {
     console.error('Bill route error:', error);
-    return new Response(JSON.stringify({ error: 'Bill pipeline critical execution error.' }), {
+    return new Response(JSON.stringify({ error: 'Bill pipeline dynamic data retrieval error.' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
