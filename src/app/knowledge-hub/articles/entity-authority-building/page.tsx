@@ -4,11 +4,28 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { ArrowRight, BookOpen, CheckCircle2, ShieldCheck, Network, Layers, HelpCircle, FileText } from 'lucide-react';
+import { 
+  ArrowRight, 
+  BookOpen, 
+  CheckCircle2, 
+  ShieldCheck, 
+  Network, 
+  Layers, 
+  HelpCircle, 
+  FileText, 
+  AlertTriangle, 
+  Wrench, 
+  UserCheck, 
+  Cpu, 
+  Database,
+  Link2,
+  MapPin,
+  Sparkles
+} from 'lucide-react';
 
 export const metadata = {
   title: "Entity Authority: Why AI Search Ranks Entities, Not Pages | AEObility",
-  description: "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.",
+  description: "Entity authority is the measurable strength of your business as an identifiable, trustworthy entity in AI search systems. Learn how to build entity salience and Answer Engine Optimisation.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
   },
@@ -26,32 +43,54 @@ export default function EntityAuthorityArticlePage() {
         "logo": {
           "@type": "ImageObject",
           "url": "https://aeobility.com.au/android-chrome-512x512.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "addressCountry": "AU"
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/vince-baker#person",
+        "name": "Vince Baker",
+        "jobTitle": "AEO & Semantic Search Specialist",
+        "worksFor": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "Western Australia",
+          "addressCountry": "AU"
+        },
+        "knowsAbout": [
+          "Answer Engine Optimisation",
+          "Entity Authority Building",
+          "Knowledge Graph Architecture",
+          "Semantic Search",
+          "Retrieval-Augmented Generation"
+        ]
       },
       {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "name": "Entity Authority: Why AI Search Ranks Entities, Not Pages",
-        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages."
+        "description": "Entity authority is the measurable strength of your business as an identifiable, trustworthy entity in AI search systems."
       },
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#article",
         "headline": "Entity Authority: Why AI Search Ranks Entities, Not Pages",
-        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.",
+        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities — the people, brands, products, and organisations behind those pages.",
         "author": {
-          "@type": "Person",
-          "name": "Vince Baker",
-          "url": "https://aeobility.com.au/vince-baker"
+          "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://aeobility.com.au/logo.png"
-          }
+          "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp"
@@ -64,7 +103,7 @@ export default function EntityAuthorityArticlePage() {
             "name": "What is entity authority",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Entity authority is how AI systems recognise, understand and trust your business. Strong entity authority improves visibility in Search, Maps and AI answers."
+              "text": "Entity authority is the measurable strength of your business as a recognised and trusted entity in AI search systems. Strong entity authority improves visibility across Google AI Overviews, ChatGPT, Perplexity, and Maps."
             }
           },
           {
@@ -72,7 +111,7 @@ export default function EntityAuthorityArticlePage() {
             "name": "Why does entity authority matter for AEO",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AEO relies on machine understanding. When your identity, services and location are consistent across the web, AI systems can confidently recommend you."
+              "text": "Answer Engine Optimisation (AEO) relies on machine understanding rather than keyword counts. When identity, services, and location facts match across web indexes, LLMs confidently cite your brand."
             }
           },
           {
@@ -80,7 +119,7 @@ export default function EntityAuthorityArticlePage() {
             "name": "How do I improve my entity authority",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with consistent identity signals, structured data, expert content and external validation. AEObility’s free audit shows exactly what needs attention."
+              "text": "Improve entity authority by standardising NAP data, deploying JSON-LD schema microdata, publishing semantically dense expert content, and earning third-party mentions. Get a free AI visibility audit to find gaps."
             }
           }
         ]
@@ -96,20 +135,32 @@ export default function EntityAuthorityArticlePage() {
       items: [
         "Consistent business name across all platforms",
         "Verified website, logo and contact details",
-        "Structured data (JSON-LD microdata schema)",
+        <>Deploy <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-medium">structured data (JSON-LD)</Link> microdata schema</>,
         "Social profiles with matching information"
+      ],
+      schemas: [
+        "Organization",
+        "LocalBusiness",
+        "Person (for authors)",
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
       ],
       icon: <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
     },
     {
       title: "2. Semantic Relevance",
       subtitle: "Topical Mastery & Concept Mapping",
-      description: "Entities gain authority by repeatedly demonstrating expertise around core topics.",
+      description: (
+        <>
+          Entities gain authority by demonstrating expertise across core topics to <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan hover:underline font-medium">improve topical clarity</Link> and <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan hover:underline font-medium">semantic relevance</Link>.
+        </>
+      ),
       items: [
         "Educational research content & guides",
         "Clear relationships between domain concepts",
         "Consistent coverage of services & solutions",
-        "Internal linking that reinforces topical clusters"
+        <>Internal linking &amp; <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan hover:underline font-medium">Positional Bias Audits</Link> to reinforce topical clusters</>
       ],
       icon: <Network className="w-5 h-5 text-aeo-cyan" />
     },
@@ -138,6 +189,30 @@ export default function EntityAuthorityArticlePage() {
       icon: <Layers className="w-5 h-5 text-aeo-cyan" />
     }
   ];
+
+  const entitySignals = [
+    { title: "Mention Frequency", desc: "How often your entity is named across independent industry sources and publications.", icon: <Sparkles className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Source Credibility", desc: "The domain authority and knowledge graph trust of third-party platforms referencing your brand.", icon: <ShieldCheck className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Topical Consistency", desc: "Tight alignment between your published content, core services, and domain expertise.", icon: <Network className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Cross-Platform Corroboration", desc: "Identical NAP (Name, Address, Phone) and identity data across LinkedIn, GitHub, Google Business, and directories.", icon: <Database className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Structured Data Alignment", desc: "Explicit JSON-LD entity markup verifying organization, author, and service schemas.", icon: <CodeIcon className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Author Identity & E-E-A-T", desc: "Named, verified authors linked via Person schemas to establish subject-matter authority.", icon: <UserCheck className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Location Signals", desc: "Clear geographic anchors (Perth, Western Australia) linking your entity to specific regional markets.", icon: <MapPin className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Vector Embedding Proximity", desc: "High semantic similarity score between your entity node and relevant user queries in LLM vector databases.", icon: <Cpu className="w-4 h-4 text-aeo-cyan" /> }
+  ];
+
+  const commonMistakes = [
+    { title: "Inconsistent Business Details (NAP Collisions)", detail: "Different business names, phone numbers, or addresses across directories fragment your Knowledge Graph identity." },
+    { title: "Missing or Malformed JSON-LD Microdata", detail: "Relying on raw HTML without explicit microdata schemas forces AI search engines to guess your entity attributes." },
+    { title: "Unlinked Author Entities", detail: "Publishing content anonymously without Person schema linkages degrades E-E-A-T trust scores." },
+    { title: "Zero Cross-Platform Corroboration", detail: "Having an isolated website without matching verified social, directory, or media citations weakens LLM confidence." },
+    { title: "Thin Semantic Coverage", detail: "Fragmented content that misses core concept relationships prevents AI models from assigning topical mastery." },
+    { title: "Unresolved Canonical Identifiers", detail: "Changing URLs or hosting multiple domain variations without canonical tags leads to entity splitting." }
+  ];
+
+  function CodeIcon({ className }: { className?: string }) {
+    return <FileText className={className} />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
@@ -169,6 +244,9 @@ export default function EntityAuthorityArticlePage() {
                 AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.
               </p>
               <p>
+                <strong>Entity authority</strong> is the measurable strength of your business as an identifiable, trustworthy entity in AI search systems.
+              </p>
+              <p className="text-base text-white/70">
                 For businesses based in Perth, and across cities like Sydney or Melbourne, this shift means your organisational identity, your geographic location, and your named authors all contribute to how clearly your entity is understood, trusted and ranked in AI‑driven search results.
               </p>
             </div>
@@ -182,7 +260,7 @@ export default function EntityAuthorityArticlePage() {
               <span>&bull;</span>
               <span>5 min read</span>
               <span>&bull;</span>
-              <span>Author: <strong className="text-white">Vince Baker</strong></span>
+              <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker</Link></span>
             </div>
           </header>
 
@@ -204,7 +282,7 @@ export default function EntityAuthorityArticlePage() {
               Entity authority building is how your business becomes consistently recognisable, trustworthy and machine understandable across the web. When AI systems know who you are, what you do and who you serve, they can confidently recommend you.
             </p>
             <p className="text-lg font-medium text-white border-l-2 border-aeo-cyan pl-4 py-1 bg-white/[0.02]">
-              This is the foundation of Answer Engine Optimisation (AEO).
+              This is the foundation of <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">Answer Engine Optimisation (AEO)</Link>.
             </p>
           </section>
 
@@ -212,39 +290,48 @@ export default function EntityAuthorityArticlePage() {
           <section className="space-y-6 border-t border-white/10 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">What Entity Authority Means</h2>
             <p className="text-white/80 leading-relaxed font-light">
-              Traditional SEO focused on ranking URLs. Entity authority focuses on establishing the thing behind the URL.
+              Entity authority shifts attention from ranking URLs to recognising the organisation behind them. It relies on machine recognition, which is how clearly AI systems understand who you are and what you do. It also relies on compounded trust, which grows when your facts, brand details and data stay consistent across the web.
             </p>
+
+            {/* Definition Block */}
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-2 my-4 shadow-xl">
+              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">Entity Authority in a Sentence</span>
+              <p className="text-white text-base font-medium leading-relaxed">
+                <strong>Entity authority</strong> is the degree to which AI systems can recognise, understand, and trust your business as a distinct entity. It is built through identity signals, semantic relevance, external validation, and knowledge graph consistency.
+              </p>
+            </div>
+
             <p className="text-white/80 leading-relaxed font-light">
-              For AEObility, this means ensuring AI systems understand:
+              For AEObility, this means ensuring AI search systems understand:
             </p>
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
               <ul className="space-y-2.5 text-sm text-white/90">
                 <li className="flex items-start gap-2.5">
                   <span className="text-aeo-cyan font-bold">&bull;</span>
-                  <span>AEObility is a company</span>
+                  <span>AEObility is an established company</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-aeo-cyan font-bold">&bull;</span>
-                  <span>AEObility specialises in Answer Engine Optimisation</span>
+                  <span>AEObility specialises in <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline">Answer Engine Optimisation</Link></span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-aeo-cyan font-bold">&bull;</span>
-                  <span>AEObility provides AI visibility audits and AI search consulting</span>
+                  <span>AEObility provides <Link href="/diagnostic" className="text-aeo-cyan hover:underline">AI visibility audits</Link> and AI search consulting</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-aeo-cyan font-bold">&bull;</span>
-                  <span>AEObility serves Australian businesses</span>
+                  <span>AEObility serves Australian businesses in Perth, Sydney, and Melbourne</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-aeo-cyan font-bold">&bull;</span>
-                  <span>AEObility demonstrates expertise through content, client work and citations</span>
+                  <span>AEObility demonstrates expertise through research, client work and citations</span>
                 </li>
               </ul>
             </div>
 
             <p className="text-white/70 font-light text-sm italic">
-              When these facts appear consistently across trusted sources, AI systems gain confidence. Confidence leads to visibility.
+              When these facts appear consistently across trusted sources, AI systems gain confidence. Confidence leads to recommendation and ranking.
             </p>
           </section>
 
@@ -257,70 +344,79 @@ export default function EntityAuthorityArticlePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {pillars.map((pillar, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-aeo-cyan/30 transition-all">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                      {pillar.icon}
+                <div key={idx} className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-aeo-cyan/30 transition-all flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                        {pillar.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white">{pillar.title}</h3>
+                        <span className="text-xs text-aeo-cyan font-mono">{pillar.subtitle}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white">{pillar.title}</h3>
-                      <span className="text-xs text-aeo-cyan font-mono">{pillar.subtitle}</span>
+                    <div className="text-xs text-white/70 font-light leading-relaxed">
+                      {pillar.description}
                     </div>
+                    <ul className="space-y-1.5 text-xs text-white/80 pt-2 border-t border-white/5">
+                      {pillar.items.map((item, itemIdx) => (
+                        <li key={itemIdx} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-xs text-white/70 font-light leading-relaxed">
-                    {pillar.description}
-                  </p>
-                  <ul className="space-y-1.5 text-xs text-white/80 pt-2 border-t border-white/5">
-                    {pillar.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  {/* Recommended Schemas if Identity Pillar */}
+                  {pillar.schemas && (
+                    <div className="pt-3 border-t border-white/10 space-y-1.5">
+                      <span className="text-[11px] font-mono text-aeo-cyan font-semibold uppercase tracking-wider">Recommended JSON-LD Schemas:</span>
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {pillar.schemas.map((s, sIdx) => (
+                          <span key={sIdx} className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-white/80 font-mono">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Why Entity Authority Matters for AI Search */}
+          {/* How AI Systems Evaluate Entity Signals */}
           <section className="space-y-6 border-t border-white/10 pt-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">Why Entity Authority Matters for AI Search</h2>
-            <p className="text-white/80 leading-relaxed font-light">
-              Large language models do not rank pages by keywords. They estimate whether an entity is a trustworthy answer based on signals such as:
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
-                <span className="text-xs font-bold text-aeo-cyan uppercase">Signal 1</span>
-                <p className="text-xs text-white/80 font-medium">Frequency of mention</p>
-              </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
-                <span className="text-xs font-bold text-aeo-cyan uppercase">Signal 2</span>
-                <p className="text-xs text-white/80 font-medium">Source credibility</p>
-              </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
-                <span className="text-xs font-bold text-aeo-cyan uppercase">Signal 3</span>
-                <p className="text-xs text-white/80 font-medium">Topical consistency</p>
-              </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
-                <span className="text-xs font-bold text-aeo-cyan uppercase">Signal 4</span>
-                <p className="text-xs text-white/80 font-medium">Cross-platform corroboration</p>
-              </div>
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">How AI Systems Evaluate Entity Signals</h2>
+              <p className="text-white/70 text-sm font-light">
+                Large language models and answer engines evaluate multi-dimensional entity vectors before synthesising direct responses.
+              </p>
             </div>
 
-            <p className="text-white/80 font-light text-sm">
-              The stronger and more consistent these signals are, the more likely your business is to appear in AI generated answers.
-            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {entitySignals.map((signal, idx) => (
+                <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10 space-y-2 hover:bg-white/[0.04] transition-all">
+                  <div className="flex items-center gap-2">
+                    {signal.icon}
+                    <h3 className="text-sm font-bold text-white">{signal.title}</h3>
+                  </div>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                    {signal.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
 
-          {/* A Practical Example */}
+          {/* Practical Example */}
           <section className="space-y-6 border-t border-white/10 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">A Practical Example</h2>
             <div className="p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 space-y-3">
               <span className="text-xs text-emerald-400 font-mono font-semibold uppercase">Simulated User Query:</span>
               <p className="text-white font-medium text-base font-serif italic">
-                &ldquo;Who are good AEO consultants in Australia&rdquo;
+                &ldquo;Who are top <Link href="/services/aeo" className="text-emerald-400 hover:underline">AEO consultants in Australia</Link>&rdquo;
               </p>
             </div>
 
@@ -330,10 +426,10 @@ export default function EntityAuthorityArticlePage() {
 
             <ul className="space-y-2 text-sm text-white/80 pl-4 border-l-2 border-white/10">
               <li>&bull; High quality educational content about AEO</li>
-              <li>&bull; Consistent structured data (JSON-LD schemas)</li>
-              <li>&bull; Mentions in Australian marketing publications</li>
-              <li>&bull; A LinkedIn profile, GitHub, Reddit, YouTube and industry directories using the same branding</li>
-              <li>&bull; Case studies demonstrating expertise</li>
+              <li>&bull; Consistent <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline">structured data (JSON-LD schemas)</Link></li>
+              <li>&bull; Mentions in Australian marketing &amp; tech publications</li>
+              <li>&bull; A LinkedIn profile, GitHub, Reddit, YouTube and industry directories using identical brand information</li>
+              <li>&bull; Client case studies demonstrating verified results</li>
             </ul>
 
             <p className="text-white/80 font-light text-sm">
@@ -351,24 +447,98 @@ export default function EntityAuthorityArticlePage() {
 
           {/* Entity Authority as a Graph */}
           <section className="space-y-6 border-t border-white/10 pt-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">Entity Authority as a Graph</h2>
-            <div className="p-6 bg-zinc-950 rounded-2xl border border-white/15 overflow-x-auto font-mono text-xs text-emerald-400 leading-relaxed shadow-2xl">
-              <pre>{`AEObility
-    │
-    ├── provides ─────────► AEO Consulting
-    ├── provides ─────────► AI Visibility Audits
-    ├── specialises in ───► Answer Engine Optimisation
-    ├── located in ───────► Australia
-    ├── publishes ────────► AI Search Research
-    ├── mentioned by ─────► Industry Publications
-    └── trusted by ───────► Clients`}</pre>
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Entity Authority as a Knowledge Graph</h2>
+              <p className="text-white/70 text-sm font-light">Visualising entity node linkages and confidence vectors across machine indexes.</p>
             </div>
+
+            {/* Interactive SVG Diagram */}
+            <div className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl flex flex-col items-center justify-center space-y-6">
+              <svg viewBox="0 0 800 360" className="w-full h-auto text-xs font-mono max-w-2xl">
+                <defs>
+                  <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#00cdd8" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.8" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Central Entity Node */}
+                <circle cx="400" cy="180" r="55" fill="url(#cyanGlow)" className="animate-pulse" />
+                <text x="400" y="176" textAnchor="middle" fill="#000" fontWeight="bold" fontSize="14">AEObility</text>
+                <text x="400" y="192" textAnchor="middle" fill="#000" fontSize="10">Brand Entity</text>
+
+                {/* Connecting Lines */}
+                <line x1="400" y1="125" x2="400" y2="50" stroke="#00cdd8" strokeWidth="2" strokeDasharray="4 4" />
+                <line x1="455" y1="180" x2="630" y2="180" stroke="#00cdd8" strokeWidth="2" strokeDasharray="4 4" />
+                <line x1="435" y1="225" x2="570" y2="300" stroke="#00cdd8" strokeWidth="2" strokeDasharray="4 4" />
+                <line x1="365" y1="225" x2="230" y2="300" stroke="#00cdd8" strokeWidth="2" strokeDasharray="4 4" />
+                <line x1="345" y1="180" x2="170" y2="180" stroke="#00cdd8" strokeWidth="2" strokeDasharray="4 4" />
+
+                {/* Connected Outer Nodes */}
+                <g transform="translate(400, 50)">
+                  <rect x="-75" y="-20" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
+                  <text x="0" y="4" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">AEO Services</text>
+                </g>
+
+                <g transform="translate(630, 180)">
+                  <rect x="-75" y="-20" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
+                  <text x="0" y="4" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Location: Perth WA</text>
+                </g>
+
+                <g transform="translate(570, 300)">
+                  <rect x="-75" y="-20" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
+                  <text x="0" y="4" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Verified Mentions</text>
+                </g>
+
+                <g transform="translate(230, 300)">
+                  <rect x="-75" y="-20" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
+                  <text x="0" y="4" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">JSON-LD Microdata</text>
+                </g>
+
+                <g transform="translate(170, 180)">
+                  <rect x="-75" y="-20" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
+                  <text x="0" y="4" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Author: Vince Baker</text>
+                </g>
+              </svg>
+
+              <div className="p-4 bg-zinc-950/80 rounded-xl border border-white/10 font-mono text-xs text-emerald-400 w-full overflow-x-auto">
+                <pre>{`AEObility (Entity Node)
+    ├── provides ─────────► AEO Consulting & AI Search Strategy
+    ├── provides ─────────► AI Search Diagnostic Audits
+    ├── specialises in ───► Answer Engine Optimisation (AEO)
+    ├── located in ───────► Perth, Western Australia
+    ├── author entity ────► Vince Baker (Person Schema)
+    ├── mentioned by ─────► Industry Publications & Citations
+    └── trusted by ───────► Australian Enterprise Clients`}</pre>
+              </div>
+            </div>
+
             <p className="text-white/70 font-light text-xs text-center">
               Each verified relationship strengthens the entity’s authority and improves visibility across Search, Maps and AI.
             </p>
           </section>
 
-          {/* Why This Matters Now & Next Steps */}
+          {/* Common Mistakes in Entity Authority Building */}
+          <section className="space-y-6 border-t border-white/10 pt-10">
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-amber-400" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Common Mistakes in Entity Authority Building</h2>
+            </div>
+            <p className="text-white/80 leading-relaxed font-light">
+              Avoid these critical pitfalls that erode machine confidence and trigger entity collisions in AI search indexes:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {commonMistakes.map((m, idx) => (
+                <div key={idx} className="p-5 bg-amber-950/10 border border-amber-500/20 rounded-xl space-y-2">
+                  <h3 className="text-sm font-bold text-amber-200">{idx + 1}. {m.title}</h3>
+                  <p className="text-xs text-white/70 leading-relaxed font-light">{m.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Next Steps */}
           <section className="space-y-6 border-t border-white/10 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">Why This Matters Now</h2>
             <p className="text-white/80 leading-relaxed font-light">
@@ -395,16 +565,66 @@ export default function EntityAuthorityArticlePage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
-                  <span>Use structured data (JSON-LD) to reinforce explicit relationships</span>
+                  <span>Use <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline">structured data (JSON-LD)</Link> to reinforce explicit relationships</span>
                 </li>
               </ul>
               <p className="text-xs text-white/70 font-light pt-2">
-                AEObility’s 90 day blueprint provides a structured roadmap for improving visibility, understanding and selection across Search, Maps and AI.
+                AEObility’s <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-semibold">90 day blueprint</Link> provides a structured roadmap for improving visibility, understanding and selection across Search, Maps and AI.
               </p>
             </div>
           </section>
 
-          {/* Three FAQ Items for Mobile */}
+          {/* Tools & Resources for Entity Optimisation */}
+          <section className="space-y-6 border-t border-white/10 pt-10">
+            <div className="flex items-center gap-2">
+              <Wrench className="w-5 h-5 text-aeo-cyan" />
+              <h2 className="text-2xl font-bold text-white">Tools &amp; Resources for Entity Optimisation</h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>Positional Bias Audit</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Evaluate context window bottlenecks and Lost in the Middle LLM synthesis bias.
+                </p>
+              </Link>
+
+              <Link href="/diagnostic" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>AI Search Diagnostic Engine</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Run a manual entity recognition check and get your brand&apos;s AI visibility score.
+                </p>
+              </Link>
+
+              <Link href="/knowledge-hub/semantic-seo" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>Semantic SEO Guide</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Master microdata, schema structures, and entity-based content architecture.
+                </p>
+              </Link>
+
+              <Link href="/solutions/aeo-blueprint" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>AEO 90-Day Blueprint</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  A structured roadmap for entity building, Answer Engine Optimisation, and LLM selection.
+                </p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Three FAQ Items */}
           <section className="space-y-6 border-t border-white/10 pt-10">
             <div className="flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-aeo-cyan" />
@@ -415,22 +635,50 @@ export default function EntityAuthorityArticlePage() {
               <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
                 <h3 className="text-base font-bold text-white">1) What is entity authority?</h3>
                 <p className="text-xs text-white/70 leading-relaxed font-light">
-                  Entity authority is how AI systems recognise, understand and trust your business. Strong entity authority improves visibility in Search, Maps and AI answers.
+                  Entity authority is the measurable strength of your business as a recognised and trusted entity in AI search systems. Strong entity authority improves visibility across Google AI Overviews, ChatGPT, Perplexity, and Maps.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
                 <h3 className="text-base font-bold text-white">2) Why does entity authority matter for AEO?</h3>
                 <p className="text-xs text-white/70 leading-relaxed font-light">
-                  AEO relies on machine understanding. When your identity, services and location are consistent across the web, AI systems can confidently recommend you.
+                  <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline">Answer Engine Optimisation (AEO)</Link> relies on machine understanding rather than keyword counts. When identity, services, and location facts match across web indexes, LLMs confidently cite your brand.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
                 <h3 className="text-base font-bold text-white">3) How do I improve my entity authority?</h3>
                 <p className="text-xs text-white/70 leading-relaxed font-light">
-                  Start with consistent identity signals, structured data, expert content and external validation. AEObility’s free audit shows exactly what needs attention.
+                  Improve entity authority by standardising NAP data, deploying JSON-LD schema microdata, publishing semantically dense expert content, and earning third-party mentions. Get a <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-medium">free AI visibility audit</Link> to find gaps.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Author Entity Bio Box */}
+          <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-aeo-cyan/50 shrink-0 shadow-lg">
+              <Image
+                src="/Profile-Picture-Vinnie.png"
+                alt="Vince Baker - AEO & Semantic Search Specialist Perth"
+                fill
+                className="object-cover"
+                sizes="64px"
+              />
+            </div>
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="text-base font-bold text-white">Vince Baker</h3>
+                <span className="text-xs text-aeo-cyan font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10">AEO &amp; Semantic Search Specialist</span>
+              </div>
+              <p className="text-xs text-white/70 font-light leading-relaxed">
+                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in knowledge graph architecture, entity salience building, and AI search retrieval for Australian businesses.
+              </p>
+              <div className="pt-1 text-xs">
+                <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1">
+                  <span>View Author Entity Profile</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
               </div>
             </div>
           </section>
