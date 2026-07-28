@@ -345,6 +345,13 @@ export default function BillWidget() {
       <div className="px-3 py-1.5 bg-zinc-900/60 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
         <button
           type="button"
+          onClick={() => executeQuery("What is semantic density?")}
+          className="bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 px-2 py-0.5 rounded-full transition cursor-pointer"
+        >
+          Semantic Density
+        </button>
+        <button
+          type="button"
           onClick={() => executeQuery("Explain positional bias in retrieval")}
           className="bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 px-2 py-0.5 rounded-full transition cursor-pointer"
         >
