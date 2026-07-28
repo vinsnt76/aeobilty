@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 // Dynamically import the compiled knowledge base containing all 38 site vector nodes
-import knowledgeBase from '@/lib/search/knowledgeBase.json';
+import knowledgeBase from '../../../lib/search/knowledgeBase.json';
 
 export const runtime = 'edge';
 
