@@ -5,6 +5,13 @@ import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
 import { X, Sparkles, Send, Activity, Bot } from 'lucide-react';
 
+// Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function BillWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
@@ -30,12 +37,49 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
+  // Telemetry Hook: Dispatches GA4 metrics when Bill switches active skills
+  const toggleTelemetryMode = () => {
+    const nextMode = !isTelemetryMode;
+    setIsTelemetryMode(nextMode);
+
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'bill_mode_toggle', {
+        event_category: 'AI Assistant',
+        event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
+        value: nextMode ? 1 : 0
+      });
+    }
+  };
+
+  // Custom submit interceptor to stream to Vercel and track intent simultaneously
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+    const textToSend = input.trim();
+
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'bill_query_submitted', {
+        event_category: 'AI Assistant',
+        search_term: textToSend,
+        active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer'
+      });
+    }
+
+    setInput('');
+    await sendMessage({ text: textToSend });
+  };
+
   // Listen for Handoff Events from search modals or CTA triggers
   useEffect(() => {
     const handleOpenBillWithQuery = (e: Event) => {
-      const customEvent = e as CustomEvent<{ query?: string }>;
+      const customEvent = e as CustomEvent<{ query?: string; mode?: 'telemetry' | 'general' }>;
       const initialQuery = customEvent.detail?.query;
+      const mode = customEvent.detail?.mode;
+
       setIsOpen(true);
+      if (mode === 'telemetry') {
+        setIsTelemetryMode(true);
+      }
       if (initialQuery) {
         setInput(initialQuery);
       }
@@ -51,14 +95,6 @@ export default function BillWidget() {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isOpen, isLoading]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-    const textToSend = input;
-    setInput('');
-    await sendMessage({ text: textToSend });
-  };
 
   const getMessageText = (m: UIMessage): string => {
     if (!m.parts) return '';
@@ -106,7 +142,7 @@ export default function BillWidget() {
           {/* Telemetry Switcher Mode */}
           <button 
             type="button"
-            onClick={() => setIsTelemetryMode(!isTelemetryMode)}
+            onClick={toggleTelemetryMode}
             className={`px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 border ${
               isTelemetryMode 
                 ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold' 
