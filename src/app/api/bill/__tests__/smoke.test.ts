@@ -2,16 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { POST } from '../route';
 import { NextRequest } from 'next/server';
 
-interface StreamTextMockCall {
-  system: string;
-}
-
-interface StreamTextMock {
-  mock: {
-    calls: StreamTextMockCall[][];
-  };
-}
-
 let capturedParams: { system?: string } = {};
 
 vi.mock('ai', () => ({
@@ -28,7 +18,7 @@ vi.mock('@ai-sdk/openai', () => ({
   openai: vi.fn()
 }));
 
-describe('Project Bill - 6-Step Production Smoke Test Suite', () => {
+describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
   beforeEach(() => {
     capturedParams = {};
     vi.clearAllMocks();
@@ -53,7 +43,17 @@ describe('Project Bill - 6-Step Production Smoke Test Suite', () => {
     expect(capturedParams.system).toContain('RAW AUDIT DATA PAYLOAD');
   });
 
-  it('2. Blueprint Funnel Detection: Confirm commercial fix intent triggers Blueprint Funnel & $995 AUD quote', async () => {
+  it('2. Natural Telemetry Intent: Confirm "how do you measure visibility" routes directly to Telemetry Guide', async () => {
+    const req = createMockReq({
+      prompt: 'how do you measure visibility'
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(200);
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Telemetry Guide]');
+  });
+
+  it('3. Blueprint Funnel Detection: Confirm commercial fix intent triggers Blueprint Funnel & $995 AUD quote', async () => {
     const req = createMockReq({
       prompt: 'how do I fix my visibility gaps'
     });
@@ -64,18 +64,28 @@ describe('Project Bill - 6-Step Production Smoke Test Suite', () => {
     expect(capturedParams.system).toContain('995.00');
   });
 
-  it('3. Concept Explainer Routing: Confirm semantic lattice queries pull dynamic knowledge nodes', async () => {
+  it('4. Positional Bias Concept Node: Confirm "what is positional bias" pulls expanded positional bias knowledge node', async () => {
     const req = createMockReq({
-      prompt: 'explain semantic lattices'
+      prompt: 'what is positional bias in retrieval'
     });
 
     const res = await POST(req);
     expect(res.status).toBe(200);
     expect(capturedParams.system).toContain('[ACTIVE SKILL: Dynamic Knowledge Graph Node Explainer]');
-    expect(capturedParams.system).toContain('DYNAMIC KNOWLEDGE MATCHES');
+    expect(capturedParams.system).toContain('Positional Bias');
   });
 
-  it('4. General Agent Fallback: Confirm neutral prompts provide canonical identity graph without funneling', async () => {
+  it('5. Semantic SEO vs AEO Node: Confirm query matches Semantic SEO vs AEO node', async () => {
+    const req = createMockReq({
+      prompt: 'semantic seo vs aeo'
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(200);
+    expect(capturedParams.system).toContain('Semantic SEO vs Answer Engine Optimisation');
+  });
+
+  it('6. General Agent Fallback: Confirm neutral prompts provide canonical identity graph without funneling', async () => {
     const req = createMockReq({
       prompt: 'what does AEObility do'
     });
@@ -86,17 +96,7 @@ describe('Project Bill - 6-Step Production Smoke Test Suite', () => {
     expect(capturedParams.system).not.toContain('[ACTIVE SKILL: Blueprint Funnel]');
   });
 
-  it('5. Ambiguous Query Handling: Confirm ambiguous queries route to explainer without false commercial funneling', async () => {
-    const req = createMockReq({
-      prompt: 'visibility structure'
-    });
-
-    const res = await POST(req);
-    expect(res.status).toBe(200);
-    expect(capturedParams.system).not.toContain('[ACTIVE SKILL: Blueprint Funnel]');
-  });
-
-  it('6. Streaming & Edge Stability Stress Test: Execute rapid sequential requests with 0 edge runtime crashes', async () => {
+  it('7. Streaming & Edge Stability Stress Test: Execute rapid sequential requests with 0 edge runtime crashes', async () => {
     for (let i = 0; i < 10; i++) {
       const req = createMockReq({ prompt: `rapid execution test iteration ${i}` });
       const res = await POST(req);

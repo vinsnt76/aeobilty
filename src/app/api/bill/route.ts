@@ -73,10 +73,17 @@ export async function POST(req: NextRequest) {
     let injectionContext = '';
 
     // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Dynamic Skill Slicing)
-    if (audit || intent === 'telemetry') {
+    if (
+      audit || 
+      intent === 'telemetry' || 
+      normalizedQuery.includes('measure visibility') || 
+      normalizedQuery.includes('telemetry') ||
+      normalizedQuery.includes('citation share') ||
+      normalizedQuery.includes('hallucination')
+    ) {
       // SKILL 1: Telemetry Guide
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
-You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
+You are evaluating a live AI Visibility Telemetry Audit or framework query. Review the raw telemetry JSON payload below.
 Diagnose Entity Clarity, Citation Share, Retrieval Confidence, and Hallucination Risks.
 Identify the visibility gaps transparently and anchor your structural fixes back to AEObility frameworks.`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
@@ -84,7 +91,8 @@ Identify the visibility gaps transparently and anchor your structural fixes back
     } else if (
       normalizedQuery.includes('fix') || normalizedQuery.includes('next steps') || 
       normalizedQuery.includes('improve visibility') || normalizedQuery.includes('buy') || 
-      normalizedQuery.includes('blueprint')
+      normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') ||
+      normalizedQuery.includes('cost') || normalizedQuery.includes('hire')
     ) {
       // SKILL 3: Blueprint Funnel
       systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
