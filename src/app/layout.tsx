@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import GlobalConsentBanner from "@/components/GlobalConsentBanner";
 import CompanionWidget from "@/components/CompanionWidget";
 import AnswerSearchModal from "@/components/AnswerSearchModal";
+import BillWidget from "@/components/BillWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -147,6 +147,7 @@ export default function RootLayout({
         <GlobalConsentBanner />
         <CompanionWidget />
         <AnswerSearchModal />
+        <BillWidget />
 
 
       </body>
