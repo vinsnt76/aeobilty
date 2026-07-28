@@ -34,8 +34,8 @@ export default function ArticlesHubPage() {
       category: "Dense Retrieval & LLM Bias",
       description: "Learn how positional bias and the 'lost in the middle' phenomenon affect search visibility, and how Answer Engine Optimisation (AEO) structures content for machine clarity.",
       href: "/knowledge-hub/articles/positional-bias-in-retrieval",
-      image: "/positional-bias-retrieval-AEObility.png",
-      alt: "High-tech vector retrieval architecture diagram illustrating positional bias in AI search engines and LLMs showing primacy and recency spikes and lost in the middle context window drop.",
+      image: "/positional-bias-retrieval-AEObility.webp",
+      alt: "Positional bias architecture diagram depicting AI search dense vector retrieval, LLM context window attention dilution, primacy and recency spikes, and Answer Engine Optimisation (AEO) entity salience by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Technical Guide" },
         { label: "Read Time", value: "5 min" }
