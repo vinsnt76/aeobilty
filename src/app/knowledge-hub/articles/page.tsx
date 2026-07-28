@@ -30,6 +30,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "What Is Positional Bias in Retrieval and Answer Engines?",
+      category: "Dense Retrieval & LLM Bias",
+      description: "Learn how positional bias and the 'lost in the middle' phenomenon affect search visibility, and how Answer Engine Optimisation (AEO) structures content for machine clarity.",
+      href: "/knowledge-hub/articles/positional-bias-in-retrieval",
+      image: "/positional-bias-retrieval-AEObility.png",
+      alt: "High-tech vector retrieval architecture diagram illustrating positional bias in AI search engines and LLMs showing primacy and recency spikes and lost in the middle context window drop.",
+      metrics: [
+        { label: "Type", value: "Technical Guide" },
+        { label: "Read Time", value: "5 min" }
+      ]
+    },
+    {
       title: "Entity Authority: Why AI Search Ranks Entities, Not Pages",
       category: "Entity Authority & AEO",
       description: "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
@@ -106,6 +118,9 @@ export default function ArticlesHubPage() {
               <div className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 Articles & Guides
               </div>
+              <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
+                Positional Bias in Retrieval
+              </Link>
               <Link href="/knowledge-hub/articles/entity-authority-building" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
                 Entity Authority Building
               </Link>

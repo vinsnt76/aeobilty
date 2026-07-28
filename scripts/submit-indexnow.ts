@@ -9,13 +9,15 @@ const urlList = [
   `https://${HOST}/knowledge-hub/geo`,
   `https://${HOST}/knowledge-hub/articles`,
   `https://${HOST}/knowledge-hub/articles/entity-authority-building`,
+  `https://${HOST}/knowledge-hub/articles/positional-bias-in-retrieval`,
   `https://${HOST}/knowledge-hub/articles/aeo-vs-seo`,
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
   `https://www.aeobility.com.au/knowledge-hub`,
   `https://www.aeobility.com.au/knowledge-hub/articles`,
-  `https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building`
+  `https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building`,
+  `https://www.aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`
 ];
 
 async function submitToIndexNow() {
