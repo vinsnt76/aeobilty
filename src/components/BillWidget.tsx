@@ -37,6 +37,45 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
+  const getMessageText = (m: UIMessage): string => {
+    if (!m.parts) return '';
+    return m.parts
+      .filter((p): p is { type: 'text'; text: string } => p.type === 'text')
+      .map(p => p.text)
+      .join('');
+  };
+
+  // Track deep funnel-level sequence transitions via message array synthesis
+  useEffect(() => {
+    if (messages.length === 0 || typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+    
+    const lastMessage = messages[messages.length - 1];
+    if (lastMessage.role !== 'assistant') return;
+
+    const content = getMessageText(lastMessage).toLowerCase();
+    if (!content) return;
+    
+    // 📊 Funnel Event 1: Captures when Bill dynamically shifts into the Blueprint Commercial Funnel
+    if (content.includes('blueprint') || content.includes('995')) {
+      const prevUserMessage = [...messages].reverse().find(m => m.role === 'user');
+      const userText = prevUserMessage ? getMessageText(prevUserMessage) : 'Unknown';
+
+      window.gtag('event', 'bill_funnel_conversion_step', {
+        event_category: 'AI Assistant Funnel',
+        funnel_step: 'Commercial Offer Exposed',
+        trigger_query: userText
+      });
+    }
+
+    // 📊 Funnel Event 2: Captures when Bill switches into technical explanation mode
+    if (content.includes('lattice') || content.includes('bias') || content.includes('schema')) {
+      window.gtag('event', 'bill_lattice_node_hit', {
+        event_category: 'AI Assistant Knowledge',
+        matched_concept: content.includes('bias') ? 'Positional Bias' : content.includes('lattice') ? 'Semantic Lattice' : 'Schema Structure'
+      });
+    }
+  }, [messages]);
+
   // Telemetry Hook: Dispatches GA4 metrics when Bill switches active skills
   const toggleTelemetryMode = () => {
     const nextMode = !isTelemetryMode;
@@ -61,7 +100,8 @@ export default function BillWidget() {
       window.gtag('event', 'bill_query_submitted', {
         event_category: 'AI Assistant',
         search_term: textToSend,
-        active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer'
+        active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer',
+        query_length: textToSend.length
       });
     }
 
@@ -95,14 +135,6 @@ export default function BillWidget() {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isOpen, isLoading]);
-
-  const getMessageText = (m: UIMessage): string => {
-    if (!m.parts) return '';
-    return m.parts
-      .filter((p): p is { type: 'text'; text: string } => p.type === 'text')
-      .map(p => p.text)
-      .join('');
-  };
 
   if (!isOpen) {
     return (
