@@ -8,7 +8,7 @@ import { ArrowRight, BookOpen, CheckCircle2, ShieldCheck, Network, Layers, HelpC
 
 export const metadata = {
   title: "Entity Authority: Why AI Search Ranks Entities, Not Pages | AEObility",
-  description: "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
+  description: "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
   },
@@ -33,16 +33,17 @@ export default function EntityAuthorityArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "name": "Entity Authority: Why AI Search Ranks Entities, Not Pages",
-        "description": "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business."
+        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages."
       },
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#article",
         "headline": "Entity Authority: Why AI Search Ranks Entities, Not Pages",
-        "description": "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
+        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.",
         "author": {
-          "@type": "Organization",
-          "name": "AEObility"
+          "@type": "Person",
+          "name": "Vince Baker",
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
           "@type": "Organization",
@@ -163,16 +164,25 @@ export default function EntityAuthorityArticlePage() {
               <span className="text-gradient-aeo">Why AI Search Ranks Entities, Not Pages</span>
             </h1>
 
-            <p className="text-xl text-white/80 font-serif font-light leading-relaxed">
-              AI search has changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities. An entity is the person, brand, product or organisation behind the page.
-            </p>
+            <div className="space-y-4 text-xl text-white/80 font-serif font-light leading-relaxed">
+              <p>
+                AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, which are essentially the people, brands, products and organisations behind those pages.
+              </p>
+              <p>
+                For businesses based in Perth, and across cities like Sydney or Melbourne, this shift means your organisational identity, your geographic location, and your named authors all contribute to how clearly your entity is understood, trusted and ranked in AI‑driven search results.
+              </p>
+            </div>
 
-            <div className="flex items-center gap-4 text-xs text-white/50 border-t border-b border-white/10 py-4">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-4">
               <span>Published by <strong className="text-white">AEObility</strong></span>
+              <span>&bull;</span>
+              <span>Location: <strong className="text-white">Perth, Western Australia</strong></span>
               <span>&bull;</span>
               <span>Updated July 2026</span>
               <span>&bull;</span>
               <span>5 min read</span>
+              <span>&bull;</span>
+              <span>Author: <strong className="text-white">Vince Baker</strong></span>
             </div>
           </header>
 
