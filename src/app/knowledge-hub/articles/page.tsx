@@ -34,8 +34,8 @@ export default function ArticlesHubPage() {
       category: "AEO / Structured Data",
       description: "Learn how structured data helps brands survive query fan-out in AI search by improving entity clarity, retrieval, and citation accuracy.",
       href: "/knowledge-hub/articles/structured-data-query-fan-out",
-      image: "/semantic-seo-for-aeo-entities_AEObility.webp",
-      alt: "Laptop screen showing structured data markup and AI search results",
+      image: "/structured-data-query-fan-out_AEObility.webp",
+      alt: "High-tech structured data and query fan-out architecture diagram visualising Schema.org entity anchors and AI search vector retrieval by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Technical Guide" },
         { label: "Read Time", value: "5 min" }
