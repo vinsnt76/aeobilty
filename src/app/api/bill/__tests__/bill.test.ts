@@ -85,7 +85,7 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
 
     const { streamText } = await import('ai');
     const callArgs = (streamText as unknown as StreamTextMock).mock.calls[0][0];
-    expect(callArgs.system).toContain('[ACTIVE SKILL: Dynamic Knowledge Graph Node Explainer]');
+    expect(callArgs.system).toContain('[ACTIVE SKILL: Technical Concept Explainer]');
   });
 
   it('🔴 Exception Handling: Should fail gracefully with a 500 status when stream execution throws', async () => {

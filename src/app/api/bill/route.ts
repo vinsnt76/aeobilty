@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
-// Dynamically import the compiled knowledge base containing all 38 site vector nodes
+// Dynamically import the compiled knowledge base containing all 41 site vector nodes
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
 
 export const runtime = 'edge';
@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
 
-    // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Dynamic Skill Slicing)
+    // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Two-Tier Skill & Lattice Architecture)
     if (
       audit || 
       intent === 'telemetry' || 
@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
       normalizedQuery.includes('citation share') ||
       normalizedQuery.includes('hallucination')
     ) {
-      // SKILL 1: Telemetry Guide
+      // TIER 1 - SKILL 1: Telemetry Guide
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit or framework query. Review the raw telemetry JSON payload below.
 Diagnose Entity Clarity, Citation Share, Retrieval Confidence, and Hallucination Risks.
@@ -94,32 +94,62 @@ Identify the visibility gaps transparently and anchor your structural fixes back
       normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') ||
       normalizedQuery.includes('cost') || normalizedQuery.includes('hire')
     ) {
-      // SKILL 3: Blueprint Funnel
+      // TIER 1 - SKILL 3: Blueprint Funnel
       systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
 The user wants to resolve visibility gaps or explore action steps. Smoothly funnel them into our core offering: The 90-Day AI Success Blueprint.
 Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: converting loose text into deterministic semantic schemas.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
     } else {
-      // SKILL 2 & 4: General Agent & Concept Explainer Integration
-      systemPrompt += `\n\n[ACTIVE SKILL: Dynamic Knowledge Graph Node Explainer]
-The user is querying conceptual, technical, or mechanical elements of AEO, schemas, or site services. 
-Synthesise your response using the verified dynamic knowledge base node captures provided below.`;
-
-      // Dynamic Node Matcher: Scans knowledgeBase.json for keyword overlaps across all 38 nodes
+      // TIER 2 - SKILL 5: Technical Concept Explainer & Dynamic Knowledge Graph Fallback
       const rawNodes = (knowledgeBase as KnowledgeNode[]) || [];
+      const queryTokens = normalizedQuery.split(/\s+/).filter((w: string) => w.length > 2);
+
       const matchedNodes = rawNodes
-        .filter((node) => {
-          const pageNameMatch = Boolean(node.pageName?.toLowerCase() && normalizedQuery.includes(node.pageName.toLowerCase()));
-          const h1Match = Boolean(node.h1?.toLowerCase() && normalizedQuery.includes(node.h1.toLowerCase()));
-          const keyphraseMatch = Boolean(node.focusKeyphrase?.toLowerCase() && normalizedQuery.includes(node.focusKeyphrase.toLowerCase()));
-          const descWords = node.description?.toLowerCase()?.split(' ') || [];
-          const descMatch = descWords.some((word) => word.length > 4 && normalizedQuery.includes(word));
-          return pageNameMatch || h1Match || keyphraseMatch || descMatch;
+        .map((node) => {
+          const pageNameLower = node.pageName?.toLowerCase() || '';
+          const h1Lower = node.h1?.toLowerCase() || '';
+          const keyphraseLower = node.focusKeyphrase?.toLowerCase() || '';
+          const primaryLower = node.primaryKeywords?.toLowerCase() || '';
+          const secondaryLower = node.secondaryKeywords?.toLowerCase() || '';
+          const latentLower = node.latentKeywords?.toLowerCase() || '';
+          const descLower = node.description?.toLowerCase() || '';
+
+          let score = 0;
+
+          // Direct phrase or keyphrase overlap
+          if (keyphraseLower && normalizedQuery.includes(keyphraseLower)) score += 50;
+          if (h1Lower && normalizedQuery.includes(h1Lower)) score += 40;
+          if (pageNameLower && normalizedQuery.includes(pageNameLower)) score += 30;
+
+          // Token overlap matching (ignoring generic stop words)
+          const fullNodeText = `${pageNameLower} ${h1Lower} ${keyphraseLower} ${primaryLower} ${secondaryLower} ${latentLower} ${descLower}`;
+          for (const token of queryTokens) {
+            if (['what', 'how', 'does', 'with', 'from', 'this', 'that', 'your', 'about', 'explain'].includes(token)) continue;
+            if (fullNodeText.includes(token)) {
+              score += 10;
+            }
+          }
+
+          return { node, score };
         })
+        .filter((item) => item.score > 0)
+        .sort((a, b) => b.score - a.score)
         .slice(0, 3)
         // Strip heavy vector embedding array to minimize context tokens
-        .map(({ embedding: _embedding, ...lightweightNode }) => lightweightNode);
+        .map(({ node }) => {
+          const { embedding: _embedding, ...lightweightNode } = node;
+          return lightweightNode;
+        });
+
+      if (matchedNodes.length > 0) {
+        systemPrompt += `\n\n[ACTIVE SKILL: Technical Concept Explainer]
+The user is querying conceptual, technical, or mechanical elements of AEO, schemas, or site services. 
+Synthesise your response using the verified dynamic knowledge base node captures provided below. Explain the concept with technical precision, authority, and Australian English parameters.`;
+      } else {
+        systemPrompt += `\n\n[ACTIVE SKILL: General NLWeb Schema Agent]
+The user is asking a general inquiry about AEObility. Answer strictly using our canonical organization and founder identity graph.`;
+      }
 
       injectionContext = `\nCANONICAL IDENTITY LAYER:\n${JSON.stringify(orgGraph)}`;
       

@@ -71,7 +71,7 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
 
     const res = await POST(req);
     expect(res.status).toBe(200);
-    expect(capturedParams.system).toContain('[ACTIVE SKILL: Dynamic Knowledge Graph Node Explainer]');
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Technical Concept Explainer]');
     expect(capturedParams.system).toContain('Positional Bias');
   });
 
@@ -96,7 +96,18 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
     expect(capturedParams.system).not.toContain('[ACTIVE SKILL: Blueprint Funnel]');
   });
 
-  it('7. Streaming & Edge Stability Stress Test: Execute rapid sequential requests with 0 edge runtime crashes', async () => {
+  it('7. Skill 5 Technical Concept Explainer: Confirm "what is semantic density" activates Skill 5 and retrieves lattice nodes', async () => {
+    const req = createMockReq({
+      prompt: 'what is semantic density'
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(200);
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Technical Concept Explainer]');
+    expect(capturedParams.system).toContain('DYNAMIC KNOWLEDGE MATCHES');
+  });
+
+  it('8. Streaming & Edge Stability Stress Test: Execute rapid sequential requests with 0 edge runtime crashes', async () => {
     for (let i = 0; i < 10; i++) {
       const req = createMockReq({ prompt: `rapid execution test iteration ${i}` });
       const res = await POST(req);
