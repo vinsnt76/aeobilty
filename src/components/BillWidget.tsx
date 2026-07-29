@@ -330,15 +330,8 @@ export default function BillWidget() {
           </div>
         );
       }
-      if (isTelemetryMode) {
-        return (
-          <div className="space-y-1.5 w-full">
-            <span className="text-[9px] uppercase tracking-wider text-amber-400 font-mono font-semibold block font-sans">Conceptual Response (Telemetry Unmatched)</span>
-            <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
-          </div>
-        );
-      }
-      return <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>;
+      // Fallback: If output does not contain [START_TELEMETRY_REPORT], treat as plain text normal assistant message
+      return <p className="whitespace-pre-wrap text-[11px] text-zinc-300 leading-relaxed">{text}</p>;
     }
 
     // Fire Card Render Event Tracking completely decoupled from React state renders
