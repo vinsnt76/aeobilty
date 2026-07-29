@@ -21,7 +21,7 @@ export default function BillWidget() {
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // 1. Local Storage Sync: Hydrate local state context from previous diagnostics
+  // 1. LOCAL STORAGE SYNC: Hydrates diagnostic variables instantly from on-screen scans
   useEffect(() => {
     const handleStorageUpdate = () => {
       if (typeof window === 'undefined') return;
@@ -42,7 +42,7 @@ export default function BillWidget() {
     return () => window.removeEventListener('aeo_telemetry_updated', handleStorageUpdate);
   }, []);
 
-  // 2. CONNECT TO UNIFIED AGENT VIA VERCEL AI SDK CORE BINDINGS
+  // 2. CONNECT DIRECTLY TO UNIFIED EDGE ROUTE VIA AI SDK HOOKS
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/bill',
@@ -62,6 +62,8 @@ export default function BillWidget() {
   const isLoading = status === 'submitted' || status === 'streaming';
 
   const getMessageText = React.useCallback((m: UIMessage): string => {
+    const rawContent = (m as unknown as { content?: string }).content;
+    if (typeof rawContent === 'string' && rawContent.trim()) return rawContent;
     if (!m.parts) return '';
     return m.parts
       .filter((p): p is { type: 'text'; text: string } => p.type === 'text')
@@ -69,7 +71,7 @@ export default function BillWidget() {
       .join('');
   }, []);
 
-  // 3. Analytics & Speech Telemetry Synthesis
+  // 3. ANALYTICS TELEMETRY & AUDIO SYNTHESIS ENGINE
   const speakText = React.useCallback((text: string) => {
     if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -92,7 +94,7 @@ export default function BillWidget() {
     
     speakText(getMessageText(lastMessage));
 
-    // GA4 Event Trigger: Commercial Funnel Slicing
+    // GA4: Commercial Conversational Funnel Analytics Tracker
     if (content.includes('blueprint') || content.includes('995')) {
       const prevUserMessage = [...messages].reverse().find(m => m.role === 'user');
       const userText = prevUserMessage ? getMessageText(prevUserMessage) : 'Unknown';
@@ -104,7 +106,7 @@ export default function BillWidget() {
       });
     }
 
-    // GA4 Event Trigger: 41-Node Lattice Concept Hit
+    // GA4: 41-Node Semantic Lattice Hit Tracker
     if (content.includes('lattice') || content.includes('bias') || content.includes('density') || content.includes('schema')) {
       window.gtag('event', 'bill_lattice_node_hit', {
         event_category: 'AI Assistant Knowledge',
@@ -144,6 +146,7 @@ export default function BillWidget() {
     await sendMessage({ text: queryText });
   };
 
+  // 4. CRITICAL CHIP FIX: Safely mutates query text tokens directly into OpenAI formats
   const handleChipClick = async (chipText: string) => {
     const queryMap: Record<string, string> = {
       'Semantic Density': 'What is semantic density in AEO framework models?',
@@ -216,7 +219,7 @@ export default function BillWidget() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-[540px] max-h-[85vh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
-      {/* Header Banner */}
+      {/* Header Controls Banner */}
       <div className="bg-zinc-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
@@ -269,7 +272,7 @@ export default function BillWidget() {
         </div>
       </div>
 
-      {/* Local Storage Telemetry Audit Card (If Hydrated) */}
+      {/* Local Diagnostic Local Snapshot Visual Block */}
       {isTelemetryMode && storedTelemetry?.result?.insightResult && (
         <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2.5 text-[10px] space-y-1.5 font-mono">
           <div className="flex justify-between items-center text-amber-400 font-bold tracking-wider uppercase text-[9px]">
@@ -289,8 +292,8 @@ export default function BillWidget() {
         </div>
       )}
 
-      {/* Message Output Box */}
-      <div className="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs">
+      {/* Core Active Message Window Stream */}
+      <div className="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
           <div className="text-center pt-6 pb-2 space-y-3 px-2">
             <div className="w-10 h-10 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -313,8 +316,8 @@ export default function BillWidget() {
               key={m.id} 
               className={`p-3.5 rounded-xl max-w-[88%] leading-relaxed ${
                 m.role === 'user' 
-                  ? 'bg-emerald-600/20 border border-emerald-500/30 ml-auto text-emerald-50' 
-                  : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200'
+                  ? 'bg-emerald-600/20 border border-emerald-500/30 ml-auto text-emerald-50 rounded-tr-none' 
+                  : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200 rounded-tl-none'
               }`}
             >
               <span className="block text-[9px] uppercase tracking-wider font-mono text-zinc-500 mb-1">
@@ -361,7 +364,7 @@ export default function BillWidget() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Diagnostic Chips */}
+      {/* Quick Action Diagnostic Interactive Selection Row */}
       <div className="px-3 py-1.5 bg-zinc-900/60 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
         {[
           { label: 'Semantic Density', icon: <Sparkles className="w-3 h-3" /> },
@@ -381,7 +384,7 @@ export default function BillWidget() {
         ))}
       </div>
 
-      {/* Input Action Form Tray */}
+      {/* Lower User Query Tray Element */}
       <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2 backdrop-blur-md">
         <input
           value={input}
