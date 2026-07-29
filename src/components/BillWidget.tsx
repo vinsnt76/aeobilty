@@ -305,6 +305,14 @@ export default function BillWidget() {
     const parsed = parseTelemetryText(text);
 
     if (!parsed.hasAnyMatch) {
+      if (!text || !text.trim()) {
+        return (
+          <div className="inline-flex items-center gap-2 py-1 text-[10px] font-mono text-emerald-400">
+            <Sparkles className="w-3.5 h-3.5 animate-spin text-emerald-400" />
+            <span>Scanning 41 semantic lattice nodes...</span>
+          </div>
+        );
+      }
       return <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>;
     }
 
