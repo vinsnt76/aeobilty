@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-// 📋 Strict Regex Pattern Map for Inline Telemetry Analysis
+// 📋 Explicit Regex Pattern Definitions for Real-time Chunk Extraction
 const TELEMETRY_PATTERNS = {
   firstImpression: /AI First Impression:\s*([^\n]+)/i,
   blindSpot: /Biggest Blind Spot:\s*([^\n]+)/i,
@@ -23,7 +23,6 @@ const TELEMETRY_PATTERNS = {
   risk: /Hallucination Risk:\s*(High|Medium|Low)/i
 };
 
-// 🧠 Dynamic Context Token Extractor
 function parseTelemetryText(text: string) {
   const firstImpressionMatch = text.match(TELEMETRY_PATTERNS.firstImpression);
   const blindSpotMatch = text.match(TELEMETRY_PATTERNS.blindSpot);
@@ -51,12 +50,12 @@ export default function BillWidget() {
   const [input, setInput] = useState('');
   const [isMuted, setIsMuted] = useState(true);
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
-  const [renderedCards, setRenderedCards] = useState<Set<string>>(new Set());
+  const [reportedCardIds] = useState(() => new Set<string>());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // 1. Storage Sync: Automatically hydrate client parameters from previous page scans
+  // 1. Session Storage Synced Data Hydration
   useEffect(() => {
-    const handleStorageUpdate = () => {
+    const hydrateAudit = () => {
       if (typeof window === 'undefined') return;
       const raw = localStorage.getItem('aeo_telemetry_latest');
       if (raw) {
@@ -65,17 +64,17 @@ export default function BillWidget() {
           setStoredTelemetry(parsed);
           setIsTelemetryMode(true);
         } catch (err) {
-          console.error("Failed to parse local telemetry:", err);
+          console.error("Failed to parse local telemetry data framework:", err);
         }
       }
     };
 
-    handleStorageUpdate();
-    window.addEventListener('aeo_telemetry_updated', handleStorageUpdate);
-    return () => window.removeEventListener('aeo_telemetry_updated', handleStorageUpdate);
+    hydrateAudit();
+    window.addEventListener('aeo_telemetry_updated', hydrateAudit);
+    return () => window.removeEventListener('aeo_telemetry_updated', hydrateAudit);
   }, []);
 
-  // 2. CONNECT TO UNIFIED AGENT VIA VERCEL AI SDK CORE BINDINGS
+  // 2. STABLE PROTECTED STREAM HOOK BINDINGS
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/bill',
@@ -104,7 +103,7 @@ export default function BillWidget() {
       .join('');
   }, []);
 
-  // 3. Analytics & Speech Telemetry Synthesis
+  // 3. Independent Effect for Analytics Event Pipelines & Audio Output Playback Stream
   const speakText = React.useCallback((text: string) => {
     if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -179,6 +178,7 @@ export default function BillWidget() {
     await sendMessage({ text: queryText });
   };
 
+  // 4. CRITICAL CHIP FIX: Safely mutates query text tokens directly into OpenAI formats
   const handleChipClick = async (chipText: string) => {
     const queryMap: Record<string, string> = {
       'Semantic Density': 'What is semantic density in AEO framework models?',
@@ -231,51 +231,44 @@ export default function BillWidget() {
     }
   }, [messages, isOpen, isLoading]);
 
-  // 🛠️ Structural Visual Node Renderer
-  const renderMessageContent = (msgId: string, text: string) => {
+  // 4. INLINE TELEMETRY CARD EXTRACTOR (Isolated from state mutations)
+  const renderMessageBubbleContent = (msgId: string, text: string) => {
     const parsed = parseTelemetryText(text);
 
-    // If no matching key phrases are caught, return normal text layout parameters
     if (!parsed.hasAnyMatch) {
       return <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>;
     }
 
-    // Analytics: Log Telemetry Card Component Generation to GA4 exactly once per block
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function' && !renderedCards.has(msgId)) {
+    // Fire Card Render Event Tracking completely decoupled from React state renders
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function' && !reportedCardIds.has(msgId)) {
+      reportedCardIds.add(msgId);
       window.gtag('event', 'bill_telemetry_card_rendered', {
         event_category: 'AI Assistant UI',
         card_message_id: msgId,
         verdict: parsed.verdict || 'Unknown'
       });
-      setRenderedCards(prev => new Set(prev).add(msgId));
     }
 
     return (
-      <div className="space-y-3 w-full">
-        {/* Clean textual fallback representation for accessibility */}
-        <p className="whitespace-pre-wrap text-[11px] text-zinc-300">
-          {text}
-        </p>
-
-        {/* 📊 Score Metric Badges */}
+      <div className="space-y-3 w-full pt-1">
+        {/* Dynamic Metric Grid Panels */}
         {(parsed.clarityScore !== null || parsed.citationShare !== null) && (
-          <div className="grid grid-cols-2 gap-2 pt-1 font-mono">
+          <div className="grid grid-cols-2 gap-2 font-mono">
             {parsed.clarityScore !== null && (
               <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
                 <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Clarity Index</span>
-                <span className="text-sm text-emerald-400 font-bold">{parsed.clarityScore}%</span>
+                <span className="text-sm font-bold text-emerald-400">{parsed.clarityScore}%</span>
               </div>
             )}
             {parsed.citationShare !== null && (
               <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
                 <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Citation Share</span>
-                <span className="text-sm text-amber-400 font-bold">{parsed.citationShare}%</span>
+                <span className="text-sm font-bold text-amber-400">{parsed.citationShare}%</span>
               </div>
             )}
           </div>
         )}
 
-        {/* 🛡️ Inline Status Cards */}
         {parsed.firstImpression && (
           <div className="bg-black/60 border border-emerald-500/30 rounded-lg p-2.5 space-y-1 font-mono">
             <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wide block">AI First Impression</span>
@@ -290,7 +283,6 @@ export default function BillWidget() {
           </div>
         )}
 
-        {/* 🎖️ Recommendation Verdict Badges */}
         {parsed.verdict && (
           <div className={`flex items-center gap-2 p-2.5 rounded-lg border text-[11px] font-mono font-medium ${
             parsed.verdict === 'PASS' 
@@ -300,7 +292,7 @@ export default function BillWidget() {
                 : 'bg-amber-950/30 border-amber-500/30 text-amber-400'
           }`}>
             {parsed.verdict === 'PASS' ? <CheckCircle2 className="w-4 h-4 shrink-0" /> : parsed.verdict === 'ALERT' ? <AlertTriangle className="w-4 h-4 shrink-0" /> : <XCircle className="w-4 h-4 shrink-0" />}
-            <div className="flex-1 flex justify-between items-center">
+            <div className="flex-1 flex justify-between items-center ml-1">
               <span>Recommendation Verdict:</span>
               <span className="font-bold tracking-wider uppercase text-[10px] bg-black/60 px-2 py-0.5 rounded border border-white/10">
                 {parsed.verdict}
@@ -332,7 +324,7 @@ export default function BillWidget() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-[540px] max-h-[85vh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
-      {/* Header Controls Banner */}
+      {/* Header Controller Banner */}
       <div className="bg-zinc-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
@@ -385,7 +377,7 @@ export default function BillWidget() {
         </div>
       </div>
 
-      {/* Local Diagnostic Local Snapshot Visual Block */}
+      {/* Hydrated Audit Sticky Indicator Bar */}
       {isTelemetryMode && storedTelemetry?.result?.insightResult && (
         <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2.5 text-[10px] space-y-1.5 font-mono">
           <div className="flex justify-between items-center text-amber-400 font-bold tracking-wider uppercase text-[9px]">
@@ -405,7 +397,7 @@ export default function BillWidget() {
         </div>
       )}
 
-      {/* Core Active Message Window Stream */}
+      {/* Main Response Log Window Feed */}
       <div className="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
           <div className="text-center pt-6 pb-2 space-y-3 px-2">
@@ -437,11 +429,10 @@ export default function BillWidget() {
                 {m.role === 'user' ? 'Local Requestor' : 'Bill'}
               </span>
 
-              {/* CRITICAL FIXED COMPONENT INJECTION HANDLER */}
               {m.role === 'user' ? (
                 <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
               ) : (
-                renderMessageContent(m.id, text)
+                renderMessageBubbleContent(m.id, text)
               )}
             </div>
           );
@@ -456,7 +447,7 @@ export default function BillWidget() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Diagnostic Interactive Selection Row */}
+      {/* Quick Action Diagnostic Input Links */}
       <div className="px-3 py-1.5 bg-zinc-900/60 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
         {[
           { label: 'Semantic Density', icon: <Sparkles className="w-3 h-3" /> },
