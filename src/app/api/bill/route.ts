@@ -126,19 +126,16 @@ export async function POST(req: NextRequest) {
     if (isTelemetryActive && isInitialScanTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
-OUTPUT FORMAT RULES:
-1. Do NOT include any introductory or concluding pleasantries (e.g., "Here is your report").
-2. Begin your response IMMEDIATELY with the tag [START_TELEMETRY_REPORT].
-3. End your response IMMEDIATELY with the tag [END_TELEMETRY_REPORT].
-4. Output these exact 6 diagnostic lines inside the tags:
+CRITICAL CONSTRAINT: Explicitly forbid any conversational preambles, introductory text, greeting, or concluding commentary before or after this block. Do not add any text before or after this report. Output MUST begin IMMEDIATELY with [START_TELEMETRY_REPORT] and end with [END_TELEMETRY_REPORT].
 
+HARD TEMPLATE:
 [START_TELEMETRY_REPORT]
 AI First Impression: <one line summary>
 Biggest Blind Spot: <one line gap summary>
-Recommendation Verdict: PASS (or HIGH RISK / ALERT)
+Recommendation Verdict: <PASS | HIGH RISK | ALERT>
 Clarity Score: <0-100>
 Citation Share: <0-100>
-Hallucination Risk: Low (or Medium / High)
+Hallucination Risk: <Low | Medium | High>
 [END_TELEMETRY_REPORT]`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
