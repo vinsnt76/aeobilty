@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, HelpCircle } from 'lucide-react';
+import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle } from 'lucide-react';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 // Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
@@ -13,15 +13,48 @@ declare global {
   }
 }
 
+// 📋 Strict Regex Pattern Map for Inline Telemetry Analysis
+const TELEMETRY_PATTERNS = {
+  firstImpression: /AI First Impression:\s*([^\n]+)/i,
+  blindSpot: /Biggest Blind Spot:\s*([^\n]+)/i,
+  verdict: /Recommendation Verdict:\s*(PASS|HIGH RISK|ALERT|FAIL)/i,
+  clarityScore: /Clarity Score:\s*(\d+)/i,
+  citationShare: /Citation Share:\s*(\d+)/i,
+  risk: /Hallucination Risk:\s*(High|Medium|Low)/i
+};
+
+// 🧠 Dynamic Context Token Extractor
+function parseTelemetryText(text: string) {
+  const firstImpressionMatch = text.match(TELEMETRY_PATTERNS.firstImpression);
+  const blindSpotMatch = text.match(TELEMETRY_PATTERNS.blindSpot);
+  const verdictMatch = text.match(TELEMETRY_PATTERNS.verdict);
+  const clarityScoreMatch = text.match(TELEMETRY_PATTERNS.clarityScore);
+  const citationShareMatch = text.match(TELEMETRY_PATTERNS.citationShare);
+  const riskMatch = text.match(TELEMETRY_PATTERNS.risk);
+
+  const hasAnyMatch = !!(firstImpressionMatch || blindSpotMatch || verdictMatch || clarityScoreMatch || citationShareMatch || riskMatch);
+
+  return {
+    hasAnyMatch,
+    firstImpression: firstImpressionMatch ? firstImpressionMatch[1].trim() : null,
+    blindSpot: blindSpotMatch ? blindSpotMatch[1].trim() : null,
+    verdict: verdictMatch ? verdictMatch[1].trim().toUpperCase() : null,
+    clarityScore: clarityScoreMatch ? parseInt(clarityScoreMatch[1], 10) : null,
+    citationShare: citationShareMatch ? parseInt(citationShareMatch[1], 10) : null,
+    risk: riskMatch ? riskMatch[1].trim() : null
+  };
+}
+
 export default function BillWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
   const [input, setInput] = useState('');
   const [isMuted, setIsMuted] = useState(true);
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
+  const [renderedCards, setRenderedCards] = useState<Set<string>>(new Set());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // 1. LOCAL STORAGE SYNC: Hydrates diagnostic variables instantly from on-screen scans
+  // 1. Storage Sync: Automatically hydrate client parameters from previous page scans
   useEffect(() => {
     const handleStorageUpdate = () => {
       if (typeof window === 'undefined') return;
@@ -42,7 +75,7 @@ export default function BillWidget() {
     return () => window.removeEventListener('aeo_telemetry_updated', handleStorageUpdate);
   }, []);
 
-  // 2. CONNECT DIRECTLY TO UNIFIED EDGE ROUTE VIA AI SDK HOOKS
+  // 2. CONNECT TO UNIFIED AGENT VIA VERCEL AI SDK CORE BINDINGS
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/bill',
@@ -71,7 +104,7 @@ export default function BillWidget() {
       .join('');
   }, []);
 
-  // 3. ANALYTICS TELEMETRY & AUDIO SYNTHESIS ENGINE
+  // 3. Analytics & Speech Telemetry Synthesis
   const speakText = React.useCallback((text: string) => {
     if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -146,7 +179,6 @@ export default function BillWidget() {
     await sendMessage({ text: queryText });
   };
 
-  // 4. CRITICAL CHIP FIX: Safely mutates query text tokens directly into OpenAI formats
   const handleChipClick = async (chipText: string) => {
     const queryMap: Record<string, string> = {
       'Semantic Density': 'What is semantic density in AEO framework models?',
@@ -199,6 +231,87 @@ export default function BillWidget() {
     }
   }, [messages, isOpen, isLoading]);
 
+  // 🛠️ Structural Visual Node Renderer
+  const renderMessageContent = (msgId: string, text: string) => {
+    const parsed = parseTelemetryText(text);
+
+    // If no matching key phrases are caught, return normal text layout parameters
+    if (!parsed.hasAnyMatch) {
+      return <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>;
+    }
+
+    // Analytics: Log Telemetry Card Component Generation to GA4 exactly once per block
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function' && !renderedCards.has(msgId)) {
+      window.gtag('event', 'bill_telemetry_card_rendered', {
+        event_category: 'AI Assistant UI',
+        card_message_id: msgId,
+        verdict: parsed.verdict || 'Unknown'
+      });
+      setRenderedCards(prev => new Set(prev).add(msgId));
+    }
+
+    return (
+      <div className="space-y-3 w-full">
+        {/* Clean textual fallback representation for accessibility */}
+        <p className="whitespace-pre-wrap text-[11px] text-zinc-300">
+          {text}
+        </p>
+
+        {/* 📊 Score Metric Badges */}
+        {(parsed.clarityScore !== null || parsed.citationShare !== null) && (
+          <div className="grid grid-cols-2 gap-2 pt-1 font-mono">
+            {parsed.clarityScore !== null && (
+              <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
+                <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Clarity Index</span>
+                <span className="text-sm text-emerald-400 font-bold">{parsed.clarityScore}%</span>
+              </div>
+            )}
+            {parsed.citationShare !== null && (
+              <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
+                <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Citation Share</span>
+                <span className="text-sm text-amber-400 font-bold">{parsed.citationShare}%</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 🛡️ Inline Status Cards */}
+        {parsed.firstImpression && (
+          <div className="bg-black/60 border border-emerald-500/30 rounded-lg p-2.5 space-y-1 font-mono">
+            <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wide block">AI First Impression</span>
+            <p className="text-[11px] text-zinc-200 leading-normal italic">&quot;{parsed.firstImpression}&quot;</p>
+          </div>
+        )}
+
+        {parsed.blindSpot && (
+          <div className="bg-black/60 border border-rose-500/30 rounded-lg p-2.5 space-y-1 font-mono">
+            <span className="text-[9px] font-bold text-rose-400 uppercase tracking-wide block">Biggest Blind Spot</span>
+            <p className="text-[11px] text-zinc-200 leading-normal">{parsed.blindSpot}</p>
+          </div>
+        )}
+
+        {/* 🎖️ Recommendation Verdict Badges */}
+        {parsed.verdict && (
+          <div className={`flex items-center gap-2 p-2.5 rounded-lg border text-[11px] font-mono font-medium ${
+            parsed.verdict === 'PASS' 
+              ? 'bg-emerald-950/30 border-emerald-500/30 text-emerald-400' 
+              : parsed.verdict === 'HIGH RISK' || parsed.verdict === 'FAIL'
+                ? 'bg-rose-950/30 border-rose-500/30 text-rose-400'
+                : 'bg-amber-950/30 border-amber-500/30 text-amber-400'
+          }`}>
+            {parsed.verdict === 'PASS' ? <CheckCircle2 className="w-4 h-4 shrink-0" /> : parsed.verdict === 'ALERT' ? <AlertTriangle className="w-4 h-4 shrink-0" /> : <XCircle className="w-4 h-4 shrink-0" />}
+            <div className="flex-1 flex justify-between items-center">
+              <span>Recommendation Verdict:</span>
+              <span className="font-bold tracking-wider uppercase text-[10px] bg-black/60 px-2 py-0.5 rounded border border-white/10">
+                {parsed.verdict}
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   if (!isOpen) {
     return (
       <button
@@ -239,7 +352,7 @@ export default function BillWidget() {
           <button
             type="button"
             onClick={() => setIsMuted(!isMuted)}
-            className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition"
+            className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
             title={isMuted ? "Enable Voice Feedback (AU)" : "Mute Voice Feedback"}
             aria-label="Toggle voice output"
           >
@@ -250,7 +363,7 @@ export default function BillWidget() {
           <button 
             type="button"
             onClick={toggleTelemetryMode}
-            className={`px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 border ${
+            className={`px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 border cursor-pointer ${
               isTelemetryMode 
                 ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold' 
                 : 'bg-white/5 text-zinc-400 border-white/10 hover:text-zinc-200'
@@ -264,7 +377,7 @@ export default function BillWidget() {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="p-1 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition"
+            className="p-1 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
             aria-label="Close Bill assistant"
           >
             <X className="w-4 h-4" />
@@ -317,39 +430,18 @@ export default function BillWidget() {
               className={`p-3.5 rounded-xl max-w-[88%] leading-relaxed ${
                 m.role === 'user' 
                   ? 'bg-emerald-600/20 border border-emerald-500/30 ml-auto text-emerald-50 rounded-tr-none' 
-                  : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200 rounded-tl-none'
+                  : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200 rounded-tl-none w-full'
               }`}
             >
               <span className="block text-[9px] uppercase tracking-wider font-mono text-zinc-500 mb-1">
                 {m.role === 'user' ? 'Local Requestor' : 'Bill'}
               </span>
-              <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
 
-              {/* Rich Telemetry Inline Visual Cards for Assistant Responses in Telemetry Mode */}
-              {m.role === 'assistant' && isTelemetryMode && storedTelemetry?.result?.insightResult && (
-                <div className="mt-3 space-y-2 pt-2 border-t border-white/10 text-[10px] font-mono">
-                  {/* AI First Impression Card */}
-                  {storedTelemetry.result.insightResult.firstImpression && (
-                    <div className="bg-black/60 border border-emerald-500/30 rounded-lg p-2 text-emerald-300">
-                      <span className="text-[8px] uppercase tracking-wider font-bold text-emerald-400 block mb-0.5">AI First Impression</span>
-                      <p className="text-[10px] italic text-zinc-200">&quot;{storedTelemetry.result.insightResult.firstImpression.headline}&quot;</p>
-                    </div>
-                  )}
-
-                  {/* Recommendation Test Badge */}
-                  {storedTelemetry.result.insightResult.recommendationTest && (
-                    <div className="bg-black/60 border border-white/10 rounded-lg p-2 flex items-center justify-between text-zinc-300">
-                      <span className="text-[9px]">AI Recommendation Verdict</span>
-                      <span className="flex items-center gap-1 font-bold">
-                        {storedTelemetry.result.insightResult.recommendationTest.wouldRecommend ? (
-                          <span className="text-emerald-400 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" /> PASS</span>
-                        ) : (
-                          <span className="text-rose-400 flex items-center gap-1"><XCircle className="w-3 h-3" /> HIGH RISK</span>
-                        )}
-                      </span>
-                    </div>
-                  )}
-                </div>
+              {/* CRITICAL FIXED COMPONENT INJECTION HANDLER */}
+              {m.role === 'user' ? (
+                <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
+              ) : (
+                renderMessageContent(m.id, text)
               )}
             </div>
           );
