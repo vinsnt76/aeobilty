@@ -3,7 +3,7 @@ import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 interface CleanMessage {
   id?: string;
