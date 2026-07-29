@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { streamText } from 'ai';
+import { streamText, convertToModelMessages } from 'ai';
 import { openai } from '@ai-sdk/openai';
 // Dynamically import the compiled knowledge base containing all 41 site vector nodes
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
@@ -158,11 +158,32 @@ The user is asking a general inquiry about AEObility. Answer strictly using our 
       }
     }
 
+    // Safely parse and convert messages to ModelMessage format for streamText
+    let coreMessages = [];
+    if (Array.isArray(messages) && messages.length > 0) {
+      try {
+        coreMessages = await convertToModelMessages(messages);
+      } catch {
+        coreMessages = messages.map((m: { role?: string; content?: string; parts?: Array<{ type: string; text: string }> }) => {
+          let textContent = m.content;
+          if (!textContent && Array.isArray(m.parts)) {
+            textContent = m.parts
+              .filter((p) => p.type === 'text')
+              .map((p) => p.text)
+              .join('');
+          }
+          return { role: (m.role as 'user' | 'assistant' | 'system') || 'user', content: textContent || '' };
+        });
+      }
+    } else {
+      coreMessages = [{ role: 'user' as const, content: userQuery }];
+    }
+
     // Execute low-latency token streaming
     const result = streamText({
       model: openai('gpt-4o-mini'),
       system: `${systemPrompt}\n\nAUTHORITATIVE KNOWLEDGE TRUTH LAYER:\n${injectionContext}`,
-      messages: messages || [{ role: 'user', content: userQuery }],
+      messages: coreMessages,
     });
 
     return result.toTextStreamResponse();
