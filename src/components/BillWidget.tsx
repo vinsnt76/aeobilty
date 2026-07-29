@@ -519,7 +519,7 @@ export default function BillWidget() {
 
         {messages.map((m: UIMessage) => {
           const text = getMessageText(m);
-          // Only skip user messages if text is missing; assistant bubbles should always render
+          // Message Pipeline Integrity: Only skip user messages if text is missing; assistant bubbles MUST ALWAYS render
           if (m.role === 'user' && !text) return null;
 
           return (
