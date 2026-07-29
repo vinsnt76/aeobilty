@@ -199,7 +199,7 @@ Address general inquiries concisely in 2-3 sentences using the organisational id
       maxOutputTokens: targetMaxTokens,
     });
 
-    return result.toTextStreamResponse();
+    return result.toDataStreamResponse();
   } catch (error) {
     console.error('Bill route runtime error:', error);
     return new Response(JSON.stringify({ error: 'Bill pipeline dynamic data retrieval error.' }), {

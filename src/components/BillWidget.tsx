@@ -92,13 +92,36 @@ export default function BillWidget() {
   const isLoading = status === 'submitted' || status === 'streaming';
 
   const getMessageText = React.useCallback((m: UIMessage): string => {
-    const rawContent = (m as unknown as { content?: string }).content;
-    if (typeof rawContent === 'string' && rawContent.trim()) return rawContent;
-    if (!m.parts) return '';
-    return m.parts
-      .filter((p): p is { type: 'text'; text: string } => p.type === 'text')
-      .map(p => p.text)
-      .join('');
+    if (!m) return '';
+    const anyM = m as unknown as Record<string, unknown>;
+
+    // 1. Direct text property (@ai-sdk/react v4 UIMessage standard)
+    if (typeof anyM.text === 'string' && anyM.text.trim()) {
+      return anyM.text;
+    }
+
+    // 2. Direct content property (string fallback)
+    if (typeof anyM.content === 'string' && anyM.content.trim()) {
+      return anyM.content;
+    }
+
+    // 3. Parts array property
+    if (Array.isArray(anyM.parts)) {
+      const extracted = anyM.parts
+        .filter((p: unknown): p is { type?: string; text?: string } => 
+          typeof p === 'object' && p !== null && 'text' in p && typeof (p as { text: unknown }).text === 'string'
+        )
+        .map(p => p.text || '')
+        .join('');
+      if (extracted.trim()) return extracted;
+    }
+
+    // 4. Delta property fallback
+    if (typeof anyM.delta === 'string' && anyM.delta.trim()) {
+      return anyM.delta;
+    }
+
+    return '';
   }, []);
 
   // 3. Independent Effect for Analytics Event Pipelines & Audio Output Playback Stream
@@ -461,7 +484,9 @@ export default function BillWidget() {
 
         {messages.map((m: UIMessage) => {
           const text = getMessageText(m);
-          if (!text) return null;
+          // Only skip user messages if text is missing; assistant bubbles should always render
+          if (m.role === 'user' && !text) return null;
+
           return (
             <div 
               key={m.id} 
@@ -478,7 +503,7 @@ export default function BillWidget() {
               {m.role === 'user' ? (
                 <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
               ) : (
-                renderMessageBubbleContent(m.id, text)
+                renderMessageBubbleContent(m.id, text || (isLoading ? "Scanning lattice nodes..." : "..."))
               )}
             </div>
           );
