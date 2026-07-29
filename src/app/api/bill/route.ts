@@ -125,18 +125,7 @@ export async function POST(req: NextRequest) {
 
     if (isTelemetryActive && isInitialScanTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
-You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
-CRITICAL CONSTRAINT: Explicitly forbid any conversational preambles, introductory text, greeting, or concluding commentary before or after this block. Do not add any text before or after this report. Output MUST begin IMMEDIATELY with [START_TELEMETRY_REPORT] and end with [END_TELEMETRY_REPORT].
-
-HARD TEMPLATE:
-[START_TELEMETRY_REPORT]
-AI First Impression: <one line summary>
-Biggest Blind Spot: <one line gap summary>
-Recommendation Verdict: <PASS | HIGH RISK | ALERT>
-Clarity Score: <0-100>
-Citation Share: <0-100>
-Hallucination Risk: <Low | Medium | High>
-[END_TELEMETRY_REPORT]`;
+You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
     } else if (isTelemetryActive && !isInitialScanTurn) {
@@ -203,7 +192,24 @@ Address general inquiries concisely in 2-3 sentences using the organisational id
       }
     }
 
-    // 2. VERCEL EDGE FREE-TIER PROTECTION: Enforce strict token limits (200 tokens for general, 400 for telemetry)
+    // MANDATORY TELEMETRY ENVELOPE CONTRACT Across All Active Skills (Initial Turn)
+    if (isTelemetryActive && isInitialScanTurn) {
+      systemPrompt += `\n\n[GLOBAL TELEMETRY MANDATE FOR ALL ACTIVE SKILLS]
+CRITICAL CONSTRAINT: Telemetry Mode is ACTIVE. Regardless of which specific skill or topic is being evaluated (e.g., Telemetry Guide, Positional Bias, RAG Drop Fixer, Technical Concepts), your response MUST BE STRICTLY FORMATTED using the telemetry report block below. 
+FORBIDDEN: Explicitly forbid any conversational preambles, introductory text, greeting, or concluding commentary before or after this block. Do not add any text before or after this report. Output MUST begin IMMEDIATELY with [START_TELEMETRY_REPORT] and end with [END_TELEMETRY_REPORT].
+
+HARD TEMPLATE:
+[START_TELEMETRY_REPORT]
+AI First Impression: <one line summary>
+Biggest Blind Spot: <one line gap summary>
+Recommendation Verdict: <PASS | HIGH RISK | ALERT>
+Clarity Score: <0-100>
+Citation Share: <0-100>
+Hallucination Risk: <Low | Medium | High>
+[END_TELEMETRY_REPORT]`;
+    }
+
+    // 2. VERCEL EDGE FREE-TIER PROTECTION: Enforce strict token limits (400 tokens for telemetry, 200 for general)
     const targetMaxTokens = isTelemetryActive ? 400 : 200;
 
     const result = streamText({
