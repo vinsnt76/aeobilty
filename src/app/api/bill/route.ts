@@ -75,7 +75,8 @@ const blueprintService = {
 const BILL_BASE_PERSONA = `You are Bill, the official AI-Native Web Agent for AEObility (aeobility.com.au). 
 Your tone is technical, sharp, professional, and entirely free of marketing fluff. You converse as an elite peer to CTOs and CMOs.
 Ensure you communicate natively using Australian English spelling parameters (e.g., optimisation, modelling, prioritised).
-You ground everything strictly in structured data and deterministic facts.`;
+You ground everything strictly in structured data and deterministic facts.
+CRITICAL FORMAT RULE: Keep responses concise, direct, and high-density (maximum 2-3 short sentences for conceptual inquiries, or structured diagnostic output). Never generate long conversational filler.`;
 
 export async function POST(req: NextRequest) {
   try {
@@ -111,12 +112,18 @@ export async function POST(req: NextRequest) {
 
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
+    const isTelemetryActive = !!(audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry'));
 
-    if (audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry')) {
+    if (isTelemetryActive) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
-Diagnose Entity Clarity, Citation Share, Retrieval Confidence, and Hallucination Risks.
-Identify the visibility gaps transparently and anchor your structural fixes back to AEObility frameworks.`;
+Format your response as a concise diagnostic report with these explicit key phrases for the client card parser:
+AI First Impression: <one line summary>
+Biggest Blind Spot: <one line gap summary>
+Recommendation Verdict: PASS (or HIGH RISK / ALERT)
+Clarity Score: <0-100>
+Citation Share: <0-100>
+Hallucination Risk: Low (or Medium / High)`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
     } else if (
@@ -127,7 +134,7 @@ Identify the visibility gaps transparently and anchor your structural fixes back
     ) {
       systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
 The user wants to resolve visibility gaps or explore action steps. Smoothly funnel them into our core offering: The 90-Day AI Success Blueprint.
-Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: converting loose text into deterministic semantic schemas.`;
+Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: converting loose text into deterministic semantic schemas. Keep answer within 2-3 sentences.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
     } else {
@@ -160,7 +167,7 @@ Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: c
       if (matchedCandidates.length > 0) {
         systemPrompt += `\n\n[ACTIVE SKILL: Technical Concept Explainer]
 The user is querying a conceptual or mechanical element of AEO, schemas, or site services.
-Synthesise your response using the verified dynamic knowledge base node captures provided below.`;
+Synthesise a sharp, authoritative 2-3 sentence explanation using the verified dynamic knowledge base node captures provided below.`;
         
         const cleanNodes = matchedCandidates.map((c) => {
           const { embedding: _embedding, ...cleanData } = c.node;
@@ -170,15 +177,19 @@ Synthesise your response using the verified dynamic knowledge base node captures
         injectionContext = `\nDYNAMIC KNOWLEDGE MATCHES:\n${JSON.stringify(cleanNodes)}\n\nCANONICAL IDENTITY LAYER:\n${JSON.stringify(orgGraph)}`;
       } else {
         systemPrompt += `\n\n[ACTIVE SKILL: General NLWeb Schema Agent]
-Address general inquiries concisely using the organisational identity graph definitions below. Do not deviate from this data boundary.`;
+Address general inquiries concisely in 2-3 sentences using the organisational identity graph definitions below. Do not deviate from this data boundary.`;
         injectionContext = `\nORGANISATION GRAPH:\n${JSON.stringify(orgGraph)}`;
       }
     }
+
+    // 2. VERCEL EDGE FREE-TIER PROTECTION: Enforce strict token limits (200 tokens for general, 400 for telemetry)
+    const targetMaxTokens = isTelemetryActive ? 400 : 200;
 
     const result = streamText({
       model: openai('gpt-4o-mini'),
       system: `${systemPrompt}\n\nAUTHORITATIVE KNOWLEDGE TRUTH LAYER:\n${injectionContext}`,
       messages: normalizedMessages.length > 0 ? normalizedMessages : [{ role: 'user', content: userQuery }],
+      maxOutputTokens: targetMaxTokens,
     });
 
     return result.toTextStreamResponse();
