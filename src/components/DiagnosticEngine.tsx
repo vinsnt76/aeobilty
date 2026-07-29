@@ -271,7 +271,7 @@ export default function DiagnosticEngine() {
                     window.dispatchEvent(
                       new CustomEvent('open_bill_with_query', {
                         detail: {
-                          query: `Deconstruct my live site telemetry metrics for ${clientUrl || 'my site'}`,
+                          query: `Deconstruct my live site telemetry metrics for ${url || 'my site'}`,
                           mode: 'telemetry'
                         }
                       })

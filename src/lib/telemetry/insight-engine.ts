@@ -9,7 +9,7 @@ export async function generateInsightEngineResult(
 
   // Extract clean site/domain label
   let domainLabel = 'your website';
-  const siteUrl = telemetry.clientUrl || telemetry.url || '';
+  const siteUrl = telemetry.clientUrl || '';
   if (siteUrl) {
     try {
       const parsed = new URL(siteUrl.startsWith('http') ? siteUrl : `https://${siteUrl}`);

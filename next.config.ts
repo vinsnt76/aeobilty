@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
         source: '/knowledge-hub/aeo/rag-faq',
         destination: '/knowledge-hub/articles/retrieval-augmented-generation#rag-faq',
         permanent: true,
+      },
       {
         source: '/knowledge-hub/articles/semantic-seo-vs-aeo',
         destination: '/knowledge-hub/semantic-seo',
