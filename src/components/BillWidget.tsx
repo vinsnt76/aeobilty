@@ -346,6 +346,7 @@ export default function BillWidget() {
       });
     }
 
+    // Clean, stable card layout rendering strictly from parsed block fields (ignoring any preambles or out-of-block text)
     return (
       <div className="space-y-3 w-full pt-1">
         {/* Dynamic Metric Grid Panels */}
