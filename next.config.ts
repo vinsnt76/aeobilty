@@ -17,6 +17,20 @@ const nextConfig: NextConfig = {
         source: '/knowledge-hub/aeo/rag-faq',
         destination: '/knowledge-hub/articles/retrieval-augmented-generation#rag-faq',
         permanent: true,
+      {
+        source: '/knowledge-hub/articles/semantic-seo-vs-aeo',
+        destination: '/knowledge-hub/semantic-seo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/positional-bias-mitigation',
+        destination: '/knowledge-hub/articles/positional-bias-in-retrieval',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/ai-visibility-telemetry',
+        destination: '/knowledge-hub/structured-data-query-fan-out',
+        permanent: true,
       },
     ];
   },
