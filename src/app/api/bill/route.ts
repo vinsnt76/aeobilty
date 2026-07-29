@@ -1,25 +1,41 @@
 import { NextRequest } from 'next/server';
-import { streamText, convertToModelMessages } from 'ai';
+import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
-// Dynamically import the compiled knowledge base containing all 41 site vector nodes
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
 
 export const runtime = 'edge';
 
+interface CleanMessage {
+  id?: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+}
+
+interface RawPart {
+  type?: string;
+  text?: string;
+}
+
+interface RawMessage {
+  id?: string;
+  role?: string;
+  content?: string | RawPart[];
+  parts?: RawPart[];
+}
+
 interface KnowledgeNode {
-  pageName: string;
-  url: string;
-  h1: string;
-  focusKeyphrase: string;
-  latentKeywords?: string;
-  schemaType?: string;
-  description: string;
+  pageName?: string;
+  url?: string;
+  h1?: string;
+  focusKeyphrase?: string;
+  description?: string;
   primaryKeywords?: string;
   secondaryKeywords?: string;
+  latentKeywords?: string;
   embedding?: number[];
 }
 
-// --- BASE ENTITY IDENTIFIER CONFIGURATION ---
+// --- DEFINITIVE ORG GRAPH STRUCTURES (Australian English & Fragment ID Compliance) ---
 const orgGraph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -64,26 +80,41 @@ You ground everything strictly in structured data and deterministic facts.`;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    const { messages, prompt, audit, intent } = body;
-    
-    const userQuery = prompt || (messages && messages[messages.length - 1]?.content) || '';
+    const { messages: rawMessages, prompt: rawPrompt, audit, intent } = body;
+
+    // 1. CRITICAL RUNTIME FIX: Normalize incoming Gemini/NLWeb structured "parts" into OpenAI-compliant string messages
+    const normalizedMessages: CleanMessage[] = (rawMessages || []).map((m: RawMessage) => {
+      if (typeof m.content === 'string' && m.content.trim()) {
+        return {
+          id: m.id || Math.random().toString(36).substring(7),
+          role: m.role === 'model' ? 'assistant' : (m.role as 'user' | 'assistant' | 'system') || 'user',
+          content: m.content,
+        };
+      }
+      
+      let extractedContent = '';
+      if (Array.isArray(m.parts)) {
+        extractedContent = m.parts.map((p) => p.text || '').join('\n');
+      } else if (Array.isArray(m.content)) {
+        extractedContent = m.content.filter((c) => c.type === 'text').map((c) => c.text || '').join('\n');
+      }
+
+      return {
+        id: m.id || Math.random().toString(36).substring(7),
+        role: m.role === 'model' ? 'assistant' : (m.role as 'user' | 'assistant' | 'system') || 'user',
+        content: extractedContent || (typeof m.content === 'string' ? m.content : ''),
+      };
+    });
+
+    const userQuery = rawPrompt || normalizedMessages[normalizedMessages.length - 1]?.content || '';
     const normalizedQuery = userQuery.toLowerCase();
 
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
 
-    // 🧠 DETERMINISTIC STATE MACHINE CONTROLLER (Two-Tier Skill & Lattice Architecture)
-    if (
-      audit || 
-      intent === 'telemetry' || 
-      normalizedQuery.includes('measure visibility') || 
-      normalizedQuery.includes('telemetry') ||
-      normalizedQuery.includes('citation share') ||
-      normalizedQuery.includes('hallucination')
-    ) {
-      // TIER 1 - SKILL 1: Telemetry Guide
+    if (audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry')) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
-You are evaluating a live AI Visibility Telemetry Audit or framework query. Review the raw telemetry JSON payload below.
+You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
 Diagnose Entity Clarity, Citation Share, Retrieval Confidence, and Hallucination Risks.
 Identify the visibility gaps transparently and anchor your structural fixes back to AEObility frameworks.`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
@@ -91,104 +122,68 @@ Identify the visibility gaps transparently and anchor your structural fixes back
     } else if (
       normalizedQuery.includes('fix') || normalizedQuery.includes('next steps') || 
       normalizedQuery.includes('improve visibility') || normalizedQuery.includes('buy') || 
-      normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') ||
+      normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') || 
       normalizedQuery.includes('cost') || normalizedQuery.includes('hire')
     ) {
-      // TIER 1 - SKILL 3: Blueprint Funnel
       systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
 The user wants to resolve visibility gaps or explore action steps. Smoothly funnel them into our core offering: The 90-Day AI Success Blueprint.
 Explicitly quote its pricing ($995.00 AUD). Emphasise its mechanical delivery: converting loose text into deterministic semantic schemas.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
     } else {
-      // TIER 2 - SKILL 5: Technical Concept Explainer & Dynamic Knowledge Graph Fallback
-      const rawNodes = (knowledgeBase as KnowledgeNode[]) || [];
-      const queryTokens = normalizedQuery.split(/\s+/).filter((w: string) => w.length > 2);
+      const stopWords = new Set(['what', 'is', 'the', 'a', 'an', 'how', 'does', 'about', 'explain', 'tell', 'me', 'in', 'of', 'for', 'to']);
+      const queryTokens = normalizedQuery.split(/\W+/).filter((t: string) => t.length > 2 && !stopWords.has(t));
 
-      const matchedNodes = rawNodes
-        .map((node) => {
-          const pageNameLower = node.pageName?.toLowerCase() || '';
-          const h1Lower = node.h1?.toLowerCase() || '';
-          const keyphraseLower = node.focusKeyphrase?.toLowerCase() || '';
-          const primaryLower = node.primaryKeywords?.toLowerCase() || '';
-          const secondaryLower = node.secondaryKeywords?.toLowerCase() || '';
-          const latentLower = node.latentKeywords?.toLowerCase() || '';
-          const descLower = node.description?.toLowerCase() || '';
+      const candidates = (knowledgeBase as KnowledgeNode[]).map((node) => {
+        let score = 0;
+        const pageName = (node.pageName || '').toLowerCase();
+        const h1 = (node.h1 || '').toLowerCase();
+        const keyphrase = (node.focusKeyphrase || '').toLowerCase();
+        const description = (node.description || '').toLowerCase();
 
-          let score = 0;
+        if (keyphrase && normalizedQuery.includes(keyphrase)) score += 50;
+        if (h1 && normalizedQuery.includes(h1)) score += 40;
+        if (pageName && normalizedQuery.includes(pageName)) score += 30;
 
-          // Direct phrase or keyphrase overlap
-          if (keyphraseLower && normalizedQuery.includes(keyphraseLower)) score += 50;
-          if (h1Lower && normalizedQuery.includes(h1Lower)) score += 40;
-          if (pageNameLower && normalizedQuery.includes(pageNameLower)) score += 30;
-
-          // Token overlap matching (ignoring generic stop words)
-          const fullNodeText = `${pageNameLower} ${h1Lower} ${keyphraseLower} ${primaryLower} ${secondaryLower} ${latentLower} ${descLower}`;
-          for (const token of queryTokens) {
-            if (['what', 'how', 'does', 'with', 'from', 'this', 'that', 'your', 'about', 'explain'].includes(token)) continue;
-            if (fullNodeText.includes(token)) {
-              score += 10;
-            }
-          }
-
-          return { node, score };
-        })
-        .filter((item) => item.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 3)
-        // Strip heavy vector embedding array to minimize context tokens
-        .map(({ node }) => {
-          const { embedding: _embedding, ...lightweightNode } = node;
-          return lightweightNode;
+        queryTokens.forEach((token: string) => {
+          if (pageName.includes(token)) score += 10;
+          if (h1.includes(token)) score += 10;
+          if (keyphrase.includes(token)) score += 10;
+          if (description.includes(token)) score += 5;
         });
 
-      if (matchedNodes.length > 0) {
+        return { node, score };
+      });
+
+      const matchedCandidates = candidates.filter((c) => c.score > 0).sort((a, b) => b.score - a.score).slice(0, 3);
+
+      if (matchedCandidates.length > 0) {
         systemPrompt += `\n\n[ACTIVE SKILL: Technical Concept Explainer]
-The user is querying conceptual, technical, or mechanical elements of AEO, schemas, or site services. 
-Synthesise your response using the verified dynamic knowledge base node captures provided below. Explain the concept with technical precision, authority, and Australian English parameters.`;
+The user is querying a conceptual or mechanical element of AEO, schemas, or site services.
+Synthesise your response using the verified dynamic knowledge base node captures provided below.`;
+        
+        const cleanNodes = matchedCandidates.map((c) => {
+          const { embedding: _embedding, ...cleanData } = c.node;
+          return cleanData;
+        });
+        
+        injectionContext = `\nDYNAMIC KNOWLEDGE MATCHES:\n${JSON.stringify(cleanNodes)}\n\nCANONICAL IDENTITY LAYER:\n${JSON.stringify(orgGraph)}`;
       } else {
         systemPrompt += `\n\n[ACTIVE SKILL: General NLWeb Schema Agent]
-The user is asking a general inquiry about AEObility. Answer strictly using our canonical organization and founder identity graph.`;
-      }
-
-      injectionContext = `\nCANONICAL IDENTITY LAYER:\n${JSON.stringify(orgGraph)}`;
-      
-      if (matchedNodes.length > 0) {
-        injectionContext += `\n\nDYNAMIC KNOWLEDGE MATCHES:\n${JSON.stringify(matchedNodes)}`;
+Address general inquiries concisely using the organisational identity graph definitions below. Do not deviate from this data boundary.`;
+        injectionContext = `\nORGANISATION GRAPH:\n${JSON.stringify(orgGraph)}`;
       }
     }
 
-    // Safely parse and convert messages to ModelMessage format for streamText
-    let coreMessages = [];
-    if (Array.isArray(messages) && messages.length > 0) {
-      try {
-        coreMessages = await convertToModelMessages(messages);
-      } catch {
-        coreMessages = messages.map((m: { role?: string; content?: string; parts?: Array<{ type: string; text: string }> }) => {
-          let textContent = m.content;
-          if (!textContent && Array.isArray(m.parts)) {
-            textContent = m.parts
-              .filter((p) => p.type === 'text')
-              .map((p) => p.text)
-              .join('');
-          }
-          return { role: (m.role as 'user' | 'assistant' | 'system') || 'user', content: textContent || '' };
-        });
-      }
-    } else {
-      coreMessages = [{ role: 'user' as const, content: userQuery }];
-    }
-
-    // Execute low-latency token streaming
     const result = streamText({
       model: openai('gpt-4o-mini'),
       system: `${systemPrompt}\n\nAUTHORITATIVE KNOWLEDGE TRUTH LAYER:\n${injectionContext}`,
-      messages: coreMessages,
+      messages: normalizedMessages.length > 0 ? normalizedMessages : [{ role: 'user', content: userQuery }],
     });
 
     return result.toTextStreamResponse();
   } catch (error) {
-    console.error('Bill route error:', error);
+    console.error('Bill route runtime error:', error);
     return new Response(JSON.stringify({ error: 'Bill pipeline dynamic data retrieval error.' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
