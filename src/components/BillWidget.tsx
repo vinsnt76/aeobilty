@@ -320,6 +320,14 @@ export default function BillWidget() {
           </div>
         );
       }
+      if (isTelemetryMode) {
+        return (
+          <div className="space-y-1.5 w-full">
+            <span className="text-[9px] uppercase tracking-wider text-amber-400 font-mono font-semibold block font-sans">Conceptual Response (Telemetry Unmatched)</span>
+            <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
+          </div>
+        );
+      }
       return <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>;
     }
 
