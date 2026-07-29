@@ -121,14 +121,18 @@ export async function POST(req: NextRequest) {
     let injectionContext = '';
     const userMessages = normalizedMessages.filter((m) => m.role === 'user');
     const isTelemetryActive = !!(audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry'));
-    const isInitialScanTurn = userMessages.length <= 1;
+    
+    // Multi-turn Skill Routing:
+    // First turn (userMessages.length <= 1) -> Telemetry Diagnostic Skill (emits card block)
+    // Later turn (userMessages.length > 1) -> Telemetry Consultant Skill (plain conversational text)
+    const isDiagnosticTurn = userMessages.length <= 1;
 
-    if (isTelemetryActive && isInitialScanTurn) {
+    if (isTelemetryActive && isDiagnosticTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
-    } else if (isTelemetryActive && !isInitialScanTurn) {
+    } else if (isTelemetryActive && !isDiagnosticTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Consultant]
 You are acting as an expert AI Visibility Consultant discussing an existing audit report with the client.
 Answer the user's follow-up question conversationally in 2-3 direct sentences.
@@ -192,10 +196,10 @@ Address general inquiries concisely in 2-3 sentences using the organisational id
       }
     }
 
-    // MANDATORY TELEMETRY ENVELOPE CONTRACT Across All Active Skills (Initial Turn)
-    if (isTelemetryActive && isInitialScanTurn) {
+    // MANDATORY TELEMETRY ENVELOPE CONTRACT Across All Active Skills (Diagnostic Turn)
+    if (isTelemetryActive && isDiagnosticTurn) {
       systemPrompt += `\n\n[GLOBAL TELEMETRY MANDATE FOR ALL ACTIVE SKILLS]
-CRITICAL CONSTRAINT: Telemetry Mode is ACTIVE. Regardless of which specific skill or topic is being evaluated (e.g., Telemetry Guide, Positional Bias, RAG Drop Fixer, Technical Concepts), your response MUST BE STRICTLY FORMATTED using the telemetry report block below. 
+CRITICAL CONSTRAINT: Telemetry Mode is ACTIVE on Diagnostic Turn 1. Regardless of which specific skill or topic is being evaluated (e.g., Telemetry Guide, Positional Bias, RAG Drop Fixer, Technical Concepts), your response MUST BE STRICTLY FORMATTED using the telemetry report block below. 
 FORBIDDEN: Explicitly forbid any conversational preambles, introductory text, greeting, or concluding commentary before or after this block. Do not add any text before or after this report. Output MUST begin IMMEDIATELY with [START_TELEMETRY_REPORT] and end with [END_TELEMETRY_REPORT].
 
 HARD TEMPLATE:
