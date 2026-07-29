@@ -273,6 +273,8 @@ export default function BillWidget() {
       const initialQuery = customEvent.detail?.query;
       const mode = customEvent.detail?.mode;
 
+      // Close CompanionWidget to prevent drawer overlay collision
+      window.dispatchEvent(new Event('close_companion_widget'));
       setIsOpen(true);
       if (mode === 'telemetry') {
         setIsTelemetryMode(true);
@@ -282,8 +284,16 @@ export default function BillWidget() {
       }
     };
 
+    const handleCloseBillWidget = () => {
+      setIsOpen(false);
+    };
+
     window.addEventListener('open_bill_with_query', handleOpenBillWithQuery);
-    return () => window.removeEventListener('open_bill_with_query', handleOpenBillWithQuery);
+    window.addEventListener('close_bill_widget', handleCloseBillWidget);
+    return () => {
+      window.removeEventListener('open_bill_with_query', handleOpenBillWithQuery);
+      window.removeEventListener('close_bill_widget', handleCloseBillWidget);
+    };
   }, []);
 
   // Auto-scroll messages container on update
@@ -400,7 +410,10 @@ export default function BillWidget() {
     return (
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          window.dispatchEvent(new Event('close_companion_widget'));
+          setIsOpen(true);
+        }}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-zinc-900/90 hover:bg-zinc-800 text-white rounded-full border border-emerald-500/30 shadow-2xl backdrop-blur-md hover:scale-105 transition-all duration-300 group cursor-pointer"
         aria-label="Open Bill AI Assistant"
       >

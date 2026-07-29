@@ -102,7 +102,8 @@ export default function CompanionWidget() {
   useEffect(() => {
     // Event listener for external triggers to open a new fresh session
     const handleOpenNewSession = () => {
-      // Open the drawer when triggered
+      // Close BillWidget drawer if open to prevent visual collision
+      window.dispatchEvent(new Event('close_bill_widget'));
       setIsOpen(true);
       window.dispatchEvent(new Event('bill_opened'));
       const raw = localStorage.getItem('aeo_telemetry_latest');
@@ -138,10 +139,15 @@ export default function CompanionWidget() {
             setBillState('EMAIL_CAPTURE');
             window.dispatchEvent(new Event('bill_email_requested'));
           }, 4000);
-        } catch (e) {
-          console.error(e);
+        } catch (err) {
+          console.error("Failed parsing telemetry JSON:", err);
         }
       }
+    };
+
+    const handleCloseCompanionWidget = () => {
+      setIsOpen(false);
+      setBillState('HIDDEN');
     };
 
     const handleOpenWithQuery = (e: Event) => {

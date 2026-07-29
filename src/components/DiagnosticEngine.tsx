@@ -267,8 +267,17 @@ export default function DiagnosticEngine() {
               <div className="pt-8 mt-8 border-t border-white/5 flex flex-col items-center justify-center space-y-4">
                 <p className="text-white/60 text-sm">Want a deeper analysis of these results?</p>
                 <button
-                  onClick={() => window.dispatchEvent(new Event('open_new_bill_session'))}
-                  className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan/20 to-aeo-purple/20 border border-aeo-cyan/30 text-white font-medium hover:bg-aeo-cyan/30 transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.15)]"
+                  onClick={() => {
+                    window.dispatchEvent(
+                      new CustomEvent('open_bill_with_query', {
+                        detail: {
+                          query: `Deconstruct my live site telemetry metrics for ${clientUrl || 'my site'}`,
+                          mode: 'telemetry'
+                        }
+                      })
+                    );
+                  }}
+                  className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan/20 to-aeo-purple/20 border border-aeo-cyan/30 text-white font-medium hover:bg-aeo-cyan/30 transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.15)] cursor-pointer"
                 >
                   <Sparkles className="w-5 h-5 text-aeo-cyan" />
                   Talk to AI Bill to discover more of what we found
