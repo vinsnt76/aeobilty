@@ -115,4 +115,34 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
       expect(res.status).toBe(200);
     }
   });
+
+  it('9. START_TELEMETRY_REPORT Tags: Confirm initial scan turn includes [START_TELEMETRY_REPORT] block tags', async () => {
+    const req = createMockReq({
+      intent: 'telemetry',
+      audit: { clarityScore: 78, citationShare: 42 },
+      messages: [{ role: 'user', content: 'diagnose my audit data' }]
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(200);
+    expect(capturedParams.system).toContain('[START_TELEMETRY_REPORT]');
+    expect(capturedParams.system).toContain('[END_TELEMETRY_REPORT]');
+  });
+
+  it('10. Multi-Turn Skill Drift: Confirm turn 2 follow-up query activates Telemetry Consultant skill without re-emitting card tags', async () => {
+    const req = createMockReq({
+      intent: 'telemetry',
+      audit: { clarityScore: 78, citationShare: 42 },
+      messages: [
+        { role: 'user', content: 'diagnose my audit data' },
+        { role: 'assistant', content: '[START_TELEMETRY_REPORT]\nAI First Impression: Low visibility\n[END_TELEMETRY_REPORT]' },
+        { role: 'user', content: 'why is citation share low?' }
+      ]
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(200);
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Telemetry Consultant]');
+    expect(capturedParams.system).not.toContain('[START_TELEMETRY_REPORT]');
+  });
 });

@@ -15,12 +15,12 @@ declare global {
 
 // 📋 Explicit Regex Pattern Definitions for Real-time Chunk Extraction
 const TELEMETRY_PATTERNS = {
-  firstImpression: /AI First Impression:\s*([^\n]+)/i,
-  blindSpot: /Biggest Blind Spot:\s*([^\n]+)/i,
-  verdict: /Recommendation Verdict:\s*(PASS|HIGH RISK|ALERT|FAIL)/i,
-  clarityScore: /Clarity Score:\s*(\d+)/i,
-  citationShare: /Citation Share:\s*(\d+)/i,
-  risk: /Hallucination Risk:\s*(High|Medium|Low)/i
+  firstImpression: /AI First Impression:\s*(.+)/im,
+  blindSpot: /Biggest Blind Spot:\s*(.+)/im,
+  verdict: /Recommendation Verdict:\s*(PASS|HIGH RISK|ALERT|FAIL)/im,
+  clarityScore: /Clarity Score:\s*(\d+)/im,
+  citationShare: /Citation Share:\s*(\d+)/im,
+  risk: /Hallucination Risk:\s*(High|Medium|Low)/im
 };
 
 function parseTelemetryText(text: string) {
@@ -28,19 +28,26 @@ function parseTelemetryText(text: string) {
     return { hasAnyMatch: false, firstImpression: null, blindSpot: null, verdict: null, clarityScore: null, citationShare: null, risk: null };
   }
   try {
-    const firstImpressionMatch = text.match(TELEMETRY_PATTERNS.firstImpression);
-    const blindSpotMatch = text.match(TELEMETRY_PATTERNS.blindSpot);
-    const verdictMatch = text.match(TELEMETRY_PATTERNS.verdict);
-    const clarityScoreMatch = text.match(TELEMETRY_PATTERNS.clarityScore);
-    const citationShareMatch = text.match(TELEMETRY_PATTERNS.citationShare);
-    const riskMatch = text.match(TELEMETRY_PATTERNS.risk);
+    // Isolate text within START / END tags if present, stripping preamble noise
+    let targetText = text;
+    const blockMatch = text.match(/\[START_TELEMETRY_REPORT\]([\s\S]*?)(?:\[END_TELEMETRY_REPORT\]|$)/i);
+    if (blockMatch && blockMatch[1]) {
+      targetText = blockMatch[1];
+    }
+
+    const firstImpressionMatch = targetText.match(TELEMETRY_PATTERNS.firstImpression);
+    const blindSpotMatch = targetText.match(TELEMETRY_PATTERNS.blindSpot);
+    const verdictMatch = targetText.match(TELEMETRY_PATTERNS.verdict);
+    const clarityScoreMatch = targetText.match(TELEMETRY_PATTERNS.clarityScore);
+    const citationShareMatch = targetText.match(TELEMETRY_PATTERNS.citationShare);
+    const riskMatch = targetText.match(TELEMETRY_PATTERNS.risk);
 
     const hasAnyMatch = !!(firstImpressionMatch || blindSpotMatch || verdictMatch || clarityScoreMatch || citationShareMatch || riskMatch);
 
     return {
       hasAnyMatch,
-      firstImpression: firstImpressionMatch ? firstImpressionMatch[1].trim() : null,
-      blindSpot: blindSpotMatch ? blindSpotMatch[1].trim() : null,
+      firstImpression: firstImpressionMatch ? firstImpressionMatch[1].trim().replace(/^["']|["']$/g, '') : null,
+      blindSpot: blindSpotMatch ? blindSpotMatch[1].trim().replace(/^["']|["']$/g, '') : null,
       verdict: verdictMatch ? verdictMatch[1].trim().toUpperCase() : null,
       clarityScore: clarityScoreMatch ? parseInt(clarityScoreMatch[1], 10) : null,
       citationShare: citationShareMatch ? parseInt(citationShareMatch[1], 10) : null,

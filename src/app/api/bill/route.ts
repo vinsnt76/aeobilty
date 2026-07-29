@@ -119,18 +119,35 @@ export async function POST(req: NextRequest) {
 
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
+    const userMessages = normalizedMessages.filter((m) => m.role === 'user');
     const isTelemetryActive = !!(audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry'));
+    const isInitialScanTurn = userMessages.length <= 1;
 
-    if (isTelemetryActive) {
+    if (isTelemetryActive && isInitialScanTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
 You are evaluating a live AI Visibility Telemetry Audit. Review the raw telemetry JSON payload below.
-Format your response as a concise diagnostic report with these explicit key phrases for the client card parser:
+OUTPUT FORMAT RULES:
+1. Do NOT include any introductory or concluding pleasantries (e.g., "Here is your report").
+2. Begin your response IMMEDIATELY with the tag [START_TELEMETRY_REPORT].
+3. End your response IMMEDIATELY with the tag [END_TELEMETRY_REPORT].
+4. Output these exact 6 diagnostic lines inside the tags:
+
+[START_TELEMETRY_REPORT]
 AI First Impression: <one line summary>
 Biggest Blind Spot: <one line gap summary>
 Recommendation Verdict: PASS (or HIGH RISK / ALERT)
 Clarity Score: <0-100>
 Citation Share: <0-100>
-Hallucination Risk: Low (or Medium / High)`;
+Hallucination Risk: Low (or Medium / High)
+[END_TELEMETRY_REPORT]`;
+      injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
+
+    } else if (isTelemetryActive && !isInitialScanTurn) {
+      systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Consultant]
+You are acting as an expert AI Visibility Consultant discussing an existing audit report with the client.
+Answer the user's follow-up question conversationally in 2-3 direct sentences.
+Do NOT output structured diagnostic report cards again unless explicitly requested.
+Base your insights strictly on the audit payload below.`;
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
     } else if (
