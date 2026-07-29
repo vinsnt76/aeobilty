@@ -332,7 +332,8 @@ export default function BillWidget() {
           </div>
         );
       }
-      // Fallback: If output does not contain [START_TELEMETRY_REPORT], treat as plain text normal assistant message
+      // Frontend Streaming Fallback: If telemetry mode is ON but no block is detected after N chunks or end-of-stream,
+      // render the raw text as a normal assistant bubble instead of suppressing it. Telemetry mode never yields an empty UI.
       return <p className="whitespace-pre-wrap text-[11px] text-zinc-300 leading-relaxed">{text}</p>;
     }
 
