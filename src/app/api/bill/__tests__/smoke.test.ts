@@ -145,4 +145,76 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
     expect(capturedParams.system).toContain('[ACTIVE SKILL: Telemetry Consultant]');
     expect(capturedParams.system).not.toContain('[START_TELEMETRY_REPORT]');
   });
+
+  it('11. Token Re-Ordering Resiliency: Confirm Clarity Score appearing before AI First Impression parses correctly', () => {
+    const outOfOrderStream = `[START_TELEMETRY_REPORT]
+Clarity Score: 88
+Recommendation Verdict: PASS
+Citation Share: 65
+AI First Impression: Strong entity graph alignment
+Biggest Blind Spot: Low schema depth
+Hallucination Risk: Low
+[END_TELEMETRY_REPORT]`;
+
+    const blockMatch = outOfOrderStream.match(/\[START_TELEMETRY_REPORT\]([\s\S]*?)(?:\[END_TELEMETRY_REPORT\]|$)/i);
+    expect(blockMatch).not.toBeNull();
+    const blockContent = blockMatch![1];
+
+    const clarityMatch = blockContent.match(/Clarity Score:\s*(\d+)/mi);
+    const firstImpressionMatch = blockContent.match(/AI First Impression:\s*(.+)/mi);
+    const verdictMatch = blockContent.match(/Recommendation Verdict:\s*(.+)/mi);
+
+    expect(clarityMatch?.[1]).toBe('88');
+    expect(firstImpressionMatch?.[1]).toBe('Strong entity graph alignment');
+    expect(verdictMatch?.[1]).toBe('PASS');
+  });
+
+  it('12. Preamble Stripping Resiliency: Confirm conversational preamble outside tags is excluded from parsed block content', () => {
+    const preambleStream = `Sure! Here is your audit report:
+[START_TELEMETRY_REPORT]
+AI First Impression: Entity alignment gap detected
+Biggest Blind Spot: Unstructured HTML blocks
+Recommendation Verdict: ALERT
+Clarity Score: 45
+Citation Share: 18
+Hallucination Risk: High
+[END_TELEMETRY_REPORT]
+Let me know if you have questions!`;
+
+    const blockMatch = preambleStream.match(/\[START_TELEMETRY_REPORT\]([\s\S]*?)(?:\[END_TELEMETRY_REPORT\]|$)/i);
+    expect(blockMatch).not.toBeNull();
+    const blockContent = blockMatch![1];
+
+    expect(blockContent).not.toContain("Sure! Here is your audit report:");
+    expect(blockContent).not.toContain("Let me know if you have questions!");
+    expect(blockContent).toContain("AI First Impression: Entity alignment gap detected");
+  });
+
+  it('13. Multi-Turn Skill Drift Resiliency: Confirm turn 1 emits card block and turn 2 yields plain conversational text', async () => {
+    // Turn 1: Initial audit scan
+    const turn1Req = createMockReq({
+      intent: 'telemetry',
+      audit: { clarityScore: 78 },
+      messages: [{ role: 'user', content: 'diagnose my audit data' }]
+    });
+    const turn1Res = await POST(turn1Req);
+    expect(turn1Res.status).toBe(200);
+    expect(capturedParams.system).toContain('[START_TELEMETRY_REPORT]');
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Telemetry Guide]');
+
+    // Turn 2: Follow-up question
+    const turn2Req = createMockReq({
+      intent: 'telemetry',
+      audit: { clarityScore: 78 },
+      messages: [
+        { role: 'user', content: 'diagnose my audit data' },
+        { role: 'assistant', content: '[START_TELEMETRY_REPORT]\nAI First Impression: Sample\n[END_TELEMETRY_REPORT]' },
+        { role: 'user', content: 'how can I improve this score?' }
+      ]
+    });
+    const turn2Res = await POST(turn2Req);
+    expect(turn2Res.status).toBe(200);
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Telemetry Consultant]');
+    expect(capturedParams.system).not.toContain('[START_TELEMETRY_REPORT]');
+  });
 });
