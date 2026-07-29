@@ -24,24 +24,32 @@ const TELEMETRY_PATTERNS = {
 };
 
 function parseTelemetryText(text: string) {
-  const firstImpressionMatch = text.match(TELEMETRY_PATTERNS.firstImpression);
-  const blindSpotMatch = text.match(TELEMETRY_PATTERNS.blindSpot);
-  const verdictMatch = text.match(TELEMETRY_PATTERNS.verdict);
-  const clarityScoreMatch = text.match(TELEMETRY_PATTERNS.clarityScore);
-  const citationShareMatch = text.match(TELEMETRY_PATTERNS.citationShare);
-  const riskMatch = text.match(TELEMETRY_PATTERNS.risk);
+  if (!text || typeof text !== 'string') {
+    return { hasAnyMatch: false, firstImpression: null, blindSpot: null, verdict: null, clarityScore: null, citationShare: null, risk: null };
+  }
+  try {
+    const firstImpressionMatch = text.match(TELEMETRY_PATTERNS.firstImpression);
+    const blindSpotMatch = text.match(TELEMETRY_PATTERNS.blindSpot);
+    const verdictMatch = text.match(TELEMETRY_PATTERNS.verdict);
+    const clarityScoreMatch = text.match(TELEMETRY_PATTERNS.clarityScore);
+    const citationShareMatch = text.match(TELEMETRY_PATTERNS.citationShare);
+    const riskMatch = text.match(TELEMETRY_PATTERNS.risk);
 
-  const hasAnyMatch = !!(firstImpressionMatch || blindSpotMatch || verdictMatch || clarityScoreMatch || citationShareMatch || riskMatch);
+    const hasAnyMatch = !!(firstImpressionMatch || blindSpotMatch || verdictMatch || clarityScoreMatch || citationShareMatch || riskMatch);
 
-  return {
-    hasAnyMatch,
-    firstImpression: firstImpressionMatch ? firstImpressionMatch[1].trim() : null,
-    blindSpot: blindSpotMatch ? blindSpotMatch[1].trim() : null,
-    verdict: verdictMatch ? verdictMatch[1].trim().toUpperCase() : null,
-    clarityScore: clarityScoreMatch ? parseInt(clarityScoreMatch[1], 10) : null,
-    citationShare: citationShareMatch ? parseInt(citationShareMatch[1], 10) : null,
-    risk: riskMatch ? riskMatch[1].trim() : null
-  };
+    return {
+      hasAnyMatch,
+      firstImpression: firstImpressionMatch ? firstImpressionMatch[1].trim() : null,
+      blindSpot: blindSpotMatch ? blindSpotMatch[1].trim() : null,
+      verdict: verdictMatch ? verdictMatch[1].trim().toUpperCase() : null,
+      clarityScore: clarityScoreMatch ? parseInt(clarityScoreMatch[1], 10) : null,
+      citationShare: citationShareMatch ? parseInt(citationShareMatch[1], 10) : null,
+      risk: riskMatch ? riskMatch[1].trim() : null
+    };
+  } catch (err) {
+    console.error("Failed parsing telemetry text stream:", err);
+    return { hasAnyMatch: false, firstImpression: null, blindSpot: null, verdict: null, clarityScore: null, citationShare: null, risk: null };
+  }
 }
 
 export default function BillWidget() {
@@ -77,17 +85,7 @@ export default function BillWidget() {
   // 2. STABLE PROTECTED STREAM HOOK BINDINGS
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
-      api: '/api/bill',
-      body: {
-        intent: isTelemetryMode ? 'telemetry' : 'general',
-        audit: isTelemetryMode ? (storedTelemetry?.result || {
-          entityClarityScore: 42,
-          citationSharePercent: 12,
-          retrievalConfidence: 'Low',
-          hallucinationRisk: 'High',
-          gaps: ['Missing fragment identifiers', 'Unstructured paragraph layouts']
-        }) : null
-      }
+      api: '/api/bill'
     })
   });
 
@@ -106,13 +104,18 @@ export default function BillWidget() {
   // 3. Independent Effect for Analytics Event Pipelines & Audio Output Playback Stream
   const speakText = React.useCallback((text: string) => {
     if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const cleanText = text.replace(/[*#_`]/g, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    const voices = window.speechSynthesis.getVoices();
-    const auVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australian')) || voices.find(v => v.lang.startsWith('en'));
-    if (auVoice) utterance.voice = auVoice;
-    window.speechSynthesis.speak(utterance);
+    try {
+      window.speechSynthesis.cancel();
+      if (!text || typeof text !== 'string') return;
+      const cleanText = text.replace(/[*#_`]/g, '');
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      const voices = window.speechSynthesis.getVoices();
+      const auVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australian')) || voices.find(v => v.lang.startsWith('en'));
+      if (auVoice) utterance.voice = auVoice;
+      window.speechSynthesis.speak(utterance);
+    } catch (err) {
+      console.error("SpeechSynthesis runtime error:", err);
+    }
   }, [isMuted]);
 
   useEffect(() => {
@@ -174,8 +177,37 @@ export default function BillWidget() {
       });
     }
 
+    // Dynamic telemetry payload extraction from localStorage or state
+    let activeAudit = storedTelemetry?.result;
+    if (typeof window !== 'undefined') {
+      const raw = localStorage.getItem('aeo_telemetry_latest');
+      if (raw) {
+        try {
+          const parsed = JSON.parse(raw);
+          activeAudit = parsed.result || activeAudit;
+        } catch (err) {
+          console.error("Failed parsing localStorage audit payload:", err);
+        }
+      }
+    }
+
     setInput('');
-    await sendMessage({ text: queryText });
+
+    await sendMessage(
+      { text: queryText },
+      {
+        body: {
+          intent: isTelemetryMode ? 'telemetry' : 'general',
+          audit: isTelemetryMode ? (activeAudit || {
+            entityClarityScore: 42,
+            citationSharePercent: 12,
+            retrievalConfidence: 'Low',
+            hallucinationRisk: 'High',
+            gaps: ['Missing fragment identifiers', 'Unstructured paragraph layouts']
+          }) : null
+        }
+      }
+    );
   };
 
   // 4. CRITICAL CHIP FIX: Safely mutates query text tokens directly into OpenAI formats

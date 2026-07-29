@@ -9,7 +9,8 @@ vi.mock('ai', () => ({
     capturedParams = params;
     return {
       toTextStreamResponse: () => new Response("Smoke test stream chunk", { status: 200, headers: { 'Content-Type': 'text/plain' } }),
-      toDataStreamResponse: () => new Response("Smoke test stream chunk", { status: 200, headers: { 'Content-Type': 'text/plain' } })
+      toDataStreamResponse: () => new Response("Smoke test stream chunk", { status: 200, headers: { 'Content-Type': 'text/plain' } }),
+      toUIMessageStreamResponse: () => new Response("Smoke test stream chunk", { status: 200, headers: { 'Content-Type': 'text/plain' } })
     };
   })
 }));
