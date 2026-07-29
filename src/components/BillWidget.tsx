@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle } from 'lucide-react';
+import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, HelpCircle } from 'lucide-react';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 // Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
@@ -21,19 +21,7 @@ export default function BillWidget() {
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Australian Web Speech API TTS synthesis helper
-  const speakText = React.useCallback((text: string) => {
-    if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const cleanText = text.replace(/[*#_`]/g, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    const voices = window.speechSynthesis.getVoices();
-    const auVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australian')) || voices.find(v => v.lang.startsWith('en'));
-    if (auVoice) utterance.voice = auVoice;
-    window.speechSynthesis.speak(utterance);
-  }, [isMuted]);
-
-  // Load telemetry data from local storage (synced across site audit forms)
+  // 1. Local Storage Sync: Hydrate local state context from previous diagnostics
   useEffect(() => {
     const handleStorageUpdate = () => {
       if (typeof window === 'undefined') return;
@@ -54,7 +42,7 @@ export default function BillWidget() {
     return () => window.removeEventListener('aeo_telemetry_updated', handleStorageUpdate);
   }, []);
 
-  // Connect cleanly to our unified edge endpoint via DefaultChatTransport
+  // 2. CONNECT TO UNIFIED AGENT VIA VERCEL AI SDK CORE BINDINGS
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/bill',
@@ -81,7 +69,18 @@ export default function BillWidget() {
       .join('');
   }, []);
 
-  // Track deep funnel-level sequence transitions via message array synthesis
+  // 3. Analytics & Speech Telemetry Synthesis
+  const speakText = React.useCallback((text: string) => {
+    if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const cleanText = text.replace(/[*#_`]/g, '');
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    const voices = window.speechSynthesis.getVoices();
+    const auVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australian')) || voices.find(v => v.lang.startsWith('en'));
+    if (auVoice) utterance.voice = auVoice;
+    window.speechSynthesis.speak(utterance);
+  }, [isMuted]);
+
   useEffect(() => {
     if (messages.length === 0 || typeof window === 'undefined' || typeof window.gtag !== 'function') return;
     
@@ -93,7 +92,7 @@ export default function BillWidget() {
     
     speakText(getMessageText(lastMessage));
 
-    // 📊 Funnel Event 1: Captures when Bill dynamically shifts into the Blueprint Commercial Funnel
+    // GA4 Event Trigger: Commercial Funnel Slicing
     if (content.includes('blueprint') || content.includes('995')) {
       const prevUserMessage = [...messages].reverse().find(m => m.role === 'user');
       const userText = prevUserMessage ? getMessageText(prevUserMessage) : 'Unknown';
@@ -105,11 +104,11 @@ export default function BillWidget() {
       });
     }
 
-    // 📊 Funnel Event 2: Captures when Bill switches into technical explanation mode
-    if (content.includes('lattice') || content.includes('bias') || content.includes('schema')) {
+    // GA4 Event Trigger: 41-Node Lattice Concept Hit
+    if (content.includes('lattice') || content.includes('bias') || content.includes('density') || content.includes('schema')) {
       window.gtag('event', 'bill_lattice_node_hit', {
         event_category: 'AI Assistant Knowledge',
-        matched_concept: content.includes('bias') ? 'Positional Bias' : content.includes('lattice') ? 'Semantic Lattice' : 'Schema Structure'
+        matched_concept: content.includes('density') ? 'Semantic Density' : content.includes('bias') ? 'Positional Bias' : 'Semantic Lattice'
       });
     }
   }, [messages, speakText, getMessageText]);
@@ -143,6 +142,26 @@ export default function BillWidget() {
 
     setInput('');
     await sendMessage({ text: queryText });
+  };
+
+  const handleChipClick = async (chipText: string) => {
+    const queryMap: Record<string, string> = {
+      'Semantic Density': 'What is semantic density in AEO framework models?',
+      'Positional Bias': 'How does AEObility mitigate positional bias in LLMs?',
+      'Fix RAG Drops': 'How do I fix RAG retrieval drops?',
+      '90-Day Blueprint': 'What are the deliverables for the 90-Day AI Success Blueprint?'
+    };
+
+    const targetPrompt = queryMap[chipText] || `Tell me about ${chipText}`;
+
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'bill_chip_clicked', {
+        event_category: 'AI Assistant UI',
+        chip_label: chipText
+      });
+    }
+
+    await executeQuery(targetPrompt);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -180,8 +199,9 @@ export default function BillWidget() {
   if (!isOpen) {
     return (
       <button
+        type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-zinc-900/90 hover:bg-zinc-800 text-white rounded-full border border-emerald-500/30 shadow-2xl backdrop-blur-md hover:scale-105 transition-all duration-300 group"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-zinc-900/90 hover:bg-zinc-800 text-white rounded-full border border-emerald-500/30 shadow-2xl backdrop-blur-md hover:scale-105 transition-all duration-300 group cursor-pointer"
         aria-label="Open Bill AI Assistant"
       >
         <div className="relative">
@@ -203,11 +223,11 @@ export default function BillWidget() {
             <Bot className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="font-semibold text-xs text-white tracking-wide flex items-center gap-1.5">
-              Bill
+            <h3 className="font-semibold text-xs text-white tracking-wide flex items-center gap-1.5 uppercase font-mono">
+              System Agent: Bill
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             </h3>
-            <p className="text-[10px] text-zinc-400">AEObility AI-Native Agent</p>
+            <p className="text-[10px] text-zinc-400">AEObility Dynamic Intelligence</p>
           </div>
         </div>
 
@@ -235,7 +255,7 @@ export default function BillWidget() {
             title="Toggle Live Telemetry Diagnostics"
           >
             <Activity className="w-3 h-3" />
-            {isTelemetryMode ? 'Telemetry: ON' : 'Telemetry Mode'}
+            {isTelemetryMode ? 'Telemetry: Active' : 'Telemetry Mode'}
           </button>
 
           <button
@@ -280,7 +300,7 @@ export default function BillWidget() {
               G&apos;day! I&apos;m Bill, AEObility&apos;s AI Agent.
             </p>
             <p className="text-zinc-500 text-[11px] leading-relaxed">
-              Query AEObility AEO frameworks, positional bias mitigation, or toggle Telemetry Mode for live site diagnostics.
+              Query Bill regarding advanced Answer Engine Optimisation architectures or switch on Telemetry Mode to pipe local variable diagnostics.
             </p>
           </div>
         )}
@@ -291,16 +311,16 @@ export default function BillWidget() {
           return (
             <div 
               key={m.id} 
-              className={`p-3 rounded-xl max-w-[88%] leading-relaxed ${
+              className={`p-3.5 rounded-xl max-w-[88%] leading-relaxed ${
                 m.role === 'user' 
                   ? 'bg-emerald-600/20 border border-emerald-500/30 ml-auto text-emerald-50' 
                   : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200'
               }`}
             >
               <span className="block text-[9px] uppercase tracking-wider font-mono text-zinc-500 mb-1">
-                {m.role === 'user' ? 'You' : 'Bill'}
+                {m.role === 'user' ? 'Local Requestor' : 'Bill'}
               </span>
-              <p className="whitespace-pre-wrap">{text}</p>
+              <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
 
               {/* Rich Telemetry Inline Visual Cards for Assistant Responses in Telemetry Mode */}
               {m.role === 'assistant' && isTelemetryMode && storedTelemetry?.result?.insightResult && (
@@ -333,9 +353,9 @@ export default function BillWidget() {
         })}
 
         {isLoading && (
-          <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-400 bg-emerald-950/30 border border-emerald-500/20 p-2.5 rounded-lg w-max animate-pulse">
+          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/30 border border-emerald-500/20 px-3 py-1.5 rounded-full animate-pulse">
             <Bot className="w-3.5 h-3.5 animate-spin" />
-            <span>Bill is formulating response...</span>
+            <span>Bill is scanning 41 lattice nodes...</span>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -343,48 +363,36 @@ export default function BillWidget() {
 
       {/* Quick Action Diagnostic Chips */}
       <div className="px-3 py-1.5 bg-zinc-900/60 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
-        <button
-          type="button"
-          onClick={() => executeQuery("What is semantic density?")}
-          className="bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 px-2 py-0.5 rounded-full transition cursor-pointer"
-        >
-          Semantic Density
-        </button>
-        <button
-          type="button"
-          onClick={() => executeQuery("Explain positional bias in retrieval")}
-          className="bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 px-2 py-0.5 rounded-full transition cursor-pointer"
-        >
-          Positional Bias
-        </button>
-        <button
-          type="button"
-          onClick={() => executeQuery("How do I fix RAG retrieval drops?")}
-          className="bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 px-2 py-0.5 rounded-full transition cursor-pointer"
-        >
-          Fix RAG Drops
-        </button>
-        <button
-          type="button"
-          onClick={() => executeQuery("How do I get the 90-Day Blueprint?")}
-          className="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full transition cursor-pointer font-medium"
-        >
-          90-Day Blueprint
-        </button>
+        {[
+          { label: 'Semantic Density', icon: <Sparkles className="w-3 h-3" /> },
+          { label: 'Positional Bias', icon: <HelpCircle className="w-3 h-3" /> },
+          { label: 'Fix RAG Drops', icon: <Activity className="w-3 h-3" /> },
+          { label: '90-Day Blueprint', icon: <Bot className="w-3 h-3" /> }
+        ].map((chip) => (
+          <button
+            key={chip.label}
+            type="button"
+            onClick={() => handleChipClick(chip.label)}
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white rounded-lg text-[10px] transition font-medium cursor-pointer"
+          >
+            {chip.icon}
+            <span>{chip.label}</span>
+          </button>
+        ))}
       </div>
 
-      {/* Input Form Tray */}
-      <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2">
+      {/* Input Action Form Tray */}
+      <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2 backdrop-blur-md">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={isTelemetryMode ? "Ask Bill to diagnose your audit payload..." : "Ask Bill about AEO semantic lattices..."}
+          placeholder={isTelemetryMode ? "Ask Bill to diagnose your audit variables..." : "Ask Bill about AEO semantic lattices..."}
           className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/60 transition"
         />
         <button 
           type="submit" 
           disabled={!input.trim() || isLoading}
-          className="bg-emerald-500 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-emerald-400 transition flex items-center justify-center shrink-0"
+          className="bg-emerald-500 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-emerald-400 transition flex items-center justify-center shrink-0 cursor-pointer"
           aria-label="Send message"
         >
           <Send className="w-3.5 h-3.5" />
