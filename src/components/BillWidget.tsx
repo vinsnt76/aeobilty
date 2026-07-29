@@ -323,6 +323,9 @@ export default function BillWidget() {
 
     const parsed = parseTelemetryText(text);
 
+    // Multi-turn UI Alignment:
+    // First turn: expect cards (hasAnyMatch = true) -> render structured diagnostic card container
+    // Follow-up turns: expect plain text (hasAnyMatch = false) -> render normal assistant bubble (no card container)
     if (!parsed.hasAnyMatch) {
       if (!text || !text.trim()) {
         return (
@@ -332,8 +335,7 @@ export default function BillWidget() {
           </div>
         );
       }
-      // Frontend Streaming Fallback: If telemetry mode is ON but no block is detected after N chunks or end-of-stream,
-      // render the raw text as a normal assistant bubble instead of suppressing it. Telemetry mode never yields an empty UI.
+      // Follow-up turn / plain-text fallback: render as normal assistant bubble without card container
       return <p className="whitespace-pre-wrap text-[11px] text-zinc-300 leading-relaxed">{text}</p>;
     }
 
