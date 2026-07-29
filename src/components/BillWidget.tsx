@@ -13,14 +13,14 @@ declare global {
   }
 }
 
-// 📋 Explicit Regex Pattern Definitions for Real-time Chunk Extraction
+// 📋 Order-Agnostic Regex Patterns for Block-Scoped Telemetry Extraction (/m and /i flags)
 const TELEMETRY_PATTERNS = {
-  firstImpression: /AI First Impression:\s*(.+)/im,
-  blindSpot: /Biggest Blind Spot:\s*(.+)/im,
-  verdict: /Recommendation Verdict:\s*(PASS|HIGH RISK|ALERT|FAIL)/im,
-  clarityScore: /Clarity Score:\s*(\d+)/im,
-  citationShare: /Citation Share:\s*(\d+)/im,
-  risk: /Hallucination Risk:\s*(High|Medium|Low)/im
+  firstImpression: /AI First Impression:\s*(.+)/mi,
+  blindSpot: /Biggest Blind Spot:\s*(.+)/mi,
+  verdict: /Recommendation Verdict:\s*(PASS|HIGH RISK|ALERT|FAIL|[\w\s]+)/mi,
+  clarityScore: /Clarity Score:\s*(\d+)/mi,
+  citationShare: /Citation Share:\s*(\d+)/mi,
+  risk: /Hallucination Risk:\s*(High|Medium|Low|[\w\s]+)/mi
 };
 
 function parseTelemetryText(text: string) {
@@ -28,19 +28,21 @@ function parseTelemetryText(text: string) {
     return { hasAnyMatch: false, firstImpression: null, blindSpot: null, verdict: null, clarityScore: null, citationShare: null, risk: null };
   }
   try {
-    // Isolate text within START / END tags if present, stripping preamble noise
-    let targetText = text;
+    // 1. Isolate the substring strictly between [START_TELEMETRY_REPORT] and [END_TELEMETRY_REPORT] (or streaming cutoff)
     const blockMatch = text.match(/\[START_TELEMETRY_REPORT\]([\s\S]*?)(?:\[END_TELEMETRY_REPORT\]|$)/i);
-    if (blockMatch && blockMatch[1]) {
-      targetText = blockMatch[1];
+    if (!blockMatch || !blockMatch[1]) {
+      return { hasAnyMatch: false, firstImpression: null, blindSpot: null, verdict: null, clarityScore: null, citationShare: null, risk: null };
     }
 
-    const firstImpressionMatch = targetText.match(TELEMETRY_PATTERNS.firstImpression);
-    const blindSpotMatch = targetText.match(TELEMETRY_PATTERNS.blindSpot);
-    const verdictMatch = targetText.match(TELEMETRY_PATTERNS.verdict);
-    const clarityScoreMatch = targetText.match(TELEMETRY_PATTERNS.clarityScore);
-    const citationShareMatch = targetText.match(TELEMETRY_PATTERNS.citationShare);
-    const riskMatch = targetText.match(TELEMETRY_PATTERNS.risk);
+    const blockContent = blockMatch[1];
+
+    // 2. Run order-agnostic regexes with /m and /i flags over that isolated block content only
+    const firstImpressionMatch = blockContent.match(TELEMETRY_PATTERNS.firstImpression);
+    const blindSpotMatch = blockContent.match(TELEMETRY_PATTERNS.blindSpot);
+    const verdictMatch = blockContent.match(TELEMETRY_PATTERNS.verdict);
+    const clarityScoreMatch = blockContent.match(TELEMETRY_PATTERNS.clarityScore);
+    const citationShareMatch = blockContent.match(TELEMETRY_PATTERNS.citationShare);
+    const riskMatch = blockContent.match(TELEMETRY_PATTERNS.risk);
 
     const hasAnyMatch = !!(firstImpressionMatch || blindSpotMatch || verdictMatch || clarityScoreMatch || citationShareMatch || riskMatch);
 
