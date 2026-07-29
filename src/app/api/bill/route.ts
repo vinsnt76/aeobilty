@@ -110,6 +110,13 @@ export async function POST(req: NextRequest) {
     const userQuery = rawPrompt || normalizedMessages[normalizedMessages.length - 1]?.content || '';
     const normalizedQuery = userQuery.toLowerCase();
 
+    // 👉 STEP A: LOG NORMALIZED REQUEST OUTPUT DIAGNOSTIC
+    console.log("👉 BILL UNIFIED ROUTER DIAGNOSTIC:", {
+      detectedIntent: intent,
+      hasAuditPayload: !!audit,
+      finalNormalizedQuery: userQuery
+    });
+
     let systemPrompt = BILL_BASE_PERSONA;
     let injectionContext = '';
     const isTelemetryActive = !!(audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry'));

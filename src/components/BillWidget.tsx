@@ -265,6 +265,20 @@ export default function BillWidget() {
 
   // 4. INLINE TELEMETRY CARD EXTRACTOR (Isolated from state mutations)
   const renderMessageBubbleContent = (msgId: string, text: string) => {
+    // 👉 STEP B: RAW STREAM TEXT DIAGNOSTIC BLOCK (Set to true for streaming text debugging)
+    const renderRawDiagnostic = false;
+
+    if (renderRawDiagnostic) {
+      return (
+        <div className="space-y-1.5 w-full pt-1 font-mono">
+          <span className="text-[9px] uppercase tracking-wider text-emerald-400 font-bold block">👉 STEP B: RAW STREAM TEXT</span>
+          <pre className="whitespace-pre-wrap text-[10px] text-emerald-200 bg-black/80 p-2 rounded-lg border border-emerald-500/30 overflow-x-auto">
+            {text || '(Empty Stream Buffer)'}
+          </pre>
+        </div>
+      );
+    }
+
     const parsed = parseTelemetryText(text);
 
     if (!parsed.hasAnyMatch) {
