@@ -415,6 +415,134 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
+        {/* Horizontal Step Flow Chart — 6 Cards */}
+        <section className="space-y-6 border-t border-white/5 pt-10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Diagnostic Flow Diagram</span>
+              <h2 className="text-xl sm:text-2xl font-bold text-white">Framework Execution Flow Chart</h2>
+            </div>
+            <span className="text-xs font-mono text-white/40 bg-white/5 px-3 py-1 rounded-full border border-white/5 self-start sm:self-auto">
+              Horizontal Step Flow (6 Phases)
+            </span>
+          </div>
+
+          <div className="relative">
+            {/* Connector line behind cards on large screens */}
+            <div className="hidden lg:block absolute top-1/2 left-4 right-4 h-0.5 bg-gradient-to-r from-aeo-cyan/30 via-aeo-purple/30 to-aeo-cyan/30 -translate-y-6 -z-10" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+              {/* Card 1: Search Intent */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-cyan/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2 py-0.5 rounded bg-aeo-cyan/10 border border-aeo-cyan/20">01</span>
+                    <Target className="w-4 h-4 text-aeo-cyan group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">Search Intent</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Target commercial query vector &amp; user intent specification.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 1</span>
+                  <ArrowRight className="w-3 h-3 text-aeo-cyan/60 lg:hidden" />
+                </div>
+              </div>
+
+              {/* Card 2: Competitor Set */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-purple/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-purple px-2 py-0.5 rounded bg-aeo-purple/10 border border-aeo-purple/20">02</span>
+                    <Search className="w-4 h-4 text-aeo-purple group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-purple transition-colors">Competitor Set</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Real-time organic SERP ingestion &amp; active domain URL extraction.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 2</span>
+                  <ArrowRight className="w-3 h-3 text-aeo-purple/60 lg:hidden" />
+                </div>
+              </div>
+
+              {/* Card 3: Semantic Comparison */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-cyan/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2 py-0.5 rounded bg-aeo-cyan/10 border border-aeo-cyan/20">03</span>
+                    <BarChart3 className="w-4 h-4 text-aeo-cyan group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">Semantic Comparison</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Cosine similarity vector scoring &amp; net dominance differential.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 3</span>
+                  <ArrowRight className="w-3 h-3 text-aeo-cyan/60 lg:hidden" />
+                </div>
+              </div>
+
+              {/* Card 4: Feature Review */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-purple/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-purple px-2 py-0.5 rounded bg-aeo-purple/10 border border-aeo-purple/20">04</span>
+                    <Sliders className="w-4 h-4 text-aeo-purple group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-purple transition-colors">Feature Review</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Schema microdata audit, page depth &amp; RDF graph density.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 4</span>
+                  <ArrowRight className="w-3 h-3 text-aeo-purple/60 lg:hidden" />
+                </div>
+              </div>
+
+              {/* Card 5: Readiness Score */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-cyan/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2 py-0.5 rounded bg-aeo-cyan/10 border border-aeo-cyan/20">05</span>
+                    <Award className="w-4 h-4 text-aeo-cyan group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">Readiness Score</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Weighted 0–100 AI search readiness classification tier.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 5</span>
+                  <ArrowRight className="w-3 h-3 text-aeo-cyan/60 lg:hidden" />
+                </div>
+              </div>
+
+              {/* Card 6: Recommended Actions */}
+              <div className="p-4 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between hover:border-aeo-purple/50 hover:bg-white/[0.04] transition-all duration-300 group shadow-lg">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-purple px-2 py-0.5 rounded bg-aeo-purple/10 border border-aeo-purple/20">06</span>
+                    <ShieldCheck className="w-4 h-4 text-aeo-purple group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-aeo-purple transition-colors">Recommended Actions</h3>
+                  <p className="text-[11px] text-white/60 leading-relaxed font-light">
+                    Prioritised 90-day AEO Sprint execution roadmap.
+                  </p>
+                </div>
+                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/40">
+                  <span>Phase 6</span>
+                  <CheckCircle2 className="w-3 h-3 text-aeo-purple" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 5 — How AEObility Compares You to Competitors (Two-Layer Style) */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
