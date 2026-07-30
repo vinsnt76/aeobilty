@@ -26,12 +26,16 @@ import {
   Crosshair,
   TrendingUp,
   Sliders,
-  Check
+  Check,
+  User,
+  Calendar,
+  MapPin,
+  Tag
 } from 'lucide-react';
 
 export const metadata = {
   title: "Competitor Overlap & Semantic Dominance Framework | AEObility",
-  description: "Learn how AEObility evaluates competitor overlap, semantic dominance, and AI search readiness. Discover how your business compares to competitors and what to fix first.",
+  description: "A technical guide by AEObility for Australian businesses to measure competitor overlap, semantic dominance, and vector proximity across Perth, Australia, and New Zealand.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework",
   },
@@ -216,16 +220,33 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             Competitor Overlap &amp; <span className="text-gradient-aeo">Semantic Dominance</span> Framework
           </h1>
 
-          <p className="text-white/80 text-lg leading-relaxed max-w-3xl font-light">
-            How AEObility compares your business against competitors in AI search, identifies your key visibility gaps, and builds a clear action plan to get you recommended.
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl font-light">
+            A technical guide by AEObility, built for Australian businesses seeking clarity in how modern AI systems interpret, rank, and recommend local service providers. This framework shows how businesses across Perth, Australia, and New Zealand can measure competitor overlap, semantic dominance, and vector proximity using advanced AEO diagnostics such as cosine similarity, entity clarity scoring, and RAG survival testing.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-2 text-xs font-mono text-white/50">
-            <span className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-lg">
-              <Crosshair className="w-3.5 h-3.5 text-aeo-cyan" /> Focus: competitor overlap &amp; AI search readiness
+          {/* Article Metadata Bar */}
+          <div className="flex flex-wrap gap-3 pt-4 text-xs font-mono border-t border-white/5">
+            <Link 
+              href="/vince-baker" 
+              className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 hover:border-white/20 transition-colors px-3 py-1.5 rounded-lg text-white/80 hover:text-white"
+            >
+              <User className="w-3.5 h-3.5 text-aeo-cyan" />
+              <span>Author: <strong className="text-white">Vince Baker</strong></span>
+            </Link>
+
+            <span className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-lg text-white/70">
+              <Calendar className="w-3.5 h-3.5 text-aeo-purple" />
+              <span>Date: <strong className="text-white">30 July 2026</strong></span>
             </span>
-            <span className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-lg">
-              <Globe2 className="w-3.5 h-3.5 text-aeo-purple" /> Target: Australian Small Businesses &amp; Agencies
+
+            <span className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-lg text-white/70">
+              <Tag className="w-3.5 h-3.5 text-aeo-cyan" />
+              <span>Topic: <strong className="text-white">AI Search Visibility &amp; Competitor Analysis</strong></span>
+            </span>
+
+            <span className="flex items-center gap-1.5 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-lg text-white/70">
+              <MapPin className="w-3.5 h-3.5 text-aeo-purple" />
+              <span>Location: <strong className="text-white">Perth, Australia &amp; New Zealand</strong></span>
             </span>
           </div>
         </header>
