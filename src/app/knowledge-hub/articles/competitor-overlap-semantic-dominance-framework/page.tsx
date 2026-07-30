@@ -31,7 +31,11 @@ import {
   User,
   Calendar,
   MapPin,
-  Tag
+  Tag,
+  Code,
+  FileCode,
+  Terminal,
+  Database
 } from 'lucide-react';
 
 export const metadata = {
@@ -199,6 +203,102 @@ export default function CompetitorOverlapFrameworkArticlePage() {
     { step: "06", title: "Build a Prioritised Action Plan", desc: "We turn your score into step-by-step recommendations on what to fix first.", icon: <ShieldCheck className="w-5 h-5 text-aeo-purple" /> }
   ];
 
+  const standardizedModules = [
+    {
+      name: "1. Competitor Ingestion Module",
+      codeFile: "src/lib/telemetry/search.ts",
+      whatItDoes: "Identifies the active competitor websites currently winning organic search attention for your target service terms.",
+      howItWorks: "Executes real-time SERP parsing using Brave Search and Gemini API endpoints, filtering out generic directories and aggregators to isolate true commercial domain nodes.",
+      inputs: "Target search intent query string (e.g. 'digital marketing specialist Perth').",
+      outputs: "Array of verified competitor homepage and service page domain URLs.",
+      actionImplications: "Establishes the realistic market benchmark you must outperform to gain citation priority.",
+      icon: <Globe2 className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "2. Vector Proximity Module",
+      codeFile: "src/lib/telemetry/proximity.ts",
+      whatItDoes: "Measures how closely your content's underlying meaning matches what prospective clients are asking AI search engines.",
+      howItWorks: "Converts text content into 768-dimensional vector embeddings using Google text-embedding-004 and calculates normalized Cosine Similarity.",
+      inputs: "Search intent string, client page text, and competitor page text chunks.",
+      outputs: "Individual similarity scores (0.00 to 1.00) for client and each competitor node.",
+      actionImplications: "Reveals whether your content is conceptually relevant or if your messaging drifts away from user intent.",
+      icon: <Network className="w-5 h-5 text-aeo-purple" />
+    },
+    {
+      name: "3. Semantic Dominance Module",
+      codeFile: "src/lib/telemetry/features.ts",
+      whatItDoes: "Determines whether your website commands stronger AI clarity than rival local businesses.",
+      howItWorks: "Calculates the net vector differential between client similarity and average competitor similarity: Math.max(0, Math.min(100, (ClientSim - CompAvgSim) * 100)).",
+      inputs: "Client vector similarity score and competitor vector similarity array.",
+      outputs: "Semantic Dominance Score (0 to 100% net differential).",
+      actionImplications: "A positive score indicates market advantage; a negative score signals risk of being overlooked in AI summaries.",
+      icon: <PieChart className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "4. Feature Extraction Module",
+      codeFile: "src/lib/telemetry/features.ts",
+      whatItDoes: "Benchmarks your website's structural depth, Schema.org completeness, and trust signals directly against competitors.",
+      howItWorks: "Extracts Content Length Ratio (ClientLen / CompAvgLen), Schema.org entity count, internal link depth, and RDF subject-predicate triple graph density.",
+      inputs: "Scraped client HTML & DOM tree alongside competitor DOM structures.",
+      outputs: "Structured feature matrix (Content Ratio, Schema Completeness %, Technical Advantage, Entity Authority score).",
+      actionImplications: "Uncovers technical blind spots giving competitors an unfair advantage in machine indexation.",
+      icon: <Sliders className="w-5 h-5 text-aeo-purple" />
+    },
+    {
+      name: "5. RAG Survival Testing Module",
+      codeFile: "src/lib/telemetry/rag-sim.ts",
+      whatItDoes: "Tests whether AI search engines retain your content when generating conversational answer summaries.",
+      howItWorks: "Generates 3+ synthetic query prompt variations (query fan-out) and tests paragraph chunk retrieval retention against a strict 0.62 similarity threshold.",
+      inputs: "Target search intent and chunked client content paragraphs.",
+      outputs: "RAG survival rate (%), attribution rank, and selected passage chunks.",
+      actionImplications: "Shows if your content is written in direct atomic answer blocks or if key service facts get dropped during retrieval.",
+      icon: <Zap className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      name: "6. AI Search Readiness Scoring Module",
+      codeFile: "src/lib/telemetry/scoring.ts",
+      whatItDoes: "Synthesises all diagnostic metrics into a single, actionable 0–100 rating with clear execution priorities.",
+      howItWorks: "Combines weighted categories based on observability config (Semantic: 40%, Technical: 20%, Entity: 15%, Competitor: 15%, Authority: 10%).",
+      inputs: "Engineered feature matrix, RAG simulation runs, RDF triples, and performance metrics.",
+      outputs: "Overall Readiness Score (0–100), Classification Tier (Dominant, Competitive, Emerging, At Risk), and Score Explanations.",
+      actionImplications: "Maps directly to a prioritised 90-day AEO Sprint execution plan focused on immediate high-impact fixes.",
+      icon: <Award className="w-5 h-5 text-aeo-purple" />
+    }
+  ];
+
+  const codeModuleMappings = [
+    {
+      file: "src/lib/telemetry/search.ts",
+      role: "Competitor SERP Ingestion",
+      summary: "Queries Brave Search and Gemini APIs to harvest top organic competitor domain URLs for the target intent."
+    },
+    {
+      file: "src/lib/telemetry/proximity.ts",
+      role: "Vector Embedding & Cosine Similarity",
+      summary: "Generates 768-dimensional text-embedding-004 vectors and computes Cosine Similarity between intent and page chunks."
+    },
+    {
+      file: "src/lib/telemetry/features.ts",
+      role: "Feature Extraction & Dominance",
+      summary: "Calculates Semantic Dominance, Content Length Ratio, Schema Completeness %, and Entity Authority scores."
+    },
+    {
+      file: "src/lib/telemetry/rag-sim.ts",
+      role: "Adversarial RAG Simulation",
+      summary: "Executes synthetic query fan-out prompt passes and checks passage retention against a 0.62 survival threshold."
+    },
+    {
+      file: "src/lib/telemetry/scoring.ts",
+      role: "Weighted Telemetry Aggregation",
+      summary: "Applies observability platform weights to output the final 0–100 Readiness Score and diagnostic explanations."
+    },
+    {
+      file: "src/lib/telemetry/config.ts",
+      role: "Observability Weight Config",
+      summary: "Defines system weights: Semantic (40%), Technical (20%), Entity (15%), Competitor (15%), Authority (10%)."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       {/* JSON-LD Dual Schema */}
@@ -217,9 +317,15 @@ export default function CompetitorOverlapFrameworkArticlePage() {
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full space-y-16">
         {/* Header / Hero Section */}
         <header className="space-y-6 border-b border-white/5 pb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Knowledge Hub • Technical Article</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Knowledge Hub • Technical Article</span>
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-xs text-aeo-cyan font-mono font-semibold">
+              <Crosshair className="w-3.5 h-3.5" />
+              <span>Query-Specific Diagnostic Methodology</span>
+            </div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
@@ -229,6 +335,15 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl font-light">
             A technical guide by AEObility, built for Australian businesses seeking clarity in how modern AI systems interpret, rank, and recommend local service providers. This framework shows how businesses across Perth, Australia, and New Zealand can measure competitor overlap, semantic dominance, and vector proximity using advanced AEO diagnostics such as cosine similarity, entity clarity scoring, and RAG survival testing.
           </p>
+
+          {/* Core Diagnostic Rule Callout Banner */}
+          <div className="p-4 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-xl flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-white/90 leading-relaxed font-light">
+              <strong className="text-aeo-cyan font-semibold font-mono uppercase tracking-wider block mb-0.5">Important Diagnostic Principle:</strong>
+              AEObility&apos;s framework is an intentional <strong>query-specific diagnostic</strong>, evaluated per target search intent, rather than a generic site-wide SEO score. It assesses real-time search competition, content structure, and machine retrieval survival for specific commercial queries.
+            </p>
+          </div>
 
           {/* Article Metadata Bar */}
           <div className="flex flex-wrap gap-3 pt-4 text-xs font-mono border-t border-white/5">
@@ -567,73 +682,223 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 5 — How AEObility Compares You to Competitors (Two-Layer Style) */}
+        {/* SECTION 5 — Standardised Component Deep-Dive Modules (Structured Schema: What, How, Inputs, Outputs, Action) */}
+        <section className="space-y-6 border-t border-white/5 pt-10">
+          <div className="space-y-2">
+            <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Technical Breakdown</span>
+            <h2 className="text-2xl font-bold flex items-center gap-3">
+              <Cpu className="w-6 h-6 text-aeo-cyan" />
+              <span>Standardised Component Modules</span>
+            </h2>
+            <p className="text-xs text-white/60 font-light">
+              Each module follows a structured diagnostic schema: What It Does, How It Works, Inputs, Outputs, and Action Implications.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {standardizedModules.map((m, idx) => (
+              <div key={idx} className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-white/20 transition-colors">
+                <div className="flex flex-wrap justify-between items-center gap-2 border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                      {m.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white">{m.name}</h3>
+                  </div>
+                  <span className="text-xs font-mono bg-white/5 text-aeo-cyan border border-white/10 px-3 py-1 rounded-full">
+                    {m.codeFile}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light">
+                  {/* What It Does */}
+                  <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                    <span className="font-bold text-aeo-cyan uppercase tracking-wider text-[10px] block font-mono">1. What It Does (SMB Outcome)</span>
+                    <p className="text-white/80 leading-relaxed">{m.whatItDoes}</p>
+                  </div>
+
+                  {/* How It Works */}
+                  <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                    <span className="font-bold text-aeo-purple uppercase tracking-wider text-[10px] block font-mono">2. How It Works (Technical Method)</span>
+                    <p className="text-white/80 leading-relaxed">{m.howItWorks}</p>
+                  </div>
+
+                  {/* Inputs */}
+                  <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                    <span className="font-bold text-white/60 uppercase tracking-wider text-[10px] block font-mono">3. Inputs</span>
+                    <p className="text-white/70 leading-relaxed font-mono">{m.inputs}</p>
+                  </div>
+
+                  {/* Outputs */}
+                  <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                    <span className="font-bold text-white/60 uppercase tracking-wider text-[10px] block font-mono">4. Outputs</span>
+                    <p className="text-white/70 leading-relaxed font-mono">{m.outputs}</p>
+                  </div>
+                </div>
+
+                {/* Action Implications */}
+                <div className="p-4 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-xl flex items-start gap-3 text-xs font-light">
+                  <ShieldCheck className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold text-aeo-cyan uppercase tracking-wider text-[10px] block font-mono">5. Action Implication</span>
+                    <p className="text-white/90 leading-relaxed">{m.actionImplications}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION 6 — Dedicated Code Architecture & File Mapping */}
+        <section className="space-y-6 border-t border-white/5 pt-10">
+          <div className="space-y-2">
+            <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider block font-semibold">Codebase Traceability</span>
+            <h2 className="text-2xl font-bold flex items-center gap-3">
+              <Code className="w-6 h-6 text-aeo-purple" />
+              <span>Code Implementation Mapping</span>
+            </h2>
+            <p className="text-xs text-white/60 font-light">
+              For developers and technical auditors, the framework maps directly to AEObility&apos;s open-source telemetry engine modules:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {codeModuleMappings.map((c, idx) => (
+              <div key={idx} className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2 hover:border-white/15 transition-colors">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-mono text-aeo-cyan font-bold flex items-center gap-1.5">
+                    <FileCode className="w-3.5 h-3.5" /> {c.file}
+                  </span>
+                  <span className="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-white/50">{c.role}</span>
+                </div>
+                <p className="text-xs text-white/70 leading-relaxed font-light">{c.summary}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION 7 — Competitor Overlap & Prioritised Blind Spot Detection */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
-            <Network className="w-6 h-6 text-aeo-purple" />
-            <span>How We Compare You to Competitors</span>
+            <AlertTriangle className="w-6 h-6 text-aeo-purple" />
+            <span>Competitor Overlap &amp; Prioritised Blind Spots</span>
           </h2>
+          <div className="space-y-4 text-sm text-white/80 leading-relaxed font-light">
+            <p>
+              When evaluating competitor overlap, AEObility distinguishes between <strong>Semantic Overlap</strong> (topic similarity) and <strong>Feature Overlap</strong> (structural capabilities). High semantic overlap without structured microdata causes content dilution, where AI models view your page as a generic duplicate.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Vector Proximity */}
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-              <div className="flex items-center gap-2">
-                <Crosshair className="w-4 h-4 text-aeo-cyan" />
-                <h3 className="text-base font-bold text-white">Relevance Comparison</h3>
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">Prioritised Blind Spot Action Matrix:</h3>
+            
+            <div className="grid grid-cols-1 gap-3 text-xs font-light">
+              <div className="p-4 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <span className="text-red-400 font-mono font-bold text-[10px] uppercase block">Blind Spot 1: Missing Structured Schema</span>
+                  <p className="text-white/80">Competitors provide explicit JSON-LD data while your site relies on plain text prose.</p>
+                </div>
+                <div className="p-2.5 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-lg text-aeo-cyan font-mono text-[11px] font-semibold sm:w-64">
+                  Action: Deploy nested JSON-LD FAQPage &amp; Service schema graphs.
+                </div>
               </div>
-              <p className="text-xs text-white/70 leading-relaxed font-light">
-                <strong>Plain English:</strong> We measure how closely your site&apos;s meaning matches what potential clients are asking AI search engines.
-              </p>
-              <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-white/40">
-                <span>Technical Note: Calculated using Cosine Similarity over 768-dimensional text embeddings.</span>
-              </div>
-            </div>
 
-            {/* Semantic Dominance */}
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-aeo-purple" />
-                <h3 className="text-base font-bold text-white">Semantic Advantage</h3>
+              <div className="p-4 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <span className="text-red-400 font-mono font-bold text-[10px] uppercase block">Blind Spot 2: Unstructured Paragraphs</span>
+                  <p className="text-white/80">Long prose paragraphs drop out during RAG retrieval passes.</p>
+                </div>
+                <div className="p-2.5 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-lg text-aeo-cyan font-mono text-[11px] font-semibold sm:w-64">
+                  Action: Refactor copy into concise, atomic answer blocks.
+                </div>
               </div>
-              <p className="text-xs text-white/70 leading-relaxed font-light">
-                <strong>Plain English:</strong> We check whether your content provides clearer, more direct answers than your top local competitors.
-              </p>
-              <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-white/40">
-                <span>Technical Note: Net vector differential = (Client Similarity - Competitor Avg Similarity) * 100.</span>
-              </div>
-            </div>
 
-            {/* Schema & Structure */}
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-              <div className="flex items-center gap-2">
-                <Sliders className="w-4 h-4 text-aeo-cyan" />
-                <h3 className="text-base font-bold text-white">Structured Data Coverage</h3>
+              <div className="p-4 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <span className="text-red-400 font-mono font-bold text-[10px] uppercase block">Blind Spot 3: Thin Content Depth</span>
+                  <p className="text-white/80">Competitor sites cover intent sub-topics with greater topical detail.</p>
+                </div>
+                <div className="p-2.5 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-lg text-aeo-cyan font-mono text-[11px] font-semibold sm:w-64">
+                  Action: Expand context chunks targeting latent user questions.
+                </div>
               </div>
-              <p className="text-xs text-white/70 leading-relaxed font-light">
-                <strong>Plain English:</strong> We check if your website provides machine-readable facts that AI models can verify without guessing.
-              </p>
-              <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-white/40">
-                <span>Technical Note: Validates Schema.org JSON-LD microdata, internal linking depth, and RDF triple graphs.</span>
-              </div>
-            </div>
 
-            {/* RAG Survival */}
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-aeo-purple" />
-                <h3 className="text-base font-bold text-white">AI Retrieval Survival</h3>
-              </div>
-              <p className="text-xs text-white/70 leading-relaxed font-light">
-                <strong>Plain English:</strong> We test whether your key service answers stay intact when AI search engines generate response summaries.
-              </p>
-              <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-white/40">
-                <span>Technical Note: Tests chunk retention under synthetic prompt fan-out against a 0.62 similarity threshold.</span>
+              <div className="p-4 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <span className="text-red-400 font-mono font-bold text-[10px] uppercase block">Blind Spot 4: Weak Location Signals</span>
+                  <p className="text-white/80">Missing coordinate metadata prevents local map pack discovery.</p>
+                </div>
+                <div className="p-2.5 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-lg text-aeo-cyan font-mono text-[11px] font-semibold sm:w-64">
+                  Action: Embed regional location coordinates &amp; GeoShape tags.
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 6 — What the Score Means */}
+        {/* SECTION 8 — Worked Case Study Walkthrough */}
+        <section className="space-y-6 border-t border-white/5 pt-10">
+          <h2 className="text-2xl font-bold flex items-center gap-3">
+            <BarChart3 className="w-6 h-6 text-aeo-cyan" />
+            <span>Instructional Worked Example: Perth Local Business</span>
+          </h2>
+
+          <div className="p-6 bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl space-y-6">
+            <div className="flex flex-wrap justify-between items-center gap-4 border-b border-white/5 pb-4">
+              <div>
+                <span className="text-[10px] font-mono text-aeo-cyan uppercase tracking-wider block">Instructional Diagnostic Walkthrough</span>
+                <h3 className="text-base font-bold text-white">Local Service Provider (Perth, WA)</h3>
+              </div>
+              <span className="text-xs font-mono bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 px-3 py-1 rounded-full font-bold">
+                Target Query: &quot;AEO consultant Perth&quot;
+              </span>
+            </div>
+
+            {/* Step-by-Step Walkthrough */}
+            <div className="space-y-4 text-xs font-light">
+              <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                <span className="font-bold text-aeo-cyan font-mono text-[10px] uppercase block">Step 1: SERP Ingestion &amp; Competitor Set</span>
+                <p className="text-white/80 leading-relaxed">
+                  The audit scraped real-time organic search results for &quot;AEO consultant Perth&quot;, isolating the top 2 competing local domain homepages.
+                </p>
+              </div>
+
+              <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-aeo-purple font-mono text-[10px] uppercase block">Step 2: Similarity &amp; Dominance Results</span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-mono font-mono text-[11px] pt-1">
+                  <div className="p-2.5 bg-black/60 rounded-lg border border-white/5">
+                    <span className="text-white/40 block text-[9px]">Client Similarity</span>
+                    <span className="text-white font-bold text-sm">0.785</span>
+                  </div>
+                  <div className="p-2.5 bg-black/60 rounded-lg border border-white/5">
+                    <span className="text-white/40 block text-[9px]">Competitor Avg Similarity</span>
+                    <span className="text-white font-bold text-sm">0.692</span>
+                  </div>
+                  <div className="p-2.5 bg-black/60 rounded-lg border border-white/5">
+                    <span className="text-white/40 block text-[9px]">Semantic Advantage</span>
+                    <span className="text-aeo-cyan font-bold text-sm">+9.3%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
+                <span className="font-bold text-yellow-400 font-mono text-[10px] uppercase block">Step 3: Blind Spots Identified</span>
+                <p className="text-white/80 leading-relaxed">
+                  Although the client possessed positive semantic dominance (+9.3%), feature extraction revealed two key blind spots: initial Readiness Score was capped at 62 due to 0% Schema Completeness and unformatted prose paragraphs dropping out during synthetic prompt tests.
+                </p>
+              </div>
+
+              <div className="p-4 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-xl space-y-1">
+                <span className="font-bold text-aeo-cyan font-mono text-[10px] uppercase block">Step 4: Executed Next Actions &amp; Results</span>
+                <p className="text-white/90 leading-relaxed">
+                  Deployed nested JSON-LD microdata and restructured key service sections into atomic answer blocks. Outcome: Readiness Score climbed from 62 to 88, securing top citation placement in ChatGPT and Gemini local recommendation summaries within 30 days.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 9 — What the Score Means */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Award className="w-6 h-6 text-aeo-cyan" />
@@ -671,97 +936,10 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 7 — Gaps Competitors Are Covering Better */}
-        <section className="space-y-6 border-t border-white/5 pt-10">
-          <h2 className="text-2xl font-bold flex items-center gap-3">
-            <AlertTriangle className="w-6 h-6 text-aeo-purple" />
-            <span>Gaps Competitors Are Covering Better</span>
-          </h2>
-          <p className="text-sm text-white/80 leading-relaxed font-light">
-            When your business lags behind competitors, our audit pinpoints the exact structural gaps giving rival sites an advantage:
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-white/70 font-light">
-            <div className="flex items-start gap-3 p-4 bg-white/[0.01] border border-white/5 rounded-xl">
-              <span className="w-2 h-2 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
-              <div>
-                <strong className="text-white block mb-0.5">Missing Structured Schema</strong>
-                <span>Competitors provide explicit JSON-LD data (like FAQs and Services) while your site relies on plain text.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white/[0.01] border border-white/5 rounded-xl">
-              <span className="w-2 h-2 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
-              <div>
-                <strong className="text-white block mb-0.5">Unstructured Content Paragraphs</strong>
-                <span>Your site uses long prose without direct, atomic answer blocks formatted for quick extraction.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white/[0.01] border border-white/5 rounded-xl">
-              <span className="w-2 h-2 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
-              <div>
-                <strong className="text-white block mb-0.5">Thinner Content Depth</strong>
-                <span>Competitors cover related questions and sub-topics more thoroughly, giving AI models more context.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white/[0.01] border border-white/5 rounded-xl">
-              <span className="w-2 h-2 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
-              <div>
-                <strong className="text-white block mb-0.5">Weak Local Coordinate Signals</strong>
-                <span>Missing location microdata prevents regional AI search tools from routing nearby users to your business.</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 8 — Worked Real-World Case Example */}
-        <section className="space-y-6 border-t border-white/5 pt-10">
-          <h2 className="text-2xl font-bold flex items-center gap-3">
-            <BarChart3 className="w-6 h-6 text-aeo-cyan" />
-            <span>Real-World Example: Perth Local Service Business</span>
-          </h2>
-
-          <div className="p-6 bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl space-y-6">
-            <div className="flex flex-wrap justify-between items-center gap-4 border-b border-white/5 pb-4">
-              <div>
-                <span className="text-[10px] font-mono text-aeo-cyan uppercase tracking-wider block">Case Audit Study</span>
-                <h3 className="text-base font-bold text-white">Local Service Provider (Perth, WA)</h3>
-              </div>
-              <span className="text-xs font-mono bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 px-3 py-1 rounded-full font-bold">
-                Intent: &quot;AEO consultant Perth&quot;
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
-              <div className="p-4 bg-black/50 rounded-xl border border-white/5 space-y-1">
-                <span className="text-white/40 text-[10px] uppercase">Client Similarity Score</span>
-                <p className="text-lg font-bold text-white">0.785</p>
-                <span className="text-[10px] text-white/50">Closeness to search intent</span>
-              </div>
-              <div className="p-4 bg-black/50 rounded-xl border border-white/5 space-y-1">
-                <span className="text-white/40 text-[10px] uppercase">Competitor Avg Similarity</span>
-                <p className="text-lg font-bold text-white">0.692</p>
-                <span className="text-[10px] text-white/50">Top organic competitors</span>
-              </div>
-              <div className="p-4 bg-black/50 rounded-xl border border-white/5 space-y-1">
-                <span className="text-white/40 text-[10px] uppercase">Semantic Advantage</span>
-                <p className="text-lg font-bold text-aeo-cyan">+9.3%</p>
-                <span className="text-[10px] text-aeo-cyan">Positive market lead</span>
-              </div>
-            </div>
-
-            <div className="space-y-3 text-xs text-white/80 font-light">
-              <h4 className="font-bold text-white text-sm">Audit Findings &amp; What Was Fixed:</h4>
-              <p>
-                While the business held a positive semantic lead (+9.3%), the audit uncovered that top competitors had richer FAQ schema markup. AEObility deployed structured atomic answer blocks and nested JSON-LD microdata, increasing machine retrieval confidence across ChatGPT and Perplexity within 30 days.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 9 — Strategic Call to Action */}
+        {/* SECTION 10 — Strategic CTA */}
         <section className="p-8 bg-gradient-to-br from-aeo-purple/10 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono">
-            <span>Ready to see how you compare?</span>
+            <span>Ready to measure your query readiness score?</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             Run Your Free AI Visibility Diagnostic
