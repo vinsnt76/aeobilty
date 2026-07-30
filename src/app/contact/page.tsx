@@ -15,7 +15,10 @@ export const metadata: Metadata = {
     "book a digital marketing consultation",
     "small business optimization support",
     "aeobility contact information"
-  ]
+  ],
+  alternates: {
+    canonical: "https://aeobility.com.au/contact",
+  }
 };
 
 export default function ContactPage() {

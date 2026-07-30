@@ -6,6 +6,9 @@ import DiagnosticEngine from '@/components/DiagnosticEngine';
 export const metadata = {
   title: 'AI Visibility Diagnostic | AEObility',
   description: 'Measure your AI Search Visibility and find out how AI engines understand your business.',
+  alternates: {
+    canonical: "https://aeobility.com.au/diagnostic",
+  },
 };
 
 export default function DiagnosticPage() {

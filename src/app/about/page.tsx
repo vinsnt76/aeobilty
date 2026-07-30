@@ -15,7 +15,10 @@ export const metadata: Metadata = {
     "technical marketing architect",
     "jargon free optimization specialist",
     "australian marketing experts"
-  ]
+  ],
+  alternates: {
+    canonical: "https://aeobility.com.au/about",
+  }
 };
 
 export default function AboutPage() {
