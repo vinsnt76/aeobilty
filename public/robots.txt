@@ -3,25 +3,46 @@
 
 User-agent: *
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: Google-Extended
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: Applebot-Extended
 Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
 
 User-agent: Bytespider
 Allow: /

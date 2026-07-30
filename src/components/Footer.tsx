@@ -150,8 +150,13 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/about/freelance-digital-specialist-perth" className="hover:text-white transition-colors">
+                Digital Specialist Perth
+              </Link>
+            </li>
+            <li>
               <Link href="/solutions" className="hover:text-white transition-colors">
-                Overview & Sprints
+                Overview &amp; Sprints
               </Link>
             </li>
           </ul>

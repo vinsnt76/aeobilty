@@ -9,6 +9,8 @@ import { ArrowLeft } from 'lucide-react';
 import { roleConfigs } from '../config';
 import { notFound } from 'next/navigation';
 
+import CapabilityMatrix from '@/components/CapabilityMatrix';
+
 interface PageProps {
   params: Promise<{
     slug: string;
@@ -104,6 +106,7 @@ export default async function Page({ params }: PageProps) {
         ("Sharper, diagnostic, AEO > SEO theatre").
       */}
       <About />
+      {slug === 'freelance-digital-specialist-perth' && <CapabilityMatrix />}
       <Contact />
     </>
   );

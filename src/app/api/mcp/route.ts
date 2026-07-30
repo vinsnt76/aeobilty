@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
+import { corsHeaders, handleCorsOptions } from '@/lib/cors';
 
 export const runtime = 'edge';
+
+export async function OPTIONS() {
+  return handleCorsOptions();
+}
 
 export async function GET() {
   const mcpPayload = {
@@ -53,5 +58,7 @@ export async function GET() {
     ]
   };
 
-  return NextResponse.json(mcpPayload);
+  return NextResponse.json(mcpPayload, {
+    headers: corsHeaders,
+  });
 }

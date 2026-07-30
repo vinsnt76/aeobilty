@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { corsHeaders, handleCorsOptions } from '@/lib/cors';
 import { computeProximity } from '@/lib/telemetry/proximity';
 import { runSimulation } from '@/lib/telemetry/rag-sim';
 import { extractEntityGraph } from '@/lib/telemetry/graph';
@@ -14,6 +15,10 @@ import { generateInsightEngineResult } from '@/lib/telemetry/insight-engine';
 
 // Allow maximum duration (60s on Vercel Hobby) for telemetry processing
 export const maxDuration = 60;
+
+export async function OPTIONS() {
+  return handleCorsOptions();
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -93,12 +98,12 @@ export async function POST(req: NextRequest) {
     // Save to Cache
     await setTelemetryCache(url || '', intent, result);
 
-    return NextResponse.json(result);
+    return NextResponse.json(result, { headers: corsHeaders });
   } catch (error: unknown) {
     console.error('Telemetry run error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error running telemetry.', stack: error instanceof Error ? error.stack : undefined },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

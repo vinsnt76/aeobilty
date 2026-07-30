@@ -76,8 +76,8 @@ export default function RootLayout({
             `,
           }}
         />
-
-
+        <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
+        <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
       <body className="min-h-full flex flex-col">
         {/* Global Entity Schema */}
@@ -107,6 +107,26 @@ export default function RootLayout({
                     "https://www.instagram.com/aeo.bility/",
                     "https://www.facebook.com/profile.php?id=61591781069830",
                     "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
+                  ],
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://aeobility.com.au/api/search/answer?query={search_term_string}",
+                      "actionPlatform": [
+                        "http://schema.org/DesktopWebPlatform",
+                        "http://schema.org/MobileWebPlatform"
+                      ],
+                      "contentType": "application/json"
+                    },
+                    "query-input": "required name=search_term_string"
+                  },
+                  "publishingPrinciples": [
+                    {
+                      "@type": "DigitalDocument",
+                      "name": "Model Context Protocol Endpoint",
+                      "url": "https://aeobility.com.au/api/mcp"
+                    }
                   ]
                 },
                 {
@@ -120,6 +140,38 @@ export default function RootLayout({
                   ],
                   "worksFor": {
                     "@id": "https://aeobility.com.au"
+                  },
+                  "knowsAbout": [
+                    "Answer Engine Optimization",
+                    "Generative Engine Optimization",
+                    "Model Context Protocol",
+                    {
+                      "@type": "Thing",
+                      "name": "Information Retrieval",
+                      "sameAs": "https://en.wikipedia.org/wiki/Information_retrieval"
+                    },
+                    {
+                      "@type": "Thing",
+                      "name": "Natural Language Processing",
+                      "sameAs": "https://en.wikipedia.org/wiki/Natural_language_processing"
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://aeobility.com.au/#website",
+                  "url": "https://aeobility.com.au",
+                  "name": "AEObility",
+                  "publisher": {
+                    "@id": "https://aeobility.com.au"
+                  },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://aeobility.com.au/api/search/answer?query={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
                   }
                 },
                 {
@@ -132,8 +184,6 @@ export default function RootLayout({
                   "contentUrl": "https://aeobility.com.au/videos/explainer.mp4", 
                   "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
                   "publisher": {
-                    "@type": "Organization",
-                    "name": "AEObility",
                     "@id": "https://aeobility.com.au"
                   }
                 }

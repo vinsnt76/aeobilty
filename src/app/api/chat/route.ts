@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
+import { corsHeaders, handleCorsOptions } from '@/lib/cors';
 
 import { generateSystemTelemetryPrompt } from '@/lib/telemetry/compressor';
 
@@ -13,6 +13,10 @@ Mission: I am a technical diagnostic specialist representing AEObility. I analyz
 - Short Answer First: Provide a concise, direct answer in the very first sentence.
 - Response Length: Restrict responses strictly to 2-3 sentences max, unless the user explicitly asks to elaborate.
 - Focus strictly on content architecture and diagnostics.`;
+
+export async function OPTIONS() {
+  return handleCorsOptions();
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -78,12 +82,12 @@ Use this specific context to answer user questions about their score, their blin
     const data = await response.json();
     const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I am currently unable to reach the telemetry servers. Please try again in a moment.";
 
-    return NextResponse.json({ response: replyText });
+    return NextResponse.json({ response: replyText }, { headers: corsHeaders });
   } catch (error) {
     console.error("API Chat route error:", error);
     return NextResponse.json(
       { response: "I encountered an error connecting to the diagnostic engine. Please try again." },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

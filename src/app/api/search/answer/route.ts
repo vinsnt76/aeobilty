@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { corsHeaders, handleCorsOptions } from '@/lib/cors';
 import { KnowledgeNode, SearchQueryResponse } from '@/lib/search/types';
 import { 
   computeUncappedScore, 
@@ -11,6 +12,10 @@ import { toAustralianEnglish } from '@/lib/search/auEnglish';
 import knowledgeBaseData from '@/lib/search/knowledgeBase.json';
 
 const knowledgeBase = knowledgeBaseData as KnowledgeNode[];
+
+export async function OPTIONS() {
+  return handleCorsOptions();
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -187,12 +192,12 @@ Rules:
       resultType: 'visibility'
     };
 
-    return NextResponse.json(response);
+    return NextResponse.json(response, { headers: corsHeaders });
   } catch (error) {
     console.error('Answer Engine Search API error:', error);
     return NextResponse.json(
       { error: 'An error occurred processing the search query.' },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }
