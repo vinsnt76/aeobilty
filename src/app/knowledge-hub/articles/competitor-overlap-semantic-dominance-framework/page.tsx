@@ -35,7 +35,8 @@ import {
   Code,
   FileCode,
   Terminal,
-  Database
+  Database,
+  HelpCircle
 } from 'lucide-react';
 
 export const metadata = {
@@ -188,6 +189,44 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             "position": 4,
             "name": "Competitor Overlap & Semantic Dominance Framework",
             "item": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Competitor Overlap & Semantic Dominance Framework?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is AEObility’s diagnostic for measuring how well your business is represented in Search, Maps, and AI results compared with the competitors already winning for that intent. It looks at semantic overlap, structured data, content depth, and retrieval readiness to show where your business is clear, competitive, or at risk."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does competitor overlap matter for AI search?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI systems tend to retrieve content that is semantically closer to the question and better structured for interpretation. If competitors occupy more of the relevant semantic space, they are more likely to be surfaced, even when your business is relevant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the AI Search Readiness Score include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The score combines semantic proximity, competitor overlap, structured data, technical health, entity signals, and content depth into a single intent-specific result. AEObility then maps that result into tiers such as At Risk, Emerging, Competitive, or Dominant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AEObility turn this into action?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AEObility uses the diagnostic to identify blind spots such as missing schema, weak entity coverage, thin content, or poor retrieval survival. The output is a prioritised action plan showing what to fix first to improve visibility and selection across AI systems."
+            }
           }
         ]
       }
@@ -931,6 +970,55 @@ export default function CompetitorOverlapFrameworkArticlePage() {
               <span className="font-mono text-red-400 font-bold text-sm block">0–44: At Risk</span>
               <p className="text-white/60 leading-relaxed">
                 AI search models struggle to parse your business, resulting in zero citation share and low discovery.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 10 — Frequently Asked Questions */}
+        <section className="space-y-6 border-t border-white/5 pt-10">
+          <div className="space-y-2">
+            <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Common Questions</span>
+            <h2 className="text-2xl font-bold flex items-center gap-3">
+              <HelpCircle className="w-6 h-6 text-aeo-cyan" />
+              <span>Frequently Asked Questions</span>
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <span className="text-aeo-cyan font-mono text-xs">Q1.</span> What is the Competitor Overlap &amp; Semantic Dominance Framework?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                It is AEObility’s diagnostic for measuring how well your business is represented in Search, Maps, and AI results compared with the competitors already winning for that intent. It looks at semantic overlap, structured data, content depth, and retrieval readiness to show where your business is clear, competitive, or at risk.
+              </p>
+            </div>
+
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <span className="text-aeo-purple font-mono text-xs">Q2.</span> Why does competitor overlap matter for AI search?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                AI systems tend to retrieve content that is semantically closer to the question and better structured for interpretation. If competitors occupy more of the relevant semantic space, they are more likely to be surfaced, even when your business is relevant.
+              </p>
+            </div>
+
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <span className="text-aeo-cyan font-mono text-xs">Q3.</span> What does the AI Search Readiness Score include?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                The score combines semantic proximity, competitor overlap, structured data, technical health, entity signals, and content depth into a single intent-specific result. AEObility then maps that result into tiers such as At Risk, Emerging, Competitive, or Dominant.
+              </p>
+            </div>
+
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <span className="text-aeo-purple font-mono text-xs">Q4.</span> How does AEObility turn this into action?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                AEObility uses the diagnostic to identify blind spots such as missing schema, weak entity coverage, thin content, or poor retrieval survival. The output is a prioritised action plan showing what to fix first to improve visibility and selection across AI systems.
               </p>
             </div>
           </div>
