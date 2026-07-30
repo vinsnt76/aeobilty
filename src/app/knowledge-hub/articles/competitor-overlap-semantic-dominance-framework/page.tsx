@@ -36,12 +36,14 @@ import {
   FileCode,
   Terminal,
   Database,
-  HelpCircle
+  HelpCircle,
+  Table,
+  ChevronDown
 } from 'lucide-react';
 
 export const metadata = {
   title: "Competitor Overlap & Semantic Dominance Framework | AEObility",
-  description: "A technical guide by AEObility for Australian businesses to measure competitor overlap, semantic dominance, and vector proximity across Perth, Australia, and New Zealand.",
+  description: "A technical, query-specific diagnostic framework that measures competitor overlap, semantic dominance, and AEO readiness for Perth, Australia and New Zealand businesses.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework",
   },
@@ -52,6 +54,15 @@ export default function CompetitorOverlapFrameworkArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "url": "https://aeobility.com.au/",
+        "name": "AEObility",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
+      },
+      {
         "@type": "Organization",
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
@@ -59,23 +70,37 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "logo": {
           "@type": "ImageObject",
           "url": "https://aeobility.com.au/android-chrome-512x512.png"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://aeobility.com.au/#website",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au/",
-        "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/aeobility"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "addressCountry": "Australia"
+        },
+        "areaServed": [
+          {
+            "@type": "Place",
+            "name": "Perth, Western Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "New Zealand"
+          }
+        ]
       },
       {
         "@type": "Person",
         "@id": "https://aeobility.com.au/vince-baker#author",
         "name": "Vince Baker",
         "url": "https://aeobility.com.au/vince-baker",
-        "jobTitle": "Founder & AI Search Consultant",
+        "jobTitle": "Senior Information Architect & AEO Consultant",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         }
@@ -84,83 +109,60 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework",
-        "name": "Competitor Overlap & Semantic Dominance Framework",
-        "description": "A practical guide explaining how AEObility compares your business against competitors in AI search, identifies key visibility gaps, and builds a clear action plan.",
+        "name": "Competitor Overlap & Semantic Dominance Framework | AEObility",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#breadcrumb"
-        }
-      },
-      {
-        "@type": "Article",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#article",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#webpage"
         },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework"
-        },
-        "headline": "Competitor Overlap & Semantic Dominance Framework",
-        "description": "Learn how AEObility evaluates competitor overlap, semantic dominance, and AI search readiness. Discover how your business compares to competitors and what to fix first.",
-        "author": {
-          "@id": "https://aeobility.com.au/vince-baker#author"
-        },
-        "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "image": {
+        "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/competitor-overlap-and-semantic-dominance_AEObility.webp",
-          "caption": "AEObility Competitor Overlap and Semantic Dominance Framework diagram illustrating AI search vector proximity, RAG retrieval survival, and Schema.org entity clarity scoring for local service businesses in Perth Australia"
+          "url": "https://aeobility.com.au/competitor-overlap-and-semantic-dominance_AEObility.webp"
         },
-        "inLanguage": "en-AU"
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#howto",
-        "name": "AEObility Competitor Overlap & Semantic Dominance Audit Workflow",
-        "description": "Follow AEObility's 6-step audit process to compare your content against competitors, identify visibility gaps, and turn your score into a prioritised action plan.",
-        "step": [
+        "about": [
           {
-            "@type": "HowToStep",
-            "position": 1,
-            "name": "Define Target Search Intent",
-            "text": "Identify the primary query prospective clients use when searching for your services."
+            "@type": "Thing",
+            "name": "Answer Engine Optimisation"
           },
           {
-            "@type": "HowToStep",
-            "position": 2,
-            "name": "Identify Active Competitors",
-            "text": "Scrape real-time organic search results to determine which competitor websites currently occupy search attention."
+            "@type": "Thing",
+            "name": "Competitor Overlap Analysis"
           },
           {
-            "@type": "HowToStep",
-            "position": 3,
-            "name": "Compare Content & Structure",
-            "text": "Evaluate how clearly your content matches the intent compared to rival pages, checking relevance, depth, and Schema.org markup."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 4,
-            "name": "Test AI Retrieval Survival",
-            "text": "Run synthetic query variations to verify whether your core service answers stay intact during AI answer generation."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 5,
-            "name": "Calculate Your Readiness Score",
-            "text": "Combine metrics across 5 weighted vectors into an overall AI Search Readiness rating (0–100)."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 6,
-            "name": "Build a Prioritised Action Plan",
-            "text": "Translate technical gaps into a clear 90-day execution roadmap to improve machine recommendations."
+            "@type": "Thing",
+            "name": "Semantic Dominance Scoring"
           }
-        ]
+        ],
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Cosine similarity"
+          },
+          {
+            "@type": "Thing",
+            "name": "Vector proximity"
+          },
+          {
+            "@type": "Thing",
+            "name": "Schema.org"
+          },
+          {
+            "@type": "Thing",
+            "name": "RAG survival testing"
+          },
+          {
+            "@type": "Thing",
+            "name": "Gemini"
+          },
+          {
+            "@type": "Thing",
+            "name": "Brave Search"
+          }
+        ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#article"
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -169,27 +171,98 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Home",
-            "item": "https://aeobility.com.au/"
+            "item": {
+              "@id": "https://aeobility.com.au/",
+              "name": "Home"
+            }
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Knowledge Hub",
-            "item": "https://aeobility.com.au/knowledge-hub"
+            "item": {
+              "@id": "https://aeobility.com.au/knowledge-hub",
+              "name": "Knowledge Hub"
+            }
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Articles",
-            "item": "https://aeobility.com.au/knowledge-hub/articles"
+            "item": {
+              "@id": "https://aeobility.com.au/knowledge-hub/articles",
+              "name": "Articles"
+            }
           },
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Competitor Overlap & Semantic Dominance Framework",
-            "item": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework"
+            "item": {
+              "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework",
+              "name": "Competitor Overlap & Semantic Dominance Framework"
+            }
           }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#article",
+        "headline": "Competitor Overlap & Semantic Dominance Framework",
+        "alternativeHeadline": "How AEObility Diagnoses Query-Specific Semantic Dominance Against Your Competitors",
+        "description": "A technical, query-specific diagnostic framework that measures competitor overlap, semantic dominance, and AEO readiness for Perth, Australia and New Zealand businesses.",
+        "articleSection": [
+          "Diagnostic Principle",
+          "Regional Relevance",
+          "Technical Methodology",
+          "Four Core Questions",
+          "Audience Segmentation",
+          "Six-Step Audit Process",
+          "Module Breakdown",
+          "Blind Spot Matrix",
+          "Worked Example",
+          "Readiness Score Tiers",
+          "FAQ"
+        ],
+        "author": {
+          "@id": "https://aeobility.com.au/vince-baker#author"
+        },
+        "creator": {
+          "@id": "https://aeobility.com.au/vince-baker#author"
+        },
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#webpage"
+        },
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "inLanguage": "en-AU",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Answer Engine Optimisation (AEO)"
+          },
+          {
+            "@type": "Thing",
+            "name": "Competitor overlap"
+          },
+          {
+            "@type": "Thing",
+            "name": "Semantic dominance"
+          },
+          {
+            "@type": "Thing",
+            "name": "AEO readiness scoring"
+          }
+        ],
+        "keywords": [
+          "Answer Engine Optimisation",
+          "AEO consultant Perth",
+          "competitor overlap",
+          "semantic dominance framework",
+          "RAG survival",
+          "schema.org auditing",
+          "vector proximity",
+          "cosine similarity"
         ]
       },
       {
@@ -201,34 +274,86 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             "name": "What is the Competitor Overlap & Semantic Dominance Framework?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It is AEObility’s diagnostic for measuring how well your business is represented in Search, Maps, and AI results compared with the competitors already winning for that intent. It looks at semantic overlap, structured data, content depth, and retrieval readiness to show where your business is clear, competitive, or at risk."
+              "text": "It is a query-specific diagnostic methodology that measures how strongly your site competes for a given intent by analysing competitor overlap, semantic coverage, technical readiness, and authority signals."
             }
           },
           {
             "@type": "Question",
-            "name": "Why does competitor overlap matter for AI search?",
+            "name": "Why does competitor overlap matter for AEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AI systems tend to retrieve content that is semantically closer to the question and better structured for interpretation. If competitors occupy more of the relevant semantic space, they are more likely to be surfaced, even when your business is relevant."
+              "text": "Competitor overlap shows which sites consistently appear for the same intent across engines, revealing who answer systems trust and where your site is missing from the dominant cluster."
             }
           },
           {
             "@type": "Question",
-            "name": "What does the AI Search Readiness Score include?",
+            "name": "What goes into the AEO readiness score?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The score combines semantic proximity, competitor overlap, structured data, technical health, entity signals, and content depth into a single intent-specific result. AEObility then maps that result into tiers such as At Risk, Emerging, Competitive, or Dominant."
+              "text": "The score blends semantic coverage, technical implementation, entity clarity, competitor presence, and authority signals into a single readiness metric for a specific query."
             }
           },
           {
             "@type": "Question",
-            "name": "How does AEObility turn this into action?",
+            "name": "How does AEObility turn this framework into practical actions?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AEObility uses the diagnostic to identify blind spots such as missing schema, weak entity coverage, thin content, or poor retrieval survival. The output is a prioritised action plan showing what to fix first to improve visibility and selection across AI systems."
+              "text": "AEObility converts diagnostic findings into concrete content, schema, and entity recommendations so your site can move from at-risk or emerging into competitive or dominant tiers for the target query."
             }
           }
         ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#howto",
+        "name": "Six-Step Competitor Overlap & Semantic Dominance Audit",
+        "description": "A structured six-step process AEObility uses to diagnose query-specific AEO readiness against competitors.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Define the target query and region",
+            "text": "Select a single, high-value query and specify the geographic focus, such as Perth, Australia or New Zealand."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Ingest competitor results across engines",
+            "text": "Collect top results from multiple engines and answer systems to identify overlapping competitors for the chosen query."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Measure vector proximity and semantic coverage",
+            "text": "Use cosine similarity and vector analysis to compare your content’s semantic coverage against the dominant competitor cluster."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Audit technical and schema readiness",
+            "text": "Evaluate schema.org implementation, structured data completeness, and technical signals that affect retrieval and answer engines."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Run RAG survival and blind spot checks",
+            "text": "Test whether your content survives retrieval thresholds and identify blind spots such as thin content or missing entities."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 6,
+            "name": "Calculate readiness score and prioritise actions",
+            "text": "Combine semantic, technical, entity, competitor, and authority metrics into a readiness score and derive a prioritised action plan."
+          }
+        ]
+      },
+      {
+        "@type": "Rating",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#readiness-tiers",
+        "name": "AEO Readiness Score Tiers",
+        "bestRating": 100,
+        "worstRating": 0,
+        "ratingExplanation": "Dominant: 85–100, Competitive: 65–84, Emerging: 45–64, At Risk: 0–44"
       }
     ]
   };
@@ -359,7 +484,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Knowledge Hub • Technical Article</span>
+              <span>Knowledge Hub • Level 3 Technical Guide</span>
             </div>
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-xs text-aeo-cyan font-mono font-semibold">
               <Crosshair className="w-3.5 h-3.5" />
@@ -458,40 +583,40 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           <p className="text-white/70 text-sm leading-relaxed font-light">
             Instead of relying on keyword density or link counts, our framework answers four essential commercial questions:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0">
+            <li className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
               <h3 className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" /> 1. Visibility Check
               </h3>
               <p className="text-xs text-white/60 leading-relaxed font-light">
                 Does your business surface when prospective clients ask AI search engines for local recommendations?
               </p>
-            </div>
-            <div className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
+            </li>
+            <li className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
               <h3 className="text-sm font-bold text-aeo-purple flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" /> 2. Machine Understanding
               </h3>
               <p className="text-xs text-white/60 leading-relaxed font-light">
                 Do AI models accurately parse your core services, locations, and value propositions?
               </p>
-            </div>
-            <div className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
+            </li>
+            <li className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
               <h3 className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" /> 3. Competitor Benchmarking
               </h3>
               <p className="text-xs text-white/60 leading-relaxed font-light">
                 Is your content clearer and better structured than rival websites in your target market?
               </p>
-            </div>
-            <div className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
+            </li>
+            <li className="p-5 bg-white/[0.01] border border-white/5 rounded-xl space-y-2">
               <h3 className="text-sm font-bold text-aeo-purple flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" /> 4. Prioritised Actions
               </h3>
               <p className="text-xs text-white/60 leading-relaxed font-light">
                 What structural changes, schema additions, or content rewrites should you execute first?
               </p>
-            </div>
-          </div>
+            </li>
+          </ul>
         </section>
 
         {/* SECTION 3 — Who This Article Is For */}
@@ -721,7 +846,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 5 — Standardised Component Deep-Dive Modules (Structured Schema: What, How, Inputs, Outputs, Action) */}
+        {/* SECTION 5 — Standardised Component Deep-Dive Modules */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <div className="space-y-2">
             <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Technical Breakdown</span>
@@ -731,6 +856,19 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             </h2>
             <p className="text-xs text-white/60 font-light">
               Each module follows a structured diagnostic schema: What It Does, How It Works, Inputs, Outputs, and Action Implications.
+            </p>
+          </div>
+
+          {/* Why Cosine Similarity Matters Callout */}
+          <div className="p-5 bg-aeo-purple/5 border border-aeo-purple/20 rounded-2xl space-y-2">
+            <div className="flex items-center gap-2">
+              <Network className="w-4 h-4 text-aeo-purple" />
+              <h3 className="text-xs font-bold text-aeo-purple font-mono uppercase tracking-wider">
+                Why Cosine Similarity Matters for Vector Proximity
+              </h3>
+            </div>
+            <p className="text-xs text-white/80 leading-relaxed font-light">
+              Cosine similarity computes the dot product of two normalized 768-dimensional vectors divided by their magnitudes. Because it measures the angle between vectors rather than their spatial distance, it evaluates pure semantic direction—ensuring content length variations do not distort relevance measurement against competitors.
             </p>
           </div>
 
@@ -786,6 +924,40 @@ export default function CompetitorOverlapFrameworkArticlePage() {
               </div>
             ))}
           </div>
+
+          {/* Module Summary Table */}
+          <div className="mt-8 space-y-3">
+            <div className="flex items-center gap-2">
+              <Table className="w-4 h-4 text-aeo-cyan" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                Module Summary Matrix
+              </h3>
+            </div>
+            <div className="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.01]">
+              <table className="w-full text-left text-xs font-light border-collapse min-w-[650px]">
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/5 font-mono text-aeo-cyan text-[11px]">
+                    <th className="p-3">Module Name</th>
+                    <th className="p-3">Code File</th>
+                    <th className="p-3">Primary Input</th>
+                    <th className="p-3">Key Output</th>
+                    <th className="p-3">Action Result</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-white/80">
+                  {standardizedModules.map((mod, i) => (
+                    <tr key={i} className="hover:bg-white/[0.02]">
+                      <td className="p-3 font-semibold text-white">{mod.name.replace(/^\d+\.\s*/, '')}</td>
+                      <td className="p-3 font-mono text-aeo-purple text-[11px]">{mod.codeFile}</td>
+                      <td className="p-3 font-mono text-[11px] text-white/60">{mod.inputs.split('(')[0]}</td>
+                      <td className="p-3 font-mono text-[11px] text-aeo-cyan">{mod.outputs.split('(')[0]}</td>
+                      <td className="p-3 text-white/70">{mod.actionImplications.split('.')[0]}.</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
 
         {/* SECTION 6 — Dedicated Code Architecture & File Mapping */}
@@ -813,6 +985,20 @@ export default function CompetitorOverlapFrameworkArticlePage() {
                 <p className="text-xs text-white/70 leading-relaxed font-light">{c.summary}</p>
               </div>
             ))}
+          </div>
+
+          {/* Developer Notes Collapsible / Callout Box */}
+          <div className="p-5 bg-black/60 border border-white/10 rounded-xl space-y-3 font-mono text-xs">
+            <div className="flex items-center gap-2 text-aeo-cyan font-bold">
+              <Terminal className="w-4 h-4" />
+              <span>Developer Notes &amp; Engine Constants</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-white/70">
+              <div>• <code>RAG_RETENTION_THRESHOLD</code> = 0.62</div>
+              <div>• <code>EMBEDDING_MODEL</code> = text-embedding-004</div>
+              <div>• <code>VECTOR_DIMENSION</code> = 768</div>
+              <div>• <code>WEIGHTS</code> = Semantic 40%, Technical 20%, Entity 15%</div>
+            </div>
           </div>
         </section>
 
@@ -933,6 +1119,49 @@ export default function CompetitorOverlapFrameworkArticlePage() {
                   Deployed nested JSON-LD microdata and restructured key service sections into atomic answer blocks. Outcome: Readiness Score climbed from 62 to 88, securing top citation placement in ChatGPT and Gemini local recommendation summaries within 30 days.
                 </p>
               </div>
+
+              {/* Comparative Before/After Table */}
+              <div className="pt-4 border-t border-white/5 space-y-2">
+                <span className="text-xs font-mono font-bold text-white uppercase block">Before vs. After Optimization Table</span>
+                <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40">
+                  <table className="w-full text-left text-[11px] font-mono border-collapse">
+                    <thead>
+                      <tr className="border-b border-white/10 bg-white/5 text-aeo-cyan">
+                        <th className="p-2.5">Metric</th>
+                        <th className="p-2.5">Before Audit</th>
+                        <th className="p-2.5">After AEO Sprint</th>
+                        <th className="p-2.5">Net Delta</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5 text-white/80">
+                      <tr>
+                        <td className="p-2.5 font-bold text-white">Semantic Similarity</td>
+                        <td className="p-2.5 text-white/60">0.785</td>
+                        <td className="p-2.5 text-aeo-cyan font-bold">0.862</td>
+                        <td className="p-2.5 text-aeo-cyan">+0.077</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2.5 font-bold text-white">Schema Completeness</td>
+                        <td className="p-2.5 text-red-400">0%</td>
+                        <td className="p-2.5 text-aeo-cyan font-bold">100%</td>
+                        <td className="p-2.5 text-aeo-cyan">+100%</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2.5 font-bold text-white">RAG Chunk Survival Rate</td>
+                        <td className="p-2.5 text-yellow-400">45%</td>
+                        <td className="p-2.5 text-aeo-cyan font-bold">92%</td>
+                        <td className="p-2.5 text-aeo-cyan">+47%</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2.5 font-bold text-white">Overall Readiness Score</td>
+                        <td className="p-2.5 text-yellow-400">62 (Emerging)</td>
+                        <td className="p-2.5 text-aeo-cyan font-bold">88 (Dominant)</td>
+                        <td className="p-2.5 text-aeo-cyan">+26 pts</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -991,40 +1220,40 @@ export default function CompetitorOverlapFrameworkArticlePage() {
                 <span className="text-aeo-cyan font-mono text-xs">Q1.</span> What is the Competitor Overlap &amp; Semantic Dominance Framework?
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                It is AEObility’s diagnostic for measuring how well your business is represented in Search, Maps, and AI results compared with the competitors already winning for that intent. It looks at semantic overlap, structured data, content depth, and retrieval readiness to show where your business is clear, competitive, or at risk.
+                It is a query-specific diagnostic methodology that measures how strongly your site competes for a given intent by analysing competitor overlap, semantic coverage, technical readiness, and authority signals.
               </p>
             </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <span className="text-aeo-purple font-mono text-xs">Q2.</span> Why does competitor overlap matter for AI search?
+                <span className="text-aeo-purple font-mono text-xs">Q2.</span> Why does competitor overlap matter for AEO?
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                AI systems tend to retrieve content that is semantically closer to the question and better structured for interpretation. If competitors occupy more of the relevant semantic space, they are more likely to be surfaced, even when your business is relevant.
+                Competitor overlap shows which sites consistently appear for the same intent across engines, revealing who answer systems trust and where your site is missing from the dominant cluster.
               </p>
             </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono text-xs">Q3.</span> What does the AI Search Readiness Score include?
+                <span className="text-aeo-cyan font-mono text-xs">Q3.</span> What goes into the AEO readiness score?
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                The score combines semantic proximity, competitor overlap, structured data, technical health, entity signals, and content depth into a single intent-specific result. AEObility then maps that result into tiers such as At Risk, Emerging, Competitive, or Dominant.
+                The score blends semantic coverage, technical implementation, entity clarity, competitor presence, and authority signals into a single readiness metric for a specific query.
               </p>
             </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <span className="text-aeo-purple font-mono text-xs">Q4.</span> How does AEObility turn this into action?
+                <span className="text-aeo-purple font-mono text-xs">Q4.</span> How does AEObility turn this framework into practical actions?
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                AEObility uses the diagnostic to identify blind spots such as missing schema, weak entity coverage, thin content, or poor retrieval survival. The output is a prioritised action plan showing what to fix first to improve visibility and selection across AI systems.
+                AEObility converts diagnostic findings into concrete content, schema, and entity recommendations so your site can move from at-risk or emerging into competitive or dominant tiers for the target query.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 10 — Strategic CTA */}
+        {/* SECTION 11 — Strategic CTA */}
         <section className="p-8 bg-gradient-to-br from-aeo-purple/10 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono">
             <span>Ready to measure your query readiness score?</span>
