@@ -8,6 +8,7 @@ const urlList = [
   `https://${HOST}/knowledge-hub/semantic-seo`,
   `https://${HOST}/knowledge-hub/geo`,
   `https://${HOST}/knowledge-hub/articles`,
+  `https://${HOST}/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
   `https://${HOST}/knowledge-hub/articles/entity-authority-building`,
   `https://${HOST}/knowledge-hub/articles/positional-bias-in-retrieval`,
   `https://${HOST}/knowledge-hub/articles/aeo-vs-seo`,
@@ -16,6 +17,7 @@ const urlList = [
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
   `https://www.aeobility.com.au/knowledge-hub`,
   `https://www.aeobility.com.au/knowledge-hub/articles`,
+  `https://www.aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
   `https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building`,
   `https://www.aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`
 ];
