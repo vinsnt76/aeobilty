@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -104,6 +105,11 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organization"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/competitor-overlap-and-semantic-dominance_AEObility.webp",
+          "caption": "AEObility Competitor Overlap and Semantic Dominance Framework diagram illustrating AI search vector proximity, RAG retrieval survival, and Schema.org entity clarity scoring for local service businesses in Perth Australia"
         },
         "inLanguage": "en-AU"
       },
@@ -248,6 +254,24 @@ export default function CompetitorOverlapFrameworkArticlePage() {
               <MapPin className="w-3.5 h-3.5 text-aeo-purple" />
               <span>Location: <strong className="text-white">Perth, Australia &amp; New Zealand</strong></span>
             </span>
+          </div>
+
+          {/* Article Banner Image */}
+          <div className="relative w-full h-[260px] sm:h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-950 my-6 group">
+            <Image
+              src="/competitor-overlap-and-semantic-dominance_AEObility.webp"
+              alt="AEObility Competitor Overlap and Semantic Dominance Framework diagram illustrating AI search vector proximity, RAG retrieval survival, and Schema.org entity clarity scoring for local service businesses in Perth Australia"
+              fill
+              priority
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-xs font-mono text-white/70">
+              <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-aeo-cyan">
+                AEObility Architecture Diagram: Competitor Overlap &amp; Semantic Dominance
+              </span>
+            </div>
           </div>
         </header>
 
