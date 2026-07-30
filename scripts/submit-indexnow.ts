@@ -3,6 +3,8 @@ const KEY = "99f72a3935774040b8814ad6a76e6e59";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
+  `https://${HOST}`,
+  `https://${HOST}/about/freelance-digital-specialist-perth`,
   `https://${HOST}/knowledge-hub`,
   `https://${HOST}/knowledge-hub/aeo`,
   `https://${HOST}/knowledge-hub/semantic-seo`,

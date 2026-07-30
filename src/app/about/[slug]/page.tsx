@@ -46,12 +46,12 @@ export default async function Page({ params }: PageProps) {
     "@graph": [
       {
         "@type": "ProfessionalService",
-        "@id": `https://vincebaker.dev/about/${config.slug}#service`,
+        "@id": `https://aeobility.com.au/about/${config.slug}#service`,
         "name": config.metadata.title.split('|')[0].trim(),
-        "image": "https://vincebaker.dev/images/vince-baker-seo-specialist.jpg",
+        "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
         "description": config.metadata.description,
-        "url": `https://vincebaker.dev/about/${config.slug}`,
-        "telephone": "", 
+        "url": `https://aeobility.com.au/about/${config.slug}`,
+        "telephone": "0480286282", 
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -66,17 +66,16 @@ export default async function Page({ params }: PageProps) {
           "longitude": "115.8500"
         },
         "founder": {
-          "@id": "https://vincebaker.dev/#person"
+          "@id": "https://aeobility.com.au/#person"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://vincebaker.dev/#person",
-        "name": "Vince Baker",
-        "jobTitle": "Technical Architect & Consultant",
+        "@id": "https://aeobility.com.au/#person",
+        "name": "Vinnie Baker",
+        "jobTitle": "Founder & AEO Specialist",
         "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance"
+          "@id": "https://aeobility.com.au"
         }
       }
     ]
