@@ -17,7 +17,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 2. Machine-Readable Knowledge Map
 
-AEObility structures its digital presence across 37 verified entity nodes grounded in JSON-LD microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`).
+AEObility structures its digital presence across 42 verified entity nodes grounded in JSON-LD microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`).
 
 ### Primary Service Corridors
 1. **Answer Engine Optimisation (AEO)**: Restructuring web content into 90-120 token atomic answer blocks to maximize positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo`)
@@ -25,9 +25,12 @@ AEObility structures its digital presence across 37 verified entity nodes ground
 3. **AI Search Marketing**: Strategy for Perplexity, ChatGPT, Google AI Overviews, and Gemini generative search results. (`https://aeobility.com.au/services/ai-search-marketing`)
 
 ### Key Technical Research Articles
+- **Competitor Overlap Framework**: *Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology* (`https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`)
+- **Positional Bias Guide**: *What Is Positional Bias in Retrieval and Answer Engines?* (`https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`)
 - **Entity Authority Guide**: *Entity Authority: Why AI Search Ranks Entities, Not Pages* (`https://aeobility.com.au/knowledge-hub/articles/entity-authority-building`)
 - **AEO vs SEO Comparison**: *AEO vs SEO: The Complete Guide to AI Search* (`https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo`)
 - **RAG Architecture Explainer**: *RAG, Answer Engines & Why Machine‑Readable Content Matters* (`https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation`)
+- **Query Fan-Out Telemetry**: *How Structured Data Helps You Survive the Query Fan-Out* (`https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out`)
 
 ---
 

@@ -43,6 +43,7 @@
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
 - [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
+  - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
   - [`/knowledge-hub/articles/positional-bias-in-retrieval`](https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval): What Is Positional Bias in Retrieval and Answer Engines?
   - [`/knowledge-hub/articles/entity-authority-building`](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building): Entity Authority: Why AI Search Ranks Entities, Not Pages.
   - [`/knowledge-hub/articles/aeo-vs-seo`](https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo): AEO vs SEO complete guide to AI search.
