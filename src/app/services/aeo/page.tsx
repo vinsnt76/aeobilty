@@ -230,7 +230,7 @@ export default function AEORootPage() {
           {
             "@type": "DefinedTerm",
             "name": "Entity",
-            "description": "A distinct, well-defined conceptual object (like a business, person, or location) that machines recognize and link."
+            "description": "A distinct, well-defined conceptual object (like a business, person, or location) that machines recognise and link."
           },
           {
             "@type": "DefinedTerm",
@@ -256,6 +256,26 @@ export default function AEORootPage() {
             "@type": "DefinedTerm",
             "name": "RAG (Retrieval-Augmented Generation)",
             "description": "The technical framework of pulling external site data to enrich LLM response generations."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Semantic Lattice Map",
+            "description": "A structured layout framework that interconnects schema entities, RDF triples, and context chunks into a high-density knowledge graph optimised for machine indexing."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Positional Bias",
+            "description": "The technical phenomenon where AI retrieval and synthesis models give disproportionate weight to information at the head or tail of a document, causing middle context to be under-indexed."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Semantic Density",
+            "description": "The ratio of explicit, machine-readable entity facts and structured data nodes relative to total token volume within a given context chunk."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Retrieval Strength",
+            "description": "A mathematical vector similarity metric scoring how accurately and confidently a document chunk matches a conversational query embedding during RAG processing."
           }
         ]
       },
@@ -380,12 +400,16 @@ export default function AEORootPage() {
   ];
 
   const glossaryTerms = [
-    { term: "Entity", definition: "A distinct, well-defined conceptual object (like a business, person, or location) that machines recognize and link." },
+    { term: "Entity", definition: "A distinct, well-defined conceptual object (like a business, person, or location) that machines recognise and link." },
     { term: "Salience", definition: "A mathematical score reflecting how relevant a specific entity is within a given body of content." },
     { term: "Atomic Answer Block", definition: "A concise, direct text response structured specifically for extraction, indexing, and synthesis by LLMs." },
     { term: "Context Chunk", definition: "A section of text parsed by crawlers containing enough semantic relationships to convey a complete answer." },
     { term: "Citation Index", definition: "A metric that scores how often and how confidently conversational search engines quote your business." },
-    { term: "RAG (Retrieval-Augmented Generation)", definition: "The technical framework of pulling external site data to enrich LLM response generations." }
+    { term: "RAG (Retrieval-Augmented Generation)", definition: "The technical framework of pulling external site data to enrich LLM response generations." },
+    { term: "Semantic Lattice Map", definition: "A structured layout framework that interconnects schema entities, RDF triples, and context chunks into a high-density knowledge graph optimised for machine indexing." },
+    { term: "Positional Bias", definition: "The technical phenomenon where AI retrieval and synthesis models give disproportionate weight to information at the head or tail of a document, causing middle context to be under-indexed." },
+    { term: "Semantic Density", definition: "The ratio of explicit, machine-readable entity facts and structured data nodes relative to total token volume within a given context chunk." },
+    { term: "Retrieval Strength", definition: "A mathematical vector similarity metric scoring how accurately and confidently a document chunk matches a conversational query embedding during RAG processing." }
   ];
 
   const workflowSteps = [

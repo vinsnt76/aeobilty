@@ -10,7 +10,8 @@ const DOMAIN_KEYWORDS = new Set([
   'author', 'vince', 'baker', 'aeobility', 'case', 'bento', 'contact', 'book',
   'support', 'ai', 'engine', 'optimisation', 'optimization', 'keyword', 'meta',
   'site', 'website', 'web', 'conversion', 'lead', 'leads', 'client', 'agency',
-  'semantic', 'salience', 'triples', 'rdf', 'vector', 'dense', 'retrieval'
+  'semantic', 'salience', 'triples', 'rdf', 'vector', 'dense', 'retrieval',
+  'lattice', 'bias', 'density', 'strength', 'positional'
 ]);
 
 export function buildVector(text: string, dim = VECTOR_DIM): number[] {
