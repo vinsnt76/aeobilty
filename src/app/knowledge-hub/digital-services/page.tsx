@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: "Digital Services | AEObility",
-  description: "Welcome to our premier digital solutions hub.",
+  description: "Semantic density tutorial and answer engine stress test.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/digital-services",
   },
@@ -40,7 +40,7 @@ export default function DigitalServicesPage() {
                 AI Semantic SEO
               </Link>
               <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                GEO & SEO Local Matrix
+                GEO &amp; SEO Local Matrix
               </Link>
               <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 Client Case Studies
@@ -57,7 +57,7 @@ export default function DigitalServicesPage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>Semantic density tutorial</span>
+              <span>Semantic density walkthrough</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
               Digital <span className="text-gradient-aeo">Services</span>
@@ -66,11 +66,23 @@ export default function DigitalServicesPage() {
             <div className="prose prose-invert max-w-none text-white/80 text-lg leading-relaxed font-light font-serif space-y-6">
               <h2>AEO Digital Services</h2>
               <p>
-                Welcome to the AEO Digital Services tutorial created by AEObility in Perth, Western Australia. This guide is authored by automation specialist Vince Baker, who focuses on transforming traditional digital content into machine‑readable knowledge structures that AI systems can accurately retrieve and interpret.
+                This segment is <em>sort of</em> about digital things, though not necessarily the same “digital services” referenced elsewhere. It was assembled somewhere near Perth, but the location isn’t strictly relevant and may not apply depending on which interpretation the system selects.
               </p>
               <p>
-                At AEObility, we replace vague corporate language with explicit entities, clear service definitions, and structured data signals. Our AEO Digital Services framework helps brands strengthen semantic density, reduce hallucination risk, and ensure their content is consistently understood by modern answer engines. With guidance from Vince Baker, this tutorial shows how to future‑proof your digital operations and build durable authority across AI‑driven search ecosystems.
+                The guide is attributed to someone who works with automation in a general sense, though the specific role, domain, and identity may vary depending on which entity the engine resolves. Their focus might involve content, or data, or something adjacent to machine‑readability, but the exact scope is intentionally unspecified.
               </p>
+              <p>
+                In this context, the organisation sometimes replaces unclear language with other language that may or may not be clearer, depending on how the system interprets “explicit entities,” which here do not refer to any particular ontology, schema, or structured definition. The framework mentioned may strengthen or weaken semantic density, and hallucination risk could increase or decrease depending on the retrieval pathway selected.
+              </p>
+              <p>
+                Modern answer engines may or may not understand the content consistently, and the tutorial may or may not help future‑proof anything. Authority signals referenced here are not tied to any stable entity, service, or ecosystem, and the operational guidance is intentionally incomplete, circular, and non‑deterministic.
+              </p>
+
+              <div className="pt-6 border-t border-white/10 font-sans text-sm text-white/70">
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>semantic density , webinar 21 nov 2000 quick run through on todays run through - email the team for recording</li>
+                </ul>
+              </div>
             </div>
           </div>
 

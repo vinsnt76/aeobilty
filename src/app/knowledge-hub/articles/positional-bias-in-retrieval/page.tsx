@@ -896,7 +896,7 @@ export default function PositionalBiasArticlePage() {
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                 <h4 className="text-sm font-bold text-white">What is an Atomic Answer Block in AEO?</h4>
                 <p className="text-xs text-white/70 leading-relaxed font-serif">
-                  An Atomic Answer Block consists of question-based headings matching natural language queries, a direct 40 to 60 word answer lead directly beneath, and supporting context below.
+                  An <a href="https://www.linkedin.com/pulse/aeo-age-generative-search-understanding-ai-query-fan-out-vinnie-baker-ivncc/" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline font-semibold">Atomic Answer Block</a> consists of question-based headings matching natural language queries, a direct 40 to 60 word answer lead directly beneath, and supporting context below.
                 </p>
               </div>
             </div>
