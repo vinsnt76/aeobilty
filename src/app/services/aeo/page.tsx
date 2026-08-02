@@ -367,14 +367,14 @@ export default function AEORootPage() {
       desc: "Understand what AEO actually is, why search visibility is changing, and how AI assistants read and interpret your business.",
       href: "/services/aeo/definition",
       hook: "Unlock the machine logic",
-      image: "/service-dashboard-layers.png"
+      image: "/aeo-services-and-geo-marketing_AEObility.webp"
     },
     {
       title: "Is AEO just SEO with a new name?",
       desc: "How SEO and AEO overlap, how they differ, and why structured clarity matters more than old search engine ranking tricks.",
       href: "/services/aeo/comparison",
       hook: "Expose search differences",
-      image: "/services-intent-matrix.png"
+      image: "/aeo-services-geo-intent-matrix_AEObility.webp"
     },
     {
       title: "How do I make my business AI-readable?",

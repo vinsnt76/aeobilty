@@ -1,21 +1,23 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import QuoteFormSection from '@/components/QuoteFormSection';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ShieldCheck, Compass, Layers, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Compass, Layers, Zap, Bot, MapPin, Search } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Our Services: AEO, AI Search & GEO Marketing | AEObility",
-  description: "See how AEObility helps Australian small businesses become discoverable, understandable, and chosen across search engines, maps, and AI platforms.",
+  title: "AEO Services, AI Search Strategy & GEO Marketing Services | AEObility",
+  description: "AEObility is an Australian AEO consultancy that helps local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
   keywords: [
+    "Digital Marketing Specialist for Australian SMBs in Perth, Australia",
     "Digital Marketing Specialist Perth",
-    "aeo services",
-    "geo marketing",
+    "AEO Services",
+    "GEO Marketing",
+    "AI Search Strategy",
     "local business visibility",
     "get found on maps",
-    "ai search strategy",
     "semantic site mapping",
     "structured optimisation",
     "conversion insights"
@@ -31,6 +33,7 @@ export default function ServicesPage() {
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
+        "description": "AEObility is an Australian AEO consultancy helping local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
         "logo": {
           "@type": "ImageObject",
           "url": "https://aeobility.com.au/android-chrome-512x512.png"
@@ -52,95 +55,20 @@ export default function ServicesPage() {
         }
       },
       {
-        "@type": ["WebPage", "AboutPage"],
-        "@id": "https://aeobility.com.au/services#webpage",
-        "url": "https://aeobility.com.au/services",
-        "name": "Our Services: AEO, AI Search & GEO Marketing | AEObility",
-        "description": "See how AEObility helps Australian small businesses become discoverable, understandable, and chosen across search engines, maps, and AI platforms.",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/#website"
-        },
-        "breadcrumb": {
-          "@id": "https://aeobility.com.au/services#breadcrumb"
-        },
-        "mainEntity": {
-          "@type": "ItemList",
-          "name": "Our Core Service Layers",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@type": "Service",
-                "name": "Answer Engine Optimisation (AEO)",
-                "url": "https://aeobility.com.au/services/aeo",
-                "description": "Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
-                "provider": {
-                  "@id": "https://aeobility.com.au/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@type": "Service",
-                "name": "Local & GEO Map Marketing",
-                "url": "https://aeobility.com.au/services/geo-marketing",
-                "description": "Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries in Perth and across Australia.",
-                "provider": {
-                  "@id": "https://aeobility.com.au/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "Service",
-                "name": "AI Search Strategy",
-                "url": "https://aeobility.com.au/services/ai-search-marketing",
-                "description": "Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
-                "provider": {
-                  "@id": "https://aeobility.com.au/#organization"
-                }
-              }
-            }
-          ]
-        }
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services#primaryimage",
+        "url": "https://aeobility.com.au/aeo-services-and-geo-marketing_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/aeo-services-and-geo-marketing_AEObility.webp",
+        "caption": "AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth, Australia SMB performance metrics across digital channels",
+        "description": "AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth, Australia SMB performance metrics across digital channels"
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services#faq",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/services#webpage"
-        },
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do AI Search and GEO Marketing work together?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. AI systems use location data to personalise answers. Strong GEO signals help AI understand where your business operates, while AI Search optimisation helps AI understand what you do."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will this help me appear in AI-generated answers for local queries?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. When someone asks an AI system for a local service, your structured data, GEO signals, and semantic clarity determine whether your business is included in the generated answer."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this relevant for service-based businesses in Australia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "More than ever. AI systems are rapidly replacing traditional search for local queries. Businesses in WA and across Australia need both GEO and AI Search optimisation to stay visible."
-            }
-          }
-        ]
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services#matriximage",
+        "url": "https://aeobility.com.au/aeo-services-geo-intent-matrix_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/aeo-services-geo-intent-matrix_AEObility.webp",
+        "caption": "AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs",
+        "description": "AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs"
       },
       {
         "@type": "BreadcrumbList",
@@ -159,6 +87,118 @@ export default function ServicesPage() {
             "item": "https://aeobility.com.au/services"
           }
         ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://aeobility.com.au/services#service",
+        "name": "AEO Services, AI Search Strategy & GEO Marketing Services",
+        "serviceType": [
+          "Answer Engine Optimisation (AEO)",
+          "AI Search Strategy",
+          "GEO Marketing",
+          "Semantic Site Mapping",
+          "Structured Schema Markup"
+        ],
+        "description": "AEObility provides AEO Services, AI Search Strategy and GEO Marketing for Australian SMBs in Perth, Australia. We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence.",
+        "provider": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Perth, Australia"
+        },
+        "image": {
+          "@id": "https://aeobility.com.au/services#primaryimage"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://aeobility.com.au/services",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "AUD",
+            "price": "995",
+            "description": "AEO Blueprint: full technical audit, local intent analysis, AI-readiness scoring and a 90-day strategic roadmap."
+          }
+        },
+        "hasPart": [
+          {
+            "@type": "Service",
+            "name": "Answer Engine Optimisation (AEO)",
+            "description": "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
+            "url": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "Service",
+            "name": "GEO Marketing",
+            "description": "GEO Marketing for local service businesses in Perth, Australia. Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries.",
+            "url": "https://aeobility.com.au/services/geo-marketing"
+          },
+          {
+            "@type": "Service",
+            "name": "AI Search Strategy",
+            "description": "AI Search Strategy for Australian SMBs. Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
+            "url": "https://aeobility.com.au/services/ai-search-marketing"
+          },
+          {
+            "@type": "Service",
+            "name": "Semantic Site Mapping",
+            "description": "Comprehensive semantic site mapping and structured optimisation so vector-based retrieval engines can ingest, map and index your business details.",
+            "url": "https://aeobility.com.au/knowledge-hub/semantic-seo"
+          }
+        ]
+      },
+      {
+        "@type": ["WebPage", "AboutPage"],
+        "@id": "https://aeobility.com.au/services#webpage",
+        "url": "https://aeobility.com.au/services",
+        "name": "AEO Services, AI Search Strategy and GEO Marketing Services | AEObility",
+        "description": "AEObility is an Australian AEO consultancy that helps local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/services#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services#service"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services#faq",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/services#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do AI Search and GEO Marketing work together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. AEO, AI Search Strategy and GEO Marketing reinforce each other. When your business is clear to AI systems, your Google Maps and Apple Maps signals strengthen. When your local entity signals improve, LLMs gain confidence recommending you for local queries. This combined approach is why AEObility’s Perth, Australia clients see higher visibility across Search, Maps and AI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this help me appear in AI-generated answers for local queries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We optimise your digital footprint so ChatGPT, Claude and Perplexity can extract, cite and recommend your services for local intent queries. This includes structured schema markup, semantic site mapping and GEO Marketing signals that help AI systems understand your business."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this relevant for service-based businesses in Australia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Our framework is built specifically for Australian SMBs and local service providers. Whether you operate in Perth, regional WA or across Australia, AEO improves how AI systems interpret your services and recommend your brand."
+            }
+          }
+        ]
       }
     ]
   };
@@ -166,23 +206,29 @@ export default function ServicesPage() {
   const layers = [
     {
       title: "Answer Engine Optimisation (AEO)",
+      icon: Bot,
       tagline: "Be the answer LLMs retrieve.",
-      desc: "Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
+      desc: "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
       bullets: ["Structured schema markup", "Neural vector alignment", "Semantic question architecture"],
+      ctaText: "Explore AEO Services",
       href: "/services/aeo"
     },
     {
-      title: "Local & GEO Map Marketing",
+      title: "GEO Marketing",
+      icon: MapPin,
       tagline: "Put your business on the map.",
-      desc: "Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries in Perth and across Australia.",
+      desc: "GEO Marketing for local service businesses in Perth, Australia. Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries.",
       bullets: ["Optimised pins & citations", "GBP profile authority", "Local entity link building"],
+      ctaText: "Explore GEO Marketing",
       href: "/services/geo-marketing"
     },
     {
       title: "AI Search Strategy",
+      icon: Search,
       tagline: "Own the conversational search corridors.",
-      desc: "Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
+      desc: "AI Search Strategy for Australian SMBs. Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
       bullets: ["Intent-to-product mapping", "LLM indexing checks", "Competitor gap analysis"],
+      ctaText: "Explore AI Search Strategy",
       href: "/services/ai-search-marketing"
     }
   ];
@@ -202,17 +248,22 @@ export default function ServicesPage() {
           {/* Hero Section */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-                <Compass className="w-3.5 h-3.5" />
-                <span>Digital Marketing Specialist Perth</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+                <Compass className="w-3.5 h-3.5 shrink-0" />
+                <span>Digital Marketing Specialist for Australian SMBs in Perth, Australia</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                AEO, AI Search & <br />
-                <span className="text-gradient-aeo">GEO Marketing</span> Services
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                AEO Services, AI Search Strategy and <br className="hidden sm:inline" />
+                <span className="text-gradient-aeo">GEO Marketing Services</span>
               </h1>
-              <p className="text-lg text-white/70 font-light leading-relaxed max-w-xl">
-                AEObility helps local Australian businesses transition into the era of AI. We make your services discoverable, understandable, and highly recommended.
-              </p>
+              <div className="space-y-4 text-white/70 font-light leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg">
+                  AEObility is an Australian AEO consultancy providing <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-normal">AEO Services for Perth, Australia SMBs</Link> to help local service businesses become discoverable, understandable and recommended across Search, Maps and AI.
+                </p>
+                <p className="text-sm sm:text-base text-white/60">
+                  We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence.
+                </p>
+              </div>
               <div className="pt-4">
                 <Link
                   href="/diagnostic"
@@ -227,8 +278,8 @@ export default function ServicesPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/service-dashboard-layers.png"
-                  alt="AEObility service dashboard showing optimisation layers"
+                  src="/aeo-services-and-geo-marketing_AEObility.webp"
+                  alt="AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth Australia SMB performance metrics across digital channels"
                   fill
                   priority
                   className="object-cover"
@@ -248,30 +299,63 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {layers.map((layer, idx) => (
-                <Link
-                  key={idx}
-                  href={layer.href}
-                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/20 transition-all flex flex-col justify-between group cursor-pointer"
-                >
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start gap-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors">{layer.title}</h3>
-                      <ArrowRight className="w-5 h-5 text-white/25 group-hover:text-aeo-cyan group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+              {layers.map((layer, idx) => {
+                const IconComponent = layer.icon;
+                return (
+                  <Link
+                    key={idx}
+                    href={layer.href}
+                    className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/30 transition-all flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-aeo-cyan/5"
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="p-3 rounded-xl bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan group-hover:bg-aeo-cyan/20 transition-colors">
+                          <IconComponent className="w-6 h-6" />
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-white/25 group-hover:text-aeo-cyan group-hover:translate-x-1 transition-all" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors">{layer.title}</h3>
+                        <p className="text-xs text-aeo-cyan font-medium uppercase tracking-wider mt-1">{layer.tagline}</p>
+                      </div>
+                      <p className="text-sm text-white/60 font-light leading-relaxed">{layer.desc}</p>
                     </div>
-                    <p className="text-xs text-aeo-cyan font-medium uppercase tracking-wider">{layer.tagline}</p>
-                    <p className="text-sm text-white/60 font-light leading-relaxed">{layer.desc}</p>
-                  </div>
-                  <ul className="space-y-2 pt-6 mt-6 border-t border-white/5">
-                    {layer.bullets.map((b, bIdx) => (
-                      <li key={bIdx} className="flex gap-2 items-center text-xs text-white/80 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Link>
-              ))}
+
+                    <div className="space-y-6 pt-6 mt-6 border-t border-white/5">
+                      <ul className="space-y-2">
+                        {layer.bullets.map((b, bIdx) => (
+                          <li key={bIdx} className="flex gap-2 items-center text-xs text-white/80 font-light">
+                            <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex items-center justify-between text-xs font-bold text-aeo-cyan group-hover:text-white transition-colors pt-3 border-t border-white/5">
+                        <span>{layer.ctaText}</span>
+                        <ArrowRight className="w-4 h-4 text-aeo-cyan group-hover:text-white group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Mid-Page Secondary CTA: Request a Quote */}
+            <div className="p-6 sm:p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+              <div className="space-y-1 text-center sm:text-left">
+                <h4 className="text-lg font-bold text-white">Action-Ready for Growth? Request a Quote</h4>
+                <p className="text-xs sm:text-sm text-white/60 font-light">
+                  Get a tailored plan and pricing for your Perth, Australia business across Search, Maps and AI platforms.
+                </p>
+              </div>
+              <a
+                href="#quote-form"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-aeo-cyan font-bold text-xs sm:text-sm rounded-xl border border-aeo-cyan/30 hover:border-aeo-cyan transition-all shrink-0 cursor-pointer shadow-lg shadow-aeo-cyan/5"
+              >
+                <span>Request a Quote</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </section>
 
@@ -280,8 +364,8 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/services-intent-matrix.png"
-                  alt="Matrix graphic showing services grouped by user intent"
+                  src="/aeo-services-geo-intent-matrix_AEObility.webp"
+                  alt="AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 500px"
@@ -291,7 +375,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl font-bold text-white">Built for Machine Understanding</h2>
               <p className="text-base text-white/70 font-light leading-relaxed">
-                Before search engines or conversational AI tools can recommend your brand, they must understand your site structure. We implement comprehensive <span className="font-semibold text-white">semantic site mapping</span> and <span className="font-semibold text-white">structured optimisation</span> so vector-based retrieval engines can easily ingest, map, and index your business details.
+                AEObility provides AEO Services, AI Search Strategy and GEO Marketing for Perth, Australia SMBs. Built for Australian SMBs and local service providers, before search engines or conversational AI tools can recommend your brand, they must understand your site structure. We implement comprehensive <Link href="/knowledge-hub/semantic-seo" className="font-semibold text-white hover:text-aeo-cyan underline decoration-aeo-cyan/40 transition-colors">semantic site mapping</Link> and <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="font-semibold text-white hover:text-aeo-cyan underline decoration-aeo-cyan/40 transition-colors">structured optimisation</Link> so vector-based retrieval engines can easily ingest, map, and index your business details.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-3 items-start">
@@ -309,7 +393,7 @@ export default function ServicesPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-white">Schema Verification</h4>
-                    <p className="text-xs text-white/60 font-light leading-relaxed">We validate all microdata formatting templates directly against Google and schema.org standard models.</p>
+                    <p className="text-xs text-white/60 font-light leading-relaxed">We validate all microdata formatting templates directly against Google and schema.org standard models using <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline">structured schema markup</Link>.</p>
                   </div>
                 </div>
               </div>
@@ -321,7 +405,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 space-y-6">
               <h2 className="text-3xl font-bold text-white">Engineered for Human Selection</h2>
               <p className="text-base text-white/70 font-light leading-relaxed">
-                Showing up is only half the battle. Once an answer engine lists your brand as a primary citation, we ensure your message is compelling. We track <span className="font-semibold text-white">conversion insights</span> and optimize context to make sure target clients click, contact, and trust your brand.
+                Showing up is only half the battle. Once an answer engine lists your brand as a primary citation for Perth, Australia service businesses, we ensure your message is compelling. Through <Link href="/knowledge-hub/articles/entity-authority-building" className="font-semibold text-white hover:text-aeo-cyan underline decoration-aeo-cyan/40 transition-colors">entity authority building</Link>, we track <Link href="/knowledge-hub/articles/aeo-vs-seo" className="font-semibold text-white hover:text-aeo-cyan underline decoration-aeo-cyan/40 transition-colors">conversion insights</Link> and optimise context to make sure target clients click, contact, and trust your brand.
               </p>
               <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4">
                 <div className="flex gap-3 items-center text-xs font-bold uppercase tracking-wider text-aeo-cyan">
@@ -329,7 +413,7 @@ export default function ServicesPage() {
                   <span>The Final Selection Formula</span>
                 </div>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
-                  Machines filter by authority and context; humans decide based on reviews, proximity, clarity, and trust. Our combined AEO & local MAP strategies optimise for both layers, turning citations into conversions.
+                  Machines filter by authority and context; humans decide based on <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline">reviews, proximity, clarity, and trust</Link>. Our combined AEO & local MAP strategies optimise for both layers, turning citations into conversions.
                 </p>
               </div>
             </div>
@@ -338,7 +422,7 @@ export default function ServicesPage() {
               <p className="text-sm text-white/60 font-light max-w-sm mx-auto">
                 Discover where your business ranks across AI platforms and Google Maps today.
               </p>
-              <div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
                   href="/diagnostic"
                   className="flex items-center gap-2 px-5 py-2.5 bg-aeo-cyan text-black text-xs font-bold rounded-lg hover:bg-white transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
@@ -346,6 +430,13 @@ export default function ServicesPage() {
                   <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+                <a
+                  href="#quote-form"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white hover:bg-white/20 text-xs font-bold rounded-lg border border-white/20 transition-all"
+                >
+                  <span>Request a Quote</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </section>
@@ -360,31 +451,61 @@ export default function ServicesPage() {
                     Do AI Search and GEO Marketing work together?
                     <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
                   </summary>
-                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
-                    Absolutely. AI systems use location data to personalise answers. Strong GEO signals help AI understand where your business operates, while AI Search optimisation helps AI understand what you do.
-                  </p>
+                  <div className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30 space-y-3">
+                    <p>
+                      Yes. AEO, AI Search Strategy and GEO Marketing reinforce each other. When your business is clear to AI systems, your Google Maps and Apple Maps signals strengthen. When your local entity signals improve, LLMs gain confidence recommending you for local queries. This combined approach is why AEObility’s Perth, Australia clients see higher visibility across Search, Maps and AI.
+                    </p>
+                    <div className="pt-2 text-xs text-white/60 font-light flex items-center gap-1.5">
+                      <span>Learn more:</span>
+                      <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>AEO Services</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
                 </details>
                 <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
                   <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
                     Will this help me appear in AI-generated answers for local queries?
                     <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
                   </summary>
-                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
-                    Yes. When someone asks an AI system for a local service, your structured data, GEO signals, and semantic clarity determine whether your business is included in the generated answer.
-                  </p>
+                  <div className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30 space-y-3">
+                    <p>
+                      Yes. We optimise your digital footprint so ChatGPT, Claude and Perplexity can extract, cite and recommend your services for local intent queries. This includes structured schema markup, semantic site mapping and GEO Marketing signals that help AI systems understand your business.
+                    </p>
+                    <div className="pt-2 text-xs text-white/60 font-light flex items-center gap-1.5">
+                      <span>See how it works:</span>
+                      <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>AI Search Strategy</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
                 </details>
                 <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
                   <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
                     Is this relevant for service-based businesses in Australia?
                     <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
                   </summary>
-                  <p className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
-                    More than ever. AI systems are rapidly replacing traditional search for local queries. Businesses in WA and across Australia need both GEO and AI Search optimisation to stay visible.
-                  </p>
+                  <div className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30 space-y-3">
+                    <p>
+                      Absolutely. Our framework is built specifically for Australian SMBs and local service providers. Whether you operate in Perth, regional WA or across Australia, AEO improves how AI systems interpret your services and recommend your brand.
+                    </p>
+                    <div className="pt-2 text-xs text-white/60 font-light flex items-center gap-1.5">
+                      <span>Ready to start?</span>
+                      <a href="#quote-form" className="text-aeo-cyan hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>Request a Quote</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
                 </details>
               </div>
             </div>
           </section>
+
+          {/* Request a Quote Section */}
+          <QuoteFormSection />
 
         </div>
       </main>
