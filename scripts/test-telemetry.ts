@@ -41,8 +41,9 @@ async function runTests() {
     console.log(`\nTesting: ${testCase.name} (${testCase.url})`);
     
     try {
+      const baseUrl = process.env.API_BASE_URL || 'https://aeobility.com.au';
       const startTime = Date.now();
-      const response = await fetch('http://localhost:3000/api/diagnostic', {
+      const response = await fetch(`${baseUrl}/api/diagnostic`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

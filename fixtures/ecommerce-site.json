@@ -1,21 +1,11 @@
 {
   "clientUrl": "https://www.bunnings.com.au",
-  "proximityScore": 30,
+  "proximityScore": 10,
   "nodes": [
     {
       "label": "Client",
-      "text": "Skip to main contentLaundry refresh, made easyWatch Ricky & Haydn transform this laundry on a budget...",
-      "similarity": 0.29621378614103544
-    },
-    {
-      "label": "Competitor 1",
-      "text": "Skip to contentHi there!Ace HardwareShopServicesSavingsProjects & TipsWhat can we help you find?Ace ...",
-      "similarity": 0.2662547158099333
-    },
-    {
-      "label": "Competitor 2",
-      "text": "No readable content found....",
-      "similarity": 0.10350983390135313
+      "text": "Crawl failed. Failed to fetch https://www.bunnings.com.au: Forbidden...",
+      "similarity": 0.09960238411119947
     }
   ],
   "triples": [
@@ -41,10 +31,10 @@
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
-      "selectedChunk": "Skip to main contentLaundry refresh, made easyWatch Ricky & Haydn transform this laundry on a budget!Watch nowZenith 25kg SureHook Bike HangerShop nowGet great value on the Ikonic Sira Entrance Lever SetShop nowNEW Bunnings Mini Bears are here!Now available online with Click & Collect and Delivery.Shop nowProduct Recall: Draw n Wipe TabletProduct Recall: Mistral Barrel Vacuum CleanersProduct Recall: Makita Cordless Grease GunView all product recallsShop our rangeView all categoriesOutdoor LivingGardenIndoor LivingBuilding & HardwareStorage & CleaningToolsSmart Home & ElectricalLightingKitchenBathroom & PlumbingPet SuppliesFlooringPaint & WoodcareAssisted LivingHire ShopInspiring ideas to update your spaceHome ImprovementTrending ProjectsKids & CraftCleaningStorageGarden HubPaintOutdoor LivingD.I.Y. SkillsPlanting and growingBuilding and ConstructionClick on the below for our trending projects12345Trending categories this weekView all categoriesKitchen BenchtopsBathroom TapwareCleaning EquipmentStorage ContainersHand ToolsSmart Home SecuritySmall AppliancesMoving & Packing SuppliesVehicle & Trailer HireWe offer a number of options to get your products home safely and securely.Hire nowSupercharge your shop with OnePassFind out moreCheck out the Bunnings magazineRead nowWhere you find a competitor's lower price on the same in-stock item, we'll beat it by 10%*.*Conditions and Exclusions Apply which you can read more about here.View Price Policy Shop online any way you choose Shop products online from our wide range. Access same day* Click & Collect or choose Click & Deliver and select from a range of delivery services to get your order home that suit your needs. Learn more Make your project more rewarding with Flybuys Earn 1 point per $1 spent when you shop with Flybuys. Plus, use your Flybuys points for money off your shop in store by scanning your Flybuys or Flybuys linked Bunnings QR code in the Bunnings App at the register (exclusions apply). Find out more Projects everyone’s loving this week Find what’s trending for the weekend. From quick weekend wins to great‑value upgrades, our trending projects include practical ideas, products you need and tips to help you get started with confidence. Explore trending projectsLeading brandsView all brands"
+      "selectedChunk": "Crawl failed. Failed to fetch https://www.bunnings.com.au: Forbidden"
     }
   ],
-  "readinessScore": 37,
+  "readinessScore": 49,
   "explanations": [
     {
       "category": "Semantic",
@@ -65,6 +55,12 @@
       "confidence": 25
     },
     {
+      "category": "Competitor Analysis",
+      "delta": 12,
+      "reason": "Comprehensive content depth vs competitors",
+      "confidence": 95
+    },
+    {
       "category": "Technical SEO",
       "delta": -10,
       "reason": "Missing explicit JSON-LD schema",
@@ -72,14 +68,14 @@
     }
   ],
   "technicalSEO": {
-    "title": "Australia DIY, Garden & Hardware Store - Bunnings AustraliaNotifications Red Dotwarning iconwarning iconwarning iconPreviousNextgo to topto expandto expandlink-outlink-outlink-outlink-outto expand",
-    "metaDescription": "Find store information, opening times, services, tools and more. Come visit us today.",
+    "title": null,
+    "metaDescription": null,
     "headingsCount": {
-      "h1": 1,
-      "h2": 7,
-      "h3": 40
+      "h1": 0,
+      "h2": 0,
+      "h3": 0
     },
-    "internalLinksCount": 467
+    "internalLinksCount": 0
   },
   "schemaValidation": {
     "hasValidSchema": false,
@@ -95,30 +91,30 @@
     "type": "Emerging"
   },
   "engineeredFeatures": {
-    "semanticDominance": 11.13315112853922,
-    "technicalAdvantage": 10,
-    "contentLengthRatio": 0.7133041848844472,
+    "semanticDominance": 9.960238411119947,
+    "technicalAdvantage": 0,
+    "contentLengthRatio": 68,
     "schemaCompleteness": 0,
     "entityAuthority": 20
   },
   "crawlQuality": {
-    "score": 80,
-    "method": "Cheerio",
+    "score": 0,
+    "method": "Fallback",
     "hydrationRequired": false
   },
   "insightResult": {
-    "verdict": "Limited",
+    "verdict": "Growing",
     "measurementConfidence": {
-      "score": 80,
+      "score": 55,
       "reasons": [
-        "We successfully crawled the site.",
+        "Limited page content was accessible.",
         "No structured data found."
       ]
     },
     "recommendationConfidence": {
-      "score": 60,
+      "score": 40,
       "reasons": [
-        "Solid competitor benchmark established.",
+        "Competitor data was limited.",
         "Weak semantic entity density."
       ]
     },
@@ -134,9 +130,9 @@
       "description": "AI indexes content on bunnings.com.au, but fails to strongly associate your page content with semantic queries for \"hardware and garden supplies\"."
     },
     "diagnosis": {
-      "currentState": "AI currently recognizes bunnings.com.au as an active participant in the hardware and garden supplies space (Readiness: 37/100).",
+      "currentState": "AI currently recognizes bunnings.com.au as an active participant in the hardware and garden supplies space (Readiness: 49/100).",
       "desiredState": "AI recommends bunnings.com.au whenever users search for top solutions for hardware and garden supplies.",
-      "gap": "Proximity score is currently 30%. Content lacks entity-rich authority signals required to outrank top competitors."
+      "gap": "Proximity score is currently 10%. Content lacks entity-rich authority signals required to outrank top competitors."
     },
     "summary": {
       "problem": "AI struggles to confidently recommend bunnings.com.au for high-intent commercial queries regarding \"hardware and garden supplies\".",
@@ -145,7 +141,7 @@
     },
     "recommendationTest": {
       "wouldRecommend": false,
-      "verdict": "Today? Probably not.",
+      "verdict": "Only for niche queries.",
       "reasoning": "Although AI understands your category, bunnings.com.au does not yet present sufficient structured evidence to be cited as the leading authority."
     }
   }

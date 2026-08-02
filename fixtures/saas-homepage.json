@@ -6,16 +6,6 @@
       "label": "Client",
       "text": "Showing up where your customers search, scroll, and ask AIGOOGLEGOOGLE MAPSBINGLINKEDINFACEBOOKINSTA...",
       "similarity": 0.21149160250654211
-    },
-    {
-      "label": "Competitor 1",
-      "text": "Learn how to improve your marketing — for free.Get the weekly newsletter keeping thousands of market...",
-      "similarity": 0.22001096400911768
-    },
-    {
-      "label": "Competitor 2",
-      "text": "No readable content found....",
-      "similarity": 0.03571428571428571
     }
   ],
   "triples": [
@@ -44,7 +34,7 @@
       "selectedChunk": "Showing up where your customers search, scroll, and ask AIGOOGLEGOOGLE MAPSBINGLINKEDINFACEBOOKINSTAGRAMTIKTOKCHATGPTCLAUDEPERPLEXITYOur MissionWhy Aussie Businesses Partner with AEObilityIf your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today.Your browser does not support the video tag.Why AEObility?Put Your Business on the MapWe focus on real outcomes, giving your business the foundation to get found and get chosen.Stop Losing Traffic on Google, Maps and AIWe get your brand positioned clearly across Google, Maps, and emerging AI answer engines so local customers actually see your name first.Get Consistent EnquiriesNo more relying on outdated tricks. We construct a clear, understandable digital presence that turns online searches into real customer enquiries.Straight to Your InboxWe focus on real outcomes. Receive direct phone calls, email enquiries, and booking requests straight to your day-to-day business pipeline.The AI Visibility Telemetry EngineHow It WorksMeasure, understand, and activate your AI search visibility.01Tell Us What You Want To Be Found ForEnter your website and your primary customer search intent.02Measure Your AI VisibilityOur telemetry engine analyses how AI systems understand, retrieve, and recommend your business.03Discover Your OpportunitiesReceive your AI Visibility Score, confidence signals, and the biggest opportunities to improve.04Create Your AI Growth BlueprintTurn your insights into an actionable 90-day roadmap.Measure Your AI VisibilitySee how AI search engines understand your business today.Australian Business URLPrimary Search IntentBusiness Contact EmailGenerate My AI Visibility Score* The scan executes a real-time vector analysis using Gemini.By clicking, you agree to our terms. Your privacy is guaranteed.Full Roadmap StrategyAI‑Ready Content from Day OneYour 90‑Day AISuccess BlueprintA clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.Get Visibility ScorePricing note: Take the strategy with you, or stay with us for the 90 days — and we credit the $995 blueprint fee back into your plan.What is included in the plan?Days 1-30: Foundation & Online Profile SetupAnalyze existing assets and organise business details so Google, map services, and modern AI tools can find and display your business accurately.Days 31-60: Local Presence & Search OptimisationOptimise local listings, map pins, and structure targeted question-and-answer resources that capture nearby client intent.Days 61-90: Scaling Authority & AI CitationsAcquire high-quality local mentions and citations across search engines, directories, and AI assistants to solidify your top ranking positions.Check Your AI Visibility Score NowReady to Get More Leadsand Enquiries?Improve your organic visibility and reduce wasted effort. See exactly what it takes to show up first across Search, Maps, and AI assistants.Generate My ScoreTakes under 60 seconds • Completely free report • Clear roadmapAsk Bill AI"
     }
   ],
-  "readinessScore": 47,
+  "readinessScore": 69,
   "explanations": [
     {
       "category": "Semantic",
@@ -66,8 +56,8 @@
     },
     {
       "category": "Competitor Analysis",
-      "delta": -10,
-      "reason": "Thin content compared to top ranking competitors",
+      "delta": 12,
+      "reason": "Comprehensive content depth vs competitors",
       "confidence": 95
     },
     {
@@ -111,9 +101,9 @@
     "type": "Emerging"
   },
   "engineeredFeatures": {
-    "semanticDominance": 8.362897764484043,
+    "semanticDominance": 21.149160250654212,
     "technicalAdvantage": 10,
-    "contentLengthRatio": 0.31059622490762007,
+    "contentLengthRatio": 3110,
     "schemaCompleteness": 100,
     "entityAuthority": 20
   },
@@ -123,7 +113,7 @@
     "hydrationRequired": false
   },
   "insightResult": {
-    "verdict": "Growing",
+    "verdict": "Visible",
     "measurementConfidence": {
       "score": 95,
       "reasons": [
@@ -132,9 +122,9 @@
       ]
     },
     "recommendationConfidence": {
-      "score": 60,
+      "score": 40,
       "reasons": [
-        "Solid competitor benchmark established.",
+        "Competitor data was limited.",
         "Weak semantic entity density."
       ]
     },
@@ -150,7 +140,7 @@
       "description": "AI indexes content on aeobility.com.au, but fails to strongly associate your page content with semantic queries for \"best AI marketing platform\"."
     },
     "diagnosis": {
-      "currentState": "AI currently recognizes aeobility.com.au as an active participant in the best AI marketing platform space (Readiness: 47/100).",
+      "currentState": "AI currently recognizes aeobility.com.au as an active participant in the best AI marketing platform space (Readiness: 69/100).",
       "desiredState": "AI recommends aeobility.com.au whenever users search for top solutions for best AI marketing platform.",
       "gap": "Proximity score is currently 21%. Content lacks entity-rich authority signals required to outrank top competitors."
     },

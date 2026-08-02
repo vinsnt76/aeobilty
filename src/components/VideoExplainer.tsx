@@ -25,17 +25,31 @@ export default function VideoExplainer() {
           </div>
         </div>
 
-        {/* Video Player Container */}
-        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.05)]">
-          <video
-            controls
-            preload="metadata"
-            poster="/aeobility-video-explainer.webp"
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/explainer.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        {/* Video Player Container / Media Showcase */}
+        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.1)] group">
+          <img
+            src="/aeobility-video-explainer.webp"
+            alt="Why Aussie Businesses Partner with AEObility - AEO & GEO Marketing"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6 sm:p-8">
+            <div className="flex justify-between items-start">
+              <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-[11px] font-mono text-aeo-cyan uppercase tracking-wider">
+                Platform Overview &bull; 2 Min
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-aeo-cyan text-black flex items-center justify-center shadow-[0_0_20px_rgba(0,205,216,0.4)] group-hover:scale-110 transition-transform">
+                <svg className="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div className="text-left space-y-0.5">
+                <p className="text-sm sm:text-base font-bold text-white font-soehne-breit">Watch AEObility Overview</p>
+                <p className="text-xs text-white/70 font-light">See how AEO &amp; GEO Marketing drive Perth SMB visibility</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

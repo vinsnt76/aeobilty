@@ -6,16 +6,6 @@
       "label": "Client",
       "text": "Crawl failed. fetch failed...",
       "similarity": 0.040291148201269014
-    },
-    {
-      "label": "Competitor 1",
-      "text": "Skip to content Free Shipping on U.S. Orders $50+ and CA Orders $75+ USD Build a Bundle of 3-6 Favor...",
-      "similarity": 0.29423887556352346
-    },
-    {
-      "label": "Competitor 2",
-      "text": "Crawl failed. Failed to fetch https://www.thespruceeats.com/best-bento-boxes-for-kids-4161232: Payme...",
-      "similarity": 0.10850069244760098
     }
   ],
   "triples": [
@@ -44,13 +34,13 @@
       "selectedChunk": "Crawl failed. fetch failed"
     }
   ],
-  "readinessScore": 0,
+  "readinessScore": 49,
   "explanations": [
     {
       "category": "Semantic",
-      "delta": -5,
-      "reason": "Weak topical coverage compared to intent",
-      "confidence": 90
+      "delta": 32,
+      "reason": "Strong vector proximity compared to competitors",
+      "confidence": 95
     },
     {
       "category": "RAG Simulation",
@@ -66,8 +56,8 @@
     },
     {
       "category": "Competitor Analysis",
-      "delta": -10,
-      "reason": "Thin content compared to top ranking competitors",
+      "delta": 12,
+      "reason": "Comprehensive content depth vs competitors",
       "confidence": 95
     },
     {
@@ -101,9 +91,9 @@
     "type": "Emerging"
   },
   "engineeredFeatures": {
-    "semanticDominance": 0,
+    "semanticDominance": 4.029114820126901,
     "technicalAdvantage": 0,
-    "contentLengthRatio": 0.004092232627685528,
+    "contentLengthRatio": 26,
     "schemaCompleteness": 0,
     "entityAuthority": 20
   },
@@ -113,7 +103,7 @@
     "hydrationRequired": false
   },
   "insightResult": {
-    "verdict": "At Risk",
+    "verdict": "Growing",
     "measurementConfidence": {
       "score": 55,
       "reasons": [
@@ -122,9 +112,9 @@
       ]
     },
     "recommendationConfidence": {
-      "score": 60,
+      "score": 40,
       "reasons": [
-        "Solid competitor benchmark established.",
+        "Competitor data was limited.",
         "Weak semantic entity density."
       ]
     },
@@ -140,7 +130,7 @@
       "description": "AI indexes content on bentobuzz.com.au, but fails to strongly associate your page content with semantic queries for \"kids bento lunch boxes\"."
     },
     "diagnosis": {
-      "currentState": "AI currently recognizes bentobuzz.com.au as an active participant in the kids bento lunch boxes space (Readiness: 0/100).",
+      "currentState": "AI currently recognizes bentobuzz.com.au as an active participant in the kids bento lunch boxes space (Readiness: 49/100).",
       "desiredState": "AI recommends bentobuzz.com.au whenever users search for top solutions for kids bento lunch boxes.",
       "gap": "Proximity score is currently 4%. Content lacks entity-rich authority signals required to outrank top competitors."
     },
@@ -151,7 +141,7 @@
     },
     "recommendationTest": {
       "wouldRecommend": false,
-      "verdict": "Today? Probably not.",
+      "verdict": "Only for niche queries.",
       "reasoning": "Although AI understands your category, bentobuzz.com.au does not yet present sufficient structured evidence to be cited as the leading authority."
     }
   }
