@@ -497,17 +497,44 @@ export default function BabyBentoCaseStudyPage() {
             </p>
           </div>
 
+          {/* Phase 5 Radial Return CTA Banner */}
+          <div className="p-8 bg-gradient-to-br from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/10 rounded-2xl text-center space-y-4 my-6">
+            <h3 className="text-xl font-bold text-white">Achieve Structural AI Visibility for Your Business</h3>
+            <p className="text-xs text-white/70 max-w-lg mx-auto font-light leading-relaxed">
+              Ready to rebuild your entity clarity, eliminate discount dependency, and surface across Search, Maps, and AI platforms?
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
+              <Link
+                href="/services/aeo"
+                className="px-5 py-2.5 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(0,205,216,0.3)]"
+              >
+                Explore AEO Services
+              </Link>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="px-5 py-2.5 bg-gradient-to-r from-aeo-purple to-pink-600 text-white font-bold text-xs rounded-xl hover:opacity-90 transition-all"
+              >
+                Get $995 AEObility Blueprint
+              </Link>
+              <Link
+                href="/contact"
+                className="px-5 py-2.5 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
+              >
+                Contact Vince Baker
+              </Link>
+            </div>
+          </div>
+
           {/* Back Navigation & Cross-Linking */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6 border-t border-white/5">
             <Link href="/knowledge-hub" className="group text-sm font-semibold text-aeo-cyan hover:text-white transition-colors flex items-center gap-1">
               &larr; Back to Knowledge Hub
             </Link>
             <div className="flex flex-wrap gap-4 text-xs text-white/40">
-              <span>Explore other nodes:</span>
-              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="hover:text-aeo-cyan transition-colors">RAG & Answer Engines</Link>
-              <Link href="/knowledge-hub/aeo" className="hover:text-aeo-cyan transition-colors">AEO Principles</Link>
-              <Link href="/knowledge-hub/semantic-seo" className="hover:text-aeo-cyan transition-colors">Semantic SEO</Link>
-              <Link href="/knowledge-hub/geo" className="hover:text-aeo-cyan transition-colors">GEO Local Matrix</Link>
+              <span>Explore primary nodes:</span>
+              <Link href="/services/aeo" className="hover:text-aeo-cyan transition-colors">AEO Services</Link>
+              <Link href="/solutions/aeo-blueprint" className="hover:text-aeo-cyan transition-colors">AEO Blueprint</Link>
+              <Link href="/contact" className="hover:text-aeo-cyan transition-colors">Contact Us</Link>
             </div>
           </div>
 

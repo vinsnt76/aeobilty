@@ -208,19 +208,30 @@ export default function AEOKnowledgeNodePage() {
             </ul>
           </div>
 
-          {/* Pricing CTA */}
+          {/* Phase 5 Radial Return CTA Banner */}
           <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6">
             <h3 className="text-2xl font-bold text-white">Unlock Your AI Visibility Metrics</h3>
             <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
               AEObility provides technical audits analyzing how modern LLMs index your digital presence. Request your strategic roadmap today.
             </p>
-            <div className="flex justify-center gap-3">
-                <Link
-                  href="/diagnostic"
-                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-black text-sm font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
-                >
-                  <span>Get Visibility Score</span>
-                <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                href="/services/aeo"
+                className="px-5 py-3 bg-aeo-cyan text-black text-xs font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
+              >
+                AEO Services
+              </Link>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="px-5 py-3 bg-gradient-to-r from-aeo-purple to-pink-600 text-white text-xs font-bold rounded-xl hover:opacity-90 transition-all"
+              >
+                Get AEObility Blueprint
+              </Link>
+              <Link
+                href="/contact"
+                className="px-5 py-3 bg-white/5 border border-white/10 text-white text-xs font-semibold rounded-xl hover:bg-white/10 transition-all"
+              >
+                Contact Strategy Team
               </Link>
             </div>
           </div>
