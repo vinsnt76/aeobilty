@@ -1,75 +1,139 @@
-# AEObility Web & Portfolio Platform
+# AEObility — Australian AEO Consultancy & AI Search Marketing Platform
 
-A modern, high-performance web platform built with **Next.js 16 (App Router)**. This repository houses the main AEObility corporate platform, Vincent Baker's professional portfolio, and a native Google Wallet digital business card pass integration.
+**AEObility** ([aeobility.com.au](https://aeobility.com.au)) is an Australian Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Strategy consultancy based in Perth, Western Australia. 
 
----
-
-## 🚀 Key Modules & Routes
-
-### 1. **Corporate Hub (`/`) & Diagnostic Engine (`/diagnostic`)**
-The primary site structure for **AEObility**—focusing on Answer Engine Optimisation (AEO), Local SEO, and the proprietary **AI Visibility Telemetry Engine**. The platform drives users away from legacy "SEO Audits" and instead offers instant, automated scoring of their visibility across ChatGPT, Gemini, and Claude.
-
-### 2. **Professional Portfolio (`/my-portfolio`)**
-Vincent Baker's complete professional resume, core competencies, and featured case studies detailing high-impact AI and automation projects (such as the *AI Video Engine* and *Baby Bento Social Reel Generator*). 
-
-### 3. **Digital Business Card (`/vince-baker`)**
-A mobile-optimised, brand-aligned digital business card featuring interactive contact triggers, direct links, and a native wallet integration.
-
-### 4. **Support Centre (`/support`)**
-A dedicated support page for the Google Business Profile including direct communication channels, contact forms, and automated answers to frequently asked questions.
+This repository contains the complete Next.js 16 (App Router) web platform, RAG vector search engine, automated telemetry test harness, machine-readable discovery manifests (`llms.txt`, `AGENTS.md`), and native Google Wallet digital business card pass integration.
 
 ---
 
-## 💳 Google Wallet Pass Integration
+## ⚡ Core Value Propositions & Offerings
 
-The platform features a custom, dependency-free Google Wallet Pass implementation, allowing visitors to save Vincent's business card directly to their Google Wallet.
-
-### Technical Architecture:
-* **Serverless Pass Generator (`/api/wallet-pass`)**: A Next.js API Route Handler that dynamically compiles a Google Wallet `GenericObject` and signs the payload into an **RS256 JWT** using Node's native `crypto` module.
-  * *Template Fallback*: Uses the Google default template layout (omits `classTemplateInfo`) to avoid manual template validation errors in the Merchant Console.
-  * *Environment Resiliency*: Sanitises surrounding double quotes and handles formatting (`\n`) for the private key, and supports both `GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL` and `GOOGLE_WALLET_CLIENT_EMAIL`.
-  * *Origins Validation*: Includes `origins` validation to secure browser save transactions on both development and production hosts.
-* **Dynamic vCard Server (`/vince-baker.vcf`)**: A route handler that outputs the raw vCard data with explicit `Content-Type: text/vcard; charset=utf-8` and inline disposition headers.
-* **Front-of-Pass QR Code**: The Google Wallet pass embeds a QR code linked directly to `https://aeobility.com.au/vince-baker.vcf`. Scanning this QR code from the wallet pass instantly triggers the smartphone's native **"Add to Contacts"** drawer.
-* **Adblock-Resilient Icon**: Uses a locally hosted `google-wallet-icon.png` asset to prevent adblockers or privacy extensions from incorrectly hiding the button.
+* **Answer Engine Optimisation (AEO)**: Restructuring content into 90–120 token atomic answer blocks, balancing token weights, and mitigating positional bias to maximize citation rates across ChatGPT, Claude, and Perplexity.
+* **Geographic Engine Optimisation (GEO)**: Hyper-local coordinate mapping, spatial vector alignment, and proximity signal engineering for Google Maps, Apple Maps, and local voice search.
+* **AI Search Strategy**: Positioning brands to capture conversational queries, query fan-out behaviors, and generative AI search Overviews (Gemini, ChatGPT Search).
+* **The AEObility Blueprint**: A standalone $995 AUD Clarity Phase delivering a deep technical audit, entity visibility score, and actionable 90-day roadmap (credited 100% back if clients proceed to implementation).
 
 ---
 
-## 🛠️ Getting Started
+## 🕸️ 5-Node AEO & RAG Internal Link Graph Architecture
 
-### Local Development
+The platform's internal link structure is engineered as a directed graph distinguishing between **Linear Conversion Corridors** (direct paths to conversion) and **Radial Trust Loops** (supporting evidence nodes that feed authority back into money pages):
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+```
+                               ┌─────────────────────────┐
+                               │     1. ROOT NODE        │
+                               │      Homepage (/)       │
+                               └────────────┬────────────┘
+                                            │
+                                            ▼
+                       ┌─────────────────────────────────────────┐
+                       │        2. PRIMARY SERVICE NODES         │
+                       │ (/services/aeo, /services/geo-marketing)│
+                       └────────────────────┬────────────────────┘
+                                            │ (Linear CTA)
+                                            ▼
+                       ┌─────────────────────────────────────────┐
+                       │           3. DIAGNOSTIC NODE            │
+                       │     (/solutions/aeo-blueprint)          │
+                       └────────────────────┬────────────────────┘
+                                            │ (Linear CTA)
+                                            ▼
+                       ┌─────────────────────────────────────────┐
+                       │           4. TERMINAL NODE              │
+                       │         Contact & Support               │
+                       │            (/contact)                   │
+                       └─────────────────────────────────────────┘
+                                            ▲
+                                            │ (Radial Return Loops)
+                       ┌────────────────────┴────────────────────┐
+                       │        5. LATERAL TRUST NODES           │
+                       │          (/knowledge-hub/*)             │
+                       └─────────────────────────────────────────┘
+```
 
-2. Create a local environment variables file:
-   Create a `.env.local` file in the root directory:
-   ```env
-   GOOGLE_WALLET_ISSUER_ID=3388000000023168657
-   GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL=wallet-service-account@wallet-businesscard.iam.gserviceaccount.com
-   GOOGLE_WALLET_PROJECT_ID=wallet-businesscard
-   GOOGLE_WALLET_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
-   ```
-
-3. Launch the development server:
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view the application.
+1. **Root Node (`/`)**: Distributes link equity directly into primary service entities.
+2. **Primary Service Nodes (`/services/*`)**: High-density capability hubs featuring linear CTAs to `/solutions/aeo-blueprint` and `/contact`.
+3. **Diagnostic Node (`/solutions/aeo-blueprint`)**: Intent qualifier leading directly to terminal conversion (`/contact`).
+4. **Terminal Node (`/contact`)**: Conversion endpoint with minimal outbound link noise for high-confidence transactional retrieval.
+5. **Lateral Trust Nodes (`/knowledge-hub/*`)**: Case studies (e.g. `/knowledge-hub/case-studies/baby-bento`) and research articles feeding authority back into money pages via radial return loops.
 
 ---
 
-## ⚙️ Production Configuration (Vercel)
+## 🧠 RAG Vector Grounding & Knowledge Base
 
-To enable the Google Wallet pass generation on the live site, configure the following Environment Variables in your Vercel project settings:
+The platform features a proprietary Retrieval-Augmented Generation (RAG) vector search engine:
 
-| Variable Name | Description |
-|---|---|
-| `GOOGLE_WALLET_ISSUER_ID` | Your Issuer ID from Google Pay & Wallet Console |
-| `GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL` / `GOOGLE_WALLET_CLIENT_EMAIL` | Service Account Client Email (supports both configurations) |
-| `GOOGLE_WALLET_PROJECT_ID` | Google Cloud Project ID |
-| `GOOGLE_WALLET_PRIVATE_KEY` | Full service account Private Key (with `\n` linebreaks, quotes handled automatically) |
+* **Information Architecture Matrix (`AEObility -IA & SLM.csv`)**: Single source of truth defining 42 verified entity nodes, H1 headers, focus keyphrases, latent keywords, and schema types.
+* **Prebuild Vector Hook (`node scripts/build-knowledge-base.mjs`)**: Parses `AEObility -IA & SLM.csv` and compiles 384-dimensional embeddings into `src/lib/search/knowledgeBase.json` during `npm run prebuild` (fired automatically during `npm run build`).
+* **Real-Time Vector Search API (`POST /api/search/answer`)**: Accepts `{ "query": "..." }`, calculates cosine similarity against the 42 vector embeddings, and returns a grounded 2-sentence answer, top match URL, and similarity score.
+* **Quote Submission API (`POST /api/forms/quote`)**: Handles interactive quote requests via `Forms.wire()` and dispatches transactional notification emails via Resend API.
 
-*After adding variables, trigger a redeployment on Vercel to rebuild the Serverless Functions.*
+---
+
+## 🤖 Machine Discovery & Agent Grounding
+
+AEObility implements state-of-the-art AI agent grounding specifications:
+
+* **[`/AGENTS.md`](https://aeobility.com.au/AGENTS.md)**: Public AI agent grounding specification detailing legal entity identity, ABN, AEO/GEO corridors, 5-node link graph, and API contracts.
+* **[`/llms.txt`](https://aeobility.com.au/llms.txt)**: Standardised markdown directory mapping all site routes, terminology definitions, and API specifications for LLM crawlers.
+* **[`/robots.txt`](https://aeobility.com.au/robots.txt)**: Crawl permissions tailored for GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, and Applebot-Extended.
+* **[`/sitemap.xml`](https://aeobility.com.au/sitemap.xml)**: Dynamic sitemap (`src/app/sitemap.ts`) mapping 55 static routes.
+
+---
+
+## 💳 Google Wallet Digital Business Card Integration
+
+The platform includes a native, dependency-free Google Wallet Pass implementation for Vince Baker's digital business card (`/vince-baker`):
+
+* **Serverless Pass Generator (`/api/wallet-pass`)**: Compiles a Google Wallet `GenericObject` and signs the payload into an RS256 JWT using Node's native `crypto` module.
+* **Dynamic vCard Server (`/vince-baker.vcf`)**: Outputs raw vCard data with explicit `Content-Type: text/vcard; charset=utf-8` headers.
+* **Wallet Pass QR Code**: Embeds a QR code pointing to `https://aeobility.com.au/vince-baker.vcf`, triggering the smartphone's native "Add to Contacts" drawer upon scanning.
+
+---
+
+## 🛠️ Technology Stack & Guidelines
+
+* **Core**: Next.js 16.2 (App Router with Turbopack), React 19, TypeScript
+* **Styling**: TailwindCSS v4, Glassmorphism, Modern Typography (Outfit, Soehne Breit)
+* **Email & Forms**: Resend API (`resend`)
+* **Testing & Telemetry**: Vitest, tsx, Cheerio, Custom Telemetry V3 Harness
+* **Spelling**: Enforces strict Australian English (AU) spelling across all copy and API responses (`optimisation`, `specialises`, `organisation`, `behaviour`, `maximise`).
+
+---
+
+## 💻 Developer Commands
+
+### Environment Setup
+Create a `.env.local` file in the root directory:
+```env
+RESEND_API_KEY=re_...
+GOOGLE_WALLET_ISSUER_ID=3388000000023168657
+GOOGLE_WALLET_SERVICE_ACCOUNT_EMAIL=wallet-service-account@wallet-businesscard.iam.gserviceaccount.com
+GOOGLE_WALLET_PROJECT_ID=wallet-businesscard
+GOOGLE_WALLET_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
+```
+
+### Development & Build Scripts
+```bash
+# Start local development server
+npm run dev
+
+# Re-compile vector knowledge base embeddings
+npm run prebuild
+
+# Run TypeScript check & full production Next.js build
+npm run build
+
+# Run agent preflight & POST answer API test
+npm run test:agent
+
+# Run Telemetry V3 test harness across 5 test fixtures
+npm run test:telemetry
+
+# Submit updated site URLs to IndexNow participant search engines
+npx tsx scripts/submit-indexnow.ts
+```
+
+---
+
+© AEObility. Trekaboutoz trading as AEObility | ABN: 61 029 803 255. Built for Australian local entities.
