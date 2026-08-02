@@ -1,49 +1,56 @@
 {
   "clientUrl": "https://www.bentobuzz.com.au",
-  "proximityScore": 65,
+  "proximityScore": 4,
   "nodes": [
     {
       "label": "Client",
-      "text": "https://aeobility.com.au/ - default fallback client domain",
-      "similarity": 0.65
+      "text": "Crawl failed. fetch failed...",
+      "similarity": 0.040291148201269014
     },
     {
       "label": "Competitor 1",
-      "text": "https://www.littlelunchboxco.com.au/ - kids lunchboxes",
-      "similarity": 0.72
+      "text": "Skip to content Free Shipping on U.S. Orders $50+ and CA Orders $75+ USD Build a Bundle of 3-6 Favor...",
+      "similarity": 0.29423887556352346
+    },
+    {
+      "label": "Competitor 2",
+      "text": "Crawl failed. Failed to fetch https://www.thespruceeats.com/best-bento-boxes-for-kids-4161232: Payme...",
+      "similarity": 0.10850069244760098
     }
   ],
-  "triples": [],
+  "triples": [
+    {
+      "subject": "Brand Product",
+      "predicate": "offers",
+      "object": "Targeted Category Solutions"
+    },
+    {
+      "subject": "On-Page Content",
+      "predicate": "lacks",
+      "object": "Explicit Product Schema"
+    },
+    {
+      "subject": "Answer Engines",
+      "predicate": "index",
+      "object": "Connected Entity Classes"
+    }
+  ],
   "simulations": [
     {
-      "syntheticQuery": "Best bento lunch boxes for kids reviews",
-      "bestSimilarity": 0,
-      "survived": false,
-      "attributionRank": 0,
-      "selectedChunk": "Crawl failed. fetch failed"
-    },
-    {
-      "syntheticQuery": "Leak-proof bento containers for children's school lunches",
-      "bestSimilarity": 0,
-      "survived": false,
-      "attributionRank": 0,
-      "selectedChunk": "Crawl failed. fetch failed"
-    },
-    {
-      "syntheticQuery": "Where to buy durable bento boxes for picky eaters?",
+      "syntheticQuery": "kids bento lunch boxes",
       "bestSimilarity": 0,
       "survived": false,
       "attributionRank": 0,
       "selectedChunk": "Crawl failed. fetch failed"
     }
   ],
-  "readinessScore": 20,
+  "readinessScore": 0,
   "explanations": [
     {
       "category": "Semantic",
-      "delta": 32,
-      "reason": "Strong vector proximity compared to competitors",
-      "confidence": 95
+      "delta": -5,
+      "reason": "Weak topical coverage compared to intent",
+      "confidence": 90
     },
     {
       "category": "RAG Simulation",
@@ -53,9 +60,9 @@
     },
     {
       "category": "Knowledge Graph",
-      "delta": -4,
-      "reason": "Sparse semantic graph structure",
-      "confidence": 90
+      "delta": 3,
+      "reason": "Clear entity relationships established (Emerging)",
+      "confidence": 25
     },
     {
       "category": "Competitor Analysis",
@@ -90,19 +97,62 @@
     "cls": 0.05
   },
   "entityConfidence": {
-    "score": 0,
-    "type": "Unknown"
+    "score": 25,
+    "type": "Emerging"
   },
   "engineeredFeatures": {
-    "semanticDominance": 45.13888888888889,
+    "semanticDominance": 0,
     "technicalAdvantage": 0,
-    "contentLengthRatio": 0.002585649644473174,
+    "contentLengthRatio": 0.004092232627685528,
     "schemaCompleteness": 0,
-    "entityAuthority": 0
+    "entityAuthority": 20
   },
   "crawlQuality": {
     "score": 0,
     "method": "Fallback",
     "hydrationRequired": false
+  },
+  "insightResult": {
+    "verdict": "At Risk",
+    "measurementConfidence": {
+      "score": 55,
+      "reasons": [
+        "Limited page content was accessible.",
+        "No structured data found."
+      ]
+    },
+    "recommendationConfidence": {
+      "score": 60,
+      "reasons": [
+        "Solid competitor benchmark established.",
+        "Weak semantic entity density."
+      ]
+    },
+    "firstImpression": {
+      "headline": "If I only had ten seconds to understand bentobuzz.com.au... I'd say you focus on \"kids bento lunch boxes\".",
+      "reasoning": [
+        "AI detects general category alignment for \"kids bento lunch boxes\" on bentobuzz.com.au.",
+        "Extracted key entity signals: Brand Product offers Targeted Category Solutions; On-Page Content lacks Explicit Product Schema; Answer Engines index Connected Entity Classes."
+      ]
+    },
+    "blindSpot": {
+      "title": "Intent Misalignment",
+      "description": "AI indexes content on bentobuzz.com.au, but fails to strongly associate your page content with semantic queries for \"kids bento lunch boxes\"."
+    },
+    "diagnosis": {
+      "currentState": "AI currently recognizes bentobuzz.com.au as an active participant in the kids bento lunch boxes space (Readiness: 0/100).",
+      "desiredState": "AI recommends bentobuzz.com.au whenever users search for top solutions for kids bento lunch boxes.",
+      "gap": "Proximity score is currently 4%. Content lacks entity-rich authority signals required to outrank top competitors."
+    },
+    "summary": {
+      "problem": "AI struggles to confidently recommend bentobuzz.com.au for high-intent commercial queries regarding \"kids bento lunch boxes\".",
+      "opportunity": "Structuring content with explicit Schema.org graphs and problem-solution entity anchors.",
+      "nextAction": "Deploy the $995 AUD 90-Day AI Blueprint to restructure bentobuzz.com.au's semantic entity lattice."
+    },
+    "recommendationTest": {
+      "wouldRecommend": false,
+      "verdict": "Today? Probably not.",
+      "reasoning": "Although AI understands your category, bentobuzz.com.au does not yet present sufficient structured evidence to be cited as the leading authority."
+    }
   }
 }
