@@ -4,6 +4,10 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
   `https://${HOST}`,
+  `https://${HOST}/services`,
+  `https://${HOST}/services/aeo`,
+  `https://${HOST}/services/geo-marketing`,
+  `https://${HOST}/services/ai-search-marketing`,
   `https://${HOST}/about/freelance-digital-specialist-perth`,
   `https://${HOST}/knowledge-hub`,
   `https://${HOST}/knowledge-hub/aeo`,
@@ -17,6 +21,7 @@ const urlList = [
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
+  `https://www.aeobility.com.au/services`,
   `https://www.aeobility.com.au/knowledge-hub`,
   `https://www.aeobility.com.au/knowledge-hub/articles`,
   `https://www.aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
