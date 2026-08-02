@@ -697,19 +697,33 @@ export default function AEORootPage() {
             </div>
           </div>
 
-          {/* SECTION 8 — Pricing & Packages CTA */}
-          <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6 border-t pt-10">
-            <h3 className="text-2xl font-bold text-white">Pricing & Strategic Blueprint</h3>
+          {/* Radial Proof Evidence (Secondary Contextual Link) */}
+          <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-center justify-between text-xs mt-6">
+            <span className="text-white/60">Real-world AEO implementation proof:</span>
+            <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline font-medium inline-flex items-center gap-1">
+              Read Baby Bento Case Study <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* SECTION 8 — Pricing & Packages CTA (Linear Conversion Corridor) */}
+          <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6 mt-6">
+            <h3 className="text-2xl font-bold text-white">Pricing &amp; Strategic Blueprint</h3>
             <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
               Accelerate your authority. Access our $995 AUD Strategic Roadmap and packages to capture conversational query pack placements.
             </p>
-            <div className="flex justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all"
+                href="/solutions/aeo-blueprint"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
               >
-                <span>View Blueprint Solutions</span>
+                <span>Get AEObility Blueprint</span>
                 <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
+              >
+                <span>Request a Quote</span>
               </Link>
             </div>
           </div>
