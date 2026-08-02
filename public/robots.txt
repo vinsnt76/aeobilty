@@ -6,6 +6,8 @@ Allow: /
 Allow: /api/search/answer
 Allow: /api/mcp
 Allow: /api/chat
+Allow: /api/forms/quote
+Allow: /api/forms/audit
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot
@@ -13,6 +15,7 @@ Allow: /
 Allow: /api/search/answer
 Allow: /api/mcp
 Allow: /api/chat
+Allow: /api/forms/quote
 
 User-agent: ChatGPT-User
 Allow: /
@@ -50,6 +53,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Indexing Resources
+# Indexing Resources & Machine Maps
 Sitemap: https://aeobility.com.au/sitemap.xml
 LLMs-txt: https://aeobility.com.au/llms.txt
+Agents-md: https://aeobility.com.au/AGENTS.md
