@@ -2,7 +2,7 @@
 
 **AEObility** ([aeobility.com.au](https://aeobility.com.au)) is an Australian Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Strategy consultancy based in Perth, Western Australia. 
 
-This repository contains the complete Next.js 16 (App Router) web platform, RAG vector search engine, automated telemetry test harness, machine-readable discovery manifests (`llms.txt`, `AGENTS.md`), and native Google Wallet digital business card pass integration.
+This repository contains the complete Next.js 16 (App Router) web platform, RAG vector search engine, AI Visibility Telemetry Engine, Natural Language Web (NLWeb) protocols, GA4-instrumented site search, automated test harnesses, machine-readable discovery manifests (`llms.txt`, `AGENTS.md`), and native Google Wallet digital business card pass integration.
 
 ---
 
@@ -12,6 +12,29 @@ This repository contains the complete Next.js 16 (App Router) web platform, RAG 
 * **Geographic Engine Optimisation (GEO)**: Hyper-local coordinate mapping, spatial vector alignment, and proximity signal engineering for Google Maps, Apple Maps, and local voice search.
 * **AI Search Strategy**: Positioning brands to capture conversational queries, query fan-out behaviors, and generative AI search Overviews (Gemini, ChatGPT Search).
 * **The AEObility Blueprint**: A standalone $995 AUD Clarity Phase delivering a deep technical audit, entity visibility score, and actionable 90-day roadmap (credited 100% back if clients proceed to implementation).
+
+---
+
+## 🔬 Telemetry Engine, Site Search & NLWeb Architecture
+
+### 1. AI Visibility Telemetry Audit Engine (`src/lib/telemetry/`)
+* **Interactive Diagnostic (`/diagnostic` & `POST /api/diagnostic`)**: Evaluates any website URL across 5 AI search readiness dimensions:
+  1. *Schema Completeness*: Mapped JSON-LD microdata and entity markup.
+  2. *Entity Authority*: Verifiable brand signals, Knowledge Graph alignment, and citation anchors.
+  3. *Positional Bias*: Head/tail canonical fact placement and token weight balances.
+  4. *Vector Proximity*: Cosine similarity in vector space.
+  5. *RAG Survival*: Extraction probability in multi-modal retrieval pipelines.
+* **Telemetry V3 Test Harness (`npm run test:telemetry`)**: Automated test runner executing live evaluations against SaaS, E-Commerce, Local Business, Blog, and Enterprise site fixtures (`scripts/test-telemetry.ts`).
+
+### 2. Internal Site Search Engine & GA4 Instrument (`src/components/SearchModal.tsx`)
+* **Instant Search Modal**: Press `Ctrl+K` or click the search icon to open the client-side vector search modal.
+* **Vector & Keyword Matcher**: Queries the 42 vector nodes compiled in `knowledgeBase.json` using instant fuzzy keyword and semantic matching.
+* **GA4 Search Telemetry**: Automatically dispatches Google Analytics `gtag('event', 'search', { search_term: query })` telemetry events to track user query intent.
+
+### 3. Natural Language Web (NLWeb) & Model Context Protocol (`/api/*`)
+* **Model Context Protocol (MCP) Server (`GET /api/mcp`)**: Exposes structured JSON-schema tool descriptors and resource capabilities for AI agents and IDE assistants.
+* **Conversational AI Chat API (`POST /api/chat`)**: Multi-turn conversational endpoint powered by grounded knowledge base retrieval.
+* **Grounded Answer API (`POST /api/search/answer`)**: High-performance REST endpoint returning similarity scores, grounded 2-sentence responses, and matched entity URLs.
 
 ---
 
@@ -96,7 +119,7 @@ The platform includes a native, dependency-free Google Wallet Pass implementatio
 * **Core**: Next.js 16.2 (App Router with Turbopack), React 19, TypeScript
 * **Styling**: TailwindCSS v4, Glassmorphism, Modern Typography (Outfit, Soehne Breit)
 * **Email & Forms**: Resend API (`resend`)
-* **Testing & Telemetry**: Vitest, tsx, Cheerio, Custom Telemetry V3 Harness
+* **Testing & Telemetry**: Vitest, tsx, Cheerio, Custom Telemetry V3 Harness (`npm run test:telemetry`, `npm run test:agent`)
 * **Spelling**: Enforces strict Australian English (AU) spelling across all copy and API responses (`optimisation`, `specialises`, `organisation`, `behaviour`, `maximise`).
 
 ---
