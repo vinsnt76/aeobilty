@@ -158,7 +158,7 @@ export default function Hero() {
                 AEObility helps your business show up more often across search, social, and AI so you get more leads and more enquiries without the complexity.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
                 <a
                   href="/diagnostic"
                   className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
@@ -168,9 +168,26 @@ export default function Hero() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-white/40 pt-4">
+              {/* Primary Service Node Entity Anchor Corridor */}
+              <div className="pt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span className="text-white/40 font-medium font-mono text-[11px] uppercase tracking-wider">Services:</span>
+                <a href="/services/aeo" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
+                  AEO Services
+                </a>
+                <a href="/services/ai-search-marketing" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
+                  AI Search Strategy
+                </a>
+                <a href="/services/geo-marketing" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
+                  GEO Marketing
+                </a>
+                <a href="/solutions/aeo-blueprint" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
+                  AEO Blueprint
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs text-white/40 pt-2">
                 <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
-                <span>Add your website to See how AI search engines understand your business</span>
+                <span>Add your website to see how AI search engines understand your business</span>
               </div>
             </div>
           </div>

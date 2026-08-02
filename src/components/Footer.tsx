@@ -132,31 +132,31 @@ export default function Footer() {
 
         {/* Quick Links Column */}
         <div className="md:col-span-2 space-y-4">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-white">Services</h4>
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white">Services &amp; Blueprint</h4>
           <ul className="space-y-2 text-xs font-medium">
             <li>
               <Link href="/services/aeo" className="hover:text-white transition-colors">
-                Answer Optimisation
+                AEO Services
               </Link>
             </li>
             <li>
               <Link href="/services/ai-search-marketing" className="hover:text-white transition-colors">
-                AI Search Marketing
+                AI Search Strategy
               </Link>
             </li>
             <li>
               <Link href="/services/geo-marketing" className="hover:text-white transition-colors">
-                GEO Map Marketing
+                GEO Marketing
               </Link>
             </li>
             <li>
-              <Link href="/about/freelance-digital-specialist-perth" className="hover:text-white transition-colors">
-                Digital Specialist Perth
+              <Link href="/solutions/aeo-blueprint" className="hover:text-white transition-colors">
+                The AEObility Blueprint
               </Link>
             </li>
             <li>
               <Link href="/solutions" className="hover:text-white transition-colors">
-                Overview &amp; Sprints
+                AEO Packages &amp; Sprints
               </Link>
             </li>
           </ul>
