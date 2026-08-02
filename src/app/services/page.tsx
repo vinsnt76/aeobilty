@@ -121,32 +121,48 @@ export default function ServicesPage() {
             "description": "AEO Blueprint: full technical audit, local intent analysis, AI-readiness scoring and a 90-day strategic roadmap."
           }
         },
-        "hasPart": [
-          {
-            "@type": "Service",
-            "name": "Answer Engine Optimisation (AEO)",
-            "description": "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
-            "url": "https://aeobility.com.au/services/aeo"
-          },
-          {
-            "@type": "Service",
-            "name": "GEO Marketing",
-            "description": "GEO Marketing for local service businesses in Perth, Australia. Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries.",
-            "url": "https://aeobility.com.au/services/geo-marketing"
-          },
-          {
-            "@type": "Service",
-            "name": "AI Search Strategy",
-            "description": "AI Search Strategy for Australian SMBs. Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
-            "url": "https://aeobility.com.au/services/ai-search-marketing"
-          },
-          {
-            "@type": "Service",
-            "name": "Semantic Site Mapping",
-            "description": "Comprehensive semantic site mapping and structured optimisation so vector-based retrieval engines can ingest, map and index your business details.",
-            "url": "https://aeobility.com.au/knowledge-hub/semantic-seo"
-          }
-        ]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AEO & GEO Marketing Services Catalog",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Answer Engine Optimisation (AEO)",
+                "description": "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
+                "url": "https://aeobility.com.au/services/aeo"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GEO Marketing",
+                "description": "GEO Marketing for local service businesses in Perth, Australia. Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries.",
+                "url": "https://aeobility.com.au/services/geo-marketing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Search Strategy",
+                "description": "AI Search Strategy for Australian SMBs. Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
+                "url": "https://aeobility.com.au/services/ai-search-marketing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Semantic Site Mapping",
+                "description": "Comprehensive semantic site mapping and structured optimisation so vector-based retrieval engines can ingest, map and index your business details.",
+                "url": "https://aeobility.com.au/knowledge-hub/semantic-seo"
+              }
+            }
+          ]
+        }
       },
       {
         "@type": ["WebPage", "AboutPage"],
@@ -165,7 +181,24 @@ export default function ServicesPage() {
         },
         "mainEntity": {
           "@id": "https://aeobility.com.au/services#service"
-        }
+        },
+        "hasPart": [
+          {
+            "@type": "WebPage",
+            "name": "Answer Engine Optimisation (AEO)",
+            "url": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "WebPage",
+            "name": "GEO Marketing",
+            "url": "https://aeobility.com.au/services/geo-marketing"
+          },
+          {
+            "@type": "WebPage",
+            "name": "AI Search Strategy",
+            "url": "https://aeobility.com.au/services/ai-search-marketing"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
