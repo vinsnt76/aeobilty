@@ -28,38 +28,124 @@ export default function GEOMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/geo-marketing",
+        "url": "https://aeobility.com.au/services/geo-marketing",
+        "name": "AEObility GEO Marketing Services for Perth SMBs",
+        "description": "GEO Marketing services for Australian SMBs. AEObility improves local visibility across Search, Maps and AI by strengthening proximity signals, location nodes and regional intent clarity.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://aeobility.com.au/services/geo-marketing#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://aeobility.com.au"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://aeobility.com.au/services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "GEO Marketing",
+              "item": "https://aeobility.com.au/services/geo-marketing"
+            }
+          ]
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/geo-marketing#service"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "GEO Marketing"
+          },
+          {
+            "@type": "Thing",
+            "name": "Local Intent Signals"
+          },
+          {
+            "@type": "Thing",
+            "name": "Proximity Signals"
+          },
+          {
+            "@type": "Thing",
+            "name": "Regional Intent Nodes"
+          },
+          {
+            "@type": "Thing",
+            "name": "Location Vector Space"
+          }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
-        "url": "https://aeobility.com.au"
+        "url": "https://aeobility.com.au",
+        "description": "AEO and GEO Marketing services for Australian small businesses. AEObility helps your business appear, make sense and stand out across Search, Maps and AI.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Perth",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "postalCode": "6000",
+          "addressCountry": "Australia"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Perth, Australia"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -31.9523,
+          "longitude": 115.8613
+        }
       },
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/geo-marketing#service",
-        "name": "AEObility GEO Marketing Services for Perth SMBs",
-        "description": "AEObility helps Perth SMBs improve local visibility through GEO Marketing. Your local GEO marketing company and specialist consultant for geolocation‑aware visibility.",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Perth Small and Medium Businesses (SMBs)",
-          "geographicArea": {
-            "@type": "City",
-            "name": "Perth",
-            "containedInPlace": {
-              "@type": "State",
-              "name": "Western Australia"
-            }
-          }
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Perth",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Western Australia"
-          }
-        },
+        "name": "GEO Marketing",
+        "serviceType": "Geolocation-Aware Visibility",
+        "category": "AEO Services",
+        "url": "https://aeobility.com.au/services/geo-marketing",
+        "description": "GEO Marketing improves how your business appears in location-aware search, map applications and AI assistants. AEObility strengthens proximity signals, regional intent nodes and structured location clarity for Perth SMBs.",
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Perth, Australia"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Australian SMBs and local service businesses"
+        },
+        "hasPart": [
+          {
+            "@type": "Service",
+            "name": "Answer Engine Optimisation",
+            "url": "https://aeobility.com.au/services/aeo",
+            "description": "AEO improves how AI systems interpret your business and extract clear answers."
+          },
+          {
+            "@type": "Service",
+            "name": "AI Search Strategy",
+            "url": "https://aeobility.com.au/services/ai-search-marketing",
+            "description": "Long-term strategy for conversational search and generative engine visibility."
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://aeobility.com.au/solutions/aeo-blueprint",
+          "priceCurrency": "AUD",
+          "price": "995",
+          "description": "The AEObility Blueprint is a deeper technical audit and 90-day roadmap that shows exactly how to improve visibility, understanding and selection across Search, Maps and AI."
         }
       },
       {
