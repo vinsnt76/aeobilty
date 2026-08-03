@@ -61,7 +61,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
     >
       <head>
-        {/* Initialize Consent Mode Defaults */}
+        {/* Direct GA4 Script Loading (Bypassing Zaraz & /metrics proxying) */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-EEOBILITY01'}`}
+        />
+        {/* Initialize Consent Mode & Direct GA4 Config */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -72,6 +77,10 @@ export default function RootLayout({
                 'ad_user_data': 'granted',
                 'ad_personalization': 'granted',
                 'analytics_storage': 'granted'
+              });
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-EEOBILITY01'}', {
+                send_page_view: true
               });
             `,
           }}
