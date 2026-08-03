@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { ArrowRight, MapPin, Map, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, MapPin, Map, Navigation, CheckCircle2, Sparkles, HelpCircle } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import QuoteFormSection from '@/components/QuoteFormSection';
 
@@ -61,6 +61,44 @@ export default function GEOMarketingPage() {
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services/geo-marketing#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is GEO Marketing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GEO Marketing improves how your business appears in location‑aware search, map applications and AI assistants. It strengthens your local signals so engines like Google Maps, Apple Maps and generative models can correctly interpret where you operate and who you serve."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does GEO support AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GEO builds the location clarity that AEO relies on. When your coordinates, service areas and proximity signals are structured properly, answer engines can confidently match your business to nearby customers and include you in local recommendations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a GEO strategy involve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A GEO strategy includes mapping your service areas, structuring location nodes, improving proximity signals and ensuring your business details are consistent across all platforms. This helps AI systems understand your footprint and present you accurately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who benefits most from GEO Marketing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Australian service businesses that rely on local enquiries benefit most. Clear location signals help plumbers, electricians, childcare centres and other SMBs appear more often in map results and AI‑generated local suggestions."
+            }
+          }
+        ]
       }
     ]
   };
@@ -213,6 +251,53 @@ export default function GEOMarketingPage() {
                   <span>Request a Quote &bull; Get Custom Strategy</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+              </div>
+            </div>
+
+            {/* Frequently Asked Questions: GEO Marketing */}
+            <div className="space-y-6 border-t border-white/5 pt-10">
+              <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase">
+                <HelpCircle className="w-4 h-4" />
+                <span>Knowledge &amp; Clarity</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">Frequently Asked Questions: GEO Marketing</h2>
+              
+              <div className="space-y-4">
+                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <span className="text-aeo-cyan font-mono text-xs">[01]</span> What is GEO Marketing?
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                    GEO Marketing improves how your business appears in location‑aware search, map applications and AI assistants. It strengthens your local signals so engines like Google Maps, Apple Maps and generative models can correctly interpret where you operate and who you serve.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <span className="text-aeo-cyan font-mono text-xs">[02]</span> How does GEO support AEO?
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                    GEO builds the location clarity that AEO relies on. When your coordinates, service areas and proximity signals are structured properly, answer engines can confidently match your business to nearby customers and include you in local recommendations.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <span className="text-aeo-cyan font-mono text-xs">[03]</span> What does a GEO strategy involve?
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                    A GEO strategy includes mapping your service areas, structuring location nodes, improving proximity signals and ensuring your business details are consistent across all platforms. This helps AI systems understand your footprint and present you accurately.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <span className="text-aeo-cyan font-mono text-xs">[04]</span> Who benefits most from GEO Marketing?
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
+                    Australian service businesses that rely on local enquiries benefit most. Clear location signals help plumbers, electricians, childcare centres and other SMBs appear more often in map results and AI‑generated local suggestions.
+                  </p>
+                </div>
               </div>
             </div>
 
