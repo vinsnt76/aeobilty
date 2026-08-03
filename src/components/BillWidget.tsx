@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
 import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 // Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
@@ -62,6 +63,13 @@ function parseTelemetryText(text: string) {
 }
 
 export default function BillWidget() {
+  const pathname = usePathname();
+
+  // Suppress AI Bill widget on /about and /freelance routes
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+    return null;
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
   const [input, setInput] = useState('');

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { X, Send } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 interface ChatMessage {
@@ -22,7 +23,13 @@ export function extractDomainLabel(url: string): string {
 }
 
 export default function CompanionWidget() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Suppress AI Bill companion widget on /about and /freelance routes
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+    return null;
+  }
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'assistant',
