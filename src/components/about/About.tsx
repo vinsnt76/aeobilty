@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap, BarChart3, Cpu, Layers } from 'lucide-react';
+import { Globe, Briefcase, TrendingUp, ShoppingCart, Brain, Search, Target, LayoutGrid, DollarSign, Compass, Award, ShieldCheck, CheckCircle2, BarChart, GraduationCap, MousePointerClick, Users, Zap, BarChart3, Cpu, Layers, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const About: React.FC = () => {
@@ -583,6 +583,44 @@ const About: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </motion.div>
+
+        {/* Strategic Mid-Page CTA Callout to Contact / Quote Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-aeo-purple/10 border border-aeo-cyan/30 text-center space-y-4 shadow-xl"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-semibold">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Ready to Elevate Your Search &amp; AI Visibility?</span>
+          </div>
+          <h4 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+            Let&apos;s Build Your Custom AEO Strategy
+          </h4>
+          <p className="text-xs sm:text-sm text-neutral-300 max-w-xl mx-auto font-light leading-relaxed font-serif">
+            Connect with Vince Baker for a tailored consultation. Get found, understood, and recommended across Search, Maps, and AI search engines.
+          </p>
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById('quote-form');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  const contactEl = document.getElementById('contact');
+                  if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs sm:text-sm rounded-xl hover:scale-[1.03] transition-all shadow-lg shadow-aeo-cyan/20 cursor-pointer"
+            >
+              <span>Get in Touch &bull; Request Custom Quote</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </motion.div>
 
