@@ -36,40 +36,40 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-20 md:py-32 scroll-mt-24">
+    <section id="about" className="py-12 sm:py-20 md:py-32 scroll-mt-24">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="container mx-auto px-6 max-w-6xl bg-white dark:bg-[#111] text-neutral-900 dark:text-neutral-100 rounded-xl p-8 md:p-10 shadow-lg"
+        className="container mx-auto px-4 sm:px-6 max-w-6xl bg-neutral-950 border border-white/10 text-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl"
       >
         {/* Hero Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-center justify-center md:justify-start mb-16"
+          className="flex items-center justify-center md:justify-start mb-10 sm:mb-16"
         >
-          <Compass className="w-8 h-8 text-aeo-cyan mr-3" />
-          <h3 className="text-3xl md:text-4xl font-bold leading-tight text-left">
+          <Compass className="w-7 h-7 sm:w-8 sm:h-8 text-aeo-cyan mr-3 shrink-0" />
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-left">
             From Traveller to <span className="text-aeo-purple font-mono">[</span>Digital Architect<span className="text-aeo-purple font-mono">]</span>
           </h3>
         </motion.div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column: Refactored Story & Pivot */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-4 text-left font-serif block"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed space-y-4 text-left font-serif block"
           >
-            {/* Floated Scaled Embed Wrapper */}
-            <div className="float-left mr-4 mb-2 -mt-2 overflow-hidden w-[180px] h-[310px] relative">
+            {/* Floated Scaled Embed Wrapper - Hides on small mobile screens to prevent text squeezing */}
+            <div className="hidden sm:block float-left mr-4 mb-2 -mt-2 overflow-hidden w-[180px] h-[310px] relative">
               <div className="transform scale-[0.48] origin-top-left w-[360px]">
                 <blockquote
                   className="instagram-media"
@@ -899,16 +899,16 @@ const About: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
-          className="mt-20 border-t border-neutral-200 dark:border-neutral-800 pt-16 text-center"
+          className="mt-12 sm:mt-20 border-t border-neutral-800 pt-10 sm:pt-16 text-center"
         >
-          <h3 className="text-xl font-bold mb-6 text-neutral-500 dark:text-neutral-400 uppercase tracking-widest text-sm">Browse my other digital specialities</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/about/freelance-seo-consultant-perth" className="px-5 py-2.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan text-aeo-cyan text-sm font-semibold shadow-sm">Freelance SEO Consultant Perth</Link>
-            <Link href="/about/freelance-google-ads-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Google Ads Consultant Perth</Link>
-            <Link href="/about/freelance-digital-specialist-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Digital Specialist Perth</Link>
-            <Link href="/about/freelance-ai-consultant-perth" className="px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance AI Consultant Perth</Link>
+          <h3 className="text-xs sm:text-sm font-bold mb-6 text-neutral-400 uppercase tracking-widest">Browse my other digital specialities</h3>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <Link href="/about/freelance-seo-consultant-perth" className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance SEO Consultant Perth</Link>
+            <Link href="/about/freelance-google-ads-consultant-perth" className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Google Ads Consultant Perth</Link>
+            <Link href="/about/freelance-digital-specialist-perth" className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance Digital Specialist Perth</Link>
+            <Link href="/about/freelance-ai-consultant-perth" className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold hover:border-aeo-cyan hover:text-aeo-cyan transition-colors shadow-sm">Freelance AI Consultant Perth</Link>
           </div>
         </motion.div>
       </motion.div>

@@ -96,20 +96,11 @@ export default async function Page({ params }: PageProps) {
       <Breadcrumbs />
       
       <main className="flex-grow w-full">
-        {/* Customized Hero Section */}
+        {/* Customized Role Hero Section */}
         <Welcome config={config} />
         
-        {/* Unified AEObility Story & Technical Frameworks */}
+        {/* AEObility Narrative, Frameworks, Team Specialties & Contact Card */}
         <About />
-        
-        {/* Featured Projects & Case Studies (Target for View My Work CTA) */}
-        <Projects />
-        
-        {/* Capability Matrix for Digital Specialist */}
-        {slug === 'freelance-digital-specialist-perth' && <CapabilityMatrix />}
-        
-        {/* Digital Business Card & Contact Terminal */}
-        <Contact />
       </main>
 
       <Footer />

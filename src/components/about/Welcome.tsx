@@ -91,15 +91,15 @@ const Welcome: React.FC<WelcomeProps> = ({ config }) => {
           >
             <button 
               type="button"
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('about')}
               className="bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-8 py-4 rounded-2xl font-bold shadow-xl shadow-aeo-cyan/20 hover:scale-[1.02] transition-all duration-300"
             >
-              View My Work
+              Explore Capabilities
             </button>
             <button 
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 rounded-2xl font-bold border-2 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+              className="px-8 py-4 rounded-2xl font-bold border-2 border-gray-200 dark:border-gray-800 text-white hover:bg-white/10 transition-all duration-300"
             >
               Get In Touch
             </button>
