@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { ArrowRight, MapPin, Map, Navigation, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MapPin, Map, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import QuoteFormSection from '@/components/QuoteFormSection';
 
 export const metadata = {
   title: "AEObility GEO Marketing Services for Perth SMBs | AEObility",
@@ -160,6 +161,29 @@ export default function GEOMarketingPage() {
             </p>
           </div>
 
+          {/* Strategic Mid-Page CTA Callout to Quote Form */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border border-aeo-cyan/30 text-center space-y-4 shadow-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Dominate Perth Maps &amp; Geolocation AI Search</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white">
+              Need a Tailored GEO Marketing Strategy for Your Perth Business?
+            </h3>
+            <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
+              Get a custom quote and local visibility roadmap for your brand across Google Maps, Apple Maps, ChatGPT, and Perplexity.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="#quote-form"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs sm:text-sm rounded-xl hover:scale-[1.03] transition-all shadow-lg shadow-aeo-cyan/20 cursor-pointer"
+              >
+                <span>Request a Quote &bull; Get Custom Strategy</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
           {/* Checklist */}
           <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
             <h3 className="text-lg font-bold text-white">GEO Map Pack Optimisation Checklist</h3>
@@ -206,8 +230,8 @@ export default function GEOMarketingPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
+                href="#quote-form"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all cursor-pointer"
               >
                 <span>Request a Quote</span>
               </Link>
@@ -215,6 +239,11 @@ export default function GEOMarketingPage() {
           </div>
         </section>
       </main>
+
+      {/* Interactive Contact & Quote Request Form */}
+      <div className="max-w-6xl mx-auto px-6 pb-16 w-full">
+        <QuoteFormSection />
+      </div>
 
       <Footer />
     </div>
