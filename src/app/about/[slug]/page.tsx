@@ -1,15 +1,17 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import Welcome from '@/components/about/Welcome';
 import About from '@/components/about/About';
 import Projects from '@/components/about/Projects';
 import Contact from '@/components/about/Contact';
+import CapabilityMatrix from '@/components/CapabilityMatrix';
 import { ArrowLeft } from 'lucide-react';
 import { roleConfigs } from '../config';
 import { notFound } from 'next/navigation';
-
-import CapabilityMatrix from '@/components/CapabilityMatrix';
 
 interface PageProps {
   params: Promise<{
@@ -31,6 +33,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: config.metadata.title,
     description: config.metadata.description,
+    alternates: {
+      canonical: `https://aeobility.com.au/about/${slug}`,
+    }
   };
 }
 
@@ -82,31 +87,32 @@ export default async function Page({ params }: PageProps) {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="fixed top-6 left-6 z-50">
-        <Link 
-          href="/about" 
-          className="flex items-center gap-2 px-4 py-2 bg-neutral-900/80 backdrop-blur-md border border-white/10 rounded-full text-sm font-medium text-white/80 hover:text-aeo-cyan hover:border-aeo-cyan/50 transition-all shadow-lg"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to About Hub
-        </Link>
-      </div>
+      <Navbar />
+      <Breadcrumbs />
       
-      {/* We pass the config to Welcome to customize the Hero Section */}
-      <Welcome config={config} />
-      
-      {/* 
-        The rest of the components use the unified AEObility narrative 
-        ("Sharper, diagnostic, AEO > SEO theatre").
-      */}
-      <About />
-      {slug === 'freelance-digital-specialist-perth' && <CapabilityMatrix />}
-      <Contact />
-    </>
+      <main className="flex-grow w-full">
+        {/* Customized Hero Section */}
+        <Welcome config={config} />
+        
+        {/* Unified AEObility Story & Technical Frameworks */}
+        <About />
+        
+        {/* Featured Projects & Case Studies (Target for View My Work CTA) */}
+        <Projects />
+        
+        {/* Capability Matrix for Digital Specialist */}
+        {slug === 'freelance-digital-specialist-perth' && <CapabilityMatrix />}
+        
+        {/* Digital Business Card & Contact Terminal */}
+        <Contact />
+      </main>
+
+      <Footer />
+    </div>
   );
 }

@@ -60,6 +60,26 @@ const nextConfig: NextConfig = {
         destination: '/knowledge-hub/structured-data-query-fan-out',
         permanent: true,
       },
+      {
+        source: '/freelance-ai-consultant-perth',
+        destination: '/about/freelance-ai-consultant-perth',
+        permanent: true,
+      },
+      {
+        source: '/freelance-seo-consultant-perth',
+        destination: '/about/freelance-seo-consultant-perth',
+        permanent: true,
+      },
+      {
+        source: '/freelance-google-ads-consultant-perth',
+        destination: '/about/freelance-google-ads-consultant-perth',
+        permanent: true,
+      },
+      {
+        source: '/freelance-digital-specialist-perth',
+        destination: '/about/freelance-digital-specialist-perth',
+        permanent: true,
+      },
     ];
   },
 };
