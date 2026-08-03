@@ -13,6 +13,8 @@ import { ArrowLeft } from 'lucide-react';
 import { roleConfigs } from '../config';
 import { notFound } from 'next/navigation';
 
+import QuoteFormSection from '@/components/QuoteFormSection';
+
 interface PageProps {
   params: Promise<{
     slug: string;
@@ -101,6 +103,11 @@ export default async function Page({ params }: PageProps) {
         
         {/* AEObility Narrative, Frameworks, Team Specialties & Contact Card */}
         <About />
+        
+        {/* Interactive Contact & Quote Request Form */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+          <QuoteFormSection />
+        </div>
       </main>
 
       <Footer />
