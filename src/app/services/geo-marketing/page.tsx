@@ -60,6 +60,20 @@ export default function GEOMarketingPage() {
         "mainEntity": {
           "@id": "https://aeobility.com.au/services/geo-marketing#service"
         },
+        "hasPart": [
+          {
+            "@type": "WebPage",
+            "name": "Answer Engine Optimisation",
+            "url": "https://aeobility.com.au/services/aeo",
+            "description": "AEO improves how AI systems interpret your business and extract clear answers."
+          },
+          {
+            "@type": "WebPage",
+            "name": "AI Search Strategy",
+            "url": "https://aeobility.com.au/services/ai-search-marketing",
+            "description": "Long-term strategy for conversational search and generative engine visibility."
+          }
+        ],
         "about": [
           {
             "@type": "Thing",
@@ -126,7 +140,7 @@ export default function GEOMarketingPage() {
           "@type": "Audience",
           "audienceType": "Australian SMBs and local service businesses"
         },
-        "hasPart": [
+        "isRelatedTo": [
           {
             "@type": "Service",
             "name": "Answer Engine Optimisation",
