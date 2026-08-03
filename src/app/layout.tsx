@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import GlobalConsentBanner from "@/components/GlobalConsentBanner";
 import CompanionWidget from "@/components/CompanionWidget";
 import AnswerSearchModal from "@/components/AnswerSearchModal";
 import BillWidget from "@/components/BillWidget";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,34 +64,32 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
     >
       <head>
-        {/* Direct GA4 Script Loading (Bypassing Zaraz & /metrics proxying) */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH'}`}
-        />
-        {/* Initialize Consent Mode & Direct GA4 Config */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('consent', 'default', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted'
-              });
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH'}', {
-                send_page_view: true
-              });
-            `,
-          }}
-        />
         <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
       <body className="min-h-full flex flex-col">
+        {/* Direct GA4 Script Loading via next/script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        {/* Initialize Consent Mode & Direct GA4 Config */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              send_page_view: true
+            });
+          `}
+        </Script>
         {/* Global Entity Schema */}
         <script
           id="global-brand-schema"
