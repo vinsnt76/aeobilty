@@ -83,14 +83,29 @@ export default function AnswerSearchModal() {
           setOffTopicCount(prev => prev + 1);
         }
 
-        // Dispatch GA4 internal search event
-        if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === 'function') {
-          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'search', {
+        // Dispatch GA4 & DataLayer internal search event
+        if (typeof window !== 'undefined') {
+          const win = window as unknown as {
+            dataLayer?: Array<Record<string, unknown>>;
+            gtag?: (...args: unknown[]) => void;
+          };
+          win.dataLayer = win.dataLayer || [];
+          win.dataLayer.push({
+            event: 'search',
             search_term: searchQuery,
             match_score: Math.round(data.similarityScore * 100),
             result_type: data.resultType,
             matched_entity: data.topMatch?.pageName || 'None'
           });
+
+          if (typeof win.gtag === 'function') {
+            win.gtag('event', 'search', {
+              search_term: searchQuery,
+              match_score: Math.round(data.similarityScore * 100),
+              result_type: data.resultType,
+              matched_entity: data.topMatch?.pageName || 'None'
+            });
+          }
         }
       }
     } catch (err) {

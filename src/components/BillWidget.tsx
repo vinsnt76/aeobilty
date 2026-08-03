@@ -195,12 +195,25 @@ export default function BillWidget() {
     const nextMode = !isTelemetryMode;
     setIsTelemetryMode(nextMode);
 
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'bill_mode_toggle', {
+    if (typeof window !== 'undefined') {
+      const win = window as unknown as {
+        dataLayer?: Array<Record<string, unknown>>;
+        gtag?: (...args: unknown[]) => void;
+      };
+      win.dataLayer = win.dataLayer || [];
+      win.dataLayer.push({
+        event: 'bill_mode_toggle',
         event_category: 'AI Assistant',
         event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
         value: nextMode ? 1 : 0
       });
+      if (typeof win.gtag === 'function') {
+        win.gtag('event', 'bill_mode_toggle', {
+          event_category: 'AI Assistant',
+          event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
+          value: nextMode ? 1 : 0
+        });
+      }
     }
   };
 
@@ -208,13 +221,27 @@ export default function BillWidget() {
   const executeQuery = async (queryText: string) => {
     if (!queryText.trim() || isLoading) return;
 
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'bill_query_submitted', {
+    if (typeof window !== 'undefined') {
+      const win = window as unknown as {
+        dataLayer?: Array<Record<string, unknown>>;
+        gtag?: (...args: unknown[]) => void;
+      };
+      win.dataLayer = win.dataLayer || [];
+      win.dataLayer.push({
+        event: 'bill_query_submitted',
         event_category: 'AI Assistant',
         search_term: queryText,
         active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer',
         query_length: queryText.length
       });
+      if (typeof win.gtag === 'function') {
+        win.gtag('event', 'bill_query_submitted', {
+          event_category: 'AI Assistant',
+          search_term: queryText,
+          active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer',
+          query_length: queryText.length
+        });
+      }
     }
 
     // Dynamic telemetry payload extraction from localStorage or state
