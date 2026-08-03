@@ -6,15 +6,15 @@ import { ArrowRight, MapPin, Map, Navigation, CheckCircle2 } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "GEO Marketing Specialist & Services | AEObility",
-  description: "Target geographic engine optimization (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
+  title: "AEObility GEO Marketing Services for Perth SMBs | AEObility",
+  description: "Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
   keywords: [
     "geo marketing",
-    "geo consultant",
-    "geo marketing company",
-    "geo specialist",
+    "geo consultant perth",
+    "geo marketing company perth",
+    "geo specialist perth",
     "geo marketing strategy",
-    "geo marketing tools"
+    "geo marketing tools perth"
   ],
   alternates: {
     canonical: "https://aeobility.com.au/services/geo-marketing",
@@ -34,11 +34,15 @@ export default function GEOMarketingPage() {
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/geo-marketing#service",
-        "name": "GEO Marketing",
-        "description": "Target geographic engine optimization (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
+        "name": "AEObility GEO Marketing Services for Perth SMBs",
+        "description": "Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
         "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
+          "@type": "City",
+          "name": "Perth",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Western Australia"
+          }
         },
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
@@ -121,13 +125,14 @@ export default function GEOMarketingPage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>GEO Marketing Services: Geolocation-Aware Visibility</span>
+              <span>Geolocation-Aware Visibility</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              GEO <span className="text-gradient-aeo">Marketing Specialist</span> & Services
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+              AEObility GEO Marketing Services <br className="hidden sm:block" />
+              for <span className="text-gradient-aeo">Perth SMBs</span>
             </h1>
-            <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
-              Target geographic engine optimization (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.
+            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
+              Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
             </p>
           </div>
 
