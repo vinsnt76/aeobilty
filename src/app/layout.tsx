@@ -64,7 +64,7 @@ export default function RootLayout({
         {/* Direct GA4 Script Loading (Bypassing Zaraz & /metrics proxying) */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-EEOBILITY01'}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH'}`}
         />
         {/* Initialize Consent Mode & Direct GA4 Config */}
         <script
@@ -79,7 +79,7 @@ export default function RootLayout({
                 'analytics_storage': 'granted'
               });
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-EEOBILITY01'}', {
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH'}', {
                 send_page_view: true
               });
             `,
