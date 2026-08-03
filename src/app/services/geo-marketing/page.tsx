@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { ArrowRight, MapPin, Map, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
@@ -135,6 +136,19 @@ export default function GEOMarketingPage() {
             <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
               Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
             </p>
+          </div>
+
+          {/* Hero Visual Banner with Entity-Rich Alt Text */}
+          <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-900 group">
+            <Image
+              src="/geo-marketing-perth_AEObility.webp"
+              alt="AEObility GEO Marketing Services for Perth SMBs displaying geolocation-aware vector mesh nodes, local map pack coordinate signals, and AI spatial search optimisation for Perth Western Australia businesses."
+              width={1200}
+              height={675}
+              priority
+              className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Pillars */}
