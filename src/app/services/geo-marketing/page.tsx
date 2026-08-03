@@ -9,7 +9,7 @@ import QuoteFormSection from '@/components/QuoteFormSection';
 
 export const metadata = {
   title: "AEObility GEO Marketing Services for Perth SMBs | AEObility",
-  description: "Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
+  description: "AEObility helps Perth SMBs improve local visibility through GEO Marketing. Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
   keywords: [
     "geo marketing",
     "geo consultant perth",
@@ -37,7 +37,19 @@ export default function GEOMarketingPage() {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/geo-marketing#service",
         "name": "AEObility GEO Marketing Services for Perth SMBs",
-        "description": "Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
+        "description": "AEObility helps Perth SMBs improve local visibility through GEO Marketing. Your local GEO marketing company and specialist consultant for geolocation‑aware visibility.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Perth Small and Medium Businesses (SMBs)",
+          "geographicArea": {
+            "@type": "City",
+            "name": "Perth",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Western Australia"
+            }
+          }
+        },
         "areaServed": {
           "@type": "City",
           "name": "Perth",
@@ -100,7 +112,7 @@ export default function GEOMarketingPage() {
               for <span className="text-gradient-aeo">Perth SMBs</span>
             </h1>
             <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-              Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
+              AEObility helps Perth SMBs improve local visibility through GEO Marketing. As your local GEO marketing company and specialist consultant, we optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
             </p>
           </div>
 
