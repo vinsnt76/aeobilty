@@ -150,7 +150,7 @@ export default function GEOMarketingPage() {
               for <span className="text-gradient-aeo">Perth SMBs</span>
             </h1>
             <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-              AEObility helps Perth SMBs improve local visibility through GEO Marketing. As your local GEO marketing company and specialist consultant, we optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
+              AEObility helps Perth SMBs improve local visibility through GEO Marketing as a specialized sub-pillar of our overarching <Link href="/services/aeo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">AEO Services</Link>. As your local GEO marketing company and specialist consultant, we optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
             </p>
           </div>
 
@@ -193,13 +193,13 @@ export default function GEOMarketingPage() {
             <div className="p-6 bg-gradient-to-br from-aeo-cyan/10 to-transparent border border-white/5 rounded-2xl space-y-4">
               <h4 className="text-sm font-bold text-white">Need immediate clarity?</h4>
               <p className="text-xs text-white/60 leading-relaxed font-light">
-                Get a custom-crafted report looking at how Perplexity, ChatGPT, and Google Maps currently see your business.
+                Get a custom-crafted report and <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">Free Visibility Audit</Link> looking at how Perplexity, ChatGPT, and Google Maps currently see your business.
               </p>
               <Link
                 href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300 text-xs sm:text-sm"
               >
-                <span>Get Visibility Score</span>
+                <span>Free Visibility Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -224,10 +224,10 @@ export default function GEOMarketingPage() {
             <div className="space-y-6 border-t border-white/5 pt-10">
               <h2 className="text-2xl font-bold">Connecting Local Users With Location-Aware Engines</h2>
               <p className="text-sm text-white/70 leading-relaxed font-light">
-                Location-aware systems determine which local brands to suggest by filtering regional intent nodes and mapping coordinate parameters. Traditional local listings are parsed into broader spatial graphs used by LLMs to fulfill local prompts.
+                Location-aware systems determine which local brands to suggest by filtering regional intent nodes and mapping coordinate parameters. GEO works seamlessly alongside our broader <Link href="/services/ai-search-marketing" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">AI Search Strategy</Link> to ensure generative search models interpret your local footprint with absolute precision.
               </p>
               <p className="text-sm text-white/70 leading-relaxed font-light">
-                At AEObility, we combine structural coordinate mapping rules with proximity signals to ensure your local service nodes match exactly where search models place geographic queries.
+                At AEObility, we combine structural coordinate mapping rules with proximity signals to ensure your local service nodes match exactly where search models place geographic queries. For an in-depth technical breakdown, explore <Link href="/knowledge-hub/geo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">Understanding Local Intent Signals</Link> in our Knowledge Hub.
               </p>
             </div>
 
@@ -299,6 +299,14 @@ export default function GEOMarketingPage() {
                   </p>
                 </div>
               </div>
+
+              {/* Explicit High-Intent Contact Conversion Link */}
+              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs mt-6">
+                <span className="text-white/60">Have specific questions about your local search presence in Perth?</span>
+                <Link href="/contact" className="text-aeo-cyan hover:underline font-bold inline-flex items-center gap-1 whitespace-nowrap">
+                  <span>Book a Clarity Call</span> <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
 
             {/* Checklist */}
@@ -335,22 +343,22 @@ export default function GEOMarketingPage() {
             {/* Phase 3 Linear Conversion Corridor Banner */}
             <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6">
               <h3 className="text-2xl font-bold text-white">Dominate Location-Aware Search &amp; Maps</h3>
-              <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
-                Start with our $995 AEObility Blueprint. Get a full local intent audit and a 90-day execution roadmap.
+              <p className="text-sm text-white/60 max-w-lg mx-auto font-light leading-relaxed">
+                Start with our $995 AEObility <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline hover:text-white font-medium">90-Day Blueprint</Link>. Get a full local intent audit and a 90-day execution roadmap, or explore full <Link href="/" className="text-aeo-cyan underline hover:text-white font-medium">AEO Services for Australian Businesses</Link> on our homepage.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/solutions/aeo-blueprint"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
                 >
-                  <span>Get AEObility Blueprint</span>
+                  <span>Get 90-Day Blueprint</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="#quote-form"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all cursor-pointer"
                 >
-                  <span>Request a Quote</span>
+                  <span>Book a Clarity Call</span>
                 </Link>
               </div>
             </div>
