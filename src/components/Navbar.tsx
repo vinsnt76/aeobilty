@@ -24,6 +24,24 @@ export default function Navbar() {
     setOpenMobileSubmenu(openMobileSubmenu === name ? null : name);
   };
 
+  // Automatically close mobile menu and submenus when pathname changes
+  useEffect(() => {
+    setIsOpen(false);
+    setOpenMobileSubmenu(null);
+  }, [pathname]);
+
+  // Manage body scroll locking when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   // Close dropdown on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -266,7 +284,11 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              onClick={() => setIsOpen(false)}
+                              prefetch={false}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setOpenMobileSubmenu(null);
+                              }}
                               className={`text-sm py-1 transition-colors ${
                                 isSubActive ? 'text-aeo-cyan font-bold' : 'text-black/60 hover:text-black'
                               }`}
@@ -286,7 +308,11 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  prefetch={false}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setOpenMobileSubmenu(null);
+                  }}
                   className={`hover:text-aeo-cyan transition-all duration-200 py-2 text-lg ${
                     active ? 'text-aeo-cyan' : 'text-black'
                   }`}
@@ -303,7 +329,11 @@ export default function Navbar() {
               
               <Link
                 href="/book"
-                onClick={() => setIsOpen(false)}
+                prefetch={false}
+                onClick={() => {
+                  setIsOpen(false);
+                  setOpenMobileSubmenu(null);
+                }}
                 className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold bg-aeo-purple text-white rounded-xl hover:bg-opacity-90 transition-all shadow-md"
               >
                 Book a Call
@@ -311,7 +341,11 @@ export default function Navbar() {
               
               <Link
                 href="/contact"
-                onClick={() => setIsOpen(false)}
+                prefetch={false}
+                onClick={() => {
+                  setIsOpen(false);
+                  setOpenMobileSubmenu(null);
+                }}
                 className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold border border-neutral-200 text-neutral-800 rounded-xl hover:bg-neutral-50 transition-all"
               >
                 Contact Page
@@ -319,7 +353,11 @@ export default function Navbar() {
               
               <Link
                 href="/diagnostic"
-                onClick={() => setIsOpen(false)}
+                prefetch={false}
+                onClick={() => {
+                  setIsOpen(false);
+                  setOpenMobileSubmenu(null);
+                }}
                 className="w-full max-w-xs text-center px-6 py-3 text-sm font-bold bg-black border border-aeo-cyan text-aeo-cyan rounded-xl hover:bg-aeo-cyan hover:text-black transition-all"
               >
                 Get Visibility Score
