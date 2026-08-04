@@ -527,8 +527,8 @@ export default function BillWidget() {
             <p className="text-zinc-300 font-medium text-xs">
               G&apos;day! I&apos;m Bill, AEObility&apos;s AI Agent.
             </p>
-            <p className="text-zinc-500 text-[11px] leading-relaxed">
-              Query Bill regarding advanced Answer Engine Optimisation architectures or switch on Telemetry Mode to pipe local variable diagnostics.
+            <p className="text-zinc-400 text-[11px] leading-relaxed">
+              Enter your website URL and target search query below to launch a live telemetry diagnostic.
             </p>
           </div>
         )}

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { X, Send } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
 import { CompanionCard } from '@/lib/search/types';
 import BillAvatar from '@/components/BillAvatar';
@@ -27,6 +27,7 @@ export function extractDomainLabel(url: string): string {
 
 export default function CompanionWidget() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -180,6 +181,7 @@ export default function CompanionWidget() {
 
   const openDeepTelemetryDrawer = () => {
     setIsOpen(false);
+    router.push('/diagnostic');
     window.dispatchEvent(new Event('open_bill_drawer'));
   };
 
@@ -587,7 +589,7 @@ export default function CompanionWidget() {
               </a>
               <button
                 type="button"
-                onClick={() => handleSendMessage("Scan my site visibility")}
+                onClick={() => openDeepTelemetryDrawer()}
                 className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
               >
                 Scan My Site ➔
