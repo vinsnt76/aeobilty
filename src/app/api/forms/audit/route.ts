@@ -6,9 +6,9 @@ const forms = Forms.wire();
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, website } = body;
+    const { name, email, website, phone } = body;
 
-    await forms.submitAuditForm({ name, email, website });
+    await forms.submitAuditForm({ name, email, website, phone });
 
     return NextResponse.json({ ok: true });
   } catch (err) {

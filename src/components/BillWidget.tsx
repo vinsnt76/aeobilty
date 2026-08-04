@@ -74,6 +74,16 @@ export default function BillWidget() {
   const [reportedCardIds] = useState(() => new Set<string>());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // 0. Gated Lead-Capture State (Triggers on 3rd User Turn)
+  const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('aeo_lead_captured') === 'true';
+    }
+    return false;
+  });
+  const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
+  const [isSubmittingLead, setIsSubmittingLead] = useState(false);
+
   // 1. Session Storage Synced Data Hydration
   useEffect(() => {
     const hydrateAudit = () => {
@@ -111,6 +121,47 @@ export default function BillWidget() {
   });
 
   const isLoading = status === 'submitted' || status === 'streaming';
+
+  // Calculate User Turn Count for Lead Gating (Triggers on 3rd turn)
+  const userTurnCount = messages.filter((m) => m.role === 'user').length;
+  const isGated = userTurnCount >= 3 && !isLeadCaptured;
+
+  const handleLeadCaptureSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadForm.email.trim()) return;
+
+    setIsSubmittingLead(true);
+    try {
+      const targetWebsite = storedTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
+      const res = await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: leadForm.name,
+          email: leadForm.email,
+          phone: leadForm.phone,
+          website: targetWebsite
+        })
+      });
+
+      if (res.ok) {
+        setIsLeadCaptured(true);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('aeo_lead_captured', 'true');
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'bill_lead_captured', {
+              event_category: 'AI Telemetry Gating',
+              email: leadForm.email
+            });
+          }
+        }
+      }
+    } catch (err) {
+      console.error("Lead submission error:", err);
+    } finally {
+      setIsSubmittingLead(false);
+    }
+  };
 
   const getMessageText = React.useCallback((m: UIMessage): string => {
     if (!m) return '';
@@ -454,7 +505,98 @@ export default function BillWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-[540px] max-h-[85vh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
+    <div className="fixed bottom-6 right-6 z-50 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-[540px] max-h-[85vh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn relative">
+      {/* 0. Interstitial Gating Modal Overlay (3rd User Turn) */}
+      {isGated && (
+        <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn">
+          {/* Close Chat Option */}
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-3.5 right-3.5 text-zinc-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition cursor-pointer"
+            aria-label="Close Chat"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <div className="w-full max-w-sm space-y-3.5 text-left bg-zinc-900/90 border border-emerald-500/30 p-5 rounded-2xl shadow-2xl">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                <Sparkles className="w-4 h-4 animate-pulse" />
+              </div>
+              <h3 className="text-xs font-bold text-white tracking-tight">
+                Unlock Complete AI Telemetry Report
+              </h3>
+            </div>
+
+            <p className="text-[11px] text-zinc-300 leading-relaxed">
+              You&apos;ve reached the free diagnostic preview limit. Enter your details to continue your deep Q&amp;A session and receive your full entity audit report.
+            </p>
+
+            <form onSubmit={handleLeadCaptureSubmit} className="space-y-2.5 pt-1">
+              <div>
+                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Full Name</label>
+                <input
+                  type="text"
+                  required
+                  value={leadForm.name}
+                  onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  placeholder="Jane Doe"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
+              </div>
+
+              <div>
+                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Work Email</label>
+                <input
+                  type="email"
+                  required
+                  value={leadForm.email}
+                  onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  placeholder="jane@company.com.au"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
+              </div>
+
+              <div>
+                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Phone Number</label>
+                <input
+                  type="tel"
+                  required
+                  value={leadForm.phone}
+                  onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  placeholder="0400 000 000"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmittingLead}
+                className="w-full py-2.5 mt-1 bg-emerald-500 hover:bg-emerald-400 font-bold text-black rounded-lg text-xs transition shadow-[0_0_15px_rgba(16,185,129,0.2)] disabled:opacity-50 cursor-pointer"
+              >
+                {isSubmittingLead ? "Unlocking Report..." : "Unlock Full Telemetry & Continue Chat"}
+              </button>
+            </form>
+
+            <div className="pt-1 text-center">
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="text-[11px] text-zinc-400 underline hover:text-zinc-200 transition cursor-pointer"
+              >
+                Close chat for now
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Header Controller Banner */}
       <div className="bg-zinc-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -608,7 +750,7 @@ export default function BillWidget() {
         />
         <button 
           type="submit" 
-          disabled={!input.trim() || isLoading}
+          disabled={isGated || !input.trim() || isLoading}
           className="bg-emerald-500 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-emerald-400 transition flex items-center justify-center shrink-0 cursor-pointer"
           aria-label="Send message"
         >

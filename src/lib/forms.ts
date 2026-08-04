@@ -3,8 +3,8 @@ import { Resend } from "resend";
 export const Forms = {
   wire() {
     return {
-      async submitAuditForm({ name, email, website }: { name?: string; email: string; website: string }) {
-        if (!email || !website) {
+      async submitAuditForm({ name, email, website, phone }: { name?: string; email: string; website?: string; phone?: string }) {
+        if (!email) {
           throw new Error("Missing required fields");
         }
 
@@ -14,12 +14,13 @@ export const Forms = {
         await resend.emails.send({
           from: "AEObility <noreply@aeobility.com.au>",
           to: "support@aeobility.com.au",
-          subject: "New AEObility Audit Request",
+          subject: "New AEObility Audit & AI Telemetry Lead",
           html: `
-            <h2>New Audit Request</h2>
+            <h2>New Audit Request & AI Telemetry Lead</h2>
             <p><strong>Name:</strong> ${name || "Not provided"}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Website:</strong> ${website}</p>
+            <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+            <p><strong>Website:</strong> ${website || "Not provided"}</p>
           `,
         });
 
