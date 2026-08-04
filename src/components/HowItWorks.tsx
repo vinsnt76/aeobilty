@@ -1,19 +1,14 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle2, Globe, Mail, Search } from 'lucide-react';
-import Link from 'next/link';
-import { useTelemetryScan } from '@/hooks/useTelemetryScan';
-import { extractDomainLabel } from './CompanionWidget';
+import { ArrowRight, Globe, Search } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function HowItWorks() {
+  const router = useRouter();
   const [url, setUrl] = useState('');
-  const [email, setEmail] = useState('');
   const [intent, setIntent] = useState('');
-  const [submitted, setSubmitted] = useState(false);
   const [started, setStarted] = useState(false);
-
-  const { runScan, result: telemetryResult, loading, error: telemetryError } = useTelemetryScan();
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -61,62 +56,23 @@ export default function HowItWorks() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!url || !email || !intent) return;
+    if (!url.trim() || !intent.trim()) return;
 
-    try {
-      // 1. Trigger real-time AEO/GEO telemetry scan via hook
-      await runScan(url, intent);
-
-      // 2. Submit email/lead form
-      await fetch('/api/forms/audit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website: url, intent }),
-      });
-
-      setSubmitted(true);
-
-      // 3. Trigger Analytics DataLayer Events
-      let emailDomain = '';
-      if (email.includes('@')) {
-        emailDomain = email.split('@')[1];
-      }
-      let websiteDomain = '';
-      try {
-        const parsedUrl = new URL(url.startsWith('http') ? url : `https://${url}`);
-        websiteDomain = parsedUrl.hostname.replace('www.', '');
-      } catch {
-        websiteDomain = url.replace('www.', '');
-      }
-
-      if (typeof window !== 'undefined') {
-        const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
-        if (win.dataLayer) {
-          win.dataLayer.push({
-            event: 'audit_form_submit',
-            form_id: 'audit',
-            email_domain: emailDomain,
-            website_domain: websiteDomain
-          });
-        }
-      }
-    } catch (err) {
-      console.error('Audit run error:', err);
+    let formattedUrl = url.trim();
+    if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {
+      formattedUrl = `https://${formattedUrl}`;
     }
+
+    const searchParams = new URLSearchParams({
+      url: formattedUrl,
+      intent: intent.trim(),
+      auto: 'true',
+    });
+
+    router.push(`/diagnostic?${searchParams.toString()}`);
   };
-
-  useEffect(() => {
-    if (submitted && telemetryResult) {
-      localStorage.setItem('aeo_telemetry_latest', JSON.stringify({
-        url,
-        intent,
-        result: telemetryResult
-      }));
-      window.dispatchEvent(new Event('aeo_telemetry_updated'));
-    }
-  }, [submitted, telemetryResult, url, intent]);
 
   return (
     <section id="how-it-works" className="py-20 bg-neutral-50 text-black">
@@ -198,131 +154,11 @@ export default function HowItWorks() {
             {/* Top decorative stripe */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple"></div>
 
-            {submitted && telemetryResult ? (
-              <div className="py-6 space-y-5 animate-fade-in">
-                <div className="text-center space-y-1.5">
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-emerald-500">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-base font-bold text-neutral-900">Telemetry Scan Complete</h4>
-                  <p className="text-[11px] text-neutral-500 font-light max-w-xs mx-auto">
-                    Real-time AEO indicators compiled for <span className="font-semibold text-neutral-800">{url}</span>.
-                  </p>
-                </div>
-
-                {/* Inline Telemetry View */}
-                <div className="bg-neutral-950 text-white border border-neutral-800 rounded-xl p-4 font-mono text-[10px] space-y-4">
-                  {/* Proximity Track */}
-                  <div className="space-y-1.5">
-                    <div className="text-[9px] uppercase tracking-wider text-white/40">AI Search Semantic Match (Vector Proximity)</div>
-                    {telemetryResult.nodes?.slice(0, 3).map((node, idx) => {
-                      const isClient = node.label === 'Client';
-                      const percentage = Math.round(node.similarity * 100);
-                      const displayLabel = isClient 
-                        ? (url ? `[${extractDomainLabel(url)}]` : '[Your Site]') 
-                        : `[${extractDomainLabel(node.text)}]`;
-                      
-                      return (
-                        <div key={idx} className="space-y-0.5">
-                          <div className="flex justify-between text-[9px]">
-                            <span>{displayLabel}</span>
-                            <span className={isClient ? 'text-aeo-cyan' : 'text-neutral-400'}>{node.similarity.toFixed(3)}</span>
-                          </div>
-                          <div className="h-1.5 w-full bg-zinc-800 rounded overflow-hidden">
-                            <div 
-                              className={`h-full rounded ${isClient ? 'bg-aeo-cyan' : 'bg-zinc-500'}`}
-                              style={{ width: `${percentage}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* RAG Verdict */}
-                  <div className="border-t border-white/5 pt-2 flex items-center justify-between text-[9px]">
-                    <span className="text-white/40 uppercase">AI Retrieval Status (Simulation):</span>
-                    {telemetryResult.simulations?.[0] && (
-                      <span className={telemetryResult.simulations[0].survived ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold'}>
-                        {telemetryResult.simulations[0].survived ? '● ALIGNED' : '● DROPPED'}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Schema Triples */}
-                  {telemetryResult.triples && telemetryResult.triples.length > 0 && (
-                    <div className="border-t border-white/5 pt-2 space-y-1">
-                      <div className="text-[9px] uppercase tracking-wider text-white/40">Core Semantic Associations (Entity Triples)</div>
-                      <div className="space-y-0.5">
-                        {telemetryResult.triples.slice(0, 2).map((t, idx) => (
-                          <div key={idx} className="text-[8px] text-white/70 truncate">
-                            <span className="text-aeo-cyan">{t.subject}</span> ──► {t.predicate} ──► {t.object}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* V2: Technical Health & Schema */}
-                  {(telemetryResult.technicalSEO || telemetryResult.performance) && (
-                    <div className="border-t border-white/5 pt-2 flex items-start justify-between text-[9px]">
-                      <div className="space-y-1">
-                        <div className="text-white/40 uppercase">Technical Health</div>
-                        {telemetryResult.performance && (
-                          <div className={telemetryResult.performance.coreWebVitalsScore > 80 ? 'text-emerald-400' : 'text-amber-400'}>
-                            CWV Score: {telemetryResult.performance.coreWebVitalsScore}
-                          </div>
-                        )}
-                        {telemetryResult.technicalSEO && (
-                          <div className="text-white/70">
-                            Links: {telemetryResult.technicalSEO.internalLinksCount}
-                          </div>
-                        )}
-                      </div>
-                      <div className="space-y-1 text-right">
-                        <div className="text-white/40 uppercase">Schema (JSON-LD)</div>
-                        {telemetryResult.schemaValidation && (
-                          <div className={telemetryResult.schemaValidation.hasValidSchema ? 'text-emerald-400' : 'text-rose-400'}>
-                            {telemetryResult.schemaValidation.hasValidSchema ? '● DETECTED' : '● MISSING'}
-                          </div>
-                        )}
-                        <div className="text-[8px] text-aeo-cyan truncate max-w-[80px]">
-                           {telemetryResult.schemaValidation?.typesFound?.[0] || 'None'}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="pt-2 border-t border-neutral-100 space-y-3">
-                  <p className="text-xs text-neutral-500 text-center font-light leading-relaxed">
-                    💡 <strong>Open the Chat Companion</strong> at the bottom right to let <strong>AI Bill</strong> review this context and walk you through fixes!
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    <Link href="/book" className="btn-primary w-full text-center py-3 text-xs">
-                      Book 15‑Min Clarity Call
-                    </Link>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setStarted(false);
-                    setUrl('');
-                    setEmail('');
-                  }}
-                  className="block mt-2 mx-auto text-[10px] font-semibold text-neutral-400 hover:text-neutral-600 hover:underline"
-                >
-                  Request another audit
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
+            <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
                 <div>
                   <h4 className="text-lg font-bold text-neutral-950">Measure Your AI Visibility</h4>
                   <p className="text-xs text-neutral-500 font-light mt-1">
-                    See how AI search engines understand your business today.
+                    See how AI search engines understand your business today. Zero email required upfront.
                   </p>
                 </div>
 
@@ -337,7 +173,7 @@ export default function HowItWorks() {
                     <div className="relative">
                       <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
                       <input
-                        type="url"
+                        type="text"
                         id="australian-business-url"
                         name="australian_business_url"
                         required
@@ -349,6 +185,8 @@ export default function HowItWorks() {
                         }}
                         className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                         aria-required="true"
+                        spellCheck={false}
+                        suppressHydrationWarning
                       />
                     </div>
                   </div>
@@ -375,32 +213,8 @@ export default function HowItWorks() {
                         }}
                         className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
                         aria-required="true"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label 
-                      htmlFor="business-contact-email"
-                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
-                    >
-                      Business Contact Email
-                    </label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-                      <input
-                        type="email"
-                        id="business-contact-email"
-                        name="business_contact_email"
-                        required
-                        placeholder="you@company.com.au"
-                        value={email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                          handleFieldStart('email');
-                        }}
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
-                        aria-required="true"
+                        spellCheck={false}
+                        suppressHydrationWarning
                       />
                     </div>
                   </div>
@@ -409,15 +223,11 @@ export default function HowItWorks() {
                 <div>
                   <button
                     type="submit"
-                    disabled={loading}
-                    className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all disabled:opacity-50 cursor-pointer"
+                    className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all cursor-pointer"
                   >
-                    {loading ? 'Running Telemetry Scan...' : 'Generate My AI Visibility Score'}
-                    {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
+                    <span>Generate My AI Visibility Score</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
-                  {telemetryError && (
-                    <p className="text-xs text-rose-500 text-center font-semibold mt-3">{telemetryError}</p>
-                  )}
                   <p className="text-[10px] text-center text-neutral-500 font-medium mt-2.5">
                     * The scan executes a real-time vector analysis using Gemini.
                   </p>
@@ -427,7 +237,6 @@ export default function HowItWorks() {
                   By clicking, you agree to our terms. Your privacy is guaranteed.
                 </p>
               </form>
-            )}
           </div>
         </div>
       </div>

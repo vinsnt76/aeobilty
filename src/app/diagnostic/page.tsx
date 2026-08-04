@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DiagnosticEngine from '@/components/DiagnosticEngine';
@@ -17,7 +17,9 @@ export default function DiagnosticPage() {
       <Navbar />
       
       <main className="flex-1 w-full max-w-4xl mx-auto px-6 py-24 flex flex-col items-center">
-        <DiagnosticEngine />
+        <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono">Initializing Telemetry Engine...</div>}>
+          <DiagnosticEngine />
+        </Suspense>
       </main>
 
       <Footer />

@@ -1,18 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles } from 'lucide-react';
 import { TelemetryResult } from '@/lib/telemetry/types';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
 
 export default function DiagnosticEngine() {
+  const searchParams = useSearchParams();
   const [step, setStep] = useState<Step>('INPUT');
   const [url, setUrl] = useState('');
   const [intent, setIntent] = useState('');
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
-  
   const [processingStage, setProcessingStage] = useState(0);
+  const hasAutoRunRef = useRef(false);
 
   const processingSteps = [
     "Crawling website structure",
@@ -23,12 +25,11 @@ export default function DiagnosticEngine() {
     "Computing retrieval readiness"
   ];
 
-  const handleStart = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!url || !intent) return;
-    
+  const runScan = async (rawUrl: string, rawIntent: string) => {
+    if (!rawUrl || !rawIntent) return;
+
     // Normalize URL
-    let normalizedUrl = url.trim();
+    let normalizedUrl = rawUrl.trim();
     if (!normalizedUrl.startsWith('http://') && !normalizedUrl.startsWith('https://')) {
       if (normalizedUrl.startsWith('https') && !normalizedUrl.includes('://')) {
         normalizedUrl = normalizedUrl.replace(/^https[^a-zA-Z0-9]*/i, 'https://');
@@ -39,9 +40,11 @@ export default function DiagnosticEngine() {
       }
     }
     setUrl(normalizedUrl);
+    setIntent(rawIntent.trim());
     
     // Dispatch scan started event
     if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('close_companion_widget'));
       window.dispatchEvent(new Event('aeo_scan_started'));
     }
 
@@ -52,7 +55,7 @@ export default function DiagnosticEngine() {
     const fetchPromise = fetch('/api/diagnostic', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: normalizedUrl, intent }),
+      body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim() }),
     }).then(res => res.json());
 
     // Fake visual progress for UX
@@ -70,11 +73,11 @@ export default function DiagnosticEngine() {
       
       // Dispatch events to notify AI Bill (CompanionWidget)
       if (typeof window !== 'undefined') {
-        localStorage.setItem('aeo_telemetry_latest', JSON.stringify({ url: normalizedUrl, intent, result: data }));
+        localStorage.setItem('aeo_telemetry_latest', JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim(), result: data }));
         window.dispatchEvent(new Event('aeo_scan_completed'));
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
-        // We no longer auto-open the chat. The user must explicitly click the guided action button.
       }
+      setStep('SCORE_REVEAL');
     } catch (e: unknown) {
       console.error('Diagnostic engine fetch error:', e);
       // fallback for demo if fails
@@ -82,9 +85,26 @@ export default function DiagnosticEngine() {
         readinessScore: 0,
         error: e instanceof Error ? e.message : 'Failed to fetch telemetry'
       } as unknown as TelemetryResult);
+      setStep('SCORE_REVEAL');
     }
+  };
 
-    setStep('SCORE_REVEAL');
+  useEffect(() => {
+    const auto = searchParams.get('auto') === 'true';
+    const queryUrl = searchParams.get('url');
+    const queryIntent = searchParams.get('intent');
+
+    if (auto && queryUrl && queryIntent && !hasAutoRunRef.current) {
+      hasAutoRunRef.current = true;
+      runScan(queryUrl, queryIntent);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  const handleStart = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!url || !intent) return;
+    await runScan(url, intent);
   };
 
   return (
