@@ -6,6 +6,7 @@ import { DefaultChatTransport, UIMessage } from 'ai';
 import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
+import BillAvatar from '@/components/BillAvatar';
 
 // Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
 declare global {
@@ -65,11 +66,6 @@ function parseTelemetryText(text: string) {
 export default function BillWidget() {
   const pathname = usePathname();
 
-  // Suppress AI Bill widget on /about and /freelance routes
-  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
-    return null;
-  }
-
   const [isOpen, setIsOpen] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
   const [input, setInput] = useState('');
@@ -97,6 +93,14 @@ export default function BillWidget() {
     hydrateAudit();
     window.addEventListener('aeo_telemetry_updated', hydrateAudit);
     return () => window.removeEventListener('aeo_telemetry_updated', hydrateAudit);
+  }, []);
+
+  useEffect(() => {
+    const handleOpenDrawer = () => {
+      setIsOpen(true);
+    };
+    window.addEventListener('open_bill_drawer', handleOpenDrawer);
+    return () => window.removeEventListener('open_bill_drawer', handleOpenDrawer);
   }, []);
 
   // 2. STABLE PROTECTED STREAM HOOK BINDINGS
@@ -223,17 +227,8 @@ export default function BillWidget() {
 
     if (typeof window !== 'undefined') {
       const win = window as unknown as {
-        dataLayer?: Array<Record<string, unknown>>;
         gtag?: (...args: unknown[]) => void;
       };
-      win.dataLayer = win.dataLayer || [];
-      win.dataLayer.push({
-        event: 'bill_query_submitted',
-        event_category: 'AI Assistant',
-        search_term: queryText,
-        active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer',
-        query_length: queryText.length
-      });
       if (typeof win.gtag === 'function') {
         win.gtag('event', 'bill_query_submitted', {
           event_category: 'AI Assistant',
@@ -440,25 +435,13 @@ export default function BillWidget() {
     );
   };
 
+  // Suppress AI Bill widget on /about and /freelance routes
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+    return null;
+  }
+
   if (!isOpen) {
-    return (
-      <button
-        type="button"
-        onClick={() => {
-          window.dispatchEvent(new Event('close_companion_widget'));
-          setIsOpen(true);
-        }}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-zinc-900/90 hover:bg-zinc-800 text-white rounded-full border border-emerald-500/30 shadow-2xl backdrop-blur-md hover:scale-105 transition-all duration-300 group cursor-pointer"
-        aria-label="Open Bill AI Assistant"
-      >
-        <div className="relative">
-          <Bot className="w-5 h-5 text-emerald-400 group-hover:rotate-12 transition-transform" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full" />
-        </div>
-        <span className="text-xs font-semibold tracking-wide">Ask Bill AI</span>
-      </button>
-    );
+    return null;
   }
 
   return (
@@ -466,9 +449,7 @@ export default function BillWidget() {
       {/* Header Controller Banner */}
       <div className="bg-zinc-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-            <Bot className="w-4 h-4" />
-          </div>
+          <BillAvatar size="sm" pulse={false} />
           <div>
             <h3 className="font-semibold text-xs text-white tracking-wide flex items-center gap-1.5 uppercase font-mono">
               System Agent: Bill

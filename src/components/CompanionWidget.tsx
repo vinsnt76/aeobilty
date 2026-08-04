@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { X, Send } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
+import BillAvatar from '@/components/BillAvatar';
 
 interface ChatMessage {
   sender: 'user' | 'assistant';
@@ -232,6 +233,11 @@ export default function CompanionWidget() {
     window.speechSynthesis.speak(utterance);
   };
 
+  const openDeepTelemetryDrawer = () => {
+    setIsOpen(false);
+    window.dispatchEvent(new Event('open_bill_drawer'));
+  };
+
   const handleSendMessage = async () => {
     if (isThinking || !inputText.trim()) return;
 
@@ -241,10 +247,27 @@ export default function CompanionWidget() {
     setIsThinking(true);
 
     try {
-      // Conversational Onboarding Interception
+      // Conversational Onboarding / Pre-Audit Search Interception
       if (billState !== 'CONSULTANT') {
         if (billState === 'EMAIL_CAPTURE') {
-          handleEmailCapture(userMsg);
+          await handleEmailCapture(userMsg);
+        } else {
+          // Instant RAG Pre-Audit Internal Search
+          try {
+            const res = await fetch('/api/search/answer', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ query: userMsg })
+            });
+            if (res.ok) {
+              const data = await res.json();
+              const answerText = data.answer || "I've searched our knowledge base. Submit your site URL to run a live diagnostic audit!";
+              setMessages(prev => [...prev, { sender: 'assistant', text: answerText }]);
+              speakText(answerText);
+            }
+          } catch (err) {
+            console.error("Pre-audit RAG search failed:", err);
+          }
         }
         setIsThinking(false);
         return;
@@ -335,8 +358,6 @@ export default function CompanionWidget() {
     return null;
   }
 
-  if (!telemetryData) return null;
-
   return (
     <>
       {/* Floating Toggle Button */}
@@ -351,7 +372,7 @@ export default function CompanionWidget() {
         {isOpen ? (
           <X className="w-6 h-6" />
         ) : (
-          <Image src="/char-mouth-closed.png" alt="AI Bill" fill sizes="56px" className="object-cover animate-pulse" />
+          <BillAvatar size="lg" pulse status={telemetryData ? 'online' : 'online'} />
         )}
       </button>
 
@@ -364,13 +385,18 @@ export default function CompanionWidget() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-white/5 px-4 py-3 bg-white/[0.02]">
           <div className="flex items-center gap-2">
-            <div className="relative h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 flex-shrink-0">
-              <Image src="/char-mouth-closed.png" alt="AI Bill Profile" fill sizes="24px" className="object-cover" />
-              <div className="absolute bottom-0 right-0 h-1.5 w-1.5 rounded-full bg-emerald-500 border border-black z-10" />
-            </div>
-            <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Diagnostic Engine</span>
+            <BillAvatar size="sm" pulse={false} />
+            <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Search & Telemetry Copilot</span>
           </div>
-          <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Co-Pilot OS</span>
+          {telemetryData && (
+            <button
+              type="button"
+              onClick={openDeepTelemetryDrawer}
+              className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded border border-aeo-cyan/25 transition cursor-pointer"
+            >
+              Open Telemetry Drawer ↗
+            </button>
+          )}
         </div>
 
         {billState === 'CONSULTANT' && telemetryData && (
