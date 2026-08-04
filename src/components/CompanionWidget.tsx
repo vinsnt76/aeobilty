@@ -199,6 +199,18 @@ export default function CompanionWidget() {
         if (billState === 'EMAIL_CAPTURE') {
           await handleEmailCapture(userMsg);
         } else {
+          // Direct URL Submission Interception
+          const isDirectUrlSubmission = /^https?:\/\//i.test(userMsg) || (/\.[a-z]{2,}/i.test(userMsg) && !userMsg.includes(' '));
+          if (isDirectUrlSubmission) {
+            setMessages(prev => [
+              ...prev,
+              { sender: 'assistant', text: `Diagnostic mode initiated for ${userMsg}. Launching live telemetry drawer...` }
+            ]);
+            openDeepTelemetryDrawer();
+            setIsThinking(false);
+            return;
+          }
+
           // Instant RAG Pre-Audit Internal Search
           try {
             const res = await fetch('/api/search/answer', {

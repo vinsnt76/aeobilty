@@ -161,23 +161,37 @@ export function classifyCompanion5Intent(
 ): CompanionSearchResponse {
   const clean = query.toLowerCase().trim();
 
-  // 1. Action Intent Check (Scan, Audit, Diagnostics, Telemetry, Check Score)
-  const isActionIntent = /\b(scan|audit|telemetry|check my score|diagnose|analyze site|analyse site|run audit)\b/i.test(clean);
-  if (isActionIntent) {
+  // 1. Strict Diagnostic Override Check (visibility, improve visibility, search visibility, answer search, entity visibility, ranking, performance, scan, audit, check, diagnose)
+  const strictDiagnosticTerms = [
+    'visibility',
+    'improve visibility',
+    'search visibility',
+    'answer search',
+    'entity visibility',
+    'ranking',
+    'performance',
+    'scan',
+    'audit',
+    'check',
+    'diagnose'
+  ];
+
+  const isDiagnosticOverride = strictDiagnosticTerms.some(term => clean.includes(term));
+  if (isDiagnosticOverride) {
     return {
       intent: 'action',
-      answer: "I can run a live AEO telemetry audit on your website. Submit your URL to inspect schema completeness, entity authority, and vector proximity scores.",
-      triggerBillScan: true,
+      answer: "I can check your visibility. Hit Scan My Site to start the diagnostic.",
+      triggerBillScan: false,
       cards: [
         {
-          title: "Run Live Telemetry Audit",
+          title: "Scan My Site (Diagnostic Mode)",
           url: "/diagnostic",
           type: "action",
-          description: "Inspect schema microdata, vector proximity, and RAG extraction risk.",
-          ctaText: "Launch Diagnostic Audit ➔"
+          description: "Run live telemetry audit on your website for schema, entity salience & RAG survival.",
+          ctaText: "Scan My Site ➔"
         }
       ],
-      suggestedPills: ["What is AEO?", "View Packages & Pricing", "Explain GEO Services"]
+      suggestedPills: ["Scan My Site", "Find a Service", "Explain AEO"]
     };
   }
 
