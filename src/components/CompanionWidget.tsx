@@ -240,13 +240,15 @@ export default function CompanionWidget() {
     window.dispatchEvent(new Event('open_bill_drawer'));
   };
 
-  const handleSendMessage = async () => {
-    if (isThinking || !inputText.trim()) return;
+  const handleSendMessage = async (overrideText?: string) => {
+    const textToSend = (typeof overrideText === 'string' ? overrideText : inputText).trim();
+    if (isThinking || !textToSend) return;
 
-    const userMsg = inputText.trim();
     setInputText('');
-    setMessages(prev => [...prev, { sender: 'user', text: userMsg }]);
+    setMessages(prev => [...prev, { sender: 'user', text: textToSend }]);
     setIsThinking(true);
+
+    const userMsg = textToSend;
 
     try {
       // Conversational Onboarding / Pre-Audit Search Interception
@@ -592,28 +594,28 @@ export default function CompanionWidget() {
               <div className="flex flex-wrap gap-1.5 pb-1">
                 <button
                   type="button"
-                  onClick={() => setInputText("What AEO services do you offer?")}
+                  onClick={() => handleSendMessage("What AEO services do you offer?")}
                   className="text-[9px] bg-aeo-cyan/10 border border-aeo-cyan/20 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded-md text-aeo-cyan transition cursor-pointer"
                 >
                   Find a Service
                 </button>
                 <button
                   type="button"
-                  onClick={() => setInputText("Scan my site visibility")}
+                  onClick={() => handleSendMessage("Scan my site visibility")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
                 >
                   Scan My Site ➔
                 </button>
                 <button
                   type="button"
-                  onClick={() => setInputText("What is AEO?")}
+                  onClick={() => handleSendMessage("What is AEO?")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
                 >
                   Explain AEO
                 </button>
                 <button
                   type="button"
-                  onClick={() => setInputText("Where is pricing?")}
+                  onClick={() => handleSendMessage("Where is pricing?")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
                 >
                   Show Pricing
@@ -625,19 +627,19 @@ export default function CompanionWidget() {
             {billState === 'CONSULTANT' && telemetryData && (
               <div className="flex flex-wrap gap-1.5 pb-2">
                 <button
-                  onClick={() => setInputText("Explain my Vector Proximity similarity score vs competitor.")}
+                  onClick={() => handleSendMessage("Explain my Vector Proximity similarity score vs competitor.")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
                 >
                   Explain Proximity
                 </button>
                 <button
-                  onClick={() => setInputText("What do these extracted Semantic Graph Triples represent?")}
+                  onClick={() => handleSendMessage("What do these extracted Semantic Graph Triples represent?")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
                 >
                   Explain Graph Triples
                 </button>
                 <button
-                  onClick={() => setInputText("Why was my content dropped in the RAG retrieval simulation?")}
+                  onClick={() => handleSendMessage("Why was my content dropped in the RAG retrieval simulation?")}
                   className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
                 >
                   Explain RAG Status
@@ -660,24 +662,32 @@ export default function CompanionWidget() {
               </div>
             )}
 
-            {billState === 'CONSULTANT' && (
-              <div className="flex gap-2">
+            {/* Main Input Form */}
+            {billState !== 'EMAIL_CAPTURE' && (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSendMessage();
+                }}
+                className="flex gap-2"
+              >
                 <input
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Message AI Bill..."
-                  className="flex-grow bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-aeo-cyan/50 transition-colors"
+                  placeholder="Search AEObility or enter site URL..."
+                  className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors"
                 />
                 <button
-                  onClick={handleSendMessage}
-                  className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 transition-colors"
-                  title="Send Message"
+                  type="submit"
+                  disabled={isThinking || !inputText.trim()}
+                  className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 disabled:opacity-40 transition-colors cursor-pointer shrink-0"
+                  title="Send Message / Search"
                 >
                   <Send className="w-4 h-4" />
                 </button>
-              </div>
+              </form>
             )}
           </div>
       </div>
