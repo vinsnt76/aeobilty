@@ -32,7 +32,7 @@ export default function CompanionWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'assistant',
-      text: "AI Bill active. Ready to run technical diagnostics or clarify search visibility metrics. Submit your URL to begin."
+      text: "G’day. Bill here. Ready to increase your visibility. Ask anything."
     }
   ]);
   const [inputText, setInputText] = useState('');
@@ -330,21 +330,42 @@ export default function CompanionWidget() {
           isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
         }`}
       >
-        {/* Drawer Header */}
-        <div className="flex items-center justify-between border-b border-white/5 px-4 py-3 bg-white/[0.02]">
-          <div className="flex items-center gap-2">
-            <BillAvatar size="sm" pulse={false} />
-            <span className="text-xs font-mono tracking-wider text-zinc-400 uppercase">AI Bill // Search & Telemetry Copilot</span>
+        {/* Drawer Header Top Bar */}
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 bg-neutral-900/90 backdrop-blur-md shrink-0">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs font-semibold font-mono tracking-wide text-white uppercase">AI Bill</span>
+            <span className="text-[10px] text-zinc-400 font-mono border-l border-white/10 pl-2">Online</span>
           </div>
-          {telemetryData && (
+          <div className="flex items-center gap-2">
+            {telemetryData && (
+              <button
+                type="button"
+                onClick={openDeepTelemetryDrawer}
+                className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded border border-aeo-cyan/25 transition cursor-pointer"
+              >
+                Telemetry ↗
+              </button>
+            )}
             <button
               type="button"
-              onClick={openDeepTelemetryDrawer}
-              className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded border border-aeo-cyan/25 transition cursor-pointer"
+              onClick={() => setIsOpen(false)}
+              className="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition cursor-pointer"
+              aria-label="Close Assistant"
             >
-              Open Telemetry Drawer ↗
+              <X className="w-4 h-4" />
             </button>
-          )}
+          </div>
+        </div>
+
+        {/* Hero Section: Centered Larger Avatar under Top Bar */}
+        <div className="flex flex-col items-center justify-center pt-4 pb-3 border-b border-white/5 bg-gradient-to-b from-neutral-900/60 to-transparent shrink-0">
+          <BillAvatar size="lg" pulse status="online" />
+          <h4 className="mt-2 text-xs font-mono font-bold tracking-wider text-white uppercase">AI Bill</h4>
+          <p className="text-[10px] text-zinc-400 font-mono">AEObility Search & UX Guide</p>
         </div>
 
         {billState === 'CONSULTANT' && telemetryData && (
@@ -504,115 +525,115 @@ export default function CompanionWidget() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Footer actions */}
-        <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
-            {/* Pre-Audit Quick Action Pills */}
-            {!telemetryData && billState !== 'CONSULTANT' && (
-              <div className="flex flex-wrap gap-1.5 pb-1">
-                <button
-                  type="button"
-                  onClick={() => handleSendMessage("What AEO services do you offer?")}
-                  className="text-[9px] bg-aeo-cyan/10 border border-aeo-cyan/20 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded-md text-aeo-cyan transition cursor-pointer"
-                >
-                  Find a Service
-                </button>
-                <a
-                  href="/contact"
-                  className="text-[9px] bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/30 px-2 py-0.5 rounded-md text-emerald-400 font-semibold transition cursor-pointer flex items-center gap-1"
-                >
-                  Get a Quote ➔
-                </a>
-                <button
-                  type="button"
-                  onClick={() => handleSendMessage("Scan my site visibility")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
-                >
-                  Scan My Site ➔
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSendMessage("What is AEO?")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
-                >
-                  Explain AEO
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSendMessage("Where is pricing?")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
-                >
-                  Show Pricing
-                </button>
-              </div>
-            )}
-
-            {/* Quick Action Diagnostic Buttons */}
-            {billState === 'CONSULTANT' && telemetryData && (
-              <div className="flex flex-wrap gap-1.5 pb-2">
-                <button
-                  onClick={() => handleSendMessage("Explain my Vector Proximity similarity score vs competitor.")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
-                >
-                  Explain Proximity
-                </button>
-                <button
-                  onClick={() => handleSendMessage("What do these extracted Semantic Graph Triples represent?")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
-                >
-                  Explain Graph Triples
-                </button>
-                <button
-                  onClick={() => handleSendMessage("Why was my content dropped in the RAG retrieval simulation?")}
-                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
-                >
-                  Explain RAG Status
-                </button>
-                <button
-                  onClick={() => {
-                    localStorage.removeItem('aeo_telemetry_latest');
-                    setTelemetryData(null);
-                    setMessages([
-                      {
-                        sender: 'assistant',
-                        text: "AI Bill active. Ready to run technical diagnostics or clarify search visibility metrics. Submit your URL to begin."
-                      }
-                    ]);
-                  }}
-                  className="text-[9px] bg-rose-950/40 border border-rose-500/20 hover:bg-rose-950/80 px-2.5 py-1 rounded-lg text-rose-300 transition-colors cursor-pointer ml-auto"
-                >
-                  Reset Audit
-                </button>
-              </div>
-            )}
-
-            {/* Main Input Form */}
-            {billState !== 'EMAIL_CAPTURE' && (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSendMessage();
-                }}
-                className="flex gap-2"
+        {/* Footer Tray */}
+        <div className="border-t border-white/10 p-3 space-y-2.5 bg-neutral-950 shrink-0">
+          {/* Main Input Form */}
+          {billState !== 'EMAIL_CAPTURE' && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSendMessage();
+              }}
+              className="flex gap-2"
+            >
+              <input
+                type="text"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Search AEObility or ask Bill anything..."
+                className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={isThinking || !inputText.trim()}
+                className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 disabled:opacity-40 transition-colors cursor-pointer shrink-0"
+                title="Send Message / Search"
               >
-                <input
-                  type="text"
-                  value={inputText}
-                  onChange={(e) => setInputText(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Search AEObility or enter site URL..."
-                  className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={isThinking || !inputText.trim()}
-                  className="flex items-center justify-center p-2 rounded-xl bg-aeo-cyan text-black hover:bg-aeo-cyan/90 disabled:opacity-40 transition-colors cursor-pointer shrink-0"
-                  title="Send Message / Search"
-                >
-                  <Send className="w-4 h-4" />
-                </button>
-              </form>
-            )}
-          </div>
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
+          )}
+
+          {/* Personality Chips under the input bar */}
+          {!telemetryData && billState !== 'CONSULTANT' && (
+            <div className="flex flex-wrap gap-1.5 pt-0.5">
+              <button
+                type="button"
+                onClick={() => handleSendMessage("What AEO services do you offer?")}
+                className="text-[9px] bg-aeo-cyan/10 border border-aeo-cyan/20 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded-md text-aeo-cyan transition cursor-pointer"
+              >
+                Find a Service
+              </button>
+              <a
+                href="/contact"
+                className="text-[9px] bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/30 px-2 py-0.5 rounded-md text-emerald-400 font-semibold transition cursor-pointer flex items-center gap-1"
+              >
+                Get a Quote ➔
+              </a>
+              <button
+                type="button"
+                onClick={() => handleSendMessage("Scan my site visibility")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+              >
+                Scan My Site ➔
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSendMessage("What is AEO?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+              >
+                Explain AEO
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSendMessage("Where is pricing?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+              >
+                Show Pricing
+              </button>
+            </div>
+          )}
+
+          {/* Quick Action Diagnostic Buttons when telemetry exists */}
+          {billState === 'CONSULTANT' && telemetryData && (
+            <div className="flex flex-wrap gap-1.5 pt-0.5">
+              <button
+                onClick={() => handleSendMessage("Explain my Vector Proximity similarity score vs competitor.")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain Proximity
+              </button>
+              <button
+                onClick={() => handleSendMessage("What do these extracted Semantic Graph Triples represent?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain Graph Triples
+              </button>
+              <button
+                onClick={() => handleSendMessage("Why was my content dropped in the RAG retrieval simulation?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+              >
+                Explain RAG Status
+              </button>
+              <button
+                onClick={() => {
+                  localStorage.removeItem('aeo_telemetry_latest');
+                  setTelemetryData(null);
+                  setMessages([
+                    {
+                      sender: 'assistant',
+                      text: "G’day. Bill here. Ready to increase your visibility. Ask anything."
+                    }
+                  ]);
+                }}
+                className="text-[9px] bg-rose-950/40 border border-rose-500/20 hover:bg-rose-950/80 px-2.5 py-1 rounded-lg text-rose-300 transition-colors cursor-pointer ml-auto"
+              >
+                Reset Audit
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
