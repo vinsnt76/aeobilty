@@ -1,4 +1,4 @@
-import { KnowledgeNode, SearchQueryResultType } from './types';
+import { KnowledgeNode, SearchQueryResultType, CompanionSearchResponse } from './types';
 
 export const VECTOR_DIM = 384;
 
@@ -148,9 +148,144 @@ export function generateAmbiguousClarification(_query: string): {
     question: `Are you looking for information on AEO services, a free visibility audit, or specific search engine optimisation pricing?`,
     options: [
       { label: 'AEO & GEO Services', query: 'What are AEObility AEO services?' },
-      { label: 'Free Visibility Audit', query: 'Free website visibility audit' },
-      { label: 'AEO vs SEO Differences', query: 'AEO vs SEO comparison' }
+      { label: 'Free Site Audit', query: 'Scan my website visibility' },
+      { label: 'Blueprint Pricing ($995 AUD)', query: 'How much does the AEObility Blueprint cost?' }
     ]
+  };
+}
+
+export function classifyCompanion5Intent(
+  query: string,
+  topMatchNode: KnowledgeNode | null,
+  _routeContext?: string
+): CompanionSearchResponse {
+  const clean = query.toLowerCase().trim();
+
+  // 1. Action Intent Check (Scan, Audit, Diagnostics, Telemetry, Check Score)
+  const isActionIntent = /\b(scan|audit|telemetry|check my score|diagnose|analyze site|analyse site|run audit)\b/i.test(clean);
+  if (isActionIntent) {
+    return {
+      intent: 'action',
+      answer: "I can run a live AEO telemetry audit on your website. Submit your URL to inspect schema completeness, entity authority, and vector proximity scores.",
+      triggerBillScan: true,
+      cards: [
+        {
+          title: "Run Live Telemetry Audit",
+          url: "/diagnostic",
+          type: "action",
+          description: "Inspect schema microdata, vector proximity, and RAG extraction risk.",
+          ctaText: "Launch Diagnostic Audit ➔"
+        }
+      ],
+      suggestedPills: ["What is AEO?", "View Packages & Pricing", "Explain GEO Services"]
+    };
+  }
+
+  // 2. Navigation Intent Check (Where is X, Go to X, Show me pricing, Contact, About, Services)
+  const isNavigationIntent = /\b(where|where's|find|show me|go to|link|pricing|cost|costs|contact|about|packages|solutions|knowledge hub|case studies)\b/i.test(clean);
+  if (isNavigationIntent) {
+    let targetUrl = '/solutions/aeo-blueprint';
+    let targetTitle = 'The AEObility Blueprint ($995 AUD)';
+    let desc = 'Complete 90-day AEO roadmap & entity audit (100% credited back on implementation).';
+
+    if (clean.includes('pricing') || clean.includes('cost') || clean.includes('packages') || clean.includes('blueprint')) {
+      targetUrl = '/solutions/aeo-blueprint';
+      targetTitle = 'The AEObility Blueprint ($995 AUD)';
+      desc = 'Complete 90-day AEO roadmap & entity audit (100% credited back on implementation).';
+    } else if (clean.includes('geo') || clean.includes('maps') || clean.includes('local')) {
+      targetUrl = '/solutions/geo-services';
+      targetTitle = 'GEO Services & Local Map Matrix';
+      desc = 'Local coordinate mapping and spatial vector alignment for Google & Apple Maps.';
+    } else if (clean.includes('contact') || clean.includes('touch') || clean.includes('book')) {
+      targetUrl = '/contact';
+      targetTitle = 'Contact & Booking Corridors';
+      desc = 'Connect directly with Vince Baker for AEO strategy & AI search consulting.';
+    } else if (clean.includes('about') || clean.includes('vince')) {
+      targetUrl = '/about';
+      targetTitle = 'About AEObility & Vince Baker';
+      desc = 'Discover our Australian AEO consultancy origins, entity graph, and team.';
+    } else if (clean.includes('case') || clean.includes('bento') || clean.includes('studies')) {
+      targetUrl = '/knowledge-hub/case-studies';
+      targetTitle = 'Case Studies & Evidence Nodes';
+      desc = 'Real-world AEO citation growth case studies including Baby Bento.';
+    }
+
+    return {
+      intent: 'navigation',
+      answer: `Here is the direct navigation route for ${targetTitle}.`,
+      cards: [
+        {
+          title: targetTitle,
+          url: targetUrl,
+          type: 'page',
+          description: desc,
+          ctaText: 'Navigate to Page ➔'
+        }
+      ],
+      suggestedPills: ["Scan My Site", "Explain AEO", "Show Pricing Options"]
+    };
+  }
+
+  // 3. Service Discovery Intent Check (What services, packages, help with local, Shopify, comparison)
+  const isServiceDiscovery = /\b(service|services|package|packages|offer|help with|shopify|sprint|consulting|compare)\b/i.test(clean);
+  if (isServiceDiscovery) {
+    return {
+      intent: 'service_discovery',
+      answer: "AEObility offers 3 primary AEO & AI Search marketing corridors tailored for Australian businesses:",
+      cards: [
+        {
+          title: "1. The AEObility Blueprint ($995 AUD)",
+          url: "/solutions/aeo-blueprint",
+          type: "service",
+          description: "Clarity Phase: Deep technical audit, entity score, and 90-day roadmap.",
+          ctaText: "Explore Blueprint ➔"
+        },
+        {
+          title: "2. AEO Implementation Sprints",
+          url: "/solutions/aeo-sprint",
+          type: "service",
+          description: "High-density technical execution: schema injection, token rebalancing, RAG survival.",
+          ctaText: "Explore Sprints ➔"
+        },
+        {
+          title: "3. GEO & Local Map Marketing",
+          url: "/solutions/geo-services",
+          type: "service",
+          description: "Spatial vector alignment & local coordinate mapping for voice search and map packs.",
+          ctaText: "Explore GEO ➔"
+        }
+      ],
+      suggestedPills: ["Scan My Site", "Where is Pricing?", "What is AEO?"]
+    };
+  }
+
+  // 4. Content Answering Intent / Fallback Search Intent
+  if (topMatchNode) {
+    const groundedAns = generateGroundedAnswer(topMatchNode);
+    return {
+      intent: 'content',
+      answer: groundedAns,
+      cards: [
+        {
+          title: topMatchNode.pageName,
+          url: topMatchNode.url,
+          type: 'page',
+          description: topMatchNode.description || topMatchNode.h1,
+          ctaText: 'Read Full Guide ➔'
+        }
+      ],
+      suggestedPills: ["Scan My Site", "View Packages & Pricing", "Help Me Choose a Service"],
+      topMatch: {
+        pageName: topMatchNode.pageName,
+        url: topMatchNode.url
+      }
+    };
+  }
+
+  return {
+    intent: 'fallback_search',
+    answer: "AEObility specialises in Answer Engine Optimisation (AEO) and AI Search Marketing. Submit your website URL to inspect your site's AI visibility score.",
+    suggestedPills: ["What is AEO?", "View Packages & Pricing", "Scan My Site"]
   };
 }
 

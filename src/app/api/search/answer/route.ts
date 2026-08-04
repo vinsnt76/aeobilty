@@ -6,7 +6,8 @@ import {
   classifyQueryIntent, 
   generateGroundedAnswer,
   generateAmbiguousClarification,
-  generateGeneralKnowledgeAnswer 
+  generateGeneralKnowledgeAnswer,
+  classifyCompanion5Intent 
 } from '@/lib/search/vectorEngine';
 import { toAustralianEnglish } from '@/lib/search/auEnglish';
 import knowledgeBaseData from '@/lib/search/knowledgeBase.json';
@@ -176,8 +177,10 @@ Rules:
       }
     }
 
-    const response: SearchQueryResponse = {
-      answer: toAustralianEnglish(synthesizedAnswer),
+    const companionData = classifyCompanion5Intent(query, bestMatch, body.routeContext);
+
+    const response = {
+      answer: toAustralianEnglish(companionData.answer || synthesizedAnswer),
       topMatch: bestMatch ? {
         pageName: toAustralianEnglish(bestMatch.pageName),
         url: bestMatch.url,
@@ -189,7 +192,11 @@ Rules:
       similarityScore,
       isFallback: false,
       isCaution,
-      resultType: 'visibility'
+      resultType: 'visibility',
+      intent: companionData.intent,
+      cards: companionData.cards,
+      suggestedPills: companionData.suggestedPills,
+      triggerBillScan: companionData.triggerBillScan
     };
 
     return NextResponse.json(response, { headers: corsHeaders });

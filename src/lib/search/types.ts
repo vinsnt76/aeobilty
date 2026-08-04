@@ -40,3 +40,31 @@ export interface SearchQueryResponse {
   offerDiagnosticTool?: boolean;
   suggestedOptions?: Array<{ label: string; query: string }>;
 }
+
+export type CompanionIntent =
+  | 'navigation'
+  | 'content'
+  | 'service_discovery'
+  | 'action'
+  | 'fallback_search';
+
+export interface CompanionCard {
+  title: string;
+  url: string;
+  type: 'page' | 'service' | 'action';
+  description?: string;
+  ctaText?: string;
+}
+
+export interface CompanionSearchResponse {
+  intent: CompanionIntent;
+  answer: string;
+  cards?: CompanionCard[];
+  suggestedPills?: string[];
+  triggerBillScan?: boolean;
+  topMatch?: {
+    pageName: string;
+    url: string;
+  } | null;
+  similarityScore?: number;
+}

@@ -5,12 +5,14 @@ import Image from 'next/image';
 import { X, Send } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
+import { CompanionCard } from '@/lib/search/types';
 import BillAvatar from '@/components/BillAvatar';
 
 interface ChatMessage {
   sender: 'user' | 'assistant';
   text: string;
   telemetry?: TelemetryResult;
+  cards?: CompanionCard[];
 }
 
 export function extractDomainLabel(url: string): string {
@@ -257,12 +259,22 @@ export default function CompanionWidget() {
             const res = await fetch('/api/search/answer', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ query: userMsg })
+              body: JSON.stringify({ query: userMsg, routeContext: pathname })
             });
             if (res.ok) {
               const data = await res.json();
               const answerText = data.answer || "I've searched our knowledge base. Submit your site URL to run a live diagnostic audit!";
-              setMessages(prev => [...prev, { sender: 'assistant', text: answerText }]);
+              setMessages(prev => [
+                ...prev, 
+                { 
+                  sender: 'assistant', 
+                  text: answerText,
+                  cards: data.cards
+                }
+              ]);
+              if (data.triggerBillScan) {
+                openDeepTelemetryDrawer();
+              }
               speakText(answerText);
             }
           } catch (err) {
@@ -444,6 +456,33 @@ export default function CompanionWidget() {
                           }`}
                         >
                         {msg.text}
+                        {msg.cards && msg.cards.length > 0 && (
+                          <div className="mt-2.5 space-y-2 w-full pt-1 border-t border-white/10">
+                            {msg.cards.map((card, cardIdx) => (
+                              <a
+                                key={cardIdx}
+                                href={card.url}
+                                onClick={(e) => {
+                                  if (card.type === 'action') {
+                                    e.preventDefault();
+                                    openDeepTelemetryDrawer();
+                                  }
+                                }}
+                                className="block p-2.5 rounded-lg bg-black/60 border border-white/10 hover:border-aeo-cyan/50 hover:bg-neutral-900 transition group cursor-pointer"
+                              >
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-[11px] font-bold text-white group-hover:text-aeo-cyan transition">{card.title}</span>
+                                  <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/20 shrink-0">
+                                    {card.ctaText || 'View ➔'}
+                                  </span>
+                                </div>
+                                {card.description && (
+                                  <p className="text-[10px] text-zinc-400 mt-1 line-clamp-2 leading-relaxed">{card.description}</p>
+                                )}
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                   {/* Dynamic Telemetry Display */}
@@ -545,6 +584,40 @@ export default function CompanionWidget() {
                     </option>
                   ))}
                 </select>
+              </div>
+            )}
+
+            {/* Pre-Audit Quick Action Pills */}
+            {!telemetryData && billState !== 'CONSULTANT' && (
+              <div className="flex flex-wrap gap-1.5 pb-1">
+                <button
+                  type="button"
+                  onClick={() => setInputText("What AEO services do you offer?")}
+                  className="text-[9px] bg-aeo-cyan/10 border border-aeo-cyan/20 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded-md text-aeo-cyan transition cursor-pointer"
+                >
+                  Find a Service
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInputText("Scan my site visibility")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+                >
+                  Scan My Site ➔
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInputText("What is AEO?")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+                >
+                  Explain AEO
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInputText("Where is pricing?")}
+                  className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2 py-0.5 rounded-md text-zinc-300 transition cursor-pointer"
+                >
+                  Show Pricing
+                </button>
               </div>
             )}
 
