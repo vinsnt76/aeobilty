@@ -99,7 +99,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
+                  "@type": "Organisation",
                   "@id": "https://aeobility.com.au",
                   "name": "AEObility",
                   "legalName": "Trekaboutoz trading as AEObility",
@@ -152,8 +152,8 @@ export default function RootLayout({
                     "@id": "https://aeobility.com.au"
                   },
                   "knowsAbout": [
-                    "Answer Engine Optimization",
-                    "Generative Engine Optimization",
+                    "Answer Engine Optimisation",
+                    "Generative Engine Optimisation",
                     "Model Context Protocol",
                     {
                       "@type": "Thing",

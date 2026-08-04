@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "aeo consultant",
     "aeo marketers near me",
     "book a digital marketing consultation",
-    "small business optimization support",
+    "small business optimisation support",
     "aeobility contact information"
   ],
   alternates: {

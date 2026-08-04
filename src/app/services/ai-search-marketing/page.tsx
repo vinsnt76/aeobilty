@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: "AI Search Marketing & Strategy | AEObility",
-  description: "Deploy optimization strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
+  description: "Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
   keywords: [
     "ai search marketing",
     "ai search strategy",
@@ -26,8 +26,8 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au"
       },
@@ -35,13 +35,13 @@ export default function AISearchMarketingPage() {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/ai-search-marketing#service",
         "name": "AI Search Marketing",
-        "description": "Deploy optimization strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
+        "description": "Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
         "areaServed": {
           "@type": "Country",
           "name": "Australia"
         },
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       }
     ]
@@ -50,7 +50,7 @@ export default function AISearchMarketingPage() {
   const pillars = [
     {
       icon: <Cpu className="w-5 h-5 text-aeo-cyan" />,
-      title: "The Core Priorities of Generative Search Engine Optimization",
+      title: "The Core Priorities of Generative Search Engine Optimisation",
       desc: "Deploy structured vector configurations to ensure query fan-out models and retrieval augmentation systems place your brand in direct answer outputs."
     },
     {
@@ -61,7 +61,7 @@ export default function AISearchMarketingPage() {
     {
       icon: <Search className="w-5 h-5 text-aeo-cyan" />,
       title: "Mapping Atomic Answer Blocks",
-      desc: "We parse your services into granular semantic components optimized for LLM search queries, answering multi-layered user intents clearly."
+      desc: "We parse your services into granular semantic components optimised for LLM search queries, answering multi-layered user intents clearly."
     }
   ];
 
@@ -127,7 +127,7 @@ export default function AISearchMarketingPage() {
               AI Search <span className="text-gradient-aeo">Marketing & Strategy</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
-              Deploy optimization strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.
+              Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.
             </p>
           </div>
 
@@ -146,12 +146,12 @@ export default function AISearchMarketingPage() {
 
           {/* Deep Dive Section */}
           <div className="space-y-6 border-t border-white/5 pt-10">
-            <h2 className="text-2xl font-bold">Why Generative Search Engine Optimization Matters</h2>
+            <h2 className="text-2xl font-bold">Why Generative Search Engine Optimisation Matters</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
               As search tools transition from list-based keyword matching to conversational retrieval platforms, traditional SEO fails. Users no longer just type &quot;plumber Perth&quot;; they use complex sentences querying specific capabilities, price transparent policies, and availability.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              By structuring your business data for <strong>retrieval augmentation</strong>, optimizing against <strong>query fan-out</strong> behaviors, and aligning your local pages within <strong>vector space</strong> maps, AEObility positions your brand directly in the citations LLMs output.
+              By structuring your business data for <strong>retrieval augmentation</strong>, optimising against <strong>query fan-out</strong> behaviours, and aligning your local pages within <strong>vector space</strong> maps, AEObility positions your brand directly in the citations LLMs output.
             </p>
           </div>
 
@@ -161,7 +161,7 @@ export default function AISearchMarketingPage() {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li className="flex gap-2 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Optimize website code for query fan-out search agent parsing.</span>
+                <span>Optimise website code for query fan-out search agent parsing.</span>
               </li>
               <li className="flex gap-2 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />

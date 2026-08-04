@@ -150,6 +150,9 @@ npm run build
 # Run agent preflight & POST answer API test
 npm run test:agent
 
+# Test external API connections (Gemini, Brave, PSI)
+npm run test:apis
+
 # Run Telemetry V3 test harness across 5 test fixtures
 npm run test:telemetry
 

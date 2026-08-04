@@ -141,7 +141,7 @@ export async function generateInsightEngineResult(
 
   const engineeredContext = {
     targetDomain: domainLabel,
-    businessContext: `Analyzing website ${domainLabel} for intent: "${intent}"`,
+    businessContext: `Analysing website ${domainLabel} for intent: "${intent}"`,
     readinessScore: telemetry.readinessScore,
     proximityScore: telemetry.proximityScore,
     crawledTextSnippet: clientText ? clientText.slice(0, 400) : '',

@@ -13,19 +13,19 @@ describe('Feature Engineering Layer', () => {
     const clientCrawl = {
       textContent: '1234567890', // len 10
       technicalSEO: { title: null, metaDescription: null, headingsCount: { h1: 1, h2: 1, h3: 1 }, internalLinksCount: 15 },
-      schemaValidation: { hasValidSchema: true, typesFound: ['Organization', 'Product'] }, // 2 types
+      schemaValidation: { hasValidSchema: true, typesFound: ['Organisation', 'Product'] }, // 2 types
     };
 
     const competitorCrawls = [
       {
         textContent: '12345', // len 5
         technicalSEO: { title: null, metaDescription: null, headingsCount: { h1: 1, h2: 1, h3: 1 }, internalLinksCount: 5 },
-        schemaValidation: { hasValidSchema: true, typesFound: ['Organization'] }, // 1 type
+        schemaValidation: { hasValidSchema: true, typesFound: ['Organisation'] }, // 1 type
       },
       {
         textContent: '1234567', // len 7
         technicalSEO: { title: null, metaDescription: null, headingsCount: { h1: 1, h2: 1, h3: 1 }, internalLinksCount: 10 },
-        schemaValidation: { hasValidSchema: true, typesFound: ['Organization'] }, // 1 type
+        schemaValidation: { hasValidSchema: true, typesFound: ['Organisation'] }, // 1 type
       }
     ]; // Avg len: 6, Avg links: 7.5, Avg types: 1
 
@@ -65,7 +65,7 @@ describe('Feature Engineering Layer', () => {
       {
         textContent: '1234567890', // len 10
         technicalSEO: { title: null, metaDescription: null, headingsCount: { h1: 1, h2: 1, h3: 1 }, internalLinksCount: 20 },
-        schemaValidation: { hasValidSchema: true, typesFound: ['Organization', 'Product'] }, // 2 types
+        schemaValidation: { hasValidSchema: true, typesFound: ['Organisation', 'Product'] }, // 2 types
       }
     ];
 
@@ -96,7 +96,7 @@ describe('Feature Engineering Layer', () => {
     const clientCrawl = {
       textContent: '12345', // len 5
       technicalSEO: { title: null, metaDescription: null, headingsCount: { h1: 1, h2: 1, h3: 1 }, internalLinksCount: 10 },
-      schemaValidation: { hasValidSchema: true, typesFound: ['Organization'] }, // 1 type
+      schemaValidation: { hasValidSchema: true, typesFound: ['Organisation'] }, // 1 type
     };
 
     const competitorCrawls: Parameters<typeof extractFeatures>[3] = []; // Empty

@@ -25,10 +25,12 @@ export default function Navbar() {
   };
 
   // Automatically close mobile menu and submenus when pathname changes
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
     setOpenMobileSubmenu(null);
-  }, [pathname]);
+  }
 
   // Manage body scroll locking when mobile menu is open
   useEffect(() => {

@@ -26,10 +26,6 @@ export default function CompanionWidget() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Suppress AI Bill companion widget on /about and /freelance routes
-  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
-    return null;
-  }
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'assistant',
@@ -152,11 +148,6 @@ export default function CompanionWidget() {
       }
     };
 
-    const handleCloseCompanionWidget = () => {
-      setIsOpen(false);
-      setBillState('HIDDEN');
-    };
-
     const handleOpenWithQuery = (e: Event) => {
       const customEvent = e as CustomEvent<{ query?: string }>;
       const searchQuery = customEvent.detail?.query || 'Diagnostic Query';
@@ -167,7 +158,7 @@ export default function CompanionWidget() {
       setMessages(prev => [
         ...prev,
         { sender: 'user', text: searchQuery },
-        { sender: 'assistant', text: `Diagnostic Inquiry Received: "${searchQuery}". Let's analyze how this topic connects to your site's AEO & GEO search architecture.` }
+        { sender: 'assistant', text: `Diagnostic Inquiry Received: "${searchQuery}". Let's analyse how this topic connects to your site's AEO & GEO search architecture.` }
       ]);
     };
 
@@ -273,11 +264,11 @@ export default function CompanionWidget() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              intent: 'AEO and AI search engine optimization services for Australian businesses',
+              intent: 'AEO and AI search engine optimisation services for Australian businesses',
               clientText: 'AEObility helps your business appear, make sense, and stand out across Search, Maps & AI so you get found and chosen without the complexity. Traditional SEO is speculative; we use active telemetry.',
               competitors: [
                 'Generic SEO Inc - traditional keyword density and backlinks company',
-                'Speculative AEO Co - prompt engineering optimization theatre'
+                'Speculative AEO Co - prompt engineering optimisation theatre'
               ]
             })
           });
@@ -338,6 +329,11 @@ export default function CompanionWidget() {
       stopLipSync();
     }
   };
+
+  // Suppress AI Bill companion widget on /about and /freelance routes
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+    return null;
+  }
 
   if (!telemetryData) return null;
 

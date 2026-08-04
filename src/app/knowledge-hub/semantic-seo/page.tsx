@@ -51,7 +51,7 @@ export default function SemanticSEONodePage() {
           "How Large Language Models Embed Context",
           "Building High-Density Content Lattices",
           "Relational SEO Over Keyword Clustering",
-          "Semantic Optimization Checklist"
+          "Semantic Optimisation Checklist"
         ],
         "keywords": [
           "AI Semantic SEO",
@@ -72,7 +72,7 @@ export default function SemanticSEONodePage() {
           "@id": "https://aeobility.com.au/#vince-baker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-07",
         "dateModified": "2026-07"
@@ -117,7 +117,7 @@ export default function SemanticSEONodePage() {
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Author of AEObility’s technical guides on Semantic SEO, entity optimisation, and AI search architecture.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -127,8 +127,8 @@ export default function SemanticSEONodePage() {
         }
       },
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",
@@ -315,7 +315,7 @@ export default function SemanticSEONodePage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>AI Semantic SEO &amp; Entity Based Optimization</span>
+              <span>AI Semantic SEO &amp; Entity Based Optimisation</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
               AI Semantic <span className="text-gradient-aeo">SEO</span> &amp; Entity‑Based Layout Frameworks
@@ -452,7 +452,7 @@ export default function SemanticSEONodePage() {
                     Schema helps search engines understand <strong>which entity</strong> you are talking about.
                   </p>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
-                    If your page mentions &ldquo;Apple,&rdquo; schema tells the machine whether you mean the fruit or the company. Declaring <code className="text-aeo-cyan font-mono text-[11px]">Organization</code>, <code className="text-aeo-cyan font-mono text-[11px]">Person</code>, <code className="text-aeo-cyan font-mono text-[11px]">Product</code>, or adding <code className="text-aeo-cyan font-mono text-[11px]">sameAs</code> links gives AI a clear, machine-readable reference point. This reduces confusion and strengthens your entity&apos;s position in the global Knowledge Graph.
+                    If your page mentions &ldquo;Apple,&rdquo; schema tells the machine whether you mean the fruit or the company. Declaring <code className="text-aeo-cyan font-mono text-[11px]">Organisation</code>, <code className="text-aeo-cyan font-mono text-[11px]">Person</code>, <code className="text-aeo-cyan font-mono text-[11px]">Product</code>, or adding <code className="text-aeo-cyan font-mono text-[11px]">sameAs</code> links gives AI a clear, machine-readable reference point. This reduces confusion and strengthens your entity&apos;s position in the global Knowledge Graph.
                   </p>
                 </div>
               </div>
@@ -530,7 +530,7 @@ export default function SemanticSEONodePage() {
 
           {/* Action List */}
           <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
-            <h3 className="text-lg font-bold text-white">Semantic Optimization Checklist</h3>
+            <h3 className="text-lg font-bold text-white">Semantic Optimisation Checklist</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li className="flex gap-2 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
@@ -538,7 +538,7 @@ export default function SemanticSEONodePage() {
               </li>
               <li className="flex gap-2 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Optimize website copy density to increase entity salience scores.</span>
+                <span>Optimise website copy density to increase entity salience scores.</span>
               </li>
               <li className="flex gap-2 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />

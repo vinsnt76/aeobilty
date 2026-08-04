@@ -8,7 +8,7 @@ const DOMAIN_KEYWORDS = new Set([
   'perth', 'business', 'services', 'pricing', 'cost', 'blueprint', 'sprint',
   'citation', 'keyphrase', 'liquid', 'shopify', 'geo', 'local', 'content',
   'author', 'vince', 'baker', 'aeobility', 'case', 'bento', 'contact', 'book',
-  'support', 'ai', 'engine', 'optimisation', 'optimization', 'keyword', 'meta',
+  'support', 'ai', 'engine', 'optimisation', 'optimisation', 'keyword', 'meta',
   'site', 'website', 'web', 'conversion', 'lead', 'leads', 'client', 'agency',
   'semantic', 'salience', 'triples', 'rdf', 'vector', 'dense', 'retrieval',
   'lattice', 'bias', 'density', 'strength', 'positional'

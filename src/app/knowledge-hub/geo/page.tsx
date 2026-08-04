@@ -23,7 +23,7 @@ export default function GEOKnowledgeNodePage() {
         "headline": "GEO and SEO: Local Discovery Matrix",
         "description": "Advanced techniques balancing localized map rankings and systemic generative visibility rules without triggering focus dilution gaps.",
         "author": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility"
         }
       }
@@ -33,7 +33,7 @@ export default function GEOKnowledgeNodePage() {
   const pillars = [
     {
       title: "Resolving Map Pack vs LLM Discovery Friction",
-      desc: "Traditional local map packs depend heavily on proximity signals. Generative AI models prioritize global brand salience and cross-node reference consensus."
+      desc: "Traditional local map packs depend heavily on proximity signals. Generative AI models prioritise global brand salience and cross-node reference consensus."
     },
     {
       title: "Structuring Multi-Location Brand Identity",

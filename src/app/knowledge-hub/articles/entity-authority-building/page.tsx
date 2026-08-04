@@ -36,8 +36,8 @@ export default function EntityAuthorityArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -57,7 +57,7 @@ export default function EntityAuthorityArticlePage() {
         "name": "Vince Baker",
         "jobTitle": "AEO & Semantic Search Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "address": {
@@ -90,7 +90,7 @@ export default function EntityAuthorityArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp"
@@ -139,7 +139,7 @@ export default function EntityAuthorityArticlePage() {
         "Social profiles with matching information"
       ],
       schemas: [
-        "Organization",
+        "Organisation",
         "LocalBusiness",
         "Person (for authors)",
         "Service",
@@ -195,7 +195,7 @@ export default function EntityAuthorityArticlePage() {
     { title: "Source Credibility", desc: "The domain authority and knowledge graph trust of third-party platforms referencing your brand.", icon: <ShieldCheck className="w-4 h-4 text-aeo-cyan" /> },
     { title: "Topical Consistency", desc: "Tight alignment between your published content, core services, and domain expertise.", icon: <Network className="w-4 h-4 text-aeo-cyan" /> },
     { title: "Cross-Platform Corroboration", desc: "Identical NAP (Name, Address, Phone) and identity data across LinkedIn, GitHub, Google Business, and directories.", icon: <Database className="w-4 h-4 text-aeo-cyan" /> },
-    { title: "Structured Data Alignment", desc: "Explicit JSON-LD entity markup verifying organization, author, and service schemas.", icon: <CodeIcon className="w-4 h-4 text-aeo-cyan" /> },
+    { title: "Structured Data Alignment", desc: "Explicit JSON-LD entity markup verifying organisation, author, and service schemas.", icon: <CodeIcon className="w-4 h-4 text-aeo-cyan" /> },
     { title: "Author Identity & E-E-A-T", desc: "Named, verified authors linked via Person schemas to establish subject-matter authority.", icon: <UserCheck className="w-4 h-4 text-aeo-cyan" /> },
     { title: "Location Signals", desc: "Clear geographic anchors (Perth, Western Australia) linking your entity to specific regional markets.", icon: <MapPin className="w-4 h-4 text-aeo-cyan" /> },
     { title: "Vector Embedding Proximity", desc: "High semantic similarity score between your entity node and relevant user queries in LLM vector databases.", icon: <Cpu className="w-4 h-4 text-aeo-cyan" /> }

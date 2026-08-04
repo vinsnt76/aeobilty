@@ -64,7 +64,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
           "@id": "https://aeobility.com.au/#vince-baker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-07",
         "dateModified": "2026-07",
@@ -130,7 +130,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Vince Baker specialises in structured data engineering, query fan-out resilience, and AI vector retrieval for Australian enterprises.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -140,8 +140,8 @@ export default function StructuredDataQueryFanOutArticlePage() {
         }
       },
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",
@@ -448,7 +448,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
               <div className="p-4 bg-white/5 border-l-2 border-aeo-cyan rounded-r-lg space-y-1 mb-3">
                 <span className="text-[10px] text-aeo-cyan font-mono font-bold uppercase">Retrieval Complexity</span>
                 <p className="text-xs text-white/90 font-medium leading-relaxed">
-                  Fan-out multiplies retrieval passes by splitting a user query into specialized sub-intents. When entity facts are buried mid-paragraph or conflict across pages, neural retrievers struggle to score relevance, increasing competition and risking citation dropouts.
+                  Fan-out multiplies retrieval passes by splitting a user query into specialised sub-intents. When entity facts are buried mid-paragraph or conflict across pages, neural retrievers struggle to score relevance, increasing competition and risking citation dropouts.
                 </p>
               </div>
 
@@ -590,7 +590,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
 
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
                       <strong className="text-purple-300 text-xs font-mono uppercase">Lost in the Middle &amp; Multi-Pass Synthesis:</strong>
-                      <p className="text-xs text-white/70">Information in the centre of a sequence is statistically harder to access when synthesizing across multiple retrieved passages.</p>
+                      <p className="text-xs text-white/70">Information in the centre of a sequence is statistically harder to access when synthesising across multiple retrieved passages.</p>
                     </div>
                   </div>
                 </div>
@@ -695,7 +695,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
             <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
               <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">Schema Engineering</span>
               <p className="text-sm text-white/90 font-medium leading-relaxed">
-                Engineering schema for fan-out requires front-loading key facts, defining explicit entity statements, prioritizing high-intent properties, keeping blocks modular, and maintaining strict cross-platform consistency.
+                Engineering schema for fan-out requires front-loading key facts, defining explicit entity statements, prioritising high-intent properties, keeping blocks modular, and maintaining strict cross-platform consistency.
               </p>
             </div>
 

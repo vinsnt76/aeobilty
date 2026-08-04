@@ -74,7 +74,7 @@ export default function PositionalBiasArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval",
         "image": "https://aeobility.com.au/positional-bias-retrieval-AEObility.webp",
@@ -98,7 +98,7 @@ export default function PositionalBiasArticlePage() {
         "description": "Author of AEObility’s technical guides on retrieval, semantic SEO, and answer engine optimisation.",
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -115,8 +115,8 @@ export default function PositionalBiasArticlePage() {
         ]
       },
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",
@@ -672,7 +672,7 @@ export default function PositionalBiasArticlePage() {
             <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
               <span className="text-xs font-mono text-aeo-cyan font-bold uppercase">Recommended Schemas to Support Positional Alignment</span>
               <div className="flex flex-wrap gap-2 pt-1">
-                {["FAQPage", "Article", "Organization", "BreadcrumbList", "LocalBusiness"].map((schemaItem, idx) => (
+                {["FAQPage", "Article", "Organisation", "BreadcrumbList", "LocalBusiness"].map((schemaItem, idx) => (
                   <span key={idx} className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs font-mono text-white/80">
                     {schemaItem}
                   </span>
@@ -919,7 +919,7 @@ export default function PositionalBiasArticlePage() {
                 <span className="text-xs text-aeo-cyan font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10">AEO &amp; Semantic Search Specialist</span>
               </div>
               <p className="text-xs text-white/70 font-light leading-relaxed">
-                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in positional bias audits, dense retrieval vector engineering, and context window optimization for Australian enterprises.
+                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in positional bias audits, dense retrieval vector engineering, and context window optimisation for Australian enterprises.
               </p>
               <div className="pt-1 text-xs">
                 <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1">

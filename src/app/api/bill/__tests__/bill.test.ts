@@ -3,16 +3,25 @@ import { POST } from '../route';
 import { NextRequest } from 'next/server';
 
 // Mock Vercel AI SDK to prevent firing live HTTP requests to OpenAI
-vi.mock('ai', () => ({
-  streamText: vi.fn().mockReturnValue({
+vi.mock('ai', () => {
+  const mockStreamText = vi.fn().mockImplementation(() => ({
     toTextStreamResponse: () => new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'text/plain' }
+      headers: { 'Content-Type': 'text/plain' },
+      status: 200
     }),
     toDataStreamResponse: () => new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'text/plain' }
+      headers: { 'Content-Type': 'text/plain' },
+      status: 200
+    }),
+    toUIMessageStreamResponse: () => new Response(JSON.stringify({ success: true }), {
+      headers: { 'Content-Type': 'text/plain' },
+      status: 200
     })
-  })
-}));
+  }));
+  return {
+    streamText: mockStreamText
+  };
+});
 
 // Mock the core OpenAI provider initialization
 vi.mock('@ai-sdk/openai', () => ({

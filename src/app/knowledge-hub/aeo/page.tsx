@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, BookOpen } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "Answer Engine Optimization Core Principles | AEObility",
+  title: "Answer Engine Optimisation Core Principles | AEObility",
   description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/aeo",
@@ -20,10 +20,10 @@ export default function AEOKnowledgeNodePage() {
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/aeo#article",
-        "headline": "Answer Engine Optimization Core Principles",
+        "headline": "Answer Engine Optimisation Core Principles",
         "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
         "author": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility"
         }
       }
@@ -37,7 +37,7 @@ export default function AEOKnowledgeNodePage() {
     },
     {
       title: "Exploiting Positional Bias Rules",
-      desc: "Retrieval models prioritize answers located at the extreme beginning or end of text blocks. We position key facts where attention weights peak."
+      desc: "Retrieval models prioritise answers located at the extreme beginning or end of text blocks. We position key facts where attention weights peak."
     },
     {
       title: "Atomic Answer Block Engineering",
@@ -94,7 +94,7 @@ export default function AEOKnowledgeNodePage() {
         <section className="lg:col-span-8 flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>Answer Engine Optimization (AEO) Deep Dive</span>
+              <span>Answer Engine Optimisation (AEO) Deep Dive</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
               What is AEO in <span className="text-gradient-aeo">Digital Marketing?</span>
@@ -109,7 +109,7 @@ export default function AEOKnowledgeNodePage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.06),transparent_50%)]" />
             <div className="flex justify-between items-center relative z-10 border-b border-white/5 pb-3">
               <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest">Paragraph Node Restructuring</span>
-              <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Token Optimization Pass</span>
+              <span className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/25">Token Optimisation Pass</span>
             </div>
             <div className="grid grid-cols-5 gap-4 items-center my-auto relative z-10">
               <div className="col-span-2 p-3 bg-white/[0.01] border border-white/5 rounded-xl space-y-1 text-left">
@@ -178,7 +178,7 @@ export default function AEOKnowledgeNodePage() {
           <div className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl font-bold">Maximizing Crawler Confidence and Attentional Weight</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              Answer Engine Optimization (AEO) deep dive guides explain how LLM text scraping metrics evaluate external sites. When search models perform context extraction, they prioritize specific structural anchors.
+              Answer Engine Optimisation (AEO) deep dive guides explain how LLM text scraping metrics evaluate external sites. When search models perform context extraction, they prioritise specific structural anchors.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
               By balancing token weight and placing critical citation anchors cleanly within high-salience paragraph tags, your business details are easily parsed and direct recommendations can be generated during RAG processes.
@@ -212,7 +212,7 @@ export default function AEOKnowledgeNodePage() {
           <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6">
             <h3 className="text-2xl font-bold text-white">Unlock Your AI Visibility Metrics</h3>
             <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
-              AEObility provides technical audits analyzing how modern LLMs index your digital presence. Request your strategic roadmap today.
+              AEObility provides technical audits analysing how modern LLMs index your digital presence. Request your strategic roadmap today.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link

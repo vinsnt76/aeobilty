@@ -20,7 +20,7 @@ export default function LocalBusinessAEOPage() {
     "name": "Local Business Visibility",
     "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
     "provider": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "@id": "https://aeobility.com.au"
     },
@@ -96,7 +96,7 @@ export default function LocalBusinessAEOPage() {
               <div className="p-6">
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Dominating Local Map Packs</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
-                  Appearing in the top 3 Map Pack results is critical for local businesses. We optimize your Google Business Profile, ensure NAP (Name, Address, Phone) consistency across the web, and build robust local entity profiles to cement your geographic authority.
+                  Appearing in the top 3 Map Pack results is critical for local businesses. We optimise your Google Business Profile, ensure NAP (Name, Address, Phone) consistency across the web, and build robust local entity profiles to cement your geographic authority.
                 </p>
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Voice & Conversational Assistant Proximity</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">

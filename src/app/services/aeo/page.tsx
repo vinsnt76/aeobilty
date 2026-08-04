@@ -19,8 +19,8 @@ export default function AEORootPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": {
@@ -34,7 +34,7 @@ export default function AEORootPage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -126,9 +126,9 @@ export default function AEORootPage() {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/aeo#service",
         "name": "Answer Engine Optimisation (AEO)",
-        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesized, and cited by conversational AI engines and RAG systems.",
+        "description": "Professional content engineering solutions that restructure, format, and optimise digital assets to be accurately ingested, synthesised, and cited by conversational AI engines and RAG systems.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": {
           "@id": "https://aeobility.com.au/services/aeo#webpage"
@@ -342,7 +342,7 @@ export default function AEORootPage() {
     {
       icon: <Brain className="w-5 h-5 text-aeo-purple" />,
       title: "Get Understood",
-      desc: "Ensure machines read, parse, and categorize your business nodes correctly without indexing bottlenecks."
+      desc: "Ensure machines read, parse, and categorise your business nodes correctly without indexing bottlenecks."
     },
     {
       icon: <Award className="w-5 h-5 text-aeo-cyan" />,

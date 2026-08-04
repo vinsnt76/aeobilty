@@ -197,7 +197,7 @@ export default function ContactForm() {
                 className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all appearance-none"
               >
                 <option value="AEO Consultant Perth">AEO Consultant Perth</option>
-                <option value="Small Business Optimization Support">Small Business Optimization Support</option>
+                <option value="Small Business Optimisation Support">Small Business Optimisation Support</option>
                 <option value="Consultation Window Request">Consultation Window Request</option>
               </select>
             </div>

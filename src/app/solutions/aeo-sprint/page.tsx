@@ -23,7 +23,7 @@ export default function AEOSprintPage() {
         "name": "AEO Technical Sprints",
         "description": "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -38,7 +38,7 @@ export default function AEOSprintPage() {
     },
     {
       title: "HTML Content Modularization Blocks",
-      desc: "Our structured content agency refactors raw page source code into crawlable, token-optimized modules and atomic blocks."
+      desc: "Our structured content agency refactors raw page source code into crawlable, token-optimised modules and atomic blocks."
     },
     {
       title: "Server-Side Infrastructure Verification",
@@ -125,7 +125,7 @@ export default function AEOSprintPage() {
               <span className="text-[10px] text-white/40 ml-2">aeo-sprint-deployment-agent (~/bin)</span>
             </div>
             <div className="space-y-2 text-white/80">
-              <p className="text-aeo-cyan animate-pulse">Initializing token optimization pass...</p>
+              <p className="text-aeo-cyan animate-pulse">Initializing token optimisation pass...</p>
               <p className="text-white/40">&gt; Building local JSON-LD graph relations...</p>
               <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg space-y-1">
                 <p className="text-aeo-purple font-semibold">{"{"}</p>
@@ -152,7 +152,7 @@ export default function AEOSprintPage() {
                       "name": pillar.title,
                       "description": pillar.desc,
                       "provider": {
-                        "@type": "Organization",
+                        "@type": "Organisation",
                         "name": "AEObility"
                       }
                     })
@@ -174,7 +174,7 @@ export default function AEOSprintPage() {
               Generative engines do not rely on standard keyword tags. They ingest content chunks, run vector similarity calculations, and extract concise passage sections.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              Through our specialized AEO technical sprints, our structured content agency provides direct AEO implementation support. We write custom nesting graphs, implement HTML refactoring rules, and set up passage-level extraction schemas to align your assets with modern search algorithms.
+              Through our specialised AEO technical sprints, our structured content agency provides direct AEO implementation support. We write custom nesting graphs, implement HTML refactoring rules, and set up passage-level extraction schemas to align your assets with modern search algorithms.
             </p>
           </div>
 

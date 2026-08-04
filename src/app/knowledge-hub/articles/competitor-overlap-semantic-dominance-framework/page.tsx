@@ -59,12 +59,12 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/",
         "name": "AEObility",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -102,7 +102,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Senior Information Architect & AEO Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -228,7 +228,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#webpage"
@@ -1122,7 +1122,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
 
               {/* Comparative Before/After Table */}
               <div className="pt-4 border-t border-white/5 space-y-2">
-                <span className="text-xs font-mono font-bold text-white uppercase block">Before vs. After Optimization Table</span>
+                <span className="text-xs font-mono font-bold text-white uppercase block">Before vs. After Optimisation Table</span>
                 <div className="overflow-x-auto rounded-lg border border-white/10 bg-black/40">
                   <table className="w-full text-left text-[11px] font-mono border-collapse">
                     <thead>

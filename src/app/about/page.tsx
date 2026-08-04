@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "automation consultant western australia",
     "data structured content agency",
     "technical marketing architect",
-    "jargon free optimization specialist",
+    "jargon free optimisation specialist",
     "australian marketing experts"
   ],
   alternates: {
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const orgSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://aeobility.com.au/#organization",
+    "@type": "Organisation",
+    "@id": "https://aeobility.com.au/#organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
@@ -78,7 +78,7 @@ export default function AboutPage() {
     "name": "Vinnie Baker",
     "jobTitle": "Founder",
     "worksFor": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     },
@@ -91,7 +91,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       {/* JSON-LD Schemas */}
       <script
-        id="organization-schema"
+        id="organisation-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
       />

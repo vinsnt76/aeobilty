@@ -8,7 +8,7 @@ function TransitionFlowChart() {
     { title: "Traditional SEO", desc: "Keywords & PageRank", color: "border-white/10" },
     { title: "Entity Extraction", desc: "JSON-LD & Schema", color: "border-aeo-cyan/30" },
     { title: "Vector Embedding", desc: "Semantic Search & RAG", color: "border-aeo-purple/30" },
-    { title: "AEO Optimization", desc: "Citations & AI Answers", color: "border-aeo-cyan" }
+    { title: "AEO Optimisation", desc: "Citations & AI Answers", color: "border-aeo-cyan" }
   ];
 
   return (

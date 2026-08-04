@@ -98,7 +98,7 @@ export default function AEOHowToPage() {
               How do I make my business easier for <span className="text-gradient-aeo">AI to understand?</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Here’s how machines actually read your business. Follow these steps to optimize content structure for Large Language Model (LLM) ingestion and citation.
+              Here’s how machines actually read your business. Follow these steps to optimise content structure for Large Language Model (LLM) ingestion and citation.
             </p>
           </div>
 

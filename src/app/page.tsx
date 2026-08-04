@@ -65,7 +65,7 @@ export default function Home() {
       "https://www.linkedin.com/in/vince-baker/"
     ],
     "worksFor": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }
@@ -93,7 +93,7 @@ export default function Home() {
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "Organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",

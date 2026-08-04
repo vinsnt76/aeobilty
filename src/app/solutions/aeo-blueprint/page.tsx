@@ -45,7 +45,7 @@ export default function AEOBlueprintPage() {
     },
     {
       title: "What is Included in Your Blueprint",
-      desc: "Receive a detailed technical gap analysis, entity optimization review, local tracking audit, and a step-by-step checklist."
+      desc: "Receive a detailed technical gap analysis, entity optimisation review, local tracking audit, and a step-by-step checklist."
     },
     {
       title: "The 100% Risk-Reversal Implementation Credit",
@@ -178,7 +178,7 @@ export default function AEOBlueprintPage() {
           <div className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl font-bold">Unlocking Generative Index Ranks Without Commitment</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              Many local businesses in Perth run traditional marketing campaigns but fail to account for how machines read their business details. The Strategic Blueprint is a flat-rate clarity phase designed to perform a thorough technical gap analysis and an entity optimization review.
+              Many local businesses in Perth run traditional marketing campaigns but fail to account for how machines read their business details. The Strategic Blueprint is a flat-rate clarity phase designed to perform a thorough technical gap analysis and an entity optimisation review.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
               We trace exactly how crawler engines and LLM retrievals see your site, locate indexing conflicts in local directories, and output a detailed website visibility audit checklist.

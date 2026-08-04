@@ -6,8 +6,6 @@ import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Welcome from '@/components/about/Welcome';
 import About from '@/components/about/About';
-import Projects from '@/components/about/Projects';
-import Contact from '@/components/about/Contact';
 import CapabilityMatrix from '@/components/CapabilityMatrix';
 import { ArrowLeft } from 'lucide-react';
 import { roleConfigs } from '../config';
@@ -98,7 +96,7 @@ export default async function Page({ params }: PageProps) {
       <Breadcrumbs />
       
       <main className="flex-grow w-full">
-        {/* Customized Role Hero Section */}
+        {/* Customised Role Hero Section */}
         <Welcome config={config} />
         
         {/* AEObility Narrative, Frameworks, Team Specialties & Contact Card */}

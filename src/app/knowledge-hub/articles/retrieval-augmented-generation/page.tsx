@@ -42,8 +42,8 @@ export default function RagArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -57,7 +57,7 @@ export default function RagArticlePage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -67,7 +67,7 @@ export default function RagArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Founder & AI Search Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -101,7 +101,7 @@ export default function RagArticlePage() {
           "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au",
           "logo": {
@@ -212,7 +212,7 @@ export default function RagArticlePage() {
           {
             "@type": "DefinedTerm",
             "name": "Atomic Passage Chunks",
-            "description": "Self-contained text blocks (typically 90-120 tokens) optimized for direct vector retrieval and synthesis."
+            "description": "Self-contained text blocks (typically 90-120 tokens) optimised for direct vector retrieval and synthesis."
           },
           {
             "@type": "DefinedTerm",
@@ -530,7 +530,7 @@ export default function RagArticlePage() {
             </p>
 
             <p>
-              This does not replace traditional web search, but it adds an essential new layer. Systems increasingly prioritize <strong>clear, structured, machine-readable content</strong> that can be retrieved and cited with total confidence.
+              This does not replace traditional web search, but it adds an essential new layer. Systems increasingly prioritise <strong>clear, structured, machine-readable content</strong> that can be retrieved and cited with total confidence.
             </p>
 
             <p className="p-4 bg-white/[0.02] border border-white/10 rounded-xl font-sans text-sm text-white/90">
@@ -822,7 +822,7 @@ export default function RagArticlePage() {
               </div>
 
               <p>
-                Many organizations view RAG as a simple indexing layer. In practice, it is a structured workflow with technical rules that directly influence AI search performance.
+                Many organisations view RAG as a simple indexing layer. In practice, it is a structured workflow with technical rules that directly influence AI search performance.
               </p>
 
               <div className="space-y-6 my-8 font-sans">
@@ -993,7 +993,7 @@ export default function RagArticlePage() {
             </div>
 
             <p>
-              While answer engines follow similar baseline patterns (retrieve, rank, synthesize), their segmentation and passage selection algorithms vary. Structuring your content into clear, logical sections ensures compatibility across all major platforms.
+              While answer engines follow similar baseline patterns (retrieve, rank, synthesise), their segmentation and passage selection algorithms vary. Structuring your content into clear, logical sections ensures compatibility across all major platforms.
             </p>
 
             {/* Section 6 */}

@@ -11,7 +11,8 @@
     "lint": "eslint",
     "test:telemetry": "tsx scripts/test-telemetry.ts",
     "test:crawl": "tsx scripts/test-crawl.ts",
-    "test:agent": "node test-agent.mjs",
+    "test:apis": "tsx scripts/test-apis.ts",
+    "test:agent": "node scripts/test-agent.mjs",
     "test": "vitest run"
   },
   "dependencies": {

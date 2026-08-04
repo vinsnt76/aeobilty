@@ -18,8 +18,8 @@ export default function AeoVsSeoArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -33,7 +33,7 @@ export default function AeoVsSeoArticlePage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -43,7 +43,7 @@ export default function AeoVsSeoArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Founder & AI Search Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -78,7 +78,7 @@ export default function AeoVsSeoArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-07-16T00:00:00+08:00",
         "dateModified": "2026-07-16T00:00:00+08:00",
@@ -515,7 +515,7 @@ export default function AeoVsSeoArticlePage() {
             <ul className="list-disc pl-5 space-y-1 mb-4">
               <li>FAQPage</li>
               <li>Product</li>
-              <li>Organization</li>
+              <li>Organisation</li>
               <li>Author</li>
               <li>HowTo (when relevant)</li>
             </ul>

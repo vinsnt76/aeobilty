@@ -32,7 +32,7 @@ export default function AEOPricingPage() {
         "name": "What are the costs for full implementation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full-scale implementation and optimization sprints range from $5,000 to $15,000 depending on complexity. The $995 Blueprint fee is deducted from this cost if you continue. If you decide not to proceed, you keep the roadmap and can implement it yourself."
+          "text": "Full-scale implementation and optimisation sprints range from $5,000 to $15,000 depending on complexity. The $995 Blueprint fee is deducted from this cost if you continue. If you decide not to proceed, you keep the roadmap and can implement it yourself."
         }
       },
       {
@@ -183,7 +183,7 @@ export default function AEOPricingPage() {
               <span>Framework Rationale</span>
             </div>
             <p className="text-xs text-white/60 leading-relaxed">
-              We anchor our services around a clarity document rather than a locked-in monthly contract or standard retainer. If you choose to continue with full-scale optimization sprints (typically ranging from $5,000 to $15,000 depending on entity complexity), the $995 Blueprint fee is credited back directly to the project cost.
+              We anchor our services around a clarity document rather than a locked-in monthly contract or standard retainer. If you choose to continue with full-scale optimisation sprints (typically ranging from $5,000 to $15,000 depending on entity complexity), the $995 Blueprint fee is credited back directly to the project cost.
             </p>
           </div>
 

@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { scrollToSection } from './navigation';
 import { RoleConfig } from '@/app/about/config';
 
 interface WelcomeProps {
@@ -91,14 +90,14 @@ const Welcome: React.FC<WelcomeProps> = ({ config }) => {
           >
             <button 
               type="button"
-              onClick={() => scrollToSection('about')}
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-8 py-4 rounded-2xl font-bold shadow-xl shadow-aeo-cyan/20 hover:scale-[1.02] transition-all duration-300"
             >
               Explore Capabilities
             </button>
             <button 
               type="button"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 rounded-2xl font-bold border-2 border-gray-200 dark:border-gray-800 text-white hover:bg-white/10 transition-all duration-300"
             >
               Get In Touch
@@ -123,7 +122,7 @@ const Welcome: React.FC<WelcomeProps> = ({ config }) => {
       <motion.button
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        onClick={() => scrollToSection('about')}
+        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-gray-400 hover:text-aeo-cyan transition-colors"
         aria-label="Scroll down to About section"
       >

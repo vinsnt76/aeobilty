@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: "Shopify AEO Services & Structured Feeds | AEObility",
-  description: "Optimize your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
+  description: "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/shopify",
   },
@@ -18,9 +18,9 @@ export default function ShopifyAEOPage() {
     "@type": "Service",
     "@id": "https://aeobility.com.au/services/aeo/shopify#service",
     "name": "Shopify AEO Services",
-    "description": "Optimize your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
+    "description": "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
     "provider": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "@id": "https://aeobility.com.au"
     },
@@ -87,7 +87,7 @@ export default function ShopifyAEOPage() {
               Shopify AEO & <span className="text-gradient-aeo">E-commerce Ingestion Architecture</span>
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-xl">
-              Optimize your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center through structured Liquid refactoring and server-side rules.
+              Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center through structured Liquid refactoring and server-side rules.
             </p>
           </div>
 
@@ -96,11 +96,11 @@ export default function ShopifyAEOPage() {
               <div className="p-6">
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Restructuring Shopify Liquid for LLM Scraping</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
-                  Traditional Shopify themes are optimized for visual presentation, but AI engines require dense, well-structured semantic chunks. We refactor your Liquid templates to ensure that product descriptions, variants, and specifications are clearly marked up using standard Product schemas, making it effortless for AI bots to extract your catalog data.
+                  Traditional Shopify themes are optimised for visual presentation, but AI engines require dense, well-structured semantic chunks. We refactor your Liquid templates to ensure that product descriptions, variants, and specifications are clearly marked up using standard Product schemas, making it effortless for AI bots to extract your catalog data.
                 </p>
-                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Google Merchant Center Feed Optimization</h3>
+                <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Google Merchant Center Feed Optimisation</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-4">
-                  A strong feed is essential for surfacing your products in rich snippets and AI-driven Shopping results. We establish precise feed rules, optimize product titles and descriptions for semantic relevance, and ensure attributes like GTIN, brand, and condition are explicitly defined for ingestion algorithms.
+                  A strong feed is essential for surfacing your products in rich snippets and AI-driven Shopping results. We establish precise feed rules, optimise product titles and descriptions for semantic relevance, and ensure attributes like GTIN, brand, and condition are explicitly defined for ingestion algorithms.
                 </p>
                 <h3 className="font-semibold text-sm sm:text-base text-white/95 mb-2">Server-Side Conversion Integrity</h3>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">

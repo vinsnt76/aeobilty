@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: "GEO Consultant Services & Local Visibility Sprints",
-  description: "Deploy location-aware optimization rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
+  description: "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions/geo-services",
   },
@@ -21,9 +21,9 @@ export default function GEOServicesPage() {
         "@type": "Service",
         "@id": "https://aeobility.com.au/solutions/geo-services#service",
         "name": "GEO Consultant & Local Visibility Sprints",
-        "description": "Deploy location-aware optimization rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
+        "description": "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -112,7 +112,7 @@ export default function GEOServicesPage() {
               GEO Consultant <span className="text-gradient-aeo">Services</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
-              Deploy location-aware optimization rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.
+              Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export default function GEOServicesPage() {
                       "name": pillar.title,
                       "description": pillar.desc,
                       "provider": {
-                        "@type": "Organization",
+                        "@type": "Organisation",
                         "name": "AEObility"
                       }
                     })
@@ -180,7 +180,7 @@ export default function GEOServicesPage() {
               Mobile and spatial AI models rely heavily on coordinate parameters, regional intent structures, and verified footprint arrays to recommend nearby services. Standard SEO directories no longer guarantee map pack placements.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              As your GEO consultant, we structure local footprint arrays, optimize map coordinates, and align proximity signals so that regional intent query pathways connect target users straight to your location nodes.
+              As your GEO consultant, we structure local footprint arrays, optimise map coordinates, and align proximity signals so that regional intent query pathways connect target users straight to your location nodes.
             </p>
           </div>
 

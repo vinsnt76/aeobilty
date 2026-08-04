@@ -17,7 +17,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 2. Machine-Readable Knowledge Map
 
-AEObility structures its digital presence across 42 verified entity nodes grounded in JSON-LD microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: BreadcrumbList`).
+AEObility structures its digital presence across 42 verified entity nodes grounded in JSON-LD microdata schemas (`@type: Organisation`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: BreadcrumbList`).
 
 ### Primary Service Corridors
 1. **AEO Services**: Restructuring web content into 90-120 token atomic answer blocks to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo`)

@@ -33,7 +33,7 @@ export default function KnowledgeHubPage() {
         "name": "What is an AI Search Marketing Course?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An AI Search Marketing Course covers how to optimize content for AI engines and generative platforms using neural matching, semantic context, and structured schema maps."
+          "text": "An AI Search Marketing Course covers how to optimise content for AI engines and generative platforms using neural matching, semantic context, and structured schema maps."
         }
       },
       {
@@ -49,7 +49,7 @@ export default function KnowledgeHubPage() {
 
   const articles = [
     {
-      name: "Answer Engine Optimization Core Principles",
+      name: "Answer Engine Optimisation Core Principles",
       href: "/knowledge-hub/aeo",
       description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
       icon: <GraduationCap className="w-5 h-5 text-aeo-cyan" />
@@ -90,13 +90,13 @@ export default function KnowledgeHubPage() {
     {
       name: "Is AEO just SEO with a new name?",
       href: "/services/aeo/comparison",
-      description: "Compare traditional keyword density search optimization with vector embeddings, neural search, and RAG pipelines.",
+      description: "Compare traditional keyword density search optimisation with vector embeddings, neural search, and RAG pipelines.",
       icon: <Brain className="w-5 h-5 text-aeo-cyan" />
     },
     {
       name: "How do I make my business AI-readable?",
       href: "/services/aeo/procedures",
-      description: "Step-by-step technical guide to structuring answers, optimizing schemas, and building clean topical entity maps.",
+      description: "Step-by-step technical guide to structuring answers, optimising schemas, and building clean topical entity maps.",
       icon: <FileCode2 className="w-5 h-5 text-aeo-cyan" />
     },
     {
@@ -253,7 +253,7 @@ export default function KnowledgeHubPage() {
             <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl font-bold text-white">AEO & Semantic SEO Frameworks</h2>
               <p className="text-base text-white/70 font-light leading-relaxed">
-                Generative model discovery relies heavily on organized data schemas. We provide detailed blueprints explaining <span className="font-semibold text-white">structured search patterns</span>, <span className="font-semibold text-white">content modelling</span>, and <span className="font-semibold text-white">schema frameworks</span> to align your site context with neural vector databases.
+                Generative model discovery relies heavily on organised data schemas. We provide detailed blueprints explaining <span className="font-semibold text-white">structured search patterns</span>, <span className="font-semibold text-white">content modelling</span>, and <span className="font-semibold text-white">schema frameworks</span> to align your site context with neural vector databases.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-3 items-start">
@@ -295,7 +295,7 @@ export default function KnowledgeHubPage() {
             <div className="lg:col-span-6 p-8 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/5 rounded-3xl text-center space-y-6">
               <h3 className="text-2xl font-bold">Secure Your AEO Learning Resources</h3>
               <p className="text-sm text-white/60 font-light max-w-sm mx-auto">
-                Get a free manual audit analyzing your brand readability across AI platforms today.
+                Get a free manual audit analysing your brand readability across AI platforms today.
               </p>
               <div>
                 <Link
