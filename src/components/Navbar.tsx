@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, Calendar, Search } from 'lucide-react';
 
@@ -221,38 +222,26 @@ export default function Navbar() {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Brand Logo & Name */}
-          <Link href="/" className="flex items-center gap-2 group relative z-50 ml-auto lg:ml-0">
-            <svg
-              className="w-8 h-8 text-black group-hover:scale-105 transition-transform"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 2L2 10L16 18L30 10L16 2Z"
-                stroke="#00cdd8"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 22L16 30L30 22"
-                stroke="#bd00ff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 16L16 24L30 16"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeDasharray="2 2"
-              />
-            </svg>
-            <span className="text-xl font-bold tracking-wider text-black">
-              AEO<span className="text-aeo-cyan" style={{ WebkitTextStroke: '1px rgba(26, 26, 26, 0.25)' }}>bility</span>
-            </span>
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center group relative z-50 ml-auto lg:ml-0">
+            {/* Desktop Full Logo */}
+            <Image
+              src="/aeobility-logo-light.svg"
+              alt="AEObility Logo"
+              width={180}
+              height={40}
+              className="h-10 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
+              priority
+            />
+            {/* Mobile Icon Logo */}
+            <Image
+              src="/aeobility-icon-light.svg"
+              alt="AEObility Icon"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain block lg:hidden group-hover:scale-105 transition-transform"
+              priority
+            />
           </Link>
         </div>
       </nav>
