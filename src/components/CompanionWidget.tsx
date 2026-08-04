@@ -554,6 +554,8 @@ export default function CompanionWidget() {
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search AEObility or ask Bill anything..."
+                spellCheck={false}
+                suppressHydrationWarning
                 className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors"
               />
               <button
