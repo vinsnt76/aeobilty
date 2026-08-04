@@ -196,10 +196,10 @@ export function classifyCompanion5Intent(
       targetUrl = '/solutions/geo-services';
       targetTitle = 'GEO Services & Local Map Matrix';
       desc = 'Local coordinate mapping and spatial vector alignment for Google & Apple Maps.';
-    } else if (clean.includes('contact') || clean.includes('touch') || clean.includes('book')) {
+    } else if (clean.includes('contact') || clean.includes('touch') || clean.includes('book') || clean.includes('quote')) {
       targetUrl = '/contact';
-      targetTitle = 'Contact & Booking Corridors';
-      desc = 'Connect directly with Vince Baker for AEO strategy & AI search consulting.';
+      targetTitle = 'Get a Quote & Contact Corridors';
+      desc = 'Connect directly with Vince Baker for AEO strategy, custom project quotes & AI search consulting.';
     } else if (clean.includes('about') || clean.includes('vince')) {
       targetUrl = '/about';
       targetTitle = 'About AEObility & Vince Baker';

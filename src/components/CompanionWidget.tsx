@@ -37,8 +37,6 @@ export default function CompanionWidget() {
   ]);
   const [inputText, setInputText] = useState('');
   const [isThinking, setIsThinking] = useState(false);
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [selectedVoiceName, setSelectedVoiceName] = useState<string>('');
   const [telemetryData, setTelemetryData] = useState<{ url?: string; clientUrl?: string; intent?: string; result?: TelemetryResult } | null>(null);
 
   type BillState = "HIDDEN" | "ANALYSING" | "INTRODUCTION" | "INSIGHT_REVEAL" | "EMAIL_CAPTURE" | "CONSULTANT" | "FOLLOW_UP";
@@ -90,7 +88,6 @@ export default function CompanionWidget() {
   };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const audioIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const loadTelemetryFromStorage = () => {
     if (typeof window === 'undefined') return;
@@ -176,64 +173,10 @@ export default function CompanionWidget() {
     };
   }, []);
 
-  // Initialize voices
-  useEffect(() => {
-
-    if (typeof window !== 'undefined' && window.speechSynthesis) {
-      const loadVoices = () => {
-        const allVoices = window.speechSynthesis.getVoices();
-        const englishVoices = allVoices.filter(
-          v => v.lang.startsWith('en') || v.name.includes('Google')
-        );
-        setVoices(englishVoices);
-        const defaultVoice = englishVoices.find(v => v.lang === 'en-AU') || englishVoices[0];
-        if (defaultVoice) {
-          setSelectedVoiceName(defaultVoice.name);
-        }
-      };
-
-      loadVoices();
-      window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-  }, []);
-
   // Scroll to bottom of chat
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isThinking]);
-
-  // Simulate lip sync / mouth movement when speaking
-  const startLipSync = () => {
-    if (audioIntervalRef.current) clearInterval(audioIntervalRef.current);
-    audioIntervalRef.current = setInterval(() => {
-      // simulate lip sync
-    }, 250);
-  };
-
-  const stopLipSync = () => {
-    if (audioIntervalRef.current) {
-      clearInterval(audioIntervalRef.current);
-      audioIntervalRef.current = null;
-    }
-  };
-
-  // TTS Speech feedback
-  const speakText = (text: string) => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    const selectedVoice = voices.find(v => v.name === selectedVoiceName);
-    if (selectedVoice) {
-      utterance.voice = selectedVoice;
-    }
-
-    utterance.onstart = startLipSync;
-    utterance.onend = stopLipSync;
-    utterance.onerror = stopLipSync;
-
-    window.speechSynthesis.speak(utterance);
-  };
 
   const openDeepTelemetryDrawer = () => {
     setIsOpen(false);
@@ -277,7 +220,6 @@ export default function CompanionWidget() {
               if (data.triggerBillScan) {
                 openDeepTelemetryDrawer();
               }
-              speakText(answerText);
             }
           } catch (err) {
             console.error("Pre-audit RAG search failed:", err);
@@ -338,12 +280,10 @@ export default function CompanionWidget() {
           telemetry: telemetryContext || (telemetryData ? telemetryData.result : null) 
         }
       ]);
-      speakText(botResponse);
     } catch (error) {
       console.error("Error sending message:", error);
       const errResponse = "My connection sequence glitched, V Man. Let's run a quick 68-second Ctrl+Alt+Delete!";
       setMessages(prev => [...prev, { sender: 'assistant', text: errResponse }]);
-      speakText(errResponse);
     } finally {
       setIsThinking(false);
     }
@@ -359,12 +299,6 @@ export default function CompanionWidget() {
 
   const toggleWidget = () => {
     setIsOpen(!isOpen);
-    if (isOpen) {
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
-      stopLipSync();
-    }
   };
 
   // Suppress AI Bill companion widget on /about and /freelance routes
@@ -570,25 +504,8 @@ export default function CompanionWidget() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Footer actions and voice selector */}
+        {/* Footer actions */}
         <div className="border-t border-white/5 p-3 space-y-2.5 bg-white/[0.01]">
-            {voices.length > 0 && (
-              <div className="flex items-center gap-2 bg-black/40 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px] text-white/50">
-                <span className="font-semibold uppercase tracking-wider text-[8px]">Voice</span>
-                <select
-                  value={selectedVoiceName}
-                  onChange={(e) => setSelectedVoiceName(e.target.value)}
-                  className="bg-transparent border-none text-white focus:outline-none flex-grow text-[9px] cursor-pointer"
-                >
-                  {voices.map((voice) => (
-                    <option key={voice.name} value={voice.name} className="bg-neutral-900 text-white">
-                      {voice.name} ({voice.lang})
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
             {/* Pre-Audit Quick Action Pills */}
             {!telemetryData && billState !== 'CONSULTANT' && (
               <div className="flex flex-wrap gap-1.5 pb-1">
@@ -599,6 +516,12 @@ export default function CompanionWidget() {
                 >
                   Find a Service
                 </button>
+                <a
+                  href="/contact"
+                  className="text-[9px] bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/30 px-2 py-0.5 rounded-md text-emerald-400 font-semibold transition cursor-pointer flex items-center gap-1"
+                >
+                  Get a Quote ➔
+                </a>
                 <button
                   type="button"
                   onClick={() => handleSendMessage("Scan my site visibility")}
