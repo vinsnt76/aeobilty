@@ -300,6 +300,13 @@ export default function BillWidget() {
 
   // Listen for Handoff Events from search modals or CTA triggers
   useEffect(() => {
+    const handleOpenBillDrawer = () => {
+      // Suppress companion widget first to avoid z-index race conditions
+      window.dispatchEvent(new Event('close_companion_widget'));
+      setIsOpen(true);
+      setIsTelemetryMode(true);
+    };
+
     const handleOpenBillWithQuery = (e: Event) => {
       const customEvent = e as CustomEvent<{ query?: string; mode?: 'telemetry' | 'general' }>;
       const initialQuery = customEvent.detail?.query;
@@ -320,9 +327,11 @@ export default function BillWidget() {
       setIsOpen(false);
     };
 
+    window.addEventListener('open_bill_drawer', handleOpenBillDrawer);
     window.addEventListener('open_bill_with_query', handleOpenBillWithQuery);
     window.addEventListener('close_bill_widget', handleCloseBillWidget);
     return () => {
+      window.removeEventListener('open_bill_drawer', handleOpenBillDrawer);
       window.removeEventListener('open_bill_with_query', handleOpenBillWithQuery);
       window.removeEventListener('close_bill_widget', handleCloseBillWidget);
     };

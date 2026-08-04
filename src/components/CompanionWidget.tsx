@@ -149,28 +149,22 @@ export default function CompanionWidget() {
       }
     };
 
-    const handleOpenWithQuery = (e: Event) => {
-      const customEvent = e as CustomEvent<{ query?: string }>;
-      const searchQuery = customEvent.detail?.query || 'Diagnostic Query';
-      setIsOpen(true);
-      setBillState('CONSULTANT');
-      window.dispatchEvent(new Event('bill_opened'));
-      window.dispatchEvent(new Event('bill_consultation_started'));
-      setMessages(prev => [
-        ...prev,
-        { sender: 'user', text: searchQuery },
-        { sender: 'assistant', text: `Diagnostic Inquiry Received: "${searchQuery}". Let's analyse how this topic connects to your site's AEO & GEO search architecture.` }
-      ]);
+    const handleCloseCompanion = () => {
+      setIsOpen(false);
     };
 
     window.addEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
     window.addEventListener('open_new_bill_session', handleOpenNewSession);
-    window.addEventListener('open_bill_with_query', handleOpenWithQuery);
+    window.addEventListener('close_companion_widget', handleCloseCompanion);
+    window.addEventListener('open_bill_drawer', handleCloseCompanion);
+    window.addEventListener('open_bill_with_query', handleCloseCompanion);
 
     return () => {
       window.removeEventListener('aeo_telemetry_updated', loadTelemetryFromStorage);
       window.removeEventListener('open_new_bill_session', handleOpenNewSession);
-      window.removeEventListener('open_bill_with_query', handleOpenWithQuery);
+      window.removeEventListener('close_companion_widget', handleCloseCompanion);
+      window.removeEventListener('open_bill_drawer', handleCloseCompanion);
+      window.removeEventListener('open_bill_with_query', handleCloseCompanion);
     };
   }, []);
 
@@ -181,6 +175,7 @@ export default function CompanionWidget() {
 
   const openDeepTelemetryDrawer = () => {
     setIsOpen(false);
+    window.dispatchEvent(new Event('close_companion_widget'));
     router.push('/diagnostic');
     window.dispatchEvent(new Event('open_bill_drawer'));
   };
