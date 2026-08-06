@@ -19,6 +19,72 @@ export default function AEOProceduresPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/aeo/procedures",
+        "name": "Best AEO Strategies: How to Make Your Business AI-Readable",
+        "description": "AEO strategies for making your business machine-readable using semantic boundaries, atomic answer blocks, structured schema, internal linking, co-citations, and multimodal optimisation.",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/best-seo-strategies-for-ai-search-marketing_AEObility.webp"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/services/aeo/procedures#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services/aeo/procedures#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AEO Services",
+            "item": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AEO Procedures",
+            "item": "https://aeobility.com.au/services/aeo/procedures"
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#org",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au",
+        "description": "Optimising Australian small businesses for the future of search — discoverable, understandable, and recommended across maps, search, and generative AI corridors.",
+        "logo": "https://aeobility.com.au/aeobility-logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AU"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://aeobility.com.au/services/aeo",
+        "name": "AEO Strategy & Implementation",
+        "provider": {
+          "@id": "https://aeobility.com.au/#org"
+        },
+        "serviceType": "Answer Engine Optimisation",
+        "areaServed": "AU",
+        "description": "Refactoring digital content so AI systems can parse, chunk, and cite your business with high confidence.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://aeobility.com.au/services/aeo/procedures",
+          "price": "0",
+          "priceCurrency": "AUD",
+          "description": "Free AI Visibility Scan and AEO audit."
+        }
+      },
+      {
         "@type": "HowTo",
         "@id": "https://aeobility.com.au/services/aeo/procedures#howto",
         "name": "Best AEO Strategies: How to Make Your Business AI-Readable",
@@ -75,21 +141,72 @@ export default function AEOProceduresPage() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What are the best AEO strategies?",
+            "name": "What is AEO & how does it work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The best AEO strategies include structuring content around question-based headings, writing standalone 90-120 token atomic answer blocks, embedding relationship-rich internal links, implementing nested JSON-LD schema, building off-page entity authority, and tuning content for multimodal voice and vision search."
+              "text": "Answer Engine Optimisation refactors content so AI systems can parse, understand, and cite a business directly."
             }
           },
           {
             "@type": "Question",
-            "name": "How do atomic answer blocks improve AI search citations?",
+            "name": "AEO vs SEO: What is the generative shift?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Atomic answer blocks provide direct, self-contained definitions of 90 to 120 tokens immediately beneath headings. This ensures RAG retrieval vector engines can extract precise answers without truncating key qualifiers or mixing unrelated context."
+              "text": "AEO focuses on entity salience, vector proximity, and structured schema, whereas SEO focuses on keyword-based ranking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What stops your business from showing up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weak entity signals, inconsistent NAP citations, vague headings, and lack of structured schema reduce AI visibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does AEO cost & what do I get?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AEO sprints include atomic answer blocks, schema graphs, entity salience optimisation, and a 90-day roadmap."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AEO improve local business visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Consistent NAP citations, structured schema, and entity co-citations strengthen local visibility across maps and AI search."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AEO support AI Semantic SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Semantic boundaries, atomic blocks, and relationship-rich internal linking create machine-readable entity networks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an AI Search Marketing Strategy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI search strategy optimises content for conversational, multimodal, and generative search systems."
             }
           }
         ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/best-seo-strategies-for-ai-search-marketing_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/best-seo-strategies-for-ai-search-marketing_AEObility.webp",
+        "name": "Best AEO Strategies for AI Search Marketing",
+        "description": "Architectural diagram depicting Answer Engine Optimisation, RAG vector retrieval, structured schema, and AI search marketing by AEObility.",
+        "uploadDate": "2026-08-06",
+        "creator": {
+          "@id": "https://aeobility.com.au/#org"
+        }
       },
       {
         "@type": "ItemList",
