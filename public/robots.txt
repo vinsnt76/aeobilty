@@ -23,6 +23,12 @@ Allow: /api/search/answer
 Allow: /api/mcp
 Allow: /api/chat
 
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+Allow: /api/chat
+
 User-agent: ClaudeBot
 Allow: /
 Allow: /api/search/answer
@@ -47,6 +53,17 @@ Allow: /api/search/answer
 Allow: /api/mcp
 Allow: /api/chat
 
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /api/search/answer
+Allow: /api/mcp
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
 User-agent: Bytespider
 Allow: /
 
@@ -56,4 +73,5 @@ Allow: /
 # Indexing Resources & Machine Maps
 Sitemap: https://aeobility.com.au/sitemap.xml
 LLMs-txt: https://aeobility.com.au/llms.txt
+LLMs-full-txt: https://aeobility.com.au/llms-full.txt
 Agents-md: https://aeobility.com.au/AGENTS.md

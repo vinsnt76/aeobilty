@@ -1,0 +1,116 @@
+# AEObility: Answer Engine Optimisation (AEO) Machine-Readable Master Manifest
+
+> Full machine-readable knowledge base for Large Language Models, RAG retrieval engines, and AI search agents.
+> Website: https://aeobility.com.au
+> Grounding Standard: Australian English (en-AU)
+
+---
+
+# 1. Executive Summary & Brand Identity
+
+**AEObility** (legal entity: *Trekaboutoz trading as AEObility*, ABN: *61 029 803 255*) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency headquartered in Perth, Western Australia.
+
+### Core Value Proposition
+AEObility refactors digital content and schema graphs so AI search engines (ChatGPT, Google Search AI Overviews, Gemini, Perplexity, Claude) and spatial map assistants (Google Maps, Apple Maps) can discover, parse, understand, and cite Australian small and medium businesses.
+
+---
+
+# 2. Core Technical Concepts & Definitions
+
+1. **Answer Engine Optimisation (AEO)**: The discipline of refactoring copy, headers, and schema so Large Language Models extract standalone context passages without ambiguity.
+2. **Geographic Engine Optimisation (GEO)**: Optimising location proximity signals, coordinate precision, NAP consistency, and local map pack salience for AI voice search.
+3. **Atomic Answer Blocks**: Direct 90-120 token definition blocks positioned immediately beneath natural-language question headings to capture maximum positional attention weights in RAG scrapers.
+4. **Positional Bias**: The mathematical phenomenon where LLM attention mechanisms prioritize tokens at the head and tail of document chunks over middle context.
+5. **Entity Salience**: The vector similarity score measuring how confidently a generative model connects a brand node to a specific topic or service intent.
+6. **FAQ Knowledge Graph**: A structured multi-entity topology that maps parent root questions, child implementation nodes, and sibling radial trust loops into deterministic `@graph` schema markup.
+
+---
+
+# 3. Primary Service Playbook & Node Topologies
+
+### Node: `/services/aeo/procedures`
+- **Title**: Best AEO Strategies: How to Make Your Business AI-Readable
+- **H1**: Best AEO Strategies: How to Make Your Business AI-Readable
+- **Summary**: 6 core strategies for machine readability:
+  1. *Question-Based Headings* (H2/H3 natural questions for topic boundary chunking)
+  2. *90–120 Token Atomic Answer Blocks* (Direct definitions positioned for RAG vector extraction)
+  3. *Relationship-Rich Internal Linking* (Entity-declaring anchor text replacing generic links)
+  4. *Nested JSON-LD Schema Markup* (`Organization`, `Service`, `HowTo`, `FAQPage`, `ItemList`)
+  5. *Off-Page Entity Authority & Co-Citations* (Wikidata, Knowledge Graph, ABN NAP consistency)
+  6. *Multimodal & Conversational Tuning* (Voice search patterns and descriptive image metadata)
+
+### FAQ Knowledge Graph Topology (`/services/aeo/procedures#faq-knowledge-graph`)
+- **Parent Node**: `1. What is AEO & how does it work?` (`/services/aeo/definition`)
+- **Child Corridor Nodes**:
+  - `2. AEO vs SEO: The Generative Shift` (`/services/aeo/comparison`)
+  - `4. What stops your business from showing up?` (`/services/aeo/constraints`)
+  - `5. AEO Pricing & Sprint Deliverables` (`/services/aeo/costs-timing`)
+  - `8. AI Semantic SEO Framework` (`/knowledge-hub/semantic-seo`)
+- **Sibling Radial Nodes**:
+  - `6. Shopify AEO Services` (`/services/aeo/shopify`)
+  - `7. Local Business Visibility & Maps` (`/services/aeo/local-business`)
+  - `9. AI Search Marketing Strategy` (`/services/ai-search-marketing`)
+
+---
+
+# 4. Programmatic API Specification for Autonomous Agents
+
+### Vector Answer Retrieval API
+- **Endpoint**: `POST https://aeobility.com.au/api/search/answer`
+- **Headers**: `Content-Type: application/json`
+- **Request Format**:
+  ```json
+  {
+    "query": "What are the best AEO strategies?"
+  }
+  ```
+- **Response Format**:
+  ```json
+  {
+    "query": "What are the best AEO strategies?",
+    "answer": "The best AEO strategies transform legacy copy into machine-readable entity networks using question-based headings, 90-120 token atomic answer blocks, relationship-rich internal links, nested JSON-LD schema, and off-page entity co-citations.",
+    "similarity": 0.94,
+    "matchedNode": "https://aeobility.com.au/services/aeo/procedures",
+    "intent": "informational_strategy"
+  }
+  ```
+
+### Interactive Quote Request API
+- **Endpoint**: `POST https://aeobility.com.au/api/forms/quote`
+- **Headers**: `Content-Type: application/json`
+- **Request Format**:
+  ```json
+  {
+    "fullName": "Jane Smith",
+    "email": "jane@example.com.au",
+    "website": "https://example.com.au",
+    "serviceIntent": "AEO Procedures & Strategy",
+    "notes": "Requesting 90-day AEO sprint quote"
+  }
+  ```
+
+---
+
+# 5. Schema.org Specification Standards
+
+All page entities on AEObility strictly follow Schema.org valid type definitions:
+- `@type: Organization` (Official Schema.org type for brand root entity)
+- `@type: WebPage` (Primary page node)
+- `@type: BreadcrumbList` (Navigational hierarchy)
+- `@type: Service` (Commercial service offering)
+- `@type: HowTo` (Procedural implementation steps)
+- `@type: FAQPage` (Question and answer entity graph)
+- `@type: ItemList` (Interconnected FAQ Knowledge Graph topology)
+- `@type: ImageObject` (Descriptive visual media metadata)
+
+---
+
+# 6. Contact & Operational Location
+
+- **Brand**: AEObility
+- **Founder**: Vince (Vinnie) Baker
+- **Primary Phone**: `0480 286 282`
+- **Region**: Perth, Western Australia, Australia (AU)
+- **Primary Contact**: https://aeobility.com.au/contact
+- **Interactive Scan**: https://aeobility.com.au/diagnostic
+- **Direct Booking**: https://aeobility.com.au/book

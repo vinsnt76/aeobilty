@@ -10,6 +10,7 @@
 - **Positional Bias**: The tendency of retrieval models to prioritize answers placed at the absolute beginning or end of text blocks.
 - **Atomic Answer Blocks**: Text passages structured within 90-120 token bounds to maximize attention scores and semantic clarity.
 - **Entity Salience**: The mathematical confidence of an LLM in identifying the subject-predicate relationship of a brand node.
+- **FAQ Knowledge Graph**: Declared parent, child, and sibling entity topology mapping core questions into machine-readable knowledge networks.
 
 ---
 
@@ -21,14 +22,14 @@
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
 - [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimisations and semantic audits.
-  - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): Explains what AEO is and why it replaces legacy SEO.
-  - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings.
-  - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Step-by-step technical guides for AI readiness.
-  - [`/services/aeo/constraints`](https://aeobility.com.au/services/aeo/constraints): Details on indexation limits and citation boundaries.
-  - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures and package timelines.
-  - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring.
-  - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimisation.
-- [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting.
+  - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): Explains what AEO is and why it replaces legacy SEO. (Root Parent FAQ Node)
+  - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings. (Child Corridor Node)
+  - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Best AEO Strategies: How to Make Your Business AI-Readable (6 core strategies, 90-120 token atomic summary, FAQ Knowledge Graph topology).
+  - [`/services/aeo/constraints`](https://aeobility.com.au/services/aeo/constraints): Details on indexation limits, trust thresholds, and positional bias blockers. (Child Corridor Node)
+  - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures, milestones, and sprint deliverables. (Child Corridor Node)
+  - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring. (Sibling Radial Node)
+  - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimisation. (Sibling Radial Node)
+- [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
 
 ### Solutions (How We Deliver)
@@ -40,7 +41,7 @@
 ### Knowledge Hub (Our Research Nodes)
 - [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
 - [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
-- [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples and semantic vector dimensions.
+- [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
 - [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
   - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
@@ -81,7 +82,7 @@ AEObility exposes vector-grounded Answer & Form APIs for real-time site search &
 We utilise schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
 - **Brand ID**: `https://aeobility.com.au`
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
-- **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`
+- **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
 
 ---
 

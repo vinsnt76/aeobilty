@@ -17,20 +17,18 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 2. Machine-Readable Knowledge Map
 
-AEObility structures its digital presence across 42 verified entity nodes grounded in JSON-LD microdata schemas (`@type: Organisation`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: BreadcrumbList`).
+AEObility structures its digital presence across verified entity nodes grounded in valid Schema.org microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: ItemList`, `@type: BreadcrumbList`).
 
 ### Primary Service Corridors
-1. **AEO Services**: Restructuring web content into 90-120 token atomic answer blocks to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo`)
+1. **AEO Services & Procedures**: Best AEO strategies for refactoring web content into 90-120 token atomic answer blocks and FAQ Knowledge Graph topologies to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo/procedures`)
 2. **GEO Marketing**: Aligning local coordinate data, map packs, and location proximity signals for Apple Maps, Google Maps, and local voice queries. (`https://aeobility.com.au/services/geo-marketing`)
 3. **AI Search Strategy**: Long-term strategy for Perplexity, ChatGPT, Google AI Overviews, and Gemini generative search results. (`https://aeobility.com.au/services/ai-search-marketing`)
 4. **The AEObility Blueprint**: Standalone $995 Clarity Phase deep technical audit and 90-day strategic roadmap. (`https://aeobility.com.au/solutions/aeo-blueprint`)
 
-### 5-Node AEO & RAG Internal Link Graph Architecture
-- **Root Node (`/`)**: Distributes authority directly to primary service entities (`/services/aeo`, `/services/geo-marketing`, `/services/ai-search-marketing`) and diagnostic entry (`/solutions/aeo-blueprint`).
-- **Primary Service Nodes (`/services/*`)**: High-density capability hubs with linear CTAs pointing to `/solutions/aeo-blueprint` and `/contact`.
-- **Diagnostic Node (`/solutions/aeo-blueprint`)**: Intent qualifier leading directly to terminal conversion (`/contact`).
-- **Terminal Node (`/contact`)**: Conversion endpoint with minimal outbound link noise for high-confidence transactional retrieval.
-- **Lateral Trust Nodes (`/knowledge-hub/*`)**: Case studies and research articles acting as proof nodes that feed authority back into money pages via radial return loops.
+### FAQ Knowledge Graph Topology
+- **Parent Root FAQ Node**: `1. What is AEO & how does it work?` (`/services/aeo/definition`)
+- **Child Corridor Nodes**: `2. AEO vs SEO` (`/services/aeo/comparison`), `4. What stops your business from showing up?` (`/services/aeo/constraints`), `5. AEO Pricing & Sprint Deliverables` (`/services/aeo/costs-timing`), `8. AI Semantic SEO` (`/knowledge-hub/semantic-seo`).
+- **Sibling Radial Nodes**: `6. Shopify AEO` (`/services/aeo/shopify`), `7. Local Business Visibility` (`/services/aeo/local-business`), `9. AI Search Marketing` (`/services/ai-search-marketing`).
 
 ### Key Technical Research Articles
 - **Competitor Overlap Framework**: *Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology* (`https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`)
