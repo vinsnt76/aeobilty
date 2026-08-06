@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const orgSchema = {
     "@context": "https://schema.org",
-    "@type": "Organisation",
+    "@type": "Organization",
     "@id": "https://aeobility.com.au/#organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
@@ -78,7 +78,7 @@ export default function AboutPage() {
     "name": "Vinnie Baker",
     "jobTitle": "Founder",
     "worksFor": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     },

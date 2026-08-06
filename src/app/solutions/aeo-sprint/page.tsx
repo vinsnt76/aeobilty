@@ -23,7 +23,7 @@ export default function AEOSprintPage() {
         "name": "AEO Technical Sprints",
         "description": "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
         "provider": {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -152,7 +152,7 @@ export default function AEOSprintPage() {
                       "name": pillar.title,
                       "description": pillar.desc,
                       "provider": {
-                        "@type": "Organisation",
+                        "@type": "Organization",
                         "name": "AEObility"
                       }
                     })

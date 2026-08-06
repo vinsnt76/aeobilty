@@ -63,7 +63,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         }
       },
       {
-        "@type": "Organisation",
+        "@type": "Organization",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",

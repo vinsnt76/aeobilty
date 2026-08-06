@@ -22,7 +22,7 @@ export default function CaseStudiesHubPage() {
     "description": "Explore real-world case studies demonstrating how structural search optimisation, schema markup, and intent alignment drive organic growth and revenue.",
     "url": "https://aeobility.com.au/knowledge-hub/case-studies",
     "publisher": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

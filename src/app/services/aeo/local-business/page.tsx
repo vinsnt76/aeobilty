@@ -20,7 +20,7 @@ export default function LocalBusinessAEOPage() {
     "name": "Local Business Visibility",
     "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
     "provider": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "@id": "https://aeobility.com.au"
     },

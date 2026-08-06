@@ -20,7 +20,7 @@ export default function ShopifyAEOPage() {
     "name": "Shopify AEO Services",
     "description": "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
     "provider": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "@id": "https://aeobility.com.au"
     },

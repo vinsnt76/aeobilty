@@ -566,7 +566,7 @@ export default function AEOProceduresPage() {
   "@type": "Service",
   "name": "Best AEO Strategies & Implementation",
   "provider": {
-    "@type": "Organisation",
+    "@type": "Organization",
     "name": "AEObility",
     "url": "https://aeobility.com.au"
   },

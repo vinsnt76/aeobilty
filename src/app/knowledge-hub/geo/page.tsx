@@ -23,7 +23,7 @@ export default function GEOKnowledgeNodePage() {
         "headline": "GEO and SEO: Local Discovery Matrix",
         "description": "Advanced techniques balancing localized map rankings and systemic generative visibility rules without triggering focus dilution gaps.",
         "author": {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "AEObility"
         }
       }
