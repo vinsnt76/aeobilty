@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -8,6 +8,13 @@ import AnswerSearchModal from "@/components/AnswerSearchModal";
 import BillWidget from "@/components/BillWidget";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

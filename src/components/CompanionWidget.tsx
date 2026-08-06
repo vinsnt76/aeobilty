@@ -89,8 +89,33 @@ export default function CompanionWidget() {
   };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.visualViewport) return;
+
+    const updatePosition = () => {
+      if (!window.visualViewport || !drawerRef.current) return;
+      const vvHeight = window.visualViewport.height;
+      if (window.innerWidth < 768) {
+        drawerRef.current.style.maxHeight = `${Math.min(vvHeight - 100, 600)}px`;
+      } else {
+        drawerRef.current.style.maxHeight = '';
+      }
+    };
+
+    window.visualViewport.addEventListener('resize', updatePosition);
+    window.visualViewport.addEventListener('scroll', updatePosition);
+    if (isOpen) updatePosition();
+
+    return () => {
+      window.visualViewport?.removeEventListener('resize', updatePosition);
+      window.visualViewport?.removeEventListener('scroll', updatePosition);
+    };
+  }, [isOpen]);
 
   const loadTelemetryFromStorage = () => {
+
     if (typeof window === 'undefined') return;
     const raw = localStorage.getItem('aeo_telemetry_latest');
     if (raw) {
@@ -321,7 +346,7 @@ export default function CompanionWidget() {
       <button
         id="companion-widget-toggle"
         onClick={toggleWidget}
-        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden ${
+        className={`fixed bottom-6 right-6 left-auto z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden touch-manipulation ${
           isOpen ? 'border-aeo-purple text-aeo-purple' : 'border-aeo-cyan text-aeo-cyan'
         }`}
         title="Chat with AI Bill"
@@ -335,7 +360,8 @@ export default function CompanionWidget() {
 
       {/* Floating Drawer */}
       <div
-        className={`fixed right-6 bottom-24 z-50 w-[350px] md:w-[480px] max-w-[calc(100vw-3rem)] h-[600px] bg-neutral-950/95 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col justify-between overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-all duration-300 origin-bottom-right ${
+        ref={drawerRef}
+        className={`fixed right-6 bottom-24 left-auto z-50 w-[350px] md:w-[480px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100dvh-7rem)] bg-neutral-950/95 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col justify-between overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-all duration-300 origin-bottom-right ${
           isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
         }`}
       >
@@ -354,7 +380,7 @@ export default function CompanionWidget() {
               <button
                 type="button"
                 onClick={openDeepTelemetryDrawer}
-                className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded border border-aeo-cyan/25 transition cursor-pointer"
+                className="text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 hover:bg-aeo-cyan/20 px-2 py-0.5 rounded border border-aeo-cyan/25 transition cursor-pointer touch-manipulation"
               >
                 Telemetry ↗
               </button>
@@ -362,7 +388,7 @@ export default function CompanionWidget() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition cursor-pointer"
+              className="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition cursor-pointer touch-manipulation"
               aria-label="Close Assistant"
             >
               <X className="w-4 h-4" />
@@ -397,7 +423,8 @@ export default function CompanionWidget() {
           </div>
         )}
 
-        <div className="flex-grow overflow-y-auto p-4 space-y-4 text-xs">
+        <div className="flex-grow overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] p-4 space-y-4 text-xs">
+
             <>
               {messages.map((msg, i) => {
                 const isUser = msg.sender === 'user';
@@ -516,7 +543,7 @@ export default function CompanionWidget() {
                       placeholder="Email Address"
                       value={onboardEmail}
                       onChange={e => setOnboardEmail(e.target.value)}
-                      className="flex-grow bg-black/60 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-aeo-cyan text-[11px]"
+                      className="flex-grow bg-black/60 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-aeo-cyan text-base sm:text-[11px] touch-manipulation"
                       onKeyDown={e => {
                         if (e.key === 'Enter') handleEmailCapture(onboardEmail);
                       }}
@@ -553,7 +580,7 @@ export default function CompanionWidget() {
                 placeholder="Search AEObility or ask Bill anything..."
                 spellCheck={false}
                 suppressHydrationWarning
-                className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors"
+                className="flex-grow bg-neutral-900 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-aeo-cyan transition-colors touch-manipulation"
               />
               <button
                 type="submit"

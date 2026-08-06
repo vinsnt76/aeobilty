@@ -75,6 +75,31 @@ export default function BillWidget() {
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
   const [reportedCardIds] = useState(() => new Set<string>());
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.visualViewport) return;
+
+    const updatePosition = () => {
+      if (!window.visualViewport || !containerRef.current) return;
+      const vvHeight = window.visualViewport.height;
+      if (window.innerWidth < 768) {
+        containerRef.current.style.maxHeight = `${Math.min(vvHeight - 80, 600)}px`;
+      } else {
+        containerRef.current.style.maxHeight = '';
+      }
+    };
+
+    window.visualViewport.addEventListener('resize', updatePosition);
+    window.visualViewport.addEventListener('scroll', updatePosition);
+    if (isOpen) updatePosition();
+
+    return () => {
+      window.visualViewport?.removeEventListener('resize', updatePosition);
+      window.visualViewport?.removeEventListener('scroll', updatePosition);
+    };
+  }, [isOpen]);
+
 
   // 0. Gated Lead-Capture State (Triggers on 3rd User Turn)
   const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
@@ -512,7 +537,7 @@ export default function BillWidget() {
 
   return createPortal(
     <div className="fixed inset-0 z-9999 pointer-events-none">
-      <div className="pointer-events-auto fixed bottom-6 right-6 z-9999 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[85vh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
+      <div ref={containerRef} className="pointer-events-auto fixed bottom-6 right-6 left-auto z-9999 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[85dvh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
       {/* 0. Interstitial Gating Modal Overlay (3rd User Turn) */}
       {isGated && (
         <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn">
@@ -548,7 +573,7 @@ export default function BillWidget() {
                   required
                   value={leadForm.name}
                   onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="Jane Doe"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -562,7 +587,7 @@ export default function BillWidget() {
                   required
                   value={leadForm.email}
                   onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="jane@company.com.au"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -576,7 +601,7 @@ export default function BillWidget() {
                   required
                   value={leadForm.phone}
                   onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors"
+                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="0400 000 000"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -676,7 +701,7 @@ export default function BillWidget() {
       )}
 
       {/* Main Response Log Window Feed */}
-      <div className="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs scrollbar-thin">
+      <div className="flex-1 p-4 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
           <div className="text-center pt-6 pb-2 space-y-3 px-2">
             <div className="w-10 h-10 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -753,7 +778,7 @@ export default function BillWidget() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={isTelemetryMode ? "Ask Bill to diagnose your audit variables..." : "Ask Bill about AEO semantic lattices..."}
-            className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/60 transition"
+            className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/60 transition touch-manipulation"
           />
           <button 
             type="submit" 

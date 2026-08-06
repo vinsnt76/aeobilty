@@ -173,7 +173,7 @@ export default function AnswerSearchModal() {
             value={query}
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder="Ask AEObility... (e.g. What is AEO?, GEO Services, Shopify AEO)"
-            className="w-full bg-transparent text-white placeholder-zinc-400 text-base focus:outline-none focus:ring-0"
+            className="w-full bg-transparent text-white placeholder-zinc-400 text-base focus:outline-none focus:ring-0 touch-manipulation"
           />
           {query && (
             <button
@@ -183,7 +183,7 @@ export default function AnswerSearchModal() {
                 setResult(null);
                 inputRef.current?.focus();
               }}
-              className="p-1 text-zinc-400 hover:text-white mr-2"
+              className="p-1 text-zinc-400 hover:text-white mr-2 touch-manipulation"
             >
               <X className="w-4 h-4" />
             </button>
@@ -191,14 +191,14 @@ export default function AnswerSearchModal() {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="px-2 py-1 rounded bg-zinc-800 text-zinc-400 text-xs font-mono border border-white/10 hover:text-white"
+            className="px-2 py-1 rounded bg-zinc-800 text-zinc-400 text-xs font-mono border border-white/10 hover:text-white touch-manipulation"
           >
             ESC
           </button>
         </form>
 
         {/* Content Body */}
-        <div className="p-5 max-h-[70vh] overflow-y-auto space-y-4">
+        <div className="p-5 max-h-[70dvh] overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] space-y-4">
           {loading && (
             <div className="flex items-center justify-center py-10 space-x-3 text-emerald-400">
               <Sparkles className="w-5 h-5 animate-spin" />
