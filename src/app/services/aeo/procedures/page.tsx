@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -157,6 +158,19 @@ export default function AEOProceduresPage() {
 
         {/* Right Side: Core Content */}
         <section className="lg:col-span-8 flex flex-col gap-10">
+          {/* Hero Banner Image */}
+          <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,205,216,0.12)] group">
+            <Image
+              src="/best-seo-strategies-for-ai-search-marketing_AEObility.webp"
+              alt="Best AEO Strategies for AI Search Marketing — AEObility"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+          </div>
+
           {/* Header Section */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan text-xs font-mono font-semibold mb-4">
