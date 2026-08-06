@@ -100,9 +100,15 @@ function runQueryTransaction() {
 
     const preflightPassed = await runPreflightCheck();
     if (preflightPassed) {
-      await runQueryTransaction();
+      const transactionPassed = await runQueryTransaction();
+      if (!transactionPassed) {
+        process.exit(1);
+      }
+    } else {
+      process.exit(1);
     }
   } catch (err) {
     console.error('\x1b[31mRuntime Error during agent simulation execution:\x1b[0m', err);
+    process.exit(1);
   }
 })();

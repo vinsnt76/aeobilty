@@ -26,4 +26,4 @@ jobs:
       - name: Run Production Verification Simulation
         run: |
           echo "🚀 Executing cross-origin preflight and data transaction tests..."
-          node test-agent.mjs
+          node scripts/test-agent.mjs
