@@ -90,6 +90,70 @@ export default function AEOProceduresPage() {
             }
           }
         ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://aeobility.com.au/services/aeo/procedures#faq-knowledge-graph",
+        "name": "AEO FAQ Knowledge Graph",
+        "description": "Structured FAQ Knowledge Graph mapping parent, child, and sibling entity relationships across Answer Engine Optimisation framework nodes.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "What is AEO & how does it work?",
+            "url": "https://aeobility.com.au/services/aeo/definition",
+            "description": "Root Parent FAQ Node establishing foundational Answer Engine Optimisation concepts."
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AEO vs SEO: The Generative Shift",
+            "url": "https://aeobility.com.au/services/aeo/comparison",
+            "description": "Child FAQ Node declaring structural differences between SEO link-building and AEO vector retrieval."
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What stops your business from showing up?",
+            "url": "https://aeobility.com.au/services/aeo/constraints",
+            "description": "Child FAQ Node defining trust thresholds, entity ambiguity, and positional bias blockers."
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "AEO Pricing & Sprint Deliverables",
+            "url": "https://aeobility.com.au/services/aeo/costs-timing",
+            "description": "Child FAQ Node detailing implementation pricing, milestones, and schema deliverables."
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Shopify AEO Services",
+            "url": "https://aeobility.com.au/services/aeo/shopify",
+            "description": "Sibling FAQ Node feeding ecommerce entity authority back to core AEO framework."
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Local Business Visibility & Maps",
+            "url": "https://aeobility.com.au/services/aeo/local-business",
+            "description": "Sibling FAQ Node feeding geographic NAP and local map authority back to core AEO framework."
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "AI Semantic SEO Framework",
+            "url": "https://aeobility.com.au/knowledge-hub/semantic-seo",
+            "description": "Child FAQ Node mapping adaptive semantic chunking and knowledge lattice graphs."
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "AI Search Marketing Strategy",
+            "url": "https://aeobility.com.au/services/ai-search-marketing",
+            "description": "Sibling FAQ Node connecting multimodal search optimization to broader AI marketing strategy."
+          }
+        ]
       }
     ]
   };
@@ -496,48 +560,100 @@ export default function AEOProceduresPage() {
             </Link>
           </div>
 
-          {/* 4. Expanded AEO Knowledge Graph Navigation Block (8 Nodes) */}
-          <div className="border-t border-white/10 pt-8 mt-2 flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan flex items-center gap-1.5">
-                <Cpu className="w-4 h-4" />
-                <span>AEO Knowledge Graph Navigation</span>
-              </h3>
-              <span className="text-[10px] font-mono text-white/40">8 Interconnected Nodes</span>
+          {/* 4. True AEO FAQ Knowledge Graph Navigation (Declared Parent, Child, & Sibling Nodes with Semantic Edges) */}
+          <div className="border-t border-white/10 pt-8 mt-2 flex flex-col gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-aeo-cyan flex items-center gap-2">
+                  <Cpu className="w-4.5 h-4.5 text-aeo-cyan" />
+                  <span>AEO FAQ Knowledge Graph (Declared Entity Topology)</span>
+                </h3>
+                <p className="text-xs text-white/60 pt-1">Parent, child, and sibling entity nodes linked by explicit semantic relationships.</p>
+              </div>
+              <span className="text-[10px] font-mono px-2.5 py-1 bg-aeo-cyan/10 border border-aeo-cyan/30 text-aeo-cyan rounded-full font-semibold shrink-0">8 Connected Graph Nodes</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold">
-              <Link href="/services/aeo/definition" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>1. What is AEO & how does it work?</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
+
+            {/* Step 1: Declared Parent Node (Root FAQ Entity) */}
+            <div className="p-4 rounded-xl bg-gradient-to-r from-aeo-cyan/15 via-black to-aeo-purple/15 border border-aeo-cyan/40 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/30">
+                  Parent Node (Root FAQ Entity)
+                </span>
+                <span className="text-[10px] text-white/50 font-mono">Foundational Concept Root</span>
+              </div>
+              <Link href="/services/aeo/definition" className="group flex items-center justify-between pt-1">
+                <div>
+                  <h4 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">1. What is AEO & how does it work?</h4>
+                  <p className="text-xs text-white/60 pt-0.5">Establishes core Answer Engine Optimisation principles, RAG architecture, and machine indexing.</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-aeo-cyan group-hover:translate-x-1 transition-transform shrink-0 ml-3" />
               </Link>
-              <Link href="/services/aeo/comparison" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>2. AEO vs SEO: The Generative Shift</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/services/aeo/constraints" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>4. What stops your business from showing up?</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/services/aeo/costs-timing" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>5. AEO Pricing & Sprint Deliverables</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/services/aeo/shopify" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>6. Shopify AEO Services</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/services/aeo/local-business" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>7. Local Business Visibility & Maps</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/knowledge-hub/semantic-seo" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>8. AI Semantic SEO Framework</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
-              <Link href="/services/ai-search-marketing" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex items-center justify-between group">
-                <span>9. AI Search Marketing Strategy</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-cyan transition-colors" />
-              </Link>
+            </div>
+
+            {/* Step 2: Child Nodes Cluster (Inside Conversion Corridor) */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-white uppercase tracking-wider font-mono flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-aeo-purple" />
+                  <span>Child Nodes (Inside Conversion Corridor)</span>
+                </span>
+                <span className="text-[10px] text-white/40 font-mono">Links Upward to Parent & Laterally</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold">
+                <Link href="/services/aeo/comparison" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-colors flex items-center justify-between group">
+                  <div className="space-y-0.5">
+                    <span className="text-white block group-hover:text-aeo-purple transition-colors">2. AEO vs SEO: The Generative Shift</span>
+                    <span className="text-[10px] text-white/50 block font-sans font-normal">Edge: Structural differences in vector retrieval</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-purple transition-colors shrink-0 ml-2" />
+                </Link>
+                <Link href="/services/aeo/constraints" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-colors flex items-center justify-between group">
+                  <div className="space-y-0.5">
+                    <span className="text-white block group-hover:text-aeo-purple transition-colors">4. What stops your business from showing up?</span>
+                    <span className="text-[10px] text-white/50 block font-sans font-normal">Edge: Trust thresholds & positional bias blockers</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-purple transition-colors shrink-0 ml-2" />
+                </Link>
+                <Link href="/services/aeo/costs-timing" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-colors flex items-center justify-between group">
+                  <div className="space-y-0.5">
+                    <span className="text-white block group-hover:text-aeo-purple transition-colors">5. AEO Pricing & Sprint Deliverables</span>
+                    <span className="text-[10px] text-white/50 block font-sans font-normal">Edge: Implementation deliverables & timelines</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-purple transition-colors shrink-0 ml-2" />
+                </Link>
+                <Link href="/knowledge-hub/semantic-seo" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-colors flex items-center justify-between group">
+                  <div className="space-y-0.5">
+                    <span className="text-white block group-hover:text-aeo-purple transition-colors">8. AI Semantic SEO Framework</span>
+                    <span className="text-[10px] text-white/50 block font-sans font-normal">Edge: Adaptive chunking & knowledge graph lattice</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-aeo-purple transition-colors shrink-0 ml-2" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Step 3: Sibling Nodes Cluster (Radial Trust Loops) */}
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-white uppercase tracking-wider font-mono flex items-center gap-1.5">
+                  <Network className="w-3.5 h-3.5 text-aeo-cyan" />
+                  <span>Sibling Nodes (Radial Trust Loops)</span>
+                </span>
+                <span className="text-[10px] text-white/40 font-mono">Feeds Authority Back to Core Framework</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-semibold">
+                <Link href="/services/aeo/shopify" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex flex-col justify-between gap-2 group">
+                  <span className="text-white group-hover:text-aeo-cyan transition-colors">6. Shopify AEO Services</span>
+                  <span className="text-[10px] text-white/50 font-sans font-normal">Edge: Ecommerce entity trust loop</span>
+                </Link>
+                <Link href="/services/aeo/local-business" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex flex-col justify-between gap-2 group">
+                  <span className="text-white group-hover:text-aeo-cyan transition-colors">7. Local Business Visibility</span>
+                  <span className="text-[10px] text-white/50 font-sans font-normal">Edge: Geographic NAP map signals</span>
+                </Link>
+                <Link href="/services/ai-search-marketing" className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-colors flex flex-col justify-between gap-2 group">
+                  <span className="text-white group-hover:text-aeo-cyan transition-colors">9. AI Search Marketing</span>
+                  <span className="text-[10px] text-white/50 font-sans font-normal">Edge: Multimodal search strategy</span>
+                </Link>
+              </div>
             </div>
           </div>
 
