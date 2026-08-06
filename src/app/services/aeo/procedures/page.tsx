@@ -162,7 +162,7 @@ export default function AEOProceduresPage() {
           <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,205,216,0.12)] group">
             <Image
               src="/best-seo-strategies-for-ai-search-marketing_AEObility.webp"
-              alt="Best AEO Strategies for AI Search Marketing — AEObility"
+              alt="Best AEO strategies architecture diagram illustrating Answer Engine Optimisation, RAG vector retrieval, structured JSON-LD schema, and AI search marketing for Australian businesses by AEObility"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -267,6 +267,35 @@ export default function AEOProceduresPage() {
               </div>
             </div>
 
+            {/* Mid-Page Strategic "Get a Quote" CTA Card */}
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-aeo-purple/20 via-black to-aeo-cyan/20 border border-aeo-purple/40 shadow-[0_0_30px_rgba(189,0,255,0.15)] flex flex-col md:flex-row items-center justify-between gap-6 my-2">
+              <div className="space-y-1.5 text-left max-w-lg">
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-0.5 rounded border border-aeo-cyan/25">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Tailored Implementation Sprint</span>
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight">Ready to Refactor Your Business Content for AI Search Systems?</h3>
+                <p className="text-xs text-white/70 leading-relaxed">
+                  Our Australian AEO specialists deploy custom schema graphs, atomic answer blocks, and entity salience optimisations tailored for your business.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-aeo-purple hover:opacity-90 text-white text-xs font-bold uppercase tracking-wider transition-all text-center shadow-lg border-0 flex items-center justify-center gap-1.5"
+                >
+                  <span>Get a Quote</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href="/diagnostic"
+                  className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white text-xs font-semibold transition-all text-center"
+                >
+                  Run Free Audit
+                </Link>
+              </div>
+            </div>
+
             {/* Strategy 4 */}
             <div id="strategy4" className="p-6 bg-white/[0.01] border border-white/10 rounded-2xl space-y-4">
               <div className="flex items-center gap-3">
@@ -329,6 +358,26 @@ export default function AEOProceduresPage() {
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                 Modern models (GPT-4o, Gemini 1.5) process text, audio, and visual inputs simultaneously. Optimise for conversational queries by using natural speech phrasing, optimizing image `alt` attributes with descriptive entity context, and providing structured video metadata for voice search assistants.
               </p>
+            </div>
+
+            {/* Mid-Page Secondary CTA Strip */}
+            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 my-2">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 flex items-center justify-center text-aeo-cyan shrink-0">
+                  <Sparkles className="w-5 h-5 animate-pulse" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">Need Custom AEO Strategy Deliverables?</h4>
+                  <p className="text-xs text-white/60">Get a transparent quote and 90-day roadmap engineered for your business.</p>
+                </div>
+              </div>
+              <Link
+                href="/contact"
+                className="px-5 py-2.5 rounded-lg bg-aeo-cyan hover:bg-white text-black text-xs font-bold uppercase tracking-wider transition-all shrink-0 shadow-md flex items-center gap-1.5"
+              >
+                <span>Get a Quote</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
 
