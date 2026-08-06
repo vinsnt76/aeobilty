@@ -216,7 +216,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Menu Toggle */}
           <button
             onClick={toggleMenu}
-            className={`lg:hidden p-2 transition-colors relative z-50 text-black hover:text-black/70`}
+            className="lg:hidden p-2 transition-colors relative z-50 text-black hover:text-black/70 touch-manipulation cursor-pointer"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
