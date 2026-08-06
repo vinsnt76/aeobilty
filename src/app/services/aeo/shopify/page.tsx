@@ -62,7 +62,7 @@ export default function ShopifyAEOPage() {
                 2. Is AEO just SEO with a new name?
               </Link>
               <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. How do I make my business AI-readable?
+                3. Best AEO Strategies & Procedures
               </Link>
               <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?

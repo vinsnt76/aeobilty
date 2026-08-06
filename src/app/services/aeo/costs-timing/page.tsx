@@ -88,7 +88,7 @@ export default function AEOPricingPage() {
                 2. Is AEO just SEO with a new name?
               </Link>
               <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. How do I make my business AI-readable?
+                3. Best AEO Strategies & Procedures
               </Link>
               <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
@@ -252,7 +252,7 @@ export default function AEOPricingPage() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                How do I make my business easier for AI to understand?
+                Best AEO Strategies: Making Your Business AI-Readable
               </Link>
               <Link href="/services/aeo/constraints" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
                 What stops my business from showing up?

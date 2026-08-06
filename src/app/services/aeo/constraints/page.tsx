@@ -69,7 +69,7 @@ export default function AEOConstraintsPage() {
                 2. Is AEO just SEO with a new name?
               </Link>
               <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. How do I make my business AI-readable?
+                3. Best AEO Strategies & Procedures
               </Link>
               <Link href="/services/aeo/constraints" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
@@ -126,7 +126,7 @@ export default function AEOConstraintsPage() {
                 Is AEO just SEO with a new name?
               </Link>
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                How do I make my business easier for AI to understand?
+                Best AEO Strategies: Making Your Business AI-Readable
               </Link>
             </div>
           </div>

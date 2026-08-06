@@ -377,8 +377,8 @@ export default function AEORootPage() {
       image: "/aeo-services-geo-intent-matrix_AEObility.webp"
     },
     {
-      title: "How do I make my business AI-readable?",
-      desc: "Explore how Large Language Models (LLMs) ingest, interpret, and cite content, and how to structure pages so they are machine-readable.",
+      title: "Best AEO Strategies: How to Make Your Business AI-Readable",
+      desc: "Explore the 6 best AEO strategies to refactor web content so Large Language Models (LLMs) and RAG search systems parse, understand, and cite your business.",
       href: "/services/aeo/procedures",
       hook: "Command crawler authority",
       image: "/structured-search-audit-wireframe.png"
@@ -468,7 +468,7 @@ export default function AEORootPage() {
                 2. Is AEO just SEO with a new name?
               </Link>
               <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. How do I make my business AI-readable?
+                3. Best AEO Strategies & Procedures
               </Link>
               <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
                 4. What stops my business from showing up?
