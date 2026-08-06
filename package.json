@@ -13,6 +13,7 @@
     "test:crawl": "tsx scripts/test-crawl.ts",
     "test:apis": "tsx scripts/test-apis.ts",
     "test:agent": "node scripts/test-agent.mjs",
+    "indexnow": "tsx scripts/submit-indexnow.ts",
     "test": "vitest run"
   },
   "dependencies": {
