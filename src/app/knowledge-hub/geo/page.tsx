@@ -107,10 +107,14 @@ export default function GEOKnowledgeNodePage() {
           "postalCode": "6000",
           "addressCountry": "AU"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -31.9505,
-          "longitude": 115.8605
+        "location": {
+          "@type": "Place",
+          "name": "AEObility Perth HQ",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -31.9505,
+            "longitude": 115.8605
+          }
         }
       },
 
