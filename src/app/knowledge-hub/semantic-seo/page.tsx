@@ -390,7 +390,7 @@ export default function SemanticSEONodePage() {
               <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
                 <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">Atomic Answer: Entity Relationships</span>
                 <p className="text-sm text-white/90 font-medium leading-relaxed">
-                  Search engines no longer rely on exact keyword matches. They interpret your site as a set of connected entities and the relationships between them. When these relationships are clear, AI systems can understand your business, classify your services, and recommend you confidently across <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-semibold">Local intent and GEO optimisation</Link> channels.
+                  Search engines no longer rely on exact keyword matches. They interpret your site as a set of connected entities and the relationships between them. When these relationships are clear, AI systems can understand your business, classify your services, and recommend you confidently across <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-semibold">Generative Engine Optimization (GEO)</Link> channels.
                 </p>
               </div>
 

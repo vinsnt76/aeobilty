@@ -519,7 +519,7 @@ export default function AEORootPage() {
           <section className="atomic-answer-block p-6 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
             <p className="text-xs text-white/50 uppercase tracking-wider font-semibold mb-2 font-mono">WHAT IS ANSWER ENGINE OPTIMISATION (AEO)?</p>
             <p className="text-sm text-white/80 leading-relaxed font-light">
-              Answer Engine Optimisation (AEO) is a method for structuring your digital content so AI search systems can read it accurately. It helps engines like Perplexity, ChatGPT and Google Gemini interpret your information, classify your services correctly, and retrieve your brand as a relevant local recommendation.
+              Answer Engine Optimisation (AEO) is a method for structuring your digital content so AI search systems can read it accurately. Working alongside <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-medium">Generative Engine Optimization (GEO)</Link>, it helps engines like Perplexity, ChatGPT and Google Gemini interpret your information, classify your services correctly, and retrieve your brand as a relevant local recommendation.
             </p>
           </section>
 

@@ -327,7 +327,7 @@ export default function GEOMarketingPage() {
                 Location-aware systems determine which local brands to suggest by filtering regional intent nodes and mapping coordinate parameters. GEO works seamlessly alongside our broader <Link href="/services/ai-search-marketing" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">AI Search Strategy</Link> to ensure generative search models interpret your local footprint with absolute precision.
               </p>
               <p className="text-sm text-white/70 leading-relaxed font-light">
-                At AEObility, we combine structural coordinate mapping rules with proximity signals to ensure your local service nodes match exactly where search models place geographic queries. For an in-depth technical breakdown, explore <Link href="/knowledge-hub/geo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">Understanding Local Intent Signals</Link> in our Knowledge Hub.
+                At AEObility, we combine structural coordinate mapping rules with proximity signals to ensure your local service nodes match exactly where search models place geographic queries. For an in-depth technical breakdown, explore <Link href="/knowledge-hub/geo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">GEO and SEO</Link> in our Knowledge Hub.
               </p>
             </div>
 

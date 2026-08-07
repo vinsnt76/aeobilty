@@ -191,7 +191,7 @@ export default function PositionalBiasArticlePage() {
     { title: "Selection", desc: "If services are not surfaced clearly, AI systems may be less likely to recommend you." },
     { title: "Local Intent", desc: (
       <>
-        Geographic proximity signals must sit at the margins to anchor regional <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-medium">GEO Local Matrix</Link> retrieval in Perth and across Australia.
+        Geographic proximity signals must sit at the margins to anchor regional <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-medium">GEO and SEO</Link> retrieval in Perth and across Australia.
       </>
     )},
     { title: "Trust", desc: "Key data points and citations buried in middle text suffer from attention dilution." }
