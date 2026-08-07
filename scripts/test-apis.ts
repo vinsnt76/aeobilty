@@ -23,8 +23,8 @@ async function testGeminiEmbedding() {
 
 async function testGeminiFlash() {
   const geminiKey = process.env.GEMINI_API_KEY;
-  console.log('Testing Gemini gemini-2.5-flash...');
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`, {
+  console.log('Testing Gemini gemini-1.5-flash...');
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
