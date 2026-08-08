@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -205,6 +206,18 @@ export default function ShopifyAEOPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <ShoppingBag className="w-3.5 h-3.5" />
               <span>E-commerce Answer Engine Architecture</span>
+            </div>
+
+            {/* Hero Web Banner */}
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/60 shadow-2xl my-4">
+              <Image
+                src="/shopify-seo-for-ai-search_AEObility.webp"
+                alt="Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 800px"
+              />
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
