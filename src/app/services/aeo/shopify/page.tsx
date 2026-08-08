@@ -62,7 +62,6 @@ export default function ShopifyAEOPage() {
           { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleA" },
           { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleB" },
           { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleC" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#checklist" },
           { "@id": "https://aeobility.com.au/services/aeo/shopify#faq" }
         ]
       },
