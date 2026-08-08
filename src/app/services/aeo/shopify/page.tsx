@@ -231,9 +231,26 @@ export default function ShopifyAEOPage() {
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/services/aeo/shopify#banner",
-        "name": "Shopify AEO Services Banner",
+        "name": "Shopify AEO Services & Liquid Ingestion Architecture Banner",
+        "caption": "Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia",
         "description": "Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia",
-        "url": "https://aeobility.com.au/shopify-seo-for-ai-search_AEObility.webp"
+        "url": "https://aeobility.com.au/shopify-seo-for-ai-search_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/shopify-seo-for-ai-search_AEObility.webp",
+        "width": {
+          "@type": "QuantitativeValue",
+          "value": 1600,
+          "unitCode": "E37"
+        },
+        "height": {
+          "@type": "QuantitativeValue",
+          "value": 900,
+          "unitCode": "E37"
+        },
+        "creditText": "AEObility",
+        "copyrightNotice": "© 2026 AEObility. All rights reserved.",
+        "author": {
+          "@id": "https://aeobility.com.au/#organisation"
+        }
       },
       {
         "@type": "Organization",
