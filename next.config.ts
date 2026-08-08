@@ -150,6 +150,36 @@ const nextConfig: NextConfig = {
         destination: '/diagnostic',
         permanent: true,
       },
+      {
+        source: '/knowledge-hub/competitor-overlap-semantic-dominance-framework',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/competitor-overlap',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/semantic-dominance-framework',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/competitor-overlap',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/semantic-dominance',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/semantic-dominance-framework',
+        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        permanent: true,
+      },
     ];
   },
 };
