@@ -26,6 +26,8 @@ const urlList = [
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
+  `https://${HOST}/services/aeo/shopify`,
+  `https://www.aeobility.com.au/services/aeo/shopify`,
   `https://www.aeobility.com.au/services`,
   `https://www.aeobility.com.au/knowledge-hub`,
   `https://www.aeobility.com.au/knowledge-hub/articles`,
