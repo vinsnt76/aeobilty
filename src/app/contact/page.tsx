@@ -24,43 +24,59 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://aeobility.com.au/#localbusiness",
-    "name": "AEObility",
-    "legalName": "Trekaboutoz trading as AEObility",
-    "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
-    "url": "https://aeobility.com.au/contact",
-    "telephone": "0480 286 282",
-    "email": "support@aeobility.com.au",
-    "taxID": "61029803255",
-    "sameAs": [
-      "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Perth St",
-      "addressLocality": "Perth",
-      "addressRegion": "Western Australia",
-      "postalCode": "6000",
-      "addressCountry": "Australia"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -31.9505,
-      "longitude": 115.8605
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "17:00"
-    }
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://aeobility.com.au/contact#webpage",
+        "url": "https://aeobility.com.au/contact",
+        "name": "Contact an Expert AEO Consultant in Perth | AEObility",
+        "description": "Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://aeobility.com.au/#localbusiness",
+        "name": "AEObility",
+        "legalName": "Trekaboutoz trading as AEObility",
+        "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+        "url": "https://aeobility.com.au/contact",
+        "telephone": "0480 286 282",
+        "email": "support@aeobility.com.au",
+        "taxID": "61029803255",
+        "sameAs": [
+          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Perth St",
+          "addressLocality": "Perth",
+          "addressRegion": "Western Australia",
+          "postalCode": "6000",
+          "addressCountry": "Australia"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -31.9505,
+          "longitude": 115.8605
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      }
+    ]
   };
 
   return (

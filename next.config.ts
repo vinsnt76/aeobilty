@@ -61,6 +61,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/knowledge-hub/entity-authority-building',
+        destination: '/knowledge-hub/articles/entity-authority-building',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/entity-authority',
+        destination: '/knowledge-hub/articles/entity-authority-building',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/entity-authority',
+        destination: '/knowledge-hub/articles/entity-authority-building',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/aeo/entity-authority-building',
+        destination: '/knowledge-hub/articles/entity-authority-building',
+        permanent: true,
+      },
+      {
         source: '/freelance-ai-consultant-perth',
         destination: '/about/freelance-ai-consultant-perth',
         permanent: true,
@@ -78,6 +98,21 @@ const nextConfig: NextConfig = {
       {
         source: '/freelance-digital-specialist-perth',
         destination: '/about/freelance-digital-specialist-perth',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/contactus',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/get-in-touch',
+        destination: '/contact',
         permanent: true,
       },
     ];
