@@ -23,7 +23,8 @@ import {
   Cpu,
   BarChart3,
   CheckSquare,
-  XCircle
+  XCircle,
+  ChevronDown
 } from 'lucide-react';
 
 export const metadata = {
@@ -129,10 +130,42 @@ export default function ShopifyAEOPage() {
           },
           {
             "@type": "Question",
-            "name": "How does Shopify AEO differ from traditional e-commerce SEO?",
+            "name": "Do I need to uninstall my existing Shopify SEO apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional e-commerce SEO targets keyword rankings for human browsers. Shopify AEO refactors Liquid templates and feeds for server-side RAG ingestion, ensuring AI assistants understand and cite exact product entity attributes."
+              "text": "No. Most Shopify SEO apps focus on meta tags, image alt text, and basic sitemaps. AEO Liquid refactoring operates at the theme architecture level—ensuring product specifications, FAQs, and schema render server-side so AI crawlers ingest them without executing JavaScript."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will editing my theme's Liquid code break future Shopify theme updates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We build custom Liquid logic into isolated, modular snippets or custom sections (using Shopify Theme 2.0 standards). This keeps your core theme files clean, making future theme updates or migration straightforward."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take for ChatGPT or Perplexity to pick up changes after refactoring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Once server-side HTML and structured JSON-LD are live, traditional search crawlers usually re-index the static DOM within 3 to 10 days. LLM knowledge updates depend on individual bot crawl cycles (like GPTBot or PerplexityBot), but making data immediately available on the first HTTP pass drastically accelerates ingestion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I just use a plugin to add AI schema instead of custom code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plugins often load structured data via client-side JavaScript scripts after the DOM hydrates. While traditional search engines can eventually render JS, many lightweight AI web scrapers parse raw HTML only and miss client-side schema entirely. Native Liquid rendering guarantees 100% passage capture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does optimising for AI search hurt my Google organic rankings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. AEO extends SEO—it doesn't replace it. Improving server-side rendering, stripping Liquid whitespace, and structuring clear product data directly benefits Google's Core Web Vitals and standard indexing pipeline while simultaneously preparing your catalog for generative search."
             }
           }
         ]
@@ -206,6 +239,29 @@ export default function ShopifyAEOPage() {
       implementation: "Merchant Center Feed Rules",
       fix: "Standardises product attributes for AI shopping assistants and Google AI Overviews.",
       limit: "Does not guarantee zero-click answer placement if off-page entity corroboration is low."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "Do I need to uninstall my existing Shopify SEO apps?",
+      answer: "No. Most Shopify SEO apps focus on meta tags, image alt text, and basic sitemaps. AEO Liquid refactoring operates at the theme architecture level—ensuring that product specifications, FAQs, and schema are rendered server-side so AI crawlers can ingest them without executing JavaScript."
+    },
+    {
+      question: "Will editing my theme's Liquid code break future Shopify theme updates?",
+      answer: "We build custom Liquid logic into isolated, modular snippets or custom sections (using Shopify Theme 2.0 standards). This keeps your core theme files clean, making future theme updates or migration straightforward."
+    },
+    {
+      question: "How long does it take for ChatGPT or Perplexity to pick up changes after refactoring?",
+      answer: "Once server-side HTML and structured JSON-LD are live, traditional search crawlers usually re-index the static DOM within 3 to 10 days. LLM knowledge updates depend on individual bot crawl cycles (like GPTBot or PerplexityBot), but making data immediately available on the first HTTP pass drastically accelerates ingestion."
+    },
+    {
+      question: "Can I just use a plugin to add AI schema instead of custom code?",
+      answer: "Plugins often load structured data via client-side JavaScript scripts after the DOM hydrates. While traditional search engines can eventually render JS, many lightweight AI web scrapers parse raw HTML only and miss client-side schema entirely. Native Liquid rendering guarantees 100% passage capture."
+    },
+    {
+      question: "Does optimising for AI search hurt my Google organic rankings?",
+      answer: "No. AEO extends SEO—it doesn't replace it. Improving server-side rendering, stripping Liquid whitespace, and structuring clear product data directly benefits Google's Core Web Vitals and standard indexing pipeline while simultaneously preparing your catalog for generative search."
     }
   ];
 
@@ -612,6 +668,36 @@ export default function ShopifyAEOPage() {
             <p className="text-xs text-white/80 font-light leading-relaxed">
               Our strategy focuses on <strong>citation and recommendation dominance</strong>. By positioning your brand as the definitive factual source, we ensure your store captures high-converting customers at the exact moment of decision. Explore our <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing &amp; Recommendation Strategy</Link> and read our <Link href="/knowledge-hub/articles/aeo-vs-seo" className="text-aeo-cyan hover:underline font-medium">The AEO vs SEO Paradigm Shift in E-commerce</Link> guide.
             </p>
+          </div>
+
+          {/* SECTION 7: Dedicated FAQ Block (Structured FAQPage Representation) */}
+          <div className="space-y-6 border-t border-white/10 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
+                <HelpCircle className="w-4 h-4" />
+                <span>Shopify AEO FAQ</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xs text-white/70 font-light">
+                Direct answers to common technical, theme operational, and crawler ingestion questions for Shopify merchants.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                  <h3 className="text-sm font-bold text-white flex items-start gap-2.5 leading-snug">
+                    <span className="text-aeo-cyan font-mono font-bold text-xs mt-0.5">Q{idx + 1}.</span>
+                    <span>{faq.question}</span>
+                  </h3>
+                  <p className="text-xs text-white/75 font-light leading-relaxed pl-6">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
