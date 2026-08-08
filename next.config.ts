@@ -115,6 +115,41 @@ const nextConfig: NextConfig = {
         destination: '/contact',
         permanent: true,
       },
+      {
+        source: '/audit',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/free-audit',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/visibility-audit',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/ai-audit',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/ai-visibility-audit',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/diagnostics',
+        destination: '/diagnostic',
+        permanent: true,
+      },
+      {
+        source: '/tools/diagnostic',
+        destination: '/diagnostic',
+        permanent: true,
+      },
     ];
   },
 };
