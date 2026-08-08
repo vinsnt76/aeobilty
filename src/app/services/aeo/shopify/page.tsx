@@ -57,7 +57,14 @@ export default function ShopifyAEOPage() {
         "isPartOf": { "@id": "https://aeobility.com.au/#website" },
         "primaryImageOfPage": { "@id": "https://aeobility.com.au/services/aeo/shopify#banner" },
         "about": { "@id": "https://aeobility.com.au/services/aeo/shopify#service" },
-        "breadcrumb": { "@id": "https://aeobility.com.au/services/aeo/shopify#breadcrumb" }
+        "breadcrumb": { "@id": "https://aeobility.com.au/services/aeo/shopify#breadcrumb" },
+        "hasPart": [
+          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleA" },
+          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleB" },
+          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleC" },
+          { "@id": "https://aeobility.com.au/services/aeo/shopify#checklist" },
+          { "@id": "https://aeobility.com.au/services/aeo/shopify#faq" }
+        ]
       },
       {
         "@type": "Service",
@@ -70,11 +77,33 @@ export default function ShopifyAEOPage() {
           "@type": "Country",
           "name": "Australia"
         },
-        "hasPart": [
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleA" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleB" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleC" }
-        ]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Shopify AEO Service Deliverables",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Module A: Liquid Architecture & Server-Side RAG"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Module B: Feed Engineering & Catalog Enrichment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Module C: AI Referral Measurement & Conversion Tracking"
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "HowTo",
