@@ -19,19 +19,24 @@ import {
   FileText,
   HelpCircle,
   TrendingUp,
-  Cpu
+  Cpu,
+  BarChart3,
+  CheckSquare,
+  XCircle,
+  HelpCircle as QuestionIcon
 } from 'lucide-react';
 
 export const metadata = {
   title: "Shopify AEO Services & Liquid Schema Refactoring | AEObility",
-  description: "Optimise your Shopify store for ChatGPT, Perplexity, and Google AI Overviews. Refactor Liquid templates, server-side rendering, and product feeds for RAG indexation.",
+  description: "Ranked #1 on Google but invisible in ChatGPT? Optimise your Shopify store for AI search, Perplexity recommendations, and Google Merchant Center feeds.",
   keywords: [
     "shopify aeo services",
     "ecommerce ai search",
     "shopify structured data perth",
     "shopify liquid schema refactoring",
     "google merchant center feed optimisation",
-    "ai search e-commerce australia"
+    "ai search e-commerce australia",
+    "why isnt my shopify store showing in chatgpt"
   ],
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/shopify",
@@ -93,86 +98,52 @@ export default function ShopifyAEOPage() {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Server-Side Conversion & Indexing Rules"
+                "name": "AI Referral Measurement & Conversion Tracking"
               }
             }
           ]
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services/aeo/shopify#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why isn't my Shopify store showing up in ChatGPT or Perplexity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most Shopify stores fail to appear in ChatGPT or Perplexity because product specs and schemas depend on client-side JavaScript hydration, missing GTIN/barcode data, or GPTBot access being blocked in robots.txt.liquid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Shopify AEO differ from traditional e-commerce SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional e-commerce SEO targets keyword rankings for human browsers. Shopify AEO refactors Liquid templates and feeds for server-side RAG ingestion, ensuring AI assistants understand and cite exact product entity attributes."
+            }
+          }
+        ]
       }
     ]
   };
 
-  const pillars = [
+  const tradeOffs = [
     {
-      title: "1. Liquid Template Refactoring",
-      subtitle: "Server-Side Rendered (SSR) Schemas",
-      description: "Standard Shopify themes rely heavily on client-side JavaScript hydration. We refactor Liquid snippets to output explicit JSON-LD Product and Offer microdata directly into server HTML on first pass.",
-      icon: <Code2 className="w-5 h-5 text-aeo-cyan" />,
-      features: [
-        "Explicit Product, Offer, and AggregateRating schemas",
-        "Variant array mapping with GTIN & MPN attributes",
-        "Bypasses client-side rendering delays for Googlebot and LLM scrapers",
-        "Server-rendered specifications and feature lists"
-      ]
+      implementation: "Liquid Refactoring (SSR)",
+      fix: "Ensures AI crawlers extract product specifications and FAQs directly from static HTML without executing JavaScript.",
+      limit: "Does not force an LLM to recommend your product over a competitor with higher external domain authority."
     },
     {
-      title: "2. Google Merchant Center Feeds",
-      subtitle: "Vector & Attribute Alignment",
-      description: "AI shopping engines parse feed vectors to match conversational queries. We structure feed attributes to ensure high relevance across Google Shopping and generative search results.",
-      icon: <Database className="w-5 h-5 text-aeo-cyan" />,
-      features: [
-        "Semantic product title and description enhancement",
-        "Clean condition, availability, and brand parameters",
-        "Structured category hierarchy matching Schema.org standards",
-        "Automated feed validation to eliminate parsing errors"
-      ]
+      implementation: "Enriched JSON-LD Schema",
+      fix: "Provides unambiguous price, availability, variant, and GTIN data directly to search engine bots.",
+      limit: "Cannot fix inaccurate inventory feeds or poor customer review sentiment on third-party sites."
     },
     {
-      title: "3. RAG Retrieval & Passage Chunking",
-      subtitle: "Atomic Product Answer Blocks",
-      description: "Retrieval-Augmented Generation (RAG) models extract content in passage chunks. We structure product FAQs, materials, and usage guides into high-density atomic blocks for instant citation.",
-      icon: <Cpu className="w-5 h-5 text-aeo-cyan" />,
-      features: [
-        "High-density Q&A sections using FAQPage microdata",
-        "Clear table-based technical specifications",
-        "Elimination of boilerplate fluff that dilutes vector similarity",
-        "Topical entity grounding linking products to brand nodes"
-      ]
-    },
-    {
-      title: "4. Indexing & Crawl Priority Rules",
-      subtitle: "Resolving GSC Discovery Delays",
-      description: "Deep e-commerce subpages often stall in GSC's 'Discovered – currently not indexed' queue. We reinforce internal link depth and sitemap feeds to ensure fast indexation.",
-      icon: <Server className="w-5 h-5 text-aeo-cyan" />,
-      features: [
-        "Contextual internal linking from high-authority hub pages",
-        "Sitemap lastmod synchronization and canonical alignment",
-        "Bypassing client-side JavaScript crawling bottlenecks",
-        "Server-side conversion integrity and attribution protection"
-      ]
-    }
-  ];
-
-  const frameworkSteps = [
-    {
-      step: "01",
-      title: "Live Inspection & Re-queueing",
-      desc: "Perform live GSC URL inspections to confirm 200 OK headers, verify absence of noindex tags, and submit targeted re-crawl requests to Google's URL frontier."
-    },
-    {
-      step: "02",
-      title: "Contextual Internal Link Depth",
-      desc: "Embed contextual do-follow links from high-authority parent hubs to move deep product and category pages within two clicks of the root domain."
-    },
-    {
-      step: "03",
-      title: "Sitemap & Feed Synchronization",
-      desc: "Validate XML sitemaps and merchant feeds, matching canonical tags and timestamps across all discovery channels."
-    },
-    {
-      step: "04",
-      title: "Server-Side Liquid Refactoring",
-      desc: "Inject SSR JSON-LD microdata directly into Shopify Liquid templates (`product.liquid`, `main-product.liquid`) so scrapers ingest complete entity facts on first pass."
+      implementation: "Merchant Center Feed Rules",
+      fix: "Standardises product attributes for AI shopping assistants and Google AI Overviews.",
+      limit: "Does not guarantee zero-click answer placement if off-page entity corroboration is low."
     }
   ];
 
@@ -227,76 +198,109 @@ export default function ShopifyAEOPage() {
         </aside>
 
         {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-10">
+        <section className="lg:col-span-8 flex flex-col gap-12">
           
-          {/* Header */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
+          {/* SECTION 1: Hero & Opening Answer Section */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <ShoppingBag className="w-3.5 h-3.5" />
               <span>E-commerce Answer Engine Architecture</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
               Shopify AEO &amp; <br />
               <span className="text-gradient-aeo">E-commerce Ingestion Architecture</span>
             </h1>
-            <p className="text-white/80 text-base leading-relaxed font-light font-serif">
-              Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center through structured Liquid refactoring, server-side microdata rendering, and RAG chunking rules.
+
+            {/* Sceptic-Aware Subheading */}
+            <p className="text-lg text-amber-300/90 font-medium leading-relaxed border-l-2 border-amber-400 pl-4 py-1 bg-amber-950/10">
+              Ranked #1 on Google but invisible in ChatGPT? Traditional rankings no longer guarantee AI recommendations. Here is how we fix your store&apos;s underlying ingestion mechanics.
             </p>
+
+            {/* 100-Word Opening Answer Block */}
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-2">
+              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">The E-commerce Ingestion Gap Explained</span>
+              <p className="text-white/90 text-sm font-medium leading-relaxed">
+                Most Shopify stores fail in AI search because Large Language Model (LLM) scrapers skip client-side JavaScript accordions, missing GTIN barcodes, and unlinked product context. Traditional Shopify themes render data for human eyes, leaving AI bots with empty passages. Answer Engine Optimisation (AEO) refactors your theme&apos;s Liquid architecture, injecting server-side JSON-LD microdata, structuring product specifications into atomic RAG answer blocks, and aligning Google Merchant Center feeds so conversational search engines can parse, verify, and cite your store on first pass.
+              </p>
+            </div>
           </div>
 
-          {/* Quick Summary Callout */}
-          <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-2">
-            <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">The E-commerce AEO Advantage</span>
-            <p className="text-white text-sm font-medium leading-relaxed">
-              Traditional Shopify themes focus purely on visual rendering for human browsers. AEO refactors underlying Liquid code so AI bots and RAG crawlers parse clean product facts, pricing, availability, and attributes on their very first request pass.
-            </p>
+          {/* SECTION 2: The Invisibility Diagnosis (Why Am I Not Appearing?) */}
+          <div className="space-y-6 border-t border-white/10 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs text-amber-400 font-mono font-semibold uppercase">
+                <AlertTriangle className="w-4 h-4" />
+                <span>The Invisibility Diagnosis</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Why isn&apos;t my Shopify store showing up in ChatGPT or Perplexity?
+              </h2>
+              <p className="text-white/70 text-sm font-light">
+                If your Shopify store generates organic search clicks but receives zero mentions in AI assistants, your catalog is suffering from three core operational blockers:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <XCircle className="w-4 h-4 text-red-400" />
+                  <span>1. Crawl &amp; Rendering Failures</span>
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  AI scrapers like <code className="text-aeo-cyan font-mono">GPTBot</code> or <code className="text-aeo-cyan font-mono">PerplexityBot</code> are frequently blocked inside default <code className="text-aeo-cyan font-mono">robots.txt.liquid</code> files, or they bounce when key product specifications are hidden behind client-side AJAX tab accordions.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <XCircle className="w-4 h-4 text-red-400" />
+                  <span>2. Thin Data &amp; Missing Entity Signals</span>
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Missing GTIN barcodes, vague product titles, or copied manufacturer descriptions force RAG models to discard your pages. AI models require explicit structured facts to cite a brand with high confidence score.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <XCircle className="w-4 h-4 text-red-400" />
+                  <span>3. Off-Page Corroboration Gaps</span>
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  LLM search engines check multi-source corroboration before recommending products. If your store lacks third-party mentions, verified directory schema links, or Reddit discussions, models default to better-known marketplace entities.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* The Four Foundational Pillars of Shopify AEO */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-white">Four Pillars of Shopify AEO Architecture</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {pillars.map((pillar, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-aeo-cyan/30 transition-all flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                        {pillar.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-base font-bold text-white">{pillar.title}</h3>
-                        <span className="text-xs text-aeo-cyan font-mono">{pillar.subtitle}</span>
-                      </div>
-                    </div>
-                    <p className="text-xs text-white/70 font-light leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-                  <ul className="space-y-1.5 text-xs text-white/80 pt-3 border-t border-white/5">
-                    {pillar.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-1" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {/* SECTION 3: Practitioner Action Framework (Modules A, B, C) */}
+          <div className="space-y-8 border-t border-white/10 pt-10">
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Practitioner Action Framework
+              </h2>
+              <p className="text-white/70 text-sm font-light">
+                Our step-by-step engineering roadmap for transforming Shopify catalogs into machine-readable e-commerce assets.
+              </p>
+            </div>
+
+            {/* Module A */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                  <Code2 className="w-5 h-5 text-aeo-cyan" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Liquid Code Refactoring Example */}
-          <div className="space-y-4 border-t border-white/10 pt-8">
-            <div className="flex items-center gap-2">
-              <Code2 className="w-5 h-5 text-aeo-cyan" />
-              <h2 className="text-2xl font-bold text-white">Liquid Template Refactoring: SSR vs Client-Side</h2>
-            </div>
-            <p className="text-sm text-white/80 font-light leading-relaxed">
-              Standard theme apps inject microdata using client-side JavaScript after page load. AI crawlers often fetch raw HTML before JavaScript execution finishes. We inject complete, server-rendered JSON-LD schema into your Liquid templates (`snippets/schema-product.liquid`):
-            </p>
-
-            <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 font-mono text-xs text-emerald-400 overflow-x-auto">
-              <pre>{`{% comment %} AEObility SSR Product JSON-LD Schema Snippet {% endcomment %}
+                <div>
+                  <h3 className="text-lg font-bold text-white">Module A: Liquid Architecture &amp; Server-Side RAG</h3>
+                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Technical Implementation &amp; SSR Schemas</span>
+                </div>
+              </div>
+              <p className="text-xs text-white/80 font-light leading-relaxed">
+                Standard themes load microdata after DOM hydration. We refactor Liquid snippets to output explicit JSON-LD Product, Offer, and FAQPage schemas directly into static server HTML on first HTTP pass:
+              </p>
+              <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 font-mono text-xs text-emerald-400 overflow-x-auto">
+                <pre>{`{% comment %} AEObility SSR Product JSON-LD Schema Snippet {% endcomment %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -305,10 +309,7 @@ export default function ShopifyAEOPage() {
   "description": {{ product.description | strip_html | truncatewords: 50 | json }},
   "sku": {{ product.selected_or_first_available_variant.sku | json }},
   "gtin": {{ product.selected_or_first_available_variant.barcode | json }},
-  "brand": {
-    "@type": "Brand",
-    "name": {{ product.vendor | json }}
-  },
+  "brand": { "@type": "Brand", "name": {{ product.vendor | json }} },
   "offers": {
     "@type": "Offer",
     "priceCurrency": {{ cart.currency.iso_code | json }},
@@ -319,51 +320,134 @@ export default function ShopifyAEOPage() {
   }
 }
 </script>`}</pre>
+              </div>
             </div>
-            <p className="text-xs text-white/60 font-light italic">
-              This guarantees that search engine bots, ChatGPT scrapers, and RAG indexers extract explicit product data immediately on first HTTP request.
-            </p>
-          </div>
 
-          {/* Indexing Framework Checklist */}
-          <div className="space-y-6 border-t border-white/10 pt-8">
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-aeo-cyan" />
-              <h2 className="text-2xl font-bold text-white">Resolving "Discovered – Currently Not Indexed" for Products</h2>
-            </div>
-            <p className="text-sm text-white/80 font-light leading-relaxed">
-              Deep product and collection pages often stall in Google Search Console's discovery queue. Our four-step operational framework accelerates URL frontier processing:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {frameworkSteps.map((step, sIdx) => (
-                <div key={sIdx} className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono text-aeo-cyan font-bold">{step.step}</span>
-                    <CheckCircle2 className="w-4 h-4 text-aeo-cyan" />
-                  </div>
-                  <h3 className="text-sm font-bold text-white">{step.title}</h3>
-                  <p className="text-xs text-white/70 font-light leading-relaxed">{step.desc}</p>
+            {/* Module B */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                  <Database className="w-5 h-5 text-aeo-cyan" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-lg font-bold text-white">Module B: Feed Engineering &amp; Catalog Enrichment</h3>
+                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Agentic Storefronts &amp; Situational Use Cases</span>
+                </div>
+              </div>
+              <p className="text-xs text-white/80 font-light leading-relaxed">
+                Move beyond standard Google Merchant Center rules. We enrich feed vectors with situational use-case tags (&ldquo;best for sensitive skin&rdquo;, &ldquo;ideal for Perth summer climate&rdquo;), precise sizing, material compositions, and GTIN parameters to capture long-tail conversational shopping queries.
+              </p>
+            </div>
+
+            {/* Module C */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                  <BarChart3 className="w-5 h-5 text-aeo-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Module C: AI Referral Measurement &amp; Conversion Tracking</h3>
+                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Attribution Integrity &amp; Prompt Analytics</span>
+                </div>
+              </div>
+              <p className="text-xs text-white/80 font-light leading-relaxed">
+                Solve the &ldquo;black box analytics&rdquo; problem. We set up server-side conversion rules, custom UTM parameter arrays, and prompt referral tracking in Shopify Analytics to measure direct conversational traffic, prompt-assisted conversions, and buyer intent.
+              </p>
             </div>
           </div>
 
-          {/* Practical Insights Block */}
-          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 border-t border-white/10">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-aeo-cyan" />
-              <span>Why This Matters for Australian E-commerce Stores</span>
-            </h3>
-            <p className="text-xs text-white/80 font-light leading-relaxed">
-              Australian e-commerce businesses in Perth, Sydney, and Melbourne face competitive vector spaces across Google Shopping and AI answer engines. When customers ask AI assistants to &ldquo;recommend the best Australian eco-friendly skin care brand,&rdquo; engines retrieve stores that offer clear, machine-verifiable product facts, fast SSR response times, and authoritative internal link pathways.
-            </p>
-            <div className="pt-2 text-xs">
-              <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1">
-                <span>Read our guide on Entity Authority Building</span>
-                <ArrowRight className="w-3 h-3" />
+          {/* SECTION 4: Interactive "AI Visibility Diagnostic" Callout */}
+          <div className="p-6 sm:p-8 bg-gradient-to-br from-aeo-cyan/10 via-neutral-950 to-aeo-purple/10 border border-white/15 rounded-3xl space-y-6 shadow-2xl border-t border-white/10 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
+                <CheckSquare className="w-4 h-4" />
+                <span>Shopify AI Readiness Checklist</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white">
+                How Machine-Readable Is Your Shopify Store Today?
+              </h2>
+              <p className="text-xs text-white/70 font-light">
+                Check your store against these four critical ingestion requirements:
+              </p>
+            </div>
+
+            <div className="space-y-3 font-mono text-xs text-white/90">
+              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
+                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
+                <span>Are product specifications rendered server-side in static HTML?</span>
+              </div>
+              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
+                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
+                <span>Is <code className="text-aeo-cyan font-mono">GPTBot</code> permitted in your <code className="text-aeo-cyan font-mono">robots.txt.liquid</code> template?</span>
+              </div>
+              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
+                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
+                <span>Do your product pages output valid <code className="text-aeo-cyan font-mono">Product</code> &amp; <code className="text-aeo-cyan font-mono">Offer</code> JSON-LD schema?</span>
+              </div>
+              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
+                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
+                <span>Are product attributes enriched with situational use cases (&ldquo;best for...&rdquo;)?</span>
+              </div>
+            </div>
+
+            <div className="pt-2 text-center">
+              <Link
+                href="/diagnostic"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs sm:text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
+              >
+                <span>Run Store Diagnostic Scan</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
+          </div>
+
+          {/* SECTION 5: Claim Discipline & Trade-Offs Table */}
+          <div className="space-y-6 border-t border-white/10 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Practitioner Candour</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">Claim Discipline &amp; Technical Trade-Offs</h2>
+              <p className="text-xs text-white/70 font-light">
+                We believe in full transparency. Here is exactly what technical AEO fixes achieve, and what they cannot control:
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse border border-white/10">
+                <thead>
+                  <tr className="bg-white/5 text-aeo-cyan font-mono uppercase border-b border-white/10">
+                    <th className="p-3 border-r border-white/10 font-bold">Implementation</th>
+                    <th className="p-3 border-r border-white/10 font-bold">What It Fixes</th>
+                    <th className="p-3 font-bold">What It Cannot Control</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-white/80 font-light">
+                  {tradeOffs.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-white/[0.02]">
+                      <td className="p-3 font-bold text-white border-r border-white/10 font-mono">{row.implementation}</td>
+                      <td className="p-3 border-r border-white/10 leading-relaxed">{row.fix}</td>
+                      <td className="p-3 text-white/60 leading-relaxed">{row.limit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* SECTION 6: Zero-Click Search & ROI Caveat */}
+          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 border-t border-white/10">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-aeo-cyan" />
+              <span>Addressing Zero-Click Search &amp; E-commerce ROI</span>
+            </h3>
+            <p className="text-xs text-white/80 font-light leading-relaxed">
+              AI search engines frequently synthesise answers directly on the search page without sending raw impression traffic. However, when an AI recommendation <em>does</em> generate a referral click to your Shopify store, the buyer intent is significantly higher than traditional keyword search.
+            </p>
+            <p className="text-xs text-white/80 font-light leading-relaxed">
+              Our strategy focuses on <strong>citation and recommendation dominance</strong>. By positioning your brand as the definitive factual source, we ensure your store captures high-converting customers at the exact moment of decision.
+            </p>
           </div>
 
           {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
@@ -392,7 +476,7 @@ export default function ShopifyAEOPage() {
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs sm:text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
               >
-                <span>Run Free AI Visibility Scan</span>
+                <span>Run Free Store Scan</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
