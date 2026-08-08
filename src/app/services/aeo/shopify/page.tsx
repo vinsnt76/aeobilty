@@ -298,6 +298,25 @@ export default function ShopifyAEOPage() {
                 Most Shopify stores fail in AI search because Large Language Model (LLM) scrapers skip client-side JavaScript accordions, missing GTIN barcodes, and unlinked product context. Traditional Shopify themes render data for human eyes, leaving AI bots with empty passages. Answer Engine Optimisation (AEO) refactors your theme&apos;s Liquid architecture, injecting server-side JSON-LD microdata, structuring product specifications into atomic RAG answer blocks, and aligning Google Merchant Center feeds so conversational search engines can parse, verify, and cite your store on first pass.
               </p>
 
+              {/* Zone 1 Contextual Links */}
+              <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs border-t border-white/10 pt-3">
+                <span className="text-white/50 font-mono">Related Frameworks:</span>
+                <Link href="/services/aeo/constraints" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
+                  <span>What stops your store showing up?</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+                <span className="text-white/30">&bull;</span>
+                <Link href="/services/aeo/procedures" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
+                  <span>Best AEO Procedures</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+                <span className="text-white/30">&bull;</span>
+                <Link href="/services/aeo/local-business" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
+                  <span>Local Visibility</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+
               {/* Immediate Hero CTA */}
               <div className="pt-3 flex flex-wrap items-center gap-4">
                 <Link
@@ -364,7 +383,7 @@ export default function ShopifyAEOPage() {
                   <span>3. Off-Page Corroboration Gaps</span>
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  LLM search engines check multi-source corroboration before recommending products. If your store lacks third-party mentions, verified directory schema links, or Reddit discussions, models default to better-known marketplace entities.
+                  LLM search engines check multi-source corroboration before recommending products. If your store lacks third-party mentions, verified directory schema links, or Reddit discussions, models default to better-known marketplace entities. Read our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-medium">Entity Authority Guide</Link> to resolve authority gaps.
                 </p>
                 <div className="pt-1">
                   <span className="inline-flex items-center gap-1 text-[10px] font-mono text-aeo-cyan bg-white/5 px-2 py-0.5 rounded border border-white/10">
@@ -422,9 +441,14 @@ export default function ShopifyAEOPage() {
 }
 </script>`}</pre>
               </div>
-              <div className="pt-1 flex items-center justify-between text-[11px] font-mono text-white/60">
-                <span>Schema Entity: HowTo #moduleA</span>
-                <span className="text-aeo-cyan">Passage Density: High</span>
+              {/* Zone 2 Contextual Links */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
+                <span className="font-mono text-aeo-cyan text-[11px]">Deliverables &amp; References:</span>
+                <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-medium">AEO Blueprint</Link>
+                <span>&bull;</span>
+                <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Technical Schema Sprint</Link>
+                <span>&bull;</span>
+                <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline font-medium">Structured Data Guide</Link>
               </div>
             </div>
 
@@ -440,11 +464,14 @@ export default function ShopifyAEOPage() {
                 </div>
               </div>
               <p className="text-xs text-white/80 font-light leading-relaxed">
-                Move beyond standard Google Merchant Center rules. We enrich feed vectors with situational use-case tags (&ldquo;best for sensitive skin&rdquo;, &ldquo;ideal for Perth summer climate&rdquo;), precise sizing, material compositions, and GTIN parameters to capture long-tail conversational shopping queries.
+                Move beyond standard Google Merchant Center rules. We enrich feed vectors with situational use-case tags (&ldquo;best for sensitive skin&rdquo;, &ldquo;ideal for Perth summer climate&rdquo;), precise sizing, material compositions, and GTIN parameters to capture long-tail conversational shopping queries. Learn more in our <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-medium">GEO Marketing &amp; Geolocation Feeds</Link> service overview.
               </p>
-              <div className="pt-1 flex items-center justify-between text-[11px] font-mono text-white/60">
-                <span>Schema Entity: HowTo #moduleB</span>
-                <span className="text-aeo-cyan">Feed Alignment: 100%</span>
+              {/* Zone 3 Contextual Links */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
+                <span className="font-mono text-aeo-cyan text-[11px]">Related Sprints:</span>
+                <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Feed Engineering Sprint</Link>
+                <span>&bull;</span>
+                <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-medium">GEO Marketing Services</Link>
               </div>
             </div>
 
@@ -460,11 +487,14 @@ export default function ShopifyAEOPage() {
                 </div>
               </div>
               <p className="text-xs text-white/80 font-light leading-relaxed">
-                Solve the &ldquo;black box analytics&rdquo; problem. We set up server-side conversion rules, custom UTM parameter arrays, and prompt referral tracking in Shopify Analytics to measure direct conversational traffic, prompt-assisted conversions, and buyer intent.
+                Solve the &ldquo;black box analytics&rdquo; problem. We set up server-side conversion rules, custom UTM parameter arrays, and prompt referral tracking in Shopify Analytics to measure direct conversational traffic, prompt-assisted conversions, and buyer intent. Explore our <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Strategy</Link> framework.
               </p>
-              <div className="pt-1 flex items-center justify-between text-[11px] font-mono text-white/60">
-                <span>Schema Entity: HowTo #moduleC</span>
-                <span className="text-aeo-cyan font-semibold">Attribution Status: Active</span>
+              {/* Zone 4 Contextual Links */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
+                <span className="font-mono text-aeo-cyan text-[11px]">Measurement Blueprint:</span>
+                <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-medium">Analytics &amp; Conversion Blueprint</Link>
+                <span>&bull;</span>
+                <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing</Link>
               </div>
             </div>
           </div>
@@ -501,6 +531,16 @@ export default function ShopifyAEOPage() {
                 <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
                 <span>Are product attributes enriched with situational use cases (&ldquo;best for...&rdquo;)?</span>
               </div>
+            </div>
+
+            {/* Zone 5 Contextual Corridor */}
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-white/70 border-t border-white/10 pt-4">
+              <span className="font-mono text-aeo-cyan text-[11px]">Next Operational Steps:</span>
+              <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-medium">AEO Services Overview</Link>
+              <span>&bull;</span>
+              <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Book Execution Sprint</Link>
+              <span>&bull;</span>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline font-medium">RAG Crawling Guide</Link>
             </div>
 
             <div className="pt-2 text-center">
@@ -547,6 +587,14 @@ export default function ShopifyAEOPage() {
                 </tbody>
               </table>
             </div>
+
+            {/* Zone 6 Contextual Links */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-white/70 bg-white/[0.02] p-3 rounded-lg border border-white/10">
+              <span className="font-mono text-aeo-cyan text-[11px]">Candour References:</span>
+              <Link href="/services/aeo/comparison" className="text-aeo-cyan hover:underline font-medium">Is AEO just SEO?</Link>
+              <span>&bull;</span>
+              <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-medium">Entity Corroboration Principles</Link>
+            </div>
           </div>
 
           {/* SECTION 6: Zero-Click Search & ROI Caveat */}
@@ -559,7 +607,7 @@ export default function ShopifyAEOPage() {
               AI search engines frequently synthesise answers directly on the search page without sending raw impression traffic. However, when an AI recommendation <em>does</em> generate a referral click to your Shopify store, the buyer intent is significantly higher than traditional keyword search.
             </p>
             <p className="text-xs text-white/80 font-light leading-relaxed">
-              Our strategy focuses on <strong>citation and recommendation dominance</strong>. By positioning your brand as the definitive factual source, we ensure your store captures high-converting customers at the exact moment of decision.
+              Our strategy focuses on <strong>citation and recommendation dominance</strong>. By positioning your brand as the definitive factual source, we ensure your store captures high-converting customers at the exact moment of decision. Explore our <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing Strategy</Link> and read our <Link href="/knowledge-hub/articles/aeo-vs-seo" className="text-aeo-cyan hover:underline font-medium">AEO vs SEO Paradigm Shift</Link> guide.
             </p>
           </div>
 
@@ -584,12 +632,19 @@ export default function ShopifyAEOPage() {
             <p className="text-xs text-white/70 max-w-lg mx-auto font-light leading-relaxed">
               Get a manual AI visibility scan for your Shopify store. Learn how ChatGPT, Google AI Overviews, and Perplexity parse your product catalog today.
             </p>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs sm:text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
               >
                 <span>Run Free Store Scan</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/15 text-white hover:bg-white/10 font-semibold text-xs sm:text-sm transition-colors"
+              >
+                <span>View $995 Blueprint</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
