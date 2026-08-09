@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Calendar, ArrowRight, X } from 'lucide-react';
+import { ChevronDown, Calendar, ArrowRight, X, Phone } from 'lucide-react';
 import MobileMenuButton from '@/components/navigation/MobileMenuButton';
 import MobileMenuOverlay from '@/components/navigation/MobileMenuOverlay';
 import MobileMenuAccordion from '@/components/navigation/MobileMenuAccordion';
@@ -146,8 +146,28 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Hamburger Menu Toggle Button Island */}
-          <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+          {/* Mobile Right Action Stack & Hamburger Menu Toggle Button Island */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Phone Call Quick Link */}
+            <a
+              href="tel:+61400000000"
+              aria-label="Call AEObility"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+            >
+              <Phone className="h-4 w-4" />
+            </a>
+
+            {/* Calendar / Scan Quick Link */}
+            <Link
+              href="/diagnostic"
+              aria-label="Run Visibility Scan or Book Session"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-purple hover:bg-aeo-purple/10 active:scale-95 transition-all"
+            >
+              <Calendar className="h-4 w-4" />
+            </Link>
+
+            <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+          </div>
         </div>
       </nav>
 
