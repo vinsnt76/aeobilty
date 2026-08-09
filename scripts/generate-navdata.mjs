@@ -60,7 +60,7 @@ export function generateNavData() {
   const rows = parse(csvRaw, { header: true });
 
   // Custom Hub Ordering
-  const hubOrder = ['/services', '/solutions', '/knowledge-hub', '/about'];
+  const hubOrder = ['/services', '/solutions', '/knowledge-hub', '/about', '/contact'];
 
   const hubs = {
     '/services': {
@@ -82,6 +82,10 @@ export function generateNavData() {
       title: 'About',
       href: '/about',
       children: []
+    },
+    '/contact': {
+      title: 'Contact',
+      href: '/contact'
     }
   };
 

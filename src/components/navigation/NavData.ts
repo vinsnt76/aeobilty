@@ -400,6 +400,10 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         ]
       }
     ]
+  },
+  {
+    "title": "Contact",
+    "href": "/contact"
   }
 ];
 

@@ -176,6 +176,16 @@ export default function Navbar() {
               <Calendar className="h-4 w-4" />
             </Link>
 
+            {/* Internal Search Quick Link (⌘K) */}
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
+              aria-label="Search Site Architecture (⌘K)"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+            >
+              <Search className="h-4 w-4" />
+            </button>
+
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
           </div>
         </div>
@@ -193,7 +203,9 @@ export default function Navbar() {
               height={28}
               className="h-7 w-7 object-contain"
             />
-            <span className="font-bold text-sm tracking-wider text-white uppercase">AEObility Menu</span>
+            <span className="font-extrabold text-base tracking-tight text-white">
+              AEO<span className="text-aeo-cyan">bility</span>
+            </span>
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -203,6 +215,22 @@ export default function Navbar() {
             <X className="w-5 h-5" />
           </button>
         </div>
+
+        {/* Top Search Trigger Button (⌘K) */}
+        <button
+          type="button"
+          onClick={() => {
+            setIsOpen(false);
+            window.dispatchEvent(new CustomEvent('open_answer_search_modal'));
+          }}
+          className="w-full mt-3 flex items-center justify-between py-2.5 px-4 text-xs font-semibold bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors text-left"
+        >
+          <div className="flex items-center gap-2">
+            <Search className="w-3.5 h-3.5 text-aeo-cyan" />
+            <span>Search site architecture...</span>
+          </div>
+          <kbd className="px-2 py-0.5 text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 border border-aeo-cyan/20 rounded font-bold">⌘K</kbd>
+        </button>
 
         {/* Accordion Content */}
         <MobileMenuAccordion />
@@ -225,24 +253,9 @@ export default function Navbar() {
             href="/solutions/aeo-blueprint"
             className="flex items-center justify-between w-full py-3 px-4 text-xs font-bold bg-white/5 border border-white/15 text-white hover:bg-white/10 rounded-xl transition-colors"
           >
-            <span>View $995 Blueprint</span>
+            <span>View the Blueprint</span>
             <ArrowRight className="w-4 h-4 text-aeo-cyan" />
           </Link>
-
-          <button
-            type="button"
-            onClick={() => {
-              setIsOpen(false);
-              window.dispatchEvent(new CustomEvent('open_answer_search_modal'));
-            }}
-            className="flex items-center justify-between w-full py-2.5 px-4 text-xs font-semibold bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors text-left mt-2"
-          >
-            <div className="flex items-center gap-2">
-              <Search className="w-3.5 h-3.5 text-aeo-cyan" />
-              <span>Search Site Architecture...</span>
-            </div>
-            <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-white/40 bg-white/5 border border-white/10 rounded">⌘K</kbd>
-          </button>
         </div>
       </MobileMenuOverlay>
     </>
