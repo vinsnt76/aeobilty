@@ -61,7 +61,7 @@ export default function Breadcrumbs() {
       />
       
       <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-[11px] font-mono text-white/40">
-        <Link href="/" className="hover:text-aeo-cyan transition-colors flex items-center gap-1">
+        <Link href="/" className="hover:text-aeo-cyan hover:underline transition-colors flex items-center gap-1 cursor-pointer">
           <Home className="w-3.5 h-3.5" />
           <span>Home</span>
         </Link>
@@ -71,10 +71,10 @@ export default function Breadcrumbs() {
             <ChevronRight className="w-3 h-3 text-white/20" />
             <Link
               href={crumb.href}
-              className={`transition-colors ${
+              className={`transition-colors cursor-pointer hover:underline ${
                 crumb.isLast
-                  ? 'text-aeo-cyan font-medium hover:underline hover:opacity-90'
-                  : 'hover:text-aeo-cyan text-white/40'
+                  ? 'text-aeo-cyan font-medium hover:opacity-90'
+                  : 'hover:text-aeo-cyan text-white/50'
               }`}
             >
               {crumb.label}
