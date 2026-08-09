@@ -28,7 +28,7 @@ export function HomepageContactForm() {
         <div className="text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>Direct Conversion Corridor</span>
+            <span>Curious to find out more</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
             Ready to Get More Leads and Enquiries?
