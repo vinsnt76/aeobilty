@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { ArrowRight, CheckCircle2, MapPin, Globe, Compass, Star } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata = {
   title: "GEO Consultant Services & Local Visibility Sprints",
@@ -59,6 +61,7 @@ export default function GEOServicesPage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.solutions} />
       <Breadcrumbs />
 
       {/* Main Container */}
