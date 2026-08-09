@@ -80,8 +80,7 @@ export function generateNavData() {
     },
     '/about': {
       title: 'About',
-      href: '/about',
-      children: []
+      href: '/about'
     },
     '/contact': {
       title: 'Contact',
@@ -168,10 +167,6 @@ export function generateNavData() {
       if (!hubs['/knowledge-hub'].children.some(c => c.href === url)) {
         hubs['/knowledge-hub'].children.push(item);
       }
-    } else if (url.startsWith('/about') || url === '/contact' || url === '/vince-baker' || url === '/support') {
-      if (!hubs['/about'].children.some(c => c.href === url)) {
-        hubs['/about'].children.push(item);
-      }
     }
 
     if (row.HierarchySub && row.HierarchySub.includes('Footer')) {
@@ -226,15 +221,6 @@ export function generateNavData() {
     if (indexA !== -1 && indexB !== -1) return indexA - indexB;
     if (indexA !== -1) return -1;
     if (indexB !== -1) return 1;
-    return 0;
-  });
-
-  // Sort About hub children: /about first, /contact second
-  hubs['/about'].children.sort((a, b) => {
-    if (a.href === '/about') return -1;
-    if (b.href === '/about') return 1;
-    if (a.href === '/contact') return -1;
-    if (b.href === '/contact') return 1;
     return 0;
   });
 
