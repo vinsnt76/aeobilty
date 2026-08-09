@@ -5,6 +5,7 @@ export interface NavItemL2 {
   description?: string;
   entityName: string;
   isServicePillar?: boolean;
+  isKnowledgeCapsule?: boolean;
   corridors?: Array<'phone' | 'scan' | 'blueprint' | 'contact'>;
 }
 
@@ -25,6 +26,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our four core AEO optimisation pillars.",
         "entityName": "Canonical AEO Hub",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -36,6 +38,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
         "entityName": "AI Search Marketing",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -48,6 +51,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
         "entityName": "AEO for Local Businesses",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "phone",
           "scan",
@@ -60,6 +64,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Target geographic engine optimisation (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
         "entityName": "GEO Marketing",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "phone",
           "scan",
@@ -72,6 +77,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
         "entityName": "AEO for Shopify",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -84,6 +90,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Discover the best AEO strategies to make your business AI-readable. Actionable procedures for structured data, atomic answer blocks, entity authority, and RAG retrieval optimisation.",
         "entityName": "Best AEO Strategies",
         "isServicePillar": true,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -96,6 +103,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "AEObility is an Australian AEO consultancy that helps local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
         "entityName": "AEO Services",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -107,6 +115,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
         "entityName": "What is AEO (Definition)",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -119,6 +128,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Compare legacy keyword-driven search ranking against dense retrieval vector systems. Learn why AI search shifts require a semantic lattice layout.",
         "entityName": "AEO vs SEO (Comparison)",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -131,6 +141,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Understand the current constraints and limitations of Answer Engine Optimisation (AEO). Discover how to navigate AI search challenges effectively today.",
         "entityName": "AEO Constraints",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -143,6 +154,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Get transparent information on AEO costs and timing. Discover AEObility's optimisation pricing packages, milestones, and timelines for search visibility.",
         "entityName": "AEO Costs & Timing",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -161,6 +173,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Explore our clear pricing models. From the $995 standalone MVP Strategic Blueprint to target optimisation implementation sprints.",
         "entityName": "AEO Packages",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -172,6 +185,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
         "entityName": "The AEObility Blueprint",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -184,6 +198,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
         "entityName": "AEO Sprints",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "blueprint",
@@ -196,6 +211,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
         "entityName": "GEO Services Sprint",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "phone",
           "scan",
@@ -209,33 +225,59 @@ export const NAVIGATION_DATA: NavItemL1[] = [
     "href": "/knowledge-hub",
     "children": [
       {
+        "title": "Articles",
+        "href": "/knowledge-hub/articles",
+        "description": "Technical articles on AEO, RAG, and AI search indexing.",
+        "entityName": "Articles",
+        "isKnowledgeCapsule": true,
+        "corridors": [
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "Guides",
+        "href": "/knowledge-hub/aeo",
+        "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
+        "entityName": "AEO Knowledge Node",
+        "isServicePillar": false,
+        "isKnowledgeCapsule": true,
+        "corridors": [
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "Case Studies",
+        "href": "/knowledge-hub/case-studies",
+        "description": "Read our case studies to see how AEObility helps Australian businesses improve their AI search visibility, traffic, and leads through expert strategies.",
+        "entityName": "Case Studies",
+        "isServicePillar": false,
+        "isKnowledgeCapsule": true,
+        "corridors": [
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "Tutorials",
+        "href": "/knowledge-hub/semantic-seo",
+        "description": "Transition from legacy keyword strings to relational topic graphs. Learn to map RDF triples and build contextual entity salience.",
+        "entityName": "Semantic SEO Node",
+        "isServicePillar": false,
+        "isKnowledgeCapsule": true,
+        "corridors": [
+          "scan",
+          "contact"
+        ]
+      },
+      {
         "title": "Knowledge Hub",
         "href": "/knowledge-hub",
         "description": "Access the industry-standard repository for machine ingestion strategies, advanced schema blueprints, and technical content templates.",
         "entityName": "Knowledge Hub",
         "isServicePillar": false,
-        "corridors": [
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "AEO Knowledge Node",
-        "href": "/knowledge-hub/aeo",
-        "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
-        "entityName": "AEO Knowledge Node",
-        "isServicePillar": false,
-        "corridors": [
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "Semantic SEO Node",
-        "href": "/knowledge-hub/semantic-seo",
-        "description": "Transition from legacy keyword strings to relational topic graphs. Learn to map RDF triples and build contextual entity salience.",
-        "entityName": "Semantic SEO Node",
-        "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -247,19 +289,9 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Advanced techniques balancing localized map rankings and systemic generative visibility rules without triggering focus dilution gaps.",
         "entityName": "GEO Knowledge Node",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "phone",
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "Case Studies",
-        "href": "/knowledge-hub/case-studies",
-        "description": "Read our case studies to see how AEObility helps Australian businesses improve their AI search visibility, traffic, and leads through expert strategies.",
-        "entityName": "Case Studies",
-        "isServicePillar": false,
-        "corridors": [
           "scan",
           "contact"
         ]
@@ -270,6 +302,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Discover how AEObility transformed Baby Bento's digital presence. Read the complete case study on our successful SEO and AI search marketing campaigns.",
         "entityName": "Case Study: Baby Bento",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -281,6 +314,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Learn how AEO (AI Engine Optimisation) differs from traditional SEO, why entity authority matters, and how brands can future‑proof visibility in AI search.",
         "entityName": "AEO vs SEO Guide",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -292,6 +326,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Understand how Retrieval‑Augmented Generation improves AI search accuracy, reduces hallucinations, and strengthens brand visibility across AI engines.",
         "entityName": "AI Search Optimisation",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -303,6 +338,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
         "entityName": "Entity Authority Guide",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -314,6 +350,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Learn what positional bias is in AI search and LLMs, how retrieval and synthesis bottlenecks affect search visibility, and how to engineer content using the Positional Bias Audit Checklist.",
         "entityName": "Positional Bias in Retrieval Guide",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -325,6 +362,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "The proprietary algorithmic logging suite used by AEObility to track real-time citation share, model hallucination rates, and engine retrieval confidence across ChatGPT, Claude, and Perplexity.",
         "entityName": "AI Visibility Telemetry",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -336,6 +374,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Learn how AEObility evaluates competitor overlap, semantic dominance, and AI search readiness. Discover how your business compares to competitors and what to fix first.",
         "entityName": "Competitor Overlap & Semantic Dominance Framework",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -353,6 +392,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Meet the technical architects behind AEObility. Over 15 years engineering custom code, business automations, and AEO systems in Perth.",
         "entityName": "About Us",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -364,6 +404,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.",
         "entityName": "Contact & Support",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -375,6 +416,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Looking for a freelance digital specialist in Perth? AEObility provides expert digital marketing, SEO, and AI search strategies for WA businesses.",
         "entityName": "Freelance Digital Specialist Perth",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -386,6 +428,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Boost your search rankings with a freelance SEO consultant in Perth. We specialise in local search, technical SEO, and AI search engine optimisation.",
         "entityName": "Freelance SEO Consultant Perth",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -397,6 +440,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Maximize your ROI with a freelance Google Ads consultant in Perth. We offer expert PPC management, campaign optimisation, and targeted lead generation.",
         "entityName": "Freelance Google Ads Consultant Perth",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -408,6 +452,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Future-proof your brand with a freelance AI consultant in Perth. We optimise your business for AI search engines like ChatGPT, Perplexity, and Gemini.",
         "entityName": "Freelance AI Consultant Perth",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -419,6 +464,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Meet Vince Baker, founder of AEObility. Discover his expertise in AI search marketing, SEO, and crafting digital strategies for Australian businesses.",
         "entityName": "Vince Baker",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -430,6 +476,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Need help with your AI search strategy? Contact AEObility support for assistance, project inquiries, and customer service for your Australian business.",
         "entityName": "Support",
         "isServicePillar": false,
+        "isKnowledgeCapsule": false,
         "corridors": [
           "scan",
           "contact"
@@ -450,6 +497,7 @@ export const FOOTER_NAVIGATION: NavItemL2[] = [
     "description": "Read the AEObility privacy policy to understand how we securely collect, use, and protect your personal information across our digital platforms.",
     "entityName": "Privacy Policy",
     "isServicePillar": false,
+    "isKnowledgeCapsule": false,
     "corridors": [
       "scan",
       "contact"
@@ -461,6 +509,7 @@ export const FOOTER_NAVIGATION: NavItemL2[] = [
     "description": "Review the terms of service for AEObility. Learn about our service agreements, AI search marketing terms, and standard client policies.",
     "entityName": "Terms of Service",
     "isServicePillar": false,
+    "isKnowledgeCapsule": false,
     "corridors": [
       "scan",
       "contact"

@@ -109,6 +109,20 @@ export function generateNavData() {
     '/services/aeo/procedures': 'AI Strategy'
   };
 
+  const KNOWLEDGE_CAPSULE_URLS = [
+    '/knowledge-hub/articles',
+    '/knowledge-hub/aeo',
+    '/knowledge-hub/case-studies',
+    '/knowledge-hub/semantic-seo'
+  ];
+
+  const KNOWLEDGE_CAPSULE_TITLE_OVERRIDES = {
+    '/knowledge-hub/articles': 'Articles',
+    '/knowledge-hub/aeo': 'Guides',
+    '/knowledge-hub/case-studies': 'Case Studies',
+    '/knowledge-hub/semantic-seo': 'Tutorials'
+  };
+
   rows.forEach((row) => {
     const pageName = toAustralianEnglish((row.PageName || '').trim());
     const url = (row.URL || '').trim();
@@ -127,7 +141,8 @@ export function generateNavData() {
     }
 
     const isServicePillar = SERVICE_PILLAR_URLS.includes(url);
-    const displayTitle = PILLAR_TITLE_OVERRIDES[url] || pageName;
+    const isKnowledgeCapsule = KNOWLEDGE_CAPSULE_URLS.includes(url);
+    const displayTitle = KNOWLEDGE_CAPSULE_TITLE_OVERRIDES[url] || PILLAR_TITLE_OVERRIDES[url] || pageName;
 
     const item = {
       title: displayTitle,
@@ -135,6 +150,7 @@ export function generateNavData() {
       description: metaDesc,
       entityName: pageName,
       isServicePillar: isServicePillar,
+      isKnowledgeCapsule: isKnowledgeCapsule,
       corridors: getCorridorsForUrl(url)
     };
 
@@ -181,6 +197,28 @@ export function generateNavData() {
     });
   }
 
+  // Ensure Articles capsule exists in Knowledge Hub
+  if (!hubs['/knowledge-hub'].children.some(c => c.href === '/knowledge-hub/articles')) {
+    hubs['/knowledge-hub'].children.unshift({
+      title: 'Articles',
+      href: '/knowledge-hub/articles',
+      description: 'Technical articles on AEO, RAG, and AI search indexing.',
+      entityName: 'Articles',
+      isKnowledgeCapsule: true,
+      corridors: ['scan', 'contact']
+    });
+  }
+
+  // Sort Knowledge Hub children according to KNOWLEDGE_CAPSULE_URLS order
+  hubs['/knowledge-hub'].children.sort((a, b) => {
+    const indexA = KNOWLEDGE_CAPSULE_URLS.indexOf(a.href);
+    const indexB = KNOWLEDGE_CAPSULE_URLS.indexOf(b.href);
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    return 0;
+  });
+
   // Sort Services hub children according to SERVICE_PILLAR_URLS order
   hubs['/services'].children.sort((a, b) => {
     const indexA = SERVICE_PILLAR_URLS.indexOf(a.href);
@@ -209,6 +247,7 @@ export interface NavItemL2 {
   description?: string;
   entityName: string;
   isServicePillar?: boolean;
+  isKnowledgeCapsule?: boolean;
   corridors?: Array<'phone' | 'scan' | 'blueprint' | 'contact'>;
 }
 
