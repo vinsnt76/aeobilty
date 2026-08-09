@@ -94,11 +94,22 @@ export function generateNavData() {
 
     if (!url || url === '/') return;
 
+    function getCorridorsForUrl(u) {
+      if (u.includes('local-business') || u.includes('geo')) {
+        return ['phone', 'scan', 'contact'];
+      }
+      if (u.includes('shopify') || u.includes('blueprint') || u.includes('sprint') || u.includes('definition') || u.includes('comparison') || u.includes('procedures') || u.includes('constraints') || u.includes('costs-timing') || u.includes('ai-search-marketing')) {
+        return ['scan', 'blueprint', 'contact'];
+      }
+      return ['scan', 'contact'];
+    }
+
     const item = {
       title: pageName,
       href: url,
       description: metaDesc,
-      entityName: pageName
+      entityName: pageName,
+      corridors: getCorridorsForUrl(url)
     };
 
     // Determine Hub Membership
@@ -152,6 +163,7 @@ export interface NavItemL2 {
   href: string;
   description?: string;
   entityName: string;
+  corridors?: Array<'phone' | 'scan' | 'blueprint' | 'contact'>;
 }
 
 export interface NavItemL1 {

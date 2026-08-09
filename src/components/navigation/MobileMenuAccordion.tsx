@@ -61,6 +61,43 @@ export function MobileMenuAccordion() {
                             </div>
                             <ArrowRight className="w-3 h-3 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                           </Link>
+
+                          {sub.corridors && sub.corridors.length > 0 && (
+                            <div className="mt-1 flex flex-wrap gap-1.5 pl-2.5 pb-1.5 md:hidden">
+                              {sub.corridors.includes('phone') && (
+                                <a
+                                  href="tel:+61400000000"
+                                  className="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 text-[10px] font-medium border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors"
+                                >
+                                  📞 Call Expert
+                                </a>
+                              )}
+                              {sub.corridors.includes('scan') && (
+                                <Link
+                                  href="/diagnostic"
+                                  className="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 text-[10px] font-medium border border-purple-500/20 hover:bg-purple-500/20 transition-colors"
+                                >
+                                  ⚡ Run Scan
+                                </Link>
+                              )}
+                              {sub.corridors.includes('blueprint') && (
+                                <Link
+                                  href="/solutions/aeo-blueprint"
+                                  className="px-2 py-0.5 rounded bg-white/5 text-zinc-300 text-[10px] font-medium border border-white/10 hover:bg-white/10 transition-colors"
+                                >
+                                  📄 Blueprint
+                                </Link>
+                              )}
+                              {sub.corridors.includes('contact') && (
+                                <Link
+                                  href="/contact"
+                                  className="px-2 py-0.5 rounded bg-white/5 text-zinc-300 text-[10px] font-medium border border-white/10 hover:bg-white/10 transition-colors"
+                                >
+                                  ✉️ Contact
+                                </Link>
+                              )}
+                            </div>
+                          )}
                         </div>
                       );
                     })}
