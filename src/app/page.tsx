@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import ServicePills from '@/components/homepage/ServicePills';
 import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import VideoExplainer from '@/components/VideoExplainer';
@@ -148,9 +147,6 @@ export default function Home() {
       />
 
       <Navbar />
-      <div className="sticky top-16 z-40 w-full bg-neutral-950/90 backdrop-blur-md border-b border-white/10">
-        <ServicePills />
-      </div>
       <Hero />
       <SocialProof />
       <VideoExplainer />

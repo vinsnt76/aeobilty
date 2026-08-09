@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
+import ServicePills from '@/components/homepage/ServicePills';
 
 export function GraphVisual() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -168,26 +169,9 @@ export default function Hero() {
                 </a>
               </div>
 
-              {/* Primary Service Node Entity Anchor Corridor */}
-              <div className="pt-2 flex flex-wrap items-center gap-2 text-xs">
-                <span className="text-white/40 font-medium font-mono text-[11px] uppercase tracking-wider">Services:</span>
-                <a href="/services/aeo" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
-                  AEO Services
-                </a>
-                <a href="/services/ai-search-marketing" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
-                  AI Search Strategy
-                </a>
-                <a href="/services/geo-marketing" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
-                  GEO Marketing
-                </a>
-                <a href="/solutions/aeo-blueprint" className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70 hover:text-aeo-cyan hover:border-aeo-cyan/40 transition-all">
-                  AEO Blueprint
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs text-white/40 pt-2">
-                <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
-                <span>Add your website to see how AI search engines understand your business</span>
+              {/* Interactive Purple Service Pills Corridor */}
+              <div className="pt-2">
+                <ServicePills />
               </div>
             </div>
           </div>
