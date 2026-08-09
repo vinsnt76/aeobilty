@@ -69,13 +69,16 @@ export default function Breadcrumbs() {
         {breadcrumbs.map((crumb) => (
           <React.Fragment key={crumb.href}>
             <ChevronRight className="w-3 h-3 text-white/20" />
-            {crumb.isLast ? (
-              <span className="text-aeo-cyan font-medium">{crumb.label}</span>
-            ) : (
-              <Link href={crumb.href} className="hover:text-aeo-cyan transition-colors">
-                {crumb.label}
-              </Link>
-            )}
+            <Link
+              href={crumb.href}
+              className={`transition-colors ${
+                crumb.isLast
+                  ? 'text-aeo-cyan font-medium hover:underline hover:opacity-90'
+                  : 'hover:text-aeo-cyan text-white/40'
+              }`}
+            >
+              {crumb.label}
+            </Link>
           </React.Fragment>
         ))}
       </nav>
