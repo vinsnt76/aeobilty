@@ -39,12 +39,7 @@ export function MobileMenuAccordion() {
                 </button>
                 {isOpen && (
                   <div className="mt-2 ml-2 space-y-2 border-l-2 border-aeo-cyan/40 pl-3 py-1">
-                    {(item.href === '/services'
-                      ? item.children.filter(sub => sub.isServicePillar)
-                      : item.href === '/knowledge-hub'
-                      ? item.children.filter(sub => sub.isKnowledgeCapsule)
-                      : item.children
-                    ).map((sub, subIdx) => {
+                    {item.children.map((sub, subIdx) => {
                       const isSubActive = pathname === sub.href;
                       return (
                         <div key={subIdx} className="group">

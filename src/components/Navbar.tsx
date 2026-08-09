@@ -87,12 +87,7 @@ export default function Navbar() {
                             : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
                         }`}
                       >
-                        {(link.href === '/services'
-                          ? link.children.filter(sub => sub.isServicePillar)
-                          : link.href === '/knowledge-hub'
-                          ? link.children.filter(sub => sub.isKnowledgeCapsule)
-                          : link.children
-                        ).map((subItem) => {
+                        {link.children.map((subItem) => {
                           const isSubActive = pathname === subItem.href;
                           return (
                             <Link

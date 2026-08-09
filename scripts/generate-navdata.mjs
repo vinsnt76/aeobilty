@@ -192,7 +192,12 @@ export function generateNavData() {
     });
   }
 
-  // Ensure Articles capsule exists in Knowledge Hub
+  // Filter Services hub children to ONLY the 6 Service Pillars in exact order
+  hubs['/services'].children = hubs['/services'].children
+    .filter(c => c.isServicePillar)
+    .sort((a, b) => SERVICE_PILLAR_URLS.indexOf(a.href) - SERVICE_PILLAR_URLS.indexOf(b.href));
+
+  // Ensure Articles capsule exists in Knowledge Hub if missing
   if (!hubs['/knowledge-hub'].children.some(c => c.href === '/knowledge-hub/articles')) {
     hubs['/knowledge-hub'].children.unshift({
       title: 'Articles',
@@ -204,25 +209,10 @@ export function generateNavData() {
     });
   }
 
-  // Sort Knowledge Hub children according to KNOWLEDGE_CAPSULE_URLS order
-  hubs['/knowledge-hub'].children.sort((a, b) => {
-    const indexA = KNOWLEDGE_CAPSULE_URLS.indexOf(a.href);
-    const indexB = KNOWLEDGE_CAPSULE_URLS.indexOf(b.href);
-    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-    if (indexA !== -1) return -1;
-    if (indexB !== -1) return 1;
-    return 0;
-  });
-
-  // Sort Services hub children according to SERVICE_PILLAR_URLS order
-  hubs['/services'].children.sort((a, b) => {
-    const indexA = SERVICE_PILLAR_URLS.indexOf(a.href);
-    const indexB = SERVICE_PILLAR_URLS.indexOf(b.href);
-    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-    if (indexA !== -1) return -1;
-    if (indexB !== -1) return 1;
-    return 0;
-  });
+  // Filter Knowledge Hub children to ONLY the 4 Knowledge Capsules in exact order
+  hubs['/knowledge-hub'].children = hubs['/knowledge-hub'].children
+    .filter(c => c.isKnowledgeCapsule)
+    .sort((a, b) => KNOWLEDGE_CAPSULE_URLS.indexOf(a.href) - KNOWLEDGE_CAPSULE_URLS.indexOf(b.href));
 
   const navDataArray = hubOrder.map(key => hubs[key]);
 
