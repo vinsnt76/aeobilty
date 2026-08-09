@@ -92,7 +92,10 @@ function buildVector(text, dim = VECTOR_DIM) {
   return Array.from(vec);
 }
 
+import { generateNavData } from './generate-navdata.mjs';
+
 async function main() {
+  generateNavData();
   console.log('⚡ Compiling AEObility IA/SLM Knowledge Base Vector Manifest...');
 
   const csvPath = path.join(process.cwd(), 'AEObility -IA & SLM.csv');

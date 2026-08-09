@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { NAVIGATION_DATA } from './NavData';
+import { NAVIGATION_DATA, FOOTER_NAVIGATION } from './NavData';
 
 export function SSRFallbackNav() {
   return (
@@ -18,6 +18,11 @@ export function SSRFallbackNav() {
                 ))}
               </ul>
             )}
+          </li>
+        ))}
+        {FOOTER_NAVIGATION.map((foot, k) => (
+          <li key={`footer-${k}`}>
+            <Link href={foot.href}>{foot.title}</Link>
           </li>
         ))}
       </ul>
