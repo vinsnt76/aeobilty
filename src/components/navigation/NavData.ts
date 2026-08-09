@@ -202,10 +202,9 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       },
       {
         "title": "Tutorials",
-        "href": "/knowledge-hub/semantic-seo",
-        "description": "Transition from legacy keyword strings to relational topic graphs. Learn to map RDF triples and build contextual entity salience.",
-        "entityName": "Semantic SEO Node",
-        "isServicePillar": false,
+        "href": "/knowledge-hub/tutorials",
+        "description": "Step-by-step technical tutorials for schema and entity optimization.",
+        "entityName": "Tutorials",
         "isKnowledgeCapsule": true,
         "corridors": [
           "scan",
@@ -335,7 +334,7 @@ export const HUB_SUBNAV_MAPS: Record<string, SubNavPillItem[]> = {
     },
     {
       "title": "Tutorials",
-      "url": "/knowledge-hub/semantic-seo"
+      "url": "/knowledge-hub/tutorials"
     }
   ],
   "solutions": [

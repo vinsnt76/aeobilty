@@ -112,14 +112,14 @@ export function generateNavData() {
     '/knowledge-hub/articles',
     '/knowledge-hub/aeo',
     '/knowledge-hub/case-studies',
-    '/knowledge-hub/semantic-seo'
+    '/knowledge-hub/tutorials'
   ];
 
   const KNOWLEDGE_CAPSULE_TITLE_OVERRIDES = {
     '/knowledge-hub/articles': 'Articles',
     '/knowledge-hub/aeo': 'Guides',
     '/knowledge-hub/case-studies': 'Case Studies',
-    '/knowledge-hub/semantic-seo': 'Tutorials'
+    '/knowledge-hub/tutorials': 'Tutorials'
   };
 
   rows.forEach((row) => {
@@ -197,13 +197,23 @@ export function generateNavData() {
     .filter(c => c.isServicePillar)
     .sort((a, b) => SERVICE_PILLAR_URLS.indexOf(a.href) - SERVICE_PILLAR_URLS.indexOf(b.href));
 
-  // Ensure Articles capsule exists in Knowledge Hub if missing
+  // Ensure Articles & Tutorials capsules exist in Knowledge Hub if missing
   if (!hubs['/knowledge-hub'].children.some(c => c.href === '/knowledge-hub/articles')) {
     hubs['/knowledge-hub'].children.unshift({
       title: 'Articles',
       href: '/knowledge-hub/articles',
       description: 'Technical articles on AEO, RAG, and AI search indexing.',
       entityName: 'Articles',
+      isKnowledgeCapsule: true,
+      corridors: ['scan', 'contact']
+    });
+  }
+  if (!hubs['/knowledge-hub'].children.some(c => c.href === '/knowledge-hub/tutorials')) {
+    hubs['/knowledge-hub'].children.push({
+      title: 'Tutorials',
+      href: '/knowledge-hub/tutorials',
+      description: 'Step-by-step technical tutorials for schema and entity optimization.',
+      entityName: 'Tutorials',
       isKnowledgeCapsule: true,
       corridors: ['scan', 'contact']
     });
@@ -241,7 +251,7 @@ export function generateNavData() {
       { title: "Articles", url: "/knowledge-hub/articles" },
       { title: "Guides", url: "/knowledge-hub/aeo" },
       { title: "Case Studies", url: "/knowledge-hub/case-studies" },
-      { title: "Tutorials", url: "/knowledge-hub/semantic-seo" }
+      { title: "Tutorials", url: "/knowledge-hub/tutorials" }
     ],
     solutions: [
       { title: "Packages Overview", url: "/solutions" },

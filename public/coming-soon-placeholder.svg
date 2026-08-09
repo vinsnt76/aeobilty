@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0c"/>
+      <stop offset="50%" stop-color="#12121c"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2D3"/>
+      <stop offset="100%" stop-color="#AF00FF"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Glowing background circles -->
+  <circle cx="400" cy="225" r="180" fill="#00D2D3" opacity="0.05" filter="blur(40px)"/>
+  <circle cx="400" cy="225" r="120" fill="#AF00FF" opacity="0.05" filter="blur(30px)"/>
+
+  <!-- Centered Card Graphics -->
+  <g transform="translate(400, 200)">
+    <!-- Outer Ring -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-dasharray="6, 6" opacity="0.8"/>
+    
+    <!-- Inner Lock / Clock Icon -->
+    <path d="M-12 -5 L-12 -12 C-12 -18.6 -6.6 -24 0 -24 C6.6 -24 12 -18.6 12 -12 L12 -5" fill="none" stroke="#00D2D3" stroke-width="3" stroke-linecap="round"/>
+    <rect x="-16" y="-5" width="32" height="28" rx="6" fill="#12121c" stroke="url(#accentGrad)" stroke-width="2.5"/>
+    <circle cx="0" cy="7" r="3" fill="#00D2D3"/>
+    <path d="M0 10 L0 15" stroke="#00D2D3" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Coming Soon Text -->
+  <text x="400" y="295" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" letter-spacing="3">TUTORIAL COMING SOON</text>
+  <text x="400" y="325" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="500" font-size="13" fill="#00D2D3" opacity="0.8" letter-spacing="1">AEObility Knowledge Hub Execution Blueprint</text>
+</svg>
