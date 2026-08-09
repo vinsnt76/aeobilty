@@ -98,3 +98,11 @@ body {
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
 }
 
+/* Hide scrollbar for Chrome, Safari, Opera, IE, Edge, and Firefox */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
