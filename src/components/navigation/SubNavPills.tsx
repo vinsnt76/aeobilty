@@ -23,7 +23,7 @@ export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
   return (
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
-      className="w-full sticky top-20 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2.5 px-4 sm:px-6 transition-all"
+      className="w-full sticky top-16 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2.5 px-4 sm:px-6 transition-all"
     >
       <div className="flex items-center gap-2 overflow-x-auto no-scrollbar whitespace-nowrap text-xs font-medium scroll-smooth max-w-7xl mx-auto">
         {items.map((item, idx) => {
