@@ -44,14 +44,14 @@ export default function Navbar() {
               className="h-10 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
               priority
             />
-            {/* Mobile Standalone Circular Logo Badge (36px x 36px / h-9 w-9) */}
-            <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-full bg-[#1e1e1e] backdrop-blur-md border border-cyan-500/30 group-hover:border-cyan-400 active:scale-95 transition-all shadow-[0_0_10px_rgba(6,182,212,0.15)] shrink-0">
+            {/* Mobile Standalone Circular Logo Badge (38px x 38px) */}
+            <div className="flex lg:hidden h-[38px] w-[38px] items-center justify-center rounded-full bg-[#1e1e1e] backdrop-blur-md border border-cyan-500/30 group-hover:border-cyan-400 active:scale-95 transition-all shadow-[0_0_10px_rgba(6,182,212,0.15)] shrink-0">
               <Image
-                src="/aeobility-icon-dark.svg"
+                src="/aeobility-icon-light.svg"
                 alt="AEObility Icon"
-                width={22}
-                height={22}
-                className="h-5 w-5 object-contain group-hover:scale-105 transition-transform"
+                width={24}
+                height={24}
+                className="h-[24px] w-[24px] object-contain group-hover:scale-105 transition-transform"
                 priority
               />
             </div>
