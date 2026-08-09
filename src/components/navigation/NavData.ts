@@ -20,6 +20,77 @@ export const NAVIGATION_DATA: NavItemL1[] = [
     "href": "/services",
     "children": [
       {
+        "title": "AEO & SEO",
+        "href": "/services/aeo",
+        "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our four core AEO optimisation pillars.",
+        "entityName": "Canonical AEO Hub",
+        "isServicePillar": true,
+        "corridors": [
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "AI Search Marketing",
+        "href": "/services/ai-search-marketing",
+        "description": "Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
+        "entityName": "AI Search Marketing",
+        "isServicePillar": true,
+        "corridors": [
+          "scan",
+          "blueprint",
+          "contact"
+        ]
+      },
+      {
+        "title": "Local Business GEO",
+        "href": "/services/aeo/local-business",
+        "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
+        "entityName": "AEO for Local Businesses",
+        "isServicePillar": true,
+        "corridors": [
+          "phone",
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "GEO Marketing",
+        "href": "/services/geo-marketing",
+        "description": "Target geographic engine optimisation (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
+        "entityName": "GEO Marketing",
+        "isServicePillar": true,
+        "corridors": [
+          "phone",
+          "scan",
+          "contact"
+        ]
+      },
+      {
+        "title": "Ecommerce AEO",
+        "href": "/services/aeo/shopify",
+        "description": "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
+        "entityName": "AEO for Shopify",
+        "isServicePillar": true,
+        "corridors": [
+          "scan",
+          "blueprint",
+          "contact"
+        ]
+      },
+      {
+        "title": "AI Strategy",
+        "href": "/services/aeo/procedures",
+        "description": "Discover the best AEO strategies to make your business AI-readable. Actionable procedures for structured data, atomic answer blocks, entity authority, and RAG retrieval optimisation.",
+        "entityName": "Best AEO Strategies",
+        "isServicePillar": true,
+        "corridors": [
+          "scan",
+          "blueprint",
+          "contact"
+        ]
+      },
+      {
         "title": "AEO Services",
         "href": "/services",
         "description": "AEObility is an Australian AEO consultancy that helps local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
@@ -48,77 +119,6 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         "description": "Compare legacy keyword-driven search ranking against dense retrieval vector systems. Learn why AI search shifts require a semantic lattice layout.",
         "entityName": "AEO vs SEO (Comparison)",
         "isServicePillar": false,
-        "corridors": [
-          "scan",
-          "blueprint",
-          "contact"
-        ]
-      },
-      {
-        "title": "AEO for Shopify",
-        "href": "/services/aeo/shopify",
-        "description": "Optimise your Shopify store for AI search, ChatGPT recommendations, and Google Merchant Center. Structured liquid refactoring and server-side rules.",
-        "entityName": "AEO for Shopify",
-        "isServicePillar": true,
-        "corridors": [
-          "scan",
-          "blueprint",
-          "contact"
-        ]
-      },
-      {
-        "title": "AEO for Local Businesses",
-        "href": "/services/aeo/local-business",
-        "description": "Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.",
-        "entityName": "AEO for Local Businesses",
-        "isServicePillar": true,
-        "corridors": [
-          "phone",
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "AI Search Marketing",
-        "href": "/services/ai-search-marketing",
-        "description": "Deploy optimisation strategies built for generative search engines (Gemini, Perplexity, ChatGPT). Elevate your brand citation index scores.",
-        "entityName": "AI Search Marketing",
-        "isServicePillar": true,
-        "corridors": [
-          "scan",
-          "blueprint",
-          "contact"
-        ]
-      },
-      {
-        "title": "GEO Marketing",
-        "href": "/services/geo-marketing",
-        "description": "Target geographic engine optimisation (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
-        "entityName": "GEO Marketing",
-        "isServicePillar": true,
-        "corridors": [
-          "phone",
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "Canonical AEO Hub",
-        "href": "/services/aeo",
-        "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our four core AEO optimisation pillars.",
-        "entityName": "Canonical AEO Hub",
-        "isServicePillar": true,
-        "corridors": [
-          "scan",
-          "contact"
-        ]
-      },
-      {
-        "title": "Best AEO Strategies",
-        "href": "/services/aeo/procedures",
-        "description": "Discover the best AEO strategies to make your business AI-readable. Actionable procedures for structured data, atomic answer blocks, entity authority, and RAG retrieval optimisation.",
-        "entityName": "Best AEO Strategies",
-        "isServicePillar": true,
         "corridors": [
           "scan",
           "blueprint",

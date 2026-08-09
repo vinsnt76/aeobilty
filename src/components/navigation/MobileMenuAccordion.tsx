@@ -54,14 +54,7 @@ export function MobileMenuAccordion() {
                                 : 'text-white/80 hover:text-white hover:bg-white/[0.02] px-2.5 rounded-md'
                             }`}
                           >
-                            <div>
                               <span>{sub.title}</span>
-                              {sub.description && (
-                                <p className="text-[10px] text-white/50 font-light mt-0.5 line-clamp-1">
-                                  {sub.description}
-                                </p>
-                              )}
-                            </div>
                             <ArrowRight className="w-3 h-3 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                           </Link>
                         </div>

@@ -100,6 +100,15 @@ export function generateNavData() {
     '/services/aeo/procedures'
   ];
 
+  const PILLAR_TITLE_OVERRIDES = {
+    '/services/aeo': 'AEO & SEO',
+    '/services/ai-search-marketing': 'AI Search Marketing',
+    '/services/aeo/local-business': 'Local Business GEO',
+    '/services/geo-marketing': 'GEO Marketing',
+    '/services/aeo/shopify': 'Ecommerce AEO',
+    '/services/aeo/procedures': 'AI Strategy'
+  };
+
   rows.forEach((row) => {
     const pageName = toAustralianEnglish((row.PageName || '').trim());
     const url = (row.URL || '').trim();
@@ -118,9 +127,10 @@ export function generateNavData() {
     }
 
     const isServicePillar = SERVICE_PILLAR_URLS.includes(url);
+    const displayTitle = PILLAR_TITLE_OVERRIDES[url] || pageName;
 
     const item = {
-      title: pageName,
+      title: displayTitle,
       href: url,
       description: metaDesc,
       entityName: pageName,
@@ -170,6 +180,16 @@ export function generateNavData() {
       entityName: 'AEObility Terms of Service'
     });
   }
+
+  // Sort Services hub children according to SERVICE_PILLAR_URLS order
+  hubs['/services'].children.sort((a, b) => {
+    const indexA = SERVICE_PILLAR_URLS.indexOf(a.href);
+    const indexB = SERVICE_PILLAR_URLS.indexOf(b.href);
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    if (indexA !== -1) return -1;
+    if (indexB !== -1) return 1;
+    return 0;
+  });
 
   // Sort About hub children: /about first, /contact second
   hubs['/about'].children.sort((a, b) => {
