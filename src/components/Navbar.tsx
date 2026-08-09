@@ -39,18 +39,18 @@ export default function Navbar() {
             <Image
               src="/aeobility-logo-light.svg"
               alt="AEObility Logo"
-              width={180}
-              height={40}
-              className="h-10 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
+              width={270}
+              height={60}
+              className="h-[60px] w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
               priority
             />
             {/* Mobile Icon Logo */}
             <Image
               src="/aeobility-icon-dark.svg"
               alt="AEObility Icon"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain block lg:hidden group-hover:scale-105 transition-transform"
+              width={54}
+              height={54}
+              className="h-[54px] w-[54px] object-contain block lg:hidden group-hover:scale-105 transition-transform"
               priority
             />
           </Link>
