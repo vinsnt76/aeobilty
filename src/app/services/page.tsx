@@ -283,7 +283,6 @@ export default function ServicesPage() {
       />
 
       <Navbar />
-      <SubNavPills sectionTitle="Our Services" items={SERVICES_PILLS} />
 
       <main className="flex-grow w-full py-12">
         <div className="max-w-6xl mx-auto px-6 space-y-24">
