@@ -35,10 +35,10 @@ export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
             <Link
               key={itemUrl + idx}
               href={itemUrl}
-              className={`px-3.5 py-1.5 rounded-full flex-shrink-0 transition-all text-xs border ${
+              className={`px-3.5 py-1.5 rounded-full flex-shrink-0 transition-all duration-200 backdrop-blur-md border ${
                 isActive
-                  ? 'bg-aeo-cyan/20 text-aeo-cyan border-aeo-cyan/50 font-semibold shadow-[0_0_12px_rgba(0,240,255,0.15)]'
-                  : 'bg-white/5 hover:bg-white/10 text-white/80 border-white/10 hover:text-white hover:border-white/20'
+                  ? 'bg-cyan-950/60 text-cyan-200 border-cyan-400 font-semibold shadow-[0_0_12px_rgba(6,182,212,0.25)]'
+                  : 'bg-zinc-900/80 text-cyan-300 border-cyan-500/30 hover:bg-zinc-800/90 hover:text-cyan-200 hover:border-cyan-400/60 shadow-sm'
               }`}
             >
               {itemLabel}
