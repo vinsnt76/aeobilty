@@ -114,8 +114,8 @@ export default function AboutPage() {
       />
 
       <Navbar />
+      <SubNavPills items={ABOUT_PILLS} />
       <Breadcrumbs />
-      <SubNavPills sectionTitle="About AEObility" items={ABOUT_PILLS} />
       <AboutUsContent />
       <Footer />
     </div>

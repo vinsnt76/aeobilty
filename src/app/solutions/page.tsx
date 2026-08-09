@@ -7,13 +7,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
-
-const SOLUTIONS_PILLS = [
-  { label: 'Solutions Overview', href: '/solutions', isActive: true },
-  { label: 'The AEObility Blueprint', href: '/solutions/aeo-blueprint' },
-  { label: 'AEO Sprints', href: '/solutions/aeo-sprint' },
-  { label: 'GEO Services Sprint', href: '/solutions/geo-services' },
-];
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata: Metadata = {
   title: "AEO Service Costs, Packages & Sprints | AEObility",
@@ -241,8 +235,8 @@ export default function SolutionsPage() {
       />
 
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.solutions} />
       <Breadcrumbs />
-      <SubNavPills sectionTitle="Our Solutions" items={SOLUTIONS_PILLS} />
 
       <main className="flex-grow w-full py-12">
         <div className="max-w-6xl mx-auto px-6 space-y-24">

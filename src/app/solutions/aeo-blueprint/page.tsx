@@ -7,20 +7,6 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
-const SOLUTIONS_PILLS = [
-  { label: 'Solutions Overview', href: '/solutions' },
-  { label: 'The AEObility Blueprint', href: '/solutions/aeo-blueprint', isActive: true },
-  { label: 'AEO Sprints', href: '/solutions/aeo-sprint' },
-  { label: 'GEO Services Sprint', href: '/solutions/geo-services' },
-];
-
-const SERVICES_PILLS = [
-  { label: 'Services Overview', href: '/services' },
-  { label: 'Answer Engine Optimisation', href: '/services/aeo' },
-  { label: 'AI Search Marketing', href: '/services/ai-search-marketing' },
-  { label: 'Local & GEO Map Marketing', href: '/services/geo-marketing' },
-];
-
 export const metadata = {
   title: "The $995 AEObility MVP Strategic Blueprint",
   description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
@@ -84,9 +70,6 @@ export default function AEOBlueprintPage() {
       <Navbar />
       <SubNavPills items={HUB_SUBNAV_MAPS.solutions} />
       <Breadcrumbs />
-
-      {/* Sticky Horizontal Sub-Navigation Bars */}
-      <SubNavPills sectionTitle="Our Solutions" items={SOLUTIONS_PILLS} />
 
       {/* Main Container */}
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
