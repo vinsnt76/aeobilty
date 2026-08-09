@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   ArrowRight, 
   BookOpen, 
@@ -261,75 +263,12 @@ export default function PositionalBiasArticlePage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
 
       {/* Main Layout Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        {/* Left Side: Sidebar Navigation */}
-        <aside className="lg:col-span-4 flex flex-col gap-6">
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl sticky top-24">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Knowledge Hub</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/knowledge-hub" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Hub Overview
-              </Link>
-              <Link href="/knowledge-hub/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                AEO Core Principles
-              </Link>
-              <Link href="/knowledge-hub/semantic-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                AI Semantic SEO
-              </Link>
-              <Link href="/knowledge-hub/geo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                GEO &amp; SEO Local Matrix
-              </Link>
-              <div className="h-px bg-white/5 my-2" />
-              <Link href="/knowledge-hub/articles" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Articles &amp; Guides
-              </Link>
-              
-              <Link href="/knowledge-hub/articles/entity-authority-building" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
-                Entity Authority Building
-              </Link>
-              <Link href="/knowledge-hub/articles/aeo-vs-seo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
-                AEO vs SEO
-              </Link>
-              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-white/10 pl-3">
-                RAG &amp; Answer Engines
-              </Link>
-              <div className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug ml-4 border-l-2 border-aeo-cyan pl-3">
-                Positional Bias in Retrieval
-              </div>
-              <div className="flex flex-col gap-1 ml-8 pl-3 border-l border-white/10 text-xs">
-                <Link href="#dense-retrieval-llm" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; Dense Retrieval &amp; LLM
-                </Link>
-                <Link href="#why-it-matters" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; Why It Matters
-                </Link>
-                <Link href="#two-bottlenecks" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; The Two Bottlenecks
-                </Link>
-                <Link href="#engineering-content" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; Content Engineering
-                </Link>
-                <Link href="#common-mistakes" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; Common Mistakes
-                </Link>
-                <Link href="#audit-checklist" className="text-white/50 hover:text-aeo-cyan transition-colors py-0.5">
-                  &bull; Audit Checklist
-                </Link>
-              </div>
-
-              <Link href="/knowledge-hub/case-studies" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Client Case Studies
-              </Link>
-            </nav>
-          </div>
-        </aside>
-
-        {/* Right Side: Main Article Content */}
-        <section className="lg:col-span-8 flex flex-col gap-10">
+      <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
+        <section className="flex flex-col gap-10">
 
           {/* Article Category & Title Header */}
           <div className="space-y-6 border-b border-white/5 pb-8">
