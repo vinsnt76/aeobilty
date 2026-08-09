@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" aria-label="AEObility Home" className="flex items-center group">
             {/* Desktop Full Logo */}
             <Image
               src="/aeobility-logo-light.svg"
@@ -44,21 +44,17 @@ export default function Navbar() {
               className="h-10 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
               priority
             />
-            {/* Mobile Icon Logo Container (36px x 36px / h-9 w-9) */}
-            <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md border border-cyan-500/30 group-hover:border-cyan-400 active:scale-95 transition-all shadow-sm shrink-0">
+            {/* Mobile Standalone Circular Logo Badge (36px x 36px / h-9 w-9) */}
+            <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-full bg-[#1e1e1e] backdrop-blur-md border border-cyan-500/30 group-hover:border-cyan-400 active:scale-95 transition-all shadow-[0_0_10px_rgba(6,182,212,0.15)] shrink-0">
               <Image
                 src="/aeobility-icon-dark.svg"
                 alt="AEObility Icon"
-                width={24}
-                height={24}
-                className="h-6 w-6 object-contain group-hover:scale-105 transition-transform"
+                width={22}
+                height={22}
+                className="h-5 w-5 object-contain group-hover:scale-105 transition-transform"
                 priority
               />
             </div>
-            {/* Mobile Brand Title */}
-            <span className="lg:hidden text-base sm:text-lg font-bold text-black tracking-tight group-hover:text-aeo-cyan transition-colors">
-              <span className="text-aeo-cyan">AEO</span>bility
-            </span>
           </Link>
 
           {/* Desktop Menu links */}
