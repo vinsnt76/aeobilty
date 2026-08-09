@@ -155,6 +155,15 @@ export function generateNavData() {
     });
   }
 
+  // Sort About hub children: /about first, /contact second
+  hubs['/about'].children.sort((a, b) => {
+    if (a.href === '/about') return -1;
+    if (b.href === '/about') return 1;
+    if (a.href === '/contact') return -1;
+    if (b.href === '/contact') return 1;
+    return 0;
+  });
+
   const navDataArray = hubOrder.map(key => hubs[key]);
 
   const fileContent = `// Auto-generated from AEObility -IA & SLM.csv - DO NOT EDIT DIRECTLY

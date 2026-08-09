@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Calendar, ArrowRight, X, Phone } from 'lucide-react';
+import { ChevronDown, Calendar, ArrowRight, X, Phone, Search } from 'lucide-react';
 import MobileMenuButton from '@/components/navigation/MobileMenuButton';
 import MobileMenuOverlay from '@/components/navigation/MobileMenuOverlay';
 import MobileMenuAccordion from '@/components/navigation/MobileMenuAccordion';
@@ -130,6 +130,16 @@ export default function Navbar() {
 
             {/* Desktop CTA Action Buttons */}
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
+                className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-black/70 hover:text-black bg-black/5 hover:bg-black/10 border border-black/10 rounded-lg transition-all"
+                aria-label="Search site architecture"
+              >
+                <Search className="w-3.5 h-3.5 text-aeo-cyan" />
+                <span>Search</span>
+                <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[9px] font-mono text-black/50 bg-black/5 rounded">⌘K</kbd>
+              </button>
               <Link
                 href="/book"
                 className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-black hover:text-aeo-cyan transition-colors"
@@ -219,12 +229,20 @@ export default function Navbar() {
             <ArrowRight className="w-4 h-4 text-aeo-cyan" />
           </Link>
 
-          <Link
-            href="/contact"
-            className="block w-full py-2.5 text-center text-xs font-semibold text-white/60 hover:text-white transition-colors"
+          <button
+            type="button"
+            onClick={() => {
+              setIsOpen(false);
+              window.dispatchEvent(new CustomEvent('open_answer_search_modal'));
+            }}
+            className="flex items-center justify-between w-full py-2.5 px-4 text-xs font-semibold bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors text-left mt-2"
           >
-            Need Help? Contact Our Team
-          </Link>
+            <div className="flex items-center gap-2">
+              <Search className="w-3.5 h-3.5 text-aeo-cyan" />
+              <span>Search Site Architecture...</span>
+            </div>
+            <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-white/40 bg-white/5 border border-white/10 rounded">⌘K</kbd>
+          </button>
         </div>
       </MobileMenuOverlay>
     </>
