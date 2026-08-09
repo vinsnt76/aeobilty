@@ -91,6 +91,15 @@ export function generateNavData() {
 
   const footerLinks = [];
 
+  const SERVICE_PILLAR_URLS = [
+    '/services/aeo',
+    '/services/ai-search-marketing',
+    '/services/aeo/local-business',
+    '/services/geo-marketing',
+    '/services/aeo/shopify',
+    '/services/aeo/procedures'
+  ];
+
   rows.forEach((row) => {
     const pageName = toAustralianEnglish((row.PageName || '').trim());
     const url = (row.URL || '').trim();
@@ -108,11 +117,14 @@ export function generateNavData() {
       return ['scan', 'contact'];
     }
 
+    const isServicePillar = SERVICE_PILLAR_URLS.includes(url);
+
     const item = {
       title: pageName,
       href: url,
       description: metaDesc,
       entityName: pageName,
+      isServicePillar: isServicePillar,
       corridors: getCorridorsForUrl(url)
     };
 
@@ -176,6 +188,7 @@ export interface NavItemL2 {
   href: string;
   description?: string;
   entityName: string;
+  isServicePillar?: boolean;
   corridors?: Array<'phone' | 'scan' | 'blueprint' | 'contact'>;
 }
 
