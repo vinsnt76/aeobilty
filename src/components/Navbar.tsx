@@ -130,7 +130,7 @@ export default function Navbar() {
                 href="tel:0480286282"
                 aria-label="Call AEObility (0480 286 282)"
                 title="Call AEObility (0480 286 282)"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
               >
                 <Phone className="h-4 w-4" />
               </a>
@@ -140,7 +140,7 @@ export default function Navbar() {
                 href="/book"
                 aria-label="Book Strategy Session"
                 title="Book Strategy Session"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-purple hover:bg-aeo-purple/10 active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
               >
                 <Calendar className="h-4 w-4" />
               </Link>
@@ -151,7 +151,7 @@ export default function Navbar() {
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
                 aria-label="Search Site Architecture (⌘K)"
                 title="Search Site Architecture (⌘K)"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
               >
                 <Search className="h-4 w-4" />
               </button>
@@ -171,7 +171,7 @@ export default function Navbar() {
             <a
               href="tel:0480286282"
               aria-label="Call AEObility"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
             >
               <Phone className="h-4 w-4" />
             </a>
@@ -180,7 +180,7 @@ export default function Navbar() {
             <Link
               href="/book"
               aria-label="Book Strategy Session"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-purple hover:bg-aeo-purple/10 active:scale-95 transition-all"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
             >
               <Calendar className="h-4 w-4" />
             </Link>
@@ -190,7 +190,7 @@ export default function Navbar() {
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
               aria-label="Search Site Architecture (⌘K)"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
             >
               <Search className="h-4 w-4" />
             </button>

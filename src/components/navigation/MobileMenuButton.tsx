@@ -29,9 +29,9 @@ export function MobileMenuButton({ isOpen, onToggle }: MobileMenuButtonProps) {
       onClick={onToggle}
       onMouseEnter={handlePrefetch}
       onFocus={handlePrefetch}
-      className="lg:hidden p-2 rounded-lg text-gray-900 hover:text-aeo-purple hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-aeo-cyan transition-colors cursor-pointer"
+      className="lg:hidden h-9 w-9 flex items-center justify-center rounded-lg bg-zinc-900/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all cursor-pointer shadow-sm"
     >
-      {isOpen ? <X className="w-6 h-6 text-aeo-cyan" /> : <Menu className="w-6 h-6 text-gray-900" />}
+      {isOpen ? <X className="w-5 h-5 text-cyan-200" /> : <Menu className="w-5 h-5 text-cyan-300" />}
     </button>
   );
 }
