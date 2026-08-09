@@ -150,17 +150,17 @@ export default function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             {/* Phone Call Quick Link */}
             <a
-              href="tel:+61400000000"
+              href="tel:0480286282"
               aria-label="Call AEObility"
               className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
             >
               <Phone className="h-4 w-4" />
             </a>
 
-            {/* Calendar / Scan Quick Link */}
+            {/* Calendar / Booking Quick Link */}
             <Link
-              href="/diagnostic"
-              aria-label="Run Visibility Scan or Book Session"
+              href="/book"
+              aria-label="Book Strategy Session"
               className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-purple hover:bg-aeo-purple/10 active:scale-95 transition-all"
             >
               <Calendar className="h-4 w-4" />
