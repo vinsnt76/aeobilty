@@ -7,6 +7,7 @@ import USPGrid from '@/components/USPGrid';
 import HowItWorks from '@/components/HowItWorks';
 import BlueprintSection from '@/components/BlueprintSection';
 import FinalCTA from '@/components/FinalCTA';
+import HomepageContactForm from '@/components/forms/HomepageContactForm';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
@@ -154,6 +155,7 @@ export default function Home() {
       <HowItWorks />
       <BlueprintSection />
       <FinalCTA />
+      <HomepageContactForm />
       <Footer />
     </div>
   );

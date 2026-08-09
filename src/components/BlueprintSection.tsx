@@ -52,15 +52,15 @@ export default function BlueprintSection() {
 
               <div className="space-y-4 pt-4">
                 <Link
-                  href="/diagnostic"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-aeo-cyan text-black font-bold text-sm shadow-[0_0_15px_rgba(0,205,216,0.2)] hover:bg-white transition-all"
+                  href="/book"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 text-zinc-950 font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)]"
                 >
-                  Get Visibility Score
+                  <span>Schedule a Discovery Call</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
-                <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
-                  <span className="font-semibold text-white">Pricing note:</span> Take the strategy with you, or stay with us for the 90 days — and we credit the $995 blueprint fee back into your plan.
+                <p className="text-xs text-zinc-400 leading-relaxed font-light max-w-sm">
+                  Curious about cost? No commitment required — stay informed and see how the $995 blueprint fee is credited back into your plan.
                 </p>
               </div>
             </div>
