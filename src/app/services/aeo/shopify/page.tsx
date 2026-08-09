@@ -337,9 +337,6 @@ export default function ShopifyAEOPage() {
       <Navbar />
       <Breadcrumbs />
 
-      {/* Sticky Horizontal Sub-Navigation Bar */}
-      <SubNavPills sectionTitle="AEO Services" items={AEO_SERVICES_PILLS} />
-
       {/* Main Container */}
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         <section className="flex flex-col gap-12">

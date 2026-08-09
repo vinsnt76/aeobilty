@@ -53,42 +53,8 @@ export default function AEOConstraintsPage() {
       <Breadcrumbs />
 
       {/* Main Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Side: Navigation Links & Entity Map */}
-        <aside className="lg:col-span-4 flex flex-col gap-6">
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                Hub Overview
-              </Link>
-              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                1. What is AEO and why does it matter?
-              </Link>
-              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                2. Is AEO just SEO with a new name?
-              </Link>
-              <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. Best AEO Strategies & Procedures
-              </Link>
-              <Link href="/services/aeo/constraints" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                4. What stops my business from showing up?
-              </Link>
-              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                5. How much does AEO cost & what do I get?
-              </Link>
-              <Link href="/services/aeo/shopify" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                6. Shopify AEO Services
-              </Link>
-              <Link href="/services/aeo/local-business" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                7. Local Business Visibility
-              </Link>
-            </nav>
-          </div>
-        </aside>
-
-        {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-8">
+      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-8">
+        <section className="flex flex-col gap-8">
           <div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
               What Stops My Business from <span className="text-gradient-aeo">Showing Up?</span>

@@ -291,54 +291,8 @@ export default function AEOProceduresPage() {
       <Breadcrumbs />
 
       {/* Main Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Side: Navigation Links & Entity Map */}
-        <aside className="lg:col-span-4 flex flex-col gap-6">
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl sticky top-28">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Service Architecture</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg">
-                Hub Overview
-              </Link>
-              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                1. What is AEO and why does it matter?
-              </Link>
-              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                2. Is AEO just SEO with a new name?
-              </Link>
-              <Link href="/services/aeo/procedures" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                3. Best AEO Strategies & Procedures
-              </Link>
-              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                4. What stops my business from showing up?
-              </Link>
-              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                5. How much does AEO cost & what do I get?
-              </Link>
-              <Link href="/services/aeo/shopify" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                6. Shopify AEO Services
-              </Link>
-              <Link href="/services/aeo/local-business" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                7. Local Business Visibility
-              </Link>
-            </nav>
-
-            <div className="mt-6 pt-6 border-t border-white/5 space-y-3">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/40 block">Free Technical Audit</span>
-              <p className="text-xs text-white/60 leading-relaxed">Want us to audit your website against these 6 AEO strategies?</p>
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-aeo-cyan hover:underline pt-1"
-              >
-                <span>Run Free AI Visibility Scan</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </div>
-        </aside>
-
-        {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-8">
+      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-8">
+        <section className="flex flex-col gap-8">
           {/* Hero Banner Image */}
           <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,205,216,0.12)] group">
             <Image
