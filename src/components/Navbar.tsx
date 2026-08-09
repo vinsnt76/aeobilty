@@ -129,26 +129,41 @@ export default function Navbar() {
             </div>
 
             {/* Desktop CTA Action Buttons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              {/* Phone Call Quick Link */}
+              <a
+                href="tel:0480286282"
+                aria-label="Call AEObility (0480 286 282)"
+                title="Call AEObility (0480 286 282)"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
+
+              {/* Calendar / Booking Quick Link */}
+              <Link
+                href="/book"
+                aria-label="Book Strategy Session"
+                title="Book Strategy Session"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-purple hover:bg-aeo-purple/10 active:scale-95 transition-all"
+              >
+                <Calendar className="h-4 w-4" />
+              </Link>
+
+              {/* Internal Search Quick Link (⌘K) */}
               <button
                 type="button"
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-black/10 active:scale-95 transition-all"
-                aria-label="Search (⌘K)"
-                title="Search (⌘K)"
+                aria-label="Search Site Architecture (⌘K)"
+                title="Search Site Architecture (⌘K)"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-aeo-cyan/10 active:scale-95 transition-all"
               >
-                <Search className="h-4 w-4 text-aeo-cyan" />
+                <Search className="h-4 w-4" />
               </button>
-              <Link
-                href="/book"
-                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-black hover:text-aeo-cyan transition-colors"
-              >
-                <Calendar className="w-4 h-4" />
-                Call
-              </Link>
+
               <Link
                 href="/diagnostic"
-                className="px-5 py-2.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-pink-500 to-aeo-purple text-white rounded-full hover:opacity-90 transition-all shadow-md border-0"
+                className="px-4 py-2 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-pink-500 to-aeo-purple text-white rounded-full hover:opacity-90 transition-all shadow-md border-0 ml-1"
               >
                 Visibility Score
               </Link>
