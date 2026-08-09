@@ -6,6 +6,8 @@ import GlobalConsentBanner from "@/components/GlobalConsentBanner";
 import CompanionWidget from "@/components/CompanionWidget";
 import AnswerSearchModal from "@/components/AnswerSearchModal";
 import BillWidget from "@/components/BillWidget";
+import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
+import SiteNavigationSchema from "@/components/navigation/SiteNavigationSchema";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
 
@@ -75,6 +77,8 @@ export default function RootLayout({
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
       <body className="min-h-full flex flex-col">
+        <SiteNavigationSchema />
+        <SSRFallbackNav />
         {/* Direct GA4 Script Loading via next/script */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
