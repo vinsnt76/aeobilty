@@ -226,6 +226,42 @@ export function generateNavData() {
 
   const navDataArray = hubOrder.map(key => hubs[key]);
 
+  const hubSubnavMaps = {
+    aeo: [
+      { title: "AEO Hub", url: "/services/aeo" },
+      { title: "What is AEO?", url: "/services/aeo/definition" },
+      { title: "AEO vs SEO", url: "/services/aeo/comparison" },
+      { title: "Best Strategies", url: "/services/aeo/procedures" },
+      { title: "Constraints", url: "/services/aeo/constraints" },
+      { title: "Costs & Timing", url: "/services/aeo/costs-timing" },
+      { title: "Shopify AEO", url: "/services/aeo/shopify" },
+      { title: "Local Business", url: "/services/aeo/local-business" }
+    ],
+    services: [
+      { title: "Services Hub", url: "/services" },
+      { title: "AEO & SEO", url: "/services/aeo" },
+      { title: "AI Search Marketing", url: "/services/ai-search-marketing" },
+      { title: "Local Business GEO", url: "/services/aeo/local-business" },
+      { title: "GEO Marketing", url: "/services/geo-marketing" },
+      { title: "Ecommerce AEO", url: "/services/aeo/shopify" },
+      { title: "AI Strategy", url: "/services/aeo/procedures" }
+    ],
+    knowledgeHub: [
+      { title: "Knowledge Hub", url: "/knowledge-hub" },
+      { title: "Articles", url: "/knowledge-hub/articles" },
+      { title: "Guides", url: "/knowledge-hub/aeo" },
+      { title: "Case Studies", url: "/knowledge-hub/case-studies" },
+      { title: "Tutorials", url: "/knowledge-hub/semantic-seo" }
+    ],
+    solutions: [
+      { title: "Packages Overview", url: "/solutions" },
+      { title: "AEO Blueprint", url: "/solutions/aeo-blueprint" },
+      { title: "AEO Sprints", url: "/solutions/aeo-sprint" },
+      { title: "GEO Services", url: "/solutions/geo-services" },
+      { title: "Visibility Scan", url: "/diagnostic" }
+    ]
+  };
+
   const fileContent = `// Auto-generated from AEObility -IA & SLM.csv - DO NOT EDIT DIRECTLY
 export interface NavItemL2 {
   title: string;
@@ -243,9 +279,16 @@ export interface NavItemL1 {
   children?: NavItemL2[];
 }
 
+export interface SubNavPillItem {
+  title: string;
+  url: string;
+}
+
 export const NAVIGATION_DATA: NavItemL1[] = ${JSON.stringify(navDataArray, null, 2)};
 
 export const FOOTER_NAVIGATION: NavItemL2[] = ${JSON.stringify(footerLinks, null, 2)};
+
+export const HUB_SUBNAV_MAPS: Record<string, SubNavPillItem[]> = ${JSON.stringify(hubSubnavMaps, null, 2)};
 `;
 
   fs.writeFileSync(targetPath, fileContent, 'utf8');
