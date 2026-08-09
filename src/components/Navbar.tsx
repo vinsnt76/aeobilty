@@ -87,7 +87,12 @@ export default function Navbar() {
                             : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
                         }`}
                       >
-                        {link.children.map((subItem) => {
+                        {(link.href === '/services'
+                          ? link.children.filter(sub => sub.isServicePillar)
+                          : link.href === '/knowledge-hub'
+                          ? link.children.filter(sub => sub.isKnowledgeCapsule)
+                          : link.children
+                        ).map((subItem) => {
                           const isSubActive = pathname === subItem.href;
                           return (
                             <Link
@@ -100,11 +105,6 @@ export default function Navbar() {
                               }`}
                             >
                               <span>{subItem.title}</span>
-                              {subItem.description && (
-                                <p className="text-[11px] font-normal text-black/50 line-clamp-1 mt-0.5">
-                                  {subItem.description}
-                                </p>
-                              )}
                             </Link>
                           );
                         })}
