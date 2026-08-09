@@ -4,6 +4,13 @@ import Footer from '@/components/Footer';
 import AboutUsContent from '@/components/AboutUsContent';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+
+const ABOUT_PILLS = [
+  { label: 'About Us', href: '/about', isActive: true },
+  { label: 'Vinnie Baker', href: '/vince-baker' },
+  { label: 'Support & Contact', href: '/contact' },
+];
 
 export const metadata: Metadata = {
   title: "About Us: Automation Consultants & Architects | AEObility",
@@ -108,6 +115,7 @@ export default function AboutPage() {
 
       <Navbar />
       <Breadcrumbs />
+      <SubNavPills sectionTitle="About AEObility" items={ABOUT_PILLS} />
       <AboutUsContent />
       <Footer />
     </div>

@@ -5,6 +5,18 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { ArrowRight, Eye, Brain, CheckCircle2, MapPin, ShieldCheck, Award } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+
+const AEO_HUB_PILLS = [
+  { label: 'AEO Hub', href: '/services/aeo', isActive: true },
+  { label: '1. What is AEO?', href: '/services/aeo/definition' },
+  { label: '2. AEO vs SEO', href: '/services/aeo/comparison' },
+  { label: '3. Best Strategies', href: '/services/aeo/procedures' },
+  { label: '4. Ingestion Constraints', href: '/services/aeo/constraints' },
+  { label: '5. Costs & Timing', href: '/services/aeo/costs-timing' },
+  { label: '6. Shopify AEO', href: '/services/aeo/shopify' },
+  { label: '7. Local Business AEO', href: '/services/aeo/local-business' },
+];
 
 export const metadata = {
   title: "Answer Engine Optimisation (AEO) Services — AEObility",
@@ -433,61 +445,12 @@ export default function AEORootPage() {
       <Navbar />
       <Breadcrumbs />
 
+      {/* Sticky Horizontal Sub-Navigation Bar */}
+      <SubNavPills sectionTitle="AEO Hub" items={AEO_HUB_PILLS} />
+
       {/* Main Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Side: Navigation Links & Entity Map */}
-        <aside className="lg:col-span-4 flex flex-col gap-6">
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Our Services</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/services" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Services Overview
-              </Link>
-              <Link href="/services/aeo" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                Answer Engine Optimisation (AEO)
-              </Link>
-              <Link href="/services/ai-search-marketing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                AI Search Marketing
-              </Link>
-              <Link href="/services/geo-marketing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Local & GEO Map Marketing
-              </Link>
-            </nav>
-          </div>
-
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">AEO Knowledge Hub</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/services/aeo" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                Hub Overview
-              </Link>
-              <Link href="/services/aeo/definition" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                1. What is AEO and why does it matter?
-              </Link>
-              <Link href="/services/aeo/comparison" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                2. Is AEO just SEO with a new name?
-              </Link>
-              <Link href="/services/aeo/procedures" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                3. Best AEO Strategies & Procedures
-              </Link>
-              <Link href="/services/aeo/constraints" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                4. What stops my business from showing up?
-              </Link>
-              <Link href="/services/aeo/costs-timing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                5. How much does AEO cost & what do I get?
-              </Link>
-              <Link href="/services/aeo/shopify" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                6. Shopify AEO Services
-              </Link>
-              <Link href="/services/aeo/local-business" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                7. Local Business Visibility
-              </Link>
-            </nav>
-          </div>
-        </aside>
-
-        {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-12">
+      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
+        <section className="flex flex-col gap-12">
           {/* SECTION 1 — Hero Block */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">

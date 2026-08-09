@@ -4,8 +4,17 @@ import Footer from '@/components/Footer';
 import QuoteFormSection from '@/components/QuoteFormSection';
 import Image from 'next/image';
 import Link from 'next/link';
+import SubNavPills from '@/components/navigation/SubNavPills';
 import { ArrowRight, CheckCircle2, ShieldCheck, Compass, Layers, Zap, Bot, MapPin, Search } from 'lucide-react';
 import { Metadata } from 'next';
+
+const SERVICES_PILLS = [
+  { label: 'Services Overview', href: '/services', isActive: true },
+  { label: 'Answer Engine Optimisation', href: '/services/aeo' },
+  { label: 'Shopify AEO Services', href: '/services/aeo/shopify' },
+  { label: 'AI Search Marketing', href: '/services/ai-search-marketing' },
+  { label: 'Local & GEO Map Marketing', href: '/services/geo-marketing' },
+];
 
 export const metadata: Metadata = {
   title: "AEO Services, AI Search Strategy & GEO Marketing Services | AEObility",
@@ -274,8 +283,9 @@ export default function ServicesPage() {
       />
 
       <Navbar />
+      <SubNavPills sectionTitle="Our Services" items={SERVICES_PILLS} />
 
-      <main className="flex-grow w-full py-16">
+      <main className="flex-grow w-full py-12">
         <div className="max-w-6xl mx-auto px-6 space-y-24">
           
           {/* Hero Section */}

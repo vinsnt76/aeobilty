@@ -6,6 +6,15 @@ import Image from 'next/image';
 import { ArrowRight, BookOpen, Brain, ShieldAlert, BadgeDollarSign, FileCode2, GraduationCap, Compass, BookOpenCheck, TrendingUp, FileText } from 'lucide-react';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+
+const KNOWLEDGE_PILLS = [
+  { label: 'Hub Overview', href: '/knowledge-hub', isActive: true },
+  { label: 'AEO Core Principles', href: '/knowledge-hub/aeo' },
+  { label: 'AI Semantic SEO', href: '/knowledge-hub/semantic-seo' },
+  { label: 'GEO & Local Matrix', href: '/knowledge-hub/geo' },
+  { label: 'Articles & Guides', href: '/knowledge-hub/articles' },
+];
 
 export const metadata: Metadata = {
   title: "AEO, GEO & AI Search Knowledge Hub | AEObility",
@@ -122,8 +131,9 @@ export default function KnowledgeHubPage() {
 
       <Navbar />
       <Breadcrumbs />
+      <SubNavPills sectionTitle="Knowledge Hub" items={KNOWLEDGE_PILLS} />
 
-      <main className="flex-grow w-full py-16">
+      <main className="flex-grow w-full py-12">
         <div className="max-w-6xl mx-auto px-6 space-y-24">
 
           {/* Hero Section */}
