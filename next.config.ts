@@ -36,6 +36,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/knowledge-hub/digital-services',
+        destination: '/knowledge-hub/tutorials',
+        permanent: true,
+      },
+      {
         source: '/knowledge-hub/aeo/rag-misconceptions',
         destination: '/knowledge-hub/articles/retrieval-augmented-generation#rag-misconceptions',
         permanent: true,
