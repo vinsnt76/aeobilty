@@ -65,48 +65,8 @@ export default function AEOSprintPage() {
       <Breadcrumbs />
 
       {/* Main Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Side: Navigation Links & Entity Map */}
-        <aside className="lg:col-span-4 flex flex-col gap-6">
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Our Solutions</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/solutions" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Solutions Overview
-              </Link>
-              <Link href="/solutions/aeo-blueprint" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                The AEObility Blueprint
-              </Link>
-              <Link href="/solutions/aeo-sprint" className="font-semibold text-aeo-cyan transition-colors bg-white/5 py-2 px-3 rounded-lg leading-snug">
-                AEO Sprints
-              </Link>
-              <Link href="/solutions/geo-services" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                GEO Services Sprint
-              </Link>
-            </nav>
-          </div>
-
-          <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan mb-4">Our Services</h3>
-            <nav className="flex flex-col gap-3 text-xs sm:text-sm">
-              <Link href="/services" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Services Overview
-              </Link>
-              <Link href="/services/aeo" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Answer Engine Optimisation (AEO)
-              </Link>
-              <Link href="/services/ai-search-marketing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                AI Search Marketing
-              </Link>
-              <Link href="/services/geo-marketing" className="font-semibold text-white/60 hover:text-white hover:bg-white/[0.02] transition-all py-2 px-3 rounded-lg leading-snug">
-                Local & GEO Map Marketing
-              </Link>
-            </nav>
-          </div>
-        </aside>
-
-        {/* Right Side: Core Content */}
-        <section className="lg:col-span-8 flex flex-col gap-10">
+      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
+        <section className="flex flex-col gap-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
               <span>Rapid Schema & Code Execution</span>
