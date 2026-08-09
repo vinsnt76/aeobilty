@@ -7,7 +7,7 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { NAVIGATION_DATA } from './NavData';
 
 export function MobileMenuAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // Default open first hub (Services)
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // Start with all accordions closed
   const pathname = usePathname();
 
   const toggle = (index: number) => {

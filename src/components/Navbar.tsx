@@ -226,7 +226,7 @@ export default function Navbar() {
         >
           <div className="flex items-center gap-2">
             <Search className="w-3.5 h-3.5 text-aeo-cyan" />
-            <span>Search site architecture...</span>
+            <span>Search...</span>
           </div>
           <kbd className="px-2 py-0.5 text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 border border-aeo-cyan/20 rounded font-bold">⌘K</kbd>
         </button>
