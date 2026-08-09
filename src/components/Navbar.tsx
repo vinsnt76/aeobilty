@@ -133,12 +133,11 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
-                className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-black/70 hover:text-black bg-black/5 hover:bg-black/10 border border-black/10 rounded-lg transition-all"
-                aria-label="Search site architecture"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 border border-black/10 text-aeo-cyan hover:bg-black/10 active:scale-95 transition-all"
+                aria-label="Search (⌘K)"
+                title="Search (⌘K)"
               >
-                <Search className="w-3.5 h-3.5 text-aeo-cyan" />
-                <span>Search</span>
-                <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[9px] font-mono text-black/50 bg-black/5 rounded">⌘K</kbd>
+                <Search className="h-4 w-4 text-aeo-cyan" />
               </button>
               <Link
                 href="/book"
