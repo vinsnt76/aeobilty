@@ -194,17 +194,15 @@ export default function Navbar() {
       <MobileMenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {/* Mobile Header */}
         <div className="flex justify-between items-center border-b border-white/10 pb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <Image
-              src="/aeobility-icon-light.svg"
-              alt="AEObility Icon"
-              width={28}
-              height={28}
-              className="h-7 w-7 object-contain"
+              src="/aeobility-logo-dark.svg"
+              alt="AEObility Logo"
+              width={140}
+              height={32}
+              className="h-8 w-auto object-contain"
+              priority
             />
-            <span className="font-extrabold text-base tracking-tight text-white">
-              AEO<span className="text-aeo-cyan">bility</span>
-            </span>
           </div>
           <button
             onClick={() => setIsOpen(false)}
