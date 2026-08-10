@@ -4,6 +4,11 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
   `https://${HOST}`,
+  `https://${HOST}/diagnostic`,
+  `https://${HOST}/solutions`,
+  `https://${HOST}/solutions/aeo-blueprint`,
+  `https://${HOST}/solutions/aeo-sprint`,
+  `https://${HOST}/solutions/geo-services`,
   `https://${HOST}/services`,
   `https://${HOST}/services/aeo`,
   `https://${HOST}/services/aeo/procedures`,
@@ -11,10 +16,12 @@ const urlList = [
   `https://${HOST}/services/aeo/comparison`,
   `https://${HOST}/services/aeo/constraints`,
   `https://${HOST}/services/aeo/costs-timing`,
+  `https://${HOST}/services/aeo/shopify`,
+  `https://${HOST}/services/aeo/local-business`,
   `https://${HOST}/services/geo-marketing`,
   `https://${HOST}/services/ai-search-marketing`,
-  `https://${HOST}/about/freelance-digital-specialist-perth`,
   `https://${HOST}/knowledge-hub`,
+  `https://${HOST}/knowledge-hub/tutorials`,
   `https://${HOST}/knowledge-hub/aeo`,
   `https://${HOST}/knowledge-hub/semantic-seo`,
   `https://${HOST}/knowledge-hub/geo`,
@@ -24,16 +31,14 @@ const urlList = [
   `https://${HOST}/knowledge-hub/articles/positional-bias-in-retrieval`,
   `https://${HOST}/knowledge-hub/articles/aeo-vs-seo`,
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
+  `https://${HOST}/knowledge-hub/articles/structured-data-query-fan-out`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
-  `https://${HOST}/services/aeo/shopify`,
-  `https://www.aeobility.com.au/services/aeo/shopify`,
-  `https://www.aeobility.com.au/services`,
-  `https://www.aeobility.com.au/knowledge-hub`,
-  `https://www.aeobility.com.au/knowledge-hub/articles`,
-  `https://www.aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
-  `https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building`,
-  `https://www.aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`
+  `https://${HOST}/about`,
+  `https://${HOST}/about/freelance-digital-specialist-perth`,
+  `https://${HOST}/contact`,
+  `https://${HOST}/book`,
+  `https://www.${HOST}`,
 ];
 
 async function submitToIndexNow() {
