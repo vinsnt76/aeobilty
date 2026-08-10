@@ -524,14 +524,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </div>
         </section>
 
-        {/* Mid-Page Visual Graphic */}
-        <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl my-4">
+        {/* Mid-Page Visual Graphic (1:1 Infographic) */}
+        <div className="relative w-full max-w-[760px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl my-8">
           <Image
             src="/optimising-ai-search-engines_AEObility.webp"
             alt="Diagram showing multi-engine query processing and answer synthesis"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 1000px"
+            width={1000}
+            height={1000}
+            className="w-full h-auto object-contain block"
+            sizes="(max-width: 1024px) 100vw, 760px"
           />
         </div>
 
