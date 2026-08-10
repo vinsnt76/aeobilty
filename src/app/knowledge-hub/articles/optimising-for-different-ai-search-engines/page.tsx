@@ -126,6 +126,44 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "item": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
           }
         ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is AI-search retrieval?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI-search retrieval is the real-time process by which an AI engine fetches external web content to ground its generated responses. When a user submits a prompt, search-enabled AI interfaces execute one or more targeted search queries, fetch relevant web pages or passages, rerank those chunks for passage-level relevance, and synthesise a cited answer. Depending on the platform and query context, the final generated response may combine static model parameters (parametric knowledge) with dynamic web retrieval, structured Knowledge Graph nodes, and product-specific datasets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does being indexed guarantee an AI citation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Indexation is a basic eligibility prerequisite, not a guarantee of selection or citation. For example, Google explicitly states that web pages displayed as supporting links in AI Overviews and AI Mode must be indexed in Google Search, eligible for standard search snippets, and compliant with standard Google Search Essentials. Meeting these base indexability requirements makes a page eligible for retrieval, but the AI engine selects and cites passages based on real-time query intent, passage relevance, and entity authority."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need special schema markup for AI search?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. There is no special or separate 'AI-only' schema markup required for inclusion in Perplexity, ChatGPT Search, Google AI features, or Microsoft Copilot. While implementing standard Schema.org structured data (such as Organization, Article, or LocalBusiness) helps search engines parse entity attributes and relationships, schema markup cannot force an AI engine to retrieve, rank, or cite a page. Structured data should be used solely to accurately describe visible, rendered page content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is one optimisation strategy enough for every AI search engine?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. There is no single, unified AI retrieval algorithm across platforms. Perplexity Search, ChatGPT Search, Google AI Overviews, and Microsoft Copilot each operate within distinct ecosystems with different user-agent controls, indexing requirements, and source-selection behaviours: Perplexity Search relies on PerplexityBot and real-time Perplexity-User agents, favouring concise, answer-first passage structures and explicit tabular evidence. ChatGPT Search utilises OAI-SearchBot for real-time retrieval, prioritising clean semantic HTML (<article>, <section>) and straightforward Q&A components. Google AI Overviews & AI Mode rely directly on the standard Google Search index and Knowledge Graph entity clarity, requiring compliance with standard Search Essentials. Microsoft Copilot integrates Bing search indexation, local schema feeds, and real-time protocol updates via IndexNow. While foundational practices (such as fast server response times, clean HTML structures, clear writing, and consistent business details) support cross-engine visibility, each platform requires targeted technical alignment."
+            }
+          }
+        ]
       }
     ]
   };
@@ -1054,6 +1092,93 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors">GEO Marketing</div>
                 <p className="text-xs text-white/50 font-serif">Generative Engine Optimisation for Aussie brands.</p>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Technical FAQs Section */}
+        <section id="faq" className="scroll-mt-24 space-y-8 border-t border-white/5 pt-12">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-aeo-cyan uppercase tracking-widest">
+              <HelpCircle className="w-4 h-4" />
+              <span>Core Technical FAQs</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
+              Frequently Asked Questions: AI Search Retrieval
+            </h2>
+            <p className="text-white/70 text-base font-light font-serif leading-relaxed">
+              Clear, technical answers to common questions about multi-engine retrieval, indexation, schema markup, and cross-platform optimisation.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-white/[0.015] border border-white/10 space-y-3">
+              <h3 className="text-lg font-bold text-white flex items-start gap-2">
+                <HelpCircle className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>What is AI-search retrieval?</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 font-serif leading-relaxed pl-7">
+                AI-search retrieval is the real-time process by which an AI engine fetches external web content to ground its generated responses. When a user submits a prompt, search-enabled AI interfaces execute one or more targeted search queries, fetch relevant web pages or passages, rerank those chunks for passage-level relevance, and synthesise a cited answer.
+              </p>
+              <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-1">
+                Depending on the platform and query context, the final generated response may combine static model parameters (parametric knowledge) with dynamic web retrieval, structured Knowledge Graph nodes, and product-specific datasets.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white/[0.015] border border-white/10 space-y-3">
+              <h3 className="text-lg font-bold text-white flex items-start gap-2">
+                <HelpCircle className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>Does being indexed guarantee an AI citation?</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 font-serif leading-relaxed pl-7">
+                No. Indexation is a basic eligibility prerequisite, not a guarantee of selection or citation.
+              </p>
+              <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-1">
+                For example, Google explicitly states that web pages displayed as supporting links in AI Overviews and AI Mode must be indexed in Google Search, eligible for standard search snippets, and compliant with standard Google Search Essentials. Meeting these base indexability requirements makes a page eligible for retrieval, but the AI engine selects and cites passages based on real-time query intent, passage relevance, and entity authority.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white/[0.015] border border-white/10 space-y-3">
+              <h3 className="text-lg font-bold text-white flex items-start gap-2">
+                <HelpCircle className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>Do I need special schema markup for AI search?</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 font-serif leading-relaxed pl-7">
+                No. There is no special or separate &quot;AI-only&quot; schema markup required for inclusion in Perplexity, ChatGPT Search, Google AI features, or Microsoft Copilot.
+              </p>
+              <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-1">
+                While implementing standard Schema.org structured data (such as Organization, Article, or LocalBusiness) helps search engines parse entity attributes and relationships, schema markup cannot force an AI engine to retrieve, rank, or cite a page. Structured data should be used solely to accurately describe visible, rendered page content.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white/[0.015] border border-white/10 space-y-3">
+              <h3 className="text-lg font-bold text-white flex items-start gap-2">
+                <HelpCircle className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>Is one optimisation strategy enough for every AI search engine?</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 font-serif leading-relaxed pl-7">
+                No. There is no single, unified AI retrieval algorithm across platforms.
+              </p>
+              <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-1">
+                Perplexity Search, ChatGPT Search, Google AI Overviews, and Microsoft Copilot each operate within distinct ecosystems with different user-agent controls, indexing requirements, and source-selection behaviours:
+              </p>
+              <ul className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-12 space-y-2 pt-1 list-disc">
+                <li>
+                  <strong className="text-white">Perplexity Search:</strong> Relies on PerplexityBot and real-time Perplexity-User agents, favouring concise, answer-first passage structures and explicit tabular evidence.
+                </li>
+                <li>
+                  <strong className="text-white">ChatGPT Search:</strong> Utilises OAI-SearchBot for real-time retrieval, prioritising clean semantic HTML (<code className="text-aeo-cyan">&lt;article&gt;</code>, <code className="text-aeo-cyan">&lt;section&gt;</code>) and straightforward Q&amp;A components.
+                </li>
+                <li>
+                  <strong className="text-white">Google AI Overviews &amp; AI Mode:</strong> Rely directly on the standard Google Search index and Knowledge Graph entity clarity, requiring compliance with standard Search Essentials.
+                </li>
+                <li>
+                  <strong className="text-white">Microsoft Copilot:</strong> Integrates Bing search indexation, local schema feeds, and real-time protocol updates via IndexNow.
+                </li>
+              </ul>
+              <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-2">
+                While foundational practices: such as fast server response times, clean HTML structures, clear writing, and consistent business details: support cross-engine visibility, each platform requires targeted technical alignment.
+              </p>
             </div>
           </div>
         </section>
