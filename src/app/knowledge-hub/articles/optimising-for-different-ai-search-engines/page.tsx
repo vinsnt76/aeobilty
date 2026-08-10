@@ -232,7 +232,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content"
+            "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
+            "item": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
           }
         ]
       },
