@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Globe, Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { trackGaEvent } from '@/lib/gtag';
 
 export default function HowItWorks() {
   const router = useRouter();
@@ -18,14 +19,10 @@ export default function HowItWorks() {
       ([entry]) => {
         if (entry.isIntersecting) {
           if (typeof window !== 'undefined') {
-            const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
-            if (win.dataLayer) {
-              win.dataLayer.push({
-                event: 'audit_form_view',
-                form_id: 'audit',
-                page: window.location.pathname
-              });
-            }
+            trackGaEvent('audit_form_view', {
+              form_id: 'how_it_works_audit',
+              page_location: window.location.pathname,
+            });
           }
           observer.disconnect(); // Track once per page load
         }
@@ -44,14 +41,10 @@ export default function HowItWorks() {
     if (!started) {
       setStarted(true);
       if (typeof window !== 'undefined') {
-        const win = window as unknown as { dataLayer?: Record<string, unknown>[] };
-        if (win.dataLayer) {
-          win.dataLayer.push({
-            event: 'audit_form_start',
-            form_id: 'audit',
-            field_started: fieldName
-          });
-        }
+        trackGaEvent('audit_form_start', {
+          form_id: 'how_it_works_audit',
+          field_started: fieldName,
+        });
       }
     }
   };

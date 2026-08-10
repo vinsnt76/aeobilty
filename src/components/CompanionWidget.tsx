@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { TelemetryResult } from '@/lib/telemetry/types';
 import { CompanionCard } from '@/lib/search/types';
 import BillAvatar from '@/components/BillAvatar';
+import { trackGaEvent } from '@/lib/gtag';
 
 interface ChatMessage {
   sender: 'user' | 'assistant';
@@ -68,6 +69,7 @@ export default function CompanionWidget() {
 
     setOnboardEmail(email);
     window.dispatchEvent(new Event('bill_email_submitted'));
+    trackGaEvent('bill_email_submitted', { event_category: 'AI Assistant', email });
     try {
       await fetch('/api/forms/audit', {
         method: 'POST',
@@ -76,6 +78,7 @@ export default function CompanionWidget() {
       });
       setBillState('CONSULTANT');
       window.dispatchEvent(new Event('bill_consultation_started'));
+      trackGaEvent('bill_consultation_started', { event_category: 'AI Assistant' });
       setMessages(prev => [
         ...prev,
         { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression` }
@@ -85,6 +88,7 @@ export default function CompanionWidget() {
       // ignore
       setBillState('CONSULTANT');
       window.dispatchEvent(new Event('bill_consultation_started'));
+      trackGaEvent('bill_consultation_started', { event_category: 'AI Assistant' });
     }
   };
 

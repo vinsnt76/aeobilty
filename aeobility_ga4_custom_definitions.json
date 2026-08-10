@@ -1,0 +1,125 @@
+{
+  "property_name": "AEObility GA4 Tracking Architecture",
+  "custom_dimensions": [
+    {
+      "parameter_name": "search_term",
+      "display_name": "Search Term",
+      "description": "Internal site search term or query submitted by user",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "match_score",
+      "display_name": "Match Score",
+      "description": "Relevance score returned by AI search engine",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "result_type",
+      "display_name": "Result Type",
+      "description": "Type of result returned (e.g., entity, page, document)",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "matched_entity",
+      "display_name": "Matched Entity",
+      "description": "Knowledge graph entity matched by query",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "funnel_step",
+      "display_name": "Funnel Step",
+      "description": "Stage name in the AI conversion funnel",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "trigger_query",
+      "display_name": "Trigger Query",
+      "description": "User prompt that triggered commercial offer/funnel step",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "matched_concept",
+      "display_name": "Matched Concept",
+      "description": "Core concept aligned with AI assistant output",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "active_skill",
+      "display_name": "Active Skill",
+      "description": "AI agent skill invoked during request processing",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "chip_label",
+      "display_name": "Chip Label",
+      "description": "Text label of prompt suggestion chip clicked",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "card_id",
+      "display_name": "Card ID",
+      "description": "Unique identifier of structured telemetry card rendered",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "form_id",
+      "display_name": "Form ID",
+      "description": "Identifier of lead capture or audit form interacted with",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "lead_type",
+      "display_name": "Lead Type",
+      "description": "Type/category of lead submitted (e.g. quote, general, contact)",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "service_requested",
+      "display_name": "Service Requested",
+      "description": "Specific service requested in quote submission",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "target_url",
+      "display_name": "Target URL",
+      "description": "URL target submitted for diagnostic scan",
+      "scope": "EVENT"
+    },
+    {
+      "parameter_name": "field_started",
+      "display_name": "Field Started",
+      "description": "First field edited in form interaction",
+      "scope": "EVENT"
+    }
+  ],
+  "custom_metrics": [
+    {
+      "parameter_name": "query_length",
+      "display_name": "Query Length",
+      "description": "Character length of chat query sent to AI assistant",
+      "scope": "EVENT",
+      "unit": "STANDARD"
+    },
+    {
+      "parameter_name": "overall_score",
+      "display_name": "Diagnostic Score",
+      "description": "Overall score returned by diagnostic scan engine",
+      "scope": "EVENT",
+      "unit": "STANDARD"
+    },
+    {
+      "parameter_name": "passed_checks",
+      "display_name": "Passed Checks Count",
+      "description": "Number of passed diagnostic checks",
+      "scope": "EVENT",
+      "unit": "STANDARD"
+    },
+    {
+      "parameter_name": "failed_checks",
+      "display_name": "Failed Checks Count",
+      "description": "Number of failed diagnostic checks",
+      "scope": "EVENT",
+      "unit": "STANDARD"
+    }
+  ]
+}

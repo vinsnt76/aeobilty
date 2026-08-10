@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles } from 'lucide-react';
-import { TelemetryResult } from '@/lib/telemetry/types';
+import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle } from 'lucide-react';
+import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
+import { trackGaEvent } from '@/lib/gtag';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
 
@@ -46,6 +47,10 @@ export default function DiagnosticEngine() {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('close_companion_widget'));
       window.dispatchEvent(new Event('aeo_scan_started'));
+      trackGaEvent('aeo_scan_started', {
+        event_category: 'diagnostic_engine',
+        target_url: normalizedUrl,
+      });
     }
 
     setStep('PROCESSING');
@@ -76,6 +81,12 @@ export default function DiagnosticEngine() {
         localStorage.setItem('aeo_telemetry_latest', JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim(), result: data }));
         window.dispatchEvent(new Event('aeo_scan_completed'));
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
+        trackGaEvent('aeo_scan_completed', {
+          event_category: 'diagnostic_engine',
+          overall_score: data.readinessScore ?? 0,
+          passed_checks: data.simulations ? data.simulations.filter((s: SimulationRun) => s.survived).length : (data.engineeredFeatures ? 1 : 0),
+          failed_checks: data.simulations ? data.simulations.filter((s: SimulationRun) => !s.survived).length : 0,
+        });
       }
       setStep('SCORE_REVEAL');
     } catch (e: unknown) {
@@ -190,7 +201,26 @@ export default function DiagnosticEngine() {
           </div>
         )}
 
-        {step === 'SCORE_REVEAL' && telemetry && (
+        {step === 'SCORE_REVEAL' && telemetry && (telemetry as unknown as Record<string, unknown>).error ? (
+          <div className="space-y-6 relative z-10 text-center py-8 bg-black/40 border border-red-500/30 rounded-2xl p-8 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+            <div className="w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center mx-auto border border-red-500/30">
+              <AlertTriangle className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Diagnostic Scan Could Not Complete</h3>
+            <p className="text-sm text-white/70 max-w-md mx-auto">
+              {String((telemetry as unknown as Record<string, unknown>).error || 'Unable to fetch site telemetry. Please verify the URL is publicly accessible and try again.')}
+            </p>
+            <button
+              onClick={() => {
+                setStep('INPUT');
+                setTelemetry(null);
+              }}
+              className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-colors border border-white/10"
+            >
+              Try Another URL
+            </button>
+          </div>
+        ) : step === 'SCORE_REVEAL' && telemetry && (
           <div className="space-y-8 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
             
             <div className="text-center space-y-8 pb-8 border-b border-white/10">

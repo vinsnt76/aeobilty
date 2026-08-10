@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Send, CheckCircle2, Sparkles, PhoneCall, Mail } from 'lucide-react';
+import { trackGaEvent } from '@/lib/gtag';
 
 export function HomepageContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,6 +17,12 @@ export function HomepageContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim()) return;
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'homepage_contact_form',
+      lead_type: 'general_contact',
+      value: 1,
+    });
     setSubmitted(true);
   };
 

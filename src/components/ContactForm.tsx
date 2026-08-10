@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { trackGaEvent } from '@/lib/gtag';
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -20,6 +21,12 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'contact_page_form',
+      lead_type: 'contact_inquiry',
+      value: 1,
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

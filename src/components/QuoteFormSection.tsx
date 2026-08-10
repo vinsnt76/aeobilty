@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Send, CheckCircle2, ShieldCheck, Sparkles, Building2, Globe, Mail, User, FileText, ChevronDown } from 'lucide-react';
+import { trackGaEvent } from '@/lib/gtag';
 
 export default function QuoteFormSection() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,14 @@ export default function QuoteFormSection() {
       if (!res.ok || !data.ok) {
         throw new Error(data.error || 'Failed to submit request. Please try again.');
       }
+
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: 'quote_form_section',
+        lead_type: 'quote_request',
+        service_requested: formData.service || 'general',
+        value: 5,
+      });
 
       setStatus('success');
       setFormData({
