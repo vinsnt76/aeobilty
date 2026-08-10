@@ -50,57 +50,162 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
-        "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content | AEObility",
-        "description": "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
+        "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
+        "description": "A practical guide to how Perplexity, ChatGPT Search, Google AI features and Microsoft Copilot retrieve, interpret and cite web content.",
         "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://aeobility.com.au/#website",
-          "url": "https://aeobility.com.au",
-          "name": "AEObility"
+          "@id": "https://aeobility.com.au/#website"
         },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Answer engine optimisation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Generative engine optimisation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Artificial intelligence search"
+          },
+          {
+            "@type": "Thing",
+            "name": "Search engine optimisation"
+          }
+        ],
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#breadcrumb"
-        }
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#article"
+        },
+        "inLanguage": "en-AU"
       },
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#article",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#webpage"
         },
         "headline": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
-        "description": "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
-        "inLanguage": "en-AU",
+        "alternativeHeadline": "Optimising for Different AI Search Engines",
+        "description": "Learn how Perplexity, ChatGPT Search, Google AI features and Microsoft Copilot retrieve, assess and cite web content, plus practical optimisation steps for Australian businesses.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#primaryimage",
+          "url": "https://aeobility.com.au/optimising-for-different-ai-web-search-engines_AEObility.webp",
+          "contentUrl": "https://aeobility.com.au/optimising-for-different-ai-web-search-engines_AEObility.webp",
+          "width": 1200,
+          "height": 630,
+          "caption": "How Perplexity, ChatGPT, Google, and Copilot find and cite web content"
+        },
         "author": {
-          "@type": "Person",
-          "name": "Vince Baker",
-          "url": "https://aeobility.com.au/vince-baker",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "AEObility",
-            "url": "https://aeobility.com.au"
-          }
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au/"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://aeobility.com.au/og-image.png"
-          }
+          "@id": "https://aeobility.com.au/#organization"
         },
-        "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
+        "datePublished": "2026-08-10T00:00:00+08:00",
+        "dateModified": "2026-08-11T00:00:00+08:00",
+        "inLanguage": "en-AU",
+        "articleSection": [
+          "AI Search",
+          "Answer Engine Optimisation",
+          "Generative Engine Optimisation",
+          "Technical SEO",
+          "Local SEO"
+        ],
+        "keywords": [
+          "AI search optimisation",
+          "answer engine optimisation",
+          "AEO",
+          "generative engine optimisation",
+          "GEO",
+          "Perplexity SEO",
+          "ChatGPT Search optimisation",
+          "Google AI Overviews",
+          "Google AI Mode",
+          "Microsoft Copilot",
+          "AI citations",
+          "technical SEO",
+          "local SEO Australia"
+        ],
         "about": [
-          { "@type": "Thing", "name": "Answer Engine Optimisation" },
-          { "@type": "Thing", "name": "Information Retrieval" },
-          { "@type": "Thing", "name": "Perplexity Search" },
-          { "@type": "Thing", "name": "ChatGPT Search" },
-          { "@type": "Thing", "name": "Google AI Overviews" },
-          { "@type": "Thing", "name": "Microsoft Copilot" }
-        ]
+          {
+            "@type": "Thing",
+            "name": "Perplexity Search"
+          },
+          {
+            "@type": "Thing",
+            "name": "ChatGPT Search"
+          },
+          {
+            "@type": "Thing",
+            "name": "Google AI Overviews"
+          },
+          {
+            "@type": "Thing",
+            "name": "Google AI Mode"
+          },
+          {
+            "@type": "Thing",
+            "name": "Microsoft Copilot"
+          },
+          {
+            "@type": "Thing",
+            "name": "Information retrieval"
+          },
+          {
+            "@type": "Thing",
+            "name": "Structured data"
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "Organization",
+            "name": "Perplexity",
+            "url": "https://www.perplexity.ai/"
+          },
+          {
+            "@type": "Organization",
+            "name": "OpenAI",
+            "url": "https://openai.com/"
+          },
+          {
+            "@type": "Organization",
+            "name": "Google",
+            "url": "https://www.google.com/"
+          },
+          {
+            "@type": "Organization",
+            "name": "Microsoft",
+            "url": "https://www.microsoft.com/"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "ChatGPT Search"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Microsoft Copilot"
+          }
+        ],
+        "isAccessibleForFree": true,
+        "copyrightHolder": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "copyrightYear": 2026,
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": [
+            "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
+          ]
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -110,25 +215,24 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://aeobility.com.au"
+            "item": "https://aeobility.com.au/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Knowledge Hub",
-            "item": "https://aeobility.com.au/knowledge-hub"
+            "item": "https://aeobility.com.au/knowledge-hub/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Articles",
-            "item": "https://aeobility.com.au/knowledge-hub/articles"
+            "item": "https://aeobility.com.au/knowledge-hub/articles/"
           },
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Optimising for Different AI Search Engines",
-            "item": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
+            "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content"
           }
         ]
       },
@@ -141,7 +245,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "name": "What is AI-search retrieval?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AI-search retrieval is the real-time process by which an AI engine fetches external web content to ground its generated responses. When a user submits a prompt, search-enabled AI interfaces execute one or more targeted search queries, fetch relevant web pages or passages, rerank those chunks for passage-level relevance, and synthesise a cited answer. Depending on the platform and query context, the final generated response may combine static model parameters (parametric knowledge) with dynamic web retrieval, structured Knowledge Graph nodes, and product-specific datasets."
+              "text": "AI-search retrieval is the process where an AI answer engine fetches external information to help ground a response. Depending on the platform and query, it may search indexes, select relevant passages, use structured entity data and combine that information with the model's existing knowledge."
             }
           },
           {
@@ -149,7 +253,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "name": "Does being indexed guarantee an AI citation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Indexation is a basic eligibility prerequisite, not a guarantee of selection or citation. For example, Google explicitly states that web pages displayed as supporting links in AI Overviews and AI Mode must be indexed in Google Search, eligible for standard search snippets, and compliant with standard Google Search Essentials. Meeting these base indexability requirements makes a page eligible for retrieval, but the AI engine selects and cites passages based on real-time query intent, passage relevance, and entity authority."
+              "text": "No. Indexation makes a page eligible to be discovered, but it does not guarantee that an AI answer engine will select, quote or cite it. Source selection depends on the query, passage relevance, available evidence, entity confidence and the platform's own retrieval systems."
             }
           },
           {
@@ -157,7 +261,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "name": "Do I need special schema markup for AI search?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. There is no special or separate 'AI-only' schema markup required for inclusion in Perplexity, ChatGPT Search, Google AI features, or Microsoft Copilot. While implementing standard Schema.org structured data (such as Organization, Article, or LocalBusiness) helps search engines parse entity attributes and relationships, schema markup cannot force an AI engine to retrieve, rank, or cite a page. Structured data should be used solely to accurately describe visible, rendered page content."
+              "text": "No. There is no universal AI-only schema type that guarantees inclusion in Perplexity, ChatGPT Search, Google AI features or Microsoft Copilot. Use accurate Schema.org markup to describe visible page content and business entities, but do not treat schema as a citation guarantee."
             }
           },
           {
@@ -165,10 +269,39 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "name": "Is one optimisation strategy enough for every AI search engine?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. There is no single, unified AI retrieval algorithm across platforms. Perplexity Search, ChatGPT Search, Google AI Overviews, and Microsoft Copilot each operate within distinct ecosystems with different user-agent controls, indexing requirements, and source-selection behaviours: Perplexity Search relies on PerplexityBot and real-time Perplexity-User agents, favouring concise, answer-first passage structures and explicit tabular evidence. ChatGPT Search utilises OAI-SearchBot for real-time retrieval, prioritising clean semantic HTML (<article>, <section>) and straightforward Q&A components. Google AI Overviews & AI Mode rely directly on the standard Google Search index and Knowledge Graph entity clarity, requiring compliance with standard Search Essentials. Microsoft Copilot integrates Bing search indexation, local schema feeds, and real-time protocol updates via IndexNow. While foundational practices (such as fast server response times, clean HTML structures, clear writing, and consistent business details) support cross-engine visibility, each platform requires targeted technical alignment."
+              "text": "No. Perplexity, ChatGPT Search, Google AI features and Microsoft Copilot operate in different product ecosystems with different crawler controls, indexing dependencies and source-selection behaviour. Clear answer-first writing, accessible HTML, evidence-backed claims and consistent entity data are durable foundations, but each platform also needs its own technical checks."
             }
           }
         ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/og-image.png"
+        },
+        "description": "AEObility helps Australian businesses improve visibility across search, maps and AI answer engines.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AU"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "url": "https://aeobility.com.au/",
+        "name": "AEObility",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "inLanguage": "en-AU"
       }
     ]
   };
