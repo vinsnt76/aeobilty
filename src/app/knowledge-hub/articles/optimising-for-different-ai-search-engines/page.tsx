@@ -192,7 +192,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
     },
     {
       myth: "Schema guarantees AI visibility.",
-      explanation: "Structured data aids machine interpretation when accurate, but cannot force retrieval, selection, or citation."
+      explanation: "Structured data aids machine interpretation when accurate, but cannot force retrieval; Gemini prioritises rendered inline HTML tables over raw unrendered schema."
     },
     {
       myth: "A citation proves the answer is correct.",
@@ -204,19 +204,19 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
     },
     {
       myth: "ChatGPT, ChatGPT Search, and GPTBot are the same system.",
-      explanation: "ChatGPT Search and model training involve separate product controls; OpenAI explicitly distinguishes OAI-SearchBot from GPTBot."
+      explanation: "OpenAI explicitly distinguishes OAI-SearchBot (live search), GPTBot (training crawler), and ChatGPT-User (live user prompt fetch)."
     },
     {
       myth: "Google requires special AI-only schema.",
-      explanation: "Google officially confirms that AI Overviews and AI Mode use standard Search eligibility requirements with no additional AI-specific technical requirements."
+      explanation: "Google officially confirms AI Overviews (single-turn summaries) and AI Mode (conversational search) use standard Search Essentials eligibility requirements."
     },
     {
       myth: "IndexNow guarantees instant Copilot visibility.",
-      explanation: "IndexNow provides change notification signals to engines; it does not guarantee crawling, indexation, ranking, or inclusion."
+      explanation: "IndexNow accelerates change discovery, but Microsoft explicitly confirms it is not a ranking factor and guarantees neither indexation nor Copilot citation."
     },
     {
       myth: "Longer pages are more likely to be cited.",
-      explanation: "Relevance, structural clarity, supported claims, and machine accessibility matter significantly more than arbitrary word count."
+      explanation: "Relevance, self-contained passage-level clarity (45-75 word chunks), inverted pyramid structure, and machine accessibility matter far more than total length."
     },
     {
       myth: "A citation automatically produces traffic or conversions.",
@@ -577,15 +577,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-teal-400 font-bold">•</span>
-                    <span>Documents <code className="text-teal-200">PerplexityBot</code> and <code className="text-teal-200">Perplexity-User</code> crawlers.</span>
+                    <span>Documents <code className="text-teal-200">PerplexityBot</code> (indexing crawler) and <code className="text-teal-200">Perplexity-User</code> (live prompt agent).</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-teal-400 font-bold">•</span>
-                    <span>Crawler access can be managed via <code className="text-teal-200">robots.txt</code> file directives.</span>
+                    <span>While <code className="text-teal-200">PerplexityBot</code> respects <code className="text-teal-200">robots.txt</code>, user-triggered fetches via <code className="text-teal-200">Perplexity-User</code> may operate under different fetch rules.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-teal-400 font-bold">•</span>
-                    <span>Crawler access does not guarantee prominent placement or source citation.</span>
+                    <span>Crawler access is an eligibility prerequisite, not a placement or citation guarantee.</span>
                   </li>
                 </ul>
               </div>
@@ -595,15 +595,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Direct answer-first introductory paragraphs are parsed cleanly.</span>
+                    <span>Direct answer-first introductory paragraphs are extracted cleanly.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Explicitly attributed evidence and data statistics support extraction.</span>
+                    <span>Explicitly attributed evidence, empirical data, and rendered HTML <code className="text-amber-200 font-mono">&lt;table&gt;</code> elements support extraction.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Clean HTML tables help locate tabular data points.</span>
+                    <span>Clean structural markup helps locate specific factual data points.</span>
                   </li>
                 </ul>
               </div>
@@ -613,7 +613,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Lead page sections with direct, complete answers.</span>
+                    <span>Lead page sections with direct, standalone answers.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
@@ -621,7 +621,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Avoid conversational introductory filler that delays the core answer.</span>
+                    <span>Keep important content in accessible HTML text rather than client-only scripts.</span>
                   </li>
                 </ul>
               </div>
@@ -661,11 +661,11 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-emerald-400 font-bold">•</span>
-                    <span><code className="text-emerald-200">GPTBot</code> is associated with offline model pre-training access.</span>
+                    <span><code className="text-emerald-200">GPTBot</code> manages offline model pre-training access.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-emerald-400 font-bold">•</span>
-                    <span>Allowing <code className="text-emerald-200">OAI-SearchBot</code> does not guarantee inclusion or citation.</span>
+                    <span><code className="text-emerald-200">ChatGPT-User</code> executes real-time user-initiated prompt fetches.</span>
                   </li>
                 </ul>
               </div>
@@ -697,7 +697,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Use meaningful heading structures phrased as natural queries.</span>
+                    <span>Use meaningful heading structures (<code className="text-aeo-cyan">&lt;article&gt;</code>, <code className="text-aeo-cyan">&lt;section&gt;</code>).</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
@@ -737,11 +737,11 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-blue-400 font-bold">•</span>
-                    <span>Pages must be indexed in Google Search.</span>
+                    <span>Spans <strong>AI Overviews</strong> (single-turn SERP summaries) and <strong>AI Mode</strong> (conversational search).</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-blue-400 font-bold">•</span>
-                    <span>Pages must be eligible for standard search snippet display.</span>
+                    <span>Both rely on standard Google Search indexation; AI Mode executes deeper multi-turn query fan-out.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-blue-400 font-bold">•</span>
@@ -755,15 +755,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Query fan-out targets related sub-intents across multiple sites.</span>
+                    <span>Gemini prioritises self-contained passage chunks (45-75 words) following an inverted pyramid format.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Knowledge Graph entity accuracy supports machine interpretation.</span>
+                    <span>Rendered inline HTML <code className="text-amber-200 font-mono">&lt;table&gt;</code> elements and lists are extracted at higher rates than raw schema alone.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Local intent signals influence location-sensitive prompts.</span>
+                    <span>Knowledge Graph entity accuracy and local intent signals support machine interpretation.</span>
                   </li>
                 </ul>
               </div>
@@ -773,15 +773,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Strictly follow Google Search Essentials quality guidelines.</span>
+                    <span>Structure content using an inverted pyramid format (Direct Answer &rarr; Data &rarr; Context).</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Ensure structured data matches actual visible page text.</span>
+                    <span>Ensure rendered HTML tables accompany structured data implementations.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Maintain consistent Google Business Profile location data.</span>
+                    <span>Track performance using Google Search Console Search Appearance AI Overviews filters.</span>
                   </li>
                 </ul>
               </div>
@@ -817,15 +817,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-purple-400 font-bold">•</span>
-                    <span>Copilot spans consumer web search, M365 Copilot, and Copilot Studio.</span>
+                    <span>Copilot retrieves web content via Bing Search APIs (relying on Bingbot for prior indexation); Copilot does not crawl directly.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-purple-400 font-bold">•</span>
-                    <span>Public web experiences rely on Bing Search indexation.</span>
+                    <span>Product tiers span Consumer Web, Edge/Windows, M365 Graph, and Copilot Studio with distinct knowledge sources.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-purple-400 font-bold">•</span>
-                    <span>IndexNow provides change signals but does not guarantee inclusion.</span>
+                    <span>IndexNow accelerates discovery, but Microsoft explicitly confirms it is <strong>not a ranking factor</strong>.</span>
                   </li>
                 </ul>
               </div>
@@ -839,11 +839,11 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Bing Places listings supply location signals for proximity prompts.</span>
+                    <span>Bing Places listings and Merchant feeds support location/product signals, though direct Copilot influence varies by prompt context.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Behaviour varies significantly depending on the specific Copilot tier.</span>
+                    <span>Retrieval behavior varies significantly by Copilot product tier and enterprise policy.</span>
                   </li>
                 </ul>
               </div>
@@ -853,15 +853,15 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <ul className="text-xs text-white/70 space-y-2 font-serif">
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Configure Bing Webmaster Tools &amp; active IndexNow submission.</span>
+                    <span>Configure Bing Webmaster Tools &amp; IndexNow protocol for rapid change notifications.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Keep Bing Places and local business data current.</span>
+                    <span>Maintain accurate Bing Places listings and product feed feeds.</span>
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-aeo-cyan font-bold">•</span>
-                    <span>Specify the exact Copilot tier when auditing visibility.</span>
+                    <span>Define the specific Copilot product tier (Consumer vs M365) when auditing visibility.</span>
                   </li>
                 </ul>
               </div>
@@ -898,38 +898,38 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <tbody className="divide-y divide-white/5 font-serif text-white/80">
                 <tr className="hover:bg-white/[0.02]">
                   <td className="p-4 font-bold text-white font-sans">Relevant Access Control</td>
-                  <td className="p-4">PerplexityBot &amp; Perplexity-User</td>
-                  <td className="p-4">OAI-SearchBot</td>
-                  <td className="p-4">Google Search indexability &amp; snippet eligibility</td>
-                  <td className="p-4">Bing indexability &amp; product configuration</td>
+                  <td className="p-4"><code className="text-teal-300 font-mono text-[11px]">PerplexityBot</code> &amp; <code className="text-teal-300 font-mono text-[11px]">Perplexity-User</code></td>
+                  <td className="p-4"><code className="text-emerald-300 font-mono text-[11px]">OAI-SearchBot</code>, <code className="text-emerald-300 font-mono text-[11px]">GPTBot</code>, <code className="text-emerald-300 font-mono text-[11px]">ChatGPT-User</code></td>
+                  <td className="p-4">Google Search indexability &amp; snippet eligibility (AIO &amp; AI Mode)</td>
+                  <td className="p-4">Bing Search APIs &amp; product tier configuration</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02]">
                   <td className="p-4 font-bold text-white font-sans">Documented Basis</td>
-                  <td className="p-4">Crawler &amp; access documentation</td>
-                  <td className="p-4">OpenAI crawler documentation</td>
-                  <td className="p-4">Standard Search requirements</td>
-                  <td className="p-4">Bing &amp; Copilot documentation</td>
+                  <td className="p-4">Perplexity bot documentation</td>
+                  <td className="p-4">OpenAI user-agent documentation</td>
+                  <td className="p-4">Standard Google Search Essentials</td>
+                  <td className="p-4">Bing Search &amp; Copilot documentation</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02]">
                   <td className="p-4 font-bold text-white font-sans">Main Misconception</td>
-                  <td className="p-4">Real-time retrieval means every page is read</td>
-                  <td className="p-4">GPTBot controls Search inclusion</td>
+                  <td className="p-4">Perplexity-User always respects robots.txt</td>
+                  <td className="p-4">GPTBot controls live Search inclusion</td>
                   <td className="p-4">Special AI schema is required</td>
-                  <td className="p-4">IndexNow guarantees instant inclusion</td>
+                  <td className="p-4">IndexNow is a ranking factor</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02]">
                   <td className="p-4 font-bold text-white font-sans">Practical Editorial Focus</td>
-                  <td className="p-4">Clear answers &amp; supporting evidence</td>
-                  <td className="p-4">Accessible, structured information</td>
-                  <td className="p-4">Helpful content &amp; accurate entities</td>
-                  <td className="p-4">Bing visibility &amp; accurate local data</td>
+                  <td className="p-4">Direct answers &amp; rendered HTML tables</td>
+                  <td className="p-4">Accessible HTML (<code className="text-emerald-300 font-mono text-[11px]">&lt;article&gt;</code>) &amp; Q&amp;A structure</td>
+                  <td className="p-4">Inverted pyramid 45-75w chunks &amp; rendered tables</td>
+                  <td className="p-4">Bing indexation, Places data &amp; IndexNow signals</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02]">
                   <td className="p-4 font-bold text-white font-sans">Main Limitation</td>
                   <td className="p-4">Ranking logic is not publicly specified</td>
                   <td className="p-4">Crawler access does not guarantee prominence</td>
                   <td className="p-4">Feature appearance is query-dependent</td>
-                  <td className="p-4">Behaviour varies by Copilot product</td>
+                  <td className="p-4">Behaviour varies by Copilot product tier</td>
                 </tr>
               </tbody>
             </table>
@@ -1039,28 +1039,28 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">1. Crawl &amp; Indexation</div>
-              <p className="text-xs text-white/60 font-serif">Monitoring crawler access logs (<code className="text-white/80">OAI-SearchBot</code>, <code className="text-white/80">PerplexityBot</code>) and index status.</p>
+              <div className="text-xs font-bold text-aeo-cyan">1. Crawl &amp; Agent Logs</div>
+              <p className="text-xs text-white/60 font-serif">Monitoring access logs (<code className="text-white/80">OAI-SearchBot</code>, <code className="text-white/80">ChatGPT-User</code>, <code className="text-white/80">PerplexityBot</code>, <code className="text-white/80">Bingbot</code>) and HTTP response status codes.</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">2. Entity Accuracy</div>
-              <p className="text-xs text-white/60 font-serif">Verifying factual consistency across Knowledge Graph nodes and business profiles.</p>
+              <div className="text-xs font-bold text-aeo-cyan">2. Search Console Filters</div>
+              <p className="text-xs text-white/60 font-serif">Utilising Google Search Console Search Appearance filters specifically designed to track AI Overviews performance and clicks.</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">3. Answer Presence</div>
-              <p className="text-xs text-white/60 font-serif">Tracking brand inclusion rates across target intent prompts in test environments.</p>
+              <div className="text-xs font-bold text-aeo-cyan">3. Entity Accuracy</div>
+              <p className="text-xs text-white/60 font-serif">Verifying factual consistency across Knowledge Graph nodes, Bing Places, and directory profiles.</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">4. Citation Quality</div>
-              <p className="text-xs text-white/60 font-serif">Evaluating whether source links support positive, neutral, or accurate brand claims.</p>
+              <div className="text-xs font-bold text-aeo-cyan">4. Answer Presence</div>
+              <p className="text-xs text-white/60 font-serif">Tracking brand inclusion and passage citation rates across target intent prompts in test environments.</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
               <div className="text-xs font-bold text-aeo-cyan">5. Citation-to-Click</div>
-              <p className="text-xs text-white/60 font-serif">Measuring referral traffic sessions originating from AI answer engine domains.</p>
+              <p className="text-xs text-white/60 font-serif">Measuring referral traffic sessions originating from AI answer engine domain referral tags.</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
               <div className="text-xs font-bold text-aeo-cyan">6. Lead Enquiries</div>
-              <p className="text-xs text-white/60 font-serif">Attributing assisted conversions and high-intent enquiries driven by AI search channels.</p>
+              <p className="text-xs text-white/60 font-serif">Attributing assisted conversions and high-intent enquiries driven by conversational AI search channels.</p>
             </div>
           </div>
 
