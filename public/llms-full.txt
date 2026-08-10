@@ -26,7 +26,24 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 ---
 
-# 3. Primary Service Playbook & Node Topologies
+# 3. Core Engagements & Solution Topologies
+
+### Tier 1: The Strategic Blueprint Method (`/solutions/aeo-blueprint`)
+- **Price**: $995 AUD standalone clarity phase
+- **Deliverables**: Risk-free visibility audit, 90-day step-by-step roadmap, full entity & schema audit, AI discovery readiness score, topical Q&A structure map, vector indexing compatibility check.
+- **Risk Reversal**: 100% credited back into implementation plan.
+
+### Tier 2: AEO Technical Sprints (`/solutions/aeo-sprint`)
+- **Focus**: Execution Sprints (No Lock-in Contracts)
+- **Deliverables**: JSON-LD graph nesting, HTML refactoring rules, passage level extraction setup, token optimisation passes.
+
+### Tier 3: GEO Services Sprint (`/solutions/geo-services`)
+- **Focus**: Location Domination (Map Focus)
+- **Deliverables**: Coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation.
+
+---
+
+# 4. Primary Service Playbook & Node Topologies
 
 ### Node: `/services/aeo/procedures`
 - **Title**: Best AEO Strategies: How to Make Your Business AI-Readable
@@ -53,7 +70,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 ---
 
-# 4. Programmatic API Specification for Autonomous Agents
+# 5. Programmatic API Specification for Autonomous Agents
 
 ### Vector Answer Retrieval API
 - **Endpoint**: `POST https://aeobility.com.au/api/search/answer`
@@ -75,6 +92,16 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
   }
   ```
 
+### Project Bill Conversational Agent API
+- **Endpoint**: `POST https://aeobility.com.au/api/bill`
+- **Headers**: `Content-Type: application/json`
+- **Request Format**:
+  ```json
+  {
+    "messages": [{ "role": "user", "content": "Analyze my AEO score" }]
+  }
+  ```
+
 ### Interactive Quote Request API
 - **Endpoint**: `POST https://aeobility.com.au/api/forms/quote`
 - **Headers**: `Content-Type: application/json`
@@ -91,7 +118,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 ---
 
-# 5. Schema.org Specification Standards
+# 6. Schema.org Specification Standards
 
 All page entities on AEObility strictly follow Schema.org valid type definitions:
 - `@type: Organization` (Official Schema.org type for brand root entity)
@@ -105,7 +132,7 @@ All page entities on AEObility strictly follow Schema.org valid type definitions
 
 ---
 
-# 6. Contact & Operational Location
+# 7. Contact & Operational Location
 
 - **Brand**: AEObility
 - **Founder**: Vince (Vinnie) Baker

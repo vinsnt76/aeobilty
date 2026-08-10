@@ -1,6 +1,6 @@
 # AEObility: Answer Engine Optimisation (AEO) Systems
 
-[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
+[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses and SMBs restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
 
 ## Core Terminology & Concepts
 - **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
@@ -17,7 +17,13 @@
 ## Complete Route Directory
 
 ### Diagnostic & Audit Tools
-- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool.
+- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free 60-second interactive AI Search & AEO Visibility Audit tool.
+
+### Core Optimisation Engagements & Solutions (How We Deliver)
+- [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.
+- [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The Strategic Blueprint Method ($995 AUD standalone clarity phase deep audit & 90-day roadmap, 100% credited back into implementation).
+- [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Technical Sprints (JSON-LD graph nesting, HTML refactoring rules, passage level extraction, token optimisation passes, no lock-in contracts).
+- [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): GEO Services Sprint (coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation).
 
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
@@ -32,14 +38,9 @@
 - [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
 
-### Solutions (How We Deliver)
-- [`/solutions`](https://aeobility.com.au/solutions): Packages and flat-rate sprints overview.
-- [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The $995 Clarity Phase deep strategic audit & 90-day roadmap.
-- [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): Programmatic structured schemas and refactoring deployments.
-- [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): Coordinate precision map and location salience sync.
-
-### Knowledge Hub (Our Research Nodes)
+### Knowledge Hub (Our Research & Tutorial Nodes)
 - [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
+- [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.
 - [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
@@ -52,7 +53,7 @@
   - [`/knowledge-hub/articles/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out): How Structured Data Helps You Survive the Query Fan-Out.
   - [`/knowledge-hub/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/structured-data-query-fan-out): Structured Data & Query Fan-Out direct guide.
 - [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
-- [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
+  - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
 
 ### Support & Brand Details
 - [`/about`](https://aeobility.com.au/about): Company background and our team.
@@ -60,18 +61,21 @@
   - [`/about/freelance-seo-consultant-perth`](https://aeobility.com.au/about/freelance-seo-consultant-perth): Technical & semantic SEO consulting.
   - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
   - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
-- [`/contact`](https://aeobility.com.au/contact): Booking inquiries and quote request forms.
-- [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic session.
+- [`/contact`](https://aeobility.com.au/contact): Direct lead capture form, booking inquiries, and quote requests.
+- [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic or discovery session.
 - [`/support`](https://aeobility.com.au/support): Technical documentation and support.
 - [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and contact info for Vinnie Baker.
 
 ---
 
-## Programmatic Answer & Form API Endpoints
+## Programmatic Answer, Chat & Form API Endpoints
 AEObility exposes vector-grounded Answer & Form APIs for real-time site search & agent transactions:
 - **Vector Search Endpoint**: `POST https://aeobility.com.au/api/search/answer`
   - **Request Body**: `{ "query": "<user_search_string>" }`
   - **Response Format**: Returns similarity score, grounded 2-sentence response, matched entity node, and intent classification.
+- **Unified Bill Agent Endpoint**: `POST https://aeobility.com.au/api/bill`
+  - **Request Body**: `{ "messages": [{ "role": "user", "content": "..." }] }`
+  - **Response Format**: Edge-streamed conversational diagnostic response with optional telemetry cards.
 - **Request a Quote Endpoint**: `POST https://aeobility.com.au/api/forms/quote`
   - **Request Body**: `{ "fullName": "...", "email": "...", "website": "...", "serviceIntent": "...", "notes": "..." }`
   - **Response Format**: Returns submission confirmation and dispatches automated email notifications via Resend API.

@@ -4,6 +4,7 @@
 User-agent: *
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 Allow: /api/forms/quote
@@ -13,6 +14,7 @@ Allow: /api/forms/audit
 User-agent: GPTBot
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 Allow: /api/forms/quote
@@ -20,42 +22,49 @@ Allow: /api/forms/quote
 User-agent: ChatGPT-User
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: OAI-SearchBot
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: ClaudeBot
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: PerplexityBot
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: Google-Extended
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: Applebot-Extended
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
 User-agent: Meta-ExternalAgent
 Allow: /
 Allow: /api/search/answer
+Allow: /api/bill
 Allow: /api/mcp
 
 User-agent: Amazonbot
