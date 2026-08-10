@@ -105,7 +105,7 @@ export default function CapabilityMatrix() {
               <td className="p-4 text-xs font-mono text-slate-500">
                 <span>HTML Head Index</span>
               </td>
-              <td className="p-4">Stitches Vinnie Baker's Person entity directly to verified Wikipedia knowledge nodes using RDF-style predicates.</td>
+              <td className="p-4">Stitches Vinnie Baker&apos;s Person entity directly to verified Wikipedia knowledge nodes using RDF-style predicates.</td>
             </tr>
             <tr>
               <td className="p-4 font-bold text-slate-900">Robot Permissions</td>

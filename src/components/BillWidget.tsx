@@ -67,8 +67,13 @@ function parseTelemetryText(text: string) {
 export default function BillWidget() {
   const pathname = usePathname();
 
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
   const [input, setInput] = useState('');
   const [isMuted, setIsMuted] = useState(true);
@@ -111,9 +116,7 @@ export default function BillWidget() {
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+
 
   // 1. Session Storage Synced Data Hydration
   useEffect(() => {

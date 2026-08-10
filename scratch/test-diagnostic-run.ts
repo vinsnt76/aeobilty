@@ -74,7 +74,7 @@ async function testFullTelemetry() {
       crawlQuality: clientCrawl.crawlQuality
     };
 
-    const insightResult = await generateInsightEngineResult(intent, result as any, clientCrawl.textContent);
+    const insightResult = await generateInsightEngineResult(intent, result as unknown as TelemetryResult, clientCrawl.textContent);
     console.log('Insight result verdict:', insightResult.verdict);
     console.log('✅ Full Telemetry Diagnostic Test Passed Successfully!');
   } catch (err) {

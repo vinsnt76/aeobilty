@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, ReactNode } from 'react';
+import React, { useEffect, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 
@@ -11,20 +11,24 @@ interface MobileMenuOverlayProps {
 }
 
 export function MobileMenuOverlay({ isOpen, onClose, children }: MobileMenuOverlayProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const pathname = usePathname();
 
-  // Mount safety check for SSR hydration
+  const onCloseRef = React.useRef(onClose);
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   // Route Listener: Auto-close drawer on App Router client SPA navigation
   useEffect(() => {
     if (isOpen) {
-      onClose();
+      onCloseRef.current();
     }
-  }, [pathname]);
+  }, [pathname, isOpen]);
 
   // Safe body scroll locking and Escape key listener
   useEffect(() => {
