@@ -15,10 +15,10 @@ export function CoreEngagementsGrid() {
         <div className="text-center mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>Our Core Optimisation Engagements</span>
+            <span>AEO Services & Technical Sprints</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-            Flat-Rate AEO Solutions & Sprints
+            Blueprint, AEO Sprints & GEO Sprints
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto font-serif">
             Whether you need a standalone strategic audit and roadmap or complete technical implementation, we provide transparent, flat-rate engagements.
