@@ -74,9 +74,14 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "description": "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
         "inLanguage": "en-AU",
         "author": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "@type": "Person",
+          "name": "Vince Baker",
+          "url": "https://aeobility.com.au/vince-baker",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "AEObility",
+            "url": "https://aeobility.com.au"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -250,21 +255,27 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed font-serif max-w-3xl">
-            A comprehensive technical breakdown of how major conversational AI platforms retrieve, interpret, and cite web content — separating documented platform controls from observed industry patterns.
+            A comprehensive technical breakdown of how major conversational AI platforms retrieve, interpret, and cite web content - separating documented platform controls from observed industry patterns.
           </p>
 
           {/* Author & Meta Bar */}
-          <div className="flex flex-wrap items-center gap-6 pt-4 text-xs text-white/50 border-t border-white/5">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-4 text-xs text-white/60 border-t border-white/5 font-serif">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 flex items-center justify-center text-aeo-cyan font-bold text-[10px]">
+              <div className="w-5 h-5 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 flex items-center justify-center text-aeo-cyan font-bold text-[9px]">
                 AU
               </div>
-              <span>Published by AEObility Strategy Team</span>
+              <span className="font-semibold text-white/90">Published by AEObility</span>
             </div>
-            <span>•</span>
-            <div>Reading Time: 10 mins</div>
-            <span>•</span>
-            <div>Audience: CMOs, Digital Leads &amp; SEO Directors</div>
+            <span className="text-white/30">•</span>
+            <div>Location: Perth, Western Australia</div>
+            <span className="text-white/30">•</span>
+            <div>Updated Aug 2026</div>
+            <span className="text-white/30">•</span>
+            <div>8 min read</div>
+            <span className="text-white/30">•</span>
+            <div>Author: Vince Baker</div>
+            <span className="text-white/30">•</span>
+            <div>Topic: Multi Engine AEO &amp; Retrieval</div>
           </div>
 
           {/* Hero Visual Graphic */}
