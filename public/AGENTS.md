@@ -35,6 +35,7 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Sibling Radial Nodes**: `6. Shopify AEO` (`/services/aeo/shopify`), `7. Local Business Visibility` (`/services/aeo/local-business`), `9. AI Search Marketing` (`/services/ai-search-marketing`).
 
 ### Key Technical Research Articles & Tutorials
+- **Multi-Engine AEO & Retrieval Guide**: *How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content* (`https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines`)
 - **Tutorials Directory**: Step-by-step practical guides and walkthroughs (`https://aeobility.com.au/knowledge-hub/tutorials`)
 - **Competitor Overlap Framework**: *Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology* (`https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`)
 - **Positional Bias Guide**: *What Is Positional Bias in Retrieval and Answer Engines?* (`https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`)

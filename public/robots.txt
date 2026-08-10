@@ -33,13 +33,6 @@ Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
-User-agent: ClaudeBot
-Allow: /
-Allow: /api/search/answer
-Allow: /api/bill
-Allow: /api/mcp
-Allow: /api/chat
-
 User-agent: PerplexityBot
 Allow: /
 Allow: /api/search/answer
@@ -47,7 +40,42 @@ Allow: /api/bill
 Allow: /api/mcp
 Allow: /api/chat
 
+User-agent: Perplexity-User
+Allow: /
+Allow: /api/search/answer
+Allow: /api/bill
+Allow: /api/mcp
+Allow: /api/chat
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /api/search/answer
+Allow: /api/bill
+Allow: /api/mcp
+Allow: /api/chat
+
+User-agent: Claude-Web
+Allow: /
+Allow: /api/search/answer
+Allow: /api/bill
+Allow: /api/mcp
+Allow: /api/chat
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /api/search/answer
+Allow: /api/bill
+Allow: /api/mcp
+Allow: /api/chat
+
 User-agent: Google-Extended
+Allow: /
+Allow: /api/search/answer
+Allow: /api/bill
+Allow: /api/mcp
+Allow: /api/chat
+
+User-agent: GoogleOther
 Allow: /
 Allow: /api/search/answer
 Allow: /api/bill

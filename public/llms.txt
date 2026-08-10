@@ -18,6 +18,7 @@
 
 ### Diagnostic & Audit Tools
 - [`/diagnostic`](https://aeobility.com.au/diagnostic): Free 60-second interactive AI Search & AEO Visibility Audit tool.
+- [`/audit`](https://aeobility.com.au/audit): Interactive AI search readiness & diagnostic audit tool.
 
 ### Core Optimisation Engagements & Solutions (How We Deliver)
 - [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.
@@ -45,6 +46,7 @@
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
 - [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
+  - [`/knowledge-hub/articles/optimising-for-different-ai-search-engines`](https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines): How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content.
   - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
   - [`/knowledge-hub/articles/positional-bias-in-retrieval`](https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval): What Is Positional Bias in Retrieval and Answer Engines?
   - [`/knowledge-hub/articles/entity-authority-building`](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building): Entity Authority: Why AI Search Ranks Entities, Not Pages.
@@ -62,6 +64,7 @@
   - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
   - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
 - [`/contact`](https://aeobility.com.au/contact): Direct lead capture form, booking inquiries, and quote requests.
+- [`/contact-us`](https://aeobility.com.au/contact-us): Alternative contact and inquiry landing page.
 - [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic or discovery session.
 - [`/support`](https://aeobility.com.au/support): Technical documentation and support.
 - [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and contact info for Vinnie Baker.
