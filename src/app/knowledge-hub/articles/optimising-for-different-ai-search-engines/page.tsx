@@ -37,8 +37,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Optimising for Different AI Search Engines: Perplexity, ChatGPT, Google & Copilot | AEObility",
-  description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
+  title: "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content | AEObility",
+  description: "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
   },
@@ -52,8 +52,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
         "url": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
-        "name": "Optimising for Different AI Search & Answer Engines | AEObility",
-        "description": "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
+        "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content | AEObility",
+        "description": "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",
@@ -70,8 +70,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
         },
-        "headline": "Optimising for Different AI Search & Answer Engines",
-        "description": "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
+        "headline": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
+        "description": "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
         "inLanguage": "en-AU",
         "author": {
           "@type": "Person",
@@ -250,12 +250,12 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white font-soehne-breit">
-            Optimising for Different AI Search &amp; Answer Engines: <br />
-            <span className="text-gradient-aeo">How Perplexity, ChatGPT Search, Google AI Overviews, and Copilot Retrieve &amp; Use Content</span>
+            How Perplexity, ChatGPT, Google, and Copilot <br />
+            <span className="text-gradient-aeo">Find and Cite Your Content</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed font-serif max-w-3xl">
-            A comprehensive technical breakdown of how major conversational AI platforms retrieve, interpret, and cite web content - separating documented platform controls from observed industry patterns.
+            A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.
           </p>
 
           {/* Author & Meta Bar */}
@@ -291,55 +291,55 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </div>
         </header>
 
-        {/* Section 1: Executive Summary */}
+        {/* Section 1: Executive Summary & Reality Checks */}
         <section id="executive-summary" className="scroll-mt-24 space-y-6">
           <div className="p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 shadow-2xl space-y-6 backdrop-blur-xl">
             <div className="flex items-center gap-3 text-aeo-cyan">
               <Sparkles className="w-6 h-6" />
-              <h2 className="text-xl font-bold tracking-tight text-white uppercase font-soehne-breit">Executive Summary &amp; Core Takeaway</h2>
+              <h2 className="text-xl font-bold tracking-tight text-white uppercase font-soehne-breit">Executive Summary &amp; Reality Checks</h2>
             </div>
             
             <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed font-serif">
-              AI-assisted search is introducing new retrieval and interpretation layers on top of established search infrastructure. When users query an AI assistant, responses combine stored model knowledge, web retrieval, structured entity graphs, and real-time contextual data rather than delivering a traditional list of ten blue links.
+              <strong>The short answer:</strong> AI search isn&apos;t just Google&apos;s old results page with a chatbot bolted on top. When someone asks Perplexity, ChatGPT, Google, or Copilot a question, the platform combines what its model already knows with live web results, entity data, and real-time context.
             </p>
 
             <blockquote className="p-6 rounded-2xl bg-black/50 border-l-4 border-aeo-cyan text-white/90 font-medium italic text-sm sm:text-base leading-relaxed">
-              &quot;AI-assisted search does not operate through one shared ranking system. Each answer engine may retrieve, interpret, and cite content differently. The most durable cross-engine strategy is to create clear, accessible, evidence-backed content and maintain consistent business information across important web and local sources.&quot;
+              &quot;There&apos;s no single &apos;AI ranking algorithm&apos; to crack. Each answer engine finds, weighs, and cites sources differently. Your safest cross-platform play is simple: publish clear, well-structured content, back your claims with solid evidence, and keep your business details consistent everywhere that matters.&quot;
             </blockquote>
 
             <div className="space-y-3 pt-2">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider">Fundamental Reality Checks:</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-white/70">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider">Reality Checks Before You Optimise:</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-white/70 font-serif">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>Search-enabled answers are not based entirely on live web retrieval.</span>
+                  <span><strong>Live search isn&apos;t behind every AI answer.</strong> Models rely heavily on pre-trained parametric memory before deciding to query the live web.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>Model training data and a live search index are separate systems.</span>
+                  <span><strong>Training data and a search index are separate systems.</strong> Blocking a training bot like <code className="text-aeo-cyan font-mono text-[11px]">GPTBot</code> doesn&apos;t stop <code className="text-aeo-cyan font-mono text-[11px]">OAI-SearchBot</code> from finding you for live answers.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>Search indexation is an eligibility condition, not an inclusion guarantee.</span>
+                  <span><strong>Being indexed gets you in the door - it doesn&apos;t guarantee a citation.</strong> Indexation makes your page eligible; relevance and clarity win the spot.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>Ranking #1 organically does not guarantee an AI answer citation.</span>
+                  <span><strong>Ranking #1 in organic search doesn&apos;t automatically earn an AI citation.</strong> Generative engines pick passages that answer specific intent, not just domain authority.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>Structured schema cannot force an AI engine to cite a page.</span>
+                  <span><strong>Schema helps machines understand your page, but it can&apos;t force a citation.</strong> Structured data gives context; it doesn&apos;t buy placement.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                  <span>A source citation does not prove every generated claim is factual.</span>
+                  <span><strong>A linked citation doesn&apos;t make every generated claim true.</strong> Hallucinations happen even when an engine links to a legitimate source.</span>
                 </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Section 2: How AI Answer Engines Retrieve Information */}
+        {/* Section 2: How Answer Engines Look Up Information */}
         <section id="retrieval-mechanics" className="scroll-mt-24 space-y-8 border-t border-white/5 pt-12">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-aeo-purple uppercase tracking-widest">
@@ -347,10 +347,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <span>Retrieval Architecture</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
-              How AI Answer Engines Retrieve Information
+              How Answer Engines Look Up Information
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
-              To understand how conversational engines process content, businesses must distinguish between two fundamental knowledge sources:
+              Before chasing citations, it helps to know where an answer engine gets its information. In practice, it draws from two main layers:
             </p>
           </div>
 
@@ -359,27 +359,27 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3">
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-sm uppercase">
                 <Cpu className="w-4 h-4" />
-                <span>1. Parametric Knowledge</span>
+                <span>1. Parametric Knowledge (What the model learned)</span>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-light font-serif leading-relaxed">
-                Information encoded directly into the neural network weights during initial model pre-training and fine-tuning. This knowledge is static, immutable post-training, and does not require an active web search connection.
+                Facts baked directly into the model during initial training. It&apos;s instant, but static - and it doesn&apos;t require a live visit to your site.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3">
               <div className="flex items-center gap-2 text-aeo-purple font-bold text-sm uppercase">
                 <Globe className="w-4 h-4" />
-                <span>2. Grounded / Retrieved Knowledge</span>
+                <span>2. Grounded Knowledge (What the model looks up)</span>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-light font-serif leading-relaxed">
-                External information fetched in real time via search APIs, crawlers, or connected databases during query execution. Grounding grounds the LLM response in verified external documents to reduce hallucinations.
+                Fresh information pulled from live search indexes, crawlers, or connected databases during a prompt. This is the layer where your accessible web content comes into play.
               </p>
             </div>
           </div>
 
           {/* 6-Step Pipeline Explanation */}
           <div className="space-y-4 pt-4">
-            <h3 className="text-lg font-bold text-white font-soehne-breit">The Simplified 6-Stage AI Retrieval Pipeline</h3>
+            <h3 className="text-lg font-bold text-white font-soehne-breit">A Practical View of How AI Search Builds an Answer</h3>
             <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
               While production architectures vary between commercial providers, most search-augmented AI systems follow a multi-stage Information Retrieval (IR) pipeline:
             </p>
@@ -387,38 +387,38 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-cyan font-bold">STAGE 01</div>
-                <div className="text-sm font-bold text-white">Query Interpretation</div>
-                <p className="text-xs text-white/60 font-light">Deconstructs user prompt intent, expanding implicit acronyms and entities.</p>
+                <div className="text-sm font-bold text-white">Work out user intent</div>
+                <p className="text-xs text-white/60 font-light">The engine interprets intent, expands acronyms, and identifies core entities.</p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-cyan font-bold">STAGE 02</div>
-                <div className="text-sm font-bold text-white">Query Fan-Out &amp; Search</div>
-                <p className="text-xs text-white/60 font-light">Issues multiple sub-queries to internal indexes or search APIs simultaneously.</p>
+                <div className="text-sm font-bold text-white">Query Fan-Out</div>
+                <p className="text-xs text-white/60 font-light">A single prompt often triggers multiple parallel queries targeting sub-topics.</p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-cyan font-bold">STAGE 03</div>
-                <div className="text-sm font-bold text-white">Passage Selection</div>
-                <p className="text-xs text-white/60 font-light">Extracts candidate documents and splits them into discrete passage chunks.</p>
+                <div className="text-sm font-bold text-white">Find useful passages</div>
+                <p className="text-xs text-white/60 font-light">The engine searches for relevant section chunks rather than judging whole pages in isolation.</p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-purple font-bold">STAGE 04</div>
-                <div className="text-sm font-bold text-white">Relevance Reranking</div>
-                <p className="text-xs text-white/60 font-light">Evaluates passage relevance using cross-encoder models to score candidate chunks.</p>
+                <div className="text-sm font-bold text-white">Sort strongest evidence</div>
+                <p className="text-xs text-white/60 font-light">Candidate passages are reranked for exact relevance to the user&apos;s prompt.</p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-purple font-bold">STAGE 05</div>
-                <div className="text-sm font-bold text-white">Synthesis &amp; Generation</div>
-                <p className="text-xs text-white/60 font-light">Injects top-ranked passages into the LLM context window to generate the response.</p>
+                <div className="text-sm font-bold text-white">Build the response</div>
+                <p className="text-xs text-white/60 font-light">The LLM synthesises the top-ranked context into a readable answer.</p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-purple font-bold">STAGE 06</div>
-                <div className="text-sm font-bold text-white">Citation Attribution</div>
-                <p className="text-xs text-white/60 font-light">Maps generated assertions back to supporting source URLs where available.</p>
+                <div className="text-sm font-bold text-white">Attach sources</div>
+                <p className="text-xs text-white/60 font-light">Generated claims are mapped back to URLs where supporting data was drawn.</p>
               </div>
             </div>
           </div>
@@ -936,7 +936,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </div>
         </section>
 
-        {/* Section 6: Unified Optimisation Framework */}
+        {/* Section 6: The Unified Optimisation Framework */}
         <section id="unified-framework" className="scroll-mt-24 space-y-8 border-t border-white/5 pt-12">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-aeo-purple uppercase tracking-widest">
@@ -944,7 +944,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <span>Core Methodology</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
-              The Unified Optimisation Framework (6 Principles)
+              The Unified Optimisation Framework (6 Actionable Principles)
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
               Rather than attempting to hack platform-specific algorithms, businesses achieve durable multi-engine visibility by following six core engineering principles:
@@ -957,10 +957,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   01
                 </div>
-                <h3 className="text-base font-bold text-white">Lead With Clarity</h3>
+                <h3 className="text-base font-bold text-white">Lead with the Answer</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Place the direct, complete answer near the very beginning of each document section. Avoid long introductory fluff that delays passage extraction.
+                Don&apos;t make readers - or answer engines - wade through a 300-word warm-up. Answer the question early, then add the proof, nuance, and examples.
               </p>
             </div>
 
@@ -969,10 +969,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   02
                 </div>
-                <h3 className="text-base font-bold text-white">Use Semantic Hierarchy</h3>
+                <h3 className="text-base font-bold text-white">Make Each Section Stand on Its Own</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Structure documents with descriptive H1, H2, and H3 headings. Ensure each chunk or passage retains standalone context when extracted independently.
+                Give every H2 and H3 enough context to make sense when lifted out of the page. A strong passage shouldn&apos;t lose the plot without the paragraphs above it.
               </p>
             </div>
 
@@ -981,10 +981,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   03
                 </div>
-                <h3 className="text-base font-bold text-white">Provide Supported Information</h3>
+                <h3 className="text-base font-bold text-white">Bring the Receipts</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Ground claims with credible citations, expert quotations, empirical statistics, and transparent data methodology to improve source confidence.
+                Support important claims with primary sources, named experts, clear methodology, and real data. Vague claims are easy to write and hard to trust.
               </p>
             </div>
 
@@ -993,10 +993,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   04
                 </div>
-                <h3 className="text-base font-bold text-white">Maintain Entity Consistency</h3>
+                <h3 className="text-base font-bold text-white">Keep Your Entity Details Consistent</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Keep business name, address, phone (NAP), service areas, products, and core claims strictly uniform across web directories and Knowledge Graphs.
+                Your business name, address, phone number, services, and core facts should match across your website, Google Business Profile, Bing Places, and local directories.
               </p>
             </div>
 
@@ -1005,10 +1005,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   05
                 </div>
-                <h3 className="text-base font-bold text-white">Ensure Machine Readability</h3>
+                <h3 className="text-base font-bold text-white">Keep Core Content Easy to Read</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Serve critical content in clean, native HTML text. Use descriptive internal links and accurate Schema.org markup that reflects visible content.
+                Serve critical copy in clean HTML. If key information relies on heavy client-side JavaScript, lightweight crawlers might miss it.
               </p>
             </div>
 
@@ -1017,50 +1017,50 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <div className="w-8 h-8 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan flex items-center justify-center font-bold text-xs">
                   06
                 </div>
-                <h3 className="text-base font-bold text-white">Support Local Intent</h3>
+                <h3 className="text-base font-bold text-white">Get Local Signals Right</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                Maintain accurate Google Business Profile, Bing Places, map pins, and geographic microdata to support location-sensitive conversational queries.
+                For Australian local businesses, accurate map listings, service areas, location pages, and local schema help answer engines respond to location-led searches with confidence.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 7: Internal Linking & Measurement Framework */}
+        {/* Section 7: Measurement Framework */}
         <section id="measurement-framework" className="scroll-mt-24 space-y-8 border-t border-white/5 pt-12">
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
-              Measurement Recommendations &amp; Editorial Guardrails
+              Measurement: Track What Happens After Visibility
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
-              Treating &quot;AI visibility&quot; as a single rank metric is misleading. Organisations must measure separate stages across the retrieval lifecycle:
+              &quot;AI visibility&quot; isn&apos;t a single vanity metric. A brand can appear in an answer, be cited in an unhelpful context, receive zero clicks, or drive high-intent enquiries. Track those stages separately:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">1. Crawl &amp; Agent Logs</div>
-              <p className="text-xs text-white/60 font-serif">Monitoring access logs (<code className="text-white/80">OAI-SearchBot</code>, <code className="text-white/80">ChatGPT-User</code>, <code className="text-white/80">PerplexityBot</code>, <code className="text-white/80">Bingbot</code>) and HTTP response status codes.</p>
+              <div className="text-xs font-bold text-aeo-cyan">1. Crawl &amp; Index Coverage</div>
+              <p className="text-xs text-white/60 font-serif">Are key agents (<code className="text-white/80">OAI-SearchBot</code>, <code className="text-white/80">ChatGPT-User</code>, <code className="text-white/80">PerplexityBot</code>, <code className="text-white/80">Bingbot</code>) accessing your pages, and are those pages indexed?</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">2. Search Console Filters</div>
-              <p className="text-xs text-white/60 font-serif">Utilising Google Search Console Search Appearance filters specifically designed to track AI Overviews performance and clicks.</p>
+              <div className="text-xs font-bold text-aeo-cyan">2. Entity Accuracy</div>
+              <p className="text-xs text-white/60 font-serif">Do your business details, products, and services match uniformly across Knowledge Graph nodes, Bing Places, and directory profiles?</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">3. Entity Accuracy</div>
-              <p className="text-xs text-white/60 font-serif">Verifying factual consistency across Knowledge Graph nodes, Bing Places, and directory profiles.</p>
+              <div className="text-xs font-bold text-aeo-cyan">3. Answer Presence</div>
+              <p className="text-xs text-white/60 font-serif">Does your brand appear for high-intent prompt queries in your target industry?</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">4. Answer Presence</div>
-              <p className="text-xs text-white/60 font-serif">Tracking brand inclusion and passage citation rates across target intent prompts in test environments.</p>
+              <div className="text-xs font-bold text-aeo-cyan">4. Citation Quality</div>
+              <p className="text-xs text-white/60 font-serif">Is the cited URL accurate, contextually relevant, and positioned as a recommended source?</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
               <div className="text-xs font-bold text-aeo-cyan">5. Citation-to-Click</div>
-              <p className="text-xs text-white/60 font-serif">Measuring referral traffic sessions originating from AI answer engine domain referral tags.</p>
+              <p className="text-xs text-white/60 font-serif">How much referral traffic is actually flowing from AI engine referral tags to your site?</p>
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
-              <div className="text-xs font-bold text-aeo-cyan">6. Lead Enquiries</div>
-              <p className="text-xs text-white/60 font-serif">Attributing assisted conversions and high-intent enquiries driven by conversational AI search channels.</p>
+              <div className="text-xs font-bold text-aeo-cyan">6. Enquiries &amp; Revenue</div>
+              <p className="text-xs text-white/60 font-serif">Are those visits turning into real calls, form fills, quote requests, or sales?</p>
             </div>
           </div>
 
@@ -1202,10 +1202,10 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <span>Get Found. Get Chosen.</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-soehne-breit">
-              Ready to Benchmark Your Multi-Engine AI Visibility?
+              Want to Know How Answer Engines See Your Business?
             </h2>
             <p className="text-white/70 text-sm sm:text-base font-serif">
-              Run our AI Visibility Telemetry audit to test how ChatGPT, Gemini, and Claude understand and cite your brand across core search intents.
+              Run an AI Visibility Telemetry audit to check how ChatGPT, Gemini, and Claude describe, source, and cite your brand across the searches that matter to your customers.
             </p>
           </div>
 
@@ -1214,7 +1214,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               href="/diagnostic"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-105 shadow-[0_0_25px_rgba(0,205,216,0.25)]"
             >
-              Generate Your Free Visibility Audit
+              Get Your Free Visibility Audit
               <ArrowRight className="w-5 h-5" />
             </Link>
 

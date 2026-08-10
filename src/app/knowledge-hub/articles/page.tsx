@@ -32,9 +32,9 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
-      title: "Optimising for Different AI Search & Answer Engines",
+      title: "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
       category: "Multi-Engine AEO & Retrieval",
-      description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
+      description: "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
       href: "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
       image: "/optimising-for-different-ai-web-search-engines_AEObility.webp",
       alt: "Abstract high‑velocity gradient artwork depicting multi‑engine retrieval convergence",
