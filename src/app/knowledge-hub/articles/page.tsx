@@ -32,6 +32,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "Optimising for Different AI Search & Answer Engines",
+      category: "Multi-Engine AEO & Retrieval",
+      description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and cite content. Discover documented controls, observed patterns, and editorial frameworks.",
+      href: "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
+      image: "/optimising-ai-search-engines-AEObility.png",
+      alt: "High-tech vector network architectural diagram showing multi-engine AI search retrieval pipeline across Perplexity, ChatGPT Search, Google AI Overviews, and Microsoft Copilot by AEObility.",
+      metrics: [
+        { label: "Type", value: "Strategic Deep Dive" },
+        { label: "Read Time", value: "8 min" }
+      ]
+    },
+    {
       title: "How Structured Data Helps You Survive the Query Fan-Out",
       category: "AEO / Structured Data",
       description: "Learn how structured data helps brands survive query fan-out in AI search by improving entity clarity, retrieval, and citation accuracy.",

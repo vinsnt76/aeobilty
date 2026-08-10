@@ -138,6 +138,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/knowledge-hub/articles/optimising-for-different-ai-search-engines`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
       lastModified: currentDate,
       changeFrequency: "weekly",
