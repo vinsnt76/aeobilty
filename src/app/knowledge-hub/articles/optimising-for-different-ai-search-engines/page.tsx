@@ -270,7 +270,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           {/* Hero Visual Graphic */}
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl mt-8">
             <Image
-              src="/optimising-ai-search-engines-AEObility.png"
+              src="/optimising-for-different-ai-web-search-engines_AEObility.webp"
               alt="High-tech vector network architectural diagram showing multi-engine AI search retrieval pipeline across Perplexity, ChatGPT Search, Google AI Overviews, and Microsoft Copilot by AEObility in Perth, Australia."
               fill
               priority
@@ -510,6 +510,17 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             </table>
           </div>
         </section>
+
+        {/* Mid-Page Visual Graphic */}
+        <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl my-4">
+          <Image
+            src="/optimising-ai-search-engines_AEObility.webp"
+            alt="Multi-engine AI search retrieval architecture and passage selection pipeline visual diagram by AEObility."
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 1000px"
+          />
+        </div>
 
         {/* Section 4: Detailed Platform Breakdown */}
         <section id="platform-breakdown" className="scroll-mt-24 space-y-12 border-t border-white/5 pt-12">
@@ -1040,17 +1051,6 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <div className="text-xs font-bold text-aeo-cyan">6. Lead Enquiries</div>
               <p className="text-xs text-white/60 font-serif">Attributing assisted conversions and high-intent enquiries driven by AI search channels.</p>
             </div>
-          </div>
-
-          {/* Editorial Guardrail Box */}
-          <div className="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 space-y-2">
-            <div className="flex items-center gap-2 font-bold text-sm text-amber-300">
-              <ShieldCheck className="w-5 h-5" />
-              <span>AEObility Editorial Guardrail</span>
-            </div>
-            <p className="text-xs sm:text-sm font-serif leading-relaxed text-amber-100/90">
-              Do not promise ranking, inclusion, citation, traffic, or conversion outcomes from any single technical implementation. Describe recommendations as practices that improve clarity, accessibility, and eligibility rather than guaranteed platform-specific ranking factors.
-            </p>
           </div>
 
           {/* Related Articles & Internal Links */}

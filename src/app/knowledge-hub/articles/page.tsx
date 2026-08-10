@@ -36,7 +36,7 @@ export default function ArticlesHubPage() {
       category: "Multi-Engine AEO & Retrieval",
       description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and cite content. Discover documented controls, observed patterns, and editorial frameworks.",
       href: "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
-      image: "/optimising-ai-search-engines-AEObility.png",
+      image: "/optimising-for-different-ai-web-search-engines_AEObility.webp",
       alt: "High-tech vector network architectural diagram showing multi-engine AI search retrieval pipeline across Perplexity, ChatGPT Search, Google AI Overviews, and Microsoft Copilot by AEObility.",
       metrics: [
         { label: "Type", value: "Strategic Deep Dive" },
