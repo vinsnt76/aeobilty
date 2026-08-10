@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import SocialProof from '@/components/SocialProof';
+import { CoreEngagementsGrid } from '@/components/sections/CoreEngagementsGrid';
 import VideoExplainer from '@/components/VideoExplainer';
 import USPGrid from '@/components/USPGrid';
 import HowItWorks from '@/components/HowItWorks';
@@ -148,7 +148,7 @@ export default function Home() {
 
       <Navbar />
       <Hero />
-      <SocialProof />
+      <CoreEngagementsGrid />
       <VideoExplainer />
       <USPGrid />
       <HowItWorks />
