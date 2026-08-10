@@ -291,20 +291,20 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           </div>
         </header>
 
-        {/* Section 1: Executive Summary & Reality Checks */}
+        {/* Section 1: The Opening Answer & Reality Checks */}
         <section id="executive-summary" className="scroll-mt-24 space-y-6">
           <div className="p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 shadow-2xl space-y-6 backdrop-blur-xl">
             <div className="flex items-center gap-3 text-aeo-cyan">
               <Sparkles className="w-6 h-6" />
-              <h2 className="text-xl font-bold tracking-tight text-white uppercase font-soehne-breit">Executive Summary &amp; Reality Checks</h2>
+              <h2 className="text-xl font-bold tracking-tight text-white uppercase font-soehne-breit">The Opening Answer</h2>
             </div>
             
             <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed font-serif">
-              <strong>The short answer:</strong> AI search isn&apos;t just Google&apos;s old results page with a chatbot bolted on top. When someone asks Perplexity, ChatGPT, Google, or Copilot a question, the platform combines what its model already knows with live web results, entity data, and real-time context.
+              AI search is not just Google&apos;s old results page with a chatbot bolted on top. When someone asks Perplexity, ChatGPT, Google, or Copilot a question, the platform combines what its model already learned during training with live web searches, entity graph data, and real-time prompt context.
             </p>
 
             <blockquote className="p-6 rounded-2xl bg-black/50 border-l-4 border-aeo-cyan text-white/90 font-medium italic text-sm sm:text-base leading-relaxed">
-              &quot;There&apos;s no single &apos;AI ranking algorithm&apos; to crack. Each answer engine finds, weighs, and cites sources differently. Your safest cross-platform play is simple: publish clear, well-structured content, back your claims with solid evidence, and keep your business details consistent everywhere that matters.&quot;
+              &quot;There is no single &apos;AI ranking algorithm&apos; to crack. Each answer engine finds, weighs, and cites sources differently depending on its architecture and user-agent rules. Your safest cross-platform play is simple: publish clear, well-structured content, back your claims with solid evidence, and keep your business details consistent across every directory and profile that matters.&quot;
             </blockquote>
 
             <div className="space-y-3 pt-2">
