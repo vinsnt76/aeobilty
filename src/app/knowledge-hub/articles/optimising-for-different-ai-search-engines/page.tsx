@@ -406,7 +406,9 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <div className="text-xs font-mono text-aeo-purple font-bold">STAGE 04</div>
                 <div className="text-sm font-bold text-white">Sort strongest evidence</div>
-                <p className="text-xs text-white/60 font-light">Candidate passages are reranked for exact relevance to the user&apos;s prompt.</p>
+                <p className="text-xs text-white/60 font-light">
+                  Candidate passages are reranked for relevance, which is where <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan underline hover:text-white transition-colors">positional bias in retrieval</Link> can impact which chunks get extracted.
+                </p>
               </div>
 
               <div className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-2">
@@ -544,7 +546,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               Platform Breakdown: Controls, Patterns &amp; Recommendations
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
-              Each AI answer engine operates within distinct crawler environments, index permissions, and user experience paradigms. Below is a detailed breakdown of documented controls vs observed patterns for each engine.
+              Each AI answer engine operates within distinct crawler environments, index permissions, and user experience paradigms - and optimising for multi-turn conversational queries requires an integrated <Link href="/services/ai-search-marketing" className="text-aeo-cyan underline hover:text-white transition-colors">AI search marketing</Link> strategy rather than isolated page tweaks.
             </p>
           </div>
 
@@ -947,7 +949,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               The Unified Optimisation Framework (6 Actionable Principles)
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
-              Rather than attempting to hack platform-specific algorithms, businesses achieve durable multi-engine visibility by following six core engineering principles:
+              Rather than attempting to hack platform-specific algorithms, businesses achieve durable multi-engine visibility by following six core engineering principles - and if you want to implement these six steps systematically across a 90-day roadmap, follow the <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline hover:text-white transition-colors font-semibold">AEObility Blueprint</Link>:
             </p>
           </div>
 
@@ -1020,7 +1022,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 <h3 className="text-base font-bold text-white">Get Local Signals Right</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed">
-                For Australian local businesses, accurate map listings, service areas, location pages, and local schema help answer engines respond to location-led searches with confidence.
+                For Australian local businesses, we restructured local service pages using <Link href="/services/geo-marketing" className="text-aeo-cyan underline hover:text-white transition-colors">GEO marketing services</Link> principles to ensure business data is verified across map packs and generative nodes.
               </p>
             </div>
           </div>
@@ -1205,7 +1207,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               Want to Know How Answer Engines See Your Business?
             </h2>
             <p className="text-white/70 text-sm sm:text-base font-serif">
-              Run an AI Visibility Telemetry audit to check how ChatGPT, Gemini, and Claude describe, source, and cite your brand across the searches that matter to your customers.
+              To see how ChatGPT, Gemini, and Claude currently cite your brand, request a <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-white transition-colors font-semibold">free AI Visibility Telemetry Audit</Link>.
             </p>
           </div>
 
