@@ -9,6 +9,7 @@ import { extractEntityGraph } from '../src/lib/telemetry/graph';
 import { validateGraphWithWikidata } from '../src/lib/telemetry/wikidata';
 import { extractFeatures } from '../src/lib/telemetry/features';
 import { calculateReadinessScore } from '../src/lib/telemetry/scoring';
+import { TelemetryResult } from '../src/lib/telemetry/types';
 import { generateInsightEngineResult } from '../src/lib/telemetry/insight-engine';
 
 async function testFullTelemetry() {
