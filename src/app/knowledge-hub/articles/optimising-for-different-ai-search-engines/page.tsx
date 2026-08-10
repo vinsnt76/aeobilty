@@ -38,7 +38,7 @@ import {
 
 export const metadata = {
   title: "Optimising for Different AI Search Engines: Perplexity, ChatGPT, Google & Copilot | AEObility",
-  description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Microsoft Copilot retrieve, interpret, and cite content, with documented controls and practical optimisation steps.",
+  description: "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
   },
@@ -53,7 +53,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
         "url": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
         "name": "Optimising for Different AI Search & Answer Engines | AEObility",
-        "description": "How Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve, interpret, and cite content.",
+        "description": "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",
@@ -65,13 +65,13 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         }
       },
       {
-        "@type": "TechArticle",
+        "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#article",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
         },
-        "headline": "Optimising for Different AI Search & Answer Engines: How Perplexity, ChatGPT Search, Google AI Overviews, and Copilot Retrieve & Use Content",
-        "description": "Comprehensive analysis of how major AI search engines retrieve, process, and cite web content, separating documented platform controls from observed patterns.",
+        "headline": "Optimising for Different AI Search & Answer Engines",
+        "description": "Learn how Perplexity, ChatGPT Search, Google AI Overviews, and Copilot retrieve and rank content - and how to optimise for each.",
         "inLanguage": "en-AU",
         "author": {
           "@type": "Organization",
@@ -271,7 +271,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl mt-8">
             <Image
               src="/optimising-for-different-ai-web-search-engines_AEObility.webp"
-              alt="High-tech vector network architectural diagram showing multi-engine AI search retrieval pipeline across Perplexity, ChatGPT Search, Google AI Overviews, and Microsoft Copilot by AEObility in Perth, Australia."
+              alt="Abstract high‑velocity gradient artwork depicting multi‑engine retrieval convergence"
               fill
               priority
               className="object-cover"
@@ -515,7 +515,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl my-4">
           <Image
             src="/optimising-ai-search-engines_AEObility.webp"
-            alt="Multi-engine AI search retrieval architecture and passage selection pipeline visual diagram by AEObility."
+            alt="Diagram showing multi-engine query processing and answer synthesis"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 1000px"
