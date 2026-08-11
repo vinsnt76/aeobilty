@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, ReactNode } from 'react';
+import React, { useEffect, useRef, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 
@@ -10,35 +10,50 @@ interface MobileMenuOverlayProps {
   children: ReactNode;
 }
 
+const emptySubscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 export function MobileMenuOverlay({ isOpen, onClose, children }: MobileMenuOverlayProps) {
-  const mounted = React.useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false
-  );
+  const mounted = React.useSyncExternalStore(emptySubscribe, getSnapshot, getServerSnapshot);
   const pathname = usePathname();
 
-  const onCloseRef = React.useRef(onClose);
+  const onCloseRef = useRef(onClose);
   useEffect(() => {
     onCloseRef.current = onClose;
   }, [onClose]);
 
-  // Route Listener: Auto-close drawer on App Router client SPA navigation
+  // Unified single-effect route listener and open-state tracking
+  const wasOpenRef = useRef(false);
+  const openedPathname = useRef<string | null>(null);
+
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !wasOpenRef.current) {
+      // Menu just opened: record initial state and pathname
+      wasOpenRef.current = true;
+      openedPathname.current = pathname || null;
+    } else if (!isOpen) {
+      // Menu closed: reset state
+      wasOpenRef.current = false;
+      openedPathname.current = null;
+    } else if (
+      isOpen &&
+      wasOpenRef.current &&
+      openedPathname.current !== null &&
+      pathname &&
+      pathname !== openedPathname.current
+    ) {
+      // Menu was already open and pathname changed to a new route -> close drawer
       onCloseRef.current();
     }
-  }, [pathname, isOpen]);
+  }, [isOpen, pathname]);
 
   // Safe body scroll locking and Escape key listener
   useEffect(() => {
     if (!isOpen) return;
 
     const originalOverflow = document.body.style.overflow;
-    const originalTouchAction = document.body.style.touchAction;
-    
     document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none';
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -50,7 +65,6 @@ export function MobileMenuOverlay({ isOpen, onClose, children }: MobileMenuOverl
 
     return () => {
       document.body.style.overflow = originalOverflow;
-      document.body.style.touchAction = originalTouchAction;
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -59,17 +73,20 @@ export function MobileMenuOverlay({ isOpen, onClose, children }: MobileMenuOverl
 
   return createPortal(
     <div
+      id="mobile-navigation-menu"
       aria-modal="true"
       role="dialog"
       aria-label="Mobile Navigation Menu"
-      className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-md flex justify-end transition-opacity duration-300"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) {
-          onClose();
-        }
-      }}
+      className="fixed inset-0 z-[10000] flex justify-end"
     >
-      <div className="w-full max-w-sm sm:max-w-md bg-neutral-950 border-l border-white/10 h-full overflow-y-auto p-6 text-white shadow-2xl relative flex flex-col justify-between select-none">
+      {/* Backdrop overlay background */}
+      <div
+        className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300 pointer-events-auto"
+        onClick={() => onClose()}
+        aria-hidden="true"
+      />
+      {/* Drawer panel content */}
+      <div className="relative z-10 w-full max-w-sm sm:max-w-md bg-neutral-950 border-l border-white/10 h-full overflow-y-auto p-6 text-white shadow-2xl flex flex-col justify-between pointer-events-auto">
         {children}
       </div>
     </div>,

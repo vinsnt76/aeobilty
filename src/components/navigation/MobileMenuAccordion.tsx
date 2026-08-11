@@ -6,7 +6,11 @@ import { usePathname } from 'next/navigation';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { NAVIGATION_DATA } from './NavData';
 
-export function MobileMenuAccordion() {
+interface MobileMenuAccordionProps {
+  onClose?: () => void;
+}
+
+export function MobileMenuAccordion({ onClose }: MobileMenuAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null); // Start with all accordions closed
   const pathname = usePathname();
 
@@ -45,6 +49,7 @@ export function MobileMenuAccordion() {
                         <div key={subIdx} className="group">
                           <Link
                             href={sub.href}
+                            onClick={onClose}
                             className={`flex items-center justify-between text-xs py-1.5 font-medium transition-all ${
                               isSubActive
                                 ? 'text-aeo-cyan font-bold bg-white/5 px-2.5 rounded-md'
@@ -63,6 +68,7 @@ export function MobileMenuAccordion() {
             ) : (
               <Link
                 href={item.href || '#'}
+                onClick={onClose}
                 className={`block text-base font-bold py-2 transition-colors hover:text-aeo-cyan ${
                   isL1Active ? 'text-aeo-cyan' : 'text-white'
                 }`}

@@ -197,7 +197,7 @@ export default function Navbar() {
               <Search className="h-4 w-4" />
             </button>
 
-            <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+            <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />
           </div>
         </div>
       </nav>
@@ -242,7 +242,7 @@ export default function Navbar() {
         </button>
 
         {/* Accordion Content */}
-        <MobileMenuAccordion />
+        <MobileMenuAccordion onClose={() => setIsOpen(false)} />
 
         {/* Bottom CTA Funnel Actions */}
         <div className="pt-6 border-t border-white/10 space-y-3">
@@ -252,6 +252,7 @@ export default function Navbar() {
 
           <Link
             href="/diagnostic"
+            onClick={() => setIsOpen(false)}
             className="flex items-center justify-between w-full py-3 px-4 text-xs font-bold bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black rounded-xl hover:scale-[1.01] transition-transform shadow-lg"
           >
             <span>Run Free Visibility Scan</span>
@@ -260,6 +261,7 @@ export default function Navbar() {
 
           <Link
             href="/solutions/aeo-blueprint"
+            onClick={() => setIsOpen(false)}
             className="flex items-center justify-between w-full py-3 px-4 text-xs font-bold bg-white/5 border border-white/15 text-white hover:bg-white/10 rounded-xl transition-colors"
           >
             <span>View the Blueprint</span>
