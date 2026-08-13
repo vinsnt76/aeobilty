@@ -133,7 +133,7 @@ export default function AEOVsSEOPage() {
             "name": "What is the difference between AEO, SEO and GEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimizing for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
+              "text": "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
             }
           },
           {
@@ -242,7 +242,7 @@ export default function AEOVsSEOPage() {
     },
     {
       q: "What is the difference between AEO, SEO and GEO?",
-      a: "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimizing for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
+      a: "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
     },
     {
       q: "How do AI search engines choose their sources?",
