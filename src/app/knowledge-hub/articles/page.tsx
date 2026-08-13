@@ -32,6 +32,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "Telemetry Diagnostic Tool: Architecture & Operational Walkthrough",
+      category: "Technical Architecture / Spec",
+      description: "Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
+      href: "/knowledge-hub/articles/telemetry-diagnostic-architecture",
+      image: "/structured-data-query-fan-out_AEObility.webp",
+      alt: "Telemetry Diagnostic Engine architecture visualization showing vector map infrastructure and RAG simulation by AEObility in Perth, Western Australia.",
+      metrics: [
+        { label: "Type", value: "Technical Spec" },
+        { label: "Read Time", value: "8 min" }
+      ]
+    },
+    {
       title: "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
       category: "Multi-Engine AEO & Retrieval",
       description: "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",

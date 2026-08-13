@@ -110,14 +110,14 @@ export function generateNavData() {
 
   const KNOWLEDGE_CAPSULE_URLS = [
     '/knowledge-hub/articles',
-    '/knowledge-hub/aeo',
+    '/knowledge-hub/guides',
     '/knowledge-hub/case-studies',
     '/knowledge-hub/tutorials'
   ];
 
   const KNOWLEDGE_CAPSULE_TITLE_OVERRIDES = {
     '/knowledge-hub/articles': 'Articles',
-    '/knowledge-hub/aeo': 'Guides',
+    '/knowledge-hub/guides': 'Guides',
     '/knowledge-hub/case-studies': 'Case Studies',
     '/knowledge-hub/tutorials': 'Tutorials'
   };
@@ -249,7 +249,7 @@ export function generateNavData() {
     knowledgeHub: [
       { title: "Knowledge Hub", url: "/knowledge-hub" },
       { title: "Articles", url: "/knowledge-hub/articles" },
-      { title: "Guides", url: "/knowledge-hub/aeo" },
+      { title: "Guides", url: "/knowledge-hub/guides" },
       { title: "Case Studies", url: "/knowledge-hub/case-studies" },
       { title: "Tutorials", url: "/knowledge-hub/tutorials" }
     ],

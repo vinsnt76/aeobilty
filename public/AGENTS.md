@@ -42,6 +42,7 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Entity Authority Guide**: *Entity Authority: Why AI Search Ranks Entities, Not Pages* (`https://aeobility.com.au/knowledge-hub/articles/entity-authority-building`)
 - **AEO vs SEO Comparison**: *AEO vs SEO: The Complete Guide to AI Search* (`https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo`)
 - **RAG Architecture Explainer**: *RAG, Answer Engines & Why Machine‑Readable Content Matters* (`https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation`)
+- **Telemetry Diagnostic Architecture Guide**: *Telemetry Diagnostic Tool: Technical Architecture Guide* (`https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture`)
 - **Query Fan-Out Telemetry**: *How Structured Data Helps You Survive the Query Fan-Out* (`https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out`)
 
 ---

@@ -178,9 +178,9 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       },
       {
         "title": "Guides",
-        "href": "/knowledge-hub/aeo",
-        "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
-        "entityName": "AEO Knowledge Node",
+        "href": "/knowledge-hub/guides",
+        "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO)",
+        "entityName": "Guides",
         "isServicePillar": false,
         "isKnowledgeCapsule": true,
         "corridors": [
@@ -326,7 +326,7 @@ export const HUB_SUBNAV_MAPS: Record<string, SubNavPillItem[]> = {
     },
     {
       "title": "Guides",
-      "url": "/knowledge-hub/aeo"
+      "url": "/knowledge-hub/guides"
     },
     {
       "title": "Case Studies",

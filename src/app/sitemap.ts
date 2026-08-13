@@ -138,6 +138,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/knowledge-hub/guides`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/knowledge-hub/guides/aeo`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/articles/optimising-for-different-ai-search-engines`,
       lastModified: currentDate,
       changeFrequency: "weekly",
@@ -181,6 +193,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/knowledge-hub/structured-data-query-fan-out`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/knowledge-hub/telemetry-diagnostic-architecture`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
