@@ -495,7 +495,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </a>
               <a href="#interlinking-matrix" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono font-bold">8.</span>
-                <span>Semantic Lattice</span>
+                <span>Continue Exploring</span>
               </a>
             </div>
           </nav>
@@ -1142,45 +1142,45 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
           </section>
 
-          {/* Section 8: Contextual Interlinking Matrix */}
+          {/* Section 8: Continue Exploring */}
           <section id="interlinking-matrix" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              8. Contextual Interlinking &amp; Semantic Lattice
+              8. Continue Exploring
             </h2>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
-              This guide sits at **Level 3 (L3)** under the Knowledge Hub hierarchy. To maintain strong semantic lattice connections across the AEObility platform, explore these linked nodes:
+              This guide explains how AEObility’s Telemetry Diagnostic works. The resources below explore the key ideas behind the system, including retrieval, structured data, semantic search, and the practical steps involved in improving AI visibility.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 font-sans text-xs">
-              <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1 transition-all">
+              <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1.5 transition-all">
                 <span className="text-aeo-cyan font-bold block">Positional Bias in Retrieval</span>
-                <span className="text-white/60 block">Context window &amp; retrieval bottlenecks</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Learn how the position and structure of information can affect retrieval.</span>
               </Link>
 
-              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1 transition-all">
-                <span className="text-aeo-cyan font-bold block">RAG &amp; AI Search</span>
-                <span className="text-white/60 block">RAG pipelines and vector search</span>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1.5 transition-all">
+                <span className="text-aeo-cyan font-bold block">RAG and AI Search</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Understand how retrieval-augmented generation and vector search work together.</span>
               </Link>
 
-              <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1 transition-all">
-                <span className="text-aeo-cyan font-bold block">Structured Data &amp; Fan-Out</span>
-                <span className="text-white/60 block">Entity clarity under query fan-out</span>
+              <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1.5 transition-all">
+                <span className="text-aeo-cyan font-bold block">Structured Data and Query Fan-Out</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Explore how structured information helps clarify entities across different search queries.</span>
               </Link>
 
-              <Link href="/solutions/aeo-blueprint" className="p-4 bg-white/[0.02] border border-white/10 hover:border-purple-400/40 rounded-xl space-y-1 transition-all">
+              <Link href="/solutions/aeo-blueprint" className="p-4 bg-white/[0.02] border border-white/10 hover:border-purple-400/40 rounded-xl space-y-1.5 transition-all">
                 <span className="text-purple-300 font-bold block">The AEO Blueprint ($995 AUD)</span>
-                <span className="text-white/60 block">Clarity Phase audit execution engine</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">See how the diagnostic findings are turned into a practical implementation roadmap.</span>
               </Link>
 
-              <Link href="/solutions/aeo-sprint" className="p-4 bg-white/[0.02] border border-white/10 hover:border-purple-400/40 rounded-xl space-y-1 transition-all">
+              <Link href="/solutions/aeo-sprint" className="p-4 bg-white/[0.02] border border-white/10 hover:border-purple-400/40 rounded-xl space-y-1.5 transition-all">
                 <span className="text-purple-300 font-bold block">AEO Implementation Sprints</span>
-                <span className="text-white/60 block">Schema injection &amp; code refactoring</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Find out how schema, content, and technical improvements can be implemented.</span>
               </Link>
 
-              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.02] border border-white/10 hover:border-emerald-400/40 rounded-xl space-y-1 transition-all">
-                <span className="text-emerald-400 font-bold block">AEO Procedures &amp; Refactoring</span>
-                <span className="text-white/60 block">Atomic answer block guidelines</span>
+              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.02] border border-white/10 hover:border-emerald-400/40 rounded-xl space-y-1.5 transition-all">
+                <span className="text-emerald-400 font-bold block">AEO Procedures and Refactoring</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Learn how to structure content into clear, answer-focused sections.</span>
               </Link>
             </div>
           </section>
