@@ -14,27 +14,19 @@ import {
   Layers, 
   HelpCircle, 
   FileText,
-  AlertTriangle,
-  TrendingDown,
-  Target,
-  Zap,
+  AlertCircle,
   Search,
   Cpu,
   Network,
-  CheckSquare,
   Sparkles,
-  Eye,
-  Check,
-  Award,
   Wrench,
-  UserCheck,
-  MapPin,
-  GitFork
+  GitFork,
+  Code
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Structured Data and Query Fan-Out: How to Survive AI Search",
-  description: "Learn how structured data helps brands survive query fan-out in AI search by improving entity clarity, retrieval, and citation accuracy.",
+  title: "Structured Data & Query Fan-Out: Entity Clarity in AI Search | AEObility",
+  description: "Learn how structured data provides machine-readable entity context during query fan-out in search systems, and why Schema supports rather than guarantees AI retrieval.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
   },
@@ -48,8 +40,8 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
         "url": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
-        "name": "Structured Data and Query Fan-Out: How to Survive AI Search",
-        "description": "A practical guide explaining how structured data improves brand resilience under query fan-out, reduces positional bias risk, and strengthens entity recognition across AI search.",
+        "name": "Structured Data and Query Fan-Out: Entity Clarity in AI Search",
+        "description": "A technical guide examining structured data, query fan-out in search systems, positional sensitivity in retrieval models, and Schema.org implementation best practices.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
@@ -60,26 +52,25 @@ export default function StructuredDataQueryFanOutArticlePage() {
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#article",
-        "headline": "Structured Data and Query Fan-Out: How to Survive AI Search",
-        "description": "Learn how structured data strengthens entity clarity, reduces retrieval errors, and improves performance under query fan-out in modern AI search.",
+        "headline": "Structured Data & Query Fan-Out: Entity Clarity in AI Search",
+        "description": "Understand how structured data complements visible text to provide explicit entity context under query fan-out, while avoiding overstated claims regarding AI retrieval.",
         "author": {
           "@id": "https://aeobility.com.au/#vince-baker"
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organisation"
         },
-        "datePublished": "2026-07",
-        "dateModified": "2026-07",
+        "datePublished": "2026-07-01",
+        "dateModified": "2026-08-13",
         "image": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#imageobject"
         },
         "articleSection": [
-          "What Query Fan-Out Is",
-          "Why Fan-Out Makes Retrieval Harder",
-          "Positional Bias Collision",
-          "Why Structured Data Helps",
-          "How Schema Supports Multi-Intent Retrieval",
-          "Engineering Schema for Fan-Out Performance",
+          "What Query Fan-Out Means",
+          "Where Positional Bias Meets Query Fan-Out",
+          "What Structured Data Can and Cannot Do",
+          "Engineering Structured Data for Technical SEO",
+          "Practical Implementation Example",
           "Technical FAQ"
         ],
         "keywords": [
@@ -107,30 +98,11 @@ export default function StructuredDataQueryFanOutArticlePage() {
         }
       },
       {
-        "@type": "CreativeWork",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#creativework",
-        "name": "Query Fan-Out Structural Visualisation",
-        "description": "A cyber-abstract artwork illustrating how query fan-out expands into multiple retrieval paths and how structured data constrains and stabilises those paths.",
-        "creator": {
-          "@id": "https://aeobility.com.au/#vince-baker"
-        },
-        "image": {
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#imageobject"
-        },
-        "genre": "Abstract Digital Art",
-        "encodingFormat": "image/webp",
-        "dateCreated": "2026-07",
-        "contentLocation": {
-          "@type": "Place",
-          "name": "Perth, Western Australia"
-        }
-      },
-      {
         "@type": "Person",
         "@id": "https://aeobility.com.au/#vince-baker",
         "name": "Vince Baker",
         "jobTitle": "Senior Information Architect & AEO Strategist",
-        "description": "Vince Baker specialises in structured data engineering, query fan-out resilience, and AI vector retrieval for Australian enterprises.",
+        "description": "Vince Baker specialises in structured data engineering, entity SEO architecture, and AI vector retrieval context for Australian enterprises.",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -182,23 +154,23 @@ export default function StructuredDataQueryFanOutArticlePage() {
             "name": "What is query fan-out in AI search?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Query fan-out is when an answer engine expands a single user question into multiple retrieval intents or micro-queries, such as materials, brand reputation, location, or pricing."
+              "text": "Query fan-out is a system behaviour where a search system expands a single user query into multiple related searches or sub-intents to retrieve comprehensive information."
             }
           },
           {
             "@type": "Question",
-            "name": "How does structured data help under query fan-out?",
+            "name": "Does structured data guarantee AI search citations?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Structured data provides a stable, machine-readable canonical reference point so each intent fragment resolves directly to explicit entity attributes."
+              "text": "No. Structured data helps search engines interpret page content and qualify for eligible rich results, but it does not guarantee rankings, retrieval, or AI citations."
             }
           },
           {
             "@type": "Question",
-            "name": "Where does positional bias collide with fan-out?",
+            "name": "Is Schema.org markup required for Google AI Overviews?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Fan-out multiplies retrieval passes, and positional bias suppresses middle-placed text across both the retrieval bottleneck and the synthesis bottleneck."
+              "text": "No. Google's documentation explicitly notes that structured data is not required for AI Overviews, and there is no special Schema markup for AI features."
             }
           }
         ]
@@ -208,53 +180,92 @@ export default function StructuredDataQueryFanOutArticlePage() {
 
   const engineeringSteps = [
     {
-      title: "1. Front-Load Key Facts",
-      desc: "Place your most important entity attributes at the start of your schema block. Engines process schema top-down, and early placement improves recognition."
+      title: "1. Use Precise Types & Stable Identifiers",
+      desc: "Deploy exact Schema.org types (e.g. LocalBusiness, Product, Organization) and define consistent URI identifiers (@id) to clarify entity boundaries across your domain."
     },
     {
-      title: "2. Use Explicit Definitions",
-      desc: "Begin with a clear statement such as 'Baby Bento is a kids lunchbox brand based in Perth, Western Australia.' This helps engines resolve the entity before processing deeper attributes."
+      title: "2. Define Explicit Entity Relationships",
+      desc: "Connect related entities using Schema.org properties such as brand, author, areaServed, or offers. This gives search engines machine-readable context between distinct assets."
     },
     {
-      title: "3. Prioritise High-Intent Properties",
-      desc: "Include properties that map directly to common fan-out fragments: brand, material, location, product type, audience, safety rating, dimensions, and price."
+      title: "3. Prioritise High-Intent Attributes",
+      desc: "Populate properties that correspond to common search sub-intents, including service locations, pricing structures, specifications, and business credentials."
     },
     {
-      title: "4. Keep Schema Blocks Modular",
-      desc: "Use compact, atomic schema blocks that focus on one entity at a time. This prevents dilution and keeps critical facts accessible."
+      title: "4. Ensure Markup Matches Visible Content",
+      desc: "Google documentation requires structured data to accurately represent content visible to human users. Do not add markup for hidden or unverified claims."
     },
     {
-      title: "5. Maintain Cross-Platform Consistency",
-      desc: "Ensure your structured data matches your Google Business Profile, product feeds, marketplace listings, and social profiles. Consistency strengthens entity recognition."
+      title: "5. Maintain Web-Wide Entity Consistency",
+      desc: "Keep core facts (NAP, services, pricing, credentials) consistent across website schema, Google Business Profile, Merchant Center, and authoritative directories."
     }
   ];
 
   const microFaqs = [
     {
       q: "What is query fan-out in simple terms?",
-      a: "It is how AI breaks one question into many smaller searches (materials, price, safety, reputation) to find the best answer."
+      a: "Query fan-out occurs when a search system expands a user's prompt into multiple concurrent queries to cover different subtopics, such as pricing, location, or specifications."
     },
     {
-      q: "Why does structured data matter here?",
-      a: "It gives AI a clear, machine-readable map of your business, so every micro-query leads directly back to your brand."
+      q: "What can structured data do for AI search?",
+      a: "Structured data provides explicit context about entities and relationships. It complements visible text to help search systems interpret page content, but it is not a shortcut or guarantee for AI citations."
     },
     {
-      q: "Can small businesses fix fan-out issues easily?",
-      a: "Yes: consistent schema markup and clear entity definitions make a massive difference in AI citation rates."
+      q: "Is Schema.org markup required for Google AI Overviews?",
+      a: "No. Google explicitly states that structured data is not required for AI Overviews or AI Mode, and there is no special Schema markup specifically designed for AI features."
     },
     {
-      q: "Does schema improve rankings?",
-      a: "Not directly. Schema improves understanding and machine retrieval reliability, which increases your chances of being cited in AI answers."
+      q: "Does schema directly improve rankings or citations?",
+      a: "No. Schema helps search systems understand page content and qualify for rich results, but there is no guaranteed citation or ranking uplift."
     },
     {
-      q: "What happens if my structured data is inconsistent?",
-      a: "Inconsistent attributes across platforms can cause AI systems to treat your brand as multiple separate entities, reducing retrieval accuracy."
+      q: "What happens if structured data is inconsistent?",
+      a: "Conflicting or ambiguous attributes across platforms make entity reconciliation more difficult, reducing search engine confidence when matching facts to your brand."
     },
     {
-      q: "How often should structured data be updated?",
-      a: "Any time your services, pricing, location, or product attributes change. Consistency across the web strengthens entity resolution."
+      q: "How should structured data be validated?",
+      a: "Validate your JSON-LD markup using Google's Rich Results Test and Schema.org validators, and monitor indexing status in Google Search Console."
     }
   ];
+
+  const jsonLdExample = `{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://example.com.au/#business",
+      "name": "Perth Plumbing Solutions",
+      "url": "https://example.com.au",
+      "telephone": "+61-8-9000-0000",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Perth",
+        "addressRegion": "WA",
+        "postalCode": "6000",
+        "addressCountry": "AU"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Perth"
+      },
+      "sameAs": [
+        "https://www.facebook.com/exampleplumbing",
+        "https://www.linkedin.com/company/exampleplumbing"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://example.com.au/blocked-drains#service",
+      "name": "Blocked Drain Clearing Perth",
+      "provider": {
+        "@id": "https://example.com.au/#business"
+      },
+      "areaServed": "Perth Metropolitan Area",
+      "description": "Emergency blocked drain clearing and CCTV pipe inspection services in Perth."
+    }
+  ]
+}`;
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
@@ -274,43 +285,41 @@ export default function StructuredDataQueryFanOutArticlePage() {
 
       {/* Main Layout Container */}
       <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
-        <section className="flex flex-col gap-10">
+        <article className="flex flex-col gap-10">
 
           {/* Article Header */}
-          <div className="space-y-6 border-b border-white/5 pb-8">
+          <header className="space-y-6 border-b border-white/10 pb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <FileText className="w-3.5 h-3.5" />
-              <span>AEO &amp; Structured Data Architecture &bull; Technical Guide</span>
+              <span>Technical SEO &amp; Entity Architecture Guide</span>
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              How <span className="text-gradient-aeo">Structured Data</span> Helps You Survive the Query Fan-Out
+              Structured Data &amp; <span className="text-gradient-aeo">Query Fan-Out</span> in AI Search
             </h1>
 
-            <h2 className="text-lg md:text-xl font-light text-white/80 font-serif leading-relaxed">
-              Structured data gives answer engines a stable machine‑readable entity anchor when one query expands into many micro‑queries. This guide explains how AEObility, based in Perth, uses structured data and Query Fan‑Out principles to keep entities consistent across Search, Maps and AI.
-            </h2>
+            <p className="text-lg md:text-xl font-light text-white/80 font-serif leading-relaxed">
+              Structured data provides explicit machine-readable entity context when search systems expand complex user queries into multiple sub-intents. This guide examines how structured data supports technical SEO under query fan-out, while clarifying what Schema can—and cannot—do for AI search visibility.
+            </p>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-4">
               <span>Published by <strong className="text-white">AEObility</strong></span>
               <span>&bull;</span>
               <span>Location: <strong className="text-white">Perth, Western Australia</strong></span>
               <span>&bull;</span>
-              <span>Updated July 2026</span>
+              <span>Updated August 2026</span>
               <span>&bull;</span>
-              <span>5 min read</span>
+              <span>6 min read</span>
               <span>&bull;</span>
               <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker</Link></span>
-              <span>&bull;</span>
-              <span>Topic: <strong className="text-white">Structured Data &amp; Query Fan Out</strong></span>
             </div>
-          </div>
+          </header>
 
           {/* Hero Banner Image */}
           <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/structured-data-query-fan-out_AEObility.webp"
-              alt="High-tech structured data and query fan-out architecture banner visualising machine-readable Schema.org entity anchors, AI search vector retrieval, and micro-query intent expansion by AEObility in Perth, Western Australia."
+              alt="Structured data and query fan-out architecture visualising machine-readable Schema.org entity anchors and multi-intent retrieval by AEObility in Perth, Western Australia."
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 800px"
@@ -318,111 +327,120 @@ export default function StructuredDataQueryFanOutArticlePage() {
             />
           </div>
 
-          {/* Direct Answer Atomic Block */}
-          <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-2 shadow-xl">
-            <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">Direct Answer: Structured Data &amp; Fan-Out</span>
-            <p className="text-white text-base font-medium leading-relaxed">
-              Structured data helps your entity perform better under query fan-out by giving answer engines a clear, machine-readable reference point. When one question expands into many retrieval tasks, explicit entity definitions and consistent attributes make it easier for engines to resolve, retrieve, and cite your brand accurately, even when content is fragmented across the web.
+          {/* Core Thesis Statement Box */}
+          <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-3 shadow-xl">
+            <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
+              Core Technical Thesis
+            </h2>
+            <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed">
+              Structured data can provide explicit context about entities, products, organisations, and relationships. This may help search systems interpret a page, but it does not guarantee retrieval, rankings, AI citations, or inclusion in an AI-generated answer. Its value is strongest when the markup accurately reflects visible, useful content and is supported by sound technical SEO, authoritative content, local signals, and consistent business information.
             </p>
           </div>
 
-          {/* Section: What Query Fan-Out Actually Is */}
+          {/* Section 1: What Query Fan-Out Means */}
           <section id="what-is-fanout" className="space-y-6 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              What Query Fan-Out Actually Is
+              What Query Fan-Out Means
             </h2>
 
-            {/* Section: What is Query Fan-Out? */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
-              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">What is Query Fan-Out?</span>
-              <p className="text-sm text-white/90 font-medium leading-relaxed">
-                Query fan-out is when an answer engine expands one user question into multiple micro-queries. Each micro-query targets a different intent fragment, such as materials, durability, safety, or price. Brands with clear, consistent entity definitions perform better because engines can resolve them across all fragments.
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 font-sans text-sm">
+              <p className="text-white/90 font-medium leading-relaxed">
+                Google officially describes query fan-out as concurrent, related queries generated to retrieve additional information for a user&apos;s query. Some AI search systems may expand a user&apos;s question into multiple related searches or retrieval tasks. The number and nature of those searches vary, so fan-out should be treated as a system behaviour rather than a fixed sequence of checks.
               </p>
             </div>
 
             <div className="space-y-4 text-white/85 text-base sm:text-lg font-light leading-relaxed font-serif">
               <p>
-                When someone asks a question, AI doesn&apos;t just look for one answer: it breaks that question into dozens of smaller checks. Each one looks at a different angle: price, quality, location, availability, trust, and whether the business actually does what the person needs.
-              </p>
-              <p>
-                The clearer your <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-semibold">structured data</Link> is, the easier it is for AI to connect those dots and choose you.
+                When a user asks a multi-faceted question, search engines do not rely solely on a single keyword lookup. Instead, the retrieval pipeline may decompose the prompt into several targeted sub-queries covering specific subtopics—such as pricing, local service availability, materials, or compliance credentials.
               </p>
 
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 font-sans text-sm">
-                <p className="font-semibold text-white">
-                  For example, a search for &ldquo;best plumber in Perth for blocked drains&rdquo; triggers micro-queries such as:
-                </p>
+                <h3 className="font-semibold text-white">
+                  Example: A search for &ldquo;best plumber in Perth for blocked drains&rdquo; might generate sub-queries for:
+                </h3>
                 <ul className="space-y-2 text-xs sm:text-sm text-white/80">
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>Does this business actually offer blocked-drain services?</span>
+                    <span>Specific blocked drain clearing methods and high-pressure jetting services</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>Are they located near the searcher?</span>
+                    <span>Geographic coverage within Perth suburban areas</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>Do they list emergency call-outs?</span>
+                    <span>Emergency call-out availability and response times</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>What&apos;s their average response time?</span>
+                    <span>Upfront pricing indicators and warranty policies</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>Are their prices visible and consistent across the web?</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                    <span>Do reviews mention reliability or fast fixes?</span>
+                    <span>Customer reviews and trade licensing credentials</span>
                   </li>
                 </ul>
               </div>
 
               <p className="text-sm sm:text-base font-normal text-white">
-                If your structured data is clean, consistent, and complete, AI can resolve all those micro-queries back to your business: which dramatically increases your chances of being selected in an AI answer.
+                When content is clear, well-structured, and supported by accurate Schema markup, search systems can more easily reconcile distinct facts back to the target entity across related sub-queries.
               </p>
             </div>
 
-            {/* Sub-Section: Why Fan-Out Makes Retrieval Harder */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            {/* Sub-Section: Stable IDs as passage-context anchors */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <GitFork className="w-5 h-5 text-aeo-cyan" />
-                <span>Why Fan-Out Makes Retrieval Harder</span>
+                <Network className="w-5 h-5 text-aeo-cyan" />
+                <span>Stable IDs as Passage-Context Anchors</span>
               </h3>
-
-              {/* Retrieval Complexity Block */}
-              <div className="p-4 bg-white/5 border-l-2 border-aeo-cyan rounded-r-lg space-y-1 mb-3">
-                <span className="text-[10px] text-aeo-cyan font-mono font-bold uppercase">Retrieval Complexity</span>
-                <p className="text-xs text-white/90 font-medium leading-relaxed">
-                  Fan-out multiplies retrieval passes by splitting a user query into specialised sub-intents. When entity facts are buried mid-paragraph or conflict across pages, neural retrievers struggle to score relevance, increasing competition and risking citation dropouts.
-                </p>
-              </div>
 
               <div className="space-y-3 text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
                 <p>
-                  Fan-out increases retrieval complexity because the engine must match many intent fragments against your content. If your entity information is buried mid-paragraph or inconsistently expressed across pages, the retriever may fail to recognise it.
+                  Query fan-out can produce multiple retrieval paths for the same underlying entity. A stable identifier can help an indexing or retrieval system recognise that separate passages refer to the same organisation, product, service, or topic.
                 </p>
                 <p>
-                  Fragmented intent amplifies competition, and unclear entities lose visibility. Aligning with <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> and <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-semibold">AI Semantic SEO &amp; Atomic Blocks</Link> provides the necessary structural clarity.
+                  For example, a passage about an organisation&apos;s AEO services might be indexed with:
+                </p>
+
+                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs space-y-1.5 text-aeo-cyan/90">
+                  <div><span className="text-white/50">Entity ID:   </span>https://example.com/#organization</div>
+                  <div><span className="text-white/50">Page ID:     </span>https://example.com/services/aeo</div>
+                  <div><span className="text-white/50">Passage ID:  </span>https://example.com/services/aeo#passage-local-seo</div>
+                </div>
+
+                <p>
+                  These identifiers can support entity-aware chunking, deduplication, graph expansion, and citation provenance. If several passages refer to the same entity, the retrieval system can preserve that relationship rather than treating every passage as an isolated text fragment.
+                </p>
+                <p>
+                  This is an architectural benefit rather than a guaranteed search-ranking signal. A stable <code className="text-aeo-cyan font-mono text-xs">@id</code> does not automatically increase vector similarity, make a passage easier for Google to retrieve, or guarantee an AI citation. Its value depends on whether the indexing or retrieval system actually ingests and uses the identifiers.
                 </p>
               </div>
             </div>
 
-            {/* Why This Matters Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 to-transparent border border-aeo-cyan/20 rounded-xl space-y-1">
-              <span className="text-xs font-mono text-aeo-cyan font-bold uppercase">Why This Matters for AI Search</span>
-              <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
-                When one query expands into ten micro-queries, your brand must win multiple retrieval passes. Clear entity anchors ensure your facts survive each pass.
-              </p>
+            {/* Sub-Section: Retrieval Complexity */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <GitFork className="w-5 h-5 text-aeo-cyan" />
+                <span>Why Fan-Out Increases Retrieval Complexity</span>
+              </h3>
+
+              <div className="space-y-3 text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
+                <p>
+                  Query fan-out expands retrieval complexity because the engine must evaluate multiple sub-intents simultaneously across candidate web pages. If entity details are ambiguous, split across unlinked pages, or expressed inconsistently, the retriever may fail to match relevant facts to the target business entity.
+                </p>
+                <p>
+                  Aligning your website with <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Principles</Link> and <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-semibold">AI Semantic SEO</Link> provides the structural clarity needed to keep entity facts readable across multiple search passes.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Flowchart Diagram: Query Fan-Out Architecture */}
-          <div className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl flex flex-col items-center justify-center space-y-4">
-            <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">Diagram: Query Fan-Out from One Question to Multiple Retrieval Paths</span>
-            <svg viewBox="0 0 760 180" className="w-full h-auto text-xs font-mono max-w-xl">
+          <figure role="img" aria-label="Query Fan-Out Architecture Diagram showing user query decomposition into sub-queries and entity attribute matching" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl flex flex-col items-center justify-center space-y-4">
+            <h3 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider text-center">
+              Diagram: Query Fan-Out Sub-Query Expansion Architecture
+            </h3>
+            <svg viewBox="0 0 760 180" className="w-full h-auto text-xs font-mono max-w-xl" aria-hidden="true">
               <g transform="translate(10, 70)">
                 <rect x="0" y="0" width="130" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
                 <text x="65" y="24" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">User Query</text>
@@ -435,217 +453,174 @@ export default function StructuredDataQueryFanOutArticlePage() {
               <path d="M 330 90 L 370 30 M 330 90 L 370 90 M 330 90 L 370 150" stroke="#00cdd8" strokeWidth="1.5" strokeDasharray="3 3" />
               <g transform="translate(370, 10)">
                 <rect x="0" y="0" width="170" height="35" rx="6" fill="#3b0764" stroke="#c084fc" strokeWidth="1" />
-                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 1: Materials</text>
+                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 1: Service Type</text>
               </g>
               <g transform="translate(370, 72)">
                 <rect x="0" y="0" width="170" height="35" rx="6" fill="#3b0764" stroke="#c084fc" strokeWidth="1" />
-                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 2: Durability</text>
+                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 2: Local Area</text>
               </g>
               <g transform="translate(370, 134)">
                 <rect x="0" y="0" width="170" height="35" rx="6" fill="#3b0764" stroke="#c084fc" strokeWidth="1" />
-                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 3: Safety/Price</text>
+                <text x="85" y="22" textAnchor="middle" fill="#ffffff" fontSize="9">Sub-Query 3: Pricing/Reviews</text>
               </g>
               <line x1="540" y1="27" x2="590" y2="90" stroke="#00cdd8" strokeWidth="1.5" />
               <line x1="540" y1="90" x2="590" y2="90" stroke="#00cdd8" strokeWidth="1.5" />
               <line x1="540" y1="151" x2="590" y2="90" stroke="#00cdd8" strokeWidth="1.5" />
               <g transform="translate(590, 70)">
                 <rect x="0" y="0" width="150" height="40" rx="8" fill="#18181b" stroke="#00cdd8" strokeWidth="1.5" />
-                <text x="75" y="18" textAnchor="middle" fill="#00cdd8" fontSize="10" fontWeight="bold">Schema Match</text>
-                <text x="75" y="32" textAnchor="middle" fill="#ffffff" fontSize="9">Cited Brand Entity</text>
+                <text x="75" y="18" textAnchor="middle" fill="#00cdd8" fontSize="10" fontWeight="bold">Entity Context</text>
+                <text x="75" y="32" textAnchor="middle" fill="#ffffff" fontSize="9">Verified Page Facts</text>
               </g>
             </svg>
 
-            {/* Machine Readable Diagram Caption */}
-            <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-center text-xs text-white/70 font-mono max-w-xl">
-              <strong>Caption:</strong> Query fan-out architecture mapping 4 sequential stages: User Query prompt decomposition, Fan-Out Intent Expansion, Sub-Query Vector Retrieval, and Schema Attribute Resolution.
-            </div>
-          </div>
+            <figcaption className="p-3 bg-white/5 rounded-xl border border-white/5 text-center text-xs text-white/70 font-sans max-w-xl">
+              Query fan-out architecture mapping user query decomposition into concurrent sub-queries and entity attribute resolution across web documents.
+            </figcaption>
+          </figure>
 
-          {/* Section: Where Positional Bias Collides with Query Fan-Out */}
+          {/* Section 2: Where Positional Bias Meets Query Fan-Out */}
           <section id="positional-collision" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan font-bold text-sm">
-                !
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <AlertCircle className="w-4 h-4" />
               </div>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Where Positional Bias Collides with Query Fan-Out
+                Where Positional Bias Meets Query Fan-Out
               </h2>
             </div>
 
-            {/* Atomic Answer Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
-              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">Positional Collision</span>
-              <p className="text-sm text-white/90 font-medium leading-relaxed">
-                Positional bias depresses middle-placed text across dense vector retrieval and LLM context window synthesis. Query fan-out compounds this bottleneck because every micro-query performs an independent retrieval pass, suppressing buried facts across multiple stages.
-              </p>
-            </div>
-
             <p className="text-white/80 text-base leading-relaxed font-serif">
-              Our <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan hover:underline font-semibold">Positional Bias in Retrieval</Link> guide details the two-stage bottleneck affecting retrieval and synthesis. Fan-out multiplies its impact across every micro-query.
+              Recent retrieval research has found position sensitivity in several dense embedding and late-interaction (ColBERT-style) models, particularly when relevant information appears later in a passage. The effect varies by model, corpus, passage length, and retrieval pipeline, and should not be assumed to describe every AI search system.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Bottleneck 1 */}
+              {/* Concept 1 */}
               <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-aeo-cyan/30 transition-all flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold text-aeo-cyan uppercase tracking-widest">
                     <Search className="w-4 h-4" />
-                    <span>1. The Retrieval Bottleneck</span>
+                    <span>1. Passage Retrieval Sensitivity</span>
                   </div>
-                  <h3 className="text-lg font-bold text-white">Primacy Bias in Vector Search</h3>
+                  <h3 className="text-lg font-bold text-white">Dense Vector Placement Effects</h3>
                   
                   <div className="space-y-3 text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-aeo-cyan text-xs font-mono uppercase">Primacy Bias in Embeddings:</strong>
-                      <p className="text-xs text-white/70">Dense embedding and ColBERT-style models show reduced effectiveness when key facts appear later in a passage rather than early.</p>
+                      <strong className="text-aeo-cyan text-xs font-mono uppercase">Dense Model Sensitivity:</strong>
+                      <p className="text-xs text-white/70">A 2025 EMNLP Findings study observed performance degradation in certain dense embedding models when key details appeared later in long passages, whereas traditional BM25 sparse search and full rerankers showed greater positional robustness.</p>
                     </div>
 
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-aeo-cyan text-xs font-mono uppercase">Why Late-Placed Facts Lose:</strong>
-                      <p className="text-xs text-white/70">When important information is buried deep in a text block, it becomes less prominent in the vector embedding, making the passage appear less relevant.</p>
-                    </div>
-
-                    <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-aeo-cyan text-xs font-mono uppercase">Fan-Out Amplification:</strong>
-                      <p className="text-xs text-white/70">Modern neural retrievers are heavily affected by positional placement during multi-intent fan-out passes.</p>
+                      <strong className="text-aeo-cyan text-xs font-mono uppercase">Passage Structuring:</strong>
+                      <p className="text-xs text-white/70">Front-loading core facts in key sections helps preserve readability for both human readers and dense retrieval algorithms.</p>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-aeo-cyan font-mono pt-3 border-t border-white/5">
-                  Passages with front-loaded facts consistently win every micro-query pass.
-                </p>
               </div>
 
-              {/* Bottleneck 2 */}
+              {/* Concept 2 */}
               <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-purple-400/30 transition-all flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold text-purple-400 uppercase tracking-widest">
                     <Cpu className="w-4 h-4" />
-                    <span>2. The Synthesis Bottleneck</span>
+                    <span>2. LLM Context Window Synthesis</span>
                   </div>
-                  <h3 className="text-lg font-bold text-white">Primacy, Recency, &amp; Lost in the Middle</h3>
+                  <h3 className="text-lg font-bold text-white">Lost in the Middle Phenomenon</h3>
                   
                   <div className="space-y-3 text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-purple-300 text-xs font-mono uppercase">Attention Dilution:</strong>
-                      <p className="text-xs text-white/70">Longer prompts spread attention thin across context windows, increasing error rates.</p>
+                      <strong className="text-purple-300 text-xs font-mono uppercase">Attention Distribution:</strong>
+                      <p className="text-xs text-white/70">Large language models during synthesis exhibit higher attention weight at the beginning and end of input prompts, making middle-placed facts statistically harder to extract.</p>
                     </div>
 
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-purple-300 text-xs font-mono uppercase">Primacy &amp; Recency Bias:</strong>
-                      <p className="text-xs text-white/70">Transformer attention naturally favours tokens at the beginning and end of a text block.</p>
-                    </div>
-
-                    <div className="p-3 bg-white/5 rounded-xl space-y-1">
-                      <strong className="text-purple-300 text-xs font-mono uppercase">Lost in the Middle &amp; Multi-Pass Synthesis:</strong>
-                      <p className="text-xs text-white/70">Information in the centre of a sequence is statistically harder to access when synthesising across multiple retrieved passages.</p>
+                      <strong className="text-purple-300 text-xs font-mono uppercase">Multi-Pass Synthesis:</strong>
+                      <p className="text-xs text-white/70">When an answer engine synthesises responses from dozens of retrieved snippets, concise, atomic blocks remain easier to process accurately.</p>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-purple-300 font-mono pt-3 border-t border-white/5">
-                  Buried facts fail to register during synthesis.
-                </p>
               </div>
-            </div>
-
-            {/* Why This Matters Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-purple/10 to-transparent border border-aeo-purple/20 rounded-xl space-y-1">
-              <span className="text-xs font-mono text-purple-300 font-bold uppercase">Why This Matters for AI Search</span>
-              <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
-                Positional bias and fan-out create a compound penalty for unstructured text. Structured data bypasses text placement heuristics entirely.
-              </p>
             </div>
           </section>
 
-          {/* Section: Why Structured Data Helps */}
+          {/* Section 3: What Structured Data Can and Cannot Do */}
           <section id="why-structured-data" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              Why Structured Data Helps
+              What Structured Data Can and Cannot Do
             </h2>
 
-            {/* Atomic Answer Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
-              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">Schema Resilience</span>
-              <p className="text-sm text-white/90 font-medium leading-relaxed">
-                Structured data provides a stable, machine-readable canonical representation of your entity. By declaring explicit Schema.org properties, engines extract core facts directly without relying on passage positioning or text embedding heuristics.
-              </p>
-            </div>
-
             <p className="text-white/80 text-base leading-relaxed font-serif">
-              Instead of relying solely on long text blocks, engines extract key attributes directly from schema. Strengthening your <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">entity clarity</Link> ensures that your core brand properties are recognised unambiguously across Search, Maps and AI. Refer to our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">Entity Authority Guide</Link> for foundational principles.
+              Google&apos;s official developer guidance emphasizes that structured data helps search engines understand page content and qualify for eligible rich results. However, Google explicitly states that structured data is <strong>not required for generative AI search</strong>, and there is no special Schema.org markup for AI Overviews or AI Mode.
             </p>
 
-            <div className="p-6 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black border border-aeo-cyan/20 rounded-2xl space-y-4 shadow-xl">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-aeo-cyan" />
-                <span>Structured Data Improves Retrieval By:</span>
-              </h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-white/90 font-light">
-                <li className="p-3 bg-white/5 rounded-xl flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-aeo-cyan shrink-0" />
-                  <span>Providing explicit entity definitions</span>
-                </li>
-                <li className="p-3 bg-white/5 rounded-xl flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-aeo-cyan shrink-0" />
-                  <span>Supporting disambiguation across micro-queries</span>
-                </li>
-                <li className="p-3 bg-white/5 rounded-xl flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-aeo-cyan shrink-0" />
-                  <span>Reducing reliance on passage position</span>
-                </li>
-                <li className="p-3 bg-white/5 rounded-xl flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-aeo-cyan shrink-0" />
-                  <span>Ensuring consistent naming and attributes</span>
-                </li>
-                <li className="p-3 bg-white/5 rounded-xl flex items-center gap-2 sm:col-span-2">
-                  <span className="w-2 h-2 rounded-full bg-aeo-cyan shrink-0" />
-                  <span>Offering a stable reference point when the web contains conflicting information</span>
-                </li>
-              </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="p-6 bg-gradient-to-br from-neutral-900 to-neutral-950 border border-aeo-cyan/30 rounded-2xl space-y-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan" />
+                  <span>What Structured Data Can Do</span>
+                </h3>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-white/80">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                    <span>Provide explicit, machine-readable entity definitions and property values</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                    <span>Declare explicit relationships between organisations, products, services, and authors</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                    <span>Qualify eligible web pages for Google rich results (e.g. products, FAQs, local business snippets)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                    <span>Complement visible text with structured metadata to aid search system interpretation</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-6 bg-gradient-to-br from-neutral-900 to-neutral-950 border border-white/10 rounded-2xl space-y-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-purple-400" />
+                  <span>What Structured Data Cannot Do</span>
+                </h3>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-white/80">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 mt-2" />
+                    <span>Bypass traditional crawling, indexing, or passage retrieval pipelines</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 mt-2" />
+                    <span>Guarantee inclusion, higher ranking, or citation within AI-generated answers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 mt-2" />
+                    <span>Compensate for poor content quality, weak local signals, or thin on-page text</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 mt-2" />
+                    <span>Act as an independent data channel for unverified or non-visible page claims</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* Sub-Section: Multi-Intent Retrieval */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <h3 className="text-base font-bold text-white">How Schema Supports Multi-Intent Retrieval</h3>
-                
-                <div className="p-3 bg-white/5 border-l-2 border-aeo-cyan rounded-r-lg space-y-1 mb-2">
-                  <span className="text-[10px] text-aeo-cyan font-mono font-bold uppercase">Multi-Intent Mapping</span>
-                  <p className="text-xs text-white/90 font-medium leading-relaxed">
-                    Multi-intent fan-out queries test specific product, location, or brand properties simultaneously. Schema.org attributes map each intent fragment directly to a property, increasing selection probability across all micro-queries.
-                  </p>
-                </div>
-
-                <p className="text-xs text-white/70 leading-relaxed font-light font-serif">
-                  Fan-out produces mixed-intent retrieval tasks spanning specifications, brand reputation, location, safety, and price ranges.
-                </p>
-              </div>
-
-              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <h3 className="text-base font-bold text-white">Why Consistency Across the Web Matters</h3>
-                <p className="text-xs text-white/70 leading-relaxed font-light font-serif">
-                  Fan-out rewards entities with consistent structured data across all surfaces. See how this is demonstrated in our <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline font-semibold">Baby Bento Case Study</Link>.
-                </p>
-                <p className="text-xs text-white/70 leading-relaxed font-light font-serif">
-                  If attributes differ across platforms, the retrieval engine treats them as separate entities, degrading entity resolution.
-                </p>
-              </div>
+            {/* Sub-Section: Multi-Intent Retrieval & Entity Reconciliation */}
+            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
+              <h3 className="text-base font-bold text-white">Entity Reconciliation &amp; Web Consistency</h3>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
+                Conflicting or ambiguous attributes across directories, structured markup, or external platforms can make entity reconciliation more difficult and may reduce confidence in which facts belong to the same entity.
+              </p>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
+                For a practical example of entity schema across multi-attribute products and local service signals, see our <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline font-semibold">Baby Bento Case Study</Link>.
+              </p>
             </div>
           </section>
 
-          {/* Section: How to Engineer Structured Data for Fan-Out Performance */}
+          {/* Section 4: Engineering Structured Data for Technical SEO */}
           <section id="engineering-schema" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              How to Engineer Structured Data for Fan-Out Performance
+              Engineering Structured Data for Technical SEO
             </h2>
-
-            {/* Atomic Answer Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border-l-4 border-aeo-cyan rounded-r-xl space-y-2">
-              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase">Schema Engineering</span>
-              <p className="text-sm text-white/90 font-medium leading-relaxed">
-                Engineering schema for fan-out requires front-loading key facts, defining explicit entity statements, prioritising high-intent properties, keeping blocks modular, and maintaining strict cross-platform consistency.
-              </p>
-            </div>
 
             <div className="space-y-4">
               {engineeringSteps.map((step, idx) => (
@@ -655,40 +630,54 @@ export default function StructuredDataQueryFanOutArticlePage() {
                 </div>
               ))}
             </div>
+          </section>
 
-            {/* Why This Matters Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 to-transparent border border-aeo-cyan/20 rounded-xl space-y-1">
-              <span className="text-xs font-mono text-aeo-cyan font-bold uppercase">Why This Matters for AI Search</span>
-              <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
-                Modular, front-loaded schema gives AI crawlers unambiguous signals on the first pass, shielding your brand against query fragmentation.
+          {/* Practical Implementation Example Section */}
+          <section id="implementation-example" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <Code className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                Practical Implementation: Valid JSON-LD Example
+              </h2>
+            </div>
+
+            <p className="text-white/80 text-base leading-relaxed font-serif">
+              Below is a practical JSON-LD example demonstrating linked entity markup for a local service business. It uses nested Schema graph nodes, explicit `@id` URIs, and property definitions that mirror visible on-page content:
+            </p>
+
+            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs overflow-x-auto shadow-2xl">
+              <div className="flex items-center justify-between text-white/50 text-[11px] pb-2 border-b border-white/10 font-sans">
+                <span>JSON-LD Graph Example</span>
+                <span className="text-aeo-cyan">application/ld+json</span>
+              </div>
+              <pre className="text-aeo-cyan/90 leading-relaxed">
+                <code>{jsonLdExample}</code>
+              </pre>
+            </div>
+
+            <div className="p-4 bg-amber-500/10 border-l-4 border-amber-500 rounded-r-xl space-y-1">
+              <span className="text-xs font-mono text-amber-400 font-bold uppercase">Google Requirement Warning</span>
+              <p className="text-xs text-white/90 leading-relaxed font-serif">
+                Google guidelines require that all properties in your JSON-LD markup accurately reflect human-readable text visible on the web page. Adding structured data for information users cannot see violates Google Search policies.
               </p>
             </div>
 
             {/* Mid-Page Conversion CTA Block */}
             <div className="p-6 bg-gradient-to-r from-aeo-purple/10 via-neutral-900 to-transparent border border-aeo-cyan/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-center sm:text-left">
-                <h4 className="text-base font-bold text-white">Want your structured data engineered for AI search?</h4>
-                <p className="text-xs text-white/70 font-light">Get your free visibility audit with AEObility today.</p>
+                <h3 className="text-base font-bold text-white">Want your structured data engineered for technical SEO?</h3>
+                <p className="text-xs text-white/70 font-light">Audit your website schema and entity consistency with AEObility.</p>
               </div>
               <Link
                 href="/diagnostic"
                 className="px-5 py-2.5 rounded-full bg-aeo-cyan text-black font-extrabold text-xs hover:bg-white transition-all shrink-0"
               >
-                <span>Get Your Free AI Search Visibility Audit</span>
+                <span>Request Technical Audit</span>
               </Link>
             </div>
           </section>
-
-          {/* Section: Why Structured Data Is Now Essential */}
-          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-            <h2 className="text-xl font-bold text-white">Why Structured Data Is Now Essential</h2>
-            <p className="text-sm text-white/80 font-light leading-relaxed font-serif">
-              Fan-out is how modern answer engines operate. Without structured data, your brand competes inside long text blocks where positional bias reduces visibility. With structured data, your entity becomes a stable reference point that engines can trust and reuse across many retrieval intents.
-            </p>
-            <div className="p-3 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-xl text-xs font-mono text-aeo-cyan font-bold">
-              Structured data is not a ranking trick. It is a resilience mechanism.
-            </div>
-          </div>
 
           {/* Section: AEObility's View */}
           <div className="p-6 bg-gradient-to-r from-aeo-purple/10 via-neutral-900 to-transparent border-l-4 border-aeo-purple rounded-r-2xl space-y-3">
@@ -697,7 +686,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
               <span>AEObility’s View</span>
             </div>
             <p className="text-sm md:text-base text-white/90 font-light leading-relaxed font-serif italic">
-              If you want your brand to be cited in AI search, you must design for retrieval first. Structured data is the most reliable way to improve performance under query fan-out, reduce positional risk, and ensure your entity is consistently recognised across the web.
+              Structured data is not an overnight ranking shortcut or a guaranteed citation trick. It is a foundational technical SEO practice that ensures search systems parse entity attributes with clarity, precision, and consistency.
             </p>
           </div>
 
@@ -714,18 +703,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {microFaqs.map((faq, idx) => (
                 <div key={idx} className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2 hover:border-aeo-cyan/30 transition-all">
-                  <h4 className="text-sm font-bold text-white leading-snug">{faq.q}</h4>
+                  <h3 className="text-sm font-bold text-white leading-snug">{faq.q}</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">{faq.a}</p>
                 </div>
               ))}
-            </div>
-
-            {/* Post-FAQ Conversion CTA */}
-            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-              <span className="text-xs text-white/80 font-medium">Run a fan-out resilience check for your brand today.</span>
-              <Link href="/diagnostic" className="text-xs text-aeo-cyan font-bold hover:underline">
-                Get Your Free AI Search Visibility Audit &rarr;
-              </Link>
             </div>
           </section>
 
@@ -733,7 +714,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
           <section className="space-y-6 border-t border-white/10 pt-10">
             <div className="flex items-center gap-2">
               <Wrench className="w-5 h-5 text-aeo-cyan" />
-              <h2 className="text-2xl font-bold text-white">Tools &amp; Resources for Fan-Out Resilience</h2>
+              <h2 className="text-2xl font-bold text-white">Tools &amp; Resources for Entity SEO</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -743,7 +724,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Run a passage structure check and test vector retrieval performance for your brand under fan-out.
+                  Evaluate entity clarity, schema completeness, and technical SEO structure for your domain.
                 </p>
               </Link>
 
@@ -753,7 +734,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Learn how to construct Atomic Answer Blocks and RDF triple schema microdata.
+                  Learn how to construct structured Atomic Answer Blocks and semantic entity content.
                 </p>
               </Link>
 
@@ -763,7 +744,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Discover why AI search ranks entities instead of keyword pages.
+                  Discover how search engines parse entity attributes across web ecosystems.
                 </p>
               </Link>
 
@@ -773,7 +754,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Mitigate the retrieval and synthesis bottlenecks in dense vector search.
+                  Examine retrieval sensitivity and synthesis bottlenecks in dense search models.
                 </p>
               </Link>
             </div>
@@ -796,7 +777,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                 <span className="text-xs text-aeo-cyan font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10">Senior Information Architect &amp; AEO Strategist</span>
               </div>
               <p className="text-xs text-white/70 font-light leading-relaxed">
-                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in structured data engineering, query fan-out resilience, and AI vector retrieval for Australian enterprises.
+                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in structured data engineering, entity SEO architecture, and AI vector retrieval context for Australian enterprises.
               </p>
               <div className="pt-1 text-xs">
                 <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1">
@@ -810,17 +791,17 @@ export default function StructuredDataQueryFanOutArticlePage() {
           {/* Bottom Audit CTA */}
           <div className="p-8 bg-gradient-to-br from-neutral-900 to-black border border-aeo-cyan/30 rounded-2xl text-center space-y-4 shadow-xl">
             <h3 className="text-xl md:text-3xl font-extrabold text-white">
-              Protect Your Brand Against <span className="text-gradient-aeo">Query Fan-Out</span>
+              Optimise Your Brand&apos;s <span className="text-gradient-aeo">Entity Architecture</span>
             </h3>
             <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
-              Get your structured data and entity schema audited for AI search engines and RAG retrieval pipelines.
+              Get your website schema and entity attributes audited for search engine clarity and technical SEO resilience.
             </p>
             <div className="pt-2">
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-aeo-cyan text-black font-extrabold text-sm hover:bg-white transition-all shadow-lg hover:shadow-aeo-cyan/20"
               >
-                <span>Get Your Free AI Search Visibility Audit</span>
+                <span>Get Started with an Entity Audit</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -843,7 +824,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </Link>
           </div>
 
-        </section>
+        </article>
 
       </main>
 
