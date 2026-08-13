@@ -560,7 +560,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <td className="py-3 px-3 font-mono text-white font-semibold">POST /api/search/answer</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/search/answer/route.ts</td>
                     <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Query &rarr; Answer Object</td>
-                    <td className="py-3 px-3">Grounded NLWeb vector search answer endpoint returning 2-sentence answers and similarity scores.</td>
+                    <td className="py-3 px-3">Grounded NLWeb vector search answer endpoint returning 2-sentence answers and similarity scores. (Note: Published in &lt;link rel=&quot;nlweb-ask&quot;&gt; head tags as a discovery URL; backend processes incoming query vectors via POST payload handling).</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">GET /api/mcp</td>
@@ -663,20 +663,25 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs shadow-2xl">
               <span className="text-aeo-cyan font-bold uppercase text-[11px] block">Final AI Readiness Score Calculation</span>
               <p className="text-white/80 leading-relaxed font-sans text-xs">
-                In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/scoring.ts</code>, each category score ($S, T, E, C, K$) is bounded to $[0, 100]$ and weighted transparently:
+                In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/scoring.ts</code>, each category score (S, T, E, C, K) is bounded to [0, 100] and weighted transparently:
               </p>
-              <div className="p-4 bg-black rounded-xl text-aeo-cyan overflow-x-auto">
-                {"$$\\text{ReadinessScore} = \\text{clamp}\\left(0, 100, \\text{round}\\left(0.40 S + 0.20 T + 0.15 E + 0.15 C + 0.10 K\\right)\\right)$$" }
+              <div className="p-4 bg-black rounded-xl text-aeo-cyan overflow-x-auto text-center font-mono space-y-2 border border-white/10">
+                <div className="text-sm font-bold tracking-wide text-aeo-cyan">
+                  ReadinessScore = clamp(0, 100, round(0.40 S + 0.20 T + 0.15 E + 0.15 C + 0.10 K))
+                </div>
+                <div className="text-[11px] text-white/50 font-sans">
+                  Normalized bounding limits: [0, 100] &bull; Weights sum: 100%
+                </div>
               </div>
 
               {/* Variable Annotations */}
               <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1 font-sans">
                 <span className="text-xs font-bold text-white uppercase block font-mono">Formula Variable Definitions:</span>
-                <div>&bull; <code className="text-aeo-cyan">S</code>: Semantic Relevance score ($0-100$)</div>
-                <div>&bull; <code className="text-white">T</code>: Technical Readiness score ($0-100$)</div>
-                <div>&bull; <code className="text-purple-300">E</code>: Entity Clarity score ($0-100$)</div>
-                <div>&bull; <code className="text-amber-300">C</code>: Competitor Coverage score ($0-100$)</div>
-                <div>&bull; <code className="text-emerald-400">K</code>: Knowledge Graph Corroboration score ($0-100$)</div>
+                <div>&bull; <code className="text-aeo-cyan">S</code>: Semantic Relevance score (0-100)</div>
+                <div>&bull; <code className="text-white">T</code>: Technical Readiness score (0-100)</div>
+                <div>&bull; <code className="text-purple-300">E</code>: Entity Clarity score (0-100)</div>
+                <div>&bull; <code className="text-amber-300">C</code>: Competitor Coverage score (0-100)</div>
+                <div>&bull; <code className="text-emerald-400">K</code>: Knowledge Graph Corroboration score (0-100)</div>
               </div>
             </div>
 
@@ -690,9 +695,9 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <p className="text-xs text-white/75 font-light font-serif leading-relaxed">
                   Relative similarity difference is calculated with a signed delta and mapped to a neutral 50 midpoint to avoid harsh zero floors:
                 </p>
-                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1">
-                  <div>{"$$\\text{RelativeDelta} = 100 \\times (\\text{Sim}_{\\text{client}} - \\bar{\\text{Sim}}_{\\text{competitors}})$$"}</div>
-                  <div>{"$$\\text{DominanceScore} = \\text{clamp}\\left(0, 100, 50 + \\frac{\\text{RelativeDelta}}{2}\\right)$$"}</div>
+                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1 text-center">
+                  <div>RelativeDelta = 100 &times; (Sim_client - Sim_competitors_avg)</div>
+                  <div>DominanceScore = clamp(0, 100, 50 + (RelativeDelta / 2))</div>
                 </div>
               </div>
 
