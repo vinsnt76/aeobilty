@@ -36,7 +36,9 @@ import {
   ArrowDown,
   Info,
   Calendar,
-  Check
+  Check,
+  Compass,
+  Lightbulb
 } from 'lucide-react';
 
 export const metadata = {
@@ -115,7 +117,8 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "Ingestion Pipeline into AI Bill",
           "Machine Interface Protocols: NLWeb & MCP",
           "Privacy, Data Handling & Security Controls",
-          "Contextual Interlinking & Semantic Lattice"
+          "System Bounds & Future Roadmap",
+          "Continue Exploring"
         ],
         "keywords": [
           "telemetry diagnostic engine",
@@ -284,6 +287,15 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <p className="text-white/90 text-sm font-light leading-relaxed">
                   The AEObility Telemetry Diagnostic reviews how clearly a website communicates its services, topics, entities, and commercial relevance. It combines website crawling, semantic comparison, structured-data checks, competitor analysis, and a controlled retrieval simulation to produce a prioritised scorecard. The score helps identify improvement opportunities; it does not predict or guarantee visibility in any external AI platform.
                 </p>
+                <div className="p-3 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-xl space-y-1 text-xs font-sans text-white/90">
+                  <span className="font-bold text-aeo-cyan flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                    <Lightbulb className="w-3.5 h-3.5" />
+                    <span>Why Clarity Matters for AI Visibility</span>
+                  </span>
+                  <p className="text-[11px] text-white/80 font-serif leading-relaxed">
+                    When AI search engines (like Perplexity, ChatGPT, or Google AI Overviews) answer user questions, they extract precise, unambiguous information blocks. If a website&apos;s copy is diluted or lacks explicit entity structure, AI models bypass it in favor of clearer competitor sources.
+                  </p>
+                </div>
               </div>
 
               {/* Technical Specification Summary */}
@@ -295,7 +307,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <p className="text-white/80 font-light leading-relaxed font-sans text-xs">
                   This document provides an open technical specification of AEObility Architecture v2.4 (last tested August 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
                 </p>
-                <div className="text-[11px] text-aeo-cyan pt-1">
+                <div className="text-[11px] text-aeo-cyan pt-1 border-t border-white/10">
                   Stack: Next.js App Router &bull; Google Gemini text-embedding-004 &bull; gemini-3.5-flash &bull; Wikidata SPARQL
                 </div>
               </div>
@@ -336,6 +348,9 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <p className="leading-relaxed font-light">
                 The diagnostic does not reproduce or access the proprietary retrieval, ranking, citation, or recommendation systems of ChatGPT, Perplexity, Gemini, Claude, Google, or other external platforms. Its findings are directional diagnostic signals generated from AEObility’s documented test configuration, not predictions or guarantees of visibility.
               </p>
+              <div className="text-[11px] text-amber-300 font-mono pt-1">
+                <strong>What is tested:</strong> AEObility measures semantic proximity under our specific Gemini text-embedding-004 configuration, schema completeness, SPO entity triples, and competitor content volume within our controlled test environment.
+              </div>
             </div>
           </header>
 
@@ -398,9 +413,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 </div>
               </div>
 
-              <p className="text-xs text-white/60 font-serif leading-relaxed text-center italic">
-                Caption: The diagnostic combines several internal tests before producing a prioritised scorecard and streaming recommendations into AI Bill.
-              </p>
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 text-xs text-white/70 font-sans">
+                <span className="font-bold text-white uppercase text-[11px] font-mono block">What to notice in Diagram 1:</span>
+                <p className="font-serif text-white/80 leading-relaxed">
+                  How raw page copy and search intent pass through parallel semantic, entity, and competitor checks before merging into a single score and handing off context to AI Bill.
+                </p>
+              </div>
             </div>
 
             {/* CTA 2: Contextual CTA */}
@@ -428,12 +446,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
               <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
                 <span className="font-bold text-white font-mono block text-aeo-cyan">Embedding</span>
-                <p className="text-white/70 font-light leading-relaxed font-serif">A numerical vector representation of text used for semantic comparison in vector spaces.</p>
+                <p className="text-white/70 font-light leading-relaxed font-serif">A numerical vector representation of text used for semantic comparison in high-dimensional vector spaces.</p>
               </div>
 
               <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
                 <span className="font-bold text-white font-mono block text-aeo-cyan">Cosine Similarity</span>
-                <p className="text-white/70 font-light leading-relaxed font-serif">A mathematical measure of how closely two vector direction angles align in high-dimensional space.</p>
+                <p className="text-white/70 font-light leading-relaxed font-serif">A mathematical measure of how closely two vector direction angles align invariant to total document length.</p>
               </div>
 
               <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
@@ -465,37 +483,68 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <span>Architecture Navigation Index</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs text-white/80">
-              <a href="#vector-map-infrastructure" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">1.</span>
-                <span>Vector Infrastructure</span>
+              <a href="#vector-map-infrastructure" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">1.</span>
+                  <span>Vector Infrastructure</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Dual 384-dim hashing &amp; 768-dim embeddings</span>
               </a>
-              <a href="#information-dilution-mitigation" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">2.</span>
-                <span>RAG Retrieval Simulation</span>
+
+              <a href="#information-dilution-mitigation" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">2.</span>
+                  <span>RAG Retrieval Simulation</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">90&ndash;120 token chunking &amp; 0.62 threshold</span>
               </a>
-              <a href="#apis-orchestration" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">3.</span>
-                <span>APIs &amp; Execution Flow</span>
+
+              <a href="#apis-orchestration" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">3.</span>
+                  <span>APIs &amp; Execution Flow</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Serverless routes, Gemini &amp; Wikidata SPARQL</span>
               </a>
-              <a href="#math-scoring-system" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">4.</span>
-                <span>5-Category Scoring Model</span>
+
+              <a href="#math-scoring-system" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">4.</span>
+                  <span>5-Category Scoring Model</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">40/20/15/15/10 math formula &amp; simulator</span>
               </a>
-              <a href="#bill-ingestion-pipeline" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">5.</span>
-                <span>AI Bill Ingestion</span>
+
+              <a href="#bill-ingestion-pipeline" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">5.</span>
+                  <span>AI Bill Ingestion</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Browser state handoff &amp; skill routing</span>
               </a>
-              <a href="#nlweb-mcp-architecture" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">6.</span>
-                <span>NLWeb &amp; MCP Config</span>
+
+              <a href="#nlweb-mcp-architecture" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">6.</span>
+                  <span>NLWeb &amp; MCP Config</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Machine discovery tags &amp; tool schemas</span>
               </a>
-              <a href="#privacy-security-controls" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">7.</span>
-                <span>Privacy &amp; Security</span>
+
+              <a href="#privacy-security-controls" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">7.</span>
+                  <span>Privacy &amp; Security</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Transient memory &amp; zero retention rules</span>
               </a>
-              <a href="#interlinking-matrix" className="p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-aeo-cyan/30 transition flex items-center gap-2">
-                <span className="text-aeo-cyan font-mono font-bold">8.</span>
-                <span>Continue Exploring</span>
+
+              <a href="#interlinking-matrix" className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 hover:border-aeo-cyan/30 transition flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 font-mono font-bold text-white">
+                  <span className="text-aeo-cyan">8.</span>
+                  <span>Continue Exploring</span>
+                </div>
+                <span className="text-[11px] text-white/60 font-serif">Related guides on RAG, schema &amp; AEO</span>
               </a>
             </div>
           </nav>
@@ -533,6 +582,21 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               The telemetry engine operates across two complementary vector representation layers: local character N-gram hashing vectors for local intent classification, and dense neural embeddings for high-dimensional cosine similarity analysis under the selected embedding configuration.
             </p>
 
+            {/* Architectural Rationale Box */}
+            <div className="p-5 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-2xl space-y-2 text-xs font-sans">
+              <span className="font-bold text-aeo-cyan uppercase font-mono text-[11px] block">Architectural Rationale &bull; Why Two Vector Layers?</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/80 font-serif">
+                <div>
+                  <strong className="text-white font-sans block mb-1 font-semibold">1. Why 3-gram Character Hashing?</strong>
+                  Parsing local character N-grams into a fixed 384-dimensional array runs in local browser memory with sub-millisecond execution. This eliminates API latency and allows instant local intent classification before invoking dense neural embeddings.
+                </div>
+                <div>
+                  <strong className="text-white font-sans block mb-1 font-semibold">2. Why Cosine Similarity?</strong>
+                  Cosine similarity measures vector directional angle rather than Euclidean distance magnitude. This makes comparison invariant to total document length, ensuring a short 100-token answer block is evaluated fairly against a 2,000-word competitor page.
+                </div>
+              </div>
+            </div>
+
             {/* Diagram 2: Dual Vector Architecture SVG */}
             <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs shadow-xl">
               <span className="text-aeo-cyan font-bold uppercase text-[11px] block">Diagram 2: Dual Vector Architecture Flow</span>
@@ -561,6 +625,13 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <span className="text-white/80 text-[11px] block">Function: Deep Cosine Proximity &amp; Competitor Comparison</span>
                   </div>
                 </div>
+              </div>
+
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 text-xs text-white/70 font-sans">
+                <span className="font-bold text-white uppercase text-[11px] font-mono block">What to notice in Diagram 2:</span>
+                <p className="font-serif text-white/80 leading-relaxed">
+                  Dual-branch routing separates ultra-fast local intent classification (384-dim) from high-dimensional neural similarity (768-dim), reducing API calls and latency.
+                </p>
               </div>
             </div>
 
@@ -651,6 +722,17 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </p>
             </div>
 
+            {/* Architectural Rationale Box */}
+            <div className="p-5 bg-purple-500/10 border border-purple-500/20 rounded-2xl space-y-2 text-xs font-sans">
+              <span className="font-bold text-purple-300 uppercase font-mono text-[11px] block">Architectural Rationale &bull; Why 90–120 Tokens?</span>
+              <p className="text-white/80 font-serif leading-relaxed">
+                In vector retrieval testing, 90–120 tokens (roughly 70–95 words) represent the sweet spot for passage chunking. Longer passages risk combining multiple topics and diluting vector focus. Shorter snippets lack sufficient semantic context for neural embeddings to score high similarity. 
+              </p>
+              <span className="text-[11px] text-purple-300 font-mono block italic">
+                Note: 90–120 tokens is an internal evaluation heuristic used by AEObility for diagnostic stress-testing, not a universal retrieval requirement across all AI platforms.
+              </span>
+            </div>
+
             {/* Direct AEO Summary Box */}
             <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 text-sm font-serif">
               <h3 className="font-bold text-white text-base font-sans">What is Content Dilution in Retrieval Tests?</h3>
@@ -700,15 +782,18 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </div>
             </div>
 
-            {/* Threshold Calibration Notice */}
-            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-2 text-xs text-white/80 font-serif shadow-md">
-              <span className="font-bold text-aeo-cyan uppercase font-sans text-[11px] block">Threshold Calibration &amp; Interpretation Limits</span>
+            {/* Threshold Calibration Notice & Model Range Example */}
+            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 text-xs text-white/80 font-serif shadow-md">
+              <span className="font-bold text-aeo-cyan uppercase font-sans text-[11px] block">Threshold Calibration &amp; Model Distribution Example</span>
               <p className="leading-relaxed">
                 AEObility currently treats a cosine-similarity score above <strong>0.62</strong> as an internal simulation pass threshold within this specific retrieval simulation, model configuration, and evaluation design.
               </p>
-              <p className="leading-relaxed text-white/60">
-                Cosine similarity values are not portable across embedding models, content types, vector indexes, or third-party AI products. A score above 0.62 does not establish a universal retrieval, ranking, citation, or recommendation threshold across external search engines.
-              </p>
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 font-sans text-[11px]">
+                <strong className="text-white block font-mono">Model Range Distribution Example:</strong>
+                <p className="text-white/70 font-serif leading-relaxed">
+                  Different embedding models produce different baseline similarity score ranges. For instance, Google&apos;s <code className="text-aeo-cyan font-mono">text-embedding-004</code> typically outputs similarity scores between <code className="text-aeo-cyan font-mono">0.55 – 0.82</code> for relevant technical content, whereas OpenAI&apos;s older <code className="text-white font-mono">text-embedding-ada-002</code> produced higher baseline numbers (<code className="text-white font-mono">0.75 – 0.92</code>) for similar pairs. Consequently, a threshold of 0.62 is specific to our test setup and cannot be directly compared across different model families.
+                </p>
+              </div>
             </div>
 
             {/* In Plain English Callout */}
@@ -838,6 +923,20 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <p>
                 The AI Readiness Score ($0-100$) is calculated from 5 normalized category dimensions using transparent weightings summing to 100%. Use our interactive simulator below to test custom category inputs.
               </p>
+            </div>
+
+            {/* Architectural Rationale & Plain English Summary Box */}
+            <div className="p-5 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-2xl space-y-3 text-xs font-sans">
+              <span className="font-bold text-aeo-cyan uppercase font-mono text-[11px] block">Scoring Rationale &bull; Why 40% for Semantic Relevance?</span>
+              <p className="text-white/80 font-serif leading-relaxed">
+                Semantic relevance represents the single largest factor (40%) in the AI Readiness Score because neural retrieval systems prioritize vector similarity above all else when answering user queries. If a website&apos;s content is semantically distant from the target search intent, perfect technical code or schema cannot force AI engines to retrieve it.
+              </p>
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 font-serif text-[11px] text-white/80">
+                <strong className="text-white font-sans block font-semibold text-[11px]">Plain English Scoring Breakdown:</strong>
+                <p>
+                  Think of the 5 categories like a modern business assessment: <strong>Semantic Relevance (40%)</strong> tests if you actually answer the customer&apos;s question; <strong>Technical Readiness (20%)</strong> verifies your site is fast and clean; <strong>Entity Clarity (15%)</strong> ensures your brand services are explicitly declared; <strong>Competitor Coverage (15%)</strong> checks if you cover the topic in sufficient depth; and <strong>KG Corroboration (10%)</strong> checks if external databases verify your details.
+                </p>
+              </div>
             </div>
 
             {/* Horizontal 5-Category Score Visual Grid */}
@@ -998,6 +1097,13 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   <span className="text-purple-300 font-bold">BillWidget UI</span>
                 </div>
               </div>
+
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 text-xs text-white/70 font-sans">
+                <span className="font-bold text-white uppercase text-[11px] font-mono block">What to notice in Diagram 3:</span>
+                <p className="font-serif text-white/80 leading-relaxed">
+                  Scraped website page copy never enters the AI chat stream directly; only the structured telemetry summary payload is saved locally and handed off to AI Bill to prevent prompt bloat.
+                </p>
+              </div>
             </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
@@ -1079,6 +1185,24 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </div>
             </div>
 
+            {/* Conceptual MCP Tool Call Example */}
+            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs shadow-xl">
+              <span className="text-purple-300 font-bold uppercase text-[11px] block">Conceptual MCP Machine Agent Tool Request Example</span>
+              <p className="text-white/80 font-sans text-xs leading-relaxed">
+                When an external AI agent queries AEObility&apos;s machine endpoint, it issues a structured JSON payload:
+              </p>
+              <div className="p-4 bg-black rounded-xl text-purple-300 overflow-x-auto text-[11px] leading-relaxed border border-white/10">
+                <pre>{`// Machine Agent Call to GET /api/mcp
+{
+  "tool": "query_knowledge_hub_node",
+  "arguments": {
+    "topic": "RAG information dilution",
+    "format": "JSON-LD"
+  }
+}`}</pre>
+              </div>
+            </div>
+
             {/* In Plain English Callout */}
             <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs font-serif shadow-md">
               <span className="font-bold text-aeo-cyan font-sans text-[11px] uppercase block">In Plain English &bull; What This Means For Your Website</span>
@@ -1138,6 +1262,68 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <p className="text-white/70 font-light leading-relaxed font-serif">
                   API endpoints enforce rate limits and payload size caps. Requests to external AI models adhere to zero data-retention for model training under commercial enterprise API terms.
                 </p>
+              </div>
+            </div>
+
+            {/* Zero Retention Box: What We Never Store */}
+            <div className="p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl space-y-3 font-sans shadow-lg">
+              <span className="font-bold text-emerald-400 uppercase font-mono text-[11px] block flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Zero Data-Retention Safeguards &bull; What We Never Store</span>
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white/80">
+                <div className="flex items-center gap-2 p-2 bg-black/40 rounded-lg">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>No raw scraped HTML or unparsed source code.</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 bg-black/40 rounded-lg">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>No competitor site text or extracted metrics stored on server.</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 bg-black/40 rounded-lg">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>No user-entered confidential prompts or intent strings logged.</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 bg-black/40 rounded-lg">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>No IP addresses or personal browser fingerprints tracked.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 7.5: System Bounds & Future Roadmap */}
+          <section className="space-y-6 pt-6 border-t border-white/10 font-sans">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300">
+                <Compass className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                System Scope Bounds &amp; Future Roadmap
+              </h2>
+            </div>
+
+            <p className="text-white/80 text-sm font-light leading-relaxed font-serif">
+              AEObility Architecture v2.4 provides a controlled, reproducible diagnostic baseline. Transparency requires defining both current scope bounds and planned architectural improvements:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="font-bold text-white text-sm font-mono text-aeo-cyan">Current Scope Bounds (v2.4)</h3>
+                <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
+                  <li>&bull; <strong>Single-Page Analysis:</strong> Audits target URL copy and schema; site-wide crawl checks are evaluated via fan-out sampling.</li>
+                  <li>&bull; <strong>Text &amp; Schema Focus:</strong> Evaluates text block embeddings and JSON-LD markup; image/video embeddings are excluded from vector proximity tests.</li>
+                  <li>&bull; <strong>Directional Pass Thresholds:</strong> Internal simulation benchmark threshold of 0.62 applies to the Gemini text-embedding-004 configuration.</li>
+                </ul>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="font-bold text-white text-sm font-mono text-purple-300">Planned Architectural Roadmap (v2.5+)</h3>
+                <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
+                  <li>&bull; <strong>Multimodal Passage Embeddings:</strong> Stress-testing image captioning and tabular data vector representation.</li>
+                  <li>&bull; <strong>Cross-Model Ensemble Comparison:</strong> Evaluating chunk survival rates across multiple open-weights embedding models simultaneously.</li>
+                  <li>&bull; <strong>Direct SPARQL Graph Validation:</strong> Automated graph entity assertion checks against custom enterprise knowledge bases.</li>
+                </ul>
               </div>
             </div>
           </section>
