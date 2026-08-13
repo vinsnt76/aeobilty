@@ -54,6 +54,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#article",
         "headline": "Structured Data & Query Fan-Out: Entity Clarity in AI Search",
         "description": "Understand how structured data complements visible text to provide explicit entity context under query fan-out, while avoiding overstated claims regarding AI retrieval.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out"
+        },
         "author": {
           "@id": "https://aeobility.com.au/#vince-baker"
         },
