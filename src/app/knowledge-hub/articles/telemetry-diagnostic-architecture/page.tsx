@@ -43,7 +43,7 @@ import {
 
 export const metadata = {
   title: "Telemetry Diagnostic Tool: Technical Architecture Guide | AEObility",
-  description: "Technical architecture specification of the AEObility Telemetry Engine: vector mapping, RAG retrieval simulation, 5-category scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
+  description: "An open technical specification of AEObility Architecture v2.4 detailing dual-vector hashing, text-embedding-004 RAG tests, and structured JSON triples.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
   },
