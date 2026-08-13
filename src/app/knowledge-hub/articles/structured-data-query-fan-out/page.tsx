@@ -376,7 +376,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
 
             <div className="space-y-4 text-white/85 text-base sm:text-lg font-light leading-relaxed font-serif">
               <p>
-                When a user asks a multi-faceted question, search engines do not rely solely on a single keyword lookup. Instead, the retrieval pipeline may decompose the prompt into several targeted sub-queries covering specific subtopics—such as pricing, local service availability, materials, or compliance credentials.
+                When a user asks a multi-faceted question, search engines do not rely solely on a single keyword lookup. Instead, the retrieval pipeline may decompose the prompt into several targeted sub-queries covering specific subtopics, such as pricing, local service availability, materials, or compliance credentials.
               </p>
 
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 font-sans text-sm">
@@ -715,7 +715,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
               <span>AEObility’s View</span>
             </div>
             <p className="text-sm md:text-base text-white/90 font-light leading-relaxed font-serif italic">
-              Structured data is not a ranking trick; it is a resilience mechanism. By providing answer engines with unambiguous machine-readable facts, you ensure your business doesn&apos;t just get indexed—you <strong className="text-aeo-cyan not-italic">Get Found. Get Chosen.</strong>
+              Structured data is not a ranking trick; it is a resilience mechanism. By providing answer engines with unambiguous machine-readable facts, you ensure your business doesn&apos;t just get indexed: you <strong className="text-aeo-cyan not-italic">Get Found. Get Chosen.</strong>
             </p>
           </div>
 
