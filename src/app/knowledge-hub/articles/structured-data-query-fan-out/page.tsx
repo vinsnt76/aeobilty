@@ -299,7 +299,11 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </h1>
 
             <p className="text-lg md:text-xl font-light text-white/80 font-serif leading-relaxed">
-              Structured data provides explicit machine-readable entity context when search systems expand complex user queries into multiple sub-intents. This guide examines how structured data supports technical SEO under query fan-out, while clarifying what Schema can—and cannot—do for AI search visibility.
+              Structured data provides explicit machine-readable entity context when search systems expand complex user queries into multiple sub-intents. This guide examines how structured data supports technical SEO under query fan-out, while clarifying what Schema can and cannot do for AI search visibility.
+            </p>
+
+            <p className="text-base sm:text-lg font-light text-white/90 font-serif leading-relaxed">
+              AI search engines no longer evaluate a single keyword or phrase in isolation. When a user asks a complex question, modern systems break that prompt into multiple sub-queries, a process known as query fan-out. Structured data and atomic answer blocks give these systems the scaffolding they need to correctly interpret your entity across all sub-intents.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-4">
