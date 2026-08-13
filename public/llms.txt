@@ -41,6 +41,8 @@
 
 ### Knowledge Hub (Our Research & Tutorial Nodes)
 - [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
+- [`/knowledge-hub/guides`](https://aeobility.com.au/knowledge-hub/guides): Technical guides index covering Answer Engine Optimisation, vector search, and RAG architectures.
+  - [`/knowledge-hub/guides/aeo`](https://aeobility.com.au/knowledge-hub/guides/aeo): AEO technical principles, vector indexing, and structural refactoring guide.
 - [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.
 - [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.

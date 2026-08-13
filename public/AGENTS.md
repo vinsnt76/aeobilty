@@ -34,7 +34,9 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Child Corridor Nodes**: `2. AEO vs SEO` (`/services/aeo/comparison`), `4. What stops your business from showing up?` (`/services/aeo/constraints`), `5. AEO Pricing & Sprint Deliverables` (`/services/aeo/costs-timing`), `8. AI Semantic SEO` (`/knowledge-hub/semantic-seo`).
 - **Sibling Radial Nodes**: `6. Shopify AEO` (`/services/aeo/shopify`), `7. Local Business Visibility` (`/services/aeo/local-business`), `9. AI Search Marketing` (`/services/ai-search-marketing`).
 
-### Key Technical Research Articles & Tutorials
+### Key Technical Research Articles, Guides & Tutorials
+- **Technical Guides Directory**: *AEO & AI Search Technical Guides* (`https://aeobility.com.au/knowledge-hub/guides`)
+- **AEO Principles Guide**: *AEO Technical Principles & Structural Refactoring Guide* (`https://aeobility.com.au/knowledge-hub/guides/aeo`)
 - **Multi-Engine AEO & Retrieval Guide**: *How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content* (`https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines`)
 - **Tutorials Directory**: Step-by-step practical guides and walkthroughs (`https://aeobility.com.au/knowledge-hub/tutorials`)
 - **Competitor Overlap Framework**: *Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology* (`https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`)
