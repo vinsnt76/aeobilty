@@ -507,6 +507,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
                       <strong className="text-aeo-cyan text-xs font-mono uppercase">Dense Model Sensitivity:</strong>
                       <p className="text-xs text-white/70">A 2025 EMNLP Findings study observed performance degradation in certain dense embedding models when key details appeared later in long passages, whereas traditional BM25 sparse search and full rerankers showed greater positional robustness.</p>
+                      <p className="text-xs text-aeo-cyan/90 font-sans italic pt-1">Plain-English note: Dense embedding models convert your content into mathematical concepts. When key facts are buried deep in a paragraph, AI search tools struggle to map those concepts accurately during quick micro-queries.</p>
                     </div>
 
                     <div className="p-3 bg-white/5 rounded-xl space-y-1">
@@ -686,7 +687,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
               <span>AEObility’s View</span>
             </div>
             <p className="text-sm md:text-base text-white/90 font-light leading-relaxed font-serif italic">
-              Structured data is not an overnight ranking shortcut or a guaranteed citation trick. It is a foundational technical SEO practice that ensures search systems parse entity attributes with clarity, precision, and consistency.
+              Structured data is not a ranking trick; it is a resilience mechanism. By providing answer engines with unambiguous machine-readable facts, you ensure your business doesn&apos;t just get indexed—you <strong className="text-aeo-cyan not-italic">Get Found. Get Chosen.</strong>
             </p>
           </div>
 
@@ -791,17 +792,17 @@ export default function StructuredDataQueryFanOutArticlePage() {
           {/* Bottom Audit CTA */}
           <div className="p-8 bg-gradient-to-br from-neutral-900 to-black border border-aeo-cyan/30 rounded-2xl text-center space-y-4 shadow-xl">
             <h3 className="text-xl md:text-3xl font-extrabold text-white">
-              Optimise Your Brand&apos;s <span className="text-gradient-aeo">Entity Architecture</span>
+              Is your business built for AI search? <span className="text-gradient-aeo">Get Found. Get Chosen.</span>
             </h3>
             <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
-              Get your website schema and entity attributes audited for search engine clarity and technical SEO resilience.
+              Claim your free AI Search Visibility Audit with AEObility today and see how answer engines read your brand across Search, Maps, and AI.
             </p>
             <div className="pt-2">
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-aeo-cyan text-black font-extrabold text-sm hover:bg-white transition-all shadow-lg hover:shadow-aeo-cyan/20"
               >
-                <span>Get Started with an Entity Audit</span>
+                <span>Claim Your Free AI Search Visibility Audit</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
