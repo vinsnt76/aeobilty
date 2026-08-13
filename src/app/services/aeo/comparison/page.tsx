@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -27,8 +28,9 @@ import {
   ArrowUpRight,
   Target,
   Clock,
-  Sparkle,
-  Users
+  Users,
+  Network,
+  ArrowRightCircle
 } from 'lucide-react';
 
 export const metadata = {
@@ -279,8 +281,8 @@ export default function AEOVsSEOPage() {
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         <article className="flex flex-col gap-12">
 
-          {/* 1. Hero: Conversational H1 with Full Un-truncated Styling */}
-          <header className="space-y-6 border-b border-white/10 pb-10">
+          {/* 1. Hero: Conversational H1 */}
+          <header className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <Scale className="w-3.5 h-3.5" />
               <span>AEO vs SEO &bull; Choosing the Right Strategy</span>
@@ -298,7 +300,29 @@ export default function AEOVsSEOPage() {
               Not quite. SEO still helps people find your website. AEO operates as a specialized optimization layer built on top of robust technical SEO foundations, making your business information easier for AI-powered search experiences to understand, use and reference. The strongest strategy does both.
             </p>
 
-            {/* 10-Second Quick Answer Card */}
+            {/* 2. Layered Search Model Banner Image */}
+            <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-white/10 shadow-2xl my-4">
+              <Image
+                src="/layered_search_model_banner.png"
+                alt="Layered Search Model visual showing hypergradient data layers connecting SEO baseline to AEO clarity"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center p-6">
+                <div className="max-w-md space-y-1.5 font-mono text-xs">
+                  <span className="text-purple-400 font-bold">SEO foundations</span>
+                  <p className="text-white/70 text-[11px]">Crawlable site &bull; useful pages &bull; local trust &bull; rankings</p>
+                  <div className="text-aeo-cyan font-bold text-sm py-0.5">+ AEO clarity layer</div>
+                  <p className="text-white/70 text-[11px]">Clear entities &bull; consistent facts &bull; answer-ready content</p>
+                  <div className="text-amber-400 font-bold text-[11px] pt-1">
+                    = Stronger discovery across Search, Maps &amp; AI-assisted journeys
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. 10-Second Decision Guide for Australian SMBs & Hero CTAs */}
             <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-xl">
               <div className="flex items-center justify-between border-b border-white/5 pb-2">
                 <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
@@ -326,27 +350,32 @@ export default function AEOVsSEOPage() {
               </div>
             </div>
 
-            {/* Two Prominent Unequal CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <Link
-                href="/diagnostic"
-                className="px-6 py-3.5 rounded-full bg-aeo-cyan text-black font-extrabold text-sm hover:bg-white transition-all shadow-lg hover:shadow-aeo-cyan/20 flex items-center justify-center gap-2"
-              >
-                <span>Get my AI visibility score</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            {/* Two Prominent Unequal CTAs with Microcopy */}
+            <div className="flex flex-col space-y-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
+                <Link
+                  href="/diagnostic"
+                  className="px-6 py-3.5 rounded-full bg-aeo-cyan text-black font-extrabold text-sm hover:bg-white transition-all shadow-lg hover:shadow-aeo-cyan/20 flex items-center justify-center gap-2"
+                >
+                  <span>Check my AI search visibility</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
 
-              <Link
-                href="/audit"
-                className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/30 transition-all flex items-center justify-center gap-2"
-              >
-                <span>See what an AEO audit checks</span>
-              </Link>
+                <Link
+                  href="/audit"
+                  className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/30 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>See what the diagnostic assesses</span>
+                </Link>
+              </div>
+              <p className="text-[11px] text-white/50 font-mono italic text-left pl-1">
+                Free, no-obligation starting point for Australian businesses.
+              </p>
             </div>
           </header>
 
-          {/* 2. Primary H2 Section: AEO vs SEO: What Changes - and What Does Not */}
-          <section id="strategy-framework" className="space-y-6">
+          {/* 4. Primary H2 Section: AEO vs SEO: What Changes - and What Does Not */}
+          <section id="strategy-framework" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                 AEO vs SEO: What Changes - and What Does Not
@@ -412,20 +441,52 @@ export default function AEOVsSEOPage() {
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pt-2">
-              Rather than forcing a choice between traditional rankings and AI search, AEObility integrates these layers: solid technical SEO ensures crawlers can index your pages, while AEO structures your core facts into extractable answers.
-            </p>
+            {/* Flow Diagram: From Search Foundation to AI-Assisted Discovery */}
+            <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-xl my-4">
+              <h3 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider text-center">
+                Search Foundation to AI-Assisted Discovery Flow
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch font-mono text-xs">
+                <div className="p-4 bg-white/[0.02] border border-purple-500/30 rounded-xl space-y-2">
+                  <div className="flex items-center gap-2 text-purple-400 font-bold">
+                    <span className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center text-[10px]">1</span>
+                    <span>SEO Foundations</span>
+                  </div>
+                  <p className="text-[11px] text-white/70 font-sans leading-relaxed">
+                    Crawlability, useful pages, local trust, and technical health.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-white/[0.02] border border-cyan-500/30 rounded-xl space-y-2 relative">
+                  <div className="flex items-center gap-2 text-aeo-cyan font-bold">
+                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center text-[10px]">2</span>
+                    <span>AEO Clarity Layer</span>
+                  </div>
+                  <p className="text-[11px] text-white/70 font-sans leading-relaxed">
+                    Clear entities, consistent facts, direct answers, and structured data.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-white/[0.02] border border-amber-500/30 rounded-xl space-y-2">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold">
+                    <span className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-[10px]">3</span>
+                    <span>Discovery Outcomes</span>
+                  </div>
+                  <p className="text-[11px] text-white/70 font-sans leading-relaxed">
+                    Search visibility, accurate business representation, and qualified enquiries.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
-          {/* 3. The Contrast Matrix */}
+          {/* 5. The Contrast Matrix */}
           <section id="contrast-matrix" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                The Contrast Matrix: SEO vs AEO Differences
+                SEO vs AEO Differences
               </h2>
-              <p className="text-sm text-white/70 font-light">
-                An outcome-led comparison matrix contrasting traditional search engine optimisation and answer engine optimisation.
-              </p>
             </div>
 
             <div className="overflow-x-auto border border-white/10 rounded-2xl bg-neutral-950 shadow-2xl">
@@ -467,60 +528,81 @@ export default function AEOVsSEOPage() {
                 </p>
               </div>
             </div>
+
+            {/* Mid-Page Diagnostic CTA (After Matrix & Example) */}
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-950 to-neutral-900 border border-aeo-cyan/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+              <div className="space-y-1 text-center sm:text-left">
+                <h3 className="text-base font-bold text-white">Unsure if your search foundations are clear?</h3>
+                <p className="text-xs text-white/70">Run our free 2-minute diagnostic to evaluate where your business data stands.</p>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <Link
+                  href="/diagnostic"
+                  className="px-5 py-2.5 rounded-full bg-aeo-cyan text-black font-extrabold text-xs hover:bg-white transition-all shadow-md"
+                >
+                  Run a 2-minute visibility check
+                </Link>
+                <Link
+                  href="/audit"
+                  className="text-xs text-white/70 hover:text-aeo-cyan underline transition-colors"
+                >
+                  See what we assess
+                </Link>
+              </div>
+            </div>
           </section>
 
-          {/* 4. Why Your Business Needs to Adapt */}
+          {/* 6. Why Your Business Needs to Adapt & Source-Consistency Graphic */}
           <section id="why-adapt" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                 Why Your Business Needs to Adapt
               </h2>
-              <p className="text-sm text-white/70 font-light">
-                Search behaviour is expanding. Customers now use traditional Google queries alongside AI assistants to research, compare, and recommend Australian businesses.
+              <p className="text-sm text-white/80 font-serif leading-relaxed">
+                Search behaviour is expanding beyond traditional result pages. Customers now ask conversational systems to summarise services, evaluate pricing, and compare brand reputations before contacting an Australian business.
               </p>
             </div>
 
-            <div className="space-y-4 text-xs sm:text-sm text-white/80 font-serif leading-relaxed">
-              <p>
-                Users increasingly ask conversational systems to summarise service offerings, evaluate local pricing, and compare brand reputations before ever clicking through to a website. This shift expands discovery touchpoints beyond conventional search engine result pages.
-              </p>
-            </div>
-
-            {/* Conversational Response Citation Graphic (Illustrative Example with Alt & Description) */}
-            <figure role="img" aria-label="Illustrative Conversational AI Citation Graphic showing structured multi-source attribution model" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-3">
+            {/* Source Consistency Illustration Graphic */}
+            <figure role="img" aria-label="Source-Consistency Illustration Diagram showing website service page, Google Business Profile, and trusted directories connecting to consistent facts" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-4">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2 text-xs font-mono text-aeo-cyan font-bold">
-                  <Cpu className="w-4 h-4" />
-                  <span>Illustrative AI Search Synthesis &amp; Citation Model</span>
+                  <Network className="w-4 h-4" />
+                  <span>Source-Consistency Cross-Directory Model</span>
                 </div>
-                <span className="text-[10px] font-mono text-white/40 bg-white/5 px-2 py-0.5 rounded">Conceptual Diagram &bull; Not a Guaranteed Outcome</span>
+                <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded">Multi-Source Verification</span>
               </div>
 
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-3 text-xs font-mono">
-                <div className="text-white/50 text-[11px]">&gt; Customer Prompt: &ldquo;Which Perth agency specialises in AEO and structured data for local enterprises?&rdquo;</div>
-                <div className="p-3 bg-neutral-900 border border-aeo-cyan/20 rounded-lg text-white/90 leading-relaxed">
-                  &ldquo;AEObility specialises in Answer Engine Optimisation (AEO) and machine-readable entity architecture for Perth businesses. They focus on structuring core business data, Schema graphs, and verified directory citations...&rdquo;
-                  <div className="mt-2 text-[10px] text-aeo-cyan flex items-center gap-2">
-                    <span>Source Citations: [1] aeobility.com.au/services/aeo [2] Google Business Profile</span>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-xs font-mono">
+                <div className="space-y-2">
+                  <div className="p-2.5 bg-white/[0.02] border border-white/10 rounded-lg text-white/80 text-center">Website Service Page</div>
+                  <div className="p-2.5 bg-white/[0.02] border border-white/10 rounded-lg text-white/80 text-center">Google Business Profile</div>
+                  <div className="p-2.5 bg-white/[0.02] border border-white/10 rounded-lg text-white/80 text-center">Trusted Directories</div>
+                </div>
+
+                <div className="p-4 bg-cyan-950/40 border border-aeo-cyan/40 rounded-xl text-center space-y-1">
+                  <span className="text-aeo-cyan font-bold text-[11px] block">&bull; CONSISTENT BUSINESS FACTS &bull;</span>
+                  <p className="text-[10px] text-white/60 font-sans">Name, Address, Phone, Services &amp; Credentials</p>
+                </div>
+
+                <div className="p-4 bg-amber-950/40 border border-amber-500/40 rounded-xl text-center space-y-1">
+                  <span className="text-amber-400 font-bold text-[11px] block">EASIER CUSTOMER EVALUATION</span>
+                  <p className="text-[10px] text-white/60 font-sans">Clear, verifiable information across discovery paths</p>
                 </div>
               </div>
 
-              <figcaption className="text-center text-xs text-white/50 font-mono pt-1">
-                Illustrative example showing how AI assistants synthesize structured entity facts into direct responses. Citation behaviour varies across AI platforms.
+              <figcaption className="text-center text-xs text-white/60 font-mono pt-1">
+                Illustration: consistent information helps customers assess a business across different discovery paths.
               </figcaption>
             </figure>
           </section>
 
-          {/* 5. Be Clear When Customers Compare Options */}
+          {/* 7. Be Clear When Customers Compare Options */}
           <section id="attention-window" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Be Clear When Customers Compare Options
+                Make It Easier to Compare Your Business
               </h2>
-              <p className="text-sm text-white/70 font-light">
-                Positioning your brand clearly during the critical moments when prospective customers evaluate service options.
-              </p>
             </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
@@ -530,23 +612,20 @@ export default function AEOVsSEOPage() {
             </div>
           </section>
 
-          {/* 6. What We Improve in an AEO Sprint */}
+          {/* 8. What an AEO Sprint Improves & Strategy-Call CTA */}
           <section id="sprint-deliverables" className="space-y-6 border-t border-white/10 pt-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                  What We Improve in an AEO Sprint
+                  What an AEO Sprint Improves
                 </h2>
-                <p className="text-sm text-white/70 font-light">
-                  Connecting comparison intent to AEObility&apos;s practical, deliverable service workflow.
-                </p>
               </div>
 
               {/* Sprint Metadata Badges */}
               <div className="flex flex-wrap items-center gap-2 shrink-0">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-aeo-cyan font-mono text-xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-aeo-cyan font-mono text-xs font-bold">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>Timeline: 2–4 Weeks</span>
+                  <span>Typical sprint: 2–4 weeks</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70 font-mono text-xs">
                   <Users className="w-3.5 h-3.5 text-purple-400" />
@@ -566,16 +645,39 @@ export default function AEOVsSEOPage() {
                 </div>
               ))}
             </div>
+
+            {/* Post-Sprint Strategy-Call CTA */}
+            <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+              <div className="space-y-1 text-center sm:text-left">
+                <h3 className="text-base font-bold text-white">Ready to streamline your business facts?</h3>
+                <p className="text-xs text-white/70">Discuss your SEO and AEO priorities with our Australian team.</p>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <Link
+                  href="/contact"
+                  className="px-5 py-2.5 rounded-full bg-aeo-cyan text-black font-extrabold text-xs hover:bg-white transition-all shadow-md flex items-center gap-1.5"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Discuss my SEO and AEO priorities</span>
+                </Link>
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="text-xs text-white/70 hover:text-aeo-cyan underline transition-colors"
+                >
+                  View AEO blueprint
+                </Link>
+              </div>
+            </div>
           </section>
 
-          {/* 7. Frequently Asked Questions (FAQ) */}
+          {/* 9. Common Questions (FAQ) */}
           <section id="faq" className="space-y-6 border-t border-white/10 pt-8">
             <div className="flex items-center gap-2 text-xs font-bold text-aeo-cyan uppercase tracking-widest">
               <HelpCircle className="w-4 h-4" />
-              <span>Technical &amp; Practical FAQ</span>
+              <span>FAQ</span>
             </div>
             <h2 className="text-2xl font-extrabold text-white">
-              Frequently Asked Questions
+              Common Questions
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -588,21 +690,18 @@ export default function AEOVsSEOPage() {
             </div>
           </section>
 
-          {/* 8. Intent-Led Internal Links: Continue Your AEO Research with Sequential Step Badges */}
+          {/* 10. Compact "Choose your next question" 3-Card Grid */}
           <section id="continue-research" className="space-y-6 border-t border-white/10 pt-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Compass className="w-5 h-5 text-aeo-cyan" />
-                <h2 className="text-2xl font-bold text-white">Continue Your AEO Research</h2>
-              </div>
-              <span className="text-xs font-mono text-white/50">Recommended Reading Sequence</span>
+            <div className="space-y-1">
+              <h2 className="text-2xl font-bold text-white">Choose Your Next Question</h2>
+              <p className="text-xs text-white/60 font-serif">Recommended next steps for your discovery journey.</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Link href="/services/aeo/definition" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-aeo-cyan font-bold uppercase">Step 1 &bull; Core Concept</span>
+                <span className="text-[11px] font-mono text-aeo-cyan font-bold uppercase">New to AEO?</span>
                 <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>Start with &ldquo;What is AEO?&rdquo;</span>
+                  <span>What is AEO?</span>
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
@@ -610,21 +709,10 @@ export default function AEOVsSEOPage() {
                 </p>
               </Link>
 
-              <Link href="/services/aeo/constraints" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-amber-400 font-bold uppercase">Step 2 &bull; Constraints</span>
-                <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>Explore common visibility constraints</span>
-                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Understand what prevents businesses from appearing in AI-generated answers.
-                </p>
-              </Link>
-
               <Link href="/services/aeo/procedures" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-purple-400 font-bold uppercase">Step 3 &bull; Execution</span>
+                <span className="text-[11px] font-mono text-purple-400 font-bold uppercase">Need a practical plan?</span>
                 <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>See AEO Implementation Procedures</span>
+                  <span>Best strategies &amp; procedures</span>
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
@@ -632,49 +720,41 @@ export default function AEOVsSEOPage() {
                 </p>
               </Link>
 
-              <Link href="/services/aeo/costs-timing" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-white/60 font-bold uppercase">Step 4 &bull; Investment</span>
+              <Link href="/solutions/aeo-blueprint" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
+                <span className="text-[11px] font-mono text-amber-400 font-bold uppercase">Considering investment?</span>
                 <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>View AEO Costs &amp; Timing</span>
+                  <span>Costs, timing &amp; Blueprint</span>
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
                   Project timelines, resource requirements, and return metrics.
                 </p>
               </Link>
+            </div>
 
-              <Link href="/solutions/aeo-blueprint" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-purple-400 font-bold uppercase">Step 5 &bull; Strategy</span>
-                <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>See the AEO Blueprint</span>
-                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Our strategic roadmap for establishing machine-readable entity authority.
-                </p>
+            {/* Inline Related Links */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 text-xs font-mono text-white/60 border-t border-white/5">
+              <span>Related:</span>
+              <Link href="/services/aeo/constraints" className="hover:text-aeo-cyan transition-colors">
+                &bull; Constraints &amp; Blocker Checklist
               </Link>
-
-              <Link href="/services/ai-search-marketing" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-aeo-cyan font-bold uppercase">Step 6 &bull; Full Scale</span>
-                <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>AI Search Marketing Services</span>
-                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Full-stack marketing solutions across Search, Maps, and AI corridors.
-                </p>
+              <Link href="/services/aeo/shopify" className="hover:text-aeo-cyan transition-colors">
+                &bull; Shopify Ecommerce AEO
+              </Link>
+              <Link href="/services/ai-search-marketing" className="hover:text-aeo-cyan transition-colors">
+                &bull; Full AI Search Marketing Services
               </Link>
             </div>
           </section>
 
-          {/* 9. Next Step CTA (Bottom Conversion Block) */}
+          {/* 11. Final Conversion CTA Block (Bottom) */}
           <section id="conversion-cta" className="p-8 bg-gradient-to-br from-neutral-900 to-black border border-aeo-cyan/30 rounded-2xl text-center space-y-6 shadow-2xl">
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-xl md:text-3xl font-extrabold text-white">
-                Not sure whether you need SEO foundations, AEO work, or both?
+                Ready to improve how your business is represented across Search, Maps and AI?
               </h2>
               <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                Start with an AI Visibility Diagnostic. We will identify where your business information is unclear, inconsistent or missing - and prioritise the next practical improvements.
+                Start with an AI Visibility Diagnostic. We will identify where your business information is unclear, inconsistent or missing - and prioritize your next practical steps.
               </p>
             </div>
 
@@ -683,7 +763,7 @@ export default function AEOVsSEOPage() {
                 href="/diagnostic"
                 className="px-6 py-3.5 rounded-full bg-aeo-cyan text-black font-extrabold text-sm hover:bg-white transition-all shadow-lg hover:shadow-aeo-cyan/20 flex items-center gap-2"
               >
-                <span>Check my AI visibility</span>
+                <span>Start my visibility diagnostic</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -692,9 +772,12 @@ export default function AEOVsSEOPage() {
                 className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/30 transition-all flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4 text-aeo-cyan" />
-                <span>Book a 15-minute strategy call</span>
+                <span>Discuss my SEO and AEO priorities</span>
               </Link>
             </div>
+            <p className="text-[11px] text-white/50 font-mono italic">
+              Free, no-obligation starting point for Australian businesses.
+            </p>
           </section>
 
           {/* Bottom-Up Link to Parent AEO Hub */}
