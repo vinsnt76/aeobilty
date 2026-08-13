@@ -49,10 +49,14 @@ export default function AEOVsSEOPage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/aeo/comparison#webpage",
         "url": "https://aeobility.com.au/services/aeo/comparison",
-        "name": "AEO vs SEO: Choosing the Right Strategy",
+        "name": "AEO vs SEO: Choosing the Right Strategy | AEObility",
         "description": "A practical comparison of SEO, AEO, and GEO, guiding Australian business decision-making and content architecture for traditional and AI search engines.",
+        "inLanguage": "en-AU",
         "isPartOf": {
-          "@id": "https://aeobility.com.au/services/aeo"
+          "@type": "WebSite",
+          "@id": "https://aeobility.com.au/#website",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au/"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/services/aeo/comparison#breadcrumb"
@@ -66,7 +70,7 @@ export default function AEOVsSEOPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://aeobility.com.au"
+            "item": "https://aeobility.com.au/"
           },
           {
             "@type": "ListItem",
@@ -90,25 +94,29 @@ export default function AEOVsSEOPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://aeobility.com.au/services/aeo#service",
-        "name": "Answer Engine Optimisation (AEO) Comparison & Strategy",
+        "@id": "https://aeobility.com.au/services/aeo/comparison#service",
+        "name": "AEO & SEO Comparison & Sprints",
         "provider": {
           "@type": "Organization",
           "@id": "https://aeobility.com.au/#organisation",
           "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "legalName": "Trekaboutoz",
+          "vatID": "61 029 803 255",
+          "url": "https://aeobility.com.au/"
         },
         "areaServed": {
           "@type": "Country",
           "name": "Australia"
         },
-        "description": "Strategic comparison and evaluation of Search Engine Optimisation (SEO), Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO) for Australian SMBs."
+        "description": "Optimising Australian small business data to be discoverable, understandable, and recommended across search, maps, and generative AI corridors."
       },
       {
         "@type": "Organization",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
-        "url": "https://aeobility.com.au",
+        "legalName": "Trekaboutoz",
+        "vatID": "61 029 803 255",
+        "url": "https://aeobility.com.au/",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png"
       },
       {
