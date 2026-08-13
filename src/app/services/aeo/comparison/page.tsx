@@ -24,12 +24,15 @@ import {
   Calendar,
   Check,
   XCircle,
-  ArrowUpRight
+  ArrowUpRight,
+  Target,
+  Clock,
+  Sparkle
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Is AEO Just SEO with a New Name? Practical Comparison | AEObility",
-  description: "Understand the practical differences between SEO and AEO. Learn when to prioritise AEO, how AI engines select source facts, and how to assess your business visibility.",
+  title: "AEO vs SEO: Choosing the Right Strategy | AEObility",
+  description: "A practical comparison of SEO, AEO, and GEO. Learn how Answer Engine Optimisation complements search foundations and how to choose the right strategy for your business.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/comparison",
   },
@@ -41,10 +44,10 @@ export default function AEOVsSEOPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/aeo/comparison",
+        "@id": "https://aeobility.com.au/services/aeo/comparison#webpage",
         "url": "https://aeobility.com.au/services/aeo/comparison",
-        "name": "Is AEO Just SEO with a New Name? Practical Comparison",
-        "description": "A practical comparison of Answer Engine Optimisation (AEO) and Search Engine Optimisation (SEO), guiding business decision-making and content architecture.",
+        "name": "AEO vs SEO: Choosing the Right Strategy",
+        "description": "A practical comparison of SEO, AEO, and GEO, guiding Australian business decision-making and content architecture for traditional and AI search engines.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/services/aeo"
         },
@@ -59,22 +62,51 @@ export default function AEOVsSEOPage() {
           {
             "@type": "ListItem",
             "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
             "name": "Services",
             "item": "https://aeobility.com.au/services"
           },
           {
             "@type": "ListItem",
-            "position": 2,
+            "position": 3,
             "name": "AEO Services",
             "item": "https://aeobility.com.au/services/aeo"
           },
           {
             "@type": "ListItem",
-            "position": 3,
-            "name": "AEO vs SEO Comparison",
+            "position": 4,
+            "name": "AEO vs SEO",
             "item": "https://aeobility.com.au/services/aeo/comparison"
           }
         ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://aeobility.com.au/services/aeo#service",
+        "name": "Answer Engine Optimisation (AEO) Comparison & Strategy",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organisation",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        "description": "Strategic comparison and evaluation of Search Engine Optimisation (SEO), Answer Engine Optimisation (AEO), and Generative Engine Optimisation (GEO) for Australian SMBs."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organisation",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au",
+        "logo": "https://aeobility.com.au/android-chrome-512x512.png"
       },
       {
         "@type": "FAQPage",
@@ -98,18 +130,18 @@ export default function AEOVsSEOPage() {
           },
           {
             "@type": "Question",
-            "name": "How does AEO differ from traditional SEO?",
+            "name": "What is the difference between AEO, SEO and GEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO improves overall page visibility in search engines. AEO structures content into clear, self-contained sections (atomic answer blocks) that make it easy for AI engines to parse, rerank, and cite specific facts in conversational summaries."
+              "text": "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimizing for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
             }
           },
           {
             "@type": "Question",
-            "name": "How do AI answer engines choose their sources?",
+            "name": "How do AI search engines choose their sources?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AI engines do not rely on a single formula. They use hybrid retrieval systems combining keyword matching, vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and factual evidence determine which sources get cited."
+              "text": "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and consistent business information determine which sources get referenced."
             }
           },
           {
@@ -117,7 +149,15 @@ export default function AEOVsSEOPage() {
             "name": "What stops my business from showing up in AI search?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business data across directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+              "text": "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I still need traditional SEO if I invest in AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Without strong SEO basics, search-augmented crawlers cannot discover or verify your business content."
             }
           }
         ]
@@ -125,83 +165,69 @@ export default function AEOVsSEOPage() {
     ]
   };
 
-  const comparisonTable = [
+  const contrastMatrixData = [
     {
       area: "Primary aim",
-      seo: "Help relevant people find and visit your site",
-      aeo: "Make business information clear and reusable in AI-mediated discovery"
+      seo: "Help relevant people find and visit your website via search engine result pages",
+      aeo: "Make business information clear, extractable, and reusable in AI-mediated discovery"
     },
     {
       area: "Main focus",
-      seo: "Search demand, technical health, content quality, authority and local visibility",
-      aeo: "Entity clarity, concise answers, source consistency, structured information and coverage of likely questions"
+      seo: "Search demand, technical health, content quality, link authority, and local visibility",
+      aeo: "Entity clarity, concise answers, source consistency, structured data, and coverage of customer questions"
     },
     {
       area: "Content approach",
-      seo: "Useful pages built around search intent",
-      aeo: "Useful pages plus self-contained sections that answer a specific question clearly"
+      seo: "Useful web pages built around explicit search intent and topic clusters",
+      aeo: "Useful pages plus self-contained atomic sections that answer specific questions directly"
     },
     {
       area: "Success signals",
-      seo: "Rankings, impressions, traffic, leads and revenue",
-      aeo: "Brand mentions, accurate representation, referral visibility and assisted conversions"
+      seo: "Rankings, impressions, organic traffic, inbound leads, and revenue",
+      aeo: "Brand mentions, accurate representation, referral visibility, and assisted conversions"
     },
     {
       area: "Still needed?",
-      seo: "Yes",
-      aeo: "Yes, where AI search matters to the audience"
-    }
-  ];
-
-  const beforeAfterExamples = [
-    {
-      question: "“Who offers emergency plumbing in Perth?”",
-      weak: "A service page with generic sales copy, hidden emergency pricing, and vague service areas.",
-      better: "A clear service definition, service area list, 24/7 availability details, contact pathway, customer reviews, and consistent business NAP details."
+      seo: "Yes - essential baseline for web discovery",
+      aeo: "Yes - where AI search matters to your target audience"
     },
     {
-      question: "“Is AEO different from SEO?”",
-      questionSub: "Commercial search intent",
-      weak: "A jargon-heavy technical explanation referencing unverified token limits or hidden algorithm formulas.",
-      better: "A direct answer first, comparison context next, then evidence, practical business impact, and next steps."
+      area: "Technical context",
+      seo: "Established search optimisation foundations (crawlability, lexical matching, domain trust)",
+      aeo: "AI-powered search products combining hybrid retrieval, passage reranking, and entity verification"
     }
   ];
 
-  const prioritizingAeoCriteria = [
-    "Customers ask detailed technical or commercial questions before contacting you.",
-    "Your business relies on local relevance, trust, and clear service information.",
-    "Important business information is scattered across pages, profiles, PDFs, or directories.",
-    "You are appearing inconsistently - or incorrectly - across AI search tools.",
-    "You already invest in SEO and want to improve how accurately your business is represented in emerging search experiences."
-  ];
-
-  const prioritizingSeoCriteria = [
-    "Your site has crawlability, speed, indexation, or major technical problems.",
-    "You lack useful service, product, location, or FAQ content.",
-    "Your Google Business Profile, citations, and on-page business details are inconsistent.",
-    "You have little evidence of customer trust, local relevance, or industry expertise."
-  ];
-
-  const methodologySteps = [
+  const sprintDeliverables = [
     {
       num: "1",
-      title: "Audit visibility and source consistency",
-      desc: "Identify conflicting, missing, or unclear information across website content, structured data, Google Business Profile, and third-party web directories."
+      title: "Source & Listing Consistency",
+      desc: "Audit and reconcile conflicting or outdated business Name, Address, Phone (NAP), and service data across your website, Google Business Profile, and third-party web directories."
     },
     {
       num: "2",
-      title: "Map high-value customer questions",
-      desc: "Prioritise commercial and technical questions that directly influence customer discovery, evaluation, and purchasing decisions."
+      title: "Entity Clarity & Schema Linking",
+      desc: "Deploy explicit Schema.org graph markup (@id URIs, Organization, LocalBusiness, Service) to define clear machine-readable relationships between your brand, services, and locations."
     },
     {
       num: "3",
-      title: "Strengthen content and entity clarity",
-      desc: "Improve page structure, service details, location signals, atomic answer passages, and Schema.org markup where appropriate."
+      title: "Customer Question Coverage",
+      desc: "Structure high-intent commercial and technical pages with direct answer-first passages (45–75 words) that resolve customer questions clearly in the top 150 words of a section."
     },
     {
       num: "4",
-      title: "Validate and iterate",
-      desc: "Monitor brand representation, AI referral patterns, search visibility metrics, and lead quality over time."
+      title: "Content Extractability & Rendering",
+      desc: "Remove technical barriers like client-side JavaScript accordions or PDF-only information that prevent search-augmented crawlers from reading core facts."
+    },
+    {
+      num: "5",
+      title: "Local Profile & Reputation Accuracy",
+      desc: "Strengthen local trust signals, primary service categories, and verified reviews to reinforce authority across Google Maps and local AI recommendation engines."
+    },
+    {
+      num: "6",
+      title: "Visibility Measurement & Iteration",
+      desc: "Track brand representation, AI assistant referral patterns, and organic search performance over time using GA4 telemetry and custom diagnostic scoring."
     }
   ];
 
@@ -215,16 +241,20 @@ export default function AEOVsSEOPage() {
       a: "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
     },
     {
-      q: "How does AEO differ from traditional SEO?",
-      a: "SEO improves overall page visibility in search engines. AEO structures content into clear, self-contained sections (atomic answer blocks) that make it easy for AI engines to parse, rerank, and cite specific facts in conversational summaries."
+      q: "What is the difference between AEO, SEO and GEO?",
+      a: "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimizing for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
     },
     {
-      q: "How do AI answer engines choose their sources?",
-      a: "AI engines do not rely on a single formula. They use hybrid retrieval systems combining keyword matching, vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and factual evidence determine which sources get cited."
+      q: "How do AI search engines choose their sources?",
+      a: "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and consistent business information determine which sources get referenced."
     },
     {
       q: "What stops my business from showing up in AI search?",
-      a: "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business data across directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+      a: "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+    },
+    {
+      q: "Do I still need traditional SEO if I invest in AEO?",
+      a: "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Without strong SEO basics, search-augmented crawlers cannot discover or verify your business content."
     }
   ];
 
@@ -248,16 +278,20 @@ export default function AEOVsSEOPage() {
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         <article className="flex flex-col gap-12">
 
-          {/* 1. Hero: Reframed Core Message & 10-Second Above the Fold */}
+          {/* 1. Hero: Conversational H1 with IA Deck & 10-Second Above the Fold */}
           <header className="space-y-6 border-b border-white/10 pb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <Scale className="w-3.5 h-3.5" />
-              <span>AEO vs SEO &bull; Decision Framework</span>
+              <span>AEO vs SEO &bull; Choosing the Right Strategy</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
               Is AEO Just SEO with a <span className="text-gradient-aeo">New Name?</span>
             </h1>
+
+            <p className="text-sm md:text-base font-mono text-aeo-cyan uppercase tracking-wider">
+              A practical comparison of SEO, AEO and where each fits in a modern search strategy.
+            </p>
 
             <p className="text-lg md:text-xl font-medium text-white/90 leading-relaxed font-serif">
               Not quite. SEO still helps people find your website. AEO helps make your business information easier for AI-powered search experiences to understand, use and reference. The strongest strategy does both.
@@ -266,13 +300,13 @@ export default function AEOVsSEOPage() {
             {/* 10-Second Quick Answer Card */}
             <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-xl">
               <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
-                10-Second Decision Guide
+                10-Second Decision Guide for Australian SMBs
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                 <div className="p-3.5 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
                   <span className="text-purple-400 font-bold font-mono">Is SEO still worth doing?</span>
                   <p className="text-white/90 font-semibold">Yes.</p>
-                  <p className="text-white/60 text-[11px]">It remains the primary engine for organic traffic and site discovery.</p>
+                  <p className="text-white/60 text-[11px]">It remains the primary engine for organic traffic, local discovery, and site visits.</p>
                 </div>
                 <div className="p-3.5 bg-white/[0.02] border border-aeo-cyan/30 rounded-xl space-y-1">
                   <span className="text-aeo-cyan font-bold font-mono">Is AEO separate?</span>
@@ -306,14 +340,64 @@ export default function AEOVsSEOPage() {
             </div>
           </header>
 
-          {/* 2. SEO vs AEO Comparison Table */}
-          <section id="comparison-table" className="space-y-6">
+          {/* 2. Primary H2 Section: AEO vs SEO: What Changes - and What Does Not */}
+          <section id="strategy-framework" className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Comparing SEO and AEO in Practice
+                AEO vs SEO: What Changes - and What Does Not
               </h2>
               <p className="text-sm text-white/70 font-light">
-                A scannable breakdown of how traditional search engine optimisation and answer engine optimisation focus on different aspects of customer discovery.
+                Understanding where Search Engine Optimisation (SEO) and Answer Engine Optimisation (AEO) fit in an integrated digital strategy.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* SEO Foundations Card */}
+              <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <Wrench className="w-5 h-5 text-purple-400" />
+                  <h3 className="text-base font-bold text-white">1. SEO Foundations</h3>
+                </div>
+                <p className="text-xs text-white/70 leading-relaxed font-serif">
+                  Technical health, server-side rendering speed, crawl budget, keyword-intent alignment, and local citation accuracy.
+                </p>
+                <p className="text-[11px] text-purple-300 font-mono">Status: Essential Baseline</p>
+              </div>
+
+              {/* AEO Priorities Card */}
+              <div className="p-6 bg-neutral-950 border border-aeo-cyan/30 rounded-2xl space-y-3 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-5 h-5 text-aeo-cyan" />
+                  <h3 className="text-base font-bold text-white">2. AEO Priorities</h3>
+                </div>
+                <p className="text-xs text-white/80 leading-relaxed font-serif">
+                  Entity relationship links, direct answer-first passages, Schema.org graph markup, and cross-directory fact consistency.
+                </p>
+                <p className="text-[11px] text-aeo-cyan font-mono">Status: High-Intent Growth Layer</p>
+              </div>
+
+              {/* Integrated Strategy Card */}
+              <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-amber-400" />
+                  <h3 className="text-base font-bold text-white">3. Integrated Strategy</h3>
+                </div>
+                <p className="text-xs text-white/70 leading-relaxed font-serif">
+                  Combining SEO organic traffic capture with AEO representation across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+                </p>
+                <p className="text-[11px] text-amber-300 font-mono">Status: Maximum Search Resilience</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. The Contrast Matrix */}
+          <section id="contrast-matrix" className="space-y-6 border-t border-white/10 pt-8">
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                The Contrast Matrix: SEO vs AEO Differences
+              </h2>
+              <p className="text-sm text-white/70 font-light">
+                An outcome-led comparison matrix contrasting traditional search engine optimisation and answer engine optimisation.
               </p>
             </div>
 
@@ -321,14 +405,14 @@ export default function AEOVsSEOPage() {
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5 font-mono text-xs uppercase text-aeo-cyan">
-                    <th className="p-4 font-bold w-1/5">Area</th>
-                    <th className="p-4 font-bold w-2/5">SEO</th>
-                    <th className="p-4 font-bold w-2/5">AEO</th>
+                    <th className="p-4 font-bold w-1/6">Area</th>
+                    <th className="p-4 font-bold w-5/12">Search Engine Optimisation (SEO)</th>
+                    <th className="p-4 font-bold w-5/12">Answer Engine Optimisation (AEO)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 font-sans">
-                  {comparisonTable.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
+                  {contrastMatrixData.map((row, idx) => (
+                    <tr key={idx} className={idx === contrastMatrixData.length - 1 ? "bg-white/[0.03] font-mono text-xs" : "hover:bg-white/[0.02] transition-colors"}>
                       <td className="p-4 font-bold text-white whitespace-nowrap">{row.area}</td>
                       <td className="p-4 text-white/70 leading-relaxed">{row.seo}</td>
                       <td className="p-4 text-white/90 font-medium text-aeo-cyan/90 leading-relaxed">{row.aeo}</td>
@@ -350,167 +434,89 @@ export default function AEOVsSEOPage() {
             </div>
           </section>
 
-          {/* 3. What This Means for Your Business & Before-and-After Example */}
-          <section id="practical-example" className="space-y-6 border-t border-white/10 pt-8">
+          {/* 4. Why Your Business Needs to Adapt */}
+          <section id="why-adapt" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                What This Means for Your Business
+                Why Your Business Needs to Adapt
               </h2>
               <p className="text-sm text-white/70 font-light">
-                AEO changes how deliberately you organise and express information across digital touchpoints.
+                Search behaviour is expanding. Customers now use traditional Google queries alongside AI assistants to research, compare, and recommend Australian businesses.
               </p>
             </div>
 
-            {/* Practical FAQ Explanation */}
+            <div className="space-y-4 text-xs sm:text-sm text-white/80 font-serif leading-relaxed">
+              <p>
+                Users increasingly ask conversational systems to summarise service offerings, evaluate local pricing, and compare brand reputations before ever clicking through to a website. This shift expands discovery touchpoints beyond conventional search engine result pages.
+              </p>
+            </div>
+
+            {/* Conversational Response Citation Graphic (Illustrative Example) */}
+            <figure role="img" aria-label="Illustrative Conversational AI Citation Graphic showing structured multi-source attribution" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-3">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center gap-2 text-xs font-mono text-aeo-cyan font-bold">
+                  <Cpu className="w-4 h-4" />
+                  <span>Illustrative AI Search Synthesis &amp; Citation Model</span>
+                </div>
+                <span className="text-[10px] font-mono text-white/40 bg-white/5 px-2 py-0.5 rounded">Conceptual Diagram &bull; Not a Guaranteed Outcome</span>
+              </div>
+
+              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-3 text-xs font-mono">
+                <div className="text-white/50 text-[11px]">&gt; Customer Prompt: &ldquo;Which Perth agency specialises in AEO and structured data for local enterprises?&rdquo;</div>
+                <div className="p-3 bg-neutral-900 border border-aeo-cyan/20 rounded-lg text-white/90 leading-relaxed">
+                  &ldquo;AEObility specialises in Answer Engine Optimisation (AEO) and machine-readable entity architecture for Perth businesses. They focus on structuring core business data, Schema graphs, and verified directory citations...&rdquo;
+                  <div className="mt-2 text-[10px] text-aeo-cyan flex items-center gap-2">
+                    <span>Source Citations: [1] aeobility.com.au/services/aeo [2] Google Business Profile</span>
+                  </div>
+                </div>
+              </div>
+
+              <figcaption className="text-center text-xs text-white/50 font-mono pt-1">
+                Illustrative example showing how AI assistants synthesize structured entity facts into direct responses. No platform can guarantee citations.
+              </figcaption>
+            </figure>
+          </section>
+
+          {/* 5. Winning the Attention Window */}
+          <section id="attention-window" className="space-y-6 border-t border-white/10 pt-8">
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                Winning the Attention Window
+              </h2>
+              <p className="text-sm text-white/70 font-light">
+                Positioning your brand clearly during the critical moments when prospective customers evaluate service options.
+              </p>
+            </div>
+
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-              <h3 className="text-lg font-bold text-white">What does AEO change on my website?</h3>
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
-                It changes how deliberately you organise and express information. We make core facts consistent across your website, Google Business Profile and relevant directories; clarify the entities your business is connected to; and create pages or sections that answer important customer questions directly. This can support visibility across traditional search and AI-assisted discovery, but it does not guarantee a specific platform will cite your business.
+                When a prospective client asks an AI assistant for a business recommendation, the system synthesises a concise summary within seconds. Winning this attention window requires clear, unambiguous, and verifiable information available across web nodes so both human decision-makers and automated systems interpret your business accurately.
               </p>
-            </div>
-
-            {/* Before-and-After Comparison Table */}
-            <div className="space-y-3">
-              <h3 className="text-base font-bold text-white">Before-and-After Content Example</h3>
-              <div className="overflow-x-auto border border-white/10 rounded-2xl bg-neutral-950 shadow-2xl">
-                <table className="w-full text-left border-collapse text-xs sm:text-sm">
-                  <thead>
-                    <tr className="border-b border-white/10 bg-white/5 font-mono text-xs uppercase text-white/60">
-                      <th className="p-4 font-bold w-1/4">Customer Question</th>
-                      <th className="p-4 font-bold w-3/8 text-red-400">Weak Page Response</th>
-                      <th className="p-4 font-bold w-3/8 text-aeo-cyan">Better Answer-Ready Response</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/5 font-sans">
-                    {beforeAfterExamples.map((row, idx) => (
-                      <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                        <td className="p-4 font-bold text-white">
-                          <p>{row.question}</p>
-                          {row.questionSub && <span className="text-[10px] text-white/40 font-mono font-normal block mt-1">{row.questionSub}</span>}
-                        </td>
-                        <td className="p-4 text-white/60 leading-relaxed font-light">{row.weak}</td>
-                        <td className="p-4 text-white/90 leading-relaxed font-normal bg-aeo-cyan/[0.02]">{row.better}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
             </div>
           </section>
 
-          {/* 4. "When You Need It" Decision Section */}
-          <section id="decision-section" className="space-y-6 border-t border-white/10 pt-8">
+          {/* 6. What We Improve in an AEO Sprint */}
+          <section id="sprint-deliverables" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                When to Prioritise AEO
+                What We Improve in an AEO Sprint
               </h2>
               <p className="text-sm text-white/70 font-light">
-                Self-qualify your business needs to determine whether to invest in AEO practices or focus on core SEO foundations first.
+                Connecting comparison intent to AEObility&apos;s practical, deliverable service workflow.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Prioritise AEO Box */}
-              <div className="p-6 bg-neutral-950 border border-aeo-cyan/30 rounded-2xl space-y-4 shadow-xl">
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-aeo-cyan" />
-                  <h3 className="text-lg font-bold text-white">AEO is likely worth prioritising if:</h3>
-                </div>
-                <ul className="space-y-3 text-xs sm:text-sm text-white/80 font-serif">
-                  {prioritizingAeoCriteria.map((criterion, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                      <span className="leading-relaxed">{criterion}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Focus on SEO Foundations Box */}
-              <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-xl">
-                <div className="flex items-center gap-2">
-                  <Wrench className="w-5 h-5 text-purple-400" />
-                  <h3 className="text-lg font-bold text-white">Start with SEO foundations if:</h3>
-                </div>
-                <ul className="space-y-3 text-xs sm:text-sm text-white/70 font-serif">
-                  {prioritizingSeoCriteria.map((criterion, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 mt-2" />
-                      <span className="leading-relaxed">{criterion}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* 5. Honest Methodology Block: How AEObility Approaches the Work */}
-          <section id="methodology" className="space-y-6 border-t border-white/10 pt-8">
-            <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                How AEObility Approaches the Work
-              </h2>
-              <p className="text-sm text-white/70 font-light">
-                Our practical methodology turns AEO from a conceptual claim into clear, actionable technical improvements.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {methodologySteps.map((step, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {sprintDeliverables.map((item, idx) => (
                 <div key={idx} className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2.5 hover:border-aeo-cyan/30 transition-all">
                   <div className="w-7 h-7 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan font-mono font-bold text-xs">
-                    {step.num}
+                    {item.num}
                   </div>
-                  <h3 className="text-sm font-bold text-white leading-snug">{step.title}</h3>
-                  <p className="text-xs text-white/70 font-light leading-relaxed">{step.desc}</p>
+                  <h3 className="text-sm font-bold text-white leading-snug">{item.title}</h3>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
-          </section>
-
-          {/* 6. Optional Technical Explainer Accordion (Progressive Disclosure) */}
-          <section id="technical-explainer" className="space-y-4 border-t border-white/10 pt-8">
-            <details className="group border border-white/10 bg-neutral-950 rounded-2xl overflow-hidden shadow-xl transition-all">
-              <summary className="p-6 cursor-pointer flex items-center justify-between font-bold text-base text-white hover:text-aeo-cyan transition-colors list-none select-none">
-                <div className="flex items-center gap-3">
-                  <Cpu className="w-5 h-5 text-aeo-cyan" />
-                  <span>Technical Explainer: How AI Systems Process Information (Optional Detail)</span>
-                </div>
-                <ChevronDown className="w-5 h-5 text-white/50 group-open:rotate-180 transition-transform" />
-              </summary>
-              
-              <div className="p-6 pt-2 border-t border-white/5 space-y-4 text-xs sm:text-sm text-white/75 font-serif leading-relaxed">
-                <p>
-                  AI-powered search products can combine several retrieval and ranking methods, so clarity, source quality and consistent business information matter.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
-                    <strong className="text-white font-sans font-bold text-xs block text-aeo-cyan">Hybrid Retrieval:</strong>
-                    <p className="text-xs text-white/70 font-sans">
-                      Search systems fetch web pages by combining lexical keyword matching (such as BM25) with semantic vector proximity.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
-                    <strong className="text-white font-sans font-bold text-xs block text-aeo-cyan">Passage Reranking:</strong>
-                    <p className="text-xs text-white/70 font-sans">
-                      Short, self-contained sections can make a page easier for people and systems to interpret, especially when each section answers one question clearly.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
-                    <strong className="text-white font-sans font-bold text-xs block text-aeo-cyan">Entity Corroboration:</strong>
-                    <p className="text-xs text-white/70 font-sans">
-                      Systems verify business facts across public registries, Knowledge Graphs, and third-party directories to corroborate accuracy before synthesis.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
-                    <strong className="text-white font-sans font-bold text-xs block text-aeo-cyan">Citation Realities:</strong>
-                    <p className="text-xs text-white/70 font-sans">
-                      Improving the chances that your information can be understood and represented accurately is the core goal; no platform can guarantee citations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </details>
           </section>
 
           {/* 7. Frequently Asked Questions (FAQ) */}
@@ -563,6 +569,28 @@ export default function AEOVsSEOPage() {
                 </p>
               </Link>
 
+              <Link href="/services/aeo/procedures" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
+                <span className="text-[11px] font-mono text-purple-400 font-bold uppercase">Need implementation details?</span>
+                <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
+                  <span>See AEO Procedures</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Technical step-by-step procedures for structuring entity data.
+                </p>
+              </Link>
+
+              <Link href="/services/aeo/costs-timing" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
+                <span className="text-[11px] font-mono text-white/60 font-bold uppercase">Pricing &amp; Timing?</span>
+                <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
+                  <span>View AEO Costs &amp; Timing</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Project timelines, resource requirements, and return metrics.
+                </p>
+              </Link>
+
               <Link href="/solutions/aeo-blueprint" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
                 <span className="text-[11px] font-mono text-purple-400 font-bold uppercase">Ready for an action plan?</span>
                 <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
@@ -570,24 +598,24 @@ export default function AEOVsSEOPage() {
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Our comprehensive strategic roadmap for establishing machine-readable entity authority.
+                  Our strategic roadmap for establishing machine-readable entity authority.
                 </p>
               </Link>
 
-              <Link href="/diagnostic" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
-                <span className="text-[11px] font-mono text-aeo-cyan font-bold uppercase">Need to assess your business first?</span>
+              <Link href="/services/ai-search-marketing" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block group">
+                <span className="text-[11px] font-mono text-aeo-cyan font-bold uppercase">Broader implementation pathway?</span>
                 <h3 className="text-sm font-bold text-white group-hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                  <span>Run a visibility diagnostic</span>
+                  <span>AI Search Marketing Services</span>
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Measure how generative search engines currently perceive and reference your brand.
+                  Full-stack marketing solutions across Search, Maps, and AI corridors.
                 </p>
               </Link>
             </div>
           </section>
 
-          {/* 9. Stronger Conversion CTA Block (Bottom) */}
+          {/* 9. Next Step CTA (Bottom Conversion Block) */}
           <section id="conversion-cta" className="p-8 bg-gradient-to-br from-neutral-900 to-black border border-aeo-cyan/30 rounded-2xl text-center space-y-6 shadow-2xl">
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-xl md:text-3xl font-extrabold text-white">
@@ -617,7 +645,7 @@ export default function AEOVsSEOPage() {
             </div>
           </section>
 
-          {/* Bottom-Up Link to Root Hub */}
+          {/* Bottom-Up Link to Parent AEO Hub */}
           <div className="pt-2 flex">
             <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
               &larr; Back to <strong className="text-white hover:underline">AEO Services Hub</strong>
