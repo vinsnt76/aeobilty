@@ -81,23 +81,31 @@ export default function AEOVsSEOPage() {
             "name": "Is AEO just SEO with a new name?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. AEO builds on top of traditional SEO. While SEO focuses on page-level rankings in search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
+              "text": "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
             }
           },
           {
             "@type": "Question",
-            "name": "How do AI answer engines choose sources?",
+            "name": "How does AEO differ from traditional SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Generative engines use hybrid retrieval systems that combine keyword matching, semantic vector search, passage reranking, entity verification, and authority scoring. No single formula guarantees selection."
+              "text": "SEO improves overall page visibility in search engines. AEO structures content into clear, self-contained sections (atomic answer blocks) that make it easy for AI engines to parse, rerank, and cite specific facts in conversational summaries."
             }
           },
           {
             "@type": "Question",
-            "name": "Why is my business missing from ChatGPT or Perplexity answers?",
+            "name": "How do AI answer engines choose their sources?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Common causes include blocking user-agents (like OAI-SearchBot), hosting content inside client-side JavaScript accordions, ambiguous brand references, inconsistent directory data, or a lack of direct, answer-first content structure."
+              "text": "AI engines do not rely on a single formula. They use hybrid retrieval systems combining keyword matching, vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and factual evidence determine which sources get cited."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What stops my business from showing up in AI search?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business data across directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
             }
           }
         ]
@@ -129,7 +137,7 @@ export default function AEOVsSEOPage() {
     {
       feature: "Retrieval Mechanics",
       seo: "Lexical matching (BM25) + link authority",
-      aeo: "Reranking, semantic proximity, and entity graphs"
+      aeo: "Hybrid retrieval, reranking, and entity graphs"
     },
     {
       feature: "Key Output",
@@ -174,15 +182,19 @@ export default function AEOVsSEOPage() {
   const microFaqs = [
     {
       q: "Is AEO just SEO with a new name?",
-      a: "No. AEO builds on top of traditional SEO. While SEO focuses on page-level rankings in search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
+      a: "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
     },
     {
-      q: "How do AI answer engines choose sources?",
-      a: "Generative engines use hybrid retrieval systems that combine keyword matching, semantic vector search, passage reranking, entity verification, and authority scoring. No single formula guarantees selection."
+      q: "How does AEO differ from traditional SEO?",
+      a: "SEO improves overall page visibility in search engines. AEO structures content into clear, self-contained sections (atomic answer blocks) that make it easy for AI engines to parse, rerank, and cite specific facts in conversational summaries."
     },
     {
-      q: "Why is my business missing from ChatGPT or Perplexity answers?",
-      a: "Common causes include blocking user-agents (like OAI-SearchBot), hosting content inside client-side JavaScript accordions, ambiguous brand references, inconsistent directory data, or a lack of direct, answer-first content structure."
+      q: "How do AI answer engines choose their sources?",
+      a: "AI engines do not rely on a single formula. They use hybrid retrieval systems combining keyword matching, vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and factual evidence determine which sources get cited."
+    },
+    {
+      q: "What stops my business from showing up in AI search?",
+      a: "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business data across directories, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
     }
   ];
 
@@ -245,10 +257,39 @@ export default function AEOVsSEOPage() {
             </p>
           </div>
 
-          {/* Graphic Matrix: Search Behaviour Expansion */}
-          <figure role="img" aria-label="Search Behaviour Expansion Diagram showing Traditional SEO vs Generative AEO Environment" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-4">
+          {/* Technical Reality Callout: Dismantling Agency Myths */}
+          <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-2xl">
+            <h3 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
+              Technical Reality: Dismantling Common AEO Myths
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1.5">
+                <span className="text-amber-400 font-bold font-mono">1. SEO IS NOT MERE KEYWORDS</span>
+                <p className="text-white/70 leading-relaxed">
+                  Modern SEO relies on entity understanding, semantic topic clusters, user intent, freshness, and quality signals—not outdated exact-match keyword density or simple PageRank.
+                </p>
+              </div>
+
+              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1.5">
+                <span className="text-amber-400 font-bold font-mono">2. NO FIXED TOKEN LIMITS</span>
+                <p className="text-white/70 leading-relaxed">
+                  No major search engine documents a fixed 90–120 token chunk limit or universal cosine formula. AI engines use hybrid retrieval combining BM25, vector search, and reranking.
+                </p>
+              </div>
+
+              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1.5">
+                <span className="text-amber-400 font-bold font-mono">3. NO GUARANTEED CITATIONS</span>
+                <p className="text-white/70 leading-relaxed">
+                  LLM outputs are dynamic and non-deterministic. No agency can guarantee zero-click AI citations. AEO improves passage extractability and retrieval eligibility.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Graphic Matrix: AEO vs SEO Real Difference */}
+          <figure role="img" aria-label="AEO vs SEO Real Difference Framework showing URL & Page-level scope extending to Passage & Chunk scope" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-4">
             <h3 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider text-center">
-              Search Behaviour Expansion Framework
+              AEO vs SEO: The Real Difference
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
@@ -260,19 +301,19 @@ export default function AEOVsSEOPage() {
                 <ul className="space-y-2 text-xs text-white/80 font-mono">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    <span>Query matching &amp; keywords</span>
+                    <span>URL &amp; Page-level scope</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    <span>Blue link search result lists</span>
+                    <span>SERP ranking focus</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    <span>Page-level domain authority</span>
+                    <span>Lexical &amp; semantic query processing</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    <span>Direct website user clicks</span>
+                    <span>Direct website clicks</span>
                   </li>
                 </ul>
               </div>
@@ -280,31 +321,31 @@ export default function AEOVsSEOPage() {
               <div className="p-5 bg-white/[0.02] border border-aeo-cyan/30 rounded-xl space-y-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-aeo-cyan uppercase tracking-wider">
                   <Cpu className="w-4 h-4" />
-                  <span>Generative AEO Environment</span>
+                  <span>Answer Engine Environment</span>
                 </div>
                 <ul className="space-y-2 text-xs text-white/80 font-mono">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan" />
-                    <span>Intent synthesis &amp; query fan-out</span>
+                    <span>Passage &amp; Chunk scope</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan" />
-                    <span>45–75 word atomic answer blocks</span>
+                    <span>Extraction focus</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan" />
-                    <span>Multi-source citation links</span>
+                    <span>Hybrid retrieval (BM25 + vectors)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan" />
-                    <span>Entity graph corroboration</span>
+                    <span>Citation &amp; Attribution</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <figcaption className="text-center text-xs text-white/50 font-mono pt-2">
-              Expansion model showing how search behaviour evolves from traditional SERP clicks to generative answer synthesis.
+              Expansion model showing how search scope evolves from URL-level SERP rankings to passage-level extraction and attribution.
             </figcaption>
           </figure>
 
@@ -314,7 +355,7 @@ export default function AEOVsSEOPage() {
               1. How SEO and AEO Overlap
             </h2>
             <p className="text-white/80 text-base leading-relaxed font-serif">
-              SEO and AEO share the same foundational requirements:
+              Both rely on the exact same foundation: fast, crawlable pages, clear site hierarchy, schema markup, entity consistency, primary sources, and high-quality, helpful content. Without strong SEO technical basics, search-augmented crawlers won&apos;t index your content in the first place.
             </p>
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl">
@@ -327,10 +368,6 @@ export default function AEOVsSEOPage() {
                 ))}
               </ul>
             </div>
-
-            <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed font-serif">
-              These fundamentals remain essential whether a user is searching via traditional Google queries or triggering a search-augmented LLM.
-            </p>
           </section>
 
           {/* Section 2: How SEO and AEO Differ */}
@@ -361,32 +398,28 @@ export default function AEOVsSEOPage() {
               </table>
             </div>
 
-            {/* Sub-Section: Traditional SEO */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <Search className="w-5 h-5 text-purple-400" />
-                <span>Traditional SEO</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
-                Traditional SEO aims to improve visibility in search engine result pages to encourage qualified visits. It uses a mix of lexical retrieval (including BM25 algorithms), semantic understanding, link graphs, freshness, structured data, and user experience signals.
-              </p>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-serif">
-                Modern SEO is far broader and more sophisticated than mere keyword density or page-level domain authority.
-              </p>
-            </div>
+            {/* Core Differentiators List */}
+            <div className="space-y-4 pt-2">
+              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white text-aeo-cyan font-mono">Unit of Extraction</h3>
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
+                  SEO targets whole URLs; AEO targets self-contained <strong>Atomic Answer Blocks</strong> (typically 45–75 words) that answer one prompt directly.
+                </p>
+              </div>
 
-            {/* Sub-Section: Answer Engine Optimisation (AEO) */}
-            <div className="p-6 bg-white/[0.02] border border-aeo-cyan/20 rounded-2xl space-y-3">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <Cpu className="w-5 h-5 text-aeo-cyan" />
-                <span>Answer Engine Optimisation (AEO)</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
-                AEO focuses on how information is selected, synthesised, and cited inside AI-generated answers, including summaries, comparisons, recommendations, and conversational responses.
-              </p>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
-                Rather than trying to trick hidden model mechanics or guessing universal vector weights, AEO emphasises <strong className="text-white">passage-level extractability</strong>. This means structuring core facts into short, self-contained sections—specifically <strong>45–75 word Atomic Answer Blocks</strong>—that state the answer early, define the entity clearly, and supply verifiable evidence.
-              </p>
+              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white text-aeo-cyan font-mono">Retrieval Mechanics</h3>
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
+                  AI search engines use <strong>hybrid retrieval</strong> (lexical keyword matching + semantic vector search) followed by <strong>passage reranking</strong>.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white text-aeo-cyan font-mono">Entity Corroboration</h3>
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
+                  AI answer engines cross-reference facts across Knowledge Graphs, public registries, and authoritative web nodes to verify claims before generating a citation.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -396,7 +429,7 @@ export default function AEOVsSEOPage() {
               3. How AI Answer Systems Select Sources
             </h2>
             <p className="text-white/80 text-base leading-relaxed font-serif">
-              It is a mistake to assume AI engines rely exclusively on dense vector retrieval or a single cosine similarity formula. In practice, search-augmented systems (like Perplexity, ChatGPT Search, and Google AI Overviews) combine multiple layers:
+              AI engines do not rely on a single formula. In practice, search-augmented systems (like Perplexity, ChatGPT Search, and Google AI Overviews) combine multiple layers:
             </p>
 
             <div className="space-y-4">
@@ -543,7 +576,7 @@ export default function AEOVsSEOPage() {
               6. Frequently Asked Questions
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {microFaqs.map((faq, idx) => (
                 <div key={idx} className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2 hover:border-aeo-cyan/30 transition-all">
                   <h3 className="text-sm font-bold text-white leading-snug">{faq.q}</h3>
