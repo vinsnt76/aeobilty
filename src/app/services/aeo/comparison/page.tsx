@@ -126,7 +126,7 @@ export default function AEOVsSEOPage() {
             "name": "Is AEO just SEO with a new name?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
+              "text": "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on clearer, more consistent information that can be used in AI-assisted discovery."
             }
           },
           {
@@ -134,7 +134,7 @@ export default function AEOVsSEOPage() {
             "name": "What is the difference between AEO, SEO and GEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
+              "text": "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI-powered search products can easily interpret direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
             }
           },
           {
@@ -142,7 +142,7 @@ export default function AEOVsSEOPage() {
             "name": "How do AI search engines choose their sources?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and consistent business information determine which sources get referenced."
+              "text": "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness and consistent business information can help systems and customers interpret a source more confidently."
             }
           },
           {
@@ -150,7 +150,7 @@ export default function AEOVsSEOPage() {
             "name": "What stops my business from showing up in AI search?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, lack of entity reconciliation across public registries, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+              "text": "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, lack of entity reconciliation across public registries, blocking user-agents (like OAI-SearchBot), or failing to provide clear, answer-first section structure."
             }
           },
           {
@@ -158,7 +158,7 @@ export default function AEOVsSEOPage() {
             "name": "Do I still need traditional SEO if I invest in AEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Without strong SEO basics, search-augmented crawlers cannot discover or verify your business content."
+              "text": "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Weak SEO foundations can make your business information harder to discover, interpret and validate."
             }
           }
         ]
@@ -180,7 +180,7 @@ export default function AEOVsSEOPage() {
     {
       area: "Content approach",
       seo: "Useful web pages built around explicit search intent and topic clusters",
-      aeo: "Useful pages plus self-contained atomic sections that answer specific questions directly"
+      aeo: "Useful pages plus clear, self-contained sections that answer a specific customer question directly"
     },
     {
       area: "Success signals",
@@ -195,7 +195,7 @@ export default function AEOVsSEOPage() {
     {
       area: "Technical context",
       seo: "Established search optimisation foundations (crawlability, lexical matching, domain trust)",
-      aeo: "AI-powered search products combining hybrid retrieval, passage reranking, and entity verification"
+      aeo: "AI-powered search products may combine keyword, semantic, page-level and other relevance signals"
     }
   ];
 
@@ -213,7 +213,7 @@ export default function AEOVsSEOPage() {
     {
       num: "3",
       title: "Customer Question Coverage",
-      desc: "Structure high-intent commercial and technical pages with direct answer-first passages (45–75 words) that resolve customer questions clearly in the top 150 words of a section."
+      desc: "Structure important sections so the direct answer appears early, followed by the context, evidence and next step a customer needs."
     },
     {
       num: "4",
@@ -223,7 +223,7 @@ export default function AEOVsSEOPage() {
     {
       num: "5",
       title: "Local Profile & Reputation Accuracy",
-      desc: "Strengthen local trust signals, primary service categories, and verified reviews to reinforce authority across Google Maps and local AI recommendation engines."
+      desc: "Strengthen local trust signals, primary service categories, and verified reviews to reinforce authority across Google Maps and AI-assisted discovery platforms."
     },
     {
       num: "6",
@@ -239,23 +239,23 @@ export default function AEOVsSEOPage() {
     },
     {
       q: "Is AEO just SEO with a new name?",
-      a: "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on passage-level extractability, entity clarity, and source attribution inside generative AI answers."
+      a: "No. AEO builds directly on top of traditional SEO. While SEO focuses on page-level visibility and driving clicks from search engine result pages, AEO focuses on clearer, more consistent information that can be used in AI-assisted discovery."
     },
     {
       q: "What is the difference between AEO, SEO and GEO?",
-      a: "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI engines can easily extract direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
+      a: "SEO (Search Engine Optimisation) targets overall website visibility in traditional search engines. AEO (Answer Engine Optimisation) focuses on structuring information so AI-powered search products can easily interpret direct answers. GEO (Generative Engine Optimisation) is an adjacent term used by some providers to describe optimising for generative search engines. At AEObility, we treat AEO and GEO as complementary practices built on top of strong SEO technical foundations."
     },
     {
       q: "How do AI search engines choose their sources?",
-      a: "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness, and consistent business information determine which sources get referenced."
+      a: "AI-powered search products can combine several retrieval and ranking methods, including lexical keyword matching, semantic vector proximity, passage reranking, entity verification, and site authority. Clarity, directness and consistent business information can help systems and customers interpret a source more confidently."
     },
     {
       q: "What stops my business from showing up in AI search?",
-      a: "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, lack of entity reconciliation across public registries, blocking user-agents (like OAI-SearchBot), or failing to provide answer-first passages in the top 150 words of a section."
+      a: "Ambiguous content, key facts hidden behind client-side JavaScript tabs, inconsistent business details across web directories, lack of entity reconciliation across public registries, blocking user-agents (like OAI-SearchBot), or failing to provide clear, answer-first section structure."
     },
     {
       q: "Do I still need traditional SEO if I invest in AEO?",
-      a: "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Without strong SEO basics, search-augmented crawlers cannot discover or verify your business content."
+      a: "Yes. AEO relies on technical SEO foundations like crawlability, fast page speeds, clean indexation, and authoritative backlinks. Weak SEO foundations can make your business information harder to discover, interpret and validate."
     }
   ];
 
@@ -449,7 +449,7 @@ export default function AEOVsSEOPage() {
               </table>
             </div>
 
-            {/* Plain-English Callout with Concrete Weak-SEO Example */}
+            {/* Plain-English Callout with Defensible Weak-SEO Example */}
             <div className="p-5 bg-neutral-900/60 border-l-4 border-aeo-cyan rounded-r-xl space-y-3">
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 text-aeo-cyan shrink-0" />
@@ -459,11 +459,11 @@ export default function AEOVsSEOPage() {
                 If search foundations are weak - crawlability, local profiles, useful pages, reputation, links and conversion paths - AEO has less to build on.
               </p>
 
-              {/* Concrete Weak SEO Scenario Callout */}
+              {/* Defensible Weak SEO Scenario Callout */}
               <div className="p-3.5 bg-black/40 border border-white/10 rounded-lg space-y-1.5 text-xs">
                 <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">Practical Example: Why SEO Baseline Matters</span>
-                <p className="text-white/70 leading-relaxed">
-                  A Perth trade company writes clear, 50-word answer blocks about emergency services. However, their mobile site takes 7 seconds to load and key service URLs trigger 404 crawl errors. Automated search crawlers timeout before indexing the page, preventing AI search engines from retrieving the brand&apos;s answer blocks regardless of content quality.
+                <p className="text-white/70 leading-relaxed font-serif">
+                  Poor performance and crawl errors can reduce the reliability of discovery and indexing. Weak SEO foundations can make your business information harder to discover, interpret and validate across traditional and AI-powered search engines.
                 </p>
               </div>
             </div>
@@ -486,8 +486,8 @@ export default function AEOVsSEOPage() {
               </p>
             </div>
 
-            {/* Conversational Response Citation Graphic (Illustrative Example) */}
-            <figure role="img" aria-label="Illustrative Conversational AI Citation Graphic showing structured multi-source attribution" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-3">
+            {/* Conversational Response Citation Graphic (Illustrative Example with Alt & Description) */}
+            <figure role="img" aria-label="Illustrative Conversational AI Citation Graphic showing structured multi-source attribution model" className="p-6 bg-neutral-950 rounded-2xl border border-white/10 shadow-2xl space-y-3">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2 text-xs font-mono text-aeo-cyan font-bold">
                   <Cpu className="w-4 h-4" />
@@ -512,11 +512,11 @@ export default function AEOVsSEOPage() {
             </figure>
           </section>
 
-          {/* 5. Winning the Attention Window */}
+          {/* 5. Be Clear When Customers Compare Options */}
           <section id="attention-window" className="space-y-6 border-t border-white/10 pt-8">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Winning the Attention Window
+                Be Clear When Customers Compare Options
               </h2>
               <p className="text-sm text-white/70 font-light">
                 Positioning your brand clearly during the critical moments when prospective customers evaluate service options.
@@ -525,7 +525,7 @@ export default function AEOVsSEOPage() {
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-serif">
-                When a prospective client asks an AI assistant for a business recommendation, the system synthesises a concise summary within seconds. Winning this attention window requires clear, unambiguous, and verifiable information available across web nodes so both human decision-makers and automated systems interpret your business accurately.
+                When a customer asks an AI assistant for help comparing businesses, the response may be brief. Make your core services, locations, credentials and proof points easy to find and consistent across the web so people can evaluate your business accurately.
               </p>
             </div>
           </section>
