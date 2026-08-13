@@ -76,8 +76,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@type": "Person",
         "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person",
         "name": "Vince Baker",
-        "jobTitle": "Principal AEO Architect & Information Strategist",
+        "jobTitle": "Chief AEO Architect",
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
+        "sameAs": [
+          "https://aeobility.com.au",
+          "https://aeobility.com.au/about/freelance-seo-consultant-perth"
+        ],
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         }
@@ -87,11 +91,13 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#article",
         "url": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "headline": "Telemetry Diagnostic Tool: Technical Architecture Guide",
-        "description": "A technical walkthrough of AEObility's proprietary website telemetry, semantic retrieval simulation, entity scoring, and AI Bill architecture.",
+        "description": "An open technical specification of AEObility Architecture v2.4 detailing dual-vector hashing, text-embedding-004 RAG simulations, and Subject-Predicate-Object entity triple extraction.",
         "inLanguage": "en-AU",
         "educationalLevel": "Advanced",
         "softwareVersion": "2.4",
         "proficiencyLevel": "Expert",
+        "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
+        "dependencies": "Google Gemini text-embedding-004, gemini-3.5-flash, Wikidata SPARQL Engine",
         "author": {
           "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person"
         },
@@ -100,12 +106,23 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         },
         "datePublished": "2026-08-13",
         "dateModified": "2026-08-13",
-        "about": {
-          "@type": "SoftwareApplication",
-          "name": "AEObility Telemetry Diagnostic",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web"
-        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Retrieval-Augmented Generation",
+            "sameAs": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Vector Embedding",
+            "sameAs": "https://en.wikipedia.org/wiki/Word_embedding"
+          },
+          {
+            "@type": "Thing",
+            "name": "Cosine Similarity",
+            "sameAs": "https://en.wikipedia.org/wiki/Cosine_similarity"
+          }
+        ],
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
@@ -336,7 +353,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <span>&bull;</span>
               <span>Architecture Version: <strong className="text-white">v2.4 (Last tested August 2026)</strong></span>
               <span>&bull;</span>
-              <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker</Link></span>
+              <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker (Chief AEO Architect)</Link></span>
             </div>
 
             {/* Prominent Platform Disclaimer Box */}
@@ -348,7 +365,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <p className="leading-relaxed font-light">
                 The diagnostic does not reproduce or access the proprietary retrieval, ranking, citation, or recommendation systems of ChatGPT, Perplexity, Gemini, Claude, Google, or other external platforms. Its findings are directional diagnostic signals generated from AEObility’s documented test configuration, not predictions or guarantees of visibility.
               </p>
-              <div className="text-[11px] text-amber-300 font-mono pt-1">
+              <div className="text-[11px] text-amber-300 font-mono pt-1 border-t border-amber-500/20">
                 <strong>What is tested:</strong> AEObility measures semantic proximity under our specific Gemini text-embedding-004 configuration, schema completeness, SPO entity triples, and competitor content volume within our controlled test environment.
               </div>
             </div>
@@ -555,17 +572,17 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               Core Technical Thesis
             </h2>
             <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed">
-              Modern search and retrieval systems may combine lexical matching, semantic embeddings, passage retrieval, entity signals, source quality, and language models. AEObility tests selected aspects of this broader process through its own diagnostic configuration by evaluating 90–120 token answer blocks validated against Google Gemini&apos;s <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code>.
+              Modern search and retrieval systems may combine lexical matching, semantic embeddings, passage retrieval, entity signals, source quality, and language models. AEObility tests selected aspects of this broader process through its own diagnostic configuration by evaluating 90–120 token answer blocks validated against Google Gemini&apos;s <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code>.
             </p>
           </div>
 
           {/* Section 1: Architecture & Vector Map Infrastructure */}
-          <section id="vector-map-infrastructure" className="space-y-6 scroll-mt-24">
+          <section className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <Network className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="vector-map-infrastructure" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 1. Architecture &amp; Vector Map Infrastructure
               </h2>
             </div>
@@ -647,10 +664,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed font-serif">
-                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/search/vectorEngine.ts</code>, text is tokenised into 3-gram character sequences and mapped into a 384-dimensional <code className="text-aeo-cyan font-mono text-xs">Float64Array</code> using L2 Euclidean normalisation:
+                  In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/lib/search/vectorEngine.ts</code>, text is tokenised into 3-gram character sequences and mapped into a 384-dimensional <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">Float64Array</code> using L2 Euclidean normalisation:
                 </p>
 
-                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-aeo-cyan/90 space-y-2">
+                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-aeo-cyan/90 space-y-2 overflow-x-auto">
                   <div>{"$$\\text{hash} = \\left(\\sum_{i=0}^{k-1} c_i \\cdot 31^{k-1-i}\\right) \\pmod{384}$$"}</div>
                   <div>{"$$\\hat{\\mathbf{v}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|_2} = \\frac{\\mathbf{v}}{\\sqrt{\\sum v_j^2}}$$" }</div>
                 </div>
@@ -658,10 +675,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 {/* Variable Annotations */}
                 <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1">
                   <span className="text-xs font-bold text-white uppercase block">Formula Variable Definitions:</span>
-                  <div>&bull; <code className="text-aeo-cyan">c_i</code>: Character code value at position i in 3-gram sequence</div>
-                  <div>&bull; <code className="text-aeo-cyan">k</code>: Sequence length (k = 3)</div>
+                  <div>&bull; <code className="text-aeo-cyan">c_i</code>: Character code value at position <code className="text-aeo-cyan">i</code> in 3-gram sequence</div>
+                  <div>&bull; <code className="text-aeo-cyan">k</code>: Sequence length (<code className="text-aeo-cyan">k = 3</code>)</div>
                   <div>&bull; <code className="text-aeo-cyan">31</code>: Prime hashing seed</div>
-                  <div>&bull; <code className="text-aeo-cyan">v_j</code>: Vector magnitude at dimension j</div>
+                  <div>&bull; <code className="text-aeo-cyan">v_j</code>: Vector magnitude at dimension <code className="text-aeo-cyan">j</code></div>
                 </div>
               </div>
 
@@ -676,10 +693,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed font-serif">
-                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/proximity.ts</code>, target search intent and crawled site copy are embedded using Google Gemini&apos;s <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code>:
+                  In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/lib/telemetry/proximity.ts</code>, target search intent and crawled site copy are embedded using Google Gemini&apos;s <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code>:
                 </p>
 
-                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-purple-300 space-y-2">
+                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-purple-300 space-y-2 overflow-x-auto">
                   <div>{"Client Node: v_client (768 dimensions)"}</div>
                   <div>{"Competitor Nodes: v_comp_i (768 dimensions)"}</div>
                   <div>{"$$\\text{CosineSim}(\\mathbf{a}, \\mathbf{b}) = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{a}\\|_2 \\|\\mathbf{b}\\|_2}$$"}</div>
@@ -688,7 +705,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 {/* Variable Annotations */}
                 <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1">
                   <span className="text-xs font-bold text-white uppercase block">Formula Variable Definitions:</span>
-                  <div>&bull; <code className="text-purple-300">a, b</code>: 768-dim dense vectors from text-embedding-004</div>
+                  <div>&bull; <code className="text-purple-300">a, b</code>: 768-dim dense vectors from <code className="text-purple-300">text-embedding-004</code></div>
                   <div>&bull; <code className="text-purple-300">||a||_2</code>: L2 Euclidean magnitude (square root of sum of squared vector elements)</div>
                 </div>
               </div>
@@ -704,12 +721,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 2: RAG Retrieval Simulation & Content Structuring */}
-          <section id="information-dilution-mitigation" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <Zap className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="information-dilution-mitigation" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 2. RAG Retrieval Simulation &amp; Content Structuring
               </h2>
             </div>
@@ -739,7 +756,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <p className="text-white/90 font-light leading-relaxed">
                 <strong>Content Dilution</strong> occurs when a single document contains a wide mixture of disparate topics (e.g. backstory, shipping rules, and multiple services). In an internal retrieval test, embedding mixed copy as one block can make the passage less similar to a specific query than a focused passage indexed separately.
               </p>
-              <div className="p-3 bg-neutral-950 border border-white/10 rounded-lg font-mono text-xs text-aeo-cyan">
+              <div className="p-3 bg-neutral-950 border border-white/10 rounded-lg font-mono text-xs text-aeo-cyan overflow-x-auto">
                 {"$$\\mathbf{v}_{\\text{passage}} = \\text{Embed}(\\text{Token}_1, \\dots, \\text{Token}_N)$$" }
               </div>
               <p className="text-white/80 font-light leading-relaxed">
@@ -755,28 +772,28 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-aeo-cyan uppercase font-mono">1. Dense Representation Model</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    AEObility uses <code className="text-aeo-cyan font-mono">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.4, last tested in August 2026.
+                    AEObility uses <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.4, last tested in August 2026.
                   </p>
                 </div>
 
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-aeo-cyan uppercase font-mono">2. Atomic Paragraph Chunking</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    In <code className="text-aeo-cyan font-mono">rag-sim.ts</code>, content is split into atomic paragraph chunks C1, C2, ..., Ck (k &le; 5, approximately 90–120 tokens). Each chunk receives an isolated <code className="text-aeo-cyan font-mono">text-embedding-004</code> vector <code className="text-aeo-cyan font-mono">v_C_i</code> and is evaluated independently.
+                    In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">rag-sim.ts</code>, content is split into atomic paragraph chunks <code className="text-aeo-cyan font-mono">C1, C2, ..., Ck</code> (<code className="text-aeo-cyan font-mono">k &le; 5</code>, approximately 90–120 tokens). Each chunk receives an isolated <code className="text-aeo-cyan font-mono">text-embedding-004</code> vector <code className="text-aeo-cyan font-mono">v_C_i</code> and is evaluated independently.
                   </p>
                 </div>
 
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-purple-400 uppercase font-mono">3. SPO Entity Triples Integration</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    In <code className="text-aeo-cyan font-mono">graph.ts</code>, unstructured text is refactored into Subject-Predicate-Object (SPO) entity triples to form hyper-focused semantic nodes.
+                    In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-purple-300 font-mono text-xs">graph.ts</code>, unstructured text is refactored into Subject-Predicate-Object (SPO) entity triples to form hyper-focused semantic nodes.
                   </p>
                 </div>
 
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-purple-400 uppercase font-mono">4. Query-Variation Retrieval Test</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    In <code className="text-aeo-cyan font-mono">rag-sim.ts</code>, <code className="text-aeo-cyan font-mono">gemini-3.5-flash</code> generates 3 synthetic query variations from the target search intent. Chunk embeddings are evaluated against these queries to measure simulation survival rates.
+                    In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-purple-300 font-mono text-xs">rag-sim.ts</code>, <code className="text-purple-300 font-mono">gemini-3.5-flash</code> generates 3 synthetic query variations from the target search intent. Chunk embeddings are evaluated against these queries to measure simulation survival rates.
                   </p>
                 </div>
               </div>
@@ -806,12 +823,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 3: System APIs & Execution Flow */}
-          <section id="apis-orchestration" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <Terminal className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="apis-orchestration" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 3. System APIs &amp; Execution Flow
               </h2>
             </div>
@@ -852,10 +869,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <td className="py-3 px-3">Edge-streamed conversational AI assistant endpoint using OpenAI gpt-4o-mini via Vercel AI SDK. Ingests telemetry payloads.</td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-mono text-white font-semibold">POST /api/search/answer</td>
+                    <td className="py-3 px-3 font-mono text-white font-semibold">GET &amp; POST /api/search/answer</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/search/answer/route.ts</td>
-                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Query &rarr; Answer Object</td>
-                    <td className="py-3 px-3">Grounded NLWeb vector search answer endpoint returning 2-sentence answers and similarity scores. (Note: Published in &lt;link rel=&quot;nlweb-ask&quot;&gt; head tags as a discovery URL; backend processes incoming query vectors via POST payload handling).</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Query string or JSON &rarr; Answer Object</td>
+                    <td className="py-3 px-3">Grounded NLWeb vector search answer endpoint returning 2-sentence answers and similarity scores. Supports GET pre-flight discovery/query strings (?q=query) and POST JSON vector payloads.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">GET /api/mcp</td>
@@ -907,12 +924,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 4: 5-Category Weighted Scoring Model & Mathematics */}
-          <section id="math-scoring-system" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <BarChart3 className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="math-scoring-system" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 4. 5-Category Weighted Scoring Model &amp; Mathematics
               </h2>
             </div>
@@ -943,7 +960,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 font-serif">
               <h3 className="text-lg font-bold text-white font-sans">5-Category Score Weight Visual Breakdown</h3>
               <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/config.ts</code>, the AI Readiness Score ($0-100$) is calculated across 5 normalized category dimensions:
+                In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/lib/telemetry/config.ts</code>, the AI Readiness Score ($0-100$) is calculated across 5 normalized category dimensions:
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 font-mono text-center text-xs">
                 <div className="p-3 bg-neutral-950 rounded-xl border border-aeo-cyan/30 shadow-md">
@@ -978,7 +995,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="p-6 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs shadow-2xl">
               <span className="text-aeo-cyan font-bold uppercase text-[11px] block">Final AI Readiness Score Calculation</span>
               <p className="text-white/80 leading-relaxed font-sans text-xs">
-                In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/scoring.ts</code>, each category score (S, T, E, C, K) is bounded to [0, 100] and weighted transparently:
+                In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/lib/telemetry/scoring.ts</code>, each category score (<code className="text-aeo-cyan font-mono">S, T, E, C, K</code>) is bounded to [0, 100] and weighted transparently:
               </p>
               <div className="p-4 bg-black rounded-xl text-aeo-cyan overflow-x-auto text-center font-mono space-y-2 border border-white/10">
                 <div className="text-sm font-bold tracking-wide text-aeo-cyan">
@@ -1010,7 +1027,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <p className="text-xs text-white/75 font-light font-serif leading-relaxed">
                   Relative similarity difference is calculated with a signed delta and mapped to a neutral 50 midpoint to avoid harsh zero floors:
                 </p>
-                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1 text-center">
+                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1 text-center overflow-x-auto">
                   <div>RelativeDelta = 100 &times; (Sim_client - Sim_competitors_avg)</div>
                   <div>DominanceScore = clamp(0, 100, 50 + (RelativeDelta / 2))</div>
                 </div>
@@ -1056,12 +1073,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 5: Ingestion Pipeline into AI Bill */}
-          <section id="bill-ingestion-pipeline" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <Bot className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="bill-ingestion-pipeline" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 5. Ingestion Pipeline into AI Bill
               </h2>
             </div>
@@ -1075,7 +1092,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
-              When a user completes a diagnostic scan on <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-semibold">/diagnostic</Link>, the resulting telemetry payload is saved to <code className="text-aeo-cyan font-mono text-xs">localStorage</code> (<code className="text-aeo-cyan font-mono text-xs">aeo_telemetry_latest</code>) and handed off to AI Bill via custom browser events (<code className="text-aeo-cyan font-mono text-xs">open_bill_with_query</code>).
+              When a user completes a diagnostic scan on <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-semibold">/diagnostic</Link>, the resulting telemetry payload is saved to <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">localStorage</code> (<code className="text-aeo-cyan font-mono text-xs">aeo_telemetry_latest</code>) and handed off to AI Bill via custom browser events (<code className="text-aeo-cyan font-mono text-xs">open_bill_with_query</code>).
             </p>
 
             {/* Diagram 3: Telemetry-to-AI-Bill Handoff Sequence SVG */}
@@ -1114,7 +1131,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
 
               <div className="space-y-3 text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
                 <p>
-                  In <code className="text-aeo-cyan font-mono text-xs">src/app/api/bill/route.ts</code>, AI Bill evaluates user turn counts to determine skill routing:
+                  In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/app/api/bill/route.ts</code>, AI Bill evaluates user turn counts to determine skill routing:
                 </p>
                 <ul className="space-y-2 text-xs font-sans">
                   <li className="p-3 bg-neutral-950 border border-white/10 rounded-lg">
@@ -1131,12 +1148,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 6: Machine Interface Protocols: NLWeb & MCP */}
-          <section id="nlweb-mcp-architecture" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
                 <Code className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="nlweb-mcp-architecture" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 6. Machine Interface Protocols: NLWeb &amp; MCP
               </h2>
             </div>
@@ -1150,7 +1167,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
-              AEObility publishes a machine-readable tool catalogue at <code className="text-aeo-cyan font-mono text-xs">/api/mcp</code> and provides an MCP-compatible integration layer for supported clients.
+              AEObility publishes a machine-readable tool catalogue at <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">/api/mcp</code> and provides an MCP-compatible integration layer for supported clients.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1160,7 +1177,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   <span>Discovery Head Link Tags</span>
                 </h3>
                 <p className="text-xs text-white/75 font-light leading-relaxed font-serif">
-                  In <code className="text-aeo-cyan font-mono text-xs">src/app/layout.tsx</code>, these link relations are published as optional discovery metadata:
+                  In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">src/app/layout.tsx</code>, these link relations are published as optional discovery metadata:
                 </p>
                 <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan overflow-x-auto">
                   <div>&lt;link rel=&quot;nlweb-ask&quot; href=&quot;https://aeobility.com.au/api/search/answer&quot; /&gt;</div>
@@ -1213,12 +1230,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 7: Privacy, Data Handling & Security Controls */}
-          <section id="privacy-security-controls" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
+          <section className="space-y-6 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
                 <ShieldCheck className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="privacy-security-controls" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 7. Privacy, Data Handling &amp; Security Controls
               </h2>
             </div>
@@ -1239,14 +1256,14 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                 <h3 className="font-bold text-white text-sm">Scope &amp; In-Memory Crawl Processing</h3>
                 <p className="text-white/70 font-light leading-relaxed font-serif">
-                  URLs and user-entered intents submitted to <code className="text-aeo-cyan font-mono text-xs">/api/diagnostic</code> are processed transiently in memory during the execution turn. External pages are parsed strictly for text extraction and schema validation.
+                  URLs and user-entered intents submitted to <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">/api/diagnostic</code> are processed transiently in memory during the execution turn. External pages are parsed strictly for text extraction and schema validation.
                 </p>
               </div>
 
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                 <h3 className="font-bold text-white text-sm">Client-Side Retention &amp; User Control</h3>
                 <p className="text-white/70 font-light leading-relaxed font-serif">
-                  Diagnostic output is stored in the browser&apos;s <code className="text-aeo-cyan font-mono text-xs">localStorage</code> (<code className="text-aeo-cyan font-mono text-xs">aeo_telemetry_latest</code>). Users can clear diagnostic state at any time by clearing site data or invoking client reset methods.
+                  Diagnostic output is stored in the browser&apos;s <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">localStorage</code> (<code className="text-aeo-cyan font-mono text-xs">aeo_telemetry_latest</code>). Users can clear diagnostic state at any time by clearing site data or invoking client reset methods.
                 </p>
               </div>
 
@@ -1298,7 +1315,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300">
                 <Compass className="w-4 h-4" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              <h2 id="system-bounds-roadmap" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
                 System Scope Bounds &amp; Future Roadmap
               </h2>
             </div>
@@ -1329,8 +1346,8 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           </section>
 
           {/* Section 8: Continue Exploring */}
-          <section id="interlinking-matrix" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+          <section className="space-y-6 pt-6 border-t border-white/10">
+            <h2 id="interlinking-matrix" className="text-2xl md:text-3xl font-extrabold text-white scroll-mt-24">
               8. Continue Exploring
             </h2>
 
