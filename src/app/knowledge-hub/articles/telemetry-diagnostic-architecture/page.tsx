@@ -94,7 +94,6 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "description": "An open technical specification of AEObility Architecture v2.4 detailing dual-vector hashing, text-embedding-004 RAG simulations, and Subject-Predicate-Object entity triple extraction.",
         "inLanguage": "en-AU",
         "educationalLevel": "Advanced",
-        "softwareVersion": "2.4",
         "proficiencyLevel": "Expert",
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "dependencies": "Google Gemini text-embedding-004, gemini-3.5-flash, Wikidata SPARQL Engine",
@@ -107,6 +106,14 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "datePublished": "2026-08-13",
         "dateModified": "2026-08-13",
         "about": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#software",
+            "name": "AEObility Telemetry Diagnostic Engine",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "softwareVersion": "2.4"
+          },
           {
             "@type": "Thing",
             "name": "Retrieval-Augmented Generation",
