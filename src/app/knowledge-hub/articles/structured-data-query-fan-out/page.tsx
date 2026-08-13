@@ -337,10 +337,35 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </p>
           </div>
 
-          {/* Section 1: What Query Fan-Out Means */}
+          {/* Executive Summary TL;DR Block */}
+          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3 font-sans shadow-xl">
+            <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
+              TL;DR: Key Takeaways
+            </h2>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-white/80">
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                <span><strong>Query Fan-Out:</strong> AI search engines expand broad user prompts into multiple concurrent sub-queries covering pricing, location, and credentials.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                <span><strong>Entity Clarity:</strong> Unambiguous machine-readable facts prevent retrieval failure when engines synthesise answer fragments.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                <span><strong>Stable Identifiers:</strong> Using consistent <code className="text-aeo-cyan font-mono text-xs">@id</code> URIs across your Schema graph connects fragmented content blocks back to your core entity.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
+                <span><strong>Realistic Scope:</strong> Structured data provides essential machine context, but it does <strong>not</strong> guarantee AI citations or bypass content retrieval pipelines.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Section 1: How Query Fan-Out Impacts Technical SEO and Entity Clarity */}
           <section id="what-is-fanout" className="space-y-6 scroll-mt-24">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              What Query Fan-Out Means
+              How Query Fan-Out Impacts Technical SEO and Entity Clarity
             </h2>
 
             <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 font-sans text-sm">
@@ -429,7 +454,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
                   Query fan-out expands retrieval complexity because the engine must evaluate multiple sub-intents simultaneously across candidate web pages. If entity details are ambiguous, split across unlinked pages, or expressed inconsistently, the retriever may fail to match relevant facts to the target business entity.
                 </p>
                 <p>
-                  Aligning your website with <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Principles</Link> and <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-semibold">AI Semantic SEO</Link> provides the structural clarity needed to keep entity facts readable across multiple search passes.
+                  Aligning your website with <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Principles</Link> and <Link href="/knowledge-hub/semantic-seo" className="text-aeo-cyan hover:underline font-semibold">AI Semantic SEO</Link> provides the structural clarity needed to keep entity facts readable across multiple search passes.
+                </p>
+                <p className="text-xs sm:text-sm text-aeo-cyan/90 font-mono italic pt-2 border-t border-white/5">
+                  Section Summary: &ldquo;Maintaining clear entity signals, consistent schema, and structured data helps AI search engines reconcile business facts across complex multi-intent retrieval passes.&rdquo;
                 </p>
               </div>
             </div>
@@ -543,10 +571,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </div>
           </section>
 
-          {/* Section 3: What Structured Data Can and Cannot Do */}
+          {/* Section 3: Schema Limitations and Entity Clarity in AI Search */}
           <section id="why-structured-data" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              What Structured Data Can and Cannot Do
+              Schema Limitations and Entity Clarity in AI Search
             </h2>
 
             <p className="text-white/80 text-base leading-relaxed font-serif">
@@ -617,10 +645,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </div>
           </section>
 
-          {/* Section 4: Engineering Structured Data for Technical SEO */}
+          {/* Section 4: Technical SEO Requirements for Schema Implementation */}
           <section id="engineering-schema" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              Engineering Structured Data for Technical SEO
+              Technical SEO Requirements for Schema Implementation
             </h2>
 
             <div className="space-y-4">
