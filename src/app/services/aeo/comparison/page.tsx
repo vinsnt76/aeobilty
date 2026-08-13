@@ -271,7 +271,7 @@ export default function AEOVsSEOPage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
-      <SubNavPills items={HUB_SUBNAV_MAPS.aeoServices} />
+      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
       {/* Main Container */}

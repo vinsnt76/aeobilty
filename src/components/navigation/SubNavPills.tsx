@@ -20,6 +20,10 @@ interface SubNavPillsProps {
 export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
   const pathname = usePathname();
 
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return null;
+  }
+
   return (
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
