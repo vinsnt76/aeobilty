@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
+import ScoreCalculator from '@/components/telemetry/ScoreCalculator';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   ArrowRight, 
@@ -29,7 +30,9 @@ import {
   BarChart3,
   Bot,
   ShieldAlert,
-  Sliders
+  Sliders,
+  Terminal,
+  FileCode
 } from 'lucide-react';
 
 export const metadata = {
@@ -62,6 +65,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#article",
         "headline": "Telemetry Diagnostic Tool: Technical Architecture Guide",
         "description": "Comprehensive technical architecture guide detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
+        "educationalLevel": "Advanced",
+        "about": [
+          { "@type": "Thing", "name": "Answer Engine Optimisation" },
+          { "@type": "Thing", "name": "Vector Embeddings" },
+          { "@type": "Thing", "name": "Retrieval-Augmented Generation" }
+        ],
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture"
@@ -96,6 +105,16 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "AEO",
           "AEObility"
         ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#sourcecode",
+        "name": "AEObility Telemetry Vector & Scoring Engine",
+        "programmingLanguage": "TypeScript",
+        "codeRepository": "https://github.com/vinsnt76/aeobilty",
+        "author": {
+          "@id": "https://aeobility.com.au/#vince-baker"
+        }
       },
       {
         "@type": "Person",
@@ -227,9 +246,13 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               Telemetry Diagnostic Tool: <span className="text-gradient-aeo">Technical Architecture Guide</span>
             </h1>
 
-            <p className="text-lg md:text-xl font-light text-white/80 font-serif leading-relaxed">
-              The Telemetry Diagnostic evaluates selected signals associated with machine-readable, retrieval-friendly website content. It uses AEObility’s proprietary crawl, semantic similarity, entity, competitor, and retrieval-simulation methods to identify opportunities relevant to conventional search and AI-mediated discovery.
-            </p>
+            {/* Direct AEO Answer Block */}
+            <div className="p-4 bg-white/[0.03] border-l-4 border-aeo-cyan rounded-r-xl space-y-1.5 font-serif text-sm">
+              <span className="font-sans font-bold text-xs text-aeo-cyan uppercase tracking-wider block">AEO Executive Summary</span>
+              <p className="text-white/90 font-light leading-relaxed">
+                <strong>The AEObility Telemetry Diagnostic</strong> evaluates website machine readability across crawl, vector similarity, entity graph, competitor, and RAG retrieval-simulation layers. It converts raw web content into 768-dimensional dense vectors using <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code> and calculates a transparent 5-category AI Readiness Score ($0-100$).
+              </p>
+            </div>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-4 font-sans">
               <span>Published by <strong className="text-white">AEObility</strong></span>
@@ -307,85 +330,94 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </p>
           </div>
 
-          {/* Executive Summary TL;DR Block */}
-          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3 font-sans shadow-xl">
-            <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
-              TL;DR: Architectural Specifications
-            </h2>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-white/80">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                <span><strong>Dual Vector Mapping:</strong> Combines 384-dim character N-gram hashing vectors for sub-millisecond local intent classification with 768-dim <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code> dense embeddings for semantic proximity.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                <span><strong>RAG Simulation Testing:</strong> Evaluates atomic 90-120 token paragraph chunks against 3 generated query variations to identify passages that maintain calibrated similarity within AEObility&apos;s retrieval tests.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                <span><strong>5-Category Weighted Score:</strong> Calculates an AI Readiness Score ($0-100$) using five category weights: Semantic Relevance (40%), Technical Readiness (20%), Entity Clarity (15%), Competitor Coverage (15%), and Knowledge Graph Corroboration (10%).</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                <span><strong>AI Bill Ingestion:</strong> Telemetry streams into <code className="text-aeo-cyan font-mono text-xs">/api/bill</code> using Multi-Turn Skill Routing, enforcing structured report envelope templates on Turn 1 and conversational guidance on follow-up turns.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-aeo-cyan shrink-0 mt-2" />
-                <span><strong>NLWeb &amp; MCP Integration:</strong> Publishes machine-readable tool schemas at <code className="text-aeo-cyan font-mono text-xs">/api/mcp</code> and discovery link metadata as optional discovery resources for compatible clients.</span>
-              </li>
-            </ul>
-          </div>
-
           {/* Section 1: Architecture & Vector Map Infrastructure */}
           <section id="vector-map-infrastructure" className="space-y-6 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              1. Architecture &amp; Vector Map Infrastructure
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <Network className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                1. Architecture &amp; Vector Map Infrastructure
+              </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                AEObility separates vector tasks into two layers: a fast 384-dimensional character 3-gram hashing vector for sub-millisecond local intent classification, and a dense 768-dimensional neural vector for deep semantic similarity comparison.
+              </p>
+            </div>
 
             <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed font-serif">
               The telemetry engine operates across two complementary vector representation layers: local character N-gram hashing vectors for sub-millisecond query intent classification, and dense neural embeddings for high-dimensional semantic proximity analysis.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 384-Dim Code & Math Block */}
               <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Network className="w-5 h-5 text-aeo-cyan" />
-                  <span>384-Dim Local Vector Construction</span>
-                </h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                    <Network className="w-5 h-5 text-aeo-cyan" />
+                    <span>384-Dim Local Vector Construction</span>
+                  </h3>
+                  <span className="text-[10px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/30">src/lib/search/vectorEngine.ts</span>
+                </div>
+
                 <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed font-serif">
-                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/search/vectorEngine.ts</code>, text is stripped of non-alphanumeric characters, tokenised into 3-gram character sequences, and mapped into a 384-dimensional <code className="text-aeo-cyan font-mono text-xs">Float64Array</code> using L2 Euclidean normalisation:
+                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/search/vectorEngine.ts</code>, text is tokenised into 3-gram character sequences and mapped into a 384-dimensional <code className="text-aeo-cyan font-mono text-xs">Float64Array</code> using L2 Euclidean normalisation:
                 </p>
-                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-aeo-cyan/90 space-y-1">
+
+                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-aeo-cyan/90 space-y-2">
                   <div>{"$$\\text{hash} = \\left(\\sum_{i=0}^{k-1} c_i \\cdot 31^{k-1-i}\\right) \\pmod{384}$$"}</div>
                   <div>{"$$\\hat{\\mathbf{v}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|_2} = \\frac{\\mathbf{v}}{\\sqrt{\\sum v_j^2}}$$" }</div>
                 </div>
+
+                {/* Variable Annotations */}
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1">
+                  <span className="text-xs font-bold text-white uppercase block">Formula Variable Definitions:</span>
+                  <div>&bull; <code className="text-aeo-cyan">c_i</code>: Character code value at position i in 3-gram sequence</div>
+                  <div>&bull; <code className="text-aeo-cyan">k</code>: Sequence length (k = 3)</div>
+                  <div>&bull; <code className="text-aeo-cyan">31</code>: Prime hashing seed</div>
+                  <div>&bull; <code className="text-aeo-cyan">v_j</code>: Vector magnitude at dimension j</div>
+                </div>
               </div>
 
+              {/* 768-Dim Dense Proximity Mapping */}
               <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Database className="w-5 h-5 text-purple-400" />
-                  <span>768-Dim Dense Proximity Mapping</span>
-                </h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                    <Database className="w-5 h-5 text-purple-400" />
+                    <span>768-Dim Dense Proximity Mapping</span>
+                  </h3>
+                  <span className="text-[10px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/30">src/lib/telemetry/proximity.ts</span>
+                </div>
+
                 <p className="text-xs sm:text-sm text-white/75 font-light leading-relaxed font-serif">
-                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/proximity.ts</code>, target search intent and crawled site content are converted into 768-dimensional dense vectors using Google Gemini&apos;s <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code>:
+                  In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/proximity.ts</code>, target search intent and crawled site copy are embedded using Google Gemini&apos;s <code className="text-aeo-cyan font-mono text-xs">text-embedding-004</code>:
                 </p>
-                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-purple-300 space-y-1">
+
+                <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-purple-300 space-y-2">
                   <div>{"Client Node: v_client (768 dimensions)"}</div>
                   <div>{"Competitor Nodes: v_comp_i (768 dimensions)"}</div>
                   <div>{"$$\\text{CosineSim}(\\mathbf{a}, \\mathbf{b}) = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{a}\\|_2 \\|\\mathbf{b}\\|_2}$$"}</div>
                 </div>
+
+                {/* Variable Annotations */}
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1">
+                  <span className="text-xs font-bold text-white uppercase block">Formula Variable Definitions:</span>
+                  <div>&bull; <code className="text-purple-300">a, b</code>: 768-dim dense vectors from text-embedding-004</div>
+                  <div>&bull; <code className="text-purple-300">||a||_2</code>: L2 Euclidean magnitude (square root of sum of squared vector elements)</div>
+                </div>
               </div>
             </div>
 
-            {/* Uncapped Ranking Math */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-              <h3 className="text-lg font-bold text-white">Uncapped Knowledge Node Ranking Formula</h3>
-              <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed font-serif">
-                Knowledge base matching combines raw cosine similarity with positional title match and keyword frequency boosts:
+            {/* In Plain English Callout */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs font-serif shadow-md">
+              <span className="font-bold text-aeo-cyan font-sans text-[11px] uppercase block">In Plain English &bull; What This Means For Your Website</span>
+              <p className="text-white/80 leading-relaxed font-light">
+                We use two math tools: a ultra-fast local checker to instantly classify what search topic your page covers, and a deep 768-dimensional AI model from Google to measure exact semantic similarity against target buyer queries.
               </p>
-              <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs text-aeo-cyan/90 overflow-x-auto">
-                {"$$\\text{RankingScore} = 1.5 \\times \\text{rawCos} + \\left(\\frac{\\text{exactTitleHits}}{N_{\\text{words}}}\\right) \\times 0.40 + \\left(\\frac{\\text{keywordHits}}{N_{\\text{words}}}\\right) \\times 0.20$$"}
-              </div>
             </div>
           </section>
 
@@ -400,19 +432,25 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </h2>
             </div>
 
-            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 text-sm font-serif">
-              <h3 className="font-bold text-white text-base font-sans">Understanding Content Dilution in Retrieval Tests</h3>
-              <p className="text-white/80 font-light leading-relaxed">
-                In Retrieval-Augmented Generation (RAG) testing, <strong>Content Dilution</strong> refers to the behavior where a single embedding of mixed-topic content represents several disparate concepts at once (e.g. brand backstory, generic marketing text, shipping policies, and multiple service details).
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                Large monolithic web pages dilute semantic focus in retrieval tests. AEObility splits copy into atomic 90-120 token paragraph chunks and stress-tests them against synthetic user query variations.
               </p>
-              <p className="text-white/80 font-light leading-relaxed">
-                In an internal retrieval test, that spatial blending may make a monolithic passage less similar to a narrowly defined query than a focused passage indexed separately:
+            </div>
+
+            {/* Direct AEO Summary Box */}
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-3 text-sm font-serif">
+              <h3 className="font-bold text-white text-base font-sans">What is Content Dilution in Retrieval Tests?</h3>
+              <p className="text-white/90 font-light leading-relaxed">
+                <strong>Content Dilution</strong> occurs when a single document contains a wide mixture of disparate topics (e.g. backstory, shipping rules, and multiple services). In an internal retrieval test, embedding mixed copy as one block can make the passage less similar to a specific query than a focused passage indexed separately.
               </p>
               <div className="p-3 bg-neutral-950 border border-white/10 rounded-lg font-mono text-xs text-aeo-cyan">
                 {"$$\\mathbf{v}_{\\text{passage}} = \\text{Embed}(\\text{Token}_1, \\dots, \\text{Token}_N)$$" }
               </div>
               <p className="text-white/80 font-light leading-relaxed">
-                In AEObility’s retrieval simulation, a mixed-topic passage may score below the selected retrieval threshold even when it contains relevant information. Restructuring unstructured copy into atomic 90-120 token blocks ensures core facts retain isolated semantic clarity.
+                In AEObility’s retrieval simulation, a mixed-topic passage may score below the selected retrieval threshold even when it contains relevant information. Restructuring copy into atomic 90-120 token blocks ensures core facts retain isolated semantic clarity.
               </p>
             </div>
 
@@ -453,7 +491,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
 
             {/* Threshold Calibration Notice */}
-            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-2 text-xs text-white/80 font-serif">
+            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-2 text-xs text-white/80 font-serif shadow-md">
               <span className="font-bold text-aeo-cyan uppercase font-sans text-[11px] block">Threshold Calibration &amp; Interpretation Limits</span>
               <p className="leading-relaxed">
                 AEObility currently treats a cosine-similarity score above <strong>0.62</strong> as a pass condition within this specific retrieval simulation, model configuration, and evaluation design.
@@ -463,20 +501,33 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </p>
             </div>
 
-            {/* Interlinking Callouts */}
-            <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-xs text-white/80 space-y-1 font-serif">
-              <span className="font-bold text-white uppercase font-sans text-[11px] block">Related Structural Research:</span>
-              <p>
-                To learn more about context window bottlenecks, see our articles on <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-cyan hover:underline font-semibold">Positional Bias in Retrieval</Link>, <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline font-semibold">Retrieval-Augmented Generation</Link>, and <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline font-semibold">Structured Data Query Fan-Out</Link>.
+            {/* In Plain English Callout */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs font-serif shadow-md">
+              <span className="font-bold text-aeo-cyan font-sans text-[11px] uppercase block">In Plain English &bull; What This Means For Your Website</span>
+              <p className="text-white/80 leading-relaxed font-light">
+                Instead of testing your whole page as one big text block, we break your page into short 90-120 word topic blocks and test if each block independently answers key buyer questions.
               </p>
             </div>
           </section>
 
           {/* Section 3: System APIs & Execution Flow */}
           <section id="apis-orchestration" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              3. System APIs &amp; Execution Flow
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <Terminal className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                3. System APIs &amp; Execution Flow
+              </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                The diagnostic engine orchestrates Next.js serverless route handlers, Google Gemini APIs, and public SPARQL knowledge bases to execute end-to-end audits.
+              </p>
+            </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
               The diagnostic engine coordinates client-side execution, serverless route handlers, generative embedding APIs, and public SPARQL knowledge bases:
@@ -487,44 +538,52 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <thead>
                   <tr className="border-b border-white/10 text-aeo-cyan uppercase font-mono">
                     <th className="py-3 px-3">API / Endpoint</th>
-                    <th className="py-3 px-3">Provider / Path</th>
-                    <th className="py-3 px-3">Function / Specification</th>
+                    <th className="py-3 px-3">Path / Provider</th>
+                    <th className="py-3 px-3">Input / Output Type</th>
+                    <th className="py-3 px-3">Function Specification</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-white/80 font-light">
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">POST /api/diagnostic</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/diagnostic/route.ts</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">URL + Intent &rarr; Diagnostic JSON</td>
                     <td className="py-3 px-3">Executes 3-stage async crawl, vector proximity embedding, RAG simulation, entity graph extraction, scoring, and strategic insight generation.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">POST /api/bill</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/bill/route.ts</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Messages &rarr; Streamed EventStream</td>
                     <td className="py-3 px-3">Edge-streamed conversational AI assistant endpoint using OpenAI gpt-4o-mini via Vercel AI SDK. Ingests telemetry payloads.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">POST /api/search/answer</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/search/answer/route.ts</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Query &rarr; Answer Object</td>
                     <td className="py-3 px-3">Grounded NLWeb vector search answer endpoint returning 2-sentence answers and similarity scores.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">GET /api/mcp</td>
                     <td className="py-3 px-3 font-mono text-white/60">src/app/api/mcp/route.ts</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">HTTP GET &rarr; Tool Catalogue JSON</td>
                     <td className="py-3 px-3">Publishes machine-readable tool catalogue for compatible client agents.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">text-embedding-004</td>
                     <td className="py-3 px-3 font-mono text-white/60">Google Gemini API</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Text String &rarr; 768-dim Float Array</td>
                     <td className="py-3 px-3">Generates 768-dimensional dense vector embeddings for target search intent and site text.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">gemini-3.5-flash</td>
                     <td className="py-3 px-3 font-mono text-white/60">Google Gemini API</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Prompt &rarr; Structured JSON Response</td>
                     <td className="py-3 px-3">Powers query-variation generation, SPO triple extraction, and Strategic Insight Engine synthesis.</td>
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-mono text-white font-semibold">Wikidata SPARQL</td>
                     <td className="py-3 px-3 font-mono text-white/60">query.wikidata.org</td>
+                    <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">SPARQL Query &rarr; RDF Entity Match</td>
                     <td className="py-3 px-3">Validates extracted entity subjects against global open knowledge graphs.</td>
                   </tr>
                 </tbody>
@@ -533,7 +592,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
 
             {/* Operational Sequence Stream */}
             <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-3 font-mono text-xs shadow-xl">
-              <span className="text-aeo-cyan font-bold uppercase text-[11px] block">End-to-End Operational Pipeline</span>
+              <span className="text-aeo-cyan font-bold uppercase text-[11px] block flex items-center gap-1.5">
+                <FileCode className="w-4 h-4" />
+                <span>End-to-End Operational Pipeline</span>
+              </span>
               <div className="p-4 bg-black rounded-xl text-white/80 space-y-2 overflow-x-auto text-[11px] leading-relaxed">
                 <div>1. Client Web Audit Request &rarr; POST /api/diagnostic (URL + Intent)</div>
                 <div>2. Async HTML Crawl &amp; Competitor Discovery &rarr; Extract Page Copy &amp; Competitor Content</div>
@@ -551,12 +613,25 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
 
           {/* Section 4: 5-Category Weighted Scoring Model & Mathematics */}
           <section id="math-scoring-system" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              4. 5-Category Weighted Scoring Model &amp; Mathematics
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <BarChart3 className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                4. 5-Category Weighted Scoring Model &amp; Mathematics
+              </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                The AI Readiness Score ($0-100$) is calculated from 5 normalized category dimensions using transparent weightings summing to 100%. Use our interactive simulator below to test custom category inputs.
+              </p>
+            </div>
 
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 font-serif">
-              <h3 className="text-lg font-bold text-white font-sans">5-Category Category Weights</h3>
+              <h3 className="text-lg font-bold text-white font-sans">5-Category Weights Breakdown</h3>
               <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                 In <code className="text-aeo-cyan font-mono text-xs">src/lib/telemetry/config.ts</code>, the AI Readiness Score ($0-100$) is calculated across 5 normalized category dimensions:
               </p>
@@ -593,16 +668,29 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <div className="p-4 bg-black rounded-xl text-aeo-cyan overflow-x-auto">
                 {"$$\\text{ReadinessScore} = \\text{clamp}\\left(0, 100, \\text{round}\\left(0.40 S + 0.20 T + 0.15 E + 0.15 C + 0.10 K\\right)\\right)$$" }
               </div>
+
+              {/* Variable Annotations */}
+              <div className="p-3 bg-black/60 rounded-xl border border-white/5 font-mono text-[11px] text-white/70 space-y-1 font-sans">
+                <span className="text-xs font-bold text-white uppercase block font-mono">Formula Variable Definitions:</span>
+                <div>&bull; <code className="text-aeo-cyan">S</code>: Semantic Relevance score ($0-100$)</div>
+                <div>&bull; <code className="text-white">T</code>: Technical Readiness score ($0-100$)</div>
+                <div>&bull; <code className="text-purple-300">E</code>: Entity Clarity score ($0-100$)</div>
+                <div>&bull; <code className="text-amber-300">C</code>: Competitor Coverage score ($0-100$)</div>
+                <div>&bull; <code className="text-emerald-400">K</code>: Knowledge Graph Corroboration score ($0-100$)</div>
+              </div>
             </div>
 
-            {/* Bounded Bounded Math Formulas */}
+            {/* Interactive Score Simulator Component */}
+            <ScoreCalculator />
+
+            {/* Bounded Math Formulas */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
                 <h3 className="text-sm font-bold text-white font-mono uppercase text-aeo-cyan">Semantic Dominance Bounded Score</h3>
                 <p className="text-xs text-white/75 font-light font-serif leading-relaxed">
                   Relative similarity difference is calculated with a signed delta and mapped to a neutral 50 midpoint to avoid harsh zero floors:
                 </p>
-                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan">
+                <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1">
                   <div>{"$$\\text{RelativeDelta} = 100 \\times (\\text{Sim}_{\\text{client}} - \\bar{\\text{Sim}}_{\\text{competitors}})$$"}</div>
                   <div>{"$$\\text{DominanceScore} = \\text{clamp}\\left(0, 100, 50 + \\frac{\\text{RelativeDelta}}{2}\\right)$$"}</div>
                 </div>
@@ -623,13 +711,34 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 </ol>
               </div>
             </div>
+
+            {/* In Plain English Callout */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs font-serif shadow-md">
+              <span className="font-bold text-aeo-cyan font-sans text-[11px] uppercase block">In Plain English &bull; What This Means For Your Website</span>
+              <p className="text-white/80 leading-relaxed font-light">
+                Your final score ($0-100$) is calculated like a weighted report card. Content quality accounts for 40%, technical code 20%, entity data 15%, competitor depth 15%, and external verification 10%.
+              </p>
+            </div>
           </section>
 
           {/* Section 5: Ingestion Pipeline into AI Bill */}
           <section id="bill-ingestion-pipeline" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              5. Ingestion Pipeline into AI Bill
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <Bot className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                5. Ingestion Pipeline into AI Bill
+              </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                Diagnostic results are saved to client localStorage and streamed into AI Bill, which dynamically switches between UI report card generation on Turn 1 and conversational Q&amp;A on Turn 2+.
+              </p>
+            </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
               When a user completes a diagnostic scan on <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-semibold">/diagnostic</Link>, the resulting telemetry payload is saved to <code className="text-aeo-cyan font-mono text-xs">localStorage</code> (<code className="text-aeo-cyan font-mono text-xs">aeo_telemetry_latest</code>) and handed off to AI Bill via custom browser events (<code className="text-aeo-cyan font-mono text-xs">open_bill_with_query</code>).
@@ -661,9 +770,22 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
 
           {/* Section 6: Machine Interface Protocols: NLWeb & MCP */}
           <section id="nlweb-mcp-architecture" className="space-y-6 scroll-mt-24 pt-6 border-t border-white/10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              6. Machine Interface Protocols: NLWeb &amp; MCP
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/30 flex items-center justify-center text-aeo-cyan">
+                <Code className="w-4 h-4" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                6. Machine Interface Protocols: NLWeb &amp; MCP
+              </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                AEObility publishes discovery link tags in page headers and a machine tool catalogue at /api/mcp for compatible AI agents.
+              </p>
+            </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
               AEObility publishes a machine-readable tool catalogue at <code className="text-aeo-cyan font-mono text-xs">/api/mcp</code> and provides an MCP-compatible integration layer for supported clients.
@@ -700,6 +822,14 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 </ul>
               </div>
             </div>
+
+            {/* In Plain English Callout */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs font-serif shadow-md">
+              <span className="font-bold text-aeo-cyan font-sans text-[11px] uppercase block">In Plain English &bull; What This Means For Your Website</span>
+              <p className="text-white/80 leading-relaxed font-light">
+                We publish machine-readable API routes so AI search crawlers can ask our site direct questions and query our business services programmatically.
+              </p>
+            </div>
           </section>
 
           {/* Section 7: Privacy, Data Handling & Security Controls */}
@@ -711,6 +841,14 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                 7. Privacy, Data Handling &amp; Security Controls
               </h2>
+            </div>
+
+            {/* Section Key Takeaways */}
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-1 text-xs text-white/80 font-serif">
+              <span className="font-bold text-white uppercase font-sans text-[11px] block">Key Section Takeaway:</span>
+              <p>
+                Diagnostic audits process copy transiently in memory, store results locally in the user&apos;s browser, and enforce strict rate limits and zero data-retention model API policies.
+              </p>
             </div>
 
             <p className="text-white/80 text-base font-light leading-relaxed font-serif">
