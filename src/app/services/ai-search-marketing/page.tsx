@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import FaqAccordion from '@/components/FaqAccordion';
 import {
   ArrowRight,
   Layers,
@@ -39,6 +40,57 @@ export const metadata = {
 };
 
 export default function AISearchMarketingPage() {
+  const faqs = [
+    {
+      q: "Is AI search marketing different from SEO?",
+      a: "AI search marketing builds on good SEO — it doesn't replace it. SEO helps pages get discovered and ranked. AI search marketing makes your business easier for Search, Maps and AI systems to understand, interpret and use when answering customer questions. Google's guidance is simple: content still needs to be crawlable, helpful and clear."
+    },
+    {
+      q: "Can anyone guarantee citations in ChatGPT, Gemini, Perplexity or Google AI?",
+      a: "No. No business can guarantee how a third-party AI system will cite or recommend a brand. What AEObility can do is improve the clarity, consistency and corroboration of the signals those systems rely on — and measure visibility across a documented set of prompts."
+    },
+    {
+      q: "How does AEObility measure AI-search visibility?",
+      a: "We create a repeatable query set based on your services, locations and customer questions. We test it across agreed AI platforms and track whether your brand appears, is cited or is referenced over time. Every report includes the query list, dates, platforms and measurement rules so results stay transparent."
+    },
+    {
+      q: "What does \"citation share\" mean?",
+      a: "Citation share is the percentage of tracked AI responses where your business is named, cited or surfaced. It's not a universal metric — it's a documented measurement rule we apply consistently across your query set."
+    },
+    {
+      q: "Does schema markup make a business appear in AI answers?",
+      a: "Schema helps search engines understand structured facts about your business. It supports clarity, but it doesn't guarantee citations or recommendations. Google's guidance is clear: focus on helpful, crawlable content rather than chasing AI-specific shortcuts."
+    },
+    {
+      q: "What is Retrieval-Augmented Generation (RAG) in simple terms?",
+      a: "RAG is a method some AI systems use to pull in relevant information while forming an answer. For businesses, the takeaway is simple: publish clear, accurate, well-structured information that can be found and trusted."
+    },
+    {
+      q: "What are \"atomic answer blocks\"?",
+      a: "They're small, self-contained pieces of content that answer one customer question clearly. Think service explanations, pricing notes, eligibility details, location availability or short FAQs. They help AI systems understand your business without guessing."
+    },
+    {
+      q: "Will AI search reduce traffic to my website?",
+      a: "AI can change how people discover businesses. Some simple questions may be answered directly in the interface, while high-intent queries still drive strong visits. The goal is to appear for commercially meaningful questions and give people a clear reason to click through."
+    },
+    {
+      q: "Which businesses benefit most from AI-search marketing?",
+      a: "Businesses with clear services, multiple locations, strong proof, or complex customer questions usually benefit the most. It's less effective when a site lacks accurate business information or doesn't convert well once visitors arrive."
+    },
+    {
+      q: "What does the $995 AEObility Blueprint include?",
+      a: "The Blueprint gives you a deeper technical audit, an AI-readiness review, priority fixes, and a 90-day roadmap. It shows exactly how to improve visibility, understanding and selection across Search, Maps and AI — and the cost is fully credited if you continue with AEObility."
+    },
+    {
+      q: "How long does AI-search work take to show results?",
+      a: "The Blueprint creates the plan. Movement depends on your starting point, competition, crawl cycles and how AI platforms retrieve information at the time. Treat AI visibility as an ongoing improvement program, not a one-off ranking promise."
+    },
+    {
+      q: "Do you need access to our website?",
+      a: "For an assessment, basic read-only access to analytics, Search Console or CMS details is helpful but not essential. For implementation, access requirements are agreed upfront so it's clear what AEObility delivers and what your team or developer handles."
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -64,40 +116,14 @@ export default function AISearchMarketingPage() {
       {
         "@type": "FAQPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is AI search marketing and how does it differ from traditional SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AI search marketing (Answer Engine Optimisation or AEO) focuses on structuring business facts, entity schemas, and atomic answer content so generative engines like Gemini, ChatGPT, and Perplexity can retrieve and cite your brand directly in conversational search outputs, whereas traditional SEO targets keyword ranking lists on search engine results pages (SERPs)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does it take to see results in Gemini, ChatGPT, and Perplexity?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Initial entity schema indexes and atomic answer nodes are typically parsed by search crawlers within 14 to 30 days. Demonstrable citation share growth across synthetic query sets is systematically tracked over a 90-day execution sprint."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is included in the $995 AEObility Blueprint?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The $995 AEObility Blueprint includes a comprehensive AI visibility & entity readiness audit, vector space alignment & query fan-out mapping, a prioritised technical execution backlog, and a direct 1-on-1 implementation strategy call with an Australian AEO specialist."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need a complete website redesign to optimise for AI search engines?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. AEObility implements schema markup, atomic answer blocks, and entity verification layers directly into your existing website architecture, avoiding costly redesigns while maximising machine-readability."
-            }
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
           }
-        ]
+        }))
       }
     ]
   };
@@ -231,25 +257,6 @@ export default function AISearchMarketingPage() {
       capability: "Vector Space Alignment",
       mechanism: "Embeddings alignment across entity nodes",
       outcome: "Increases citation index frequency across Gemini, ChatGPT, and Perplexity."
-    }
-  ];
-
-  const faqs = [
-    {
-      q: "What is AI search marketing and how does it differ from traditional SEO?",
-      a: "AI search marketing (Answer Engine Optimisation or AEO) focuses on structuring business facts, entity schemas, and atomic answer content so generative engines like Gemini, ChatGPT, and Perplexity can retrieve and cite your brand directly in conversational search outputs, whereas traditional SEO targets keyword ranking lists on search engine results pages (SERPs)."
-    },
-    {
-      q: "How long does it take to see results in Gemini, ChatGPT, and Perplexity?",
-      a: "Initial entity schema indexes and atomic answer nodes are typically parsed by search crawlers within 14 to 30 days. Demonstrable citation share growth across synthetic query sets is systematically tracked over a 90-day execution sprint."
-    },
-    {
-      q: "What is included in the $995 AEObility Blueprint?",
-      a: "The $995 AEObility Blueprint includes a comprehensive AI visibility & entity readiness audit, vector space alignment & query fan-out mapping, a prioritised technical execution backlog, and a direct 1-on-1 implementation strategy call with an Australian AEO specialist."
-    },
-    {
-      q: "Do I need a complete website redesign to optimise for AI search engines?",
-      a: "No. AEObility implements schema markup, atomic answer blocks, and entity verification layers directly into your existing website architecture, avoiding costly redesigns while maximising machine-readability."
     }
   ];
 
@@ -626,7 +633,7 @@ export default function AISearchMarketingPage() {
             </div>
           </div>
 
-          {/* STEP 10: FAQ Module */}
+          {/* STEP 10: Brand-Aligned Interactive FAQ Accordion Module */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase m-0">
@@ -635,22 +642,35 @@ export default function AISearchMarketingPage() {
               </h2>
               <h2 className="text-2xl font-bold text-white">AI Search Marketing Insights &amp; FAQs</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
-                Key questions answered regarding Answer Engine Optimisation, RAG models, and implementation timing.
+                Clear, grounded answers to common questions about Answer Engine Optimisation, RAG models, and measurement.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors">
-                  <h3 className="text-sm font-bold text-white leading-snug flex items-start gap-2">
-                    <HelpCircle className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
-                    <span>{faq.q}</span>
-                  </h3>
-                  <p className="text-xs text-white/70 leading-relaxed font-light pl-6">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
+            <FaqAccordion faqs={faqs} />
+
+            {/* Conversion Bridge Panel */}
+            <div className="p-6 sm:p-8 bg-gradient-to-r from-aeo-purple/10 via-white/[0.02] to-aeo-cyan/10 border border-aeo-cyan/20 rounded-2xl text-center space-y-4 shadow-xl">
+              <h3 className="text-base sm:text-lg font-bold text-white leading-snug max-w-xl mx-auto">
+                Not sure whether AI search is relevant to your business?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 font-light max-w-md mx-auto leading-relaxed">
+                The AEObility Blueprint shows the highest-priority gaps and opportunities before you commit to anything.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 pt-2">
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)] whitespace-nowrap"
+                >
+                  <span>Get the $995 AEObility Blueprint</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all whitespace-nowrap"
+                >
+                  <span>Talk Through a Custom Strategy</span>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -719,6 +739,7 @@ export default function AISearchMarketingPage() {
               </li>
             </ul>
           </div>
+
         </section>
       </main>
 
