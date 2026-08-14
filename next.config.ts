@@ -181,8 +181,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/knowledge-hub/articles/semantic-dominance-framework',
-        destination: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
+        source: '/packages/the-aeobility-blueprint',
+        destination: '/solutions/aeo-blueprint',
+        permanent: true,
+      },
+      {
+        source: '/packages/aeo-blueprint',
+        destination: '/solutions/aeo-blueprint',
+        permanent: true,
+      },
+      {
+        source: '/packages/aeo-sprints',
+        destination: '/solutions/aeo-sprint',
+        permanent: true,
+      },
+      {
+        source: '/packages/the-aeobility-sprint',
+        destination: '/solutions/aeo-sprint',
         permanent: true,
       },
     ];
