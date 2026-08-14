@@ -110,7 +110,13 @@ export default function AISearchMarketingPage() {
         },
         "primaryImageOfPage": {
           "@id": "https://aeobility.com.au/services/ai-search-marketing#primaryimage"
-        }
+        },
+        "mentions": [
+          { "@type": "Thing", "name": "Google AI" },
+          { "@type": "Thing", "name": "Gemini" },
+          { "@type": "Thing", "name": "ChatGPT" },
+          { "@type": "Thing", "name": "Perplexity" }
+        ]
       },
       {
         "@type": "Service",
@@ -133,19 +139,6 @@ export default function AISearchMarketingPage() {
           "audienceType": "Australian small businesses and local service providers"
         },
         "serviceOutput": "AI-readiness assessment and 90-day visibility roadmap",
-        "knowsAbout": [
-          "AI search visibility",
-          "structured content",
-          "local business visibility",
-          "entity clarity",
-          "search engine optimisation"
-        ],
-        "mentions": [
-          { "@type": "Thing", "name": "Google AI" },
-          { "@type": "Thing", "name": "Gemini" },
-          { "@type": "Thing", "name": "ChatGPT" },
-          { "@type": "Thing", "name": "Perplexity" }
-        ],
         "url": "https://aeobility.com.au/services/ai-search-marketing"
       },
       {
