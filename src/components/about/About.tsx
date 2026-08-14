@@ -54,7 +54,7 @@ const About: React.FC = () => {
         >
           <Compass className="w-7 h-7 sm:w-8 sm:h-8 text-aeo-cyan mr-3 shrink-0" />
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-left">
-            From Traveller to <span className="text-aeo-purple font-mono">[</span>Digital Architect<span className="text-aeo-purple font-mono">]</span>
+            From Traveller to <span className="text-gradient-aeo font-extrabold">Digital Architect</span>
           </h3>
         </motion.div>
 
@@ -797,7 +797,7 @@ const About: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-10 space-y-4">
             <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-              A Career Built on <span className="text-aeo-cyan font-mono">[</span>Adaptability<span className="text-aeo-cyan font-mono">]</span> and{" "}
+              A Career Built on <span className="text-gradient-aeo font-extrabold">Adaptability</span> and{" "}
               <span className="relative inline-block pb-2">
                 <span>Growth</span>
                 <span className="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-aeo-cyan to-aeo-purple rounded-full shadow-sm" />

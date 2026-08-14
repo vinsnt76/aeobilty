@@ -152,7 +152,7 @@ export default function Hero() {
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
                 Measure Your<br />
-                <span className="text-aeo-cyan font-normal">[</span>AI Search<span className="text-aeo-cyan font-normal">]</span> Visibility
+                <span className="text-gradient-aeo">AI Search</span> Visibility
               </h1>
 
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
