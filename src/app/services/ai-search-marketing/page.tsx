@@ -418,16 +418,17 @@ export default function AISearchMarketingPage() {
           <div className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl font-bold">Why Generative Search Engine Optimisation Matters</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              As search tools transition from list-based keyword matching to conversational retrieval platforms, traditional SEO alone is insufficient. Users no longer just type &quot;plumber Perth&quot;; they use complex sentences querying specific capabilities, price transparent policies, and availability.
+              Strong SEO remains the foundation. AI search adds new ways people discover and evaluate businesses by making the relationships between your services, locations, and proof easier to interpret.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              By structuring your business data for <strong>retrieval augmentation</strong>, optimising against <strong>query fan-out</strong> behaviours, and aligning your local pages within <strong>vector space</strong> maps, AEObility positions your brand directly in the citations LLMs output.
+              By publishing clear <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan underline hover:text-white transition-colors">atomic answer blocks</Link>, structuring machine-readable schemas, and maintaining consistent multi-channel citations, AEObility helps your brand stand out when Search, Maps, and AI platforms answer customer questions.
             </p>
           </div>
 
           {/* STEP 5: Strategic Directives Section */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
+              <h2 className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-widest">Foundational Methodology</h2>
               <h2 className="text-2xl font-bold">Strategic Directives for Generative Search</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
                 To position your organisation at the forefront of AI-driven discovery, our methodology centers on three foundational principles:
@@ -435,26 +436,48 @@ export default function AISearchMarketingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {strategicDirectives.map((directive, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="p-2.5 bg-white/5 rounded-xl w-fit">
-                      {directive.icon}
-                    </div>
-                    <h3 className="text-base font-bold text-white leading-snug">{directive.title}</h3>
-                    <div className="text-xs text-white/70 leading-relaxed font-light">{directive.desc}</div>
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="p-2.5 bg-white/5 rounded-xl w-fit">
+                    <Zap className="w-5 h-5 text-aeo-cyan" />
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">Optimise for RAG Over Crawling</h3>
+                  <div className="text-xs text-white/70 leading-relaxed font-light">
+                    AI search engines construct answers dynamically using <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan underline hover:text-white transition-colors">Retrieval-Augmented Generation (RAG)</Link> rather than static index lookups. Structuring machine-readable schemas, maintaining signal freshness, and providing clear content nodes help make your content easier for retrieval systems to find and reference when relevant.
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="p-2.5 bg-white/5 rounded-xl w-fit">
+                    <ShieldCheck className="w-5 h-5 text-aeo-purple" />
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">First-Party Entity Verification</h3>
+                  <div className="text-xs text-white/70 leading-relaxed font-light">
+                    Consistent information across your website and trusted third-party sources makes your business easier for AI systems to verify and recommend. We align your Name, Address, Phone (NAP), corporate identifiers, and JSON-LD sameAs schema across digital platforms to build clear <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-purple underline hover:text-white transition-colors font-medium">entity authority</Link>.
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="p-2.5 bg-white/5 rounded-xl w-fit">
+                    <Compass className="w-5 h-5 text-aeo-cyan" />
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">Conversational Intent Mapping</h3>
+                  <div className="text-xs text-white/70 leading-relaxed font-light">
+                    Users pose long-tail, multi-clause comparative queries (e.g., &apos;best B2B AI search agency in Australia vs traditional SEO&apos;). We map nuanced intent clusters into structured answer blocks that resolve complex prompts directly.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* STEP 6: Four-Phase Execution Framework (Outcomes & Deliverables) */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <h2 className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase m-0">
-                <span>Execution Roadmap</span>
-              </h2>
+              <h2 className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-widest">Execution Roadmap</h2>
               <h2 className="text-2xl font-bold text-white">🛠️ The AEObility AI Search Execution Framework</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
                 A productised 4-phase methodology with defined buyer outcomes and concrete deliverables.
@@ -462,38 +485,153 @@ export default function AISearchMarketingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {executionPhases.map((phase, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
-                        {phase.phase}
-                      </span>
-                      <div className="p-2 bg-white/5 rounded-lg">
-                        {phase.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-base font-bold text-white leading-snug">{phase.title}</h3>
-                    
-                    <div className="space-y-1.5 pt-1">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Key Activities:</span>
-                      <ul className="space-y-1 text-xs text-white/70 font-light">
-                        {phase.activities.map((act, aIdx) => (
-                          <li key={aIdx} className="flex items-center gap-2">
-                            <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
-                            <span>{act}</span>
-                          </li>
-                        ))}
-                      </ul>
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
+                      Phase 1: Diagnose
+                    </span>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <Search className="w-4 h-4 text-aeo-cyan" />
                     </div>
                   </div>
-
-                  <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-aeo-cyan">
-                    <CheckCircle2 className="w-4 h-4 shrink-0" />
-                    <span>Deliverable: {phase.deliverable}</span>
+                  <h3 className="text-base font-bold text-white leading-snug">Establish baseline and prioritise gaps</h3>
+                  
+                  <div className="space-y-1.5 pt-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Key Activities:</span>
+                    <ul className="space-y-1 text-xs text-white/70 font-light">
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Audit knowledge graph representation</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Identify entity misalignments &amp; semantic gaps</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Review crawlability and schema validation</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              ))}
+
+                <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-aeo-cyan">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Deliverable: AI visibility and entity-readiness audit</span>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
+                      Phase 2: Clarify
+                    </span>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <Layers className="w-4 h-4 text-aeo-purple" />
+                    </div>
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">Make priority pages easier to interpret</h3>
+                  
+                  <div className="space-y-1.5 pt-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Key Activities:</span>
+                    <ul className="space-y-1 text-xs text-white/70 font-light">
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Structure atomic answer blocks</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Implement JSON-LD schema markup</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Format modular Q&amp;A content nodes</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-aeo-cyan">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Deliverable: Prioritised content, entity, and <Link href="/solutions/aeo-sprint" className="text-aeo-cyan underline hover:text-white">schema backlog</Link></span>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
+                      Phase 3: Build Evidence
+                    </span>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <Share2 className="w-4 h-4 text-aeo-cyan" />
+                    </div>
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">Strengthen corroborating information</h3>
+                  
+                  <div className="space-y-1.5 pt-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Key Activities:</span>
+                    <ul className="space-y-1 text-xs text-white/70 font-light">
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Strengthen relevant third-party references</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Cross-verify NAP data across knowledge bases</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Format citation &amp; reference nodes</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-aeo-cyan">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Deliverable: <Link href="/services/aeo/local-business" className="text-aeo-cyan underline hover:text-white">Citation/reference</Link> and content-distribution plan</span>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
+                      Phase 4: Measure
+                    </span>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <BarChart3 className="w-4 h-4 text-aeo-purple" />
+                    </div>
+                  </div>
+                  <h3 className="text-base font-bold text-white leading-snug">Track movements and refine priorities</h3>
+                  
+                  <div className="space-y-1.5 pt-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Key Activities:</span>
+                    <ul className="space-y-1 text-xs text-white/70 font-light">
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Track visibility across a documented set of representative customer prompts</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Track citation frequency across ChatGPT, Gemini, and Perplexity</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <ChevronRight className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                        <span>Sprint review &amp; strategy adjustment</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-aeo-cyan">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Deliverable: Query-set reporting and 90-day roadmap review</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -521,7 +659,7 @@ export default function AISearchMarketingPage() {
               </div>
 
               <p className="text-xs text-white/60 font-light leading-relaxed">
-                * Measured over 90 days using a defined set of tracked prompts across Gemini, ChatGPT and Perplexity. Results are client-specific and not guaranteed.
+                * Citation share represents the percentage of tracked prompts where Baby Bento was named, cited, or linked under our standardised testing methodology over 90 days across Gemini, ChatGPT, and Perplexity. Results are client-specific and not guaranteed.
               </p>
             </div>
             <Link
@@ -533,72 +671,74 @@ export default function AISearchMarketingPage() {
             </Link>
           </div>
 
-          {/* STEP 8: Blueprint Scope & Inclusions Panel */}
-          <div className="p-8 bg-gradient-to-br from-aeo-purple/10 via-white/[0.02] to-aeo-cyan/15 border border-white/10 rounded-3xl space-y-6">
-            <div className="text-center space-y-2 max-w-xl mx-auto">
-              <span className="px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-mono font-bold">
-                Productised Assessment Scope
-              </span>
-              <h3 className="text-2xl font-bold text-white">See What is Limiting Your AI-Search Visibility</h3>
-              <p className="text-sm text-white/60 font-light leading-relaxed">
-                Receive an AI-readiness evaluation and a prioritised 90-day roadmap.
-              </p>
-            </div>
+          {/* STEP 8: Blueprint Scope & Inclusions Panel with Explicit Border Separation */}
+          <div className="space-y-6 border-t border-white/5 pt-10">
+            <div className="p-8 bg-gradient-to-br from-aeo-purple/10 via-white/[0.02] to-aeo-cyan/15 border border-white/10 rounded-3xl space-y-6">
+              <div className="text-center space-y-2 max-w-xl mx-auto">
+                <h2 className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-widest">
+                  Productised Assessment Scope
+                </h2>
+                <h2 className="text-2xl font-bold text-white">See What is Limiting Your AI-Search Visibility</h2>
+                <p className="text-sm text-white/60 font-light leading-relaxed">
+                  Receive an AI-readiness evaluation and a prioritised 90-day roadmap.
+                </p>
+              </div>
 
-            {/* 4 Inclusions List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-2">
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Priority Entity &amp; Technical Gaps</h4>
-                  <p className="text-[11px] text-white/60 font-light mt-0.5">Identify schema errors, broken canonicals, and entity misalignments holding back retrieval.</p>
+              {/* 4 Inclusions List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto pt-2">
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-xs font-bold text-white">Priority Entity &amp; Technical Gaps</h3>
+                    <p className="text-[11px] text-white/60 font-light mt-0.5">Identify schema errors, broken canonicals, and entity misalignments holding back retrieval.</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-xs font-bold text-white">Query &amp; Content Opportunities</h3>
+                    <p className="text-[11px] text-white/60 font-light mt-0.5">Map long-tail conversational prompts into atomic answer block templates.</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-xs font-bold text-white">Recommended Implementation Sequence</h3>
+                    <p className="text-[11px] text-white/60 font-light mt-0.5">Step-by-step technical backlog ordered by commercial effort vs impact.</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-xs font-bold text-white">Practical Measurement Framework</h3>
+                    <p className="text-[11px] text-white/60 font-light mt-0.5">Setup query-set tracking across Gemini, ChatGPT, and Perplexity.</p>
+                  </div>
                 </div>
               </div>
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Query &amp; Content Opportunities</h4>
-                  <p className="text-[11px] text-white/60 font-light mt-0.5">Map long-tail conversational prompts into atomic answer block templates.</p>
-                </div>
-              </div>
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Recommended Implementation Sequence</h4>
-                  <p className="text-[11px] text-white/60 font-light mt-0.5">Step-by-step technical backlog ordered by commercial effort vs impact.</p>
-                </div>
-              </div>
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Practical Measurement Framework</h4>
-                  <p className="text-[11px] text-white/60 font-light mt-0.5">Setup query-set tracking across Gemini, ChatGPT, and Perplexity.</p>
-                </div>
-              </div>
-            </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
-              >
-                <span>Get the $995 AEObility Blueprint</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
-              >
-                <span>Talk Through a Custom Strategy</span>
-              </Link>
+              {/* CTAs */}
+              <div className="flex flex-wrap justify-center gap-4 pt-4">
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
+                >
+                  <span>Get the $995 AEObility Blueprint</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
+                >
+                  <span>Talk Through a Custom Strategy</span>
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* STEP 9: Structured Technical Capability Matrix Table */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <h2 className="inline-flex items-center gap-2 text-aeo-purple font-bold text-xs tracking-widest uppercase m-0">
+              <h2 className="text-[11px] font-mono font-bold text-aeo-purple uppercase tracking-widest flex items-center gap-2">
                 <Table className="w-4 h-4" />
                 <span>Technical Specifications</span>
               </h2>
@@ -618,16 +758,30 @@ export default function AISearchMarketingPage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 font-light text-white/80">
-                  {capabilityMatrix.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 sm:p-5 font-semibold text-white flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
-                        <span>{row.capability}</span>
-                      </td>
-                      <td className="p-4 sm:p-5 text-white/70">{row.mechanism}</td>
-                      <td className="p-4 sm:p-5 text-aeo-cyan font-medium">{row.outcome}</td>
-                    </tr>
-                  ))}
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-white flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
+                      <span>Query Fan-Out Optimisation</span>
+                    </td>
+                    <td className="p-4 sm:p-5 text-white/70">Multi-intent semantic cluster mapping</td>
+                    <td className="p-4 sm:p-5 text-aeo-cyan font-medium">Captures complex, multi-clause conversational search prompts.</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-white flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
+                      <span>Atomic Answer Blocks</span>
+                    </td>
+                    <td className="p-4 sm:p-5 text-white/70">Self-contained, schema-backed data nodes</td>
+                    <td className="p-4 sm:p-5 text-aeo-cyan font-medium">Designed to make answers easier to identify and use when relevant, improving coverage across tracked AI-search queries.</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-white flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
+                      <span>Vector Space Alignment</span>
+                    </td>
+                    <td className="p-4 sm:p-5 text-white/70">Embeddings alignment across entity nodes</td>
+                    <td className="p-4 sm:p-5 text-aeo-cyan font-medium">Improves citation and recommendation frequency across Gemini, ChatGPT, and Perplexity.</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -636,7 +790,7 @@ export default function AISearchMarketingPage() {
           {/* STEP 10: Brand-Aligned Interactive FAQ Accordion Module */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <h2 className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase m-0">
+              <h2 className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-widest flex items-center gap-2">
                 <HelpCircle className="w-4 h-4" />
                 <span>Frequently Asked Questions</span>
               </h2>
@@ -677,7 +831,7 @@ export default function AISearchMarketingPage() {
           {/* STEP 11: Related Services & Knowledge Hub Grid */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <h2 className="inline-flex items-center gap-2 text-aeo-purple font-bold text-xs tracking-widest uppercase m-0">
+              <h2 className="text-[11px] font-mono font-bold text-aeo-purple uppercase tracking-widest flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
                 <span>SILO Architecture &amp; Knowledge Network</span>
               </h2>
@@ -717,25 +871,25 @@ export default function AISearchMarketingPage() {
             </div>
           </div>
 
-          {/* Quick Checklist */}
+          {/* Actionable Plain-English AI Readiness Checklist */}
           <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
             <h3 className="text-lg font-bold text-white">AI Readiness Quick Checklist</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
+              <li className="flex gap-2.5 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Optimise website code for query fan-out search agent parsing.</span>
+                <span>Publish clear, structured service explanations with transparent pricing and location details.</span>
               </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
+              <li className="flex gap-2.5 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Configure structures to excel in vector space relevance algorithms.</span>
+                <span>Implement valid JSON-LD schema markup so search engines can verify core business facts.</span>
               </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
+              <li className="flex gap-2.5 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Verify and format atomic answer blocks for direct model retrieval.</span>
+                <span>Maintain consistent Name, Address, Phone (NAP) details across your site and third-party profiles.</span>
               </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
+              <li className="flex gap-2.5 items-start text-xs font-light text-white/80">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Configure content indexing authority to match generative visibility models.</span>
+                <span>Create self-contained atomic Q&amp;A blocks that directly answer your customers&apos; key questions.</span>
               </li>
             </ul>
           </div>

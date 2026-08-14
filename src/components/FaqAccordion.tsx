@@ -40,9 +40,15 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
             <button
               type="button"
               onClick={() => toggleIndex(idx)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleIndex(idx);
+                }
+              }}
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${idx}`}
-              className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-white focus:outline-none focus:ring-1 focus:ring-aeo-cyan"
+              className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-white focus:outline-none focus:ring-1 focus:ring-aeo-cyan rounded-2xl"
             >
               <span className="flex items-center gap-2.5 leading-snug">
                 <HelpCircle className="w-4 h-4 text-aeo-cyan shrink-0" />
