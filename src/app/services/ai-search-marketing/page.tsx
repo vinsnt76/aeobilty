@@ -16,7 +16,10 @@ import {
   Sparkles,
   Table,
   FileText,
-  ChevronRight
+  ChevronRight,
+  HelpCircle,
+  BookOpen,
+  ArrowUpRight
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -57,6 +60,44 @@ export default function AISearchMarketingPage() {
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is AI search marketing and how does it differ from traditional SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI search marketing (Answer Engine Optimisation or AEO) focuses on structuring business facts, entity schemas, and atomic answer content so generative engines like Gemini, ChatGPT, and Perplexity can retrieve and cite your brand directly in conversational search outputs, whereas traditional SEO targets keyword ranking lists on search engine results pages (SERPs)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to see results in Gemini, ChatGPT, and Perplexity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Initial entity schema indexes and atomic answer nodes are typically parsed by search crawlers within 14 to 30 days. Demonstrable citation share growth across synthetic query sets is systematically tracked over a 90-day execution sprint."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is included in the $995 AEObility Blueprint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The $995 AEObility Blueprint includes a comprehensive AI visibility & entity readiness audit, vector space alignment & query fan-out mapping, a prioritised technical execution backlog, and a direct 1-on-1 implementation strategy call with an Australian AEO specialist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a complete website redesign to optimise for AI search engines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. AEObility implements schema markup, atomic answer blocks, and entity verification layers directly into your existing website architecture, avoiding costly redesigns while maximising machine-readability."
+            }
+          }
+        ]
       }
     ]
   };
@@ -114,12 +155,20 @@ export default function AISearchMarketingPage() {
     {
       icon: <Zap className="w-5 h-5 text-aeo-cyan" />,
       title: "Optimise for RAG Over Crawling",
-      desc: "AI search engines construct answers dynamically using Retrieval-Augmented Generation (RAG) rather than static index lookups. Structuring machine-readable schemas, maintaining signal freshness, and providing fast API-friendly data nodes ensure your content is retrieved live during prompt resolution."
+      desc: (
+        <>
+          AI search engines construct answers dynamically using <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan underline hover:text-white transition-colors">Retrieval-Augmented Generation (RAG)</Link> rather than static index lookups. Structuring machine-readable schemas, maintaining signal freshness, and providing fast API-friendly data nodes ensure your content is retrieved live during prompt resolution.
+        </>
+      )
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-aeo-purple" />,
       title: "First-Party Entity Verification",
-      desc: "LLMs require cross-platform consensus before citing a brand in answer outputs. We align your Name, Address, Phone (NAP), corporate identifiers, and JSON-LD sameAs schema across global knowledge graphs to establish unassailable entity authority."
+      desc: (
+        <>
+          LLMs require cross-platform consensus before citing a brand in answer outputs. We align your Name, Address, Phone (NAP), corporate identifiers, and JSON-LD sameAs schema across global knowledge graphs to establish unassailable <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-purple underline hover:text-white transition-colors font-medium">entity authority</Link>.
+        </>
+      )
     },
     {
       icon: <Compass className="w-5 h-5 text-aeo-cyan" />,
@@ -140,14 +189,22 @@ export default function AISearchMarketingPage() {
       phase: "Phase 2: Clarify",
       title: "Make priority pages easier to interpret",
       activities: ["Structure atomic answer blocks", "Implement JSON-LD schema markup", "Format modular Q&A content nodes"],
-      deliverable: "Prioritised content, entity, and schema backlog",
+      deliverable: (
+        <>
+          Prioritised content, entity, and <Link href="/solutions/aeo-sprint" className="text-aeo-cyan underline hover:text-white">schema backlog</Link>
+        </>
+      ),
       icon: <Layers className="w-4 h-4 text-aeo-purple" />
     },
     {
       phase: "Phase 3: Build Evidence",
       title: "Strengthen corroborating information",
       activities: ["Align multi-channel entity references", "Cross-verify NAP data across knowledge bases", "Format citation & reference nodes"],
-      deliverable: "Citation/reference and content-distribution plan",
+      deliverable: (
+        <>
+          <Link href="/services/aeo/local-business" className="text-aeo-cyan underline hover:text-white">Citation/reference</Link> and content-distribution plan
+        </>
+      ),
       icon: <Share2 className="w-4 h-4 text-aeo-cyan" />
     },
     {
@@ -174,6 +231,58 @@ export default function AISearchMarketingPage() {
       capability: "Vector Space Alignment",
       mechanism: "Embeddings alignment across entity nodes",
       outcome: "Increases citation index frequency across Gemini, ChatGPT, and Perplexity."
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "What is AI search marketing and how does it differ from traditional SEO?",
+      a: "AI search marketing (Answer Engine Optimisation or AEO) focuses on structuring business facts, entity schemas, and atomic answer content so generative engines like Gemini, ChatGPT, and Perplexity can retrieve and cite your brand directly in conversational search outputs, whereas traditional SEO targets keyword ranking lists on search engine results pages (SERPs)."
+    },
+    {
+      q: "How long does it take to see results in Gemini, ChatGPT, and Perplexity?",
+      a: "Initial entity schema indexes and atomic answer nodes are typically parsed by search crawlers within 14 to 30 days. Demonstrable citation share growth across synthetic query sets is systematically tracked over a 90-day execution sprint."
+    },
+    {
+      q: "What is included in the $995 AEObility Blueprint?",
+      a: "The $995 AEObility Blueprint includes a comprehensive AI visibility & entity readiness audit, vector space alignment & query fan-out mapping, a prioritised technical execution backlog, and a direct 1-on-1 implementation strategy call with an Australian AEO specialist."
+    },
+    {
+      q: "Do I need a complete website redesign to optimise for AI search engines?",
+      a: "No. AEObility implements schema markup, atomic answer blocks, and entity verification layers directly into your existing website architecture, avoiding costly redesigns while maximising machine-readability."
+    }
+  ];
+
+  const relatedLinks = [
+    {
+      title: "All Digital Services Hub",
+      category: "Services Hub",
+      desc: "Explore our full suite of AI search, GEO, and technical optimisation capabilities.",
+      url: "/services"
+    },
+    {
+      title: "Generative Engine Optimisation (GEO)",
+      category: "Sibling Service",
+      desc: "Align your brand for Google AI Overviews and visual generative search outputs.",
+      url: "/services/geo-marketing"
+    },
+    {
+      title: "Local Business AEO",
+      category: "Sibling Service",
+      desc: "Dominate local map packs and conversational AI location queries.",
+      url: "/services/aeo/local-business"
+    },
+    {
+      title: "AEO vs SEO: The Definitive Guide",
+      category: "Knowledge Hub",
+      desc: "Understand the core paradigm shift between traditional rankings and AI citations.",
+      url: "/knowledge-hub/articles/aeo-vs-seo"
+    },
+    {
+      title: "Structured Data & Query Fan-Out",
+      category: "Technical Guide",
+      desc: "Technical blueprint for multi-clause prompt resolution and JSON-LD node structure.",
+      url: "/knowledge-hub/articles/structured-data-query-fan-out"
     }
   ];
 
@@ -207,7 +316,7 @@ export default function AISearchMarketingPage() {
                 AI Search <span className="text-gradient-aeo">Marketing & Strategy</span>
               </h1>
               <p className="text-white/80 text-lg leading-relaxed max-w-2xl font-light">
-                Make your business easier for AI search tools to understand, retrieve and reference.
+                Make your business easier for AI search tools to understand, retrieve and reference. Deploy <Link href="/services/aeo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">generative search engine optimisation (AEO)</Link> strategies built for Gemini, Perplexity, and ChatGPT.
               </p>
             </div>
 
@@ -326,7 +435,7 @@ export default function AISearchMarketingPage() {
                       {directive.icon}
                     </div>
                     <h3 className="text-base font-bold text-white leading-snug">{directive.title}</h3>
-                    <p className="text-xs text-white/70 leading-relaxed font-light">{directive.desc}</p>
+                    <div className="text-xs text-white/70 leading-relaxed font-light">{directive.desc}</div>
                   </div>
                 </div>
               ))}
@@ -517,7 +626,78 @@ export default function AISearchMarketingPage() {
             </div>
           </div>
 
-          {/* STEP 10: Final Conversion Corridor & Quick Checklist */}
+          {/* STEP 10: FAQ Module */}
+          <div className="space-y-6 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <h2 className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase m-0">
+                <HelpCircle className="w-4 h-4" />
+                <span>Frequently Asked Questions</span>
+              </h2>
+              <h2 className="text-2xl font-bold text-white">AI Search Marketing Insights &amp; FAQs</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-light">
+                Key questions answered regarding Answer Engine Optimisation, RAG models, and implementation timing.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-white/10 transition-colors">
+                  <h3 className="text-sm font-bold text-white leading-snug flex items-start gap-2">
+                    <HelpCircle className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+                    <span>{faq.q}</span>
+                  </h3>
+                  <p className="text-xs text-white/70 leading-relaxed font-light pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* STEP 11: Related Services & Knowledge Hub Grid */}
+          <div className="space-y-6 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <h2 className="inline-flex items-center gap-2 text-aeo-purple font-bold text-xs tracking-widest uppercase m-0">
+                <BookOpen className="w-4 h-4" />
+                <span>SILO Architecture &amp; Knowledge Network</span>
+              </h2>
+              <h2 className="text-2xl font-bold text-white">Explore Related Services &amp; Deep Dives</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-light">
+                Strengthen your digital entity authority across our connected service silos and technical guides.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedLinks.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.url}
+                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3 hover:border-aeo-cyan/30 hover:bg-white/[0.04] transition-all group flex flex-col justify-between"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-mono font-bold text-aeo-cyan px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20">
+                        {item.category}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 text-white/40 group-hover:text-aeo-cyan transition-colors" />
+                    </div>
+                    <h3 className="text-sm font-bold text-white leading-snug group-hover:text-aeo-cyan transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-white/60 leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div className="pt-2 text-xs font-mono text-aeo-cyan flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>Explore Route</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Checklist */}
           <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
             <h3 className="text-lg font-bold text-white">AI Readiness Quick Checklist</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -546,5 +726,3 @@ export default function AISearchMarketingPage() {
     </div>
   );
 }
-
-
