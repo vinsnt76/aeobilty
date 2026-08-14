@@ -207,20 +207,27 @@ export default function Footer() {
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="flex gap-2">
+              <label htmlFor="footer-newsletter-email" className="sr-only">
+                Email address for newsletter
+              </label>
               <input
+                id="footer-newsletter-email"
                 type="email"
                 required
+                aria-label="Email address for newsletter"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                suppressHydrationWarning
                 className="flex-grow px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-all"
               />
               <button
                 type="submit"
                 disabled={loading}
+                aria-label="Subscribe to newsletter"
                 className="px-4 py-2.5 bg-aeo-cyan hover:bg-white text-black font-semibold rounded-xl text-xs transition-all disabled:opacity-50 shrink-0"
               >
-                {loading ? '...' : 'Subscribe'}
+                {loading ? 'Subscribing...' : 'Subscribe'}
               </button>
             </form>
           )}

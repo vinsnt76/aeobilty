@@ -101,7 +101,7 @@ export default function AISearchMarketingPage() {
       phase: "Phase 1",
       title: "Entity & Semantic Audit",
       icon: <Search className="w-4 h-4 text-aeo-cyan" />,
-      desc: "We audit your site's knowledge graph representation against target LLM training corpora and vector indexes to pinpoint semantic gaps and entity misalignments."
+      desc: "We audit your site's knowledge graph representation against target LLM retrieval pipelines and vector indexes to pinpoint semantic gaps and entity misalignments."
     },
     {
       phase: "Phase 2",
@@ -113,7 +113,7 @@ export default function AISearchMarketingPage() {
       phase: "Phase 3",
       title: "Citation & Reference Network Distribution",
       icon: <Share2 className="w-4 h-4 text-aeo-cyan" />,
-      desc: "Building multi-channel entity references, cross-verified citations, and high-authority contextual nodes to force LLM consensus during live generative retrieval."
+      desc: "Building multi-channel entity references, cross-verified citations, and high-authority contextual nodes to drive multi-source LLM consensus during live generative retrieval."
     },
     {
       phase: "Phase 4",
@@ -190,7 +190,7 @@ export default function AISearchMarketingPage() {
           <div className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl font-bold">Why Generative Search Engine Optimisation Matters</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
-              As search tools transition from list-based keyword matching to conversational retrieval platforms, traditional SEO fails. Users no longer just type &quot;plumber Perth&quot;; they use complex sentences querying specific capabilities, price transparent policies, and availability.
+              As search tools transition from list-based keyword matching to conversational retrieval platforms, traditional SEO alone is insufficient. Users no longer just type &quot;plumber Perth&quot;; they use complex sentences querying specific capabilities, price transparent policies, and availability.
             </p>
             <p className="text-sm text-white/70 leading-relaxed font-light">
               By structuring your business data for <strong>retrieval augmentation</strong>, optimising against <strong>query fan-out</strong> behaviours, and aligning your local pages within <strong>vector space</strong> maps, AEObility positions your brand directly in the citations LLMs output.
@@ -224,9 +224,9 @@ export default function AISearchMarketingPage() {
           {/* 4-Phase Implementation Framework */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase">
+              <h2 className="inline-flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase m-0">
                 <span>Execution Roadmap</span>
-              </div>
+              </h2>
               <h2 className="text-2xl font-bold text-white">🛠️ The AEObility AI Search Execution Framework</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
                 A systematic 4-phase methodology designed to capture, hold, and scale brand citation share across AI search engines.
@@ -277,15 +277,18 @@ export default function AISearchMarketingPage() {
           {/* Enhanced Case Study Callout Section */}
           <div className="p-6 sm:p-8 bg-gradient-to-r from-white/[0.03] via-aeo-purple/10 to-aeo-cyan/10 border border-white/10 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-semibold">
+              <h3 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-semibold m-0">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Proven Real-World Impact</span>
-              </div>
+              </h3>
               <h3 className="text-xl sm:text-2xl font-bold text-white">
                 +310% Citation Share Growth across AI Search Engines
               </h3>
               <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
                 See how AEObility transformed Baby Bento&apos;s generative search presence through atomic answer blocks, schema restructuring, and vector space alignment.
+              </p>
+              <p className="text-[11px] text-aeo-cyan/80 font-mono pt-1">
+                * Measured across 50+ synthetic prompt variations on Gemini, ChatGPT, and Perplexity over a 90-day tracking sprint.
               </p>
             </div>
             <Link
@@ -300,10 +303,10 @@ export default function AISearchMarketingPage() {
           {/* Structured Technical Capability Matrix Table */}
           <div className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-aeo-purple font-bold text-xs tracking-widest uppercase">
+              <h2 className="inline-flex items-center gap-2 text-aeo-purple font-bold text-xs tracking-widest uppercase m-0">
                 <Table className="w-4 h-4" />
                 <span>Technical Specifications</span>
-              </div>
+              </h2>
               <h2 className="text-2xl font-bold text-white">Structured Technical Capability Matrix</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
                 How AEObility&apos;s vector and AEO capabilities map technical mechanisms directly to tangible business outcomes for AI models.
@@ -341,6 +344,27 @@ export default function AISearchMarketingPage() {
             <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
               Start with our $995 AEObility Blueprint. Get an AI-readiness evaluation and a 90-day execution roadmap.
             </p>
+
+            {/* Scope / Deliverables Checklist */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-xl mx-auto pt-2 pb-1 font-light text-xs text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
+                <span>Comprehensive AI Visibility &amp; Knowledge Graph Audit</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
+                <span>Vector Alignment &amp; Query Fan-Out Mapping</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
+                <span>Step-by-Step 90-Day Technical Execution Roadmap</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
+                <span>Direct 1-on-1 Strategy &amp; Implementation Call</span>
+              </div>
+            </div>
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/solutions/aeo-blueprint"
