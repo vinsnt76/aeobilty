@@ -313,32 +313,32 @@ export default function AISearchMarketingPage() {
   const relatedLinks = [
     {
       title: "All Digital Services Hub",
-      category: "Services Hub",
-      desc: "Explore our full suite of AI search, GEO, and technical optimisation capabilities.",
+      category: "Browse All Services",
+      desc: "See our complete range of search, maps, and AI-readiness services built for Australian businesses.",
       url: "/services"
     },
     {
       title: "Generative Engine Optimisation (GEO)",
-      category: "Related Service",
-      desc: "Align your brand for Google AI Overviews and visual generative search outputs.",
+      category: "Service",
+      desc: "Help your business appear clearly in Google AI Overviews and visual generative search results.",
       url: "/services/geo-marketing"
     },
     {
-      title: "Local Business AEO",
-      category: "Related Service",
-      desc: "Dominate local map packs and conversational AI location queries.",
+      title: "Local Business Visibility",
+      category: "Service",
+      desc: "Make your locations, opening hours, and local services easier to find in map packs and voice prompts.",
       url: "/services/aeo/local-business"
     },
     {
-      title: "AEO vs SEO: The Definitive Guide",
-      category: "Helpful Guide",
-      desc: "Understand the core paradigm shift between traditional rankings and AI citations.",
+      title: "AEO vs SEO: What Every Owner Needs to Know",
+      category: "Read Guide · 5 Min",
+      desc: "A simple breakdown of how traditional search rankings differ from direct AI answers and citations.",
       url: "/knowledge-hub/articles/aeo-vs-seo"
     },
     {
-      title: "Structured Data & Query Fan-Out",
-      category: "Helpful Guide",
-      desc: "Technical blueprint for multi-clause prompt resolution and JSON-LD node structure.",
+      title: "How Structured Data Helps AI Answer Customer Questions",
+      category: "Read Guide · 6 Min",
+      desc: "How clear website formatting and schema help search engines answer complex, multi-part customer questions.",
       url: "/knowledge-hub/articles/structured-data-query-fan-out"
     }
   ];
@@ -655,11 +655,11 @@ export default function AISearchMarketingPage() {
             <div className="space-y-2">
               <h2 className="text-[11px] font-mono font-bold text-aeo-purple uppercase tracking-widest flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
-                <span>SILO Architecture &amp; Knowledge Network</span>
+                <span>WHERE TO NEXT</span>
               </h2>
-              <h2 className="text-2xl font-bold text-white">Explore Related Services &amp; Deep Dives</h2>
+              <h2 className="text-2xl font-bold text-white">Explore Related Services &amp; Practical Guides</h2>
               <p className="text-xs sm:text-sm text-white/60 font-light">
-                Strengthen your digital entity authority across our connected service silos and technical guides.
+                Clear ways to improve how your business is understood, found, and chosen across Search, Maps, and AI tools.
               </p>
             </div>
 
