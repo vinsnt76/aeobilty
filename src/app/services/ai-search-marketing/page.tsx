@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import {
@@ -35,6 +36,28 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://aeobility.com.au/services/ai-search-marketing",
+  },
+  openGraph: {
+    title: "AI Search Marketing & Strategy | AEObility",
+    description: "Make your business easier for search and AI systems to identify, understand, and use.",
+    url: "https://aeobility.com.au/services/ai-search-marketing",
+    siteName: "AEObility",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg",
+        width: 1600,
+        height: 900,
+        alt: "A graphic illustrating how verified business facts and trusted evidence support visibility in conversational AI search answers.",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Search Marketing & Strategy | AEObility",
+    description: "Make your business easier for search and AI systems to identify, understand, and use.",
+    images: ["https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg"],
   },
 };
 
@@ -74,6 +97,20 @@ export default function AISearchMarketingPage() {
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing",
+        "url": "https://aeobility.com.au/services/ai-search-marketing",
+        "name": "AI Search Marketing & Strategy",
+        "description": "Make your business easier for AI search tools to understand, retrieve and reference.",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg",
+          "width": 1600,
+          "height": 900,
+          "caption": "A clean visual showing how business information and evidence support AI search visibility."
+        }
       },
       {
         "@type": "Service",
@@ -158,7 +195,7 @@ export default function AISearchMarketingPage() {
       title: "Optimise for RAG Over Crawling",
       desc: (
         <>
-          AI search engines construct answers dynamically using <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan underline hover:text-white transition-colors">Retrieval-Augmented Generation (RAG)</Link> rather than static index lookups. Structuring machine-readable schemas, maintaining signal freshness, and providing fast API-friendly data nodes ensure your content is retrieved live during prompt resolution.
+          AI search engines construct answers dynamically using <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan underline hover:text-white transition-colors">Retrieval-Augmented Generation (RAG)</Link> rather than static index lookups. Structuring machine-readable schemas, maintaining signal freshness, and providing clear content nodes help make your content easier for retrieval systems to find and reference when relevant.
         </>
       )
     },
@@ -167,7 +204,7 @@ export default function AISearchMarketingPage() {
       title: "First-Party Entity Verification",
       desc: (
         <>
-          LLMs require cross-platform consensus before citing a brand in answer outputs. We align your Name, Address, Phone (NAP), corporate identifiers, and JSON-LD sameAs schema across global knowledge graphs to establish unassailable <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-purple underline hover:text-white transition-colors font-medium">entity authority</Link>.
+          Consistent information across your website and trusted third-party sources makes your business easier for AI systems to verify and recommend. We align your Name, Address, Phone (NAP), corporate identifiers, and JSON-LD sameAs schema across digital platforms to build clear <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-purple underline hover:text-white transition-colors font-medium">entity authority</Link>.
         </>
       )
     },
@@ -211,7 +248,7 @@ export default function AISearchMarketingPage() {
     {
       phase: "Phase 4: Measure",
       title: "Track movements and refine priorities",
-      activities: ["Monitor synthetic prompt rankings", "Track citation frequency across ChatGPT, Gemini, Perplexity", "Sprint review & strategy adjustment"],
+      activities: ["Track visibility across a documented set of representative customer prompts", "Track citation frequency across ChatGPT, Gemini, and Perplexity", "Sprint review & strategy adjustment"],
       deliverable: "Query-set reporting and 90-day roadmap review",
       icon: <BarChart3 className="w-4 h-4 text-aeo-purple" />
     }
@@ -252,20 +289,24 @@ export default function AISearchMarketingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
+      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
+      {/* Background Glow */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
       <Breadcrumbs />
 
+      {/* Main Container */}
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-14">
         <section className="flex flex-col gap-14">
 
+          {/* STEP 1: Hero Header & Compact Above-The-Fold Hero Conversion Band */}
           <div className="space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
@@ -280,6 +321,7 @@ export default function AISearchMarketingPage() {
               </p>
             </div>
 
+            {/* Compact Above-The-Fold Hero Conversion Band */}
             <div className="p-6 rounded-2xl bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border border-aeo-cyan/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
               <div className="space-y-2 max-w-xl">
                 <div className="flex flex-wrap items-center gap-2">
@@ -301,6 +343,7 @@ export default function AISearchMarketingPage() {
                 </p>
               </div>
 
+              {/* Action Buttons with Unambiguous CTA Hierarchy */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full md:w-auto">
                 <Link
                   href="/solutions/aeo-blueprint"
@@ -316,6 +359,18 @@ export default function AISearchMarketingPage() {
                   <span>Talk Through a Custom Strategy</span>
                 </Link>
               </div>
+            </div>
+
+            {/* Hero Featured Editorial Illustration */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02] p-2 mt-4">
+              <Image
+                src="/images/services/ai-search-marketing-visibility-australia.jpg"
+                alt="A graphic illustrating how verified business facts and trusted evidence support visibility in conversational AI search answers."
+                width={1600}
+                height={900}
+                priority
+                className="w-full h-auto rounded-xl object-cover"
+              />
             </div>
           </div>
 
