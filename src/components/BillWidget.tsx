@@ -637,10 +637,14 @@ export default function BillWidget() {
         <div className="flex items-center gap-2.5">
           <BillAvatar size="sm" pulse={false} />
           <div>
-            <h3 className="font-semibold text-xs text-white tracking-wide flex items-center gap-1.5 uppercase font-mono">
-              System Agent: Bill
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            </h3>
+            <div className="flex items-center gap-2">
+              <h3 className="font-semibold text-xs text-white tracking-wide uppercase font-mono">
+                System Agent: Bill
+              </h3>
+              <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-400 font-mono border border-emerald-500/20">
+                Online
+              </span>
+            </div>
             <p className="text-[10px] text-zinc-400">AEObility Dynamic Intelligence</p>
           </div>
         </div>
