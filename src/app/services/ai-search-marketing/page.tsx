@@ -93,37 +93,93 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au"
-      },
-      {
         "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/ai-search-marketing",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing",
-        "name": "AI Search Marketing & Strategy",
-        "description": "Make your business easier for AI search tools to understand, retrieve and reference.",
+        "name": "AI Search Marketing & Strategy | AEObility",
+        "description": "Make your business easier for search and AI systems to identify, understand, and use.",
+        "inLanguage": "en-AU",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "about": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#service"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#breadcrumb"
+        },
         "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg",
-          "width": 1600,
-          "height": 900,
-          "caption": "A clean visual showing how business information and evidence support AI search visibility."
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#primaryimage"
         }
       },
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/ai-search-marketing#service",
-        "name": "AI Search Marketing",
-        "description": "Make your business easier for AI search tools to understand, retrieve and reference.",
+        "name": "AI Search Marketing & Strategy",
+        "serviceType": "AI Search Marketing and Answer Engine Optimisation",
+        "description": "A structured-content and search-visibility service that helps Australian businesses make their services, evidence, locations, and answers easier for search and AI systems to interpret when relevant.",
+        "provider": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#webpage"
+        },
         "areaServed": {
           "@type": "Country",
           "name": "Australia"
         },
-        "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
-        }
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Australian small businesses and local service providers"
+        },
+        "serviceOutput": "AI-readiness assessment and 90-day visibility roadmap",
+        "knowsAbout": [
+          "AI search visibility",
+          "structured content",
+          "local business visibility",
+          "entity clarity",
+          "search engine optimisation"
+        ],
+        "mentions": [
+          { "@type": "Thing", "name": "Google AI" },
+          { "@type": "Thing", "name": "Gemini" },
+          { "@type": "Thing", "name": "ChatGPT" },
+          { "@type": "Thing", "name": "Perplexity" }
+        ],
+        "url": "https://aeobility.com.au/services/ai-search-marketing"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-marketing-visibility.jpg",
+        "width": 1600,
+        "height": 900,
+        "caption": "Business information and trusted evidence supporting visibility in AI search."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://aeobility.com.au/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Search Marketing",
+            "item": "https://aeobility.com.au/services/ai-search-marketing"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
