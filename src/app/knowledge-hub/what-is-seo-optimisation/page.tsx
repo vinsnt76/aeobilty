@@ -23,7 +23,7 @@ import {
   BookOpen,
   ArrowDownRight,
   Gauge,
-  MapPin
+  HelpCircle
 } from 'lucide-react';
 
 export const metadata = {
@@ -78,6 +78,7 @@ export default function WhatIsSEOOptimisationPage() {
           "The Missing Bridge: Entity SEO",
           "How SEO Feeds AI Knowledge Graphs & Hybrid RAG",
           "When SEO Is Enough — And When You Need AEO",
+          "Frequently Asked Questions",
           "Summary — SEO Is Still Foundational"
         ],
         "keywords": [
@@ -131,26 +132,42 @@ export default function WhatIsSEOOptimisationPage() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is SEO optimisation?",
+            "name": "Is SEO still important in the AI search era?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO (Search Engine Optimisation) makes your website easier for search engines to find, understand, and rank. It is the technical and content foundation that gives AI search systems reliable pages, entities, and passages to retrieve."
+              "text": "Yes. SEO is still the foundation of discoverability. It makes your website easier for search engines to crawl, understand and rank — and it gives AI search systems the clear, reliable source content they need before they can retrieve or reference anything. SEO builds the structure; AEO and entity optimisation help machines interpret it confidently."
             }
           },
           {
             "@type": "Question",
-            "name": "What is Entity SEO?",
+            "name": "Why does my business rank on Google but not appear in AI answers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional SEO teaches search bots what words are on a page; Entity SEO clarifies the real-world concepts, organisations, products, and relationships those words represent using JSON-LD structured data, entity references, and explicit contextual relationships."
+              "text": "Ranking a page doesn't guarantee that an AI system will use it. AI search looks for clear entities, consistent business information, strong contextual signals and answer-ready passages. If those elements are missing, an AI engine may understand your page — but still choose a competitor's content when generating an answer."
             }
           },
           {
             "@type": "Question",
-            "name": "How does SEO feed RAG retrieval pipelines?",
+            "name": "What's the difference between SEO, Entity SEO and AEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Modern AI search and answer engines rely on hybrid search, combining dense vector embeddings with sparse BM25 lexical signals. Clean HTML tags, metadata, and lexical clarity provided by traditional SEO give hybrid retrievers early candidate matches before dense vector reranking."
+              "text": "SEO improves page-level visibility: crawlability, indexability and relevance. Entity SEO clarifies who you are — your business, services, locations and relationships — so machines interpret you correctly. AEO shapes key information into clear, self-contained passages that answer engines can more easily retrieve and potentially cite. Together, they help your business get found, understood and chosen across Search, Maps & AI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I fix first to improve AI search visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with the fundamentals: make sure important pages are crawlable and indexable, use clear headings and structured content, keep business details consistent across your site, strengthen internal linking and topical relationships, and add appropriate structured data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can SEO or AEO guarantee that AI will cite my website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential — but no optimisation method can guarantee selection or citation by every AI system. The goal is to make your business easier for machines to understand and more likely to be used when they generate answers."
             }
           }
         ]
@@ -268,6 +285,9 @@ export default function WhatIsSEOOptimisationPage() {
               </a>
               <a href="#seo-vs-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
                 7. SEO vs AEO
+              </a>
+              <a href="#faq" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                8. FAQs
               </a>
             </div>
           </nav>
@@ -620,6 +640,59 @@ export default function WhatIsSEOOptimisationPage() {
                   <p className="text-slate-300 text-base">
                     <em>&ldquo;SEO builds the foundation. AEO earns the citation — where answer engines choose to attribute sources.&rdquo;</em>
                   </p>
+                </div>
+              </section>
+
+              {/* Section 8.5: Brand-Aligned FAQ Block */}
+              <section id="faq" className="scroll-mt-32 space-y-6 bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                <div className="flex items-center gap-3">
+                  <HelpCircle className="w-6 h-6 text-teal-400" />
+                  <h2 className="text-2xl font-bold text-white">Frequently Asked Questions</h2>
+                </div>
+
+                <div className="space-y-4">
+                  {/* Q1 */}
+                  <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                    <h3 className="text-base font-bold text-teal-300">1. Is SEO still important in the AI search era?</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      Yes. SEO is still the foundation of discoverability. It makes your website easier for search engines to crawl, understand and rank — and it gives AI search systems the clear, reliable source content they need before they can retrieve or reference anything. SEO builds the structure; <Link href="/services/aeo" className="text-teal-400 font-semibold hover:underline">AEO and entity optimisation</Link> help machines interpret it confidently.
+                    </p>
+                  </div>
+
+                  {/* Q2 */}
+                  <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                    <h3 className="text-base font-bold text-cyan-300">2. Why does my business rank on Google but not appear in AI answers?</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      Ranking a page doesn&apos;t guarantee that an AI system will use it. AI search looks for clear entities, consistent business information, strong contextual signals and answer‑ready passages. If those elements are missing, an AI engine may understand your page — but still choose a competitor&apos;s content when generating an answer. Test your site with our <Link href="/solutions/aeo-blueprint" className="text-cyan-400 font-semibold hover:underline">AI readiness score audit</Link>.
+                    </p>
+                  </div>
+
+                  {/* Q3 */}
+                  <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                    <h3 className="text-base font-bold text-purple-300">3. What&apos;s the difference between SEO, Entity SEO and AEO?</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                      SEO improves page‑level visibility: crawlability, indexability and relevance.<br />
+                      <strong>Entity SEO</strong> clarifies who you are — your business, services, locations and relationships — so machines interpret you correctly (see our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO guide</Link>).<br />
+                      <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">AEO</Link> shapes key information into clear, self‑contained passages that answer engines can more easily retrieve and potentially cite.<br />
+                      Together, they help your business get found, understood and chosen across Search, Maps &amp; AI.
+                    </p>
+                  </div>
+
+                  {/* Q4 */}
+                  <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                    <h3 className="text-base font-bold text-emerald-300">4. What should I fix first to improve AI search visibility?</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      Start with the fundamentals: make sure important pages are crawlable and indexable, use clear headings and structured content, keep business details consistent across your site, strengthen internal linking and topical relationships, and add appropriate <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-emerald-400 font-semibold hover:underline">structured data</Link>. Follow our step-by-step <Link href="/knowledge-hub/tutorials" className="text-purple-400 font-semibold hover:underline">Technical Tutorials</Link> to audit your site layout.
+                    </p>
+                  </div>
+
+                  {/* Q5 */}
+                  <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                    <h3 className="text-base font-bold text-teal-300">5. Can SEO or AEO guarantee that AI will cite my website?</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential — but no optimisation method can guarantee selection or citation by every AI system. The goal is to make your business easier for machines to understand and more likely to be used when they generate answers. Learn more about our technical methodology in <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
+                    </p>
+                  </div>
                 </div>
               </section>
 
