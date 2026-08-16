@@ -82,6 +82,16 @@ export default function GuidesHubPage() {
       ]
     },
     {
+      title: "What Is SEO Optimisation? Guide for Modern Search",
+      category: "Foundational Search Infrastructure",
+      description: "Learn what SEO optimisation means today, how lexical retrieval feeds RAG hybrid search, and how Entity SEO bridges traditional search to AEO.",
+      href: "/knowledge-hub/what-is-seo-optimisation",
+      metrics: [
+        { label: "Type", value: "Foundational Guide" },
+        { label: "Read Time", value: "5 min" }
+      ]
+    },
+    {
       title: "Competitor Overlap & Semantic Dominance Framework",
       category: "Diagnostic Methodology",
       description: "Learn how AEObility evaluates competitor overlap, semantic dominance, and AI search readiness. Discover how your business compares to competitors.",

@@ -22,7 +22,8 @@ import {
   Zap,
   BookOpen,
   ArrowDownRight,
-  Gauge
+  Gauge,
+  MapPin
 } from 'lucide-react';
 
 export const metadata = {
@@ -284,7 +285,7 @@ export default function WhatIsSEOOptimisationPage() {
                   SEO as the Input Layer for Modern Search
                 </h2>
                 <p className="leading-relaxed">
-                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. SEO is not outdated; it remains the essential foundation of discoverability that gives search engines and AI retrieval systems reliable material to crawl, interpret, retrieve, and cite.
+                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. SEO is not outdated; it remains the essential foundation of discoverability that gives search engines and AI retrieval systems reliable material to crawl, interpret, retrieve, and cite. For Australian small businesses and enterprise domains alike, establishing a strong <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">SEO foundation</Link> is a prerequisite for local visibility in <Link href="/services/aeo/local-business" className="text-cyan-400 font-semibold hover:underline">AEO for Local Businesses</Link> and <Link href="/services/geo-marketing" className="text-emerald-400 font-semibold hover:underline">Local Business GEO</Link>.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {[
@@ -302,7 +303,7 @@ export default function WhatIsSEOOptimisationPage() {
 
                 {/* Humanised Outcome Bridge */}
                 <div className="p-4 rounded-xl bg-teal-950/20 border border-teal-500/20 text-xs sm:text-sm text-slate-300">
-                  <strong className="text-teal-300 font-mono">What this means for your business:</strong> If a search engine cannot reliably crawl and understand a page, an AI answer engine has less reliable information to retrieve, assess, and reference when generating answers.
+                  <strong className="text-teal-300 font-mono">What this means for your business:</strong> If a search engine cannot reliably crawl and understand a page, an AI answer engine has less reliable information to retrieve, assess, and reference when generating answers. Explore our full suite of <Link href="/solutions" className="text-teal-400 font-semibold hover:underline">AEO Implementation Packages</Link> to audit your site architecture.
                 </div>
               </section>
 
@@ -313,7 +314,7 @@ export default function WhatIsSEOOptimisationPage() {
                   Lexical Retrieval — How Sparse Indexing Works
                 </h2>
                 <p className="leading-relaxed">
-                  <strong>Lexical retrieval</strong> means matching the exact words and phrases people search for with relevant words and structural signals on a web page. Rather than reading for abstract context alone, lexical search systems score term frequency, page structure, and link authority using algorithms like <strong>BM25</strong>.
+                  <strong>Lexical retrieval</strong> means matching the exact words and phrases people search for with relevant words and structural signals on a web page. Rather than reading for abstract context alone, lexical search systems score term frequency, page structure, and link authority using algorithms like <strong>BM25</strong>. To dive deeper into technical markup implementation, explore our <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-teal-400 font-medium hover:underline">Structured Data & Schema Guide</Link>, step-by-step <Link href="/knowledge-hub/tutorials" className="text-purple-400 font-medium hover:underline">Technical Tutorials</Link>, and <Link href="/knowledge-hub/guides" className="text-emerald-400 font-medium hover:underline">AEO Guides</Link>.
                 </p>
                 <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 space-y-3">
                   <div className="text-sm font-semibold text-slate-200 uppercase tracking-wider">What lexical SEO improves:</div>
@@ -565,7 +566,7 @@ export default function WhatIsSEOOptimisationPage() {
                   </div>
                   <h3 className="text-xl font-bold text-white">Check Your AI Search Readiness Score</h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                    Discover how effectively AI search engines crawl, parse, and cite your site&apos;s entities across BM25 lexical signals and vector space.
+                    Discover how effectively AI search engines crawl, parse, and cite your site&apos;s entities across BM25 lexical signals and vector space with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
                   </p>
                 </div>
                 <Link 
@@ -612,7 +613,7 @@ export default function WhatIsSEOOptimisationPage() {
                   When SEO Is Enough — And When You Need AEO
                 </h2>
                 <p className="leading-relaxed">
-                  SEO is enough when your primary goal is traditional search result visibility and human search clicks. However, when your goal is to appear inside AI answers and zero-click search experiences, AEO becomes essential.
+                  SEO is enough when your primary goal is traditional search result visibility and human search clicks. However, when your goal is to appear inside AI answers and zero-click search experiences, AEO becomes essential. For local Australian trade services and clinics, see our specialized <Link href="/services/aeo/local-business" className="text-cyan-400 font-semibold hover:underline">AEO for Local Businesses</Link> guide.
                 </p>
                 <div className="p-6 bg-slate-950/80 border border-purple-500/30 rounded-2xl text-center space-y-2">
                   <div className="text-lg font-bold text-white">The Operational Formula</div>
@@ -629,7 +630,7 @@ export default function WhatIsSEOOptimisationPage() {
                   Summary — SEO Is Still Foundational
                 </h2>
                 <p className="leading-relaxed">
-                  SEO optimisation remains essential because it creates the structured, crawlable, indexable content that both search engines and AI systems rely on. In an AI-driven search landscape, SEO alone is no longer enough — but it remains the critical layer that makes AEO possible.
+                  SEO optimisation remains essential because it creates the structured, crawlable, indexable content that both search engines and AI systems rely on. In an AI-driven search landscape, SEO alone is no longer enough — but it remains the critical layer that makes AEO possible. Ready to audit your site? Get started with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link> or review our <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO Implementation Packages</Link>.
                 </p>
               </section>
 
@@ -650,7 +651,7 @@ export default function WhatIsSEOOptimisationPage() {
                 </h3>
 
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Get a deep technical audit of your SEO foundation and a 90-day strategic roadmap to capture AI search citations.
+                  Get a <Link href="/solutions/aeo-blueprint" className="text-teal-400 hover:underline">deep technical audit</Link> of your SEO foundation and a 90-day strategic roadmap to capture AI search citations.
                 </p>
 
                 <div className="pt-2">

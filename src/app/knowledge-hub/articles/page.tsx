@@ -104,6 +104,18 @@ export default function ArticlesHubPage() {
       ]
     },
     {
+      title: "What Is SEO Optimisation? Guide for Modern Search",
+      category: "Foundational Search Infrastructure",
+      description: "Understand traditional lexical search, sparse BM25 indexing, technical SEO pillars, and how page-level structure feeds AI Knowledge Graphs and RAG pipelines.",
+      href: "/knowledge-hub/what-is-seo-optimisation",
+      image: "/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+      alt: "Abstract hyper-gradient illustration showing SEO as the foundational input layer for modern search.",
+      metrics: [
+        { label: "Type", value: "Foundational Guide" },
+        { label: "Read Time", value: "5 min" }
+      ]
+    },
+    {
       title: "AEO vs SEO: The Complete Guide to AI Search",
       category: "Generative Search",
       description: "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
