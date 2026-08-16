@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "start": "next start",
     "lint": "eslint",
-    "test:telemetry": "tsx scripts/test-telemetry.ts",
+    "test:telemetry": "tsx scripts/test-crawl.ts",
     "test:crawl": "tsx scripts/test-crawl.ts",
     "test:apis": "tsx scripts/test-apis.ts",
     "test:agent": "node scripts/test-agent.mjs",

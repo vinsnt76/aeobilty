@@ -21,17 +21,23 @@ export const viewport: Viewport = {
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["monospace"],
 });
 
 const ibmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm-plex-serif",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  fallback: ["serif"],
 });
 
 export const metadata: Metadata = {
@@ -110,7 +116,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
+                  "@type": "Organisation",
                   "@id": "https://aeobility.com.au",
                   "name": "AEObility",
                   "legalName": "Trekaboutoz trading as AEObility",

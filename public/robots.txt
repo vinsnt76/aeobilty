@@ -9,6 +9,7 @@ Allow: /api/mcp
 Allow: /api/chat
 Allow: /api/forms/quote
 Allow: /api/forms/audit
+Allow: /api/diagnostic
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot
@@ -111,4 +112,5 @@ Allow: /
 Sitemap: https://aeobility.com.au/sitemap.xml
 LLMs-txt: https://aeobility.com.au/llms.txt
 LLMs-full-txt: https://aeobility.com.au/llms-full.txt
+FullLLMs-txt: https://aeobility.com.au/fullllms.txt
 Agents-md: https://aeobility.com.au/AGENTS.md

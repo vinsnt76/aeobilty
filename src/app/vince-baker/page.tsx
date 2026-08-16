@@ -59,7 +59,7 @@ export default function VinceBakerPage() {
             "name": "Vinnie Baker",
             "jobTitle": "Founder",
             "worksFor": {
-              "@type": "Organization",
+              "@type": "Organisation",
               "name": "AEObility",
               "url": "https://aeobility.com.au"
             },

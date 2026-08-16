@@ -24,7 +24,7 @@ export default function TutorialsHubPage() {
     "description": "Explore step-by-step technical tutorials on Answer Engine Optimisation (AEO), vector semantic density, and positional bias mitigation.",
     "url": "https://aeobility.com.au/knowledge-hub/tutorials",
     "publisher": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }
@@ -34,7 +34,7 @@ export default function TutorialsHubPage() {
     {
       title: "Understanding Semantic Density in Vector Retrieval",
       category: "Vector Embeddings & Semantic Density",
-      description: "Step-by-step tutorial on optimizing chunk semantic density, RDF triple salience, and vector embedding proximity for AI engine citations.",
+      description: "Step-by-step tutorial on optimising chunk semantic density, RDF triple salience, and vector embedding proximity for AI engine citations.",
       href: "/knowledge-hub/tutorials/semantic-density",
       image: "/coming-soon-placeholder.svg",
       alt: "Semantic density tutorial placeholder graphic depicting AI vector retrieval by AEObility.",
@@ -85,7 +85,7 @@ export default function TutorialsHubPage() {
             AI Search & AEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-aeo-cyan to-aeo-purple">Tutorials</span>
           </h1>
           <p className="text-zinc-400 text-base sm:text-lg max-w-3xl leading-relaxed">
-            Step-by-step technical tutorials on vector chunking, semantic density optimization, and LLM attention window formatting for direct machine citation.
+            Step-by-step technical tutorials on vector chunking, semantic density optimisation, and LLM attention window formatting for direct machine citation.
           </p>
         </div>
 

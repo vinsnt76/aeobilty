@@ -17,7 +17,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 2. Machine-Readable Knowledge Map
 
-AEObility structures its digital presence across verified entity nodes grounded in valid Schema.org microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: ItemList`, `@type: BreadcrumbList`).
+AEObility structures its digital presence across verified entity nodes grounded in valid Schema.org microdata schemas (`@type: Organisation`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: ItemList`, `@type: BreadcrumbList`).
 
 ### Core Engagements & Solutions
 1. **The Strategic Blueprint Method**: Standalone $995 Clarity Phase deep technical audit and 90-day strategic roadmap. (`https://aeobility.com.au/solutions/aeo-blueprint`)
@@ -70,6 +70,12 @@ Autonomous AI agents can query AEObility's live search, chat, & quote APIs via R
    - **Headers**: `Content-Type: application/json`
    - **Body**: `{ "fullName": "Jane Doe", "email": "jane@example.com.au", "website": "https://example.com.au", "serviceIntent": "AEO Services", "notes": "Requesting quote for Perth SMB" }`
    - **Output**: Returns JSON `{ "success": true, "message": "Quote request received successfully." }`.
+
+4. **AI Telemetry Diagnostic API**:
+   - **URL**: `POST https://aeobility.com.au/api/diagnostic`
+   - **Headers**: `Content-Type: application/json`
+   - **Body**: `{ "url": "https://example.com.au", "intent": "perth plumbing services" }`
+   - **Output**: Returns 5-dimensional diagnostic audit metrics (schema completeness, entity authority, positional bias, vector proximity, RAG survival probability).
 
 ---
 

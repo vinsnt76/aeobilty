@@ -24,7 +24,7 @@ export default function GuidesHubPage() {
     "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO), vector search architecture, RAG dilution mitigation, and entity authority.",
     "url": "https://aeobility.com.au/knowledge-hub/guides",
     "publisher": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

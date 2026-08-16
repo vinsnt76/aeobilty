@@ -48,11 +48,11 @@ export default function AEODefinitionPage() {
     "description": "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
     "inLanguage": "en-AU",
     "author": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "logo": {
         "@type": "ImageObject",
@@ -75,7 +75,7 @@ export default function AEODefinitionPage() {
         "name": "AEO Services",
         "serviceType": "Answer Engine Optimisation",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility"
         }
       }

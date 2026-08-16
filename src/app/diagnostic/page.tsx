@@ -22,7 +22,7 @@ export default function DiagnosticPage() {
         "name": "AI Visibility Diagnostic | AEObility",
         "description": "Measure your AI Search Visibility and find out how AI engines understand your business.",
         "publisher": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -37,7 +37,7 @@ export default function DiagnosticPage() {
         "browserRequirements": "Requires JavaScript",
         "description": "Interactive Answer Engine Optimisation (AEO) diagnostic tool evaluating brand entity salience and AI search visibility scores.",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }

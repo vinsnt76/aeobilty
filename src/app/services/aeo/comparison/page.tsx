@@ -97,7 +97,7 @@ export default function AEOVsSEOPage() {
         "@id": "https://aeobility.com.au/services/aeo/comparison#service",
         "name": "AEO & SEO Comparison & Sprints",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "@id": "https://aeobility.com.au/#organisation",
           "name": "AEObility",
           "legalName": "Trekaboutoz",
@@ -111,7 +111,7 @@ export default function AEOVsSEOPage() {
         "description": "Optimising Australian small business data to be discoverable, understandable, and recommended across search, maps, and generative AI corridors."
       },
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "legalName": "Trekaboutoz",
@@ -218,7 +218,7 @@ export default function AEOVsSEOPage() {
     {
       num: "2",
       title: "Entity Clarity & Schema Linking",
-      desc: "Deploy explicit Schema.org graph markup (@id URIs, Organization, LocalBusiness, Service) to define clear machine-readable relationships between your brand, services, and locations."
+      desc: "Deploy explicit Schema.org graph markup (@id URIs, Organisation, LocalBusiness, Service) to define clear machine-readable relationships between your brand, services, and locations."
     },
     {
       num: "3",
@@ -305,7 +305,7 @@ export default function AEOVsSEOPage() {
             </p>
 
             <p className="text-lg md:text-xl font-medium text-white/90 leading-relaxed font-serif">
-              Not quite. SEO still helps people find your website. AEO operates as a specialized optimization layer built on top of robust technical SEO foundations, making your business information easier for AI-powered search experiences to understand, use and reference. The strongest strategy does both.
+              Not quite. SEO still helps people find your website. AEO operates as a specialised optimisation layer built on top of robust technical SEO foundations, making your business information easier for AI-powered search experiences to understand, use and reference. The strongest strategy does both.
             </p>
 
             {/* 2. Layered Search Model Banner Image */}
@@ -762,7 +762,7 @@ export default function AEOVsSEOPage() {
                 Ready to improve how your business is represented across Search, Maps and AI?
               </h2>
               <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                Start with an AI Visibility Diagnostic. We will identify where your business information is unclear, inconsistent or missing - and prioritize your next practical steps.
+                Start with an AI Visibility Diagnostic. We will identify where your business information is unclear, inconsistent or missing - and prioritise your next practical steps.
               </p>
             </div>
 

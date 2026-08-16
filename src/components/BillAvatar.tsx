@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 interface BillAvatarProps {
   size?: 'sm' | 'md' | 'lg';
-  status?: 'online' | 'analyzing' | 'offline';
+  status?: 'online' | 'analysing' | 'offline';
   pulse?: boolean;
   className?: string;
   onClick?: () => void;
@@ -26,7 +26,7 @@ export default function BillAvatar({
 
   const statusColors = {
     online: 'bg-emerald-500',
-    analyzing: 'bg-amber-400 animate-ping',
+    analysing: 'bg-amber-400 animate-ping',
     offline: 'bg-zinc-600'
   };
 

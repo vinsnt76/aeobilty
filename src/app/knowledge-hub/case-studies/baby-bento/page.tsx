@@ -49,7 +49,7 @@ export default function BabyBentoCaseStudyPage() {
     },
 
     "publisher": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "AEObility",
       "logo": {
         "@type": "ImageObject",

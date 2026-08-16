@@ -55,7 +55,7 @@ export default function AEOProceduresPage() {
         ]
       },
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#org",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
@@ -116,7 +116,7 @@ export default function AEOProceduresPage() {
             "@type": "HowToStep",
             "position": 4,
             "name": "Deploy Structured Schema & Entity Markup (JSON-LD)",
-            "text": "Implement nested JSON-LD schema (FAQPage, HowTo, Organization, LocalBusiness) to provide deterministic entity graphs that AI scrapers parse without guessing context.",
+            "text": "Implement nested JSON-LD schema (FAQPage, HowTo, Organisation, LocalBusiness) to provide deterministic entity graphs that AI scrapers parse without guessing context.",
             "url": "https://aeobility.com.au/services/aeo/procedures#strategy4"
           },
           {
@@ -268,7 +268,7 @@ export default function AEOProceduresPage() {
             "position": 8,
             "name": "AI Search Marketing Strategy",
             "url": "https://aeobility.com.au/services/ai-search-marketing",
-            "description": "Sibling FAQ Node connecting multimodal search optimization to broader AI marketing strategy."
+            "description": "Sibling FAQ Node connecting multimodal search optimisation to broader AI marketing strategy."
           }
         ]
       }
@@ -508,7 +508,7 @@ export default function AEOProceduresPage() {
                 <h3 className="text-white font-bold text-lg">Strategy 4: Deploy Structured Schema & Entity Markup (JSON-LD)</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Implement rich, nested JSON-LD schema markup (`Organization`, `LocalBusiness`, `FAQPage`, `HowTo`, `Service`). Schema acts as an explicit data dictionary for scrapers, eliminating ambiguity around business entities, geographic service areas, and product offerings.
+                Implement rich, nested JSON-LD schema markup (`Organisation`, `LocalBusiness`, `FAQPage`, `HowTo`, `Service`). Schema acts as an explicit data dictionary for scrapers, eliminating ambiguity around business entities, geographic service areas, and product offerings.
               </p>
 
               {/* Visual Micro-Diagram 4: Schema Node Graph */}
@@ -520,7 +520,7 @@ export default function AEOProceduresPage() {
   "@type": "Service",
   "name": "Best AEO Strategies & Implementation",
   "provider": {
-    "@type": "Organization",
+    "@type": "Organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au"
   },
@@ -598,7 +598,7 @@ export default function AEOProceduresPage() {
                 <h3 className="text-white font-bold text-lg">Strategy 6: Optimise for Multimodal & Conversational Search</h3>
               </div>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Modern models (GPT-4o, Gemini 1.5) process text, audio, and visual inputs simultaneously. Optimise for conversational queries by using natural speech phrasing, optimizing image `alt` attributes with descriptive entity context, and providing structured video metadata for voice search assistants.
+                Modern models (GPT-4o, Gemini 1.5) process text, audio, and visual inputs simultaneously. Optimise for conversational queries by using natural speech phrasing, optimising image `alt` attributes with descriptive entity context, and providing structured video metadata for voice search assistants.
               </p>
 
               {/* Internal Link 6 -> AI Search Marketing Strategy */}

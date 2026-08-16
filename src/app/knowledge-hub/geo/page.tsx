@@ -26,7 +26,7 @@ import {
 
 export const metadata = {
   title: "GEO & SEO: Fix Local Discovery Before AI Invents Your Hours | AEObility",
-  description: "A field guide explaining how Generative Engine Optimization (GEO) and local SEO converge to turn spatial signals into authoritative LLM recommendations.",
+  description: "A field guide explaining how Generative Engine Optimisation (GEO) and local SEO converge to turn spatial signals into authoritative LLM recommendations.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/geo",
   },
@@ -59,7 +59,7 @@ export default function GEOKnowledgeNodePage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/geo",
         "name": "GEO & SEO: Fix Local Discovery Before AI Invents Your Hours",
-        "description": "A field guide explaining how Generative Engine Optimization (GEO) and local SEO converge to turn spatial signals into authoritative LLM recommendations.",
+        "description": "A field guide explaining how Generative Engine Optimisation (GEO) and local SEO converge to turn spatial signals into authoritative LLM recommendations.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
@@ -97,7 +97,7 @@ export default function GEOKnowledgeNodePage() {
       },
 
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#org",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
@@ -148,7 +148,7 @@ export default function GEOKnowledgeNodePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/geo#article",
         "headline": "GEO & SEO: Fix Local Discovery Before AI Invents Your Hours",
         "about": [
-          "Generative Engine Optimization",
+          "Generative Engine Optimisation",
           "Local SEO",
           "Entity Graphs",
           "GeoCoordinates",
@@ -213,7 +213,7 @@ export default function GEOKnowledgeNodePage() {
   const jsonLdExample = `{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://aeobility.com.au/#organization",
+  "@id": "https://aeobility.com.au/#organisation",
   "name": "AEObility",
   "address": {
     "@type": "PostalAddress",
@@ -272,7 +272,7 @@ export default function GEOKnowledgeNodePage() {
             <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
               <Image
                 src="/fix-local-discovery-with-geo-seo_AEObility.webp"
-                alt="Generative Engine Optimization (GEO) and local SEO framework diagram aligning physical GPS proximity coordinates with AI entity verification, Schema microdata, and LLM search citations by AEObility in Perth, Western Australia."
+                alt="Generative Engine Optimisation (GEO) and local SEO framework diagram aligning physical GPS proximity coordinates with AI entity verification, Schema microdata, and LLM search citations by AEObility in Perth, Western Australia."
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 800px"
@@ -284,7 +284,7 @@ export default function GEOKnowledgeNodePage() {
             <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl space-y-2">
               <span className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider">Atomic Summary: GEO + SEO Alignment</span>
               <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-light">
-                Generative Engine Optimization (GEO) structures entity relationships, GeoCoordinates microdata, and knowledge graphs so Large Language Models (LLMs) cite your business in conversational search. Traditional SEO maintains keyword ranking signals across organic SERPs. Merging GEO and SEO prevents AI search engines from hallucinating your operating hours, service radius, or physical location.
+                Generative Engine Optimisation (GEO) structures entity relationships, GeoCoordinates microdata, and knowledge graphs so Large Language Models (LLMs) cite your business in conversational search. Traditional SEO maintains keyword ranking signals across organic SERPs. Merging GEO and SEO prevents AI search engines from hallucinating your operating hours, service radius, or physical location.
               </p>
             </div>
 
@@ -303,7 +303,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>Executive Summary</span>
               </div>
               <ol className="list-decimal list-inside space-y-2 text-sm text-white/80 font-light leading-relaxed">
-                <li>Generative Engine Optimization (GEO) structures entity relationships so LLMs can confidently cite your business.</li>
+                <li>Generative Engine Optimisation (GEO) structures entity relationships so LLMs can confidently cite your business.</li>
                 <li>Search Engine Optimisation (SEO) maintains traditional ranking signals across organic SERPs.</li>
                 <li>Together, they prevent AI engines from hallucinating your hours, service radius, or location.</li>
               </ol>
@@ -363,7 +363,7 @@ export default function GEOKnowledgeNodePage() {
                   <span className="text-xs font-mono uppercase tracking-wider text-aeo-cyan">AI Entity Signals</span>
                   <Cpu className="w-5 h-5 text-aeo-cyan" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Generative Engine Optimization (GEO)</h3>
+                <h3 className="text-xl font-bold text-white">Generative Engine Optimisation (GEO)</h3>
                 <ul className="space-y-2 text-xs text-white/80 font-light">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0" />
@@ -466,7 +466,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>Atomic Warning: Conflicting NAP Breaks Generative Recommendations</span>
               </div>
               <p className="text-xs text-white/90 font-light leading-relaxed">
-                Conflicting Name, Address, or Phone (NAP) data confuses generative search engines. When LLMs detect conflicting location signals across directories, entity confidence drops, causing AI models to drop citations or synthesize inaccurate opening hours and service boundaries.
+                Conflicting Name, Address, or Phone (NAP) data confuses generative search engines. When LLMs detect conflicting location signals across directories, entity confidence drops, causing AI models to drop citations or synthesise inaccurate opening hours and service boundaries.
               </p>
             </div>
           </div>
@@ -521,7 +521,7 @@ export default function GEOKnowledgeNodePage() {
                 Consider an emergency plumbing business registered in <strong>Osborne Park</strong> that claims service coverage in <strong>Joondalup</strong> and <strong>Fremantle</strong>. If their website states 24/7 emergency response in Fremantle while directory listings display 9-to-5 operating hours in Osborne Park, generative models encounter an entity confidence conflict.
               </p>
               <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-300 font-light">
-                <strong>Result:</strong> ChatGPT and Perplexity drop the business from after-hours recommendations or synthesize inaccurate operating hours, assuming the business is closed.
+                <strong>Result:</strong> ChatGPT and Perplexity drop the business from after-hours recommendations or synthesise inaccurate operating hours, assuming the business is closed.
               </div>
             </div>
 
@@ -608,7 +608,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>GEO Content Pattern Blueprint Checklist</span>
               </h2>
               <p className="text-xs text-white/60 font-light">
-                Follow this checklist when auditing or deploying local landing page content for AI search optimization. For detailed guides, visit our <Link href="/knowledge-hub/articles" className="text-aeo-cyan hover:underline">Articles &amp; Guides</Link>.
+                Follow this checklist when auditing or deploying local landing page content for AI search optimisation. For detailed guides, visit our <Link href="/knowledge-hub/articles" className="text-aeo-cyan hover:underline">Articles &amp; Guides</Link>.
               </p>
             </div>
 

@@ -117,7 +117,7 @@ export default function PositionalBiasArticlePage() {
         ]
       },
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",

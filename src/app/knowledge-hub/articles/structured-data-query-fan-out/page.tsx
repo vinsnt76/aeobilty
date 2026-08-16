@@ -118,7 +118,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
         }
       },
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
@@ -185,7 +185,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
   const engineeringSteps = [
     {
       title: "1. Use Precise Types & Stable Identifiers",
-      desc: "Deploy exact Schema.org types (e.g. LocalBusiness, Product, Organization) and define consistent URI identifiers (@id) to clarify entity boundaries across your domain."
+      desc: "Deploy exact Schema.org types (e.g. LocalBusiness, Product, Organisation) and define consistent URI identifiers (@id) to clarify entity boundaries across your domain."
     },
     {
       title: "2. Define Explicit Entity Relationships",
@@ -436,7 +436,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
                 </p>
 
                 <div className="p-4 bg-neutral-950 border border-white/10 rounded-xl font-mono text-xs space-y-1.5 text-aeo-cyan/90">
-                  <div><span className="text-white/50">Entity ID:   </span>https://example.com/#organization</div>
+                  <div><span className="text-white/50">Entity ID:   </span>https://example.com/#organisation</div>
                   <div><span className="text-white/50">Page ID:     </span>https://example.com/services/aeo</div>
                   <div><span className="text-white/50">Passage ID:  </span>https://example.com/services/aeo#passage-local-seo</div>
                 </div>

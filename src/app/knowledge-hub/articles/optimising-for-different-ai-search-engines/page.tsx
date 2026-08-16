@@ -102,13 +102,13 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           "caption": "How Perplexity, ChatGPT, Google, and Copilot find and cite web content"
         },
         "author": {
-          "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
+          "@type": "Organisation",
+          "@id": "https://aeobility.com.au/#organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au/"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-08-10T00:00:00+08:00",
         "dateModified": "2026-08-11T00:00:00+08:00",
@@ -167,22 +167,22 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ],
         "mentions": [
           {
-            "@type": "Organization",
+            "@type": "Organisation",
             "name": "Perplexity",
             "url": "https://www.perplexity.ai/"
           },
           {
-            "@type": "Organization",
+            "@type": "Organisation",
             "name": "OpenAI",
             "url": "https://openai.com/"
           },
           {
-            "@type": "Organization",
+            "@type": "Organisation",
             "name": "Google",
             "url": "https://www.google.com/"
           },
           {
-            "@type": "Organization",
+            "@type": "Organisation",
             "name": "Microsoft",
             "url": "https://www.microsoft.com/"
           },
@@ -197,7 +197,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ],
         "isAccessibleForFree": true,
         "copyrightHolder": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "copyrightYear": 2026,
         "potentialAction": {
@@ -276,8 +276,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ]
       },
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -300,7 +300,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "url": "https://aeobility.com.au/",
         "name": "AEObility",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "inLanguage": "en-AU"
       }
@@ -980,7 +980,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="text-amber-400 font-bold">•</span>
-                    <span>Retrieval behavior varies significantly by Copilot product tier and enterprise policy.</span>
+                    <span>Retrieval behaviour varies significantly by Copilot product tier and enterprise policy.</span>
                   </li>
                 </ul>
               </div>
@@ -1295,7 +1295,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
                 No. There is no special or separate &quot;AI-only&quot; schema markup required for inclusion in Perplexity, ChatGPT Search, Google AI features, or Microsoft Copilot.
               </p>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-1">
-                While implementing standard Schema.org structured data (such as Organization, Article, or LocalBusiness) helps search engines parse entity attributes and relationships, schema markup cannot force an AI engine to retrieve, rank, or cite a page. Structured data should be used solely to accurately describe visible, rendered page content.
+                While implementing standard Schema.org structured data (such as Organisation, Article, or LocalBusiness) helps search engines parse entity attributes and relationships, schema markup cannot force an AI engine to retrieve, rank, or cite a page. Structured data should be used solely to accurately describe visible, rendered page content.
               </p>
             </div>
 

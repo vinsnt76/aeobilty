@@ -44,7 +44,7 @@ export default function RagArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "Organisation",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
@@ -103,7 +103,7 @@ export default function RagArticlePage() {
           "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au",
           "logo": {

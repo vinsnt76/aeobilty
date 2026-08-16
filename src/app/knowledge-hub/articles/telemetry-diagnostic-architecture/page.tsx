@@ -54,8 +54,8 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@type": "Organisation",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "legalName": "Trekaboutoz",
         "url": "https://aeobility.com.au",
@@ -83,7 +83,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "https://aeobility.com.au/about/freelance-seo-consultant-perth"
         ],
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -101,7 +101,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-08-13",
         "dateModified": "2026-08-13",
@@ -953,7 +953,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="p-5 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-2xl space-y-3 text-xs font-sans">
               <span className="font-bold text-aeo-cyan uppercase font-mono text-[11px] block">Scoring Rationale &bull; Why 40% for Semantic Relevance?</span>
               <p className="text-white/80 font-serif leading-relaxed">
-                Semantic relevance represents the single largest factor (40%) in the AI Readiness Score because neural retrieval systems prioritize vector similarity above all else when answering user queries. If a website&apos;s content is semantically distant from the target search intent, perfect technical code or schema cannot force AI engines to retrieve it.
+                Semantic relevance represents the single largest factor (40%) in the AI Readiness Score because neural retrieval systems prioritise vector similarity above all else when answering user queries. If a website&apos;s content is semantically distant from the target search intent, perfect technical code or schema cannot force AI engines to retrieve it.
               </p>
               <div className="p-3 bg-black/60 rounded-xl border border-white/5 space-y-1 font-serif text-[11px] text-white/80">
                 <strong className="text-white font-sans block font-semibold text-[11px]">Plain English Scoring Breakdown:</strong>

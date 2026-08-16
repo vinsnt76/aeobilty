@@ -97,10 +97,11 @@ The platform features a proprietary Retrieval-Augmented Generation (RAG) vector 
 
 AEObility implements state-of-the-art AI agent grounding specifications:
 
-* **[`/AGENTS.md`](https://aeobility.com.au/AGENTS.md)**: Public AI agent grounding specification detailing legal entity identity, ABN, AEO/GEO corridors, 5-node link graph, and API contracts.
-* **[`/llms.txt`](https://aeobility.com.au/llms.txt)**: Standardised markdown directory mapping all site routes, terminology definitions, and API specifications for LLM crawlers.
+* **[`/AGENTS.md`](https://aeobility.com.au/AGENTS.md)**: Public AI agent grounding specification detailing legal entity identity, ABN, AEO/GEO corridors, 5-node link graph, and REST API contracts.
+* **[`/llms.txt`](https://aeobility.com.au/llms.txt)**: Standardised markdown directory mapping canonical site routes, core terminology, and API endpoints for LLM crawlers.
+* **[`/fullllms.txt`](https://aeobility.com.au/fullllms.txt)** / **[`/llms-full.txt`](https://aeobility.com.au/llms-full.txt)**: Full machine-readable master knowledge base manifest for RAG retrieval engines and AI agents.
 * **[`/robots.txt`](https://aeobility.com.au/robots.txt)**: Crawl permissions tailored for GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, and Applebot-Extended.
-* **[`/sitemap.xml`](https://aeobility.com.au/sitemap.xml)**: Dynamic sitemap (`src/app/sitemap.ts`) mapping 55 static routes.
+* **[`/sitemap.xml`](https://aeobility.com.au/sitemap.xml)**: Dynamic sitemap (`src/app/sitemap.ts`) mapping canonical 200 OK site routes.
 
 ---
 
