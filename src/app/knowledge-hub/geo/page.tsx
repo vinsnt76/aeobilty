@@ -35,19 +35,19 @@ export default function GEOKnowledgeNodePage() {
   const faqList = [
     {
       question: "What is the exact difference between GEO and Local SEO?",
-      answer: "Local SEO improves visibility in Google Search and Maps through Google Business Profile completeness, local relevance, and proximity signals. GEO strengthens entity, location, and service-boundary facts so AI search systems and LLMs can accurately identify, reconcile, and cite your business in generative responses."
+      answer: "Local SEO focuses on improving visibility within established Google Search and Map interfaces through relevance, prominence, reviews, and proximity signals. GEO improves the consistency and clarity of core business facts—such as address, operating hours, and service coverage—so AI-driven search engines and LLMs can accurately reconcile, interpret, and cite your business in generative responses."
     },
     {
       question: "How do GEO and Local SEO work together to capture local market share?",
-      answer: "Local SEO drives organic map pack and search engine rankings, while GEO ensures entity clarity across AI search engines, directories, and LLMs. Together, they unify proximity signals with generative verification to prevent AI models from hallucinating business hours, locations, or service boundaries."
+      answer: "Local SEO drives organic map pack placements and local search rankings, while GEO reduces ambiguity around business facts across your website, Google Business Profile, and third-party directories. Together, they align proximity signals with cross-source factual reconciliation to ensure AI experiences represent your business details accurately."
     },
     {
       question: "Are GeoCoordinates and areaServed schema mandatory for AI search indexing?",
-      answer: "No structured data schema is strictly mandatory for AI indexing. However, explicit GeoCoordinates, PostalAddress, and areaServed microdata clarify machine-readable business facts, reducing ambiguity for retrieval systems even though they do not guarantee inclusion or ranking."
+      answer: "No. No schema markup is strictly mandatory for AI search indexing or guarantees inclusion in generative answers. However, deploying GeoCoordinates and areaServed JSON-LD microdata provides a machine-readable data layer that clarifies your physical location and coverage boundaries when search systems reconcile local entities."
     },
     {
       question: "How should local businesses handle location pages without creating thin duplicate content?",
-      answer: "The critical factor is not the total page count, but whether each location page provides unique, useful local evidence, genuine case study proofs, and explicit service boundaries. Thin, templated suburb pages cause rank dilution, while well-supported location pages with authentic local value are legitimate and effective."
+      answer: "Avoid creating templated suburb pages that lack distinct substance. Publish location-specific landing pages only where you have genuine local value, original evidence, unique customer proofs, and distinct service context. Quality location pages with authentic regional proof support local discovery without risking thin-content penalties."
     }
   ];
 
@@ -265,7 +265,7 @@ export default function GEOKnowledgeNodePage() {
     {
       dimension: "Measurement",
       localSeo: "Local rankings, map visibility, calls, direction requests, leads",
-      geo: "Accuracy in AI answers, brand inclusion where observable, consistency of cited facts"
+      geo: "Accuracy and consistency of business facts across monitored AI-assisted search results, cited sources where available, and owned/third-party profiles."
     },
     {
       dimension: "Relationship",
@@ -366,7 +366,7 @@ export default function GEOKnowledgeNodePage() {
                 GEO vs Local SEO: What Is the Difference?
               </h2>
               <p className="text-xs sm:text-sm text-white/70 font-light">
-                Side-by-side comparison matrix mapping local search surfaces against AI-assisted discovery frameworks.
+                Side-by-side comparison matrix mapping local search surfaces against AI-assisted local discovery.
               </p>
             </div>
 
@@ -445,7 +445,7 @@ export default function GEOKnowledgeNodePage() {
             <div className="grid grid-cols-1 gap-3">
               <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Standardise exact Name, Address, and Phone (NAP) data across your website, Google Business Profile, and third-party directories.</span>
+                <span className="text-xs sm:text-sm text-white/90 font-light">Standardise consistent business name, address, and phone number (NAP) data across your website, Google Business Profile, and third-party directories.</span>
               </div>
 
               <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
@@ -470,66 +470,74 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* 4. CLOSING CONVERSION PANEL */}
-          <div id="sec-closing-panel" className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl my-4">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-              Turn Local Business Facts Into a Verifiable Entity System
-            </h3>
-            <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
-              If your address, operating hours, service boundaries, or directory listings conflict, start with a Local GEO Audit. AEObility can identify factual inconsistencies, review local business schema, and prioritise the location signals most likely to create discovery friction.
-            </p>
-            <div className="pt-2 flex flex-wrap justify-center gap-3 sm:gap-4">
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-bold text-xs sm:text-sm rounded-xl hover:bg-neutral-100 transition-all duration-300 shadow-lg"
-              >
-                <span>Check Local Entity Clarity — Free Diagnostic</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-bold text-xs sm:text-sm rounded-xl hover:bg-white/10 transition-all duration-300"
-              >
-                <span>Explore The AEObility Blueprint</span>
-                <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-              </Link>
+          {/* SECTION 5: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
+          <div id="sec-audit-panel" className="space-y-6 border-t border-white/5 pt-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              Get a Local Entity Audit
+            </h2>
+            <div className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                Turn Local Business Facts Into a Verifiable Entity System
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
+                If your address, operating hours, service boundaries, or directory listings conflict, start with a Local GEO Audit. AEObility can identify factual inconsistencies, review local business schema, and prioritise the location signals most likely to create discovery friction.
+              </p>
+              <div className="pt-2 flex flex-wrap justify-center gap-3 sm:gap-4">
+                <Link
+                  href="/diagnostic"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-bold text-xs sm:text-sm rounded-xl hover:bg-neutral-100 transition-all duration-300 shadow-lg"
+                >
+                  <span>Check Local Entity Clarity — Free Diagnostic</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-bold text-xs sm:text-sm rounded-xl hover:bg-white/10 transition-all duration-300"
+                >
+                  <span>Explore The AEObility Blueprint</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* 5. SCHEMA BLOCK FIX */}
-          <div id="sec-schema-blueprint" className="space-y-4 border-t border-white/5 pt-10">
-            <div className="space-y-2">
+          {/* SECTION 6: LOCALBUSINESS SCHEMA EXAMPLE */}
+          <div id="sec-schema-blueprint" className="space-y-6 border-t border-white/5 pt-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              LocalBusiness Schema Example
+            </h2>
+            <div className="space-y-4">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <Code className="w-5 h-5 text-aeo-cyan" />
                 <span>Valid GEO Microdata Blueprint</span>
               </h3>
-              <p className="text-xs text-white/60 font-light">
-                Place this <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD script within your site header, customizing the parameters to match your canonical business facts:
+              <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                Add this <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD as a script block in the page <code className="text-aeo-cyan font-mono">&lt;head&gt;</code> or body, and customise it to match visible, canonical business facts:
               </p>
-            </div>
 
-            <details className="group border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden transition-all duration-200" open>
-              <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-white hover:text-aeo-cyan list-none text-base transition-colors">
-                <div className="flex items-center gap-2">
-                  <Code className="w-5 h-5 text-aeo-cyan" />
-                  <span>LocalBusiness &amp; GeoCoordinates JSON-LD Snippet</span>
+              <details className="group border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden transition-all duration-200" open>
+                <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-white hover:text-aeo-cyan list-none text-base transition-colors">
+                  <div className="flex items-center gap-2">
+                    <Code className="w-5 h-5 text-aeo-cyan" />
+                    <span>LocalBusiness &amp; GeoCoordinates JSON-LD Snippet</span>
+                  </div>
+                  <ChevronDown className="w-5 h-5 text-aeo-cyan transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                
+                <div className="px-6 pb-6 border-t border-white/5 pt-4 space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono text-white/60">JSON-LD Microdata Script</span>
+                    <CopySchemaButton code={jsonLdExample} />
+                  </div>
+                  <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 overflow-x-auto font-mono text-xs text-aeo-cyan">
+                    <pre>{jsonLdExample}</pre>
+                  </div>
                 </div>
-                <ChevronDown className="w-5 h-5 text-aeo-cyan transition-transform duration-200 group-open:rotate-180" />
-              </summary>
-              
-              <div className="px-6 pb-6 border-t border-white/5 pt-4 space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-mono text-white/60">JSON-LD Microdata Script</span>
-                  <CopySchemaButton code={jsonLdExample} />
-                </div>
-                <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 overflow-x-auto font-mono text-xs text-aeo-cyan">
-                  <pre>{jsonLdExample}</pre>
-                </div>
-              </div>
-            </details>
+              </details>
+            </div>
           </div>
 
-          {/* FREQUENTLY ASKED QUESTIONS */}
+          {/* SECTION 7: FREQUENTLY ASKED QUESTIONS */}
           <div id="sec-faqs" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
@@ -543,33 +551,37 @@ export default function GEOKnowledgeNodePage() {
 
             <div className="space-y-4">
               {faqList.map((faq, idx) => (
-                <details key={idx} className="group border border-white/5 rounded-2xl bg-white/[0.02] hover:border-white/10 transition-all duration-200 overflow-hidden">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-white hover:text-aeo-cyan list-none text-sm sm:text-base transition-colors">
-                    <span className="pr-4">{faq.question}</span>
-                    <ChevronDown className="w-5 h-5 text-aeo-cyan flex-shrink-0 transition-transform duration-200 group-open:rotate-180" />
-                  </summary>
-                  <div className="px-6 pb-6 text-xs sm:text-sm text-white/80 font-light leading-relaxed border-t border-white/5 pt-4">
-                    {faq.answer}
+                <div key={idx} className="border border-white/10 rounded-2xl bg-white/[0.02] p-6 space-y-3 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                    <span className="text-aeo-cyan font-mono font-bold">Q{idx + 1}:</span>
+                    <span>{faq.question}</span>
+                  </h3>
+                  <div className="text-xs sm:text-sm text-white/80 font-light leading-relaxed border-t border-white/5 pt-3">
+                    <strong className="text-aeo-cyan">A:</strong> {faq.answer}
                   </div>
-                </details>
+                </div>
               ))}
             </div>
           </div>
 
           {/* FOOTER CTA */}
-          <div id="sec-footer-cta" className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
-            <h3 className="text-2xl font-bold text-white">Align Your Local Map &amp; AI Entity Assets</h3>
-            <p className="text-sm text-white/70 max-w-md mx-auto font-light leading-relaxed">
-              Ensure conversational AI engines and spatial map assistants cite your business accurately. Secure your local entity clarity check today.
-            </p>
-            <div className="flex justify-center gap-3">
-              <Link
-                href="/diagnostic"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-black text-sm font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300"
-              >
-                <span>Check Local Entity Clarity — Free Diagnostic</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+          <div id="sec-footer-cta" className="space-y-6 border-t border-white/5 pt-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center">
+              Align Your Local Map &amp; AI Entity Assets
+            </h2>
+            <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
+              <p className="text-sm text-white/80 max-w-lg mx-auto font-light leading-relaxed">
+                Help search, maps, and AI-assisted experiences find and represent your business facts more consistently. Secure your local entity clarity check today.
+              </p>
+              <div className="flex justify-center gap-3">
+                <Link
+                  href="/diagnostic"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-black text-sm font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300"
+                >
+                  <span>Check Local Entity Clarity — Free Diagnostic</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
 
