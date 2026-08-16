@@ -20,7 +20,9 @@ import {
   GitBranch,
   Table,
   Zap,
-  BookOpen
+  BookOpen,
+  ArrowDownRight,
+  Gauge
 } from 'lucide-react';
 
 export const metadata = {
@@ -70,7 +72,8 @@ export default function WhatIsSEOOptimisationPage() {
           "SEO as the Input Layer for Modern Search",
           "Lexical Retrieval — How Sparse Indexing Works",
           "The Core Pillars of SEO Optimisation",
-          "The 4-Layer Search Model: SEO -> Entity -> AEO -> RAG",
+          "The 4-Layer Search Model",
+          "SEO to RAG Flow Architecture",
           "The Missing Bridge: Entity SEO",
           "How SEO Feeds AI Knowledge Graphs & Hybrid RAG",
           "When SEO Is Enough — And When You Need AEO",
@@ -130,7 +133,7 @@ export default function WhatIsSEOOptimisationPage() {
             "name": "What is SEO optimisation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO (Search Engine Optimisation) is the technical and structural practice of making web content crawlable, indexable, and lexically relevant. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI search and answer engines with clean, structured source material for entity parsing and RAG retrieval."
+              "text": "SEO (Search Engine Optimisation) makes your website easier for search engines to find, understand, and rank. It is the technical and content foundation that gives AI search systems reliable pages, entities, and passages to retrieve."
             }
           },
           {
@@ -138,7 +141,7 @@ export default function WhatIsSEOOptimisationPage() {
             "name": "What is Entity SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional SEO teaches search bots what words are on a page; Entity SEO teaches them what real-world concepts, organisations, and relationships those words represent using JSON-LD structured data, entity references, and explicit contextual relationships."
+              "text": "Traditional SEO teaches search bots what words are on a page; Entity SEO clarifies the real-world concepts, organisations, products, and relationships those words represent using JSON-LD structured data, entity references, and explicit contextual relationships."
             }
           },
           {
@@ -175,8 +178,8 @@ export default function WhatIsSEOOptimisationPage() {
             <SubNavPills items={HUB_SUBNAV_MAPS.knowledge} />
           </div>
 
-          {/* Header Banner */}
-          <div className="mt-8 mb-12 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-950/90 border border-slate-800/80 rounded-3xl p-8 sm:p-12 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+          {/* Editorial Hero Banner */}
+          <div className="mt-8 mb-8 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-950/90 border border-slate-800/80 rounded-3xl p-8 sm:p-12 backdrop-blur-xl relative overflow-hidden shadow-2xl">
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-500/10 blur-3xl rounded-full" />
             
             <div className="max-w-3xl">
@@ -189,18 +192,48 @@ export default function WhatIsSEOOptimisationPage() {
                 What Is SEO Optimisation?
               </h1>
 
-              {/* Atomic Definition Block */}
-              <div className="p-6 bg-slate-950/80 border border-teal-500/30 rounded-2xl relative shadow-inner">
-                <div className="text-xs font-mono text-teal-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+              {/* Progressive Disclosure Atomic Definition */}
+              <div className="p-6 bg-slate-950/80 border border-teal-500/30 rounded-2xl relative shadow-inner space-y-3">
+                <div className="text-xs font-mono text-teal-400 uppercase tracking-wider flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   ATOMIC DEFINITION
                 </div>
-                <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
-                  <strong>SEO (Search Engine Optimisation)</strong> is the technical and structural practice of making web content <strong>crawlable, indexable, and lexically relevant</strong>. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI search and answer engines with clean, structured source material for entity parsing and RAG retrieval.
+                <p className="text-slate-100 text-base sm:text-lg leading-relaxed">
+                  <strong>SEO (Search Engine Optimisation) makes your website easier for search engines to find, understand, and rank.</strong> It is the technical and content foundation that gives AI search systems reliable pages, entities, and passages to retrieve.
                 </p>
+
+                {/* Hero Micro-Actions */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <a 
+                    href="#seo-vs-aeo" 
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-teal-400 hover:text-teal-300 font-mono transition-colors"
+                  >
+                    <span>SEO vs AEO</span>
+                    <ArrowDownRight className="w-3.5 h-3.5" />
+                  </a>
+                  <Link 
+                    href="/solutions/aeo-blueprint"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/30 text-xs text-teal-300 hover:bg-teal-500/20 font-mono transition-colors"
+                  >
+                    <Gauge className="w-3.5 h-3.5" />
+                    <span>Check Your Visibility Score</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* "On This Page" Compact Jump-Link Navigation */}
+          <nav aria-label="On this page" className="mb-12 p-4 bg-slate-900/60 border border-slate-800 rounded-2xl flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-slate-400">
+            <span className="text-teal-400 font-bold uppercase tracking-wider">On this page:</span>
+            <a href="#input-layer" className="hover:text-teal-300 transition-colors">1. Input Layer</a>
+            <a href="#lexical-retrieval" className="hover:text-cyan-300 transition-colors">2. Lexical Retrieval</a>
+            <a href="#core-pillars" className="hover:text-purple-300 transition-colors">3. Core Pillars</a>
+            <a href="#search-model" className="hover:text-emerald-300 transition-colors">4. 4-Layer Model</a>
+            <a href="#flow-architecture" className="hover:text-teal-300 transition-colors">5. Flow Diagram</a>
+            <a href="#entity-seo-bridge" className="hover:text-cyan-300 transition-colors">6. Entity SEO Bridge</a>
+            <a href="#seo-vs-aeo" className="hover:text-purple-300 transition-colors">7. SEO vs AEO</a>
+          </nav>
 
           {/* Main Article Body */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -208,14 +241,14 @@ export default function WhatIsSEOOptimisationPage() {
             {/* Main Content Column */}
             <div className="lg:col-span-8 space-y-12 text-slate-300">
               
-              {/* Section 1 */}
-              <section className="bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
+              {/* Section 1: Input Layer */}
+              <section id="input-layer" className="bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Layers className="w-6 h-6 text-teal-400" />
                   SEO as the Input Layer for Modern Search
                 </h2>
                 <p className="leading-relaxed">
-                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. Clean SEO gives search engines and AI retrieval systems more reliable material to crawl, interpret, retrieve, and cite across human and machine interfaces.
+                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. SEO is not outdated; it remains the essential foundation of discoverability that gives search engines and AI retrieval systems reliable material to crawl, interpret, retrieve, and cite.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {[
@@ -230,20 +263,25 @@ export default function WhatIsSEOOptimisationPage() {
                     </div>
                   ))}
                 </div>
+
+                {/* Humanised Outcome Bridge */}
+                <div className="p-4 rounded-xl bg-teal-950/20 border border-teal-500/20 text-xs sm:text-sm text-slate-300">
+                  <strong className="text-teal-300 font-mono">What this means for your business:</strong> If a search engine cannot reliably crawl and understand a page, an AI answer engine has less reliable information to retrieve, assess, and reference when generating answers.
+                </div>
               </section>
 
-              {/* Section 2 */}
-              <section className="space-y-4">
+              {/* Section 2: Lexical Retrieval */}
+              <section id="lexical-retrieval" className="space-y-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Search className="w-6 h-6 text-cyan-400" />
                   Lexical Retrieval — How Sparse Indexing Works
                 </h2>
                 <p className="leading-relaxed">
-                  Lexical retrieval focuses on matching explicit search terms, stemmed variants, and anchor text across a site&apos;s document index. Rather than reading for abstract context alone, lexical systems calculate relevance using algorithms like <strong>BM25</strong> to score term frequency, page structure, and link authority.
+                  <strong>Lexical retrieval</strong> means matching the exact words and phrases people search for with relevant words and structural signals on a web page. Rather than reading for abstract context alone, lexical search systems score term frequency, page structure, and link authority using algorithms like <strong>BM25</strong>.
                 </p>
                 <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 space-y-3">
                   <div className="text-sm font-semibold text-slate-200 uppercase tracking-wider">What lexical SEO improves:</div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 text-sm">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-slate-300 text-sm">
                     <li className="flex items-center gap-2">• Sparse BM25 term frequency matching</li>
                     <li className="flex items-center gap-2">• Metadata & H1 title tag clarity</li>
                     <li className="flex items-center gap-2">• Document heading hierarchy</li>
@@ -253,8 +291,8 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
               </section>
 
-              {/* Section 3 */}
-              <section className="space-y-6">
+              {/* Section 3: Core Pillars */}
+              <section id="core-pillars" className="space-y-6">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Compass className="w-6 h-6 text-purple-400" />
                   The Core Pillars of SEO Optimisation
@@ -284,8 +322,8 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
               </section>
 
-              {/* Section 4: The 4-Layer Search Model */}
-              <section className="space-y-6 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
+              {/* Section 4: The 4-Layer Search Model Table */}
+              <section id="search-model" className="space-y-6 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
                   <Table className="w-6 h-6 text-teal-400" />
                   <h2 className="text-2xl font-bold text-white">The 4-Layer Search Model</h2>
@@ -309,7 +347,7 @@ export default function WhatIsSEOOptimisationPage() {
                         <td className="p-3.5 font-bold text-white border-r border-slate-800">1. Traditional SEO</td>
                         <td className="p-3.5 border-r border-slate-800 text-slate-300">Crawlability, indexability, site speed, and page relevance</td>
                         <td className="p-3.5 border-r border-slate-800 font-mono text-cyan-300">Sparse Lexical Matching (BM25) & Links</td>
-                        <td className="p-3.5 font-semibold text-slate-200">Full URL / Page</td>
+                        <td className="p-3.5 font-semibold text-slate-200">Page or URL</td>
                       </tr>
                       <tr>
                         <td className="p-3.5 font-bold text-white border-r border-slate-800">2. Entity SEO</td>
@@ -325,7 +363,7 @@ export default function WhatIsSEOOptimisationPage() {
                       </tr>
                       <tr>
                         <td className="p-3.5 font-bold text-white border-r border-slate-800">4. Generative RAG</td>
-                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Synthesising retrieved source evidence into answers</td>
+                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Retrieving source material and generating an answer</td>
                         <td className="p-3.5 border-r border-slate-800 font-mono text-purple-300">Hybrid Retrieval (Sparse + Dense vectors)</td>
                         <td className="p-3.5 font-semibold text-slate-200">Synthesised AI Response</td>
                       </tr>
@@ -334,8 +372,84 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
               </section>
 
-              {/* Section 5: The Missing Bridge - Entity SEO */}
-              <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-5">
+              {/* Section 5: SEO to RAG Interactive Flow Architecture Diagram Component */}
+              <section id="flow-architecture" className="space-y-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                <div className="flex items-center gap-3">
+                  <GitBranch className="w-6 h-6 text-cyan-400" />
+                  <h2 className="text-2xl font-bold text-white">SEO → Entity SEO → AEO → RAG Progression Diagram</h2>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Visual mental model illustrating how raw lexical web pages transform into verified knowledge graph entities, liftable answer passages, and synthesized AI citations:
+                </p>
+
+                {/* Horizontal 4-Step Visual Flow Component */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+                  
+                  {/* Step 1 */}
+                  <div className="p-5 rounded-2xl bg-slate-900/90 border border-cyan-500/30 flex flex-col justify-between space-y-3 relative group">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">STEP 1</span>
+                      <span className="text-xs text-slate-400 font-mono">Discover</span>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white">1. Traditional SEO</h3>
+                      <p className="text-xs text-slate-300 mt-1">Crawlable pages + clear words</p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-800 text-[11px] text-cyan-300 font-mono">
+                      Input: BM25 Sparse Index
+                    </div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="p-5 rounded-2xl bg-slate-900/90 border border-teal-500/30 flex flex-col justify-between space-y-3 relative group">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono text-teal-400 font-bold px-2 py-0.5 rounded bg-teal-500/10 border border-teal-500/20">STEP 2</span>
+                      <span className="text-xs text-slate-400 font-mono">Understand</span>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white">2. Entity SEO</h3>
+                      <p className="text-xs text-slate-300 mt-1">Known things + relationships</p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-800 text-[11px] text-teal-300 font-mono">
+                      Bridge: JSON-LD Schemas
+                    </div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="p-5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 flex flex-col justify-between space-y-3 relative group">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">STEP 3</span>
+                      <span className="text-xs text-slate-400 font-mono">Extract</span>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white">3. AEO</h3>
+                      <p className="text-xs text-slate-300 mt-1">Clear, extractable answer passages</p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-800 text-[11px] text-emerald-300 font-mono">
+                      Output: Passage Blocks
+                    </div>
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="p-5 rounded-2xl bg-slate-900/90 border border-purple-500/30 flex flex-col justify-between space-y-3 relative group">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono text-purple-400 font-bold px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">STEP 4</span>
+                      <span className="text-xs text-slate-400 font-mono">Retrieve & Synthesise</span>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white">4. Generative RAG</h3>
+                      <p className="text-xs text-slate-300 mt-1">Retrieves evidence + generates answer</p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-800 text-[11px] text-purple-300 font-mono">
+                      Result: AI Answer & Citation
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              {/* Section 6: The Missing Bridge - Entity SEO */}
+              <section id="entity-seo-bridge" className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-5">
                 <div className="flex items-center gap-3">
                   <GitBranch className="w-6 h-6 text-teal-400" />
                   <h2 className="text-2xl font-bold text-white">The Missing Bridge: Entity SEO</h2>
@@ -352,21 +466,6 @@ export default function WhatIsSEOOptimisationPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                  <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                    <div className="text-xs font-mono text-teal-400 font-bold">1. Lexical Input</div>
-                    <p className="text-xs text-slate-400">Clean HTML tags, BM25 term signals, H1-H3 headings.</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                    <div className="text-xs font-mono text-cyan-400 font-bold">2. Entity Mapping</div>
-                    <p className="text-xs text-slate-400">JSON-LD structured data, entity references, contextual links.</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                    <div className="text-xs font-mono text-purple-400 font-bold">3. Passage & Citation</div>
-                    <p className="text-xs text-slate-400">Passage retrieval & citation potential in hybrid search.</p>
-                  </div>
-                </div>
-
                 {/* Next Node Inset Router Card */}
                 <div className="mt-4 p-4 rounded-xl bg-teal-950/30 border border-teal-500/20 text-xs sm:text-sm text-slate-200 flex items-start gap-3">
                   <BookOpen className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
@@ -376,53 +475,29 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
               </section>
 
-              {/* Section 6: How SEO Feeds AI Knowledge Graphs & Hybrid RAG */}
-              <section className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <Network className="w-6 h-6 text-teal-400" />
-                  How SEO Feeds AI Knowledge Graphs & Hybrid RAG
-                </h2>
-                <p className="leading-relaxed">
-                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong> and run <strong>hybrid search</strong>. Clear heading hierarchy helps both people and automated systems identify coherent passages, providing the sparse candidate pool that generative models ingest into <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-medium hover:underline">RAG (Retrieval-Augmented Generation)</Link> pipelines:
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
-                    <div className="text-sm font-bold text-teal-300 flex items-center gap-2">
-                      <Zap className="w-4 h-4" />
-                      Clean Heading Hierarchy
-                    </div>
-                    <p className="text-xs text-slate-400">Enables unambiguous natural language passage chunking for automated systems.</p>
+              {/* Mid-Article Micro-CTA Card */}
+              <section className="bg-gradient-to-r from-teal-950/60 via-slate-900 to-slate-950 border border-teal-500/40 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+                <div className="space-y-2 text-center sm:text-left">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-mono">
+                    <Gauge className="w-3.5 h-3.5" />
+                    INTERACTIVE DIAGNOSTIC
                   </div>
-
-                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
-                    <div className="text-sm font-bold text-cyan-300 flex items-center gap-2">
-                      <Zap className="w-4 h-4" />
-                      Clear Entity Anchors
-                    </div>
-                    <p className="text-xs text-slate-400">Strengthens brand node confidence scores in vector space and Knowledge Graphs.</p>
-                  </div>
-
-                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
-                    <div className="text-sm font-bold text-purple-300 flex items-center gap-2">
-                      <Zap className="w-4 h-4" />
-                      Consistent Terminology
-                    </div>
-                    <p className="text-xs text-slate-400">Enhances semantic density, BM25 term scores, and hybrid retrieval ranking.</p>
-                  </div>
-
-                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
-                    <div className="text-sm font-bold text-emerald-300 flex items-center gap-2">
-                      <Zap className="w-4 h-4" />
-                      Internal Link Graphs
-                    </div>
-                    <p className="text-xs text-slate-400">Maps relationship graphs back to the main <Link href="/knowledge-hub" className="text-emerald-400 hover:underline font-semibold">AEObility Knowledge Hub</Link>.</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white">Check Your AI Search Readiness Score</h3>
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+                    Discover how effectively AI search engines crawl, parse, and cite your site&apos;s entities across BM25 lexical signals and vector space.
+                  </p>
                 </div>
+                <Link 
+                  href="/solutions/aeo-blueprint"
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-500/20"
+                >
+                  <span>Scan My Site</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </section>
 
               {/* Section 7: SEO vs AEO Comparison */}
-              <section className="space-y-6">
+              <section id="seo-vs-aeo" className="space-y-6">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Cpu className="w-6 h-6 text-cyan-400" />
                   SEO vs AEO — Page Ranking vs Passage Extraction
@@ -434,7 +509,7 @@ export default function WhatIsSEOOptimisationPage() {
                       SEO Focus: Page Ranking
                     </div>
                     <p className="text-sm text-slate-300 leading-relaxed">
-                      Optimises full URLs for human clicks, matching target keywords and improving SERP click-through rates.
+                      Optimises full URLs for human clicks, matching target keywords and improving click-through rates from search results.
                     </p>
                   </div>
 
@@ -456,7 +531,7 @@ export default function WhatIsSEOOptimisationPage() {
                   When SEO Is Enough — And When You Need AEO
                 </h2>
                 <p className="leading-relaxed">
-                  SEO is enough when your primary goal is traditional SERP visibility and human search clicks. However, when your goal is to appear inside AI-generated answers and zero-click environments, AEO becomes essential.
+                  SEO is enough when your primary goal is traditional search result visibility and human search clicks. However, when your goal is to appear inside AI answers and zero-click search experiences, AEO becomes essential.
                 </p>
                 <div className="p-6 bg-slate-950/80 border border-purple-500/30 rounded-2xl text-center space-y-2">
                   <div className="text-lg font-bold text-white">The Operational Formula</div>
