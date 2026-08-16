@@ -350,13 +350,13 @@ export default function CompanionWidget() {
       <button
         id="companion-widget-toggle"
         onClick={toggleWidget}
-        className={`fixed bottom-6 right-6 left-auto z-50 flex items-center justify-center w-14 h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden touch-manipulation ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 left-auto z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border bg-neutral-950 shadow-2xl transition-all duration-300 group hover:scale-105 overflow-hidden touch-manipulation ${
           isOpen ? 'border-aeo-purple text-aeo-purple' : 'border-aeo-cyan text-aeo-cyan'
         }`}
         title="Chat with AI Bill"
       >
         {isOpen ? (
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         ) : (
           <BillAvatar size="lg" pulse status={telemetryData ? 'online' : 'online'} />
         )}
@@ -365,7 +365,7 @@ export default function CompanionWidget() {
       {/* Floating Drawer */}
       <div
         ref={drawerRef}
-        className={`fixed right-6 bottom-24 left-auto z-50 w-[350px] md:w-[480px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100dvh-7rem)] bg-neutral-950/95 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col justify-between overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-all duration-300 origin-bottom-right ${
+        className={`fixed right-4 sm:right-6 bottom-20 sm:bottom-24 left-auto z-50 w-[calc(100vw-2rem)] sm:w-[480px] max-w-[480px] h-[520px] sm:h-[600px] max-h-[calc(100dvh-6rem)] bg-neutral-950/95 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col justify-between overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-all duration-300 origin-bottom-right ${
           isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
         }`}
       >

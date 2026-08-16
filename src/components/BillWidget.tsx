@@ -540,7 +540,7 @@ export default function BillWidget() {
 
   return createPortal(
     <div className="fixed inset-0 z-9999 pointer-events-none">
-      <div ref={containerRef} className="pointer-events-auto fixed bottom-6 right-6 left-auto z-9999 w-80 sm:w-96 bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[85dvh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
+      <div ref={containerRef} className="pointer-events-auto fixed bottom-4 right-4 sm:bottom-6 sm:right-6 left-auto z-50 w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-md bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[80dvh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
       {/* 0. Interstitial Gating Modal Overlay (3rd User Turn) */}
       {isGated && (
         <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn">

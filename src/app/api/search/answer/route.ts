@@ -130,7 +130,7 @@ Query: "${query}"`;
 
   // Case D: Visibility / AEO / SEO Question (High Match or Caution)
   const isCaution = similarityScore < 0.65;
-  let synthesizedAnswer = bestMatch ? generateGroundedAnswer(bestMatch) : "AEObility provides Answer Engine Optimisation (AEO) services to structure business content for LLMs and map engines.";
+  let synthesisedAnswer = bestMatch ? generateGroundedAnswer(bestMatch) : "AEObility provides Answer Engine Optimisation (AEO) services to structure business content for LLMs and map engines.";
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (apiKey && bestMatch) {
@@ -165,7 +165,7 @@ Rules:
       if (geminiRes.ok) {
         const data = await geminiRes.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) synthesizedAnswer = text.trim();
+        if (text) synthesisedAnswer = text.trim();
       }
     } catch (err) {
       console.warn('Gemini live synthesis fallback:', err);
@@ -175,7 +175,7 @@ Rules:
   const companionData = classifyCompanion5Intent(query, bestMatch, routeContext);
 
   const response = {
-    answer: toAustralianEnglish(companionData.answer || synthesizedAnswer),
+    answer: toAustralianEnglish(companionData.answer || synthesisedAnswer),
     topMatch: bestMatch ? {
       pageName: toAustralianEnglish(bestMatch.pageName),
       url: bestMatch.url,

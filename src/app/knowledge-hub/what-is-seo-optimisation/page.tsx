@@ -436,7 +436,7 @@ export default function WhatIsSEOOptimisationPage() {
                   <h2 className="text-2xl font-bold text-white">SEO → Entity SEO → AEO → RAG Progression Diagram</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Visual mental model illustrating how raw lexical web pages transform into verified knowledge graph entities, liftable answer passages, and synthesized AI citations:
+                  Visual mental model illustrating how raw lexical web pages transform into verified knowledge graph entities, liftable answer passages, and synthesised AI citations:
                 </p>
 
                 {/* Horizontal 4-Step Visual Flow Component */}
@@ -633,7 +633,7 @@ export default function WhatIsSEOOptimisationPage() {
                   When SEO Is Enough — And When You Need AEO
                 </h2>
                 <p className="leading-relaxed">
-                  SEO is enough when your primary goal is traditional search result visibility and human search clicks. However, when your goal is to appear inside AI answers and zero-click search experiences, AEO becomes essential. For local Australian trade services and clinics, see our specialized <Link href="/services/aeo/local-business" className="text-cyan-400 font-semibold hover:underline">AEO for Local Businesses</Link> guide.
+                  SEO is enough when your primary goal is traditional search result visibility and human search clicks. However, when your goal is to appear inside AI answers and zero-click search experiences, AEO becomes essential. For local Australian trade services and clinics, see our specialised <Link href="/services/aeo/local-business" className="text-cyan-400 font-semibold hover:underline">AEO for Local Businesses</Link> guide.
                 </p>
                 <div className="p-6 bg-slate-950/80 border border-purple-500/30 rounded-2xl text-center space-y-2">
                   <div className="text-lg font-bold text-white">The Operational Formula</div>
