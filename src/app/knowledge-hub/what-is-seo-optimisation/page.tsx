@@ -39,9 +39,9 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
         width: 1200,
-        height: 630,
+        height: 800,
         alt: "What Is SEO Optimisation? AEObility Knowledge Hub",
       },
     ],
@@ -54,53 +54,162 @@ export default function WhatIsSEOOptimisationPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation",
+        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation",
         "name": "What Is SEO Optimisation? Guide for Modern Search",
         "description": "Learn what SEO optimisation means today, how lexical retrieval feeds RAG hybrid search, and how Entity SEO bridges traditional search to AEO.",
+        "inLanguage": "en-AU",
         "isPartOf": {
-          "@id": "https://aeobility.com.au/knowledge-hub"
+          "@id": "https://aeobility.com.au/#website"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#seo-term"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#article"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#primaryimage"
         }
       },
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#article",
-        "headline": "What Is SEO Optimisation? Guide for Modern Search",
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#webpage"
+        },
+        "headline": "What Is SEO Optimisation?",
+        "alternativeHeadline": "A Guide to SEO Optimisation for Modern Search, AEO and AI Retrieval",
+        "description": "SEO optimisation makes a website easier for search engines to find, understand and rank. It provides the technical and content foundation that gives AI search systems reliable pages, entities and passages to retrieve.",
+        "inLanguage": "en-AU",
         "articleSection": [
-          "SEO as the Input Layer for Modern Search",
-          "Lexical Retrieval: How Sparse Indexing Works",
-          "The Core Pillars of SEO Optimisation",
-          "The 4-Layer Search Model",
-          "SEO to RAG Flow Architecture",
-          "The Missing Bridge: Entity SEO",
-          "How SEO Feeds AI Knowledge Graphs & Hybrid RAG",
-          "When SEO Is Enough (And When You Need AEO)",
-          "Frequently Asked Questions",
-          "Summary: SEO Is Still Foundational"
+          "Search Engine Optimisation",
+          "Technical SEO",
+          "Entity SEO",
+          "Answer Engine Optimisation",
+          "AI Search",
+          "Retrieval-Augmented Generation"
         ],
         "keywords": [
-          "what is seo optimisation",
-          "seo optimisation",
-          "lexical retrieval",
-          "bm25 sparse retrieval",
-          "entity seo",
-          "seo vs aeo",
-          "hybrid search RAG",
-          "technical seo pillars"
+          "SEO optimisation",
+          "Search Engine Optimisation",
+          "technical SEO",
+          "Entity SEO",
+          "AEO",
+          "AI search",
+          "RAG"
         ],
+        "about": [
+          {
+            "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#seo-term"
+          },
+          {
+            "@type": "Thing",
+            "name": "Entity SEO"
+          },
+          {
+            "@type": "Thing",
+            "name": "Answer Engine Optimisation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Retrieval-Augmented Generation"
+          }
+        ],
+        "image": {
+          "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#primaryimage"
+        },
         "author": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au"
-        }
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "datePublished": "2026-02-15T00:00:00+10:00",
+        "dateModified": "2026-08-16T16:00:00+10:00",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/knowledge-hub#collection"
+        },
+        "citation": [
+          {
+            "@type": "WebPage",
+            "name": "Entity SEO & Authority Building",
+            "url": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Answer Engine Optimisation",
+            "url": "https://aeobility.com.au/knowledge-hub/aeo"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Retrieval-Augmented Generation",
+            "url": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
+          }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#seo-term",
+        "name": "Search Engine Optimisation",
+        "alternateName": [
+          "SEO",
+          "SEO Optimisation"
+        ],
+        "description": "Search Engine Optimisation is the technical and content practice of making a website easier for search engines to find, understand and rank. It provides a crawlable, indexable and relevant foundation for conventional search and AI retrieval systems.",
+        "inDefinedTermSet": {
+          "@id": "https://aeobility.com.au/knowledge-hub#glossary"
+        },
+        "url": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is SEO still important in the AI search era?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. SEO is still the foundation of discoverability. It makes a website easier for search engines to crawl, understand and rank, and gives AI search systems clear, reliable source content to retrieve or reference."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does my business rank on Google but not appear in AI answers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ranking a page does not guarantee that an AI system will use it. AI search may look for clear entities, consistent business information, strong contextual signals and answer-ready passages when selecting sources for a response."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between SEO, Entity SEO and AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO improves page-level crawlability, indexability and relevance. Entity SEO clarifies a business, its services, locations and relationships so systems can interpret them correctly. AEO structures key information into clear, self-contained passages that answer engines can more easily retrieve and potentially cite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I fix first to improve AI search visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with the fundamentals: make important pages crawlable and indexable, use clear headings and structured content, keep business details consistent, strengthen internal linking and topical relationships, and add appropriate structured data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can SEO or AEO guarantee that AI will cite my website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential, but no optimisation method can guarantee selection or citation by every AI system."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -110,7 +219,7 @@ export default function WhatIsSEOOptimisationPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://aeobility.com.au"
+            "item": "https://aeobility.com.au/"
           },
           {
             "@type": "ListItem",
@@ -127,50 +236,17 @@ export default function WhatIsSEOOptimisationPage() {
         ]
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is SEO still important in the AI search era?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. SEO is still the foundation of discoverability. It makes your website easier for search engines to crawl, understand and rank — and it gives AI search systems the clear, reliable source content they need before they can retrieve or reference anything. SEO builds the structure; AEO and entity optimisation help machines interpret it confidently."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does my business rank on Google but not appear in AI answers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ranking a page doesn't guarantee that an AI system will use it. AI search looks for clear entities, consistent business information, strong contextual signals and answer-ready passages. If those elements are missing, an AI engine may understand your page — but still choose a competitor's content when generating an answer."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What's the difference between SEO, Entity SEO and AEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SEO improves page-level visibility: crawlability, indexability and relevance. Entity SEO clarifies who you are — your business, services, locations and relationships — so machines interpret you correctly. AEO shapes key information into clear, self-contained passages that answer engines can more easily retrieve and potentially cite. Together, they help your business get found, understood and chosen across Search, Maps & AI."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I fix first to improve AI search visibility?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Start with the fundamentals: make sure important pages are crawlable and indexable, use clear headings and structured content, keep business details consistent across your site, strengthen internal linking and topical relationships, and add appropriate structured data."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can SEO or AEO guarantee that AI will cite my website?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential — but no optimisation method can guarantee selection or citation by every AI system. The goal is to make your business easier for machines to understand and more likely to be used when they generate answers."
-            }
-          }
-        ]
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#primaryimage",
+        "url": "https://aeobility.com.au/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+        "caption": "Abstract representation of traditional SEO input-layer indexing feeding generative AI search and vector retrieval.",
+        "representativeOfPage": true,
+        "width": 1200,
+        "height": 800,
+        "copyrightHolder": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
       }
     ]
   };
@@ -462,7 +538,7 @@ export default function WhatIsSEOOptimisationPage() {
                   <h2 className="text-2xl font-bold text-white">SEO to RAG Progression Diagram</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Visual mental model illustrating how raw lexical web pages transform into verified knowledge graph entities, liftable answer passages, and synthesised AI citations:
+                  Visual mental model illustrating how raw lexical web pages transform into interpretable entity relationships, liftable answer passages, and generated answers with attribution where supported:
                 </p>
 
                 {/* Horizontal 4-Step Visual Flow Component */}
@@ -697,10 +773,7 @@ export default function WhatIsSEOOptimisationPage() {
                   <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                     <h3 className="text-base font-bold text-purple-300">3. What&apos;s the difference between SEO, Entity SEO and AEO?</h3>
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                      SEO improves page‑level visibility: crawlability, indexability and relevance.<br />
-                      <strong>Entity SEO</strong> clarifies who you are — your business, services, locations and relationships — so machines interpret you correctly (see our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO guide</Link>).<br />
-                      <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">AEO</Link> shapes key information into clear, self‑contained passages that answer engines can more easily retrieve and potentially cite.<br />
-                      Together, they help your business get found, understood and chosen across Search, Maps &amp; AI.
+                      SEO improves page‑level visibility: crawlability, indexability and relevance. <strong className="text-white">Entity SEO</strong> clarifies who you are — your business, services, locations and relationships — so machines interpret you correctly (see our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO guide</Link>). <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">AEO</Link> shapes key information into clear, self‑contained passages that answer engines can more easily retrieve and potentially cite. Together, they help your business get found, understood and chosen across Search, Maps &amp; AI.
                     </p>
                   </div>
 
