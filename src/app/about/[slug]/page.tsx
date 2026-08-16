@@ -30,12 +30,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const config = roleConfigs[slug];
   if (!config) return {};
   
+  const pageUrl = `https://aeobility.com.au/about/${slug}`;
+  const imageUrl = "https://aeobility.com.au/Profile-Picture-Vinnie.png";
+
   return {
     title: config.metadata.title,
     description: config.metadata.description,
     alternates: {
-      canonical: `https://aeobility.com.au/about/${slug}`,
-    }
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: config.metadata.title,
+      description: config.metadata.description,
+      url: pageUrl,
+      type: "website",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 1200,
+          alt: "Vinnie Baker - Founder & Principal Consultant at AEObility",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: config.metadata.title,
+      description: config.metadata.description,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -46,16 +69,51 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+  const pageUrl = `https://aeobility.com.au/about/${config.slug}`;
+  const imageUrl = "https://aeobility.com.au/Profile-Picture-Vinnie.png";
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
-        "@id": `https://aeobility.com.au/about/${config.slug}#service`,
-        "name": config.metadata.title.split('|')[0].trim(),
-        "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        "url": pageUrl,
+        "name": config.metadata.title,
         "description": config.metadata.description,
-        "url": `https://aeobility.com.au/about/${config.slug}`,
+        "inLanguage": "en-AU",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": `${pageUrl}#primaryimage`
+        },
+        "mainEntity": {
+          "@id": `${pageUrl}#service`
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${pageUrl}#primaryimage`,
+        "url": imageUrl,
+        "contentUrl": imageUrl,
+        "caption": "Vinnie Baker - Founder & Principal Consultant at AEObility",
+        "representativeOfPage": true,
+        "width": 1200,
+        "height": 1200,
+        "copyrightHolder": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${pageUrl}#service`,
+        "name": config.metadata.title.split('|')[0].trim(),
+        "image": {
+          "@id": `${pageUrl}#primaryimage`
+        },
+        "description": config.metadata.description,
+        "url": pageUrl,
         "telephone": "0480286282", 
         "priceRange": "$$",
         "address": {
@@ -70,6 +128,9 @@ export default async function Page({ params }: PageProps) {
           "latitude": "-31.9167",
           "longitude": "115.8500"
         },
+        "provider": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
         "founder": {
           "@id": "https://aeobility.com.au/#person"
         }
@@ -79,6 +140,8 @@ export default async function Page({ params }: PageProps) {
         "@id": "https://aeobility.com.au/#person",
         "name": "Vinnie Baker",
         "jobTitle": "Founder & AEO Specialist",
+        "image": imageUrl,
+        "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         }
