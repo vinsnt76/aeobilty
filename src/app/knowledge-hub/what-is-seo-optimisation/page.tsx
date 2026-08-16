@@ -166,17 +166,16 @@ export default function WhatIsSEOOptimisationPage() {
 
       <Navbar />
 
-      <main className="relative pt-28 pb-20 overflow-hidden">
+      {/* Category SubNav Pills Component */}
+      <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
+
+      <main className="relative pt-12 pb-20 overflow-hidden">
         {/* Ambient background glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-teal-500/10 via-cyan-500/5 to-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <Breadcrumbs />
-
-          <div className="mt-8">
-            <SubNavPills items={HUB_SUBNAV_MAPS.knowledge} />
-          </div>
 
           {/* Editorial Hero Banner */}
           <div className="mt-8 mb-8 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-950/90 border border-slate-800/80 rounded-3xl p-8 sm:p-12 backdrop-blur-xl relative overflow-hidden shadow-2xl">
@@ -206,14 +205,14 @@ export default function WhatIsSEOOptimisationPage() {
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <a 
                     href="#seo-vs-aeo" 
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-teal-400 hover:text-teal-300 font-mono transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-teal-400 hover:text-teal-300 font-mono transition-colors"
                   >
                     <span>SEO vs AEO</span>
                     <ArrowDownRight className="w-3.5 h-3.5" />
                   </a>
                   <Link 
                     href="/solutions/aeo-blueprint"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/30 text-xs text-teal-300 hover:bg-teal-500/20 font-mono transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/30 text-xs text-teal-300 hover:bg-teal-500/20 font-mono transition-colors"
                   >
                     <Gauge className="w-3.5 h-3.5" />
                     <span>Check Your Visibility Score</span>
@@ -223,16 +222,35 @@ export default function WhatIsSEOOptimisationPage() {
             </div>
           </div>
 
-          {/* "On This Page" Compact Jump-Link Navigation */}
-          <nav aria-label="On this page" className="mb-12 p-4 bg-slate-900/60 border border-slate-800 rounded-2xl flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-slate-400">
-            <span className="text-teal-400 font-bold uppercase tracking-wider">On this page:</span>
-            <a href="#input-layer" className="hover:text-teal-300 transition-colors">1. Input Layer</a>
-            <a href="#lexical-retrieval" className="hover:text-cyan-300 transition-colors">2. Lexical Retrieval</a>
-            <a href="#core-pillars" className="hover:text-purple-300 transition-colors">3. Core Pillars</a>
-            <a href="#search-model" className="hover:text-emerald-300 transition-colors">4. 4-Layer Model</a>
-            <a href="#flow-architecture" className="hover:text-teal-300 transition-colors">5. Flow Diagram</a>
-            <a href="#entity-seo-bridge" className="hover:text-cyan-300 transition-colors">6. Entity SEO Bridge</a>
-            <a href="#seo-vs-aeo" className="hover:text-purple-300 transition-colors">7. SEO vs AEO</a>
+          {/* "On This Page" Visual Subnav Pill Component Bar */}
+          <nav aria-label="On this page navigation" className="mb-12 p-4 bg-slate-950/80 border border-slate-800/80 rounded-2xl flex flex-wrap items-center gap-3 shadow-lg">
+            <span className="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5" />
+              On this page:
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <a href="#input-layer" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                1. Input Layer
+              </a>
+              <a href="#lexical-retrieval" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                2. Lexical Retrieval
+              </a>
+              <a href="#core-pillars" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                3. Core Pillars
+              </a>
+              <a href="#search-model" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-emerald-400 text-slate-300 hover:text-emerald-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                4. 4-Layer Model
+              </a>
+              <a href="#flow-architecture" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                5. Flow Diagram
+              </a>
+              <a href="#entity-seo-bridge" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                6. Entity SEO Bridge
+              </a>
+              <a href="#seo-vs-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                7. SEO vs AEO
+              </a>
+            </div>
           </nav>
 
           {/* Main Article Body */}
@@ -242,7 +260,7 @@ export default function WhatIsSEOOptimisationPage() {
             <div className="lg:col-span-8 space-y-12 text-slate-300">
               
               {/* Section 1: Input Layer */}
-              <section id="input-layer" className="bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
+              <section id="input-layer" className="scroll-mt-32 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Layers className="w-6 h-6 text-teal-400" />
                   SEO as the Input Layer for Modern Search
@@ -271,7 +289,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 2: Lexical Retrieval */}
-              <section id="lexical-retrieval" className="space-y-4">
+              <section id="lexical-retrieval" className="scroll-mt-32 space-y-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Search className="w-6 h-6 text-cyan-400" />
                   Lexical Retrieval — How Sparse Indexing Works
@@ -292,7 +310,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 3: Core Pillars */}
-              <section id="core-pillars" className="space-y-6">
+              <section id="core-pillars" className="scroll-mt-32 space-y-6">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Compass className="w-6 h-6 text-purple-400" />
                   The Core Pillars of SEO Optimisation
@@ -323,7 +341,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 4: The 4-Layer Search Model Table */}
-              <section id="search-model" className="space-y-6 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
+              <section id="search-model" className="scroll-mt-32 space-y-6 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
                   <Table className="w-6 h-6 text-teal-400" />
                   <h2 className="text-2xl font-bold text-white">The 4-Layer Search Model</h2>
@@ -373,7 +391,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 5: SEO to RAG Interactive Flow Architecture Diagram Component */}
-              <section id="flow-architecture" className="space-y-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8">
+              <section id="flow-architecture" className="scroll-mt-32 space-y-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
                   <GitBranch className="w-6 h-6 text-cyan-400" />
                   <h2 className="text-2xl font-bold text-white">SEO → Entity SEO → AEO → RAG Progression Diagram</h2>
@@ -449,7 +467,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 6: The Missing Bridge - Entity SEO */}
-              <section id="entity-seo-bridge" className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-5">
+              <section id="entity-seo-bridge" className="scroll-mt-32 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-5">
                 <div className="flex items-center gap-3">
                   <GitBranch className="w-6 h-6 text-teal-400" />
                   <h2 className="text-2xl font-bold text-white">The Missing Bridge: Entity SEO</h2>
@@ -471,6 +489,51 @@ export default function WhatIsSEOOptimisationPage() {
                   <BookOpen className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-teal-300 font-mono">Next Node in the Learning Lattice:</strong> Learn how to map real-world concepts with our guide to <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO & Authority Building</Link>, or explore how <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">Answer Engine Optimisation (AEO)</Link> refactors passages for generative search.
+                  </div>
+                </div>
+              </section>
+
+              {/* Section 6.5: How SEO Feeds Knowledge Graphs (4-Card Grid) */}
+              <section className="scroll-mt-32 bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
+                <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <Network className="w-6 h-6 text-teal-400" />
+                  How SEO Feeds AI Knowledge Graphs & Hybrid RAG
+                </h2>
+                <p className="leading-relaxed">
+                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong> and run <strong>hybrid search</strong>. Clear heading hierarchy helps both people and automated systems identify coherent passages, providing the sparse candidate pool that generative models ingest into <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-medium hover:underline">RAG (Retrieval-Augmented Generation)</Link> pipelines:
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
+                    <div className="text-sm font-bold text-teal-300 flex items-center gap-2">
+                      <Zap className="w-4 h-4" />
+                      Clean Heading Hierarchy
+                    </div>
+                    <p className="text-xs text-slate-400">Enables unambiguous natural language passage chunking for automated systems.</p>
+                  </div>
+
+                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
+                    <div className="text-sm font-bold text-cyan-300 flex items-center gap-2">
+                      <Zap className="w-4 h-4" />
+                      Clear Entity Anchors
+                    </div>
+                    <p className="text-xs text-slate-400">Strengthens brand node confidence scores in vector space and Knowledge Graphs.</p>
+                  </div>
+
+                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
+                    <div className="text-sm font-bold text-purple-300 flex items-center gap-2">
+                      <Zap className="w-4 h-4" />
+                      Consistent Terminology
+                    </div>
+                    <p className="text-xs text-slate-400">Enhances semantic density, BM25 term scores, and hybrid retrieval ranking.</p>
+                  </div>
+
+                  <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
+                    <div className="text-sm font-bold text-emerald-300 flex items-center gap-2">
+                      <Zap className="w-4 h-4" />
+                      Internal Link Graphs
+                    </div>
+                    <p className="text-xs text-slate-400">Maps relationship graphs back to the main <Link href="/knowledge-hub" className="text-emerald-400 hover:underline font-semibold">AEObility Knowledge Hub</Link>.</p>
                   </div>
                 </div>
               </section>
@@ -497,7 +560,7 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 7: SEO vs AEO Comparison */}
-              <section id="seo-vs-aeo" className="space-y-6">
+              <section id="seo-vs-aeo" className="scroll-mt-32 space-y-6">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Cpu className="w-6 h-6 text-cyan-400" />
                   SEO vs AEO — Page Ranking vs Passage Extraction
