@@ -177,8 +177,26 @@ export default function WhatIsSEOOptimisationPage() {
           
           <Breadcrumbs />
 
+          {/* Visual Hero Banner (1200x800 Abstract SEO Input-Layer Graphic) */}
+          <figure className="mt-8 mb-10">
+            <div className="relative h-[280px] sm:h-[420px] lg:h-[500px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/50 via-transparent to-teal-500/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
+              <Image
+                src="/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp"
+                alt="Abstract visualisation of traditional SEO input layer feeding AI search engines and vector retrieval graphs."
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                priority
+              />
+            </div>
+            <figcaption className="text-center text-xs text-slate-400 mt-3 font-mono italic">
+              Abstract representation of traditional SEO input-layer indexing feeding generative AI search and vector retrieval.
+            </figcaption>
+          </figure>
+
           {/* Editorial Hero Banner */}
-          <div className="mt-8 mb-8 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-950/90 border border-slate-800/80 rounded-3xl p-8 sm:p-12 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+          <div className="mt-6 mb-8 bg-gradient-to-br from-slate-900/90 via-slate-900/50 to-slate-950/90 border border-slate-800/80 rounded-3xl p-8 sm:p-12 backdrop-blur-xl relative overflow-hidden shadow-2xl">
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-500/10 blur-3xl rounded-full" />
             
             <div className="max-w-3xl">
