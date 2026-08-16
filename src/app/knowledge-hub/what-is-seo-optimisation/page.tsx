@@ -19,7 +19,8 @@ import {
   Compass,
   GitBranch,
   Table,
-  Zap
+  Zap,
+  BookOpen
 } from 'lucide-react';
 
 export const metadata = {
@@ -69,7 +70,7 @@ export default function WhatIsSEOOptimisationPage() {
           "SEO as the Input Layer for Modern Search",
           "Lexical Retrieval — How Sparse Indexing Works",
           "The Core Pillars of SEO Optimisation",
-          "The 3-Layer Search Model: SEO vs Entity vs RAG",
+          "The 4-Layer Search Model: SEO -> Entity -> AEO -> RAG",
           "The Missing Bridge: Entity SEO",
           "How SEO Feeds AI Knowledge Graphs & Hybrid RAG",
           "When SEO Is Enough — And When You Need AEO",
@@ -129,7 +130,7 @@ export default function WhatIsSEOOptimisationPage() {
             "name": "What is SEO optimisation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SEO (Search Engine Optimisation) is the technical and structural practice of making web content crawlable, indexable, and lexically relevant. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI answer engines with clean, structured source material for entity parsing and RAG retrieval."
+              "text": "SEO (Search Engine Optimisation) is the technical and structural practice of making web content crawlable, indexable, and lexically relevant. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI search and answer engines with clean, structured source material for entity parsing and RAG retrieval."
             }
           },
           {
@@ -137,7 +138,7 @@ export default function WhatIsSEOOptimisationPage() {
             "name": "What is Entity SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional SEO teaches search bots what words are on a page; Entity SEO teaches them what real-world concepts, organisations, and relationships those words represent using structured schema markup and Knowledge Graph mappings."
+              "text": "Traditional SEO teaches search bots what words are on a page; Entity SEO teaches them what real-world concepts, organisations, and relationships those words represent using JSON-LD structured data, entity references, and explicit contextual relationships."
             }
           },
           {
@@ -145,7 +146,7 @@ export default function WhatIsSEOOptimisationPage() {
             "name": "How does SEO feed RAG retrieval pipelines?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Modern RAG engines rely on hybrid search, combining dense vector embeddings with sparse BM25 lexical signals. Clean HTML tags, metadata, and lexical clarity provided by traditional SEO give hybrid retrievers early candidate matches before dense vector reranking."
+              "text": "Modern AI search and answer engines rely on hybrid search, combining dense vector embeddings with sparse BM25 lexical signals. Clean HTML tags, metadata, and lexical clarity provided by traditional SEO give hybrid retrievers early candidate matches before dense vector reranking."
             }
           }
         ]
@@ -188,14 +189,14 @@ export default function WhatIsSEOOptimisationPage() {
                 What Is SEO Optimisation?
               </h1>
 
-              {/* Atomic Definition Block (90-120 Tokens) */}
+              {/* Atomic Definition Block */}
               <div className="p-6 bg-slate-950/80 border border-teal-500/30 rounded-2xl relative shadow-inner">
                 <div className="text-xs font-mono text-teal-400 uppercase tracking-wider mb-2 flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  Upgraded Atomic Definition Block (AEO / RAG Ready)
+                  ATOMIC DEFINITION
                 </div>
                 <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
-                  <strong>SEO (Search Engine Optimisation)</strong> is the technical and structural practice of making web content <strong>crawlable, indexable, and lexically relevant</strong>. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI answer engines with clean, structured source material for entity parsing and RAG retrieval.
+                  <strong>SEO (Search Engine Optimisation)</strong> is the technical and structural practice of making web content <strong>crawlable, indexable, and lexically relevant</strong>. It serves as the foundational input layer that enables search engines to rank full web pages and provides AI search and answer engines with clean, structured source material for entity parsing and RAG retrieval.
                 </p>
               </div>
             </div>
@@ -214,7 +215,7 @@ export default function WhatIsSEOOptimisationPage() {
                   SEO as the Input Layer for Modern Search
                 </h2>
                 <p className="leading-relaxed">
-                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. Far from being an obsolete relic, clean SEO forms the essential input layer that AI engines and RAG pipelines rely on before they can extract entities, passages, and semantic meaning.
+                  Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. Clean SEO gives search engines and AI retrieval systems more reliable material to crawl, interpret, retrieve, and cite across human and machine interfaces.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {[
@@ -241,7 +242,7 @@ export default function WhatIsSEOOptimisationPage() {
                   Lexical retrieval focuses on matching explicit search terms, stemmed variants, and anchor text across a site&apos;s document index. Rather than reading for abstract context alone, lexical systems calculate relevance using algorithms like <strong>BM25</strong> to score term frequency, page structure, and link authority.
                 </p>
                 <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 space-y-3">
-                  <div className="text-sm font-semibold text-slate-200 uppercase tracking-wider">What Lexical SEO Optimisation Enhances:</div>
+                  <div className="text-sm font-semibold text-slate-200 uppercase tracking-wider">What lexical SEO improves:</div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 text-sm">
                     <li className="flex items-center gap-2">• Sparse BM25 term frequency matching</li>
                     <li className="flex items-center gap-2">• Metadata & H1 title tag clarity</li>
@@ -283,14 +284,14 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
               </section>
 
-              {/* Section 4: The 3-Layer Search Model */}
+              {/* Section 4: The 4-Layer Search Model */}
               <section className="space-y-6 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
                   <Table className="w-6 h-6 text-teal-400" />
-                  <h2 className="text-2xl font-bold text-white">The 3-Layer Search Model</h2>
+                  <h2 className="text-2xl font-bold text-white">The 4-Layer Search Model</h2>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-300">
-                  Modern search systems operate across three distinct functional layers — moving from full-page discovery to atomic passage extraction and hybrid AI answer synthesis:
+                  Modern search systems operate across four distinct functional layers — moving from full-page discovery to entity disambiguation, atomic passage extraction, and hybrid AI answer synthesis:
                 </p>
 
                 <div className="overflow-x-auto">
@@ -299,27 +300,33 @@ export default function WhatIsSEOOptimisationPage() {
                       <tr className="bg-slate-950/80 text-teal-300 border-b border-slate-800 font-mono">
                         <th className="p-3.5 border-r border-slate-800">Layer</th>
                         <th className="p-3.5 border-r border-slate-800">Core Focus</th>
-                        <th className="p-3.5 border-r border-slate-800">Dominant Retrieval Mechanism</th>
-                        <th className="p-3.5">Primary Optimisation Target</th>
+                        <th className="p-3.5 border-r border-slate-800">Dominant Mechanism</th>
+                        <th className="p-3.5">Primary Target</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/60 bg-slate-900/40">
                       <tr>
                         <td className="p-3.5 font-bold text-white border-r border-slate-800">1. Traditional SEO</td>
                         <td className="p-3.5 border-r border-slate-800 text-slate-300">Crawlability, indexability, site speed, and page relevance</td>
-                        <td className="p-3.5 border-r border-slate-800 font-mono text-cyan-300">Lexical Retrieval (Sparse / BM25 matching & anchor graphs)</td>
+                        <td className="p-3.5 border-r border-slate-800 font-mono text-cyan-300">Sparse Lexical Matching (BM25) & Links</td>
                         <td className="p-3.5 font-semibold text-slate-200">Full URL / Page</td>
                       </tr>
                       <tr>
-                        <td className="p-3.5 font-bold text-white border-r border-slate-800">2. Entity & AEO</td>
-                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Entity mapping, passage clarity, and claim verification</td>
-                        <td className="p-3.5 border-r border-slate-800 font-mono text-teal-300">Semantic Retrieval (Dense vector embeddings & Knowledge Graphs)</td>
+                        <td className="p-3.5 font-bold text-white border-r border-slate-800">2. Entity SEO</td>
+                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Entity disambiguation, schema markup, & Knowledge Graph alignment</td>
+                        <td className="p-3.5 border-r border-slate-800 font-mono text-teal-300">Semantic Mapping & Linked Open Data</td>
+                        <td className="p-3.5 font-semibold text-slate-200">Entity & Relationship Nodes</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-white border-r border-slate-800">3. AEO</td>
+                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Direct-answer formatting, passage clarity, & claim support</td>
+                        <td className="p-3.5 border-r border-slate-800 font-mono text-emerald-300">Passage Extraction & Vector Similarity</td>
                         <td className="p-3.5 font-semibold text-slate-200">Atomic Passage / Answer Block</td>
                       </tr>
                       <tr>
-                        <td className="p-3.5 font-bold text-white border-r border-slate-800">3. Generative RAG</td>
-                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Synthesising factual citations into conversational answers</td>
-                        <td className="p-3.5 border-r border-slate-800 font-mono text-purple-300">Hybrid Retrieval (Merged Lexical + Vector candidate sets)</td>
+                        <td className="p-3.5 font-bold text-white border-r border-slate-800">4. Generative RAG</td>
+                        <td className="p-3.5 border-r border-slate-800 text-slate-300">Synthesising retrieved source evidence into answers</td>
+                        <td className="p-3.5 border-r border-slate-800 font-mono text-purple-300">Hybrid Retrieval (Sparse + Dense vectors)</td>
                         <td className="p-3.5 font-semibold text-slate-200">Synthesised AI Response</td>
                       </tr>
                     </tbody>
@@ -328,42 +335,55 @@ export default function WhatIsSEOOptimisationPage() {
               </section>
 
               {/* Section 5: The Missing Bridge - Entity SEO */}
-              <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-4">
+              <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-teal-500/30 rounded-2xl p-6 sm:p-8 space-y-5">
                 <div className="flex items-center gap-3">
                   <GitBranch className="w-6 h-6 text-teal-400" />
                   <h2 className="text-2xl font-bold text-white">The Missing Bridge: Entity SEO</h2>
                 </div>
+                
                 <p className="leading-relaxed text-slate-200">
-                  Traditional SEO teaches search bots what words are on a page; <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO</Link> teaches them what real-world concepts, organisations, and relationships those words represent.
-                </p>
-                <p className="leading-relaxed text-slate-300 text-sm">
-                  Before an <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">Answer Engine (AEO)</Link> can cite your content in a RAG pipeline, it must connect your page&apos;s lexical signals to verified nodes in a Knowledge Graph using structured schema markup and clear contextual relationships.
+                  Traditional SEO makes a page discoverable and relevant to the words people search. <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO</Link> clarifies the real-world concepts, organisations, products, and relationships those words represent. An <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">Answer Engine (AEO)</Link> then shapes important claims into clear, self-contained passages that AI search and answer engines can more easily retrieve, interpret, and potentially cite.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
+                <div className="p-4 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2 text-sm text-slate-300">
+                  <div className="font-mono text-teal-300 font-bold">SEO → Entity SEO → AEO → RAG Progression:</div>
+                  <p>
+                    First, build crawlable pages with clear lexical signals. Next, establish entity clarity and relationships through JSON-LD structured data, entity references, and explicit contextual relationships. Then make high-value answers extractable at the passage level so AI retrieval systems can use those signals alongside other sources when selecting evidence for generated answers.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                   <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
                     <div className="text-xs font-mono text-teal-400 font-bold">1. Lexical Input</div>
                     <p className="text-xs text-slate-400">Clean HTML tags, BM25 term signals, H1-H3 headings.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
                     <div className="text-xs font-mono text-cyan-400 font-bold">2. Entity Mapping</div>
-                    <p className="text-xs text-slate-400">JSON-LD schema microdata, SPO triple declarations.</p>
+                    <p className="text-xs text-slate-400">JSON-LD structured data, entity references, contextual links.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                    <div className="text-xs font-mono text-purple-400 font-bold">3. RAG Citation</div>
-                    <p className="text-xs text-slate-400">Atomic passage extraction & vector similarity match.</p>
+                    <div className="text-xs font-mono text-purple-400 font-bold">3. Passage & Citation</div>
+                    <p className="text-xs text-slate-400">Passage retrieval & citation potential in hybrid search.</p>
+                  </div>
+                </div>
+
+                {/* Next Node Inset Router Card */}
+                <div className="mt-4 p-4 rounded-xl bg-teal-950/30 border border-teal-500/20 text-xs sm:text-sm text-slate-200 flex items-start gap-3">
+                  <BookOpen className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-teal-300 font-mono">Next Node in the Learning Lattice:</strong> Learn how to map real-world concepts with our guide to <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity SEO & Authority Building</Link>, or explore how <Link href="/knowledge-hub/aeo" className="text-cyan-400 font-semibold hover:underline">Answer Engine Optimisation (AEO)</Link> refactors passages for generative search.
                   </div>
                 </div>
               </section>
 
-              {/* Section 6: How SEO Feeds Knowledge Graphs & Hybrid RAG */}
+              {/* Section 6: How SEO Feeds AI Knowledge Graphs & Hybrid RAG */}
               <section className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Network className="w-6 h-6 text-teal-400" />
                   How SEO Feeds AI Knowledge Graphs & Hybrid RAG
                 </h2>
                 <p className="leading-relaxed">
-                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong> and run <strong>hybrid search</strong>. Clean SEO structure feeds directly into <Link href="/knowledge-hub/semantic-seo" className="text-teal-400 font-medium hover:underline">AI Semantic SEO</Link> and entity graphs, providing the sparse candidate pool that generative models ingest into <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-medium hover:underline">RAG (Retrieval-Augmented Generation)</Link> pipelines:
+                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong> and run <strong>hybrid search</strong>. Clear heading hierarchy helps both people and automated systems identify coherent passages, providing the sparse candidate pool that generative models ingest into <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-medium hover:underline">RAG (Retrieval-Augmented Generation)</Link> pipelines:
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -372,7 +392,7 @@ export default function WhatIsSEOOptimisationPage() {
                       <Zap className="w-4 h-4" />
                       Clean Heading Hierarchy
                     </div>
-                    <p className="text-xs text-slate-400">Enables unambiguous natural language passage chunking for RAG scrapers.</p>
+                    <p className="text-xs text-slate-400">Enables unambiguous natural language passage chunking for automated systems.</p>
                   </div>
 
                   <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
@@ -441,7 +461,7 @@ export default function WhatIsSEOOptimisationPage() {
                 <div className="p-6 bg-slate-950/80 border border-purple-500/30 rounded-2xl text-center space-y-2">
                   <div className="text-lg font-bold text-white">The Operational Formula</div>
                   <p className="text-slate-300 text-base">
-                    <em>&ldquo;SEO builds the foundation. AEO earns the citation.&rdquo;</em>
+                    <em>&ldquo;SEO builds the foundation. AEO earns the citation — where answer engines choose to attribute sources.&rdquo;</em>
                   </p>
                 </div>
               </section>
