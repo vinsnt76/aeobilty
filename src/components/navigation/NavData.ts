@@ -168,8 +168,9 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "Articles",
         "href": "/knowledge-hub/articles",
-        "description": "Technical articles on AEO, RAG, and AI search indexing.",
-        "entityName": "Articles",
+        "description": "Read our latest articles on Answer Engine Optimisation (AEO), generative search, and semantic content structuring.",
+        "entityName": "Articles Index",
+        "isServicePillar": false,
         "isKnowledgeCapsule": true,
         "corridors": [
           "scan",
