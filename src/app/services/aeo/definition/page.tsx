@@ -89,8 +89,7 @@ export default function AEODefinitionPage() {
         "@type": "Article",
         "@id": "https://aeobility.com.au/services/aeo/definition#article",
         "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://aeobility.com.au/services/aeo/definition"
+          "@id": "https://aeobility.com.au/services/aeo/definition#webpage"
         },
         "headline": "What is AEO in Digital Marketing? Meaning & Concepts",
         "description": "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
@@ -150,30 +149,40 @@ export default function AEODefinitionPage() {
           "embeddings",
           "vector similarity",
           "passage-level extraction"
-        ],
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/aeo/definition#webpage",
+        "url": "https://aeobility.com.au/services/aeo/definition",
+        "name": "What is AEO in Digital Marketing? Meaning & Concepts",
         "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Services",
-              "item": "https://aeobility.com.au/services"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "AEO Services",
-              "item": "https://aeobility.com.au/services/aeo"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "What is AEO (Definition)",
-              "item": "https://aeobility.com.au/services/aeo/definition"
-            }
-          ]
+          "@id": "https://aeobility.com.au/services/aeo/definition#breadcrumb"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services/aeo/definition#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Services",
+            "item": "https://aeobility.com.au/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AEO Services",
+            "item": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What is AEO (Definition)",
+            "item": "https://aeobility.com.au/services/aeo/definition"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
