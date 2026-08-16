@@ -83,7 +83,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "https://aeobility.com.au/about/freelance-seo-consultant-perth"
         ],
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {

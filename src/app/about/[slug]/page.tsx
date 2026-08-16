@@ -80,7 +80,7 @@ export default async function Page({ params }: PageProps) {
         "name": "Vinnie Baker",
         "jobTitle": "Founder & AEO Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     ]

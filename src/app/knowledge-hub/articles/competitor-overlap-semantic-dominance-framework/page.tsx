@@ -102,7 +102,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Senior Information Architect & AEO Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {

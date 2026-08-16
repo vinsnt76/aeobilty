@@ -100,7 +100,7 @@ export default function PositionalBiasArticlePage() {
         "description": "Author of AEObility’s technical guides on retrieval, semantic SEO, and answer engine optimisation.",
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "address": {
           "@type": "PostalAddress",

@@ -166,7 +166,7 @@ export default function RootLayout({
                     "https://www.linkedin.com/in/vince-baker/"
                   ],
                   "worksFor": {
-                    "@id": "https://aeobility.com.au"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "knowsAbout": [
                     "Answer Engine Optimisation",

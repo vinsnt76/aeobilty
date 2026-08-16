@@ -57,7 +57,7 @@ export default function EntityAuthorityArticlePage() {
         "name": "Vince Baker",
         "jobTitle": "AEO & Semantic Search Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "address": {
