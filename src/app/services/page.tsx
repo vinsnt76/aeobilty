@@ -497,10 +497,14 @@ export default function ServicesPage() {
                     <p>
                       Yes. AEO, AI Search Strategy and GEO Marketing reinforce each other. When your business is clear to AI systems, your Google Maps and Apple Maps signals strengthen. When your local entity signals improve, LLMs gain confidence recommending you for local queries. This combined approach is why AEObility’s Perth, Australia clients see higher visibility across Search, Maps and AI.
                     </p>
-                    <div className="pt-2 text-xs text-white/60 font-light flex items-center gap-1.5">
+                    <div className="pt-2 text-xs text-white/60 font-light flex flex-wrap items-center gap-3">
                       <span>Learn more:</span>
                       <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-semibold inline-flex items-center gap-1">
-                        <span>AEO Services</span>
+                        <span>AEO Services Hub</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                      <Link href="/services/aeo/definition" className="text-aeo-purple hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>What is AEO? (Definition &amp; Concepts)</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>

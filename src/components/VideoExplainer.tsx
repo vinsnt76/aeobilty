@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function VideoExplainer() {
 
@@ -20,7 +21,7 @@ export default function VideoExplainer() {
               Why Aussie Businesses Partner with AEObility
             </h2>
             <p className="text-base text-white/60 font-light max-w-xl mx-auto leading-relaxed font-serif">
-              If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today.
+              If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today. Read our <Link href="/services/aeo/definition" className="text-aeo-cyan font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
             </p>
           </div>
         </div>

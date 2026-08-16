@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services/aeo/definition`,
       lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/services/aeo/comparison`,

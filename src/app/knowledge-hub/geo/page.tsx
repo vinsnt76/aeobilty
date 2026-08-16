@@ -335,7 +335,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>Conceptual Sequence: GEO &amp; AEO Integration</span>
               </div>
               <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
-                <strong>GEO verifies who and where a local business is.</strong> AEO helps shape the concise, evidence-backed content that answer engines can retrieve and present when responding to a user’s question. Explore the <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> page for answer-focused content structure, question coverage, and retrieval-ready evidence.
+                <strong>GEO verifies who and where a local business is.</strong> AEO helps shape the concise, evidence-backed content that answer engines can retrieve and present when responding to a user’s question. Explore our <Link href="/services/aeo/definition" className="text-aeo-cyan hover:underline font-semibold">AEO Definition &amp; Concepts Guide</Link> and <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> for answer-focused content structure, question coverage, and retrieval-ready evidence.
               </p>
             </div>
 
