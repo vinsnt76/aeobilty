@@ -82,7 +82,7 @@ export default function ShopifyAEOPage() {
         "@id": "https://aeobility.com.au/services/aeo/shopify#service",
         "name": "Shopify AEO Services",
         "serviceType": "Answer Engine Optimisation (AEO)",
-        "provider": { "@id": "https://aeobility.com.au/#organisation" },
+        "provider": { "@id": "https://aeobility.com.au/#organization" },
         "description": "Refactoring Shopify Liquid architecture for server-side JSON-LD, structured feeds, GTIN enrichment, and AI ingestion readiness.",
         "areaServed": {
           "@type": "Country",
@@ -260,12 +260,12 @@ export default function ShopifyAEOPage() {
         "creditText": "AEObility",
         "copyrightNotice": "© 2026 AEObility. All rights reserved.",
         "author": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
-        "@type": "Organisation",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",

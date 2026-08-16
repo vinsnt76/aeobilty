@@ -102,13 +102,13 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           "caption": "How Perplexity, ChatGPT, Google, and Copilot find and cite web content"
         },
         "author": {
-          "@type": "Organisation",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au/"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-08-10T00:00:00+08:00",
         "dateModified": "2026-08-11T00:00:00+08:00",
@@ -167,22 +167,22 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ],
         "mentions": [
           {
-            "@type": "Organisation",
+            "@type": "Organization",
             "name": "Perplexity",
             "url": "https://www.perplexity.ai/"
           },
           {
-            "@type": "Organisation",
+            "@type": "Organization",
             "name": "OpenAI",
             "url": "https://openai.com/"
           },
           {
-            "@type": "Organisation",
+            "@type": "Organization",
             "name": "Google",
             "url": "https://www.google.com/"
           },
           {
-            "@type": "Organisation",
+            "@type": "Organization",
             "name": "Microsoft",
             "url": "https://www.microsoft.com/"
           },
@@ -276,8 +276,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ]
       },
       {
-        "@type": "Organisation",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {

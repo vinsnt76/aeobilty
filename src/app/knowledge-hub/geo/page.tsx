@@ -97,7 +97,7 @@ export default function GEOKnowledgeNodePage() {
       },
 
       {
-        "@type": "Organisation",
+        "@type": "Organization",
         "@id": "https://aeobility.com.au/#org",
         "name": "AEObility",
         "url": "https://aeobility.com.au",

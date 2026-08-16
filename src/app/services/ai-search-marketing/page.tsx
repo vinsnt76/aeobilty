@@ -125,7 +125,7 @@ export default function AISearchMarketingPage() {
         "serviceType": "AI Search Marketing and Answer Engine Optimisation",
         "description": "A structured-content and search-visibility service that helps Australian businesses make their services, evidence, locations, and answers easier for search and AI systems to interpret when relevant.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": {
           "@id": "https://aeobility.com.au/services/ai-search-marketing#webpage"

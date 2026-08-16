@@ -24,7 +24,7 @@ export default function TutorialsHubPage() {
     "description": "Explore step-by-step technical tutorials on Answer Engine Optimisation (AEO), vector semantic density, and positional bias mitigation.",
     "url": "https://aeobility.com.au/knowledge-hub/tutorials",
     "publisher": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

@@ -44,7 +44,7 @@ const replacements = [
   [/\borganized\b/g, 'organised'],
   [/\bOrganizing\b/g, 'Organising'],
   [/\borganizing\b/g, 'organising'],
-  [/\bOrganization\b/g, 'Organisation'],
+  [/(?<!@type":\s*"|Schema.org\s*)\bOrganization\b/g, 'Organisation'],
   [/\borganization\b/g, 'organisation'],
   [/\bOrganizations\b/g, 'Organisations'],
   [/\borganizations\b/g, 'organisations'],

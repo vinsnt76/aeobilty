@@ -40,8 +40,8 @@ const orgGraph = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organisation',
-      '@id': 'https://aeobility.com.au/#organisation',
+      '@type': 'Organization',
+      '@id': 'https://aeobility.com.au/#organization',
       name: 'AEObility',
       url: 'https://aeobility.com.au',
       description: 'An agency defining the standard for Answer Engine Optimisation (AEO) in Australia.',
@@ -52,7 +52,7 @@ const orgGraph = {
       '@id': 'https://aeobility.com.au/#vince-baker',
       name: 'Vince Baker',
       jobTitle: 'Founder & Principal AEO Architect',
-      worksFor: { '@id': 'https://aeobility.com.au/#organisation' },
+      worksFor: { '@id': 'https://aeobility.com.au/#organization' },
       sameAs: ['https://linkedin.com/in/vincebaker']
     }
   ]
@@ -63,7 +63,7 @@ const blueprintService = {
   '@type': 'Service',
   '@id': 'https://aeobility.com.au/solutions/aeo-blueprint/#service',
   serviceType: 'AI Readiness Optimisation Consultancy',
-  provider: { '@id': 'https://aeobility.com.au/#organisation' },
+  provider: { '@id': 'https://aeobility.com.au/#organization' },
   offers: { 
     '@type': 'Offer', 
     price: '995.00', 

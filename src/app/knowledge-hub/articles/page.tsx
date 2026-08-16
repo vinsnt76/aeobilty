@@ -24,7 +24,7 @@ export default function ArticlesHubPage() {
     "description": "Read our latest articles on Answer Engine Optimisation (AEO), generative search, and semantic content structuring.",
     "url": "https://aeobility.com.au/knowledge-hub/articles",
     "publisher": {
-      "@type": "Organisation",
+      "@type": "Organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

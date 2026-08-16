@@ -20,8 +20,8 @@ export default function AeoVsSeoArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organisation",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {

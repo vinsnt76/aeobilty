@@ -25,7 +25,7 @@ export default function AEOKnowledgeNodePage() {
         "headline": "Answer Engine Optimisation Core Principles",
         "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
         "author": {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "AEObility"
         }
       }

@@ -25,7 +25,7 @@ export default function GEOServicesPage() {
         "name": "GEO Consultant & Local Visibility Sprints",
         "description": "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
         "provider": {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -121,7 +121,7 @@ export default function GEOServicesPage() {
                       "name": pillar.title,
                       "description": pillar.desc,
                       "provider": {
-                        "@type": "Organisation",
+                        "@type": "Organization",
                         "name": "AEObility"
                       }
                     })

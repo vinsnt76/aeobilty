@@ -116,8 +116,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organisation",
-                  "@id": "https://aeobility.com.au",
+                  "@type": "Organization",
+                  "@id": "https://aeobility.com.au/#organization",
                   "name": "AEObility",
                   "legalName": "Trekaboutoz trading as AEObility",
                   "url": "https://aeobility.com.au",

@@ -99,7 +99,7 @@ export default function GEOMarketingPage() {
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "description": "AEO and GEO Marketing services for Australian small businesses. AEObility helps your business appear, make sense and stand out across Search, Maps and AI.",
@@ -130,7 +130,7 @@ export default function GEOMarketingPage() {
         "url": "https://aeobility.com.au/services/geo-marketing",
         "description": "GEO Marketing improves how your business appears in location-aware search, map applications and AI assistants. AEObility strengthens proximity signals, regional intent nodes and structured location clarity for Perth SMBs.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "AdministrativeArea",

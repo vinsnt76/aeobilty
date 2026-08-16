@@ -1,10 +1,16 @@
 /**
  * Utility to convert US English spelling to Australian English (AU) conventions.
+ * Preserves Schema.org standard types like "@type": "Organization".
  */
 export function toAustralianEnglish(text: string): string {
   if (!text) return text;
 
-  return text
+  // Protect Schema.org Organization type strings
+  const schemaProtected = text
+    .replace(/"@type"\s*:\s*"Organization"/g, '__SCHEMA_TYPE_ORGANIZATION__')
+    .replace(/'@type'\s*:\s*'Organization'/g, '__SCHEMA_TYPE_ORGANIZATION_SINGLE__');
+
+  const converted = schemaProtected
     // -ize / -ization -> -ise / -isation
     .replace(/\bOptimization\b/g, 'Optimisation')
     .replace(/\boptimization\b/g, 'optimisation')
@@ -68,4 +74,8 @@ export function toAustralianEnglish(text: string): string {
     .replace(/\bcolor\b/g, 'colour')
     .replace(/\bColors\b/g, 'Colours')
     .replace(/\bcolors\b/g, 'colours');
+
+  return converted
+    .replace(/__SCHEMA_TYPE_ORGANIZATION__/g, '"@type": "Organization"')
+    .replace(/__SCHEMA_TYPE_ORGANIZATION_SINGLE__/g, "'@type': 'Organization'");
 }

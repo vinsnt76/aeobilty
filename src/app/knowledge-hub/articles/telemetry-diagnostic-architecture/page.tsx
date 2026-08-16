@@ -54,8 +54,8 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organisation",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "legalName": "Trekaboutoz",
         "url": "https://aeobility.com.au",

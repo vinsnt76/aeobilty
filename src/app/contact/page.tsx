@@ -32,7 +32,7 @@ export default function ContactPage() {
         "name": "Contact an Expert AEO Consultant in Perth | AEObility",
         "description": "Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.",
         "publisher": {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }

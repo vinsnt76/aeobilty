@@ -97,8 +97,8 @@ export default function AEOVsSEOPage() {
         "@id": "https://aeobility.com.au/services/aeo/comparison#service",
         "name": "AEO & SEO Comparison & Sprints",
         "provider": {
-          "@type": "Organisation",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "legalName": "Trekaboutoz",
           "vatID": "61 029 803 255",
@@ -111,8 +111,8 @@ export default function AEOVsSEOPage() {
         "description": "Optimising Australian small business data to be discoverable, understandable, and recommended across search, maps, and generative AI corridors."
       },
       {
-        "@type": "Organisation",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@type": "Organization",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "legalName": "Trekaboutoz",
         "vatID": "61 029 803 255",

@@ -33,7 +33,7 @@ function toAustralianEnglish(text) {
     .replace(/\bprioritized\b/g, 'prioritised')
     .replace(/\bOrganize\b/g, 'Organise')
     .replace(/\borganize\b/g, 'organise')
-    .replace(/\bOrganization\b/g, 'Organisation')
+    .replace(/(?<!@type":\s*"|Schema.org\s*)\bOrganization\b/g, 'Organisation')
     .replace(/\borganization\b/g, 'organisation')
     .replace(/\bCustomization\b/g, 'Customisation')
     .replace(/\bcustomization\b/g, 'customisation')
