@@ -43,7 +43,6 @@
 - [`/knowledge-hub/guides`](https://aeobility.com.au/knowledge-hub/guides): Technical guides index covering Answer Engine Optimisation, vector search, and RAG architectures.
   - [`/knowledge-hub/guides/aeo`](https://aeobility.com.au/knowledge-hub/guides/aeo): AEO technical principles, vector indexing, and structural refactoring guide.
 - [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.
-- [`/knowledge-hub/aeo`](https://aeobility.com.au/knowledge-hub/aeo): RAG citation mechanics and positional bias rules.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
 - [`/knowledge-hub/what-is-seo-optimisation`](https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation): What Is SEO Optimisation? Guide for Modern Search.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
@@ -93,27 +92,6 @@ AEObility exposes vector-grounded Answer & Form APIs for real-time site search &
 
 ## Structured Data Schema Standards
 We utilise schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
-- **Brand ID**: `https://aeobility.com.au`
+- **Brand ID**: `https://aeobility.com.au/#organization`
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
 - **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
-
----
-
-## Brand Guidelines & Core Messaging
-- **Brand Promise**: Get Found. Get Chosen.
-- **Primary Message**: AEObility helps your business appear, make sense, and stand out across Search, Maps & AI — so you get more enquiries without the complexity.
-- **Value Pillars**:
-  - **Visibility**: Show up more often.
-  - **Understanding**: Restructure digital content so answer engines can easily read, chunk, and cite it.
-  - **Selection**: Build conversion trust to ensure customers choose you.
-  - **Local Intent**: Target local prospects using geographic coordinates and location maps.
-  - **Trust**: Establish entity consistency to build search engine reputation.
-
----
-
-## Verified Profiles & Social Nodes
-- **Google Maps & Business Profile**: [Google Maps Profile](https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA)
-- **LinkedIn**: [LinkedIn Company Page](https://www.linkedin.com/company/133445734/)
-- **Instagram**: [Instagram Profile](https://www.instagram.com/aeo.bility/)
-- **Facebook**: [Facebook Page](https://www.facebook.com/profile.php?id=61591781069830)
-- **YouTube**: [YouTube Channel](https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg)

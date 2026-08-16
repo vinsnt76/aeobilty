@@ -17,7 +17,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 2. Machine-Readable Knowledge Map
 
-AEObility structures its digital presence across verified entity nodes grounded in valid Schema.org microdata schemas (`@type: Organisation`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: ItemList`, `@type: BreadcrumbList`).
+AEObility structures its digital presence across verified entity nodes grounded in valid Schema.org microdata schemas (`@type: Organization`, `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: FAQPage`, `@type: HowTo`, `@type: ImageObject`, `@type: ItemList`, `@type: BreadcrumbList`).
 
 ### Core Engagements & Solutions
 1. **The Strategic Blueprint Method**: Standalone $995 Clarity Phase deep technical audit and 90-day strategic roadmap. (`https://aeobility.com.au/solutions/aeo-blueprint`)
