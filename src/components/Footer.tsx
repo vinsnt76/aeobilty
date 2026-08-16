@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
           
           <p className="text-xs text-white/40 leading-relaxed font-light font-serif max-w-sm">
-            Optimising Australian small businesses for the future of search. Discoverable, understandable, and recommended across maps, search, and generative AI corridors.
+            Optimising Australian small businesses for the future of search. Discoverable, understandable, and recommended across maps, search, and generative AI search experiences.
           </p>
 
           {/* Social Icons */}

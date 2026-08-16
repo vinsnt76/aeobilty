@@ -187,7 +187,7 @@ export default function WhatIsSEOOptimisationPage() {
       {/* Category SubNav Pills Component */}
       <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
 
-      <main className="relative pt-12 pb-20 overflow-hidden">
+      <main className="relative pt-12 pb-28 sm:pb-20 overflow-hidden">
         {/* Ambient background glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-teal-500/10 via-cyan-500/5 to-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -266,28 +266,28 @@ export default function WhatIsSEOOptimisationPage() {
             </span>
             <div className="flex flex-wrap items-center gap-2">
               <a href="#input-layer" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                1. Input Layer
+                Input Layer
               </a>
               <a href="#lexical-retrieval" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                2. Lexical Retrieval
+                Lexical Retrieval
               </a>
               <a href="#core-pillars" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                3. Core Pillars
+                Core Pillars
               </a>
               <a href="#search-model" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-emerald-400 text-slate-300 hover:text-emerald-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                4. 4-Layer Model
+                4-Layer Model
               </a>
               <a href="#flow-architecture" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                5. Flow Diagram
+                Flow Diagram
               </a>
               <a href="#entity-seo-bridge" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                6. Entity SEO Bridge
+                Entity SEO Bridge
               </a>
               <a href="#seo-vs-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                7. SEO vs AEO
+                SEO vs AEO
               </a>
               <a href="#faq" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                8. FAQs
+                FAQs
               </a>
             </div>
           </nav>
@@ -299,7 +299,7 @@ export default function WhatIsSEOOptimisationPage() {
             <div className="lg:col-span-8 space-y-12 text-slate-300">
               
               {/* Section 1: Input Layer */}
-              <section id="input-layer" className="scroll-mt-32 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
+              <section id="input-layer" className="scroll-mt-32 bg-slate-900/40 border border-slate-800/60 rounded-2xl p-6 sm:p-8 space-y-6">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Layers className="w-6 h-6 text-teal-400" />
                   SEO as the Input Layer for Modern Search
@@ -307,23 +307,31 @@ export default function WhatIsSEOOptimisationPage() {
                 <p className="leading-relaxed">
                   Traditional SEO focuses on making your content <strong>discoverable and understandable</strong> at the page level. SEO is not outdated; it remains the essential foundation of discoverability that gives search engines and AI retrieval systems reliable material to crawl, interpret, retrieve, and cite. For Australian small businesses and enterprise domains alike, establishing a strong <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">SEO foundation</Link> is a prerequisite for local visibility in <Link href="/services/aeo/local-business" className="text-cyan-400 font-semibold hover:underline">AEO for Local Businesses</Link> and <Link href="/services/geo-marketing" className="text-emerald-400 font-semibold hover:underline">Local Business GEO</Link>.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+
+                {/* Foundation Cards Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   {[
                     "Clean HTML heading hierarchy (H1, H2, H3)",
                     "Crawlable XML sitemaps & site architecture",
                     "Clear lexical keyword & entity signals",
                     "Fast, accessible, machine-parsable pages"
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 p-3 rounded-lg bg-slate-950/50 border border-slate-800/40 text-slate-200 text-sm">
+                    <div key={idx} className="flex items-center gap-2.5 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/60 text-slate-200 text-sm shadow-sm">
                       <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Humanised Outcome Bridge */}
-                <div className="p-4 rounded-xl bg-teal-950/20 border border-teal-500/20 text-xs sm:text-sm text-slate-300">
-                  <strong className="text-teal-300 font-mono">What this means for your business:</strong> If a search engine cannot reliably crawl and understand a page, an AI answer engine has less reliable information to retrieve, assess, and reference when generating answers. Explore our full suite of <Link href="/solutions" className="text-teal-400 font-semibold hover:underline">AEO Implementation Packages</Link> to audit your site architecture.
+                {/* Standalone Business Takeaway Callout Box */}
+                <div className="p-5 rounded-2xl bg-teal-950/30 border border-teal-500/30 text-xs sm:text-sm text-slate-200 space-y-1.5 shadow-md">
+                  <div className="text-teal-300 font-mono font-bold flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-teal-400" />
+                    What this means for your business
+                  </div>
+                  <p className="leading-relaxed">
+                    If a search engine cannot reliably crawl and understand a page, an AI answer engine has less reliable information to retrieve, assess, and reference when generating answers. Explore our full suite of <Link href="/solutions" className="text-teal-400 font-semibold hover:underline">AEO Implementation Packages</Link> to audit your site architecture.
+                  </p>
                 </div>
               </section>
 
@@ -334,16 +342,31 @@ export default function WhatIsSEOOptimisationPage() {
                   Lexical Retrieval — How Sparse Indexing Works
                 </h2>
                 <p className="leading-relaxed">
-                  <strong>Lexical retrieval</strong> means matching the exact words and phrases people search for with relevant words and structural signals on a web page. Rather than reading for abstract context alone, lexical search systems score term frequency, page structure, and link authority using algorithms like <strong>BM25</strong>. To dive deeper into technical markup implementation, explore our <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-teal-400 font-medium hover:underline">Structured Data & Schema Guide</Link>, step-by-step <Link href="/knowledge-hub/tutorials" className="text-purple-400 font-medium hover:underline">Technical Tutorials</Link>, and <Link href="/knowledge-hub/guides" className="text-emerald-400 font-medium hover:underline">AEO Guides</Link>.
+                  <strong>Lexical retrieval</strong> means matching query terms, related language and page‑level relevance signals with useful content. Rather than reading for abstract context alone, lexical search systems score term frequency, page structure, and link authority using algorithms like <strong>BM25</strong>. To dive deeper into technical markup implementation, explore our <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-teal-400 font-medium hover:underline">Structured Data & Schema Guide</Link>, step-by-step <Link href="/knowledge-hub/tutorials" className="text-purple-400 font-medium hover:underline">Technical Tutorials</Link>, and <Link href="/knowledge-hub/guides" className="text-emerald-400 font-medium hover:underline">AEO Guides</Link>.
                 </p>
                 <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-6 space-y-3">
-                  <div className="text-sm font-semibold text-slate-200 uppercase tracking-wider">What lexical SEO improves:</div>
+                  <div className="text-sm font-semibold text-slate-200">What lexical SEO improves</div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-slate-300 text-sm">
-                    <li className="flex items-center gap-2">• Sparse BM25 term frequency matching</li>
-                    <li className="flex items-center gap-2">• Metadata & H1 title tag clarity</li>
-                    <li className="flex items-center gap-2">• Document heading hierarchy</li>
-                    <li className="flex items-center gap-2">• Anchor text link authority graphs</li>
-                    <li className="flex items-center gap-2">• Page speed & DOM accessibility</li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>Sparse BM25 term frequency matching</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>Metadata & H1 title tag clarity</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>Document heading hierarchy</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>Anchor text link authority graphs</span>
+                    </li>
+                    <li className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                      <span>Page speed & DOM accessibility</span>
+                    </li>
                   </ul>
                 </div>
               </section>
@@ -386,7 +409,7 @@ export default function WhatIsSEOOptimisationPage() {
                   <h2 className="text-2xl font-bold text-white">The 4-Layer Search Model</h2>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-300">
-                  Modern search systems operate across four distinct functional layers — moving from full-page discovery to entity disambiguation, atomic passage extraction, and hybrid AI answer synthesis:
+                  AEObility’s four-layer model explains how SEO foundations support entity understanding, answer extraction and AI retrieval:
                 </p>
 
                 <div className="overflow-x-auto">
@@ -554,9 +577,9 @@ export default function WhatIsSEOOptimisationPage() {
                   <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
                     <div className="text-sm font-bold text-cyan-300 flex items-center gap-2">
                       <Zap className="w-4 h-4" />
-                      Clear Entity Anchors
+                      Clear Entity References
                     </div>
-                    <p className="text-xs text-slate-400">Strengthens brand node confidence scores in vector space and Knowledge Graphs.</p>
+                    <p className="text-xs text-slate-400">Clear entity references help systems interpret who and what your content is about.</p>
                   </div>
 
                   <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-1">
@@ -584,9 +607,9 @@ export default function WhatIsSEOOptimisationPage() {
                     <Gauge className="w-3.5 h-3.5" />
                     INTERACTIVE DIAGNOSTIC
                   </div>
-                  <h3 className="text-xl font-bold text-white">Check Your AI Search Readiness Score</h3>
+                  <h3 className="text-xl font-bold text-white">See how ready your site is for AI search</h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                    Discover how effectively AI search engines crawl, parse, and cite your site&apos;s entities across BM25 lexical signals and vector space with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
+                    Get a practical view of your technical SEO, entity clarity and answer‑ready content with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
                   </p>
                 </div>
                 <Link 
@@ -638,7 +661,7 @@ export default function WhatIsSEOOptimisationPage() {
                 <div className="p-6 bg-slate-950/80 border border-purple-500/30 rounded-2xl text-center space-y-2">
                   <div className="text-lg font-bold text-white">The Operational Formula</div>
                   <p className="text-slate-300 text-base">
-                    <em>&ldquo;SEO builds the foundation. AEO earns the citation — where answer engines choose to attribute sources.&rdquo;</em>
+                    <em>&ldquo;SEO builds the foundation. AEO makes important passages easier to retrieve, interpret and potentially attribute.&rdquo;</em>
                   </p>
                 </div>
               </section>
@@ -724,7 +747,7 @@ export default function WhatIsSEOOptimisationPage() {
                 </h3>
 
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Get a <Link href="/solutions/aeo-blueprint" className="text-teal-400 hover:underline">deep technical audit</Link> of your SEO foundation and a 90-day strategic roadmap to capture AI search citations.
+                  Get a <Link href="/solutions/aeo-blueprint" className="text-teal-400 hover:underline">deep technical audit</Link> of your SEO foundation to improve your readiness for AI search visibility and source attribution.
                 </p>
 
                 <div className="pt-2">
@@ -744,7 +767,7 @@ export default function WhatIsSEOOptimisationPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <span>Lexical & Vector readiness score</span>
+                    <span>Lexical &amp; Vector readiness score</span>
                   </div>
                 </div>
               </div>
