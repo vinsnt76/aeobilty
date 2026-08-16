@@ -25,6 +25,7 @@ const urlList = [
   `https://${HOST}/knowledge-hub/aeo`,
   `https://${HOST}/knowledge-hub/semantic-seo`,
   `https://${HOST}/knowledge-hub/geo`,
+  `https://${HOST}/knowledge-hub/what-is-seo-optimisation`,
   `https://${HOST}/knowledge-hub/articles`,
   `https://${HOST}/knowledge-hub/articles/optimising-for-different-ai-search-engines`,
   `https://${HOST}/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
