@@ -292,7 +292,7 @@ export default function AeoVsSeoArticlePage() {
           <div className="space-y-6 text-white/80 font-serif font-light leading-relaxed">
             <h2 className="text-2xl font-bold text-white font-sans mt-8 mb-4">1. The Shifting Search Landscape: From Clicks to Answers</h2>
             <p>
-              For years, SEO ran on a pretty simple deal: you publish helpful content, Google crawls it, and—if you’ve done a decent job—you earn clicks. That old “ten blue links” model shaped how every business built its website.
+              For years, <Link href="/knowledge-hub/what-is-seo-optimisation" className="text-aeo-cyan font-medium hover:underline">SEO optimisation</Link> ran on a pretty simple deal: you publish helpful content, Google crawls it, and—if you’ve done a decent job—you earn clicks. That old “ten blue links” model shaped how every business built its website.
             </p>
             <p>
               But that world is disappearing fast.

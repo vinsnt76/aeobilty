@@ -131,8 +131,14 @@ export default function AEOKnowledgeNodePage() {
                 {idx === 0 && (
                   <div className="pt-3 border-t border-white/10 flex flex-col gap-1.5 text-[11px]">
                     <Link 
-                      href="/knowledge-hub/articles/telemetry-diagnostic-architecture"
+                      href="/knowledge-hub/what-is-seo-optimisation"
                       className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1"
+                    >
+                      &rarr; What Is SEO Optimisation? (Lexical Baseline)
+                    </Link>
+                    <Link 
+                      href="/knowledge-hub/articles/telemetry-diagnostic-architecture"
+                      className="text-white/70 hover:text-white hover:underline font-normal flex items-center gap-1"
                     >
                       &rarr; Telemetry Diagnostic Architecture Spec
                     </Link>

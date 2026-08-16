@@ -57,6 +57,12 @@ export default function KnowledgeHubPage() {
       icon: <GraduationCap className="w-5 h-5 text-aeo-cyan" />
     },
     {
+      name: "What Is SEO Optimisation?",
+      href: "/knowledge-hub/what-is-seo-optimisation",
+      description: "Understand traditional lexical search, technical SEO pillars, and how page-level optimisation feeds AI Knowledge Graphs.",
+      icon: <BookOpen className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
       name: "AI Semantic SEO & Entity-Based Layout Frameworks",
       href: "/knowledge-hub/semantic-seo",
       description: "Transition from legacy keyword strings to relational topic graphs. Learn to map RDF triples and build contextual entity salience.",

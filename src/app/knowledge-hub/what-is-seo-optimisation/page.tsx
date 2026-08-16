@@ -280,13 +280,13 @@ export default function WhatIsSEOOptimisationPage() {
                   How SEO Feeds AI Knowledge Graphs
                 </h2>
                 <p className="leading-relaxed">
-                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong>. SEO provides the raw material that generative models ingest:
+                  Modern AI search engines don&apos;t just read web pages — they build <strong>knowledge graphs</strong>. Clean SEO structure feeds directly into <Link href="/knowledge-hub/semantic-seo" className="text-teal-400 font-medium hover:underline">AI Semantic SEO</Link> and entity graphs, providing raw material that generative models ingest into <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-medium hover:underline">RAG (Retrieval-Augmented Generation)</Link> pipelines:
                 </p>
                 <div className="space-y-2.5 text-sm">
-                  <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-teal-300">Clean structure:</strong> Enables unambiguous machine parsing.</div>
+                  <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-teal-300">Clean structure:</strong> Enables unambiguous machine parsing for AI systems.</div>
                   <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-cyan-300">Clear entities:</strong> Strengthens brand node confidence in vector space.</div>
                   <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-purple-300">Consistent terminology:</strong> Enhances semantic density and retrieval scores.</div>
-                  <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-emerald-300">Internal linking:</strong> Maps relationship graphs between primary topics.</div>
+                  <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-lg"><strong className="text-emerald-300">Internal linking:</strong> Maps relationship graphs back to the main <Link href="/knowledge-hub" className="text-emerald-400 font-medium hover:underline">AEObility Knowledge Hub</Link>.</div>
                 </div>
               </section>
 
