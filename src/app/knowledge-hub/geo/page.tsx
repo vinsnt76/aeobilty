@@ -17,12 +17,10 @@ import {
   Layers, 
   HelpCircle, 
   AlertTriangle, 
-  ShieldCheck, 
-  GitFork,
-  Search,
   CheckSquare,
   Compass,
-  FileText
+  FileText,
+  ShieldCheck
 } from 'lucide-react';
 
 export const metadata = {
@@ -238,6 +236,44 @@ export default function GEOKnowledgeNodePage() {
   ]
 }`;
 
+  const matrixRows = [
+    {
+      dimension: "Primary Outcome",
+      localSeo: "Visibility in organic local results and map experiences",
+      geo: "Clear, corroborated business facts for AI-assisted discovery"
+    },
+    {
+      dimension: "Primary User Context",
+      localSeo: "“Near me,” map, category, and location searches",
+      geo: "Conversational local recommendations and fact-led questions"
+    },
+    {
+      dimension: "Important Signals",
+      localSeo: "Relevance, prominence, proximity, GBP quality, reviews, local links",
+      geo: "Consistent entity identity, service coverage, structured data, corroborating sources"
+    },
+    {
+      dimension: "Core Business Facts",
+      localSeo: "Category, address, phone, reviews, location relevance",
+      geo: "Organisation identity, address, hours, services, areas served, supporting evidence"
+    },
+    {
+      dimension: "Content Priority",
+      localSeo: "Helpful service and location pages for users",
+      geo: "Concise, evidence-backed factual answers with clear local context"
+    },
+    {
+      dimension: "Measurement",
+      localSeo: "Local rankings, map visibility, calls, direction requests, leads",
+      geo: "Accuracy in AI answers, brand inclusion where observable, consistency of cited facts"
+    },
+    {
+      dimension: "Relationship",
+      localSeo: "Helps users find the business in established local search surfaces",
+      geo: "Helps reduce ambiguity when systems reconcile local business information"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       {/* JSON-LD Schema */}
@@ -277,44 +313,22 @@ export default function GEOKnowledgeNodePage() {
               />
             </div>
 
-            {/* Atomic Summary Block */}
-            <div className="p-5 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl space-y-2">
-              <span className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider">Atomic Summary: Local SEO vs GEO</span>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-light">
-                Local SEO improves visibility in Google Search and Maps through Google Business Profile completeness, on-page relevance, and proximity signals. Generative Engine Optimisation (GEO) strengthens entity, location, and service-boundary facts so AI search engines and LLMs can accurately identify, reconcile, and cite a local business.
-              </p>
-            </div>
-
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
               GEO vs Local SEO: <span className="text-gradient-aeo">Key Differences for AI and Map Discovery</span>
             </h1>
 
-            <p className="text-white/90 text-lg leading-relaxed font-normal">
-              Learn how local SEO improves visibility in Google Search and Maps, while GEO strengthens the entity, location, and service-boundary signals AI search systems need to identify and recommend a local business accurately.
-            </p>
-
-            {/* Campaign Callout Subheading */}
-            <div className="p-4 bg-white/[0.03] border-l-4 border-aeo-purple rounded-r-xl">
-              <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                <Compass className="w-5 h-5 text-aeo-purple flex-shrink-0" />
-                <span>Fix Local Discovery Before AI Invents Your Hours</span>
-              </h2>
-            </div>
-
-            {/* Executive Summary */}
-            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-              <div className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan flex items-center gap-2">
+            {/* 1. Consolidated Executive Summary Block */}
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl space-y-3 shadow-lg">
+              <div className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-2">
                 <Cpu className="w-4 h-4" />
                 <span>Executive Summary</span>
               </div>
-              <ol className="list-decimal list-inside space-y-2 text-sm text-white/80 font-light leading-relaxed">
-                <li><strong>Local SEO</strong> improves visibility in Google Search and Maps via local relevance, Google Business Profile completeness, and proximity.</li>
-                <li><strong>GEO</strong> strengthens organisation, location, and service-boundary signals AI search engines need to cite a local business accurately.</li>
-                <li><strong>Together</strong>, they prevent AI systems from hallucinating operating hours, service radius, or business facts.</li>
-              </ol>
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
+                Local SEO helps a business appear in Google Search and Maps through relevance, prominence, reviews, complete business information, and proximity. GEO improves the consistency and clarity of business identity, location, service-area, and operational facts that AI-driven search experiences may use when assessing or citing local providers.
+              </p>
             </div>
 
-            {/* Contextual Transition Box linking to AEO Core Principles */}
+            {/* Distinct Conceptual Sequence: GEO & AEO Integration Callout */}
             <div className="p-5 bg-aeo-cyan/10 border border-aeo-cyan/30 rounded-2xl space-y-2">
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider">
                 <FileText className="w-4 h-4 flex-shrink-0" />
@@ -323,6 +337,14 @@ export default function GEOKnowledgeNodePage() {
               <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
                 <strong>GEO verifies who and where a local business is.</strong> AEO helps shape the concise, evidence-backed content that answer engines can retrieve and present when responding to a user’s question. Explore the <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> page for answer-focused content structure, question coverage, and retrieval-ready evidence.
               </p>
+            </div>
+
+            {/* Campaign Callout Subheading */}
+            <div className="p-4 bg-white/[0.03] border-l-4 border-aeo-purple rounded-r-xl">
+              <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <Compass className="w-5 h-5 text-aeo-purple flex-shrink-0" />
+                <span>Fix Local Discovery Before AI Invents Your Hours</span>
+              </h2>
             </div>
 
             {/* Hero CTA */}
@@ -337,214 +359,78 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 2: GEO VS LOCAL SEO COMPARISON TABLE */}
+          {/* SECTION 2: DEFENSIBLE COMPARISON MATRIX TABLE */}
           <div id="sec-diff" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
                 GEO vs Local SEO: What Is the Difference?
               </h2>
               <p className="text-xs sm:text-sm text-white/70 font-light">
-                Side-by-side comparison of local search ranking signals versus generative entity verification requirements.
+                Side-by-side comparison matrix mapping local search surfaces against AI-assisted discovery frameworks.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Local SEO Signals */}
-              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono uppercase tracking-wider text-white/60 font-bold">Search &amp; Maps Discovery</span>
-                    <Search className="w-5 h-5 text-white/50" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Local SEO Signals</h3>
-                  <ul className="space-y-3 text-xs sm:text-sm text-white/80 font-light">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-white/50 flex-shrink-0 mt-0.5" />
-                      <span>Google Business Profile completeness and category relevance</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-white/50 flex-shrink-0 mt-0.5" />
-                      <span>Consistent NAP data and authoritative local citations</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-white/50 flex-shrink-0 mt-0.5" />
-                      <span>Local relevance, prominence, reviews, links, and proximity</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-white/50 flex-shrink-0 mt-0.5" />
-                      <span>Useful location and service pages built for real users</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-white/80 font-medium mt-4">
-                  Focuses on traditional SERP and Google Maps pack positioning.
-                </div>
-              </div>
-
-              {/* GEO Signals */}
-              <div className="p-6 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-aeo-cyan/30 rounded-2xl space-y-4 shadow-xl flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold">Generative AI Discovery</span>
-                    <Cpu className="w-5 h-5 text-aeo-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">GEO Signals</h3>
-                  <ul className="space-y-3 text-xs sm:text-sm text-white/90 font-light">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                      <span>Clear organisation, location, and service-coverage entities</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                      <span>Accurate structured data for address, location, hours, and services</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                      <span>Consistent first-party and third-party business facts</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                      <span>Retrieval-friendly proof of expertise, service boundaries, and local relevance</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="p-3 bg-aeo-cyan/10 rounded-xl border border-aeo-cyan/20 text-xs text-white font-semibold mt-4">
-                  Strengthens machine-readable facts for AI citations &amp; LLM recommendations.
-                </div>
-              </div>
+            {/* Defensible Comparison Matrix Table */}
+            <div className="overflow-x-auto border border-white/10 rounded-2xl bg-white/[0.01] shadow-2xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/5 text-white">
+                    <th className="p-4 font-mono font-bold uppercase tracking-wider text-aeo-cyan w-1/4">Dimension</th>
+                    <th className="p-4 font-mono font-bold uppercase tracking-wider text-white/90 w-3/8">Local SEO</th>
+                    <th className="p-4 font-mono font-bold uppercase tracking-wider text-aeo-cyan w-3/8">GEO</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 font-light text-white/80">
+                  {matrixRows.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 font-bold text-white bg-white/[0.01]">{row.dimension}</td>
+                      <td className="p-4 text-white/80 leading-relaxed">{row.localSeo}</td>
+                      <td className="p-4 text-white/90 leading-relaxed bg-aeo-cyan/[0.02] border-l border-white/5 font-normal">{row.geo}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
 
-          {/* SECTION 3: HOW LOCAL SEARCH AND AI DISCOVERY USE BUSINESS FACTS */}
-          <div id="sec-facts" className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
-                <Layers className="w-6 h-6 text-aeo-cyan" />
+          {/* SECTION 3: PRACTICAL STRATEGIC DEEP DIVES */}
+          <div id="sec-deepdives" className="space-y-8 border-t border-white/5 pt-10">
+            
+            {/* Discovery Section */}
+            <div className="space-y-3">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <Layers className="w-5 h-5 text-aeo-cyan" />
                 <span>How Local Search and AI Discovery Use Business Facts</span>
               </h2>
-              <p className="text-xs sm:text-sm text-white/70 font-light">
-                Understanding how spatial proximity engines and generative retrieval models parse local business data.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <h3 className="text-base font-bold text-white">Local SEO: Maps, Relevance, Prominence &amp; Proximity</h3>
-                <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                  Traditional local search relies on physical GPS distance, category completion in Google Business Profile, local link signals, and review sentiment. On-page content demonstrates local relevance and service clarity so human searchers find accurate details on location pages.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <h3 className="text-base font-bold text-white">GEO: Entity Verification, Service Coverage &amp; Consistency</h3>
-                <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                  AI search systems retrieve and reconcile business details across indexed first-party content, structured schema, directory citations, and knowledge-graph-like data. Rather than relying on simple keyword matching, generative systems evaluate whether business facts are corroborating across independent sources.
-                </p>
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                Local search systems may weigh location, category relevance, prominence, reviews, and proximity. AI-assisted search experiences may also reconcile facts from a business website, structured data, maps profiles, directories, reviews, and other authoritative sources before presenting a recommendation or answer.
               </div>
             </div>
-          </div>
 
-          {/* SECTION 4: THE LOCAL ENTITY SIGNALS THAT MATTER */}
-          <div id="sec-signals" className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                The Local Entity Signals That Matter
+            {/* Entity Signal Section */}
+            <div className="space-y-3">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
+                <span>The Local Entity Signals That Matter</span>
               </h2>
-              <p className="text-xs sm:text-sm text-white/70 font-light">
-                Core structural building blocks required to verify identity and location across generative search pipelines.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <span className="text-xs font-mono text-aeo-cyan font-bold">SIGNAL 01</span>
-                <h3 className="text-base font-bold text-white">Name, Address, Phone &amp; Hours</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Canonical Name, Address, and Phone (NAP) syntax combined with accurate operating hours prevent confidence drops when generative models cross-check directory listings.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <span className="text-xs font-mono text-aeo-cyan font-bold">SIGNAL 02</span>
-                <h3 className="text-base font-bold text-white">Location &amp; Service Area Boundaries</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Deploying explicit <code className="text-aeo-cyan font-mono">GeoCoordinates</code> and <code className="text-aeo-cyan font-mono">areaServed</code> microdata clarifies machine-readable facts, helping search engines understand your exact regional scope.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
-                <span className="text-xs font-mono text-aeo-cyan font-bold">SIGNAL 03</span>
-                <h3 className="text-base font-bold text-white">First-Party &amp; Third-Party Corroboration</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Aligning first-party website schema with verified third-party listings ensures retrieval systems reconcile consistent evidence across all digital touchpoints.
-                </p>
+              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                Treat your website as the canonical source of local business facts: publish the same verifiable name, address, phone number, hours, services, and service areas in visible content, then express compatible facts in relevant structured data. Use schema to clarify content—not to introduce claims users cannot verify on the page.
               </div>
             </div>
-          </div>
 
-          {/* SECTION 5: COMMON LOCAL DISCOVERY FAILURES */}
-          <div id="sec-failures" className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-amber-400" />
+            {/* Failure Section */}
+            <div className="space-y-3">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-amber-400" />
                 <span>Common Local Discovery Failures</span>
               </h2>
-              <p className="text-xs sm:text-sm text-white/70 font-light">
-                Why businesses get dropped from generative AI search recommendations.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
-                <h3 className="text-sm font-bold text-amber-400">1. NAP &amp; Operating Hours Conflicts</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  When directory listings show 9-to-5 operating hours while website copy claims 24/7 service, generative models encounter an entity confidence conflict and often omit the business from after-hours recommendations.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
-                <h3 className="text-sm font-bold text-amber-400">2. Ambiguous Service Areas</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Unclear suburb boundaries or missing geographic declarations leave AI systems unsure if your business actually serves target regional queries, diluting local citation likelihood.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
-                <h3 className="text-sm font-bold text-amber-400">3. Weak or Thin Location Content</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  The important distinction is not page count, but whether each page has unique, useful local evidence and a legitimate user purpose. Thin, templated suburb pages cause issues, while well-supported location pages with real local proof are valid.
-                </p>
-              </div>
-
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2">
-                <h3 className="text-sm font-bold text-amber-400">4. Unsupported Business Claims</h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Claiming service specialisations or regional authority without structured schema or verifiable local case study proofs reduces the factual confidence score assigned by AI retrieval scrapers.
-                </p>
+              <div className="p-5 bg-white/[0.02] border border-amber-500/20 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                Long-form content can obscure critical local facts when users—or systems—need a direct answer. Place important details such as operating hours, emergency availability, service boundaries, eligibility, and address information in concise, visible question-and-answer or fact blocks, supported by explanatory copy where needed.
               </div>
             </div>
           </div>
 
-          {/* MID-PAGE CTA CORRIDOR */}
-          <div id="sec-cta" className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl my-4">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-              Run Local GEO Audit — Fix Entity Ambiguity Before AI Hallucinates Your Business
-            </h3>
-            <p className="text-xs sm:text-sm text-white/70 max-w-lg mx-auto font-light">
-              Detect location signal mismatches, NAP discrepancies, and missing JSON-LD schema across Australian search engines.
-            </p>
-            <div className="pt-2 flex justify-center gap-3">
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold text-xs sm:text-sm rounded-xl hover:bg-neutral-100 transition-all duration-300"
-              >
-                <span>Get Free Local GEO Diagnostic</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* SECTION 6: LOCAL GEO IMPLEMENTATION CHECKLIST */}
+          {/* SECTION 4: LOCAL GEO IMPLEMENTATION CHECKLIST */}
           <div id="sec-checklist" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
@@ -584,20 +470,56 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* ACCORDION: VALID GEO MICRODATA BLUEPRINT */}
-          <div id="sec-schema" className="space-y-4 border-t border-white/5 pt-10">
-            <details className="group border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden transition-all duration-200">
+          {/* 4. CLOSING CONVERSION PANEL */}
+          <div id="sec-closing-panel" className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl my-4">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+              Turn Local Business Facts Into a Verifiable Entity System
+            </h3>
+            <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
+              If your address, operating hours, service boundaries, or directory listings conflict, start with a Local GEO Audit. AEObility can identify factual inconsistencies, review local business schema, and prioritise the location signals most likely to create discovery friction.
+            </p>
+            <div className="pt-2 flex flex-wrap justify-center gap-3 sm:gap-4">
+              <Link
+                href="/diagnostic"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-bold text-xs sm:text-sm rounded-xl hover:bg-neutral-100 transition-all duration-300 shadow-lg"
+              >
+                <span>Check Local Entity Clarity — Free Diagnostic</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-bold text-xs sm:text-sm rounded-xl hover:bg-white/10 transition-all duration-300"
+              >
+                <span>Explore The AEObility Blueprint</span>
+                <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+              </Link>
+            </div>
+          </div>
+
+          {/* 5. SCHEMA BLOCK FIX */}
+          <div id="sec-schema-blueprint" className="space-y-4 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <Code className="w-5 h-5 text-aeo-cyan" />
+                <span>Valid GEO Microdata Blueprint</span>
+              </h3>
+              <p className="text-xs text-white/60 font-light">
+                Place this <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD script within your site header, customizing the parameters to match your canonical business facts:
+              </p>
+            </div>
+
+            <details className="group border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden transition-all duration-200" open>
               <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-white hover:text-aeo-cyan list-none text-base transition-colors">
                 <div className="flex items-center gap-2">
                   <Code className="w-5 h-5 text-aeo-cyan" />
-                  <span>Valid GEO Microdata Blueprint</span>
+                  <span>LocalBusiness &amp; GeoCoordinates JSON-LD Snippet</span>
                 </div>
                 <ChevronDown className="w-5 h-5 text-aeo-cyan transition-transform duration-200 group-open:rotate-180" />
               </summary>
               
               <div className="px-6 pb-6 border-t border-white/5 pt-4 space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-mono text-white/60">JSON-LD Schema (LocalBusiness, GeoCoordinates &amp; areaServed)</span>
+                  <span className="text-xs font-mono text-white/60">JSON-LD Microdata Script</span>
                   <CopySchemaButton code={jsonLdExample} />
                 </div>
                 <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 overflow-x-auto font-mono text-xs text-aeo-cyan">
@@ -607,7 +529,7 @@ export default function GEOKnowledgeNodePage() {
             </details>
           </div>
 
-          {/* SECTION 7: FREQUENTLY ASKED QUESTIONS */}
+          {/* FREQUENTLY ASKED QUESTIONS */}
           <div id="sec-faqs" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
