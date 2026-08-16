@@ -45,6 +45,11 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 # 4. Primary Service Playbook & Node Topologies
 
+### Node: `/services/aeo/definition`
+- **Title**: What is AEO in Digital Marketing? Meaning & Concepts
+- **H1**: What is AEO in Digital Marketing? Meaning & Concepts
+- **Summary**: Definitive guide on Answer Engine Optimisation (AEO). Features a 40-word executive summary answer block, 5-step implementation framework (Audit, Chunking, Schema, Internal Linking, Citation Tracking), Baby Bento case study proof point (+17% sales lift, +95% CTR), Common AEO Mistakes, and embedded YouTube video asset (`ghX_txnK7WU`).
+
 ### Node: `/services/aeo/procedures`
 - **Title**: Best AEO Strategies: How to Make Your Business AI-Readable
 - **H1**: Best AEO Strategies: How to Make Your Business AI-Readable
@@ -55,6 +60,10 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
   4. *Nested JSON-LD Schema Markup* (`Organization`, `Service`, `HowTo`, `FAQPage`, `ItemList`)
   5. *Off-Page Entity Authority & Co-Citations* (Wikidata, Knowledge Graph, ABN NAP consistency)
   6. *Multimodal & Conversational Tuning* (Voice search patterns and descriptive image metadata)
+
+### Case Study Node: `/knowledge-hub/case-studies/baby-bento`
+- **Title**: E-Commerce AEO Case Study: Baby Bento
+- **Summary**: Real-world e-commerce proof demonstrating +17% sales uplift and +95% CTR via AI platform direct answer placement and semantic passage refactoring.
 
 ### FAQ Knowledge Graph Topology (`/services/aeo/procedures#faq-knowledge-graph`)
 - **Parent Node**: `1. What is AEO & how does it work?` (`/services/aeo/definition`)

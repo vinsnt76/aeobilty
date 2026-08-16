@@ -34,7 +34,8 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Child Corridor Nodes**: `2. AEO vs SEO` (`/services/aeo/comparison`), `4. What stops your business from showing up?` (`/services/aeo/constraints`), `5. AEO Pricing & Sprint Deliverables` (`/services/aeo/costs-timing`), `8. AI Semantic SEO` (`/knowledge-hub/semantic-seo`).
 - **Sibling Radial Nodes**: `6. Shopify AEO` (`/services/aeo/shopify`), `7. Local Business Visibility` (`/services/aeo/local-business`), `9. AI Search Marketing` (`/services/ai-search-marketing`).
 
-### Key Technical Research Articles, Guides & Tutorials
+### Key Technical Research Articles, Guides & Case Studies
+- **Baby Bento Case Study**: *E-Commerce AEO Case Study: +17% Sales Uplift & +95% CTR via AI Answer Placement* (`https://aeobility.com.au/knowledge-hub/case-studies/baby-bento`)
 - **Technical Guides Directory**: *AEO & AI Search Technical Guides* (`https://aeobility.com.au/knowledge-hub/guides`)
 - **AEO Principles Guide**: *AEO Technical Principles & Structural Refactoring Guide* (`https://aeobility.com.au/knowledge-hub/guides/aeo`)
 - **Multi-Engine AEO & Retrieval Guide**: *How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content* (`https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines`)
@@ -46,6 +47,7 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **RAG Architecture Explainer**: *RAG, Answer Engines & Why Machine‑Readable Content Matters* (`https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation`)
 - **Telemetry Diagnostic Architecture Guide**: *Telemetry Diagnostic Tool: Technical Architecture Guide* (`https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture`)
 - **Query Fan-Out Telemetry**: *How Structured Data Helps You Survive the Query Fan-Out* (`https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out`)
+- **AEO Explainer Video Asset**: *What is AEO in Digital Marketing? Meaning & Concepts YouTube Video Explainer* (`https://youtu.be/ghX_txnK7WU`)
 
 ---
 

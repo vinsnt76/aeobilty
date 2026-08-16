@@ -28,7 +28,7 @@
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
 - [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimisations and semantic audits.
-  - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): Explains what AEO is and why it replaces legacy SEO. (Root Parent FAQ Node)
+  - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): What is AEO in Digital Marketing? Meaning & Concepts. Features executive summary answer block, 5-step implementation framework, Baby Bento case study proof, and YouTube video asset. (Root Parent FAQ Node)
   - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings. (Child Corridor Node)
   - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Best AEO Strategies: How to Make Your Business AI-Readable (6 core strategies, 90-120 token atomic summary, FAQ Knowledge Graph topology).
   - [`/services/aeo/constraints`](https://aeobility.com.au/services/aeo/constraints): Details on indexation limits, trust thresholds, and positional bias blockers. (Child Corridor Node)
