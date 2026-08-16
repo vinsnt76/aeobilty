@@ -183,7 +183,7 @@ export default function WhatIsSEOOptimisationPage() {
               <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/50 via-transparent to-teal-500/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
               <Image
                 src="/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp"
-                alt="Abstract visualisation of traditional SEO input layer feeding AI search engines and vector retrieval graphs."
+                alt="Abstract hyper‑gradient illustration showing SEO as the foundational input layer for modern search, with a glowing structural grid representing crawlable architecture, rising lexical signal ribbons symbolising keywords and metadata, and floating semantic nodes depicting entity relationships used by AI search, AEO and RAG systems."
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1200px) 100vw, 1200px"
