@@ -128,7 +128,17 @@ async function main() {
     const row = dataRows[i];
     const pageName = toAustralianEnglish(row[0] ? row[0].trim() : '');
     const url = row[1] ? row[1].trim() : '';
-    if (!pageName || !url) continue;
+    if (!pageName && !url) continue; // Skip trailing empty lines
+
+    if (row.length !== 18) {
+      console.error(`❌ CSV parsing error at row ${i + 2}: Expected 18 columns, but got ${row.length}. Check for unquoted commas!`);
+      process.exit(1);
+    }
+
+    if (!url || (!url.startsWith('/') && !url.startsWith('http'))) {
+      console.error(`❌ Invalid URL at CSV row ${i + 2}: "${url}". Check CSV alignment!`);
+      process.exit(1);
+    }
 
     const focusKeyphrase = toAustralianEnglish(row[4] ? row[4].trim() : '');
     const description = toAustralianEnglish(row[7] ? row[7].trim() : '');

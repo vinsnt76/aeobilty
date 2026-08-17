@@ -180,7 +180,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "Guides",
         "href": "/knowledge-hub/guides",
-        "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO)",
+        "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO), vector search architecture, RAG dilution mitigation, and entity authority.",
         "entityName": "Guides",
         "isServicePillar": false,
         "isKnowledgeCapsule": true,
@@ -204,8 +204,9 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "Tutorials",
         "href": "/knowledge-hub/tutorials",
-        "description": "Step-by-step technical tutorials for schema and entity optimization.",
-        "entityName": "Tutorials",
+        "description": "Explore step-by-step technical tutorials on Answer Engine Optimisation (AEO), vector semantic density, and positional bias mitigation.",
+        "entityName": "Technical Tutorials",
+        "isServicePillar": false,
         "isKnowledgeCapsule": true,
         "corridors": [
           "scan",
