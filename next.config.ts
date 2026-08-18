@@ -81,6 +81,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/assets/geo-banner',
+        destination: '/fix-local-discovery-with-geo-seo_AEObility.webp',
+        permanent: true,
+      },
+      {
         source: '/knowledge-hub/entity-authority-building',
         destination: '/knowledge-hub/articles/entity-authority-building',
         permanent: true,

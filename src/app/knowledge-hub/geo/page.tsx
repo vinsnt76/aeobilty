@@ -63,7 +63,7 @@ export default function GEOKnowledgeNodePage() {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
         "primaryImageOfPage": {
-          "@id": "https://aeobility.com.au/assets/geo-banner"
+          "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/geo/breadcrumb"
@@ -121,7 +121,7 @@ export default function GEOKnowledgeNodePage() {
 
       {
         "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/assets/geo-banner",
+        "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp",
         "name": "GEO vs Local SEO Framework Banner",
         "description": "Framework diagram comparing Local SEO and Geographic Engine Optimisation (GEO) signals across physical proximity and AI entity discovery by AEObility.",
         "creator": {
@@ -158,7 +158,7 @@ export default function GEOKnowledgeNodePage() {
           "@id": "https://aeobility.com.au/#organization"
         },
         "image": {
-          "@id": "https://aeobility.com.au/assets/geo-banner"
+          "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp"
         }
       },
 
