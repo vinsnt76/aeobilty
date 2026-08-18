@@ -55,8 +55,6 @@
   - [`/knowledge-hub/articles/retrieval-augmented-generation`](https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation): RAG, answer engines & machine-readable content.
   - [`/knowledge-hub/articles/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out): How Structured Data Helps You Survive the Query Fan-Out.
   - [`/knowledge-hub/articles/telemetry-diagnostic-architecture`](https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture): Telemetry Diagnostic Tool: Technical Architecture Guide.
-  - [`/knowledge-hub/telemetry-diagnostic-architecture`](https://aeobility.com.au/knowledge-hub/telemetry-diagnostic-architecture): Telemetry Diagnostic Tool Technical Architecture Guide direct route.
-  - [`/knowledge-hub/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/structured-data-query-fan-out): Structured Data & Query Fan-Out direct guide.
 - [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
   - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
 
@@ -66,9 +64,8 @@
   - [`/about/freelance-seo-consultant-perth`](https://aeobility.com.au/about/freelance-seo-consultant-perth): Technical & semantic SEO consulting.
   - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
   - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
-- [`/contact`](https://aeobility.com.au/contact): Direct lead capture form, booking inquiries, and quote requests.
+- [`/contact`](https://aeobility.com.au/contact): Direct lead capture form, booking inquiries, support, and quote requests.
 - [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic or discovery session.
-- [`/support`](https://aeobility.com.au/support): Technical documentation and support.
 - [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile card and contact info for Vinnie Baker.
 
 ---
