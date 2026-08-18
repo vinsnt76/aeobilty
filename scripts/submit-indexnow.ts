@@ -34,18 +34,19 @@ const urlList = [
   `https://${HOST}/knowledge-hub/articles/aeo-vs-seo`,
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/articles/structured-data-query-fan-out`,
+  `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
   `https://${HOST}/knowledge-hub/guides`,
   `https://${HOST}/knowledge-hub/guides/aeo`,
-  `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
-  `https://${HOST}/knowledge-hub/telemetry-diagnostic-architecture`,
-  `https://${HOST}/knowledge-hub/structured-data-query-fan-out`,
   `https://${HOST}/about`,
   `https://${HOST}/about/freelance-digital-specialist-perth`,
+  `https://${HOST}/about/freelance-seo-consultant-perth`,
+  `https://${HOST}/about/freelance-google-ads-consultant-perth`,
+  `https://${HOST}/about/freelance-ai-consultant-perth`,
   `https://${HOST}/contact`,
   `https://${HOST}/book`,
-  `https://www.${HOST}`,
+  `https://${HOST}/vince-baker`,
 ];
 
 async function submitToIndexNow() {
