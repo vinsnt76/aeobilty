@@ -370,7 +370,7 @@ export default function AEOVsSEOPage() {
                 </Link>
 
                 <Link
-                  href="/audit"
+                  href="/diagnostic"
                   className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/30 transition-all flex items-center justify-center gap-2"
                 >
                   <span>See what the diagnostic assesses</span>
@@ -551,7 +551,7 @@ export default function AEOVsSEOPage() {
                   Run a 2-minute visibility check
                 </Link>
                 <Link
-                  href="/audit"
+                  href="/diagnostic"
                   className="text-xs text-white/70 hover:text-aeo-cyan underline transition-colors"
                 >
                   See what we assess

@@ -204,19 +204,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/knowledge-hub/structured-data-query-fan-out`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/knowledge-hub/telemetry-diagnostic-architecture`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -280,12 +268,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/support`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy`,

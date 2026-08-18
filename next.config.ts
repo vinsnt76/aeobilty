@@ -62,7 +62,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/knowledge-hub/articles/ai-visibility-telemetry',
-        destination: '/knowledge-hub/structured-data-query-fan-out',
+        destination: '/knowledge-hub/articles/structured-data-query-fan-out',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/structured-data-query-fan-out',
+        destination: '/knowledge-hub/articles/structured-data-query-fan-out',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/telemetry-diagnostic-architecture',
+        destination: '/knowledge-hub/articles/telemetry-diagnostic-architecture',
+        permanent: true,
+      },
+      {
+        source: '/support',
+        destination: '/contact',
         permanent: true,
       },
       {
