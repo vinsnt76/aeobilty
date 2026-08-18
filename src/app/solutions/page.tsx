@@ -12,6 +12,9 @@ import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 export const metadata: Metadata = {
   title: "AEO Service Costs, Packages & Sprints | AEObility",
   description: "Explore transparent AEO service costs and pricing models. From our $995 Strategic Blueprint to targeted optimisation sprints, boost your local visibility.",
+  alternates: {
+    canonical: "https://aeobility.com.au/solutions",
+  },
   keywords: [
     "AEO Service Cost",
     "aeo services vs seo services",

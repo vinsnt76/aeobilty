@@ -12,6 +12,9 @@ import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 export const metadata: Metadata = {
   title: "AEO, GEO & AI Search Knowledge Hub | AEObility",
   description: "Explore our AI Search Knowledge Hub for practical AEO guides, schema templates, and modern machine-ingestion strategies to boost your digital visibility.",
+  alternates: {
+    canonical: "https://aeobility.com.au/knowledge-hub",
+  },
   keywords: [
     "AI Search Marketing Course",
     "ai search marketing examples",

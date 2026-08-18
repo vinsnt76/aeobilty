@@ -2,6 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+export const metadata = {
+  title: "Terms & Conditions | AEObility",
+  description: "Terms and conditions governing the use of AEObility website, visibility diagnostic tools, and consultancy services.",
+  alternates: {
+    canonical: "https://aeobility.com.au/terms",
+  },
+};
+
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen bg-black text-white py-16 px-6 font-sans">

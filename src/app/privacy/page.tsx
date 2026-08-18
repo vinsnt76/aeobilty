@@ -2,6 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+export const metadata = {
+  title: "Privacy Policy | AEObility",
+  description: "Learn how AEObility protects your personal information in accordance with the Australian Privacy Principles (APPs) under the Privacy Act 1988 (Cth).",
+  alternates: {
+    canonical: "https://aeobility.com.au/privacy",
+  },
+};
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-black text-white py-16 px-6 font-sans">

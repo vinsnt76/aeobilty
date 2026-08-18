@@ -7,6 +7,9 @@ import { Calendar, ShieldCheck, Compass } from 'lucide-react';
 export const metadata: Metadata = {
   title: "Book a Clarity Call | AEObility",
   description: "Book a complimentary 15-minute call with an AEO and AI search specialist to review your visibility roadmap.",
+  alternates: {
+    canonical: "https://aeobility.com.au/book",
+  },
   keywords: [
     "Book a Call",
     "Clarity Call",

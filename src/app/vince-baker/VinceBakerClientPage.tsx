@@ -1,0 +1,246 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import './card.css';
+
+export default function VinceBakerClientPage() {
+  const [walletUrl, setWalletUrl] = useState<string | null>(null);
+  const [shareTooltip, setShareTooltip] = useState('Share');
+
+  useEffect(() => {
+    fetch('/api/wallet-pass')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.url) {
+          setWalletUrl(data.url);
+        }
+      })
+      .catch((err) => console.error("Error fetching Google Wallet pass link:", err));
+  }, []);
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Vinnie Baker - AEObility',
+      text: 'Vinnie Baker - Founder, AEO & AI Automation Specialist',
+      url: window.location.href,
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        if ((err as Error).name !== 'AbortError') {
+          console.error('Error sharing:', err);
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        setShareTooltip('Link copied!');
+        setTimeout(() => setShareTooltip('Share'), 2000);
+      } catch (err) {
+        console.error('Failed to copy link:', err);
+      }
+    }
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://aeobility.com.au/#person",
+    "name": "Vinnie Baker",
+    "alternateName": ["Vince Baker", "Vincent Baker"],
+    "jobTitle": "Founder & AI Search Automation Specialist",
+    "url": "https://aeobility.com.au/vince-baker",
+    "image": "https://aeobility.com.au/vinnie-baker.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/vincentbakerperth/",
+      "https://github.com/vinsnt76"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organization",
+      "name": "AEObility",
+      "legalName": "Trekaboutoz",
+      "url": "https://aeobility.com.au"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Perth",
+      "addressRegion": "WA",
+      "addressCountry": "AU"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <div className="vince-card-page font-sans">
+        {/* Background Glows */}
+        <div className="vince-glow vince-glow-purple" />
+        <div className="vince-glow vince-glow-cyan" />
+
+        <div className="vince-card-container">
+          
+          {/* Header Action Bar */}
+          <div className="vince-action-bar">
+            <span className="vince-badge">
+              <span className="vince-pulse-dot" />
+              Available for AEO Sprints
+            </span>
+            <button
+              onClick={handleShare}
+              className="vince-share-btn"
+              title={shareTooltip}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+              <span>{shareTooltip}</span>
+            </button>
+          </div>
+
+          {/* Profile Section */}
+          <div className="vince-profile-section">
+            <div className="vince-avatar-wrapper">
+              <Image
+                src="/vinnie-baker.jpg"
+                alt="Vinnie Baker - Founder of AEObility"
+                width={112}
+                height={112}
+                priority
+                className="vince-avatar-img"
+              />
+              <div className="vince-avatar-ring" />
+            </div>
+
+            <div className="vince-profile-info">
+              <h1 className="vince-name">Vinnie Baker</h1>
+              <p className="vince-title">Founder &amp; AI Search Specialist</p>
+              <p className="vince-location">
+                <svg className="w-3.5 h-3.5 text-aeo-cyan inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Perth, Western Australia &bull; AEObility
+              </p>
+            </div>
+          </div>
+
+          {/* Bio */}
+          <p className="vince-bio font-serif">
+            Specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and LLM knowledge graph reconciliation for Australian small businesses.
+          </p>
+
+          {/* Action Links Grid */}
+          <div className="vince-links-grid">
+            <a
+              href="/vcard.vcf"
+              download="Vinnie_Baker_AEObility.vcf"
+              className="vince-link-btn vince-btn-primary"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Save Contact (vCard)</span>
+            </a>
+
+            {walletUrl ? (
+              <a
+                href={walletUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vince-link-btn vince-btn-wallet"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+                <span>Save to Google Wallet</span>
+              </a>
+            ) : (
+              <div className="vince-link-btn vince-btn-wallet opacity-50 cursor-not-allowed">
+                <span>Loading Wallet Pass...</span>
+              </div>
+            )}
+
+            <a
+              href="https://cal.com/vince-baker-aeo-call/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vince-link-btn vince-btn-secondary"
+            >
+              <svg className="w-5 h-5 text-aeo-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Book 15-Min Clarity Call</span>
+            </a>
+
+            <a
+              href="/diagnostic"
+              className="vince-link-btn vince-btn-secondary"
+            >
+              <svg className="w-5 h-5 text-aeo-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <span>Free AI Search Diagnostic</span>
+            </a>
+          </div>
+
+          {/* Social Links */}
+          <div className="vince-socials">
+            <a
+              href="https://www.linkedin.com/in/vincentbakerperth/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vince-social-link"
+              aria-label="LinkedIn Profile"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="https://github.com/vinsnt76"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vince-social-link"
+              aria-label="GitHub Profile"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="mailto:vince@aeobility.com.au"
+              className="vince-social-link"
+              aria-label="Email Vinnie"
+            >
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>Email</span>
+            </a>
+          </div>
+
+          {/* Footer branding */}
+          <div className="vince-footer-brand font-serif">
+            <a href="https://aeobility.com.au" className="hover:text-aeo-cyan transition-colors">
+              aeobility.com.au
+            </a>
+            <span className="text-white/20">&bull;</span>
+            <span>Perth, WA</span>
+          </div>
+
+        </div>
+      </div>
+    </>
+  );
+}
