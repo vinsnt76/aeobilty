@@ -119,13 +119,87 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": "https://aeobility.com.au/#organization",
                   "name": "AEObility",
+                  "alternateName": [
+                    "AEO Bility",
+                    "AEObilty",
+                    "AEO bility Perth",
+                    "AEObility Perth"
+                  ],
                   "legalName": "Trekaboutoz trading as AEObility",
                   "url": "https://aeobility.com.au",
                   "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
                   "telephone": "0480286282",
                   "address": {
                     "@type": "PostalAddress",
+                    "addressLocality": "Perth",
+                    "addressRegion": "WA",
                     "addressCountry": "AU"
+                  },
+                  "founder": {
+                    "@type": "Person",
+                    "@id": "https://aeobility.com.au/#person"
+                  },
+                  "areaServed": [
+                    {
+                      "@type": "City",
+                      "name": "Perth",
+                      "sameAs": "https://en.wikipedia.org/wiki/Perth"
+                    },
+                    {
+                      "@type": "AdministrativeArea",
+                      "name": "Western Australia",
+                      "sameAs": "https://en.wikipedia.org/wiki/Western_Australia"
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "Australia"
+                    }
+                  ],
+                  "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "AEO & AI Search Marketing Services",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Answer Engine Optimisation (AEO)",
+                          "url": "https://aeobility.com.au/services/aeo"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "GEO Marketing Services",
+                          "url": "https://aeobility.com.au/services/geo-marketing"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "AI Search Marketing",
+                          "url": "https://aeobility.com.au/services/ai-search-marketing"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "The AEObility MVP Strategic Blueprint",
+                          "url": "https://aeobility.com.au/solutions/aeo-blueprint"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "AEO Technical Sprints",
+                          "url": "https://aeobility.com.au/solutions/aeo-sprint"
+                        }
+                      }
+                    ]
                   },
                   "taxID": "61029803255",
                   "sameAs": [
@@ -160,10 +234,12 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://aeobility.com.au/#person",
                   "name": "Vinnie Baker",
+                  "alternateName": ["Vince Baker"],
                   "jobTitle": "Founder & AEO Specialist",
                   "url": "https://aeobility.com.au/vince-baker",
                   "sameAs": [
-                    "https://www.linkedin.com/in/vince-baker/"
+                    "https://www.linkedin.com/in/vince-baker/",
+                    "https://github.com/vinsnt76"
                   ],
                   "worksFor": {
                     "@id": "https://aeobility.com.au/#organization"

@@ -25,6 +25,41 @@ export default function AEOBlueprintPage() {
         "name": "The AEObility MVP Strategic Blueprint",
         "image": "https://aeobility.com.au/client-milestones-onboarding.png",
         "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
+          "name": "AEObility",
+          "legalName": "Trekaboutoz trading as AEObility",
+          "url": "https://aeobility.com.au",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Perth",
+            "addressRegion": "WA",
+            "addressCountry": "AU"
+          },
+          "founder": {
+            "@type": "Person",
+            "@id": "https://aeobility.com.au/#person",
+            "name": "Vinnie Baker",
+            "alternateName": "Vince Baker",
+            "url": "https://aeobility.com.au/vince-baker",
+            "sameAs": [
+              "https://www.linkedin.com/in/vince-baker/"
+            ]
+          }
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/#person",
+          "name": "Vinnie Baker",
+          "jobTitle": "Founder & AEO Specialist",
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://aeobility.com.au/#organization",
+            "name": "AEObility",
+            "legalName": "Trekaboutoz trading as AEObility"
+          }
+        },
         "offers": {
           "@type": "Offer",
           "price": "995",

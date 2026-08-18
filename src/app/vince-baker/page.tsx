@@ -56,15 +56,27 @@ export default function VinceBakerPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
+            "@id": "https://aeobility.com.au/#person",
             "name": "Vinnie Baker",
-            "jobTitle": "Founder",
+            "alternateName": "Vince Baker",
+            "jobTitle": "Founder & AEO Specialist",
+            "url": "https://aeobility.com.au/vince-baker",
             "worksFor": {
               "@type": "Organization",
+              "@id": "https://aeobility.com.au/#organization",
               "name": "AEObility",
-              "url": "https://aeobility.com.au"
+              "legalName": "Trekaboutoz trading as AEObility",
+              "url": "https://aeobility.com.au",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Perth",
+                "addressRegion": "WA",
+                "addressCountry": "AU"
+              }
             },
             "sameAs": [
               "https://www.linkedin.com/in/vince-baker/",
+              "https://github.com/vinsnt76",
               "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
             ]
           })

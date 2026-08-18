@@ -26,8 +26,38 @@ export default function AEOSprintPage() {
         "description": "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
         "provider": {
           "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
-          "url": "https://aeobility.com.au"
+          "legalName": "Trekaboutoz trading as AEObility",
+          "url": "https://aeobility.com.au",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Perth",
+            "addressRegion": "WA",
+            "addressCountry": "AU"
+          },
+          "founder": {
+            "@type": "Person",
+            "@id": "https://aeobility.com.au/#person",
+            "name": "Vinnie Baker",
+            "alternateName": "Vince Baker",
+            "url": "https://aeobility.com.au/vince-baker",
+            "sameAs": [
+              "https://www.linkedin.com/in/vince-baker/"
+            ]
+          }
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/#person",
+          "name": "Vinnie Baker",
+          "jobTitle": "Founder & AEO Specialist",
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://aeobility.com.au/#organization",
+            "name": "AEObility",
+            "legalName": "Trekaboutoz trading as AEObility"
+          }
         }
       }
     ]
