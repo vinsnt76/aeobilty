@@ -569,7 +569,7 @@ export default function LocalBusinessAEOPage() {
                   Technical Implementation
                 </span>
                 <p className="text-xs text-white/80 font-light leading-relaxed">
-                  Skip the audit. Move straight into technical liquid feed refactoring and location schema deployment for immediate machine-readable proof.
+                  Skip the diagnostic audit and move straight into updating your website&apos;s location information and structured data.
                 </p>
               </div>
 
@@ -775,17 +775,6 @@ export default function LocalBusinessAEOPage() {
               </div>
             </details>
 
-            <div className="pt-2 space-y-3">
-              <h3 className="text-sm font-bold text-white font-mono">Plain-Language Glossary</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {plainGlossary.map((g, idx) => (
-                  <div key={idx} className="p-4 bg-white/[0.01] border border-white/5 rounded-2xl space-y-1">
-                    <h4 className="text-xs font-bold text-aeo-cyan font-mono">{g.term}</h4>
-                    <p className="text-xs text-white/60 leading-relaxed font-light">{g.definition}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </section>
 
           {/* SECTION 8 — Areas we serve */}
@@ -797,16 +786,50 @@ export default function LocalBusinessAEOPage() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-1">
-              {PerthSuburbs.map((suburb, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-white/80 font-mono inline-flex items-center gap-1.5"
-                >
-                  <MapPin className="w-3 h-3 text-aeo-cyan" />
-                  {suburb}
-                </span>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+              <div className="p-3.5 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase block">Central &amp; Inner</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Perth CBD", "West Perth", "East Perth", "Subiaco", "Leederville"].map((suburb, idx) => (
+                    <span key={idx} className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-white/80 font-mono">
+                      {suburb}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-3.5 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                <span className="text-[11px] font-mono font-bold text-blue-400 uppercase block">North Metro</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Joondalup", "Stirling", "Scarborough"].map((suburb, idx) => (
+                    <span key={idx} className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-white/80 font-mono">
+                      {suburb}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-3.5 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                <span className="text-[11px] font-mono font-bold text-aeo-purple uppercase block">South &amp; East</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Victoria Park", "South Perth", "Booragoon", "Cannington", "Midland"].map((suburb, idx) => (
+                    <span key={idx} className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-white/80 font-mono">
+                      {suburb}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-3.5 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase block">Coastal &amp; South-West</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Fremantle", "Rockingham"].map((suburb, idx) => (
+                    <span key={idx} className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-white/80 font-mono">
+                      {suburb}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="pt-2">
@@ -867,6 +890,24 @@ export default function LocalBusinessAEOPage() {
                     {faq.a}
                   </p>
                 </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Plain-Language Glossary */}
+          <section className="space-y-4 border-t border-white/5 pt-8">
+            <div className="space-y-1">
+              <h3 className="text-sm font-bold text-white font-mono">Plain-Language Glossary</h3>
+              <p className="text-xs text-white/60 font-light">
+                Key terms explained in clear, everyday language for local business owners.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {plainGlossary.map((g, idx) => (
+                <div key={idx} className="p-4 bg-white/[0.01] border border-white/5 rounded-2xl space-y-1">
+                  <h4 className="text-xs font-bold text-aeo-cyan font-mono">{g.term}</h4>
+                  <p className="text-xs text-white/60 leading-relaxed font-light">{g.definition}</p>
+                </div>
               ))}
             </div>
           </section>

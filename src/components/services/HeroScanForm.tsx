@@ -43,7 +43,7 @@ export default function HeroScanForm() {
           type="submit"
           className="px-6 py-3.5 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] flex items-center justify-center gap-2 whitespace-nowrap"
         >
-          <span>Scan My Local Coordinates</span>
+          <span>Check my local visibility</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </form>
