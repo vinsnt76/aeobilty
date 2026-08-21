@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import {
@@ -22,7 +23,9 @@ import {
   HelpCircle,
   BookOpen,
   Activity,
-  UserCheck
+  UserCheck,
+  Search,
+  Globe
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -35,6 +38,18 @@ export const metadata = {
 };
 
 export default function LocalBusinessAEOPage() {
+  const [siteUrl, setSiteUrl] = useState('');
+  const router = useRouter();
+
+  const handleHeroScanSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (siteUrl.trim()) {
+      router.push(`/diagnostic?url=${encodeURIComponent(siteUrl.trim())}`);
+    } else {
+      router.push('/diagnostic');
+    }
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -364,34 +379,52 @@ export default function LocalBusinessAEOPage() {
         <article className="flex flex-col gap-12">
           
           {/* SECTION 1 — Hero */}
-          <header className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Grounded Local Search &amp; AEO for WA Businesses</span>
+          <header className="space-y-6">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Grounded Local Search &amp; AEO for WA Businesses</span>
+              </div>
+              
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                Local Business <span className="text-gradient-aeo">AEO Services in Perth</span>
+              </h1>
+              
+              <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
+                Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences. AEObility combines local SEO foundations with clear service content, accurate business information, and structured data where appropriate.
+              </p>
             </div>
-            
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Local Business <span className="text-gradient-aeo">AEO Services in Perth</span>
-            </h1>
-            
-            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
-              Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences. AEObility combines local SEO foundations with clear service content, accurate business information, and structured data where appropriate.
-            </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="btn-primary flex items-center gap-2 text-xs"
-              >
-                <span>Explore the $995 Blueprint</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/book"
-                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-2"
-              >
-                <span>Book a Strategy Call</span>
-              </Link>
+            {/* CTA POSITION 1 — The Hero Entry Hook (Corridor C) */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 max-w-xl">
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-wider block">
+                  Check Local Discoverability &bull; Zero Technical Noise
+                </span>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Paste your primary business URL for an instant entity visibility report.
+                </p>
+              </div>
+
+              <form onSubmit={handleHeroScanSubmit} className="flex flex-col sm:flex-row gap-3">
+                <div className="relative flex-grow">
+                  <Globe className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={siteUrl}
+                    onChange={(e) => setSiteUrl(e.target.value)}
+                    placeholder="https://yourbusiness.com.au"
+                    className="w-full bg-black/60 border border-white/15 rounded-xl pl-10 pr-4 py-3 text-xs text-white placeholder:text-white/30 focus:outline-none focus:border-aeo-cyan transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-3.5 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] flex items-center justify-center gap-2 whitespace-nowrap"
+                >
+                  <span>Scan My Local Coordinates</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
             </div>
           </header>
 
@@ -439,6 +472,31 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
+          {/* CTA POSITION 2 — The Mid-Page Low-Friction Offer (Corridor A) */}
+          <section className="p-6 md:p-8 bg-gradient-to-r from-aeo-purple/20 via-black to-aeo-cyan/20 border border-white/15 rounded-2xl space-y-4 relative overflow-hidden">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-2 max-w-xl">
+                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-wider block">
+                  Corridor A &bull; Low-Friction Commercial Entry
+                </span>
+                <h3 className="text-xl font-bold text-white">
+                  A low-risk diagnostic uncovering exactly how AI search engines interpret your physical location.
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Includes a 100% credit guarantee towards subsequent implementation sprints. No pressure. Just clarity.
+                </p>
+              </div>
+
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="px-6 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.3)] inline-flex items-center gap-2 whitespace-nowrap self-start md:self-auto"
+              >
+                <span>Claim Your $995 Clarity Blueprint</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </section>
+
           {/* SECTION 3 — Local SEO & AEO: How They Work Together */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
@@ -468,6 +526,26 @@ export default function LocalBusinessAEOPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* CTA POSITION 3 — The Inline Capability Matrix Token (Corridor B) */}
+            <div className="p-5 bg-white/[0.01] border border-white/10 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="space-y-1 max-w-xl">
+                <span className="text-[10px] font-mono text-aeo-cyan uppercase font-bold block">
+                  Corridor B &bull; High-Intent Technical Execution
+                </span>
+                <p className="text-xs text-white/80 font-light leading-relaxed">
+                  Skip the audit. Move straight into technical liquid feed refactoring and location schema deployment for immediate machine-readable proof.
+                </p>
+              </div>
+
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="border border-aeo-cyan text-aeo-cyan hover:bg-aeo-cyan/10 transition-colors px-5 py-3 rounded-xl font-mono text-xs font-bold inline-flex items-center gap-2 whitespace-nowrap self-start md:self-auto"
+              >
+                <Code2 className="w-4 h-4" />
+                <span>Deploy Schema Sprints</span>
+              </Link>
             </div>
 
             <p className="text-xs text-white/70 font-light leading-relaxed bg-white/[0.02] p-4 rounded-xl border border-white/5">
@@ -697,7 +775,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* SECTION 9 — Mandatory Target Link Corridors (Lattice Connectivity) */}
+          {/* SECTION 9 — Mandatory Target Link Corridors (Lattice Mesh) */}
           <section className="p-6 bg-white/[0.01] border border-white/10 rounded-2xl space-y-4">
             <div className="space-y-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">Required Link Corridors &amp; Knowledge Mesh</span>
@@ -826,6 +904,34 @@ export default function LocalBusinessAEOPage() {
               >
                 <Activity className="w-3.5 h-3.5 text-aeo-cyan" />
                 <span>Check AI Search Readiness</span>
+              </Link>
+            </div>
+          </section>
+
+          {/* CTA POSITION 4 — Terminal Radial Loop Continuity Guard */}
+          <section className="p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl space-y-4 font-serif border-l-4 border-l-aeo-cyan">
+            <div className="space-y-2">
+              <span className="font-sans text-[11px] font-mono text-aeo-cyan font-bold uppercase tracking-wider block">
+                Radial Loop Continuity Guard &bull; Human Practitioner Proof
+              </span>
+              <h3 className="text-xl md:text-2xl font-normal italic text-white/90 leading-snug">
+                &ldquo;Verify local case evidence: See how Western Australian local trades and clinics dominate location-aware search graphs.&rdquo;
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-2 font-sans text-xs">
+              <Link
+                href="/about/freelance-seo-consultant-perth"
+                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-all inline-flex items-center gap-2"
+              >
+                <UserCheck className="w-4 h-4 text-aeo-cyan" />
+                <span>Continue to Perth Consultant Profile &rarr;</span>
+              </Link>
+              <Link
+                href="/knowledge-hub/case-studies/baby-bento"
+                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white/80 font-medium hover:text-white transition-all inline-flex items-center gap-2"
+              >
+                <span>Read Baby Bento Perth Case Study &rarr;</span>
               </Link>
             </div>
           </section>
