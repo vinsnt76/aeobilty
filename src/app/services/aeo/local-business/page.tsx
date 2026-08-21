@@ -40,6 +40,25 @@ export const metadata = {
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/local-business",
   },
+  openGraph: {
+    title: "Local Business AEO & GEO Marketing Services in Perth | AEObility",
+    description: "Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences.",
+    url: "https://aeobility.com.au/services/aeo/local-business",
+    images: [
+      {
+        url: "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+        width: 800,
+        height: 800,
+        alt: "Vince Baker - Founder, AEO & GEO Specialist at AEObility Perth WA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Local Business AEO & GEO Marketing Services in Perth | AEObility",
+    description: "Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences.",
+    images: ["https://aeobility.com.au/Profile-Picture-Vinnie.png"],
+  },
 };
 
 export default function LocalBusinessAEOPage() {
@@ -102,6 +121,10 @@ export default function LocalBusinessAEOPage() {
             "closes": "17:00"
           }
         ],
+        "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+        "founder": {
+          "@id": "https://aeobility.com.au/#vince-baker"
+        },
         "sameAs": [
           "https://www.truelocal.com.au/business/aeobility",
           "https://www.yellowpages.com.au/wa/perth/aeobility",
@@ -118,6 +141,26 @@ export default function LocalBusinessAEOPage() {
             "name": "Get AEObility Blueprint",
             "target": "https://aeobility.com.au/solutions/aeo-blueprint"
           }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/#vince-baker",
+        "name": "Vince Baker",
+        "jobTitle": "Founder, AEO & GEO Specialist",
+        "worksFor": {
+          "@id": "https://aeobility.com.au/#localbusiness"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://aeobility.com.au/Profile-Picture-Vinnie.png#primaryimage",
+          "url": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+          "contentUrl": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+          "caption": "Vince Baker - Founder, AEO & GEO Specialist at AEObility Perth WA"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/vincebaker",
+          "https://aeobility.com.au/vince-baker"
         ]
       },
       {
@@ -668,9 +711,11 @@ export default function LocalBusinessAEOPage() {
 
             {/* Founder Practitioner Card */}
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-5">
-              <div className="p-3 bg-aeo-cyan/10 border border-aeo-cyan/30 rounded-2xl text-aeo-cyan flex-shrink-0">
-                <User className="w-8 h-8" />
-              </div>
+              <img
+                src="/Profile-Picture-Vinnie.png"
+                alt="Vince Baker - Founder, AEO & GEO Specialist at AEObility Perth WA"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover border-2 border-aeo-cyan/40 shadow-lg flex-shrink-0"
+              />
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white">Vince Baker &bull; Founder, AEO &amp; GEO Specialist</h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
