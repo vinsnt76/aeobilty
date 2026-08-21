@@ -111,10 +111,18 @@ export default function GEOMarketingPage() {
           "postalCode": "6000",
           "addressCountry": "Australia"
         },
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Perth, Australia"
-        },
+        "areaServed": [
+          { "@type": "City", "name": "Perth" },
+          { "@type": "AdministrativeArea", "name": "Western Australia" },
+          { "@type": "City", "name": "West Perth" },
+          { "@type": "City", "name": "Subiaco" },
+          { "@type": "City", "name": "Fremantle" },
+          { "@type": "City", "name": "Joondalup" },
+          { "@type": "City", "name": "Stirling" },
+          { "@type": "City", "name": "Victoria Park" },
+          { "@type": "City", "name": "Midland" },
+          { "@type": "City", "name": "Rockingham" }
+        ],
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": -31.9523,
