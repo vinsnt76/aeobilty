@@ -25,7 +25,10 @@ import {
   Activity,
   UserCheck,
   Search,
-  Globe
+  Globe,
+  CheckSquare,
+  ArrowRightCircle,
+  User
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -59,7 +62,7 @@ export default function LocalBusinessAEOPage() {
         "name": "AEObility",
         "legalName": "Trekaboutoz trading as AEObility",
         "url": "https://aeobility.com.au",
-        "telephone": "+61-8-9000-0000",
+        "telephone": "0480 286 282",
         "email": "contact@aeobility.com.au",
         "priceRange": "$$",
         "description": "Local Business AEO and local search services for Perth and Western Australian small businesses.",
@@ -146,20 +149,20 @@ export default function LocalBusinessAEOPage() {
             "name": "What is the difference between Local SEO and Local AEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Local SEO focuses on improving discoverability, technical quality, Google Business Profile details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
+              "text": "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
             }
           },
           {
             "@type": "Question",
-            "name": "Can any agency guarantee a top 3 placement in Google Map Packs?",
+            "name": "Can any agency guarantee a top-three Google Maps result?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. No agency can guarantee placement in the Google Map Pack. Local Map Pack visibility is influenced by relevance, distance, prominence, competition, category selection, review velocity, business legitimacy, and real-time query context."
+              "text": "No. Google Maps visibility depends on factors such as relevance, distance, prominence, competition, category fit, reviews, and the searcher's location. AEObility can improve the accuracy and quality of local-search foundations, but no agency can guarantee a specific Map Pack position."
             }
           },
           {
             "@type": "Question",
-            "name": "How does structured JSON-LD data help local search engines?",
+            "name": "How does structured data help a local business website?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Structured JSON-LD data provides search engines with clear, standardized code declaring business attributes like legal name, address, opening hours, and operating areas. It helps clarify business facts when it matches visible page content, though it does not guarantee specific rankings or inclusion in AI answers."
@@ -167,10 +170,34 @@ export default function LocalBusinessAEOPage() {
           },
           {
             "@type": "Question",
-            "name": "What sectors do you serve in Perth and Western Australia?",
+            "name": "Do I need a physical Perth address to use local SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical, HVAC), allied health clinics (physiotherapy, dental, medical), professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+              "text": "Service-area businesses that travel to clients (such as mobile plumbers or electricians) can operate without showing a physical storefront address, provided their Google Business Profile service areas and on-site location pages accurately reflect their operating regions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Perth businesses are a good fit for local AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local AEO is ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is included in the $995 AEObility Blueprint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The $995 AEObility Blueprint includes a complete audit of your local presence, NAP directory consistency, Google Business Profile configuration, key service pages, structured data checklist, a 90-day action roadmap, and a 45-minute strategy walkthrough with 100% credit-back terms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does local SEO and AEO work take to show results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Initial search engine crawlability and structured data indexation updates are typically processed within 30 to 60 days. Broader improvements in search impressions, lead quality, and customer inquiry clarity generally develop over 90 days as search engines validate consistent business details."
             }
           }
         ]
@@ -201,18 +228,18 @@ export default function LocalBusinessAEOPage() {
     }
   ];
 
-  const conversationalPrompts = [
+  const customerQuestionsTable = [
     {
-      prompt: '"Who provides AEO and local-search strategy for Perth small businesses?"',
-      analysis: "Search systems evaluate website service clarity, location indicators, and provider experience to answer local inquiries."
+      question: '"Who offers local SEO and AEO support in Perth?"',
+      clearResponse: "Your experience, services, location, process, and contact details"
     },
     {
-      prompt: '"Find an emergency electrician serving Subiaco"',
-      analysis: "Search engines cross-reference Google Business Profile service areas, operating hours, and location pages to identify active regional providers."
+      question: '"Find an emergency electrician in Subiaco"',
+      clearResponse: "Service area, operating hours, emergency availability, contact information, and relevant services"
     },
     {
-      prompt: '"What is included in a Perth local search audit?"',
-      analysis: "Decision-stage questions benefit from explicit pricing factors, service inclusions, and clear execution timelines."
+      question: '"What is included in a Perth local-search audit?"',
+      clearResponse: "Scope, deliverables, timing, price factors, and next steps"
     }
   ];
 
@@ -220,7 +247,7 @@ export default function LocalBusinessAEOPage() {
     {
       badge: "01. Data Audit",
       label: "Local Data & Directory Consistency Audit",
-      desc: "Comprehensive review of Name, Address, and Phone (NAP) details across your website, Google Business Profile, True Local, and Yellow Pages AU.",
+      desc: "Comprehensive review of Name, Address, and Phone (NAP) details across your website, Google Business Profile (GBP), True Local, and Yellow Pages AU.",
       bullets: [
         "Canonical NAP alignment check",
         "Directory inaccuracy report",
@@ -252,8 +279,8 @@ export default function LocalBusinessAEOPage() {
       label: "JSON-LD Structured Data Implementation",
       desc: "Deploy valid Schema.org LocalBusiness, PostalAddress, and areaServed JSON-LD code matching visible on-page text.",
       bullets: [
-        "Nested LocalBusiness JSON-LD markup",
-        "Explicit GeoCoordinates & areaServed setup",
+        "Local business structured data that matches your website",
+        "Accurate address, service-area, and location details",
         "Schema Validator verification"
       ]
     },
@@ -278,7 +305,7 @@ export default function LocalBusinessAEOPage() {
   const plainGlossary = [
     { term: "Entity", definition: "A distinct thing, such as a business, person, service, product, or location." },
     { term: "Structured data", definition: "Code (such as JSON-LD) that helps search engines understand key page details." },
-    { term: "Answer engine", definition: "A search or conversational platform that provides direct answers alongside or instead of traditional search results." },
+    { term: "Answer engine", definition: "A search or conversational platform that provides direct answers alongside traditional search results." },
     { term: "Local SEO", definition: "Improving visibility in local organic search results, Google Business Profile, and Map listings." },
     { term: "Local AEO", definition: "Applying answer-focused content and accurate business facts to the questions local customers ask." },
     { term: "Comparison content", definition: "Content that fairly evaluates options against consistent criteria." }
@@ -287,19 +314,31 @@ export default function LocalBusinessAEOPage() {
   const faqs = [
     {
       q: "What is the difference between Local SEO and Local AEO?",
-      a: "Local SEO focuses on improving discoverability, technical quality, Google Business Profile details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
+      a: "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
     },
     {
-      q: "Can any agency guarantee a top 3 placement in Google Map Packs?",
-      a: "No. No agency can guarantee placement in the Google Map Pack. Local Map Pack visibility is influenced by relevance, distance, prominence, competition, category selection, review velocity, business legitimacy, and real-time query context."
+      q: "Can any agency guarantee a top-three Google Maps result?",
+      a: "No. Google Maps visibility depends on factors such as relevance, distance, prominence, competition, category fit, reviews, and the searcher's location. AEObility can improve the accuracy and quality of local-search foundations, but no agency can guarantee a specific Map Pack position."
     },
     {
-      q: "How does structured JSON-LD data help local search engines?",
+      q: "How does structured data help a local business website?",
       a: "Structured JSON-LD data provides search engines with clear, standardized code declaring business attributes like legal name, address, opening hours, and operating areas. It helps clarify business facts when it matches visible page content, though it does not guarantee specific rankings or inclusion in AI answers."
     },
     {
-      q: "What sectors do you serve in Perth and Western Australia?",
-      a: "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical, HVAC), allied health clinics (physiotherapy, dental, medical), professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+      q: "Do I need a physical Perth address to use local SEO?",
+      a: "Service-area businesses that travel to clients (such as mobile plumbers or electricians) can operate without showing a physical storefront address, provided their Google Business Profile service areas and on-site location pages accurately reflect their operating regions."
+    },
+    {
+      q: "Which Perth businesses are a good fit for local AEO?",
+      a: "Local AEO is ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+    },
+    {
+      q: "What is included in the $995 AEObility Blueprint?",
+      a: "The $995 AEObility Blueprint includes a complete audit of your local presence, NAP directory consistency, Google Business Profile configuration, key service pages, structured data checklist, a 90-day action roadmap, and a 45-minute strategy walkthrough with 100% credit-back terms."
+    },
+    {
+      q: "How long does local SEO and AEO work take to show results?",
+      a: "Initial search engine crawlability and structured data indexation updates are typically processed within 30 to 60 days. Broader improvements in search impressions, lead quality, and customer inquiry clarity generally develop over 90 days as search engines validate consistent business details."
     }
   ];
 
@@ -320,7 +359,7 @@ export default function LocalBusinessAEOPage() {
       "name": "AEObility",
       "legalName": "Trekaboutoz trading as AEObility",
       "url": "https://aeobility.com.au",
-      "telephone": "+61-8-9000-0000",
+      "telephone": "0480 286 282",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Perth Business Hub",
@@ -398,11 +437,11 @@ export default function LocalBusinessAEOPage() {
             {/* CTA POSITION 1 — The Hero Entry Hook (Corridor C) */}
             <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 max-w-xl">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-wider block">
-                  Check Local Discoverability &bull; Zero Technical Noise
+                <span className="text-xs font-semibold text-aeo-cyan block">
+                  Check local discoverability
                 </span>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Paste your primary business URL for an instant entity visibility report.
+                  Paste your primary business URL for an instant entity visibility report. No technical noise.
                 </p>
               </div>
 
@@ -428,11 +467,11 @@ export default function LocalBusinessAEOPage() {
             </div>
           </header>
 
-          {/* SECTION 2 — Question Header 1: Direct Answer Block */}
+          {/* SECTION 2 — The Basics (Direct Answer Block) */}
           <section className="atomic-answer-block p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
-            <div className="flex items-center gap-2 text-xs text-aeo-cyan font-mono font-semibold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-xs text-aeo-cyan font-semibold">
               <FileText className="w-4 h-4" />
-              <span>Machine-Extractable Passage</span>
+              <span>The basics</span>
             </div>
             
             <h2 className="text-xl font-bold text-white">What is Local Business AEO and How Does It Work in Perth?</h2>
@@ -445,7 +484,7 @@ export default function LocalBusinessAEOPage() {
               <div className="space-y-1">
                 <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Local Data &amp; NAP Consistency
+                  Accurate local data
                 </h3>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
                   Review business name, address, phone details, and local directory listings for accuracy and consistency.
@@ -454,7 +493,7 @@ export default function LocalBusinessAEOPage() {
               <div className="space-y-1">
                 <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Clear Service &amp; Location Pages
+                  Clear service &amp; location pages
                 </h3>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
                   Create explicit service scope descriptions, suburb coverage maps, and operating hour details.
@@ -463,7 +502,7 @@ export default function LocalBusinessAEOPage() {
               <div className="space-y-1">
                 <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Decision-Support &amp; Answers
+                  Decision-support content
                 </h3>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
                   Build FAQs, direct answers, and fair comparison guides for pre-purchase customer questions.
@@ -476,8 +515,8 @@ export default function LocalBusinessAEOPage() {
           <section className="p-6 md:p-8 bg-gradient-to-r from-aeo-purple/20 via-black to-aeo-cyan/20 border border-white/15 rounded-2xl space-y-4 relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-xl">
-                <span className="text-[11px] font-mono font-bold text-aeo-cyan uppercase tracking-wider block">
-                  Corridor A &bull; Low-Friction Commercial Entry
+                <span className="text-xs font-bold text-aeo-cyan block">
+                  Standalone Strategic Blueprint
                 </span>
                 <h3 className="text-xl font-bold text-white">
                   A low-risk diagnostic uncovering exactly how AI search engines interpret your physical location.
@@ -497,13 +536,12 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* SECTION 3 — Local SEO & AEO: How They Work Together */}
+          {/* SECTION 3 — How Local SEO and AEO work together */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Search Strategy</span>
-              <h2 className="text-2xl font-bold">Local SEO &amp; AEO: How They Work Together</h2>
+              <h2 className="text-2xl font-bold">How Local SEO and AEO work together</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
-                Compare how traditional local search engine optimisation complements modern answer-focused content engineering.
+                Compare how traditional local search engine optimisation complements clear content designed around customer questions.
               </p>
             </div>
 
@@ -528,11 +566,47 @@ export default function LocalBusinessAEOPage() {
               </table>
             </div>
 
+            {/* 3-Step Horizontal Diagram: How local AEO fits into your search foundations */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+              <h3 className="text-sm font-bold text-white">How local AEO fits into your search foundations</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-bold">
+                    <MapPin className="w-4 h-4" />
+                    <span>1. Get the basics right</span>
+                  </div>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                    Website usability, Google Business Profile setup, local directory accuracy, and customer reviews.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                  <div className="flex items-center gap-2 text-aeo-cyan text-xs font-bold">
+                    <CheckSquare className="w-4 h-4" />
+                    <span>2. Make key information clear</span>
+                  </div>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                    Service details, suburb operating areas, opening hours, helpful FAQs, and clear pricing factors.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-2">
+                  <div className="flex items-center gap-2 text-aeo-purple text-xs font-bold">
+                    <ArrowRightCircle className="w-4 h-4" />
+                    <span>3. Help customers choose</span>
+                  </div>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                    Fair service comparisons, decision guides, clear call-to-action buttons, and direct enquiry paths.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* CTA POSITION 3 — The Inline Capability Matrix Token (Corridor B) */}
             <div className="p-5 bg-white/[0.01] border border-white/10 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1 max-w-xl">
-                <span className="text-[10px] font-mono text-aeo-cyan uppercase font-bold block">
-                  Corridor B &bull; High-Intent Technical Execution
+                <span className="text-xs font-bold text-aeo-cyan block">
+                  Technical Implementation
                 </span>
                 <p className="text-xs text-white/80 font-light leading-relaxed">
                   Skip the audit. Move straight into technical liquid feed refactoring and location schema deployment for immediate machine-readable proof.
@@ -553,42 +627,39 @@ export default function LocalBusinessAEOPage() {
             </p>
           </section>
 
-          {/* SECTION 4 — Question Header 2: Conversational Search Queries */}
+          {/* SECTION 4 — Questions your customers ask */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Conversational Intent</span>
-              <h2 className="text-2xl font-bold">How Do Conversational Search Engines Match Perth Local Queries?</h2>
+              <h2 className="text-2xl font-bold">Questions your customers ask</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
-                Prospective clients often use conversational or voice search queries when seeking local solutions. AEObility helps clarify your business information so search systems can present accurate facts when users ask pre-purchase questions.
+                Prospective clients ask specific questions before making contact. Search systems look for clear service details, accurate location information, and evidence that a business is relevant.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {conversationalPrompts.map((item, idx) => (
-                <div key={idx} className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3 flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold">
-                      <MessageSquare className="w-3.5 h-3.5" />
-                      <span>Customer Search #{idx + 1}</span>
-                    </div>
-                    <p className="text-xs font-bold text-white italic bg-white/5 p-3 rounded-xl border border-white/5">
-                      {item.prompt}
-                    </p>
-                  </div>
-                  <div className="space-y-1 border-t border-white/5 pt-3">
-                    <span className="text-[10px] font-mono text-white/50 uppercase block">Search Matching Logic:</span>
-                    <p className="text-xs text-white/70 font-light leading-relaxed">{item.analysis}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.01]">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.03]">
+                    <th className="p-4 font-bold text-aeo-cyan w-1/2">Customer question</th>
+                    <th className="p-4 font-bold text-white/90 w-1/2">What your website should make clear</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {customerQuestionsTable.map((item, idx) => (
+                    <tr key={idx} className="hover:bg-white/[0.02]">
+                      <td className="p-4 font-medium text-white italic">{item.question}</td>
+                      <td className="p-4 text-white/70 font-light leading-relaxed">{item.clearResponse}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </section>
 
-          {/* SECTION 5 — Tangible Scope & Deliverables */}
+          {/* SECTION 5 — What's included (Deliverables & Scope) */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Tangible Scope</span>
-              <h2 className="text-2xl font-bold">Our Local AEO Deliverables &amp; Scope</h2>
+              <h2 className="text-2xl font-bold">What&apos;s included</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
                 Practical, buyer-friendly deliverables designed to strengthen search quality and business information clarity.
               </p>
@@ -622,14 +693,26 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* SECTION 6 — Dedicated Provider Proof: Perth AEO Specialist Section */}
+          {/* SECTION 6 — Why work with AEObility (Provider Proof) */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Provider Credibility</span>
-              <h2 className="text-2xl font-bold">Perth AEO Specialist for Local Businesses</h2>
+              <h2 className="text-2xl font-bold">Why work with AEObility</h2>
               <p className="text-xs md:text-sm text-white/80 font-light leading-relaxed max-w-3xl">
                 AEObility helps Perth and WA businesses improve the clarity, consistency, and usefulness of their local service information across websites, Google Business Profiles, local directories, and answer-led search experiences.
               </p>
+            </div>
+
+            {/* Founder Practitioner Card */}
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-5">
+              <div className="p-3 bg-aeo-cyan/10 border border-aeo-cyan/30 rounded-2xl text-aeo-cyan flex-shrink-0">
+                <User className="w-8 h-8" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-base font-bold text-white">Vince Baker &bull; Founder &amp; Search Strategist</h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Based in Perth, Western Australia. 15+ years in search engine optimization, local search engineering, and structured data implementation for Australian SMBs.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -649,7 +732,7 @@ export default function LocalBusinessAEOPage() {
                   <span>Sectors Served</span>
                 </div>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Local trades (plumbing, electrical, HVAC), allied health clinics, professional services (accounting, legal, consulting), retailers, and e-commerce.
+                  Local trades (plumbing, electrical, HVAC), health clinics, professional services (accounting, legal, consulting), retailers, and e-commerce.
                 </p>
               </div>
 
@@ -664,14 +747,11 @@ export default function LocalBusinessAEOPage() {
               </div>
             </div>
 
-            {/* Case Study Spotlight with Attribution Caveats */}
+            {/* Qualitative Case Study Card: A Perth client example */}
             <div className="p-6 md:p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl space-y-4 border-l-aeo-purple border-l-4 mt-4">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="space-y-1">
-                  <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-purple">
-                    <BarChart3 className="w-4 h-4" />
-                    <span>LOCAL EVIDENCE &amp; CASE STUDY PROOF</span>
-                  </div>
+                  <span className="text-xs font-bold text-aeo-purple block">A Perth client example</span>
                   <h3 className="text-xl font-bold text-white">Baby Bento Case Study</h3>
                 </div>
                 
@@ -684,62 +764,58 @@ export default function LocalBusinessAEOPage() {
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-xs">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs">
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                  <span className="font-mono text-[10px] text-white/50 uppercase block">Starting Context</span>
+                  <span className="font-mono text-[10px] text-white/50 uppercase block">Before</span>
                   <p className="text-white/80 font-light leading-relaxed">
-                    Perth-based retail brand required clear product specifications, structured JSON-LD schema, and category decision content.
+                    Product information was inconsistent or incomplete across digital channels.
                   </p>
                 </div>
 
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
                   <span className="font-mono text-[10px] text-white/50 uppercase block">Work Completed</span>
                   <p className="text-white/80 font-light leading-relaxed">
-                    Refactored product data feeds, deployed rich product schema markup, and built customer decision FAQ frameworks.
+                    Product data, structured data, and decision FAQs were improved.
                   </p>
                 </div>
 
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                  <span className="font-mono text-[10px] text-white/50 uppercase block">Results Over 90 Days</span>
+                  <span className="font-mono text-[10px] text-white/50 uppercase block">Outcome</span>
                   <p className="text-white/90 font-medium leading-relaxed">
-                    Achieved a <strong className="text-aeo-cyan font-bold">+17% sales uplift</strong> and a <strong className="text-aeo-cyan font-bold">+95% CTR increase</strong> in organic answer placements.
-                  </p>
-                </div>
-
-                <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1 lg:col-span-3">
-                  <span className="font-mono text-[10px] text-white/50 uppercase block">Measurement Attribution Caveat</span>
-                  <p className="text-white/70 font-light leading-relaxed italic">
-                    *Results reflect combined site improvements across content, JSON-LD schema, and search fundamentals over 90 days. Individual results vary depending on industry competition, location, and baseline authority.
+                    Clearer product information and measured commercial improvement over 90 days (17% sales uplift, 95% CTR increase in organic search).
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 7 — Question Header 3: JSON-LD Schema & Plain Glossary */}
+          {/* SECTION 7 — Structured data for local businesses (Collapsible Code) */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Technical &amp; Terminology Clarity</span>
-              <h2 className="text-2xl font-bold">What Structured Data Signals Are Required for WA Trades &amp; Clinics?</h2>
+              <h2 className="text-2xl font-bold">Structured data for local businesses</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
                 Structured JSON-LD data provides search engines with clear, standardized code declaring business attributes like legal name, address, opening hours, trade capabilities, and operating areas.
               </p>
             </div>
 
-            <div className="p-6 bg-black/80 border border-white/10 rounded-2xl space-y-3 font-mono text-xs overflow-x-auto relative">
-              <div className="flex justify-between items-center pb-2 border-b border-white/10 text-white/50">
-                <span className="flex items-center gap-1.5 text-aeo-cyan font-bold">
+            {/* Expandable <details> for code sample */}
+            <details className="group border border-white/10 rounded-2xl bg-black/60 p-5 cursor-pointer">
+              <summary className="font-mono text-xs text-aeo-cyan font-bold flex items-center justify-between outline-none list-none">
+                <span className="flex items-center gap-2">
                   <Code2 className="w-4 h-4" />
-                  LocalBusiness_Schema.jsonld
+                  View an example of LocalBusiness JSON-LD
                 </span>
-                <span>JSON-LD Format</span>
-              </div>
-              <pre className="text-white/80 leading-relaxed overflow-x-auto">
-                <code>{jsonLdSnippet}</code>
-              </pre>
-            </div>
+                <span className="group-open:rotate-180 transition-transform duration-200">&darr;</span>
+              </summary>
 
-            <div className="pt-4 space-y-3">
+              <div className="mt-4 pt-4 border-t border-white/10 font-mono text-xs overflow-x-auto">
+                <pre className="text-white/80 leading-relaxed">
+                  <code>{jsonLdSnippet}</code>
+                </pre>
+              </div>
+            </details>
+
+            <div className="pt-2 space-y-3">
               <h3 className="text-sm font-bold text-white font-mono">Plain-Language Glossary</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {plainGlossary.map((g, idx) => (
@@ -752,17 +828,16 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* SECTION 8 — Perth Suburban Operating Regions */}
+          {/* SECTION 8 — Areas we serve */}
           <section className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
             <div className="space-y-1">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Geographic Service Footprint</span>
-              <h2 className="text-xl font-bold text-white">Targeted Perth &amp; WA Operating Regions</h2>
-              <p className="text-xs text-white/60 font-light max-w-xl">
-                Explicitly declared in structured JSON-LD schema markup to match visible operating regions.
+              <h2 className="text-xl font-bold text-white">Areas we serve</h2>
+              <p className="text-xs text-white/70 font-light max-w-2xl leading-relaxed">
+                Based in Perth and working with businesses across the metro area and wider WA, including Perth CBD, Subiaco, Fremantle, Joondalup, Rockingham, Midland, and surrounding suburbs.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex flex-wrap gap-2 pt-1">
               {PerthSuburbs.map((suburb, idx) => (
                 <span
                   key={idx}
@@ -773,44 +848,49 @@ export default function LocalBusinessAEOPage() {
                 </span>
               ))}
             </div>
+
+            <div className="pt-2">
+              <Link href="/contact" className="text-xs text-aeo-cyan hover:underline font-medium inline-flex items-center gap-1">
+                <span>Ask about your area</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
           </section>
 
-          {/* SECTION 9 — Mandatory Target Link Corridors (Lattice Mesh) */}
+          {/* SECTION 9 — Related guides (Mandatory Target Link Corridors) */}
           <section className="p-6 bg-white/[0.01] border border-white/10 rounded-2xl space-y-4">
             <div className="space-y-1">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">Required Link Corridors &amp; Knowledge Mesh</span>
-              <h3 className="text-base font-bold text-white">Explore Related Local Search &amp; GEO Strategies</h3>
+              <h3 className="text-base font-bold text-white">Related guides</h3>
               <p className="text-xs text-white/60 font-light">
-                Contextual dual-directional links connecting local business signals with dedicated technical guides and local expert profiles.
+                Useful links to related local-search guides and services.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-semibold pt-1">
               <Link href="/services/geo-marketing" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
-                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Proximity Signals</span>
+                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Services</span>
                 <span className="text-white group-hover:text-aeo-cyan">GEO Marketing Services &rarr;</span>
-                <p className="text-[11px] text-white/50 font-light leading-relaxed">Optimize geographic engine performance and location vectors.</p>
+                <p className="text-[11px] text-white/50 font-light leading-relaxed">Map engine visibility and local search strategy.</p>
               </Link>
 
               <Link href="/knowledge-hub/geo" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
-                <span className="text-aeo-purple font-mono block text-[10px] uppercase">Topical Authority</span>
+                <span className="text-aeo-purple font-mono block text-[10px] uppercase">Knowledge Hub</span>
                 <span className="text-white group-hover:text-aeo-cyan">GEO vs Local SEO Guide &rarr;</span>
                 <p className="text-[11px] text-white/50 font-light leading-relaxed">Technical guide on local search vs generative map discovery.</p>
               </Link>
 
               <Link href="/about/freelance-seo-consultant-perth" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
-                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Local Practitioner</span>
+                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Profile</span>
                 <span className="text-white group-hover:text-aeo-cyan">Freelance SEO Consultant Perth &rarr;</span>
-                <p className="text-[11px] text-white/50 font-light leading-relaxed">Verified Perth digital strategy &amp; local optimization credentials.</p>
+                <p className="text-[11px] text-white/50 font-light leading-relaxed">Perth digital strategy &amp; local optimization credentials.</p>
               </Link>
             </div>
           </section>
 
-          {/* SECTION 10 — Complete FAQs (100% Visible & Schema Mapped) */}
+          {/* SECTION 10 — Frequently asked questions (7 Rendered Items) */}
           <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Questions &amp; Answers</span>
-              <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-bold">Frequently asked questions</h2>
             </div>
 
             <div className="space-y-4">
@@ -831,7 +911,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* SECTION 11 — Expanded $995 AEObility Blueprint CTA */}
+          {/* SECTION 11 — Start with a clear plan ($995 Blueprint CTA) */}
           <section className="p-8 md:p-10 bg-gradient-to-br from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6 mt-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-aeo-cyan/10 rounded-full filter blur-3xl -z-10" />
             
@@ -841,7 +921,7 @@ export default function LocalBusinessAEOPage() {
             </div>
 
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              Start with the <span className="text-gradient-aeo">AEObility Blueprint</span>
+              Start with a clear plan: <span className="text-gradient-aeo">The AEObility Blueprint</span>
             </h2>
             
             <p className="text-xs md:text-sm text-white/80 max-w-xl mx-auto font-light leading-relaxed">
@@ -911,8 +991,8 @@ export default function LocalBusinessAEOPage() {
           {/* CTA POSITION 4 — Terminal Radial Loop Continuity Guard */}
           <section className="p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl space-y-4 font-serif border-l-4 border-l-aeo-cyan">
             <div className="space-y-2">
-              <span className="font-sans text-[11px] font-mono text-aeo-cyan font-bold uppercase tracking-wider block">
-                Radial Loop Continuity Guard &bull; Human Practitioner Proof
+              <span className="font-sans text-xs text-aeo-cyan font-bold block">
+                Human Practitioner Proof &bull; Perth WA
               </span>
               <h3 className="text-xl md:text-2xl font-normal italic text-white/90 leading-snug">
                 &ldquo;Verify local case evidence: See how Western Australian local trades and clinics dominate location-aware search graphs.&rdquo;
