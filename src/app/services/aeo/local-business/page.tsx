@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import HeroScanForm from '@/components/services/HeroScanForm';
 import {
   MapPin,
   CheckCircle2,
@@ -41,17 +41,6 @@ export const metadata = {
 };
 
 export default function LocalBusinessAEOPage() {
-  const [siteUrl, setSiteUrl] = useState('');
-  const router = useRouter();
-
-  const handleHeroScanSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (siteUrl.trim()) {
-      router.push(`/diagnostic?url=${encodeURIComponent(siteUrl.trim())}`);
-    } else {
-      router.push('/diagnostic');
-    }
-  };
 
   const schema = {
     "@context": "https://schema.org",
@@ -435,36 +424,7 @@ export default function LocalBusinessAEOPage() {
             </div>
 
             {/* CTA POSITION 1 — The Hero Entry Hook (Corridor C) */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 max-w-xl">
-              <div className="space-y-1">
-                <span className="text-xs font-semibold text-aeo-cyan block">
-                  Check local discoverability
-                </span>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Paste your primary business URL for an instant entity visibility report. No technical noise.
-                </p>
-              </div>
-
-              <form onSubmit={handleHeroScanSubmit} className="flex flex-col sm:flex-row gap-3">
-                <div className="relative flex-grow">
-                  <Globe className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    value={siteUrl}
-                    onChange={(e) => setSiteUrl(e.target.value)}
-                    placeholder="https://yourbusiness.com.au"
-                    className="w-full bg-black/60 border border-white/15 rounded-xl pl-10 pr-4 py-3 text-xs text-white placeholder:text-white/30 focus:outline-none focus:border-aeo-cyan transition-colors"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="px-6 py-3.5 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] flex items-center justify-center gap-2 whitespace-nowrap"
-                >
-                  <span>Scan My Local Coordinates</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
-            </div>
+            <HeroScanForm />
           </header>
 
           {/* SECTION 2 — The Basics (Direct Answer Block) */}
