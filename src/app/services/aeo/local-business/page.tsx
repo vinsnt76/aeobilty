@@ -67,6 +67,25 @@ export default function LocalBusinessAEOPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/aeo/local-business/#webpage",
+        "url": "https://aeobility.com.au/services/aeo/local-business",
+        "name": "Local Business AEO & GEO Marketing Services in Perth | AEObility",
+        "description": "Local SEO, AEO, and GEO marketing services for Perth businesses. Improve how clearly your business is represented across your website, Google Business Profile, Maps, directories, and answer-led search experiences.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://aeobility.com.au/#website",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Answer Engine Optimisation" },
+          { "@type": "Thing", "name": "Generative Engine Optimisation" },
+          { "@type": "Thing", "name": "Local SEO" },
+          { "@type": "Thing", "name": "Conversion Rate Optimisation" }
+        ]
+      },
+      {
         "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://aeobility.com.au/#localbusiness",
         "name": "AEObility",
@@ -105,13 +124,10 @@ export default function LocalBusinessAEOPage() {
         "knowsAbout": [
           "Answer Engine Optimisation",
           "Generative Engine Optimisation",
+          "Local Search Engineering",
           "Conversion Rate Optimisation",
-          "Local Search Strategy",
-          "MedicalBusiness",
-          "PhysicalTherapyClinic",
-          "Electrician",
-          "Plumber",
-          "HVACBusiness"
+          "JSON-LD Schema Implementation",
+          "Business Information Alignment"
         ],
         "openingHoursSpecification": [
           {
@@ -129,18 +145,6 @@ export default function LocalBusinessAEOPage() {
           "https://www.truelocal.com.au/business/aeobility",
           "https://www.yellowpages.com.au/wa/perth/aeobility",
           "https://www.linkedin.com/in/vincebaker"
-        ],
-        "potentialAction": [
-          {
-            "@type": "Action",
-            "name": "Check AI Search Readiness",
-            "target": "https://aeobility.com.au/diagnostic"
-          },
-          {
-            "@type": "Action",
-            "name": "Get AEObility Blueprint",
-            "target": "https://aeobility.com.au/solutions/aeo-blueprint"
-          }
         ]
       },
       {
@@ -165,27 +169,67 @@ export default function LocalBusinessAEOPage() {
       },
       {
         "@type": "Service",
-        "@id": "https://aeobility.com.au/services/aeo/local-business#service",
-        "name": "Local Business AEO & GEO Marketing Services",
-        "description": "Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences.",
-        "provider": {
-          "@id": "https://aeobility.com.au/#localbusiness"
-        },
+        "@id": "https://aeobility.com.au/services/aeo/local-business/#service",
+        "name": "Local Business AEO & GEO Services",
+        "provider": { "@id": "https://aeobility.com.au/#localbusiness" },
+        "serviceType": [
+          "Answer Engine Optimisation (AEO)",
+          "Generative Engine Optimisation (GEO)",
+          "Local Search Engine Optimisation",
+          "Conversion Rate Optimisation (CRO)",
+          "JSON-LD Schema Implementation",
+          "Business Information Alignment"
+        ],
+        "description": "Technical and structured-data services that improve how clearly Perth businesses are represented across Maps, AI assistants, directories, and answer-led search experiences.",
         "areaServed": {
           "@type": "AdministrativeArea",
-          "name": "Perth, Western Australia"
+          "name": "Western Australia"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Perth service businesses, trades, clinics, and local operators"
         }
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/services/aeo/local-business/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://aeobility.com.au/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AEO",
+            "item": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Local Business",
+            "item": "https://aeobility.com.au/services/aeo/local-business"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services/aeo/local-business#faq",
+        "@id": "https://aeobility.com.au/services/aeo/local-business/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the difference between Local SEO, AEO, and GEO Marketing?",
+            "name": "What is the difference between Local SEO, Local AEO, and GEO Marketing?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Local SEO focuses on improving discoverability and organic rankings in Google Search and Maps. Local AEO structures business facts and pre-purchase FAQs for conversational AI answer engines. GEO Marketing (Generative Engine Optimisation) aligns your entity data across generative search platforms so AI assistants accurately represent your physical location and services."
+              "text": "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organising your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions. GEO Marketing aligns your entity data across generative search and map engines."
             }
           },
           {
@@ -230,7 +274,7 @@ export default function LocalBusinessAEOPage() {
           },
           {
             "@type": "Question",
-            "name": "How long does local SEO, AEO, and GEO work take to show results?",
+            "name": "How long does local SEO and AEO work take to show results?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Initial search engine crawlability and structured data indexation updates are typically processed within 30 to 60 days. Broader improvements in search impressions, lead quality, and customer inquiry clarity generally develop over 90 days as search engines validate consistent business details."
@@ -388,6 +432,25 @@ export default function LocalBusinessAEOPage() {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/services/aeo/local-business/#webpage",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
+      "name": "Local Business AEO & GEO Marketing Services in Perth | AEObility",
+      "description": "Local SEO, AEO, and GEO marketing services for Perth businesses. Improve how clearly your business is represented across your website, Google Business Profile, Maps, directories, and answer-led search experiences.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au"
+      },
+      "about": [
+        { "@type": "Thing", "name": "Answer Engine Optimisation" },
+        { "@type": "Thing", "name": "Generative Engine Optimisation" },
+        { "@type": "Thing", "name": "Local SEO" },
+        { "@type": "Thing", "name": "Conversion Rate Optimisation" }
+      ]
+    },
+    {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://aeobility.com.au/#localbusiness",
       "name": "AEObility",
@@ -407,27 +470,96 @@ export default function LocalBusinessAEOPage() {
         "latitude": -31.9523,
         "longitude": 115.8613
       },
-      "hasMap": "https://maps.google.com/?q=-31.9523,115.8613",
       "areaServed": [
         { "@type": "City", "name": "Perth" },
         { "@type": "City", "name": "West Perth" },
         { "@type": "City", "name": "Subiaco" },
-        { "@type": "City", "name": "Fremantle" }
+        { "@type": "City", "name": "Fremantle" },
+        { "@type": "City", "name": "Joondalup" },
+        { "@type": "City", "name": "Rockingham" },
+        { "@type": "City", "name": "Midland" }
       ],
       "knowsAbout": [
         "Answer Engine Optimisation",
         "Generative Engine Optimisation",
+        "Local Search Engineering",
         "Conversion Rate Optimisation",
-        "MedicalBusiness",
-        "Electrician",
-        "Plumber"
+        "JSON-LD Schema Implementation",
+        "Business Information Alignment"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://aeobility.com.au/services/aeo/local-business/#service",
+      "name": "Local Business AEO & GEO Services",
+      "provider": { "@id": "https://aeobility.com.au/#localbusiness" },
+      "serviceType": [
+        "Answer Engine Optimisation (AEO)",
+        "Generative Engine Optimisation (GEO)",
+        "Local Search Engine Optimisation",
+        "Conversion Rate Optimisation (CRO)",
+        "JSON-LD Schema Implementation",
+        "Business Information Alignment"
       ],
-      "openingHoursSpecification": [
+      "description": "Technical and structured-data services that improve how clearly Perth businesses are represented across Maps, AI assistants, directories, and answer-led search experiences.",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Western Australia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Perth service businesses, trades, clinics, and local operators"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aeobility.com.au/services/aeo/local-business/#breadcrumb",
+      "itemListElement": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:30",
-          "closes": "17:00"
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aeobility.com.au"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://aeobility.com.au/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AEO",
+          "item": "https://aeobility.com.au/services/aeo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Local Business",
+          "item": "https://aeobility.com.au/services/aeo/local-business"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://aeobility.com.au/services/aeo/local-business/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between Local SEO, Local AEO, and GEO Marketing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organising your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions. GEO Marketing aligns your entity data across generative search and map engines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can any agency guarantee a top-three Google Maps result?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Google Maps visibility depends on factors such as relevance, distance, prominence, competition, category fit, reviews, and the searcher's location. AEObility can improve the accuracy and quality of local-search foundations, but no agency can guarantee a specific Map Pack position."
+          }
         }
       ]
     }
