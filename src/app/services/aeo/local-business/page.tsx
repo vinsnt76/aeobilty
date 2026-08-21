@@ -28,12 +28,14 @@ import {
   Globe,
   CheckSquare,
   ArrowRightCircle,
-  User
+  User,
+  TrendingUp,
+  Cpu
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "Local Business AEO & AI Search Services in Perth | AEObility",
+  title: "Local Business AEO & GEO Marketing Services in Perth | AEObility",
   description: "Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/local-business",
@@ -54,7 +56,7 @@ export default function LocalBusinessAEOPage() {
         "telephone": "0480 286 282",
         "email": "contact@aeobility.com.au",
         "priceRange": "$$",
-        "description": "Local Business AEO and local search services for Perth and Western Australian small businesses.",
+        "description": "Local Business AEO, GEO Marketing, and Conversion Rate Optimisation (CRO) services for Perth and Western Australian small businesses.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Perth Business Hub",
@@ -83,6 +85,8 @@ export default function LocalBusinessAEOPage() {
         ],
         "knowsAbout": [
           "Answer Engine Optimisation",
+          "Generative Engine Optimisation",
+          "Conversion Rate Optimisation",
           "Local Search Strategy",
           "MedicalBusiness",
           "PhysicalTherapyClinic",
@@ -119,7 +123,7 @@ export default function LocalBusinessAEOPage() {
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services/aeo/local-business#service",
-        "name": "Local Business AEO Services",
+        "name": "Local Business AEO & GEO Marketing Services",
         "description": "Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences.",
         "provider": {
           "@id": "https://aeobility.com.au/#localbusiness"
@@ -135,10 +139,10 @@ export default function LocalBusinessAEOPage() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the difference between Local SEO and Local AEO?",
+            "name": "What is the difference between Local SEO, AEO, and GEO Marketing?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
+              "text": "Local SEO focuses on improving discoverability and organic rankings in Google Search and Maps. Local AEO structures business facts and pre-purchase FAQs for conversational AI answer engines. GEO Marketing (Generative Engine Optimisation) aligns your entity data across generative search platforms so AI assistants accurately represent your physical location and services."
             }
           },
           {
@@ -167,10 +171,10 @@ export default function LocalBusinessAEOPage() {
           },
           {
             "@type": "Question",
-            "name": "Which Perth businesses are a good fit for local AEO?",
+            "name": "Which Perth businesses are a good fit for local AEO and GEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Local AEO is ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+              "text": "Local AEO and GEO are ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
             }
           },
           {
@@ -183,7 +187,7 @@ export default function LocalBusinessAEOPage() {
           },
           {
             "@type": "Question",
-            "name": "How long does local SEO and AEO work take to show results?",
+            "name": "How long does local SEO, AEO, and GEO work take to show results?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Initial search engine crawlability and structured data indexation updates are typically processed within 30 to 60 days. Broader improvements in search impressions, lead quality, and customer inquiry clarity generally develop over 90 days as search engines validate consistent business details."
@@ -213,13 +217,13 @@ export default function LocalBusinessAEOPage() {
     {
       aspect: "Relationship",
       seo: "The essential search foundation",
-      aeo: "A complementary layer built on strong local SEO"
+      aeo: "A complementary layer built on strong local SEO and GEO alignment"
     }
   ];
 
   const customerQuestionsTable = [
     {
-      question: '"Who offers local SEO and AEO support in Perth?"',
+      question: '"Who offers local SEO, AEO, and GEO support in Perth?"',
       clearResponse: "Your experience, services, location, process, and contact details"
     },
     {
@@ -245,7 +249,7 @@ export default function LocalBusinessAEOPage() {
     },
     {
       badge: "02. Map Profile",
-      label: "Google Business Profile Optimization",
+      label: "Google Business Profile & GEO Optimization",
       desc: "Align your Google Business Profile primary category, business description, operating hours, and product/service catalogs with on-site pages.",
       bullets: [
         "Primary & secondary category audit",
@@ -254,13 +258,13 @@ export default function LocalBusinessAEOPage() {
       ]
     },
     {
-      badge: "03. Content",
-      label: "Service & Suburb Page Refactoring",
-      desc: "Develop clear, plain-language service briefs and location explanations for target Perth regions without keyword stuffing.",
+      badge: "03. Content & CRO",
+      label: "Service Page & CRO Refactoring",
+      desc: "Develop clear service briefs, location explanations, and Conversion Rate Optimisation (CRO) enquiry pathways without keyword stuffing.",
       bullets: [
         "Suburb-level service scope briefs",
         "Clear pricing factor explanations",
-        "Customer decision FAQ frameworks"
+        "Customer decision FAQ frameworks & CRO CTAs"
       ]
     },
     {
@@ -285,25 +289,23 @@ export default function LocalBusinessAEOPage() {
     }
   ];
 
-  const PerthSuburbs = [
-    "Perth CBD", "West Perth", "East Perth", "Subiaco", "Leederville",
-    "Victoria Park", "South Perth", "Joondalup", "Stirling", "Scarborough",
-    "Fremantle", "Booragoon", "Cannington", "Rockingham", "Midland"
-  ];
-
   const plainGlossary = [
     { term: "Entity", definition: "A distinct thing, such as a business, person, service, product, or location." },
     { term: "Structured data", definition: "Code (such as JSON-LD) that helps search engines understand key page details." },
     { term: "Answer engine", definition: "A search or conversational platform that provides direct answers alongside traditional search results." },
     { term: "Local SEO", definition: "Improving visibility in local organic search results, Google Business Profile, and Map listings." },
     { term: "Local AEO", definition: "Applying answer-focused content and accurate business facts to the questions local customers ask." },
-    { term: "Comparison content", definition: "Content that fairly evaluates options against consistent criteria." }
+    { term: "GEO Marketing", definition: "Generative Engine Optimisation, aligning entity data across generative search platforms and map engines." },
+    { term: "CRO", definition: "Conversion Rate Optimisation, structuring pages to turn local search visitors into qualified inquiries." },
+    { term: "RAG architecture", definition: "Retrieval-Augmented Generation, where AI search systems fetch verified site facts before generating answers." },
+    { term: "Knowledge Graph topology", definition: "A structured network connecting business entities, locations, and services as machine-readable graph nodes." },
+    { term: "RDF triples", definition: "Semantic data statements formatted as subject-predicate-object relationships (e.g. AEObility -> operatesIn -> Perth)." }
   ];
 
   const faqs = [
     {
-      q: "What is the difference between Local SEO and Local AEO?",
-      a: "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions."
+      q: "What is the difference between Local SEO, Local AEO, and GEO Marketing?",
+      a: "Local SEO focuses on improving discoverability, technical quality, Google Business Profile (GBP) details, and organic rankings in local search engine results. Local AEO builds on those foundations by organizing your business facts, service scope, and decision-stage answers so AI assistants and answer engines can present clear information when customers ask targeted questions. GEO Marketing aligns your entity data across generative search and map engines."
     },
     {
       q: "Can any agency guarantee a top-three Google Maps result?",
@@ -318,8 +320,8 @@ export default function LocalBusinessAEOPage() {
       a: "Service-area businesses that travel to clients (such as mobile plumbers or electricians) can operate without showing a physical storefront address, provided their Google Business Profile service areas and on-site location pages accurately reflect their operating regions."
     },
     {
-      q: "Which Perth businesses are a good fit for local AEO?",
-      a: "Local AEO is ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+      q: "Which Perth businesses are a good fit for local AEO and GEO?",
+      a: "Local AEO and GEO are ideal for Perth service providers where customers ask detailed questions before booking—including home trades (plumbing, electrical, HVAC), health and medical clinics, professional advisory firms (accounting, legal, consulting), local retailers, and regional e-commerce brands."
     },
     {
       q: "What is included in the $995 AEObility Blueprint?",
@@ -371,6 +373,8 @@ export default function LocalBusinessAEOPage() {
       ],
       "knowsAbout": [
         "Answer Engine Optimisation",
+        "Generative Engine Optimisation",
+        "Conversion Rate Optimisation",
         "MedicalBusiness",
         "Electrician",
         "Plumber"
@@ -411,15 +415,15 @@ export default function LocalBusinessAEOPage() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Grounded Local Search &amp; AEO for WA Businesses</span>
+                <span>Grounded Local Search, AEO &amp; GEO Marketing for WA Businesses</span>
               </div>
               
               <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                Local Business <span className="text-gradient-aeo">AEO Services in Perth</span>
+                Local Business <span className="text-gradient-aeo">AEO &amp; GEO Services in Perth</span>
               </h1>
               
               <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
-                Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences. AEObility combines local SEO foundations with clear service content, accurate business information, and structured data where appropriate.
+                Improve how clearly your Perth business is represented across your website, Google Business Profile, local directories, Maps, and answer-led search experiences. AEObility combines local SEO foundations with GEO Marketing, Conversion Rate Optimisation (CRO), clear service content, and structured JSON-LD data.
               </p>
             </div>
 
@@ -427,17 +431,17 @@ export default function LocalBusinessAEOPage() {
             <HeroScanForm />
           </header>
 
-          {/* SECTION 2 — The Basics (Direct Answer Block) */}
+          {/* SECTION 2 — The Basics (90-Word Atomic Answer Block) */}
           <section className="atomic-answer-block p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
             <div className="flex items-center gap-2 text-xs text-aeo-cyan font-semibold">
               <FileText className="w-4 h-4" />
-              <span>The basics</span>
+              <span>The basics &bull; What is Local Business AEO &amp; GEO Marketing in Perth?</span>
             </div>
             
-            <h2 className="text-xl font-bold text-white">What is Local Business AEO and How Does It Work in Perth?</h2>
+            <h2 className="text-xl font-bold text-white">What is Local Business AEO &amp; GEO Marketing in Perth?</h2>
             
             <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-              Local business AEO applies answer-focused content, accurate business information, and local SEO fundamentals to the questions customers ask before they call, visit, or buy. It helps clarify what your business does, where you operate, who you serve, and which services are right for different needs.
+              Local Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) align a business&rsquo;s online entity data across websites, Google Business Profiles, and directories. Unlike traditional local SEO focused purely on rankings, a Perth AEO specialist structures Name, Address, and Phone (NAP) profiles, Knowledge Graph topology, and JSON-LD schema. This RAG-ready semantic site mapping ensures conversational AI search tools, Google Maps, and answer engines accurately interpret service areas, business hours, and pre-purchase FAQs to recommend Western Australian service providers directly to high-intent local buyers.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-white/5">
@@ -511,7 +515,7 @@ export default function LocalBusinessAEOPage() {
                   <tr className="border-b border-white/10 bg-white/[0.03]">
                     <th className="p-4 font-bold text-white/90 w-1/4">Area</th>
                     <th className="p-4 font-bold text-blue-400 w-3/8">Local SEO</th>
-                    <th className="p-4 font-bold text-aeo-cyan w-3/8">Local AEO</th>
+                    <th className="p-4 font-bold text-aeo-cyan w-3/8">Local AEO &amp; GEO</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
@@ -621,7 +625,7 @@ export default function LocalBusinessAEOPage() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">What&apos;s included</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
-                Practical, buyer-friendly deliverables designed to strengthen search quality and business information clarity.
+                Practical, buyer-friendly deliverables designed to strengthen search quality, business information clarity, and Conversion Rate Optimisation (CRO).
               </p>
             </div>
 
@@ -658,7 +662,7 @@ export default function LocalBusinessAEOPage() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">Why work with AEObility</h2>
               <p className="text-xs md:text-sm text-white/80 font-light leading-relaxed max-w-3xl">
-                AEObility helps Perth and WA businesses improve the clarity, consistency, and usefulness of their local service information across websites, Google Business Profiles, local directories, and answer-led search experiences.
+                AEObility is a Perth-based AEO, GEO Marketing, and digital search agency helping WA businesses improve the clarity, consistency, and usefulness of their local service information across websites, Google Business Profiles, local directories, and answer-led search experiences.
               </p>
             </div>
 
@@ -668,9 +672,9 @@ export default function LocalBusinessAEOPage() {
                 <User className="w-8 h-8" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-base font-bold text-white">Vince Baker &bull; Founder &amp; Search Strategist</h3>
+                <h3 className="text-base font-bold text-white">Vince Baker &bull; Founder, AEO &amp; GEO Specialist</h3>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Based in Perth, Western Australia. 15+ years in search engine optimization, local search engineering, and structured data implementation for Australian SMBs.
+                  Based in Perth, Western Australia. 15+ years in search engine optimization, local search engineering, GEO Marketing, and structured data implementation for Australian SMBs.
                 </p>
               </div>
             </div>
@@ -682,7 +686,7 @@ export default function LocalBusinessAEOPage() {
                   <span>Local WA Experience</span>
                 </div>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Based in Perth, engineering technical search, local SEO foundations, and structured data solutions for Australian SMBs.
+                  Based in Perth, engineering technical search, GEO Marketing, local SEO foundations, and structured data solutions for Australian SMBs.
                 </p>
               </div>
 
@@ -735,7 +739,7 @@ export default function LocalBusinessAEOPage() {
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
                   <span className="font-mono text-[10px] text-white/50 uppercase block">Work Completed</span>
                   <p className="text-white/80 font-light leading-relaxed">
-                    Product data, structured data, and decision FAQs were improved.
+                    Product data, structured JSON-LD schema, and decision FAQs were improved.
                   </p>
                 </div>
 
@@ -774,7 +778,6 @@ export default function LocalBusinessAEOPage() {
                 </pre>
               </div>
             </details>
-
           </section>
 
           {/* SECTION 8 — Areas we serve */}
@@ -894,12 +897,12 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* Plain-Language Glossary */}
+          {/* Plain-Language Glossary & Latent Semantic Layer */}
           <section className="space-y-4 border-t border-white/5 pt-8">
             <div className="space-y-1">
-              <h3 className="text-sm font-bold text-white font-mono">Plain-Language Glossary</h3>
+              <h3 className="text-sm font-bold text-white font-mono">Plain-Language Glossary &amp; Technical Concepts</h3>
               <p className="text-xs text-white/60 font-light">
-                Key terms explained in clear, everyday language for local business owners.
+                Key local search, GEO, and machine-readability terms explained in clear, everyday language.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
