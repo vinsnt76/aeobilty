@@ -20,7 +20,9 @@ import {
   FileText,
   Award,
   HelpCircle,
-  BookOpen
+  BookOpen,
+  Activity,
+  UserCheck
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -37,7 +39,7 @@ export default function LocalBusinessAEOPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://aeobility.com.au/#localbusiness",
         "name": "AEObility",
         "legalName": "Trekaboutoz trading as AEObility",
@@ -59,6 +61,7 @@ export default function LocalBusinessAEOPage() {
           "latitude": -31.9523,
           "longitude": 115.8613
         },
+        "hasMap": "https://maps.google.com/?q=-31.9523,115.8613",
         "areaServed": [
           { "@type": "City", "name": "Perth" },
           { "@type": "AdministrativeArea", "name": "Western Australia" },
@@ -71,9 +74,39 @@ export default function LocalBusinessAEOPage() {
           { "@type": "City", "name": "Midland" },
           { "@type": "City", "name": "Rockingham" }
         ],
+        "knowsAbout": [
+          "Answer Engine Optimisation",
+          "Local Search Strategy",
+          "MedicalBusiness",
+          "PhysicalTherapyClinic",
+          "Electrician",
+          "Plumber",
+          "HVACBusiness"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:30",
+            "closes": "17:00"
+          }
+        ],
         "sameAs": [
           "https://www.truelocal.com.au/business/aeobility",
-          "https://www.yellowpages.com.au/wa/perth/aeobility"
+          "https://www.yellowpages.com.au/wa/perth/aeobility",
+          "https://www.linkedin.com/in/vincebaker"
+        ],
+        "potentialAction": [
+          {
+            "@type": "Action",
+            "name": "Check AI Search Readiness",
+            "target": "https://aeobility.com.au/diagnostic"
+          },
+          {
+            "@type": "Action",
+            "name": "Get AEObility Blueprint",
+            "target": "https://aeobility.com.au/solutions/aeo-blueprint"
+          }
         ]
       },
       {
@@ -122,7 +155,7 @@ export default function LocalBusinessAEOPage() {
             "name": "What sectors do you serve in Perth and Western Australia?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical), medical and health clinics, professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+              "text": "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical, HVAC), allied health clinics (physiotherapy, dental, medical), professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
             }
           }
         ]
@@ -251,7 +284,7 @@ export default function LocalBusinessAEOPage() {
     },
     {
       q: "What sectors do you serve in Perth and Western Australia?",
-      a: "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical), medical and health clinics, professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
+      a: "We provide local search and AEO strategy for Perth service businesses across trades (plumbing, electrical, HVAC), allied health clinics (physiotherapy, dental, medical), professional services (accounting, legal, consulting), local retailers, and regional e-commerce brands."
     }
   ];
 
@@ -265,29 +298,49 @@ export default function LocalBusinessAEOPage() {
 
   const jsonLdSnippet = `{
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://aeobility.com.au/#localbusiness",
-  "name": "AEObility",
-  "legalName": "Trekaboutoz trading as AEObility",
-  "url": "https://aeobility.com.au",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Perth Business Hub",
-    "addressLocality": "Perth",
-    "addressRegion": "WA",
-    "postalCode": "6000",
-    "addressCountry": "AU"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -31.9523,
-    "longitude": 115.8613
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Perth" },
-    { "@type": "City", "name": "West Perth" },
-    { "@type": "City", "name": "Subiaco" },
-    { "@type": "City", "name": "Fremantle" }
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://aeobility.com.au/#localbusiness",
+      "name": "AEObility",
+      "legalName": "Trekaboutoz trading as AEObility",
+      "url": "https://aeobility.com.au",
+      "telephone": "+61-8-9000-0000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Perth Business Hub",
+        "addressLocality": "Perth",
+        "addressRegion": "WA",
+        "postalCode": "6000",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.9523,
+        "longitude": 115.8613
+      },
+      "hasMap": "https://maps.google.com/?q=-31.9523,115.8613",
+      "areaServed": [
+        { "@type": "City", "name": "Perth" },
+        { "@type": "City", "name": "West Perth" },
+        { "@type": "City", "name": "Subiaco" },
+        { "@type": "City", "name": "Fremantle" }
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimisation",
+        "MedicalBusiness",
+        "Electrician",
+        "Plumber"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:30",
+          "closes": "17:00"
+        }
+      ]
+    }
   ]
 }`;
 
@@ -308,10 +361,10 @@ export default function LocalBusinessAEOPage() {
 
       {/* Main Container */}
       <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-14">
-        <section className="flex flex-col gap-12">
+        <article className="flex flex-col gap-12">
           
           {/* SECTION 1 — Hero */}
-          <div className="space-y-4">
+          <header className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Grounded Local Search &amp; AEO for WA Businesses</span>
@@ -340,14 +393,17 @@ export default function LocalBusinessAEOPage() {
                 <span>Book a Strategy Call</span>
               </Link>
             </div>
-          </div>
+          </header>
 
-          {/* SECTION 2 — Direct Answer Block ("What is local business AEO?") */}
+          {/* SECTION 2 — Question Header 1: Direct Answer Block */}
           <section className="atomic-answer-block p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
             <div className="flex items-center gap-2 text-xs text-aeo-cyan font-mono font-semibold uppercase tracking-wider">
               <FileText className="w-4 h-4" />
-              <h2>What is local business AEO?</h2>
+              <span>Machine-Extractable Passage</span>
             </div>
+            
+            <h2 className="text-xl font-bold text-white">What is Local Business AEO and How Does It Work in Perth?</h2>
+            
             <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
               Local business AEO applies answer-focused content, accurate business information, and local SEO fundamentals to the questions customers ask before they call, visit, or buy. It helps clarify what your business does, where you operate, who you serve, and which services are right for different needs.
             </p>
@@ -384,7 +440,7 @@ export default function LocalBusinessAEOPage() {
           </section>
 
           {/* SECTION 3 — Local SEO & AEO: How They Work Together */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Search Strategy</span>
               <h2 className="text-2xl font-bold">Local SEO &amp; AEO: How They Work Together</h2>
@@ -417,13 +473,13 @@ export default function LocalBusinessAEOPage() {
             <p className="text-xs text-white/70 font-light leading-relaxed bg-white/[0.02] p-4 rounded-xl border border-white/5">
               <strong className="text-white font-semibold">Supporting note:</strong> Local AEO is not a replacement for Local SEO. Strong Local SEO remains essential; Local AEO builds on those foundations by making key business information more explicit, consistent, and useful for answer-led discovery.
             </p>
-          </div>
+          </section>
 
-          {/* SECTION 4 — When Customers Search for Local Services in Perth */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          {/* SECTION 4 — Question Header 2: Conversational Search Queries */}
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Conversational Intent</span>
-              <h2 className="text-2xl font-bold">When Customers Search for Local Services in Perth</h2>
+              <h2 className="text-2xl font-bold">How Do Conversational Search Engines Match Perth Local Queries?</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
                 Prospective clients often use conversational or voice search queries when seeking local solutions. AEObility helps clarify your business information so search systems can present accurate facts when users ask pre-purchase questions.
               </p>
@@ -448,10 +504,10 @@ export default function LocalBusinessAEOPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 5 — Our Local AEO Deliverables & Scope */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          {/* SECTION 5 — Tangible Scope & Deliverables */}
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Tangible Scope</span>
               <h2 className="text-2xl font-bold">Our Local AEO Deliverables &amp; Scope</h2>
@@ -486,10 +542,10 @@ export default function LocalBusinessAEOPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* SECTION 6 — Dedicated Provider Proof: Perth AEO Specialist Section */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Provider Credibility</span>
               <h2 className="text-2xl font-bold">Perth AEO Specialist for Local Businesses</h2>
@@ -515,7 +571,7 @@ export default function LocalBusinessAEOPage() {
                   <span>Sectors Served</span>
                 </div>
                 <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Local trades (plumbing, electrical), health clinics, professional services (accounting, legal), local retailers, and regional e-commerce.
+                  Local trades (plumbing, electrical, HVAC), allied health clinics, professional services (accounting, legal, consulting), retailers, and e-commerce.
                 </p>
               </div>
 
@@ -580,15 +636,15 @@ export default function LocalBusinessAEOPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 7 — On-Page Schema.org Code Example & Plain Glossary */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          {/* SECTION 7 — Question Header 3: JSON-LD Schema & Plain Glossary */}
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Technical &amp; Terminology Clarity</span>
-              <h2 className="text-2xl font-bold">On-Page JSON-LD Structured Data Reference</h2>
+              <h2 className="text-2xl font-bold">What Structured Data Signals Are Required for WA Trades &amp; Clinics?</h2>
               <p className="text-xs text-white/60 font-light max-w-xl">
-                Structured data can clarify facts such as business name, address, opening hours, service type, and service area when it matches visible page content.
+                Structured JSON-LD data provides search engines with clear, standardized code declaring business attributes like legal name, address, opening hours, trade capabilities, and operating areas.
               </p>
             </div>
 
@@ -616,10 +672,10 @@ export default function LocalBusinessAEOPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </section>
 
           {/* SECTION 8 — Perth Suburban Operating Regions */}
-          <div className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+          <section className="p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
             <div className="space-y-1">
               <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Geographic Service Footprint</span>
               <h2 className="text-xl font-bold text-white">Targeted Perth &amp; WA Operating Regions</h2>
@@ -639,10 +695,41 @@ export default function LocalBusinessAEOPage() {
                 </span>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 9 — Complete FAQs (100% Visible & Schema Mapped) */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
+          {/* SECTION 9 — Mandatory Target Link Corridors (Lattice Connectivity) */}
+          <section className="p-6 bg-white/[0.01] border border-white/10 rounded-2xl space-y-4">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">Required Link Corridors &amp; Knowledge Mesh</span>
+              <h3 className="text-base font-bold text-white">Explore Related Local Search &amp; GEO Strategies</h3>
+              <p className="text-xs text-white/60 font-light">
+                Contextual dual-directional links connecting local business signals with dedicated technical guides and local expert profiles.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-semibold pt-1">
+              <Link href="/services/geo-marketing" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
+                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Proximity Signals</span>
+                <span className="text-white group-hover:text-aeo-cyan">GEO Marketing Services &rarr;</span>
+                <p className="text-[11px] text-white/50 font-light leading-relaxed">Optimize geographic engine performance and location vectors.</p>
+              </Link>
+
+              <Link href="/knowledge-hub/geo" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
+                <span className="text-aeo-purple font-mono block text-[10px] uppercase">Topical Authority</span>
+                <span className="text-white group-hover:text-aeo-cyan">GEO vs Local SEO Guide &rarr;</span>
+                <p className="text-[11px] text-white/50 font-light leading-relaxed">Technical guide on local search vs generative map discovery.</p>
+              </Link>
+
+              <Link href="/about/freelance-seo-consultant-perth" className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:border-aeo-cyan/30 hover:text-aeo-cyan transition-all space-y-1">
+                <span className="text-aeo-cyan font-mono block text-[10px] uppercase">Local Practitioner</span>
+                <span className="text-white group-hover:text-aeo-cyan">Freelance SEO Consultant Perth &rarr;</span>
+                <p className="text-[11px] text-white/50 font-light leading-relaxed">Verified Perth digital strategy &amp; local optimization credentials.</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* SECTION 10 — Complete FAQs (100% Visible & Schema Mapped) */}
+          <section className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Questions &amp; Answers</span>
               <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
@@ -664,10 +751,10 @@ export default function LocalBusinessAEOPage() {
                 </details>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 10 — Expanded $995 AEObility Blueprint CTA */}
-          <div className="p-8 md:p-10 bg-gradient-to-br from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6 mt-6 relative overflow-hidden">
+          {/* SECTION 11 — Expanded $995 AEObility Blueprint CTA */}
+          <section className="p-8 md:p-10 bg-gradient-to-br from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6 mt-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-aeo-cyan/10 rounded-full filter blur-3xl -z-10" />
             
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-semibold">
@@ -730,38 +817,26 @@ export default function LocalBusinessAEOPage() {
                 href="/solutions/aeo-blueprint"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)]"
               >
-                <span>Get the AEObility Blueprint</span>
+                <span>Get the AEObility Blueprint ($995)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/book"
+                href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
               >
-                <span>Book a Strategy Call</span>
+                <Activity className="w-3.5 h-3.5 text-aeo-cyan" />
+                <span>Check AI Search Readiness</span>
               </Link>
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 11 — Semantic Navigation */}
-          <div className="border-t border-white/5 pt-6 flex flex-col gap-3">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
-              <Link href="/services/geo-marketing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Explore dedicated GEO Marketing Strategies &rarr;
-              </Link>
-              <Link href="/about/freelance-seo-consultant-perth" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Freelance SEO Consultant Perth Profile &rarr;
-              </Link>
-            </div>
-          </div>
-
-          <div className="pt-2 flex">
+          <footer className="pt-2 flex">
             <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
               &larr; Back to <strong className="text-white hover:underline">AEO Services</strong>
             </Link>
-          </div>
+          </footer>
 
-        </section>
+        </article>
       </main>
 
       <Footer />
