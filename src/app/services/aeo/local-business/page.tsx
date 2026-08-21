@@ -992,33 +992,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* CTA POSITION 4 — Terminal Radial Loop Continuity Guard */}
-          <section className="p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-3xl space-y-4 font-serif border-l-4 border-l-aeo-cyan">
-            <div className="space-y-2">
-              <span className="font-sans text-xs text-aeo-cyan font-bold block">
-                Human Practitioner Proof &bull; Perth WA
-              </span>
-              <h3 className="text-xl md:text-2xl font-normal italic text-white/90 leading-snug">
-                &ldquo;Verify local case evidence: See how Western Australian local trades and clinics dominate location-aware search graphs.&rdquo;
-              </h3>
-            </div>
 
-            <div className="flex flex-wrap gap-4 pt-2 font-sans text-xs">
-              <Link
-                href="/about/freelance-seo-consultant-perth"
-                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-all inline-flex items-center gap-2"
-              >
-                <UserCheck className="w-4 h-4 text-aeo-cyan" />
-                <span>Continue to Perth Consultant Profile &rarr;</span>
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies/baby-bento"
-                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white/80 font-medium hover:text-white transition-all inline-flex items-center gap-2"
-              >
-                <span>Read Baby Bento Perth Case Study &rarr;</span>
-              </Link>
-            </div>
-          </section>
 
           <footer className="pt-2 flex">
             <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
