@@ -478,13 +478,13 @@ export default function LocalBusinessAEOPage() {
           <section className="atomic-answer-block p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
             <div className="flex items-center gap-2 text-xs text-aeo-cyan font-semibold">
               <FileText className="w-4 h-4" />
-              <span>The basics &bull; What is Local Business AEO &amp; GEO Marketing in Perth?</span>
+              <span>The basics &bull; What Local AEO/GEO Accomplishes for Perth Service Providers</span>
             </div>
             
-            <h2 className="text-xl font-bold text-white">What is Local Business AEO &amp; GEO Marketing in Perth?</h2>
+            <h2 className="text-xl font-bold text-white">What Local AEO/GEO Accomplishes for Perth Service Providers</h2>
             
             <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-              Local Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) align a business&rsquo;s online entity data across websites, Google Business Profiles, and directories. Unlike traditional local SEO focused purely on rankings, a Perth AEO specialist structures Name, Address, and Phone (NAP) profiles, Knowledge Graph topology, and JSON-LD schema. This RAG-ready semantic site mapping ensures conversational AI search tools, Google Maps, and answer engines accurately interpret service areas, business hours, and pre-purchase FAQs to recommend Western Australian service providers directly to high-intent local buyers.
+              Local Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) transition local search from keyword-based document ranking to machine-readable entity resolution. By mapping exact geographic coordinates, establishing structured JSON-LD schema graphs, and enforcing consistent off-page brand citations, local service businesses in Western Australia avoid generative AI hallucinations (such as incorrect operating hours or incorrect service boundaries). This technical framework allows Retrieval-Augmented Generation (RAG) models, Google AI Overviews, Perplexity, and ChatGPT Search to resolve location nodes, evaluate local vector proximity, and directly recommend Western Australian businesses to high-intent buyers.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-white/5">
