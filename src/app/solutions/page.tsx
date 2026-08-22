@@ -19,30 +19,57 @@ export default function SolutionsPage() {
 
   const productSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "AEObility 90-Day Success Blueprint",
-    "description": "A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.",
-    "brand": {
-      "@type": "Brand",
-      "name": "AEObility"
+    "@type": "Service",
+    "name": "AEObility AEO Solutions & Sprints",
+    "description": "Clear roadmap, targeted Micro-Sprints and Foundation Implementation for Australian businesses across Search, Maps and AI.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AEObility",
+      "legalName": "Trekaboutoz trading as AEObility",
+      "url": "https://www.aeobility.com.au",
+      "founder": {
+        "@type": "Person",
+        "name": "Vince Baker",
+        "jobTitle": "Founder"
+      }
     },
-    "offers": {
-      "@type": "Offer",
-      "price": `${PRICING_CONFIG.blueprint.price}.00`,
-      "priceCurrency": PRICING_CONFIG.currency,
-      "url": "https://aeobility.com.au/solutions",
-      "areaServed": "AU"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AEObility Engagement Pathways",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "The AEObility Blueprint",
+          "price": "995.00",
+          "priceCurrency": "AUD",
+          "description": "Strategic audit and 90-day prioritised roadmap."
+        },
+        {
+          "@type": "Offer",
+          "name": "Micro-Sprints",
+          "price": "495.00",
+          "priceCurrency": "AUD",
+          "description": "Focused implementation for a defined website, content or local visibility issue (starting price)."
+        },
+        {
+          "@type": "Offer",
+          "name": "Foundation Implementation",
+          "price": "3195.00",
+          "priceCurrency": "AUD",
+          "description": "Broader technical, content and local visibility foundation delivered across a 4-week period (starting price)."
+        }
+      ]
     }
   };
 
   const faqs = [
     {
-      question: "Do I need a Blueprint before booking a Micro-Sprint?",
+      question: "Do I need the Blueprint before booking a Micro-Sprint?",
       answer: "No. If you already know the specific issue you want addressed, you can book a Micro-Sprint directly. If you need help identifying and prioritising gaps, start with the Blueprint."
     },
     {
       question: "What is included in Foundation Implementation?",
-      answer: "Foundation Implementation combines agreed priority improvements across technical setup, key pages, internal linking and business-information consistency. Scope is fully locked down before work begins."
+      answer: "Foundation Implementation combines agreed priority improvements across technical setup, key pages, internal linking and business-information consistency. Scope is fully agreed before work begins."
     },
     {
       question: "Does Foundation Implementation include the full Blueprint?",
@@ -50,11 +77,15 @@ export default function SolutionsPage() {
     },
     {
       question: "How long does Foundation Implementation take?",
-      answer: "Most Foundation engagements are delivered over 4–5 working days across a four-week period, allowing adequate time for precise implementation, machine-readability validation and review."
+      answer: "Most Foundation engagements are delivered over 4–5 working days across a four-week period, allowing adequate time for precise implementation, validation and review."
     },
     {
       question: "Are there ongoing contracts or retainers?",
       answer: "No. All work is clearly scoped and fixed-price upfront. Ongoing optimisations or support are only available where explicitly agreed upon post-handover."
+    },
+    {
+      question: "What happens after a sprint is completed?",
+      answer: "You receive a full handover with clear documentation of all updates made. You can choose to manage the site internally, book additional targeted Micro-Sprints, or discuss ongoing support if required."
     }
   ];
 
@@ -76,21 +107,21 @@ export default function SolutionsPage() {
       need: "Need clarity?",
       feeling: "“I’m not sure what is holding us back.”",
       solution: "The AEObility Blueprint",
-      price: `$${PRICING_CONFIG.blueprint.price}`,
+      price: `$${PRICING_CONFIG.blueprint.price} AUD ex. GST`,
       href: "/solutions/aeo-blueprint"
     },
     {
       need: "Know the issue?",
       feeling: "“I know the issue and need it fixed.”",
       solution: "A Micro-Sprint",
-      price: `From $${PRICING_CONFIG.microSprints.basePriceFrom}`,
+      price: `From $${PRICING_CONFIG.microSprints.basePriceFrom} AUD ex. GST`,
       href: "/solutions/aeo-sprint"
     },
     {
       need: "Need several fixes?",
       feeling: "“We have several important issues to address.”",
       solution: "Foundation Implementation",
-      price: `From $${PRICING_CONFIG.foundation.basePriceFrom}`,
+      price: `From $${PRICING_CONFIG.foundation.basePriceFrom} AUD ex. GST`,
       href: "/contact"
     }
   ];
@@ -99,28 +130,28 @@ export default function SolutionsPage() {
     {
       id: "S1",
       title: "S1: Schema & Semantic Mapping",
-      subtitle: "Clarify business information",
+      subtitle: "Clarify business, service and location information",
       application: "Structured data, service relationships and location signals.",
       icon: <Layers className="w-5 h-5 text-aeo-cyan" />
     },
     {
       id: "S2",
       title: "S2: Answer-Ready Content",
-      subtitle: "Make key pages clearer",
+      subtitle: "Make key pages clearer for customers and search systems",
       application: "Page sections, FAQs, service explanations and proof points.",
       icon: <Boxes className="w-5 h-5 text-aeo-cyan" />
     },
     {
       id: "S3",
       title: "S3: Internal Linking & Content Connections",
-      subtitle: "Connect related pages",
+      subtitle: "Connect related service, location and supporting pages",
       application: "Contextual internal links, navigation paths and topic relationships.",
       icon: <Network className="w-5 h-5 text-aeo-cyan" />
     },
     {
       id: "S4",
       title: "S4: Brand Facts & Consistency",
-      subtitle: "Create a reliable source of truth",
+      subtitle: "Create a reliable central source of business information",
       application: "Brand Facts Page, core business claims, service details and trust information.",
       icon: <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
     }
@@ -170,7 +201,7 @@ export default function SolutionsPage() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 border border-white/15 hover:border-aeo-cyan text-white font-semibold text-base transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-aeo-cyan" />
-                <span>Book a strategy call</span>
+                <span>Discuss your starting point</span>
               </Link>
             </div>
           </section>
@@ -186,7 +217,7 @@ export default function SolutionsPage() {
                     <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider font-mono">Strategic Audit</span>
                     <div className="text-right">
                       <span className="text-lg font-bold text-cyan-300 font-mono">${PRICING_CONFIG.blueprint.price} AUD</span>
-                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST ({PRICING_CONFIG.blueprint.code})</span>
+                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
                     </div>
                   </div>
                   <div>
@@ -235,7 +266,7 @@ export default function SolutionsPage() {
                       <span className="text-xs font-semibold text-purple-400 uppercase tracking-wider font-mono">Micro-Sprints</span>
                       <div className="text-right">
                         <span className="text-sm font-bold text-cyan-300 font-mono">From ${PRICING_CONFIG.microSprints.basePriceFrom} AUD</span>
-                        <span className="text-[10px] text-zinc-500 font-mono block">ex. GST ({PRICING_CONFIG.microSprints.codeSeries})</span>
+                        <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
                       </div>
                     </div>
                     <div>
@@ -274,7 +305,7 @@ export default function SolutionsPage() {
                       href="/solutions/aeo-sprint"
                       className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)]"
                     >
-                      <span>Explore Micro-Sprints</span>
+                      <span>View Micro-Sprints</span>
                       <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -288,7 +319,7 @@ export default function SolutionsPage() {
                     <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider font-mono">Foundation</span>
                     <div className="text-right">
                       <span className="text-sm font-bold text-cyan-300 font-mono">From ${PRICING_CONFIG.foundation.basePriceFrom} AUD</span>
-                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST ({PRICING_CONFIG.foundation.codeSeries})</span>
+                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
                     </div>
                   </div>
                   <div>
@@ -343,10 +374,10 @@ export default function SolutionsPage() {
               <span>Commercial Guarantee & Clarity</span>
             </div>
             <h3 className="text-2xl font-bold text-white tracking-tight">
-              Clear scope. Fixed pricing. No lock-in contracts.
+              Clearly Scoped, Fixed Pricing
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed font-serif">
-              Every engagement includes agreed deliverables, progress updates and a full handover before work begins.
+              Agree on the deliverables, timing and price before work begins. Every engagement includes agreed deliverables, progress updates and a full handover.
             </p>
           </section>
 
@@ -370,7 +401,7 @@ export default function SolutionsPage() {
                     <div>
                       <span className="text-[10px] uppercase font-mono text-zinc-400 block">Best starting point</span>
                       <span className="text-sm font-bold text-white block">{item.solution}</span>
-                      <span className="text-[11px] font-mono text-cyan-300 font-bold block">{item.price} AUD</span>
+                      <span className="text-[11px] font-mono text-cyan-300 font-bold block">{item.price}</span>
                     </div>
                     <Link
                       href={item.href}
@@ -391,6 +422,10 @@ export default function SolutionsPage() {
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Technical Building Blocks</h2>
               <p className="text-xs text-white/60 font-serif">The practical areas we work on, selected to suit your business priorities:</p>
             </div>
+
+            <p className="text-xs text-center text-zinc-400 max-w-xl mx-auto leading-relaxed font-serif italic">
+              We structure important information into clear, well-connected page sections so customers and modern search tools can identify the answers they need.
+            </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {buildingBlocks.map((block) => (
@@ -414,6 +449,17 @@ export default function SolutionsPage() {
                 </div>
               ))}
             </div>
+
+            {/* Mid-Page CTA */}
+            <div className="text-center pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 underline underline-offset-4 cursor-pointer"
+              >
+                <span>Not sure which option fits? Discuss your priorities</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </section>
 
           {/* 6. "What Happens Next" 3-Step Strip */}
@@ -433,13 +479,13 @@ export default function SolutionsPage() {
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-2 text-center relative">
                 <span className="text-2xl font-extrabold text-purple-400 font-mono block">02</span>
                 <h3 className="text-sm font-bold text-white">Confirm scope and priorities</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We lock down explicit deliverables, technical targets, and timelines before work begins.</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We agree on the work, deliverables and timing before implementation begins.</p>
               </div>
 
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-2 text-center relative">
                 <span className="text-2xl font-extrabold text-cyan-400 font-mono block">03</span>
                 <h3 className="text-sm font-bold text-white">Receive updates and handover</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-serif">Get regular progress validation, deployment checks, and full machine-readability handover documentation.</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">You receive progress updates, final checks and the information needed to manage the work afterwards.</p>
               </div>
             </div>
           </section>
@@ -496,12 +542,12 @@ export default function SolutionsPage() {
                   className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg text-sm"
                 >
                   <Calendar className="w-4 h-4 text-black" />
-                  <span>Book a strategy call</span>
+                  <span>Discuss Your Starting Point</span>
                 </Link>
               </div>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-2">
                 <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You’ll speak directly with Vince Baker, AEObility’s founder.</span>
+                <span>Speak directly with Vince Baker, AEObility’s founder.</span>
               </div>
             </div>
           </section>
