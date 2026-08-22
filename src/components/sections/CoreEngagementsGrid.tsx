@@ -18,10 +18,10 @@ export function CoreEngagementsGrid() {
             <span>AEO Services & Technical Sprints</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-            Blueprint, AEO Sprints & Local Visibility Sprints
+            Choose the right starting point
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-3xl mx-auto font-serif leading-relaxed">
-            Start with a clear roadmap or move directly into a focused technical sprint. AEObility offers transparent, fixed-price implementation work to help Australian businesses become easier to find, understand and trust across Search, Maps and AI.
+          <p className="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto font-serif leading-relaxed">
+            Get a clear roadmap, fix a specific issue or strengthen your local search foundations. All engagements are clearly scoped, transparently priced and designed for Australian businesses.
           </p>
         </div>
 
@@ -43,30 +43,26 @@ export function CoreEngagementsGrid() {
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">The AEObility Blueprint</h3>
                 <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-serif">
-                  A practical audit and 90-day action plan identifying the highest-priority opportunities across your website, structured data, business information and local visibility.
+                  A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.
                 </p>
               </div>
 
               <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Entity, website and structured-data review</span>
+                  <span>Visibility and entity review</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>AI and search visibility scorecard</span>
+                  <span>Structured-data and content opportunities</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Priority fixes and 90-day implementation roadmap</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Content and service-information opportunities</span>
+                  <span>Prioritised implementation roadmap</span>
                 </li>
                 <li className="flex items-start gap-2 font-medium text-cyan-300">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Blueprint fee credited towards eligible implementation work</span>
+                  <span>Fee credited towards eligible implementation work</span>
                 </li>
               </ul>
             </div>
@@ -99,28 +95,28 @@ export function CoreEngagementsGrid() {
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">AEO Technical Sprints</h3>
                   <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-serif">
-                    Focused implementation sprints addressing specific issues that affect how search engines and AI systems interpret your website and services.
+                    Focused implementation for your website, structured data and priority service pages.
                   </p>
                 </div>
 
                 <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-white font-semibold">Service or Location Schema Sprint — $495:</strong> Add or improve structured data for a key service or location page.</span>
+                    <span>Schema implementation — from $495</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-white font-semibold">Single-Page Content Sprint — $495:</strong> Rewrite one priority page so customer questions, services and proof points are clearer.</span>
+                    <span>Single-page content rewrite — from $495</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-white font-semibold">Foundation Implementation — from $3,195:</strong> A broader technical and content foundation, typically delivered over <strong className="text-cyan-300 font-semibold">4–5 working days across a four-week period</strong>.</span>
-                  </li>
-                  <li className="flex items-start gap-2 font-medium text-cyan-300">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>Clear scope, fixed pricing and no long-term contracts.</span>
+                    <span>Foundation Implementation — from $3,195</span>
                   </li>
                 </ul>
+
+                <p className="text-[11px] text-zinc-400 font-mono italic pt-1 border-t border-white/5">
+                  Typically delivered over 4–5 working days across a four-week period.
+                </p>
               </div>
 
               <div className="pt-8">
@@ -149,32 +145,24 @@ export function CoreEngagementsGrid() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">GEO Services Sprints</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">Local Visibility Sprints</h3>
                 <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-serif">
-                  Improve the consistency and clarity of the local signals customers and search platforms use to understand where you operate and what you offer.
+                  Improve the local signals that help customers and search platforms understand where you operate and what you offer.
                 </p>
               </div>
 
               <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span><strong className="text-white font-semibold">Business details and citation clean-up — $495:</strong> Review and standardise core business information across key platforms.</span>
+                  <span>Business information and citation clean-up — from $495</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span><strong className="text-white font-semibold">Local internal-linking sprint — $695:</strong> Connect priority location, service and supporting pages more clearly.</span>
+                  <span>Local internal-linking improvements — from $695</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span><strong className="text-white font-semibold">Brand Facts Page — $495:</strong> Create a central, sourceable page covering your business identity, services, locations and trust signals.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Location, map and regional-intent checks to identify practical next steps.</span>
-                </li>
-                <li className="flex items-start gap-2 font-medium text-cyan-300">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>No long-term contracts or locked-in commitments.</span>
+                  <span>Brand Facts Page — from $495</span>
                 </li>
               </ul>
             </div>
