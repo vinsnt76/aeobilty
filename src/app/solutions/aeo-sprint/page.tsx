@@ -30,6 +30,8 @@ import {
   FileCheck
 } from 'lucide-react';
 
+import { getAeoSprintSchemaGraph } from '@/lib/schema/aeoSprint';
+
 export const TECHNICAL_SPRINT_INTERNAL_LINKS = [
   {
     targetSlug: "/services/geo-marketing",
@@ -156,131 +158,7 @@ export default function AEOSprintPage() {
     }
   ];
 
-  const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#webpage",
-        "url": "https://www.aeobility.com.au/solutions/aeo-sprint",
-        "name": "AEO Technical Sprints & Schema Deployments | AEObility",
-        "description": "Focused, fixed-scope implementation for your website, structured data and priority service pages. Micro-Sprints from $495 AUD ex. GST.",
-        "inLanguage": "en-AU",
-        "isPartOf": {
-          "@id": "https://www.aeobility.com.au/#website"
-        },
-        "about": {
-          "@id": "https://www.aeobility.com.au/#organization"
-        },
-        "breadcrumb": {
-          "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#breadcrumb"
-        },
-        "mainEntity": {
-          "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#service"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.aeobility.com.au/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Solutions",
-            "item": "https://www.aeobility.com.au/solutions"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "AEO Technical Sprints",
-            "item": "https://www.aeobility.com.au/solutions/aeo-sprint"
-          }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#service",
-        "name": "AEObility Technical Sprints",
-        "alternateName": "SS1-SS4-MICRO",
-        "description": "Focused, fixed-scope implementation for website code, structured data schema, and priority page rewrites.",
-        "provider": {
-          "@id": "https://www.aeobility.com.au/#organization"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
-        },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Service or Location Schema Sprint",
-            "sku": "SS1",
-            "price": "495.00",
-            "priceCurrency": "AUD",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "valueAddedTaxIncluded": false,
-              "description": "Excluding GST"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Single-Page Content Sprint",
-            "sku": "SS2",
-            "price": "495.00",
-            "priceCurrency": "AUD",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "valueAddedTaxIncluded": false,
-              "description": "Excluding GST"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Page Structure & Search Intent Sprint",
-            "sku": "SS3",
-            "price": "495.00",
-            "priceCurrency": "AUD",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "valueAddedTaxIncluded": false,
-              "description": "Excluding GST"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Foundation Implementation",
-            "sku": "SS1-SS4-MACRO",
-            "price": "3195.00",
-            "priceCurrency": "AUD",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "valueAddedTaxIncluded": false,
-              "description": "Excluding GST; $995 Blueprint credit applicable"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.aeobility.com.au/solutions/aeo-sprint#faq",
-        "mainEntity": faqs.map(f => ({
-          "@type": "Question",
-          "name": f.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": f.answer
-          }
-        }))
-      }
-    ]
-  };
+  const jsonLdGraph = getAeoSprintSchemaGraph(faqs);
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
