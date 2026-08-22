@@ -2,13 +2,23 @@ import React, { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DiagnosticEngine from '@/components/DiagnosticEngine';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'AI Visibility Diagnostic | AEObility',
-  description: 'Measure your AI Search Visibility and find out how AI engines understand your business.',
+export const metadata: Metadata = {
+  title: "Run a Free AI Visibility Scan | AEObility",
+  description: "Test your business details today. Run a free visibility scan to check your structured data, location signals and service information formatting.",
   alternates: {
     canonical: "https://aeobility.com.au/diagnostic",
   },
+  keywords: [
+    "free AI visibility scan",
+    "AEO diagnostic tool",
+    "structured data check Australia",
+    "local signals audit",
+    "AI search audit",
+    "search visibility score",
+    "service information formatting"
+  ]
 };
 
 export default function DiagnosticPage() {
@@ -19,8 +29,8 @@ export default function DiagnosticPage() {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/diagnostic#webpage",
         "url": "https://aeobility.com.au/diagnostic",
-        "name": "AI Visibility Diagnostic | AEObility",
-        "description": "Measure your AI Search Visibility and find out how AI engines understand your business.",
+        "name": "Run a Free AI Visibility Scan | AEObility",
+        "description": "Test your business details today. Run a free visibility scan to check your structured data, location signals and service information formatting.",
         "publisher": {
           "@type": "Organization",
           "name": "AEObility",
@@ -30,12 +40,12 @@ export default function DiagnosticPage() {
       {
         "@type": "WebApplication",
         "@id": "https://aeobility.com.au/diagnostic#webapp",
-        "name": "AEObility AI Visibility Diagnostic Engine",
+        "name": "AEObility Free AI Visibility Scanner",
         "url": "https://aeobility.com.au/diagnostic",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript",
-        "description": "Interactive Answer Engine Optimisation (AEO) diagnostic tool evaluating brand entity salience and AI search visibility scores.",
+        "description": "Interactive visibility diagnostic tool evaluating structured data, location signals, and service information formatting across primary search platforms.",
         "provider": {
           "@type": "Organization",
           "name": "AEObility",
@@ -46,15 +56,15 @@ export default function DiagnosticPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Navbar />
       
-      <main className="flex-1 w-full max-w-4xl mx-auto px-6 py-24 flex flex-col items-center">
-        <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono">Initialising Telemetry Engine...</div>}>
+      <main className="flex-1 w-full max-w-4xl mx-auto px-6 py-16 flex flex-col items-center">
+        <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
           <DiagnosticEngine />
         </Suspense>
       </main>
