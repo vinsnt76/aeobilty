@@ -71,8 +71,9 @@ export function CoreEngagementsGrid() {
               <Link
                 href="/solutions/aeo-blueprint"
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
+                title="Explore the prioritised 90-day action plan with the AEObility Blueprint"
               >
-                <span>Explore the Blueprint</span>
+                <span>Explore the Blueprint (90-Day Plan)</span>
                 <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

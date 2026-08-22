@@ -11,6 +11,24 @@ import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, La
 import { PRICING_CONFIG } from '@/lib/brandFacts';
 import { trackGaEvent } from '@/lib/gtag';
 
+export const BLUEPRINT_INTERNAL_LINKS = [
+  {
+    targetSlug: "/solutions/aeo-sprint",
+    anchorText: "focused micro-sprints",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/services/geo-marketing",
+    anchorText: "local business profile structures",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/brand-facts",
+    anchorText: "canonical product database",
+    entityRelation: "http://schema.org/isRelatedTo"
+  }
+];
+
 export default function AEOBlueprintPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [contactSubmitted, setContactSubmitted] = useState(false);
@@ -321,7 +339,7 @@ export default function AEOBlueprintPage() {
                 <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white font-semibold block mb-0.5">Developer-Ready Asset: Implement In-House or With Us</strong>
-                  <span>You can take your Blueprint and implement it in-house or hand it to your developer. If you choose AEObility for implementation, your $995 fee is credited back when you book any Foundation Sprint or higher.</span>
+                  <span>You can take your Blueprint and implement it in-house or hand it to your developer. If you choose AEObility for implementation, your $995 fee is credited back when you book any Foundation Sprint or higher. Alternatively, you can implement rapid technical fixes through <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
                 </div>
               </div>
             </div>
@@ -346,7 +364,7 @@ export default function AEOBlueprintPage() {
                 Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
-                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline) within 60 days of your Blueprint handover. Credit does not apply to standalone Micro-Sprints and is not redeemable for cash.
+                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline) within 60 days of your Blueprint handover. All pricing is published in our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical product database</Link>. Credit does not apply to standalone Micro-Sprints and is not redeemable for cash.
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
                 <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -407,7 +425,7 @@ export default function AEOBlueprintPage() {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-white/80 font-serif">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Consistency of your key local business details and citations (NAP).</span>
+                  <span>Consistency of your key local business details, geographic signals, and <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profile structures</Link> (NAP).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
