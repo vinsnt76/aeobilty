@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award, Code, Users } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award, Code, Users, Search, Target, Cpu, CheckSquare } from 'lucide-react';
 import { PRICING_CONFIG } from '@/lib/brandFacts';
 import { trackGaEvent } from '@/lib/gtag';
 
@@ -137,7 +137,7 @@ export default function AEOBlueprintPage() {
         "@type": "Product",
         "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#product",
         "name": "The AEObility Blueprint",
-        "image": "https://www.aeobility.com.au/client-milestones-onboarding.png",
+        "image": "https://www.aeobility.com.au/aeo-strategic-blueprint_AEObilty.webp",
         "description": "A comprehensive marketing audit with strategic roadmap, technical gap analysis, and 90-day implementation plan.",
         "sku": "BPSTRAT",
         "brand": {
@@ -250,8 +250,8 @@ export default function AEOBlueprintPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-5xl mx-auto px-6 space-y-20">
 
-          {/* 1. Hero Block */}
-          <section className="text-center max-w-3xl mx-auto space-y-6">
+          {/* 1. Hero Block with Overlaid CTAs */}
+          <section className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <Compass className="w-4 h-4 text-aeo-cyan" />
               <span>Strategic Audit (Code: {PRICING_CONFIG.blueprint.code})</span>
@@ -274,39 +274,46 @@ export default function AEOBlueprintPage() {
               </div>
             </div>
 
-            {/* Hero Asset Image Container */}
-            <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl my-6">
+            {/* Hero Image Container with Overlaid CTAs */}
+            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group">
               <Image
-                src="/client-milestones-onboarding.png"
-                alt="Mock-up of a printed premium technical strategy document and roadmap layout system"
-                width={800}
-                height={400}
-                className="w-full h-auto object-cover"
+                src="/aeo-strategic-blueprint_AEObilty.webp"
+                alt="AEObility Strategic Blueprint: 90-day AEO marketing audit and technical roadmap for Perth and Australian businesses"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-cover opacity-85 transition-opacity duration-300 group-hover:opacity-95"
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              
+              {/* Overlaid Hero CTAs Container */}
+              <div className="absolute bottom-6 inset-x-6 z-10 p-6 rounded-2xl bg-zinc-950/80 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
+                  <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fixed-Price Engagement</span>
+                  <span className="text-sm font-semibold text-white font-serif block">Ready to clarify your search visibility priorities?</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                  <Link
+                    href="/contact?service=blueprint"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-black" />
+                    <span>Discuss the Blueprint</span>
+                  </Link>
+                  <Link
+                    href="/diagnostic"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
+                  >
+                    <span>Run free scan</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-3 pt-2">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/contact?service=blueprint"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4 text-black" />
-                  <span>Discuss the Blueprint</span>
-                </Link>
-                <Link
-                  href="/diagnostic"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 border border-white/15 hover:border-aeo-cyan text-white font-semibold text-base transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
-                >
-                  <span>Run a free visibility scan</span>
-                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-                </Link>
-              </div>
-              <p className="text-xs text-zinc-400 font-serif">
-                Not sure whether you need a Blueprint or a focused sprint? We will help you choose the right starting point.
-              </p>
-            </div>
+            <p className="text-xs text-zinc-400 font-serif">
+              Not sure whether you need a Blueprint or a focused sprint? We will help you choose the right starting point.
+            </p>
           </section>
 
           {/* 2. "Best For" Qualification Strip */}
@@ -373,34 +380,54 @@ export default function AEOBlueprintPage() {
               ))}
             </div>
 
-            {/* Supporting Timeline Image */}
-            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl my-4">
+            {/* Structured Flow Image Container with Overlaid Callout & Scope Notes */}
+            <div className="relative w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl my-6 group">
               <Image
-                src="/structured-search-audit-wireframe.png"
-                alt="Grid displaying the complete contents of the 90-day operational milestone timeline"
-                width={900}
-                height={300}
-                className="w-full h-auto object-cover opacity-90"
+                src="/aeo-seo-structured-flow.webp"
+                alt="AEObility AEO SEO structured flow: 90-day operational milestone timeline for search visibility"
+                width={1200}
+                height={800}
+                className="w-full h-[420px] object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-75"
               />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-zinc-950/80 to-black" />
 
-            {/* Built for Your Team or Developer Callout */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">Use the Blueprint your way</strong>
-                  <span>Take the recommendations to your internal team, developer or agency partner, or ask AEObility to implement the agreed priorities. If you need a smaller, defined fix, explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
+              {/* Icon Visual Markers */}
+              <div className="absolute top-6 left-6 right-6 z-10 flex items-center justify-between pointer-events-none">
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono">
+                  <Search className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>01. Discovery</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-500/40 text-purple-300 text-xs font-mono">
+                  <Target className="w-3.5 h-3.5 text-purple-400" />
+                  <span>02. Planning</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono">
+                  <CheckSquare className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>03. Handover</span>
                 </div>
               </div>
-            </div>
 
-            {/* "What is Not Included" Restrained Scope Callout Container */}
-            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-4 flex items-start gap-3 text-xs text-zinc-300 font-serif leading-relaxed shadow-sm">
-              <Info className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-              <p>
-                <strong className="text-white font-semibold">Scope note:</strong> The Blueprint is a strategic audit and roadmap. It does not include website development, schema deployment, content rewrites, citation updates or ongoing monitoring. These can be scoped separately after handover.
-              </p>
+              {/* Overlaid Callouts Stacked Over the Image */}
+              <div className="absolute inset-x-6 bottom-6 z-10 space-y-3">
+                {/* Overlay 1: Built for Your Team or Developer */}
+                <div className="bg-zinc-950/90 border border-white/20 rounded-xl p-4 sm:p-5 backdrop-blur-md text-xs text-zinc-300 font-serif leading-relaxed shadow-xl">
+                  <div className="flex items-start gap-3">
+                    <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white font-semibold block mb-0.5">Use the Blueprint your way</strong>
+                      <span>Take the recommendations to your internal team, developer or agency partner, or ask AEObility to implement the agreed priorities. If you need a smaller, defined fix, explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Overlay 2: Scope Note */}
+                <div className="bg-cyan-950/60 border border-cyan-500/40 rounded-xl p-3.5 sm:p-4 backdrop-blur-md flex items-start gap-3 text-xs text-zinc-300 font-serif leading-relaxed shadow-xl">
+                  <Info className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <p>
+                    <strong className="text-white font-semibold">Scope note:</strong> The Blueprint is a strategic audit and roadmap. It does not include website development, schema deployment, content rewrites, citation updates or ongoing monitoring. These can be scoped separately after handover.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
