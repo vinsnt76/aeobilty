@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award } from 'lucide-react';
 import { PRICING_CONFIG } from '@/lib/brandFacts';
 
 export default function AEOBlueprintPage() {
@@ -20,27 +20,27 @@ export default function AEOBlueprintPage() {
   const faqs = [
     {
       question: "What is included in the AEObility Blueprint?",
-      answer: "The Blueprint includes a website and structured-data review, an AI and search visibility scorecard, a 90-day implementation roadmap, and a content and service-information audit."
+      answer: "The Blueprint includes a website and structured-data review, a visibility scorecard, a prioritised 90-day roadmap, and an audit of key service and content pages. You receive practical recommendations for the highest-priority improvements."
     },
     {
       question: "How long does the Blueprint take?",
-      answer: "Typical turnaround is 7–10 business days from receipt of required website access, local profile permissions, and business information."
+      answer: "Most Blueprints are completed within 7 to 10 business days after we receive the required access and business information. Timing may vary for larger or multi-location businesses."
     },
     {
       question: "Do you need access to my website or Google Business Profile?",
-      answer: "Yes, read-only or administrative access to your website CMS, Google Business Profile, and Search Console helps us evaluate existing technical setup and local signals accurately."
+      answer: "We will confirm the access needed during discovery. Website access and view-level access to relevant business profiles can help us provide more specific recommendations, but we will explain exactly what is required before work begins."
     },
     {
       question: "Does the Blueprint include implementation?",
-      answer: "No. The Blueprint is a strategic audit and roadmap. It does not include website development, schema deployment, content rewrites, or citation updates. Implementation can be scoped separately after handover."
+      answer: "No. The Blueprint is a strategic audit and 90-day implementation roadmap. Website development, schema deployment, page rewrites, citation updates and ongoing support can be scoped separately after handover."
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: "Your $995 Blueprint fee is credited towards Foundation Implementation or a qualifying implementation package booked within 60 days of your Blueprint handover."
+      answer: "Your $995 Blueprint fee is credited towards Foundation Implementation or eligible implementation work valued at $3,195 or more, when booked within 60 days of your Blueprint handover. The credit is applied to the agreed implementation scope and is not redeemable for cash."
     },
     {
       question: "Is the Blueprint suitable for agencies or multi-location businesses?",
-      answer: "Yes. The Blueprint delivers clear, un-jargoned specifications and checklists that internal teams, developers, or external agency partners can execute directly."
+      answer: "Yes. The Blueprint can support internal marketing teams, developers and agency partners, and can be scoped for multi-location businesses. Contact us to confirm the appropriate scope and pricing before booking."
     }
   ];
 
@@ -120,7 +120,7 @@ export default function AEOBlueprintPage() {
           "priceSpecification": {
             "@type": "PriceSpecification",
             "valueAddedTaxIncluded": false,
-            "description": "Excluding GST; credited towards qualifying implementation packages booked within 60 days."
+            "description": "Excluding GST; credited towards Foundation Implementation or qualifying implementation work valued at $3,195 or more booked within 60 days."
           }
         }
       },
@@ -148,18 +148,25 @@ export default function AEOBlueprintPage() {
     {
       icon: <BarChart3 className="w-6 h-6 text-aeo-purple" />,
       title: "Visibility scorecard",
-      description: "A clear scorecard evaluating your business across Search, Maps and generative AI platforms, highlighting the most practical opportunities to improve visibility."
+      description: "A clear scorecard evaluating your business across Search, Maps and AI-assisted search tools, highlighting the most practical opportunities to improve visibility."
     },
     {
       icon: <Map className="w-6 h-6 text-aeo-cyan" />,
       title: "90-day roadmap",
-      description: "A step-by-step priority roadmap mapping out the most impactful technical, content and local-visibility adjustments tailored to your business goals."
+      description: "A step-by-step priority roadmap mapping out the most impactful website, content and local visibility improvements tailored to your business goals."
     },
     {
       icon: <FileText className="w-6 h-6 text-aeo-purple" />,
       title: "Content and service-information audit",
-      description: "An analysis of your core service descriptions and client-facing pages to match active customer questions and local user search intents."
+      description: "An analysis of your core service descriptions and client-facing pages to match the questions local customers are asking."
     }
+  ];
+
+  const valueProps = [
+    "Fixed $995 price with clearly defined deliverables",
+    "Independent, prioritised recommendations rather than an open-ended retainer",
+    "Built for Australian businesses, local visibility and modern search behaviour",
+    "Clear handover for your internal team, developer or agency partner"
   ];
 
   return (
@@ -198,21 +205,26 @@ export default function AEOBlueprintPage() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Link
-                href="/contact?service=blueprint"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
-              >
-                <Calendar className="w-4 h-4 text-black" />
-                <span>Discuss the Blueprint</span>
-              </Link>
-              <Link
-                href="/diagnostic"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 border border-white/15 hover:border-aeo-cyan text-white font-semibold text-base transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
-              >
-                <span>Run a free visibility scan</span>
-                <ArrowRight className="w-4 h-4 text-aeo-cyan" />
-              </Link>
+            <div className="space-y-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/contact?service=blueprint"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4 text-black" />
+                  <span>Discuss the Blueprint</span>
+                </Link>
+                <Link
+                  href="/diagnostic"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 border border-white/15 hover:border-aeo-cyan text-white font-semibold text-base transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+                >
+                  <span>Run a free visibility scan</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </Link>
+              </div>
+              <p className="text-xs text-zinc-400 font-serif">
+                Not sure whether you need a Blueprint or a focused sprint? We will help you choose the right starting point.
+              </p>
             </div>
           </section>
 
@@ -240,6 +252,21 @@ export default function AEOBlueprintPage() {
                 <span>Need a clear scope for internal developers, content teams, or agency partners.</span>
               </li>
             </ul>
+
+            {/* Decision Guide Helper Strip */}
+            <div className="bg-zinc-900/60 border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-serif mt-4">
+              <span className="text-white/80 font-medium flex items-center gap-1.5 shrink-0">
+                <HelpCircle className="w-4 h-4 text-cyan-400" />
+                Need help deciding?
+              </span>
+              <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-zinc-300">
+                <span className="text-cyan-300">Unsure what is limiting visibility → Blueprint</span>
+                <span className="text-zinc-600">|</span>
+                <Link href="/solutions/aeo-sprint" className="text-purple-400 hover:underline">Know the issue → Micro-Sprint</Link>
+                <span className="text-zinc-600">|</span>
+                <Link href="/solutions" className="text-cyan-400 hover:underline">Multiple priorities → Foundation</Link>
+              </div>
+            </div>
           </section>
 
           {/* 3. Core Deliverables Matrix (Four Responsive Cards) */}
@@ -274,21 +301,34 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 4. Price and Fee-Credit Terms Banner */}
-          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-8 text-center space-y-4 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
-              <ShieldCheck className="w-4 h-4 text-cyan-400" />
-              <span>100% Fee Credit Terms</span>
+          {/* 4. Price and Fee-Credit Terms Banner + High-Intent Mid-Page CTA */}
+          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-8 text-center space-y-6 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                <span>100% Fee Credit Terms</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
+                Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
+                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited towards Foundation Implementation or eligible implementation work valued at $3,195 or more, when booked within 60 days of your Blueprint handover. The credit is applied to the agreed implementation scope and is not redeemable for cash.
+              </p>
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
+                <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span>Typical turnaround: 7 to 10 business days from receipt of required access and business information.</span>
+              </div>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
-              Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
-            </h3>
-            <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
-              Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited towards Foundation Implementation or a qualifying implementation package booked within 60 days of your Blueprint handover.
-            </p>
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
-              <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>Typical turnaround: 7 to 10 business days from receipt of required access and business information.</span>
+
+            {/* Mid-Page High-Intent Conversion CTA */}
+            <div className="pt-2">
+              <Link
+                href="/contact?service=blueprint"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(6,182,212,0.3)] cursor-pointer"
+              >
+                <Calendar className="w-4 h-4 text-black" />
+                <span>Discuss the Blueprint</span>
+              </Link>
             </div>
           </section>
 
@@ -303,7 +343,7 @@ export default function AEOBlueprintPage() {
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
                 <span className="text-2xl font-extrabold text-cyan-400 font-mono block">01</span>
                 <h3 className="text-base font-bold text-white font-soehne-breit">Initial Discovery & Setup</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We audit your existing local signals, brand claims, and technical structural data.</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We audit your existing local signals, brand claims, and website structure and business information.</p>
               </div>
 
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
@@ -320,10 +360,10 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 6. Technical Review Section ("What we review in more detail") */}
+          {/* 6. Technical Review Section ("A closer look at what we review") */}
           <section className="border-t border-white/10 pt-16 space-y-6">
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold text-white font-soehne-breit">What we review in more detail</h2>
+              <h2 className="text-2xl font-bold text-white font-soehne-breit">A closer look at what we review</h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-serif leading-relaxed">
                 For businesses and agency teams that want the technical detail, the Blueprint can examine:
               </p>
@@ -337,7 +377,7 @@ export default function AEOBlueprintPage() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>How your business data and service connections are formatted for search systems.</span>
+                  <span>How your services and locations are described consistently online.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
@@ -351,7 +391,25 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 7. FAQ Accordion Block */}
+          {/* 7. Trust & Evidence Strip ("Why Businesses Choose the Blueprint") */}
+          <section className="border-t border-white/10 pt-16 space-y-6">
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 md:p-8 space-y-4">
+              <div className="flex items-center gap-2">
+                <Award className="w-5 h-5 text-cyan-400" />
+                <h3 className="text-lg font-bold text-white font-soehne-breit">Why businesses choose the Blueprint</h3>
+              </div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-white/80 font-serif">
+                {valueProps.map((prop, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>{prop}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* 8. Full FAQ Accordion Block (All Answers Rendered & Accessible) */}
           <section className="border-t border-white/10 pt-16 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
@@ -390,12 +448,12 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 8. Final Founder-Supported CTA */}
+          {/* 9. Final Founder-Supported Conversion CTA */}
           <section className="border-t border-white/10 pt-16 text-center space-y-6">
             <div className="max-w-md mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss the Blueprint</h2>
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Ready for a Clearer Picture of What to Fix First?</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Order your AEObility Blueprint today for ${PRICING_CONFIG.blueprint.price} AUD (ex. GST) and receive your prioritised 90-day action plan.
+                Discuss the Blueprint with founder Vince Baker and receive your practical 90-day action plan.
               </p>
               <div>
                 <Link
@@ -408,7 +466,7 @@ export default function AEOBlueprintPage() {
               </div>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-2">
                 <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak directly with Vince Baker, AEObility’s founder.</span>
+                <span>You will speak directly with Vince Baker, AEObility&apos;s founder.</span>
               </div>
             </div>
           </section>
