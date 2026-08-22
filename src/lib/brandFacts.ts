@@ -1,3 +1,32 @@
+export const PRICING_CONFIG = {
+  currency: 'AUD',
+  taxExclusive: true,
+  guarantee: null, // Removed 60-day risk reversal policy
+  blueprint: {
+    code: 'BPSTRAT',
+    title: 'The AEObility Blueprint',
+    price: 995,
+    creditBackEligible: true,
+  },
+  microSprints: {
+    codeSeries: 'SS1-SS4-MICRO',
+    basePriceFrom: 495,
+    catalog: [
+      { id: 'schema', name: 'Schema Sprint', price: 495 },
+      { id: 'content', name: 'Content Sprint', price: 495 },
+      { id: 'citations', name: 'Citation Clean-Up', price: 495 },
+      { id: 'linking', name: 'Local Linking Sprint', price: 695 },
+      { id: 'brand-facts', name: 'Brand Facts Page', price: 495 },
+    ],
+  },
+  foundation: {
+    codeSeries: 'SS1-SS4-MACRO',
+    basePriceFrom: 3195,
+    deliveryWindow: '4–5 working days across a 4-week period',
+    contractTerm: 'None (Fixed-scope execution)',
+  },
+} as const;
+
 /**
  * AEObility Brand Facts & Service Offerings JSON-LD Source of Truth
  * Provides unambiguous, machine-readable reference for products, SKUs, and pricing.

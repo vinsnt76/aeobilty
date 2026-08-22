@@ -1,232 +1,99 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CheckCircle2, ArrowRight, HelpCircle, Compass, Layers, Boxes, Network, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Compass, Layers, Boxes, Network, ShieldCheck, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
+import { PRICING_CONFIG } from '@/lib/brandFacts';
 
 export const metadata: Metadata = {
-  title: "AEO Service Costs, Packages & Sprints | AEObility",
-  description: "Explore transparent AEO service costs and pricing models. From our $995 Strategic Blueprint to targeted optimisation sprints, boost your local visibility.",
+  title: "AEO Services, Sprints & Clear Pricing | AEObility",
+  description: "Explore transparent AEO services, Micro-Sprints, and Foundation Implementation starting from $495 AUD. Scoped work for Australian businesses across Search, Maps, and AI.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions",
   },
   keywords: [
-    "AEO Service Cost",
-    "aeo services vs seo services",
+    "AEO Services Australia",
     "transparent digital marketing pricing",
-    "90‑day marketing roadmap",
+    "AEO technical sprints",
+    "90-day marketing roadmap",
     "strategic audit and roadmap",
-    "no‑contract marketing agency",
-    "project deliverables",
+    "no-contract marketing agency",
     "pricing clarity",
-    "sprint milestones"
+    "local visibility sprints"
   ]
 };
-
-function GanttChart() {
-  const tasks = [
-    { name: "S1: Schema & Semantic Mapping", startDay: 1, endDay: 30, color: "from-aeo-cyan to-aeo-purple" },
-    { name: "S2: Atomic Answer Blocks", startDay: 31, endDay: 60, color: "from-aeo-purple to-aeo-cyan" },
-    { name: "S3: Semantic Lattice Linking", startDay: 61, endDay: 75, color: "from-aeo-cyan to-neutral-800" },
-    { name: "S4: Brand Facts & Consensus", startDay: 76, endDay: 90, color: "from-aeo-purple to-neutral-800" }
-  ];
-
-  return (
-    <div className="w-full bg-neutral-950/80 border border-white/10 rounded-2xl p-6 space-y-6 shadow-2xl backdrop-blur-xl">
-      <div className="flex justify-between items-center border-b border-white/10 pb-3">
-        <h3 className="text-sm font-bold tracking-wider text-white uppercase">90-Day Execution Timeline</h3>
-        <span className="text-[10px] font-mono text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded border border-aeo-cyan/20">Australia Focus</span>
-      </div>
-
-      {/* Grid Timeline Header */}
-      <div className="grid grid-cols-6 text-center text-[10px] font-mono text-white/40 border-b border-white/5 pb-2">
-        <div>Day 1</div>
-        <div>Day 15</div>
-        <div>Day 30</div>
-        <div>Day 60</div>
-        <div>Day 75</div>
-        <div>Day 90</div>
-      </div>
-
-      {/* Rows */}
-      <div className="space-y-4 relative">
-        {/* Background Grid Lines */}
-        <div className="absolute inset-0 grid grid-cols-6 pointer-events-none">
-          <div className="border-r border-white/5 h-full"></div>
-          <div className="border-r border-white/5 h-full"></div>
-          <div className="border-r border-white/5 h-full"></div>
-          <div className="border-r border-white/5 h-full"></div>
-          <div className="border-r border-white/5 h-full"></div>
-          <div className="h-full"></div>
-        </div>
-
-        {tasks.map((task, idx) => {
-          let colStart = 1;
-          let colSpan = 2;
-          if (task.startDay === 1) { colStart = 1; colSpan = 2; }
-          else if (task.startDay === 31) { colStart = 3; colSpan = 2; }
-          else if (task.startDay === 61) { colStart = 5; colSpan = 1; }
-          else if (task.startDay === 76) { colStart = 6; colSpan = 1; }
-
-          return (
-            <div key={idx} className="space-y-1.5 relative z-10">
-              <div className="flex justify-between text-xs font-semibold text-white/80">
-                <span>{task.name}</span>
-                <span className="text-[10px] text-white/40 font-mono">Days {task.startDay}-{task.endDay}</span>
-              </div>
-              <div className="w-full bg-white/[0.02] border border-white/5 h-6 rounded-lg overflow-hidden p-0.5">
-                <div className="grid grid-cols-6 h-full w-full">
-                  <div 
-                    style={{ gridColumnStart: colStart, gridColumnEnd: `span ${colSpan}` }}
-                    className={`h-full rounded-md bg-gradient-to-r ${task.color} opacity-85 hover:opacity-100 transition-opacity shadow-[0_0_12px_rgba(0,205,216,0.15)]`}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function SprintFlowChart() {
-  const sprints = [
-    {
-      id: "S1",
-      title: "Schema & Semantic Mapping",
-      human: "We define exactly what your business offers so AI stops guessing.",
-      tech: "Entity salience, schema markup, relationship definitions.",
-      icon: <Layers className="w-5 h-5" />
-    },
-    {
-      id: "S2",
-      title: "Atomic Answer Block Structuring",
-      human: "We rewrite your pages into short, clear answers that AI can actually use.",
-      tech: "90–120 token passages, conversational query alignment.",
-      icon: <Boxes className="w-5 h-5" />
-    },
-    {
-      id: "S3",
-      title: "Semantic Lattice Linking",
-      human: "We connect your ideas with descriptive links so AI understands how everything fits together.",
-      tech: "Relationship graph, anchor‑text signalling, contextual pathways.",
-      icon: <Network className="w-5 h-5" />
-    },
-    {
-      id: "S4",
-      title: "Brand Facts & Consensus Signals",
-      human: "We publish one canonical source of truth so AI stops contradicting your brand.",
-      tech: "Fact consolidation, consistency signals, hallucination reduction.",
-      icon: <ShieldCheck className="w-5 h-5" />
-    }
-  ];
-
-  return (
-    <div className="relative w-full max-w-[900px] mx-auto flex flex-col gap-6 pr-4">
-      {/* Connector Line */}
-      <div className="absolute left-[31px] md:left-[35px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-aeo-cyan via-aeo-purple to-neutral-800 pointer-events-none" />
-
-      {sprints.map((sprint) => (
-        <div 
-          key={sprint.id}
-          className="relative flex gap-4 md:gap-6 items-start p-5 bg-neutral-900/40 backdrop-blur-xl border border-white/5 rounded-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 transition-all duration-300 group"
-        >
-          {/* Node Icon */}
-          <div className="relative z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black border border-white/10 text-aeo-cyan flex-shrink-0 group-hover:scale-105 transition-transform">
-            {sprint.icon}
-            <span className="absolute -top-1.5 -right-1.5 text-[8px] font-extrabold px-1.5 py-0.5 rounded-full bg-aeo-purple text-white shadow-sm shadow-black/80">
-              {sprint.id}
-            </span>
-          </div>
-
-          <div className="space-y-1">
-            <h3 className="text-sm md:text-base font-bold text-white group-hover:text-aeo-cyan transition-colors">
-              {sprint.title}
-            </h3>
-            <p className="text-xs md:text-sm text-white/70 font-light leading-relaxed">
-              {sprint.human}
-            </p>
-            <p className="text-[10px] text-white/40 font-mono tracking-tight pt-1">
-              {sprint.tech}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function SolutionsPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "AEObility 90-Day Success Blueprint",
-    "image": "https://aeobility.com.au/pricing-tiered-modules.png",
-    "description": "A comprehensive visibility audit and deep-dive strategic roadmap to structure your business for Search, Maps, and conversational AI.",
+    "description": "A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.",
     "brand": {
       "@type": "Brand",
       "name": "AEObility"
     },
     "offers": {
       "@type": "Offer",
-      "price": "995.00",
-      "priceCurrency": "AUD",
+      "price": `${PRICING_CONFIG.blueprint.price}.00`,
+      "priceCurrency": PRICING_CONFIG.currency,
       "url": "https://aeobility.com.au/solutions",
       "areaServed": "AU"
     }
   };
 
-  const packages = [
+  const decisionStrip = [
     {
-      name: "The Strategic Blueprint Method",
-      price: "$995 AUD",
-      description: "A comprehensive, risk-free visibility audit and 90-day step-by-step roadmap to format your business details for generative search.",
-      features: [
-        "Full entity & schema audit",
-        "AI discovery readiness score",
-        "Topical Q&A structure map",
-        "Vector indexing compatibility check",
-        "100% credit back if you stay with us"
-      ],
-      cta: "Explore Blueprint Solution",
-      href: "/solutions/aeo-blueprint",
-      highlighted: false
+      feeling: "“I’m not sure what is holding us back.”",
+      solution: "The AEObility Blueprint",
+      href: "/solutions/aeo-blueprint"
     },
     {
-      name: "AEO Technical Sprints",
-      price: "Execution Sprints",
-      description: "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
-      features: [
-        "JSON-LD graph nesting",
-        "HTML refactoring rules",
-        "Passage level extraction setup",
-        "Token optimisation passes",
-        "No locked-in commitments"
-      ],
-      cta: "Explore AEO Sprints",
-      href: "/solutions/aeo-sprint",
-      highlighted: true
+      feeling: "“I know the issue and need it fixed.”",
+      solution: "A Micro-Sprint",
+      href: "/solutions/aeo-sprint"
     },
     {
-      name: "GEO Services Sprint",
-      price: "Location Domination",
-      description: "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
-      features: [
-        "Coordinate precision mapping",
-        "Verified map pack foundations",
-        "Regional intent frameworks",
-        "Proximity signal validation",
-        "No contracts, no locking"
-      ],
-      cta: "Explore GEO Sprints",
-      href: "/solutions/geo-services",
-      highlighted: false
+      feeling: "“We have several important issues to address.”",
+      solution: "Foundation Implementation",
+      href: "/contact"
+    }
+  ];
+
+  const buildingBlocks = [
+    {
+      id: "S1",
+      title: "S1: Schema & Semantic Mapping",
+      achieves: "Clarify business, service and location information",
+      application: "Structured data, service relationships and location signals",
+      icon: <Layers className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      id: "S2",
+      title: "S2: Answer-Ready Content",
+      subtitle: "(Formerly Atomic Answer Blocks)",
+      achieves: "Make key pages clearer for customers and search systems",
+      application: "Page sections, FAQs, service explanations and proof points",
+      icon: <Boxes className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      id: "S3",
+      title: "S3: Internal Linking & Content Connections",
+      subtitle: "(Formerly Semantic Lattice Linking)",
+      achieves: "Connect related service, location and supporting pages",
+      application: "Contextual internal links, navigation paths and topic relationships",
+      icon: <Network className="w-5 h-5 text-aeo-cyan" />
+    },
+    {
+      id: "S4",
+      title: "S4: Brand Facts & Consistency",
+      achieves: "Create a reliable central source of business information",
+      application: "Brand Facts Page, core business claims, service details and trust information",
+      icon: <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
     }
   ];
 
@@ -242,80 +109,222 @@ export default function SolutionsPage() {
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12">
-        <div className="max-w-6xl mx-auto px-6 space-y-24">
+        <div className="max-w-6xl mx-auto px-6 space-y-20">
 
-          {/* Hero Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-                <Compass className="w-3.5 h-3.5" />
-                <span>AEO Service Cost & Pricing Clarity</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Transparent AEO Solutions, <br />
-                <span className="text-gradient-aeo">Sprints & Pricing</span>
-              </h1>
-              <p className="text-lg text-white/70 font-light leading-relaxed max-w-xl">
-                Compare AEO services vs SEO services. We offer simple, milestone-based packages with full pricing clarity so you always know what you are paying for.
-              </p>
-              <div className="pt-4">
-                <Link
-                  href="/#audit-form"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
-                >
-                  <span>Get My Free Audit</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+          {/* 1. Hero Section */}
+          <section className="text-center max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <Compass className="w-4 h-4 text-aeo-cyan" />
+              <span>Clear Pricing & Scoped Engagements</span>
             </div>
-
-            <div className="lg:col-span-6">
-              <GanttChart />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+              AEO Services, Sprints & <span className="text-gradient-aeo">Clear Pricing</span>
+            </h1>
+            <p className="text-base sm:text-lg text-white/70 font-light leading-relaxed">
+              Choose a clear roadmap, fix one priority issue or build stronger foundations across Search, Maps and AI. No locked-in contracts—just clearly scoped work and transparent pricing.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/diagnostic"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
+              >
+                <span>Get a Free Visibility Audit</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </section>
 
-          {/* Core Optimisation Engagements */}
-          <section className="space-y-12 border-t border-white/5 pt-16">
-            <div className="text-center max-w-2xl mx-auto space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Our Core Optimisation Engagements</h2>
-              <p className="text-white/60 font-light leading-relaxed">
-                Whether you need a standalone strategic audit and roadmap or complete implementation, we provide flat-rate solutions.
+          {/* 2. The Three Engagement Paths */}
+          <section className="space-y-8 border-t border-white/10 pt-16">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Choose Your Engagement Path</h2>
+              <p className="text-white/60 text-sm font-light">
+                Transparent, fixed-price implementation designed specifically for Australian small businesses.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-              {packages.map((pkg, idx) => (
-                <div 
-                  key={idx}
-                  className={`p-1 rounded-2xl bg-gradient-to-br transition-all duration-300 ${
-                    pkg.highlighted 
-                      ? 'from-aeo-cyan via-aeo-purple to-black shadow-[0_0_30px_rgba(0,205,216,0.15)] scale-105' 
-                      : 'from-white/10 to-white/5 border border-white/5'
-                  }`}
-                >
-                  <div className="p-8 bg-neutral-950 rounded-xl flex flex-col justify-between h-full gap-8">
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-white">{pkg.name}</h3>
-                      <div className="text-3xl font-extrabold text-white">{pkg.price}</div>
-                      <p className="text-sm text-white/60 font-light leading-relaxed">{pkg.description}</p>
-                      <ul className="space-y-3 pt-4">
-                        {pkg.features.map((feat, fIdx) => (
-                          <li key={fIdx} className="flex gap-2.5 items-start text-xs text-white/80 font-light">
-                            <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+              
+              {/* Path 1: Start with a Blueprint */}
+              <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400 transition-all duration-300 group">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider font-mono">1. Start with a Blueprint</span>
+                    <div className="text-right">
+                      <span className="text-lg font-bold text-cyan-300 font-mono">${PRICING_CONFIG.blueprint.price} AUD</span>
+                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white tracking-tight">{PRICING_CONFIG.blueprint.title}</h3>
+                    <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
+                      Understand what is limiting your visibility, then receive a prioritised 90-day action plan.
+                    </p>
+                  </div>
+
+                  <ul className="space-y-2.5 text-xs text-zinc-300 pt-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Website, entity and structured-data review</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Visibility scorecard and priority actions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Practical 90-day roadmap</span>
+                    </li>
+                    <li className="flex items-start gap-2 font-medium text-cyan-300">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Blueprint fee credited towards eligible implementation work</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="pt-8">
+                  <Link
+                    href="/solutions/aeo-blueprint"
+                    className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
+                  >
+                    <span>Explore the Blueprint</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Path 2: Fix One Priority */}
+              <div className="relative p-0.5 rounded-2xl bg-gradient-to-b from-cyan-400 via-purple-500 to-cyan-500 shadow-[0_0_30px_rgba(168,85,247,0.25)] transition-all duration-300 group">
+                <div className="flex flex-col justify-between h-full p-6 md:p-8 rounded-[15px] bg-zinc-950/95 backdrop-blur-xl">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-semibold text-purple-400 uppercase tracking-wider font-mono">2. Fix One Priority</span>
+                      <div className="text-right">
+                        <span className="text-sm font-bold text-cyan-300 font-mono">From ${PRICING_CONFIG.microSprints.basePriceFrom} AUD</span>
+                        <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white tracking-tight">Micro-Sprints</h3>
+                      <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        A focused, fixed-scope sprint for a defined website, content or local-visibility issue.
+                      </p>
+                    </div>
+
+                    <ul className="space-y-2.5 text-xs text-zinc-300 pt-2">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Schema Sprint — $495:</strong> Improve structured data for one service or location page</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Content Sprint — $495:</strong> Improve one priority page for customer questions and search visibility</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Citation Clean-Up — $495:</strong> Standardise core business details across priority platforms</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Local Linking Sprint — $695:</strong> Better connect priority service, location and supporting pages</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Brand Facts Page — $495:</strong> Create a central source of clear, consistent business information</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="pt-8">
+                    <Link
+                      href="/solutions/aeo-sprint"
+                      className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                    >
+                      <span>Explore Micro-Sprints</span>
+                      <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Path 3: Build the Foundation */}
+              <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider font-mono">3. Build the Foundation</span>
+                    <div className="text-right">
+                      <span className="text-sm font-bold text-cyan-300 font-mono">From ${PRICING_CONFIG.foundation.basePriceFrom} AUD</span>
+                      <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white tracking-tight">Foundation Implementation</h3>
+                    <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
+                      For businesses with several connected priorities, combining the most important technical, content and local-visibility improvements into one structured programme.
+                    </p>
+                  </div>
+
+                  <ul className="space-y-2.5 text-xs text-zinc-300 pt-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>{PRICING_CONFIG.foundation.deliveryWindow}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Priorities selected through your Blueprint or initial scoping</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>May include structured data, page improvements, internal linking and business-information consistency</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Progress updates, validation and handover</span>
+                    </li>
+                    <li className="flex items-start gap-2 font-medium text-cyan-300">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <span>Clear scope, fixed pricing and no long-term contract</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="pt-8">
+                  <Link
+                    href="/contact"
+                    className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
+                  >
+                    <span>Explore Foundation Implementation</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* 3. Decision Strip (Quick Self-Selection) */}
+          <section className="border-t border-white/10 pt-16 space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Self-Selection Guide</h2>
+              <p className="text-xs text-white/60">Find the right starting point for your business goals.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {decisionStrip.map((item, idx) => (
+                <div key={idx} className="bg-zinc-950/80 border border-white/10 p-5 rounded-xl flex flex-col justify-between space-y-4 hover:border-aeo-cyan/30 transition">
+                  <div className="space-y-2">
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-zinc-500">If this sounds like you</span>
+                    <p className="text-sm font-medium text-white italic">{item.feeling}</p>
+                  </div>
+                  <div className="pt-3 border-t border-white/5 flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-aeo-cyan block">Best starting point</span>
+                      <span className="text-xs font-bold text-white">{item.solution}</span>
                     </div>
                     <Link
-                      href={pkg.href}
-                      className={`flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold transition-all duration-300 ${
-                        pkg.highlighted 
-                          ? 'bg-gradient-to-r from-aeo-cyan to-aeo-purple text-white shadow-lg' 
-                          : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'
-                      }`}
+                      href={item.href}
+                      className="p-2 bg-white/5 border border-white/10 rounded-lg text-aeo-cyan hover:bg-aeo-cyan/20 transition"
                     >
-                      <span>{pkg.cta}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -324,59 +333,70 @@ export default function SolutionsPage() {
             </div>
           </section>
 
-          {/* Onboarding Flow & Sprint Milestones */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-white/5 pt-16">
-            <div className="lg:col-span-6 order-2 lg:order-1">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
-                <Image
-                  src="/client-milestones-onboarding.png"
-                  alt="Flowchart showing client milestones during onboarding"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                />
-              </div>
+          {/* 4. Technical Building Blocks (Reframed Modules) */}
+          <section className="border-t border-white/10 pt-16 space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">Technical Building Blocks</h2>
+              <p className="text-xs text-white/60">Modular building blocks used in Micro-Sprints and Foundation Implementation.</p>
             </div>
-            <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
-              <h2 className="text-3xl font-bold text-white">Transparent Sprints</h2>
-              <p className="text-base text-white/70 font-light leading-relaxed mb-6">
-                We believe in structured, transparent sprints. Our onboarding workflow guides you through concrete <span className="font-semibold text-white">sprint milestones</span> to build and format your business entity model. You receive regular status updates on all project deliverables.
-              </p>
-              <SprintFlowChart />
+
+            {/* Mobile-Friendly Stacked List */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {buildingBlocks.map((block) => (
+                <div key={block.id} className="bg-zinc-950/80 border border-white/10 rounded-xl p-5 space-y-3 hover:border-aeo-cyan/30 transition">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-black border border-white/10 rounded-lg">
+                      {block.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-white">{block.title}</h3>
+                      {block.subtitle && (
+                        <span className="text-[10px] text-zinc-500 font-mono block">{block.subtitle}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5 pt-2 border-t border-white/5 text-xs">
+                    <div>
+                      <span className="text-[10px] uppercase font-mono text-zinc-500 block">What it helps achieve</span>
+                      <span className="text-white/90">{block.achieves}</span>
+                    </div>
+                    <div className="pt-1">
+                      <span className="text-[10px] uppercase font-mono text-zinc-500 block">Typical application</span>
+                      <span className="text-white/70">{block.application}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
-          {/* No Locked-In Commitments Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-white/5 pt-16">
-            <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-3xl font-bold text-white">No Locked‑In Commitments</h2>
-              <p className="text-base text-white/70 font-light leading-relaxed">
-                As a proudly <span className="font-semibold text-white">no‑contract marketing agency</span>, we keep it simple. If we do not deliver results, you can leave anytime. No locked-in agreements, no hidden fees. Just clear partnership models and actionable digital results.
-              </p>
-              <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4">
-                <div className="flex gap-2 items-center text-xs font-bold uppercase tracking-wider text-aeo-cyan">
-                  <HelpCircle className="w-4 h-4" />
-                  <span>Why No Contracts?</span>
-                </div>
-                <p className="text-xs text-white/60 font-light leading-relaxed">
-                  We believe visibility marketing agency arrangements should align both incentives. If we help your brand gain citations and local map ranks, you will stay because it grows your revenue, not because of a piece of paper.
-                </p>
-              </div>
+          {/* 5. No Lock-In Trust Banner */}
+          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-white/10 rounded-2xl p-8 text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Transparent & Risk-Free</span>
             </div>
-            <div className="lg:col-span-6 p-8 bg-gradient-to-br from-aeo-cyan/10 to-aeo-purple/10 border border-white/5 rounded-3xl text-center space-y-6">
-              <h3 className="text-2xl font-bold">Secure Your Visibility Audit</h3>
-              <p className="text-sm text-white/60 font-light max-w-sm mx-auto">
-                Get a free manual audit of your search and map visibility within 24 hours.
-              </p>
-              <div>
-                <Link
-                  href="/diagnostic"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
-                >
-                  <span>Get Visibility Score</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+            <h3 className="text-2xl font-bold text-white">Clearly Scoped, Fixed Pricing</h3>
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
+              No long-term contracts, lock-in commitments, or hidden retainer fees. Every engagement is scoped with explicit deliverables, milestones, and handover documentation.
+            </p>
+          </section>
+
+          {/* 6. Contact CTA */}
+          <section className="border-t border-white/10 pt-16 text-center space-y-6">
+            <h2 className="text-3xl font-bold text-white">Ready to Get Started?</h2>
+            <p className="text-sm text-zinc-400 max-w-md mx-auto">
+              Have questions or want to discuss the best path for your business? Get in touch with our Perth team today.
+            </p>
+            <div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg"
+              >
+                <span>Talk to Vince Baker</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </section>
 
