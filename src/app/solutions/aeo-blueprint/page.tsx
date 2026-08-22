@@ -200,7 +200,7 @@ export default function AEOBlueprintPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
-                href="/contact"
+                href="/contact?service=blueprint"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-black" />
@@ -265,8 +265,8 @@ export default function AEOBlueprintPage() {
               ))}
             </div>
 
-            {/* "What is Not Included" Restrained Note */}
-            <div className="bg-black/40 border border-white/10 rounded-xl p-4 flex items-start gap-3 text-xs text-zinc-400 font-serif leading-relaxed">
+            {/* "What is Not Included" Restrained Scope Callout Container */}
+            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-4 flex items-start gap-3 text-xs text-zinc-300 font-serif leading-relaxed shadow-sm">
               <Info className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
               <p>
                 <strong className="text-white font-semibold">Scope note:</strong> The Blueprint is a strategic audit and roadmap. It does not include website development, schema deployment, content rewrites, citation updates or ongoing monitoring. These can be scoped separately after handover.
@@ -288,7 +288,7 @@ export default function AEOBlueprintPage() {
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
               <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>Typical turnaround: 7–10 business days from receipt of required access and business information.</span>
+              <span>Typical turnaround: 7 to 10 business days from receipt of required access and business information.</span>
             </div>
           </section>
 
@@ -337,7 +337,7 @@ export default function AEOBlueprintPage() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Schema markup syntax, nesting logic, and entity data relationships.</span>
+                  <span>How your business data and service connections are formatted for search systems.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
@@ -399,7 +399,7 @@ export default function AEOBlueprintPage() {
               </p>
               <div>
                 <Link
-                  href="/contact"
+                  href="/contact?service=blueprint"
                   className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg text-sm"
                 >
                   <Calendar className="w-4 h-4 text-black" />
