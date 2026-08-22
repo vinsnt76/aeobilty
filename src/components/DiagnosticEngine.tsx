@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
+import { BRAND_PRICING_SCHEMA } from '@/lib/brandFacts';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
 
@@ -16,6 +17,9 @@ export default function DiagnosticEngine() {
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
   const [processingStage, setProcessingStage] = useState(0);
   const hasAutoRunRef = useRef(false);
+
+  // Extract BPSTRAT product parameters from canonical schema
+  const bpstratProduct = BRAND_PRICING_SCHEMA['@graph'].find(p => p.sku === 'BPSTRAT') || BRAND_PRICING_SCHEMA['@graph'][0];
 
   const processingSteps = [
     "Crawling website structure",
@@ -134,8 +138,9 @@ export default function DiagnosticEngine() {
       <div className="w-full bg-white/[0.02] border border-white/10 rounded-2xl p-8 backdrop-blur-md relative overflow-hidden shadow-2xl">
         
         {step === 'INPUT' && (
-          <form onSubmit={handleStart} className="space-y-6 relative z-10">
-            <div>
+          <form onSubmit={handleStart} className="grid grid-cols-12 gap-4 relative z-10">
+            {/* Website URL - Full 12 Column Width */}
+            <div className="col-span-12">
               <label className="block text-sm font-medium text-white/80 mb-2">Website URL</label>
               <input
                 type="text"
@@ -146,7 +151,9 @@ export default function DiagnosticEngine() {
                 className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-colors"
               />
             </div>
-            <div>
+
+            {/* Primary Customer Search Intent - 6 Columns on Desktop */}
+            <div className="col-span-12 sm:col-span-6">
               <label className="block text-sm font-medium text-white/80 mb-2">Primary customer search</label>
               <input
                 type="text"
@@ -158,14 +165,47 @@ export default function DiagnosticEngine() {
               />
               <p className="text-xs text-white/40 mt-2">Example: &quot;best accounting software&quot;, &quot;commercial electricians&quot;</p>
             </div>
+
+            {/* Schema-Bound Audit Deliverables Preview - 6 Columns on Desktop */}
+            <div className="col-span-12 sm:col-span-6 bg-black/40 border border-white/10 rounded-xl p-3.5 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-aeo-cyan font-bold">
+                    Audit Deliverables ({bpstratProduct.sku})
+                  </span>
+                  <span className="text-[10px] font-mono text-zinc-400">
+                    ${bpstratProduct.price} AUD
+                  </span>
+                </div>
+                <ul className="space-y-1 text-xs text-white/70">
+                  {bpstratProduct.offers.itemOffered.slice(0, 3).map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3 h-3 text-aeo-cyan shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="text-[9px] font-mono text-zinc-400 mt-2 pt-1 border-t border-white/5">
+                Scope: {bpstratProduct.offers.eligibleDuration}
+              </div>
+            </div>
             
-            <button
-              type="submit"
-              className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-lg transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.2)] mt-8"
-            >
-              Generate My Visibility Score
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            {/* Submit Button & In-line 60-Day Risk Reversal Guarantee */}
+            <div className="col-span-12 pt-4">
+              <button
+                type="submit"
+                className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-lg transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.2)] cursor-pointer"
+              >
+                Generate My Visibility Score
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </button>
+
+              <div className="flex items-center justify-center gap-2 mt-4 text-xs text-white/60 font-mono text-center">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Backed by our 100% credit-back guarantee towards subsequent implementation sprints.</span>
+              </div>
+            </div>
           </form>
         )}
 
