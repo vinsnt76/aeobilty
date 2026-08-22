@@ -208,6 +208,10 @@ export default function SolutionsPage() {
 
           {/* 2. Engagement Paths (Three-Card Grid) */}
           <section className="space-y-8 border-t border-white/10 pt-16">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
+              <p className="text-xs text-white/60 font-serif">Transparent, fixed-price implementation designed specifically for Australian small businesses.</p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               
               {/* Path 1: Start with a Blueprint */}
@@ -384,7 +388,7 @@ export default function SolutionsPage() {
           {/* 4. Self-Selection Pathway Diagram (Responsive Stack) */}
           <section className="border-t border-white/10 pt-16 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Find Your Starting Point</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Not sure where to start?</h2>
               <p className="text-xs text-white/60 font-serif">Match your current situation to the recommended engagement pathway.</p>
             </div>
 
@@ -419,7 +423,7 @@ export default function SolutionsPage() {
           {/* 5. Technical Building Blocks (Four-Card Stack Layout) */}
           <section className="border-t border-white/10 pt-16 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Technical Building Blocks</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">The Technical Building Blocks</h2>
               <p className="text-xs text-white/60 font-serif">The practical areas we work on, selected to suit your business priorities:</p>
             </div>
 
@@ -493,7 +497,7 @@ export default function SolutionsPage() {
           {/* 7. FAQ Accordion Block */}
           <section className="border-t border-white/10 pt-16 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently Asked Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
               <p className="text-xs text-white/60 font-serif">Everything you need to know about our services, scoping, and implementation.</p>
             </div>
 
