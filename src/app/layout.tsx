@@ -8,6 +8,7 @@ import AnswerSearchModal from "@/components/AnswerSearchModal";
 import BillWidget from "@/components/BillWidget";
 import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
 import SiteNavigationSchema from "@/components/navigation/SiteNavigationSchema";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
 
@@ -301,8 +302,7 @@ export default function RootLayout({
         <CompanionWidget />
         <AnswerSearchModal />
         <BillWidget />
-
-
+        <SpeedInsights />
       </body>
     </html>
   );
