@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://aeobility.com.au";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aeobility.com.au";
   const currentDate = new Date().toISOString();
 
   return [
