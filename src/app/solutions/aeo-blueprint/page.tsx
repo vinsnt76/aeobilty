@@ -489,11 +489,13 @@ export default function AEOBlueprintPage() {
                         }`}
                       />
                     </button>
-                    {isOpen && (
-                      <div className="px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif">
-                        {faq.answer}
-                      </div>
-                    )}
+                    <div
+                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
+                        isOpen ? 'block' : 'hidden'
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
                   </div>
                 );
               })}
@@ -516,9 +518,14 @@ export default function AEOBlueprintPage() {
             {/* Inline Blueprint Direct Contact Form */}
             <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full filter blur-2xl -z-10" />
-              <h3 className="text-xl font-bold text-white font-soehne-breit mb-1.5">Send a Direct Blueprint Enquiry</h3>
+              <div className="flex items-center justify-between gap-4 mb-1.5">
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Send a Direct Blueprint Enquiry</h3>
+                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
+                  $995 Credit Eligible
+                </span>
+              </div>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, credited back towards Foundation Sprints and above).
+                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, 100% credited back towards Foundation Sprints and above). Or <Link href="/contact?service=blueprint&credit=995" className="text-cyan-400 hover:underline">open full consultation page</Link>.
               </p>
 
               {contactSubmitted ? (
@@ -531,6 +538,9 @@ export default function AEOBlueprintPage() {
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <input type="hidden" name="service" value="blueprint" />
+                  <input type="hidden" name="credit_amount" value="995" />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="blueprint-name">
