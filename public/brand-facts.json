@@ -31,7 +31,7 @@
       "sku": "SS1MACROS1",
       "name": "Schema and Semantic Mapping",
       "priceCurrency": "AUD",
-      "price": "3177.00",
+      "price": "3195.00",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -40,7 +40,7 @@
       "description": "Establish machine-readable identity and resolve entity confusion.",
       "offers": {
         "@type": "Offer",
-        "price": "3177.00",
+        "price": "3195.00",
         "priceCurrency": "AUD",
         "eligibleDuration": "Foundation Tier (~15 Hours)",
         "itemOffered": [
@@ -158,7 +158,7 @@
       "sku": "SS2MACROS2",
       "name": "Atomic Answer Blocks",
       "priceCurrency": "AUD",
-      "price": "3177.00",
+      "price": "3195.00",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -167,7 +167,7 @@
       "description": "Convert pages into retrieval-ready atomic content blocks.",
       "offers": {
         "@type": "Offer",
-        "price": "3177.00",
+        "price": "3195.00",
         "priceCurrency": "AUD",
         "eligibleDuration": "Foundation Tier (~15 Hours)",
         "itemOffered": [
@@ -375,7 +375,7 @@
       "sku": "SS4MACROS4",
       "name": "Brand Facts and Consensus",
       "priceCurrency": "AUD",
-      "price": "3177.00",
+      "price": "3195.00",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -384,7 +384,7 @@
       "description": "Standardise cross-directory citations and strengthen external trust signals.",
       "offers": {
         "@type": "Offer",
-        "price": "3177.00",
+        "price": "3195.00",
         "priceCurrency": "AUD",
         "eligibleDuration": "Foundation Tier (~15 Hours)",
         "itemOffered": [

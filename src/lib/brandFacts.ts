@@ -62,7 +62,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       sku: 'SS1MACROS1',
       name: 'Schema and Semantic Mapping',
       priceCurrency: 'AUD',
-      price: '3177.00',
+      price: '3195.00',
       priceSpecification: {
         '@type': 'PriceSpecification',
         valueAddedTaxIncluded: false,
@@ -71,7 +71,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       description: 'Establish machine-readable identity and resolve entity confusion.',
       offers: {
         '@type': 'Offer',
-        price: '3177.00',
+        price: '3195.00',
         priceCurrency: 'AUD',
         eligibleDuration: 'Foundation Tier (~15 Hours)',
         itemOffered: [
@@ -189,7 +189,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       sku: 'SS2MACROS2',
       name: 'Atomic Answer Blocks',
       priceCurrency: 'AUD',
-      price: '3177.00',
+      price: '3195.00',
       priceSpecification: {
         '@type': 'PriceSpecification',
         valueAddedTaxIncluded: false,
@@ -198,7 +198,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       description: 'Convert pages into retrieval-ready atomic content blocks.',
       offers: {
         '@type': 'Offer',
-        price: '3177.00',
+        price: '3195.00',
         priceCurrency: 'AUD',
         eligibleDuration: 'Foundation Tier (~15 Hours)',
         itemOffered: [
@@ -406,7 +406,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       sku: 'SS4MACROS4',
       name: 'Brand Facts and Consensus',
       priceCurrency: 'AUD',
-      price: '3177.00',
+      price: '3195.00',
       priceSpecification: {
         '@type': 'PriceSpecification',
         valueAddedTaxIncluded: false,
@@ -415,7 +415,7 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
       description: 'Standardise cross-directory citations and strengthen external trust signals.',
       offers: {
         '@type': 'Offer',
-        price: '3177.00',
+        price: '3195.00',
         priceCurrency: 'AUD',
         eligibleDuration: 'Foundation Tier (~15 Hours)',
         itemOffered: [
