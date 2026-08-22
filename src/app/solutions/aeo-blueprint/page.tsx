@@ -5,237 +5,300 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText } from 'lucide-react';
+import { PRICING_CONFIG } from '@/lib/brandFacts';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: "The $995 AEObility MVP Strategic Blueprint",
-  description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
+export const metadata: Metadata = {
+  title: "The AEObility Blueprint | 90-Day Strategy & Audit",
+  description: "Understand what is limiting your visibility across Search, Maps and AI. Get a practical 90-day action plan for a fixed price of $995 AUD ex. GST.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions/aeo-blueprint",
   },
+  keywords: [
+    "AEObility Blueprint",
+    "AEO strategic audit",
+    "90-day marketing roadmap",
+    "structured data audit",
+    "local visibility audit",
+    "search visibility scorecard",
+    "fixed price marketing audit Australia"
+  ]
 };
 
 export default function AEOBlueprintPage() {
-  const schema = {
+  const jsonLdGraph = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Product",
-        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
-        "name": "The AEObility MVP Strategic Blueprint",
-        "image": "https://aeobility.com.au/client-milestones-onboarding.png",
-        "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
-          "name": "AEObility",
-          "legalName": "Trekaboutoz trading as AEObility",
-          "url": "https://aeobility.com.au",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Perth",
-            "addressRegion": "WA",
-            "addressCountry": "AU"
-          },
-          "founder": {
-            "@type": "Person",
-            "@id": "https://aeobility.com.au/#person",
-            "name": "Vinnie Baker",
-            "alternateName": "Vince Baker",
-            "url": "https://aeobility.com.au/vince-baker",
-            "sameAs": [
-              "https://www.linkedin.com/in/vince-baker/"
-            ]
-          }
-        },
-        "author": {
+        "@type": "Organization",
+        "@id": "https://www.aeobility.com.au/#organization",
+        "name": "AEObility",
+        "legalName": "Trekaboutoz trading as AEObility",
+        "url": "https://www.aeobility.com.au",
+        "logo": "https://www.aeobility.com.au/Profile-Picture-Vinnie.png",
+        "founder": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/#person",
-          "name": "Vinnie Baker",
-          "jobTitle": "Founder & AEO Specialist",
-          "worksFor": {
-            "@type": "Organization",
-            "@id": "https://aeobility.com.au/#organization",
-            "name": "AEObility",
-            "legalName": "Trekaboutoz trading as AEObility"
+          "name": "Vince Baker",
+          "jobTitle": "Founder",
+          "url": "https://www.aeobility.com.au/vince-baker"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#webpage",
+        "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+        "name": "The AEObility Blueprint | 90-Day Strategy & Audit",
+        "description": "Understand what is limiting your visibility across Search, Maps and AI. Get a practical 90-day action plan for a fixed price of $995 AUD ex. GST.",
+        "publisher": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://www.aeobility.com.au/solutions"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The AEObility Blueprint",
+            "item": "https://www.aeobility.com.au/solutions/aeo-blueprint"
           }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#service",
+        "name": "The AEObility Blueprint",
+        "identifier": "BPSTRAT",
+        "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+        "description": "A practical audit and 90-day action plan identifying the highest-priority opportunities across your website, structured data, business information and local visibility.",
+        "provider": {
+          "@id": "https://www.aeobility.com.au/#organization"
         },
         "offers": {
           "@type": "Offer",
-          "price": "995",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock",
-          "areaServed": [
-            { "@type": "AdministrativeArea", "name": "Perth" },
-            { "@type": "AdministrativeArea", "name": "Western Australia" },
-            { "@type": "Country", "name": "Australia" }
-          ]
+          "sku": "BPSTRAT",
+          "price": `${PRICING_CONFIG.blueprint.price}.00`,
+          "priceCurrency": PRICING_CONFIG.currency,
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "valueAddedTaxIncluded": false,
+            "description": "Excluding GST; 100% credited towards eligible implementation work."
+          }
         }
       }
     ]
   };
 
-  const pillars = [
+  const deliverables = [
     {
-      title: "The Standalone $995 Clarity Phase",
-      desc: "No long contracts. We map out your entire entity framework and crawl accessibility before you spend a cent on execution."
+      icon: <Layers className="w-6 h-6 text-aeo-cyan" />,
+      title: "Website & Structured Data Review",
+      description: "A detailed evaluation of your website's structural architecture and existing schema markup. We identify exactly where search platforms encounter confusion or indexing limits."
     },
     {
-      title: "What is Included in Your Blueprint",
-      desc: "Receive a detailed technical gap analysis, entity optimisation review, local tracking audit, and a step-by-step checklist."
+      icon: <BarChart3 className="w-6 h-6 text-aeo-purple" />,
+      title: "Visibility Scorecard & Gaps",
+      description: "A clear scorecard evaluating your business across Search, Maps and generative AI platforms, pinpointing immediate performance opportunities."
     },
     {
-      title: "The 100% Risk-Reversal Implementation Credit",
-      desc: "If you decide to hire us to deploy the roadmap, we credit the entire $995 blueprint fee back to your implementation package."
+      icon: <Map className="w-6 h-6 text-aeo-cyan" />,
+      title: "90-Day Implementation Roadmap",
+      description: "A step-by-step priority roadmap mapping out the most impactful technical, content and local-visibility adjustments tailored to your business goals."
+    },
+    {
+      icon: <FileText className="w-6 h-6 text-aeo-purple" />,
+      title: "Content & Service Information Audit",
+      description: "An analysis of your core service descriptions and client-facing pages to match active customer questions and local user search intents."
     }
   ];
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* JSON-LD Schema */}
+      {/* Unified JSON-LD Connected Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
-
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
       <SubNavPills items={HUB_SUBNAV_MAPS.solutions} />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
-        <section className="flex flex-col gap-8">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold mb-4">
-              <span>The Standalone $995 Clarity Phase</span>
+      <main className="flex-grow w-full py-12">
+        <div className="max-w-5xl mx-auto px-6 space-y-20">
+
+          {/* Section A: Hero Block */}
+          <section className="text-center max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <Compass className="w-4 h-4 text-aeo-cyan" />
+              <span>Strategic Audit (Code: {PRICING_CONFIG.blueprint.code})</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-              The AEObility <span className="text-gradient-aeo">Strategic Blueprint</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+              The AEObility Blueprint
             </h1>
-            <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
-              Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.
-            </p>
-          </div>
-
-          {/* Premium printed Strategy mock-up design representation */}
-          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/80 shadow-2xl flex flex-col justify-between p-6">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.08),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(147,51,234,0.08),transparent_50%)]" />
-            <div className="flex justify-between items-start border-b border-white/10 pb-4 relative z-10">
-              <div className="space-y-1">
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest">Blueprint Specification Document</p>
-                <h4 className="text-sm font-bold text-white">AEObility MVP Strategy & Roadmapping</h4>
-              </div>
-              <span className="text-[9px] font-mono px-2 py-0.5 rounded border border-aeo-purple/20 bg-aeo-purple/5 text-aeo-purple uppercase">v1.0.4 AUD</span>
-            </div>
-            <div className="grid grid-cols-2 gap-4 my-auto relative z-10 text-xs text-white/50">
-              <div className="space-y-2 border-r border-white/5 pr-4">
-                <p className="font-mono text-[9px] uppercase tracking-wider text-aeo-cyan">01 / Technical Gap Analysis</p>
-                <p className="font-light leading-relaxed">Evaluation of indexing compliance issues, crawler accessibility limits, and entity identification flags.</p>
-              </div>
-              <div className="space-y-2 pl-2">
-                <p className="font-mono text-[9px] uppercase tracking-wider text-aeo-purple">02 / 90-Day Roadmap Checklist</p>
-                <p className="font-light leading-relaxed">Custom step-by-step milestones to deploy nested schemas and establish local tracking parameters.</p>
-              </div>
-            </div>
-            <div className="pt-4 border-t border-white/10 flex justify-between items-center text-[10px] font-mono text-neutral-400 relative z-10">
-              <span>Risk-Free Onboarding Process Enabled</span>
-              <span>100% Refundable Implementation Credit</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pillars.map((pillar, idx) => (
-              <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors">
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                      "@context": "https://schema.org",
-                      "@type": "Product",
-                      "name": pillar.title,
-                      "description": pillar.desc,
-                      "category": "Strategic Blueprint Pillar"
-                    })
-                  }}
-                />
-                <div className="p-2.5 bg-white/5 rounded-xl w-fit">
-                  <Sparkles className="w-5 h-5 text-aeo-cyan" />
-                </div>
-                <h3 className="text-base font-bold text-white leading-snug">{pillar.title}</h3>
-                <p className="text-xs text-white/60 leading-relaxed font-light">{pillar.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Deep Dive Section */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <h2 className="text-2xl font-bold">Unlocking Generative Index Ranks Without Commitment</h2>
-            <p className="text-sm text-white/70 leading-relaxed font-light">
-              Many local businesses in Perth run traditional marketing campaigns but fail to account for how machines read their business details. The Strategic Blueprint is a flat-rate clarity phase designed to perform a thorough technical gap analysis and an entity optimisation review.
-            </p>
-            <p className="text-sm text-white/70 leading-relaxed font-light">
-              We trace exactly how crawler engines and LLM retrievals see your site, locate indexing conflicts in local directories, and output a detailed website visibility audit checklist.
-            </p>
-          </div>
-
-          {/* Action List */}
-          <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
-            <h3 className="text-lg font-bold text-white">What We Audit & Configure</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Validate crawler indexing permissions in site code files.</span>
-              </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Assess local tracking audit metrics and map pin coordinates.</span>
-              </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Examine entity schema structure for search database integrity.</span>
-              </li>
-              <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span>Verify trust metrics and search index representation accuracy.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Phase 4 Linear Conversion Corridor CTA */}
-          <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6">
-            <h3 className="text-2xl font-bold text-white">Claim Your 90-Day Strategic Roadmap</h3>
-            <p className="text-sm text-white/60 max-w-md mx-auto font-light leading-relaxed">
-              Order your Standalone $995 Clarity Phase. Get a comprehensive technical audit, entity visibility score, and actionable 90-day roadmap.
-            </p>
-            <div className="pt-4 flex flex-wrap justify-center gap-4">
+            <h2 className="text-base sm:text-lg text-white/70 font-light leading-relaxed font-serif max-w-2xl mx-auto">
+              A practical audit and 90-day action plan identifying the highest-priority opportunities across your website, structured data, business information and local visibility. Fixed price of ${PRICING_CONFIG.blueprint.price} AUD (ex. GST).
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm rounded-xl hover:scale-[1.02] transition-transform shadow-[0_0_20px_rgba(0,205,216,0.3)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
               >
-                <span>Book Audit Call &amp; Request Quote</span>
-                <ArrowRight className="w-4 h-4" />
+                <Calendar className="w-4 h-4 text-black" />
+                <span>Book a Blueprint Strategy Call</span>
               </Link>
               <Link
                 href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-4 bg-white/5 border border-white/10 text-white font-semibold text-sm rounded-xl hover:bg-white/10 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 border border-white/15 hover:border-aeo-cyan text-white font-semibold text-base transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
               >
-                <span>Get Free Visibility Audit</span>
+                <span>Run a Free Visibility Scan</span>
+                <ArrowRight className="w-4 h-4 text-aeo-cyan" />
               </Link>
             </div>
-          </div>
+          </section>
 
-          {/* Phase 4 Optional Bottom Micro-CTA to Case Studies */}
-          <div className="text-center pt-2 pb-4">
-            <Link href="/knowledge-hub/case-studies" className="text-xs text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center gap-1">
-              Looking for proof of real-world results? Explore Client Case Studies <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </section>
+          {/* Section B: Core Deliverables Matrix (Four Responsive Cards) */}
+          <section className="border-t border-white/10 pt-16 space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">What You Receive in Your Blueprint</h2>
+              <p className="text-xs text-white/60 font-serif">Four core deliverables designed to provide complete clarity and immediate action.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {deliverables.map((item, idx) => (
+                <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-aeo-cyan/30 transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white font-soehne-breit">{item.title}</h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pt-1">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Section C: Fixed Pricing & Credit-Back Trust Banner */}
+          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-8 text-center space-y-4 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+              <ShieldCheck className="w-4 h-4 text-cyan-400" />
+              <span>100% Fee Credit Guarantee</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
+              Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
+              Every dollar spent on your AEObility Blueprint is credited 100% back towards eligible implementation work if you choose to fix your gaps with us.
+            </p>
+          </section>
+
+          {/* Section D: "How the Audit Works" Operational Timeline */}
+          <section className="border-t border-white/10 pt-16 space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How the Audit Works</h2>
+              <p className="text-xs text-white/60 font-serif">A simple 3-step operational workflow from initial booking to strategic handover.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
+                <span className="text-2xl font-extrabold text-cyan-400 font-mono block">01</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Initial Discovery & Setup</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We audit your existing local signals, brand claims, and technical structural data.</p>
+              </div>
+
+              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
+                <span className="text-2xl font-extrabold text-purple-400 font-mono block">02</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Review & Strategic Mapping</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">We build your priority roadmap, visibility scorecards, and a 90-day implementation plan.</p>
+              </div>
+
+              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
+                <span className="text-2xl font-extrabold text-cyan-400 font-mono block">03</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Handover & Strategy Session</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">A comprehensive review meeting to hand over your actionable assets and plan next steps.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section E: The Technical Specifications */}
+          <section className="border-t border-white/10 pt-16 space-y-6">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-white font-soehne-breit">The areas we cross-examine</h3>
+              <p className="text-xs sm:text-sm text-zinc-400 font-serif leading-relaxed">
+                To build absolute trust for technical and agency buyers, our analysis investigates:
+              </p>
+            </div>
+
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 md:p-8 space-y-4">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-white/80 font-serif">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Local business profile structures, geographic coordinates, and hyper-local citation alignment (NAP).</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Schema markup syntax, nesting logic, and entity data relationships.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Page structural formatting, FAQ patterns, and information clarity.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Internal context link webs and topic connectivity across service nodes.</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section F: Bottom Conversion CTA Block */}
+          <section className="border-t border-white/10 pt-16 text-center space-y-6">
+            <div className="max-w-md mx-auto space-y-4">
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Ready for Complete Clarity?</h2>
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+                Order your AEObility Blueprint today for ${PRICING_CONFIG.blueprint.price} AUD (ex. GST) and receive your prioritised 90-day action plan.
+              </p>
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg text-sm"
+                >
+                  <Calendar className="w-4 h-4 text-black" />
+                  <span>Discuss Your Blueprint Strategy</span>
+                </Link>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-2">
+                <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>You will speak directly with AEObility's founder, Vince Baker. No sales pitches—just practical next steps for your business.</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
       </main>
 
       <Footer />
