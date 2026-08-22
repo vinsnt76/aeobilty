@@ -104,7 +104,7 @@ export default function SolutionsPage() {
           {
             "@type": "Service",
             "name": "The AEObility Blueprint",
-            "sku": "BPSTRAT",
+            "identifier": "BPSTRAT",
             "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
             "description": "A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.",
             "provider": {
@@ -112,6 +112,7 @@ export default function SolutionsPage() {
             },
             "offers": {
               "@type": "Offer",
+              "sku": "BPSTRAT",
               "price": "995.00",
               "priceCurrency": "AUD",
               "priceSpecification": {
@@ -124,7 +125,7 @@ export default function SolutionsPage() {
           {
             "@type": "Service",
             "name": "AEObility Micro-Sprints",
-            "sku": "SS1-SS4-MICRO",
+            "identifier": "SS1-SS4-MICRO",
             "url": "https://www.aeobility.com.au/solutions/aeo-sprint",
             "description": "A focused, fixed-scope sprint for a defined website, content or local-visibility issue.",
             "provider": {
@@ -191,7 +192,7 @@ export default function SolutionsPage() {
           {
             "@type": "Service",
             "name": "Foundation Implementation",
-            "sku": "SS1-SS4-MACRO",
+            "identifier": "SS1-SS4-MACRO",
             "url": "https://www.aeobility.com.au/contact",
             "description": "When several issues are connected, Foundation Implementation brings the most important work together in one focused engagement.",
             "provider": {
@@ -199,6 +200,7 @@ export default function SolutionsPage() {
             },
             "offers": {
               "@type": "Offer",
+              "sku": "SS1-SS4-MACRO",
               "priceCurrency": "AUD",
               "priceSpecification": {
                 "@type": "PriceSpecification",
