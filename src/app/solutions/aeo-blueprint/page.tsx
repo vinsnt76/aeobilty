@@ -376,7 +376,7 @@ export default function AEOBlueprintPage() {
             {/* Supporting Timeline Image */}
             <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl my-4">
               <Image
-                src="/milestones-diagram.png"
+                src="/structured-search-audit-wireframe.png"
                 alt="Grid displaying the complete contents of the 90-day operational milestone timeline"
                 width={900}
                 height={300}
