@@ -20,17 +20,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.aeobility.com.au',
-          },
-        ],
-        destination: 'https://aeobility.com.au/:path*',
-        permanent: true,
-      },
-      {
         source: '/my-portfolio',
         destination: '/about/freelance-digital-specialist-perth',
         permanent: true,
