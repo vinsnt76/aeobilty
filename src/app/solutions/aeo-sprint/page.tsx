@@ -319,7 +319,7 @@ export default function AEOSprintPage() {
             {/* Hero Banner with Featured 1200x800 WebP Image Backdrop & Code Block Terminal Widget */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[460px]">
               <Image
-                src="/aeo-technical-sprints_AEObility.webp"
+                src="/images/solutions/aeo-seo-technical-sprints_AEObilty.webp"
                 alt="AEO Technical Sprints and Schema Deployments by AEObility"
                 width={1200}
                 height={800}
