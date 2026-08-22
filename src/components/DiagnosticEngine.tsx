@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
 import { BRAND_PRICING_SCHEMA } from '@/lib/brandFacts';
+import Link from 'next/link';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
 
@@ -14,8 +15,6 @@ export default function DiagnosticEngine() {
   const [step, setStep] = useState<Step>('INPUT');
   const [url, setUrl] = useState('');
   const [intent, setIntent] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
   const [processingStage, setProcessingStage] = useState(0);
   const hasAutoRunRef = useRef(false);
@@ -29,7 +28,7 @@ export default function DiagnosticEngine() {
     "Evaluating local signals & location information",
     "Measuring customer search intent alignment",
     "Validating business detail consistency",
-    "Generating custom visibility scorecard"
+    "Generating simulated AI Impression"
   ];
 
   const runScan = async (rawUrl: string, rawIntent: string) => {
@@ -66,12 +65,12 @@ export default function DiagnosticEngine() {
     const fetchPromise = fetch('/api/diagnostic', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim(), name, email }),
+      body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim() }),
     }).then(res => res.json());
 
     // Visual progress for user feedback
     for (let i = 0; i < processingSteps.length; i++) {
-      await new Promise(r => setTimeout(r, 1000 + Math.random() * 600));
+      await new Promise(r => setTimeout(r, 900 + Math.random() * 500));
       setProcessingStage(i + 1);
     }
 
@@ -123,6 +122,18 @@ export default function DiagnosticEngine() {
     await runScan(url, intent);
   };
 
+  const openAiBill = () => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('open_bill_with_query', {
+        detail: {
+          query: `Analyze diagnostic scan for ${url} (Search Query: "${intent}")`,
+          mode: 'telemetry'
+        }
+      }));
+      window.dispatchEvent(new Event('open_bill_drawer'));
+    }
+  };
+
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
       
@@ -132,7 +143,7 @@ export default function DiagnosticEngine() {
           Run a Free AI Visibility Scan
         </h1>
         <h2 className="text-white/70 text-base md:text-lg font-light leading-relaxed font-serif">
-          Identify exactly how clear, consistent and discoverable your business information is across Search, Maps and AI. No long-term commitments, no obligation.
+          Identify exactly how clear, consistent and discoverable your business information is across Search, Maps and AI. Easy for customers and search systems to understand and recommend.
         </h2>
       </div>
 
@@ -140,9 +151,10 @@ export default function DiagnosticEngine() {
         
         {step === 'INPUT' && (
           <div className="space-y-8">
+            {/* Zero-Friction 2-Field Input Form */}
             <form onSubmit={handleStart} className="grid grid-cols-12 gap-4 relative z-10">
               
-              {/* Step 1: Website URL - Full 12-Column Width */}
+              {/* Field 1: Website URL - Full 12-Column Width */}
               <div className="col-span-12 space-y-1.5">
                 <label className="block text-sm font-semibold text-white">Website URL</label>
                 <input
@@ -158,9 +170,9 @@ export default function DiagnosticEngine() {
                 </p>
               </div>
 
-              {/* Step 2: Primary Customer Search Intent - Dual 6-Column Container */}
-              <div className="col-span-12 md:col-span-6 space-y-1.5">
-                <label className="block text-sm font-semibold text-white">Primary customer search</label>
+              {/* Field 2: Primary Customer Search Query - Full 12-Column Width */}
+              <div className="col-span-12 space-y-1.5">
+                <label className="block text-sm font-semibold text-white">Primary customer search query</label>
                 <input
                   type="text"
                   required
@@ -173,61 +185,14 @@ export default function DiagnosticEngine() {
                   Identifies how customer questions and local searches target your business.
                 </p>
               </div>
-
-              {/* Step 2: First Name - Dual 6-Column Container */}
-              <div className="col-span-12 md:col-span-6 space-y-1.5">
-                <label className="block text-sm font-semibold text-white">First Name (Optional)</label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                  placeholder="e.g. Vince"
-                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-colors text-sm"
-                />
-              </div>
-
-              {/* Step 2: Primary Email Address - Full 12-Column Width */}
-              <div className="col-span-12 space-y-1.5">
-                <label className="block text-sm font-semibold text-white">Primary Email Address (Optional)</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="vince@example.com.au"
-                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-colors text-sm"
-                />
-                <p className="text-xs text-white/50 font-serif leading-normal pt-1">
-                  Your privacy is guaranteed. We use your details strictly to deliver your custom visibility score and report.
-                </p>
-              </div>
-
-              {/* Schema-Bound Strategic Audit Preview */}
-              <div className="col-span-12 bg-black/40 border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold">
-                      Full Audit Path Available
-                    </span>
-                    <span className="text-xs font-mono text-zinc-400">
-                      (${bpstratProduct.price} AUD ex. GST)
-                    </span>
-                  </div>
-                  <p className="text-xs text-white/70 font-serif">
-                    Includes entity review, visibility scorecard, and 90-day prioritised roadmap (100% fee credited towards implementation).
-                  </p>
-                </div>
-                <div className="shrink-0 text-xs font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-3 py-1.5 rounded-lg">
-                  {bpstratProduct.sku}
-                </div>
-              </div>
               
-              {/* Submission Action & In-Line Trust Banner */}
+              {/* Submission Action & Single Mid-Page Trust Banner */}
               <div className="col-span-12 pt-4 space-y-4">
                 <button
                   type="submit"
                   className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-base transition-transform hover:scale-[1.01] shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
                 >
-                  <span>Run Free Scan</span>
+                  <span>Run Free Visibility Scan</span>
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </button>
 
@@ -238,23 +203,23 @@ export default function DiagnosticEngine() {
               </div>
             </form>
 
-            {/* "What Happens Next" Diagnostic Strip */}
+            {/* "What Happens Next" 3-Step Strip */}
             <div className="border-t border-white/10 pt-6 space-y-4">
               <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block text-center">
                 What Happens Next
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-left">
                 <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter details</span>
+                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter website details</span>
                   <p className="text-xs text-white/70 font-serif leading-snug">Enter your website URL and primary customer search query.</p>
                 </div>
                 <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-purple-400 font-mono block">2. Scanner evaluation</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Our scanner reviews your local signals, structured data and service details.</p>
+                  <span className="text-xs font-bold text-purple-400 font-mono block">2. Receive simulated AI Impression</span>
+                  <p className="text-xs text-white/70 font-serif leading-snug">Our scanner reviews your local signals and generates your AI visibility impression.</p>
                 </div>
                 <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">3. Receive roadmap</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Receive your visibility score and prioritised 90-day action plan within 24 hours.</p>
+                  <span className="text-xs font-bold text-cyan-400 font-mono block">3. Chat with AI Bill</span>
+                  <p className="text-xs text-white/70 font-serif leading-snug">Click 'Talk to AI Bill' to explore your findings and receive your 90-day action plan.</p>
                 </div>
               </div>
             </div>
@@ -317,11 +282,11 @@ export default function DiagnosticEngine() {
             
             <div className="text-center space-y-6 pb-8 border-b border-white/10">
               
-              {/* Summary Box */}
+              {/* Simulated AI Impression Summary */}
               <div className="max-w-xl mx-auto bg-black/40 border border-aeo-cyan/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(0,205,216,0.1)]">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-aeo-cyan" />
-                  <h3 className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Visibility Analysis Summary</h3>
+                  <h3 className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Simulated AI Impression</h3>
                 </div>
                 <div className="space-y-4 font-serif">
                   <p className="text-xl text-white/90 font-medium text-center">
@@ -347,6 +312,41 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
+              {/* Chat with AI Bill Interactive Button */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={openAiBill}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
+                >
+                  <MessageSquare className="w-5 h-5 text-black" />
+                  <span>Talk to AI Bill About Findings</span>
+                </button>
+              </div>
+
+            </div>
+
+            {/* Strategic Blueprint Upsell Block (Placed Below Workflow / Results) */}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Compass className="w-5 h-5 text-aeo-cyan" />
+                  <h3 className="text-lg font-bold text-white">The AEObility Blueprint</h3>
+                  <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
+                    ${bpstratProduct.price} AUD ex. GST
+                  </span>
+                </div>
+                <p className="text-xs text-white/70 font-serif leading-relaxed max-w-lg">
+                  A practical strategic audit and 90-day action plan identifying the highest-priority opportunities across your website, structured data, and local visibility. (Fee credited towards eligible implementation work).
+                </p>
+              </div>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm hover:bg-zinc-800 cursor-pointer"
+              >
+                <span>View Full Blueprint</span>
+                <ArrowRight className="w-4 h-4 text-cyan-400" />
+              </Link>
             </div>
 
             <div className="text-center pt-2">
@@ -357,7 +357,7 @@ export default function DiagnosticEngine() {
                 }}
                 className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors border border-white/10 cursor-pointer font-mono"
               >
-                Run Another Visibility Scan
+                Run Another Free Scan
               </button>
             </div>
 
