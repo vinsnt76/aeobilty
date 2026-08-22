@@ -503,7 +503,7 @@ export default function AEOBlueprintPage() {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-white/80 font-serif">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Consistency of your key local business details, location information, and <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profiles</Link> (NAP).</span>
+                  <span>Consistency of your key local business details, location information, and <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">standardise regional intent signals and local business profile structures</Link> (NAP).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />

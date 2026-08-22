@@ -1,447 +1,574 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { ArrowRight, MapPin, Map, Navigation, CheckCircle2, Sparkles, HelpCircle } from 'lucide-react';
+import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import QuoteFormSection from '@/components/QuoteFormSection';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
+import { PRICING_CONFIG } from '@/lib/brandFacts';
+import { trackGaEvent } from '@/lib/gtag';
+import { getGeoMarketingSchemaGraph } from '@/lib/schema/geoMarketing';
+import { 
+  CheckCircle2, 
+  ArrowRight, 
+  MapPin, 
+  Globe, 
+  Link as LinkIcon, 
+  FileText, 
+  ShieldCheck, 
+  Calendar, 
+  Clock, 
+  Code, 
+  Info, 
+  HelpCircle, 
+  ChevronDown, 
+  Users,
+  Cpu,
+  Boxes,
+  FileCheck,
+  Building2,
+  Navigation
+} from 'lucide-react';
 
-export const metadata = {
-  title: "AEObility GEO Marketing Services for Perth SMBs | AEObility",
-  description: "AEObility helps Perth SMBs improve local visibility through GEO Marketing. Your local GEO marketing company and specialist consultant for geolocation‑aware visibility. We optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.",
-  keywords: [
-    "geo marketing",
-    "geo consultant perth",
-    "geo marketing company perth",
-    "geo specialist perth",
-    "geo marketing strategy",
-    "geo marketing tools perth"
-  ],
-  alternates: {
-    canonical: "https://aeobility.com.au/services/geo-marketing",
+export const GEO_MARKETING_INTERNAL_LINKS = [
+  {
+    targetSlug: "/brand-facts",
+    anchorText: "canonical brand facts catalog and uniform pricing database",
+    entityRelation: "http://schema.org/isRelatedTo"
   },
-};
+  {
+    targetSlug: "/solutions/aeo-blueprint",
+    anchorText: "website visibility audit and 90-day strategic roadmap",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/solutions/aeo-sprint",
+    anchorText: "AEO Technical Sprints",
+    entityRelation: "http://schema.org/isRelatedTo"
+  }
+];
 
-export default function GEOMarketingPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/geo-marketing",
-        "url": "https://aeobility.com.au/services/geo-marketing",
-        "name": "AEObility GEO Marketing Services for Perth SMBs",
-        "description": "GEO Marketing services for Australian SMBs. AEObility improves local visibility across Search, Maps and AI by strengthening proximity signals, location nodes and regional intent clarity.",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "@id": "https://aeobility.com.au/services/geo-marketing#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://aeobility.com.au"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Services",
-              "item": "https://aeobility.com.au/services"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "GEO Marketing",
-              "item": "https://aeobility.com.au/services/geo-marketing"
-            }
-          ]
-        },
-        "mainEntity": {
-          "@id": "https://aeobility.com.au/services/geo-marketing#service"
-        },
-        "hasPart": [
-          {
-            "@type": "WebPage",
-            "name": "Answer Engine Optimisation",
-            "url": "https://aeobility.com.au/services/aeo",
-            "description": "AEO improves how AI systems interpret your business and extract clear answers."
-          },
-          {
-            "@type": "WebPage",
-            "name": "AI Search Strategy",
-            "url": "https://aeobility.com.au/services/ai-search-marketing",
-            "description": "Long-term strategy for conversational search and generative engine visibility."
-          }
-        ],
-        "about": [
-          {
-            "@type": "Thing",
-            "name": "GEO Marketing"
-          },
-          {
-            "@type": "Thing",
-            "name": "Local Intent Signals"
-          },
-          {
-            "@type": "Thing",
-            "name": "Proximity Signals"
-          },
-          {
-            "@type": "Thing",
-            "name": "Regional Intent Nodes"
-          },
-          {
-            "@type": "Thing",
-            "name": "Location Vector Space"
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://aeobility.com.au/#organization",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au",
-        "description": "AEO and GEO Marketing services for Australian small businesses. AEObility helps your business appear, make sense and stand out across Search, Maps and AI.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Perth",
-          "addressLocality": "Perth",
-          "addressRegion": "WA",
-          "postalCode": "6000",
-          "addressCountry": "Australia"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "Perth" },
-          { "@type": "AdministrativeArea", "name": "Western Australia" },
-          { "@type": "City", "name": "West Perth" },
-          { "@type": "City", "name": "Subiaco" },
-          { "@type": "City", "name": "Fremantle" },
-          { "@type": "City", "name": "Joondalup" },
-          { "@type": "City", "name": "Stirling" },
-          { "@type": "City", "name": "Victoria Park" },
-          { "@type": "City", "name": "Midland" },
-          { "@type": "City", "name": "Rockingham" }
-        ],
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -31.9523,
-          "longitude": 115.8613
-        }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://aeobility.com.au/services/geo-marketing#service",
-        "name": "GEO Marketing",
-        "serviceType": "Geolocation-Aware Visibility",
-        "category": "AEO Services",
-        "url": "https://aeobility.com.au/services/geo-marketing",
-        "description": "GEO Marketing improves how your business appears in location-aware search, map applications and AI assistants. AEObility strengthens proximity signals, regional intent nodes and structured location clarity for Perth SMBs.",
-        "provider": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Perth, Australia"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Australian SMBs and local service businesses"
-        },
-        "isRelatedTo": [
-          {
-            "@type": "Service",
-            "name": "Answer Engine Optimisation",
-            "url": "https://aeobility.com.au/services/aeo",
-            "description": "AEO improves how AI systems interpret your business and extract clear answers."
-          },
-          {
-            "@type": "Service",
-            "name": "AI Search Strategy",
-            "url": "https://aeobility.com.au/services/ai-search-marketing",
-            "description": "Long-term strategy for conversational search and generative engine visibility."
-          }
-        ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://aeobility.com.au/solutions/aeo-blueprint",
-          "priceCurrency": "AUD",
-          "price": "995",
-          "description": "The AEObility Blueprint is a deeper technical audit and 90-day roadmap that shows exactly how to improve visibility, understanding and selection across Search, Maps and AI."
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services/geo-marketing#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is GEO Marketing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "GEO Marketing improves how your business appears in location‑aware search, map applications and AI assistants. It strengthens your local signals so engines like Google Maps, Apple Maps and generative models can correctly interpret where you operate and who you serve."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does GEO support AEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "GEO builds the location clarity that AEO relies on. When your coordinates, service areas and proximity signals are structured properly, answer engines can confidently match your business to nearby customers and include you in local recommendations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What does a GEO strategy involve?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A GEO strategy includes mapping your service areas, structuring location nodes, improving proximity signals and ensuring your business details are consistent across all platforms. This helps AI systems understand your footprint and present you accurately."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Who benefits most from GEO Marketing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Australian service businesses that rely on local enquiries benefit most. Clear location signals help plumbers, electricians, childcare centres and other SMBs appear more often in map results and AI‑generated local suggestions."
-            }
-          }
-        ]
-      }
-    ]
+export default function GeoMarketingPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    website: '',
+    serviceType: 'citation',
+    message: ''
+  });
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const pillars = [
+  const selectSprintForForm = (typeKey: string) => {
+    setContactData(prev => ({ ...prev, serviceType: typeKey }));
+    const formElement = document.getElementById('geo-contact-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'geo_marketing_contact_form',
+      lead_type: 'geo_enquiry',
+      service_selected: contactData.serviceType,
+      value: 1,
+    });
+    setContactSubmitted(true);
+    setTimeout(() => {
+      setContactSubmitted(false);
+      setContactData({ name: '', email: '', website: '', serviceType: 'citation', message: '' });
+    }, 6000);
+  };
+
+  const faqs = [
     {
-      icon: <MapPin className="w-5 h-5 text-aeo-cyan" />,
-      title: "Understanding Generative Engine Optimisation (GEO)",
-      desc: "Align your business within the location vector space to ensure generative map packs and location-aware AI engines query and surface your brand."
+      question: "What is included in a Local Visibility Micro-Sprint?",
+      answer: "Each local micro-sprint targets one defined area: citation clean-up, local internal linking, or Brand Facts page creation. You receive clear deliverables, validation checks, and complete handover documentation."
     },
     {
-      icon: <Map className="w-5 h-5 text-aeo-purple" />,
-      title: "Structuring Location Nodes for Scrapers",
-      desc: "Format schema structures and coordinate mapping rules so LLMs and web scrapers link your physical pins with highly relevant intent searches."
+      question: "How long does a Citation Clean-Up sprint take?",
+      answer: "Most citation clean-up and local linking sprints are delivered within 4–5 business days once access to priority profiles and website CMS has been confirmed."
     },
     {
-      icon: <Navigation className="w-5 h-5 text-aeo-cyan" />,
-      title: "Hyper-Local Market Strategy",
-      desc: "Implement regional intent nodes and coordinate parameters that feed proximity signals directly into real-time local search packs."
+      question: "Why is a Brand Facts page important for local search?",
+      answer: "A Brand Facts page acts as a central, machine-readable source of truth on your site. It provides search engines and AI assistants with unambiguous details about your business identity, locations, and services."
+    },
+    {
+      question: "Can I credit my Blueprint fee towards Foundation Implementation?",
+      answer: "Yes. If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
+    },
+    {
+      question: "Do you require long-term contracts or monthly retainers?",
+      answer: "No. All GEO Sprints and Foundation engagements are scoped as individual, fixed-price projects with clear deliverables and no ongoing retainers."
+    },
+    {
+      question: "What information is needed to begin a local sprint?",
+      answer: "We require your core business identity details (Name, Address, Phone, Operating Hours), primary location targets, and temporary CMS or directory access where updates are required."
     }
   ];
 
+  const localSprints = [
+    {
+      key: "citation",
+      anchorId: "citation-cleanup",
+      icon: <Building2 className="w-6 h-6 text-aeo-cyan" />,
+      title: "Business Details & Citation Clean-Up",
+      code: "SS4MICRO1",
+      price: "$495 AUD",
+      priceSub: "ex. GST",
+      scope: "Priority business profiles & directories",
+      description: "Review, correct, and standardise core Name, Address, and Phone (NAP) information across priority directory sets and platforms.",
+      techNote: "For technical teams: Standardises entity identity vectors and resolves duplicate listing conflicts across map engines.",
+      whenToChoose: "Choose this when your business name, address, or phone number varies across search engines, maps, and online directories."
+    },
+    {
+      key: "linking",
+      anchorId: "local-linking",
+      icon: <LinkIcon className="w-6 h-6 text-aeo-purple" />,
+      title: "Local Internal-Linking Sprint",
+      code: "SS3MICRO1",
+      price: "$695 AUD",
+      priceSub: "ex. GST",
+      scope: "Priority location hubs & service pages",
+      description: "Better connect priority location pages, service hubs, and supporting regional content to reinforce contextual signals.",
+      techNote: "For technical teams: Establishes explicit parent-child geographic linking hierarchies between primary and sub-location nodes.",
+      whenToChoose: "Choose this when regional service pages exist on your site but lack strong navigational connections to primary location hubs."
+    },
+    {
+      key: "brand-facts",
+      anchorId: "brand-facts-creation",
+      icon: <FileText className="w-6 h-6 text-aeo-cyan" />,
+      title: "Brand Facts Page Creation",
+      code: "SS4MICRO3",
+      price: "$495 AUD",
+      priceSub: "ex. GST",
+      scope: "One central site source of truth",
+      description: "Create a central, machine-readable source of truth page on your site covering your business identity, locations, and services.",
+      techNote: "For technical teams: Deploys unified LocalBusiness and Organization JSON-LD graphs with coordinate precision data.",
+      whenToChoose: "Choose this when search tools or AI assistants struggle to retrieve clean, authoritative facts about your business."
+    }
+  ];
+
+  const jsonLdGraph = getGeoMarketingSchemaGraph(faqs);
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* JSON-LD Schema */}
+      {/* Unified JSON-LD Connected Graph in HTML Head Context */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
-
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-12 md:py-16 w-full flex flex-col gap-10">
-        {/* Top Hero Section: Intro Text & Hero Banner */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Hero Copy */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <span>Geolocation-Aware Visibility</span>
+      <main className="flex-grow w-full py-12">
+        <div className="max-w-5xl mx-auto px-6 space-y-16">
+
+          {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
+          <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <MapPin className="w-4 h-4 text-aeo-cyan" />
+              <span>Local Proximity & Map Visibility</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              AEObility GEO Marketing Services <br className="hidden sm:block" />
-              for <span className="text-gradient-aeo">Perth SMBs</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+              Local Visibility & <span className="text-gradient-aeo">GEO Sprints</span>
             </h1>
-            <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
-              AEObility helps Perth SMBs improve local visibility through GEO Marketing as a specialised sub-pillar of our overarching <Link href="/services/aeo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">AEO Services</Link>. As your local GEO marketing company and specialist consultant, we optimise geographic engine performance (GEO) to help Perth businesses dominate location‑aware search, map applications, and local discovery engines.
+            <div className="space-y-3 max-w-2xl mx-auto">
+              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+                Improve the consistency and clarity of the local signals customers and search platforms use to understand where you operate and what you offer. No hidden retainers.
+              </h2>
+              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
+                <span>Micro-Sprints from $495 AUD ex. GST</span>
+                <span className="text-zinc-600">|</span>
+                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+              </div>
+            </div>
+
+            {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
+            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
+              <Image
+                src="/images/services/geo-marketing-services_AEObility.webp"
+                alt="AEObility local visibility interface mapping geographic coordinate grids and hyper-local citation points across regional search maps."
+                width={1200}
+                height={800}
+                className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
+
+              {/* Overlaid Hero CTAs */}
+              <div className="absolute bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/85 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
+                  <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix Local Citation Gaps or Build Regional Depth</span>
+                  <span className="text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('citation')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-black" />
+                    <span>Book a Local Strategy Call</span>
+                  </button>
+                  <Link
+                    href="/diagnostic"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
+                  >
+                    <span>Run a Free Visibility Scan</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xs text-zinc-400 font-serif">
+              Not sure whether you need citation clean-up or a broader regional sprint? We will help you choose the right starting point.
             </p>
-          </div>
+          </section>
 
-          {/* Hero Banner Image */}
-          <div className="lg:col-span-5 relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-900 group">
-            <Image
-              src="/geo-marketing-perth_AEObility.webp"
-              alt="AEObility GEO Marketing Services for Perth SMBs displaying geolocation-aware vector mesh nodes, local map pack coordinate signals, and AI spatial search optimisation for Perth Western Australia businesses."
-              width={1200}
-              height={675}
-              priority
-              className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-          </div>
-        </div>
+          {/* 2. Recommended Decision Strip */}
+          <section id="decision-strip" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3 scroll-mt-24">
+            <div className="flex items-center gap-2">
+              <HelpCircle className="w-5 h-5 text-cyan-400" />
+              <h3 className="text-base font-bold text-white font-soehne-breit">Which option fits your priority?</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif pt-1">
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                <span className="text-cyan-300 font-bold block font-mono">Know the issue?</span>
+                <span className="text-zinc-300 block">Choose a Micro-Sprint from $495 ex. GST.</span>
+              </div>
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                <span className="text-purple-300 font-bold block font-mono">Need several connected fixes?</span>
+                <span className="text-zinc-300 block">
+                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Foundation Implementation from $3,195 ex. GST</Link>.
+                </span>
+              </div>
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
+                <span className="text-cyan-300 font-bold block font-mono">Unsure what limits local visibility?</span>
+                <span className="text-zinc-300 block">
+                  <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Start with a comprehensive website visibility audit and 90-day strategic roadmap</Link> ($995 AUD).
+                </span>
+              </div>
+            </div>
+          </section>
 
-        {/* Content Section */}
-        <div className="pt-6 border-t border-white/5">
-          <section className="flex flex-col gap-10">
-            {/* Pillars */}
+          {/* 3. Local Sprints Catalogue Grid (3 Cards) */}
+          <section id="local-sprints" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Local Visibility Sprint Catalogue</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Standardise local business information, correct citation inconsistencies, and connect regional pages.</p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {pillars.map((pillar, idx) => (
-                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4 hover:border-white/10 transition-colors">
-                  <div className="p-2.5 bg-white/5 rounded-xl w-fit">
-                    {pillar.icon}
+              {localSprints.map((sprint, idx) => (
+                <div id={sprint.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
+                        {sprint.icon}
+                      </div>
+                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                        {sprint.code}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{sprint.title}</h3>
+                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
+                        {sprint.price} <span className="text-[10px] text-zinc-400 font-normal">{sprint.priceSub}</span>
+                      </div>
+                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {sprint.scope}</span>
+                    </div>
+
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
+                      {sprint.description}
+                    </p>
+
+                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
+                      <strong className="text-white block mb-0.5">When to choose:</strong>
+                      <span>{sprint.whenToChoose}</span>
+                    </div>
                   </div>
-                  <h3 className="text-base font-bold text-white leading-snug">{pillar.title}</h3>
-                  <p className="text-xs text-white/60 leading-relaxed font-light">{pillar.desc}</p>
+
+                  <div className="space-y-3 pt-3 border-t border-white/5">
+                    <p className="text-[10px] text-zinc-500 font-mono leading-tight">{sprint.techNote}</p>
+                    <button
+                      type="button"
+                      onClick={() => selectSprintForForm(sprint.key)}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+                    >
+                      <span>Discuss this Micro-Sprint</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Deep Dive Section */}
-            <div className="space-y-6 border-t border-white/5 pt-10">
-              <h2 className="text-2xl font-bold">Connecting Local Users With Location-Aware Engines</h2>
-              <p className="text-sm text-white/70 leading-relaxed font-light">
-                Location-aware systems determine which local brands to suggest by filtering regional intent nodes and mapping coordinate parameters. GEO works seamlessly alongside our broader <Link href="/services/ai-search-marketing" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">AI Search Strategy</Link> to ensure generative search models interpret your local footprint with absolute precision.
-              </p>
-              <p className="text-sm text-white/70 leading-relaxed font-light">
-                At AEObility, we combine structural coordinate mapping rules with proximity signals to ensure your local service nodes match exactly where search models place geographic queries. For an in-depth technical breakdown, explore <Link href="/knowledge-hub/geo" className="text-aeo-cyan underline hover:text-white transition-colors font-medium">GEO and SEO</Link> in our Knowledge Hub.
+            {/* Micro-Sprint Scope & Exclusion Box */}
+            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-2 shadow-sm">
+              <div className="flex items-center gap-2 font-bold text-white text-sm">
+                <FileCheck className="w-4 h-4 text-cyan-400" />
+                <span>Every Local Visibility Sprint includes:</span>
+              </div>
+              <p>
+                One agreed priority local task, implementation or cleanup work, verification checks, a summary of completed updates, and handover notes. Additional locations or unrelated technical issues are scoped separately. Review our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical brand facts catalog and uniform pricing database</Link>. Typical delivery: 4–5 business days from confirmed scope and access.
               </p>
             </div>
+          </section>
 
-            {/* Strategic Mid-Page CTA Callout to Quote Form */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border border-aeo-cyan/30 text-center space-y-4 shadow-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20 text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Dominate Perth Maps &amp; Geolocation AI Search</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                Need a Tailored GEO Marketing Strategy for Your Perth Business?
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
-                Get a custom quote and local visibility roadmap for your brand across Google Maps, Apple Maps, ChatGPT, and Perplexity.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="#quote-form"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs sm:text-sm rounded-xl hover:scale-[1.03] transition-all shadow-lg shadow-aeo-cyan/20 cursor-pointer"
-                >
-                  <span>Request a Quote &bull; Get Custom Strategy</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+          {/* 4. Trust Banner Callout */}
+          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-lg">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+              <ShieldCheck className="w-4 h-4 text-cyan-400" />
+              <span>Transparent Engagement Standards</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+              Clear scope. Fixed pricing. No lock-in contracts.
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto font-serif leading-relaxed">
+              Every local visibility engagement includes defined deliverables, progress validation, and a full implementation handover.
+            </p>
+          </section>
+
+          {/* 5. Self-Selection "Where We Apply Proximity Rules" & Technical Building Blocks Stack */}
+          <section id="building-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations (S3 & S4)</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">These are the practical areas we work on, selected to suit your business priorities.</p>
             </div>
 
-            {/* Frequently Asked Questions: GEO Marketing */}
-            <div className="space-y-6 border-t border-white/5 pt-10">
-              <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs tracking-widest uppercase">
-                <HelpCircle className="w-4 h-4" />
-                <span>Knowledge &amp; Clarity</span>
-              </div>
-              <h2 className="text-2xl font-bold text-white">Frequently Asked Questions: GEO Marketing</h2>
-              
-              <div className="space-y-4">
-                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="text-aeo-cyan font-mono text-xs">[01]</span> What is GEO Marketing?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                    GEO Marketing improves how your business appears in location‑aware search, map applications and AI assistants. It strengthens your local signals so engines like Google Maps, Apple Maps and generative models can correctly interpret where you operate and who you serve.
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                    <Navigation className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-purple-400 font-bold">FOUNDATION S3</span>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Internal Linking & Content Connections</h3>
+                  </div>
                 </div>
-
-                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="text-aeo-cyan font-mono text-xs">[02]</span> How does GEO support AEO?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                    GEO builds the location clarity that AEO relies on. When your coordinates, service areas and proximity signals are structured properly, answer engines can confidently match your business to nearby customers and include you in local recommendations.
-                  </p>
-                </div>
-
-                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="text-aeo-cyan font-mono text-xs">[03]</span> What does a GEO strategy involve?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                    A GEO strategy includes mapping your service areas, structuring location nodes, improving proximity signals and ensuring your business details are consistent across all platforms. This helps AI systems understand your footprint and present you accurately.
-                  </p>
-                </div>
-
-                <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 hover:border-white/10 transition-colors">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="text-aeo-cyan font-mono text-xs">[04]</span> Who benefits most from GEO Marketing?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light pl-6">
-                    Australian service businesses that rely on local enquiries benefit most. Clear location signals help plumbers, electricians, childcare centres and other SMBs appear more often in map results and AI‑generated local suggestions.
-                  </p>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  Strengthen link structures, navigation paths, and topic relationships between related service and location pages. Establishes clear contextual hierarchy so search engines understand regional service boundaries.
+                </p>
+                <div className="pt-2 border-t border-white/5">
+                  <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
+                    <span>Explore AEO Technical Sprints</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
 
-              {/* Explicit High-Intent Contact Conversion Link */}
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs mt-6">
-                <span className="text-white/60">Have specific questions about your local search presence in Perth?</span>
-                <Link href="/contact" className="text-aeo-cyan hover:underline font-bold inline-flex items-center gap-1 whitespace-nowrap">
-                  <span>Book a Clarity Call</span> <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Checklist */}
-            <div className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl space-y-4">
-              <h3 className="text-lg font-bold text-white">GEO Map Pack Optimisation Checklist</h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                  <span>Synchronize business details to match proximity signal rules.</span>
-                </li>
-                <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                  <span>Verify location nodes are fully crawlable by search scrapers.</span>
-                </li>
-                <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                  <span>Optimise local maps category fields in location vector space.</span>
-                </li>
-                <li className="flex gap-2 items-start text-xs font-light text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                  <span>Configure microdata elements using exact coordinate mapping rules.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Radial Proof Evidence (Secondary Contextual Link) */}
-            <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-center justify-between text-xs">
-              <span className="text-white/60">Real-world GEO &amp; AEO implementation proof:</span>
-              <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline font-medium inline-flex items-center gap-1">
-                Read Baby Bento Case Study <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            {/* Phase 3 Linear Conversion Corridor Banner */}
-            <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/5 rounded-3xl text-center space-y-6">
-              <h3 className="text-2xl font-bold text-white">Dominate Location-Aware Search &amp; Maps</h3>
-              <p className="text-sm text-white/60 max-w-lg mx-auto font-light leading-relaxed">
-                Start with our $995 AEObility <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline hover:text-white font-medium">90-Day Blueprint</Link>. Get a full local intent audit and a 90-day execution roadmap, or explore full <Link href="/" className="text-aeo-cyan underline hover:text-white font-medium">AEO Services for Australian Businesses</Link> on our homepage.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/solutions/aeo-blueprint"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
-                >
-                  <span>Get 90-Day Blueprint</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all cursor-pointer"
-                >
-                  <span>Book a Clarity Call</span>
-                </Link>
+              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                    <Globe className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-cyan-400 font-bold">FOUNDATION S4</span>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Brand Facts & Consistency</h3>
+                  </div>
+                </div>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  Consolidate core brand assertions, map coordinate data, and external trust signals into a clean, referenceable framework. Ensures your business details stay consistent across directory networks and AI engines.
+                </p>
+                <div className="pt-2 border-t border-white/5">
+                  <Link href="/services/aeo/procedures" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
+                    <span>Learn more about AEO Procedures</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
+
+          {/* 6. FAQ Accordion Section */}
+          <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility local visibility sprints.</p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-3">
+              {faqs.map((faq, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-zinc-950/80 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="text-sm font-bold text-white">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-cyan-400 transition-transform duration-300 shrink-0 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
+                        isOpen ? 'block' : 'hidden'
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* 7. Bottom Conversion CTA Block + Direct Contact Form */}
+          <section id="geo-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
+            <div className="max-w-md mx-auto space-y-4">
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Local Visibility Enquiry</h2>
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+                Tell us about your business locations and local priority issues. We will confirm the scope and price before you commit.
+              </p>
+              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
+                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Speak directly with AEObility founder Vince Baker. You will connect with a local specialist based in Perth to discuss practical next steps for your business.</span>
+              </div>
+            </div>
+
+            {/* Inline Local Contact Form */}
+            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
+              <div className="flex items-center justify-between gap-4 mb-1.5">
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss Your Local Visibility</h3>
+                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
+                  Local GEO Sprint
+                </span>
+              </div>
+              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
+                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
+              </p>
+
+              {contactSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">Local Visibility Enquiry Received</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you for reaching out. Our AEObility local visibility team will review your details and get in touch within 24 business hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-name">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="geo-name"
+                        required
+                        value={contactData.name}
+                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Vince Baker"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-email">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="geo-email"
+                        required
+                        value={contactData.email}
+                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="vince@example.com.au"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-service-type">
+                      What would you like to discuss?
+                    </label>
+                    <select
+                      id="geo-service-type"
+                      value={contactData.serviceType}
+                      onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
+                    >
+                      <option value="citation">Business Details & Citation Clean-Up ($495 AUD)</option>
+                      <option value="linking">Local Internal-Linking Sprint ($695 AUD)</option>
+                      <option value="brand-facts">Brand Facts Page Creation ($495 AUD)</option>
+                      <option value="foundation">Foundation Implementation (from $3,195 AUD)</option>
+                      <option value="unsure">Not sure yet — Help me decide</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-website">
+                      Website URL (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="geo-website"
+                      value={contactData.website}
+                      onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      placeholder="example.com.au"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-message">
+                      Business Locations or Local Issues to Address
+                    </label>
+                    <textarea
+                      id="geo-message"
+                      required
+                      rows={3}
+                      value={contactData.message}
+                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                      placeholder="Tell us about your locations or citation issues..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                  >
+                    <span>Discuss Your Local Visibility</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+
+                  <p className="text-[11px] text-zinc-500 text-center font-serif">
+                    Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
+                  </p>
+                </form>
+              )}
+            </div>
+          </section>
+
         </div>
       </main>
-
-      {/* Interactive Contact & Quote Request Form */}
-      <div className="max-w-6xl mx-auto px-6 pb-16 w-full">
-        <QuoteFormSection />
-      </div>
 
       <Footer />
     </div>
