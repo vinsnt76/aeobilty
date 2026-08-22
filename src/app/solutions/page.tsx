@@ -17,51 +17,6 @@ export default function SolutionsPage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AEObility AEO Solutions & Sprints",
-    "description": "Clear roadmap, targeted Micro-Sprints and Foundation Implementation for Australian businesses across Search, Maps and AI.",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "AEObility",
-      "legalName": "Trekaboutoz trading as AEObility",
-      "url": "https://www.aeobility.com.au",
-      "founder": {
-        "@type": "Person",
-        "name": "Vince Baker",
-        "jobTitle": "Founder"
-      }
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "AEObility Engagement Pathways",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "The AEObility Blueprint",
-          "price": "995.00",
-          "priceCurrency": "AUD",
-          "description": "Strategic audit and 90-day prioritised roadmap."
-        },
-        {
-          "@type": "Offer",
-          "name": "Micro-Sprints",
-          "price": "495.00",
-          "priceCurrency": "AUD",
-          "description": "Focused implementation for a defined website, content or local visibility issue (starting price)."
-        },
-        {
-          "@type": "Offer",
-          "name": "Foundation Implementation",
-          "price": "3195.00",
-          "priceCurrency": "AUD",
-          "description": "Broader technical, content and local visibility foundation delivered across a 4-week period (starting price)."
-        }
-      ]
-    }
-  };
-
   const faqs = [
     {
       question: "Do I need the Blueprint before booking a Micro-Sprint?",
@@ -89,17 +44,186 @@ export default function SolutionsPage() {
     }
   ];
 
-  const faqSchema = {
+  const jsonLdGraph = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.answer
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.aeobility.com.au/#organization",
+        "name": "AEObility",
+        "legalName": "Trekaboutoz trading as AEObility",
+        "url": "https://www.aeobility.com.au",
+        "logo": "https://www.aeobility.com.au/Profile-Picture-Vinnie.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Vince Baker",
+          "jobTitle": "Founder",
+          "url": "https://www.aeobility.com.au/vince-baker"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.aeobility.com.au/solutions#webpage",
+        "url": "https://www.aeobility.com.au/solutions",
+        "name": "AEO Services, Sprints & Fixed Pricing | AEObility",
+        "description": "Discover clear, fixed-price implementation work for Australian businesses. Choose a strategic roadmap, fix a single priority, or build a strong digital foundation.",
+        "publisher": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://www.aeobility.com.au/solutions#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.aeobility.com.au/solutions#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://www.aeobility.com.au/solutions"
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://www.aeobility.com.au/solutions#catalog",
+        "name": "AEObility Solutions & Engagement Pathways",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "The AEObility Blueprint",
+            "sku": "BPSTRAT",
+            "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+            "description": "A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.",
+            "provider": {
+              "@id": "https://www.aeobility.com.au/#organization"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "995.00",
+              "priceCurrency": "AUD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "valueAddedTaxIncluded": false,
+                "description": "Excluding GST"
+              }
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "AEObility Micro-Sprints",
+            "sku": "SS1-SS4-MICRO",
+            "url": "https://www.aeobility.com.au/solutions/aeo-sprint",
+            "description": "A focused, fixed-scope sprint for a defined website, content or local-visibility issue.",
+            "provider": {
+              "@id": "https://www.aeobility.com.au/#organization"
+            },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Schema Sprint",
+                "price": "495.00",
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "valueAddedTaxIncluded": false,
+                  "description": "Excluding GST"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Content Sprint",
+                "price": "495.00",
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "valueAddedTaxIncluded": false,
+                  "description": "Excluding GST"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Citation Clean-Up",
+                "price": "495.00",
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "valueAddedTaxIncluded": false,
+                  "description": "Excluding GST"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Local Linking Sprint",
+                "price": "695.00",
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "valueAddedTaxIncluded": false,
+                  "description": "Excluding GST"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Brand Facts Page",
+                "price": "495.00",
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "valueAddedTaxIncluded": false,
+                  "description": "Excluding GST"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "name": "Foundation Implementation",
+            "sku": "SS1-SS4-MACRO",
+            "url": "https://www.aeobility.com.au/contact",
+            "description": "When several issues are connected, Foundation Implementation brings the most important work together in one focused engagement.",
+            "provider": {
+              "@id": "https://www.aeobility.com.au/#organization"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "AUD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": "3195.00",
+                "priceCurrency": "AUD",
+                "valueAddedTaxIncluded": false,
+                "description": "Starting from $3,195 AUD ex. GST; final scope confirmed before work begins."
+              }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.aeobility.com.au/solutions#faq",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.answer
+          }
+        }))
       }
-    }))
+    ]
   };
 
   const selfSelectionItems = [
@@ -159,14 +283,10 @@ export default function SolutionsPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Structural JSON-LD Schemas */}
+      {/* Unified Connected JSON-LD Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
       <Navbar />
