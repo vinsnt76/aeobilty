@@ -35,8 +35,8 @@ import {
 
 export const GEO_MARKETING_INTERNAL_LINKS = [
   {
-    targetSlug: "/brand-facts",
-    anchorText: "canonical brand facts catalog and uniform pricing database",
+    targetSlug: "/solutions",
+    anchorText: "current service pricing and scope",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -93,27 +93,27 @@ export default function GeoMarketingPage() {
   const faqs = [
     {
       question: "What is included in a Local Visibility Micro-Sprint?",
-      answer: "Each local micro-sprint targets one defined area: citation clean-up, local internal linking, or Brand Facts page creation. You receive clear deliverables, validation checks, and complete handover documentation."
+      answer: "Each Micro-Sprint includes one agreed local priority, the specified implementation or clean-up work, validation checks, a summary of completed changes and handover notes. Additional locations or pages are scoped separately."
     },
     {
       question: "How long does a Citation Clean-Up sprint take?",
-      answer: "Most citation clean-up and local linking sprints are delivered within 4–5 business days once access to priority profiles and website CMS has been confirmed."
+      answer: "Most Local Visibility Micro-Sprints are delivered within 4–5 business days after the scope, required business information and access have been confirmed. Additional locations or complex listing issues may require a separate scope."
     },
     {
-      question: "Why is a Brand Facts page important for local search?",
-      answer: "A Brand Facts page acts as a central, machine-readable source of truth on your site. It provides search engines and AI assistants with unambiguous details about your business identity, locations, and services."
+      question: "Why is a Brand Facts Page important for local search?",
+      answer: "It gives customers and search systems one clear place to verify your business identity, services, locations and contact information. It also helps reduce confusion when important facts are spread across multiple pages or platforms."
     },
     {
       question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
+      answer: "Yes. If you have completed the AEObility Blueprint, the full $995 fee can be credited towards Foundation Implementation booked within 60 days of handover. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
     },
     {
       question: "Do you require long-term contracts or monthly retainers?",
-      answer: "No. All GEO Sprints and Foundation engagements are scoped as individual, fixed-price projects with clear deliverables and no ongoing retainers."
+      answer: "No. Local Visibility Sprints are fixed-scope engagements. Any further work or ongoing support is discussed separately."
     },
     {
       question: "What information is needed to begin a local sprint?",
-      answer: "We require your core business identity details (Name, Address, Phone, Operating Hours), primary location targets, and temporary CMS or directory access where updates are required."
+      answer: "We may need your website address, business name, address, phone number, service areas, priority listings and access to relevant platforms. We will confirm exactly what is required before work begins."
     }
   ];
 
@@ -127,9 +127,9 @@ export default function GeoMarketingPage() {
       price: "$495 AUD",
       priceSub: "ex. GST",
       scope: "Priority business profiles & directories",
-      description: "Review, correct, and standardise core Name, Address, and Phone (NAP) information across priority directory sets and platforms.",
-      techNote: "For technical teams: Standardises entity identity vectors and resolves duplicate listing conflicts across map engines.",
-      whenToChoose: "Choose this when your business name, address, or phone number varies across search engines, maps, and online directories."
+      description: "Review and correct your core business details across priority directories, maps and local platforms.",
+      techNote: "For technical teams: We check for inconsistent listings, duplicates and conflicting business information.",
+      whenToChoose: "Choose this when your business name, address or phone details vary across online listings, maps and directories."
     },
     {
       key: "linking",
@@ -140,9 +140,9 @@ export default function GeoMarketingPage() {
       price: "$695 AUD",
       priceSub: "ex. GST",
       scope: "Priority location hubs & service pages",
-      description: "Better connect priority location pages, service hubs, and supporting regional content to reinforce contextual signals.",
-      techNote: "For technical teams: Establishes explicit parent-child geographic linking hierarchies between primary and sub-location nodes.",
-      whenToChoose: "Choose this when regional service pages exist on your site but lack strong navigational connections to primary location hubs."
+      description: "Connect important location, service and supporting pages so visitors and search engines can navigate your local offering more easily.",
+      techNote: "For technical teams: Establishes clear connections between main location pages and regional pages.",
+      whenToChoose: "Choose this when your location or service pages exist but are difficult to discover from the rest of your website."
     },
     {
       key: "brand-facts",
@@ -152,10 +152,10 @@ export default function GeoMarketingPage() {
       code: "SS4MICRO3",
       price: "$495 AUD",
       priceSub: "ex. GST",
-      scope: "One central site source of truth",
-      description: "Create a central, machine-readable source of truth page on your site covering your business identity, locations, and services.",
-      techNote: "For technical teams: Deploys unified LocalBusiness and Organization JSON-LD graphs with coordinate precision data.",
-      whenToChoose: "Choose this when search tools or AI assistants struggle to retrieve clean, authoritative facts about your business."
+      scope: "One central site reference page",
+      description: "Create one clear reference page covering your business, services, locations, contact details and key trust information.",
+      techNote: "For technical teams: The page can be supported with appropriate Organisation, LocalBusiness or Service structured data where the visible content supports it.",
+      whenToChoose: "Choose this when your business information is scattered, inconsistent or difficult for customers to verify online."
     }
   ];
 
@@ -187,7 +187,7 @@ export default function GeoMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Improve the consistency and clarity of the local signals customers and search platforms use to understand where you operate and what you offer. No hidden retainers.
+                Make it easier for customers to find the right business, service and location information across Search, Maps and AI-assisted search. Fix one local visibility issue or address several connected problems without committing to a long-term retainer.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
@@ -200,7 +200,7 @@ export default function GeoMarketingPage() {
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/services/geo-marketing-services_AEObility.webp"
-                alt="AEObility local visibility interface mapping geographic coordinate grids and hyper-local citation points across regional search maps."
+                alt="Local visibility diagram showing business information, location pages and directory signals."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -211,7 +211,7 @@ export default function GeoMarketingPage() {
               {/* Overlaid Hero CTAs */}
               <div className="absolute bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/85 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
                 <div className="text-left space-y-1">
-                  <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix Local Citation Gaps or Build Regional Depth</span>
+                  <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix a Single Priority or Build a Foundation</span>
                   <span className="text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
@@ -221,7 +221,7 @@ export default function GeoMarketingPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black" />
-                    <span>Book a Local Strategy Call</span>
+                    <span>Discuss Your Local Visibility</span>
                   </button>
                   <Link
                     href="/diagnostic"
@@ -325,12 +325,54 @@ export default function GeoMarketingPage() {
                 <span>Every Local Visibility Sprint includes:</span>
               </div>
               <p>
-                One agreed priority local task, implementation or cleanup work, verification checks, a summary of completed updates, and handover notes. Additional locations or unrelated technical issues are scoped separately. Review our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical brand facts catalog and uniform pricing database</Link>. Typical delivery: 4–5 business days from confirmed scope and access.
+                Every sprint includes: one agreed local priority, the specified implementation or clean-up work, validation checks, a summary of completed changes and handover notes. Additional locations, pages or unrelated issues are scoped separately. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>. Typical delivery: 4–5 business days from confirmed scope and access.
               </p>
             </div>
           </section>
 
-          {/* 4. Trust Banner Callout */}
+          {/* 4. Foundation Implementation Upgrade Block */}
+          <section id="foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-4 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
+                  <Boxes className="w-4 h-4 text-purple-400" />
+                  <span>Multi-Page Implementation Tier</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
+                  Foundation Implementation
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
+                  For businesses that need several connected improvements. May include internal linking, structured data, priority-page improvements or local business information, depending on the agreed scope. Final pricing depends on the number of pages, implementation requirements and agreed deliverables. Scope is confirmed before work begins.
+                </p>
+
+                {/* Prominently Elevated Blueprint Credit Callout Box */}
+                <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
+                  <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
+                  <p>
+                    If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
+                <div className="text-left md:text-right">
+                  <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD</span>
+                  <span className="text-xs text-zinc-400 font-mono">ex. GST | 4-Week Schedule</span>
+                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Typical schedule: delivered across a four-week period.</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => selectSprintForForm('foundation')}
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4 text-black" />
+                  <span>Discuss Foundation Implementation</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {/* 5. Trust Banner Callout */}
           <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-lg">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
               <ShieldCheck className="w-4 h-4 text-cyan-400" />
@@ -340,11 +382,11 @@ export default function GeoMarketingPage() {
               Clear scope. Fixed pricing. No lock-in contracts.
             </h3>
             <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto font-serif leading-relaxed">
-              Every local visibility engagement includes defined deliverables, progress validation, and a full implementation handover.
+              Every engagement has agreed deliverables, a clear delivery window, validation checks and a practical handover. No ongoing retainer is required.
             </p>
           </section>
 
-          {/* 5. Self-Selection "Where We Apply Proximity Rules" & Technical Building Blocks Stack */}
+          {/* 6. Core Technical Foundations (S3 & S4 Focus) */}
           <section id="building-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations (S3 & S4)</h2>
@@ -363,9 +405,12 @@ export default function GeoMarketingPage() {
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Strengthen link structures, navigation paths, and topic relationships between related service and location pages. Establishes clear contextual hierarchy so search engines understand regional service boundaries.
+                  Connect related service and location pages so customers can move through your website more easily and search engines can understand how the pages relate.
                 </p>
-                <div className="pt-2 border-t border-white/5">
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  Technical detail: Internal linking, location-page relationships and appropriate structured data may be reviewed as part of the agreed scope.
+                </p>
+                <div className="pt-1">
                   <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
                     <span>Explore AEO Technical Sprints</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -384,9 +429,12 @@ export default function GeoMarketingPage() {
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Consolidate core brand assertions, map coordinate data, and external trust signals into a clean, referenceable framework. Ensures your business details stay consistent across directory networks and AI engines.
+                  Bring your key business details, services, locations and trust information together so they remain clear and consistent across your website and priority local platforms.
                 </p>
-                <div className="pt-2 border-t border-white/5">
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  Technical detail: Business identity verification, location details, and structured schema alignment across search channels.
+                </p>
+                <div className="pt-1">
                   <Link href="/services/aeo/procedures" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
                     <span>Learn more about AEO Procedures</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -394,9 +442,20 @@ export default function GeoMarketingPage() {
                 </div>
               </div>
             </div>
+
+            {/* Ownership & Handover Statement */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
+                  <span>Use the completed work and handover notes with your internal team or developer, or ask AEObility to implement the agreed changes.</span>
+                </div>
+              </div>
+            </div>
           </section>
 
-          {/* 6. FAQ Accordion Section */}
+          {/* 7. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
           <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
@@ -437,7 +496,7 @@ export default function GeoMarketingPage() {
             </div>
           </section>
 
-          {/* 7. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 8. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="geo-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Local Visibility Enquiry</h2>
