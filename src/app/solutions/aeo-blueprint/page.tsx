@@ -19,12 +19,12 @@ export const BLUEPRINT_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/services/geo-marketing",
-    anchorText: "local business profile structures",
+    anchorText: "local business profiles",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
-    targetSlug: "/brand-facts",
-    anchorText: "canonical product database",
+    targetSlug: "/solutions",
+    anchorText: "current service pricing",
     entityRelation: "http://schema.org/isRelatedTo"
   }
 ];
@@ -65,23 +65,23 @@ export default function AEOBlueprintPage() {
     },
     {
       question: "How long does the Blueprint take?",
-      answer: "Most Blueprints are completed within 7 to 10 business days after we receive the required access and business information. Timing may vary for larger or multi-location businesses."
+      answer: "Most Blueprints are completed within 7–10 business days once we have the information and access needed for the review. Larger or multi-location businesses may require a longer scope, which we will confirm before work begins."
     },
     {
       question: "Can I implement the Blueprint myself or give it to my developer?",
-      answer: "Yes. The Blueprint is fully developer-ready and delivered as a clear, un-jargoned specification. You can implement it in-house, hand it to your developer, or hire AEObility for implementation."
+      answer: "Yes. Your Blueprint is designed to be useful whether you implement the recommendations internally, with a developer or agency partner, or with AEObility. It includes prioritised actions and practical guidance for the next 90 days."
     },
     {
       question: "Does the Blueprint include implementation?",
-      answer: "No. The Blueprint is a strategic audit and 90-day implementation roadmap. Website development, schema deployment, page rewrites, citation updates and ongoing support can be scoped separately after handover."
+      answer: "No. The Blueprint is an audit and roadmap. Website development, structured-data deployment, content rewrites, citation updates and ongoing support are scoped separately if required."
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: "Your $995 Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline). It does not apply to standalone Micro-Sprints."
+      answer: "If you book Foundation Implementation within 60 days of receiving your Blueprint, we apply the full $995 Blueprint fee to your implementation cost. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
     },
     {
       question: "Is the Blueprint suitable for agencies or multi-location businesses?",
-      answer: "Yes. The Blueprint can support internal marketing teams, developers and agency partners, and can be scoped for multi-location businesses. Contact us to confirm the appropriate scope and pricing before booking."
+      answer: "Yes. We can scope the Blueprint for agency teams, internal marketing teams and multi-location businesses. Contact us before booking so we can confirm the right scope and price."
     }
   ];
 
@@ -89,34 +89,23 @@ export default function AEOBlueprintPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://www.aeobility.com.au/#organization",
-        "name": "AEObility",
-        "legalName": "Trekaboutoz trading as AEObility",
-        "url": "https://www.aeobility.com.au",
-        "logo": "https://www.aeobility.com.au/Profile-Picture-Vinnie.png",
-        "founder": {
-          "@type": "Person",
-          "name": "Vince Baker",
-          "jobTitle": "Founder",
-          "url": "https://www.aeobility.com.au/vince-baker"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
-        }
-      },
-      {
         "@type": "WebPage",
         "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#webpage",
         "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
         "name": "The AEObility Blueprint | 90-Day Strategy & Audit",
-        "description": "Understand what is limiting your visibility across Search, Maps and AI. Get a practical 90-day action plan for a fixed price of $995 AUD ex. GST.",
-        "publisher": {
+        "description": "A fixed-price $995 AUD ex. GST strategic audit and 90-day action plan for Australian businesses seeking stronger visibility across Search, Maps and AI.",
+        "inLanguage": "en-AU",
+        "isPartOf": {
+          "@id": "https://www.aeobility.com.au/#website"
+        },
+        "about": {
           "@id": "https://www.aeobility.com.au/#organization"
         },
         "breadcrumb": {
           "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#service"
         }
       },
       {
@@ -127,7 +116,7 @@ export default function AEOBlueprintPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.aeobility.com.au"
+            "item": "https://www.aeobility.com.au/"
           },
           {
             "@type": "ListItem",
@@ -147,21 +136,31 @@ export default function AEOBlueprintPage() {
         "@type": "Service",
         "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#service",
         "name": "The AEObility Blueprint",
-        "identifier": "BPSTRAT",
-        "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
-        "description": "A practical audit and 90-day action plan for stronger visibility across Search, Maps and AI. Fixed price of $995 AUD ex. GST.",
+        "alternateName": "BPSTRAT",
+        "description": "A strategic audit and prioritised 90-day action plan covering website structure, structured data, business information, local visibility and key service pages.",
         "provider": {
           "@id": "https://www.aeobility.com.au/#organization"
         },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Australian small businesses, agency teams and internal marketing teams"
+        },
         "offers": {
           "@type": "Offer",
+          "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#offer",
+          "url": "https://www.aeobility.com.au/contact?service=blueprint",
+          "name": "AEObility Blueprint Strategic Audit",
           "sku": "BPSTRAT",
-          "price": `${PRICING_CONFIG.blueprint.price}.00`,
-          "priceCurrency": PRICING_CONFIG.currency,
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "valueAddedTaxIncluded": false,
-            "description": "Excluding GST; credited towards Foundation Sprints and above when booked within 60 days."
+          "price": "995.00",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "description": "Fixed price of $995 AUD excluding GST. Includes a strategic audit and 90-day action plan. The Blueprint fee may be credited towards Foundation Implementation booked within 60 days of Blueprint handover; terms apply.",
+          "seller": {
+            "@id": "https://www.aeobility.com.au/#organization"
           }
         }
       },
@@ -206,8 +205,8 @@ export default function AEOBlueprintPage() {
   const valueProps = [
     "Fixed $995 price with clearly defined deliverables",
     "Independent, prioritised recommendations rather than an open-ended retainer",
-    "Developer-ready specifications you can implement in-house or with AEObility",
-    "Built for Australian businesses, local visibility and modern search behaviour"
+    "Built for Australian businesses, local visibility and modern search behaviour",
+    "Clear handover for your internal team, developer or agency partner"
   ];
 
   return (
@@ -333,13 +332,13 @@ export default function AEOBlueprintPage() {
               ))}
             </div>
 
-            {/* Handover & Developer-Ready Callout */}
+            {/* Built for Your Team or Developer Callout */}
             <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
               <div className="flex items-start gap-3">
                 <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white font-semibold block mb-0.5">Developer-Ready Asset: Implement In-House or With Us</strong>
-                  <span>You can take your Blueprint and implement it in-house or hand it to your developer. If you choose AEObility for implementation, your $995 fee is credited back when you book any Foundation Sprint or higher. Alternatively, you can implement rapid technical fixes through <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
+                  <strong className="text-white font-semibold block mb-0.5">Use the Blueprint your way</strong>
+                  <span>Take the recommendations to your internal team, developer or agency partner, or ask AEObility to implement the agreed priorities. If you need a smaller, defined fix, explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
                 </div>
               </div>
             </div>
@@ -361,10 +360,10 @@ export default function AEOBlueprintPage() {
                 <span>100% Fee Credit Terms</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
-                Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
+                Apply your Blueprint fee to implementation
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
-                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline) within 60 days of your Blueprint handover. All pricing is published in our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical product database</Link>. Credit does not apply to standalone Micro-Sprints and is not redeemable for cash.
+                If you book Foundation Implementation within 60 days of receiving your Blueprint, we will apply the full $995 Blueprint fee to your implementation cost. The credit cannot be used for standalone Micro-Sprints, transferred to another business or exchanged for cash. Review <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing</Link>.
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
                 <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -394,20 +393,20 @@ export default function AEOBlueprintPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
                 <span className="text-2xl font-extrabold text-cyan-400 font-mono block">01</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Initial Discovery & Setup</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Initial discovery</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed font-serif">We audit your existing local signals, brand claims, and website structure and business information.</p>
               </div>
 
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
                 <span className="text-2xl font-extrabold text-purple-400 font-mono block">02</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Review & Strategic Mapping</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Review and priority planning</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed font-serif">We build your priority roadmap, visibility scorecards, and a 90-day implementation plan.</p>
               </div>
 
               <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left relative">
                 <span className="text-2xl font-extrabold text-cyan-400 font-mono block">03</span>
                 <h3 className="text-base font-bold text-white font-soehne-breit">Handover & Strategy Session</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-serif">A comprehensive review meeting to hand over your actionable assets and plan next steps.</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-serif">A comprehensive review meeting to hand over your audit findings and next steps.</p>
               </div>
             </div>
           </section>
@@ -425,7 +424,7 @@ export default function AEOBlueprintPage() {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-white/80 font-serif">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Consistency of your key local business details, geographic signals, and <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profile structures</Link> (NAP).</span>
+                  <span>Consistency of your key local business details, location information, and <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profiles</Link> (NAP).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
@@ -505,13 +504,13 @@ export default function AEOBlueprintPage() {
           {/* 9. Final Role-Based Conversion CTA & Direct Contact Form */}
           <section className="border-t border-white/10 pt-16 text-center space-y-8">
             <div className="max-w-md mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-white font-soehne-breit">Ready for a Clearer Picture of What to Fix First?</h2>
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss the Blueprint</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Discuss your Blueprint with an AEObility specialist and receive your practical 90-day action plan.
+                Speak directly with AEObility founder Vince Baker. Discuss your priorities, confirm whether the Blueprint is the right starting point and get clear next steps.
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Speak with an AEObility specialist (guided by founder Vince Baker).</span>
+                <span>Speak directly with AEObility founder Vince Baker.</span>
               </div>
             </div>
 
@@ -519,13 +518,13 @@ export default function AEOBlueprintPage() {
             <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full filter blur-2xl -z-10" />
               <div className="flex items-center justify-between gap-4 mb-1.5">
-                <h3 className="text-xl font-bold text-white font-soehne-breit">Send a Direct Blueprint Enquiry</h3>
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss the Blueprint</h3>
                 <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
                   $995 Credit Eligible
                 </span>
               </div>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, 100% credited back towards Foundation Sprints and above). Or <Link href="/contact?service=blueprint&credit=995" className="text-cyan-400 hover:underline">open full consultation page</Link>.
+                Tell us a little about your business and the visibility challenge you want to address. We will confirm whether the Blueprint is the right fit before you commit.
               </p>
 
               {contactSubmitted ? (
@@ -533,7 +532,7 @@ export default function AEOBlueprintPage() {
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
                   <h4 className="font-bold text-white text-base">Blueprint Enquiry Received</h4>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you for reaching out. Our AEObility visibility team will review your website details and get in touch within 24 business hours.
+                    Thank you for reaching out. Vince Baker will review your website details and get in touch within 24 business hours.
                   </p>
                 </div>
               ) : (
