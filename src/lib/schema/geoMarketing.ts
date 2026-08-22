@@ -87,16 +87,16 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
             "itemListElement": [
               {
                 "@type": "Offer",
-                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-citation-cleanup",
+                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-ss4micro1",
                 "name": "Business Details & Citation Clean-Up",
-                "url": "https://www.aeobility.com.au/services/geo-marketing?service=citation",
+                "url": "https://www.aeobility.com.au/services/geo-marketing#ss4micro1",
                 "price": "495.00",
                 "priceCurrency": "AUD",
                 "availability": "https://schema.org/InStock",
                 "category": "GEO Local Micro-Sprint",
-                "description": "Review, correct, and standardise core Name, Address, and Phone (NAP) information across priority directory sets and platforms. Price excludes GST.",
+                "description": "Review and correct your core business details across priority directories, maps and local platforms. Price excludes GST.",
                 "itemOffered": {
-                  "@id": "https://www.aeobility.com.au/services/geo-marketing#citation-cleanup"
+                  "@id": "https://www.aeobility.com.au/services/geo-marketing#ss4micro1"
                 },
                 "seller": {
                   "@id": "https://www.aeobility.com.au/#organization"
@@ -104,16 +104,16 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
               },
               {
                 "@type": "Offer",
-                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-local-linking",
+                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-ss3micro1",
                 "name": "Local Internal-Linking Sprint",
-                "url": "https://www.aeobility.com.au/services/geo-marketing?service=linking",
+                "url": "https://www.aeobility.com.au/services/geo-marketing#ss3micro1",
                 "price": "695.00",
                 "priceCurrency": "AUD",
                 "availability": "https://schema.org/InStock",
                 "category": "GEO Local Micro-Sprint",
-                "description": "Better connect priority location pages, service hubs, and supporting regional content to reinforce contextual signals. Price excludes GST.",
+                "description": "Connect important location, service and supporting pages so visitors and search engines can navigate your local offering more easily. Price excludes GST.",
                 "itemOffered": {
-                  "@id": "https://www.aeobility.com.au/services/geo-marketing#local-linking"
+                  "@id": "https://www.aeobility.com.au/services/geo-marketing#ss3micro1"
                 },
                 "seller": {
                   "@id": "https://www.aeobility.com.au/#organization"
@@ -121,16 +121,16 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
               },
               {
                 "@type": "Offer",
-                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-brand-facts",
+                "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-ss4micro3",
                 "name": "Brand Facts Page Creation",
-                "url": "https://www.aeobility.com.au/services/geo-marketing?service=brand-facts",
+                "url": "https://www.aeobility.com.au/services/geo-marketing#ss4micro3",
                 "price": "495.00",
                 "priceCurrency": "AUD",
                 "availability": "https://schema.org/InStock",
                 "category": "GEO Local Micro-Sprint",
-                "description": "Create a central, machine-readable source of truth page on your site covering your business identity, locations, and services. Price excludes GST.",
+                "description": "Create one clear reference page covering your business, services, locations, contact details and key trust information. Price excludes GST.",
                 "itemOffered": {
-                  "@id": "https://www.aeobility.com.au/services/geo-marketing#brand-facts"
+                  "@id": "https://www.aeobility.com.au/services/geo-marketing#ss4micro3"
                 },
                 "seller": {
                   "@id": "https://www.aeobility.com.au/#organization"
@@ -146,7 +146,7 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
                 "@type": "Offer",
                 "@id": "https://www.aeobility.com.au/services/geo-marketing#offer-foundation",
                 "name": "Foundation Implementation",
-                "url": "https://www.aeobility.com.au/services/geo-marketing?service=foundation",
+                "url": "https://www.aeobility.com.au/services/geo-marketing#foundation-implementation",
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "minPrice": "3195.00",
@@ -169,10 +169,10 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
       },
       {
         "@type": "Service",
-        "@id": "https://www.aeobility.com.au/services/geo-marketing#citation-cleanup",
+        "@id": "https://www.aeobility.com.au/services/geo-marketing#ss4micro1",
         "name": "Business Details & Citation Clean-Up",
         "alternateName": "SS4MICRO1",
-        "description": "Review, correct, and standardise core Name, Address, and Phone (NAP) information across priority directory sets and platforms.",
+        "description": "Review and correct your core business details across priority directories, maps and local platforms.",
         "provider": {
           "@id": "https://www.aeobility.com.au/#organization"
         },
@@ -183,10 +183,10 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
       },
       {
         "@type": "Service",
-        "@id": "https://www.aeobility.com.au/services/geo-marketing#local-linking",
+        "@id": "https://www.aeobility.com.au/services/geo-marketing#ss3micro1",
         "name": "Local Internal-Linking Sprint",
         "alternateName": "SS3MICRO1",
-        "description": "Better connect priority location pages, service hubs, and supporting regional content to reinforce contextual signals.",
+        "description": "Connect important location, service and supporting pages so visitors and search engines can navigate your local offering more easily.",
         "provider": {
           "@id": "https://www.aeobility.com.au/#organization"
         },
@@ -197,10 +197,23 @@ export const getGeoMarketingSchemaGraph = (faqs: FaqItem[]) => {
       },
       {
         "@type": "Service",
-        "@id": "https://www.aeobility.com.au/services/geo-marketing#brand-facts",
+        "@id": "https://www.aeobility.com.au/services/geo-marketing#ss4micro3",
         "name": "Brand Facts Page Creation",
         "alternateName": "SS4MICRO3",
-        "description": "Create a central, machine-readable source of truth page on your site covering your business identity, locations, and services.",
+        "description": "Create one clear reference page covering your business, services, locations, contact details and key trust information.",
+        "provider": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.aeobility.com.au/services/geo-marketing#foundation-implementation",
+        "name": "Foundation Implementation",
+        "description": "A multi-page, multi-issue engagement covering agreed technical, content, internal linking and local business information improvements.",
         "provider": {
           "@id": "https://www.aeobility.com.au/#organization"
         },

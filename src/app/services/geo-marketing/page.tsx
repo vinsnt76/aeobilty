@@ -58,7 +58,7 @@ export default function GeoMarketingPage() {
     name: '',
     email: '',
     website: '',
-    serviceType: 'citation',
+    serviceType: 'ss4micro1',
     message: ''
   });
 
@@ -86,7 +86,7 @@ export default function GeoMarketingPage() {
     setContactSubmitted(true);
     setTimeout(() => {
       setContactSubmitted(false);
-      setContactData({ name: '', email: '', website: '', serviceType: 'citation', message: '' });
+      setContactData({ name: '', email: '', website: '', serviceType: 'ss4micro1', message: '' });
     }, 6000);
   };
 
@@ -119,8 +119,8 @@ export default function GeoMarketingPage() {
 
   const localSprints = [
     {
-      key: "citation",
-      anchorId: "citation-cleanup",
+      key: "ss4micro1",
+      anchorId: "ss4micro1",
       icon: <Building2 className="w-6 h-6 text-aeo-cyan" />,
       title: "Business Details & Citation Clean-Up",
       code: "SS4MICRO1",
@@ -132,8 +132,8 @@ export default function GeoMarketingPage() {
       whenToChoose: "Choose this when your business name, address or phone details vary across online listings, maps and directories."
     },
     {
-      key: "linking",
-      anchorId: "local-linking",
+      key: "ss3micro1",
+      anchorId: "ss3micro1",
       icon: <LinkIcon className="w-6 h-6 text-aeo-purple" />,
       title: "Local Internal-Linking Sprint",
       code: "SS3MICRO1",
@@ -145,8 +145,8 @@ export default function GeoMarketingPage() {
       whenToChoose: "Choose this when your location or service pages exist but are difficult to discover from the rest of your website."
     },
     {
-      key: "brand-facts",
-      anchorId: "brand-facts-creation",
+      key: "ss4micro3",
+      anchorId: "ss4micro3",
       icon: <FileText className="w-6 h-6 text-aeo-cyan" />,
       title: "Brand Facts Page Creation",
       code: "SS4MICRO3",
@@ -163,7 +163,7 @@ export default function GeoMarketingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Unified JSON-LD Connected Graph in HTML Head Context */}
+      {/* Unified JSON-LD Connected Graph with Passage @id Anchors */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
@@ -217,7 +217,7 @@ export default function GeoMarketingPage() {
                 <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
                   <button
                     type="button"
-                    onClick={() => selectSprintForForm('citation')}
+                    onClick={() => selectSprintForForm('ss4micro1')}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black" />
@@ -265,7 +265,7 @@ export default function GeoMarketingPage() {
             </div>
           </section>
 
-          {/* 3. Local Sprints Catalogue Grid (3 Cards) */}
+          {/* 3. Local Sprints Catalogue Grid (3 Cards with Explicit Passage @id Anchors) */}
           <section id="local-sprints" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Local Visibility Sprint Catalogue</h2>
@@ -331,7 +331,7 @@ export default function GeoMarketingPage() {
           </section>
 
           {/* 4. Foundation Implementation Upgrade Block */}
-          <section id="foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
+          <section id="foundation-implementation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
@@ -372,7 +372,7 @@ export default function GeoMarketingPage() {
             </div>
           </section>
 
-          {/* 5. Trust Banner Callout */}
+          {/* 5. Single Transparent Engagement Standards Banner */}
           <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-lg">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
               <ShieldCheck className="w-4 h-4 text-cyan-400" />
@@ -394,7 +394,7 @@ export default function GeoMarketingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left">
+              <div id="s3-linking" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 bg-black border border-white/10 rounded-xl">
                     <Navigation className="w-6 h-6 text-purple-400" />
@@ -418,7 +418,7 @@ export default function GeoMarketingPage() {
                 </div>
               </div>
 
-              <div className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left">
+              <div id="s4-brand-facts" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 bg-black border border-white/10 rounded-xl">
                     <Globe className="w-6 h-6 text-cyan-400" />
@@ -505,7 +505,7 @@ export default function GeoMarketingPage() {
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Speak directly with AEObility founder Vince Baker. You will connect with a local specialist based in Perth to discuss practical next steps for your business.</span>
+                <span>You will speak with an AEObility specialist based in Perth to discuss practical next steps for your business. Vince Baker, AEObility’s founder, is available for more complex scopes or strategic questions.</span>
               </div>
             </div>
 
@@ -573,9 +573,9 @@ export default function GeoMarketingPage() {
                       onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
-                      <option value="citation">Business Details & Citation Clean-Up ($495 AUD)</option>
-                      <option value="linking">Local Internal-Linking Sprint ($695 AUD)</option>
-                      <option value="brand-facts">Brand Facts Page Creation ($495 AUD)</option>
+                      <option value="ss4micro1">Business Details & Citation Clean-Up ($495 AUD)</option>
+                      <option value="ss3micro1">Local Internal-Linking Sprint ($695 AUD)</option>
+                      <option value="ss4micro3">Brand Facts Page Creation ($495 AUD)</option>
                       <option value="foundation">Foundation Implementation (from $3,195 AUD)</option>
                       <option value="unsure">Not sure yet — Help me decide</option>
                     </select>
