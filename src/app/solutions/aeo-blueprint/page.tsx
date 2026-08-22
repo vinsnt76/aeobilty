@@ -153,7 +153,6 @@ export default function AEOBlueprintPage() {
           "sku": "BPSTRAT",
           "price": "995.00",
           "priceCurrency": "AUD",
-          "valueAddedTaxIncluded": false,
           "availability": "https://schema.org/InStock",
           "areaServed": [
             { "@type": "Country", "name": "Australia" },
