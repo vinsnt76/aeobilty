@@ -219,7 +219,7 @@ export default function DiagnosticEngine() {
                 </div>
                 <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
                   <span className="text-xs font-bold text-cyan-400 font-mono block">3. Chat with AI Bill</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Click 'Talk to AI Bill' to explore your findings and receive your 90-day action plan.</p>
+                  <p className="text-xs text-white/70 font-serif leading-snug">Click &apos;Talk to AI Bill&apos; to explore your findings and receive a complimentary copy of your scan.</p>
                 </div>
               </div>
             </div>
