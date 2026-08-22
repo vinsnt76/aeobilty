@@ -9,12 +9,35 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award } from 'lucide-react';
 import { PRICING_CONFIG } from '@/lib/brandFacts';
+import { trackGaEvent } from '@/lib/gtag';
 
 export default function AEOBlueprintPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    website: '',
+    message: ''
+  });
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'blueprint_page_contact_form',
+      lead_type: 'blueprint_enquiry',
+      value: 1,
+    });
+    setContactSubmitted(true);
+    setTimeout(() => {
+      setContactSubmitted(false);
+      setContactData({ name: '', email: '', website: '', message: '' });
+    }, 6000);
   };
 
   const faqs = [
@@ -448,26 +471,110 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 9. Final Founder-Supported Conversion CTA */}
-          <section className="border-t border-white/10 pt-16 text-center space-y-6">
+          {/* 9. Final Founder-Supported Conversion CTA & Direct Contact Form */}
+          <section className="border-t border-white/10 pt-16 text-center space-y-8">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Ready for a Clearer Picture of What to Fix First?</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
                 Discuss the Blueprint with founder Vince Baker and receive your practical 90-day action plan.
               </p>
-              <div>
-                <Link
-                  href="/contact?service=blueprint"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg text-sm"
-                >
-                  <Calendar className="w-4 h-4 text-black" />
-                  <span>Discuss the Blueprint</span>
-                </Link>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-2">
+              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>You will speak directly with Vince Baker, AEObility&apos;s founder.</span>
               </div>
+            </div>
+
+            {/* Inline Blueprint Direct Contact Form */}
+            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full filter blur-2xl -z-10" />
+              <h3 className="text-xl font-bold text-white font-soehne-breit mb-1.5">Send a Direct Blueprint Enquiry</h3>
+              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
+                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, 100% credited towards implementation).
+              </p>
+
+              {contactSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">Blueprint Enquiry Received</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you for reaching out. Vince Baker will review your website details and get in touch within 24 business hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="blueprint-name">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="blueprint-name"
+                        required
+                        value={contactData.name}
+                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Vince Baker"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="blueprint-email">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="blueprint-email"
+                        required
+                        value={contactData.email}
+                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="vince@example.com.au"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="blueprint-website">
+                      Website URL (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="blueprint-website"
+                      value={contactData.website}
+                      onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      placeholder="example.com.au"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="blueprint-message">
+                      Project Notes / Primary Objective
+                    </label>
+                    <textarea
+                      id="blueprint-message"
+                      required
+                      rows={3}
+                      value={contactData.message}
+                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                      placeholder="Tell us about your business or what you'd like to achieve with the Blueprint..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                  >
+                    <span>Submit Blueprint Enquiry</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+
+                  <p className="text-[11px] text-zinc-500 text-center font-serif">
+                    Your privacy is protected. We use your details strictly to respond to your Blueprint enquiry.
+                  </p>
+                </form>
+              )}
             </div>
           </section>
 
