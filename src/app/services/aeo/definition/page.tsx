@@ -397,8 +397,8 @@ export default function AEODefinitionPage() {
                   <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">
                     AEObility Blueprint &rarr;
                   </Link>
-                  <Link href="/solutions" className="text-aeo-purple hover:underline">
-                    View AEO Packages &rarr;
+                  <Link href="/solutions/aeo-sprint" className="text-aeo-purple hover:underline">
+                    Request an answer-ready content sprint or schema deployment sequence &rarr;
                   </Link>
                 </div>
               </div>

@@ -430,8 +430,9 @@ export default function SolutionsPage() {
                     <Link
                       href="/solutions/aeo-sprint"
                       className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                      title="Explore our fixed-scope execution micro-sprints to solve single website or structured data issues"
                     >
-                      <span>View Micro-Sprints</span>
+                      <span>Explore our fixed-scope execution micro-sprints</span>
                       <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>

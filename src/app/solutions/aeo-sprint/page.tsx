@@ -30,20 +30,20 @@ import {
   FileCheck
 } from 'lucide-react';
 
-export const SPRINT_INTERNAL_LINKS = [
+export const TECHNICAL_SPRINT_INTERNAL_LINKS = [
   {
-    targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "AEObility Blueprint strategic audit",
-    entityRelation: "http://schema.org/isRelatedTo"
-  },
-  {
-    targetSlug: "/services/aeo/procedures",
-    anchorText: "AEO Services & Procedures",
+    targetSlug: "/services/geo-marketing",
+    anchorText: "local business profile signals",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
     targetSlug: "/solutions",
-    anchorText: "current service pricing",
+    anchorText: "uniform pricing database",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/solutions/aeo-blueprint",
+    anchorText: "website visibility audit and 90-day strategic roadmap",
     entityRelation: "http://schema.org/isRelatedTo"
   }
 ];
@@ -378,7 +378,7 @@ export default function AEOSprintPage() {
               <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Unsure what is limiting visibility?</span>
                 <span className="text-zinc-300 block">
-                  Start with the <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline">AEObility Blueprint ($995 AUD)</Link>.
+                  <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Start with a comprehensive website visibility audit and 90-day strategic roadmap</Link> ($995 AUD).
                 </span>
               </div>
             </div>
@@ -388,7 +388,7 @@ export default function AEOSprintPage() {
           <section className="border-t border-white/10 pt-16 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Micro-Sprint Catalogue</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Choose one defined improvement for a priority page, structured-data asset or local business signal.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Choose one defined improvement for a priority page, structured-data asset or <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profile signals</Link>.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -467,7 +467,7 @@ export default function AEOSprintPage() {
                 {/* Blueprint Credit Block */}
                 <div className="p-4 bg-black/60 border border-white/10 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed">
                   <strong className="text-cyan-300 font-mono block mb-1">Completed the Blueprint?</strong>
-                  If you book Foundation Implementation within 60 days of your Blueprint handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints. Review <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing</Link>.
+                  If you book Foundation Implementation within 60 days of your Blueprint handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints. Access our <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">uniform pricing database</Link> for full engagement rates.
                 </div>
               </div>
 
