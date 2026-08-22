@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, ShieldCheck, Calendar, UserCheck, Layers, BarChart3, Map, FileText, ChevronDown, Clock, Info, HelpCircle, Award, Code, Users } from 'lucide-react';
 import { PRICING_CONFIG } from '@/lib/brandFacts';
 import { trackGaEvent } from '@/lib/gtag';
 
@@ -50,8 +50,8 @@ export default function AEOBlueprintPage() {
       answer: "Most Blueprints are completed within 7 to 10 business days after we receive the required access and business information. Timing may vary for larger or multi-location businesses."
     },
     {
-      question: "Do you need access to my website or Google Business Profile?",
-      answer: "We will confirm the access needed during discovery. Website access and view-level access to relevant business profiles can help us provide more specific recommendations, but we will explain exactly what is required before work begins."
+      question: "Can I implement the Blueprint myself or give it to my developer?",
+      answer: "Yes. The Blueprint is fully developer-ready and delivered as a clear, un-jargoned specification. You can implement it in-house, hand it to your developer, or hire AEObility for implementation."
     },
     {
       question: "Does the Blueprint include implementation?",
@@ -59,7 +59,7 @@ export default function AEOBlueprintPage() {
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: "Your $995 Blueprint fee is credited towards Foundation Implementation or eligible implementation work valued at $3,195 or more, when booked within 60 days of your Blueprint handover. The credit is applied to the agreed implementation scope and is not redeemable for cash."
+      answer: "Your $995 Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline). It does not apply to standalone Micro-Sprints."
     },
     {
       question: "Is the Blueprint suitable for agencies or multi-location businesses?",
@@ -143,7 +143,7 @@ export default function AEOBlueprintPage() {
           "priceSpecification": {
             "@type": "PriceSpecification",
             "valueAddedTaxIncluded": false,
-            "description": "Excluding GST; credited towards Foundation Implementation or qualifying implementation work valued at $3,195 or more booked within 60 days."
+            "description": "Excluding GST; credited towards Foundation Sprints and above when booked within 60 days."
           }
         }
       },
@@ -188,8 +188,8 @@ export default function AEOBlueprintPage() {
   const valueProps = [
     "Fixed $995 price with clearly defined deliverables",
     "Independent, prioritised recommendations rather than an open-ended retainer",
-    "Built for Australian businesses, local visibility and modern search behaviour",
-    "Clear handover for your internal team, developer or agency partner"
+    "Developer-ready specifications you can implement in-house or with AEObility",
+    "Built for Australian businesses, local visibility and modern search behaviour"
   ];
 
   return (
@@ -315,6 +315,17 @@ export default function AEOBlueprintPage() {
               ))}
             </div>
 
+            {/* Handover & Developer-Ready Callout */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">Developer-Ready Asset: Implement In-House or With Us</strong>
+                  <span>You can take your Blueprint and implement it in-house or hand it to your developer. If you choose AEObility for implementation, your $995 fee is credited back when you book any Foundation Sprint or higher.</span>
+                </div>
+              </div>
+            </div>
+
             {/* "What is Not Included" Restrained Scope Callout Container */}
             <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-4 flex items-start gap-3 text-xs text-zinc-300 font-serif leading-relaxed shadow-sm">
               <Info className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
@@ -335,7 +346,7 @@ export default function AEOBlueprintPage() {
                 Fixed Price: ${PRICING_CONFIG.blueprint.price} AUD (ex. GST). No hidden retainers.
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-serif">
-                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited towards Foundation Implementation or eligible implementation work valued at $3,195 or more, when booked within 60 days of your Blueprint handover. The credit is applied to the agreed implementation scope and is not redeemable for cash.
+                Your ${PRICING_CONFIG.blueprint.price} Blueprint fee is credited back when you book any Foundation Sprint or higher ($3,195 AUD ex. GST baseline) within 60 days of your Blueprint handover. Credit does not apply to standalone Micro-Sprints and is not redeemable for cash.
               </p>
               <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/5">
                 <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -471,16 +482,16 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 9. Final Founder-Supported Conversion CTA & Direct Contact Form */}
+          {/* 9. Final Role-Based Conversion CTA & Direct Contact Form */}
           <section className="border-t border-white/10 pt-16 text-center space-y-8">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Ready for a Clearer Picture of What to Fix First?</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Discuss the Blueprint with founder Vince Baker and receive your practical 90-day action plan.
+                Discuss your Blueprint with an AEObility specialist and receive your practical 90-day action plan.
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
-                <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak directly with Vince Baker, AEObility&apos;s founder.</span>
+                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Speak with an AEObility specialist (guided by founder Vince Baker).</span>
               </div>
             </div>
 
@@ -489,7 +500,7 @@ export default function AEOBlueprintPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full filter blur-2xl -z-10" />
               <h3 className="text-xl font-bold text-white font-soehne-breit mb-1.5">Send a Direct Blueprint Enquiry</h3>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, 100% credited towards implementation).
+                Submit your details below to discuss your Strategic Blueprint audit (${PRICING_CONFIG.blueprint.price} AUD ex. GST, credited back towards Foundation Sprints and above).
               </p>
 
               {contactSubmitted ? (
@@ -497,7 +508,7 @@ export default function AEOBlueprintPage() {
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
                   <h4 className="font-bold text-white text-base">Blueprint Enquiry Received</h4>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you for reaching out. Vince Baker will review your website details and get in touch within 24 business hours.
+                    Thank you for reaching out. Our AEObility visibility team will review your website details and get in touch within 24 business hours.
                   </p>
                 </div>
               ) : (
@@ -571,7 +582,7 @@ export default function AEOBlueprintPage() {
                   </button>
 
                   <p className="text-[11px] text-zinc-500 text-center font-serif">
-                    Your privacy is protected. We use your details strictly to respond to your Blueprint enquiry.
+                    Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
                   </p>
                 </form>
               )}
