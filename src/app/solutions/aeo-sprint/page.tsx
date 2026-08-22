@@ -27,9 +27,7 @@ import {
   Users,
   Cpu,
   Boxes,
-  Terminal,
-  FileCheck,
-  Zap
+  FileCheck
 } from 'lucide-react';
 
 export const SPRINT_INTERNAL_LINKS = [
@@ -140,7 +138,7 @@ export default function AEOSprintPage() {
       priceSub: "ex. GST",
       scope: "One priority client-facing page",
       description: "Rewrite one priority page so its services, answers and proof points are easier for customers to scan and understand.",
-      techNote: "Technical detail: Refactors page copy into atomic answer blocks formatted to match customer search questions.",
+      techNote: "Technical detail: Refactors page copy into clear answer blocks formatted to match customer search questions.",
       whenToChoose: "Choose this when the page content is unclear, incomplete or not answering customer questions well."
     },
     {
@@ -298,11 +296,11 @@ export default function AEOSprintPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* 1. Hero Block with Terminal Deployment Agent Container */}
+          {/* 1. Hero Block with Sleek Featured Image Backdrop & Overlaid CTAs */}
           <section className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <Rocket className="w-4 h-4 text-aeo-cyan" />
-              <span>Rapid Schema & Code Execution</span>
+              <span>Rapid Implementation Sprints</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               AEO Technical <span className="text-gradient-aeo">Sprints</span>
@@ -318,59 +316,35 @@ export default function AEOSprintPage() {
               </div>
             </div>
 
-            {/* Hero Image Backdrop + Interactive Deployment Terminal Code Widget */}
+            {/* Featured WebP Image Container (1200x800) with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group">
               <Image
                 src="/aeo-technical-sprints_AEObility.webp"
                 alt="AEO Technical Sprints and Schema Deployments by AEObility"
                 width={1200}
                 height={800}
-                className="w-full h-auto object-cover opacity-25"
+                className="w-full h-auto object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/80 to-transparent" />
-
-              {/* Code block terminal representation widget */}
-              <div className="absolute inset-x-4 top-4 bottom-28 z-10 rounded-xl border border-white/15 bg-neutral-950/95 p-5 shadow-2xl font-mono text-xs text-left overflow-hidden backdrop-blur-md">
-                <div className="flex items-center gap-1.5 border-b border-white/10 pb-2.5 mb-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                  <span className="text-[11px] text-white/50 ml-2">aeo-sprint-deployment-agent (~/bin)</span>
-                </div>
-                <div className="space-y-1.5 text-white/80 text-[11px] leading-relaxed">
-                  <p className="text-aeo-cyan animate-pulse">Initializing token optimisation pass...</p>
-                  <p className="text-white/40">&gt; Building local JSON-LD graph relations...</p>
-                  <div className="p-2.5 bg-black/60 border border-white/10 rounded-lg space-y-0.5">
-                    <p className="text-aeo-purple font-semibold">{"{"}</p>
-                    <p className="text-aeo-purple pl-4">&quot;@context&quot;: &quot;https://schema.org&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;@type&quot;: &quot;Service&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;name&quot;: &quot;Local Business Authority Map&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;areaServed&quot;: &quot;Perth, WA&quot;</p>
-                    <p className="text-aeo-purple">{"}"}</p>
-                  </div>
-                  <p className="text-green-400 font-semibold">&gt; Schema JSON Validation: OK (Passage-level extraction active)</p>
-                  <p className="text-white/40">&gt; Initiating programmatic code deployments...</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
               {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-4 inset-x-4 z-20 p-4 sm:p-5 rounded-xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xl">
-                <div className="text-left space-y-0.5">
+              <div className="absolute bottom-6 inset-x-6 z-20 p-5 sm:p-6 rounded-2xl bg-zinc-950/85 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
                   <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix a Single Priority or Build a Foundation</span>
                   <span className="text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
                   <Link
                     href="/contact?service=sprint"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black" />
                     <span>Discuss a Technical Sprint</span>
                   </Link>
                   <Link
                     href="/diagnostic"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
                   >
                     <span>Run a free visibility scan</span>
                     <ArrowRight className="w-4 h-4 text-cyan-400" />
