@@ -542,12 +542,12 @@ export default function SolutionsPage() {
                   className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-100 transition-all duration-300 cursor-pointer shadow-lg text-sm"
                 >
                   <Calendar className="w-4 h-4 text-black" />
-                  <span>Discuss Your Starting Point</span>
+                  <span>Book a strategy call</span>
                 </Link>
               </div>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-2">
                 <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Speak directly with Vince Baker, AEObility’s founder.</span>
+                <span>Speak directly with AEObility founder Vince Baker to discuss your starting point.</span>
               </div>
             </div>
           </section>
