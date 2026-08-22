@@ -136,7 +136,7 @@ export default function Footer() {
           <ul className="space-y-2 text-xs font-medium">
             <li>
               <Link href="/services/aeo" className="hover:text-white transition-colors">
-                AEO Services
+                AEO &amp; Search Engine Services
               </Link>
             </li>
             <li>

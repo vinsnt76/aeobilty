@@ -209,26 +209,26 @@ export default function GeoMarketingPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
               {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/85 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
-                <div className="text-left space-y-1">
-                  <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix a Single Priority or Build a Foundation</span>
-                  <span className="text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
+                <div className="text-left space-y-0.5 sm:space-y-1">
+                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix a Single Priority or Build a Foundation</span>
+                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
                   <button
                     type="button"
                     onClick={() => selectSprintForForm('ss4micro1')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <Calendar className="w-4 h-4 text-black" />
+                    <Calendar className="w-4 h-4 text-black shrink-0" />
                     <span>Discuss Your Local Visibility</span>
                   </button>
                   <Link
                     href="/diagnostic"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Run a Free Visibility Scan</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400" />
+                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
                   </Link>
                 </div>
               </div>
@@ -318,15 +318,26 @@ export default function GeoMarketingPage() {
               ))}
             </div>
 
-            {/* Micro-Sprint Scope & Exclusion Box */}
-            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-2 shadow-sm">
+            {/* Micro-Sprint Scope & Exclusion Box (Bulleted for High Mobile Scannability) */}
+            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-3 shadow-sm">
               <div className="flex items-center gap-2 font-bold text-white text-sm">
                 <FileCheck className="w-4 h-4 text-cyan-400" />
                 <span>Every Local Visibility Sprint includes:</span>
               </div>
-              <p>
-                Every sprint includes: one agreed local priority, the specified implementation or clean-up work, validation checks, a summary of completed changes and handover notes. Additional locations, pages or unrelated issues are scoped separately. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>. Typical delivery: 4–5 business days from confirmed scope and access.
-              </p>
+              <ul className="space-y-2 text-xs text-zinc-300 font-serif">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>One agreed local priority, specified implementation or clean-up work.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Comprehensive validation checks, summary of completed changes, and handover notes.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Typical delivery: 4–5 business days from confirmed scope and access. Additional locations or pages scoped separately. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -412,7 +423,7 @@ export default function GeoMarketingPage() {
                 </p>
                 <div className="pt-1">
                   <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
-                    <span>Explore AEO Technical Sprints</span>
+                    <span>Explore AEO Technical &amp; Schema Sprints</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
