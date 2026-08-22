@@ -66,6 +66,9 @@ export const metadata: Metadata = {
     icon: "/favicon.ico"
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "TlRAYGi_c4DdLtiNq7_LpYCCS7XE-OInAQaOxQJ66QY",
+  },
 };
 
 export default function RootLayout({
@@ -80,6 +83,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
     >
       <head>
+        <meta name="google-site-verification" content="TlRAYGi_c4DdLtiNq7_LpYCCS7XE-OInAQaOxQJ66QY" />
         <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
