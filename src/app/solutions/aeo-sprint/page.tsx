@@ -33,12 +33,12 @@ import {
 export const TECHNICAL_SPRINT_INTERNAL_LINKS = [
   {
     targetSlug: "/services/geo-marketing",
-    anchorText: "local business profile signals",
+    anchorText: "local business information",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
     targetSlug: "/solutions",
-    anchorText: "uniform pricing database",
+    anchorText: "current service pricing",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -50,7 +50,6 @@ export const TECHNICAL_SPRINT_INTERNAL_LINKS = [
 
 export default function AEOSprintPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [selectedSprintType, setSelectedSprintType] = useState('schema');
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactData, setContactData] = useState({
     name: '',
@@ -65,7 +64,6 @@ export default function AEOSprintPage() {
   };
 
   const selectSprintForForm = (typeKey: string) => {
-    setSelectedSprintType(typeKey);
     setContactData(prev => ({ ...prev, serviceType: typeKey }));
     const formElement = document.getElementById('sprint-contact-form');
     if (formElement) {
@@ -104,7 +102,7 @@ export default function AEOSprintPage() {
     },
     {
       question: "How does the Blueprint fee credit apply to Foundation Implementation?",
-      answer: "If you have completed the AEObility Blueprint, the full $995 fee can be credited towards Foundation Implementation booked within 60 days of handover. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
+      answer: "If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
     },
     {
       question: "Are there any ongoing retainers or lock-in contracts?",
@@ -126,8 +124,8 @@ export default function AEOSprintPage() {
       price: "$495 AUD",
       priceSub: "ex. GST",
       scope: "One key service or location page",
-      description: "Add or improve structured data for one important service or location page, helping search platforms interpret your business details more consistently.",
-      techNote: "Technical detail: JSON-LD implementation may include Service, LocalBusiness or FAQPage markup where appropriate.",
+      description: "Add or improve structured data for one important service or location page, helping search engines and other search tools read your business details more consistently.",
+      techNote: "For technical teams: JSON-LD implementation may include Service, LocalBusiness or FAQPage markup where appropriate.",
       whenToChoose: "Choose this when you need structured data added to a key service or location page."
     },
     {
@@ -140,7 +138,7 @@ export default function AEOSprintPage() {
       priceSub: "ex. GST",
       scope: "One priority client-facing page",
       description: "Rewrite one priority page so its services, answers and proof points are easier for customers to scan and understand.",
-      techNote: "Technical detail: Refactors page copy into clear answer blocks formatted to match customer search questions.",
+      techNote: "For technical teams: Refactors page copy into clear answer blocks formatted to match customer search questions.",
       whenToChoose: "Choose this when the page content is unclear, incomplete or not answering customer questions well."
     },
     {
@@ -153,7 +151,7 @@ export default function AEOSprintPage() {
       priceSub: "ex. GST",
       scope: "One critical landing page",
       description: "Structure headings, sub-headers and content sections around customer search intent and clear information hierarchy.",
-      techNote: "Technical focus: passage structure, headings and search-intent mapping.",
+      techNote: "For technical teams: Passage structure, headings and search-intent mapping.",
       whenToChoose: "Choose this when the page has useful content, but its headings, sections and information hierarchy need restructuring."
     }
   ];
@@ -303,14 +301,14 @@ export default function AEOSprintPage() {
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <Rocket className="w-4 h-4 text-aeo-cyan" />
-              <span>Rapid Implementation Sprints</span>
+              <span>Focused Implementation Sprints</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               AEO Technical <span className="text-gradient-aeo">Sprints</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <p className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Focused improvements for your website, structured data and priority service pages. Work on one defined priority without committing to a long-term retainer.
+                Focused improvements for your website, structured data and priority service pages. Fix one defined issue without committing to a long-term retainer.
               </p>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
@@ -392,7 +390,7 @@ export default function AEOSprintPage() {
           <section id="micro-sprints" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Micro-Sprint Catalogue</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Choose one defined improvement for a priority page, structured-data asset or <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profile signals</Link>.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Choose one defined improvement for a priority page, structured data or <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business information</Link>.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -448,7 +446,7 @@ export default function AEOSprintPage() {
                 <span>Every Micro-Sprint includes:</span>
               </div>
               <p>
-                One agreed priority page or asset, implementation or rewrite work, validation checks, a summary of completed updates, and handover notes. Additional pages, substantial revision cycles or unrelated technical issues are scoped separately. Typical delivery: 4–5 business days from confirmed scope and access.
+                One agreed priority page or asset, implementation or rewrite work, validation checks, a summary of completed updates, and handover notes. Additional pages, substantial revision cycles or unrelated technical issues are scoped separately. Markup is selected according to the content and entity being described; we do not add schema types that are unsupported by visible page content. Typical delivery: 4–5 business days from confirmed scope and access.
               </p>
             </div>
           </section>
@@ -465,14 +463,14 @@ export default function AEOSprintPage() {
                   Foundation Implementation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                  For businesses with multi-page, multi-issue priorities. Combines agreed improvements across website technical setup, priority pages, internal linking structures, and local signals. Final pricing depends on the number of pages, implementation requirements and agreed deliverables. Scope is confirmed before work begins.
+                  For businesses that need several connected improvements. May include internal linking, structured data, priority-page improvements or local business information, depending on the agreed scope. Final pricing depends on the number of pages, implementation requirements and agreed deliverables. Scope is confirmed before work begins.
                 </p>
 
                 {/* Prominently Elevated Blueprint Credit Callout Box */}
                 <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you book Foundation Implementation within 60 days of your Blueprint handover, we will apply the full $995 Blueprint fee to your Foundation work. The credit does not apply to standalone Micro-Sprints. Access our <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">uniform pricing database</Link> for full engagement rates.
+                    If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing</Link>.
                   </p>
                 </div>
               </div>
@@ -481,6 +479,7 @@ export default function AEOSprintPage() {
                 <div className="text-left md:text-right">
                   <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD</span>
                   <span className="text-xs text-zinc-400 font-mono">ex. GST | 4-Week Schedule</span>
+                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Typical schedule: delivered across a four-week period.</span>
                 </div>
                 <button
                   type="button"
@@ -527,18 +526,18 @@ export default function AEOSprintPage() {
                 <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
-                  <span>Take the completed work, implementation notes and handover documentation to your internal team or developer, or ask AEObility to complete the implementation.</span>
+                  <span>Use the completed work and handover notes with your internal team or developer, or ask AEObility to implement the agreed changes.</span>
                 </div>
               </div>
             </div>
 
-            {/* Quality Standards & Reassurance (Clean Buyer-Friendly Copy) */}
+            {/* Quality Standards & Reassurance */}
             <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
               <div className="flex items-start gap-3">
                 <Cpu className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white font-semibold block mb-0.5">Built on Core Quality Standards</strong>
-                  <span>These sprints are built on our core page structure and answer-formatting standards. Learn more about our <Link href="/services/aeo/procedures" className="text-cyan-400 hover:underline font-medium">AEO Services & Procedures</Link>.</span>
+                  <span>These sprints follow AEObility’s standards for clear page structure, useful answers and consistent business information. Learn more about our <Link href="/services/aeo/procedures" className="text-cyan-400 hover:underline font-medium">AEO Services & Procedures</Link>.</span>
                 </div>
               </div>
             </div>
@@ -608,7 +607,7 @@ export default function AEOSprintPage() {
                 </span>
               </div>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Select your preferred sprint option below to confirm scope and timing.
+                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
               </p>
 
               {contactSubmitted ? (
