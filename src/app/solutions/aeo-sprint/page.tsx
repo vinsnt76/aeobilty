@@ -119,6 +119,7 @@ export default function AEOSprintPage() {
   const microSprints = [
     {
       key: "schema",
+      anchorId: "ss1-schema",
       icon: <FileCode className="w-6 h-6 text-aeo-cyan" />,
       title: "Service or Location Schema Sprint",
       code: "SS1",
@@ -131,6 +132,7 @@ export default function AEOSprintPage() {
     },
     {
       key: "content",
+      anchorId: "ss2-content",
       icon: <FileText className="w-6 h-6 text-aeo-purple" />,
       title: "Single-Page Content Sprint",
       code: "SS2",
@@ -143,6 +145,7 @@ export default function AEOSprintPage() {
     },
     {
       key: "structure",
+      anchorId: "ss3-structure",
       icon: <Layers className="w-6 h-6 text-aeo-cyan" />,
       title: "Page Structure & Search Intent Sprint",
       code: "SS3",
@@ -283,7 +286,7 @@ export default function AEOSprintPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Unified JSON-LD Connected Graph */}
+      {/* Unified JSON-LD Connected Graph in HTML Head Context */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
@@ -296,8 +299,8 @@ export default function AEOSprintPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* 1. Hero Block with Sleek Featured Image Backdrop & Overlaid CTAs */}
-          <section className="text-center max-w-4xl mx-auto space-y-6">
+          {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
+          <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <Rocket className="w-4 h-4 text-aeo-cyan" />
               <span>Rapid Implementation Sprints</span>
@@ -316,59 +319,36 @@ export default function AEOSprintPage() {
               </div>
             </div>
 
-            {/* Hero Banner with Featured 1200x800 WebP Image Backdrop & Code Block Terminal Widget */}
-            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[460px]">
+            {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
+            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/solutions/aeo-seo-technical-sprints_AEObilty.webp"
                 alt="AEO Technical Sprints and Schema Deployments by AEObility"
                 width={1200}
                 height={800}
-                className="w-full h-[460px] object-cover opacity-20"
+                className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/80 to-transparent" />
-
-              {/* Code block terminal representation widget */}
-              <div className="absolute inset-x-4 top-4 bottom-24 z-10 rounded-xl border border-white/15 bg-neutral-950/95 p-5 shadow-2xl font-mono text-xs text-left overflow-hidden backdrop-blur-md">
-                <div className="flex items-center gap-1.5 border-b border-white/10 pb-2.5 mb-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                  <span className="text-[11px] text-white/50 ml-2">aeo-sprint-deployment-agent (~/bin)</span>
-                </div>
-                <div className="space-y-1.5 text-white/80 text-[11px] leading-relaxed">
-                  <p className="text-aeo-cyan animate-pulse">Initializing token optimisation pass...</p>
-                  <p className="text-white/40">&gt; Building local JSON-LD graph relations...</p>
-                  <div className="p-2.5 bg-black/60 border border-white/10 rounded-lg space-y-0.5">
-                    <p className="text-aeo-purple font-semibold">{"{"}</p>
-                    <p className="text-aeo-purple pl-4">&quot;@context&quot;: &quot;https://schema.org&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;@type&quot;: &quot;Service&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;name&quot;: &quot;Local Business Authority Map&quot;,</p>
-                    <p className="text-aeo-purple pl-4">&quot;areaServed&quot;: &quot;Perth, WA&quot;</p>
-                    <p className="text-aeo-purple">{"}"}</p>
-                  </div>
-                  <p className="text-green-400 font-semibold">&gt; Schema JSON Validation: OK (Passage-level extraction active)</p>
-                  <p className="text-white/40">&gt; Initiating programmatic code deployments...</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
               {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-3 inset-x-3 z-20 p-4 rounded-xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xl">
-                <div className="text-left space-y-0.5">
+              <div className="absolute bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/85 border border-white/15 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
                   <span className="text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix a Single Priority or Build a Foundation</span>
                   <span className="text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-                  <Link
-                    href="/contact?service=sprint"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('schema')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black" />
                     <span>Discuss a Technical Sprint</span>
-                  </Link>
+                  </button>
                   <Link
                     href="/diagnostic"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer shrink-0"
                   >
                     <span>Run a free visibility scan</span>
                     <ArrowRight className="w-4 h-4 text-cyan-400" />
@@ -383,23 +363,23 @@ export default function AEOSprintPage() {
           </section>
 
           {/* 2. Recommended Decision Strip (Positioned ABOVE Micro-Sprint Catalogue) */}
-          <section className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3">
+          <section id="decision-strip" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3 scroll-mt-24">
             <div className="flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-cyan-400" />
               <h3 className="text-base font-bold text-white font-soehne-breit">Which option fits your priority?</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif pt-1">
-              <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Know exactly what needs fixing?</span>
                 <span className="text-zinc-300 block">Choose a Micro-Sprint from $495 ex. GST.</span>
               </div>
-              <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-purple-300 font-bold block font-mono">Need several connected fixes?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline">Foundation Implementation from $3,195 ex. GST</Link>.
+                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Foundation Implementation from $3,195 ex. GST</Link>.
                 </span>
               </div>
-              <div className="p-3.5 bg-black/60 border border-white/10 rounded-xl space-y-1">
+              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Unsure what is limiting visibility?</span>
                 <span className="text-zinc-300 block">
                   <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Start with a comprehensive website visibility audit and 90-day strategic roadmap</Link> ($995 AUD).
@@ -408,8 +388,8 @@ export default function AEOSprintPage() {
             </div>
           </section>
 
-          {/* 3. Micro-Sprints Catalog Grid (Three Clean Cards with Individual CTAs) */}
-          <section className="border-t border-white/10 pt-16 space-y-8">
+          {/* 3. Micro-Sprints Catalog Grid (Three Clean Cards with Individual Contextual CTAs) */}
+          <section id="micro-sprints" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Micro-Sprint Catalogue</h2>
               <p className="text-xs sm:text-sm text-white/60 font-serif">Choose one defined improvement for a priority page, structured-data asset or <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">local business profile signals</Link>.</p>
@@ -417,7 +397,7 @@ export default function AEOSprintPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {microSprints.map((sprint, idx) => (
-                <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group">
+                <div id={sprint.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
@@ -474,9 +454,9 @@ export default function AEOSprintPage() {
           </section>
 
           {/* 4. Foundation Implementation Upgrade Block */}
-          <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+          <section id="foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div className="space-y-3 max-w-2xl">
+              <div className="space-y-4 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
                   <Boxes className="w-4 h-4 text-purple-400" />
                   <span>Multi-Page Implementation Tier</span>
@@ -488,10 +468,12 @@ export default function AEOSprintPage() {
                   For businesses with multi-page, multi-issue priorities. Combines agreed improvements across website technical setup, priority pages, internal linking structures, and local signals. Final pricing depends on the number of pages, implementation requirements and agreed deliverables. Scope is confirmed before work begins.
                 </p>
 
-                {/* Blueprint Credit Block */}
-                <div className="p-4 bg-black/60 border border-white/10 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed">
-                  <strong className="text-cyan-300 font-mono block mb-1">Completed the Blueprint?</strong>
-                  If you book Foundation Implementation within 60 days of your Blueprint handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints. Access our <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">uniform pricing database</Link> for full engagement rates.
+                {/* Prominently Elevated Blueprint Credit Callout Box */}
+                <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
+                  <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
+                  <p>
+                    If you book Foundation Implementation within 60 days of your Blueprint handover, we will apply the full $995 Blueprint fee to your Foundation work. The credit does not apply to standalone Micro-Sprints. Access our <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">uniform pricing database</Link> for full engagement rates.
+                  </p>
                 </div>
               </div>
 
@@ -500,19 +482,20 @@ export default function AEOSprintPage() {
                   <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD</span>
                   <span className="text-xs text-zinc-400 font-mono">ex. GST | 4-Week Schedule</span>
                 </div>
-                <Link
-                  href="/contact?service=foundation"
+                <button
+                  type="button"
+                  onClick={() => selectSprintForForm('foundation')}
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
                   <span>Discuss Foundation Implementation</span>
-                </Link>
+                </button>
               </div>
             </div>
           </section>
 
           {/* 5. "How Sprints Are Deployed" 3-Step Process */}
-          <section className="border-t border-white/10 pt-16 space-y-8">
+          <section id="deployment-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Three-Step Deployment Process</h2>
               <p className="text-xs sm:text-sm text-white/60 font-serif">A clear, transparent execution workflow designed for speed and quality.</p>
@@ -549,20 +532,20 @@ export default function AEOSprintPage() {
               </div>
             </div>
 
-            {/* Technical Building Blocks Reassurance (S1 & S2 Focus) */}
+            {/* Quality Standards & Reassurance (Clean Buyer-Friendly Copy) */}
             <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
               <div className="flex items-start gap-3">
                 <Cpu className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white font-semibold block mb-0.5">Built on Core Engineering Foundations</strong>
-                  <span>These sprints use the same engineering foundations as our Schema & Semantic Mapping (S1) and Atomic Answer Blocks (S2) work. Learn more about our <Link href="/services/aeo/procedures" className="text-cyan-400 hover:underline font-medium">AEO Services & Procedures</Link>.</span>
+                  <strong className="text-white font-semibold block mb-0.5">Built on Core Quality Standards</strong>
+                  <span>These sprints are built on our core page structure and answer-formatting standards. Learn more about our <Link href="/services/aeo/procedures" className="text-cyan-400 hover:underline font-medium">AEO Services & Procedures</Link>.</span>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 6. Full FAQ Accordion Block */}
-          <section className="border-t border-white/10 pt-16 space-y-8">
+          {/* 6. Full FAQ Accordion Block (All 6 Answers Rendered directly in DOM) */}
+          <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
               <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility Technical Sprints.</p>
@@ -603,7 +586,7 @@ export default function AEOSprintPage() {
           </section>
 
           {/* 7. Scalable Team Conversion Block & Direct Contact Form */}
-          <section id="sprint-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8">
+          <section id="sprint-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Sprint Enquiry</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
@@ -677,7 +660,7 @@ export default function AEOSprintPage() {
                       id="sprint-service-type"
                       value={contactData.serviceType}
                       onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
-                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
                       <option value="schema">Service or Location Schema Sprint ($495 AUD)</option>
                       <option value="content">Single-Page Content Sprint ($495 AUD)</option>
