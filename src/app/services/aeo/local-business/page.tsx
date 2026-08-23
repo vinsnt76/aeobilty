@@ -28,7 +28,11 @@ import {
   Users,
   ShieldCheck,
   Stethoscope,
-  Wrench
+  Wrench,
+  AlertTriangle,
+  FileText,
+  Activity,
+  Check
 } from 'lucide-react';
 
 export const LOCAL_BUSINESS_AEO_INTERNAL_LINKS = [
@@ -51,6 +55,7 @@ export const LOCAL_BUSINESS_AEO_INTERNAL_LINKS = [
 
 export default function LocalBusinessAEOPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [activeAudienceTab, setActiveAudienceTab] = useState<'trades' | 'clinics'>('trades');
   const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
@@ -111,30 +116,26 @@ export default function LocalBusinessAEOPage() {
     }, 6000);
   };
 
-  const faqs = [
+  const symptoms = [
     {
-      question: "How does AEO help local trades, clinics and service businesses?",
-      answer: "AEO structures your location details, operating hours, phone numbers, and service areas into machine-readable JSON-LD schema. This ensures search engines, Google Maps, Apple Maps, and AI assistants (like ChatGPT and Gemini) recommend your business accurately for local queries."
+      title: "Your business appears for the wrong suburb—or not at all",
+      symptom: "Customers search for local trades or clinics in nearby suburbs, but your business is invisible or mapped to an old location.",
+      solution: "We inject exact location schema and restructure suburb service area pages so search engines verify your true coverage radius."
     },
     {
-      question: "What is included in a $495 Proximity Micro-Sprint?",
-      answer: "A $495 Micro-Sprint targets one agreed local signal issue: Location Schema Injection ($495 AUD ex. GST), Service Schema Injection ($495 AUD ex. GST), or Citation Clean-Up & NAP Standardisation ($495 AUD ex. GST). It includes validation checks, a summary of completed changes, and handover notes."
+      title: "Maps and directories show conflicting business details (NAP)",
+      symptom: "Google Maps, Apple Maps, Yellow Pages and TrueLocal display different phone numbers, addresses or operating hours.",
+      solution: "We standardise your Name, Address and Phone (NAP) details across priority directories and align your Google Business Profile."
     },
     {
-      question: "What is the difference between a Micro-Sprint and Unified Local Foundation?",
-      answer: "A Micro-Sprint fixes one defined local signal issue within 4–5 business days. Unified Local Foundation (From $3,195 AUD ex. GST) is a four-week engagement designed for multi-location clinics or growing trade services, combining structured data, directory consistency, and internal location page linking."
+      title: "You have a good website, but calls and bookings remain inconsistent",
+      symptom: "Visitors land on generic service pages that lack clear suburb details, operating hours or immediate contact actions.",
+      solution: "We rewrite key service pages into self-contained atomic answer blocks that make calling or booking straightforward."
     },
     {
-      question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you complete the Local Visibility Blueprint ($995 AUD ex. GST) and book Foundation Implementation within 60 days of handover, we apply the full $995 fee to your Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
-    },
-    {
-      question: "How do you standardise NAP details across directories?",
-      answer: "We audit your Business Name, Address, and Phone number (NAP) across major Australian directories (such as Yellow Pages, TrueLocal, and Google Business Profile), correct discrepancies, and deploy matching schema markup to establish entity authority."
-    },
-    {
-      question: "Are there any ongoing monthly contracts?",
-      answer: "No. All AEObility local business sprints are fixed-scope, flat-rate engagements. No ongoing monthly retainer or locked-in contract is required."
+      title: "Your multi-location business sends authority to the wrong page",
+      symptom: "Search engines direct local patients or clients to your main head-office page instead of their nearest branch or clinic.",
+      solution: "We build a multi-location schema graph and internal linking lattice to pass authority directly to individual clinic/branch pages."
     }
   ];
 
@@ -186,23 +187,71 @@ export default function LocalBusinessAEOPage() {
   const technicalBuildingBlocks = [
     {
       icon: <MapPin className="w-6 h-6 text-cyan-400" />,
-      title: "Location Schema Injection (S1)",
-      description: "Deploy nested JSON-LD schema (LocalBusiness, MedicalClinic, HVACBusiness, Electrician) defining exact geographic coordinates, opening hours, and service radiuses."
+      title: "Make your business details machine-readable (LocalBusiness Schema)",
+      code: "S1 Series",
+      description: "Deploy nested JSON-LD schema (LocalBusiness, MedicalClinic, HVACBusiness, Electrician) defining exact geographic coordinates, operating hours, and service radiuses so search engines and AI assistants parse your true location."
     },
     {
       icon: <Building2 className="w-6 h-6 text-purple-400" />,
-      title: "Directory Citation Clean-Up (S4)",
-      description: "Standardise business name, address, and phone number (NAP) details across major Australian business directories, Google Business Profile, and Apple Maps."
+      title: "Fix conflicting business listings (Directory Citation Clean-Up)",
+      code: "S4 Series",
+      description: "Standardise business name, address, and phone number (NAP) details across major Australian business directories (Yellow Pages, TrueLocal), Google Business Profile, and Apple Maps to eliminate machine confusion."
     },
     {
       icon: <Wrench className="w-6 h-6 text-cyan-400" />,
-      title: "Service Area Page Restructuring (S2)",
-      description: "Structure service area pages into atomic answer blocks answering specific local queries (e.g. emergency plumbing, clinical consultation hours) for RAG scrapers."
+      title: "Restructure service-area pages into clear answers (Service Area Restructuring)",
+      code: "S2 Series",
+      description: "Structure suburb and service area pages into self-contained atomic answer blocks answering specific local queries (e.g. emergency plumbing responses, clinical consultation hours) for RAG scrapers."
     },
     {
       icon: <Stethoscope className="w-6 h-6 text-purple-400" />,
-      title: "Internal Location Linking Lattice (S3)",
-      description: "Link core service pages to regional clinic or suburb location pages using structured anchor text to pass local authority across your site."
+      title: "Connect multi-location authority (Internal Location Lattice)",
+      code: "S3 Series",
+      description: "Link core service pages to regional clinic or suburb location pages using structured anchor text to pass local search authority directly to individual branch locations."
+    }
+  ];
+
+  const caseSnapshots = [
+    {
+      badge: "TRADE SERVICE SNAPSHOT",
+      title: "Regional Plumbing & HVAC Business (Perth Metro & Northern Suburbs)",
+      initialGap: "Conflicting business address listings on TrueLocal and missing service-area schema caused zero visibility in 4 key growth suburbs.",
+      workDone: "Deployed $495 Citation Clean-Up + Location Schema Injection Sprint across 5 suburb service pages.",
+      outcome: "Directory NAP alignment verified; suburb service pages indexed cleanly with direct call-click tracking."
+    },
+    {
+      badge: "MEDICAL CLINIC SNAPSHOT",
+      title: "Multi-Location Allied Health Clinic (Perth CBD & Joondalup)",
+      initialGap: "Main domain canonical tags directed satellite clinic queries back to the CBD head office, creating booking confusion for Joondalup patients.",
+      workDone: "Executed $3,195 Unified Local Foundation (Multi-location schema graph & internal location lattice).",
+      outcome: "Satellite clinic page indexed independently in Google Maps with location-specific online booking buttons."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "Can a mobile trade business rank across multiple suburbs without a physical storefront?",
+      answer: "Yes. Mobile trades (plumbers, electricians, builders, HVAC specialists) operate as Service Area Businesses (SABs). We configure your LocalBusiness schema with explicit GeoCircle and areaServed properties, standardise directory listings, and structure suburb service pages without disclosing private home addresses."
+    },
+    {
+      question: "Do you handle healthcare clinic advertising and compliance guidelines in Australia?",
+      answer: "Yes. For medical practices, dental clinics, and allied health providers, all content, schema markup, and patient trust messaging adhere strictly to Australian Health Practitioner Regulation Agency (AHPRA) advertising guidelines. We focus on verifiable facts, operating hours, practitioner details, and direct booking paths."
+    },
+    {
+      question: "Can AEObility work with our existing web developer or internal team?",
+      answer: "Absolutely. Every AEObility sprint includes complete handover notes, copy files, and validated JSON-LD schema snippets. Your existing web developer can easily copy-paste the updates, or our strategy team can implement them directly on your CMS."
+    },
+    {
+      question: "What happens if certain local citations or directory listings cannot be claimed?",
+      answer: "Where third-party directory listings cannot be claimed directly, we submit verified update notices, align your website footer and Google Business Profile NAP strings, and inject authoritative JSON-LD schema on your canonical domain to establish primary source authority."
+    },
+    {
+      question: "What is the difference between the Free Local Scan and the $995 Blueprint?",
+      answer: "The Free Local Scan provides a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next actions. The AEObility Blueprint ($995 AUD ex. GST) is an in-depth digital presence audit and 90-day execution roadmap—which is 100% credited if you book Foundation Implementation within 60 days."
+    },
+    {
+      question: "Are there any ongoing monthly contracts or agency retainers?",
+      answer: "No. All AEObility local business sprints are fixed-scope, flat-rate engagements delivered in 4–5 business days (Micro-Sprints) or 4 weeks (Foundation). No ongoing monthly retainer or locked-in contract is required."
     }
   ];
 
@@ -223,7 +272,7 @@ export default function LocalBusinessAEOPage() {
       <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* 1. Hero Block */}
+          {/* 1. Outcome-Led Hero Block */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <MapPin className="w-4 h-4 text-aeo-cyan" />
@@ -231,18 +280,44 @@ export default function LocalBusinessAEOPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Local Search &amp; AEO for <span className="text-gradient-aeo">Trades &amp; Clinics</span>
+              Help Local Customers Find Accurate Details, Choose the Right Location &amp; Contact Your <span className="text-gradient-aeo">Trade Business or Clinic</span>
             </h1>
 
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Improve how local customers and modern search platforms find, verify and trust your service areas, operating details and clinical locations. Clear scope, upfront flat rates.
+                Fix inconsistent business data, unclear service-area pages and weak local entity signals across Maps, search and AI answers. Clear scope, upfront flat rates.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
                 <span>Foundation Implementation from $3,195 AUD ex. GST</span>
               </div>
+            </div>
+
+            {/* In-Page Jump Navigation Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveAudienceTab('trades');
+                  document.getElementById('audience-pathways')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-cyan-500/30 text-xs text-white hover:border-cyan-400 transition cursor-pointer"
+              >
+                <Wrench className="w-4 h-4 text-cyan-400" />
+                <span>🛠️ Jump to Trade Services Pathway</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveAudienceTab('clinics');
+                  document.getElementById('audience-pathways')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-purple-500/30 text-xs text-white hover:border-purple-400 transition cursor-pointer"
+              >
+                <Stethoscope className="w-4 h-4 text-purple-400" />
+                <span>🏥 Jump to Medical Clinics Pathway</span>
+              </button>
             </div>
 
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
@@ -288,7 +363,198 @@ export default function LocalBusinessAEOPage() {
             </p>
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          {/* 2. "Signs Your Local Signals Are Broken" (Symptom Checklist) */}
+          <section id="symptoms" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Problem Identification</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Signs Your Local Search Signals Are Broken</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Common visibility and trust issues preventing local trade and clinic enquiries.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {symptoms.map((item, idx) => (
+                <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
+                  <div className="flex items-center gap-2 text-amber-400 text-xs font-mono font-bold">
+                    <AlertTriangle className="w-4 h-4 shrink-0" />
+                    <span>{item.title}</span>
+                  </div>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    <strong className="text-white block mb-0.5">What happens:</strong>
+                    {item.symptom}
+                  </p>
+                  <div className="bg-cyan-950/30 border border-cyan-500/20 p-3 rounded-xl text-xs text-cyan-300 font-serif leading-relaxed">
+                    <strong className="text-white block mb-0.5">What AEObility fixes:</strong>
+                    {item.solution}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 3. Split Audience Experience: Trades vs Clinics */}
+          <section id="audience-pathways" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Audience-Specific Solutions</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Tailored Pathways for Trades &amp; Medical Clinics</h2>
+              <p className="text-xs text-white/60 font-serif">Select your industry focus to explore how AEObility addresses your unique customer journey.</p>
+            </div>
+
+            {/* Audience Toggle Tabs */}
+            <div className="flex justify-center border-b border-white/10 max-w-md mx-auto">
+              <button
+                type="button"
+                onClick={() => setActiveAudienceTab('trades')}
+                className={`flex-1 py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer ${
+                  activeAudienceTab === 'trades'
+                    ? 'border-cyan-400 text-cyan-300 bg-cyan-950/40'
+                    : 'border-transparent text-zinc-400 hover:text-white'
+                }`}
+              >
+                🛠️ FOR TRADE SERVICES
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveAudienceTab('clinics')}
+                className={`flex-1 py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer ${
+                  activeAudienceTab === 'clinics'
+                    ? 'border-purple-400 text-purple-300 bg-purple-950/40'
+                    : 'border-transparent text-zinc-400 hover:text-white'
+                }`}
+              >
+                🏥 FOR MEDICAL CLINICS
+              </button>
+            </div>
+
+            {/* Tab Content 1: Trades */}
+            {activeAudienceTab === 'trades' && (
+              <div id="trade-pathway" className="bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-cyan-950 border border-cyan-500/40 rounded-xl">
+                    <Wrench className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white font-soehne-breit">Trade Services &amp; Mobile Providers</h3>
+                    <p className="text-xs text-zinc-400 font-serif">Plumbers, Electricians, HVAC Specialists, Builders &amp; Service Area Businesses</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-zinc-300 font-serif">
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">Key Trade Search Priorities:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>Emergency &amp; urgent local service intent (&quot;electrician near me&quot;)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>Mobile service area coverage across multiple target suburbs</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>Direct phone click-to-call lead generation for technicians</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">AEObility Trade Sprint Actions:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>S1 Schema: Inject LocalBusiness &amp; GeoCircle service area radiuses</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>S4 Directory Clean-Up: Align NAP data across Yellow Pages &amp; Google Maps</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>S2 Page Restructuring: Turn generic services pages into suburb answer units</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('micro-sprint')}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 text-black font-bold text-xs hover:bg-cyan-400 transition cursor-pointer"
+                  >
+                    <span>Discuss Trade Sprints</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Tab Content 2: Clinics */}
+            {activeAudienceTab === 'clinics' && (
+              <div id="clinic-pathway" className="bg-zinc-950/90 border border-purple-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-purple-950 border border-purple-500/40 rounded-xl">
+                    <Stethoscope className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white font-soehne-breit">Medical Practices &amp; Health Clinics</h3>
+                    <p className="text-xs text-zinc-400 font-serif">GP Clinics, Dental Practices, Allied Health, Specialists &amp; Multi-Location Practices</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-zinc-300 font-serif">
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">Key Clinic Patient Journey Priorities:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>Symptom, condition &amp; practitioner specialty query matching</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>AHPRA-compliant reputation, verified facts &amp; clinical credentials</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>Direct online booking friction reduction per physical branch</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">AEObility Clinic Sprint Actions:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>S1 Schema: Deploy MedicalClinic &amp; Physician nested JSON-LD graphs</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>S3 Linking Lattice: Connect specialty pages directly to location booking nodes</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span>S4 Citation Clean-Up: Align clinic operating hours across healthcare directories</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('foundation')}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-500 text-black font-bold text-xs hover:bg-purple-400 transition cursor-pointer"
+                  >
+                    <span>Discuss Clinic Sprints</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </section>
+
+          {/* 4. "Choose Your Starting Point" Engagement Grid & Comparison Table */}
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
@@ -409,7 +675,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 3. Technical Building Blocks Reassurance (S1 & S4 Focus) */}
+          {/* 5. Technical Building Blocks (with Plain-English Jargon Translations) */}
           <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Technical Building Blocks for Trades &amp; Clinics</h2>
@@ -419,8 +685,13 @@ export default function LocalBusinessAEOPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {technicalBuildingBlocks.map((block, idx) => (
                 <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left hover:border-cyan-500/40 transition">
-                  <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit">
-                    {block.icon}
+                  <div className="flex items-center justify-between">
+                    <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit">
+                      {block.icon}
+                    </div>
+                    <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                      {block.code}
+                    </span>
                   </div>
                   <h3 className="text-base font-bold text-white font-soehne-breit">{block.title}</h3>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -431,7 +702,41 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 4. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          {/* 6. Proof & Anonymised Case Snapshots (No Ranking Promises) */}
+          <section id="proof-snapshots" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Proof &amp; Validation</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Anonymised Case Snapshots</h2>
+              <p className="text-xs text-white/60 font-serif">Real-world examples of local signal repair and architectural fixes (no ranking guarantees).</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {caseSnapshots.map((snapshot, idx) => (
+                <div key={idx} className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-4 text-left hover:border-cyan-500/40 transition">
+                  <span className="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    {snapshot.badge}
+                  </span>
+                  <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{snapshot.title}</h3>
+                  <div className="space-y-2 text-xs font-serif leading-relaxed">
+                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
+                      <strong className="text-amber-400 block mb-0.5">Initial Gap:</strong>
+                      <span className="text-zinc-300">{snapshot.initialGap}</span>
+                    </div>
+                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
+                      <strong className="text-cyan-400 block mb-0.5">Work Completed:</strong>
+                      <span className="text-zinc-300">{snapshot.workDone}</span>
+                    </div>
+                    <div className="bg-cyan-950/40 p-3 rounded-xl border border-cyan-500/30">
+                      <strong className="text-emerald-400 block mb-0.5">Verified Outcome:</strong>
+                      <span className="text-zinc-200">{snapshot.outcome}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 7. Streamlined 12-Column Responsive Diagnostic Form Module */}
           <section id="local-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
@@ -443,7 +748,7 @@ export default function LocalBusinessAEOPage() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Local Visibility Scan</h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your business website or profile URL to evaluate location signals, map coordinate accuracy, and directory consistency.
+                  Delivers a short local signal scorecard highlighting your top 3 verified technical gaps and recommended next actions.
                 </p>
               </div>
 
@@ -452,7 +757,7 @@ export default function LocalBusinessAEOPage() {
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
                   <h4 className="font-bold text-white text-base">Local Visibility Scan Submitted</h4>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you. Our AEObility strategy team will audit your local profile signals and send your gap report within 24 business hours.
+                    Thank you. Our AEObility strategy team will audit your local profile signals and send your 3-point scorecard within 24 business hours.
                   </p>
                 </div>
               ) : (
@@ -535,7 +840,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 5. Operational 3-Step Process Flow Pipeline Graphic */}
+          {/* 8. Operational 3-Step Process Flow Pipeline Graphic */}
           <section id="local-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
@@ -564,7 +869,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 6. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 9. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="local-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss Local AEO Priorities</h2>
@@ -693,7 +998,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 7. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 10. Decision Blockers FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
           <section id="faq-local" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
