@@ -104,7 +104,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ],
       "potentialAction": [
         {
-          "@type": "ContactAction",
+          "@type": "CommunicateAction",
           "name": "Request a local AEO quote",
           "target": {
             "@type": "EntryPoint",
