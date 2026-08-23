@@ -129,7 +129,8 @@ export default function GeoMarketingPage() {
       scope: "Priority business profiles & directories",
       description: "Review and correct your core business details across priority directories, maps and local platforms.",
       techNote: "For technical teams: We check for inconsistent listings, duplicates and conflicting business information.",
-      whenToChoose: "Choose this when your business name, address or phone details vary across online listings, maps and directories."
+      whenToChoose: "Choose this when your business name, address or phone details vary across online listings, maps and directories.",
+      ctaLabel: "Discuss Citation Clean-Up"
     },
     {
       key: "ss3micro1",
@@ -141,8 +142,9 @@ export default function GeoMarketingPage() {
       priceSub: "ex. GST",
       scope: "Priority location hubs & service pages",
       description: "Connect important location, service and supporting pages so visitors and search engines can navigate your local offering more easily.",
-      techNote: "For technical teams: Establishes clear connections between main location pages and regional pages.",
-      whenToChoose: "Choose this when your location or service pages exist but are difficult to discover from the rest of your website."
+      techNote: "For technical teams: Connects your main location page with relevant service and regional pages so the relationship between them is clearer.",
+      whenToChoose: "Choose this when your location or service pages exist but are difficult to discover from the rest of your website.",
+      ctaLabel: "Discuss Local Internal Linking"
     },
     {
       key: "ss4micro3",
@@ -154,8 +156,9 @@ export default function GeoMarketingPage() {
       priceSub: "ex. GST",
       scope: "One central site reference page",
       description: "Create one clear reference page covering your business, services, locations, contact details and key trust information.",
-      techNote: "For technical teams: The page can be supported with appropriate Organisation, LocalBusiness or Service structured data where the visible content supports it.",
-      whenToChoose: "Choose this when your business information is scattered, inconsistent or difficult for customers to verify online."
+      techNote: "For technical teams: We can add appropriate structured data where the visible page content supports it.",
+      whenToChoose: "Choose this when your business information is scattered, inconsistent or difficult for customers to verify online.",
+      ctaLabel: "Discuss a Brand Facts Page"
     }
   ];
 
@@ -221,13 +224,13 @@ export default function GeoMarketingPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Discuss Your Local Visibility</span>
+                    <span>Discuss your local visibility</span>
                   </button>
                   <Link
                     href="/diagnostic"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <span>Run a Free Visibility Scan</span>
+                    <span>Run a free visibility scan</span>
                     <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
                   </Link>
                 </div>
@@ -310,7 +313,7 @@ export default function GeoMarketingPage() {
                       onClick={() => selectSprintForForm(sprint.key)}
                       className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
                     >
-                      <span>Discuss this Micro-Sprint</span>
+                      <span>{sprint.ctaLabel}</span>
                       <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
                     </button>
                   </div>
@@ -339,6 +342,17 @@ export default function GeoMarketingPage() {
                 </li>
               </ul>
             </div>
+
+            {/* Deliverables & Handover Ownership Statement (Positioned after Scope Box) */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
+                  <span>Use the completed work and handover notes with your internal team or developer, or ask AEObility to implement the agreed changes.</span>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 4. Foundation Implementation Upgrade Block */}
@@ -353,23 +367,22 @@ export default function GeoMarketingPage() {
                   Foundation Implementation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                  For businesses that need several connected improvements. May include internal linking, structured data, priority-page improvements or local business information, depending on the agreed scope. Final pricing depends on the number of pages, implementation requirements and agreed deliverables. Scope is confirmed before work begins.
+                  For businesses that need several connected improvements. May include internal linking, structured data, priority-page improvements or local business information, depending on the agreed scope. Final scope depends on the number of pages, locations and implementation requirements. We confirm the deliverables and price before work begins.
                 </p>
 
                 {/* Prominently Elevated Blueprint Credit Callout Box */}
                 <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
+                    If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
                 <div className="text-left md:text-right">
-                  <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD</span>
-                  <span className="text-xs text-zinc-400 font-mono">ex. GST | 4-Week Schedule</span>
-                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Typical schedule: delivered across a four-week period.</span>
+                  <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD ex. GST</span>
+                  <span className="text-xs text-zinc-400 font-mono block mt-0.5">Typically delivered across a four-week period</span>
                 </div>
                 <button
                   type="button"
@@ -397,10 +410,10 @@ export default function GeoMarketingPage() {
             </p>
           </section>
 
-          {/* 6. Core Technical Foundations (S3 & S4 Focus) */}
+          {/* 6. Core Technical Foundations */}
           <section id="building-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations (S3 & S4)</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations</h2>
               <p className="text-xs sm:text-sm text-white/60 font-serif">These are the practical areas we work on, selected to suit your business priorities.</p>
             </div>
 
@@ -419,7 +432,7 @@ export default function GeoMarketingPage() {
                   Connect related service and location pages so customers can move through your website more easily and search engines can understand how the pages relate.
                 </p>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  Technical detail: Internal linking, location-page relationships and appropriate structured data may be reviewed as part of the agreed scope.
+                  For technical teams: Connects your main location page with relevant service and regional pages so the relationship between them is clearer.
                 </p>
                 <div className="pt-1">
                   <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
@@ -443,24 +456,13 @@ export default function GeoMarketingPage() {
                   Bring your key business details, services, locations and trust information together so they remain clear and consistent across your website and priority local platforms.
                 </p>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  Technical detail: Business identity verification, location details, and structured schema alignment across search channels.
+                  For technical teams: Review business identity, location details and structured-data consistency across priority platforms.
                 </p>
                 <div className="pt-1">
                   <Link href="/services/aeo/procedures" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
                     <span>Learn more about AEO Procedures</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Ownership & Handover Statement */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
-                  <span>Use the completed work and handover notes with your internal team or developer, or ask AEObility to implement the agreed changes.</span>
                 </div>
               </div>
             </div>
@@ -516,7 +518,7 @@ export default function GeoMarketingPage() {
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak with an AEObility specialist based in Perth to discuss practical next steps for your business. Vince Baker, AEObility’s founder, is available for more complex scopes or strategic questions.</span>
+                <span>You will speak with an AEObility specialist based in Perth. Vince Baker, AEObility’s founder, reviews more complex scopes and strategic enquiries.</span>
               </div>
             </div>
 
