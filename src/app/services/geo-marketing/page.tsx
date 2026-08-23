@@ -400,10 +400,10 @@ export default function GeoMarketingPage() {
           <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-lg">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
               <ShieldCheck className="w-4 h-4 text-cyan-400" />
-              <span>Transparent Engagement Standards</span>
+              <span>No Jargon, Just Clarity</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-              Clear scope. Fixed pricing. No lock-in contracts.
+              No jargon, just clarity.
             </h3>
             <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto font-serif leading-relaxed">
               Every engagement has agreed deliverables, a clear delivery window, validation checks and a practical handover. No ongoing retainer is required.
