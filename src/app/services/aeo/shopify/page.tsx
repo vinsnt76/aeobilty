@@ -199,7 +199,7 @@ export default function ShopifyAeoPage() {
       <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      <main className="flex-grow w-full py-12">
+      <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
           {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
@@ -316,6 +316,40 @@ export default function ShopifyAeoPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Clean 3-Tier Comparison Matrix Table */}
+            <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md">
+              <table className="w-full text-left text-xs font-serif border-collapse min-w-[580px]">
+                <thead>
+                  <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
+                    <th className="p-3.5 sm:p-4">Service / Tier</th>
+                    <th className="p-3.5 sm:p-4">Target Scope</th>
+                    <th className="p-3.5 sm:p-4">Best For</th>
+                    <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Product Data Sprint</td>
+                    <td className="p-3.5 sm:p-4">1 Collection or Product Schema</td>
+                    <td className="p-3.5 sm:p-4">Quick fix for a single priority product line</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">E-Commerce Blueprint</td>
+                    <td className="p-3.5 sm:p-4">Full Store Audit &amp; 90-Day Plan</td>
+                    <td className="p-3.5 sm:p-4">Unclear what is blocking store AI visibility</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Shopify Foundation</td>
+                    <td className="p-3.5 sm:p-4">Multi-Page &amp; Collection Alignment</td>
+                    <td className="p-3.5 sm:p-4">Connected improvements across entire store</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             {/* Scope & Inclusion Box */}
@@ -594,7 +628,36 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 7. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 7. Operational 3-Step Process Flow Pipeline Graphic */}
+          <section id="process-flow" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How Shopify AEO Sprints Work</h2>
+              <p className="text-xs text-white/60 font-serif">Clear sequence from initial diagnostic scan to complete handover notes.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">1</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Store Scan &amp; Access</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run a free scan or confirm your store scope and theme preview permissions.</p>
+              </div>
+
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-purple-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-purple-950 border border-purple-500/40 text-purple-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(168,85,247,0.2)]">2</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">4–5 Day Execution</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Deploy agreed product schema, Liquid markup, or collection page rewrites.</p>
+              </div>
+
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">3</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Validation &amp; Handover</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run validation checks and receive complete documentation &amp; ownership notes.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 8. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="shopify-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Shopify Store Enquiry</h2>
