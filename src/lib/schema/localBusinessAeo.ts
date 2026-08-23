@@ -14,8 +14,8 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "@type": "WebPage",
       "@id": "https://www.aeobility.com.au/services/aeo/local-business#webpage",
       "url": "https://www.aeobility.com.au/services/aeo/local-business",
-      "name": "Local Search & AEO for Trades & Clinics | AEObility",
-      "description": "Connect your trade service or clinic locations with local customers. Fixed-scope citation clean-up and local schema sprints from $495 ex. GST.",
+      "name": "Local Search & AEO for Local Businesses | AEObility",
+      "description": "Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers. Micro-Sprints from $495 ex. GST.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://www.aeobility.com.au/#website"
@@ -63,9 +63,9 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Service",
       "@id": "https://www.aeobility.com.au/services/aeo/local-business#service",
-      "name": "Local Search & AEO for Trades & Clinics",
+      "name": "Local Search & AEO for Local Businesses",
       "alternateName": "Local Business GEO & AEO Marketing",
-      "description": "Fixed-scope local visibility sprints for trade services, medical clinics, and local providers across Perth and Australian markets.",
+      "description": "Fixed-scope local visibility sprints for service area businesses, storefronts, and clinics across Perth and Australian markets.",
       "provider": {
         "@id": "https://www.aeobility.com.au/#organization"
       },
@@ -76,7 +76,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ],
       "audience": {
         "@type": "Audience",
-        "audienceType": "Australian trades, medical clinics, professional service providers, and regional business owners"
+        "audienceType": "Australian trades, medical clinics, service area businesses, and regional business owners"
       },
       "hasOfferCatalog": {
         "@id": "https://www.aeobility.com.au/services/aeo/local-business#catalog"
@@ -102,19 +102,6 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-blueprint",
-          "name": "Local Visibility Blueprint",
-          "sku": "BPSTRAT",
-          "price": "995.00",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock",
-          "description": "Audit local profile structures, map coordinate logic, and existing structured data. Receive a practical 90-day regional execution roadmap. Price excludes GST.",
-          "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
-          }
-        },
-        {
-          "@type": "Offer",
           "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-foundation",
           "name": "Unified Local Foundation",
           "sku": "SS1-SS4-MACRO",
@@ -126,6 +113,19 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "For multi-location clinics or growing trade services, combine your structured data, cross-directory consistency, and internal location page connections in a focused four-week engagement starting from $3,195 AUD ex. GST.",
+          "seller": {
+            "@id": "https://www.aeobility.com.au/#organization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-blueprint",
+          "name": "Local Visibility Blueprint",
+          "sku": "BPSTRAT",
+          "price": "995.00",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "description": "Audit local profile structures, map coordinate logic, and existing structured data. Receive a practical 90-day regional execution roadmap. Price excludes GST.",
           "seller": {
             "@id": "https://www.aeobility.com.au/#organization"
           }

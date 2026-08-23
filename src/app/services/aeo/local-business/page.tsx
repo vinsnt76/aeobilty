@@ -32,7 +32,8 @@ import {
   AlertTriangle,
   FileText,
   Activity,
-  Check
+  Check,
+  Home
 } from 'lucide-react';
 
 export const LOCAL_BUSINESS_AEO_INTERNAL_LINKS = [
@@ -55,7 +56,7 @@ export const LOCAL_BUSINESS_AEO_INTERNAL_LINKS = [
 
 export default function LocalBusinessAEOPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [activeAudienceTab, setActiveAudienceTab] = useState<'trades' | 'clinics'>('trades');
+  const [activeAudienceTab, setActiveAudienceTab] = useState<'service-areas' | 'storefronts' | 'regional'>('service-areas');
   const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
@@ -119,7 +120,7 @@ export default function LocalBusinessAEOPage() {
   const symptoms = [
     {
       title: "Your business appears for the wrong suburb—or not at all",
-      symptom: "Customers search for local trades or clinics in nearby suburbs, but your business is invisible or mapped to an old location.",
+      symptom: "Customers search for local trades, clinics or services in nearby suburbs, but your business is invisible or mapped to an old location.",
       solution: "We inject exact location schema and restructure suburb service area pages so search engines verify your true coverage radius."
     },
     {
@@ -189,7 +190,7 @@ export default function LocalBusinessAEOPage() {
       icon: <MapPin className="w-6 h-6 text-cyan-400" />,
       title: "Make your business details machine-readable (LocalBusiness Schema)",
       code: "S1 Series",
-      description: "Deploy nested JSON-LD schema (LocalBusiness, MedicalClinic, HVACBusiness, Electrician) defining exact geographic coordinates, operating hours, and service radiuses so search engines and AI assistants parse your true location."
+      description: "Deploy nested JSON-LD schema (LocalBusiness, MedicalClinic, Electrician, Air Conditioning Business) defining exact geographic coordinates, operating hours, and service radiuses so search engines and AI assistants parse your true location."
     },
     {
       icon: <Building2 className="w-6 h-6 text-purple-400" />,
@@ -211,27 +212,10 @@ export default function LocalBusinessAEOPage() {
     }
   ];
 
-  const caseSnapshots = [
-    {
-      badge: "TRADE SERVICE SNAPSHOT",
-      title: "Regional Plumbing & HVAC Business (Perth Metro & Northern Suburbs)",
-      initialGap: "Conflicting business address listings on TrueLocal and missing service-area schema caused zero visibility in 4 key growth suburbs.",
-      workDone: "Deployed $495 Citation Clean-Up + Location Schema Injection Sprint across 5 suburb service pages.",
-      outcome: "Directory NAP alignment verified; suburb service pages indexed cleanly with direct call-click tracking."
-    },
-    {
-      badge: "MEDICAL CLINIC SNAPSHOT",
-      title: "Multi-Location Allied Health Clinic (Perth CBD & Joondalup)",
-      initialGap: "Main domain canonical tags directed satellite clinic queries back to the CBD head office, creating booking confusion for Joondalup patients.",
-      workDone: "Executed $3,195 Unified Local Foundation (Multi-location schema graph & internal location lattice).",
-      outcome: "Satellite clinic page indexed independently in Google Maps with location-specific online booking buttons."
-    }
-  ];
-
   const faqs = [
     {
-      question: "Can a mobile trade business rank across multiple suburbs without a physical storefront?",
-      answer: "Yes. Mobile trades (plumbers, electricians, builders, HVAC specialists) operate as Service Area Businesses (SABs). We configure your LocalBusiness schema with explicit GeoCircle and areaServed properties, standardise directory listings, and structure suburb service pages without disclosing private home addresses."
+      question: "Can a mobile trade or service business rank across multiple suburbs without a physical storefront?",
+      answer: "Yes. Mobile trades (plumbers, electricians, builders, air conditioning specialists) operate as Service Area Businesses (SABs). We configure your LocalBusiness schema with explicit GeoCircle and areaServed properties, standardise directory listings, and structure suburb service pages without disclosing private home addresses."
     },
     {
       question: "Do you handle healthcare clinic advertising and compliance guidelines in Australia?",
@@ -280,12 +264,12 @@ export default function LocalBusinessAEOPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Help Local Customers Find Accurate Details, Choose the Right Location &amp; Contact Your <span className="text-gradient-aeo">Trade Business or Clinic</span>
+              Local Search &amp; AEO for <span className="text-gradient-aeo">Local Businesses</span>
             </h1>
 
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Fix inconsistent business data, unclear service-area pages and weak local entity signals across Maps, search and AI answers. Clear scope, upfront flat rates.
+                Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
@@ -294,37 +278,11 @@ export default function LocalBusinessAEOPage() {
               </div>
             </div>
 
-            {/* In-Page Jump Navigation Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveAudienceTab('trades');
-                  document.getElementById('audience-pathways')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-cyan-500/30 text-xs text-white hover:border-cyan-400 transition cursor-pointer"
-              >
-                <Wrench className="w-4 h-4 text-cyan-400" />
-                <span>🛠️ Jump to Trade Services Pathway</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveAudienceTab('clinics');
-                  document.getElementById('audience-pathways')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-purple-500/30 text-xs text-white hover:border-purple-400 transition cursor-pointer"
-              >
-                <Stethoscope className="w-4 h-4 text-purple-400" />
-                <span>🏥 Jump to Medical Clinics Pathway</span>
-              </button>
-            </div>
-
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/services/aeo-local-business_perth_AEObility.webp"
-                alt="AEObility Local Search & AEO for Trades & Clinics strategy diagram showcasing location schema injection and citation alignment."
+                alt="AEObility Local Search & AEO for Local Businesses strategy diagram showcasing location schema injection and citation alignment."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -368,7 +326,7 @@ export default function LocalBusinessAEOPage() {
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Problem Identification</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Signs Your Local Search Signals Are Broken</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Common visibility and trust issues preventing local trade and clinic enquiries.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Common visibility and trust issues preventing local enquiries.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -391,56 +349,67 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 3. Split Audience Experience: Trades vs Clinics */}
+          {/* 3. Refactored Audience Experience: Built for Service Areas & Local Locations */}
           <section id="audience-pathways" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Audience-Specific Solutions</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Tailored Pathways for Trades &amp; Medical Clinics</h2>
-              <p className="text-xs text-white/60 font-serif">Select your industry focus to explore how AEObility addresses your unique customer journey.</p>
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Business Model Alignment</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Built for Service Areas &amp; Local Locations</h2>
+              <p className="text-xs text-white/60 font-serif">Select your business model to explore how AEObility structures your location signals.</p>
             </div>
 
             {/* Audience Toggle Tabs */}
-            <div className="flex justify-center border-b border-white/10 max-w-md mx-auto">
+            <div className="flex justify-center border-b border-white/10 max-w-xl mx-auto overflow-x-auto">
               <button
                 type="button"
-                onClick={() => setActiveAudienceTab('trades')}
-                className={`flex-1 py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer ${
-                  activeAudienceTab === 'trades'
+                onClick={() => setActiveAudienceTab('service-areas')}
+                className={`py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer whitespace-nowrap ${
+                  activeAudienceTab === 'service-areas'
                     ? 'border-cyan-400 text-cyan-300 bg-cyan-950/40'
                     : 'border-transparent text-zinc-400 hover:text-white'
                 }`}
               >
-                🛠️ FOR TRADE SERVICES
+                🛠️ MOBILE &amp; SERVICE AREAS
               </button>
               <button
                 type="button"
-                onClick={() => setActiveAudienceTab('clinics')}
-                className={`flex-1 py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer ${
-                  activeAudienceTab === 'clinics'
+                onClick={() => setActiveAudienceTab('storefronts')}
+                className={`py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer whitespace-nowrap ${
+                  activeAudienceTab === 'storefronts'
                     ? 'border-purple-400 text-purple-300 bg-purple-950/40'
                     : 'border-transparent text-zinc-400 hover:text-white'
                 }`}
               >
-                🏥 FOR MEDICAL CLINICS
+                🏥 STOREFRONTS &amp; CLINICS
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveAudienceTab('regional')}
+                className={`py-3 px-4 text-xs font-bold font-mono transition-colors border-b-2 cursor-pointer whitespace-nowrap ${
+                  activeAudienceTab === 'regional'
+                    ? 'border-emerald-400 text-emerald-300 bg-emerald-950/40'
+                    : 'border-transparent text-zinc-400 hover:text-white'
+                }`}
+              >
+                🏡 REGIONAL OPERATIONS
               </button>
             </div>
 
-            {/* Tab Content 1: Trades */}
-            {activeAudienceTab === 'trades' && (
-              <div id="trade-pathway" className="bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
+            {/* Tab Content 1: Mobile & Service Areas */}
+            {activeAudienceTab === 'service-areas' && (
+              <div id="service-areas-pathway" className="bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-cyan-950 border border-cyan-500/40 rounded-xl">
                     <Wrench className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white font-soehne-breit">Trade Services &amp; Mobile Providers</h3>
-                    <p className="text-xs text-zinc-400 font-serif">Plumbers, Electricians, HVAC Specialists, Builders &amp; Service Area Businesses</p>
+                    <h3 className="text-xl font-bold text-white font-soehne-breit">Mobile &amp; Service-Area Businesses</h3>
+                    <p className="text-xs text-zinc-400 font-serif">Plumbers, Electricians, Air Conditioning Specialists, Builders &amp; Mobile Technicians</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-zinc-300 font-serif">
                   <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
-                    <strong className="text-white font-semibold block text-sm">Key Trade Search Priorities:</strong>
+                    <strong className="text-white font-semibold block text-sm">Key Search Priorities:</strong>
                     <ul className="space-y-1.5">
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -458,7 +427,7 @@ export default function LocalBusinessAEOPage() {
                   </div>
 
                   <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
-                    <strong className="text-white font-semibold block text-sm">AEObility Trade Sprint Actions:</strong>
+                    <strong className="text-white font-semibold block text-sm">AEObility Sprint Actions:</strong>
                     <ul className="space-y-1.5">
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -482,29 +451,29 @@ export default function LocalBusinessAEOPage() {
                     onClick={() => selectSprintForForm('micro-sprint')}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 text-black font-bold text-xs hover:bg-cyan-400 transition cursor-pointer"
                   >
-                    <span>Discuss Trade Sprints</span>
+                    <span>Discuss Service Area Sprints</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Tab Content 2: Clinics */}
-            {activeAudienceTab === 'clinics' && (
-              <div id="clinic-pathway" className="bg-zinc-950/90 border border-purple-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
+            {/* Tab Content 2: Storefronts & Clinics */}
+            {activeAudienceTab === 'storefronts' && (
+              <div id="storefronts-pathway" className="bg-zinc-950/90 border border-purple-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-purple-950 border border-purple-500/40 rounded-xl">
                     <Stethoscope className="w-6 h-6 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white font-soehne-breit">Medical Practices &amp; Health Clinics</h3>
-                    <p className="text-xs text-zinc-400 font-serif">GP Clinics, Dental Practices, Allied Health, Specialists &amp; Multi-Location Practices</p>
+                    <h3 className="text-xl font-bold text-white font-soehne-breit">Storefronts &amp; Local Clinics</h3>
+                    <p className="text-xs text-zinc-400 font-serif">Medical practices, Dental Clinics, Allied Health, Retail &amp; Commercial Offices</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-zinc-300 font-serif">
                   <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
-                    <strong className="text-white font-semibold block text-sm">Key Clinic Patient Journey Priorities:</strong>
+                    <strong className="text-white font-semibold block text-sm">Key Search Priorities:</strong>
                     <ul className="space-y-1.5">
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
@@ -522,7 +491,7 @@ export default function LocalBusinessAEOPage() {
                   </div>
 
                   <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
-                    <strong className="text-white font-semibold block text-sm">AEObility Clinic Sprint Actions:</strong>
+                    <strong className="text-white font-semibold block text-sm">AEObility Sprint Actions:</strong>
                     <ul className="space-y-1.5">
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
@@ -546,7 +515,71 @@ export default function LocalBusinessAEOPage() {
                     onClick={() => selectSprintForForm('foundation')}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-500 text-black font-bold text-xs hover:bg-purple-400 transition cursor-pointer"
                   >
-                    <span>Discuss Clinic Sprints</span>
+                    <span>Discuss Storefront Sprints</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Tab Content 3: Regional Operations */}
+            {activeAudienceTab === 'regional' && (
+              <div id="regional-pathway" className="bg-zinc-950/90 border border-emerald-500/30 p-6 sm:p-8 rounded-2xl space-y-6 animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-emerald-950 border border-emerald-500/40 rounded-xl">
+                    <Home className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white font-soehne-breit">Home-Based &amp; Regional Operations</h3>
+                    <p className="text-xs text-zinc-400 font-serif">Consultants, Regional Contractors, Specialized Services &amp; Hybrid Operations</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-zinc-300 font-serif">
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">Key Regional Priorities:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>Privacy-safe address suppression with defined regional coverage</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>Cross-suburb authority building for regional growth corridors</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>Verified contact NAP consistency across digital directories</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-black/60 border border-white/10 p-4 rounded-xl space-y-2">
+                    <strong className="text-white font-semibold block text-sm">AEObility Sprint Actions:</strong>
+                    <ul className="space-y-1.5">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>S1 Schema: Inject privacy-compliant LocalBusiness schema with areaServed</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>S2 Restructuring: Build regional answer units for outlying service hubs</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>S4 Citation Alignment: Fix inconsistent phone and website URLs across directories</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('micro-sprint')}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs hover:bg-emerald-400 transition cursor-pointer"
+                  >
+                    <span>Discuss Regional Sprints</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -675,11 +708,11 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 5. Technical Building Blocks (with Plain-English Jargon Translations) */}
+          {/* 5. Refactored Technical Building Blocks Section */}
           <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Technical Building Blocks for Trades &amp; Clinics</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Plain-English specifications detailing how local signals and structured data are engineered.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How We Fix Your Local Search Signals</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical specifications detailing how your business data and location signals are structured.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -701,7 +734,7 @@ export default function LocalBusinessAEOPage() {
               ))}
             </div>
 
-            {/* Mid-Page Duplicate Scan CTA for High-Converting Scroll Traffic */}
+            {/* Mid-Page Duplicate Scan CTA */}
             <div className="text-center pt-4">
               <a
                 href="#local-diagnostic-form"
@@ -714,41 +747,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 6. Proof & Anonymised Case Snapshots (No Ranking Promises) */}
-          <section id="proof-snapshots" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Proof &amp; Validation</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Anonymised Case Snapshots</h2>
-              <p className="text-xs text-white/60 font-serif">Real-world examples of local signal repair and architectural fixes (no ranking guarantees).</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseSnapshots.map((snapshot, idx) => (
-                <div key={idx} className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-4 text-left hover:border-cyan-500/40 transition">
-                  <span className="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                    {snapshot.badge}
-                  </span>
-                  <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{snapshot.title}</h3>
-                  <div className="space-y-2 text-xs font-serif leading-relaxed">
-                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
-                      <strong className="text-amber-400 block mb-0.5">Initial Gap:</strong>
-                      <span className="text-zinc-300">{snapshot.initialGap}</span>
-                    </div>
-                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
-                      <strong className="text-cyan-400 block mb-0.5">Work Completed:</strong>
-                      <span className="text-zinc-300">{snapshot.workDone}</span>
-                    </div>
-                    <div className="bg-cyan-950/40 p-3 rounded-xl border border-cyan-500/30">
-                      <strong className="text-emerald-400 block mb-0.5">Verified Outcome:</strong>
-                      <span className="text-zinc-200">{snapshot.outcome}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* 7. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          {/* 6. Streamlined 12-Column Responsive Diagnostic Form Module */}
           <section id="local-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
@@ -852,7 +851,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 8. Operational 3-Step Process Flow Pipeline Graphic */}
+          {/* 7. Operational 3-Step Process Flow Pipeline Graphic */}
           <section id="local-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
@@ -881,12 +880,12 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 9. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 8. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="local-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss Local AEO Priorities</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Tell us about your trade or clinic locations and service area goals. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
+                Tell us about your business locations and service area goals. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -990,7 +989,7 @@ export default function LocalBusinessAEOPage() {
                       value={contactData.message}
                       onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                      placeholder="For example: location schema injection, directory citation clean-up, or multi-clinic page restructuring..."
+                      placeholder="For example: location schema injection, directory citation clean-up, or multi-location page restructuring..."
                     />
                   </div>
 
@@ -1010,11 +1009,11 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 10. Decision Blockers FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 9. Decision Blockers FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
           <section id="faq-local" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
-              <p className="text-xs text-white/60 font-serif">Everything you need to know about local search and AEO for trades and clinics.</p>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about local search and AEO for local businesses.</p>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-3">
