@@ -234,7 +234,7 @@ export default function AEOSprintPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Not sure whether you need a single micro-sprint or Foundation Implementation? We will help you choose the right starting point.
+              For physical service locations and regional trades, view our dedicated <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link> sprint guide. Not sure whether you need a single micro-sprint or Foundation Implementation? We will help you choose the right starting point.
             </p>
           </section>
 

@@ -170,12 +170,12 @@ export function CoreEngagementsGrid() {
 
             <div className="pt-8">
               <Link
-                href="/services/geo-marketing"
+                href="/services/aeo/local-business"
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
                 title="Explore our focused GEO services sprints to enhance local visibility signals"
               >
-                <span>Explore our focused GEO services sprints</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
+                <span>Explore our focused GEO services sprints to enhance local visibility signals</span>
+                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
           </div>
