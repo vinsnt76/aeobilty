@@ -115,34 +115,34 @@ export default function ShopifyAeoPage() {
 
   const faqs = [
     {
-      question: "What makes Shopify store optimization for AI search different from traditional SEO?",
-      answer: "AI search engines (like ChatGPT, Perplexity, and Gemini) extract structured product details, price specifications, availability, and clear collection answers directly. We format your Shopify Liquid schema and product hierarchy so digital assistants can interpret your product information more accurately."
-    },
-    {
       question: "What is included in a $495 Shopify Product Data Micro-Sprint?",
-      answer: "The sprint covers one agreed product, collection or schema priority. It includes the specified implementation or rewrite work, validation checks, a summary of completed changes and handover notes. Additional products, collections or unrelated issues are scoped separately."
+      answer: "One Micro-Sprint covers one agreed product, collection or structured-data priority. It includes the agreed implementation or rewrite work, validation checks, a summary of completed changes and handover notes. Additional products, collections or unrelated issues are scoped separately."
     },
     {
       question: "How long does a Shopify AEO sprint take to deliver?",
-      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, required access and store information have been confirmed. Larger or more complex requirements may need a separate scope."
+      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, store access and required information are confirmed. More complex requirements may need a separate scope and delivery schedule."
     },
     {
       question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you have completed the AEObility Blueprint, the full $995 fee can be credited towards Foundation Implementation booked within 60 days of handover. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
+      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
     },
     {
       question: "Do you require ongoing monthly retainers or app subscriptions?",
-      answer: "No. The work is scoped as a fixed-price engagement. AEObility does not require an ongoing retainer or a particular app subscription, although any third-party tools or app costs needed for your store remain your responsibility."
+      answer: "No. Shopify Sprints are fixed-scope engagements. No ongoing retainer or AEObility app subscription is required; any third-party app or platform fees remain separate."
     },
     {
       question: "What access is required to begin a Shopify sprint?",
-      answer: "Depending on the agreed scope, we may need your store URL, theme or theme-preview access, relevant product or collection information and access to any tools involved in validation. We will confirm the minimum access required before work begins."
+      answer: "Depending on the agreed scope, we may need your store URL, theme or theme-preview access, relevant product or collection details and access to any tools used for validation. We confirm the minimum access needed before work begins."
+    },
+    {
+      question: "What makes Shopify store optimization for AI search different from traditional SEO?",
+      answer: "AI search engines (like ChatGPT, Perplexity, and Gemini) extract structured product details, price specifications, availability, and clear collection answers directly. We format your Shopify Liquid schema and product hierarchy so digital assistants can interpret your product information more accurately."
     }
   ];
 
   const engagementPaths = [
     {
-      key: "micro-sprint",
+      key: "product-data-micro-sprint",
       anchorId: "ss1micro-shopify",
       icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
       title: "Product Data Micro-Sprint",
@@ -150,16 +150,16 @@ export default function ShopifyAeoPage() {
       price: "From $495 AUD",
       priceSub: "ex. GST",
       scope: "One priority collection or product schema",
-      description: "Choose one focused priority: Product or Collection schema implementation for $495, or a Single Collection Rewrite for $495.",
+      description: "Choose one focused priority for $495 AUD ex. GST: Product or Collection structured-data work, or a Single Collection Rewrite.",
       techNote: "For technical teams: Review Product, Offer and CollectionPage schema alongside the relevant Shopify Liquid templates.",
       whenToChoose: "Choose this when you have one specific product line or collection page that needs structured data or copy improvements.",
       ctaLabel: "Discuss Product Data Sprint"
     },
     {
-      key: "foundation",
+      key: "shopify-foundation",
       anchorId: "shopify-foundation",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
-      title: "Shopify Foundation Implementation",
+      title: "Comprehensive Store Foundation",
       code: "MACRO TIER",
       price: "From $3,195 AUD",
       priceSub: "ex. GST",
@@ -170,7 +170,7 @@ export default function ShopifyAeoPage() {
       ctaLabel: "Discuss Shopify Foundation"
     },
     {
-      key: "blueprint",
+      key: "ecommerce-blueprint",
       anchorId: "bpstrat-shopify",
       icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
       title: "E-Commerce Blueprint",
@@ -189,7 +189,7 @@ export default function ShopifyAeoPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Unified JSON-LD Connected Graph with Passage @id Anchors */}
+      {/* Unified JSON-LD Connected Graph with Full FAQPage Support */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
@@ -213,7 +213,7 @@ export default function ShopifyAeoPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Improve how search engines, digital assistants and AI-assisted search read your Shopify products, collections and store information. Clear scope, flat rates.
+                Improve how search engines, digital assistants and AI-assisted search read your Shopify products, collections and store information. Clear scope. Flat rates.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
@@ -237,13 +237,13 @@ export default function ShopifyAeoPage() {
               {/* Overlaid Hero CTAs */}
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
                 <div className="text-left space-y-0.5 sm:space-y-1">
-                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one product-data issue or build a stronger store foundation</span>
+                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one product-data issue or build a stronger store foundation.</span>
                   <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
                   <button
                     type="button"
-                    onClick={() => selectSprintForForm('micro-sprint')}
+                    onClick={() => selectSprintForForm('product-data-micro-sprint')}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black shrink-0" />
@@ -265,7 +265,7 @@ export default function ShopifyAeoPage() {
             </p>
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid (Micro-Sprints, Foundation, Blueprint) */}
+          {/* 2. "Choose Your Starting Point" Engagement Grid */}
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
@@ -398,7 +398,7 @@ export default function ShopifyAeoPage() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Shopify Visibility Scan</h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your store URL to check key Shopify product-data, collection-structure and AI-search readiness signals.
+                  Enter your store URL to check key product-data, collection-page and AI-search readiness signals.
                 </p>
               </div>
 
@@ -429,7 +429,7 @@ export default function ShopifyAeoPage() {
                         placeholder="e.g. mystore.com.au or mystore.myshopify.com"
                       />
                       <p className="text-[11px] text-zinc-400 font-serif leading-tight">
-                        Checks your Shopify Liquid feed nesting, product graph data, and collection page structural formatting.
+                        We check product information, structured-data setup and collection-page structure for common visibility gaps.
                       </p>
                     </div>
 
@@ -506,7 +506,7 @@ export default function ShopifyAeoPage() {
                 <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
+                    If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
                   </p>
                 </div>
               </div>
@@ -514,12 +514,12 @@ export default function ShopifyAeoPage() {
               <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
                 <div className="text-left md:text-right">
                   <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD ex. GST</span>
-                  <span className="text-xs text-zinc-400 font-mono block mt-0.5">Typically delivered across four weeks</span>
-                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Final scope depends on the number of pages, locations and implementation requirements. We confirm the deliverables and price before work begins.</span>
+                  <span className="text-xs text-zinc-400 font-mono block mt-0.5">Typical schedule: delivered across four weeks</span>
+                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Deliverables and implementation windows agreed before work begins.</span>
                 </div>
                 <button
                   type="button"
-                  onClick={() => selectSprintForForm('foundation')}
+                  onClick={() => selectSprintForForm('shopify-foundation')}
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
@@ -548,7 +548,7 @@ export default function ShopifyAeoPage() {
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Structure product variants, pricing, availability and GTIN details so search systems and AI-assisted tools can interpret your product information more accurately. Helps reduce ambiguity and missing information when search systems read your product pages.
+                  Structure product variants, pricing, availability and GTIN details so search systems can interpret product information more consistently. Helps reduce ambiguity and missing information across priority product pages.
                 </p>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
                   For technical teams: Validate Product, Offer, and AggregateRating markup against the visible product content and Shopify Liquid templates.
@@ -735,9 +735,9 @@ export default function ShopifyAeoPage() {
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
                       <option value="unsure">Not sure yet — Help me decide</option>
-                      <option value="micro-sprint">Product Data Micro-Sprint (From $495 AUD)</option>
-                      <option value="foundation">Shopify Foundation Implementation (From $3,195 AUD)</option>
-                      <option value="blueprint">E-Commerce Blueprint ($995 AUD)</option>
+                      <option value="product-data-micro-sprint">Product Data Micro-Sprint (From $495 AUD)</option>
+                      <option value="shopify-foundation">Shopify Foundation Implementation (From $3,195 AUD)</option>
+                      <option value="ecommerce-blueprint">E-Commerce Blueprint ($995 AUD)</option>
                     </select>
                   </div>
 
@@ -766,7 +766,7 @@ export default function ShopifyAeoPage() {
                       value={contactData.message}
                       onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                      placeholder="For example: product variants missing from schema, a collection page that needs rewriting, or unclear product-category structure."
+                      placeholder="For example: product variants missing from structured data, a collection page that needs rewriting, or unclear category structure."
                     />
                   </div>
 

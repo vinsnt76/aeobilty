@@ -15,7 +15,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://www.aeobility.com.au/services/aeo/shopify#webpage",
       "url": "https://www.aeobility.com.au/services/aeo/shopify",
       "name": "Shopify AEO & AI Search Optimisation | AEObility",
-      "description": "Improve how Search, Maps, and AI platforms discover, read and recommend your Shopify store. Product schema, collection structure, and AEO sprints from $495 ex. GST.",
+      "description": "Shopify AEO services for product data, structured data, collection-page content and store architecture. E-Commerce Blueprint from $995 AUD ex. GST, Micro-Sprints from $495 AUD ex. GST and Foundation Implementation from $3,195 AUD ex. GST.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://www.aeobility.com.au/#website"
@@ -49,7 +49,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "AEO Services",
+          "name": "AEO & SEO",
           "item": "https://www.aeobility.com.au/services/aeo"
         },
         {
@@ -63,9 +63,9 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Service",
       "@id": "https://www.aeobility.com.au/services/aeo/shopify#service",
-      "name": "Shopify AI Search Marketing & Product Visibility",
-      "alternateName": "Shopify AEO Services",
-      "description": "Fixed-scope optimization services that help Australian e-commerce businesses improve product schema markup, collection page structure, and AI search visibility.",
+      "name": "Shopify AEO & AI Search Optimisation",
+      "alternateName": "Shopify E-Commerce AEO",
+      "description": "Fixed-scope Shopify services for product data, structured data, collection-page content and internal store architecture.",
       "provider": {
         "@id": "https://www.aeobility.com.au/#organization"
       },
@@ -75,7 +75,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Shopify store owners, Australian e-commerce brands, and digital retail teams"
+        "audienceType": "Australian Shopify merchants, e-commerce teams and Shopify developers"
       },
       "hasOfferCatalog": {
         "@id": "https://www.aeobility.com.au/services/aeo/shopify#catalog"
@@ -84,94 +84,117 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "OfferCatalog",
       "@id": "https://www.aeobility.com.au/services/aeo/shopify#catalog",
-      "name": "AEObility Shopify E-Commerce Engagement Catalogue",
+      "name": "AEObility Shopify AEO Services",
       "itemListElement": [
         {
-          "@type": "OfferCatalog",
-          "@id": "https://www.aeobility.com.au/services/aeo/shopify#micro-sprints",
-          "name": "Shopify Micro-Sprints & Strategic Audits",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#ss1micro-shopify",
-              "name": "Product Data & Schema Micro-Sprint",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#ss1micro-shopify",
-              "sku": "SS1MICRO1",
-              "price": "495.00",
-              "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock",
-              "category": "Shopify Micro-Sprint",
-              "description": "Add or clean up Product, Offer, AggregateRating or Brand JSON-LD schema for priority Shopify products. Price excludes GST.",
-              "seller": {
-                "@id": "https://www.aeobility.com.au/#organization"
-              }
-            },
-            {
-              "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#ss2micro-shopify",
-              "name": "Collection Page Rewrite Micro-Sprint",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#ss2micro-shopify",
-              "sku": "SS2MICRO1",
-              "price": "495.00",
-              "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock",
-              "category": "Shopify Micro-Sprint",
-              "description": "Rewrite one priority collection page so its product categories, buyer answers, and trust signals are clear for customers and AI platforms. Price excludes GST.",
-              "seller": {
-                "@id": "https://www.aeobility.com.au/#organization"
-              }
-            },
-            {
-              "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#bpstrat-shopify",
-              "name": "E-Commerce Blueprint",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#bpstrat-shopify",
-              "sku": "BPSTRAT",
-              "price": "995.00",
-              "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock",
-              "category": "Strategic Audit",
-              "description": "Audit your product data, structured data, store hierarchy and collection-page intent. Receive a practical 90-day execution roadmap. Price excludes GST.",
-              "seller": {
-                "@id": "https://www.aeobility.com.au/#organization"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-ecommerce-blueprint",
+          "name": "E-Commerce Blueprint",
+          "url": "https://www.aeobility.com.au/services/aeo/shopify?service=ecommerce-blueprint",
+          "sku": "BPSTRAT",
+          "price": "995.00",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "description": "A full Shopify store diagnostic and practical 90-day execution roadmap. Price excludes GST.",
+          "itemOffered": {
+            "@id": "https://www.aeobility.com.au/services/aeo/shopify#ecommerce-blueprint"
+          },
+          "seller": {
+            "@id": "https://www.aeobility.com.au/#organization"
+          }
         },
         {
-          "@type": "OfferCatalog",
-          "@id": "https://www.aeobility.com.au/services/aeo/shopify#foundation-catalog",
-          "name": "Shopify Foundation Implementation",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#shopify-foundation",
-              "name": "Shopify Foundation Implementation",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#shopify-foundation",
-              "sku": "SS1-SS4-MACRO",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "minPrice": "3195.00",
-                "priceCurrency": "AUD",
-                "valueAddedTaxIncluded": false
-              },
-              "availability": "https://schema.org/InStock",
-              "category": "Shopify Foundation Implementation",
-              "description": "Starting from $3,195 AUD excluding GST. Combine your highest-priority technical data, internal contextual linking, and content fixes into one focused four-week engagement.",
-              "seller": {
-                "@id": "https://www.aeobility.com.au/#organization"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-product-data-micro-sprint",
+          "name": "Product Data Micro-Sprint",
+          "url": "https://www.aeobility.com.au/services/aeo/shopify?service=product-data-micro-sprint",
+          "sku": "SS1-SS2-MICRO",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "495.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "A fixed-scope Shopify engagement for one agreed product-data, structured-data or collection-page priority. Final scope is confirmed before work begins.",
+          "itemOffered": {
+            "@id": "https://www.aeobility.com.au/services/aeo/shopify#product-data-micro-sprint"
+          },
+          "seller": {
+            "@id": "https://www.aeobility.com.au/#organization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-store-foundation",
+          "name": "Comprehensive Store Foundation",
+          "url": "https://www.aeobility.com.au/services/aeo/shopify?service=shopify-foundation",
+          "sku": "SHOPIFY-MACRO",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "3195.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "A focused four-week Shopify implementation engagement for agreed improvements across product data, structured data, collection pages and internal linking. Final scope and price are confirmed before work begins.",
+          "itemOffered": {
+            "@id": "https://www.aeobility.com.au/services/aeo/shopify#store-foundation"
+          },
+          "seller": {
+            "@id": "https://www.aeobility.com.au/#organization"
+          }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aeobility.com.au/services/aeo/shopify#ecommerce-blueprint",
+      "name": "E-Commerce Blueprint",
+      "alternateName": "BPSTRAT",
+      "description": "A Shopify store diagnostic reviewing product data, structured data, site hierarchy and collection-page intent, with a 90-day execution roadmap.",
+      "provider": {
+        "@id": "https://www.aeobility.com.au/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aeobility.com.au/services/aeo/shopify#product-data-micro-sprint",
+      "name": "Product Data Micro-Sprint",
+      "alternateName": "SS1 / SS2",
+      "description": "A fixed-scope Shopify sprint for one agreed product-data, structured-data or collection-page priority.",
+      "provider": {
+        "@id": "https://www.aeobility.com.au/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aeobility.com.au/services/aeo/shopify#store-foundation",
+      "name": "Comprehensive Store Foundation",
+      "alternateName": "Shopify Foundation Implementation",
+      "description": "A four-week implementation engagement for agreed improvements across priority Shopify product data, structured data, collection pages and internal linking.",
+      "provider": {
+        "@id": "https://www.aeobility.com.au/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      }
     }
   ];
 
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/shopify#faq-shopify",
+      "@id": "https://www.aeobility.com.au/services/aeo/shopify#faq",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,
