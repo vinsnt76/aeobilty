@@ -141,13 +141,13 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "OfferCatalog",
           "@id": "https://www.aeobility.com.au/services/aeo/shopify#foundation-catalog",
-          "name": "Comprehensive Store Foundation",
+          "name": "Shopify Foundation Implementation",
           "itemListElement": [
             {
               "@type": "Offer",
               "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-foundation",
-              "name": "Comprehensive Store Foundation",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#foundation-implementation",
+              "name": "Shopify Foundation Implementation",
+              "url": "https://www.aeobility.com.au/services/aeo/shopify#store-foundation",
               "sku": "SS1-SS4-MACRO",
               "priceSpecification": {
                 "@type": "PriceSpecification",
