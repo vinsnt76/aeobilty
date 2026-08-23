@@ -1,775 +1,693 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
-
-const AEO_SERVICES_PILLS = [
-  { label: 'AEO Hub', href: '/services/aeo' },
-  { label: '1. What is AEO?', href: '/services/aeo/definition' },
-  { label: '2. AEO vs SEO', href: '/services/aeo/comparison' },
-  { label: '3. Best Strategies', href: '/services/aeo/procedures' },
-  { label: '4. Ingestion Constraints', href: '/services/aeo/constraints' },
-  { label: '5. Costs & Timing', href: '/services/aeo/costs-timing' },
-  { label: '6. Shopify AEO', href: '/services/aeo/shopify', isActive: true },
-  { label: '7. Local Business AEO', href: '/services/aeo/local-business' },
-];
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
+import { PRICING_CONFIG } from '@/lib/brandFacts';
+import { trackGaEvent } from '@/lib/gtag';
+import { getShopifyAeoSchemaGraph } from '@/lib/schema/shopifyAeo';
 import { 
-  ShoppingBag, 
-  Code2, 
-  Database, 
-  Server, 
   CheckCircle2, 
   ArrowRight, 
-  ShieldCheck, 
+  ShoppingBag, 
+  Tag, 
   Layers, 
-  Search, 
-  Zap, 
-  AlertTriangle, 
-  Sparkles,
-  FileText,
-  HelpCircle,
-  TrendingUp,
-  Cpu,
-  BarChart3,
-  CheckSquare,
-  XCircle,
-  ChevronDown
+  FileText, 
+  ShieldCheck, 
+  Calendar, 
+  Clock, 
+  Code, 
+  Info, 
+  HelpCircle, 
+  ChevronDown, 
+  Users,
+  Boxes,
+  FileCheck,
+  Compass,
+  Rocket,
+  Search,
+  Sparkles
 } from 'lucide-react';
 
-export const metadata = {
-  title: "Shopify AEO Services & Liquid Schema Refactoring | AEObility",
-  description: "Ranked #1 on Google but invisible in ChatGPT? Technical AEO services for Shopify stores including SSR Liquid refactoring, structured feeds, GTIN enrichment, and AI ingestion architecture.",
-  keywords: [
-    "shopify aeo services",
-    "ecommerce ai search",
-    "shopify structured data perth",
-    "shopify liquid schema refactoring",
-    "google merchant center feed optimisation",
-    "ai search e-commerce australia",
-    "why isnt my shopify store showing in chatgpt"
-  ],
-  alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/shopify",
+export const SHOPIFY_AEO_INTERNAL_LINKS = [
+  {
+    targetSlug: "/solutions",
+    anchorText: "canonical product database and uniform pricing framework",
+    entityRelation: "http://schema.org/isRelatedTo"
   },
-};
+  {
+    targetSlug: "/solutions/aeo-sprint",
+    anchorText: "AEO Technical Sprints Package",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/contact",
+    anchorText: "Quote Request",
+    entityRelation: "http://schema.org/isRelatedTo"
+  }
+];
 
-export default function ShopifyAEOPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#webpage",
-        "name": "Shopify AEO Services & Liquid Schema Refactoring",
-        "description": "Technical AEO services for Shopify stores including SSR Liquid refactoring, structured feeds, GTIN enrichment, and AI ingestion architecture.",
-        "url": "https://aeobility.com.au/services/aeo/shopify",
-        "isPartOf": { "@id": "https://aeobility.com.au/#website" },
-        "primaryImageOfPage": { "@id": "https://aeobility.com.au/services/aeo/shopify#banner" },
-        "about": { "@id": "https://aeobility.com.au/services/aeo/shopify#service" },
-        "breadcrumb": { "@id": "https://aeobility.com.au/services/aeo/shopify#breadcrumb" },
-        "hasPart": [
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleA" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleB" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#moduleC" },
-          { "@id": "https://aeobility.com.au/services/aeo/shopify#faq" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#service",
-        "name": "Shopify AEO Services",
-        "serviceType": "Answer Engine Optimisation (AEO)",
-        "provider": { "@id": "https://aeobility.com.au/#organization" },
-        "description": "Refactoring Shopify Liquid architecture for server-side JSON-LD, structured feeds, GTIN enrichment, and AI ingestion readiness.",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Shopify AEO Service Deliverables",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Module A: Liquid Architecture & Server-Side RAG"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Module B: Feed Engineering & Catalog Enrichment"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Module C: AI Referral Measurement & Conversion Tracking"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#moduleA",
-        "name": "Module A: Liquid Architecture & Server-Side RAG",
-        "description": "Refactor Liquid snippets to output SSR Product, Offer, and FAQPage JSON-LD schemas.",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "Inject SSR JSON-LD Product schema",
-            "text": "Inject static server-side Product microdata into snippet templates."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Inject SSR Offer schema",
-            "text": "Ensure currency, pricing, and stock availability render directly into server HTML."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Inject SSR FAQPage schema",
-            "text": "Structure product Q&A accordions as static JSON-LD blocks."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Remove JS-dependent microdata delays",
-            "text": "Bypass client-side AJAX hydration loops for first-pass crawler execution."
-          }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#moduleB",
-        "name": "Module B: Feed Engineering & Catalog Enrichment",
-        "description": "Enhance Google Merchant Center feeds with GTINs, situational use-case tags, and enriched product attributes."
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#moduleC",
-        "name": "Module C: AI Referral Measurement & Conversion Tracking",
-        "description": "Implement server-side conversion rules, UTM arrays, and prompt referral tracking."
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why isn't my Shopify store showing up in ChatGPT or Perplexity?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Crawl failures, thin data, missing GTINs, and off-page corroboration gaps prevent AI engines from citing your store."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need to uninstall my existing Shopify SEO apps?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Most Shopify SEO apps focus on meta tags, image alt text, and basic sitemaps. AEO Liquid refactoring operates at the theme architecture level—ensuring product specifications, FAQs, and schema render server-side so AI crawlers ingest them without executing JavaScript."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will editing my theme's Liquid code break future Shopify theme updates?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We build custom Liquid logic into isolated, modular snippets or custom sections (using Shopify Theme 2.0 standards). This keeps your core theme files clean, making future theme updates or migration straightforward."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does it take for ChatGPT or Perplexity to pick up changes after refactoring?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Once server-side HTML and structured JSON-LD are live, traditional search crawlers usually re-index the static DOM within 3 to 10 days. LLM knowledge updates depend on individual bot crawl cycles (like GPTBot or PerplexityBot), but making data immediately available on the first HTTP pass drastically accelerates ingestion."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I just use a plugin to add AI schema instead of custom code?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Plugins often load structured data via client-side JavaScript scripts after the DOM hydrates. While traditional search engines can eventually render JS, many lightweight AI web scrapers parse raw HTML only and miss client-side schema entirely. Native Liquid rendering guarantees 100% passage capture."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does optimising for AI search hurt my Google organic rankings?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. AEO extends SEO—it doesn't replace it. Improving server-side rendering, stripping Liquid whitespace, and structuring clear product data directly benefits Google's Core Web Vitals and standard indexing pipeline while simultaneously preparing your catalog for generative search."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#checklist",
-        "name": "Shopify AI Readiness Checklist",
-        "itemListElement": [
-          "Server-side product specifications",
-          "GPTBot allowed in robots.txt.liquid",
-          "Valid Product & Offer JSON-LD schema",
-          "Situational use-case attributes"
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "AEO Services",
-            "item": "https://aeobility.com.au/services/aeo"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Shopify AEO Services",
-            "item": "https://aeobility.com.au/services/aeo/shopify"
-          }
-        ]
-      },
-      {
-        "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/services/aeo/shopify#banner",
-        "name": "Shopify AEO Services & Liquid Ingestion Architecture Banner",
-        "caption": "Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia",
-        "description": "Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia",
-        "url": "https://aeobility.com.au/shopify-seo-for-ai-search_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/shopify-seo-for-ai-search_AEObility.webp",
-        "width": {
-          "@type": "QuantitativeValue",
-          "value": 1600,
-          "unitCode": "E37"
-        },
-        "height": {
-          "@type": "QuantitativeValue",
-          "value": 900,
-          "unitCode": "E37"
-        },
-        "creditText": "AEObility",
-        "copyrightNotice": "© 2026 AEObility. All rights reserved.",
-        "author": {
-          "@id": "https://aeobility.com.au/#organization"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au",
-        "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Perth St",
-          "addressLocality": "Perth",
-          "addressRegion": "WA",
-          "postalCode": "6000",
-          "addressCountry": "AU"
-        }
-      }
-    ]
+export default function ShopifyAeoPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+
+  const [diagnosticData, setDiagnosticData] = useState({
+    storeUrl: '',
+    name: '',
+    email: ''
+  });
+
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    website: '',
+    serviceType: 'blueprint',
+    message: ''
+  });
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const tradeOffs = [
-    {
-      implementation: "Liquid Refactoring (SSR)",
-      fix: "Ensures AI crawlers extract product specifications and FAQs directly from static HTML without executing JavaScript.",
-      limit: "Does not force an LLM to recommend your product over a competitor with higher external domain authority."
-    },
-    {
-      implementation: "Enriched JSON-LD Schema",
-      fix: "Provides unambiguous price, availability, variant, and GTIN data directly to search engine bots.",
-      limit: "Cannot fix inaccurate inventory feeds or poor customer review sentiment on third-party sites."
-    },
-    {
-      implementation: "Merchant Center Feed Rules",
-      fix: "Standardises product attributes for AI shopping assistants and Google AI Overviews.",
-      limit: "Does not guarantee zero-click answer placement if off-page entity corroboration is low."
+  const selectSprintForForm = (typeKey: string) => {
+    setContactData(prev => ({ ...prev, serviceType: typeKey }));
+    const formElement = document.getElementById('shopify-contact-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
     }
-  ];
+  };
+
+  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'shopify_diagnostic_form',
+      lead_type: 'shopify_audit_request',
+      value: 1,
+    });
+    setDiagnosticSubmitted(true);
+    setTimeout(() => {
+      setDiagnosticSubmitted(false);
+      setDiagnosticData({ storeUrl: '', name: '', email: '' });
+    }, 6000);
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'shopify_contact_form',
+      lead_type: 'shopify_enquiry',
+      service_selected: contactData.serviceType,
+      value: 1,
+    });
+    setContactSubmitted(true);
+    setTimeout(() => {
+      setContactSubmitted(false);
+      setContactData({ name: '', email: '', website: '', serviceType: 'blueprint', message: '' });
+    }, 6000);
+  };
 
   const faqs = [
     {
-      question: "Do I need to uninstall my existing Shopify SEO apps?",
-      answer: "No. Most Shopify SEO apps focus on meta tags, image alt text, and basic sitemaps. AEO Liquid refactoring operates at the theme architecture level—ensuring that product specifications, FAQs, and schema are rendered server-side so AI crawlers can ingest them without executing JavaScript."
+      question: "What makes Shopify store optimization for AI search different from traditional SEO?",
+      answer: "AI search engines (like ChatGPT, Perplexity, and Gemini) extract structured product details, price specifications, availability, and clear collection answers directly. We format your Shopify Liquid schema and product hierarchy so digital assistants can cite and recommend your products."
     },
     {
-      question: "Will editing my theme's Liquid code break future Shopify theme updates?",
-      answer: "We build custom Liquid logic into isolated, modular snippets or custom sections (using Shopify Theme 2.0 standards). This keeps your core theme files clean, making future theme updates or migration straightforward."
+      question: "What is included in a $495 Shopify Product Data Micro-Sprint?",
+      answer: "Each Micro-Sprint addresses one specific Shopify collection or product schema priority. Includes structured data markup (Product, Offer, AggregateRating) or a single collection page rewrite with handover documentation."
     },
     {
-      question: "How long does it take for ChatGPT or Perplexity to pick up changes after refactoring?",
-      answer: "Once server-side HTML and structured JSON-LD are live, traditional search crawlers usually re-index the static DOM within 3 to 10 days. LLM knowledge updates depend on individual bot crawl cycles (like GPTBot or PerplexityBot), but making data immediately available on the first HTTP pass drastically accelerates ingestion."
+      question: "How long does a Shopify AEO sprint take to deliver?",
+      answer: "Most single Micro-Sprints are delivered within 4–5 business days after scope and store access have been confirmed. Comprehensive Store Foundation Implementation is delivered across a four-week schedule."
     },
     {
-      question: "Can I just use a plugin to add AI schema instead of custom code?",
-      answer: "Plugins often load structured data via client-side JavaScript scripts after the DOM hydrates. While traditional search engines can eventually render JS, many lightweight AI web scrapers parse raw HTML only and miss client-side schema entirely. Native Liquid rendering guarantees 100% passage capture."
+      question: "Can I credit my Blueprint fee towards Foundation Implementation?",
+      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we apply the full $995 Blueprint fee to the Foundation work. The credit applies to Foundation Implementation only and cannot be exchanged for cash."
     },
     {
-      question: "Does optimising for AI search hurt my Google organic rankings?",
-      answer: "No. AEO extends SEO—it doesn't replace it. Improving server-side rendering, stripping Liquid whitespace, and structuring clear product data directly benefits Google's Core Web Vitals and standard indexing pipeline while simultaneously preparing your catalog for generative search."
+      question: "Do you require ongoing monthly retainers or app subscriptions?",
+      answer: "No. All Shopify Micro-Sprints and Foundation engagements are fixed-scope projects with clear deliverables, transparent flat rates, and no lock-in contracts."
+    },
+    {
+      question: "What access is required to begin a Shopify sprint?",
+      answer: "We typically require collaborator access to your Shopify admin (specifically Theme/Liquid template access or app metadata permissions) or your staging theme. All requirements are confirmed before work begins."
     }
   ];
 
+  const engagementPaths = [
+    {
+      key: "blueprint",
+      anchorId: "ecommerce-blueprint",
+      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      title: "E-Commerce Blueprint",
+      code: "BPSTRAT",
+      price: "$995 AUD",
+      priceSub: "ex. GST",
+      scope: "Full store diagnostic & 90-day roadmap",
+      description: "Audit your product feed schema, website hierarchy, and collection intent matching. Receive a practical 90-day execution roadmap.",
+      techNote: "For technical teams: Comprehensive review of Product, Offer, CollectionPage schema and Liquid template nesting.",
+      whenToChoose: "Choose this when you are unsure what is limiting your store's product visibility across search engines and AI tools.",
+      ctaLabel: "Discuss E-Commerce Blueprint"
+    },
+    {
+      key: "micro-sprint",
+      anchorId: "product-data-sprint",
+      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
+      title: "Product Data Micro-Sprint",
+      code: "SS1 / SS2",
+      price: "From $495 AUD",
+      priceSub: "ex. GST",
+      scope: "One priority collection or product schema",
+      description: "Target one specific collection page or product schema mismatch. Includes Product/Collection Schema ($495) or Single Collection Rewrite ($495).",
+      techNote: "For technical teams: Adds structured schema data or refactors collection page text into clear answer blocks.",
+      whenToChoose: "Choose this when you have one specific product line or collection page that needs structured data or copy improvements.",
+      ctaLabel: "Discuss Micro-Sprint"
+    },
+    {
+      key: "foundation",
+      anchorId: "store-foundation",
+      icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
+      title: "Comprehensive Store Foundation",
+      code: "MACRO TIER",
+      price: "From $3,195 AUD",
+      priceSub: "ex. GST",
+      scope: "Multi-collection & store-wide fixes",
+      description: "Combine your highest-priority technical data, internal contextual linking, and content fixes into one focused four-week engagement.",
+      techNote: "For technical teams: Store-wide structured data alignment, collection internal linking, and key product page rewrites.",
+      whenToChoose: "Choose this when your Shopify store has multiple connected product data, schema or collection layout priorities.",
+      ctaLabel: "Discuss Store Foundation"
+    }
+  ];
+
+  const jsonLdGraph = getShopifyAeoSchemaGraph(faqs);
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* JSON-LD Schema */}
+      {/* Unified JSON-LD Connected Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
-
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
-        <section className="flex flex-col gap-12">
-          
-          {/* SECTION 1: Hero & Opening Answer Section */}
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>E-commerce Answer Engine Architecture</span>
-            </div>
+      <main className="flex-grow w-full py-12">
+        <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-            {/* Hero Web Banner */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/60 shadow-2xl my-4">
-              <Image
-                src="/shopify-seo-for-ai-search_AEObility.webp"
-                alt="Shopify AEO Services & AI Search Optimisation architecture diagram depicting Liquid schema refactoring, RAG vector indexing, and Google Merchant Center feed rules for e-commerce stores by AEObility in Perth Western Australia"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 800px"
-              />
+          {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
+          <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <ShoppingBag className="w-4 h-4 text-aeo-cyan" />
+              <span>Shopify E-Commerce AEO &amp; AI Search</span>
             </div>
-
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Shopify AEO &amp; <br />
-              <span className="text-gradient-aeo">E-commerce Ingestion Architecture</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+              Shopify AI Search Marketing &amp; <span className="text-gradient-aeo">Product Visibility</span>
             </h1>
+            <div className="space-y-3 max-w-2xl mx-auto">
+              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+                Improve how search engines, digital assistants and modern AI platforms crawl, understand and extract your Shopify store&apos;s product data and service collection structures. Clear scope, flat rates.
+              </h2>
+              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
+                <span>Micro-Sprints from $495 AUD ex. GST</span>
+                <span className="text-zinc-600">|</span>
+                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+              </div>
+            </div>
 
-            {/* Sceptic-Aware Subheading */}
-            <p className="text-lg text-amber-300/90 font-medium leading-relaxed border-l-2 border-amber-400 pl-4 py-1 bg-amber-950/10">
-              Ranked #1 on Google but invisible in ChatGPT? Traditional rankings no longer guarantee AI recommendations. Here is how we fix your store&apos;s underlying ingestion mechanics.
+            {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
+            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
+              <Image
+                src="/images/services/shopify-aeo-and-ai-search-marketing_AEObility.webp"
+                alt="AEObility Shopify e-commerce audit interface mapping product graph data, Liquid schema structures, and collection page intent hierarchies."
+                width={1200}
+                height={800}
+                className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
+
+              {/* Overlaid Hero CTAs */}
+              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
+                <div className="text-left space-y-0.5 sm:space-y-1">
+                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix Product Schema or Build Store Depth</span>
+                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('micro-sprint')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-black shrink-0" />
+                    <span>Discuss your Shopify store</span>
+                  </button>
+                  <a
+                    href="#shopify-diagnostic-form"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <span>Run a free store scan</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xs text-zinc-400 font-serif">
+              Not sure whether you need product schema clean-up or a broader store audit? We will help you choose the right starting point.
             </p>
+          </section>
 
-            {/* 100-Word Opening Answer Block */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-3">
-              <span className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">The E-commerce Ingestion Gap Explained</span>
-              <p className="text-white/90 text-sm font-medium leading-relaxed">
-                Most Shopify stores fail in AI search because Large Language Model (LLM) scrapers skip client-side JavaScript accordions, missing GTIN barcodes, and unlinked product context. Traditional Shopify themes render data for human eyes, leaving AI bots with empty passages. Answer Engine Optimisation (AEO) refactors your theme&apos;s Liquid architecture, injecting server-side JSON-LD microdata, structuring product specifications into atomic RAG answer blocks, and aligning Google Merchant Center feeds so conversational search engines can parse, verify, and cite your store on first pass.
-              </p>
-
-              {/* Zone 1 Contextual Links with Descriptive Anchors */}
-              <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs border-t border-white/10 pt-3">
-                <span className="text-white/50 font-mono">Related Frameworks:</span>
-                <Link href="/services/aeo/constraints" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
-                  <span>What stops your store showing up in AI search</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-                <span className="text-white/30">&bull;</span>
-                <Link href="/services/aeo/procedures" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
-                  <span>Best AEO Strategies &amp; Procedures</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-                <span className="text-white/30">&bull;</span>
-                <Link href="/services/aeo/local-business" className="text-aeo-cyan hover:underline font-medium flex items-center gap-1">
-                  <span>Local Business AI Visibility</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
-
-              {/* Immediate Hero CTA */}
-              <div className="pt-3 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/diagnostic"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.3)]"
-                >
-                  <span>Run Free Store Scan</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <span className="text-xs text-white/50 font-mono font-light">Takes 60 seconds • No lock-in</span>
-              </div>
-            </div>
-          </div>
-
-          {/* SECTION 2: The Invisibility Diagnosis (Why Am I Not Appearing?) */}
-          <div className="space-y-6 border-t border-white/10 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs text-amber-400 font-mono font-semibold uppercase">
-                <AlertTriangle className="w-4 h-4" />
-                <span>The Invisibility Diagnosis</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
-                Why isn&apos;t my Shopify store showing up in ChatGPT or Perplexity?
-              </h2>
-              <p className="text-white/70 text-sm font-light">
-                If your Shopify store generates organic search clicks but receives zero mentions in AI assistants, your catalog is suffering from three core operational blockers:
-              </p>
+          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a diagnostic audit, a targeted micro-sprint, or a comprehensive store foundation.</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4">
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <XCircle className="w-4 h-4 text-red-400" />
-                  <span>1. Crawl &amp; Rendering Failures</span>
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  AI scrapers like <code className="text-aeo-cyan font-mono">GPTBot</code> or <code className="text-aeo-cyan font-mono">PerplexityBot</code> are frequently blocked inside default <code className="text-aeo-cyan font-mono">robots.txt.liquid</code> files, or they bounce when key product specifications are hidden behind client-side AJAX tab accordions.
-                </p>
-                <div className="pt-1">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-mono text-aeo-cyan bg-white/5 px-2 py-0.5 rounded border border-white/10">
-                    <span>Atomic Block: Server-side rendering ensures 100% crawler passage capture</span>
-                  </span>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {engagementPaths.map((path, idx) => (
+                <div id={path.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
+                        {path.icon}
+                      </div>
+                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                        {path.code}
+                      </span>
+                    </div>
 
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <XCircle className="w-4 h-4 text-red-400" />
-                  <span>2. Thin Data &amp; Missing Entity Signals</span>
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  Missing GTIN barcodes, vague product titles, or copied manufacturer descriptions force RAG models to discard your pages. AI models require explicit structured facts to cite a brand with high confidence score.
-                </p>
-                <div className="pt-1">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-mono text-aeo-cyan bg-white/5 px-2 py-0.5 rounded border border-white/10">
-                    <span>Atomic Block: GTIN + Product entity schema anchors product confidence</span>
-                  </span>
-                </div>
-              </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{path.title}</h3>
+                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
+                        {path.price} <span className="text-[10px] text-zinc-400 font-normal">{path.priceSub}</span>
+                      </div>
+                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {path.scope}</span>
+                    </div>
 
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <XCircle className="w-4 h-4 text-red-400" />
-                  <span>3. Off-Page Corroboration Gaps</span>
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed">
-                  LLM search engines check multi-source corroboration before recommending products. If your store lacks third-party mentions, verified directory schema links, or Reddit discussions, models default to better-known marketplace entities. Read our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-medium">AEObility Entity Authority &amp; Corroboration Framework</Link> to resolve domain authority gaps.
-                </p>
-                <div className="pt-1">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-mono text-aeo-cyan bg-white/5 px-2 py-0.5 rounded border border-white/10">
-                    <span>Atomic Block: Multi-node identity corroboration unlocks AI recommendations</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
+                      {path.description}
+                    </p>
 
-          {/* SECTION 3: Practitioner Action Framework (Modules A, B, C) */}
-          <div className="space-y-8 border-t border-white/10 pt-10">
-            <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
-                Practitioner Action Framework
-              </h2>
-              <p className="text-white/70 text-sm font-light">
-                Our step-by-step engineering roadmap for transforming Shopify catalogs into machine-readable e-commerce assets.
-              </p>
-            </div>
+                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
+                      <strong className="text-white block mb-0.5">When to choose:</strong>
+                      <span>{path.whenToChoose}</span>
+                    </div>
+                  </div>
 
-            {/* Module A */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 max-w-full">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                  <Code2 className="w-5 h-5 text-aeo-cyan" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">Module A: Liquid Architecture &amp; Server-Side RAG</h3>
-                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Technical Implementation &amp; SSR Schemas</span>
-                </div>
-              </div>
-              <p className="text-xs text-white/80 font-light leading-relaxed">
-                Standard themes load microdata after DOM hydration. We refactor Liquid snippets to output explicit JSON-LD Product, Offer, and FAQPage schemas directly into static server HTML on first HTTP pass:
-              </p>
-              
-              {/* Refined Mobile-Responsive Code Container */}
-              <div className="p-4 bg-neutral-950 rounded-xl border border-white/10 font-mono text-[11px] sm:text-xs text-emerald-400 overflow-x-auto max-w-full leading-relaxed whitespace-pre-wrap break-words sm:whitespace-pre sm:break-normal">
-                <code>{`{% comment %} AEObility SSR Product JSON-LD Schema Snippet {% endcomment %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": {{ product.title | json }},
-  "description": {{ product.description | strip_html | truncatewords: 50 | json }},
-  "sku": {{ product.selected_or_first_available_variant.sku | json }},
-  "gtin": {{ product.selected_or_first_available_variant.barcode | json }},
-  "brand": { "@type": "Brand", "name": {{ product.vendor | json }} },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": {{ cart.currency.iso_code | json }},
-    "price": "{{ product.price | money_without_currency | remove: ',' }}",
-    "itemCondition": "https://schema.org/NewCondition",
-    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
-    "url": "{{ shop.url }}{{ product.url }}"
-  }
-}
-</script>`}</code>
-              </div>
-
-              {/* Zone 2 Contextual Links with Natural Descriptive Anchors */}
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
-                <span className="font-mono text-aeo-cyan text-[11px]">Deliverables &amp; References:</span>
-                <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-medium">90-Day Technical AEO Blueprint</Link>
-                <span>&bull;</span>
-                <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Shopify Liquid Schema Engineering Sprint</Link>
-                <span>&bull;</span>
-                <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline font-medium">Structured Data &amp; Query Fan-Out Engineering Guide</Link>
-              </div>
-            </div>
-
-            {/* Module B */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                  <Database className="w-5 h-5 text-aeo-cyan" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">Module B: Feed Engineering &amp; Catalog Enrichment</h3>
-                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Agentic Storefronts &amp; Situational Use Cases</span>
-                </div>
-              </div>
-              <p className="text-xs text-white/80 font-light leading-relaxed">
-                Move beyond standard Google Merchant Center rules. We enrich feed vectors with situational use-case tags (&ldquo;best for sensitive skin&rdquo;, &ldquo;ideal for Perth summer climate&rdquo;), precise sizing, material compositions, and GTIN parameters to capture long-tail conversational shopping queries. Learn more in our <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-medium">GEO Marketing &amp; Geolocation Feed Optimisation</Link> service overview.
-              </p>
-              {/* Zone 3 Contextual Links with Natural Descriptive Anchors */}
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
-                <span className="font-mono text-aeo-cyan text-[11px]">Related Sprints:</span>
-                <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Google Merchant Center Feed Engineering Sprint</Link>
-                <span>&bull;</span>
-                <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-medium">GEO Marketing Services</Link>
-              </div>
-            </div>
-
-            {/* Module C */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
-                  <BarChart3 className="w-5 h-5 text-aeo-cyan" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">Module C: AI Referral Measurement &amp; Conversion Tracking</h3>
-                  <span className="text-xs text-aeo-cyan font-mono font-semibold">Attribution Integrity &amp; Prompt Analytics</span>
-                </div>
-              </div>
-              <p className="text-xs text-white/80 font-light leading-relaxed">
-                Solve the &ldquo;black box analytics&rdquo; problem. We set up server-side conversion rules, custom UTM parameter arrays, and prompt referral tracking in Shopify Analytics to measure direct conversational traffic, prompt-assisted conversions, and buyer intent. Explore our <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing &amp; Recommendation Strategy</Link> framework.
-              </p>
-              {/* Zone 4 Contextual Links with Natural Descriptive Anchors */}
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
-                <span className="font-mono text-aeo-cyan text-[11px]">Measurement Blueprint:</span>
-                <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-medium">E-commerce AI Analytics &amp; Conversion Blueprint</Link>
-                <span>&bull;</span>
-                <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* SECTION 4: Interactive "AI Visibility Diagnostic" Callout */}
-          <div className="p-6 sm:p-8 bg-gradient-to-br from-aeo-cyan/10 via-neutral-950 to-aeo-purple/10 border border-white/15 rounded-3xl space-y-6 shadow-2xl border-t border-white/10 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
-                <CheckSquare className="w-4 h-4" />
-                <span>Shopify AI Readiness Checklist (ItemList Entity)</span>
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white">
-                How Machine-Readable Is Your Shopify Store Today?
-              </h2>
-              <p className="text-xs text-white/70 font-light">
-                Check your store against these four critical ingestion requirements:
-              </p>
-            </div>
-
-            <div className="space-y-3 font-mono text-xs text-white/90">
-              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
-                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
-                <span>Are key product specifications rendered server-side in static HTML?</span>
-              </div>
-              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
-                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
-                <span>Is <code className="text-aeo-cyan font-mono">GPTBot</code> permitted in your <code className="text-aeo-cyan font-mono">robots.txt.liquid</code> template?</span>
-              </div>
-              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
-                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
-                <span>Do your product pages output valid <code className="text-aeo-cyan font-mono">Product</code> &amp; <code className="text-aeo-cyan font-mono">Offer</code> JSON-LD schema?</span>
-              </div>
-              <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
-                <span className="w-4 h-4 rounded border border-aeo-cyan flex items-center justify-center text-aeo-cyan font-bold">✓</span>
-                <span>Are product attributes enriched with situational use cases (&ldquo;best for...&rdquo;)?</span>
-              </div>
-            </div>
-
-            {/* Zone 5 Contextual Corridor with Natural Anchors */}
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-white/70 border-t border-white/10 pt-4">
-              <span className="font-mono text-aeo-cyan text-[11px]">Next Operational Steps:</span>
-              <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-medium">AEO Services Overview</Link>
-              <span>&bull;</span>
-              <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-medium">Execute Shopify AEO Technical Sprint</Link>
-              <span>&bull;</span>
-              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline font-medium">Retrieval-Augmented Generation &amp; Ingestion Mechanics Guide</Link>
-            </div>
-
-            <div className="pt-2 text-center">
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs sm:text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
-              >
-                <span>Run Store Diagnostic Scan</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* SECTION 5: Claim Discipline & Trade-Offs Table */}
-          <div className="space-y-6 border-t border-white/10 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Practitioner Candour</span>
-              </div>
-              <h2 className="text-2xl font-bold text-white">Claim Discipline &amp; Technical Trade-Offs</h2>
-              <p className="text-xs text-white/70 font-light">
-                We believe in full transparency. Here is exactly what technical AEO fixes achieve, and what they cannot control:
-              </p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse border border-white/10">
-                <thead>
-                  <tr className="bg-white/5 text-aeo-cyan font-mono uppercase border-b border-white/10">
-                    <th className="p-3 border-r border-white/10 font-bold">Implementation</th>
-                    <th className="p-3 border-r border-white/10 font-bold">What It Fixes</th>
-                    <th className="p-3 font-bold">What It Cannot Control</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/10 text-white/80 font-light">
-                  {tradeOffs.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02]">
-                      <td className="p-3 font-bold text-white border-r border-white/10 font-mono">{row.implementation}</td>
-                      <td className="p-3 border-r border-white/10 leading-relaxed">{row.fix}</td>
-                      <td className="p-3 text-white/60 leading-relaxed">{row.limit}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Zone 6 Contextual Links with Natural Anchors */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-white/70 bg-white/[0.02] p-3 rounded-lg border border-white/10">
-              <span className="font-mono text-aeo-cyan text-[11px]">Candour References:</span>
-              <Link href="/services/aeo/comparison" className="text-aeo-cyan hover:underline font-medium">AEO vs Traditional SEO Paradigm Comparison</Link>
-              <span>&bull;</span>
-              <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-medium">Multi-Source Entity Corroboration Principles</Link>
-            </div>
-          </div>
-
-          {/* SECTION 6: Zero-Click Search & ROI Caveat */}
-          <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 border-t border-white/10">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-aeo-cyan" />
-              <span>Addressing Zero-Click Search &amp; E-commerce ROI</span>
-            </h3>
-            <p className="text-xs text-white/80 font-light leading-relaxed">
-              AI search engines frequently synthesise answers directly on the search page without sending raw impression traffic. However, when an AI recommendation <em>does</em> generate a referral click to your Shopify store, the buyer intent is significantly higher than traditional keyword search.
-            </p>
-            <p className="text-xs text-white/80 font-light leading-relaxed">
-              Our strategy focuses on <strong>citation and recommendation dominance</strong>. By positioning your brand as the definitive factual source, we ensure your store captures high-converting customers at the exact moment of decision. Explore our <Link href="/services/ai-search-marketing" className="text-aeo-cyan hover:underline font-medium">AI Search Marketing &amp; Recommendation Strategy</Link> and read our <Link href="/knowledge-hub/articles/aeo-vs-seo" className="text-aeo-cyan hover:underline font-medium">The AEO vs SEO Paradigm Shift in E-commerce</Link> guide.
-            </p>
-          </div>
-
-          {/* SECTION 7: Dedicated FAQ Block (Structured FAQPage Representation) */}
-          <div className="space-y-6 border-t border-white/10 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase font-bold">
-                <HelpCircle className="w-4 h-4" />
-                <span>Shopify AEO FAQ</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-xs text-white/70 font-light">
-                Direct answers to common technical, theme operational, and crawler ingestion questions for Shopify merchants.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
-                  <h3 className="text-sm font-bold text-white flex items-start gap-2.5 leading-snug">
-                    <span className="text-aeo-cyan font-mono font-bold text-xs mt-0.5">Q{idx + 1}.</span>
-                    <span>{faq.question}</span>
-                  </h3>
-                  <p className="text-xs text-white/75 font-light leading-relaxed pl-6">
-                    {faq.answer}
-                  </p>
+                  <div className="space-y-3 pt-3 border-t border-white/5">
+                    <p className="text-[10px] text-zinc-500 font-mono leading-tight">{path.techNote}</p>
+                    <button
+                      type="button"
+                      onClick={() => selectSprintForForm(path.key)}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+                    >
+                      <span>{path.ctaLabel}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* Sibling/Lateral Corridor navigation (Semantic Lattice) */}
-          <div className="border-t border-white/10 pt-6 flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
-              <Link href="/services/aeo/costs-timing" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                <span>How much does AEO cost &amp; what do I get?</span>
-                <ArrowRight className="w-3.5 h-3.5 text-aeo-cyan" />
-              </Link>
-              <Link href="/services/aeo/local-business" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors flex items-center justify-between">
-                <span>Local Business Visibility across Maps &amp; AI Search</span>
-                <ArrowRight className="w-3.5 h-3.5 text-aeo-cyan" />
-              </Link>
+            {/* Scope & Inclusion Box */}
+            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 font-bold text-white text-sm">
+                <FileCheck className="w-4 h-4 text-cyan-400" />
+                <span>Every Shopify Sprint includes:</span>
+              </div>
+              <ul className="space-y-2 text-xs text-zinc-300 font-serif">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>One agreed store priority, specified product schema or collection rewrite work.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Comprehensive validation checks, summary of completed changes, and handover notes.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Typical delivery: 4–5 business days from confirmed scope and store access. Additional collections or products scoped separately. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">canonical product database and uniform pricing framework</Link>.</span>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          {/* CTA Banner */}
-          <div className="p-8 bg-gradient-to-br from-aeo-cyan/10 via-neutral-950 to-aeo-purple/10 border border-white/15 rounded-3xl text-center space-y-4 shadow-2xl">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white">Ready to Optimise Your Shopify Store for AI Search?</h3>
-            <p className="text-xs text-white/70 max-w-lg mx-auto font-light leading-relaxed">
-              Get a manual AI visibility scan for your Shopify store. Learn how ChatGPT, Google AI Overviews, and Perplexity parse your product catalog today.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/diagnostic"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-xs sm:text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
-              >
-                <span>Run Free Store Scan</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/15 text-white hover:bg-white/10 font-semibold text-xs sm:text-sm transition-colors"
-              >
-                <span>View $995 Blueprint</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            {/* Deliverables Ownership Statement */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
+                  <span>Use the completed work and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          {/* Bottom-Up Link to Root Hub */}
-          <div className="pt-2 flex">
-            <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors flex items-center gap-1">
-              <span>&larr; Back to</span>
-              <strong className="text-white hover:underline">AEO Services Overview</strong>
-            </Link>
-          </div>
-        </section>
+          {/* 3. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          <section id="shopify-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
+
+              <div className="text-center space-y-3 mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                  <Search className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Instant Shopify Store Scan</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Shopify Visibility Scan</h3>
+                <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
+                  Enter your store URL to check your Liquid schema data, collection page structures, and product visibility signals across AI platforms.
+                </p>
+              </div>
+
+              {diagnosticSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">Store Scan Diagnostic Submitted</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you. Our AEObility e-commerce team will audit your store&apos;s product graph data and send your gap report within 24 business hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleDiagnosticSubmit} className="space-y-6">
+                  {/* Strict 12-Column Grid Layout */}
+                  <div className="grid grid-cols-12 gap-4">
+                    {/* Store URL Field - Col Span 12 */}
+                    <div className="col-span-12 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="diag-store-url">
+                        Shopify Store URL
+                      </label>
+                      <input
+                        type="text"
+                        id="diag-store-url"
+                        required
+                        value={diagnosticData.storeUrl}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, storeUrl: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. mystore.com.au or mystore.myshopify.com"
+                      />
+                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                        Checks your Shopify Liquid feed nesting, product graph data, and collection page structural formatting.
+                      </p>
+                    </div>
+
+                    {/* First Name Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
+                    <div className="col-span-12 md:col-span-6 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="diag-name">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="diag-name"
+                        required
+                        value={diagnosticData.name}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Sarah"
+                      />
+                    </div>
+
+                    {/* Primary Email Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
+                    <div className="col-span-12 md:col-span-6 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="diag-email">
+                        Primary Email
+                      </label>
+                      <input
+                        type="email"
+                        id="diag-email"
+                        required
+                        value={diagnosticData.email}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="sarah@mystore.com.au"
+                      />
+                    </div>
+
+                    <div className="col-span-12">
+                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                        We use your details strictly to deliver your custom store visibility score and technical gap report.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Submission Action Button & In-Line Risk Reversal Banner */}
+                  <div className="pt-2 space-y-4">
+                    <button
+                      type="submit"
+                      className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                    >
+                      <span>Run Free Store Scan</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+
+                    {/* Risk Reversal Banner */}
+                    <div className="p-3 bg-black/50 border border-white/10 rounded-xl text-center text-xs text-zinc-300 font-serif leading-relaxed">
+                      Clear scope. Fixed pricing. No lock-in contracts. Every diagnostic evaluation maps directly to practical next steps.
+                    </div>
+                  </div>
+                </form>
+              )}
+            </div>
+          </section>
+
+          {/* 4. Technical Building Blocks Reassurance (S1 & S2 Focus) */}
+          <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations (S1 &amp; S2)</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical engineering areas for product data and collection page optimization.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div id="s1-product-schema" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                    <Tag className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-cyan-400 font-bold">FOUNDATION S1</span>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Product Data &amp; Schema Integration</h3>
+                  </div>
+                </div>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  Structure product variants, pricing, availability, and GTIN details so AI assistants cite your store accurately. Ensures search engines extract clean product details without missing data.
+                </p>
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  For technical teams: Validates Product, Offer, and AggregateRating JSON-LD schema against visible Liquid store templates.
+                </p>
+                <div className="pt-1">
+                  <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
+                    <span>AEO Technical Sprints Package</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              <div id="s2-collection-structure" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                    <Layers className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-purple-400 font-bold">FOUNDATION S2</span>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Collection Page &amp; Search Intent Optimization</h3>
+                  </div>
+                </div>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  Rewrite and format collection pages into clear answer blocks that match high-intent customer search queries. Connects main collection hubs with sub-category pages cleanly.
+                </p>
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  For technical teams: Refactors collection page headers and category descriptions into structured answer units.
+                </p>
+                <div className="pt-1">
+                  <Link href="/services/aeo/procedures" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
+                    <span>Learn more about AEO Procedures</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 5. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility Shopify AEO sprints.</p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-3">
+              {faqs.map((faq, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-zinc-950/80 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="text-sm font-bold text-white">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-cyan-400 transition-transform duration-300 shrink-0 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
+                        isOpen ? 'block' : 'hidden'
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* 6. Bottom Conversion CTA Block + Direct Contact Form */}
+          <section id="shopify-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
+            <div className="max-w-md mx-auto space-y-4">
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Shopify Store Enquiry</h2>
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+                Tell us about your Shopify store and product data priorities. We will confirm the scope and price before you commit. Request a <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Quote Request</Link>.
+              </p>
+              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
+                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>You will speak with an AEObility specialist based in Perth. Vince Baker, AEObility’s founder, reviews more complex scopes and strategic enquiries.</span>
+              </div>
+            </div>
+
+            {/* Inline Shopify Contact Form */}
+            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
+              <div className="flex items-center justify-between gap-4 mb-1.5">
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss Your Shopify Store</h3>
+                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
+                  Shopify AEO Sprint
+                </span>
+              </div>
+              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
+                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
+              </p>
+
+              {contactSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">Shopify Enquiry Received</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you for reaching out. Our AEObility e-commerce team will review your details and get in touch within 24 business hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="shop-name">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="shop-name"
+                        required
+                        value={contactData.name}
+                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Vince Baker"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="shop-email">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="shop-email"
+                        required
+                        value={contactData.email}
+                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="vince@example.com.au"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="shop-service-type">
+                      What would you like to discuss?
+                    </label>
+                    <select
+                      id="shop-service-type"
+                      value={contactData.serviceType}
+                      onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
+                    >
+                      <option value="blueprint">E-Commerce Blueprint ($995 AUD)</option>
+                      <option value="micro-sprint">Product Data Micro-Sprint (From $495 AUD)</option>
+                      <option value="foundation">Comprehensive Store Foundation (From $3,195 AUD)</option>
+                      <option value="unsure">Not sure yet — Help me decide</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="shop-website">
+                      Shopify Store URL (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="shop-website"
+                      value={contactData.website}
+                      onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      placeholder="mystore.com.au"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="shop-message">
+                      Product Data or Collection Issues to Address
+                    </label>
+                    <textarea
+                      id="shop-message"
+                      required
+                      rows={3}
+                      value={contactData.message}
+                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                      placeholder="Tell us about your product catalog or collection page priorities..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                  >
+                    <span>Discuss Your Shopify Store</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+
+                  <p className="text-[11px] text-zinc-500 text-center font-serif">
+                    Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
+                  </p>
+                </form>
+              )}
+            </div>
+          </section>
+
+        </div>
       </main>
 
       <Footer />
