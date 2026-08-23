@@ -1,7 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
+import { trackGaEvent } from '@/lib/gtag';
+import { getCanonicalAeoSchemaGraph } from '@/lib/schema/canonicalAeo';
 import {
   ArrowRight,
   Eye,
@@ -18,1005 +26,732 @@ import {
   HelpCircle,
   BookOpen,
   BarChart3,
-  Layers
+  Layers,
+  Users,
+  Calendar,
+  Search,
+  Rocket,
+  Boxes,
+  FileCheck,
+  ChevronDown,
+  Code,
+  Compass
 } from 'lucide-react';
-import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
-  title: "Answer Engine Optimisation (AEO) Services — AEObility",
-  description: "Improve how clearly your business, services, and expertise are explained across your website, local presence, and answer-led search experiences.",
-  alternates: {
-    canonical: "https://aeobility.com.au/services/aeo",
+export const AEO_CANONICAL_INTERNAL_LINKS = [
+  {
+    targetSlug: "/services/aeo/definition",
+    anchorText: "What is AEO?",
+    entityRelation: "http://schema.org/isRelatedTo"
   },
-};
+  {
+    targetSlug: "/services/aeo/comparison",
+    anchorText: "AEO vs SEO Comparison",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/services/aeo/shopify",
+    anchorText: "Shopify AEO Services",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/services/aeo/local-business",
+    anchorText: "Local Business AEO",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/solutions/aeo-sprint",
+    anchorText: "focused micro-sprints",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/solutions/aeo-blueprint",
+    anchorText: "The AEObility Blueprint",
+    entityRelation: "http://schema.org/isRelatedTo"
+  }
+];
 
 export default function AEORootPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/android-chrome-512x512.png"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://aeobility.com.au/#website",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au",
-        "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://aeobility.com.au/services/aeo#faq",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/services/aeo#webpage"
-        },
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the difference between AEO and traditional SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Traditional SEO focuses on improving discoverability, technical quality, and organic rankings in search engines. Answer Engine Optimisation (AEO) builds on SEO by making key business facts, services, and decision-stage answers clearer and more structured for answer-led search experiences."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does comparison content help AEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Comparison content can help when it answers a real customer decision clearly and fairly. It should explain the options, comparison criteria, trade-offs, and situations each option suits. It does not promise rankings, citations, or recommendations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Should my business publish \"X vs Y\" pages?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Publish comparison pages when customers genuinely compare those options and you can provide a balanced, evidence-led answer. Use consistent criteria, acknowledge limitations, and give readers practical selection guidance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is AEO a replacement for SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. AEO complements SEO. Technical SEO, helpful content, site usability, local visibility, and authority remain important foundations of search performance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does AEO help with local search and Google Maps?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. AEO strengthens local business detail consistency (name, address, phone number, services, and operating regions), improving local search visibility and voice assistant accuracy."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is included in the $995 AEObility Blueprint?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The $995 AEObility Blueprint includes a digital presence review, service and content assessment, technical and structured-data review, a 90-day action roadmap, a 45-minute strategy walkthrough, and 100% credit-back terms towards subsequent implementation sprints."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/aeo#webpage",
-        "url": "https://aeobility.com.au/services/aeo",
-        "name": "Answer Engine Optimisation (AEO) Services — AEObility",
-        "description": "Improve how clearly your business, services, and expertise are explained across your website, local presence, and answer-led search experiences.",
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/#website"
-        },
-        "about": [
-          { "@id": "https://aeobility.com.au/services/aeo#service" },
-          { "@id": "https://aeobility.com.au/services/aeo#benefits" },
-          { "@id": "https://aeobility.com.au/services/aeo#glossary" }
-        ],
-        "mentions": [
-          { "@type": "Thing", "name": "Search Engine Optimisation" },
-          { "@type": "Thing", "name": "Answer Engine Optimisation" },
-          { "@type": "Thing", "name": "Structured Data" }
-        ],
-        "breadcrumb": {
-          "@id": "https://aeobility.com.au/services/aeo#breadcrumb"
-        },
-        "mainEntity": {
-          "@id": "https://aeobility.com.au/services/aeo#service"
-        },
-        "hasPart": [
-          { "@id": "https://aeobility.com.au/services/aeo#howto" },
-          { "@id": "https://aeobility.com.au/services/aeo#faq" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://aeobility.com.au/services/aeo#service",
-        "name": "Answer Engine Optimisation (AEO) Services",
-        "description": "Improve how clearly your business, services, and expertise are explained across your website, local presence, and answer-led search experiences.",
-        "provider": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "mainEntityOfPage": {
-          "@id": "https://aeobility.com.au/services/aeo#webpage"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "AEO Service Deliverables",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AEO Readiness Audit"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AEO Strategy and Content Roadmap"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Answer and Comparison Content Blueprint"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Technical and Structured-Data Implementation"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Measurement and Improvement Sprints"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://aeobility.com.au/services/aeo#benefits",
-        "name": "Why Clear, Structured Information Matters",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Improve Information Clarity" },
-          { "@type": "ListItem", "position": 2, "name": "Reduce Ambiguity" },
-          { "@type": "ListItem", "position": 3, "name": "Support Confident Decisions" },
-          { "@type": "ListItem", "position": 4, "name": "Strengthen Local Consistency" },
-          { "@type": "ListItem", "position": 5, "name": "Build Durable Search Foundations" }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://aeobility.com.au/services/aeo#howto",
-        "name": "Our AEO Delivery Process",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "01 Assess",
-            "text": "Review current content clarity, technical search fundamentals, and business information consistency."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "02 Prioritise",
-            "text": "Identify high-value service pages, customer decision questions, and structured data priorities."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "03 Implement",
-            "text": "Deploy content updates, FAQ frameworks, comparison guides, and eligible schema markup."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "04 Review",
-            "text": "Monitor performance metrics, lead quality, and user search feedback to refine content."
-          }
-        ]
-      },
-      {
-        "@type": "DefinedTermSet",
-        "@id": "https://aeobility.com.au/services/aeo#glossary",
-        "name": "Plain-Language Glossary of Terms",
-        "hasDefinedTerm": [
-          {
-            "@type": "DefinedTerm",
-            "name": "Entity",
-            "description": "A distinct thing, such as a business, person, service, product, or location."
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Structured data",
-            "description": "Code that helps search engines understand key page details."
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Answer engine",
-            "description": "A search or conversational platform that provides direct answers alongside or instead of traditional search results."
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "RAG",
-            "description": "A technique some AI systems use to retrieve relevant information before generating an answer."
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Comparison content",
-            "description": "Content that fairly evaluates options against consistent criteria."
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Decision guide",
-            "description": "Content that helps a prospective customer choose an appropriate product, service, or approach."
-          }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://aeobility.com.au/services/aeo#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://aeobility.com.au/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://aeobility.com.au/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "AEO Services",
-            "item": "https://aeobility.com.au/services/aeo"
-          }
-        ]
-      }
-    ]
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+
+  const [diagnosticData, setDiagnosticData] = useState({
+    websiteUrl: '',
+    name: '',
+    email: ''
+  });
+
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    website: '',
+    serviceType: 'unsure',
+    message: ''
+  });
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const aeoVsSeoTable = [
-    {
-      area: "Primary purpose",
-      seo: "Improve discoverability and organic performance in search",
-      aeo: "Make important information clearer and more useful in answer-led search experiences"
-    },
-    {
-      area: "Core foundations",
-      seo: "Technical quality, helpful content, relevance, authority, internal linking, local signals, and user experience",
-      aeo: "Direct answers, consistent business facts, entity clarity, structured information, and decision-support content"
-    },
-    {
-      area: "Typical outputs",
-      seo: "Service pages, local pages, guides, product or category pages, and technical improvements",
-      aeo: "FAQs, definitions, comparison pages, service explainers, and structured data where appropriate"
-    },
-    {
-      area: "Relationship",
-      seo: "The essential search foundation",
-      aeo: "A complementary layer built on strong SEO"
+  const selectSprintForForm = (typeKey: string) => {
+    setContactData(prev => ({ ...prev, serviceType: typeKey }));
+    const formElement = document.getElementById('aeo-contact-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
     }
-  ];
+  };
 
-  const decisionFramework = [
-    {
-      title: "Choose SEO first when",
-      badge: "Search Foundations",
-      borderColor: "border-blue-500/30 text-blue-400",
-      points: [
-        "Your site has technical, content, local visibility, or authority fundamentals to improve",
-        "You rely on organic traffic from category, service, product, or informational searches",
-        "Your priority is increasing qualified website visits and traditional search visibility"
-      ]
-    },
-    {
-      title: "Add AEO when",
-      badge: "Answer Clarity",
-      borderColor: "border-aeo-cyan/40 text-aeo-cyan",
-      points: [
-        "Customers regularly ask detailed questions before they enquire or purchase",
-        "Your service pages need clearer explanations of scope, suitability, locations, and outcomes",
-        "You want to improve the consistency and answer-readiness of key business information"
-      ]
-    },
-    {
-      title: "Use both when",
-      badge: "Full-Funnel Strategy",
-      borderColor: "border-aeo-purple/40 text-aeo-purple",
-      points: [
-        "You need strong organic visibility and clear decision-stage content",
-        "You are a local or regional business with service, location, and trust information to clarify",
-        "You want a durable search strategy that supports users across conventional and AI-led search experiences"
-      ]
-    }
-  ];
+  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'canonical_aeo_diagnostic_form',
+      lead_type: 'aeo_visibility_scan',
+      value: 1,
+    });
+    setDiagnosticSubmitted(true);
+    setTimeout(() => {
+      setDiagnosticSubmitted(false);
+      setDiagnosticData({ websiteUrl: '', name: '', email: '' });
+    }, 6000);
+  };
 
-  const comparisonFormats = [
-    {
-      question: "Is AEO different from SEO?",
-      format: "AEO vs SEO guide",
-      decision: "Differences, overlap, and priority order"
-    },
-    {
-      question: "Do I need local SEO, AEO, or both?",
-      format: "Local SEO and AEO guide",
-      decision: "Which foundation a local business needs first"
-    },
-    {
-      question: "Which engagement suits me?",
-      format: "Blueprint vs sprint vs implementation",
-      decision: "Scope, inclusions, timing, and next step"
-    }
-  ];
-
-  const serviceModules = [
-    {
-      badge: "01. Audit",
-      label: "AEO Readiness Audit",
-      desc: "A practical assessment of current content clarity, technical search fundamentals, and business information consistency.",
-      deliverables: [
-        "Crawlability and indexation review",
-        "Business-data consistency check",
-        "Core-page content review",
-        "Prioritised audit findings & recommendations"
-      ],
-      linkHref: "/services/ai-search-marketing",
-      linkText: "Learn About Audits"
-    },
-    {
-      badge: "02. Strategy",
-      label: "AEO Strategy and Content Roadmap",
-      desc: "Define service and topic priorities, customer question research, internal linking structures, and execution timelines.",
-      deliverables: [
-        "Service and topic priority map",
-        "Customer-question intent research",
-        "Internal-linking architecture plan",
-        "Step-by-step implementation roadmap"
-      ],
-      linkHref: "/services/aeo/definition",
-      linkText: "View Strategy Framework"
-    },
-    {
-      badge: "03. Content",
-      label: "Answer and Comparison Content Blueprint",
-      desc: "Develop clear FAQ frameworks, service-page briefs, comparison templates, and customer decision paths.",
-      deliverables: [
-        "FAQ content framework & answer briefs",
-        "Service-page structural briefs",
-        "Comparison-page content templates",
-        "Conversion path & next-step design"
-      ],
-      specialCallout: {
-        title: "Comparison Content Blueprint",
-        text: "We identify decision-stage questions that matter to your customers and plan useful comparison pages, selection guides, service tables, and supporting FAQs. Each blueprint defines the user question, comparison criteria, evidence requirements, information structure, internal links, and conversion path."
-      },
-      linkHref: "/services/aeo/procedures",
-      linkText: "Explore Blueprint Setup"
-    },
-    {
-      badge: "04. Implementation",
-      label: "Technical and Structured-Data Implementation",
-      desc: "Deploy on-page content updates, eligible Schema.org microdata, internal linking fixes, and site-template improvements.",
-      deliverables: [
-        "On-page content & heading structural updates",
-        "Structured data implementation (Service, Org, FAQ)",
-        "Internal link integration & URL hierarchy fixes",
-        "Site-template improvements & schema validation"
-      ],
-      linkHref: "/services/aeo/shopify",
-      linkText: "View Implementation Scope"
-    },
-    {
-      badge: "05. Measurement",
-      label: "Measurement and Improvement Sprints",
-      desc: "Ongoing performance reviews, content iteration backlogs, lead-quality feedback tracking, and quarterly priorities.",
-      deliverables: [
-        "Quarterly performance review & reporting",
-        "Content iteration & refinement backlog",
-        "Lead-quality & conversion feedback review",
-        "Technical health checks & quarterly priorities"
-      ],
-      linkHref: "/solutions",
-      linkText: "Explore Sprint Options"
-    }
-  ];
-
-  const whyClearInfoMatters = [
-    {
-      icon: <Eye className="w-5 h-5 text-aeo-cyan" />,
-      title: "Improve Information Clarity",
-      desc: "Make it easier for customers to understand your services, locations, operating details, expertise, and next steps."
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5 text-aeo-purple" />,
-      title: "Reduce Ambiguity",
-      desc: "Use explicit, current business facts and plain-language explanations so key information is less open to misinterpretation."
-    },
-    {
-      icon: <Award className="w-5 h-5 text-aeo-cyan" />,
-      title: "Support Confident Decisions",
-      desc: "Give prospective customers clear service details, FAQs, comparisons, proof points, and suitable next actions."
-    },
-    {
-      icon: <MapPin className="w-5 h-5 text-aeo-purple" />,
-      title: "Strengthen Local Consistency",
-      desc: "Review important business details—name, contact details, location, service area, and local profiles—for accuracy and consistency."
-    },
-    {
-      icon: <Brain className="w-5 h-5 text-aeo-cyan" />,
-      title: "Build Durable Search Foundations",
-      desc: "Create useful, accessible, well-structured pages that support people first and remain valuable as search experiences evolve."
-    }
-  ];
-
-  const deliveryProcess = [
-    { step: "01", name: "Assess", desc: "Review current content clarity, technical search fundamentals, and business information consistency." },
-    { step: "02", name: "Prioritise", desc: "Identify high-value service pages, customer decision questions, and structured data priorities." },
-    { step: "03", name: "Implement", desc: "Deploy content updates, FAQ frameworks, comparison guides, and eligible schema markup." },
-    { step: "04", name: "Review", desc: "Monitor performance metrics, lead quality, and user search feedback to refine content." }
-  ];
-
-  const plainGlossary = [
-    { term: "Entity", definition: "A distinct thing, such as a business, person, service, product, or location." },
-    { term: "Structured data", definition: "Code that helps search engines understand key page details." },
-    { term: "Answer engine", definition: "A search or conversational platform that provides direct answers alongside or instead of traditional search results." },
-    { term: "RAG", definition: "A technique some AI systems use to retrieve relevant information before generating an answer." },
-    { term: "Comparison content", definition: "Content that fairly evaluates options against consistent criteria." },
-    { term: "Decision guide", definition: "Content that helps a prospective customer choose an appropriate product, service, or approach." }
-  ];
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackGaEvent('generate_lead', {
+      event_category: 'lead_generation',
+      form_id: 'canonical_aeo_contact_form',
+      lead_type: 'aeo_services_enquiry',
+      service_selected: contactData.serviceType,
+      value: 1,
+    });
+    setContactSubmitted(true);
+    setTimeout(() => {
+      setContactSubmitted(false);
+      setContactData({ name: '', email: '', website: '', serviceType: 'unsure', message: '' });
+    }, 6000);
+  };
 
   const faqs = [
     {
-      q: "What is the difference between AEO and traditional SEO?",
-      a: "Traditional SEO focuses on improving discoverability, technical quality, and organic rankings in search engines. Answer Engine Optimisation (AEO) builds on SEO by making key business facts, services, and decision-stage answers clearer and more structured for answer-led search experiences."
+      question: "What is the difference between AEO and traditional SEO?",
+      answer: "Traditional SEO focuses on improving discoverability, technical quality, and organic rankings in search engines. Answer Engine Optimisation (AEO) builds on SEO by making key business facts, services, and decision-stage answers clearer and more structured for answer-led search experiences and AI search assistants."
     },
     {
-      q: "Does comparison content help AEO?",
-      a: "Comparison content can help when it answers a real customer decision clearly and fairly. It should explain the options, comparison criteria, trade-offs, and situations each option suits. It does not promise rankings, citations, or recommendations."
+      question: "Does comparison content help AEO?",
+      answer: "Comparison content helps when it answers real customer decision prompts clearly and objectively. Explaining service options, comparison criteria, trade-offs, and target suitability gives search platforms and AI agents clear structured evidence to reference."
     },
     {
-      q: "Should my business publish \"X vs Y\" pages?",
-      a: "Publish comparison pages when customers genuinely compare those options and you can provide a balanced, evidence-led answer. Use consistent criteria, acknowledge limitations, and give readers practical selection guidance."
+      question: "Is AEO a replacement for traditional SEO?",
+      answer: "No. AEO complements SEO. Technical SEO, helpful content, fast page speed, site usability, local visibility, and domain authority remain essential foundations of search performance."
     },
     {
-      q: "Is AEO a replacement for SEO?",
-      a: "No. AEO complements SEO. Technical SEO, helpful content, site usability, local visibility, and authority remain important foundations of search performance."
+      question: "Does AEO help with local search and Google Maps?",
+      answer: "Yes. AEO strengthens local business detail consistency (name, address, phone number, services, and operating regions), improving local search visibility and voice assistant accuracy across Maps and local search packs."
     },
     {
-      q: "Does AEO help with local search and Google Maps?",
-      a: "Yes. AEO strengthens local business detail consistency (name, address, phone number, services, and operating regions), improving local search visibility and voice assistant accuracy."
+      question: "What is included in the $995 AEObility Blueprint?",
+      answer: "The Blueprint includes a complete digital presence audit, technical gap analysis, visibility scorecard, and a practical 90-day execution roadmap. If you proceed with Foundation Implementation within 60 days, the full $995 Blueprint fee is credited toward your implementation cost."
     },
     {
-      q: "What is included in the $995 AEObility Blueprint?",
-      a: "The $995 AEObility Blueprint includes a digital presence review, service and content assessment, technical and structured-data review, a 90-day action roadmap, a 45-minute strategy walkthrough, and 100% credit-back terms towards subsequent implementation sprints."
+      question: "How long does an AEO sprint take to deliver?",
+      answer: "Most targeted Micro-Sprints are delivered within 4–5 business days after scope and access are confirmed. Foundation Implementation is delivered across a structured four-week schedule with agreed milestones."
     }
   ];
 
-  const blueprintInclusions = [
-    { item: "Digital presence review", desc: "A practical assessment of current content, technical, and business-information priorities" },
-    { item: "Service and content assessment", desc: "Recommendations for key service pages, FAQs, decision guides, and comparison opportunities" },
-    { item: "Technical and structured-data review", desc: "A prioritised implementation checklist where applicable" },
-    { item: "90-day action roadmap", desc: "Clear work priorities, dependencies, suggested sequence, and next steps" },
-    { item: "Strategy walkthrough", desc: "A 45-minute session to explain findings and answer questions" }
+  const pillars = [
+    {
+      icon: <Layers className="w-6 h-6 text-aeo-cyan" />,
+      title: "1. Machine-Readable Structure",
+      description: "Deploy nested JSON-LD schema markup (Organization, Service, Offer, LocalBusiness) so scrapers and search systems can extract structured facts without missing data."
+    },
+    {
+      icon: <Brain className="w-6 h-6 text-aeo-purple" />,
+      title: "2. Atomic Content Clarity",
+      description: "Restructure service copy into concise, self-contained answer blocks formatted around real customer decision queries and high-intent search prompts."
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6 text-aeo-cyan" />,
+      title: "3. Internal Linking Lattice",
+      description: "Connect core service hubs, sub-node specialisations, and regional location pages with explicit contextual internal links that reinforce topic authority."
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-aeo-purple" />,
+      title: "4. Corroborated Brand Authority",
+      description: "Align core NAP details, verified credentials, and client evidence across external citations and authority profiles to build machine trust."
+    }
   ];
+
+  const engagementPaths = [
+    {
+      key: "micro-sprint",
+      anchorId: "aeo-micro-sprints",
+      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
+      title: "AEO Technical Micro-Sprint",
+      code: "SS1 / SS2",
+      price: "From $495 AUD",
+      priceSub: "ex. GST",
+      scope: "One priority page or schema fix",
+      description: "Choose one focused priority for $495 AUD ex. GST: Structured Schema Deployment, Single Page Atomic Rewrite, or Category Answer Unit.",
+      techNote: "For technical teams: Deployment of nested JSON-LD graphs and atomic HTML passage markup.",
+      whenToChoose: "Choose this when you have one specific page or schema gap limiting AI search readability.",
+      ctaLabel: "Discuss Micro-Sprint"
+    },
+    {
+      key: "foundation",
+      anchorId: "aeo-foundation",
+      icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
+      title: "Foundation Implementation",
+      code: "MACRO TIER",
+      price: "From $3,195 AUD",
+      priceSub: "ex. GST",
+      scope: "Connected multi-page & entity improvements",
+      description: "Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures in a focused four-week engagement.",
+      techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
+      whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
+      ctaLabel: "Discuss Foundation Tier"
+    },
+    {
+      key: "blueprint",
+      anchorId: "aeo-blueprint",
+      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      title: "The AEObility Blueprint",
+      code: "BPSTRAT",
+      price: "$995 AUD",
+      priceSub: "ex. GST",
+      scope: "Full digital audit & 90-day roadmap",
+      description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work.",
+      techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
+      whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
+      ctaLabel: "Discuss $995 Blueprint"
+    }
+  ];
+
+  const jsonLdGraph = getCanonicalAeoSchemaGraph(faqs);
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* JSON-LD Schema */}
+      {/* Unified JSON-LD Connected Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
-
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-14">
-        <section className="flex flex-col gap-12">
-          
-          {/* SECTION 1 — Refined Hero */}
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Plain-Language AEO Services for Australian SMBs</span>
-            </div>
-            
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Answer Engine <span className="text-gradient-aeo">Optimisation (AEO)</span> Services
-            </h1>
-            
-            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl font-light">
-              Improve how clearly your business, services, and expertise are explained across your website, local presence, and answer-led search experiences.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="btn-primary flex items-center gap-2"
-              >
-                <span>Explore the $995 Blueprint</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/book"
-                className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-2"
-              >
-                <span>Book a Strategy Call</span>
-              </Link>
-            </div>
-          </div>
+      <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
+        <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* SECTION 2 — Direct Answer Block ("What is AEO?") */}
-          <section className="atomic-answer-block p-6 md:p-8 bg-white/[0.02] border border-white/10 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
-            <div className="flex items-center gap-2 text-xs text-aeo-cyan font-mono font-semibold uppercase tracking-wider">
-              <FileText className="w-4 h-4" />
-              <h2>What is AEO?</h2>
+          {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
+          <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <Sparkles className="w-4 h-4 text-aeo-cyan" />
+              <span>Answer Engine Optimisation (AEO) Services</span>
             </div>
-            <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-              Answer Engine Optimisation (AEO) is the practice of making important business information clear, accurate, well structured, and easy to verify across your website and supporting digital presence. It works alongside SEO to help search engines and answer-led platforms interpret relevant services, locations, expertise, and customer answers.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+              AEO Services — <span className="text-gradient-aeo">Get Found. Get Chosen.</span>
+            </h1>
+            <div className="space-y-3 max-w-2xl mx-auto">
+              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+                Restructure your digital footprint for AI-first search engines and modern discovery platforms. Clear scope. Flat rates.
+              </h2>
+              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
+                <span>Micro-Sprints from $495 AUD ex. GST</span>
+                <span className="text-zinc-600">|</span>
+                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+              </div>
+            </div>
+
+            {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
+            <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
+              <Image
+                src="/images/services/canonical-aeo-services-hub_AEObility.webp"
+                alt="AEObility canonical Answer Engine Optimisation dashboard mapping 4 foundational pillars, structured content deliverables, and AEO sprint execution."
+                width={1200}
+                height={800}
+                className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
+
+              {/* Overlaid Hero CTAs */}
+              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
+                <div className="text-left space-y-0.5 sm:space-y-1">
+                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AEO foundation.</span>
+                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => selectSprintForForm('micro-sprint')}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-black shrink-0" />
+                    <span>Discuss AEO Services</span>
+                  </button>
+                  <a
+                    href="#aeo-diagnostic-form"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <span>Run a free AEO scan</span>
+                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xs text-zinc-400 font-serif">
+              Looking for specialized solutions? Explore <Link href="/services/aeo/shopify" className="text-cyan-400 hover:underline font-medium">Shopify AEO Services</Link> or <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link>.
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-white/5">
-              <div className="space-y-1">
-                <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Clarify your offer
-                </h3>
-                <p className="text-xs text-white/60 font-light leading-relaxed">
-                  Explain services, locations, expertise, pricing factors, and proof points consistently.
-                </p>
+          </section>
+
+          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {engagementPaths.map((path, idx) => (
+                <div id={path.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
+                        {path.icon}
+                      </div>
+                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                        {path.code}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{path.title}</h3>
+                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
+                        {path.price} <span className="text-[10px] text-zinc-400 font-normal">{path.priceSub}</span>
+                      </div>
+                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {path.scope}</span>
+                    </div>
+
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
+                      {path.description}
+                    </p>
+
+                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
+                      <strong className="text-white block mb-0.5">When to choose:</strong>
+                      <span>{path.whenToChoose}</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 pt-3 border-t border-white/5">
+                    <p className="text-[10px] text-zinc-500 font-mono leading-tight">{path.techNote}</p>
+                    <button
+                      type="button"
+                      onClick={() => selectSprintForForm(path.key)}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+                    >
+                      <span>{path.ctaLabel}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Clean 3-Tier Comparison Matrix Table */}
+            <div id="aeo-comparison" className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md scroll-mt-24">
+              <table className="w-full text-left text-xs font-serif border-collapse min-w-[580px]">
+                <thead>
+                  <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
+                    <th className="p-3.5 sm:p-4">Service / Tier</th>
+                    <th className="p-3.5 sm:p-4">Target Scope</th>
+                    <th className="p-3.5 sm:p-4">Best For</th>
+                    <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Technical Micro-Sprint</td>
+                    <td className="p-3.5 sm:p-4">1 Defined Priority Page / Schema Fix</td>
+                    <td className="p-3.5 sm:p-4">Quick fix for one specific issue</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                    <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
+                    <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
+                    <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
+                    <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Inclusions Box */}
+            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 font-bold text-white text-sm">
+                <FileCheck className="w-4 h-4 text-cyan-400" />
+                <span>Every AEObility Engagement includes:</span>
               </div>
-              <div className="space-y-1">
-                <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Strengthen search foundations
-                </h3>
-                <p className="text-xs text-white/60 font-light leading-relaxed">
-                  Improve helpful content, internal linking, local business information, technical quality, and eligible structured data.
-                </p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-aeo-cyan" />
-                  Support customer decisions
-                </h3>
-                <p className="text-xs text-white/60 font-light leading-relaxed">
-                  Create direct answers, FAQs, service explainers, and fair comparison content for common pre-purchase questions.
-                </p>
+              <ul className="space-y-2 text-xs text-zinc-300 font-serif">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>One agreed business priority, specified schema deployment, or page rewrite work.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Validation checks, summary of completed changes, and handover notes.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                  <span>Typical delivery: 4–5 business days for Micro-Sprints. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Deliverables Ownership Statement */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
+                  <span>Use completed code and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 3 — AEO vs SEO: How They Work Together */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Search Strategy</span>
-              <h2 className="text-2xl font-bold">AEO vs SEO: How They Work Together</h2>
-            </div>
-
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.01]">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-white/10 bg-white/[0.03]">
-                    <th className="p-4 font-bold text-white/90 w-1/4">Area</th>
-                    <th className="p-4 font-bold text-blue-400 w-3/8">SEO</th>
-                    <th className="p-4 font-bold text-aeo-cyan w-3/8">AEO</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5">
-                  {aeoVsSeoTable.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 font-semibold text-white/80 font-mono">{row.area}</td>
-                      <td className="p-4 text-white/60 font-light leading-relaxed">{row.seo}</td>
-                      <td className="p-4 text-white/90 font-light leading-relaxed bg-aeo-cyan/[0.02]">{row.aeo}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <p className="text-xs text-white/70 font-light leading-relaxed bg-white/[0.02] p-4 rounded-xl border border-white/5">
-              <strong className="text-white font-semibold">Supporting note:</strong> AEO is not a replacement for SEO. Strong SEO remains essential; AEO builds on those foundations by making key business information more explicit, consistent, and useful for answer-led discovery.
-            </p>
-          </div>
-
-          {/* SECTION 4 — When to Use SEO, AEO, or Both */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Decision Framework</span>
-              <h2 className="text-2xl font-bold">When to Use SEO, AEO, or Both</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {decisionFramework.map((card, idx) => (
-                <div key={idx} className={`p-6 bg-white/[0.02] border ${card.borderColor} rounded-2xl space-y-4 flex flex-col justify-between`}>
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 inline-block">
-                      {card.badge}
-                    </span>
-                    <h3 className="text-base font-bold text-white">{card.title}</h3>
-                    <ul className="space-y-2.5 pt-2">
-                      {card.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex gap-2 items-start text-xs font-light text-white/75 leading-relaxed">
-                          <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* SECTION 5 — Comparison Content for Decision-Stage Search */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Buyer Intent</span>
-              <h2 className="text-2xl font-bold">Comparison Content for Decision-Stage Search</h2>
-            </div>
-
-            <p className="text-xs md:text-sm text-white/80 font-light leading-relaxed max-w-3xl">
-              Comparison content helps people decide between real options, including AEO vs SEO, local SEO vs AEO, a Blueprint vs an implementation sprint, or different service approaches. It can support answer-led visibility because it gives readers a clear, evidence-based answer to questions such as &ldquo;What is the difference?&rdquo; and &ldquo;Which option is right for me?&rdquo; It does not guarantee rankings, AI citations, recommendations, or visibility on a particular platform.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
-                <h3 className="text-sm font-bold text-white font-mono">Content Standards We Follow:</h3>
-                <ul className="space-y-2 text-xs font-light text-white/70 leading-relaxed">
-                  <li className="flex gap-2 items-start">
-                    <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                    <span>Base pages on genuine questions customers ask.</span>
-                  </li>
-                  <li className="flex gap-2 items-start">
-                    <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                    <span>Compare options using consistent criteria: suitability, scope, cost factors, timeframe, limitations, and expected outcomes.</span>
-                  </li>
-                  <li className="flex gap-2 items-start">
-                    <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                    <span>Explain trade-offs fairly, including when an alternative approach may be better.</span>
-                  </li>
-                  <li className="flex gap-2 items-start">
-                    <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                    <span>Support claims with experience, methodology, first-party evidence, and credible sources.</span>
-                  </li>
-                  <li className="flex gap-2 items-start">
-                    <Check className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                    <span>End with practical guidance: &ldquo;Choose this when...&rdquo;</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <h3 className="text-sm font-bold text-white font-mono">Example Comparison Formats:</h3>
-                  <div className="space-y-2.5">
-                    {comparisonFormats.map((cf, idx) => (
-                      <div key={idx} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-xs space-y-1">
-                        <div className="flex justify-between items-center">
-                          <span className="font-bold text-white">{cf.question}</span>
-                          <span className="font-mono text-[10px] text-aeo-cyan">{cf.format}</span>
-                        </div>
-                        <p className="text-white/60 font-light text-[11px]">{cf.decision}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* SECTION 6 — Simplified Service Names & Deliverables */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Practical Deliverables</span>
-              <h2 className="text-2xl font-bold">Services &amp; Scope of Work</h2>
-              <p className="text-xs text-white/60 font-light max-w-xl">
-                Tangible deliverables and clear scope descriptions tailored for Australian businesses.
-              </p>
+          {/* 3. The 4 Foundational AEO Pillars */}
+          <section id="aeo-pillars" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Our Four Foundational Framework Pillars</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">A structured approach to machine readability, content clarity, and entity trust.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {serviceModules.map((module, idx) => (
-                <div key={idx} className={`p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col justify-between space-y-4 hover:border-white/20 transition-all ${idx === 2 ? 'md:col-span-2' : ''}`}>
-                  <div className="space-y-4">
-                    <span className="text-xs font-mono font-bold text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-1 rounded-full border border-aeo-cyan/20 inline-block">
-                      {module.badge}
-                    </span>
+              {pillars.map((pillar, idx) => (
+                <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-3 text-left">
+                  <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="text-base font-bold text-white font-soehne-breit">{pillar.title}</h3>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-                    <h3 className="text-lg font-bold text-white">{module.label}</h3>
-                    <p className="text-xs text-white/70 leading-relaxed font-light">{module.desc}</p>
+          {/* 4. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          <section id="aeo-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
 
-                    <div className="space-y-2">
-                      <span className="text-[11px] font-mono text-white/50 uppercase tracking-wider block">Deliverables include:</span>
-                      <ul className="space-y-2">
-                        {module.deliverables.map((del, dIdx) => (
-                          <li key={dIdx} className="flex gap-2 items-start text-xs font-light text-white/80 leading-relaxed">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                            <span>{del}</span>
-                          </li>
-                        ))}
-                      </ul>
+              <div className="text-center space-y-3 mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                  <Search className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Instant AEO Visibility Scan</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free AEO Visibility Scan</h3>
+                <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
+                  Enter your website URL to check structured data, entity clarity, and AI search readiness signals.
+                </p>
+              </div>
+
+              {diagnosticSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">AEO Visibility Scan Submitted</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you. Our AEObility team will audit your website structure and send your gap report within 24 business hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleDiagnosticSubmit} className="space-y-6">
+                  {/* Strict 12-Column Grid Layout */}
+                  <div className="grid grid-cols-12 gap-4">
+                    {/* Website URL Field - Col Span 12 */}
+                    <div className="col-span-12 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="aeo-diag-url">
+                        Website URL
+                      </label>
+                      <input
+                        type="text"
+                        id="aeo-diag-url"
+                        required
+                        value={diagnosticData.websiteUrl}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, websiteUrl: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. mybusiness.com.au"
+                      />
+                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                        We check website structure, structured-data setup, and content clarity for common visibility gaps.
+                      </p>
                     </div>
 
-                    {module.specialCallout && (
-                      <div className="p-4 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-xl space-y-1.5 mt-2">
-                        <h4 className="text-xs font-bold text-aeo-cyan font-mono flex items-center gap-1.5">
-                          <Layers className="w-3.5 h-3.5" />
-                          {module.specialCallout.title} (Named Deliverable)
-                        </h4>
-                        <p className="text-xs text-white/70 font-light leading-relaxed">
-                          {module.specialCallout.text}
-                        </p>
-                      </div>
-                    )}
+                    {/* First Name Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
+                    <div className="col-span-12 md:col-span-6 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="aeo-diag-name">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="aeo-diag-name"
+                        required
+                        value={diagnosticData.name}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Sarah"
+                      />
+                    </div>
+
+                    {/* Primary Email Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
+                    <div className="col-span-12 md:col-span-6 space-y-1.5">
+                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="aeo-diag-email">
+                        Primary Email
+                      </label>
+                      <input
+                        type="email"
+                        id="aeo-diag-email"
+                        required
+                        value={diagnosticData.email}
+                        onChange={(e) => setDiagnosticData({ ...diagnosticData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="sarah@mybusiness.com.au"
+                      />
+                    </div>
+
+                    <div className="col-span-12">
+                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                        We use your details to deliver your AEO visibility score and gap report. We will not add you to marketing communications without your consent.
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/5 flex justify-end">
-                    <Link
-                      href={module.linkHref}
-                      className="text-xs font-bold text-aeo-cyan hover:underline inline-flex items-center gap-1"
+                  {/* Submission Action Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
                     >
-                      {module.linkText}
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                      <span>Run Free AEO Visibility Scan</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
                   </div>
-                </div>
-              ))}
+                </form>
+              )}
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 7 — Why Clear, Structured Information Matters */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Business Impact</span>
-              <h2 className="text-2xl font-bold">Why Clear, Structured Information Matters</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {whyClearInfoMatters.map((card, idx) => (
-                <div key={idx} className={`p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 ${idx === 4 ? 'md:col-span-2' : ''}`}>
-                  <div className="flex items-center gap-2">
-                    {card.icon}
-                    <h3 className="font-bold text-sm text-white">{card.title}</h3>
-                  </div>
-                  <p className="text-xs text-white/60 leading-relaxed font-light">{card.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* SECTION 8 — Process: Assess, Prioritise, Implement, Review */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Methodology</span>
-              <h2 className="text-2xl font-bold">Our Delivery Process</h2>
+          {/* 5. Operational 3-Step Process Flow Pipeline Graphic */}
+          <section id="aeo-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How AEO Sprints Work</h2>
+              <p className="text-xs text-white/60 font-serif">Clear sequence from initial scan to complete handover notes.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {deliveryProcess.map((step, idx) => (
-                <div key={idx} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl relative space-y-2">
-                  <span className="text-xs font-mono font-bold text-aeo-purple/60">{step.step}</span>
-                  <h3 className="text-sm font-bold text-white">{step.name}</h3>
-                  <p className="text-xs text-white/60 leading-relaxed font-light">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* SECTION 9 — Evidence from Implementation (Case Study) */}
-          <div className="p-6 md:p-8 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl space-y-4 border-l-aeo-purple border-l-4">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-purple">
-                  <BarChart3 className="w-4 h-4" />
-                  <span>EVIDENCE FROM IMPLEMENTATION</span>
-                </div>
-                <h3 className="text-xl font-bold text-white">Baby Bento eCommerce Case Study</h3>
-              </div>
-              
-              <Link
-                href="/knowledge-hub/case-studies/baby-bento"
-                className="px-4 py-2.5 rounded-xl bg-aeo-purple/20 border border-aeo-purple/40 text-white font-bold text-xs hover:bg-aeo-purple/30 transition-all inline-flex items-center gap-2 whitespace-nowrap self-start md:self-auto"
-              >
-                <span>Read Full Case Study</span>
-                <ArrowUpRight className="w-4 h-4 text-aeo-cyan" />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-xs">
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                <span className="font-mono text-[10px] text-white/50 uppercase block">Starting position</span>
-                <p className="text-white/80 font-light leading-relaxed">
-                  E-commerce retailer needed clearer product data structures, category decision content, and rich microdata.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">1</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Scan &amp; Access</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run a free scan or confirm your site priorities with our AEO team.</p>
               </div>
 
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                <span className="font-mono text-[10px] text-white/50 uppercase block">Work completed</span>
-                <p className="text-white/80 font-light leading-relaxed">
-                  Restructured Liquid product data feeds, deployed rich product schema microdata, and created direct answer FAQs.
-                </p>
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-purple-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-purple-950 border border-purple-500/40 text-purple-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(168,85,247,0.2)]">2</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">4–5 Day Execution</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Deploy agreed schema markup, atomic page rewrites, or internal linking.</p>
               </div>
 
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                <span className="font-mono text-[10px] text-white/50 uppercase block">Evidence &amp; Results</span>
-                <p className="text-white/90 font-medium leading-relaxed">
-                  Achieved a <strong className="text-aeo-cyan font-bold">+17% sales uplift</strong> and a <strong className="text-aeo-cyan font-bold">+95% CTR increase</strong> in search answer placements over 90 days.
-                </p>
-              </div>
-
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1">
-                <span className="font-mono text-[10px] text-white/50 uppercase block">Limitations</span>
-                <p className="text-white/80 font-light leading-relaxed">
-                  Results reflect combined site improvements; individual performance varies by catalog size and market conditions.
-                </p>
-              </div>
-
-              <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1 md:col-span-2 lg:col-span-2">
-                <span className="font-mono text-[10px] text-white/50 uppercase block">Key lesson for SMBs</span>
-                <p className="text-white/80 font-light leading-relaxed">
-                  Structured entity clarity and explicit product specifications directly improve search understanding and pre-purchase conversion readiness.
-                </p>
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
+                <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">3</div>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Validation &amp; Handover</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run validation checks and receive complete documentation &amp; ownership notes.</p>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 10 — Plain-Language Glossary */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider">Plain Language</span>
-              <h2 className="text-2xl font-bold">Glossary of Key Terms</h2>
-              <p className="text-xs text-white/60 font-light max-w-xl">
-                Simple definitions for terms used in Answer Engine Optimisation.
+          {/* 6. Bottom Conversion CTA Block + Direct Contact Form */}
+          <section id="aeo-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
+            <div className="max-w-md mx-auto space-y-4">
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss AEO Services</h2>
+              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
+                Tell us about your business goals and Answer Engine Optimisation priorities. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
               </p>
+              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
+                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {plainGlossary.map((g, idx) => (
-                <div key={idx} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl space-y-1">
-                  <h3 className="text-xs font-bold text-aeo-cyan font-mono">{g.term}</h3>
-                  <p className="text-xs text-white/60 leading-relaxed font-light">{g.definition}</p>
-                </div>
-              ))}
-            </div>
+            {/* Inline AEO Contact Form */}
+            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
+              <div className="flex items-center justify-between gap-4 mb-1.5">
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss AEO Services</h3>
+                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
+                  AEO Sprint
+                </span>
+              </div>
+              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
+                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
+              </p>
 
-            <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl text-xs flex items-center justify-between">
-              <span className="text-white/60 font-light">Looking for deep technical guides?</span>
-              <Link href="/knowledge-hub/guides" className="text-aeo-cyan hover:underline font-bold inline-flex items-center gap-1">
-                Explore Knowledge Hub Guides <BookOpen className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* SECTION 11 — Complete FAQs (100% Visible & Schema Mapped) */}
-          <div className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider">Questions &amp; Answers</span>
-              <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <details
-                  key={idx}
-                  className="group bg-white/[0.01] border border-white/5 rounded-xl p-5 cursor-pointer open:bg-white/[0.03] transition-colors"
-                >
-                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm">
-                    <span>{faq.q}</span>
-                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300 font-mono text-lg">+</span>
-                  </summary>
-                  <p className="mt-4 text-xs text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/40 font-light">
-                    {faq.a}
+              {contactSubmitted ? (
+                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
+                  <h4 className="font-bold text-white text-base">AEO Enquiry Received</h4>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Thank you for reaching out. Our AEObility team will review your details and get in touch within 24 business hours.
                   </p>
-                </details>
-              ))}
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="aeo-name">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="aeo-name"
+                        required
+                        value={contactData.name}
+                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="e.g. Vince Baker"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="aeo-email">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="aeo-email"
+                        required
+                        value={contactData.email}
+                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        placeholder="vince@example.com.au"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="aeo-service-type">
+                      What would you like to discuss?
+                    </label>
+                    <select
+                      id="aeo-service-type"
+                      value={contactData.serviceType}
+                      onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
+                    >
+                      <option value="unsure">Not sure yet — Help me decide</option>
+                      <option value="micro-sprint">AEO Micro-Sprint (From $495 AUD)</option>
+                      <option value="blueprint">The AEObility Blueprint ($995 AUD)</option>
+                      <option value="foundation">Foundation Implementation (From $3,195 AUD)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="aeo-website">
+                      Website URL (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="aeo-website"
+                      value={contactData.website}
+                      onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      placeholder="mybusiness.com.au"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="aeo-message">
+                      What would you like help with?
+                    </label>
+                    <textarea
+                      id="aeo-message"
+                      required
+                      rows={3}
+                      value={contactData.message}
+                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                      placeholder="For example: schema markup deployment, restructuring key service pages, or a 90-day AEO roadmap..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                  >
+                    <span>Discuss AEO Services</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+
+                  <p className="text-[11px] text-zinc-500 text-center font-serif">
+                    Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
+                  </p>
+                </form>
+              )}
             </div>
-          </div>
+          </section>
 
-          {/* SECTION 12 — Expanded $995 AEObility Blueprint Section */}
-          <div className="p-8 md:p-10 bg-gradient-to-br from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6 mt-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-aeo-cyan/10 rounded-full filter blur-3xl -z-10" />
-            
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-semibold">
-              <Zap className="w-3.5 h-3.5" />
-              <span>Prioritised Search Visibility Roadmap</span>
+          {/* 7. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          <section id="faq-aeo" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility AEO services.</p>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              Start with the <span className="text-gradient-aeo">AEObility Blueprint</span>
-            </h2>
-            
-            <p className="text-xs md:text-sm text-white/80 max-w-xl mx-auto font-light leading-relaxed">
-              For businesses that want a prioritised AEO and search-visibility roadmap before committing to implementation.
-            </p>
-
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-black/50 text-left max-w-3xl mx-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
-                    <th className="p-3.5 font-bold text-aeo-cyan font-mono">Included</th>
-                    <th className="p-3.5 font-bold text-white">What the client receives</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5">
-                  {blueprintInclusions.map((inc, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02]">
-                      <td className="p-3.5 font-semibold text-white/90">{inc.item}</td>
-                      <td className="p-3.5 text-white/70 font-light leading-relaxed">{inc.desc}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="max-w-3xl mx-auto space-y-3">
+              {faqs.map((faq, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-zinc-950/80 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="text-sm font-bold text-white">{faq.question}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-cyan-400 transition-transform duration-300 shrink-0 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
+                        isOpen ? 'block' : 'hidden'
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+          </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left max-w-3xl mx-auto pt-2">
-              <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono text-white/50 block">TIMEFRAME</span>
-                <p className="text-xs font-bold text-white">5–7 Business Days</p>
-              </div>
-              <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono text-white/50 block">PRICE</span>
-                <p className="text-xs font-bold text-white">$995 AUD</p>
-              </div>
-              <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono text-white/50 block">WALKTHROUGH</span>
-                <p className="text-xs font-bold text-white">45-Minute Session</p>
-              </div>
-              <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono font-semibold text-aeo-cyan block">CREDIT-BACK</span>
-                <p className="text-xs font-bold text-white">100% Credited</p>
-              </div>
-            </div>
-
-            <p className="text-[11px] text-white/60 font-light max-w-lg mx-auto">
-              *100% credited toward a qualifying subsequent AEO implementation sprint.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 pt-2">
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs rounded-xl hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)]"
-              >
-                <span>Get the AEObility Blueprint</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/book"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-semibold text-xs rounded-xl hover:bg-white/10 transition-all"
-              >
-                <span>Book a Strategy Call</span>
-              </Link>
-            </div>
-          </div>
-
-        </section>
+        </div>
       </main>
 
       <Footer />
