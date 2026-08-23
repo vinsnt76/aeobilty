@@ -248,7 +248,7 @@ export default function LocalBusinessAEOPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/local-business-visibility-perth_AEObility.webp"
+                src="/images/services/aeo-local-business_perth_AEObility.webp"
                 alt="AEObility Local Search & AEO for Trades & Clinics strategy diagram showcasing location schema injection and citation alignment."
                 width={1200}
                 height={800}

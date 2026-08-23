@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Local Search & AEO for Trades & Clinics | AEObility',
     description: 'Connect your trade service or clinic locations with local customers. Fixed-scope citation clean-up and local schema sprints from $495 ex. GST.',
-    images: ['https://www.aeobility.com.au/images/services/local-business-visibility-perth_AEObility.webp'],
+    images: ['https://www.aeobility.com.au/images/services/aeo-local-business_perth_AEObility.webp'],
   },
   keywords: [
     'local business visibility',
