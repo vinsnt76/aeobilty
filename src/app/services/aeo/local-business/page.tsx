@@ -332,28 +332,28 @@ export default function LocalBusinessAEOPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
-              {/* Overlaid Hero CTAs */}
+              {/* Overlaid Hero CTAs with Elevated Free Scan Highlight */}
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
                 <div className="text-left space-y-0.5 sm:space-y-1">
                   <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one local signal gap or build a complete local foundation.</span>
                   <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
+                  <a
+                    href="#local-diagnostic-form"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <Search className="w-4 h-4 text-black shrink-0" />
+                    <span>Run a Free Local Scan</span>
+                  </a>
                   <button
                     type="button"
                     onClick={() => selectSprintForForm('micro-sprint')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Discuss Local AEO</span>
+                    <Calendar className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                    <span>Discuss Local Sprints</span>
                   </button>
-                  <a
-                    href="#local-diagnostic-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <span>Run a free local scan</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
-                  </a>
                 </div>
               </div>
             </div>
@@ -626,16 +626,16 @@ export default function LocalBusinessAEOPage() {
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Local Visibility Blueprint</td>
-                    <td className="p-3.5 sm:p-4">Local Profile Audit &amp; 90-Day Roadmap</td>
-                    <td className="p-3.5 sm:p-4">Businesses needing diagnostic direction</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Unified Local Foundation</td>
                     <td className="p-3.5 sm:p-4">Multi-Location &amp; Service Area Fixes</td>
                     <td className="p-3.5 sm:p-4">Multi-location clinics &amp; growing trade services</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Local Visibility Blueprint</td>
+                    <td className="p-3.5 sm:p-4">Local Profile Audit &amp; 90-Day Roadmap</td>
+                    <td className="p-3.5 sm:p-4">Businesses needing diagnostic direction</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
                   </tr>
                 </tbody>
               </table>
@@ -699,6 +699,18 @@ export default function LocalBusinessAEOPage() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Mid-Page Duplicate Scan CTA for High-Converting Scroll Traffic */}
+            <div className="text-center pt-4">
+              <a
+                href="#local-diagnostic-form"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
+              >
+                <Search className="w-4 h-4 text-black" />
+                <span>Run Free Local Signal Scan</span>
+                <ArrowRight className="w-4 h-4 text-black" />
+              </a>
             </div>
           </section>
 
@@ -795,7 +807,7 @@ export default function LocalBusinessAEOPage() {
                         value={diagnosticData.name}
                         onChange={(e) => setDiagnosticData({ ...diagnosticData, name: e.target.value })}
                         className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="e.g. Dr. James"
+                        placeholder="e.g. Sarah"
                       />
                     </div>
 
@@ -811,7 +823,7 @@ export default function LocalBusinessAEOPage() {
                         value={diagnosticData.email}
                         onChange={(e) => setDiagnosticData({ ...diagnosticData, email: e.target.value })}
                         className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="james@myclinic.com.au"
+                        placeholder="sarah@mybusiness.com.au"
                       />
                     </div>
 
@@ -822,7 +834,7 @@ export default function LocalBusinessAEOPage() {
                     </div>
                   </div>
 
-                  {/* Submission Action Button & In-Line Risk Reversal Banner */}
+                  {/* Submission Action Button & Single Consolidated In-Line Risk Reversal Banner */}
                   <div className="space-y-3 pt-2">
                     <button
                       type="submit"
@@ -832,7 +844,7 @@ export default function LocalBusinessAEOPage() {
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                     <p className="text-[11px] text-zinc-400 font-serif text-center">
-                      Clear scope. Fixed pricing. No lock-in contracts. Every diagnostic evaluation maps directly to practical next steps.
+                      Clear scope. Upfront flat rates. No lock-in contracts. Every evaluation maps to practical next steps.
                     </p>
                   </div>
                 </form>
@@ -917,7 +929,7 @@ export default function LocalBusinessAEOPage() {
                         value={contactData.name}
                         onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
                         className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="e.g. Dr. Vince Baker"
+                        placeholder="e.g. Sarah Jenkins"
                       />
                     </div>
                     <div>
@@ -931,7 +943,7 @@ export default function LocalBusinessAEOPage() {
                         value={contactData.email}
                         onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
                         className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="vince@example.com.au"
+                        placeholder="sarah@example.com.au"
                       />
                     </div>
                   </div>
@@ -948,8 +960,8 @@ export default function LocalBusinessAEOPage() {
                     >
                       <option value="unsure">Not sure yet — Help me decide</option>
                       <option value="micro-sprint">Proximity Micro-Sprint (From $495 AUD)</option>
-                      <option value="blueprint">Local Visibility Blueprint ($995 AUD)</option>
                       <option value="foundation">Unified Local Foundation (From $3,195 AUD)</option>
+                      <option value="blueprint">Local Visibility Blueprint ($995 AUD)</option>
                     </select>
                   </div>
 
