@@ -282,7 +282,7 @@ export default function LocalBusinessAEOPage() {
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/services/aeo-local-business_perth_AEObility.webp"
-                alt="AEObility Local Search & AEO for Local Businesses strategy diagram showcasing location schema injection and citation alignment."
+                alt="Clean smartphone UI display emphasizing an optimized map pin interaction state"
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -321,12 +321,12 @@ export default function LocalBusinessAEOPage() {
             </p>
           </section>
 
-          {/* 2. "Signs Your Local Signals Are Broken" (Symptom Checklist) */}
+          {/* 2. Dominating Local Map Packs (Symptom Checklist) */}
           <section id="symptoms" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Problem Identification</span>
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Dominating Local Map Packs</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Signs Your Local Search Signals Are Broken</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Common visibility and trust issues preventing local enquiries.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Ensure your local business gets found on maps and surfaces in local search optimisation Perth &amp; national proximity engines.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -349,12 +349,12 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 3. Refactored Audience Experience: Built for Service Areas & Local Locations */}
+          {/* 3. Optimizing for Voice and Conversational Assistant Proximity */}
           <section id="audience-pathways" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Business Model Alignment</span>
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Optimizing for Voice and Conversational Assistant Proximity</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Built for Service Areas &amp; Local Locations</h2>
-              <p className="text-xs text-white/60 font-serif">Select your business model to explore how AEObility structures your location signals.</p>
+              <p className="text-xs text-white/60 font-serif">Proximity algorithm targeting and local entity profiles for businesses seeking aeo marketers near me and aeo services near me.</p>
             </div>
 
             {/* Audience Toggle Tabs */}
@@ -708,11 +708,12 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 5. Refactored Technical Building Blocks Section */}
+          {/* 5. Clear Entity Signals for Local Trades */}
           <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Clear Entity Signals for Local Trades</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How We Fix Your Local Search Signals</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical specifications detailing how your business data and location signals are structured.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical specifications detailing how hyper-local coordinates, NAP consistency, and service area schema are structured.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

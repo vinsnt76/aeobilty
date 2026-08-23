@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Local Search & AEO for Local Businesses | AEObility',
-  description: 'Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers. Micro-Sprints from $495 ex. GST.',
+  title: 'Local Business Visibility across Maps & AI Search | AEObility',
+  description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
   alternates: {
     canonical: 'https://www.aeobility.com.au/services/aeo/local-business',
   },
   openGraph: {
-    title: 'Local Search & AEO for Local Businesses | AEObility',
-    description: 'Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers. Micro-Sprints from $495 ex. GST.',
+    title: 'Local Business Visibility across Maps & AI Search | AEObility',
+    description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
     url: 'https://www.aeobility.com.au/services/aeo/local-business',
     siteName: 'AEObility',
     locale: 'en_AU',
@@ -16,19 +16,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Local Search & AEO for Local Businesses | AEObility',
-    description: 'Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers.',
+    title: 'Local Business Visibility across Maps & AI Search | AEObility',
+    description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
     images: ['https://www.aeobility.com.au/images/services/aeo-local-business_perth_AEObility.webp'],
   },
   keywords: [
     'local business visibility',
-    'local search and aeo for local businesses',
     'aeo marketers near me',
     'aeo services near me',
     'get found on maps',
     'local search optimisation perth',
     'proximity algorithm targeting',
-    'aeo consultant perth'
+    'local entity profiles',
+    'NAP consistency',
+    'hyper-local coordinates',
+    'service area schema'
   ]
 };
 
