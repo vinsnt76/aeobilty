@@ -1,5 +1,5 @@
 /**
- * AEObility Local Business Visibility Schema.org Graph Builder
+ * AEObility Local Business Visibility Production Schema.org Graph Builder
  * Path: src/lib/schema/localBusinessAeo.ts
  */
 
@@ -11,24 +11,38 @@ export interface FaqItem {
 export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: any[] = [
     {
-      "@type": "WebPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#webpage",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
-      "name": "Local Search & AEO for Local Businesses | AEObility",
-      "description": "Fix inconsistent business details, missing suburb schema, and location mapping gaps across Search, Maps, and AI answers. Micro-Sprints from $495 ex. GST.",
-      "inLanguage": "en-AU",
-      "isPartOf": {
-        "@id": "https://www.aeobility.com.au/#website"
+      "@type": "Organization",
+      "@id": "https://www.aeobility.com.au/#organization",
+      "name": "AEObility",
+      "legalName": "Trekaboutoz trading as AEObility",
+      "url": "https://www.aeobility.com.au/",
+      "telephone": "+61480286282",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ABN",
+        "value": "61 029 803 255"
       },
-      "about": {
+      "sameAs": [
+        "https://www.linkedin.com/company/133445734/",
+        "https://www.instagram.com/aeo.bility/",
+        "https://www.facebook.com/profile.php?id=61591781069830",
+        "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg",
+        "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.aeobility.com.au/#website",
+      "url": "https://www.aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
         "@id": "https://www.aeobility.com.au/#organization"
       },
-      "breadcrumb": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#breadcrumb"
-      },
-      "mainEntity": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#service"
-      }
+      "inLanguage": "en-AU"
     },
     {
       "@type": "BreadcrumbList",
@@ -49,7 +63,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "AEO Services",
+          "name": "AEO & SEO",
           "item": "https://www.aeobility.com.au/services/aeo"
         },
         {
@@ -61,83 +75,234 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ]
     },
     {
-      "@type": "Service",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#service",
-      "name": "Local Search & AEO for Local Businesses",
-      "alternateName": "Local Business GEO & AEO Marketing",
-      "description": "Fixed-scope local visibility sprints for service area businesses, storefronts, and clinics across Perth and Australian markets.",
-      "provider": {
+      "@type": "WebPage",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#webpage",
+      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "name": "Local Business Visibility across Maps & AI Search",
+      "headline": "Local Search & AEO for Local Businesses",
+      "description": "Fixed-scope local search and AEO services for Australian trades, clinics and local service businesses. Fix inconsistent business details, missing suburb schema, citation gaps and location mapping issues across Search, Maps and AI answers.",
+      "inLanguage": "en-AU",
+      "isPartOf": {
+        "@id": "https://www.aeobility.com.au/#website"
+      },
+      "publisher": {
         "@id": "https://www.aeobility.com.au/#organization"
       },
-      "areaServed": [
-        { "@type": "Country", "name": "Australia" },
-        { "@type": "AdministrativeArea", "name": "Western Australia" },
-        { "@type": "City", "name": "Perth" }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Australian trades, medical clinics, service area businesses, and regional business owners"
+      "breadcrumb": {
+        "@id": "https://www.aeobility.com.au/services/aeo/local-business#breadcrumb"
       },
-      "hasOfferCatalog": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#catalog"
-      }
-    },
-    {
-      "@type": "OfferCatalog",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#catalog",
-      "name": "AEObility Local Business Visibility Services",
-      "itemListElement": [
+      "mainEntity": {
+        "@id": "https://www.aeobility.com.au/services/aeo/local-business#service"
+      },
+      "about": [
+        { "@type": "Thing", "name": "Local search optimisation" },
+        { "@type": "Thing", "name": "Google Business Profile optimisation" },
+        { "@type": "Thing", "name": "LocalBusiness structured data" },
+        { "@type": "Thing", "name": "Citation and NAP consistency" },
+        { "@type": "Thing", "name": "Service-area SEO" },
+        { "@type": "Thing", "name": "AI search optimisation" }
+      ],
+      "potentialAction": [
         {
-          "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-proximity-sprint",
-          "name": "Proximity Micro-Sprint",
-          "sku": "SS1-SS4-MICRO",
-          "price": "495.00",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock",
-          "description": "Target a defined local signal issue: Location Schema Injection ($495), Service Schema Injection ($495), or Citation Clean-Up & NAP Standardisation ($495 ex. GST).",
-          "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
+          "@type": "ContactAction",
+          "name": "Request a local AEO quote",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.aeobility.com.au/contact",
+            "inLanguage": "en-AU"
           }
         },
         {
-          "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-foundation",
-          "name": "Unified Local Foundation",
-          "sku": "SS1-SS4-MACRO",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": "3195.00",
-            "priceCurrency": "AUD",
-            "valueAddedTaxIncluded": false
-          },
-          "availability": "https://schema.org/InStock",
-          "description": "For multi-location clinics or growing trade services, combine your structured data, cross-directory consistency, and internal location page connections in a focused four-week engagement starting from $3,195 AUD ex. GST.",
-          "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
-          }
-        },
-        {
-          "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-blueprint",
-          "name": "Local Visibility Blueprint",
-          "sku": "BPSTRAT",
-          "price": "995.00",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock",
-          "description": "Audit local profile structures, map coordinate logic, and existing structured data. Receive a practical 90-day regional execution roadmap. Price excludes GST.",
-          "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
+          "@type": "CommunicateAction",
+          "name": "Run a free local visibility scan",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.aeobility.com.au/services/aeo/local-business#local-diagnostic-form",
+            "inLanguage": "en-AU"
           }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#service",
+      "name": "Local Business Visibility across Maps & AI Search",
+      "alternateName": [
+        "Local Search & AEO for Local Businesses",
+        "Local Search & Proximity Optimisation",
+        "Local Business GEO"
+      ],
+      "description": "Fixed-scope local search, Maps and AI search optimisation for Australian trade businesses, clinics, storefronts and regional service providers. Services address local structured data, citation consistency, Google Business Profile alignment, service-area content and multi-location internal linking.",
+      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "provider": {
+        "@id": "https://www.aeobility.com.au/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "audience": [
+        { "@type": "BusinessAudience", "audienceType": "Australian trade and mobile service businesses" },
+        { "@type": "BusinessAudience", "audienceType": "Australian clinics and local storefront businesses" },
+        { "@type": "BusinessAudience", "audienceType": "Multi-location and regional service businesses" }
+      ],
+      "serviceType": [
+        "Local search optimisation",
+        "Local SEO",
+        "Local AEO",
+        "Google Business Profile alignment",
+        "LocalBusiness schema implementation",
+        "Citation clean-up",
+        "NAP standardisation",
+        "Service-area page restructuring",
+        "Multi-location internal linking"
+      ],
+      "termsOfService": "https://www.aeobility.com.au/terms",
+      "hasOfferCatalog": {
+        "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-catalog"
+      },
+      "offers": [
+        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer" },
+        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer" },
+        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-catalog",
+      "name": "AEObility Local Business Visibility Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Proximity Micro-Sprints",
+          "itemListElement": [
+            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer" }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Local Foundation Services",
+          "itemListElement": [
+            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer" }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Local Strategy and Diagnostic Services",
+          "itemListElement": [
+            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer" }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer",
+      "name": "Proximity Micro-Sprint",
+      "description": "A fixed-scope local signal repair for one priority issue, including LocalBusiness or service schema injection, or citation clean-up and NAP standardisation.",
+      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "price": "495",
+      "priceCurrency": "AUD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "495",
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "description": "From $495 AUD excluding GST."
+      },
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Proximity Micro-Sprint",
+        "serviceType": [
+          "LocalBusiness schema implementation",
+          "Service schema implementation",
+          "Citation clean-up",
+          "NAP standardisation"
+        ],
+        "provider": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer",
+      "name": "Unified Local Foundation",
+      "description": "A four-week local visibility implementation for multi-location clinics and growing trade services, combining structured data, citation consistency and internal location-page connections.",
+      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "price": "3195",
+      "priceCurrency": "AUD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "3195",
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "description": "From $3,195 AUD excluding GST."
+      },
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Unified Local Foundation",
+        "serviceType": [
+          "Multi-location schema graph implementation",
+          "Cross-directory NAP alignment",
+          "Internal location linking",
+          "Service-area optimisation"
+        ],
+        "provider": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer",
+      "name": "Local Visibility Blueprint",
+      "description": "A fixed-price local visibility audit and 90-day execution roadmap covering local profile structures, map coordinate logic and existing structured data. The Blueprint fee is credited toward Foundation work.",
+      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "price": "995",
+      "priceCurrency": "AUD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "995",
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "description": "$995 AUD excluding GST."
+      },
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Local Visibility Blueprint",
+        "serviceType": [
+          "Local profile audit",
+          "Structured data audit",
+          "Map coordinate review",
+          "90-day local visibility roadmap"
+        ],
+        "provider": {
+          "@id": "https://www.aeobility.com.au/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        }
+      }
     }
   ];
 
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#faq-local",
+      "@id": "https://www.aeobility.com.au/services/aeo/local-business#faq",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,
