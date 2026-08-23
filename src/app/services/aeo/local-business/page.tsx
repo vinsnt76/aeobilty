@@ -33,7 +33,10 @@ import {
   FileText,
   Activity,
   Check,
-  Home
+  Home,
+  ShieldAlert,
+  HelpCircle,
+  CheckSquare
 } from 'lucide-react';
 
 export const LOCAL_BUSINESS_AEO_INTERNAL_LINKS = [
@@ -131,12 +134,17 @@ export default function LocalBusinessAEOPage() {
     {
       title: "You have a good website, but calls and bookings remain inconsistent",
       symptom: "Visitors land on generic service pages that lack clear suburb details, operating hours or immediate contact actions.",
-      solution: "We rewrite key service pages into self-contained atomic answer blocks that make calling or booking straightforward."
+      solution: "We rewrite key service pages into self-contained atomic answer blocks that make calling or booking straightforward for AI search systems and answer engines."
     },
     {
       title: "Your multi-location business sends authority to the wrong page",
       symptom: "Search engines direct local patients or clients to your main head-office page instead of their nearest branch or clinic.",
       solution: "We build a multi-location schema graph and internal linking lattice to pass authority directly to individual clinic/branch pages."
+    },
+    {
+      title: "Duplicate profiles or outdated former location listings",
+      symptom: "Former trading addresses or legacy duplicate Google Business profiles remain online, confusing both maps algorithms and local clients.",
+      solution: "We submit verified profile consolidation requests and inject canonical source schema on your domain to establish primary source authority."
     }
   ];
 
@@ -153,7 +161,7 @@ export default function LocalBusinessAEOPage() {
       description: "Target a defined local signal issue: Location Schema Injection ($495 AUD ex. GST), Service Schema Injection ($495 AUD ex. GST), or Citation Clean-Up & NAP Standardisation ($495 AUD ex. GST).",
       techNote: "For technical teams: Deployment of LocalBusiness schema and directory NAP standardisation.",
       whenToChoose: "Choose this when you have one specific location schema or directory citation discrepancy limiting local search visibility.",
-      ctaLabel: "Discuss Micro-Sprint"
+      ctaLabel: "Request Scope for This Sprint"
     },
     {
       key: "foundation",
@@ -167,7 +175,7 @@ export default function LocalBusinessAEOPage() {
       description: "For multi-location clinics or growing trade services, combine your structured data, cross-directory consistency, and internal location page connections into one focused four-week engagement.",
       techNote: "For technical teams: Multi-location schema graphs, cross-directory NAP alignment, and internal linking lattice.",
       whenToChoose: "Choose this when your business operates across multiple locations or requires connected improvements across service areas.",
-      ctaLabel: "Discuss Foundation Tier"
+      ctaLabel: "Request Scope for This Sprint"
     },
     {
       key: "blueprint",
@@ -177,11 +185,11 @@ export default function LocalBusinessAEOPage() {
       code: "BPSTRAT",
       price: "$995 AUD",
       priceSub: "ex. GST",
-      scope: "Full local profile audit & 90-day roadmap",
-      description: "Audit your local profile structures, map coordinate logic, and existing structured data. Receive a practical 90-day regional execution roadmap. 100% credited toward Foundation work.",
+      scope: "Full diagnostic inventory & 90-day roadmap",
+      description: "Audit your local profile structures, map coordinate logic, and existing structured data. Receive a full diagnostic inventory, prioritised 90-day roadmap, implementation sequence, scope assumptions and investment plan. 100% credited toward Foundation work.",
       techNote: "For technical teams: Local signal audit, map coordinate review, and geographic query fan-out mapping.",
       whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
-      ctaLabel: "Discuss $995 Blueprint"
+      ctaLabel: "Help Me Choose a Sprint"
     }
   ];
 
@@ -202,13 +210,37 @@ export default function LocalBusinessAEOPage() {
       icon: <Wrench className="w-6 h-6 text-cyan-400" />,
       title: "Restructure service-area pages into clear answers (Service Area Restructuring)",
       code: "S2 Series",
-      description: "Structure suburb and service area pages into self-contained atomic answer blocks answering specific local queries (e.g. emergency plumbing responses, clinical consultation hours) for RAG scrapers."
+      description: "Structure suburb pages that answer a local customer's question clearly, so search and AI search systems can identify the right service and location. Technical implementation: atomic answer blocks, structured service-area entities and internal location linking."
     },
     {
       icon: <Stethoscope className="w-6 h-6 text-purple-400" />,
       title: "Connect multi-location authority (Internal Location Lattice)",
       code: "S3 Series",
       description: "Link core service pages to regional clinic or suburb location pages using structured anchor text to pass local search authority directly to individual branch locations."
+    }
+  ];
+
+  const evidenceCards = [
+    {
+      badge: "CITATION ALIGNMENT ARTEFACT",
+      title: "Directory NAP & Hours Standardisation Register",
+      problem: "Different phone numbers and operating hours across Yellow Pages, TrueLocal, and Google Business Profile caused machine confusion.",
+      solution: "Deployed canonical NAP schema and submitted profile alignment notices across priority Australian business directories.",
+      deliverable: "Directory Update Register + Verified Schema Validation Result"
+    },
+    {
+      badge: "MULTI-LOCATION ARTEFACT",
+      title: "Branch Location & Internal Lattice Architecture",
+      problem: "Satellite clinic queries were directed to the head-office CBD domain, causing patient booking friction for Joondalup searches.",
+      solution: "Constructed multi-location MedicalClinic schema graph and connected branch specialty pages directly to location booking nodes.",
+      deliverable: "Location Schema Graph + Changed-Page Code Handover Notes"
+    },
+    {
+      badge: "SERVICE AREA ARTEFACT",
+      title: "Suburb Answer Unit Restructuring",
+      problem: "Generic service pages lacked suburb-specific details, preventing AI search assistants from recognizing true service radiuses.",
+      solution: "Reorganized core service pages into structured suburb answer units answering specific local queries.",
+      deliverable: "Atomic Answer Unit Files + Implementation Change Log"
     }
   ];
 
@@ -219,7 +251,7 @@ export default function LocalBusinessAEOPage() {
     },
     {
       question: "Do you handle healthcare clinic advertising and compliance guidelines in Australia?",
-      answer: "Yes. For medical practices, dental clinics, and allied health providers, all content, schema markup, and patient trust messaging adhere strictly to Australian Health Practitioner Regulation Agency (AHPRA) advertising guidelines. We focus on verifiable facts, operating hours, practitioner details, and direct booking paths."
+      answer: "Yes. For medical practices, dental clinics, and allied health providers, all content, schema markup, and patient trust messaging adhere strictly to Australian Health Practitioner Regulation Agency (AHPRA) advertising guidelines. We focus on verifiable facts, operating hours, practitioner details, and direct booking paths without making false clinical or patient acquisition guarantees."
     },
     {
       question: "Can AEObility work with our existing web developer or internal team?",
@@ -231,7 +263,7 @@ export default function LocalBusinessAEOPage() {
     },
     {
       question: "What is the difference between the Free Local Scan and the $995 Blueprint?",
-      answer: "The Free Local Scan provides a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next actions. The AEObility Blueprint ($995 AUD ex. GST) is an in-depth digital presence audit and 90-day execution roadmap—which is 100% credited if you book Foundation Implementation within 60 days."
+      answer: "The Free Local Scan provides a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next step. The AEObility Blueprint ($995 AUD ex. GST) is a full diagnostic inventory, prioritised 90-day roadmap, implementation sequence, scope assumptions and investment plan—which is 100% credited if you book Foundation Implementation within 60 days."
     },
     {
       question: "Are there any ongoing monthly contracts or agency retainers?",
@@ -302,7 +334,7 @@ export default function LocalBusinessAEOPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Search className="w-4 h-4 text-black shrink-0" />
-                    <span>Run a Free Local Scan</span>
+                    <span>Run Free Local Scan</span>
                   </a>
                   <button
                     type="button"
@@ -310,7 +342,7 @@ export default function LocalBusinessAEOPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                    <span>Discuss Local Sprints</span>
+                    <span>Request a Scoped Quote</span>
                   </button>
                 </div>
               </div>
@@ -451,7 +483,7 @@ export default function LocalBusinessAEOPage() {
                     onClick={() => selectSprintForForm('micro-sprint')}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 text-black font-bold text-xs hover:bg-cyan-400 transition cursor-pointer"
                   >
-                    <span>Discuss Service Area Sprints</span>
+                    <span>Request Scope for This Sprint</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -467,7 +499,7 @@ export default function LocalBusinessAEOPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white font-soehne-breit">Storefronts &amp; Local Clinics</h3>
-                    <p className="text-xs text-zinc-400 font-serif">Medical practices, Dental Clinics, Allied Health, Retail &amp; Commercial Offices</p>
+                    <p className="text-xs text-zinc-400 font-serif">Dental Practices, Allied Health Clinics, Medical Providers, Retail &amp; Commercial Offices</p>
                   </div>
                 </div>
 
@@ -477,15 +509,15 @@ export default function LocalBusinessAEOPage() {
                     <ul className="space-y-1.5">
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <span>Symptom, condition &amp; practitioner specialty query matching</span>
+                        <span>Practitioner &amp; physical location clarity per branch node</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <span>AHPRA-compliant reputation, verified facts &amp; clinical credentials</span>
+                        <span>Service &amp; condition intent matching for local queries</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <span>Direct online booking friction reduction per physical branch</span>
+                        <span>AHPRA-compliant trust messaging (no false acquisition guarantees)</span>
                       </li>
                     </ul>
                   </div>
@@ -499,7 +531,7 @@ export default function LocalBusinessAEOPage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <span>S3 Linking Lattice: Connect specialty pages directly to location booking nodes</span>
+                        <span>S3 Linking Lattice: Connect location pages directly to online booking nodes</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
@@ -515,7 +547,7 @@ export default function LocalBusinessAEOPage() {
                     onClick={() => selectSprintForForm('foundation')}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-500 text-black font-bold text-xs hover:bg-purple-400 transition cursor-pointer"
                   >
-                    <span>Discuss Storefront Sprints</span>
+                    <span>Request Scope for This Sprint</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -579,7 +611,7 @@ export default function LocalBusinessAEOPage() {
                     onClick={() => selectSprintForForm('micro-sprint')}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs hover:bg-emerald-400 transition cursor-pointer"
                   >
-                    <span>Discuss Regional Sprints</span>
+                    <span>Request Scope for This Sprint</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -696,6 +728,21 @@ export default function LocalBusinessAEOPage() {
               </ul>
             </div>
 
+            {/* One-Off Sprint vs Monthly Retainer Contrast & Client Responsibilities */}
+            <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-4">
+              <h3 className="text-base font-bold text-white font-soehne-breit">One-Off Sprints vs. Monthly SEO Retainers</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-serif leading-relaxed text-zinc-300">
+                <div className="bg-black/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <strong className="text-cyan-400 font-bold block text-sm">AEObility Fixed-Scope Sprint</strong>
+                  <p>Upfront flat rate, 4–5 day delivery, and 100% deliverable ownership. We repair root-cause structured data and page code so you don&apos;t pay ongoing monthly agency retainers.</p>
+                </div>
+                <div className="bg-black/50 p-4 rounded-xl border border-purple-500/20 space-y-2">
+                  <strong className="text-purple-300 font-bold block text-sm">What Remains Your Responsibility</strong>
+                  <p>Post-handover, you retain total code ownership. Your ongoing team responsibility is simply keeping your operational business hours up to date on Google Business Profile and responding to local customer reviews.</p>
+                </div>
+              </div>
+            </div>
+
             {/* Deliverables Ownership Statement */}
             <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
               <div className="flex items-start gap-3">
@@ -708,7 +755,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 5. Clear Entity Signals for Local Trades */}
+          {/* 5. Clear Entity Signals for Local Trades (Technical Building Blocks) */}
           <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Clear Entity Signals for Local Trades</span>
@@ -742,13 +789,73 @@ export default function LocalBusinessAEOPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
               >
                 <Search className="w-4 h-4 text-black" />
-                <span>Run Free Local Signal Scan</span>
+                <span>Run Free Local Scan</span>
                 <ArrowRight className="w-4 h-4 text-black" />
               </a>
             </div>
           </section>
 
-          {/* 6. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          {/* 6. What a Validated Local Signal Fix Looks Like (Proof & Deliverables) */}
+          <section id="proof-evidence" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Proof &amp; Verification</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">What a Validated Local Signal Fix Looks Like</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Demonstrated technical outcomes and validation artifacts delivered with every engagement (no ranking or revenue guarantees).</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {evidenceCards.map((card, idx) => (
+                <div key={idx} className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-4 text-left hover:border-cyan-500/40 transition">
+                  <span className="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    {card.badge}
+                  </span>
+                  <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{card.title}</h3>
+                  <div className="space-y-2 text-xs font-serif leading-relaxed">
+                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
+                      <strong className="text-amber-400 block mb-0.5">Technical Problem Identified:</strong>
+                      <span className="text-zinc-300">{card.problem}</span>
+                    </div>
+                    <div className="bg-black/50 p-3 rounded-xl border border-white/5">
+                      <strong className="text-cyan-400 block mb-0.5">AEObility Fix Executed:</strong>
+                      <span className="text-zinc-300">{card.solution}</span>
+                    </div>
+                    <div className="bg-cyan-950/40 p-3 rounded-xl border border-cyan-500/30">
+                      <strong className="text-emerald-400 block mb-0.5">Deliverable Artefact Included:</strong>
+                      <span className="text-zinc-200">{card.deliverable}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Deliverables Summary Box */}
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3">
+              <div className="flex items-center gap-2 font-bold text-white text-sm">
+                <CheckSquare className="w-5 h-5 text-cyan-400" />
+                <span>Handover Artefacts Delivered with Every Engagement</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs font-serif text-zinc-300 pt-1">
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5">
+                  <strong className="text-cyan-300 block font-mono mb-1">1. Implementation Log</strong>
+                  <span>Line-by-line summary of code &amp; schema changes.</span>
+                </div>
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5">
+                  <strong className="text-cyan-300 block font-mono mb-1">2. Schema Validation Result</strong>
+                  <span>JSON-LD test output matching Schema.org standards.</span>
+                </div>
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5">
+                  <strong className="text-cyan-300 block font-mono mb-1">3. Directory Register</strong>
+                  <span>NAP consistency log across priority directories.</span>
+                </div>
+                <div className="p-3 bg-black/60 rounded-xl border border-white/5">
+                  <strong className="text-cyan-300 block font-mono mb-1">4. Changed-Page List</strong>
+                  <span>Complete list of updated service-area answer units.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 7. Streamlined 12-Column Responsive Diagnostic Form Module */}
           <section id="local-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
@@ -760,7 +867,7 @@ export default function LocalBusinessAEOPage() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Local Visibility Scan</h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Delivers a short local signal scorecard highlighting your top 3 verified technical gaps and recommended next actions.
+                  Delivers a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next step.
                 </p>
               </div>
 
@@ -769,7 +876,7 @@ export default function LocalBusinessAEOPage() {
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
                   <h4 className="font-bold text-white text-base">Local Visibility Scan Submitted</h4>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you. Our AEObility strategy team will audit your local profile signals and send your 3-point scorecard within 24 business hours.
+                    Thank you. Our AEObility strategy team will audit your local profile signals and send your top 3 verified technical gaps and recommended next step within 24 business hours.
                   </p>
                 </div>
               ) : (
@@ -829,7 +936,7 @@ export default function LocalBusinessAEOPage() {
 
                     <div className="col-span-12">
                       <p className="text-[11px] text-zinc-400 font-serif leading-tight">
-                        We use your details strictly to validate your local tracking signals and deliver your prioritised 90-day action roadmap.
+                        We use your details strictly to validate your local tracking signals and deliver your top 3 verified technical gaps and recommended next step.
                       </p>
                     </div>
                   </div>
@@ -852,7 +959,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 7. Operational 3-Step Process Flow Pipeline Graphic */}
+          {/* 8. Operational 3-Step Process Flow Pipeline Graphic */}
           <section id="local-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
@@ -881,7 +988,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 8. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 9. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="local-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss Local AEO Priorities</h2>
@@ -998,7 +1105,7 @@ export default function LocalBusinessAEOPage() {
                     type="submit"
                     className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
                   >
-                    <span>Discuss Local Priorities</span>
+                    <span>Request a Scoped Quote</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
 
@@ -1010,7 +1117,7 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 9. Decision Blockers FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 10. Decision Blockers FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
           <section id="faq-local" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
