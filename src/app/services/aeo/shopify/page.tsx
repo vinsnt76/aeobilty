@@ -529,11 +529,11 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 5. Technical Building Blocks Reassurance (S1 & S2 Focus) */}
+          {/* 5. Technical Building Blocks Reassurance */}
           <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations (S1 &amp; S2)</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical engineering areas for product data and collection page optimization.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical engineering areas for product data and collection page optimisation.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
