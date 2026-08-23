@@ -93,24 +93,9 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "itemListElement": [
             {
               "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-blueprint",
-              "name": "E-Commerce Blueprint",
-              "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
-              "sku": "BPSTRAT",
-              "price": "995.00",
-              "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock",
-              "category": "Strategic Audit",
-              "description": "Audit your product feed schema, website hierarchy, and collection intent matching. Receive a practical 90-day execution roadmap. Price excludes GST.",
-              "seller": {
-                "@id": "https://www.aeobility.com.au/#organization"
-              }
-            },
-            {
-              "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-product-schema",
+              "@id": "https://www.aeobility.com.au/services/aeo/shopify#ss1micro-shopify",
               "name": "Product Data & Schema Micro-Sprint",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#product-schema",
+              "url": "https://www.aeobility.com.au/services/aeo/shopify#ss1micro-shopify",
               "sku": "SS1MICRO1",
               "price": "495.00",
               "priceCurrency": "AUD",
@@ -123,15 +108,30 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
             },
             {
               "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-collection-rewrite",
+              "@id": "https://www.aeobility.com.au/services/aeo/shopify#ss2micro-shopify",
               "name": "Collection Page Rewrite Micro-Sprint",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#collection-rewrite",
+              "url": "https://www.aeobility.com.au/services/aeo/shopify#ss2micro-shopify",
               "sku": "SS2MICRO1",
               "price": "495.00",
               "priceCurrency": "AUD",
               "availability": "https://schema.org/InStock",
               "category": "Shopify Micro-Sprint",
               "description": "Rewrite one priority collection page so its product categories, buyer answers, and trust signals are clear for customers and AI platforms. Price excludes GST.",
+              "seller": {
+                "@id": "https://www.aeobility.com.au/#organization"
+              }
+            },
+            {
+              "@type": "Offer",
+              "@id": "https://www.aeobility.com.au/services/aeo/shopify#bpstrat-shopify",
+              "name": "E-Commerce Blueprint",
+              "url": "https://www.aeobility.com.au/services/aeo/shopify#bpstrat-shopify",
+              "sku": "BPSTRAT",
+              "price": "995.00",
+              "priceCurrency": "AUD",
+              "availability": "https://schema.org/InStock",
+              "category": "Strategic Audit",
+              "description": "Audit your product data, structured data, store hierarchy and collection-page intent. Receive a practical 90-day execution roadmap. Price excludes GST.",
               "seller": {
                 "@id": "https://www.aeobility.com.au/#organization"
               }
@@ -145,9 +145,9 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "itemListElement": [
             {
               "@type": "Offer",
-              "@id": "https://www.aeobility.com.au/services/aeo/shopify#offer-foundation",
+              "@id": "https://www.aeobility.com.au/services/aeo/shopify#shopify-foundation",
               "name": "Shopify Foundation Implementation",
-              "url": "https://www.aeobility.com.au/services/aeo/shopify#store-foundation",
+              "url": "https://www.aeobility.com.au/services/aeo/shopify#shopify-foundation",
               "sku": "SS1-SS4-MACRO",
               "priceSpecification": {
                 "@type": "PriceSpecification",
@@ -171,7 +171,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/shopify#faq",
+      "@id": "https://www.aeobility.com.au/services/aeo/shopify#faq-shopify",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,

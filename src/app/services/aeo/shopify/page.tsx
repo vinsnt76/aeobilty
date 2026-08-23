@@ -142,22 +142,8 @@ export default function ShopifyAeoPage() {
 
   const engagementPaths = [
     {
-      key: "blueprint",
-      anchorId: "ecommerce-blueprint",
-      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
-      title: "E-Commerce Blueprint",
-      code: "BPSTRAT",
-      price: "$995 AUD",
-      priceSub: "ex. GST",
-      scope: "Full store diagnostic & 90-day roadmap",
-      description: "Audit your product data, structured data, store hierarchy and collection-page intent. Receive a practical 90-day execution roadmap.",
-      techNote: "For technical teams: Comprehensive review of Product, Offer, CollectionPage schema and Liquid template nesting.",
-      whenToChoose: "Choose this when you are unsure what is limiting your store's product visibility across search engines and AI tools.",
-      ctaLabel: "Discuss E-Commerce Blueprint"
-    },
-    {
       key: "micro-sprint",
-      anchorId: "product-data-sprint",
+      anchorId: "ss1micro-shopify",
       icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
       title: "Product Data Micro-Sprint",
       code: "SS1 / SS2",
@@ -165,13 +151,13 @@ export default function ShopifyAeoPage() {
       priceSub: "ex. GST",
       scope: "One priority collection or product schema",
       description: "Choose one focused priority: Product or Collection schema implementation for $495, or a Single Collection Rewrite for $495.",
-      techNote: "For technical teams: Adds structured schema data or refactors collection page text into clear answer units.",
+      techNote: "For technical teams: Review Product, Offer and CollectionPage schema alongside the relevant Shopify Liquid templates.",
       whenToChoose: "Choose this when you have one specific product line or collection page that needs structured data or copy improvements.",
       ctaLabel: "Discuss Product Data Sprint"
     },
     {
       key: "foundation",
-      anchorId: "store-foundation",
+      anchorId: "shopify-foundation",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
       title: "Shopify Foundation Implementation",
       code: "MACRO TIER",
@@ -182,6 +168,20 @@ export default function ShopifyAeoPage() {
       techNote: "For technical teams: Store-wide structured data alignment, collection internal linking, and key product page rewrites.",
       whenToChoose: "Choose this when your Shopify store has multiple connected product data, schema or collection layout priorities.",
       ctaLabel: "Discuss Shopify Foundation"
+    },
+    {
+      key: "blueprint",
+      anchorId: "bpstrat-shopify",
+      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      title: "E-Commerce Blueprint",
+      code: "BPSTRAT",
+      price: "$995 AUD",
+      priceSub: "ex. GST",
+      scope: "Full store diagnostic & 90-day roadmap",
+      description: "Audit your product data, structured data, store hierarchy and collection-page intent. Receive a practical 90-day execution roadmap.",
+      techNote: "For technical teams: Comprehensive review of Product, Offer, CollectionPage schema and Liquid template nesting.",
+      whenToChoose: "Choose this when you are unsure what is limiting your store's product visibility across search engines and AI tools.",
+      ctaLabel: "Discuss E-Commerce Blueprint"
     }
   ];
 
@@ -189,7 +189,7 @@ export default function ShopifyAeoPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Unified JSON-LD Connected Graph with Full FAQPage Support */}
+      {/* Unified JSON-LD Connected Graph with Passage @id Anchors */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
@@ -265,11 +265,11 @@ export default function ShopifyAeoPage() {
             </p>
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          {/* 2. "Choose Your Starting Point" Engagement Grid (Micro-Sprints, Foundation, Blueprint) */}
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a diagnostic audit, a targeted micro-sprint, or a comprehensive store foundation.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive store foundation, or a diagnostic audit.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -438,8 +438,8 @@ export default function ShopifyAeoPage() {
                     </div>
                   </div>
 
-                  {/* Submission Action Button & In-Line Risk Reversal Banner */}
-                  <div className="pt-2 space-y-4">
+                  {/* Submission Action Button */}
+                  <div className="pt-2">
                     <button
                       type="submit"
                       className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
@@ -447,11 +447,6 @@ export default function ShopifyAeoPage() {
                       <span>Run Free Store Scan</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
-
-                    {/* Risk Reversal Banner */}
-                    <div className="p-3 bg-black/50 border border-white/10 rounded-xl text-center text-xs text-zinc-300 font-serif leading-relaxed">
-                      Clear scope. Fixed pricing. No lock-in contracts. Every diagnostic evaluation maps directly to practical next steps.
-                    </div>
                   </div>
                 </form>
               )}
@@ -459,7 +454,7 @@ export default function ShopifyAeoPage() {
           </section>
 
           {/* 4. Foundation Implementation Upgrade Block */}
-          <section id="foundation-implementation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
+          <section id="shopify-foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
@@ -532,7 +527,7 @@ export default function ShopifyAeoPage() {
                 </div>
               </div>
 
-              <div id="s2-collection-structure" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
+              <div id="s2-collection-optimisation" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 bg-black border border-white/10 rounded-xl">
                     <Layers className="w-6 h-6 text-purple-400" />
@@ -559,7 +554,7 @@ export default function ShopifyAeoPage() {
           </section>
 
           {/* 6. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
-          <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+          <section id="faq-shopify" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
               <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility Shopify AEO sprints.</p>
@@ -608,7 +603,7 @@ export default function ShopifyAeoPage() {
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak with an AEObility specialist based in Perth. Vince Baker, AEObility’s founder, reviews more complex scopes and strategic enquiries.</span>
+                <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
               </div>
             </div>
 
@@ -677,9 +672,9 @@ export default function ShopifyAeoPage() {
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
                       <option value="unsure">Not sure yet — Help me decide</option>
-                      <option value="blueprint">E-Commerce Blueprint ($995 AUD)</option>
                       <option value="micro-sprint">Product Data Micro-Sprint (From $495 AUD)</option>
                       <option value="foundation">Shopify Foundation Implementation (From $3,195 AUD)</option>
+                      <option value="blueprint">E-Commerce Blueprint ($995 AUD)</option>
                     </select>
                   </div>
 
