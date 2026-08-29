@@ -307,10 +307,10 @@ export default function AEODefinitionPage() {
 
               {/* Block 3 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">3. Semantic retrieval explained</h3>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">3. Semantic retrieval & atomic chunking</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p><strong className="text-white font-medium">Semantic retrieval</strong> compares the mathematical representation of a user question against the vector space of your content.</p>
-                  <p>AEO applies <strong className="text-white font-medium">semantic chunking</strong> to partition content into standalone information blocks, allowing RAG systems to retrieve relevant facts with minimal noise.</p>
+                  <p>Our underlying framework restructures business facts into clear semantic groups. During text conversion, long-form data segments pass through precise <strong className="text-white font-medium">atomic chunking patterns</strong> to ensure your core content fragments survive the dense retrieval phase without context loss.</p>
+                  <p>AEO applies semantic chunking to partition content into standalone information blocks, allowing RAG systems to retrieve relevant facts with minimal noise.</p>
                 </div>
               </div>
 

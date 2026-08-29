@@ -143,7 +143,7 @@ export default function DiagnosticEngine() {
           Run a Free AI Visibility Scan
         </h1>
         <h2 className="text-white/70 text-base md:text-lg font-light leading-relaxed font-serif">
-          Identify exactly how clear, consistent and discoverable your business information is across Search, Maps and AI. Easy for customers and search systems to understand and recommend.
+          The engine runs rigorous simulation loops to measure how effectively your digital footprint interfaces with AI agents. By analysing <strong className="text-white font-medium">high-dimensional vector embeddings</strong>, the scanner determines your brand&apos;s exact proximity to target commercial intents across active conversational indices.
         </h2>
       </div>
 

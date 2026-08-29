@@ -160,6 +160,18 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "url": "https://www.aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
         }
       ],
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "@id": "https://aeobility.com.au/services/aeo/definition",
+          "name": "Answer Engine Optimisation Core Definition Model"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://aeobility.com.au/diagnostic#webapp",
+          "name": "AI Visibility Diagnostic Measurement Suite"
+        }
+      ],
       "hasOfferCatalog": {
         "@id": "https://www.aeobility.com.au/services/aeo#catalog"
       }
