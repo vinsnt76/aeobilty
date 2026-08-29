@@ -336,8 +336,8 @@ export default function DiagnosticEngine() {
                     ${bpstratProduct.price} AUD ex. GST
                   </span>
                 </div>
-                <p className="text-xs text-white/70 font-serif leading-relaxed max-w-lg">
-                  Once the diagnostic engine generates your system salience score, structural deficiencies can be resolved during our initial execution sprint. Review our fixed-price <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO packages and pricing</Link> or the comprehensive 90-day Blueprint to establish definitive machine readability.
+                <p className="text-xs text-white/70 font-serif leading-relaxed">
+                  Our background telemetry scan tracks real-time vector proximity data to determine your platform&apos;s exact machine readability score. If structural gaps are detected across your entity boundaries, they can be immediately refactored via our fixed-price <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO packages and pricing</Link> execution sprints.
                 </p>
               </div>
               <Link

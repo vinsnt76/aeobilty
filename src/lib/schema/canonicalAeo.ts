@@ -74,6 +74,16 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "about": [
         {
           "@type": "Thing",
+          "name": "AEO Services",
+          "identifier": "proximity_weight_0.94"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI Visibility Diagnostic",
+          "identifier": "proximity_weight_0.91"
+        },
+        {
+          "@type": "Thing",
           "name": "Search Engine Optimization",
           "sameAs": "https://www.wikidata.org/wiki/Q180711"
         },
