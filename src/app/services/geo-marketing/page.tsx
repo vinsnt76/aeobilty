@@ -30,7 +30,13 @@ import {
   Boxes,
   FileCheck,
   Building2,
-  Navigation
+  Navigation,
+  DollarSign,
+  Target,
+  Layers,
+  Sparkles,
+  Compass,
+  Activity
 } from 'lucide-react';
 
 export const GEO_MARKETING_INTERNAL_LINKS = [
@@ -396,7 +402,55 @@ export default function GeoMarketingPage() {
             </div>
           </section>
 
-          {/* 5. Single Transparent Engagement Standards Banner */}
+          {/* 5. High-Density Declarative Answer Block: Transparent Investment */}
+          <section id="geo-cost" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                <DollarSign className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Fixed Investment Model</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                Transparent Investment: How Much Does GEO Marketing Cost?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                Our geographic engine strategies operate on a strict, fixed-scope sprint framework. By replacing unpredictable agency retainers with transparent deliverables, you receive machine-readable optimisation without long-term contractual exposure.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
+              <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
+                <div className="flex items-center justify-between">
+                  <strong className="text-cyan-300 font-sans font-bold text-sm">Citation Clean-Up Sprint</strong>
+                  <span className="font-mono text-cyan-400 font-bold">$495 AUD</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed">
+                  A rapid operational micro-sprint resolving scattered location signals across mapping platforms. This sprint fixes inconsistent name, address, and telephone profiles to secure a clear baseline footprint.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-zinc-900/90 border border-cyan-500/30 space-y-2 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                <div className="flex items-center justify-between">
+                  <strong className="text-white font-sans font-bold text-sm">Internal-Linking Lattice</strong>
+                  <span className="font-mono text-cyan-300 font-bold">$695 AUD</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed">
+                  Deploys a rigid linking architecture connecting high-precision technical articles straight to local conversion pages, passing earned informational authority directly into active commercial routes.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
+                <div className="flex items-center justify-between">
+                  <strong className="text-purple-300 font-sans font-bold text-sm">Local Foundation Tier</strong>
+                  <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed">
+                  A comprehensive four-week technical implementation building deeply nested Schema.org code, exact coordinate boundaries, and token-optimised local text blocks across your core site infrastructure.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 6. Single Transparent Engagement Standards Banner */}
           <section className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-3 shadow-lg">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
               <ShieldCheck className="w-4 h-4 text-cyan-400" />
@@ -410,7 +464,7 @@ export default function GeoMarketingPage() {
             </p>
           </section>
 
-          {/* 6. Core Technical Foundations */}
+          {/* 7. Core Technical Foundations */}
           <section id="building-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations</h2>
@@ -449,21 +503,93 @@ export default function GeoMarketingPage() {
                   </div>
                   <div>
                     <span className="text-xs font-mono text-cyan-400 font-bold">FOUNDATION S4</span>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">Brand Facts & Consistency</h3>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Brand Facts & Business Profile</h3>
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Bring your key business details, services, locations and trust information together so they remain clear and consistent across your website and priority local platforms.
+                  Create a clear, structured reference page that confirms your business details, core services and service areas in one verified place.
                 </p>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: Review business identity, location details and structured-data consistency across priority platforms.
+                  For technical teams: Structured reference copy and optional schema deployment to reduce entity ambiguity across search systems.
                 </p>
                 <div className="pt-1">
-                  <Link href="/services/aeo/procedures" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
-                    <span>Learn more about AEO Procedures</span>
+                  <Link href="/brand-facts" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
+                    <span>View Canonical Brand Facts</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 8. High-Density Declarative Answer Block: What Is GEO? */}
+          <section id="geo-definition" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
+                <Compass className="w-3.5 h-3.5 text-purple-400" />
+                <span>Machine Discovery Framework</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                Machine Discovery: What Is Generative Engine Optimisation (GEO) for Local Business?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                Traditional search optimisation relies on capturing standard keyword patterns, but modern local engines extract machine-readable structural facts. Generative Engine Optimisation (GEO) is the technical framework used to ensure AI discovery engines, voice assistants, and location-aware models can verify your operational coordinates without guessing.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed space-y-2">
+              <p>
+                When a potential client queries an AI system for an open service provider nearby, the underlying engine queries a localised vector index. It scans for explicit entity boundaries, clean coordinate data, and structured service arrays.
+              </p>
+              <p className="text-zinc-200">
+                If your local presence is trapped inside un-indexed website files or unstructured paragraphs, AI crawlers skip your asset entirely. GEO fixes this by making your physical business facts perfectly readable to software bots.
+              </p>
+            </div>
+          </section>
+
+          {/* 9. Visual Comparison Card: Local GEO vs Traditional Local SEO */}
+          <section id="geo-vs-seo" className="border border-white/15 rounded-2xl overflow-hidden bg-zinc-950/90 shadow-2xl scroll-mt-24">
+            <div className="bg-white/5 border-b border-white/10 px-6 py-4 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Layers className="w-4 h-4 text-cyan-400" />
+                <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
+                  The Architecture Paradigm: Local GEO vs Traditional Local SEO
+                </h3>
+              </div>
+              <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                Entity vs Lexical
+              </span>
+            </div>
+
+            <div className="p-6 grid md:grid-cols-2 gap-6 text-sm">
+              <div className="space-y-3 p-5 rounded-xl bg-red-950/20 border border-red-500/20">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-bold text-red-400 font-soehne-breit text-base">Legacy Local SEO</h4>
+                  <span className="text-[10px] font-mono text-red-400 bg-red-950/80 px-2 py-0.5 rounded border border-red-500/30">Lexical</span>
+                </div>
+                <p className="text-zinc-300 text-xs font-serif leading-relaxed">
+                  Relies heavily on surface-level keyword inclusion, high volumes of generic directory citations, and basic backlink acquisition. This system targets algorithmic signals built for traditional lexical search boxes.
+                </p>
+                <ul className="space-y-1.5 text-xs text-zinc-400 font-serif pt-1">
+                  <li>• Focuses on raw keyword density</li>
+                  <li>• Vulnerable to multi-node signal dilution</li>
+                  <li>• Relies on static directory scraping</li>
+                </ul>
+              </div>
+
+              <div className="space-y-3 p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/20">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-bold text-emerald-400 font-soehne-breit text-base">Modern Local GEO</h4>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">Vector &amp; Semantic</span>
+                </div>
+                <p className="text-zinc-300 text-xs font-serif leading-relaxed">
+                  Prioritises deep entity disambiguation, precise coordinate matrix routing, and the deployment of nested JSON-LD schema graphs. Engineered to satisfy retrieval-augmented generation (RAG) pipelines and vector proximity calculations used by Perplexity, Apple Maps, and ChatGPT Search.
+                </p>
+                <ul className="space-y-1.5 text-xs text-zinc-300 font-serif pt-1">
+                  <li>• Hard-codes coordinate matrices for proximity routing</li>
+                  <li>• Unifies Brand Facts with Wikidata entities</li>
+                  <li>• Optimized for passage-level extraction and AI citations</li>
+                </ul>
               </div>
             </div>
           </section>
