@@ -126,13 +126,13 @@ export default function Navbar() {
             </div>
 
             {/* Desktop CTA Action Buttons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               {/* Phone Call Quick Link */}
               <a
                 href="tel:0480286282"
                 aria-label="Call AEObility (0480 286 282)"
                 title="Call AEObility (0480 286 282)"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
               >
                 <Phone className="h-4 w-4" />
               </a>
@@ -142,7 +142,7 @@ export default function Navbar() {
                 href="/book"
                 aria-label="Book Strategy Session"
                 title="Book Strategy Session"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
               >
                 <Calendar className="h-4 w-4" />
               </Link>
@@ -153,7 +153,7 @@ export default function Navbar() {
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
                 aria-label="Search Site Architecture (⌘K)"
                 title="Search Site Architecture (⌘K)"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
               >
                 <Search className="h-4 w-4" />
               </button>
@@ -168,12 +168,12 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Right Action Stack & Hamburger Menu Toggle Button Island */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2.5 sm:gap-3 lg:hidden">
             {/* Phone Call Quick Link */}
             <a
               href="tel:0480286282"
               aria-label="Call AEObility"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
             >
               <Phone className="h-4 w-4" />
             </a>
@@ -182,7 +182,7 @@ export default function Navbar() {
             <Link
               href="/book"
               aria-label="Book Strategy Session"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
+              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
             >
               <Calendar className="h-4 w-4" />
             </Link>
@@ -192,7 +192,7 @@ export default function Navbar() {
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
               aria-label="Search Site Architecture (⌘K)"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
             >
               <Search className="h-4 w-4" />
             </button>
