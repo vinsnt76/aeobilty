@@ -145,14 +145,43 @@ export default function RagArticlePage() {
         ],
         "about": [
           {
+            "@type": "Service",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "AEO Services",
+            "url": "https://aeobility.com.au/services/aeo"
+          },
+          {
             "@type": "Thing",
-            "name": "Retrieval-Augmented Generation (RAG)",
-            "description": "A technical architecture enabling AI models to retrieve and cite live external content for accurate, grounded answers."
+            "name": "Retrieval-Augmented Generation",
+            "description": "A technical architecture enabling AI models to retrieve and cite live external content for accurate, grounded answers.",
+            "sameAs": "https://www.wikidata.org/wiki/Q124316499"
+          },
+          {
+            "@type": "Thing",
+            "name": "Large Language Model",
+            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
           },
           {
             "@type": "Thing",
             "name": "AI Search Optimisation",
             "description": "Optimising content for AI-driven answer engines using structured data, semantic clarity, and passage-level retrieval."
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Knowledge Graph",
+            "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+          },
+          {
+            "@type": "Thing",
+            "name": "Search Engine Optimization",
+            "sameAs": "https://www.wikidata.org/wiki/Q180711"
+          },
+          {
+            "@type": "Thing",
+            "name": "Vector Space Model",
+            "sameAs": "https://www.wikidata.org/wiki/Q792224"
           }
         ],
         "citation": [
@@ -1187,8 +1216,24 @@ export default function RagArticlePage() {
             <p>
               Answer engines are becoming an integral part of modern digital search.<br />
               RAG is the primary technical engine behind AI search optimisation.<br />
-              AEO is how you format and structure your content to maximize machine comprehension.
+              AEO is how you format and structure your content to maximise machine comprehension.
             </p>
+
+            {/* Strategic Service Entity Bridge */}
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-aeo-purple/10 to-transparent border border-aeo-cyan/30 rounded-2xl my-8">
+              <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
+              <h3 className="text-lg font-bold text-white font-sans mb-2">Deploying Production-Grade RAG Optimisation</h3>
+              <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
+                Transitioning from theoretical knowledge to live citation dominance requires implementing an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link>. AEObility provides <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and <Link href="/solutions/aeo-sprint" className="text-aeo-purple font-semibold hover:underline">structured AEO implementation sprints</Link> engineered to boost citation share across generative search engines.
+              </p>
+              <Link
+                href="/services/aeo"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:bg-white transition-all shadow-md"
+              >
+                <span>Explore AEO Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
 
             <p className="text-lg font-bold text-white font-sans my-4">
               AEObility helps you show up clearly, consistently, and confidently across Search, Maps & AI. Get Found. Get Chosen.

@@ -90,6 +90,36 @@ export default function PositionalBiasArticlePage() {
           "AEO",
           "AI search",
           "semantic SEO"
+        ],
+        "about": [
+          {
+            "@type": "Service",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "AEO Services",
+            "url": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "Thing",
+            "name": "Large Language Model",
+            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+          },
+          {
+            "@type": "Thing",
+            "name": "Search Engine Optimization",
+            "sameAs": "https://www.wikidata.org/wiki/Q180711"
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Knowledge Graph",
+            "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+          },
+          {
+            "@type": "Thing",
+            "name": "Vector Space Model",
+            "sameAs": "https://www.wikidata.org/wiki/Q792224"
+          }
         ]
       },
       {
@@ -839,6 +869,22 @@ export default function PositionalBiasArticlePage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Strategic Operational Service Bridge */}
+          <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-aeo-purple/10 to-transparent border border-aeo-cyan/30 rounded-2xl my-8">
+            <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
+            <h3 className="text-lg font-bold text-white font-sans mb-2">Eliminating Positional Bias with Professional AEO</h3>
+            <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
+              Fixing positional dilution across your core service pages requires deploying an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link>. Explore our <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and <Link href="/solutions/aeo-sprint" className="text-aeo-purple font-semibold hover:underline">structured AEO implementation sprints</Link> to reconstruct your atomic answer blocks and secure top-ranked citation positions.
+            </p>
+            <Link
+              href="/services/aeo"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:bg-white transition-all shadow-md"
+            >
+              <span>Explore Canonical AEO Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
           {/* Author Entity Bio Box */}

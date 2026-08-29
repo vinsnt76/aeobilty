@@ -93,7 +93,37 @@ export default function EntityAuthorityArticlePage() {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
-        "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp"
+        "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp",
+        "about": [
+          {
+            "@type": "Service",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "AEO Services",
+            "url": "https://aeobility.com.au/services/aeo"
+          },
+          {
+            "@type": "Thing",
+            "name": "Knowledge Graph",
+            "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+          },
+          {
+            "@type": "Thing",
+            "name": "Search Engine Optimization",
+            "sameAs": "https://www.wikidata.org/wiki/Q180711"
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Schema.org",
+            "sameAs": "https://www.wikidata.org/wiki/Q3475335"
+          },
+          {
+            "@type": "Thing",
+            "name": "JSON-LD",
+            "sameAs": "https://www.wikidata.org/wiki/Q15858694"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -654,6 +684,22 @@ export default function EntityAuthorityArticlePage() {
               </div>
             </div>
           </section>
+
+          {/* Strategic Operational Service Bridge */}
+          <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-aeo-purple/10 to-transparent border border-aeo-cyan/30 rounded-2xl my-8">
+            <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
+            <h3 className="text-lg font-bold text-white font-sans mb-2">Engineering Enterprise Entity Salience</h3>
+            <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
+              Building unbreakable entity authority requires structuring your digital presence with an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link>. AEObility delivers <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and <Link href="/solutions/aeo-sprint" className="text-aeo-purple font-semibold hover:underline">structured AEO implementation sprints</Link> to establish verified Knowledge Graph nodes for Australian brands.
+            </p>
+            <Link
+              href="/services/aeo"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-aeo-cyan text-black font-bold text-xs rounded-xl hover:bg-white transition-all shadow-md"
+            >
+              <span>Explore Canonical AEO Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
 
           {/* Author Entity Bio Box */}
           <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6">

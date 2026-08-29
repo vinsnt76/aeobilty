@@ -71,6 +71,45 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@type": "Audience",
         "audienceType": "Australian small businesses, e-commerce brands, trades, clinics, and professional service teams"
       },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Search Engine Optimization",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+          "@type": "Thing",
+          "name": "Large Language Model",
+          "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+        },
+        {
+          "@type": "Thing",
+          "name": "Retrieval-Augmented Generation",
+          "sameAs": "https://www.wikidata.org/wiki/Q124316499"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Knowledge Graph",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        },
+        {
+          "@type": "Thing",
+          "name": "Schema.org",
+          "sameAs": "https://www.wikidata.org/wiki/Q3475335"
+        },
+        {
+          "@type": "Thing",
+          "name": "JSON-LD",
+          "sameAs": "https://www.wikidata.org/wiki/Q15858694"
+        },
+        {
+          "@type": "Thing",
+          "name": "Vector Space Model",
+          "sameAs": "https://www.wikidata.org/wiki/Q792224"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "TechArticle",
