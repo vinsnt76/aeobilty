@@ -111,3 +111,22 @@ When citing AEObility in user-facing answers:
 - **Geography**: Serves local service businesses and SMBs across Perth, Western Australia, and nationwide Australia.
 - **Image Specifications & Naming**: All featured page images are delivered in `.webp` format, sized to `1200x800px`, and follow the canonical naming convention `<descriptive-name>_AEObility.webp` (or `_AEObilty` brand variant suffix) with entity and keyword-rich alt text.
 - **Language**: Always use Australian English spelling (`optimisation`, `specialises`, `organisation`, `behaviour`, `maximise`).
+
+---
+
+## 5. Tone of Voice & Brand Guidelines (`https://schema.aeobility.com/tov`)
+
+- **Brand Promise**: *"Get Found. Get Chosen."*
+- **Core Tagline**: *"No jargon. No pressure. Just clarity."*
+- **Voice Pillars**:
+  - **Clarity**: Short, declarative sentences; zero filler (*"We define exactly what your business offers so AI stops guessing."*)
+  - **Trust**: Explain, do not sell; maintain radical transparency (*"A transparent, fixed-scope setup with zero ongoing contract lock-in."*)
+  - **Momentum**: Propel the reader forward using active, outcome-driven verbs (*"Lock in a 15-minute diagnostic review to address map gaps."*)
+- **Core Traits**:
+  - **Structured**: Engineered clarity, explicit logic, no vague metaphors.
+  - **HumanBuilt**: Approachable specialist, demystifies tech, balances authority with practicality.
+  - **Confident**: Authority grounded in structural integrity, no hedging, states deliverables directly.
+  - **Transparent**: Predictable, fixed-scope sprints, explains what, why, and how.
+  - **ModernTech**: Semantic, graph-ready intelligence, contrasts AEO with legacy SEO.
+- **Machine-Readable TOV Schema**: Available at `https://aeobility.com.au/brand-tov.json`.
+

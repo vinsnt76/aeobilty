@@ -18,3 +18,20 @@ For the public AI agent grounding specification, see [public/AGENTS.md](file:///
 - **Tri-Graph Architecture**: Decouple data into Entity Graph (What exists), Semantic/Intent Graph (How concepts link), and Evidence Graph (Where claims are proven).
 - **Absolute URI Integrity**: All JSON-LD `@id` and node references must use fully-qualified absolute canonical URIs (`https://aeobility.com.au/...`).
 
+## Tone of Voice & Brand Guidelines (`https://schema.aeobility.com/tov`)
+- **Brand Promise**: *"Get Found. Get Chosen."*
+- **Core Tagline**: *"No jargon. No pressure. Just clarity."*
+- **Voice Pillars**:
+  - **Clarity**: Short, declarative sentences; zero filler (*"We define exactly what your business offers so AI stops guessing."*)
+  - **Trust**: Explain, do not sell; maintain radical transparency (*"A transparent, fixed-scope setup with zero ongoing contract lock-in."*)
+  - **Momentum**: Propel the reader forward using active, outcome-driven verbs (*"Lock in a 15-minute diagnostic review to address map gaps."*)
+- **Core Traits**:
+  - **Structured**: Engineered clarity, explicit logic, no vague metaphors.
+  - **HumanBuilt**: Approachable specialist, demystifies tech, balances authority with practicality.
+  - **Confident**: Authority grounded in structural integrity, no hedging, states deliverables directly.
+  - **Transparent**: Predictable, fixed-scope sprints, explains what, why, and how.
+  - **ModernTech**: Semantic, graph-ready intelligence, contrasts AEO with legacy SEO.
+- **Brand Do's**: Use declarative sentences; frame solutions around fixed-scope sprints; differentiate semantic AEO/GEO graphs from legacy SEO; use Australian English spelling; maintain visual consistency with Inter/Söhne and AEO Cyan (`#00E5FF`).
+- **Brand Don'ts**: Avoid legacy SEO buzzwords; avoid agency jargon or upsell traps; avoid hedging or uncertain phrasing; avoid American spelling; do not flatten dynamic brand gradients.
+
+

@@ -4,6 +4,8 @@
  * Last Verified: Aug 29, 2026
  */
 
+export { AEOBILITY_TONE_OF_VOICE } from './brandGuidelines';
+
 export interface FactProvenance {
   subject: string;
   predicate: string;
