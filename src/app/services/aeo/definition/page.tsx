@@ -109,6 +109,7 @@ export default function AEODefinitionPage() {
         "about": [
           {
             "@type": "Thing",
+            "@id": "https://aeobility.com.au/services/aeo#service",
             "name": "Answer Engine Optimisation",
             "description": "AEO is the practice of structuring business information so AI systems can read it, understand it, and cite it in generated answers."
           },
@@ -119,14 +120,17 @@ export default function AEODefinitionPage() {
           },
           {
             "@type": "Service",
+            "@id": "https://aeobility.com.au/services/aeo#service",
             "name": "AEO Services",
             "serviceType": "Answer Engine Optimisation",
             "provider": {
-              "@type": "Organization",
-              "name": "AEObility"
+              "@id": "https://aeobility.com.au/#organization"
             }
           }
         ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
         "articleSection": [
           "What is AEO and why does it matter?",
           "Why AEO matters for your business",
@@ -260,7 +264,7 @@ export default function AEODefinitionPage() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light mb-8">
-              AEO, or <strong className="text-white font-semibold">Answer Engine Optimisation</strong>, is the practice of organising your business information so AI systems can read it, understand it, and confidently cite it in generated answers.
+              Answer Engine Optimisation (AEO) modifies raw content chunks to align with conversational query architectures. To deploy this framework effectively inside production systems, businesses utilise expert <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to structure context blocks and secure consistent engine attributions.
             </p>
 
             {/* Why AEO matters for your business */}

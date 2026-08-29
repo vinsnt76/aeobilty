@@ -112,6 +112,24 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ],
       "subjectOf": [
         {
+          "@type": "WebPage",
+          "@id": "https://www.aeobility.com.au/services/aeo/definition",
+          "name": "What is AEO (Definition)",
+          "url": "https://www.aeobility.com.au/services/aeo/definition"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://www.aeobility.com.au/diagnostic#webapp",
+          "name": "AI Visibility Diagnostic Engine",
+          "url": "https://www.aeobility.com.au/diagnostic"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/case-studies/baby-bento",
+          "name": "Case Study: Baby Bento AI Search Visibility Success",
+          "url": "https://www.aeobility.com.au/knowledge-hub/case-studies/baby-bento"
+        },
+        {
           "@type": "TechArticle",
           "@id": "https://www.aeobility.com.au/knowledge-hub/aeo#article",
           "name": "Answer Engine Optimisation Principles & Mechanics",

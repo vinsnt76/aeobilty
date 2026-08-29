@@ -18,7 +18,8 @@ export const metadata = {
 export default function BabyBentoCaseStudyPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
+    "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
 
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -44,7 +45,7 @@ export default function BabyBentoCaseStudyPage() {
 
     "author": {
       "@type": "Person",
-      "name": "Vinnie Baker",
+      "name": "Vince Baker",
       "url": "https://aeobility.com.au/vince-baker"
     },
 
@@ -64,10 +65,21 @@ export default function BabyBentoCaseStudyPage() {
     "inLanguage": "en-AU",
     "articleSection": "Case Studies",
 
-    "about": {
-      "@type": "Thing",
-      "name": "Baby Bento",
-      "description": "Australian ecommerce brand specialising in kids’ lunchboxes, insulated food jars, and eco-friendly lunch solutions."
+    "about": [
+      {
+        "@type": "Thing",
+        "@id": "https://aeobility.com.au/services/aeo#service",
+        "name": "Answer Engine Optimisation"
+      },
+      {
+        "@type": "Thing",
+        "name": "Baby Bento",
+        "description": "Australian ecommerce brand specialising in kids’ lunchboxes, insulated food jars, and eco-friendly lunch solutions."
+      }
+    ],
+
+    "mainEntity": {
+      "@id": "https://aeobility.com.au/services/aeo#service"
     },
 
     "audience": {
@@ -463,7 +475,7 @@ export default function BabyBentoCaseStudyPage() {
           <div className="p-8 bg-gradient-to-r from-aeo-cyan/5 to-aeo-purple/5 border border-white/10 rounded-2xl space-y-4">
             <h3 className="text-xl font-bold text-white">Conclusion</h3>
             <p className="text-sm text-white/80 leading-relaxed font-serif font-light">
-              Baby Bento’s turnaround wasn’t driven by publishing more content, chasing keywords, or increasing ad spend. It was driven by structural clarity, intent alignment, and answer‑engine readability.
+              The organic impression growth achieved for Baby Bento was powered directly by eliminating canonical content overlaps. Review our commercial <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to see how our rapid technical execution sprints can align your platform&apos;s semantic footprint.
             </p>
             <p className="text-base text-aeo-cyan font-bold font-soehne-breit mt-2">
               &ldquo;When AI understands your business, your customers finally can.&rdquo;
