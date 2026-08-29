@@ -26,13 +26,13 @@ import {
 
 export const metadata = {
   title: "Why This Architecture Is Correct for AI Search | AEObility",
-  description: "Learn how to fix AI brand hallucinations and retrieval evidence gaps by structuring your site around semantic propositions, entities, and evidence layers.",
+  description: "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
   },
   openGraph: {
     title: "Why This Architecture Is Correct for AI Search: Entities & Evidence | AEObility",
-    description: "Learn how to fix AI brand hallucinations and retrieval evidence gaps by structuring your site around semantic propositions, entities, and evidence layers.",
+    description: "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence.",
     url: "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
     type: "article",
   }
@@ -75,13 +75,13 @@ export default function FixAiBrandHallucinationsArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
         "name": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
-        "description": "Learn how to fix AI brand hallucinations and retrieval evidence gaps by structuring your site around semantic propositions, entities, and evidence layers."
+        "description": "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence."
       },
       {
         "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#article",
         "headline": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
-        "description": "A comprehensive guide on eliminating AI factual drift, missing citations, and incorrect pricing by deploying semantic propositions and the 5-stage verification loop.",
+        "description": "A comprehensive guide on structuring website content around semantic propositions, claim governance, and the 5-stage retrieval verification loop.",
         "author": {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
@@ -113,7 +113,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
         "@type": "HowTo",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#howto",
         "name": "5-Stage Retrieval Verification Loop",
-        "description": "The five-step engineering loop used to verify, score, and fix AI search brand hallucinations and evidence gaps.",
+        "description": "The five-step engineering loop used to verify, score, and improve the conditions for AI search citation inclusion.",
         "step": [
           {
             "@type": "HowToStep",
@@ -125,13 +125,13 @@ export default function FixAiBrandHallucinationsArticlePage() {
             "@type": "HowToStep",
             "position": 2,
             "name": "Observe",
-            "text": "Execute automated query fan-out simulations across live conversational search indices."
+            "text": "Run automated query tests across live AI-search environments to compare declared brand facts with observed answers."
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Compare",
-            "text": "Calculate the mathematical variance between your declared corporate parameters and observed answer passages."
+            "text": "Measure the gap between your declared brand facts and the passages surfaced in answers."
           },
           {
             "@type": "HowToStep",
@@ -143,7 +143,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
             "@type": "HowToStep",
             "position": 5,
             "name": "Fix",
-            "text": "Apply targeted AEO Technical Sprints to resolve schema drifts, update text copy blocks, and secure unassailable citation slots."
+            "text": "Apply targeted AEO Technical Sprints to resolve schema drifts, update text copy blocks, and improve the conditions for citation inclusion."
           }
         ]
       }
@@ -170,7 +170,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
-            Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions
+            Why This Architecture Is Correct for AI Search
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-white/50 pt-2">
@@ -186,7 +186,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <p className="text-lg sm:text-xl text-white/80 font-serif leading-relaxed pt-2">
-            The fundamental building block of a modern, machine-readable website is changing. In conversational search environments (such as Google AI Overviews, Perplexity Pro, and ChatGPT Search), securing visibility requires moving past traditional keyword-driven layouts.
+            AI-search readiness does not come from more keyword-targeted pages or isolated schema. It comes from a coherent architecture that defines entities clearly, connects them through meaningful relationships, and supports important claims with visible evidence.
           </p>
         </header>
 
@@ -208,11 +208,11 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h2>
           
           <p className="text-base sm:text-lg text-white/70 font-serif leading-relaxed">
-            Traditional SEO workflows typically rely on a direct linear path: <span className="font-mono text-aeo-cyan text-sm">Keyword &rarr; Target Page &rarr; Internal Link</span>. While this remains useful for language discovery and mapping raw search demand, it is insufficient for an environment governed by dense retrieval and passage-level extraction.
+            Traditional SEO workflows typically rely on a direct linear path: <span className="font-mono text-aeo-cyan text-sm">Keyword &rarr; Target Page &rarr; Internal Link</span>. While this remains useful for language discovery and mapping raw search demand, it is not enough on its own for modern search and answer environments that may retrieve and summarise content at the passage level.
           </p>
 
           <p className="text-base sm:text-lg text-white/70 font-serif leading-relaxed">
-            A keyword is an expression of user need, not the underlying concept, commercial requirement, or entity relationship a site must establish. For instance, search strings like <em className="text-white">&ldquo;AEO audit&rdquo;</em>, <em className="text-white">&ldquo;AI search checker&rdquo;</em>, and <em className="text-white">&ldquo;how do I improve AI search visibility&rdquo;</em> reflect overlapping user intents. Chasing each phrase with fragmented, overlapping pages divides topical authority across competing endpoints rather than elevating a single canonical resource.
+            A keyword is an expression of user need and demand, but it is not always the underlying concept, commercial requirement, or entity relationship a site must establish. For instance, search strings like <em className="text-white">&ldquo;AEO audit&rdquo;</em>, <em className="text-white">&ldquo;AI search checker&rdquo;</em>, and <em className="text-white">&ldquo;how do I improve AI search visibility&rdquo;</em> reflect overlapping user intents. Chasing each phrase with fragmented, overlapping pages divides topical authority across competing endpoints rather than elevating a single canonical resource.
           </p>
 
           <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
@@ -221,7 +221,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               The Semantic Proposition Standard
             </h3>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              To improve the conditions for retrieval, interpretation, and grounding, a website must organise its content around <strong>semantic propositions</strong> rather than keywords alone. A semantic proposition states a clear, meaningful claim or relationship connecting a subject entity to an object entity, outcome, or action. This maps directly to the subject-predicate-object triples used in RDF knowledge graphs to express clear relationships between resources.
+              To improve the conditions for retrieval, interpretation, and grounding, a website should organise its content around <strong>semantic propositions</strong> rather than keywords alone. A semantic proposition states a clear, meaningful claim or relationship connecting a subject entity to an object entity, outcome, or action. This maps directly to the subject-predicate-object triples used in RDF knowledge graphs to express clear relationships between resources.
             </p>
           </div>
         </section>
@@ -238,11 +238,11 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            To maintain absolute data integrity across conversational indexing loops, every core relationship must be tracked within a central proposition model. This framework establishes clear canonical page ownership for specific claims, ensuring that minor technical concepts support higher-level containers instead of causing keyword cannibalisation.
+            To maintain clear claim governance across AI-search and content systems, every core relationship should be tracked in a central proposition model. This framework helps establish canonical page ownership for specific claims, so smaller technical concepts support the main content system instead of creating keyword cannibalisation.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            To prevent inflated claims and ensure that evidence requirements are visible before content creation begins, every semantic proposition must strictly adhere to the following <strong>Claim Confidence Rules</strong>:
+            To prevent inflated claims and ensure that evidence requirements are visible before content creation begins, every semantic proposition must adhere to the following <strong>Claim Confidence Rules</strong>:
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 pt-2">
@@ -282,7 +282,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
                 <span>4. Qualified</span>
               </div>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Used when an outcome depends entirely on specific client implementations, system variations, or external search engine modifications (e.g., <em>&ldquo;Can support...&rdquo;</em>, <em>&ldquo;May improve...&rdquo;</em>, or <em>&ldquo;Creates stronger conditions for...&rdquo;</em>).
+                Used when an outcome depends on client implementation, system variation, or external search engine behaviour (e.g., <em>&ldquo;Can support...&rdquo;</em>, <em>&ldquo;May improve...&rdquo;</em>, or <em>&ldquo;Creates stronger conditions for...&rdquo;</em>).
               </p>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            A high-performance content portfolio must be organised around five explicit cognitive layers. This progression moves an early-stage user query smoothly down through technical mechanics and proof assets into verified commercial actions without forcing every researcher straight to a transaction page.
+            A strong content portfolio can be organised around five explicit cognitive layers. This progression moves an early-stage user query smoothly down through technical mechanics and proof assets into verified commercial actions without forcing every researcher straight to a transaction page.
           </p>
 
           <div className="space-y-3">
@@ -308,7 +308,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="font-mono text-xs font-bold text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-1 rounded border border-aeo-cyan/20 shrink-0">1. Intent</span>
               <div className="space-y-1">
                 <h3 className="text-sm font-bold text-white">Intent Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Captures a raw consumer problem, question, task, or desired outcome (e.g., <em>&ldquo;How do I improve AI search visibility?&rdquo;</em>) using comprehensive guides, FAQs, or comparison tools.</p>
+                <p className="text-xs text-zinc-400 font-serif">Captures a user problem, question, task, or desired outcome (e.g., <em>&ldquo;How do I improve AI search visibility?&rdquo;</em>) using comprehensive guides, FAQs, or comparison tools.</p>
               </div>
             </div>
 
@@ -324,7 +324,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 shrink-0">3. Evidence</span>
               <div className="space-y-1">
                 <h3 className="text-sm font-bold text-white">Evidence Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Demonstrates the validity of the technical claims using transparent research data, measurement frameworks, and detailed case studies (e.g., <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline">Baby Bento E-Commerce Growth</Link>).</p>
+                <p className="text-xs text-zinc-400 font-serif">Demonstrates or supports the technical claims using transparent research data, measurement frameworks, and detailed case studies (e.g., <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline">Baby Bento E-Commerce Growth</Link>).</p>
               </div>
             </div>
 
@@ -340,7 +340,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="font-mono text-xs font-bold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/20 shrink-0">5. Core</span>
               <div className="space-y-1">
                 <h3 className="text-sm font-bold text-white">Core Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Establishes the accountable brand profile and corporate identifiers behind the entire system (e.g., <em>Who is providing this framework?</em>) using verified organisation profiles like <Link href="/brand-facts" className="text-aeo-cyan hover:underline">/brand-facts</Link> and <Link href="/about" className="text-aeo-cyan hover:underline">/about</Link>.</p>
+                <p className="text-xs text-zinc-400 font-serif">Establishes the accountable brand entity and organisation identity behind the entire system (e.g., <em>Who is providing this framework?</em>) using verified organisation profiles like <Link href="/brand-facts" className="text-aeo-cyan hover:underline">/brand-facts</Link> and <Link href="/about" className="text-aeo-cyan hover:underline">/about</Link>.</p>
               </div>
             </div>
           </div>
@@ -365,7 +365,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
             <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
               <h3 className="text-lg font-bold text-white font-soehne-breit">A. Entity Definition</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Every service, diagnostic tool, or method must feature a standalone definition that makes sense out of context.
+                Every service, diagnostic tool, or method should feature a standalone definition that makes sense out of context.
               </p>
               <div className="p-3 bg-white/5 rounded-lg border border-white/10 font-mono text-xs text-aeo-cyan">
                 <strong>The Formula:</strong> [Entity] is a [category] that [primary function] for [audience/context] by [method/mechanism].
@@ -382,7 +382,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               </p>
               <ul className="space-y-2 text-xs font-serif text-zinc-400 list-disc pl-5">
                 <li><strong className="text-white">Process &rarr; Outcome:</strong> An entity audit identifies ambiguous service and brand information that can create inconsistent interpretation across key pages.</li>
-                <li><strong className="text-white">Component &rarr; System:</strong> Structured data is one component of a broader AI-search strategy that also includes content clarity, crawlability, internal linking, and source evidence.</li>
+                <li><strong className="text-white">Component &rarr; System:</strong> Structured data is one supporting component of a broader AI-search strategy that also includes content clarity, crawlability, internal linking, and source evidence.</li>
                 <li><strong className="text-white">Problem &rarr; Method:</strong> Where a page makes unsupported claims, an evidence audit identifies the proof, methodology, or source material required.</li>
               </ul>
             </div>
@@ -390,7 +390,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
             <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
               <h3 className="text-lg font-bold text-white font-soehne-breit">C. Evidence and Proof</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                High-value claims require visible support. Google&rsquo;s grounding documentation describes grounded answers as those whose claims are supported directly by supplied reference texts, allowing systems to evaluate whether claims are substantiated and return appropriate citations. Authoritative evidence types include transparent service methodologies, defined measurement criteria, anonymised audit examples, and case studies with clearly documented scopes, reporting periods, and limitations.
+                High-value claims require visible support. Google&rsquo;s grounding documentation describes grounded answers as those whose claims are supported by supplied reference texts, and its systems can evaluate whether claims are substantiated and return citations. Authoritative evidence types include transparent service methodologies, defined measurement criteria, anonymised audit examples, and case studies with clearly documented scopes, reporting periods, and limitations.
               </p>
             </div>
           </div>
@@ -408,7 +408,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            Building a large physical URL directory for every micro-concept (e.g., creating individual routes for /json-ld/, /chunking/, and /embeddings/) creates severe crawl-depth bottlenecks and internal link fragmentation.
+            Building a large physical URL directory for every micro-concept can create crawl-depth issues, internal-link fragmentation, and maintenance overhead.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
@@ -438,7 +438,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
 
             <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
               <div className="text-xs font-mono text-blue-400 font-bold">Evidence Node (/knowledge-hub/case-studies)</div>
-              <p className="text-xs text-zinc-400 font-serif">Aggregates client success datasets to provide verified verification proof points.</p>
+              <p className="text-xs text-zinc-400 font-serif">Aggregates client success datasets to provide verified proof points.</p>
             </div>
 
             <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
@@ -464,7 +464,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            When configuring server-rendered <code className="text-aeo-cyan font-mono text-xs">@graph</code> blocks, match recognised entities to valid properties (e.g., <code className="text-zinc-300 font-mono text-xs">about</code>, <code className="text-zinc-300 font-mono text-xs">mainEntity</code>, <code className="text-zinc-300 font-mono text-xs">mentions</code>, <code className="text-zinc-300 font-mono text-xs">hasPart</code>, <code className="text-zinc-300 font-mono text-xs">provider</code>, <code className="text-zinc-300 font-mono text-xs">citation</code>). Proprietary internal labels used for planning must never be invented in public Schema.org markup; they must be mapped cleanly to standard interoperable vocabularies.
+            When configuring server-rendered <code className="text-aeo-cyan font-mono text-xs">@graph</code> blocks, match recognised entities to valid properties (e.g., <code className="text-zinc-300 font-mono text-xs">about</code>, <code className="text-zinc-300 font-mono text-xs">mainEntity</code>, <code className="text-zinc-300 font-mono text-xs">mentions</code>, <code className="text-zinc-300 font-mono text-xs">hasPart</code>, <code className="text-zinc-300 font-mono text-xs">provider</code>, <code className="text-zinc-300 font-mono text-xs">citation</code>). Proprietary internal labels used for planning should not be invented in public Schema.org markup; they should be mapped cleanly to standard interoperable vocabularies.
           </p>
         </section>
 
@@ -480,7 +480,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            When generative AI search engines guess your business pricing, capabilities, or operating hours, they don&rsquo;t just lose citations: they lose high-intent clients. Large Language Models (LLMs) do not query traditional databases by default; they generate statistical token predictions. When an environment relies on unstructured or scattered prose, RAG scrapers suffer from context survival failure, causing models to drop your citations in favor of an authoritative third-party directory.
+            When generative AI search systems guess your business pricing, capabilities, or operating hours, the result can be inaccurate answers, weaker trust, and missed high-intent opportunities. AI systems do not all retrieve and present information in the same way, which is why clear, well-structured source content matters. When content is scattered or poorly structured, retrieval systems may miss important context and surface incomplete or less reliable sources.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
@@ -500,7 +500,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-aeo-purple bg-aeo-purple/10 px-2.5 py-1 rounded border border-aeo-purple/25 shrink-0">Stage 2</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Observe</h3>
-                <p className="text-xs text-zinc-400 font-serif">Execute automated query fan-out simulations across live conversational search indices.</p>
+                <p className="text-xs text-zinc-400 font-serif">Run automated query tests across live AI-search environments to compare declared brand facts with observed answers.</p>
               </div>
             </div>
 
@@ -508,7 +508,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/25 shrink-0">Stage 3</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Compare</h3>
-                <p className="text-xs text-zinc-400 font-serif">Calculate the mathematical variance between your declared corporate parameters and observed answer passages.</p>
+                <p className="text-xs text-zinc-400 font-serif">Measure the gap between your declared brand facts and the passages surfaced in answers.</p>
               </div>
             </div>
 
@@ -524,13 +524,13 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/25 shrink-0">Stage 5</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Fix</h3>
-                <p className="text-xs text-zinc-400 font-serif">Apply targeted <Link href="/solutions/aeo-sprint" className="text-emerald-400 hover:underline">AEO Technical Sprints</Link> to resolve schema drifts, update text copy blocks, and secure unassailable citation slots.</p>
+                <p className="text-xs text-zinc-400 font-serif">Apply targeted <Link href="/solutions/aeo-sprint" className="text-emerald-400 hover:underline">AEO Technical Sprints</Link> to resolve schema drifts, update text copy blocks, and improve the conditions for citation inclusion.</p>
               </div>
             </div>
           </div>
 
           <p className="text-base text-white/70 font-serif leading-relaxed pt-2">
-            An AI-search content architecture does not reward a website simply for repeating keywords or adding isolated technical markup. A stronger foundation comes from a coherent knowledge system: one that models the propositions a business needs to establish, assigns clear canonical page ownership, connects user intent directly to technical concepts and visible evidence, and makes the organisation behind the information visible and accountable.
+            An AI-search content architecture does not help a website simply by repeating keywords or adding isolated technical markup. A stronger foundation comes from a coherent knowledge system that models the propositions a business needs to establish, assigns clear ownership to canonical pages, connects user intent to technical concepts and visible evidence, and makes the organisation behind the information visible and accountable.
           </p>
         </section>
 
