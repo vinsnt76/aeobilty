@@ -188,6 +188,9 @@ export default function RagArticlePage() {
           "https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo",
           "https://aeobility.com.au/knowledge-hub/semantic-seo"
         ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
         "potentialAction": {
           "@type": "ReadAction",
           "target": [
@@ -1224,7 +1227,7 @@ export default function RagArticlePage() {
               <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
               <h3 className="text-lg font-bold text-white font-sans mb-2">Deploying Production-Grade RAG Optimisation</h3>
               <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-                Bypassing linear parsing limits requires structuring text blocks into distinct informational fragments. For companies deploying these updates inside production frameworks, integrating an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> ensures that generated citations correctly reference the source organisation.
+                To successfully pass through passage-level extraction filters inside modern context windows, engineering content must organise raw data chunks around a stable entity model. Organisations can deploy our custom <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> frameworks and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to optimise text ingestion speeds and improve citation reliability.
               </p>
               <Link
                 href="/services/aeo"

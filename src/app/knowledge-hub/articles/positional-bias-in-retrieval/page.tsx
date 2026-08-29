@@ -120,7 +120,10 @@ export default function PositionalBiasArticlePage() {
             "name": "Vector Space Model",
             "sameAs": "https://www.wikidata.org/wiki/Q792224"
           }
-        ]
+        ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        }
       },
       {
         "@type": "Person",
@@ -876,7 +879,7 @@ export default function PositionalBiasArticlePage() {
             <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
             <h3 className="text-lg font-bold text-white font-sans mb-2">Eliminating Positional Bias with Professional AEO</h3>
             <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-              To minimise context dilution inside massive token windows, brand copy should isolate answers within top-tier headings. Systems can leverage structured <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> to guarantee semantic accuracy across diverse retrieval pipelines.
+              Mitigating primacy and recency spikes requires restructuring text blocks into crisp answer fragments. Businesses can implement dedicated <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> to protect content density across deep retrieval pipelines.
             </p>
             <Link
               href="/services/aeo"
