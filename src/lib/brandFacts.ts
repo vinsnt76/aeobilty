@@ -1,12 +1,114 @@
+/**
+ * AEObility Canonical Brand Knowledge Layer (CBKL)
+ * Locale: en-AU (Modern Australian English)
+ * Last Verified: Aug 29, 2026
+ */
+
+export interface FactProvenance {
+  subject: string;
+  predicate: string;
+  object: string;
+  source: string;
+  evidenceType: 'FirstPartyPage' | 'CorporateRegistry' | 'TechnicalDocumentation' | 'CaseStudy';
+  status: 'verified' | 'provisional';
+  firstPublished: string;
+  lastVerified: string;
+}
+
+// ============================================================================
+// 1. IDENTITY FACTS (Who/What the Entity Is)
+// ============================================================================
+export const BRAND_IDENTITY = {
+  name: "AEObility",
+  legalName: "AEObility Pty Ltd",
+  entityType: "LocalBusiness",
+  industry: "Answer Engine Optimisation",
+  foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
+  website: "https://aeobility.com.au",
+  brandPromise: "Get Found. Get Chosen.",
+  tagline: "No jargon. No pressure. Just clarity."
+};
+
+// ============================================================================
+// 2. KNOWLEDGE FACTS & PROVENANCE (Scope Boundaries & Methods)
+// ============================================================================
+export const BRAND_DEFINITIONS = {
+  "Answer Engine Optimisation": {
+    establishedFact: "The process of structuring digital content to improve its discoverability by AI search assistants and conversational retrieval engines.",
+    aeobilityMethodology: "Restructuring raw data assets into explicit semantic graph architectures and atomic answer blocks to maximise passage-level extraction scores."
+  },
+  "Telemetry Diagnostic": {
+    establishedFact: "An automated technical scan designed to audit how web assets are parsed by information retrieval systems.",
+    aeobilityClaim: "Simulates multi-engine scraper workflows to identify configuration vulnerabilities, entity salience drifts, and topological positioning gaps."
+  }
+};
+
+export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
+  {
+    subject: "AEObility",
+    predicate: "specialisesIn",
+    object: "Answer Engine Optimisation",
+    source: "https://aeobility.com.au/services/aeo",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2025-11-12",
+    lastVerified: "2026-08-29"
+  },
+  {
+    subject: "AEObility",
+    predicate: "provides",
+    object: "Telemetry Diagnostic Scanner",
+    source: "https://aeobility.com.au/diagnostic",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-01-15",
+    lastVerified: "2026-08-29"
+  },
+  {
+    subject: "AEObility",
+    predicate: "evidences",
+    object: "Baby Bento E-Commerce Growth",
+    source: "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
+    evidenceType: "CaseStudy",
+    status: "verified",
+    firstPublished: "2026-02-01",
+    lastVerified: "2026-08-29"
+  }
+];
+
+// ============================================================================
+// 3. COMMERCIAL FACTS (Products, SKUs, and Pricing Frameworks)
+// ============================================================================
 export const PRICING_CONFIG = {
+  meta: { currency: "AUD", taxStatus: "Excluding GST" },
   currency: 'AUD',
   taxExclusive: true,
-  guarantee: null, // Removed 60-day risk reversal policy
+  guarantee: null,
   blueprint: {
     code: 'BPSTRAT',
+    sku: 'AEO-BP-STRAT',
     title: 'The AEObility Blueprint',
+    name: 'Strategic AEO Blueprint & Diagnostic Scan',
     price: 995,
+    priceAUD: 995,
+    duration: '10 business days',
     creditBackEligible: true,
+    deliverables: [
+      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices)',
+      'Passage-level extraction and context survival diagnostics',
+      'Entity salience and schema graph gap assessment'
+    ]
+  },
+  StrategicBlueprint: {
+    sku: 'AEO-BP-STRAT',
+    name: 'Strategic AEO Blueprint & Diagnostic Scan',
+    priceAUD: 995,
+    duration: '10 business days',
+    deliverables: [
+      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices)',
+      'Passage-level extraction and context survival diagnostics',
+      'Entity salience and schema graph gap assessment'
+    ]
   },
   microSprints: {
     codeSeries: 'SS1-SS4-MICRO',
@@ -17,21 +119,36 @@ export const PRICING_CONFIG = {
       { id: 'citations', name: 'Citation Clean-Up', price: 495 },
       { id: 'linking', name: 'Local Linking Sprint', price: 695 },
       { id: 'brand-facts', name: 'Brand Facts Page', price: 495 },
-    ],
+    ]
+  },
+  MicroSprints: {
+    sku: 'AEO-SS-MICRO',
+    name: 'Technical Schema & Local Proximity Sprint',
+    priceFromAUD: 495,
+    duration: '3 to 5 business days',
+    deliverables: ['Nested JSON-LD schema generation', 'GeoCoordinate mapping alignment']
   },
   foundation: {
     codeSeries: 'SS1-SS4-MACRO',
     basePriceFrom: 3195,
     deliveryWindow: '4–5 working days across a 4-week period',
-    contractTerm: 'None (Fixed-scope execution)',
-  },
+    contractTerm: 'None (Fixed-scope execution)'
+  }
 } as const;
 
-/**
- * AEObility Brand Facts & Service Offerings JSON-LD Source of Truth
- * Provides unambiguous, machine-readable reference for products, SKUs, and pricing.
- */
+// ============================================================================
+// 4. TEMPORAL FACTS (Dynamic States & Active Sprints)
+// ============================================================================
+export const BRAND_TEMPORAL_STATE = {
+  fiscalCycle: "FY27",
+  activeSprintsAvailable: true,
+  lastRegistrySync: "2026-08-29T20:36:40+08:00",
+  currentCaseStudies: ["case-studies/baby-bento", "case-studies/allied-health"]
+};
 
+// ============================================================================
+// 5. PUBLIC INTEROPERABLE VOCABULARY (Standard Schema.org Graph)
+// ============================================================================
 export interface ProductOffer {
   '@type': 'Product';
   sku: string;
@@ -137,395 +254,94 @@ export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
           'ContactPoint validation'
         ]
       }
-    },
+    }
+  ]
+};
+
+export const PUBLIC_SCHEMA_GRAPH = {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'Product',
-      sku: 'SS1MICRO2',
-      name: 'Service Schema Injection',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
+      "@type": BRAND_IDENTITY.entityType,
+      "@id": "https://aeobility.com.au/#organization",
+      "name": BRAND_IDENTITY.name,
+      "legalName": BRAND_IDENTITY.legalName,
+      "url": BRAND_IDENTITY.website,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": BRAND_IDENTITY.foundingLocation.city,
+        "addressRegion": BRAND_IDENTITY.foundingLocation.state,
+        "addressCountry": BRAND_IDENTITY.foundingLocation.country
       },
-      description: 'Add structured Service schema to one service page.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Service schema',
-          'ServiceType',
-          'AreaServed',
-          'Provider',
-          'Related service mapping'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS1MICRO3',
-      name: 'Canonical Business Facts Consolidation',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Standardise business facts for AI engines and local directory profiles.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Business facts dictionary',
-          'Name, Address, Phone (NAP) standardisation',
-          'legalName mapping'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS1MICRO4',
-      name: 'JSON-LD Validation and Repair',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Validate and repair broken or conflicting schema blocks.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'JSON-LD validation',
-          'Syntax error correction',
-          'Nesting fixes',
-          'Deprecated field removal'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS2MACROS2',
-      name: 'Atomic Answer Blocks',
-      priceCurrency: 'AUD',
-      price: '3195.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Convert pages into retrieval-ready atomic content blocks.',
-      offers: {
-        '@type': 'Offer',
-        price: '3195.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Foundation Tier (~15 Hours)',
-        itemOffered: [
-          '10 core pages rewritten into atomic blocks',
-          'Conversational query alignment',
-          'Passage structuring'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS2MICRO1',
-      name: 'Single Page Atomic Rewrite',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Rewrite one critical page into atomic blocks.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Answer-first rewrite',
-          'Problem-solution-outcome segmentation',
-          '90–120 token retrieval-ready formatting'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS2MICRO2',
-      name: 'FAQ Extraction and Expansion',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Build AI-ready FAQs for one service page.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Five to eight atomic FAQs',
-          'Query-aligned phrasing',
-          'Conversational answer-first responses'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS2MICRO3',
-      name: 'Passage-Level Structuring and Chunking',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Restructure one page into machine-friendly content chunks.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Intent-aligned segmentation',
-          'Semantic density optimisation',
-          'Strict heading structure validation'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS2MICRO4',
-      name: 'Query Alignment and Intent Mapping',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Align one page with active conversational AI search queries.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Query intent family mapping',
-          'Integration of high-frequency queries',
-          'Answer-first alignment'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS3MACROS3',
-      name: 'Semantic Lattice Linking',
-      priceCurrency: 'AUD',
-      price: '6359.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Build internal concept relationships and cross-page structural meaning.',
-      offers: {
-        '@type': 'Offer',
-        price: '6359.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Comprehensive Tier (~30 Hours)',
-        itemOffered: [
-          'Full site semantic lattice',
-          'Descriptive anchor strategy',
-          'Relationship mapping',
-          'Pathway optimisation'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS3MICRO1',
-      name: 'Three-Node Semantic Lattice Patch',
-      priceCurrency: 'AUD',
-      price: '695.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Build a small concept lattice for one high-value service cluster.',
-      offers: {
-        '@type': 'Offer',
-        price: '695.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Specialised Half-Day (3 Hours)',
-        itemOffered: [
-          'Three-node micro-lattice',
-          'Descriptive anchor text optimisation',
-          'Core concept reinforcement'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS3MICRO2',
-      name: 'Anchor Optimisation for One Page',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Improve internal linking logic and anchor signalling for one page.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Descriptive anchor rewrite',
-          'Contextual relationship mapping',
-          'Semantic reinforcement pathway setup'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS3MICRO3',
-      name: 'Concept Cluster Reinforcement',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Strengthen semantic meaning across a small cluster of related pages.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Cluster mapping',
-          'Cross-page anchor alignment',
-          'Semantic reinforcement'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS4MACROS4',
-      name: 'Brand Facts and Consensus',
-      priceCurrency: 'AUD',
-      price: '3195.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Standardise cross-directory citations and strengthen external trust signals.',
-      offers: {
-        '@type': 'Offer',
-        price: '3195.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Foundation Tier (~15 Hours)',
-        itemOffered: [
-          'Brand Facts page creation',
-          'Directory cleanup',
-          'NAP profile consistency',
-          'Bing Places alignment'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS4MICRO1',
-      name: 'NAP Standardisation',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Correct Name, Address, and Phone inconsistencies across core directories.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Hyper-local NAP audit',
-          'Cross-directory standardisation',
-          'Manual update deployment plan'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS4MICRO2',
-      name: 'Directory Citation Cleanup',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Clean up legacy citations in one major directory set.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Directory account corrections',
-          'Citation alignment',
-          'Removal of conflicting or duplicate entries'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS4MICRO3',
-      name: 'Brand Facts Page Creation',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Build a canonical Brand Facts page on the client\'s site.',
-      offers: {
-        '@type': 'Offer',
-        price: '495.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'Single source of truth page deployment',
-          'Factual consistency checks',
-          'Entity graph reinforcement'
+      "knowsAbout": Object.keys(BRAND_DEFINITIONS),
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AEObility Commercial Sprint Matrix",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": PRICING_CONFIG.StrategicBlueprint.name,
+              "sku": PRICING_CONFIG.StrategicBlueprint.sku
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": PRICING_CONFIG.StrategicBlueprint.priceAUD,
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": "false"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": PRICING_CONFIG.MicroSprints.name,
+              "sku": PRICING_CONFIG.MicroSprints.sku
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": PRICING_CONFIG.MicroSprints.priceFromAUD,
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": "false"
+            }
+          }
         ]
       }
     }
   ]
 };
+
+// ============================================================================
+// 6. PROPRIETARY TELEMETRY CORE (Internal Value Weights)
+// ============================================================================
+export interface TelemetryMetrics {
+  relationshipStrength: number;
+  expectedFactCoverage: boolean;
+  retrievalPriorityScore: number;
+}
+
+export const INTERNAL_TELEMETRY_REGISTRY: Record<string, TelemetryMetrics> = {
+  "AEObility->specialisesIn->Answer Engine Optimisation": {
+    relationshipStrength: 0.94,
+    expectedFactCoverage: true,
+    retrievalPriorityScore: 0.98
+  },
+  "AEObility->provides->Telemetry Diagnostic Scanner": {
+    relationshipStrength: 0.91,
+    expectedFactCoverage: true,
+    retrievalPriorityScore: 0.95
+  }
+};
+
+export function calculateFactCoverageScore() {
+  const verifiedFacts = BRAND_KNOWLEDGE_LATTICE.filter(f => f.status === 'verified').length;
+  const evidencedFacts = BRAND_KNOWLEDGE_LATTICE.filter(f => f.source !== "").length;
+  
+  return {
+    identityCoverage: BRAND_IDENTITY.name ? 1.00 : 0.00,
+    factCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? verifiedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00,
+    relationshipCoverage: Object.keys(INTERNAL_TELEMETRY_REGISTRY).length > 0 ? 0.91 : 0.00,
+    evidenceCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? evidencedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00
+  };
+}

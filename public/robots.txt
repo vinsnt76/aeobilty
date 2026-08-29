@@ -11,6 +11,7 @@ Allow: /api/forms/quote
 Allow: /api/forms/audit
 Allow: /api/diagnostic
 Allow: /api/wallet-pass
+Allow: /api/brand-facts
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot

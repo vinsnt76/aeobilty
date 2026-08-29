@@ -1,4 +1,4 @@
-# AEObility: Answer Engine Optimisation (AEO) Systems
+ # AEObility: Answer Engine Optimisation (AEO) Systems
 
 [AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses and SMBs restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
 
