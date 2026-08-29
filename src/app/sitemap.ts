@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aeobility.com.au";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aeobility.com.au";
   const currentDate = new Date().toISOString();
 
   return [
@@ -103,6 +103,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/solutions/aeo-sprint`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/solutions/geo-services`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -274,12 +280,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/brand-facts`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/privacy`,

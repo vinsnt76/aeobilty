@@ -111,8 +111,9 @@ User-agent: CCBot
 Allow: /
 
 # Indexing Resources & Machine Maps
-Sitemap: https://www.aeobility.com.au/sitemap.xml
-LLMs-txt: https://www.aeobility.com.au/llms.txt
-LLMs-full-txt: https://www.aeobility.com.au/llms-full.txt
-FullLLMs-txt: https://www.aeobility.com.au/fullllms.txt
-Agents-md: https://www.aeobility.com.au/AGENTS.md
+Sitemap: https://aeobility.com.au/sitemap.xml
+LLMs-txt: https://aeobility.com.au/llms.txt
+LLMs-full-txt: https://aeobility.com.au/llms-full.txt
+FullLLMs-txt: https://aeobility.com.au/fullllms.txt
+Agents-md: https://aeobility.com.au/AGENTS.md
+Brand-Facts: https://aeobility.com.au/brand-facts

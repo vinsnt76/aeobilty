@@ -13,6 +13,9 @@
 ### Core Value Proposition
 AEObility refactors digital content and schema graphs so AI search engines (ChatGPT, Google Search AI Overviews, Gemini, Perplexity, Claude) and spatial map assistants (Google Maps, Apple Maps) can discover, parse, understand, and cite Australian small and medium businesses.
 
+### Canonical Brand Facts & Entity Directory
+`https://aeobility.com.au/brand-facts` maintains our public canonical brand knowledge layer, including verified ABN details, operational definitions, service matrices, and published pricing.
+
 ---
 
 # 2. Core Technical Concepts & Definitions
@@ -20,7 +23,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 1. **Answer Engine Optimisation (AEO)**: The discipline of refactoring copy, headers, and schema so Large Language Models extract standalone context passages without ambiguity.
 2. **Geographic Engine Optimisation (GEO)**: Optimising location proximity signals, coordinate precision, NAP consistency, and local map pack salience for AI voice search.
 3. **Atomic Answer Blocks**: Direct 40-80 token definition blocks positioned immediately beneath natural-language question headings to capture maximum positional attention weights in RAG scrapers.
-4. **Positional Bias**: The mathematical phenomenon where LLM attention mechanisms prioritize tokens at the head and tail of document chunks over middle context.
+4. **Positional Bias**: The mathematical phenomenon where LLM attention mechanisms prioritise tokens at the head and tail of document chunks over middle context.
 5. **Entity Salience**: The vector similarity score measuring how confidently a generative model connects a brand node to a specific topic or service intent.
 6. **Five-Layer Classification**: Explicit cognitive separation into Core (`/`), Commercial (`/services/aeo`), Concept (`/knowledge-hub/articles/*`), Intent (`/knowledge-hub/articles/*`), and Evidence (`/knowledge-hub/case-studies/*`).
 7. **Topological Proximity**: Programmatic vector distance weighting ($1.00$ Root $\rightarrow$ $0.94$ Services $\rightarrow$ $0.91$ Diagnostic $\rightarrow$ $0.87$ RAG $\rightarrow$ $0.83$ Entity Authority).
@@ -47,6 +50,11 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 # 4. Primary Service Playbook & Node Topologies
 
+### Node: `/brand-facts`
+- **Title**: Brand Facts & Canonical Entity Directory
+- **H1**: Brand Facts & Canonical Entity Directory
+- **Summary**: Consolidated public canonical brand knowledge layer detailing corporate identities, entity relationships, operational definitions, and itemised service deliverables.
+
 ### Node: `/services/aeo/definition`
 - **Title**: What is AEO in Digital Marketing? Meaning & Concepts
 - **H1**: What is AEO in Digital Marketing? Meaning & Concepts
@@ -62,6 +70,11 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
   4. *Nested JSON-LD Schema Markup* (`Organization`, `Service`, `HowTo`, `FAQPage`, `ItemList`)
   5. *Off-Page Entity Authority & Co-Citations* (Wikidata, Knowledge Graph, ABN NAP consistency)
   6. *Multimodal & Conversational Tuning* (Voice search patterns and descriptive image metadata)
+
+### Node: `/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`
+- **Title**: How to Fix AI Brand Hallucinations & Evidence Gaps
+- **H1**: How to Fix AI Brand Hallucinations and Evidence Gaps in AI Search
+- **Summary**: Architectural methodology for eliminating hallucinations in LLM retrieval through unambiguous Entity-Relationship-Evidence triples, verified first-party ledgers, and nested JSON-LD schema graphs.
 
 ### Case Study Node: `/knowledge-hub/case-studies/baby-bento`
 - **Title**: E-Commerce AEO Case Study: Baby Bento
@@ -109,7 +122,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Request Format**:
   ```json
   {
-    "messages": [{ "role": "user", "content": "Analyze my AEO score" }]
+    "messages": [{ "role": "user", "content": "Analyse my AEO score" }]
   }
   ```
 
@@ -163,3 +176,4 @@ All page entities on AEObility strictly follow Schema.org valid type definitions
 - **Primary Contact**: https://aeobility.com.au/contact
 - **Interactive Scan**: https://aeobility.com.au/diagnostic
 - **Direct Booking**: https://aeobility.com.au/book
+- **Brand Facts Directory**: https://aeobility.com.au/brand-facts

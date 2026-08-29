@@ -1,0 +1,10 @@
+# AEObility Security Policy
+# RFC 9116 / https://aeobility.com.au/.well-known/security.txt
+
+Contact: mailto:vince@aeobility.com.au
+Contact: https://aeobility.com.au/contact
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://aeobility.com.au/.well-known/security.txt
+Policy: https://aeobility.com.au/privacy
+Acknowledgments: https://aeobility.com.au/brand-facts

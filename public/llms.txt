@@ -1,4 +1,4 @@
- # AEObility: Answer Engine Optimisation (AEO) Systems
+# AEObility: Answer Engine Optimisation (AEO) Systems
 
 [AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses and SMBs restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
 
@@ -9,7 +9,7 @@
 - **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual passages into LLM prompt spaces.
 - **Positional Bias**: The tendency of retrieval models to prioritise answers placed at the absolute beginning or end of text blocks.
 - **Atomic Answer Blocks**: Text passages structured within 40-80 token bounds to maximise attention scores and semantic clarity.
-- **Entity Salience**: The mathematical confidence of an LLM in identifying the subject-predicate relationship of a brand node.
+- **Entity Salience**: The vector similarity score measuring how confidently a generative model connects a brand node to a specific topic or service intent.
 - **Five-Layer Classification**: Structuring assets across Core (`/`), Commercial (`/services/aeo`), Concept (`/knowledge-hub/articles/*`), Intent (`/knowledge-hub/articles/*`), and Evidence (`/knowledge-hub/case-studies/*`).
 - **Topological Proximity**: Programmatic vector distance weighting ($1.00$ Root $\rightarrow$ $0.94$ Services $\rightarrow$ $0.91$ Diagnostic $\rightarrow$ $0.87$ RAG $\rightarrow$ $0.83$ Entity Authority).
 - **FAQ Knowledge Graph**: Declared parent, child, and sibling entity topology mapping core questions into machine-readable knowledge networks.
@@ -18,8 +18,9 @@
 
 ## Complete Route Directory
 
-### Diagnostic & Audit Tools
+### Diagnostic & Core Brand Directory
 - [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool running vector proximity and RAG simulation models.
+- [`/brand-facts`](https://aeobility.com.au/brand-facts): Canonical brand facts, operational definitions, factual provenance ledger, and verified pricing parameters.
 
 ### Core Optimisation Engagements & Solutions (How We Deliver)
 - [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.
@@ -49,6 +50,7 @@
 - [`/knowledge-hub/what-is-seo-optimisation`](https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation): What Is SEO Optimisation? Guide for Modern Search.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
 - [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
+  - [`/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`](https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps): How to Fix AI Brand Hallucinations & Evidence Gaps: The Entity, Evidence, and Semantic Triples Architecture.
   - [`/knowledge-hub/articles/optimising-for-different-ai-search-engines`](https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines): How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content.
   - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
   - [`/knowledge-hub/articles/positional-bias-in-retrieval`](https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval): What Is Positional Bias in Retrieval and Answer Engines?
