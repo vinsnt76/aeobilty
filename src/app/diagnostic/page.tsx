@@ -40,12 +40,22 @@ export default function DiagnosticPage() {
       {
         "@type": "WebApplication",
         "@id": "https://aeobility.com.au/diagnostic#webapp",
-        "name": "AEObility Free AI Visibility Scanner",
+        "name": "AI Visibility Diagnostic Engine",
         "url": "https://aeobility.com.au/diagnostic",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript",
         "description": "Interactive visibility diagnostic tool evaluating structured data, location signals, and service information formatting across primary search platforms.",
+        "about": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Vector Proximity",
+            "description": "Cosine similarity matching models across transformer embeddings space."
+          }
+        ],
         "provider": {
           "@type": "Organization",
           "name": "AEObility",

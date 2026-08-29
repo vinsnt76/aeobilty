@@ -876,7 +876,7 @@ export default function PositionalBiasArticlePage() {
             <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
             <h3 className="text-lg font-bold text-white font-sans mb-2">Eliminating Positional Bias with Professional AEO</h3>
             <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-              Fixing positional dilution across your core service pages requires deploying an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link>. Explore our <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and <Link href="/solutions/aeo-sprint" className="text-aeo-purple font-semibold hover:underline">structured AEO implementation sprints</Link> to reconstruct your atomic answer blocks and secure top-ranked citation positions.
+              Mitigating primacy and recency spikes requires restructuring text fields into precise answer units. Businesses looking to close the semantic alignment gap can deploy dedicated <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> to secure long-term citation slots.
             </p>
             <Link
               href="/services/aeo"

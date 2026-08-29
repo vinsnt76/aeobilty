@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AEO Pricing, Packages & Technical Sprints | AEObility",
-  description: "Explore transparent pricing models for Australian businesses. Standalone $995 AEObility Blueprint audit, fixed-scope micro-sprints from $495 ex. GST, and Foundation Implementation.",
+  title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
+  description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
   alternates: {
     canonical: "https://www.aeobility.com.au/solutions",
   },
   openGraph: {
-    title: "AEO Pricing, Packages & Technical Sprints | AEObility",
-    description: "Explore transparent pricing models for Australian businesses. Standalone $995 AEObility Blueprint audit, fixed-scope micro-sprints from $495 ex. GST, and Foundation Implementation.",
+    title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
+    description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
     url: "https://www.aeobility.com.au/solutions",
     siteName: "AEObility",
     images: [
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AEO Pricing, Packages & Technical Sprints | AEObility",
-    description: "Explore transparent pricing models for Australian businesses.",
+    title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
+    description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
     images: ["https://www.aeobility.com.au/images/solutions/aeo-solutions-and-pricing-framework_AEObility.webp"],
   },
   keywords: [

@@ -111,7 +111,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "AEO Packages",
         "href": "/solutions",
-        "description": "Explore our clear pricing models. From the $995 standalone MVP Strategic Blueprint to target optimisation implementation sprints.",
+        "description": "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
         "entityName": "AEO Packages",
         "isServicePillar": false,
         "isKnowledgeCapsule": false,

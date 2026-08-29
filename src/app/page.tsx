@@ -12,7 +12,7 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: "AI Search Optimisation for Australian Businesses | AEObility",
+  title: "AI Search Optimisation Services | AEObility",
   description: "Get found across Search, Maps, and AI systems. Enter your website URL for a free visibility audit delivered straight to your inbox.",
   keywords: [
     "AI Search Optimisation Australia",

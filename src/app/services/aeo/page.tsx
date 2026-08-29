@@ -442,6 +442,22 @@ export default function AEORootPage() {
                 </div>
               </div>
             </div>
+
+            {/* Deep Mechanics Evidence Bridge */}
+            <div className="bg-gradient-to-r from-aeo-purple/15 via-black to-aeo-cyan/15 border border-white/15 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono uppercase font-bold text-cyan-300 tracking-wider block">Deep Mechanics &amp; Algorithmic Grounding</span>
+                <p className="text-xs text-white/90">
+                  <strong>Deep Mechanics:</strong> Explore how retrieval-augmented engines deconstruct conversational queries via our <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-semibold hover:underline">RAG &amp; Answer Engine Search</Link> index or review our operational <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-purple-400 font-semibold hover:underline">Positional Bias Audit</Link> to safeguard content density.
+                </p>
+              </div>
+              <Link
+                href="/knowledge-hub/aeo"
+                className="px-4 py-2 bg-white/5 border border-white/10 hover:border-cyan-400 text-white rounded-lg text-xs font-mono font-bold shrink-0 transition-colors"
+              >
+                Review Methodology &rarr;
+              </Link>
+            </div>
           </section>
 
           {/* 3. The 4 Foundational AEO Pillars */}
