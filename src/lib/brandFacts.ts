@@ -7,9 +7,7 @@
 export { AEOBILITY_TONE_OF_VOICE } from './brandGuidelines';
 
 export interface FactProvenance {
-  subject: string;
-  predicate: string;
-  object: string;
+  statement: string;
   source: string;
   evidenceType: 'FirstPartyPage' | 'CorporateRegistry' | 'TechnicalDocumentation' | 'CaseStudy';
   status: 'verified' | 'provisional';
@@ -24,7 +22,7 @@ export const BRAND_IDENTITY = {
   name: "AEObility",
   legalName: "Trekaboutoz trading as AEObility",
   abn: "61 029 803 255",
-  entityType: "LocalBusiness & ProfessionalService",
+  entityType: "ProfessionalService",
   industry: "Answer Engine Optimisation",
   foundingDate: "2011-03-15",
   founder: "Vinnie Baker",
@@ -35,23 +33,24 @@ export const BRAND_IDENTITY = {
     coordinates: { latitude: -31.9505, longitude: 115.8605 }
   },
   foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
-  serviceArea: ["Australia", "Western Australia (Primary Base)", "Major Capital Cities (Remote Execution)"],
+  serviceArea: ["Australia", "Western Australia (Primary Base)", "Major Capital Cities (Remote Delivery)"],
   website: "https://aeobility.com.au",
   brandPromise: "Get Found. Get Chosen.",
   tagline: "No jargon. No pressure. Just clarity.",
-  knownAs: ["AEObility Australia", "AEObility Optimisation Agency", "AEObility Digital"],
+  knownAs: ["AEObility"],
   notToBeConfusedWith: ["generic consulting brands", "unverified AI-search claims"],
   officialSources: [
-    "https://aeobility.com.au",
-    "https://aeobility.com.au/brand-facts",
-    "https://aeobility.com.au/AGENTS.md",
-    "https://aeobility.com.au/diagnostic"
+    { title: "AEObility Home", url: "https://aeobility.com.au" },
+    { title: "Brand Facts Directory", url: "https://aeobility.com.au/brand-facts" },
+    { title: "AI Crawler and Agent Guidance", url: "https://aeobility.com.au/AGENTS.md" },
+    { title: "AI Visibility Diagnostic", url: "https://aeobility.com.au/diagnostic" }
   ],
   temporalBadge: {
-    lastVerified: "Aug 29, 2026",
-    effectiveDate: "Aug 29, 2026",
+    lastVerified: "29 Aug 2026",
+    effectiveDate: "29 Aug 2026",
     fiscalCycle: "FY27",
-    reviewedBy: "AEObility editorial and technical team"
+    reviewedBy: "AEObility editorial and technical team",
+    governanceNote: "We review this page when a material brand, service, pricing, or contact detail changes, and at least annually."
   }
 };
 
@@ -60,20 +59,18 @@ export const BRAND_IDENTITY = {
 // ============================================================================
 export const BRAND_DEFINITIONS = {
   "Answer Engine Optimisation": {
-    establishedFact: "The process of structuring digital content to improve its discoverability by AI search assistants and conversational retrieval engines.",
-    aeobilityMethodology: "AEObility's methodology focuses on organising core business information into clear, machine-readable structures and direct answer blocks so AI systems can more easily read and reference the business."
+    workingDefinition: "A practice focused on making business information easier for search engines and AI answer systems to access, interpret, and use when responding to relevant queries.",
+    aeobilityApproach: "Organising core business information into clear, machine-readable structures and direct answer blocks so AI systems can more easily read and reference the business."
   },
   "Telemetry Diagnostic": {
-    establishedFact: "An automated technical scan designed to audit how web assets are parsed by modern information retrieval systems.",
-    aeobilityClaim: "Uses structured checks to identify broken data signals, inconsistent business details across platforms, and likely gaps in how AI systems may interpret the business."
+    workingDefinition: "An automated review designed to assess selected technical and content signals that can affect how web assets are accessed and interpreted.",
+    whatItAssesses: "A structured review of selected content, technical, entity, and information-consistency signals that may affect AI-search readiness."
   }
 };
 
 export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
   {
-    subject: "AEObility",
-    predicate: "specialisesIn",
-    object: "Answer Engine Optimisation",
+    statement: "AEObility provides Answer Engine Optimisation services",
     source: "https://aeobility.com.au/services/aeo",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -81,9 +78,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    subject: "AEObility",
-    predicate: "provides",
-    object: "Telemetry Diagnostic Scanner",
+    statement: "AEObility provides the Telemetry Diagnostic",
     source: "https://aeobility.com.au/diagnostic",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -91,9 +86,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    subject: "AEObility",
-    predicate: "foundedBy",
-    object: "Vinnie Baker",
+    statement: "AEObility was founded by Vinnie Baker",
     source: "https://aeobility.com.au/vince-baker",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -101,9 +94,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    subject: "AEObility",
-    predicate: "operatesIn",
-    object: "Australia, with Perth as primary base",
+    statement: "AEObility operates in Australia, with Perth as the primary base",
     source: "https://aeobility.com.au/contact",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -111,9 +102,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    subject: "AEObility",
-    predicate: "evidences",
-    object: "Baby Bento E-Commerce Growth",
+    statement: "Baby Bento case study documents an AEObility client engagement",
     source: "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
     evidenceType: "CaseStudy",
     status: "verified",
@@ -121,9 +110,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    subject: "Telemetry Diagnostic Scanner",
-    predicate: "analyses",
-    object: "Answer Engine Visibility & Fact Coverage",
+    statement: "The Telemetry Diagnostic assesses selected AI-search visibility and fact-coverage signals",
     source: "https://aeobility.com.au/diagnostic",
     evidenceType: "TechnicalDocumentation",
     status: "verified",
@@ -144,26 +131,28 @@ export const PRICING_CONFIG = {
     code: 'BPSTRAT',
     sku: 'AEO-BP-STRAT',
     title: 'The AEObility Blueprint',
-    name: 'Strategic AEO Blueprint & Diagnostic Scan',
+    name: 'Strategic AEO Blueprint and Diagnostic Scan',
     price: 995,
     priceAUD: 995,
     duration: '10 business days',
     creditBackEligible: true,
+    description: 'A fixed-scope review of location consistency, priority-page answer readiness, entity clarity, structured-data gaps, and recommended next actions.',
     deliverables: [
-      'Multi-platform location signal review to identify inconsistencies across mapping layers',
-      'Passage-level content review to improve the likelihood that AI search systems surface accurate answers',
-      'Entity and schema gap assessment to reduce missed citation opportunities'
+      'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
+      'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
+      'Entity and schema gap assessment to address information and evidence gaps'
     ]
   },
   StrategicBlueprint: {
     sku: 'AEO-BP-STRAT',
-    name: 'Strategic AEO Blueprint & Diagnostic Scan',
+    name: 'Strategic AEO Blueprint and Diagnostic Scan',
     priceAUD: 995,
     duration: '10 business days',
+    description: 'A fixed-scope review of location consistency, priority-page answer readiness, entity clarity, structured-data gaps, and recommended next actions.',
     deliverables: [
-      'Multi-platform location signal review to identify inconsistencies across mapping layers',
-      'Passage-level content review to improve the likelihood that AI search systems surface accurate answers',
-      'Entity and schema gap assessment to reduce missed citation opportunities'
+      'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
+      'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
+      'Entity and schema gap assessment to address information and evidence gaps'
     ]
   },
   microSprints: {
@@ -179,12 +168,13 @@ export const PRICING_CONFIG = {
   },
   MicroSprints: {
     sku: 'AEO-SS-MICRO',
-    name: 'Technical Schema & Local Proximity Sprint',
+    name: 'Technical Schema and Local Proximity Sprint',
     priceFromAUD: 495,
     duration: '3 to 5 business days',
+    description: 'Modular, fixed-scope engineering sprints targeting one agreed technical priority.',
     deliverables: [
       'Nested JSON-LD schema generation to support clearer machine-readable entity relationships',
-      'GeoCoordinate mapping alignment to support local map pack visibility and accurate voice assistant routing'
+      'GeoCoordinate and location-data alignment to support consistent local information across relevant web and map surfaces'
     ]
   },
   foundation: {
@@ -208,26 +198,6 @@ export const BRAND_TEMPORAL_STATE = {
 // ============================================================================
 // 5. PUBLIC INTEROPERABLE VOCABULARY (Standard Schema.org Graph)
 // ============================================================================
-export interface ProductOffer {
-  '@type': 'Product';
-  sku: string;
-  name: string;
-  priceCurrency: 'AUD';
-  price: string;
-  priceSpecification: {
-    '@type': 'PriceSpecification';
-    valueAddedTaxIncluded: boolean;
-    description: string;
-  };
-  offers: {
-    '@type': 'Offer';
-    price: string;
-    priceCurrency: 'AUD';
-    availability: string;
-    itemCondition: string;
-  };
-}
-
 export const BRAND_PRICING_SCHEMA = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -295,7 +265,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
         latitude: BRAND_IDENTITY.location.coordinates.latitude,
         longitude: BRAND_IDENTITY.location.coordinates.longitude
       },
-      sameAs: BRAND_IDENTITY.officialSources
+      sameAs: BRAND_IDENTITY.officialSources.map(s => s.url)
     },
     {
       '@type': 'WebPage',
