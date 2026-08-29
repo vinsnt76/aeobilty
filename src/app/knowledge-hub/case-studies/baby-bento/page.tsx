@@ -475,7 +475,7 @@ export default function BabyBentoCaseStudyPage() {
           <div className="p-8 bg-gradient-to-r from-aeo-cyan/5 to-aeo-purple/5 border border-white/10 rounded-2xl space-y-4">
             <h3 className="text-xl font-bold text-white">Conclusion</h3>
             <p className="text-sm text-white/80 leading-relaxed font-serif font-light">
-              The organic impression growth achieved for Baby Bento was powered directly by eliminating canonical content overlaps. Review our commercial <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to see how our rapid technical execution sprints can align your platform&apos;s semantic footprint.
+              Our success in boosting organic impressions for Baby Bento was achieved by establishing unambiguous corporate signals. Review our core <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> framework to see how our rapid code refactoring sprints can optimise your local business visibility.
             </p>
             <p className="text-base text-aeo-cyan font-bold font-soehne-breit mt-2">
               &ldquo;When AI understands your business, your customers finally can.&rdquo;

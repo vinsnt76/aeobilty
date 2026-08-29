@@ -143,6 +143,18 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building#article",
+          "name": "Entity Authority: Why AI Search Ranks Entities Not Pages",
+          "url": "https://www.aeobility.com.au/knowledge-hub/articles/entity-authority-building"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#article",
+          "name": "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content",
+          "url": "https://www.aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines"
+        },
+        {
+          "@type": "TechArticle",
           "@id": "https://www.aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
           "name": "AI Search Optimisation with Retrieval-Augmented Generation (RAG)",
           "url": "https://www.aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"

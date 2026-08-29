@@ -84,7 +84,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "inLanguage": "en-AU"
       },
       {
-        "@type": "Article",
+        "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#article",
         "mainEntityOfPage": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#webpage"
@@ -138,6 +138,11 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "about": [
           {
             "@type": "Thing",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "Answer Engine Optimisation"
+          },
+          {
+            "@type": "Thing",
             "name": "Perplexity Search"
           },
           {
@@ -165,6 +170,9 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "name": "Structured data"
           }
         ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        },
         "mentions": [
           {
             "@type": "Organization",
@@ -1326,6 +1334,9 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               </ul>
               <p className="text-xs sm:text-sm text-white/70 font-serif leading-relaxed pl-7 pt-2">
                 While foundational practices: such as fast server response times, clean HTML structures, clear writing, and consistent business details: support cross-engine visibility, each platform requires targeted technical alignment.
+              </p>
+              <p className="text-xs sm:text-sm text-white/80 font-serif leading-relaxed pl-7 pt-2">
+                Determining how multi-engine search crawlers pull chunks into active context windows requires moving past flat keyword sets. To deploy a footprint engineered for deep LLM retrieval, platforms rely on targeted <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to structure business facts and protect citation continuity.
               </p>
             </div>
           </div>

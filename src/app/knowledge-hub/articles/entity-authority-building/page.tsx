@@ -82,9 +82,9 @@ export default function EntityAuthorityArticlePage() {
         "description": "Entity authority is the measurable strength of your business as an identifiable, trustworthy entity in AI search systems."
       },
       {
-        "@type": "Article",
+        "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#article",
-        "headline": "Entity Authority: Why AI Search Ranks Entities, Not Pages",
+        "headline": "Entity Authority: Why AI Search Ranks Entities Not Pages",
         "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities — the people, brands, products, and organisations behind those pages.",
         "author": {
           "@id": "https://aeobility.com.au/vince-baker#person"
@@ -95,6 +95,11 @@ export default function EntityAuthorityArticlePage() {
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "image": "https://aeobility.com.au/entity-visibilty-semantic-SEO_AEObility.webp",
         "about": [
+          {
+            "@type": "Thing",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "Answer Engine Optimisation"
+          },
           {
             "@type": "Service",
             "@id": "https://aeobility.com.au/services/aeo#service",
@@ -123,7 +128,10 @@ export default function EntityAuthorityArticlePage() {
             "name": "JSON-LD",
             "sameAs": "https://www.wikidata.org/wiki/Q15858694"
           }
-        ]
+        ],
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        }
       },
       {
         "@type": "FAQPage",
