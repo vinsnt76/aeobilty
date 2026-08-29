@@ -238,8 +238,8 @@ export default function LocalBusinessAEOPage() {
     {
       badge: "SERVICE AREA ARTEFACT",
       title: "Suburb Answer Unit Restructuring",
-      problem: "Generic service pages lacked suburb-specific details, preventing AI search assistants from recognizing true service radiuses.",
-      solution: "Reorganized core service pages into structured suburb answer units answering specific local queries.",
+      problem: "Generic service pages lacked suburb-specific details, preventing AI search assistants from recognising true service radiuses.",
+      solution: "Reorganised core service pages into structured suburb answer units answering specific local queries.",
       deliverable: "Atomic Answer Unit Files + Implementation Change Log"
     }
   ];
@@ -314,7 +314,7 @@ export default function LocalBusinessAEOPage() {
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/services/aeo-local-business_perth_AEObility.webp"
-                alt="Clean smartphone UI display emphasizing an optimized map pin interaction state"
+                alt="Clean smartphone UI display emphasising an optimised map pin interaction state"
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -381,10 +381,10 @@ export default function LocalBusinessAEOPage() {
             </div>
           </section>
 
-          {/* 3. Optimizing for Voice and Conversational Assistant Proximity */}
+          {/* 3. Optimising for Voice and Conversational Assistant Proximity */}
           <section id="audience-pathways" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Optimizing for Voice and Conversational Assistant Proximity</span>
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Optimising for Voice and Conversational Assistant Proximity</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Built for Service Areas &amp; Local Locations</h2>
               <p className="text-xs text-white/60 font-serif">Proximity algorithm targeting and local entity profiles for businesses seeking aeo marketers near me and aeo services near me.</p>
             </div>

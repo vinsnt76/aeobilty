@@ -75,7 +75,7 @@ export default function HumanBrandFactsPage() {
             <span>Lexical Disambiguation Note</span>
           </div>
           <p className="text-xs sm:text-sm font-serif leading-relaxed">
-            Not to be confused with <strong className="text-white">{BRAND_IDENTITY.notToBeConfusedWith.join(' or ')}</strong>. Recognized brand aliases and trading variants include: <span className="text-amber-200 font-mono">{BRAND_IDENTITY.knownAs.join(', ')}</span>.
+            Not to be confused with <strong className="text-white">{BRAND_IDENTITY.notToBeConfusedWith.join(' or ')}</strong>. Recognised brand aliases and trading variants include: <span className="text-amber-200 font-mono">{BRAND_IDENTITY.knownAs.join(', ')}</span>.
           </p>
         </div>
 

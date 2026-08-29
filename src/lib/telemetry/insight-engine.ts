@@ -94,7 +94,7 @@ export async function generateInsightEngineResult(
       description: blindSpotDesc
     },
     diagnosis: {
-      currentState: `AI currently recognizes ${domainLabel} as an active participant in the ${intent} space (Readiness: ${telemetry.readinessScore}/100).`,
+      currentState: `AI currently recognises ${domainLabel} as an active participant in the ${intent} space (Readiness: ${telemetry.readinessScore}/100).`,
       desiredState: `AI recommends ${domainLabel} whenever users search for top solutions for ${intent}.`,
       gap: telemetry.proximityScore < 50 
         ? `Proximity score is currently ${telemetry.proximityScore}%. Content lacks entity-rich authority signals required to outrank top competitors.`

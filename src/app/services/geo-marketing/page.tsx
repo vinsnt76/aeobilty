@@ -588,7 +588,7 @@ export default function GeoMarketingPage() {
                 <ul className="space-y-1.5 text-xs text-zinc-300 font-serif pt-1">
                   <li>• Hard-codes coordinate matrices for proximity routing</li>
                   <li>• Unifies Brand Facts with Wikidata entities</li>
-                  <li>• Optimized for passage-level extraction and AI citations</li>
+                  <li>• Optimised for passage-level extraction and AI citations</li>
                 </ul>
               </div>
             </div>

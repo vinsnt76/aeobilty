@@ -127,7 +127,7 @@ export default function DiagnosticEngine() {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open_bill_with_query', {
         detail: {
-          query: `Analyze diagnostic scan for ${url} (Search Query: "${intent}")`,
+          query: `Analyse diagnostic scan for ${url} (Search Query: "${intent}")`,
           mode: 'telemetry'
         }
       }));

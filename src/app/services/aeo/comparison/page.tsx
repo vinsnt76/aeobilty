@@ -464,7 +464,7 @@ export default function AEOVsSEOPage() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Strategy Scan</h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your website URL to check whether your site is optimized for traditional SEO, Answer Engines (AEO), or Local GEO.
+                  Enter your website URL to check whether your site is optimised for traditional SEO, Answer Engines (AEO), or Local GEO.
                 </p>
               </div>
 
