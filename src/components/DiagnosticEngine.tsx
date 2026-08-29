@@ -389,6 +389,10 @@ export default function DiagnosticEngine() {
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
+
+              <div className="pt-2 text-[11px] text-zinc-400 font-serif border-t border-white/5 leading-relaxed">
+                If your telemetry scan flags a critical delta between your expected and observed parameters, explore our strategic overview on how to <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-aeo-cyan hover:underline font-medium">fix AI brand hallucinations and evidence gaps</Link> to stabilise your brand&apos;s data graph.
+              </div>
             </div>
 
             {/* Strategic Blueprint Upsell Block (Placed Below Workflow / Results) */}

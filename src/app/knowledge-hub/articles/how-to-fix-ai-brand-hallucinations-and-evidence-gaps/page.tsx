@@ -242,6 +242,10 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
+            When establishing a semantic content system, businesses must ensure that core commercial offerings are anchored to a single endpoint. Instead of scattering references, centralising your structural markup onto a dedicated hub for <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO services</Link> eliminates multi-node signal dilution and clarifies canonical ownership for AI crawlers.
+          </p>
+
+          <p className="text-base text-white/70 font-serif leading-relaxed">
             To prevent inflated claims and ensure that evidence requirements are visible before content creation begins, every semantic proposition must adhere to the following <strong>Claim Confidence Rules</strong>:
           </p>
 
@@ -303,7 +307,11 @@ export default function FixAiBrandHallucinationsArticlePage() {
             A strong content portfolio can be organised around five explicit cognitive layers. This progression moves an early-stage user query smoothly down through technical mechanics and proof assets into verified commercial actions without forcing every researcher straight to a transaction page.
           </p>
 
-          <div className="space-y-3">
+          <p className="text-base text-white/70 font-serif leading-relaxed">
+            Optimising for conversational retrieval models requires understanding how individual engines process information. For example, a business targeting visibility within a <Link href="/services/ai-search-marketing" className="text-aeo-purple font-semibold hover:underline">perplexity aeo service</Link> layout needs to structure its technical documentation to allow multi-engine scrapers to extract verified facts without attribute drift.
+          </p>
+
+          <div className="space-y-3 pt-2">
             <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
               <span className="font-mono text-xs font-bold text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-1 rounded border border-aeo-cyan/20 shrink-0">1. Intent</span>
               <div className="space-y-1">
@@ -356,6 +364,10 @@ export default function FixAiBrandHallucinationsArticlePage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
             Entity-Relationship-Evidence Page Architecture
           </h2>
+
+          <p className="text-base text-white/70 font-serif leading-relaxed">
+            Many time-poor operators fall into the trap of assuming standard website copy is sufficient for modern search. Implementing a qualified <Link href="/services/aeo" className="text-emerald-400 font-semibold hover:underline">ai aeo service</Link> framework ensures that your service lists are machine-readable, moving your platform out of deep ranking tiers and into active citation slots.
+          </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
             Because answer engines extract short passages to compile direct response citations, every important page (or self-contained section of a page) must maintain complete contextual clarity when read independently. Each core block must integrate a three-part structural sequence:
@@ -464,6 +476,10 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
+            Transparent commercial alignment is a core pillar of professional data governance. Operators evaluating their digital footprint often ask: <Link href="/solutions" className="text-cyan-300 font-semibold hover:underline">how much does AEO cost</Link>? Addressing this through fixed-scope, itemised pricing configurations eliminates agency complexity and builds immediate user trust.
+          </p>
+
+          <p className="text-base text-white/70 font-serif leading-relaxed">
             When configuring server-rendered <code className="text-aeo-cyan font-mono text-xs">@graph</code> blocks, match recognised entities to valid properties (e.g., <code className="text-zinc-300 font-mono text-xs">about</code>, <code className="text-zinc-300 font-mono text-xs">mainEntity</code>, <code className="text-zinc-300 font-mono text-xs">mentions</code>, <code className="text-zinc-300 font-mono text-xs">hasPart</code>, <code className="text-zinc-300 font-mono text-xs">provider</code>, <code className="text-zinc-300 font-mono text-xs">citation</code>). Proprietary internal labels used for planning should not be invented in public Schema.org markup; they should be mapped cleanly to standard interoperable vocabularies.
           </p>
         </section>
@@ -550,7 +566,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               href="/diagnostic"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg"
             >
-              <span>Analyse Your Brand Fact Coverage via AI Diagnostic</span>
+              <span>AI Visibility Diagnostic</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -558,7 +574,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               href="/solutions/aeo-blueprint"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/15 transition-all"
             >
-              <span>Review Strategic Blueprint Method</span>
+              <span>Strategic Blueprint Method</span>
             </Link>
           </div>
         </section>

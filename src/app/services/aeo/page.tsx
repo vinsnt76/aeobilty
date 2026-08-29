@@ -83,6 +83,11 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
     targetSlug: "/solutions/aeo-blueprint",
     anchorText: "The AEObility Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
+    anchorText: "Fix AI Brand Hallucinations & Evidence Gaps",
+    entityRelation: "http://schema.org/subjectOf"
   }
 ];
 
@@ -316,6 +321,10 @@ export default function AEORootPage() {
                   </a>
                 </div>
               </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs text-zinc-300 font-serif leading-relaxed">
+              To review the underlying data structures that govern passage extraction, read our technical guide on how to <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-cyan-400 font-semibold hover:underline">fix AI brand hallucinations and evidence gaps</Link> using verified provenance networks.
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
