@@ -21,24 +21,25 @@ import {
   FileCheck2,
   Workflow,
   HelpCircle,
-  FileText
+  FileText,
+  Compass
 } from 'lucide-react';
 
 export const metadata = {
   title: "Why This Architecture Is Correct for AI Search | AEObility",
-  description: "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence.",
+  description: "Discover how semantic propositions, entity relationships, evidence, and role-based content containers create stronger foundations for AI-search visibility.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
   },
   openGraph: {
     title: "Why This Architecture Is Correct for AI Search: Entities & Evidence | AEObility",
-    description: "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence.",
+    description: "Discover how semantic propositions, entity relationships, evidence, and role-based content containers create stronger foundations for AI-search visibility.",
     url: "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
     type: "article",
   }
 };
 
-export default function FixAiBrandHallucinationsArticlePage() {
+export default function AISeachArchitectureArticle() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -75,12 +76,13 @@ export default function FixAiBrandHallucinationsArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
         "name": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
-        "description": "Learn how to improve AI search readiness by structuring your site around semantic propositions, entities, and visible evidence."
+        "description": "Discover how semantic propositions, entity relationships, evidence, and role-based content containers create stronger foundations for AI-search visibility."
       },
       {
         "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#article",
-        "headline": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
+        "headline": "Why This Architecture Is Correct for AI Search",
+        "inLanguage": "en-AU",
         "description": "A comprehensive guide on structuring website content around semantic propositions, claim governance, and the 5-stage retrieval verification loop.",
         "author": {
           "@id": "https://aeobility.com.au/vince-baker#person"
@@ -107,6 +109,28 @@ export default function FixAiBrandHallucinationsArticlePage() {
           "https://aeobility.com.au/brand-facts",
           "https://aeobility.com.au/diagnostic",
           "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why can't I just add more keyword-targeted pages?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because fragmented pages dilute canonical ownership, fragment internal links, and weaken passage extraction scores across conversational engines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does evidence matter for AI search visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI retrieval models utilise deep verification filters to evaluate whether claims are substantiated before awarding citation slots."
+            }
+          }
         ]
       },
       {
@@ -162,7 +186,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 pb-32 sm:pb-24 space-y-16">
         
-        {/* Article Header */}
+        {/* Human Scannability Header */}
         <header className="space-y-6 border-b border-white/10 pb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
             <ShieldCheck className="w-4 h-4" />
@@ -174,14 +198,14 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-white/50 pt-2">
-            <span>By <strong className="text-white">Vinnie Baker</strong></span>
+            <span>Author: <strong className="text-white">Vinnie Baker</strong></span>
             <span>•</span>
-            <span>Published Aug 29, 2026</span>
+            <span>Reading Time: 9 min read</span>
             <span>•</span>
-            <span>8 min read</span>
+            <span>Reviewed: Aug 29, 2026</span>
             <span>•</span>
             <span className="text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
-              Verified Grounding Framework
+              Standard: Verified CBKL
             </span>
           </div>
 
@@ -201,32 +225,48 @@ export default function FixAiBrandHallucinationsArticlePage() {
           />
         </div>
 
-        {/* Core Thesis & Problem Statement */}
+        {/* Executive Summary Card / Human Anchor Line */}
+        <div className="bg-gradient-to-r from-aeo-cyan/15 to-aeo-purple/10 border-l-4 border-aeo-cyan p-6 rounded-r-2xl border-y border-r border-white/10 shadow-lg">
+          <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
+            <strong className="text-white font-sans">Here is the short version:</strong> Modern AI search assistants do not rank standard keyword pages: they extract passages. This guide maps the exact structural boundaries your architecture requires to survive passage-level extraction and win trusted engine citations.
+          </p>
+        </div>
+
+        {/* Section 1: The Problem */}
         <section className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Moving Beyond the Keyword-Driven Paradigm
+            1. The Problem With Keyword-Led Content Layouts
           </h2>
           
           <p className="text-base sm:text-lg text-white/70 font-serif leading-relaxed">
-            Traditional SEO workflows typically rely on a direct linear path: <span className="font-mono text-aeo-cyan text-sm">Keyword &rarr; Target Page &rarr; Internal Link</span>. While this remains useful for language discovery and mapping raw search demand, it is not enough on its own for modern search and answer environments that may retrieve and summarise content at the passage level.
+            Traditional SEO structures rely on a straightforward historical sequence: <span className="font-mono text-aeo-cyan text-sm">Keyword &rarr; Target URL &rarr; Internal Link Text</span>. While this framework remains useful for mapping user demand signals and discovering query phrasing, it is not enough on its own for modern search and answer environments that may retrieve and summarise content at the passage level.
           </p>
 
           <p className="text-base sm:text-lg text-white/70 font-serif leading-relaxed">
-            A keyword is an expression of user need and demand, but it is not always the underlying concept, commercial requirement, or entity relationship a site must establish. For instance, search strings like <em className="text-white">&ldquo;AEO audit&rdquo;</em>, <em className="text-white">&ldquo;AI search checker&rdquo;</em>, and <em className="text-white">&ldquo;how do I improve AI search visibility&rdquo;</em> reflect overlapping user intents. Chasing each phrase with fragmented, overlapping pages divides topical authority across competing endpoints rather than elevating a single canonical resource.
+            A keyword is merely a human expression of need. It is not the underlying concept, commercial requirement, or entity relationship a website must establish to claim authority. When separate pages chase overlapping search strings like <em className="text-white">&ldquo;AEO audit&rdquo;</em>, <em className="text-white">&ldquo;AI search checker&rdquo;</em>, or <em className="text-white">&ldquo;how do I improve AI search visibility&rdquo;</em>, they divide topical equity across competing endpoints. This multi-node signal dilution causes retrieval models to miss important context and surface incomplete sources.
           </p>
 
-          <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
-            <h3 className="text-lg font-bold text-aeo-cyan font-soehne-breit flex items-center gap-2">
-              <Network className="w-5 h-5" />
-              The Semantic Proposition Standard
-            </h3>
-            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              To improve the conditions for retrieval, interpretation, and grounding, a website should organise its content around <strong>semantic propositions</strong> rather than keywords alone. A semantic proposition states a clear, meaningful claim or relationship connecting a subject entity to an object entity, outcome, or action. This maps directly to the subject-predicate-object triples used in RDF knowledge graphs to express clear relationships between resources.
-            </p>
+          {/* Structural Layout Card: Old vs New */}
+          <div className="border border-white/10 rounded-2xl overflow-hidden my-8 bg-zinc-950/90 shadow-xl">
+            <div className="bg-white/5 border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-wider text-zinc-400 font-mono">
+              Workbook Unit Transformation Model
+            </div>
+            <div className="p-6 grid md:grid-cols-2 gap-6 text-sm">
+              <div className="space-y-2.5 p-4 rounded-xl bg-red-950/20 border border-red-500/20">
+                <h4 className="font-bold text-red-400 font-soehne-breit text-base">Legacy Keyword-Led Architecture</h4>
+                <p className="text-zinc-300 font-mono text-xs bg-black/50 p-2.5 rounded border border-white/5">Keyword &rarr; Page Directory &rarr; Link</p>
+                <p className="text-xs text-zinc-400 font-serif leading-relaxed">Triggers thin content creation, structural competition, and internal link fragmentation.</p>
+              </div>
+              <div className="space-y-2.5 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20">
+                <h4 className="font-bold text-emerald-400 font-soehne-breit text-base">Propositions-Led Architecture</h4>
+                <p className="text-zinc-300 font-mono text-xs bg-black/50 p-2.5 rounded border border-white/5">Entity &rarr; Relationship &rarr; Intent &rarr; Evidence</p>
+                <p className="text-xs text-zinc-400 font-serif leading-relaxed">Builds a coherent knowledge system where multiple diverse paths resolve to one single canonical page.</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Layer 1: Semantic Proposition Governance */}
+        {/* Section 2: Semantic Propositions */}
         <section className="space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-cyan">
             <Layers className="w-4 h-4" />
@@ -234,65 +274,58 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Semantic Proposition Governance &amp; Claim Confidence Rules
+            2. The Semantic Proposition Governance Model
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            To maintain clear claim governance across AI-search and content systems, every core relationship should be tracked in a central proposition model. This framework helps establish canonical page ownership for specific claims, so smaller technical concepts support the main content system instead of creating keyword cannibalisation.
+            To maintain clear claim governance across AI-search and content systems, every core relationship should be tracked in a central proposition model. A semantic proposition records a meaningful claim that connects a subject entity to an object entity, outcome, or action using a standard pattern: <span className="text-aeo-cyan font-mono font-semibold">Subject &rarr; Predicate &rarr; Object</span>. This is consistent with the structures used in RDF knowledge graphs to express clear relationships between resources.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
             When establishing a semantic content system, businesses must ensure that core commercial offerings are anchored to a single endpoint. Instead of scattering references, centralising your structural markup onto a dedicated hub for <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO services</Link> eliminates multi-node signal dilution and clarifies canonical ownership for AI crawlers.
           </p>
-
-          <p className="text-base text-white/70 font-serif leading-relaxed">
-            To prevent inflated claims and ensure that evidence requirements are visible before content creation begins, every semantic proposition must adhere to the following <strong>Claim Confidence Rules</strong>:
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4 pt-2">
-            <div className="p-5 rounded-xl bg-zinc-950/90 border border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-aeo-cyan font-bold uppercase">
-                <FileCheck2 className="w-4 h-4" />
-                <span>1. Defined</span>
+          
+          {/* Claim Confidence Rules Summary */}
+          <div className="bg-zinc-950/90 border border-white/10 rounded-2xl p-6 my-8 shadow-xl space-y-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 font-mono">The Four Pillars of Claim Confidence Governance</h3>
+            <div className="grid sm:grid-cols-2 gap-4 text-sm">
+              <div className="bg-black/60 p-4 rounded-xl border border-white/5 space-y-1">
+                <strong className="text-aeo-cyan block font-mono text-xs uppercase">1. Defined</strong>
+                <span className="text-zinc-400 text-xs font-serif leading-relaxed">Used for proprietary services and internal methodologies (e.g., <em>&ldquo;AEObility defines...&rdquo;</em>).</span>
               </div>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Applied when defining a proprietary service, process, or internal methodology (e.g., <em>&ldquo;AEObility defines...&rdquo;</em> or <em>&ldquo;The framework includes...&rdquo;</em>).
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl bg-zinc-950/90 border border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-aeo-purple font-bold uppercase">
-                <Search className="w-4 h-4" />
-                <span>2. Observed</span>
+              <div className="bg-black/60 p-4 rounded-xl border border-white/5 space-y-1">
+                <strong className="text-aeo-purple block font-mono text-xs uppercase">2. Observed</strong>
+                <span className="text-zinc-400 text-xs font-serif leading-relaxed">Based on practitioner audit experience and systematic client testing.</span>
               </div>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Based on direct practitioner experience, systematic client audits, or internal testing environments (e.g., <em>&ldquo;We commonly observe...&rdquo;</em> or <em>&ldquo;Our audits often identify...&rdquo;</em>).
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl bg-zinc-950/90 border border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold uppercase">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>3. Verified</span>
+              <div className="bg-black/60 p-4 rounded-xl border border-white/5 space-y-1">
+                <strong className="text-emerald-400 block font-mono text-xs uppercase">3. Verified</strong>
+                <span className="text-zinc-400 text-xs font-serif leading-relaxed">Supported directly by transparent, documented first-party data layers.</span>
               </div>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Supported directly by transparent first-party data layers, documented business outcomes, or authoritative canonical sources (e.g., <em>&ldquo;The data shows...&rdquo;</em> or <em>&ldquo;The documented outcome was...&rdquo;</em>).
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl bg-zinc-950/90 border border-white/10 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase">
-                <AlertTriangle className="w-4 h-4" />
-                <span>4. Qualified</span>
+              <div className="bg-black/60 p-4 rounded-xl border border-white/5 space-y-1">
+                <strong className="text-amber-400 block font-mono text-xs uppercase">4. Qualified</strong>
+                <span className="text-zinc-400 text-xs font-serif leading-relaxed">Acknowledges dependency on system variations and crawler behaviours.</span>
               </div>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Used when an outcome depends on client implementation, system variation, or external search engine behaviour (e.g., <em>&ldquo;Can support...&rdquo;</em>, <em>&ldquo;May improve...&rdquo;</em>, or <em>&ldquo;Creates stronger conditions for...&rdquo;</em>).
-              </p>
             </div>
           </div>
         </section>
 
-        {/* Layer 2: The Five-Layer Knowledge Architecture */}
+        {/* Mid-Page Conversion Corridor 1 */}
+        <div className="border border-aeo-cyan/30 bg-gradient-to-r from-aeo-cyan/15 via-zinc-950 to-black rounded-2xl p-6 sm:p-8 my-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-2xl">
+          <div className="max-w-xl space-y-2">
+            <h3 className="text-xl font-bold text-white font-soehne-breit">Audit Your Platform Factual Grounding</h3>
+            <p className="text-zinc-300 text-xs sm:text-sm font-serif leading-relaxed">
+              Our diagnostic engine measures the exact delta between your declared brand parameters and what AI engines observe.
+            </p>
+          </div>
+          <Link 
+            href="/diagnostic" 
+            className="bg-white text-black px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-aeo-cyan transition-colors whitespace-nowrap self-start md:self-center shadow-lg"
+          >
+            Run AI Visibility Scan
+          </Link>
+        </div>
+
+        {/* Section 3: Five-Layer Architecture */}
         <section className="space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-purple">
             <Workflow className="w-4 h-4" />
@@ -300,61 +333,65 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            The Five-Layer Knowledge Architecture
+            3. The Five-Layer Knowledge Framework
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            A strong content portfolio can be organised around five explicit cognitive layers. This progression moves an early-stage user query smoothly down through technical mechanics and proof assets into verified commercial actions without forcing every researcher straight to a transaction page.
+            A high-performance content strategy can be organised around five explicit cognitive layers. This architecture moves an early-stage user problem smoothly down through underlying technical frameworks and proof metrics into verified commercial actions without asking for immediate conversion.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
             Optimising for conversational retrieval models requires understanding how individual engines process information. For example, a business targeting visibility within a <Link href="/services/ai-search-marketing" className="text-aeo-purple font-semibold hover:underline">perplexity aeo service</Link> layout needs to structure its technical documentation to allow multi-engine scrapers to extract verified facts without attribute drift.
           </p>
-
-          <div className="space-y-3 pt-2">
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
-              <span className="font-mono text-xs font-bold text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-1 rounded border border-aeo-cyan/20 shrink-0">1. Intent</span>
-              <div className="space-y-1">
-                <h3 className="text-sm font-bold text-white">Intent Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Captures a user problem, question, task, or desired outcome (e.g., <em>&ldquo;How do I improve AI search visibility?&rdquo;</em>) using comprehensive guides, FAQs, or comparison tools.</p>
-              </div>
+          
+          {/* Layer Summary Grid */}
+          <div className="space-y-3 text-sm my-6">
+            <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
+              <span className="font-mono font-bold text-aeo-cyan bg-aeo-cyan/10 px-2 py-0.5 rounded text-xs border border-aeo-cyan/25">01</span>
+              <div><strong className="text-white font-sans">Intent Layer:</strong> <span className="text-zinc-400 font-serif">Captures a user problem, question, task, or desired outcome (e.g., <em>&ldquo;How do I improve AI visibility?&rdquo;</em>).</span></div>
             </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
-              <span className="font-mono text-xs font-bold text-aeo-purple bg-aeo-purple/10 px-2.5 py-1 rounded border border-aeo-purple/20 shrink-0">2. Concept</span>
-              <div className="space-y-1">
-                <h3 className="text-sm font-bold text-white">Concept Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Explains the underlying knowledge mechanism, technical terminology, or methodology (e.g., <em>What is entity authority?</em>) using deep-dive pillar resources or glossary assets.</p>
-              </div>
+            <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
+              <span className="font-mono font-bold text-aeo-purple bg-aeo-purple/10 px-2 py-0.5 rounded text-xs border border-aeo-purple/25">02</span>
+              <div><strong className="text-white font-sans">Concept Layer:</strong> <span className="text-zinc-400 font-serif">Explains the underlying knowledge mechanism or technical framework (e.g., <em>&ldquo;What is entity authority?&rdquo;</em>).</span></div>
             </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
-              <span className="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 shrink-0">3. Evidence</span>
-              <div className="space-y-1">
-                <h3 className="text-sm font-bold text-white">Evidence Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Demonstrates or supports the technical claims using transparent research data, measurement frameworks, and detailed case studies (e.g., <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline">Baby Bento E-Commerce Growth</Link>).</p>
-              </div>
+            <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
+              <span className="font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded text-xs border border-emerald-500/25">03</span>
+              <div><strong className="text-white font-sans">Evidence Layer:</strong> <span className="text-zinc-400 font-serif">Substantiates claims using original research, transparent criteria, and case studies (e.g., <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline">Baby Bento Case Study</Link>).</span></div>
             </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
-              <span className="font-mono text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20 shrink-0">4. Commercial</span>
-              <div className="space-y-1">
-                <h3 className="text-sm font-bold text-white">Commercial Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Explains the service scope, pricing tiers, deliverables, and next transactional actions (e.g., <em>Who can help us execute this?</em>) via dedicated optimisation hubs like <Link href="/services/aeo" className="text-aeo-cyan hover:underline">/services/aeo</Link>.</p>
-              </div>
+            <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
+              <span className="font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded text-xs border border-amber-500/25">04</span>
+              <div><strong className="text-white font-sans">Commercial Layer:</strong> <span className="text-zinc-400 font-serif">Details the specific service deliverables, timelines, and package frameworks via <Link href="/services/aeo" className="text-aeo-cyan hover:underline">/services/aeo</Link>.</span></div>
             </div>
+            <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
+              <span className="font-mono font-bold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded text-xs border border-blue-500/25">05</span>
+              <div><strong className="text-white font-sans">Core Layer:</strong> <span className="text-zinc-400 font-serif">Connects the complete system back to an accountable, verified brand entity via <Link href="/brand-facts" className="text-aeo-cyan hover:underline">/brand-facts</Link> and <Link href="/about" className="text-aeo-cyan hover:underline">/about</Link>.</span></div>
+            </div>
+          </div>
 
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 flex items-start gap-4">
-              <span className="font-mono text-xs font-bold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/20 shrink-0">5. Core</span>
+          {/* Micro-FAQ Ingestion Block */}
+          <div className="border border-white/10 rounded-2xl overflow-hidden my-8 bg-zinc-950/90 shadow-xl">
+            <div className="bg-white/5 border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-wider text-aeo-cyan font-mono flex items-center gap-2">
+              <HelpCircle className="w-4 h-4" />
+              <span>Micro-FAQ Ingestion Block</span>
+            </div>
+            <div className="p-6 space-y-5 text-sm">
               <div className="space-y-1">
-                <h3 className="text-sm font-bold text-white">Core Layer</h3>
-                <p className="text-xs text-zinc-400 font-serif">Establishes the accountable brand entity and organisation identity behind the entire system (e.g., <em>Who is providing this framework?</em>) using verified organisation profiles like <Link href="/brand-facts" className="text-aeo-cyan hover:underline">/brand-facts</Link> and <Link href="/about" className="text-aeo-cyan hover:underline">/about</Link>.</p>
+                <h4 className="font-bold text-white font-soehne-breit text-base">Q: Why can&apos;t I just add more keyword-targeted pages?</h4>
+                <p className="text-zinc-300 font-serif text-xs leading-relaxed">
+                  A: Because fragmented pages dilute canonical ownership, fragment internal links, and weaken passage extraction scores across conversational engines.
+                </p>
+              </div>
+              <div className="border-t border-white/5 pt-4 space-y-1">
+                <h4 className="font-bold text-white font-soehne-breit text-base">Q: Why does evidence matter for AI search visibility?</h4>
+                <p className="text-zinc-300 font-serif text-xs leading-relaxed">
+                  A: AI retrieval models utilise deep verification filters to evaluate whether claims are substantiated before awarding citation slots.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Layer 3: Entity-Relationship-Evidence Page Architecture */}
+        {/* Section 4: Entity-Relationship-Evidence Page Architecture */}
         <section className="space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400">
             <FileText className="w-4 h-4" />
@@ -362,7 +399,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Entity-Relationship-Evidence Page Architecture
+            4. Page Ingestion Design: Entity, Relationship, Evidence
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
@@ -370,45 +407,56 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            Because answer engines extract short passages to compile direct response citations, every important page (or self-contained section of a page) must maintain complete contextual clarity when read independently. Each core block must integrate a three-part structural sequence:
+            Because automated scrapers extract short text chunks to compile direct answers, each self-contained content segment should maintain contextual clarity when read independently. Every high-value content block should incorporate a strict three-part architecture:
           </p>
 
-          <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
-              <h3 className="text-lg font-bold text-white font-soehne-breit">A. Entity Definition</h3>
+          <div className="space-y-4">
+            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2">
+              <h3 className="text-base font-bold text-white font-soehne-breit">Entity Definition</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Every service, diagnostic tool, or method should feature a standalone definition that makes sense out of context.
+                Every service, metric, or diagnostic tool must feature a direct definition that makes sense out of context.
               </p>
-              <div className="p-3 bg-white/5 rounded-lg border border-white/10 font-mono text-xs text-aeo-cyan">
-                <strong>The Formula:</strong> [Entity] is a [category] that [primary function] for [audience/context] by [method/mechanism].
+              <div className="p-3 bg-black/60 rounded-lg border border-white/10 font-mono text-xs text-aeo-cyan">
+                Formula: [Entity] is a [category] that [primary function] for [context] by [mechanism].
               </div>
-              <p className="text-xs text-zinc-400 font-serif italic pt-1">
-                <strong>Example:</strong> &ldquo;An AI search architecture audit is a structured assessment of a website&rsquo;s entity clarity, content relationships, technical accessibility, and evidence quality to identify barriers to visibility in search and AI-generated answers.&rdquo;
+            </div>
+
+            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2">
+              <h3 className="text-base font-bold text-white font-soehne-breit">Semantic Relationships</h3>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                Content blocks must move past flat self-description to express precise relational connections. For instance, structured data is merely one supporting component of a broader AI-search strategy that also includes content clarity, crawlability, internal linking, and source evidence.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
-              <h3 className="text-lg font-bold text-white font-soehne-breit">B. Semantic Relationships</h3>
+            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2">
+              <h3 className="text-base font-bold text-white font-soehne-breit">Evidence and Proof</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Content blocks must move past flat self-description to express precise relational connections:
-              </p>
-              <ul className="space-y-2 text-xs font-serif text-zinc-400 list-disc pl-5">
-                <li><strong className="text-white">Process &rarr; Outcome:</strong> An entity audit identifies ambiguous service and brand information that can create inconsistent interpretation across key pages.</li>
-                <li><strong className="text-white">Component &rarr; System:</strong> Structured data is one supporting component of a broader AI-search strategy that also includes content clarity, crawlability, internal linking, and source evidence.</li>
-                <li><strong className="text-white">Problem &rarr; Method:</strong> Where a page makes unsupported claims, an evidence audit identifies the proof, methodology, or source material required.</li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-3">
-              <h3 className="text-lg font-bold text-white font-soehne-breit">C. Evidence and Proof</h3>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                High-value claims require visible support. Google&rsquo;s grounding documentation describes grounded answers as those whose claims are supported by supplied reference texts, and its systems can evaluate whether claims are substantiated and return citations. Authoritative evidence types include transparent service methodologies, defined measurement criteria, anonymised audit examples, and case studies with clearly documented scopes, reporting periods, and limitations.
+                High-value claims require visible support. Google&apos;s grounding documentation describes grounded answers as those whose claims are supported directly by supplied reference texts, allowing systems to evaluate whether claims are substantiated and return appropriate citations. Authoritative proof types include defined measurement criteria, anonymised audit examples, and case studies with clearly documented scopes, reporting periods, and limitations.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Layer 4: Role-Based Semantic Containers vs Taxonomy Trap */}
+        {/* Mid-Page Conversion Corridor 2 */}
+        <div className="bg-gradient-to-b from-zinc-900 to-black border border-white/15 rounded-2xl p-8 my-10 text-center shadow-2xl space-y-4">
+          <div className="inline-flex p-3 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan mb-2">
+            <Compass className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">Ready to Structure Your Facts?</h3>
+          <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
+            We systematically eliminate canonical competition across commercial URLs and align content paths to improve conditions for citation inclusion.
+          </p>
+          <div className="pt-2">
+            <Link 
+              href="/solutions/aeo-blueprint" 
+              className="inline-block bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg"
+            >
+              Explore the Strategic Blueprint Method
+            </Link>
+          </div>
+        </div>
+
+        {/* Section 5: The Taxonomy Trap */}
         <section className="space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400">
             <Database className="w-4 h-4" />
@@ -416,91 +464,35 @@ export default function FixAiBrandHallucinationsArticlePage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Role-Based Semantic Containers vs. The Taxonomy Trap
+            5. Role-Based Semantic Containers vs. The Taxonomy Trap
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            Building a large physical URL directory for every micro-concept can create crawl-depth issues, internal-link fragmentation, and maintenance overhead.
+            Building a large physical URL directory for every technical noun (e.g., creating individual paths for <em>/json-ld/</em>, <em>/chunking/</em>, and <em>/embeddings/</em>) can create crawl-depth issues, internal link fragmentation, and excessive maintenance overhead.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            The practical strength of a website&rsquo;s hierarchy comes from page quality, hub layouts, contextual links, and canonical clarity. Micro-concepts should be contained inside shallow, high-level <strong>Role-Based Semantic Containers</strong>. Minor technical terms reside within the text blocks and backend schema graph arrays of these parent roots rather than commanding individual endpoints:
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-aeo-cyan font-bold">Services Hub (/services/aeo)</div>
-              <p className="text-xs text-zinc-400 font-serif">Consolidates commercial packages, engagement pathways, and delivery parameters.</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-aeo-purple font-bold">Definition Node (/services/aeo/definition)</div>
-              <p className="text-xs text-zinc-400 font-serif">Houses core terminology scope boundaries and primary mechanisms.</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-emerald-400 font-bold">Measurement Node (/diagnostic)</div>
-              <p className="text-xs text-zinc-400 font-serif">Contains the diagnostic engine, assessment inputs, scoring criteria, and sample outputs.</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-amber-400 font-bold">Research Node (/knowledge-hub/geo)</div>
-              <p className="text-xs text-zinc-400 font-serif">Provides technical comparative research for specific user questions.</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-blue-400 font-bold">Evidence Node (/knowledge-hub/case-studies)</div>
-              <p className="text-xs text-zinc-400 font-serif">Aggregates client success datasets to provide verified proof points.</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-1">
-              <div className="text-xs font-mono text-cyan-300 font-bold">Core Node (/about)</div>
-              <p className="text-xs text-zinc-400 font-serif">Establishes organisation identity, team expertise, and brand trust signals.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Layer 5: Machine-Readable Implementation & Schema Guardrails */}
-        <section className="space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400">
-            <Code className="w-4 h-4" />
-            <span>Layer 5: Machine Grounding</span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Machine-Readable Implementation &amp; Schema Guardrails
-          </h2>
-
-          <p className="text-base text-white/70 font-serif leading-relaxed">
-            Structured data is a representation layer, not the architecture itself. JSON-LD should reinforce the site&rsquo;s visible information architecture, not function as a hidden replacement for real content, internal links, or navigational structures. Google&rsquo;s guidance states that structured data must accurately represent page content and must not be misleading; additionally, no special schema markup is required for generative AI features.
+            Google recommends descriptive, readable URL structures. However, URL folder depth should not be confused with crawl depth or information architecture. The practical strength of a website&apos;s hierarchy comes from page quality, hub layouts, contextual links, and canonical clarity. Minor technical concepts should be contained inside shallow, high-level role containers like our central <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO services</Link> hub. The underlying files handle the deep relational work behind the scenes through nested schema graphs and exact in-content hyperlinks, keeping the physical file system simple.
           </p>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
             Transparent commercial alignment is a core pillar of professional data governance. Operators evaluating their digital footprint often ask: <Link href="/solutions" className="text-cyan-300 font-semibold hover:underline">how much does AEO cost</Link>? Addressing this through fixed-scope, itemised pricing configurations eliminates agency complexity and builds immediate user trust.
           </p>
-
-          <p className="text-base text-white/70 font-serif leading-relaxed">
-            When configuring server-rendered <code className="text-aeo-cyan font-mono text-xs">@graph</code> blocks, match recognised entities to valid properties (e.g., <code className="text-zinc-300 font-mono text-xs">about</code>, <code className="text-zinc-300 font-mono text-xs">mainEntity</code>, <code className="text-zinc-300 font-mono text-xs">mentions</code>, <code className="text-zinc-300 font-mono text-xs">hasPart</code>, <code className="text-zinc-300 font-mono text-xs">provider</code>, <code className="text-zinc-300 font-mono text-xs">citation</code>). Proprietary internal labels used for planning should not be invented in public Schema.org markup; they should be mapped cleanly to standard interoperable vocabularies.
-          </p>
         </section>
 
-        {/* Operationalizing: 5-Stage Verification Loop */}
-        <section className="space-y-6 pt-6 border-t border-white/10">
+        {/* Section 6: Operationalising the Architecture */}
+        <section className="space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400">
             <RefreshCw className="w-4 h-4" />
-            <span>Execution Protocol</span>
+            <span>Layer 5: Execution Protocol</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            How to Fix AI Brand Hallucinations &amp; Evidence Gaps
+            6. How Australian SMBs Operationalise the Model
           </h2>
 
           <p className="text-base text-white/70 font-serif leading-relaxed">
-            When generative AI search systems guess your business pricing, capabilities, or operating hours, the result can be inaccurate answers, weaker trust, and missed high-intent opportunities. AI systems do not all retrieve and present information in the same way, which is why clear, well-structured source content matters. When content is scattered or poorly structured, retrieval systems may miss important context and surface incomplete or less reliable sources.
-          </p>
-
-          <p className="text-base text-white/70 font-serif leading-relaxed">
-            To secure consistent machine attributions, you can operationalise this framework across your platform using the <strong>5-Stage Retrieval Verification Loop</strong> to bridge the gap between your declared brand parameters and what AI engines observe:
+            To stop AI search engines from guessing your commercial metrics, you can deploy the <strong>5-Stage Retrieval Verification Loop</strong> to monitor and align your data footprints:
           </p>
 
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 divide-y divide-white/10">
@@ -508,7 +500,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-aeo-cyan bg-aeo-cyan/10 px-2.5 py-1 rounded border border-aeo-cyan/25 shrink-0">Stage 1</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Declare</h3>
-                <p className="text-xs text-zinc-400 font-serif">Establish your single source of truth in code via an indexable, canonical entity endpoint like the <Link href="/brand-facts" className="text-aeo-cyan hover:underline">Canonical Brand Facts Ledger</Link>.</p>
+                <p className="text-xs text-zinc-400 font-serif">Establish your single source of truth in code via a canonical entity endpoint like the <Link href="/brand-facts" className="text-aeo-cyan hover:underline">Canonical Brand Facts Ledger</Link>.</p>
               </div>
             </div>
 
@@ -532,7 +524,7 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/25 shrink-0">Stage 4</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Score</h3>
-                <p className="text-xs text-zinc-400 font-serif">Measure your 4-quadrant Brand Fact Coverage ratio across Identity, Terminology, Topology, and Evidence completeness.</p>
+                <p className="text-xs text-zinc-400 font-serif">Evaluate your 4-quadrant Brand Fact Coverage ratio across Identity, Terminology, Topology, and Evidence completeness.</p>
               </div>
             </div>
 
@@ -540,44 +532,38 @@ export default function FixAiBrandHallucinationsArticlePage() {
               <span className="text-xs font-bold font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/25 shrink-0">Stage 5</span>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-white font-soehne-breit">Fix</h3>
-                <p className="text-xs text-zinc-400 font-serif">Apply targeted <Link href="/solutions/aeo-sprint" className="text-emerald-400 hover:underline">AEO Technical Sprints</Link> to resolve schema drifts, update text copy blocks, and improve the conditions for citation inclusion.</p>
+                <p className="text-xs text-zinc-400 font-serif">Apply targeted <Link href="/solutions/aeo-sprint" className="text-emerald-400 hover:underline">AEO Technical Sprints</Link> to resolve schema drifts, update text copy blocks, and improve conditions for citation inclusion.</p>
               </div>
             </div>
           </div>
-
-          <p className="text-base text-white/70 font-serif leading-relaxed pt-2">
-            An AI-search content architecture does not help a website simply by repeating keywords or adding isolated technical markup. A stronger foundation comes from a coherent knowledge system that models the propositions a business needs to establish, assigns clear ownership to canonical pages, connects user intent to technical concepts and visible evidence, and makes the organisation behind the information visible and accountable.
-          </p>
         </section>
 
-        {/* Action Blocks / CTAs */}
-        <section className="bg-gradient-to-b from-zinc-950 to-zinc-900 border border-white/10 rounded-2xl p-8 space-y-6 text-center sm:text-left shadow-2xl">
-          <div className="space-y-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-              Ready to Verify Your Platform&rsquo;s Machine Legibility?
-            </h3>
-            <p className="text-sm text-white/70 font-serif max-w-2xl">
-              To measure your platform&rsquo;s current machine legibility, run our automated scan to evaluate entity clarity and context survival scores.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Link
-              href="/diagnostic"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg"
-            >
-              <span>AI Visibility Diagnostic</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-
-            <Link
-              href="/solutions/aeo-blueprint"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/15 transition-all"
-            >
-              <span>Strategic Blueprint Method</span>
-            </Link>
-          </div>
-        </section>
+        {/* Final Summary Card / 5-Point Human Recap */}
+        <footer className="bg-zinc-950/90 border border-white/10 rounded-2xl p-6 sm:p-8 font-sans shadow-xl space-y-4">
+          <h3 className="text-xs font-bold text-aeo-cyan uppercase tracking-wider font-mono">Summary: Closing the Context Gap</h3>
+          <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>Keywords indicate demand; semantic propositions define your system&apos;s actual facts.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>Decoupling simple human menus from machine data models keeps your site scannable.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>Self-contained, monosemantic text passages improve conditions for direct citation extraction.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>Shallow physical folder routes combined with deep internal linking prevents the taxonomy trap.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>Structured data acts as a supporting representation layer, not a hidden substitute for web quality.</span>
+            </li>
+          </ul>
+        </footer>
 
       </main>
 
