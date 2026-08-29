@@ -35,7 +35,10 @@ import {
   FileCheck,
   ChevronDown,
   Code,
-  Compass
+  Compass,
+  DollarSign,
+  Activity,
+  Target
 } from 'lucide-react';
 
 export const AEO_CANONICAL_INTERNAL_LINKS = [
@@ -466,6 +469,165 @@ export default function AEORootPage() {
               >
                 Review Methodology &rarr;
               </Link>
+            </div>
+            {/* High-Density Declarative Answer Block: Transparent Investment */}
+            <div id="aeo-cost" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                  <DollarSign className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Fixed Investment Model</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                  Transparent Investment: How Much Does AEO Cost?
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                  Answer Engine Optimisation costs vary depending on the scale of your digital footprint, but our pricing remains entirely fixed and transparent. We eliminate agency retainers and multi-month contract locks by delivering high-density technical improvements in structured deployment phases.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
+                <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <strong className="text-cyan-300 font-sans font-bold text-sm">Micro-Sprints</strong>
+                    <span className="font-mono text-cyan-400 font-bold">$495 AUD</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    A targeted, fixed-scope engineering sprint focused on a single tactical priority: custom JSON-LD schema nesting, atomic block rewrites, or internal linking repairs.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-zinc-900/90 border border-cyan-500/30 space-y-2 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <div className="flex items-center justify-between">
+                    <strong className="text-white font-sans font-bold text-sm">Strategic Blueprint</strong>
+                    <span className="font-mono text-cyan-300 font-bold">$995 AUD</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    A comprehensive diagnostic audit and custom 90-day execution roadmap measuring your brand entity salience across major AI retrieval models.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <strong className="text-purple-300 font-sans font-bold text-sm">Foundation Tier</strong>
+                    <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    A comprehensive four-week technical engagement delivering connected, multi-page schema mapping, token-optimised HTML restructuring, and bidirectional entity routing.
+                  </p>
+                </div>
+              </div>
+
+              {/* 100% Risk-Reversal Callout */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 via-zinc-900 to-purple-950/40 border border-cyan-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <strong className="text-white text-xs font-sans font-bold flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                    <span>The 100% Risk-Reversal Credit</span>
+                  </strong>
+                  <p className="text-xs text-zinc-300 font-serif">
+                    Every dollar invested in your $995 Strategic Blueprint is fully credited back if you choose us for your implementation sprints.
+                  </p>
+                </div>
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 text-black font-bold text-xs hover:bg-white transition-colors shrink-0"
+                >
+                  <span>Explore Blueprint</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* High-Density Declarative Answer Block: Defining the Roadmap */}
+            <div id="aeo-blueprint-definition" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
+                  <Compass className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Strategic Methodology</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                  Defining the Roadmap: What Is the AEObility AEO Blueprint?
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                  The AEObility Strategic Blueprint is a standalone clarity phase designed to diagnose machine-readability friction across your web ecosystem. Instead of delivering vague marketing reports, this process builds an actionable 90-day execution roadmap tailored specifically to your commercial intent.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-300 font-sans font-bold">
+                    <Target className="w-4 h-4 text-cyan-400" />
+                    <span>Vector Proximity Audit</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    We evaluate how closely your website context matches target user search intents within dense vector spaces.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-purple-300 font-sans font-bold">
+                    <Layers className="w-4 h-4 text-purple-400" />
+                    <span>Entity Relationship Mapping</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    Our team reviews your underlying code to uncover missing schema ties, unverified coordinates, and hidden brand facts.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2 text-emerald-300 font-sans font-bold">
+                    <Activity className="w-4 h-4 text-emerald-400" />
+                    <span>90-Day Operational Timeline</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">
+                    You receive a sequential, line-by-line engineering guide detailing what to fix first to ensure accurate AI indexing.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* High-Density Declarative Answer Block: AI AEO Services for Perth & Australia */}
+            <div id="ai-aeo-services" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold">
+                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Local &amp; Enterprise Grounding</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                  Verified Ingestion: AI AEO Services for Perth and Australian Businesses
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                  Traditional SEO models match static keyword strings, but modern conversational platforms extract structured facts. Our specialised AI AEO services build the definitive entity authority your business needs to survive and scale within modern RAG pipelines.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
+                  We restructure your digital presence for Google AI Overviews, Perplexity Pro, and ChatGPT Search:
+                </p>
+                <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
+                  <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                    <strong className="text-white font-sans font-bold text-sm block">1. Direct GeoCoordinate Grounding</strong>
+                    <p className="text-zinc-300 leading-relaxed">
+                      We hard-code precise geographic coordinate matrices into your template headers to anchor local proximity routing.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                    <strong className="text-white font-sans font-bold text-sm block">2. Atomic Content Refactoring</strong>
+                    <p className="text-zinc-300 leading-relaxed">
+                      Multi-line text walls are broken down into short, declarative, information-dense thoughts optimised for passage extraction.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                    <strong className="text-white font-sans font-bold text-sm block">3. Automated Verification Loops</strong>
+                    <p className="text-zinc-300 leading-relaxed">
+                      We run prebuild vector compilation scripts to test how smoothly AI search crawlers ingest, verify, and cite your business facts.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
