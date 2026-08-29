@@ -148,6 +148,16 @@ export default function AboutUsContent() {
           <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
             We believe that clean, machine-readable schemas are the bedrock of local search. Our team of Australian marketing experts implements strict data standards to ensure your brand details are consistently understood, trusted, and verified across all search and maps models.
           </p>
+          <div className="pt-2">
+            <Link
+              href="/brand-facts"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-aeo-cyan hover:underline group"
+            >
+              <ShieldCheck className="w-4 h-4" />
+              <span>Review our verified corporate fact ledger</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 

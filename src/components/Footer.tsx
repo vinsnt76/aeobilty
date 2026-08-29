@@ -191,6 +191,11 @@ export default function Footer() {
                 About Our Team
               </Link>
             </li>
+            <li>
+              <Link href="/brand-facts" className="hover:text-aeo-cyan text-aeo-cyan/80 transition-colors flex items-center gap-1">
+                Brand Facts Ledger
+              </Link>
+            </li>
           </ul>
         </div>
 
