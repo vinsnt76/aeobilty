@@ -136,7 +136,14 @@ export default function EntityAuthorityArticlePage() {
         ],
         "mainEntity": {
           "@id": "https://aeobility.com.au/services/aeo#service"
-        }
+        },
+        "citation": [
+          {
+            "@type": "WebPage",
+            "name": "AEObility Case Studies Portfolio",
+            "url": "https://aeobility.com.au/knowledge-hub/case-studies"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -703,7 +710,7 @@ export default function EntityAuthorityArticlePage() {
             <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
             <h3 className="text-lg font-bold text-white font-sans mb-2">Engineering Enterprise Entity Salience</h3>
             <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-              Evaluating how effectively a conversational interface surfaces a company name depends directly on <strong className="text-white font-medium">entity salience scores</strong>. Rather than relying on simple keyword repetition, our underlying <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> structure text fields into clear relational facts that transformer models can ingest without attribute drift.
+              Evaluating how effectively a conversational assistant retrieves and cites your platform depends heavily on unambiguous corporate tracking signals. Rather than relying on simple keyword repetition, our custom <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> restructure text blocks into highly integrated relational facts that transformer models can ingest without attribute drift.
             </p>
             <Link
               href="/services/aeo"

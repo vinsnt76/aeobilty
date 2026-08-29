@@ -1232,7 +1232,7 @@ export default function RagArticlePage() {
               <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
               <h3 className="text-lg font-bold text-white font-sans mb-2">Deploying Production-Grade RAG Optimisation</h3>
               <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-                Achieving consistent passage-level extraction within modern transformer context windows requires locking your digital footprint to a stable entity anchor. Platforms can leverage our core <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to structure unstructured text chunks, minimise hallucination thresholds, and maximise brand citation index positions across conversational layouts.
+                Retrieval-augmented generation layers utilise deep indexing models to extract text fragments from complex layouts. If an interface lacks machine-readable structure, its underlying claims will fail to survive passage extraction. Deploying an automated <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI visibility audit</Link> and partnering with our <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> resolves this context gap.
               </p>
               <Link
                 href="/services/aeo"

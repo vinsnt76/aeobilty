@@ -74,6 +74,11 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "about": [
         {
           "@type": "Thing",
+          "name": "Entity Authority",
+          "identifier": "graph_node_entity_authority"
+        },
+        {
+          "@type": "Thing",
           "name": "AEO Services",
           "identifier": "proximity_weight_0.94"
         },
