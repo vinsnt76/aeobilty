@@ -91,7 +91,7 @@ export default function AISeachArchitectureArticle() {
           "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
-        "image": "https://aeobility.com.au/entity-authority-semantic-search_AEObilty.webp",
+        "image": "https://aeobility.com.au/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
         "about": [
           {
             "@type": "Service",
@@ -214,15 +214,39 @@ export default function AISeachArchitectureArticle() {
           </p>
         </header>
 
-        {/* Featured Image */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video shadow-2xl bg-zinc-950">
+        {/* Featured Image with CTA Overlay */}
+        <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video shadow-2xl bg-zinc-950 group">
           <Image
-            src="/entity-authority-semantic-search_AEObilty.webp"
-            alt="Entities, Evidence, and Semantic Propositions Architecture for AI Search"
+            src="/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp"
+            alt="Fix AI Brand Hallucinations and Evidence Gaps: Semantic Propositions, Entity-Relationship-Evidence Framework, and AEO Services by AEObility in Perth, Western Australia"
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
             priority
           />
+          {/* Gradient Scrim & Interactive CTA Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+              <div className="space-y-1.5 max-w-lg">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/40 text-aeo-cyan text-[11px] font-mono font-semibold">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Grounding &amp; Provenance Protocol</span>
+                </div>
+                <h3 className="text-lg sm:text-2xl font-bold text-white font-soehne-breit tracking-tight drop-shadow-md">
+                  Stop AI Search Engines From Guessing Your Facts
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif line-clamp-2 drop-shadow">
+                  Eliminate hallucinated pricing and broken citations with structured semantic propositions.
+                </p>
+              </div>
+              <Link
+                href="/diagnostic"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-aeo-cyan text-black font-bold text-xs uppercase tracking-wider hover:bg-white transition-colors shadow-lg shrink-0"
+              >
+                <span>Run Visibility Scan</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Executive Summary Card / Human Anchor Line */}

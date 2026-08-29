@@ -32,15 +32,15 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
-      title: "How to Fix AI Brand Hallucinations & Evidence Gaps",
+      title: "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Propositions",
       category: "Grounding & Provenance / CBKL",
-      description: "Learn how to eliminate AI factual drift, missing citations, and incorrect pricing by deploying the Canonical Brand Knowledge Layer and 5-stage verification loop.",
+      description: "Learn how to eliminate AI factual drift, missing citations, and incorrect pricing by deploying semantic propositions and the 5-stage verification loop.",
       href: "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
-      image: "/entity-authority-semantic-search_AEObilty.webp",
-      alt: "Fix AI Brand Hallucinations and Evidence Gaps Conceptual Diagram",
+      image: "/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
+      alt: "Fix AI Brand Hallucinations and Evidence Gaps: Semantic Propositions and Entity Architecture by AEObility in Perth, Western Australia",
       metrics: [
         { label: "Type", value: "Technical Guide" },
-        { label: "Read Time", value: "7 min" }
+        { label: "Read Time", value: "9 min" }
       ]
     },
     {
