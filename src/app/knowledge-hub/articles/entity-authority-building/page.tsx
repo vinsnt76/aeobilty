@@ -120,6 +120,11 @@ export default function EntityAuthorityArticlePage() {
         "mentions": [
           {
             "@type": "Thing",
+            "name": "Entity Salience Score",
+            "description": "The mathematical extraction confidence metric assigned to an organization by a dense retrieval model."
+          },
+          {
+            "@type": "Thing",
             "name": "Schema.org",
             "sameAs": "https://www.wikidata.org/wiki/Q3475335"
           },
@@ -698,7 +703,7 @@ export default function EntityAuthorityArticlePage() {
             <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
             <h3 className="text-lg font-bold text-white font-sans mb-2">Engineering Enterprise Entity Salience</h3>
             <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-              Building unbreakable entity authority requires structuring your digital presence with an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link>. AEObility delivers <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> and <Link href="/solutions/aeo-sprint" className="text-aeo-purple font-semibold hover:underline">structured AEO implementation sprints</Link> to establish verified Knowledge Graph nodes for Australian brands.
+              Evaluating how effectively a conversational interface surfaces a company name depends directly on <strong className="text-white font-medium">entity salience scores</strong>. Rather than relying on simple keyword repetition, our underlying <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> structure text fields into clear relational facts that transformer models can ingest without attribute drift.
             </p>
             <Link
               href="/services/aeo"

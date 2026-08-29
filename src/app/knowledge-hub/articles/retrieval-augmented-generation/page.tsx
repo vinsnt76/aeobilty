@@ -1227,7 +1227,7 @@ export default function RagArticlePage() {
               <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
               <h3 className="text-lg font-bold text-white font-sans mb-2">Deploying Production-Grade RAG Optimisation</h3>
               <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-                To successfully pass through passage-level extraction filters inside modern context windows, engineering content must organise raw data chunks around a stable entity model. Organisations can deploy our custom <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> frameworks and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to optimise text ingestion speeds and improve citation reliability.
+                Retrieval-augmented search layers rely on clean database ingestion patterns to compile direct citation links. If a site lacks structural clarity, its core facts will fail to register within the engine&apos;s internal <strong className="text-white font-medium">knowledge graph layout</strong>. Organisations can deploy our custom <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> frameworks and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to solve this context gap.
               </p>
               <Link
                 href="/services/aeo"
