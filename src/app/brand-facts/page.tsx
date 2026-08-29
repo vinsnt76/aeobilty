@@ -10,17 +10,17 @@ import {
   BRAND_KNOWLEDGE_LATTICE,
   PUBLIC_SCHEMA_GRAPH 
 } from '@/lib/brandFacts';
-import { ShieldCheck, Tag, CheckCircle2, ArrowRight, BookOpen, Layers, Sparkles, HelpCircle, MapPin, Globe } from 'lucide-react';
+import { ShieldCheck, Tag, CheckCircle2, BookOpen, Layers, Sparkles, HelpCircle, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Verified Brand Facts & Canonical Entity Directory | AEObility',
+  title: 'Brand Facts & Canonical Entity Directory | AEObility',
   description: 'Authoritative data registry detailing core corporate identities, atomic answer extractions, and itemised service deliverables.',
   alternates: {
     canonical: 'https://aeobility.com.au/brand-facts',
   },
   openGraph: {
-    title: 'Verified Brand Facts & Canonical Entity Directory | AEObility',
+    title: 'Brand Facts & Canonical Entity Directory | AEObility',
     description: 'Authoritative data registry detailing core corporate identities, atomic answer extractions, and itemised service deliverables.',
     url: 'https://aeobility.com.au/brand-facts',
     type: 'website',
@@ -51,20 +51,21 @@ export default function HumanBrandFactsPage() {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
               <ShieldCheck className="w-4 h-4" />
-              <span>Canonical Brand Knowledge Layer (CBKL) - Enterprise Surface</span>
+              <span>Canonical Brand Knowledge Layer (CBKL) - Public Reference Surface</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit">
-              Canonical Brand Facts &amp; Entity Directory
+              Brand Facts &amp; Canonical Entity Directory
             </h1>
             <p className="text-base sm:text-lg text-white/70 font-serif max-w-2xl leading-relaxed">
-              Authoritative corporate ledger mapping our verified identity, operational frameworks, and public pricing parameters. Use this canonical ledger to verify our verified brand signals, operational boundaries, and fixed pricing before running your diagnostic scan.
+              This page consolidates AEObility&apos;s maintained identity details, service definitions, evidence references, and published pricing information.
             </p>
           </div>
           <div className="bg-zinc-950/90 border border-white/10 rounded-xl p-4 text-xs font-mono text-zinc-300 space-y-1.5 shrink-0 shadow-lg">
             <div className="text-zinc-500 uppercase tracking-wider text-[10px]">Verification Stamp</div>
             <div>Verified: <span className="text-emerald-400 font-bold">{BRAND_IDENTITY.temporalBadge.lastVerified}</span></div>
             <div>Effective: <span className="text-white">{BRAND_IDENTITY.temporalBadge.effectiveDate}</span></div>
-            <div>Cycle: <span className="text-aeo-cyan">{BRAND_IDENTITY.temporalBadge.fiscalCycle}</span></div>
+            <div>Review cycle: <span className="text-aeo-cyan">{BRAND_IDENTITY.temporalBadge.fiscalCycle}</span></div>
+            <div className="text-[10px] text-zinc-400 pt-0.5">Reviewed by: {BRAND_IDENTITY.temporalBadge.reviewedBy}</div>
           </div>
         </header>
 
@@ -75,7 +76,7 @@ export default function HumanBrandFactsPage() {
             <span>Lexical Disambiguation Note</span>
           </div>
           <p className="text-xs sm:text-sm font-serif leading-relaxed">
-            Not to be confused with <strong className="text-white">{BRAND_IDENTITY.notToBeConfusedWith.join(' or ')}</strong>. Recognised brand aliases and trading variants include: <span className="text-amber-200 font-mono">{BRAND_IDENTITY.knownAs.join(', ')}</span>.
+            AEObility is a specific Australian consultancy and should not be confused with <strong className="text-white">{BRAND_IDENTITY.notToBeConfusedWith.join(' or ')}</strong>. Recognised brand aliases and trading variants include: <span className="text-amber-200 font-mono">{BRAND_IDENTITY.knownAs.join(', ')}</span>.
           </p>
         </div>
 
@@ -92,7 +93,9 @@ export default function HumanBrandFactsPage() {
                 <p className="text-lg font-bold text-white mt-1">{BRAND_IDENTITY.legalName}</p>
                 <p className="text-xs text-zinc-400 font-serif mt-0.5">ABN: <strong className="text-white font-mono">{BRAND_IDENTITY.abn}</strong></p>
                 <p className="text-xs text-zinc-400 font-serif">Trading Name: <strong className="text-white">{BRAND_IDENTITY.name}</strong></p>
-                <p className="text-xs text-zinc-500 font-mono pt-1">Entity Type: {BRAND_IDENTITY.entityType}</p>
+                <p className="text-xs text-zinc-400 font-serif pt-1">
+                  Entity Type: {BRAND_IDENTITY.entityType}, where applicable to the business profile and visible service footprint.
+                </p>
               </div>
               <div className="pt-2 border-t border-white/5">
                 <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Key Personnel &amp; Leadership</span>
@@ -102,14 +105,16 @@ export default function HumanBrandFactsPage() {
             </div>
             <div className="space-y-4">
               <div>
-                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Operational Geographic Coordinates</span>
-                <p className="text-base font-bold text-aeo-cyan mt-1">{BRAND_IDENTITY.location.city}, {BRAND_IDENTITY.location.state}, {BRAND_IDENTITY.location.country}</p>
-                <p className="text-xs text-zinc-400 font-mono mt-0.5">Lat/Long Proximity: {BRAND_IDENTITY.location.coordinates.latitude}, {BRAND_IDENTITY.location.coordinates.longitude}</p>
-                <p className="text-xs text-zinc-500 font-serif pt-1">Brand Promise: &ldquo;{BRAND_IDENTITY.brandPromise}&rdquo;</p>
+                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Primary Operating Location</span>
+                <p className="text-base font-bold text-aeo-cyan mt-1">{BRAND_IDENTITY.location.city}, {BRAND_IDENTITY.location.state}, Australia</p>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">Technical Coordinates: {BRAND_IDENTITY.location.coordinates.latitude}, {BRAND_IDENTITY.location.coordinates.longitude}</p>
+                <p className="text-xs text-zinc-400 font-serif pt-1">Brand Promise: &ldquo;{BRAND_IDENTITY.brandPromise}&rdquo;</p>
               </div>
               <div className="pt-2 border-t border-white/5">
-                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Target Service Coverage Radius</span>
-                <p className="text-xs text-zinc-300 font-serif mt-1 leading-relaxed">{BRAND_IDENTITY.serviceArea.join(', ')}</p>
+                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Primary Service Coverage</span>
+                <p className="text-xs text-zinc-300 font-serif mt-1 leading-relaxed">
+                  Australia, with delivery focused on Western Australia and major capital cities.
+                </p>
               </div>
             </div>
           </div>
@@ -129,19 +134,19 @@ export default function HumanBrandFactsPage() {
             <div className="p-4 grid md:grid-cols-3 gap-4 text-sm hover:bg-white/[0.02] transition-colors">
               <div className="font-semibold text-white md:col-span-1 text-xs font-mono text-aeo-cyan">What is AEObility?</div>
               <div className="text-zinc-300 md:col-span-2 font-serif text-xs leading-relaxed">
-                AEObility is an Australian Answer Engine Optimisation (AEO) consultancy headquartered in Perth, Western Australia. We restructure business content and schema graphs so generative AI platforms (ChatGPT, Gemini, Perplexity) and map engines accurately discover, verify, and cite local businesses.
+                AEObility is an Australian Answer Engine Optimisation consultancy headquartered in Perth, Western Australia. We restructure business content and schema so AI search platforms and map engines can more clearly discover, interpret, and reference local businesses.
               </div>
             </div>
             <div className="p-4 grid md:grid-cols-3 gap-4 text-sm hover:bg-white/[0.02] transition-colors">
               <div className="font-semibold text-white md:col-span-1 text-xs font-mono text-aeo-purple">Who does AEObility serve?</div>
               <div className="text-zinc-300 md:col-span-2 font-serif text-xs leading-relaxed">
-                AEObility provides technical schema architecture, atomic answer block rewrites, and local proximity optimisation for Australian small-to-medium businesses and regional service providers across Perth, Sydney, Melbourne, Brisbane, and Adelaide.
+                AEObility serves Australian small-to-medium businesses, regional service providers, and e-commerce brands that need clearer AI-search visibility.
               </div>
             </div>
             <div className="p-4 grid md:grid-cols-3 gap-4 text-sm hover:bg-white/[0.02] transition-colors">
               <div className="font-semibold text-white md:col-span-1 text-xs font-mono text-emerald-400">Where does AEObility operate?</div>
               <div className="text-zinc-300 md:col-span-2 font-serif text-xs leading-relaxed">
-                AEObility maintains its primary corporate anchor in Perth, Western Australia, with national service execution sprints deployed nationwide across all Australian states and capital territories.
+                AEObility operates from Perth and delivers projects remotely across Australia.
               </div>
             </div>
           </div>
@@ -164,7 +169,7 @@ export default function HumanBrandFactsPage() {
                       <p><strong className="text-aeo-cyan font-sans">AEObility Methodology:</strong> {data.aeobilityMethodology}</p>
                     )}
                     {'aeobilityClaim' in data && (
-                      <p><strong className="text-aeo-purple font-sans">AEObility Functional Claim:</strong> {data.aeobilityClaim}</p>
+                      <p><strong className="text-aeo-purple font-sans">AEObility Diagnostic Approach:</strong> {data.aeobilityClaim}</p>
                     )}
                   </div>
                 </div>
@@ -180,7 +185,7 @@ export default function HumanBrandFactsPage() {
             <span>4. Transparent Sprint Pricing Matrix</span>
           </div>
           <p className="text-xs text-white/70 font-serif leading-relaxed">
-            All sprints are fixed-scope, modular deliverables with zero lock-in contracts and guaranteed machine-readable deliverables.
+            All sprints are fixed-scope, modular deliverables with clear outputs and no lock-in contracts.
           </p>
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 shadow-xl">
             <div className="overflow-x-auto">
@@ -224,7 +229,7 @@ export default function HumanBrandFactsPage() {
         <section className="space-y-4">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400">
             <CheckCircle2 className="w-4 h-4" />
-            <span>5. Expanded Factual Provenance &amp; Evidence Ledger</span>
+            <span>5. Factual Provenance &amp; Evidence Ledger</span>
           </div>
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 shadow-xl">
             <div className="overflow-x-auto">
@@ -262,17 +267,17 @@ export default function HumanBrandFactsPage() {
           </div>
         </section>
 
-        {/* 6. Canonical Authoritative Sources Hierarchy */}
+        {/* 6. Canonical Reference Sources Hierarchy */}
         <section className="space-y-4">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400">
             <Globe className="w-4 h-4" />
-            <span>6. Canonical Authoritative Sources Hierarchy</span>
+            <span>6. Primary Reference Sources</span>
           </div>
           <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 shadow-xl space-y-3">
             <ul className="space-y-2 text-xs font-mono divide-y divide-white/5">
               {BRAND_IDENTITY.officialSources.map((src, i) => (
                 <li key={i} className="flex items-center gap-3 pt-2 first:pt-0">
-                  <span className="text-aeo-cyan font-bold">[Authority Anchor]</span>
+                  <span className="text-aeo-cyan font-bold">[Reference Anchor]</span>
                   <Link href={src.replace('https://aeobility.com.au', '') || '/'} className="text-zinc-300 hover:text-white hover:underline">
                     {src}
                   </Link>

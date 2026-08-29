@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
-import { BRAND_PRICING_SCHEMA, calculateFactCoverageScore, BRAND_IDENTITY } from '@/lib/brandFacts';
+import { BRAND_PRICING_SCHEMA, calculateFactCoverageScore, BRAND_IDENTITY, PRICING_CONFIG } from '@/lib/brandFacts';
 import Link from 'next/link';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
@@ -20,7 +20,7 @@ export default function DiagnosticEngine() {
   const hasAutoRunRef = useRef(false);
 
   // Extract BPSTRAT product parameters from canonical schema & CBKL coverage
-  const bpstratProduct = BRAND_PRICING_SCHEMA['@graph'].find(p => p.sku === 'BPSTRAT') || BRAND_PRICING_SCHEMA['@graph'][0];
+  const bpstratPrice = PRICING_CONFIG.blueprint.price;
   const factCoverage = calculateFactCoverageScore();
 
   const processingSteps = [
@@ -402,7 +402,7 @@ export default function DiagnosticEngine() {
                   <Compass className="w-5 h-5 text-aeo-cyan" />
                   <h3 className="text-lg font-bold text-white">The AEObility Blueprint</h3>
                   <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
-                    ${bpstratProduct.price} AUD ex. GST
+                    ${bpstratPrice} AUD ex. GST
                   </span>
                 </div>
                 <p className="text-xs text-white/70 font-serif leading-relaxed">

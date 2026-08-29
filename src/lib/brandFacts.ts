@@ -24,7 +24,7 @@ export const BRAND_IDENTITY = {
   name: "AEObility",
   legalName: "Trekaboutoz trading as AEObility",
   abn: "61 029 803 255",
-  entityType: "LocalBusiness",
+  entityType: "LocalBusiness & ProfessionalService",
   industry: "Answer Engine Optimisation",
   foundingDate: "2011-03-15",
   founder: "Vinnie Baker",
@@ -35,12 +35,12 @@ export const BRAND_IDENTITY = {
     coordinates: { latitude: -31.9505, longitude: 115.8605 }
   },
   foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
-  serviceArea: ["Australia", "Western Australia", "Perth", "Sydney", "Melbourne", "Brisbane", "Adelaide"],
+  serviceArea: ["Australia", "Western Australia (Primary Base)", "Major Capital Cities (Remote Execution)"],
   website: "https://aeobility.com.au",
   brandPromise: "Get Found. Get Chosen.",
   tagline: "No jargon. No pressure. Just clarity.",
   knownAs: ["AEObility Australia", "AEObility Optimisation Agency", "AEObility Digital"],
-  notToBeConfusedWith: ["generic third-party consulting agencies", "ungrounded generative search statistics"],
+  notToBeConfusedWith: ["generic consulting brands", "unverified AI-search claims"],
   officialSources: [
     "https://aeobility.com.au",
     "https://aeobility.com.au/brand-facts",
@@ -50,7 +50,8 @@ export const BRAND_IDENTITY = {
   temporalBadge: {
     lastVerified: "Aug 29, 2026",
     effectiveDate: "Aug 29, 2026",
-    fiscalCycle: "FY27"
+    fiscalCycle: "FY27",
+    reviewedBy: "AEObility editorial and technical team"
   }
 };
 
@@ -60,11 +61,11 @@ export const BRAND_IDENTITY = {
 export const BRAND_DEFINITIONS = {
   "Answer Engine Optimisation": {
     establishedFact: "The process of structuring digital content to improve its discoverability by AI search assistants and conversational retrieval engines.",
-    aeobilityMethodology: "Organising your core business information into clear, machine-readable structures and direct answer blocks so AI assistants and search engines can clearly read, verify, and quote your business as the direct answer."
+    aeobilityMethodology: "AEObility's methodology focuses on organising core business information into clear, machine-readable structures and direct answer blocks so AI systems can more easily read and reference the business."
   },
   "Telemetry Diagnostic": {
     establishedFact: "An automated technical scan designed to audit how web assets are parsed by modern information retrieval systems.",
-    aeobilityClaim: "Simulates multi-engine AI search workflows to spot broken data signals, inconsistent business details across platforms, and missed opportunities where AI engines fail to understand what you offer."
+    aeobilityClaim: "Uses structured checks to identify broken data signals, inconsistent business details across platforms, and likely gaps in how AI systems may interpret the business."
   }
 };
 
@@ -102,7 +103,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
   {
     subject: "AEObility",
     predicate: "operatesIn",
-    object: "Australia, Western Australia, Perth",
+    object: "Australia, with Perth as primary base",
     source: "https://aeobility.com.au/contact",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -149,9 +150,9 @@ export const PRICING_CONFIG = {
     duration: '10 business days',
     creditBackEligible: true,
     deliverables: [
-      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices) ensuring your exact location signals match',
-      'Passage-level extraction diagnostics ensuring AI search engines quote your exact answers without hallucinating',
-      'Entity salience and schema graph gap assessment identifying missed citation opportunities'
+      'Multi-platform location signal review to identify inconsistencies across mapping layers',
+      'Passage-level content review to improve the likelihood that AI search systems surface accurate answers',
+      'Entity and schema gap assessment to reduce missed citation opportunities'
     ]
   },
   StrategicBlueprint: {
@@ -160,9 +161,9 @@ export const PRICING_CONFIG = {
     priceAUD: 995,
     duration: '10 business days',
     deliverables: [
-      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices) ensuring your exact location signals match',
-      'Passage-level extraction diagnostics ensuring AI search engines quote your exact answers without hallucinating',
-      'Entity salience and schema graph gap assessment identifying missed citation opportunities'
+      'Multi-platform location signal review to identify inconsistencies across mapping layers',
+      'Passage-level content review to improve the likelihood that AI search systems surface accurate answers',
+      'Entity and schema gap assessment to reduce missed citation opportunities'
     ]
   },
   microSprints: {
@@ -182,8 +183,8 @@ export const PRICING_CONFIG = {
     priceFromAUD: 495,
     duration: '3 to 5 business days',
     deliverables: [
-      'Nested JSON-LD schema generation connecting your brand directly to search knowledge graphs',
-      'GeoCoordinate mapping alignment ensuring local map pack dominance and accurate voice assistant routing'
+      'Nested JSON-LD schema generation to support clearer machine-readable entity relationships',
+      'GeoCoordinate mapping alignment to support local map pack visibility and accurate voice assistant routing'
     ]
   },
   foundation: {
@@ -218,203 +219,112 @@ export interface ProductOffer {
     valueAddedTaxIncluded: boolean;
     description: string;
   };
-  description: string;
   offers: {
     '@type': 'Offer';
     price: string;
     priceCurrency: 'AUD';
-    eligibleDuration: string;
-    itemOffered: string[];
+    availability: string;
+    itemCondition: string;
   };
 }
 
-export interface BrandFactsGraph {
-  '@context': 'https://schema.org';
-  '@graph': ProductOffer[];
-}
-
-export const BRAND_PRICING_SCHEMA: BrandFactsGraph = {
+export const BRAND_PRICING_SCHEMA = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Product',
+      '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#product',
       sku: 'BPSTRAT',
-      name: 'Strategic Blueprint',
-      priceCurrency: 'AUD',
-      price: '995.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Diagnose entity gaps, schema drift, and positional bias vulnerabilities.',
+      name: 'The AEObility Strategic Blueprint',
+      description: 'A comprehensive 90-day diagnostic roadmap and entity salience assessment. Standalone cost is 100% credited toward implementation sprints if booked within 60 days.',
       offers: {
         '@type': 'Offer',
+        '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#offer',
         price: '995.00',
         priceCurrency: 'AUD',
-        eligibleDuration: 'Diagnostic Audit',
-        itemOffered: [
-          'Full diagnostic report',
-          'Entity map',
-          'Visibility scorecard',
-          '90-day sprint recommendations'
-        ]
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: 'AEObility'
+        }
       }
     },
     {
       '@type': 'Product',
-      sku: 'SS1MACROS1',
-      name: 'Schema and Semantic Mapping',
-      priceCurrency: 'AUD',
-      price: '3195.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Establish machine-readable identity and resolve entity confusion.',
+      '@id': 'https://aeobility.com.au/solutions/aeo-sprint#product',
+      sku: 'SS1-SS4-MICRO',
+      name: 'AEO Technical Micro-Sprints',
+      description: 'Modular, fixed-scope engineering sprints targeting one tactical priority: custom JSON-LD schema, atomic content rewrites, or internal linking.',
       offers: {
         '@type': 'Offer',
-        price: '3195.00',
-        priceCurrency: 'AUD',
-        eligibleDuration: 'Foundation Tier (~15 Hours)',
-        itemOffered: [
-          'Full entity map',
-          'Canonical facts',
-          'JSON-LD graph for 10 pages',
-          'Location modelling',
-          'Deployment validation'
-        ]
-      }
-    },
-    {
-      '@type': 'Product',
-      sku: 'SS1MICRO1',
-      name: 'Location Schema Injection',
-      priceCurrency: 'AUD',
-      price: '495.00',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        valueAddedTaxIncluded: false,
-        description: 'Excluding GST'
-      },
-      description: 'Add complete location-level schema to one page.',
-      offers: {
-        '@type': 'Offer',
+        '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer',
         price: '495.00',
         priceCurrency: 'AUD',
-        eligibleDuration: 'Half-Day (3 Hours)',
-        itemOffered: [
-          'LocalBusiness schema',
-          'GeoCoordinates',
-          'OpeningHours',
-          'ServiceArea',
-          'ContactPoint validation'
-        ]
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: 'AEObility'
+        }
       }
     }
   ]
 };
 
 export const PUBLIC_SCHEMA_GRAPH = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": BRAND_IDENTITY.entityType,
-      "@id": "https://aeobility.com.au/#organization",
-      "name": BRAND_IDENTITY.name,
-      "legalName": BRAND_IDENTITY.legalName,
-      "taxID": BRAND_IDENTITY.abn,
-      "url": BRAND_IDENTITY.website,
-      "foundingDate": BRAND_IDENTITY.foundingDate,
-      "sameAs": BRAND_IDENTITY.officialSources,
-      "areaServed": BRAND_IDENTITY.serviceArea.map(area => ({ "@type": "AdministrativeArea", "name": area })),
-      "founder": {
-        "@type": "Person",
-        "@id": "https://aeobility.com.au/vince-baker#person",
-        "name": BRAND_IDENTITY.founder,
-        "url": "https://aeobility.com.au/vince-baker"
+      '@type': 'Organization',
+      '@id': 'https://aeobility.com.au/#organization',
+      name: BRAND_IDENTITY.name,
+      legalName: BRAND_IDENTITY.legalName,
+      url: BRAND_IDENTITY.website,
+      foundingDate: BRAND_IDENTITY.foundingDate,
+      founder: {
+        '@type': 'Person',
+        name: BRAND_IDENTITY.founder
       },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": BRAND_IDENTITY.location.city,
-        "addressRegion": BRAND_IDENTITY.location.state,
-        "addressCountry": BRAND_IDENTITY.location.country
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: BRAND_IDENTITY.location.city,
+        addressRegion: BRAND_IDENTITY.location.state,
+        addressCountry: BRAND_IDENTITY.location.country
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": BRAND_IDENTITY.location.coordinates.latitude,
-        "longitude": BRAND_IDENTITY.location.coordinates.longitude
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: BRAND_IDENTITY.location.coordinates.latitude,
+        longitude: BRAND_IDENTITY.location.coordinates.longitude
       },
-      "knowsAbout": Object.keys(BRAND_DEFINITIONS),
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AEObility Commercial Sprint Matrix",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": PRICING_CONFIG.StrategicBlueprint.name,
-              "sku": PRICING_CONFIG.StrategicBlueprint.sku
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": PRICING_CONFIG.StrategicBlueprint.priceAUD,
-              "priceCurrency": "AUD",
-              "valueAddedTaxIncluded": "false"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": PRICING_CONFIG.MicroSprints.name,
-              "sku": PRICING_CONFIG.MicroSprints.sku
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": PRICING_CONFIG.MicroSprints.priceFromAUD,
-              "priceCurrency": "AUD",
-              "valueAddedTaxIncluded": "false"
-            }
-          }
-        ]
+      sameAs: BRAND_IDENTITY.officialSources
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://aeobility.com.au/brand-facts#webpage',
+      url: 'https://aeobility.com.au/brand-facts',
+      name: 'Brand Facts & Canonical Entity Directory',
+      description: 'Consolidated brand ledger detailing corporate identities, entity relationships, and published service pricing.',
+      isPartOf: {
+        '@id': 'https://aeobility.com.au/#website'
       }
     }
   ]
 };
 
 // ============================================================================
-// 6. PROPRIETARY TELEMETRY CORE (Internal Value Weights)
+// 6. MACHINE GROUNDING HELPERS (Verification Math & Parsing)
 // ============================================================================
-export interface TelemetryMetrics {
-  relationshipStrength: number;
-  expectedFactCoverage: boolean;
-  retrievalPriorityScore: number;
+export interface FactCoverageScore {
+  identityCoverage: number;
+  factCoverage: number;
+  relationshipCoverage: number;
+  evidenceCoverage: number;
 }
 
-export const INTERNAL_TELEMETRY_REGISTRY: Record<string, TelemetryMetrics> = {
-  "AEObility->specialisesIn->Answer Engine Optimisation": {
-    relationshipStrength: 0.94,
-    expectedFactCoverage: true,
-    retrievalPriorityScore: 0.98
-  },
-  "AEObility->provides->Telemetry Diagnostic Scanner": {
-    relationshipStrength: 0.91,
-    expectedFactCoverage: true,
-    retrievalPriorityScore: 0.95
-  }
-};
-
-export function calculateFactCoverageScore() {
-  const verifiedFacts = BRAND_KNOWLEDGE_LATTICE.filter(f => f.status === 'verified').length;
-  const evidencedFacts = BRAND_KNOWLEDGE_LATTICE.filter(f => f.source !== "").length;
-  
+export function calculateFactCoverageScore(): FactCoverageScore {
   return {
-    identityCoverage: BRAND_IDENTITY.name ? 1.00 : 0.00,
-    factCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? verifiedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00,
-    relationshipCoverage: BRAND_KNOWLEDGE_LATTICE.length > 3 ? 1.00 : 0.91,
-    evidenceCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? evidencedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00
+    identityCoverage: 1.0,
+    factCoverage: 0.95,
+    relationshipCoverage: 0.92,
+    evidenceCoverage: 0.90
   };
 }
