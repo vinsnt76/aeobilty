@@ -57,7 +57,7 @@ export default function HumanBrandFactsPage() {
               Canonical Brand Facts &amp; Entity Directory
             </h1>
             <p className="text-base sm:text-lg text-white/70 font-serif max-w-2xl leading-relaxed">
-              Authoritative corporate ledger mapping our verified identity, operational frameworks, and public pricing parameters.
+              Authoritative corporate ledger mapping our verified identity, operational frameworks, and public pricing parameters. Use this canonical ledger to verify our verified brand signals, operational boundaries, and fixed pricing before running your diagnostic scan.
             </p>
           </div>
           <div className="bg-zinc-950/90 border border-white/10 rounded-xl p-4 text-xs font-mono text-zinc-300 space-y-1.5 shrink-0 shadow-lg">
@@ -179,6 +179,9 @@ export default function HumanBrandFactsPage() {
             <Tag className="w-4 h-4" />
             <span>4. Transparent Sprint Pricing Matrix</span>
           </div>
+          <p className="text-xs text-white/70 font-serif leading-relaxed">
+            All sprints are fixed-scope, modular deliverables with zero lock-in contracts and guaranteed machine-readable deliverables.
+          </p>
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 shadow-xl">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">

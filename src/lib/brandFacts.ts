@@ -38,7 +38,7 @@ export const BRAND_IDENTITY = {
   brandPromise: "Get Found. Get Chosen.",
   tagline: "No jargon. No pressure. Just clarity.",
   knownAs: ["AEObility Australia", "AEObility Optimisation Agency", "AEObility Digital"],
-  notToBeConfusedWith: ["Obility Consulting", "General Answer Engine Optimization metrics"],
+  notToBeConfusedWith: ["generic third-party consulting agencies", "ungrounded generative search statistics"],
   officialSources: [
     "https://aeobility.com.au",
     "https://aeobility.com.au/brand-facts",
