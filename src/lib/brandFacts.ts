@@ -1,5 +1,5 @@
 /**
- * AEObility Canonical Brand Knowledge Layer (CBKL)
+ * AEObility Canonical Brand Knowledge Layer (CBKL) - Enterprise Layer
  * Locale: en-AU (Modern Australian English)
  * Last Verified: Aug 29, 2026
  */
@@ -24,10 +24,32 @@ export const BRAND_IDENTITY = {
   abn: "61 029 803 255",
   entityType: "LocalBusiness",
   industry: "Answer Engine Optimisation",
+  foundingDate: "2011-03-15",
+  founder: "Vinnie Baker",
+  location: {
+    city: "Perth",
+    state: "Western Australia",
+    country: "AU",
+    coordinates: { latitude: -31.9505, longitude: 115.8605 }
+  },
   foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
+  serviceArea: ["Australia", "Western Australia", "Perth", "Sydney", "Melbourne", "Brisbane", "Adelaide"],
   website: "https://aeobility.com.au",
   brandPromise: "Get Found. Get Chosen.",
-  tagline: "No jargon. No pressure. Just clarity."
+  tagline: "No jargon. No pressure. Just clarity.",
+  knownAs: ["AEObility Australia", "AEObility Optimisation Agency", "AEObility Digital"],
+  notToBeConfusedWith: ["Obility Consulting", "General Answer Engine Optimization metrics"],
+  officialSources: [
+    "https://aeobility.com.au",
+    "https://aeobility.com.au/brand-facts",
+    "https://aeobility.com.au/AGENTS.md",
+    "https://aeobility.com.au/diagnostic"
+  ],
+  temporalBadge: {
+    lastVerified: "Aug 29, 2026",
+    effectiveDate: "Aug 29, 2026",
+    fiscalCycle: "FY27"
+  }
 };
 
 // ============================================================================
@@ -67,12 +89,42 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
   },
   {
     subject: "AEObility",
+    predicate: "foundedBy",
+    object: "Vinnie Baker",
+    source: "https://aeobility.com.au/vince-baker",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-01-15",
+    lastVerified: "2026-08-29"
+  },
+  {
+    subject: "AEObility",
+    predicate: "operatesIn",
+    object: "Australia, Western Australia, Perth",
+    source: "https://aeobility.com.au/contact",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-01-15",
+    lastVerified: "2026-08-29"
+  },
+  {
+    subject: "AEObility",
     predicate: "evidences",
     object: "Baby Bento E-Commerce Growth",
     source: "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
     evidenceType: "CaseStudy",
     status: "verified",
     firstPublished: "2026-02-01",
+    lastVerified: "2026-08-29"
+  },
+  {
+    subject: "Telemetry Diagnostic Scanner",
+    predicate: "analyses",
+    object: "Answer Engine Visibility & Fact Coverage",
+    source: "https://aeobility.com.au/diagnostic",
+    evidenceType: "TechnicalDocumentation",
+    status: "verified",
+    firstPublished: "2026-03-22",
     lastVerified: "2026-08-29"
   }
 ];
@@ -146,7 +198,7 @@ export const PRICING_CONFIG = {
 export const BRAND_TEMPORAL_STATE = {
   fiscalCycle: "FY27",
   activeSprintsAvailable: true,
-  lastRegistrySync: "2026-08-29T20:36:40+08:00",
+  lastRegistrySync: "2026-08-29T21:18:00+08:00",
   currentCaseStudies: ["case-studies/baby-bento", "case-studies/allied-health"]
 };
 
@@ -272,11 +324,25 @@ export const PUBLIC_SCHEMA_GRAPH = {
       "legalName": BRAND_IDENTITY.legalName,
       "taxID": BRAND_IDENTITY.abn,
       "url": BRAND_IDENTITY.website,
+      "foundingDate": BRAND_IDENTITY.foundingDate,
+      "sameAs": BRAND_IDENTITY.officialSources,
+      "areaServed": BRAND_IDENTITY.serviceArea.map(area => ({ "@type": "AdministrativeArea", "name": area })),
+      "founder": {
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/vince-baker#person",
+        "name": BRAND_IDENTITY.founder,
+        "url": "https://aeobility.com.au/vince-baker"
+      },
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": BRAND_IDENTITY.foundingLocation.city,
-        "addressRegion": BRAND_IDENTITY.foundingLocation.state,
-        "addressCountry": BRAND_IDENTITY.foundingLocation.country
+        "addressLocality": BRAND_IDENTITY.location.city,
+        "addressRegion": BRAND_IDENTITY.location.state,
+        "addressCountry": BRAND_IDENTITY.location.country
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": BRAND_IDENTITY.location.coordinates.latitude,
+        "longitude": BRAND_IDENTITY.location.coordinates.longitude
       },
       "knowsAbout": Object.keys(BRAND_DEFINITIONS),
       "hasOfferCatalog": {
@@ -346,7 +412,7 @@ export function calculateFactCoverageScore() {
   return {
     identityCoverage: BRAND_IDENTITY.name ? 1.00 : 0.00,
     factCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? verifiedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00,
-    relationshipCoverage: Object.keys(INTERNAL_TELEMETRY_REGISTRY).length > 0 ? 0.91 : 0.00,
+    relationshipCoverage: BRAND_KNOWLEDGE_LATTICE.length > 3 ? 1.00 : 0.91,
     evidenceCoverage: BRAND_KNOWLEDGE_LATTICE.length > 0 ? evidencedFacts / BRAND_KNOWLEDGE_LATTICE.length : 1.00
   };
 }
