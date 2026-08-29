@@ -10,6 +10,7 @@ Allow: /api/chat
 Allow: /api/forms/quote
 Allow: /api/forms/audit
 Allow: /api/diagnostic
+Allow: /api/wallet-pass
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot

@@ -7,9 +7,11 @@
 - **GEO (Geographic Engine Optimisation)**: Optimising localised map pack matrices and location-aware AI systems.
 - **Entity Authority**: Establishing verifiable identity, semantic relevance, external validation, and knowledge graph consistency.
 - **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual passages into LLM prompt spaces.
-- **Positional Bias**: The tendency of retrieval models to prioritize answers placed at the absolute beginning or end of text blocks.
-- **Atomic Answer Blocks**: Text passages structured within 90-120 token bounds to maximize attention scores and semantic clarity.
+- **Positional Bias**: The tendency of retrieval models to prioritise answers placed at the absolute beginning or end of text blocks.
+- **Atomic Answer Blocks**: Text passages structured within 40-80 token bounds to maximise attention scores and semantic clarity.
 - **Entity Salience**: The mathematical confidence of an LLM in identifying the subject-predicate relationship of a brand node.
+- **Five-Layer Classification**: Structuring assets across Core (`/`), Commercial (`/services/aeo`), Concept (`/knowledge-hub/articles/*`), Intent (`/knowledge-hub/articles/*`), and Evidence (`/knowledge-hub/case-studies/*`).
+- **Topological Proximity**: Programmatic vector distance weighting ($1.00$ Root $\rightarrow$ $0.94$ Services $\rightarrow$ $0.91$ Diagnostic $\rightarrow$ $0.87$ RAG $\rightarrow$ $0.83$ Entity Authority).
 - **FAQ Knowledge Graph**: Declared parent, child, and sibling entity topology mapping core questions into machine-readable knowledge networks.
 
 ---
@@ -17,7 +19,7 @@
 ## Complete Route Directory
 
 ### Diagnostic & Audit Tools
-- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free 60-second interactive AI Search & AEO Visibility Audit tool.
+- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool running vector proximity and RAG simulation models.
 
 ### Core Optimisation Engagements & Solutions (How We Deliver)
 - [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.

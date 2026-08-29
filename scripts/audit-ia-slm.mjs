@@ -10,8 +10,9 @@ const rootDir = path.resolve(__dirname, '..');
 const csvPath = path.join(rootDir, 'AEObility -IA & SLM.csv');
 const rawContent = fs.readFileSync(csvPath, 'utf8');
 
-const records = parse(rawContent, { header: true });
-console.log(`Parsed ${records.length} records from ${path.basename(csvPath)}.`);
+const rawRecords = parse(rawContent, { header: true });
+const records = rawRecords.filter(r => r.URL && r.URL.trim().length > 0);
+console.log(`Parsed ${records.length} valid records from ${path.basename(csvPath)}.`);
 
 let fixes = 0;
 

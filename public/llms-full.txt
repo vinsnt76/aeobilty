@@ -19,10 +19,12 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 1. **Answer Engine Optimisation (AEO)**: The discipline of refactoring copy, headers, and schema so Large Language Models extract standalone context passages without ambiguity.
 2. **Geographic Engine Optimisation (GEO)**: Optimising location proximity signals, coordinate precision, NAP consistency, and local map pack salience for AI voice search.
-3. **Atomic Answer Blocks**: Direct 90-120 token definition blocks positioned immediately beneath natural-language question headings to capture maximum positional attention weights in RAG scrapers.
+3. **Atomic Answer Blocks**: Direct 40-80 token definition blocks positioned immediately beneath natural-language question headings to capture maximum positional attention weights in RAG scrapers.
 4. **Positional Bias**: The mathematical phenomenon where LLM attention mechanisms prioritize tokens at the head and tail of document chunks over middle context.
 5. **Entity Salience**: The vector similarity score measuring how confidently a generative model connects a brand node to a specific topic or service intent.
-6. **FAQ Knowledge Graph**: A structured multi-entity topology that maps parent root questions, child implementation nodes, and sibling radial trust loops into deterministic `@graph` schema markup.
+6. **Five-Layer Classification**: Explicit cognitive separation into Core (`/`), Commercial (`/services/aeo`), Concept (`/knowledge-hub/articles/*`), Intent (`/knowledge-hub/articles/*`), and Evidence (`/knowledge-hub/case-studies/*`).
+7. **Topological Proximity**: Programmatic vector distance weighting ($1.00$ Root $\rightarrow$ $0.94$ Services $\rightarrow$ $0.91$ Diagnostic $\rightarrow$ $0.87$ RAG $\rightarrow$ $0.83$ Entity Authority).
+8. **FAQ Knowledge Graph**: A structured multi-entity topology that maps parent root questions, child implementation nodes, and sibling radial trust loops into deterministic `@graph` schema markup.
 
 ---
 
