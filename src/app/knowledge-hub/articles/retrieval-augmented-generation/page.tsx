@@ -1224,7 +1224,7 @@ export default function RagArticlePage() {
               <div className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold mb-2">Operational Service Bridge</div>
               <h3 className="text-lg font-bold text-white font-sans mb-2">Deploying Production-Grade RAG Optimisation</h3>
               <p className="text-sm text-white/80 font-serif leading-relaxed mb-4">
-                To successfully maintain passage-level relevance inside modern context windows, engineering content must link technical data fields back to verified corporate entities. Organisations can leverage our <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> to optimise structured text parsing speeds and secure long-term citation share.
+                Bypassing linear parsing limits requires structuring text blocks into distinct informational fragments. For companies deploying these updates inside production frameworks, integrating an <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">operational AEO architecture</Link> and <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">enterprise AEO services</Link> ensures that generated citations correctly reference the source organisation.
               </p>
               <Link
                 href="/services/aeo"

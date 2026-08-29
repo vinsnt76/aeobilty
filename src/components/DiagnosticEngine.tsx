@@ -337,7 +337,7 @@ export default function DiagnosticEngine() {
                   </span>
                 </div>
                 <p className="text-xs text-white/70 font-serif leading-relaxed max-w-lg">
-                  A practical strategic audit and 90-day action plan identifying the highest-priority opportunities across your website, structured data, and local visibility. (Fee credited towards eligible implementation work).
+                  Once the diagnostic engine generates your system salience score, structural deficiencies can be resolved during our initial execution sprint. Review our fixed-price <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO packages and pricing</Link> or the comprehensive 90-day Blueprint to establish definitive machine readability.
                 </p>
               </div>
               <Link

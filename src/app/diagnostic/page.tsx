@@ -46,14 +46,23 @@ export default function DiagnosticPage() {
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript",
         "description": "Interactive visibility diagnostic tool evaluating structured data, location signals, and service information formatting across primary search platforms.",
-        "about": {
-          "@id": "https://aeobility.com.au/services/aeo#service"
-        },
+        "about": [
+          {
+            "@type": "Thing",
+            "@id": "https://aeobility.com.au/services/aeo#service",
+            "name": "Answer Engine Optimisation"
+          }
+        ],
         "mentions": [
           {
             "@type": "Thing",
             "name": "Vector Proximity",
-            "description": "Cosine similarity matching models across transformer embeddings space."
+            "description": "Cosine similarity matching models across transformer embedding spaces."
+          },
+          {
+            "@type": "Thing",
+            "name": "Entity Salience",
+            "description": "Algorithmic extraction weight of core brand nouns within knowledge graphs."
           }
         ],
         "provider": {
