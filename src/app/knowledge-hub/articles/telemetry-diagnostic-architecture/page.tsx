@@ -96,7 +96,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "educationalLevel": "Advanced",
         "proficiencyLevel": "Expert",
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
-        "dependencies": "Google Gemini text-embedding-004, gemini-3.5-flash, Wikidata SPARQL Engine",
+        "dependencies": "Google Gemini text-embedding-004, gemini-3.7-flash, Wikidata SPARQL Engine",
         "author": {
           "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person"
         },
@@ -332,7 +332,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   This document provides an open technical specification of AEObility Architecture v2.4 (last tested August 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
                 </p>
                 <div className="text-[11px] text-aeo-cyan pt-1 border-t border-white/10">
-                  Stack: Next.js App Router &bull; Google Gemini text-embedding-004 &bull; gemini-3.5-flash &bull; Wikidata SPARQL
+                  Stack: Next.js App Router &bull; Google Gemini text-embedding-004 &bull; gemini-3.7-flash &bull; Wikidata SPARQL
                 </div>
               </div>
             </div>
@@ -800,7 +800,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-purple-400 uppercase font-mono">4. Query-Variation Retrieval Test</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-purple-300 font-mono text-xs">rag-sim.ts</code>, <code className="text-purple-300 font-mono">gemini-3.5-flash</code> generates 3 synthetic query variations from the target search intent. Chunk embeddings are evaluated against these queries to measure simulation survival rates.
+                    In <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-purple-300 font-mono text-xs">rag-sim.ts</code>, <code className="text-purple-300 font-mono">gemini-3.7-flash</code> generates 3 synthetic query variations from the target search intent. Chunk embeddings are evaluated against these queries to measure simulation survival rates.
                   </p>
                 </div>
               </div>
@@ -894,7 +894,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <td className="py-3 px-3">Generates 768-dimensional dense vector embeddings for target search intent and site text.</td>
                   </tr>
                   <tr>
-                    <td className="py-3 px-3 font-mono text-white font-semibold">gemini-3.5-flash</td>
+                    <td className="py-3 px-3 font-mono text-white font-semibold">gemini-3.7-flash</td>
                     <td className="py-3 px-3 font-mono text-white/60">Google Gemini API</td>
                     <td className="py-3 px-3 font-mono text-aeo-cyan/90 text-[11px]">Prompt &rarr; Structured JSON Response</td>
                     <td className="py-3 px-3">Powers query-variation generation, SPO triple extraction, and Strategic Insight Engine synthesis.</td>
@@ -919,7 +919,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div>1. Client Web Audit Request &rarr; POST /api/diagnostic (URL + Intent)</div>
                 <div>2. Async HTML Crawl &amp; Competitor Discovery &rarr; Extract Page Copy &amp; Competitor Content</div>
                 <div>3. Dense Vector Embeddings &rarr; text-embedding-004 (768-dim v_client &amp; v_competitor)</div>
-                <div>4. Query-Variation Generation &rarr; gemini-3.5-flash (3 Synthetic Query Variations)</div>
+                <div>4. Query-Variation Generation &rarr; gemini-3.7-flash (3 Synthetic Query Variations)</div>
                 <div>5. RAG Retrieval Simulation &rarr; Atomic Paragraph Chunking (rag-sim.ts, AEObility benchmark threshold: 0.62)</div>
                 <div>6. Entity Graph Extraction &rarr; SPO Triples &amp; Wikidata SPARQL Corroboration (graph.ts)</div>
                 <div>7. 5-Category Score Normalisation &rarr; 0-100 Scorecard (scoring.ts)</div>
