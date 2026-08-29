@@ -20,7 +20,8 @@ export interface FactProvenance {
 // ============================================================================
 export const BRAND_IDENTITY = {
   name: "AEObility",
-  legalName: "AEObility Pty Ltd",
+  legalName: "Trekaboutoz trading as AEObility",
+  abn: "61 029 803 255",
   entityType: "LocalBusiness",
   industry: "Answer Engine Optimisation",
   foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
@@ -35,11 +36,11 @@ export const BRAND_IDENTITY = {
 export const BRAND_DEFINITIONS = {
   "Answer Engine Optimisation": {
     establishedFact: "The process of structuring digital content to improve its discoverability by AI search assistants and conversational retrieval engines.",
-    aeobilityMethodology: "Restructuring raw data assets into explicit semantic graph architectures and atomic answer blocks to maximise passage-level extraction scores."
+    aeobilityMethodology: "Organising your core business information into clear, machine-readable structures and direct answer blocks so AI assistants and search engines can clearly read, verify, and quote your business as the direct answer."
   },
   "Telemetry Diagnostic": {
-    establishedFact: "An automated technical scan designed to audit how web assets are parsed by information retrieval systems.",
-    aeobilityClaim: "Simulates multi-engine scraper workflows to identify configuration vulnerabilities, entity salience drifts, and topological positioning gaps."
+    establishedFact: "An automated technical scan designed to audit how web assets are parsed by modern information retrieval systems.",
+    aeobilityClaim: "Simulates multi-engine AI search workflows to spot broken data signals, inconsistent business details across platforms, and missed opportunities where AI engines fail to understand what you offer."
   }
 };
 
@@ -94,9 +95,9 @@ export const PRICING_CONFIG = {
     duration: '10 business days',
     creditBackEligible: true,
     deliverables: [
-      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices)',
-      'Passage-level extraction and context survival diagnostics',
-      'Entity salience and schema graph gap assessment'
+      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices) ensuring your exact location signals match',
+      'Passage-level extraction diagnostics ensuring AI search engines quote your exact answers without hallucinating',
+      'Entity salience and schema graph gap assessment identifying missed citation opportunities'
     ]
   },
   StrategicBlueprint: {
@@ -105,9 +106,9 @@ export const PRICING_CONFIG = {
     priceAUD: 995,
     duration: '10 business days',
     deliverables: [
-      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices)',
-      'Passage-level extraction and context survival diagnostics',
-      'Entity salience and schema graph gap assessment'
+      'Multi-platform map coordinate check (Google, Apple Maps, Siri indices) ensuring your exact location signals match',
+      'Passage-level extraction diagnostics ensuring AI search engines quote your exact answers without hallucinating',
+      'Entity salience and schema graph gap assessment identifying missed citation opportunities'
     ]
   },
   microSprints: {
@@ -126,7 +127,10 @@ export const PRICING_CONFIG = {
     name: 'Technical Schema & Local Proximity Sprint',
     priceFromAUD: 495,
     duration: '3 to 5 business days',
-    deliverables: ['Nested JSON-LD schema generation', 'GeoCoordinate mapping alignment']
+    deliverables: [
+      'Nested JSON-LD schema generation connecting your brand directly to search knowledge graphs',
+      'GeoCoordinate mapping alignment ensuring local map pack dominance and accurate voice assistant routing'
+    ]
   },
   foundation: {
     codeSeries: 'SS1-SS4-MACRO',
@@ -266,6 +270,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
       "@id": "https://aeobility.com.au/#organization",
       "name": BRAND_IDENTITY.name,
       "legalName": BRAND_IDENTITY.legalName,
+      "taxID": BRAND_IDENTITY.abn,
       "url": BRAND_IDENTITY.website,
       "address": {
         "@type": "PostalAddress",

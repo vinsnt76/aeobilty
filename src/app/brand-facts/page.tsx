@@ -44,7 +44,7 @@ export default function HumanBrandFactsPage() {
       <Navbar />
       <Breadcrumbs />
 
-      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-12 w-full space-y-12">
+      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-12 pb-32 sm:pb-20 w-full space-y-12">
         
         {/* Header Section */}
         <header className="border-b border-white/10 pb-8 text-center sm:text-left space-y-4">
@@ -70,6 +70,7 @@ export default function HumanBrandFactsPage() {
             <div className="space-y-1">
               <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Registered Corporate Entity</span>
               <p className="text-lg font-bold text-white">{BRAND_IDENTITY.legalName}</p>
+              <p className="text-xs text-zinc-400 font-serif">ABN: <strong className="text-white font-mono">{BRAND_IDENTITY.abn}</strong></p>
               <p className="text-xs text-zinc-400 font-serif">Trading Name: <strong className="text-white">{BRAND_IDENTITY.name}</strong></p>
               <p className="text-xs text-zinc-500 font-mono pt-1">Entity Type: {BRAND_IDENTITY.entityType}</p>
             </div>
@@ -131,7 +132,7 @@ export default function HumanBrandFactsPage() {
                       <td className="p-4 font-mono text-xs text-aeo-cyan">{item.sku}</td>
                       <td className="p-4 font-semibold text-white">
                         <div>{item.name}</div>
-                        <ul className="text-xs text-zinc-400 font-serif space-y-0.5 mt-1 list-disc pl-4">
+                        <ul className="text-xs text-zinc-400 font-serif space-y-1 mt-1.5 list-disc pl-4">
                           {item.deliverables.map((d, i) => (
                             <li key={i}>{d}</li>
                           ))}
