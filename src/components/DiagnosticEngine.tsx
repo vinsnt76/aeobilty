@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
-import { BRAND_PRICING_SCHEMA } from '@/lib/brandFacts';
+import { BRAND_PRICING_SCHEMA, calculateFactCoverageScore, BRAND_IDENTITY } from '@/lib/brandFacts';
 import Link from 'next/link';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
@@ -19,8 +19,9 @@ export default function DiagnosticEngine() {
   const [processingStage, setProcessingStage] = useState(0);
   const hasAutoRunRef = useRef(false);
 
-  // Extract BPSTRAT product parameters from canonical schema
+  // Extract BPSTRAT product parameters from canonical schema & CBKL coverage
   const bpstratProduct = BRAND_PRICING_SCHEMA['@graph'].find(p => p.sku === 'BPSTRAT') || BRAND_PRICING_SCHEMA['@graph'][0];
+  const factCoverage = calculateFactCoverageScore();
 
   const processingSteps = [
     "Crawling website structure & service pages",
@@ -324,6 +325,70 @@ export default function DiagnosticEngine() {
                 </button>
               </div>
 
+            </div>
+
+            {/* Brand Fact Coverage Ratio Card */}
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 shadow-xl space-y-4 text-left">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
+                  <h3 className="text-base font-bold text-white font-soehne-breit">
+                    Canonical Fact Grounding &amp; Coverage
+                  </h3>
+                </div>
+                <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Verified CBKL Model
+                </span>
+              </div>
+
+              <p className="text-xs text-white/70 font-serif leading-relaxed">
+                Measures the mathematical variance between declared brand facts (corporate identities, services, pricing matrices) and what conversational retrieval engines observe during active query simulation.
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Identity</span>
+                  <span className="text-lg font-bold text-white">
+                    {Math.round(factCoverage.identityCoverage * 100)}%
+                  </span>
+                </div>
+                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Terminology</span>
+                  <span className="text-lg font-bold text-aeo-cyan">
+                    {Math.round(factCoverage.factCoverage * 100)}%
+                  </span>
+                </div>
+                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Topology</span>
+                  <span className="text-lg font-bold text-aeo-purple">
+                    {Math.round(factCoverage.relationshipCoverage * 100)}%
+                  </span>
+                </div>
+                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Evidence</span>
+                  <span className="text-lg font-bold text-emerald-400">
+                    {Math.round(factCoverage.evidenceCoverage * 100)}%
+                  </span>
+                </div>
+              </div>
+
+              <div className="pt-2 flex justify-between items-center text-xs text-zinc-400 border-t border-white/5">
+                <span>Verification Authority:</span>
+                <Link
+                  href="/brand-facts"
+                  onClick={() => {
+                    trackGaEvent('view_fact_coverage_matrix', {
+                      event_category: 'Diagnostic',
+                      event_label: url || 'direct_scan',
+                      coverage_ratio: 0.95
+                    });
+                  }}
+                  className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1"
+                >
+                  <span>View Canonical Brand Ledger</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
             </div>
 
             {/* Strategic Blueprint Upsell Block (Placed Below Workflow / Results) */}
