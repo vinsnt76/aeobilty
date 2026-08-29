@@ -210,6 +210,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/case-studies`,
       lastModified: currentDate,
       changeFrequency: "weekly",

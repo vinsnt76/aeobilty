@@ -67,3 +67,8 @@ what is answer engine optimisation
 ai search indexing guide","answer engine strategies
 vector retrieval guide
 ai citation guide",Understanding Answer Engine Optimisation;Key Architecture Elements;Implementation Roadmap,"vector search, RAG, LLM indexing, entity salience, structured content","TechArticle, Guide",Australia,High-level architectural blueprint of Answer Engine Optimisation components,Flowchart showing step-by-step AEO guide implementation steps
+Fix AI Brand Hallucinations & Evidence Gaps,/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps,L3,Knowledge Sub,Fix AI Brand Hallucinations,Fix AI Brand Hallucinations & Evidence Gaps | AEObility,55,Learn how to fix AI brand hallucinations and retrieval evidence gaps using the Canonical Brand Knowledge Layer and 5-stage verification loop.,141,How to Fix AI Brand Hallucinations & Evidence Gaps,"fix ai brand hallucinations
+resolve ai evidence gaps
+canonical brand knowledge layer","ai retrieval verification
+aeo brand grounding
+eliminate ai hallucination",Why Generative AI Engines Guess Your Business Facts;The Canonical Brand Knowledge Layer (CBKL);The 5-Stage Retrieval Verification Loop;Test Your Brand Fact Coverage Score,"brand facts, evidence coverage, verification loop, RAG retrieval, CBKL, entity alignment","TechArticle, HowTo",Australia,Fix AI Brand Hallucinations and Evidence Gaps Conceptual Diagram,Diagram illustrating the 5-Stage Retrieval Verification Loop for AEO

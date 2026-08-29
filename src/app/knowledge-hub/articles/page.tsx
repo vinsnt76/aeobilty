@@ -32,6 +32,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "How to Fix AI Brand Hallucinations & Evidence Gaps",
+      category: "Grounding & Provenance / CBKL",
+      description: "Learn how to eliminate AI factual drift, missing citations, and incorrect pricing by deploying the Canonical Brand Knowledge Layer and 5-stage verification loop.",
+      href: "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
+      image: "/entity-authority-semantic-search_AEObilty.webp",
+      alt: "Fix AI Brand Hallucinations and Evidence Gaps Conceptual Diagram",
+      metrics: [
+        { label: "Type", value: "Technical Guide" },
+        { label: "Read Time", value: "7 min" }
+      ]
+    },
+    {
       title: "Telemetry Diagnostic Tool: Architecture & Operational Walkthrough",
       category: "Technical Architecture / Spec",
       description: "Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
