@@ -4,6 +4,7 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const urlList = [
   `https://${HOST}`,
+  `https://${HOST}/brand-facts`,
   `https://${HOST}/diagnostic`,
   `https://${HOST}/solutions`,
   `https://${HOST}/solutions/aeo-blueprint`,
@@ -27,6 +28,7 @@ const urlList = [
   `https://${HOST}/knowledge-hub/geo`,
   `https://${HOST}/knowledge-hub/what-is-seo-optimisation`,
   `https://${HOST}/knowledge-hub/articles`,
+  `https://${HOST}/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`,
   `https://${HOST}/knowledge-hub/articles/optimising-for-different-ai-search-engines`,
   `https://${HOST}/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`,
   `https://${HOST}/knowledge-hub/articles/entity-authority-building`,
