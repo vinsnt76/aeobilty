@@ -57,9 +57,9 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Service",
       "@id": "https://www.aeobility.com.au/services/aeo#service",
-      "name": "Answer Engine Optimisation (AEO) Services",
-      "alternateName": "AEO & Structured Content Consultancy",
-      "description": "Comprehensive AEO services restructing digital presence for machine discovery, RAG retrieval accuracy, entity salience, and conversion rate optimisation.",
+      "name": "AEO Services",
+      "alternateName": "Answer Engine Optimisation (AEO) Services",
+      "description": "Canonical AEO services restructuring digital presence for machine discovery, RAG retrieval accuracy, entity salience, and conversion rate optimisation.",
       "provider": {
         "@id": "https://www.aeobility.com.au/#organization"
       },
@@ -71,6 +71,26 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@type": "Audience",
         "audienceType": "Australian small businesses, e-commerce brands, trades, clinics, and professional service teams"
       },
+      "subjectOf": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/aeo#article",
+          "name": "Answer Engine Optimisation Principles & Mechanics",
+          "url": "https://www.aeobility.com.au/knowledge-hub/aeo"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval#article",
+          "name": "What Is Positional Bias in Retrieval and Answer Engines?",
+          "url": "https://www.aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
+          "name": "AI Search Optimisation with Retrieval-Augmented Generation (RAG)",
+          "url": "https://www.aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
+        }
+      ],
       "hasOfferCatalog": {
         "@id": "https://www.aeobility.com.au/services/aeo#catalog"
       }

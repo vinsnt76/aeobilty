@@ -60,6 +60,21 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
+    targetSlug: "/knowledge-hub/aeo",
+    anchorText: "AEO Core Principles & Mechanics",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
+    targetSlug: "/knowledge-hub/articles/positional-bias-in-retrieval",
+    anchorText: "Positional Bias Audit & Mitigation",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
+    targetSlug: "/knowledge-hub/articles/retrieval-augmented-generation",
+    anchorText: "RAG Search Optimisation Guide",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
     targetSlug: "/solutions/aeo-sprint",
     anchorText: "focused micro-sprints",
     entityRelation: "http://schema.org/isRelatedTo"

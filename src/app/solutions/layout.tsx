@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AEO Service Costs, Packages & Sprints | AEObility",
+  title: "AEO Pricing, Packages & Technical Sprints | AEObility",
   description: "Explore transparent pricing models for Australian businesses. Standalone $995 AEObility Blueprint audit, fixed-scope micro-sprints from $495 ex. GST, and Foundation Implementation.",
   alternates: {
     canonical: "https://www.aeobility.com.au/solutions",
   },
   openGraph: {
-    title: "AEO Service Costs, Packages & Sprints | AEObility",
+    title: "AEO Pricing, Packages & Technical Sprints | AEObility",
     description: "Explore transparent pricing models for Australian businesses. Standalone $995 AEObility Blueprint audit, fixed-scope micro-sprints from $495 ex. GST, and Foundation Implementation.",
     url: "https://www.aeobility.com.au/solutions",
     siteName: "AEObility",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AEO Service Costs, Packages & Sprints | AEObility",
+    title: "AEO Pricing, Packages & Technical Sprints | AEObility",
     description: "Explore transparent pricing models for Australian businesses.",
     images: ["https://www.aeobility.com.au/images/solutions/aeo-solutions-and-pricing-framework_AEObility.webp"],
   },

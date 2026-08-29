@@ -8,8 +8,8 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata = {
-  title: "Answer Engine Optimisation Core Principles | AEObility",
-  description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
+  title: "Answer Engine Optimisation Principles & Mechanics | AEObility",
+  description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximise positional bias within text fields.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/aeo",
   },
@@ -22,11 +22,18 @@ export default function AEOKnowledgeNodePage() {
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/aeo#article",
-        "headline": "Answer Engine Optimisation Core Principles",
-        "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
+        "headline": "Answer Engine Optimisation Principles & Mechanics",
+        "description": "Technical guide on how search bots parse files for direct citation extraction. Learn to maximise positional bias within text fields.",
+        "inLanguage": "en-AU",
         "author": {
           "@type": "Organization",
           "name": "AEObility"
+        },
+        "about": {
+          "@type": "Service",
+          "@id": "https://aeobility.com.au/services/aeo#service",
+          "name": "AEO Services",
+          "url": "https://aeobility.com.au/services/aeo"
         }
       }
     ]

@@ -12,7 +12,7 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: "AEO Services for Australian Businesses | AEObility",
+  title: "AI Search Optimisation for Australian Businesses | AEObility",
   description: "Get found across Search, Maps, and AI systems. Enter your website URL for a free visibility audit delivered straight to your inbox.",
   keywords: [
     "AI Search Optimisation Australia",
@@ -35,7 +35,7 @@ export default function Home() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "AEO Services",
+    "name": "AI Search Optimisation Services",
     "provider": {
       "@type": "LocalBusiness",
       "name": "AEObility",
