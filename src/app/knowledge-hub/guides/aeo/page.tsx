@@ -242,33 +242,28 @@ export default function AEOGuideWhitepaperPage() {
       <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
 
-      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-12 pb-32 sm:pb-20 w-full space-y-12">
+      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-32 sm:pb-20 w-full space-y-8 sm:space-y-12">
         
         {/* Header Block with Low-Contrast Geometric Background */}
-        <header className="relative border border-white/10 rounded-3xl p-6 sm:p-10 overflow-hidden bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-black shadow-2xl space-y-6">
+        <header className="relative border border-white/10 rounded-3xl p-5 sm:p-8 md:p-10 overflow-hidden bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-black shadow-2xl space-y-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,229,255,0.06),transparent_60%)] pointer-events-none" />
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-aeo-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 space-y-4">
+          <div className="relative z-10 space-y-3.5">
+            {/* Consolidated Pill Badge */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
-                <BookOpen className="w-3.5 h-3.5" />
-                <span>Technical Whitepaper</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs font-mono">
-                <span>Reading time: ~12 mins</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
-                <ShieldCheck className="w-3 h-3" />
-                <span>Peer-Referenced Technical Guide</span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
+                <BookOpen className="w-3.5 h-3.5 shrink-0" />
+                <span>Technical Whitepaper • 12 min read • Peer-Referenced</span>
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
-              Answer Engine Optimisation (AEO): Core Principles, System Mechanics, and Semantic Retrieval Architecture
+            {/* Responsive Scaled Title for Maximum Above-the-Fold Value */}
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
+              Answer Engine Optimisation (AEO): <span className="hidden sm:inline">Core Principles, System Mechanics &amp; Semantic Retrieval Architecture</span><span className="sm:hidden">Core Principles &amp; Retrieval Architecture</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
               Answer Engine Optimisation (AEO) improves the clarity, structure, and evidence behind your website content so AI search tools and conversational assistants can more accurately understand, retrieve, and reference it. It complements SEO rather than replacing it.
             </p>
 
@@ -278,7 +273,7 @@ export default function AEOGuideWhitepaperPage() {
               Before we unpack the underlying engineering code, here is the simple version: Answer Engine Optimisation (AEO) helps AI search models understand your business facts the same way a human colleague would: clearly, consistently, and without guesswork. If you are a non-technical leader, this guide reveals how to ensure your brand is accurately cited when AI systems answer questions on behalf of users.
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-400 font-mono border-t border-white/5 pt-4">
+            <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-zinc-400 font-mono border-t border-white/5 pt-3.5">
               <span>Author: <Link href="/vince-baker" className="text-aeo-cyan hover:underline">Vince Baker</Link></span>
               <span>•</span>
               <span>Reviewed by: AEObility Editorial &amp; Technical Team</span>

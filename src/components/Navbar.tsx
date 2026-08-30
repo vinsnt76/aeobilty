@@ -167,35 +167,14 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Right Action Stack & Hamburger Menu Toggle Button Island */}
-          <div className="flex items-center gap-2.5 sm:gap-3 lg:hidden">
-            {/* Phone Call Quick Link */}
-            <a
-              href="tel:0480286282"
-              aria-label="Call AEObility"
-              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
-            >
-              <Phone className="h-4 w-4" />
-            </a>
-
-            {/* Calendar / Booking Quick Link */}
+          {/* Mobile Right Action Stack: Primary Diagnostic CTA + Hamburger Menu */}
+          <div className="flex items-center gap-2.5 lg:hidden">
             <Link
-              href="/book"
-              aria-label="Book Strategy Session"
-              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
+              href="/diagnostic"
+              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black rounded-full hover:opacity-90 active:scale-95 transition-all shadow-sm"
             >
-              <Calendar className="h-4 w-4" />
+              Diagnostic
             </Link>
-
-            {/* Internal Search Quick Link (⌘K) */}
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
-              aria-label="Search Site Architecture (⌘K)"
-              className="flex min-h-[44px] min-w-[44px] h-11 w-11 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
-            >
-              <Search className="h-4 w-4" />
-            </button>
 
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />
           </div>
@@ -225,6 +204,26 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Quick Utility Action Island inside Drawer: Call, Calendar, Search */}
+        <div className="grid grid-cols-2 gap-2 mt-3">
+          <a
+            href="tel:0480286282"
+            aria-label="Call AEObility (0480 286 282)"
+            className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium hover:bg-cyan-900/50 transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>Call Us</span>
+          </a>
+          <Link
+            href="/book"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-purple-950/40 border border-purple-500/30 text-purple-300 text-xs font-mono font-medium hover:bg-purple-900/50 transition-colors"
+          >
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Book Strategy</span>
+          </Link>
+        </div>
+
         {/* Top Search Trigger Button (⌘K) */}
         <button
           type="button"
@@ -232,11 +231,11 @@ export default function Navbar() {
             setIsOpen(false);
             window.dispatchEvent(new CustomEvent('open_answer_search_modal'));
           }}
-          className="w-full mt-3 flex items-center justify-between py-2.5 px-4 text-xs font-semibold bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors text-left"
+          className="w-full mt-2 flex items-center justify-between py-2.5 px-4 text-xs font-semibold bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors text-left"
         >
           <div className="flex items-center gap-2">
             <Search className="w-3.5 h-3.5 text-aeo-cyan" />
-            <span>Search...</span>
+            <span>Search Site Architecture...</span>
           </div>
           <kbd className="px-2 py-0.5 text-[9px] font-mono text-aeo-cyan bg-aeo-cyan/10 border border-aeo-cyan/20 rounded font-bold">⌘K</kbd>
         </button>
