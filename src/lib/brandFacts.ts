@@ -25,7 +25,7 @@ export const BRAND_IDENTITY = {
   entityType: "ProfessionalService",
   industry: "Answer Engine Optimisation",
   foundingDate: "2011-03-15",
-  founder: "Vinnie Baker",
+  founder: "Vince Baker",
   location: {
     city: "Perth",
     state: "Western Australia",
@@ -86,7 +86,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
-    statement: "AEObility was founded by Vinnie Baker",
+    statement: "AEObility was founded by Vince Baker",
     source: "https://aeobility.com.au/vince-baker",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -214,7 +214,7 @@ export const BRAND_PRICING_SCHEMA = {
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
         seller: {
-          '@type': 'Organization',
+          '@type': 'ProfessionalService',
           name: 'AEObility'
         }
       }
@@ -232,7 +232,7 @@ export const BRAND_PRICING_SCHEMA = {
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
         seller: {
-          '@type': 'Organization',
+          '@type': 'ProfessionalService',
           name: 'AEObility'
         }
       }
@@ -244,15 +244,21 @@ export const PUBLIC_SCHEMA_GRAPH = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': 'ProfessionalService',
       '@id': 'https://aeobility.com.au/#organization',
       name: BRAND_IDENTITY.name,
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,
+      logo: 'https://aeobility.com.au/assets/AEObility_Logo.webp',
+      image: 'https://aeobility.com.au/assets/AEObility_Featured_Image.webp',
+      description: 'Australian Answer Engine Optimisation consultancy specialising in structured business knowledge, entity graphs, and AI-search visibility.',
       foundingDate: BRAND_IDENTITY.foundingDate,
       founder: {
         '@type': 'Person',
-        name: BRAND_IDENTITY.founder
+        '@id': 'https://aeobility.com.au/vince-baker#person',
+        name: BRAND_IDENTITY.founder,
+        jobTitle: 'Founder & Principal Consultant',
+        url: 'https://aeobility.com.au/vince-baker'
       },
       address: {
         '@type': 'PostalAddress',
@@ -265,16 +271,38 @@ export const PUBLIC_SCHEMA_GRAPH = {
         latitude: BRAND_IDENTITY.location.coordinates.latitude,
         longitude: BRAND_IDENTITY.location.coordinates.longitude
       },
-      sameAs: BRAND_IDENTITY.officialSources.map(s => s.url)
+      areaServed: [
+        {
+          '@type': 'Country',
+          name: 'Australia'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Western Australia'
+        }
+      ],
+      priceRange: '$$',
+      knowsAbout: [
+        'Answer Engine Optimisation',
+        'Generative Engine Optimisation',
+        'Entity Resolution',
+        'Structured Data & Schema.org'
+      ]
     },
     {
       '@type': 'WebPage',
       '@id': 'https://aeobility.com.au/brand-facts#webpage',
       url: 'https://aeobility.com.au/brand-facts',
-      name: 'Brand Facts & Canonical Entity Directory',
-      description: 'Consolidated brand ledger detailing corporate identities, entity relationships, and published service pricing.',
+      name: 'Canonical Brand Facts & Machine Interface Directory | AEObility',
+      description: "AEObility's canonical business knowledge layer, publishing verified first-party business facts, entity graphs, provenance evidence, and machine interface endpoints.",
       isPartOf: {
         '@id': 'https://aeobility.com.au/#website'
+      },
+      about: {
+        '@id': 'https://aeobility.com.au/#organization'
+      },
+      mainEntity: {
+        '@id': 'https://aeobility.com.au/#organization'
       }
     }
   ]
