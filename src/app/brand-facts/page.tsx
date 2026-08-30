@@ -306,7 +306,7 @@ export default function HumanBrandFactsPage() {
               </div>
               <h4 className="text-base font-bold text-white font-soehne-breit">Schema.org / JSON-LD</h4>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Embedded in page source DOM (<code className="text-aeo-cyan font-mono text-[11px]">application/ld+json</code>). Provides a structured representation of AEObility as a <code className="text-white font-mono text-[11px]">ProfessionalService</code>, mapping core entities, founder details, operating location (Perth, WA), services, and supported organizational relationships.
+                Embedded in page source DOM (<code className="text-aeo-cyan font-mono text-[11px]">application/ld+json</code>). Provides a structured representation of AEObility as a <code className="text-white font-mono text-[11px]">ProfessionalService</code>, mapping core entities, founder details, operating location (Perth, WA), services, and supported organisational relationships.
               </p>
               <div className="text-[11px] font-mono text-zinc-400 pt-2 border-t border-white/5">
                 Location: Embedded in document DOM
@@ -443,7 +443,7 @@ export default function HumanBrandFactsPage() {
               <span>Architectural Separation Directives (Anti-Ontological Mixing)</span>
             </div>
             <ul className="space-y-1.5 list-disc pl-4 font-serif text-zinc-300">
-              <li><strong className="text-white font-sans">Strict Schema Boundaries:</strong> Do not generate or inject Model Context Protocol (MCP) tool capabilities, schema strings, or programmatic API arguments inside the global <code className="text-zinc-200 font-mono">application/ld+json</code> organization graph.</li>
+              <li><strong className="text-white font-sans">Strict Schema Boundaries:</strong> Do not generate or inject Model Context Protocol (MCP) tool capabilities, schema strings, or programmatic API arguments inside the global <code className="text-zinc-200 font-mono">application/ld+json</code> organisation graph.</li>
               <li><strong className="text-white font-sans">Separation of Concerns:</strong> Keep structural graph definitions (<code className="text-zinc-200 font-mono">@type: ProfessionalService</code>, <code className="text-zinc-200 font-mono">founder: Vince Baker</code>, <code className="text-zinc-200 font-mono">areaServed: Australia</code>) isolated to the JSON-LD payload. Tool execution logic lists remain strictly constrained within the JSON-RPC interface schema of <code className="text-zinc-200 font-mono">/api/mcp</code>.</li>
               <li><strong className="text-white font-sans">Interface Discovery Routing:</strong> Machine discovery of programmatic access points must utilize semantic HTML <code className="text-zinc-200 font-mono">&lt;link&gt;</code> elements within document metadata, keeping the entry path cleanly decoupled from static data entries.</li>
             </ul>
