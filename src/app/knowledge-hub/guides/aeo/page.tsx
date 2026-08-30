@@ -92,7 +92,7 @@ export default function AEOGuideWhitepaperPage() {
         'inLanguage': 'en-AU',
         'mainEntityOfPage': 'https://aeobility.com.au/knowledge-hub/guides/aeo',
         'datePublished': '2026-08-30T11:59:51+08:00',
-        'dateModified': '2026-08-30T12:25:00+08:00',
+        'dateModified': '2026-08-30T19:50:00+08:00',
         'dependencies': 'Vector Search Indexing, Contextual Chunking, JSON-LD Schema Graphs',
         'proficiencyLevel': 'Advanced',
         'author': {
@@ -185,23 +185,23 @@ export default function AEOGuideWhitepaperPage() {
             'name': 'Is AEO replacing traditional SEO?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'No. It acts as a complementary layer. Traditional SEO targets lexical indexing loops and human click-through paths on legacy digital maps, while AEO optimizes passage extraction accuracy within dense vector retrieval layers.'
+              'text': 'No. AEO complements SEO. SEO helps people find pages through search results, while AEO also focuses on making important facts clear, well-supported and easy for answer engines to interpret and reference.'
             }
           },
           {
             '@type': 'Question',
-            'name': 'Do I absolutely require structured schema for AEO?',
+            'name': 'Do I need schema markup for AEO?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Yes. While Schema.org data does not guarantee inclusion, nested JSON-LD graphs provide machines with unambiguous entity boundaries, linking business metrics directly to verified Wikidata identifiers.'
+              'text': 'No. Schema markup is not a prerequisite for every AEO improvement, but valid structured data can help clarify eligible entities, services and relationships when it accurately reflects visible page content. Start with clear, evidence-backed content and technical accessibility; then add the most relevant schema types.'
             }
           },
           {
             '@type': 'Question',
-            'name': 'How long does a standard AEO implementation engagement take?',
+            'name': 'How long does a standard AEO implementation engagement typically take?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'A baseline deployment via our Foundation Implementation package executes over a fixed four-week cycle, establishing your connected semantic structure.'
+              'text': 'A baseline deployment via our Foundation Implementation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.'
             }
           },
           {
@@ -209,7 +209,7 @@ export default function AEOGuideWhitepaperPage() {
             'name': 'What website components should be optimised first?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Priority should be allocated to your primary identity directory, service capability definitions, and core commercial fact listings before addressing deep informational archives.'
+              'text': 'Start with accurate business identity details, core service pages, location and contact information, pricing and eligibility facts where appropriate, and the high-intent questions customers ask before contacting you.'
             }
           }
         ]
@@ -226,7 +226,7 @@ export default function AEOGuideWhitepaperPage() {
     { id: 'implementation-checklist', label: '6. Practical Implementation Checklist' },
     { id: 'sources-notes', label: '7. Primary Sources & Research Notes' },
     { id: 'service-framework', label: '8. AEObility Methodology & 6-Stage Diagnostic' },
-    { id: 'site-architecture', label: '9. Site Architecture & Entity Graph Model' },
+    { id: 'site-architecture', label: '9. Site Architecture & Content Governance Model' },
     { id: 'faq-section', label: '10. Frequently Asked Questions (FAQ)' },
   ];
 
@@ -270,7 +270,7 @@ export default function AEOGuideWhitepaperPage() {
             {/* Humanization Bridge (Primacy Placement) */}
             <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
               <strong className="text-aeo-cyan font-sans uppercase tracking-wider text-xs block mb-1">Executive Summary:</strong>
-              Before we unpack the underlying engineering code, here is the simple version: Answer Engine Optimisation (AEO) helps AI search models understand your business facts the same way a human colleague would: clearly, consistently, and without guesswork. If you are a non-technical leader, this guide reveals how to ensure your brand is accurately cited when AI systems answer questions on behalf of users.
+              Before we unpack the underlying engineering code, here is the simple version: Answer Engine Optimisation (AEO) helps AI search models understand your business facts the same way a human colleague would: clearly, consistently, and without guesswork. If you are a business leader, this guide explains how to ensure your brand is accurately cited when AI systems answer questions on behalf of users.
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-zinc-400 font-mono border-t border-white/5 pt-3.5">
@@ -333,7 +333,7 @@ export default function AEOGuideWhitepaperPage() {
                   href="/solutions/aeo-sprint"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs border border-white/15 transition-colors"
                 >
-                  <span>Foundation Sprint</span>
+                  <span>Foundation Package</span>
                   <ArrowRight className="w-3 h-3 text-zinc-400" />
                 </Link>
               </div>
@@ -354,7 +354,7 @@ export default function AEOGuideWhitepaperPage() {
               </div>
               <h3 className="text-sm font-bold text-white font-soehne-breit">What AEO Solves</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Eliminates multi-node signal dilution, missing context chunks, and brand hallucinations across AI scrapers.
+                Helps reduce conflicting or fragmented business information, missing context chunks, and inconsistent facts across AI search tools.
               </p>
             </div>
           </div>
@@ -366,7 +366,7 @@ export default function AEOGuideWhitepaperPage() {
               </div>
               <h3 className="text-sm font-bold text-white font-soehne-breit">How It Works</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Restructures unstructured copy into distinct, high-density token blocks wrapped in nested JSON-LD schema graphs.
+                Restructures copy into short, self-contained answer sections backed by connected structured data and clear entity references.
               </p>
             </div>
           </div>
@@ -378,7 +378,7 @@ export default function AEOGuideWhitepaperPage() {
               </div>
               <h3 className="text-sm font-bold text-white font-soehne-breit">Why It Matters</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Ensures your service modules and pricing structures are directly extractable by automated conversational search engines.
+                Makes service and pricing information clearer and easier for crawlers and AI systems to interpret and reference.
               </p>
             </div>
           </div>
@@ -422,6 +422,10 @@ export default function AEOGuideWhitepaperPage() {
               Where traditional SEO focuses primarily on earning rankings on traditional search engine results pages (SERPs) through keyword targeting and authority signals, <strong>Answer Engine Optimisation (AEO)</strong> focuses on the machine interpretability of your core facts, ensuring that conversational agents and Retrieval-Augmented Generation (RAG) pipelines can cleanly extract, synthesize, and cite specific business claims without ambiguity.
             </p>
 
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-zinc-300 font-serif leading-relaxed">
+              <strong>Core Concept:</strong> An <em>entity</em> is a distinct, identifiable person, organization, service, or location (such as AEObility or Perth, Western Australia). A <em>canonical URL</em> is the single authoritative web address designated for that specific entity.
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-4 pt-3 text-xs font-mono">
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
                 <span className="text-white font-semibold uppercase tracking-wider flex items-center gap-1.5">
@@ -463,7 +467,7 @@ export default function AEOGuideWhitepaperPage() {
             </p>
 
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              Many AI search platforms and conversational discovery tools operate using variants of <strong>Retrieval-Augmented Generation (RAG)</strong>. While individual platform implementations differ (incorporating proprietary hybrid lexical-vector indices, dense embeddings, knowledge graphs, and cross-encoder rerankers), the conceptual architecture typically executes across four sequential stages. For a comprehensive architectural deep-dive, see our detailed whitepaper on <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline">RAG Engineering and Context Injection</Link>.
+              Many AI search platforms and conversational discovery tools operate using variants of <strong>Retrieval-Augmented Generation (RAG)</strong>: an architecture that retrieves relevant documents from an external index to ground the language model before generating an answer. While individual platform implementations differ (incorporating proprietary hybrid lexical-vector indices, dense embeddings, knowledge graphs, and cross-encoder rerankers), the conceptual architecture typically executes across four sequential stages. For a comprehensive architectural deep-dive, see our detailed whitepaper on <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline">RAG Engineering and Context Injection</Link>.
             </p>
           </div>
 
@@ -476,27 +480,27 @@ export default function AEOGuideWhitepaperPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-aeo-cyan font-semibold">1. Data Ingestion</div>
+                <div className="text-xs font-mono text-aeo-cyan font-semibold">1. Data Parsing &amp; Indexing</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Web pages are crawled, stripped of boilerplate, and split into segmented text chunks.
+                  Depending on the platform, web content may be parsed, de-duplicated, segmented and indexed in passages or other retrievable units.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-aeo-purple font-semibold">2. Vector Encoding</div>
+                <div className="text-xs font-mono text-aeo-purple font-semibold">2. Semantic Vector Indexing</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Chunks are converted into high-dimensional vector embeddings and indexed in vector databases.
+                  Passages are converted into vector representations to help systems match queries by conceptual meaning alongside exact keywords.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-emerald-400 font-semibold">3. Cosine Search</div>
+                <div className="text-xs font-mono text-emerald-400 font-semibold">3. Query Scoring &amp; Reranking</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  When a user asks a query, candidate passages are scored for relevance and reranked.
+                  When a user asks a question, candidate passages are scored for relevance, topical similarity, and source authority.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-amber-400 font-semibold">4. Context Injection</div>
+                <div className="text-xs font-mono text-amber-400 font-semibold">4. Context Assembly &amp; Response</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Top matching passages are injected into the LLM prompt context to synthesize a cited response.
+                  In many RAG systems, selected passages are supplied as context to help generate a grounded response; citation behaviour varies by platform.
                 </p>
               </div>
             </div>
@@ -505,8 +509,8 @@ export default function AEOGuideWhitepaperPage() {
             <div className="p-4 rounded-xl bg-black/60 border border-white/10 text-xs text-zinc-300 font-serif leading-relaxed flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
               <span>
-                <strong className="text-white font-mono uppercase text-[11px] block">Localised Retrieval Scenario:</strong>
-                For example, when a prospect asks an AI engine for an &ldquo;AEO specialist in Perth&rdquo;, the RAG framework does not just guess. It scans available indexes for localised coordinate arrays and semantic matches, pulling out exact text chunks to verify our operating footprint.
+                <strong className="text-white font-mono uppercase text-[11px] block">Localised retrieval scenario:</strong>
+                When someone searches for an AEO specialist in Perth, an AI platform may compare available sources for relevant location, service and business information. Clear, consistent first-party facts can make it easier for systems to interpret AEObility accurately, although visibility and citation are never guaranteed.
               </span>
             </div>
           </div>
@@ -517,7 +521,7 @@ export default function AEOGuideWhitepaperPage() {
               <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase">2.1 Document Chunking</span>
               <h3 className="text-base font-bold text-white font-soehne-breit">Passage Segmentation</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Retrieval engines rarely evaluate an entire 3,000-word article as a single unit. Content is broken down into semantic chunks (often 200–500 tokens). Clear subheadings and self-contained paragraphs ensure that extracted chunks retain full meaning without losing context.
+                Systems often segment content into retrievable passages; chunk size and overlap vary by platform and implementation. Clear subheadings and self-contained paragraphs ensure that extracted passages retain their complete meaning.
               </p>
             </div>
 
@@ -525,7 +529,7 @@ export default function AEOGuideWhitepaperPage() {
               <span className="text-xs font-mono font-semibold text-aeo-purple uppercase">2.2 Hybrid Retrieval</span>
               <h3 className="text-base font-bold text-white font-soehne-breit">Vector &amp; Lexical Matching</h3>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Modern retrieval systems blend dense semantic vector embeddings (which capture conceptual meaning and synonyms) with traditional BM25 lexical keyword matching (which captures exact entity names, part numbers, and specific terminology).
+                Modern retrieval systems blend dense semantic vector embeddings (which capture conceptual meaning and synonyms) with traditional BM25 lexical keyword matching (a classic keyword scoring algorithm that identifies exact terms and names).
               </p>
             </div>
 
@@ -535,6 +539,24 @@ export default function AEOGuideWhitepaperPage() {
               <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                 When candidate passages provide explicit, unhedged answers supported by clear entity relationships, the language model can cite the original URL with higher confidence, reducing hallucination risk. For guidance on remediating citation errors, read <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-emerald-400 hover:underline">Fixing AI Brand Hallucinations</Link>.
               </p>
+            </div>
+          </div>
+
+          {/* Section 2 Contextual Micro-FAQs */}
+          <div className="p-5 rounded-2xl bg-zinc-950 border border-white/10 space-y-3">
+            <h4 className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-wider flex items-center gap-2">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Section FAQs: RAG Mechanics</span>
+            </h4>
+            <div className="grid sm:grid-cols-2 gap-4 text-xs font-serif text-zinc-300">
+              <div className="space-y-1">
+                <strong className="text-white block font-sans">Can you optimise directly for a specific AI answer engine?</strong>
+                <p className="text-zinc-400 leading-relaxed">Not reliably. Different platforms use different indexes, retrieval systems, policies and citation behaviours. Focus on clear, crawlable, well-supported information that remains useful across platforms.</p>
+              </div>
+              <div className="space-y-1">
+                <strong className="text-white block font-sans">Does every AI search tool use RAG?</strong>
+                <p className="text-zinc-400 leading-relaxed">No. Many systems use retrieval in some form, but their architecture, source selection and use of web content vary. Treat RAG as a useful model, not a complete description of every platform.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -564,7 +586,7 @@ export default function AEOGuideWhitepaperPage() {
           {/* Diagram 2: Positional Bias Coordinate Curve */}
           <div className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-3">
             <div className="text-[11px] font-mono text-zinc-400 pb-2 border-b border-white/5 flex justify-between items-center">
-              <span>Diagram 2: Attention Allocation Curve in Long-Context Retrieval</span>
+              <span>Diagram 2: Attention allocation curve in long-context retrieval</span>
               <span className="text-aeo-purple text-[10px]">Research-Backed Heuristic</span>
             </div>
             
@@ -572,17 +594,17 @@ export default function AEOGuideWhitepaperPage() {
               <pre className="text-xs font-mono text-zinc-300 leading-relaxed whitespace-pre">
 {`Retrieval Accuracy Spikes
   │
-1.0  │  █ [Primacy Spike: 0-10%]                          █ [Recency Spike: 90-100%]
+1.0  │  █ [Primacy Spike: Opening Chunk]                 █ [Recency Spike: Closing Chunk]
      │  █                                                 █
      │  █                 Context Dilution Valley         █
-0.5  │  █                  (The 20%-80% Middle Zone)      █
+0.5  │  █                  (Central Context Zone)         █
      │  █ █                                             █ █
      │  █ █ █ ▄                                       ▄ █ █ █
 0.0  └─────────────────────────────────────────────────────────
      0% Initial Chunk        50% Context Window      100% Final Chunk`}
               </pre>
               <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-2 border-t border-white/5">
-                <strong>Key Finding:</strong> When LLMs process dense multi-document prompts, retrieval accuracy for facts placed in the first 10–20% or final 10% of a context window is significantly higher than for facts placed in the central 50%.
+                <strong>Key finding:</strong> Long-context evaluations have found that relevant information can be less reliably used when placed in the middle of an input context; the effect varies by task, model architecture, and prompt length.
               </p>
             </div>
           </div>
@@ -613,6 +635,18 @@ export default function AEOGuideWhitepaperPage() {
               </div>
             </div>
           </div>
+
+          {/* Section 3 Contextual Micro-FAQ */}
+          <div className="p-5 rounded-2xl bg-zinc-950 border border-white/10 space-y-2 text-xs font-serif text-zinc-300">
+            <h4 className="text-xs font-mono font-semibold text-aeo-purple uppercase tracking-wider flex items-center gap-2">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Section FAQ: Positional Placement</span>
+            </h4>
+            <div className="space-y-1">
+              <strong className="text-white block font-sans">Should every important fact appear at the start and end of a page?</strong>
+              <p className="text-zinc-400 leading-relaxed">No. Put the direct answer early in the relevant section, then support it with evidence and context. Avoid artificial repetition that makes the page less useful for human readers.</p>
+            </div>
+          </div>
         </section>
 
         {/* Section 4: Content Architecture & Atomic Answer Blocks */}
@@ -641,7 +675,7 @@ export default function AEOGuideWhitepaperPage() {
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono font-bold text-zinc-400 uppercase flex items-center gap-1.5">
                       <XCircle className="w-4 h-4 text-amber-400" />
-                      <span>Before (Machine-Illegible / Low Specificity)</span>
+                      <span>Before (Low-Specificity Copy: Vague &amp; Hedged)</span>
                     </span>
                     <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold uppercase">Weak Extraction</span>
                   </div>
@@ -695,7 +729,7 @@ export default function AEOGuideWhitepaperPage() {
               Schema.org JSON-LD as an Explicit Entity Disambiguation Layer
             </h2>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              While natural-language content is processed probabilistically by large language models, structured data (specifically Schema.org JSON-LD) provides an explicit, deterministic graph of entities, attributes, and relationships. Learn more about interconnected entity graphs in our analysis of <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline">Structured Data Query Fan-Out</Link>.
+              While natural-language content is processed probabilistically by large language models, structured data (specifically Schema.org JSON-LD, or JavaScript Object Notation for Linked Data) provides an explicit, machine-readable representation of declared entities, attributes, and relationships. Learn more about interconnected entity graphs in our analysis of <Link href="/knowledge-hub/articles/structured-data-query-fan-out" className="text-aeo-cyan hover:underline">Structured Data Query Fan-Out</Link>.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
@@ -710,10 +744,22 @@ export default function AEOGuideWhitepaperPage() {
                 <span className="text-xs font-mono font-semibold text-amber-400 uppercase">Limitations of Schema</span>
                 <ul className="text-xs text-zinc-300 font-serif space-y-1.5 list-disc pl-4">
                   <li>Schema alone cannot compensate for thin, inaccurate, or contradictory on-page text.</li>
-                  <li>Search engines ignore schema if claims do not match visible page content.</li>
-                  <li>Over-complicated or unverified schemas create markup errors and risk manual penalties.</li>
+                  <li>Search engines may disregard, devalue or decline to use markup that conflicts with visible content or policy requirements.</li>
+                  <li>Invalid, misleading or policy-noncompliant markup can produce errors, reduce eligibility for enhanced results, or in serious cases create enforcement risk.</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Section 5 Contextual Micro-FAQ */}
+          <div className="p-5 rounded-2xl bg-zinc-950 border border-white/10 space-y-2 text-xs font-serif text-zinc-300">
+            <h4 className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-wider flex items-center gap-2">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Section FAQ: Schema &amp; Citations</span>
+            </h4>
+            <div className="space-y-1">
+              <strong className="text-white block font-sans">Can schema markup make an AI engine cite my website?</strong>
+              <p className="text-zinc-400 leading-relaxed">No. Schema can clarify what a page is about, but it does not guarantee indexing, rankings, AI visibility or citation. Visible content quality, relevance, accessibility and external trust signals still matter.</p>
             </div>
           </div>
         </section>
@@ -756,7 +802,7 @@ export default function AEOGuideWhitepaperPage() {
                   <span>3. Valid Schema.org Validation</span>
                 </div>
                 <p className="text-zinc-300 pl-6 leading-relaxed">
-                  Implement valid, tested JSON-LD graphs linking your Organisation/ProfessionalService, Services, Articles, and Author profiles with fully qualified URIs. See our guide on <Link href="/knowledge-hub/articles/entity-authority-building" className="text-emerald-400 hover:underline">Entity Authority Building</Link>.
+                  Implement valid, tested JSON-LD graphs linking your Organisation, Services, Articles, and Author profiles with fully qualified URIs. See our guide on <Link href="/knowledge-hub/articles/entity-authority-building" className="text-emerald-400 hover:underline">Entity Authority Building</Link>.
                 </p>
               </div>
 
@@ -769,6 +815,18 @@ export default function AEOGuideWhitepaperPage() {
                   Connect related concepts, services, and evidence case studies using descriptive anchor text rather than generic &ldquo;click here&rdquo; labels.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Section 6 Contextual Micro-FAQ */}
+          <div className="p-5 rounded-2xl bg-zinc-950 border border-white/10 space-y-2 text-xs font-serif text-zinc-300">
+            <h4 className="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Section FAQ: Implementation Priorities</span>
+            </h4>
+            <div className="space-y-1">
+              <strong className="text-white block font-sans">What should a small business improve first?</strong>
+              <p className="text-zinc-400 leading-relaxed">Start with accurate business identity details, core service pages, location and contact information, service/pricing facts where appropriate, and the high-intent questions customers ask before contacting you.</p>
             </div>
           </div>
         </section>
@@ -784,6 +842,9 @@ export default function AEOGuideWhitepaperPage() {
             <h2 className="text-lg font-bold text-white font-soehne-breit">
               Authoritative Citations and Research Foundation
             </h2>
+            <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+              Our technical recommendations are grounded in peer-reviewed computer science literature and official open standard specifications:
+            </p>
             <ul className="space-y-3 text-xs font-mono text-zinc-300 divide-y divide-white/5">
               <li className="pt-2.5 first:pt-0 space-y-1">
                 <div className="text-white font-semibold flex items-center justify-between">
@@ -791,7 +852,10 @@ export default function AEOGuideWhitepaperPage() {
                   <span className="text-[10px] text-zinc-500">Lewis et al. (NeurIPS 2020)</span>
                 </div>
                 <p className="text-zinc-400 font-serif">
-                  Lewis, P., et al. &ldquo;Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.&rdquo; <em>Advances in Neural Information Processing Systems</em> 33 (2020): 9459-9474.
+                  Lewis, P., et al. &ldquo;Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.&rdquo; <em>Advances in Neural Information Processing Systems</em> 33 (2020): 9459-9474.{' '}
+                  <a href="https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">
+                    [NeurIPS Proceedings <ExternalLink className="w-3 h-3" />]
+                  </a>
                 </p>
               </li>
 
@@ -801,7 +865,10 @@ export default function AEOGuideWhitepaperPage() {
                   <span className="text-[10px] text-zinc-500">Liu et al. (TACL 2023)</span>
                 </div>
                 <p className="text-zinc-400 font-serif">
-                  Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., &amp; Liang, P. &ldquo;Lost in the Middle: How Language Models Use Long Contexts.&rdquo; <em>Transactions of the Association for Computational Linguistics</em> 12 (2024): 157-173.
+                  Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., &amp; Liang, P. &ldquo;Lost in the Middle: How Language Models Use Long Contexts.&rdquo; <em>Transactions of the Association for Computational Linguistics</em> 12 (2024): 157-173.{' '}
+                  <a href="https://doi.org/10.1162/tacl_a_00638" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">
+                    [DOI: 10.1162/tacl_a_00638 <ExternalLink className="w-3 h-3" />]
+                  </a>
                 </p>
               </li>
 
@@ -811,7 +878,10 @@ export default function AEOGuideWhitepaperPage() {
                   <span className="text-[10px] text-zinc-500">W3C / Schema.org Community</span>
                 </div>
                 <p className="text-zinc-400 font-serif">
-                  Official vocabulary guidelines for structured entities, professional services, and semantic triples. Reference: <a href="https://schema.org" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">schema.org <ExternalLink className="w-3 h-3" /></a>.
+                  Official vocabulary guidelines for structured entities, professional services, and semantic triples. Reference:{' '}
+                  <a href="https://schema.org" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">
+                    schema.org <ExternalLink className="w-3 h-3" />
+                  </a>
                 </p>
               </li>
 
@@ -821,7 +891,10 @@ export default function AEOGuideWhitepaperPage() {
                   <span className="text-[10px] text-zinc-500">Anthropic Specification</span>
                 </div>
                 <p className="text-zinc-400 font-serif">
-                  Open protocol standard for connecting AI models to external tools, resource endpoints, and contextual datasets. Reference: <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">modelcontextprotocol.io <ExternalLink className="w-3 h-3" /></a>.
+                  Open protocol standard for connecting AI models to external tools, resource endpoints, and contextual datasets. Reference:{' '}
+                  <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-0.5">
+                    modelcontextprotocol.io <ExternalLink className="w-3 h-3" />
+                  </a>
                 </p>
               </li>
             </ul>
@@ -840,15 +913,23 @@ export default function AEOGuideWhitepaperPage() {
               Structured Engagements &amp; Diagnostic Methodology
             </h2>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              AEObility uses a working model to align client content with AI retrieval behaviour. Our diagnostic engine evaluates website content through an automated 6-stage telemetry analysis. For an open technical specification of this engine, review the <Link href="/knowledge-hub/articles/telemetry-diagnostic-architecture" className="text-aeo-cyan hover:underline">Telemetry Diagnostic Technical Architecture Guide</Link>.
+              AEObility uses a working model to align client content with AI retrieval behaviour. Our diagnostic engine evaluates website content through an automated 6-stage assessment. For an open technical specification of this engine, review the <Link href="/knowledge-hub/articles/telemetry-diagnostic-architecture" className="text-aeo-cyan hover:underline">Telemetry Diagnostic Technical Architecture Guide</Link>.
             </p>
+          </div>
+
+          {/* Working Model Disclaimer Box */}
+          <div className="p-4 rounded-xl bg-aeo-cyan/5 border border-aeo-cyan/20 text-xs text-zinc-300 font-serif leading-relaxed flex items-start gap-2.5">
+            <Info className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+            <span>
+              <strong>AEObility Working Model:</strong> The diagnostic stages, scoring weights, and content readiness framework described below represent AEObility&apos;s proprietary audit methodology for evaluating web content readiness. They provide actionable quality benchmarks and do not guarantee search engine rankings or AI citations.
+            </span>
           </div>
 
           {/* 6-Stage Diagnostic Breakdown Box */}
           <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
             <h3 className="text-base font-bold text-white font-soehne-breit flex items-center gap-2">
               <Activity className="w-4 h-4 text-aeo-cyan" />
-              <span>The 6 Stages of the AEObility Telemetric Audit</span>
+              <span>The 6 Stages of the AEObility Automated Assessment</span>
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs font-serif">
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
@@ -857,7 +938,7 @@ export default function AEOGuideWhitepaperPage() {
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
                 <div className="font-mono text-aeo-purple font-semibold">Stage 2: Schema Triple Extraction</div>
-                <p className="text-zinc-400 leading-relaxed">Validates JSON-LD entities, Subject-Predicate-Object triples, and absolute canonical URI integrity.</p>
+                <p className="text-zinc-400 leading-relaxed">Validates JSON-LD entities, Subject-Predicate-Object triples, and canonical URI integrity.</p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
                 <div className="font-mono text-emerald-400 font-semibold">Stage 3: Positional Salience Check</div>
@@ -865,7 +946,7 @@ export default function AEOGuideWhitepaperPage() {
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
                 <div className="font-mono text-amber-400 font-semibold">Stage 4: Entity Alignment</div>
-                <p className="text-zinc-400 leading-relaxed">Evaluates consistency between on-page assertions and external knowledge bases (Wikidata, industry nodes).</p>
+                <p className="text-zinc-400 leading-relaxed">Evaluates consistency between on-page assertions and open knowledge bases (Wikidata, industry nodes).</p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1">
                 <div className="font-mono text-pink-400 font-semibold">Stage 5: Vector Proximity Test</div>
@@ -876,9 +957,29 @@ export default function AEOGuideWhitepaperPage() {
                 <p className="text-zinc-400 leading-relaxed">Verifies that commercial claims are grounded by proof, internal link bridges, and public case studies.</p>
               </div>
             </div>
-            <div className="text-[11px] font-mono text-zinc-400 pt-2 border-t border-white/5">
-              <em>Note: Diagnostic scores indicate content readiness and structured markup quality; they do not guarantee indexing or inclusion by third-party search engines.</em>
+          </div>
+
+          {/* Real Implementation Mini Case Study Context Box */}
+          <div className="p-5 rounded-2xl bg-zinc-950 border border-white/10 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Implementation Example: Baby Bento Case Study</span>
+              </span>
+              <Link href="/knowledge-hub/case-studies/baby-bento" className="text-xs font-mono text-aeo-cyan hover:underline inline-flex items-center gap-1">
+                <span>View Case Study</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
+            <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+              <strong>Context &amp; Challenge:</strong> Baby Bento, an Australian e-commerce retailer, had detailed product catalogue pages but lacked connected schema and structured Q&amp;A summaries, resulting in inconsistent brand recommendations in generative AI responses.
+            </p>
+            <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+              <strong>Intervention:</strong> Implemented structured schema graphs, atomic product benefit answers, and canonical entity links during a 4-week engagement.
+            </p>
+            <p className="text-xs text-zinc-400 font-serif leading-relaxed italic">
+              <strong>Outcome &amp; Limitation:</strong> Improved passage extraction and recommendation consistency across Google AI Overviews and Perplexity; note that AI platform citation behaviour evolves and third-party inclusion cannot be permanently guaranteed.
+            </p>
           </div>
 
           {/* 4-Stage Service Grid with Accurately Routed CTAs */}
@@ -914,7 +1015,7 @@ export default function AEOGuideWhitepaperPage() {
             <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 space-y-3 shadow-xl flex flex-col justify-between">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">Stage 3: Build</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Foundation Build</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Foundation Package</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                   Comprehensive 4-week implementation (from $3,195 AUD ex. GST): schema graphs, atomic page rewrites, and linking.
                 </p>
@@ -941,11 +1042,11 @@ export default function AEOGuideWhitepaperPage() {
           </div>
         </section>
 
-        {/* Section 9: Site Architecture & Entity Graph Model */}
+        {/* Section 9: Site Architecture & Content Governance Model */}
         <section id="site-architecture" className="space-y-6 scroll-mt-24">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-cyan">
             <GitGraph className="w-4 h-4" />
-            <span>9. Site Architecture &amp; Entity Graph Model</span>
+            <span>9. Site Architecture &amp; Content Governance Model</span>
           </div>
 
           <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
@@ -953,7 +1054,7 @@ export default function AEOGuideWhitepaperPage() {
               The Node &amp; Edge Information Architecture Model
             </h2>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              To support both human navigation and automated AI entity extraction, AEObility organizes website content as a network of typed nodes connected by explicit semantic relationships (edges):
+              To support both human navigation and automated AI entity extraction, AEObility organizes website content as a network of typed nodes connected by explicit semantic relationships:
             </p>
 
             <div className="grid sm:grid-cols-3 gap-4 pt-2 text-xs font-mono">
@@ -962,8 +1063,8 @@ export default function AEOGuideWhitepaperPage() {
                 <p className="text-zinc-400 font-serif">A specific URL characterized by a Schema.org <code className="text-zinc-300">@type</code> and a primary topical query cluster.</p>
               </div>
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <span className="text-aeo-purple font-bold uppercase">Edge Definition</span>
-                <p className="text-zinc-400 font-serif">A typed, descriptive internal link connecting two nodes (e.g. <code className="text-zinc-300">implements</code>, <code className="text-zinc-300">identityOf</code>).</p>
+                <span className="text-aeo-purple font-bold uppercase">Relationship Definition</span>
+                <p className="text-zinc-400 font-serif">A typed, descriptive internal link connecting two related pages with clear context.</p>
               </div>
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
                 <span className="text-emerald-400 font-bold uppercase">Anchor Text Principle</span>
@@ -976,13 +1077,16 @@ export default function AEOGuideWhitepaperPage() {
               <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
                 Canonical Node-to-Edge Mapping Table
               </h3>
+              <p className="text-xs text-zinc-400 font-serif">
+                Note: Relationship labels are internal AEObility content governance terms used to organize internal link architecture.
+              </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs font-mono border border-white/10 rounded-xl overflow-hidden">
                   <thead className="bg-white/5 text-zinc-300 border-b border-white/10">
                     <tr>
                       <th className="p-3 font-semibold">Source Node</th>
                       <th className="p-3 font-semibold">Target Node</th>
-                      <th className="p-3 font-semibold">Relationship (Edge)</th>
+                      <th className="p-3 font-semibold">Relationship</th>
                       <th className="p-3 font-semibold">Descriptive Anchor Text Example</th>
                     </tr>
                   </thead>
@@ -1042,27 +1146,27 @@ export default function AEOGuideWhitepaperPage() {
                   <span>Is AEO replacing traditional SEO?</span>
                 </h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
-                  No. It acts as a complementary layer. Traditional SEO targets lexical indexing loops and human click-through paths on legacy digital maps, while AEO optimizes passage extraction accuracy within dense vector retrieval layers.
+                  No. AEO complements SEO. SEO helps people find pages through search results, while AEO also focuses on making important facts clear, well-supported and easy for answer engines to interpret and reference.
                 </p>
               </div>
 
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
                 <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-aeo-purple"></span>
-                  <span>Do I absolutely require structured schema for AEO?</span>
+                  <span>Do I need schema markup for AEO?</span>
                 </h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
-                  Yes. While Schema.org data does not guarantee inclusion, nested JSON-LD graphs provide machines with unambiguous entity boundaries, linking business metrics directly to verified Wikidata identifiers.
+                  No. Schema markup is not a prerequisite for every AEO improvement, but valid structured data can help clarify eligible entities, services and relationships when it accurately reflects visible page content. Start with clear, evidence-backed content and technical accessibility; then add the most relevant schema types.
                 </p>
               </div>
 
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
                 <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span>How long does a standard AEO implementation engagement take?</span>
+                  <span>How long does a standard AEO implementation engagement typically take?</span>
                 </h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
-                  A baseline deployment via our Foundation Implementation package executes over a fixed four-week cycle, establishing your connected semantic structure.
+                  A baseline deployment via our Foundation Implementation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.
                 </p>
               </div>
 
@@ -1072,7 +1176,7 @@ export default function AEOGuideWhitepaperPage() {
                   <span>What website components should be optimised first?</span>
                 </h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
-                  Priority should be allocated to your primary identity directory (<Link href="/brand-facts" className="text-aeo-cyan hover:underline">Brand Facts</Link>), service capability definitions, and core commercial fact listings before addressing deep informational archives.
+                  Start with accurate business identity details, core service pages, location and contact information, pricing and eligibility facts where appropriate, and the high-intent questions customers ask before contacting you.
                 </p>
               </div>
             </div>
@@ -1130,6 +1234,3 @@ export default function AEOGuideWhitepaperPage() {
     </div>
   );
 }
-
-
-
