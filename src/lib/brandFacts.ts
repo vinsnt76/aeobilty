@@ -130,29 +130,44 @@ export const PRICING_CONFIG = {
   blueprint: {
     code: 'BPSTRAT',
     sku: 'AEO-BP-STRAT',
-    title: 'The AEObility Blueprint',
+    title: 'The AEObility Strategic Blueprint',
     name: 'Strategic AEO Blueprint and Diagnostic Scan',
     price: 995,
     priceAUD: 995,
     duration: '10 business days',
     creditBackEligible: true,
-    description: 'A fixed-scope review of location consistency, priority-page answer readiness, entity clarity, structured-data gaps, and recommended next actions.',
+    description: 'A standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit.',
     deliverables: [
       'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
       'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
-      'Entity and schema gap assessment to address information and evidence gaps'
+      'Entity and schema gap assessment to address structural indexing friction points',
+      '100% credited back into Foundation Implementation if booked within 60 days'
     ]
   },
   StrategicBlueprint: {
     sku: 'AEO-BP-STRAT',
-    name: 'Strategic AEO Blueprint and Diagnostic Scan',
+    name: 'Strategic AEO Blueprint & Diagnostic Review',
     priceAUD: 995,
     duration: '10 business days',
-    description: 'A fixed-scope review of location consistency, priority-page answer readiness, entity clarity, structured-data gaps, and recommended next actions.',
+    description: 'Standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit identifying exact structural indexing friction points.',
     deliverables: [
       'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
       'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
-      'Entity and schema gap assessment to address information and evidence gaps'
+      'Entity and schema gap assessment to address information and evidence gaps',
+      '100% credited back into Foundation Implementation if booked within 60 days'
+    ]
+  },
+  FoundationImplementation: {
+    sku: 'AEO-FOUNDATION',
+    name: 'Foundation Implementation',
+    priceFromAUD: 3195,
+    duration: '4-week structured deployment',
+    description: 'Deploys a connected information layer designed to make core business facts, services, and key entities clearer and more retrievable to supported AI systems and answer engines.',
+    deliverables: [
+      'Structured Data: Refine, nest, and connect key business identity and service schemas within the page source DOM',
+      'Atomic Page Rewrites: Restructure priority content blocks into focused, retrieval-ready answer segments',
+      'Internal Linking: Strengthen semantic lattice paths and contextual linking relationships between primary entity hubs',
+      'Citation Structures: Standardise evidence, provenance linkages, and source documentation across core pages'
     ]
   },
   microSprints: {
@@ -168,19 +183,22 @@ export const PRICING_CONFIG = {
   },
   MicroSprints: {
     sku: 'AEO-SS-MICRO',
-    name: 'Technical Schema and Local Proximity Sprint',
+    name: 'Targeted Optimisation Sprints',
     priceFromAUD: 495,
     duration: '3 to 5 business days',
-    description: 'Modular, fixed-scope engineering sprints targeting one agreed technical priority.',
+    description: 'Rapid iterative engineering sprints to continually lift middle-tier search telemetry positions into primary citation layers.',
     deliverables: [
-      'Nested JSON-LD schema generation to support clearer machine-readable entity relationships',
-      'GeoCoordinate and location-data alignment to support consistent local information across relevant web and map surfaces'
+      'Rapid schema refactoring and nested JSON-LD graph generation to support clearer entity relationships',
+      'Server-side infrastructure and token optimisation based on real-time telemetry data',
+      'GeoCoordinate and location-data alignment across relevant web and map surfaces'
     ]
   },
   foundation: {
     codeSeries: 'SS1-SS4-MACRO',
+    sku: 'AEO-FOUNDATION',
+    name: 'Foundation Implementation',
     basePriceFrom: 3195,
-    deliveryWindow: '4–5 working days across a 4-week period',
+    deliveryWindow: '4-week structured deployment',
     contractTerm: 'None (Fixed-scope execution)'
   }
 } as const;
@@ -221,10 +239,28 @@ export const BRAND_PRICING_SCHEMA = {
     },
     {
       '@type': 'Product',
+      '@id': 'https://aeobility.com.au/solutions/aeo-foundation#product',
+      sku: 'AEO-FOUNDATION',
+      name: 'Foundation Implementation',
+      description: 'Focused four-week deployment of connected information layers, structured schemas, atomic page rewrites, and citation provenance across core pages.',
+      offers: {
+        '@type': 'Offer',
+        '@id': 'https://aeobility.com.au/solutions/aeo-foundation#offer',
+        price: '3195.00',
+        priceCurrency: 'AUD',
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'ProfessionalService',
+          name: 'AEObility'
+        }
+      }
+    },
+    {
+      '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-sprint#product',
       sku: 'SS1-SS4-MICRO',
-      name: 'AEO Technical Micro-Sprints',
-      description: 'Modular, fixed-scope engineering sprints targeting one tactical priority: custom JSON-LD schema, atomic content rewrites, or internal linking.',
+      name: 'Targeted Optimisation Sprints',
+      description: 'Modular, fixed-scope engineering sprints targeting tactical priorities: custom JSON-LD schema, atomic content rewrites, or internal linking.',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer',

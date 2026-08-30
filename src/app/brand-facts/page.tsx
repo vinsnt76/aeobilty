@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 export default function HumanBrandFactsPage() {
   const pricingItems = [
     PRICING_CONFIG.StrategicBlueprint,
+    PRICING_CONFIG.FoundationImplementation,
     PRICING_CONFIG.MicroSprints,
   ];
 
@@ -185,10 +186,10 @@ export default function HumanBrandFactsPage() {
         <section className="space-y-4">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-cyan">
             <Tag className="w-4 h-4" />
-            <span>4. Transparent Sprint Pricing Matrix</span>
+            <span>4. Commercial Facts &amp; Service Architecture</span>
           </div>
           <p className="text-xs text-white/70 font-serif leading-relaxed">
-            All sprints are fixed-scope, modular deliverables with clear outputs and no lock-in contracts.
+            All service tiers are deterministic, fixed-scope engineering and structural deliverables with clear outputs and zero contract lock-in.
           </p>
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 shadow-xl">
             <div className="overflow-x-auto">
