@@ -92,7 +92,7 @@ export default function AEOGuideWhitepaperPage() {
         'inLanguage': 'en-AU',
         'mainEntityOfPage': 'https://aeobility.com.au/knowledge-hub/guides/aeo',
         'datePublished': '2026-08-30T11:59:51+08:00',
-        'dateModified': '2026-08-30T20:00:00+08:00',
+        'dateModified': '2026-08-30T20:11:58+08:00',
         'dependencies': 'Vector Search Indexing, Contextual Chunking, JSON-LD Schema Graphs',
         'proficiencyLevel': 'Advanced',
         'author': {
