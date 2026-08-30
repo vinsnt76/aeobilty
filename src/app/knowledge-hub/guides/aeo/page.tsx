@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -49,6 +50,14 @@ export const metadata: Metadata = {
     description: 'Evidence-based technical architecture guide analysing RAG retrieval pipelines, positional bias heuristics, and structured entity architecture.',
     url: 'https://aeobility.com.au/knowledge-hub/guides/aeo',
     type: 'article',
+    images: [
+      {
+        url: 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
+        width: 1200,
+        height: 800,
+        alt: 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
+      },
+    ],
   },
 };
 
@@ -56,6 +65,16 @@ export default function AEOGuideWhitepaperPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'ImageObject',
+        '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#primaryimage',
+        'url': 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
+        'contentUrl': 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
+        'caption': 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
+        'description': 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
+        'width': 1200,
+        'height': 800
+      },
       {
         '@type': 'TechArticle',
         '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#article',
@@ -67,6 +86,9 @@ export default function AEOGuideWhitepaperPage() {
         },
         'headline': 'Answer Engine Optimisation (AEO): Core Principles, System Mechanics, and Semantic Retrieval Architecture',
         'description': 'Comprehensive technical guide analysing Retrieval-Augmented Generation (RAG) pipelines, positional bias heuristics, structured data governance, and atomic answer block engineering.',
+        'image': {
+          '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#primaryimage'
+        },
         'inLanguage': 'en-AU',
         'mainEntityOfPage': 'https://aeobility.com.au/knowledge-hub/guides/aeo',
         'datePublished': '2026-08-30T11:59:51+08:00',
@@ -267,6 +289,68 @@ export default function AEOGuideWhitepaperPage() {
             </div>
           </div>
         </header>
+
+        {/* Featured Guide Banner with Glassmorphic CTA Overlay */}
+        <figure className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950 group">
+          <div className="relative aspect-[16/9] md:aspect-[21/9] w-full">
+            <Image
+              src="/images/aeo-guide_AEObility.webp"
+              alt="Answer Engine Optimisation (AEO) system architecture diagram and guide banner by AEObility illustrating RAG retrieval pipelines, schema entity graphs, and conversational AI search visibility."
+              fill
+              priority
+              className="object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+            {/* Multi-layered Dark & Color Wash Gradients for Text Contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+
+            {/* CTA Overlay Box */}
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 md:right-auto md:max-w-xl z-20">
+              <div className="p-4 sm:p-6 rounded-2xl bg-zinc-950/85 backdrop-blur-md border border-white/15 shadow-2xl space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/15 border border-aeo-cyan/30 text-aeo-cyan text-[11px] font-mono font-semibold">
+                    <Activity className="w-3 h-3" />
+                    <span>AI Telemetry Engine</span>
+                  </span>
+                  <span className="text-[11px] font-mono text-zinc-400">
+                    6-Stage Retrieval Audit
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h2 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-tight">
+                    Benchmark Your AI Search Visibility
+                  </h2>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    Test your website against our live telemetry scanner to evaluate entity clarity, vector similarity, and machine-extractable content chunks.
+                  </p>
+                </div>
+
+                <div className="pt-1 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/diagnostic"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs font-sans hover:opacity-90 transition-opacity shadow-lg shadow-aeo-cyan/10"
+                  >
+                    <span>Run Free Diagnostic</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link
+                    href="/solutions/aeo-sprint"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs border border-white/15 transition-colors"
+                  >
+                    <span>Foundation Sprint</span>
+                    <ArrowRight className="w-3 h-3 text-zinc-400" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <figcaption className="p-3 bg-zinc-950 border-t border-white/5 text-center text-[11px] text-zinc-400 font-mono">
+            Figure 1: AEObility AEO Technical Architecture &amp; RAG Vector Retrieval Framework.
+          </figcaption>
+        </figure>
 
         {/* Break-Up Block 1: The Conceptual 3-Card Summary */}
         <section aria-label="Conceptual 3-Card Summary" className="grid sm:grid-cols-3 gap-4">
