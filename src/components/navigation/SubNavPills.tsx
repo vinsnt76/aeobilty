@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -19,6 +19,30 @@ interface SubNavPillsProps {
 
 export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
   const pathname = usePathname();
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Keep visible near top of page
+      if (currentScrollY <= 80) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 8) {
+        // Scrolling down: hide subnav to maximize reading space
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current - 12) {
+        // Scrolling up: reveal subnav
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (!items || !Array.isArray(items) || items.length === 0) {
     return null;
@@ -27,7 +51,9 @@ export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
   return (
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
-      className="w-full sticky top-16 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 transition-all relative"
+      className={`w-full sticky top-16 z-30 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 relative transition-all duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+      }`}
     >
       {/* Subtle Right Edge Fade for Mobile Horizontal Scroll Discovery */}
       <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-neutral-950/90 to-transparent pointer-events-none z-10 sm:hidden" />
