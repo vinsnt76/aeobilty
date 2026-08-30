@@ -528,13 +528,22 @@ export default function AEORootPage() {
                     Every dollar invested in your $995 Strategic Blueprint is fully credited back if you choose us for your implementation sprints.
                   </p>
                 </div>
-                <Link
-                  href="/solutions/aeo-blueprint"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 text-black font-bold text-xs hover:bg-white transition-colors shrink-0"
-                >
-                  <span>Explore Blueprint</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <div className="flex flex-wrap gap-2 shrink-0">
+                  <Link
+                    href="/services/aeo/costs-timing"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-xs border border-white/10 transition-colors"
+                  >
+                    <span>Costs &amp; Timelines Hub</span>
+                    <ArrowRight className="w-3 h-3 text-zinc-400" />
+                  </Link>
+                  <Link
+                    href="/solutions/aeo-blueprint"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 text-black font-bold text-xs hover:bg-white transition-colors"
+                  >
+                    <span>Explore Blueprint</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
 
