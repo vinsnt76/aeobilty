@@ -16,20 +16,21 @@ import {
   ChevronRight,
   Target,
   FileText,
-  Boxes
+  Boxes,
+  FileCheck
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'How Much Does AEO Cost and What Do I Get? | AEObility',
-  description: 'Transparent pricing structures, Strategic Blueprint MVP details, Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
+  description: 'Transparent pricing structures, Strategic Blueprint details ($995 AUD), Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
   alternates: {
     canonical: 'https://aeobility.com.au/services/aeo/costs-timing',
   },
   openGraph: {
     title: 'How Much Does AEO Cost and What Do I Get? | AEObility',
-    description: 'Transparent pricing structures, Strategic Blueprint MVP details, Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
+    description: 'Transparent pricing structures, Strategic Blueprint details ($995 AUD), Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
     url: 'https://aeobility.com.au/services/aeo/costs-timing',
     type: 'website',
   },
@@ -43,7 +44,7 @@ export default function AEOPricingPage() {
         '@type': 'ItemList',
         '@id': 'https://aeobility.com.au/services/aeo/costs-timing#itemlist',
         'name': 'AEObility AEO Pricing and Implementation Pathway',
-        'description': 'Four-stage commercial ladder for Answer Engine Optimisation (AEO) services, from free diagnostic assessment to enterprise implementation.',
+        'description': 'Four-stage commercial ladder for Answer Engine Optimisation (AEO) services, from free diagnostic assessment to custom application-based implementation.',
         'itemListOrder': 'https://schema.org/ItemListOrderAscending',
         'numberOfItems': 4,
         'itemListElement': [
@@ -117,9 +118,9 @@ export default function AEOPricingPage() {
             'position': 4,
             'item': {
               '@type': 'Service',
-              '@id': 'https://aeobility.com.au/solutions#custom-service',
-              'name': 'Custom AEO Implementation Sprints',
-              'description': 'Multi-entity and enterprise-scale AEO implementation sprints tailored to large catalogues and complex corporate footprints.',
+              '@id': 'https://aeobility.com.au/contact#custom-implementation',
+              'name': 'Custom AEO Implementation',
+              'description': 'Custom multi-entity and complex network implementation available by application following Blueprint review.',
               'provider': {
                 '@type': 'ProfessionalService',
                 '@id': 'https://aeobility.com.au/#organization',
@@ -127,12 +128,8 @@ export default function AEOPricingPage() {
               },
               'offers': {
                 '@type': 'Offer',
-                'priceSpecification': {
-                  '@type': 'PriceSpecification',
-                  'minPrice': '5000',
-                  'maxPrice': '15000',
-                  'priceCurrency': 'AUD'
-                }
+                'description': 'Available by application following Blueprint review',
+                'availability': 'https://schema.org/LimitedAvailability'
               }
             }
           }
@@ -147,7 +144,7 @@ export default function AEOPricingPage() {
             'name': 'How does the $995 Blueprint credit work?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with AEObility for implementation, the entire $995 AUD is credited back and deducted from the cost of your Foundation Implementation ($3,195 AUD) or custom sprint package.'
+              'text': 'The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation ($3,195 AUD)—or are accepted for a custom implementation engagement—the entire $995 AUD Blueprint investment is credited back against the approved implementation scope.'
             }
           },
           {
@@ -160,10 +157,10 @@ export default function AEOPricingPage() {
           },
           {
             '@type': 'Question',
-            'name': 'What are the costs for larger or bespoke enterprise implementation?',
+            'name': 'Can AEObility support larger or more complex implementations?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Full-scale implementation for large websites, multi-location networks, or extensive e-commerce catalogues typically ranges from $5,000 to $15,000 AUD. Your $995 Blueprint fee is deducted from this cost if you continue.'
+              'text': 'Yes. For multi-location brands, extensive ecommerce catalogues, or multi-entity networks, custom implementation may be available by application. Every engagement is assessed after Blueprint review to confirm strategic fit, technical readiness, delivery scope, and capacity.'
             }
           },
           {
@@ -219,7 +216,7 @@ export default function AEOPricingPage() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
-            Answer Engine Optimisation (AEO) starts with a free AI visibility check. Our Strategic Blueprint roadmap is $995 AUD (100% credited back if you proceed). Our fixed-scope <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-semibold">Foundation Implementation is $3,195 AUD ex. GST</Link>, while custom multi-entity enterprise sprints range from $5,000 to $15,000 AUD.
+            Answer Engine Optimisation (AEO) starts with a free AI visibility check. Our Strategic Blueprint roadmap is $995 AUD (100% credited back if you proceed). Our fixed-scope <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-semibold">Foundation Implementation is $3,195 AUD ex. GST</Link>. For businesses with more complex requirements, custom implementation is available by application following Blueprint review.
           </p>
         </header>
 
@@ -338,32 +335,35 @@ export default function AEOPricingPage() {
               </div>
             </div>
 
-            {/* Stage 4: Custom Enterprise Implementation */}
+            {/* Stage 4: Custom Implementation (Application Only) */}
             <div className="p-5 bg-zinc-950/80 border border-white/10 rounded-2xl flex flex-col justify-between space-y-5 shadow-xl hover:border-white/20 transition-all">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] text-emerald-400 font-mono font-semibold">
                   Stage 4: Scale
                 </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Custom Enterprise Sprints</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Custom Implementation</h3>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Tailored implementation for multi-location brands, large product catalogues, and multi-entity networks.
+                  For multi-location brands, large ecommerce catalogues, and multi-entity networks exceeding Foundation scope.
                 </p>
               </div>
 
               <div className="space-y-3 pt-3 border-t border-white/5">
                 <div className="flex justify-between items-baseline">
                   <span className="text-xs text-zinc-400">Price:</span>
-                  <span className="text-sm font-bold text-white font-mono">$5,000–$15,000</span>
+                  <span className="text-xs font-bold text-emerald-400 font-mono uppercase">By Application</span>
                 </div>
                 <div className="flex justify-between items-baseline text-xs">
-                  <span className="text-zinc-400">Timing:</span>
-                  <span className="text-zinc-200 font-mono">Custom Sprints</span>
+                  <span className="text-zinc-400">Delivery:</span>
+                  <span className="text-zinc-300 font-mono text-[11px]">Confirmed Post-Blueprint</span>
+                </div>
+                <div className="p-1.5 rounded-lg bg-emerald-950/20 border border-emerald-500/20 text-[9px] text-emerald-300 font-mono text-center">
+                  Limited capacity • Selected projects
                 </div>
                 <Link
-                  href="/solutions"
+                  href="/contact"
                   className="group flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/10 transition-all text-center"
                 >
-                  <span>Compare Sprints</span>
+                  <span>Apply for Custom Scope</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -407,7 +407,7 @@ export default function AEOPricingPage() {
             <span>Why the Blueprint Comes First (Zero Lock-In Model)</span>
           </div>
           <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-            We anchor our engagements around a verified clarity document rather than locked-in monthly retainers or indefinite agency fees. The <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">AEObility Blueprint ($995 AUD)</Link> delivers a standalone roadmap you own completely. If you choose to partner with AEObility to execute the work, the entire $995 investment is credited back against your <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link> or larger custom project, reducing your net execution balance.
+            We anchor our engagements around a verified clarity document rather than locked-in monthly retainers or indefinite agency fees. The <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">AEObility Blueprint ($995 AUD)</Link> delivers a standalone roadmap you own completely. If you choose to proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>—or are accepted for a custom implementation engagement—the entire $995 investment is credited back against your approved implementation scope, reducing your net execution balance.
           </p>
         </section>
 
@@ -466,7 +466,7 @@ export default function AEOPricingPage() {
                 How does the $995 Blueprint credit work?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with AEObility for implementation, the entire $995 AUD is credited back and deducted from the cost of your <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link> or custom sprint package.
+                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>—or are accepted for a custom implementation engagement—the entire $995 AUD Blueprint investment is credited back and deducted from your approved implementation scope.
               </p>
             </div>
 
@@ -481,10 +481,10 @@ export default function AEOPricingPage() {
 
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="how-much-do-professional-aeo-optimisation-services-cost" className="font-semibold text-sm sm:text-base text-white">
-                What are the costs for larger or bespoke enterprise implementation?
+                Can AEObility support larger or more complex implementations?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Full-scale implementation for large websites, multi-location networks, or extensive e-commerce catalogues typically ranges from $5,000 to $15,000 AUD. Your $995 Blueprint fee is deducted from this cost if you continue. You can <Link href="/contact" className="text-aeo-cyan hover:underline">talk through the right implementation scope with our team</Link>.
+                Yes. For multi-location brands, extensive ecommerce catalogues, or multi-entity networks, custom implementation may be available by application. Every engagement is assessed after Blueprint review to confirm strategic fit, technical readiness, delivery scope, and capacity. You can <Link href="/contact" className="text-aeo-cyan hover:underline">apply for custom implementation with our team</Link>.
               </p>
             </div>
 
@@ -522,11 +522,11 @@ export default function AEOPricingPage() {
             </Link>
 
             <Link 
-              href="/solutions" 
+              href="/contact" 
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-emerald-400/40 hover:text-emerald-400 transition-all space-y-1 block"
             >
-              <div className="font-bold text-white">AEO Packages &amp; Sprints</div>
-              <p className="text-zinc-400 font-serif text-[11px]">Compare modular technical micro-sprints and ongoing scaling options.</p>
+              <div className="font-bold text-white">Custom Implementation Application</div>
+              <p className="text-zinc-400 font-serif text-[11px]">Apply for custom scope for multi-entity or large ecommerce sites.</p>
             </Link>
 
             <Link 
