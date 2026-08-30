@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Globe, Search } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Globe, Search, BookOpen } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { trackGaEvent } from '@/lib/gtag';
 
@@ -139,6 +140,18 @@ export default function HowItWorks() {
                   Turn your insights into an actionable 90-day roadmap.
                 </p>
               </div>
+            </div>
+
+            {/* Inbound Link to AEO Technical Guide */}
+            <div className="pt-4 border-t border-neutral-200">
+              <Link 
+                href="/knowledge-hub/guides/aeo" 
+                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-aeo-purple transition-colors"
+              >
+                <BookOpen className="w-4 h-4 text-aeo-purple" />
+                <span>Read our AEO Technical Guides for deep system mechanics</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
 

@@ -29,7 +29,12 @@ import {
   ExternalLink,
   Info,
   ListOrdered,
-  GitGraph
+  GitGraph,
+  ChevronDown,
+  Target,
+  Wrench,
+  TrendingUp,
+  MapPin
 } from 'lucide-react';
 import { Metadata } from 'next';
 
@@ -65,7 +70,7 @@ export default function AEOGuideWhitepaperPage() {
         'inLanguage': 'en-AU',
         'mainEntityOfPage': 'https://aeobility.com.au/knowledge-hub/guides/aeo',
         'datePublished': '2026-08-30T11:59:51+08:00',
-        'dateModified': '2026-08-30T12:20:00+08:00',
+        'dateModified': '2026-08-30T12:25:00+08:00',
         'dependencies': 'Vector Search Indexing, Contextual Chunking, JSON-LD Schema Graphs',
         'proficiencyLevel': 'Advanced',
         'author': {
@@ -144,6 +149,48 @@ export default function AEOGuideWhitepaperPage() {
             'text': 'Support the claim with relevant internal links, documentation references, and valid structured data where applicable.'
           }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#faq',
+        'isPartOf': {
+          '@type': 'WebPage',
+          '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#webpage'
+        },
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'Is AEO replacing traditional SEO?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'No. It acts as a complementary layer. Traditional SEO targets lexical indexing loops and human click-through paths on legacy digital maps, while AEO optimizes passage extraction accuracy within dense vector retrieval layers.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Do I absolutely require structured schema for AEO?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes. While Schema.org data does not guarantee inclusion, nested JSON-LD graphs provide machines with unambiguous entity boundaries, linking business metrics directly to verified Wikidata identifiers.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'How long does a standard AEO implementation engagement take?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'A baseline deployment via our Foundation Implementation package executes over a fixed four-week cycle, establishing your connected semantic structure.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'What website components should be optimised first?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Priority should be allocated to your primary identity directory, service capability definitions, and core commercial fact listings before addressing deep informational archives.'
+            }
+          }
+        ]
       }
     ]
   };
@@ -158,11 +205,12 @@ export default function AEOGuideWhitepaperPage() {
     { id: 'sources-notes', label: '7. Primary Sources & Research Notes' },
     { id: 'service-framework', label: '8. AEObility Methodology & 6-Stage Diagnostic' },
     { id: 'site-architecture', label: '9. Site Architecture & Entity Graph Model' },
+    { id: 'faq-section', label: '10. Frequently Asked Questions (FAQ)' },
   ];
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* Background Schema.org TechArticle & HowTo insertion */}
+      {/* Background Schema.org TechArticle, HowTo & FAQ insertion */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -174,40 +222,90 @@ export default function AEOGuideWhitepaperPage() {
 
       <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-12 pb-32 sm:pb-20 w-full space-y-12">
         
-        {/* Header Block */}
-        <header className="border-b border-white/10 pb-8 space-y-4">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Technical Whitepaper</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs font-mono">
-              <span>Reading time: ~12 mins</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
-              <ShieldCheck className="w-3 h-3" />
-              <span>Peer-Referenced Technical Guide</span>
-            </span>
-          </div>
+        {/* Header Block with Low-Contrast Geometric Background */}
+        <header className="relative border border-white/10 rounded-3xl p-6 sm:p-10 overflow-hidden bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-black shadow-2xl space-y-6">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,229,255,0.06),transparent_60%)] pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-aeo-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
-            Answer Engine Optimisation (AEO): Core Principles, System Mechanics, and Semantic Retrieval Architecture
-          </h1>
+          <div className="relative z-10 space-y-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Technical Whitepaper</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs font-mono">
+                <span>Reading time: ~12 mins</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+                <ShieldCheck className="w-3 h-3" />
+                <span>Peer-Referenced Technical Guide</span>
+              </span>
+            </div>
 
-          <p className="text-base sm:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
-            Answer Engine Optimisation (AEO) improves the clarity, structure, and evidence behind your website content so AI search tools and conversational assistants can more accurately understand, retrieve, and reference it. It complements SEO rather than replacing it.
-          </p>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
+              Answer Engine Optimisation (AEO): Core Principles, System Mechanics, and Semantic Retrieval Architecture
+            </h1>
 
-          <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-400 font-mono border-t border-white/5 pt-4">
-            <span>Author: <Link href="/vince-baker" className="text-aeo-cyan hover:underline">Vince Baker</Link></span>
-            <span>•</span>
-            <span>Reviewed by: AEObility Editorial &amp; Technical Team</span>
-            <span>•</span>
-            <span>Last reviewed: August 30, 2026</span>
-            <span>•</span>
-            <span>Canonical: <code className="text-zinc-300">/knowledge-hub/guides/aeo</code></span>
+            <p className="text-base sm:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
+              Answer Engine Optimisation (AEO) improves the clarity, structure, and evidence behind your website content so AI search tools and conversational assistants can more accurately understand, retrieve, and reference it. It complements SEO rather than replacing it.
+            </p>
+
+            {/* Humanization Bridge (Primacy Placement) */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+              <strong className="text-aeo-cyan font-sans uppercase tracking-wider text-xs block mb-1">Executive Summary:</strong>
+              Before we unpack the underlying engineering code, here is the simple version: Answer Engine Optimisation (AEO) helps AI search models understand your business facts the same way a human colleague would: clearly, consistently, and without guesswork. If you are a non-technical leader, this guide reveals how to ensure your brand is accurately cited when AI systems answer questions on behalf of users.
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-400 font-mono border-t border-white/5 pt-4">
+              <span>Author: <Link href="/vince-baker" className="text-aeo-cyan hover:underline">Vince Baker</Link></span>
+              <span>•</span>
+              <span>Reviewed by: AEObility Editorial &amp; Technical Team</span>
+              <span>•</span>
+              <span>Last reviewed: August 30, 2026</span>
+              <span>•</span>
+              <span>Canonical: <code className="text-zinc-300">/knowledge-hub/guides/aeo</code></span>
+            </div>
           </div>
         </header>
+
+        {/* Break-Up Block 1: The Conceptual 3-Card Summary */}
+        <section aria-label="Conceptual 3-Card Summary" className="grid sm:grid-cols-3 gap-4">
+          <div className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2 shadow-xl flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                <Target className="w-4 h-4" />
+              </div>
+              <h3 className="text-sm font-bold text-white font-soehne-breit">What AEO Solves</h3>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                Eliminates multi-node signal dilution, missing context chunks, and brand hallucinations across AI scrapers.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2 shadow-xl flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-8 h-8 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/20 flex items-center justify-center text-aeo-cyan">
+                <Wrench className="w-4 h-4" />
+              </div>
+              <h3 className="text-sm font-bold text-white font-soehne-breit">How It Works</h3>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                Restructures unstructured copy into distinct, high-density token blocks wrapped in nested JSON-LD schema graphs.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-2 shadow-xl flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <h3 className="text-sm font-bold text-white font-soehne-breit">Why It Matters</h3>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                Ensures your service modules and pricing structures are directly extractable by automated conversational search engines.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Table of Contents Box */}
         <nav aria-label="Table of Contents" className="bg-zinc-950/90 border border-white/10 rounded-2xl p-5 sm:p-6 shadow-xl space-y-3">
@@ -281,43 +379,58 @@ export default function AEOGuideWhitepaperPage() {
             <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
               How AI Retrieval Pipelines Process and Synthesize Web Content
             </h2>
+            
+            {/* Humanization Bridge for RAG */}
+            <p className="text-sm text-zinc-200 font-serif leading-relaxed bg-white/[0.02] border-l-2 border-aeo-cyan p-3.5 rounded-r-xl">
+              To understand how AI engines discover your data, we must look at the retrieval process. Think of a RAG pipeline as an automated research assistant that cross-references a closed database before compiling a clean brief.
+            </p>
+
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
               Many AI search platforms and conversational discovery tools operate using variants of <strong>Retrieval-Augmented Generation (RAG)</strong>. While individual platform implementations differ (incorporating proprietary hybrid lexical-vector indices, dense embeddings, knowledge graphs, and cross-encoder rerankers), the conceptual architecture typically executes across four sequential stages. For a comprehensive architectural deep-dive, see our detailed whitepaper on <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-aeo-cyan hover:underline">RAG Engineering and Context Injection</Link>.
             </p>
           </div>
 
-          {/* Accessible SVG/HTML Retrieval Flow Diagram */}
+          {/* Accessible Flowchart Mapping Ingestion Pipeline */}
           <div className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
             <div className="flex justify-between items-center border-b border-white/5 pb-3">
-              <span className="text-xs font-mono text-zinc-400">Conceptual Multi-Stage RAG Pipeline</span>
-              <span className="text-aeo-cyan text-[11px] font-mono">Standard Architectural Sequence</span>
+              <span className="text-xs font-mono text-zinc-400">Diagram 1: End-to-End RAG Ingestion &amp; Synthesis Pipeline</span>
+              <span className="text-aeo-cyan text-[11px] font-mono">Standard Retrieval Architecture</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-aeo-cyan font-semibold">1. Ingestion &amp; Chunking</div>
+                <div className="text-xs font-mono text-aeo-cyan font-semibold">1. Data Ingestion</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
                   Web pages are crawled, stripped of boilerplate, and split into segmented text chunks.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-aeo-purple font-semibold">2. Semantic Vector Indexing</div>
+                <div className="text-xs font-mono text-aeo-purple font-semibold">2. Vector Encoding</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Chunks are converted into high-dimensional vector embeddings and indexed alongside lexical terms.
+                  Chunks are converted into high-dimensional vector embeddings and indexed in vector databases.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-emerald-400 font-semibold">3. Query Retrieval &amp; Reranking</div>
+                <div className="text-xs font-mono text-emerald-400 font-semibold">3. Cosine Search</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  When a user asks a question, candidate passages are scored for relevance and reranked.
+                  When a user asks a query, candidate passages are scored for relevance and reranked.
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
-                <div className="text-xs font-mono text-amber-400 font-semibold">4. Prompt Injection &amp; Citation</div>
+                <div className="text-xs font-mono text-amber-400 font-semibold">4. Context Injection</div>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Top matching passages are appended to the LLM prompt context to synthesize a cited response.
+                  Top matching passages are injected into the LLM prompt context to synthesize a cited response.
                 </p>
               </div>
+            </div>
+
+            {/* Localized Scenario Example Micro-Relief */}
+            <div className="p-4 rounded-xl bg-black/60 border border-white/10 text-xs text-zinc-300 font-serif leading-relaxed flex items-start gap-2.5">
+              <MapPin className="w-4 h-4 text-aeo-cyan shrink-0 mt-0.5" />
+              <span>
+                <strong className="text-white font-mono uppercase text-[11px] block">Localised Retrieval Scenario:</strong>
+                For example, when a prospect asks an AI engine for an &ldquo;AEO specialist in Perth&rdquo;, the RAG framework does not just guess. It scans available indexes for localised coordinate arrays and semantic matches, pulling out exact text chunks to verify our operating footprint.
+              </span>
             </div>
           </div>
 
@@ -360,21 +473,39 @@ export default function AEOGuideWhitepaperPage() {
             <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
               Understanding Positional Bias and the &ldquo;Lost in the Middle&rdquo; Phenomenon
             </h2>
+
+            {/* Humanization Bridge for Positional Bias */}
+            <p className="text-sm text-zinc-200 font-serif leading-relaxed bg-white/[0.02] border-l-2 border-aeo-purple p-3.5 rounded-r-xl">
+              If you are managing content, the key takeaway here is simple: location matters. Just like humans skip the middle paragraphs of a dense legal document, AI attention models focus their primary token budgets on the absolute beginning and end of a text block.
+            </p>
+
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
               Research in language model evaluation (notably by Liu et al., 2023) has documented that transformer-based models exhibit positional bias: performance is typically highest when critical information is located at the beginning (primacy effect) or end (recency effect) of an input context, with lower retrieval accuracy for information situated in the middle of long contexts. For a specialized study of this effect, see our research article on <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-purple hover:underline">Positional Bias in AI Retrieval</Link>.
             </p>
           </div>
 
-          {/* Dilution Curve Box */}
+          {/* Diagram 2: Positional Bias Coordinate Curve */}
           <div className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-3">
             <div className="text-[11px] font-mono text-zinc-400 pb-2 border-b border-white/5 flex justify-between items-center">
-              <span>Attention Allocation Curve in Long-Context Retrieval</span>
+              <span>Diagram 2: Attention Allocation Curve in Long-Context Retrieval</span>
               <span className="text-aeo-purple text-[10px]">Research-Backed Heuristic</span>
             </div>
-            <div className="p-4 rounded-xl bg-black/60 border border-white/5 font-mono text-xs text-zinc-300 space-y-2">
-              <div className="text-aeo-cyan font-bold text-[11px]">Key Research Takeaway:</div>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                When LLMs process dense multi-document prompts, retrieval accuracy for facts placed in the first 10–20% or final 10% of a context window is significantly higher than for facts placed in the central 50%.
+            
+            <div className="p-4 rounded-xl bg-black/60 border border-white/5 font-mono text-xs text-zinc-300 space-y-3 overflow-x-auto">
+              <pre className="text-xs font-mono text-zinc-300 leading-relaxed whitespace-pre">
+{`Retrieval Accuracy Spikes
+  │
+1.0  │  █ [Primacy Spike: 0-10%]                          █ [Recency Spike: 90-100%]
+     │  █                                                 █
+     │  █                 Context Dilution Valley         █
+0.5  │  █                  (The 20%-80% Middle Zone)      █
+     │  █ █                                             █ █
+     │  █ █ █ ▄                                       ▄ █ █ █
+0.0  └─────────────────────────────────────────────────────────
+     0% Initial Chunk        50% Context Window      100% Final Chunk`}
+              </pre>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-2 border-t border-white/5">
+                <strong>Key Finding:</strong> When LLMs process dense multi-document prompts, retrieval accuracy for facts placed in the first 10–20% or final 10% of a context window is significantly higher than for facts placed in the central 50%.
               </p>
             </div>
           </div>
@@ -423,43 +554,46 @@ export default function AEOGuideWhitepaperPage() {
             </p>
           </div>
 
-          {/* Educational Contrast Example */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Vague Pattern */}
-            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-zinc-400 uppercase flex items-center gap-1.5">
-                    <XCircle className="w-4 h-4 text-amber-400" />
-                    <span>Low-Specificity Copy (Vague &amp; Hedged)</span>
-                  </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold uppercase">Weak Extraction</span>
+          {/* Diagram 3: Before vs After Side-by-Side Comparison */}
+          <div className="space-y-3">
+            <div className="text-xs font-mono text-zinc-400">Diagram 3: Before vs. After Code &amp; Copy Architecture</div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Before */}
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-zinc-400 uppercase flex items-center gap-1.5">
+                      <XCircle className="w-4 h-4 text-amber-400" />
+                      <span>Before (Machine-Illegible / Low Specificity)</span>
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold uppercase">Weak Extraction</span>
+                  </div>
+                  <blockquote className="text-xs text-zinc-400 font-serif italic border-l-2 border-amber-500/40 pl-3 leading-relaxed">
+                    &ldquo;At our company, we always strive to provide our valued clients with the absolute best digital solutions possible. If you have been wondering about what AEO actually means for your business, it is an innovative new approach that changes the way websites interact with the internet. We help make your content really stand out because we understand that technology is changing rapidly nowadays.&rdquo;
+                  </blockquote>
                 </div>
-                <blockquote className="text-xs text-zinc-400 font-serif italic border-l-2 border-amber-500/40 pl-3 leading-relaxed">
-                  &ldquo;At our company, we always strive to provide our valued clients with the absolute best digital solutions possible. If you have been wondering about what AEO actually means for your business, it is an innovative new approach that changes the way websites interact with the internet. We help make your content really stand out because we understand that technology is changing rapidly nowadays.&rdquo;
-                </blockquote>
+                <div className="text-[11px] font-mono text-zinc-400 pt-3 border-t border-white/5 space-y-1">
+                  <div>Characteristics: Excessive promotional filler, speculative hedging (<em>strive to provide</em>), low in extractable facts and entity specificity.</div>
+                </div>
               </div>
-              <div className="text-[11px] font-mono text-zinc-400 pt-3 border-t border-white/5 space-y-1">
-                <div>Characteristics: Excessive promotional filler, speculative hedging (<em>strive to provide</em>), low in extractable facts and entity specificity.</div>
-              </div>
-            </div>
 
-            {/* Clear Pattern */}
-            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-emerald-400 uppercase flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span>High-Clarity Answer Block (Fact-Dense &amp; Direct)</span>
-                  </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold uppercase">Strong Extraction</span>
+              {/* After */}
+              <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-emerald-400 uppercase flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>After (AEO Optimised Pattern)</span>
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold uppercase">Strong Extraction</span>
+                  </div>
+                  <blockquote className="text-xs text-zinc-200 font-serif border-l-2 border-emerald-500/40 pl-3 leading-relaxed">
+                    &ldquo;Answer Engine Optimisation (AEO) is the practice of structuring website content and schema markup to make business information easily retrievable by AI search tools and conversational assistants. It focuses on direct answer formatting, clear entity definitions, and verifiable evidence sources so that machine systems can accurately interpret and cite business offerings.&rdquo;
+                  </blockquote>
                 </div>
-                <blockquote className="text-xs text-zinc-200 font-serif border-l-2 border-emerald-500/40 pl-3 leading-relaxed">
-                  &ldquo;Answer Engine Optimisation (AEO) is the practice of structuring website content and schema markup to make business information easily retrievable by AI search tools and conversational assistants. It focuses on direct answer formatting, clear entity definitions, and verifiable evidence sources so that machine systems can accurately interpret and cite business offerings.&rdquo;
-                </blockquote>
-              </div>
-              <div className="text-[11px] font-mono text-zinc-400 pt-3 border-t border-white/5 space-y-1">
-                <div>Characteristics: Direct declarative definition, zero filler words, clear entity context, easily cited in AI responses.</div>
+                <div className="text-[11px] font-mono text-zinc-400 pt-3 border-t border-white/5 space-y-1">
+                  <div>Characteristics: Direct declarative definition, zero filler words, clear entity context, easily cited in AI responses. See <Link href="/services/aeo" className="text-aeo-cyan hover:underline">how we implement AEO for Australian enterprises</Link>.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -813,6 +947,61 @@ export default function AEOGuideWhitepaperPage() {
           </div>
         </section>
 
+        {/* Section 10: Frequently Asked Questions (FAQ) */}
+        <section id="faq-section" className="space-y-6 scroll-mt-24">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400">
+            <HelpCircle className="w-4 h-4" />
+            <span>10. Frequently Asked Questions (AEO Guide)</span>
+          </div>
+
+          <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
+            <h2 className="text-xl font-bold text-white font-soehne-breit">
+              Direct Answers to Common AEO Implementation Inquiries
+            </h2>
+            <div className="space-y-4 pt-2">
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+                <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
+                  <span>Is AEO replacing traditional SEO?</span>
+                </h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
+                  No. It acts as a complementary layer. Traditional SEO targets lexical indexing loops and human click-through paths on legacy digital maps, while AEO optimizes passage extraction accuracy within dense vector retrieval layers.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+                <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-aeo-purple"></span>
+                  <span>Do I absolutely require structured schema for AEO?</span>
+                </h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
+                  Yes. While Schema.org data does not guarantee inclusion, nested JSON-LD graphs provide machines with unambiguous entity boundaries, linking business metrics directly to verified Wikidata identifiers.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+                <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>How long does a standard AEO implementation engagement take?</span>
+                </h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
+                  A baseline deployment via our Foundation Implementation package executes over a fixed four-week cycle, establishing your connected semantic structure.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+                <h3 className="text-sm font-bold text-white font-soehne-breit flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+                  <span>What website components should be optimised first?</span>
+                </h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
+                  Priority should be allocated to your primary identity directory (<Link href="/brand-facts" className="text-aeo-cyan hover:underline">Brand Facts</Link>), service capability definitions, and core commercial fact listings before addressing deep informational archives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Author Bio Card & Editorial Transparency */}
         <section className="bg-zinc-950/90 border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-xl">
           <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-aeo-cyan/30 to-aeo-purple/30 border border-aeo-cyan/40 flex items-center justify-center text-xl font-bold font-mono text-white shrink-0">
@@ -864,5 +1053,6 @@ export default function AEOGuideWhitepaperPage() {
     </div>
   );
 }
+
 
 

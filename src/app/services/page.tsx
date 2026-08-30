@@ -252,7 +252,7 @@ export default function ServicesPage() {
       title: "Answer Engine Optimisation (AEO)",
       icon: Bot,
       tagline: "Be the answer LLMs retrieve.",
-      desc: "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services.",
+      desc: "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services. Read our guide on Answer Engine Optimisation Core Principles for technical mechanics.",
       bullets: ["Structured schema markup", "Neural vector alignment", "Semantic question architecture"],
       ctaText: "Explore AEO Services",
       href: "/services/aeo"
@@ -305,7 +305,7 @@ export default function ServicesPage() {
                   AEObility is an Australian AEO consultancy providing <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-normal">AEO Services for Perth, Australia SMBs</Link> to help local service businesses become discoverable, understandable and recommended across Search, Maps and AI.
                 </p>
                 <p className="text-sm sm:text-base text-white/60">
-                  We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence.
+                  We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence. Review our technical guide on <Link href="/knowledge-hub/guides/aeo" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation Core Principles</Link> to explore our RAG retrieval architecture.
                 </p>
               </div>
               <div className="pt-4">
