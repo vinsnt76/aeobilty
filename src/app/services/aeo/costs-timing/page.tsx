@@ -19,8 +19,9 @@ import {
   Boxes,
   FileCheck,
   Code,
-  Terminal,
-  Activity
+  Activity,
+  Search,
+  ExternalLink
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
@@ -147,7 +148,7 @@ export default function AEOPricingPage() {
             'name': 'How does the $995 Blueprint credit work?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation ($3,195 AUD)—or are accepted for a custom implementation engagement—the entire $995 AUD Blueprint investment is credited back against the approved implementation scope.'
+              'text': 'The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation ($3,195 AUD), or are accepted for a custom implementation engagement, the entire $995 AUD Blueprint investment is credited back against the approved implementation scope.'
             }
           },
           {
@@ -179,54 +180,34 @@ export default function AEOPricingPage() {
     ]
   };
 
-  const ganttMilestones = [
+  const timelineSteps = [
     {
-      sprintNumber: 1,
-      title: 'Sprint 1: Structured Data Refactoring',
-      weekLabel: 'Week 1',
-      weekIndex: 0,
-      color: 'from-aeo-cyan/20 to-aeo-cyan/40 border-aeo-cyan text-aeo-cyan',
-      barColor: 'bg-aeo-cyan',
-      deliverables: [
-        'DOM Schema Graph Nesting (Organization, Service, Offer, LocalBusiness)',
-        'Wikidata Node Reference Connections & Absolute Canonical URIs'
-      ]
+      weekNumber: 'Week 1',
+      title: 'Structured Data Refactoring',
+      tag: 'Organisational Code Restructuring',
+      description: "Structuring your site's code so AI engines can parse and verify your exact organisational details and service locations without guesswork.",
+      deliverables: ['DOM Schema Graph Nesting', 'Wikidata Node Reference Connections']
     },
     {
-      sprintNumber: 2,
-      title: 'Sprint 2: Atomic Answer Block Engineering',
-      weekLabel: 'Week 2',
-      weekIndex: 1,
-      color: 'from-aeo-purple/20 to-aeo-purple/40 border-aeo-purple text-aeo-purple',
-      barColor: 'bg-aeo-purple',
-      deliverables: [
-        'High-Salience Block Content Compiling (80–120 Word Heuristics)',
-        'Primacy Attention Window Optimisation across Priority H2 Headings'
-      ]
+      weekNumber: 'Week 2',
+      title: 'Atomic Answer Engineering',
+      tag: 'Atomic Answer Copywriting',
+      description: 'Rewriting your core website sections into clear, high-density answers positioned exactly where AI models look first when pulling direct citations.',
+      deliverables: ['High-Salience Answer Blocks', 'Primacy Attention Window Optimisation']
     },
     {
-      sprintNumber: 3,
-      title: 'Sprint 3: Semantic Internal Linking Framework',
-      weekLabel: 'Week 3',
-      weekIndex: 2,
-      color: 'from-emerald-500/20 to-emerald-500/40 border-emerald-500 text-emerald-400',
-      barColor: 'bg-emerald-500',
-      deliverables: [
-        'Bidirectional Lattice Anchoring Network between Commercial & Concept Nodes',
-        'Authority Routing Equity Dispersal with Contextual Anchor Text'
-      ]
+      weekNumber: 'Week 3',
+      title: 'Semantic Internal Linking',
+      tag: 'Internal Relationship Mapping',
+      description: 'Connecting the links between your primary services and educational guides so search engines clearly map how your expertise relates to your offers.',
+      deliverables: ['Bidirectional Lattice Anchoring', 'Authority Routing Equity Dispersal']
     },
     {
-      sprintNumber: 4,
-      title: 'Sprint 4: Citation & Provenance Alignment',
-      weekLabel: 'Week 4',
-      weekIndex: 3,
-      color: 'from-amber-500/20 to-amber-500/40 border-amber-500 text-amber-400',
-      barColor: 'bg-amber-500',
-      deliverables: [
-        'Source Verification Link Logging & First-Party Evidence Grounding',
-        'Telemetric Verification Run, Validation Reports & Complete Handover Notes'
-      ]
+      weekNumber: 'Week 4',
+      title: 'Technical Verification & Audit',
+      tag: 'Verification & Handover Audit',
+      description: 'Linking your published evidence sources to your core facts and executing a final diagnostic crawl to verify that your data is machine-readable.',
+      deliverables: ['Source Verification Link Logging', 'Telemetric Verification Run & Handover']
     }
   ];
 
@@ -245,11 +226,11 @@ export default function AEOPricingPage() {
       <Navbar />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-32 sm:pb-20 w-full space-y-10">
+      {/* Main Container with Defensive Bottom Spacing for Floating Widgets */}
+      <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-32 sm:pb-24 w-full space-y-10">
         
-        {/* Header Block with Direct Commercial Answer */}
-        <header className="space-y-4">
+        {/* Header Block with Scannable Hero Chunking */}
+        <header className="space-y-5">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Transparent Pricing &amp; Service Framework</span>
@@ -259,12 +240,52 @@ export default function AEOPricingPage() {
             How Much Does AEO Cost and <span className="text-gradient-aeo">What Do I Get?</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-white/80 font-serif leading-relaxed max-w-3xl">
-            Answer Engine Optimisation (AEO) starts with a free AI visibility check. Our Strategic Blueprint roadmap is $995 AUD (100% credited back if you proceed). Our fixed-scope <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-semibold">Foundation Implementation is $3,195 AUD ex. GST</Link>. For businesses with more complex requirements, custom implementation is available by application following Blueprint review.
-          </p>
+          <div className="space-y-3 max-w-3xl">
+            <p className="text-sm sm:text-base text-white/90 font-serif leading-relaxed">
+              Our service structure provides clear, fixed-scope milestones designed to fit single-operator deployment pipelines. Review our four operational tiers:
+            </p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-serif">
+              <li className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2">
+                <span className="text-aeo-cyan font-mono font-bold shrink-0">1. Discover:</span>
+                <span className="text-zinc-300">
+                  Run our free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link> to instantly isolate your site&apos;s machine-readability gaps.
+                </span>
+              </li>
+              <li className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2">
+                <span className="text-aeo-purple font-mono font-bold shrink-0">2. Define:</span>
+                <span className="text-zinc-300">
+                  Receive a 90-day technical roadmap via the <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">$995 AUD ex. GST Strategic Blueprint</Link>.
+                </span>
+              </li>
+              <li className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2">
+                <span className="text-emerald-400 font-mono font-bold shrink-0">3. Build:</span>
+                <span className="text-zinc-300">
+                  Establish your entire data layout with our <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">$3,195 AUD ex. GST Foundation Implementation</Link>.
+                </span>
+              </li>
+              <li className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2">
+                <span className="text-amber-400 font-mono font-bold shrink-0">4. Scale:</span>
+                <span className="text-zinc-300">
+                  Bespoke multi-location or extensive e-commerce catalogue integrations are available exclusively <Link href="/contact?inquiry=custom-application" className="text-amber-400 font-semibold hover:underline">By Application</Link>.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 100% Risk-Reversal Implementation Credit Box */}
+          <div className="p-4 rounded-xl bg-gradient-to-r from-aeo-cyan/10 via-zinc-900 to-aeo-purple/10 border border-aeo-cyan/30 flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-aeo-cyan shrink-0 mt-0.5" />
+            <div className="space-y-0.5 text-xs sm:text-sm font-serif">
+              <strong className="text-white font-sans block">100% Risk-Reversal Implementation Credit</strong>
+              <p className="text-zinc-300 leading-relaxed">
+                If you proceed with our core Foundation Implementation, or are accepted for a custom implementation engagement, the full $995 AUD Blueprint investment is credited directly against your approved project scope.
+              </p>
+            </div>
+          </div>
         </header>
 
-        {/* The 4-Stage Commercial Offer Ladder (ItemList Visual Representation) */}
+        {/* The 4-Stage Commercial Offer Ladder (ItemList Visual Cards) */}
         <section aria-label="AEO Commercial Product Ladder" className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-mono uppercase tracking-wider text-aeo-cyan font-bold flex items-center gap-1.5">
@@ -286,6 +307,10 @@ export default function AEOPricingPage() {
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
                   Automated scan of entity clarity, schema coverage, and machine-extractable content chunks.
                 </p>
+                <div className="text-[11px] text-zinc-500 font-serif">
+                  <strong className="text-zinc-400 font-sans block">Best for:</strong>
+                  <span>Fast baseline check before committing to roadmap work.</span>
+                </div>
               </div>
 
               <div className="space-y-3 pt-3 border-t border-white/5">
@@ -313,10 +338,14 @@ export default function AEOPricingPage() {
                 <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-aeo-purple/15 border border-aeo-purple/30 text-[10px] text-aeo-purple font-mono font-semibold">
                   Stage 2: Define
                 </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">The AEObility Blueprint</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">The Strategic Blueprint</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                   A comprehensive technical audit and 90-day strategic roadmap identifying exact schema and content gaps.
                 </p>
+                <div className="text-[11px] text-zinc-400 font-serif">
+                  <strong className="text-zinc-300 font-sans block">Best for:</strong>
+                  <span>Businesses requiring an actionable 90-day roadmap before booking developer hours.</span>
+                </div>
               </div>
 
               <div className="space-y-3 pt-3 border-t border-white/5">
@@ -355,6 +384,10 @@ export default function AEOPricingPage() {
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                   Fixed-scope 4-week deployment: schema graphs, atomic page rewrites, and internal link architecture.
                 </p>
+                <div className="text-[11px] text-cyan-200/80 font-serif">
+                  <strong className="text-cyan-200 font-sans block">Best for:</strong>
+                  <span>Australian SMBs and clinics ready for turnkey machine-readable deployment in 4 weeks.</span>
+                </div>
               </div>
 
               <div className="space-y-3 pt-3 border-t border-white/5">
@@ -382,25 +415,29 @@ export default function AEOPricingPage() {
             {/* Stage 4: Custom Implementation (Application Only) */}
             <div className="p-5 bg-zinc-950/80 border border-white/10 rounded-2xl flex flex-col justify-between space-y-5 shadow-xl hover:border-white/20 transition-all">
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] text-emerald-400 font-mono font-semibold">
+                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-[10px] text-amber-400 font-mono font-semibold">
                   Stage 4: Scale
                 </div>
                 <h3 className="text-base font-bold text-white font-soehne-breit">Custom Implementation</h3>
                 <p className="text-xs text-zinc-400 font-serif leading-relaxed">
                   For multi-location brands, large ecommerce catalogues, and multi-entity networks exceeding Foundation scope.
                 </p>
+                <div className="text-[11px] text-zinc-400 font-serif">
+                  <strong className="text-zinc-300 font-sans block">Best for:</strong>
+                  <span>Multi-location brands and complex ecommerce sites requiring bespoke architecture.</span>
+                </div>
               </div>
 
               <div className="space-y-3 pt-3 border-t border-white/5">
                 <div className="flex justify-between items-baseline">
                   <span className="text-xs text-zinc-400">Price:</span>
-                  <span className="text-xs font-bold text-emerald-400 font-mono uppercase">By Application</span>
+                  <span className="text-xs font-bold text-amber-400 font-mono uppercase">By Application</span>
                 </div>
                 <div className="flex justify-between items-baseline text-xs">
                   <span className="text-zinc-400">Delivery:</span>
                   <span className="text-zinc-300 font-mono text-[11px]">Confirmed Post-Blueprint</span>
                 </div>
-                <div className="p-1.5 rounded-lg bg-emerald-950/20 border border-emerald-500/20 text-[9px] text-emerald-300 font-mono text-center">
+                <div className="p-1.5 rounded-lg bg-amber-950/20 border border-amber-500/20 text-[9px] text-amber-300 font-mono text-center">
                   Limited capacity • Selected projects
                 </div>
                 <Link
@@ -416,144 +453,128 @@ export default function AEOPricingPage() {
           </div>
         </section>
 
-        {/* Decision Guidance: Which Option Is Right for Me? */}
-        <section className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
+        {/* Target Audience Guidance Section */}
+        <section className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
           <h2 className="text-lg sm:text-xl font-bold text-white font-soehne-breit flex items-center gap-2">
             <Target className="w-5 h-5 text-aeo-cyan" />
             <span>Which Option Is Right for Your Business?</span>
           </h2>
+          
           <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif pt-1">
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-              <strong className="text-white font-sans text-xs block">1. Need an Initial Snapshot?</strong>
-              <p className="text-zinc-300 leading-relaxed">
-                If you want to know whether AI search engines can currently understand your business, start with the <Link href="/diagnostic" className="text-aeo-cyan hover:underline">free AI Visibility Score</Link>.
-              </p>
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2 flex flex-col justify-between">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-mono text-aeo-purple uppercase font-bold">Stage 2: The Strategic Blueprint</span>
+                <strong className="text-white font-sans text-xs block">$995 AUD ex. GST</strong>
+                <p className="text-zinc-300 leading-relaxed">
+                  <strong className="text-zinc-200">Best for:</strong> Businesses requiring an actionable, jargon-free 90-day technical roadmap before committing to developer implementation hours.
+                </p>
+              </div>
+              <Link href="/solutions/aeo-blueprint" className="text-aeo-purple hover:underline font-mono text-[11px] pt-2 block">
+                View Blueprint inclusions →
+              </Link>
             </div>
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-              <strong className="text-white font-sans text-xs block">2. Need an Independent Roadmap?</strong>
-              <p className="text-zinc-300 leading-relaxed">
-                If you want a fixed-price 90-day technical plan that your team can evaluate or execute in-house, order <Link href="/solutions/aeo-blueprint" className="text-aeo-purple hover:underline">The AEObility Blueprint ($995 AUD)</Link>.
-              </p>
+
+            <div className="p-4 rounded-xl bg-cyan-950/20 border border-aeo-cyan/30 space-y-2 flex flex-col justify-between">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-mono text-aeo-cyan uppercase font-bold">Stage 3: Foundation Implementation</span>
+                <strong className="text-white font-sans text-xs block">$3,195 AUD ex. GST</strong>
+                <p className="text-zinc-300 leading-relaxed">
+                  <strong className="text-cyan-200">Best for:</strong> Australian SMBs, local service trades, and single-domain clinics ready to establish an authoritative, machine-readable digital footprint within four weeks.
+                </p>
+              </div>
+              <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-mono text-[11px] pt-2 block">
+                Explore Foundation package →
+              </Link>
             </div>
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-              <strong className="text-white font-sans text-xs block">3. Ready for Turnkey Implementation?</strong>
-              <p className="text-zinc-300 leading-relaxed">
-                If you need the schema, page copy, and link architecture deployed for you, proceed straight into <Link href="/solutions/aeo-sprint" className="text-emerald-400 hover:underline">Foundation Implementation ($3,195 AUD)</Link>.
-              </p>
+
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2 flex flex-col justify-between">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-mono text-amber-400 uppercase font-bold">Stage 4: Custom Implementation</span>
+                <strong className="text-white font-sans text-xs block">By Application</strong>
+                <p className="text-zinc-300 leading-relaxed">
+                  <strong className="text-zinc-200">Best for:</strong> Multi-location brands, complex e-commerce platforms, and multi-entity networks requiring custom interface engineering.
+                </p>
+              </div>
+              <Link href="/contact?inquiry=custom-application" className="text-amber-400 hover:underline font-mono text-[11px] pt-2 block">
+                Apply for custom scope →
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* Why the Blueprint Comes First (Customer-Oriented Framing) */}
+        {/* Why the Blueprint Comes First (Zero Lock-In Model) */}
         <section className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 shadow-xl">
           <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider font-mono">
             <ShieldCheck className="w-4 h-4" />
             <span>Why the Blueprint Comes First (Zero Lock-In Model)</span>
           </div>
           <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-            We anchor our engagements around a verified clarity document rather than locked-in monthly retainers or indefinite agency fees. The <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">AEObility Blueprint ($995 AUD)</Link> delivers a standalone roadmap you own completely. If you choose to proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>—or are accepted for a custom implementation engagement—the entire $995 investment is credited back against your approved implementation scope, reducing your net execution balance.
+            We anchor our engagements around a verified clarity document rather than locked-in monthly retainers or indefinite agency fees. The <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">AEObility Blueprint ($995 AUD)</Link> delivers a standalone roadmap you own completely. If you choose to proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>, or are accepted for a custom implementation engagement, the entire $995 investment is credited back against your approved implementation scope, reducing your net execution balance.
           </p>
         </section>
 
-        {/* Structured Gantt Chart Timeline Component (Replaces Legacy Keyword Table) */}
-        <section aria-label="Foundation Implementation Gantt Chart Timeline" className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-7 space-y-6 shadow-2xl overflow-hidden">
+        {/* Fully Responsive 4-Week Foundation Implementation Timeline (Mobile-First CSS Layout) */}
+        <section aria-label="Foundation Implementation Timeline" className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-7 space-y-6 shadow-2xl overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
             <div className="space-y-1">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-[10px] text-aeo-cyan font-mono font-semibold">
                 <Calendar className="w-3 h-3" />
-                <span>Execution Schedule</span>
+                <span>Structured Delivery Schedule</span>
               </div>
               <h2 className="text-base sm:text-lg font-bold text-white font-soehne-breit">
-                Comprehensive 4-Week Foundation Implementation Gantt Chart Timeline
+                Comprehensive 4-Week Foundation Implementation Timeline
               </h2>
             </div>
-            <span className="text-[11px] font-mono text-zinc-400">Fixed-Scope • Milestone Driven</span>
+            <span className="text-[11px] font-mono text-zinc-400">Fixed-Scope • 4-Week Structured Sprints</span>
           </div>
 
-          {/* Interactive Visual Timeline Track */}
-          <div className="space-y-4">
-            {/* Week Column Header Row */}
-            <div className="hidden md:grid grid-cols-12 gap-3 text-xs font-mono text-zinc-400 border-b border-white/5 pb-2">
-              <div className="col-span-5 font-bold uppercase tracking-wider text-white/80">Weeks &amp; Deployment Milestones</div>
-              <div className="col-span-7 grid grid-cols-4 gap-2 text-center">
-                <div className="p-1 rounded bg-white/5 border border-white/5 text-aeo-cyan font-bold">[ WEEK 1 ]</div>
-                <div className="p-1 rounded bg-white/5 border border-white/5 text-aeo-purple font-bold">[ WEEK 2 ]</div>
-                <div className="p-1 rounded bg-white/5 border border-white/5 text-emerald-400 font-bold">[ WEEK 3 ]</div>
-                <div className="p-1 rounded bg-white/5 border border-white/5 text-amber-400 font-bold">[ WEEK 4 ]</div>
-              </div>
-            </div>
-
-            {/* Milestones List & Gantt Bars */}
-            <div className="space-y-3.5">
-              {ganttMilestones.map((m) => (
-                <div 
-                  key={m.sprintNumber}
-                  className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all space-y-3"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-                    {/* Left: Sprint Description & Deliverables */}
-                    <div className="md:col-span-5 space-y-1.5">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-mono font-bold text-white">{m.title}</span>
-                        <span className="md:hidden text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-zinc-300">
-                          {m.weekLabel}
-                        </span>
-                      </div>
-                      <ul className="text-xs text-zinc-400 font-serif space-y-1 list-disc pl-4">
-                        {m.deliverables.map((d, i) => (
-                          <li key={i} className="leading-relaxed">{d}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Right: Gantt Visual Bar */}
-                    <div className="md:col-span-7 grid grid-cols-4 gap-2 items-center">
-                      {[0, 1, 2, 3].map((weekCol) => (
-                        <div key={weekCol} className="h-9 rounded-lg bg-black/40 border border-white/5 flex items-center justify-center p-1 relative overflow-hidden">
-                          {weekCol === m.weekIndex ? (
-                            <div className={`w-full h-full rounded-md ${m.barColor} text-black font-mono font-extrabold text-[10px] flex items-center justify-center tracking-wider shadow-sm animate-pulse`}>
-                              ACTIVE
-                            </div>
-                          ) : (
-                            <span className="text-[9px] font-mono text-zinc-700 select-none">···</span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+          {/* Responsive CSS Vertical Timeline (Mobile Stack -> Desktop 4-Column Grid) */}
+          <div className="relative border-l-2 border-aeo-cyan/30 ml-3.5 my-4 md:border-l-0 md:ml-0 md:my-0 md:grid md:grid-cols-4 md:gap-4">
+            {timelineSteps.map((step, idx) => (
+              <div key={idx} className="mb-8 pl-6 relative md:mb-0 md:pl-0 flex flex-col justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-aeo-cyan/30 transition-all">
+                
+                {/* Timeline Dot Indicator */}
+                <div className="absolute -left-[31px] top-4 w-3.5 h-3.5 rounded-full bg-aeo-cyan border-2 border-black md:static md:mb-3 md:left-auto md:top-auto shadow-[0_0_8px_rgba(0,229,255,0.6)]" />
+                
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-aeo-cyan uppercase font-bold tracking-wider">
+                      {step.weekNumber}
+                    </span>
+                    <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/10 text-zinc-300">
+                      Active
+                    </span>
                   </div>
+
+                  <h3 className="text-sm font-bold text-white font-soehne-breit">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              ))}
-            </div>
+
+                <div className="mt-4 pt-3 border-t border-white/5 space-y-1">
+                  <span className="text-[10px] font-mono text-zinc-400 block uppercase font-semibold">Key Deliverables:</span>
+                  <ul className="text-[11px] text-zinc-400 font-serif space-y-1">
+                    {step.deliverables.map((d, dIdx) => (
+                      <li key={dIdx} className="flex items-start gap-1.5">
+                        <span className="text-aeo-cyan font-mono text-[9px] mt-0.5">•</span>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Clean Text-Based ASCII Representation for Engineering Verification */}
-          <div className="space-y-2 pt-2 border-t border-white/5">
-            <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span className="flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5 text-aeo-cyan" />
-                <span>Text-Based Architecture Gantt Specification</span>
-              </span>
-              <span className="text-[10px] text-zinc-500">ASCII Architecture Layout</span>
-            </div>
-            <pre className="p-4 rounded-xl bg-black/80 border border-white/10 text-[11px] font-mono text-zinc-300 leading-relaxed overflow-x-auto whitespace-pre">
-{`WEEKS & DEPLOYMENT MILESTONES             [ WEEK 1 ]   [ WEEK 2 ]   [ WEEK 3 ]   [ WEEK 4 ]
-─────────────────────────────────────────────────────────────────────────────────────────
-Sprint 1: Structured Data Refactoring     ██████████
-  - DOM Schema Graph Nesting              [Active]
-  - Wikidata Node Reference Connections
-
-Sprint 2: Atomic Answer Block Engineering              ██████████
-  - High-Salience Block Content Compiling              [Active]
-  - Primacy Attention Window Optimisation
-
-Sprint 3: Semantic Internal Linking Framework                       ██████████
-  - Bidirectional Lattice Anchoring Network                          [Active]
-  - Authority Routing Equity Dispersal
-
-Sprint 4: Citation & Provenance Alignment                                         ██████████
-  - Source Verification Link Logging                                              [Active]
-  - Telemetric Verification Run & Handover                                        [Active]`}
-            </pre>
+          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs text-zinc-400 font-serif">
+            <span>Every milestone concludes with completed validation checks, schema testing, and handover notes.</span>
+            <Link href="/services/aeo/procedures" className="text-aeo-cyan hover:underline font-mono text-[11px] shrink-0 ml-2">
+              Review procedures →
+            </Link>
           </div>
         </section>
 
@@ -570,7 +591,7 @@ Sprint 4: Citation & Provenance Alignment                                       
                 How does the $995 Blueprint credit work?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>—or are accepted for a custom implementation engagement—the entire $995 AUD Blueprint investment is credited back and deducted from your approved implementation scope.
+                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>, or are accepted for a custom implementation engagement, the entire $995 AUD Blueprint investment is credited back and deducted from your approved implementation scope.
               </p>
             </div>
 
@@ -627,7 +648,7 @@ Sprint 4: Citation & Provenance Alignment                                       
 
             <Link 
               href="/contact?inquiry=custom-application" 
-              className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-emerald-400/40 hover:text-emerald-400 transition-all space-y-1 block"
+              className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-amber-400/40 hover:text-amber-400 transition-all space-y-1 block"
             >
               <div className="font-bold text-white">Custom Implementation Application</div>
               <p className="text-zinc-400 font-serif text-[11px]">Apply for custom scope for multi-entity or large ecommerce sites.</p>
