@@ -2,13 +2,98 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass, Cpu } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  Circle,
+  Loader2,
+  Sparkles,
+  AlertTriangle,
+  ShieldCheck,
+  MessageSquare,
+  Compass,
+  Cpu,
+  Layers,
+  Globe,
+  FileCode,
+  Lock,
+  Zap,
+  Eye,
+  ChevronDown,
+  CircleHelp
+} from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
-import { BRAND_PRICING_SCHEMA, calculateFactCoverageScore, BRAND_IDENTITY, PRICING_CONFIG } from '@/lib/brandFacts';
+import { calculateFactCoverageScore, PRICING_CONFIG } from '@/lib/brandFacts';
 import Link from 'next/link';
 
 type Step = 'INPUT' | 'PROCESSING' | 'SCORE_REVEAL';
+
+export const DIAGNOSTIC_FAQ_ITEMS = [
+  {
+    q: "How is AI Search (AEO) different from regular SEO?",
+    a: "Traditional SEO optimises for keywords, blue links, and search rankings. Answer Engine Optimisation (AEO) structures your content, schema, and entity relationships so generative AI engines (like ChatGPT, Perplexity, and Gemini) extract and cite your business as the definitive answer."
+  },
+  {
+    q: "Will this scan affect my live website speed or uptime?",
+    a: "No. The diagnostic scan is a safe, lightweight, read-only external query. It inspects public HTML, schema markup, and vector distance without impacting server load or uptime."
+  },
+  {
+    q: "What happens after I run the scan?",
+    a: "You receive an instant on-screen diagnostic report showing your 0–100 AI Readiness Score, simulated AI impression, and factual grounding breakdown. You can also chat directly with AI Bill to explore specific remediation steps."
+  },
+  {
+    q: "Do I need technical skills to understand the report?",
+    a: "No. Every diagnostic evaluation provides plain-English summaries alongside technical specifics, categorising findings into quick wins and structural improvements."
+  },
+  {
+    q: "Do I need to jump on a sales call to get my report?",
+    a: "No. Your report generates directly on-screen with zero sales pressure, zero lock-in contracts, and transparent fixed-price remediation options."
+  }
+];
+
+export const DIAGNOSTIC_DIMENSIONS = [
+  {
+    id: "dim-1",
+    title: "1. Technical & Ingestion Structure",
+    icon: Globe,
+    badge: "Layer 01",
+    benefit: "Checks if AI search crawlers can read your pages without hitting structural roadblocks.",
+    details: "Inspects raw HTML DOM structures, analyzes text-to-code density, verifies heading hierarchies (H1/H2/H3), evaluates Core Web Vitals (LCP/CLS), and checks robots.txt access rights for major LLM scraping bots (GPTBot, ClaudeBot, PerplexityBot)."
+  },
+  {
+    id: "dim-2",
+    title: "2. Entity & Local Clarity",
+    icon: Compass,
+    badge: "Layer 02",
+    benefit: "Verifies that your business name, address, phone number, and service areas match consistently across the web.",
+    details: "Audits NAP consistency, geographic coordinate grounding, and regional service boundary signals against external map nodes and semantic knowledge graphs to detect regional footprint gaps."
+  },
+  {
+    id: "dim-3",
+    title: "3. Structured Data Coverage",
+    icon: FileCode,
+    badge: "Layer 03",
+    benefit: "Reviews the hidden code that translates your service list into direct facts for machine reading.",
+    details: "Audits and validates nested JSON-LD schema graphs, verifying interconnected relationships between @type: Organization, LocalBusiness, and Service arrays with Wikidata sameAs entity disambiguation."
+  },
+  {
+    id: "dim-4",
+    title: "4. Answer Readiness & RAG Survival",
+    icon: Layers,
+    badge: "Layer 04",
+    benefit: "Tests how easily AI tools can extract short, direct text blocks to answer buyer questions.",
+    details: "Runs a simulated Retrieval-Augmented Generation (RAG) loop to test how passages survive token context limits, sentence boundary chunking, and transformer positional attention bias (the opening 150 characters under H2/H3 headings)."
+  },
+  {
+    id: "dim-5",
+    title: "5. Trust & Citation Readiness",
+    icon: ShieldCheck,
+    badge: "Layer 05",
+    benefit: "Checks for corporate credentials and verified authorship links that prove your business is a trusted source.",
+    details: "Audits schema records for corporate identifiers (such as Australian ABN registration) and explicit linkage to verified person graphs (e.g. /vince-baker#author) to anchor machine trust."
+  }
+];
 
 export default function DiagnosticEngine() {
   const searchParams = useSearchParams();
@@ -189,7 +274,7 @@ export default function DiagnosticEngine() {
                   className="w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[48px]"
                 />
                 <p className="text-xs text-zinc-400 font-serif leading-normal pt-0.5">
-                  What phrase do your ideal clients search? Identifies how AI assistants match user queries to your business.
+                  See if AI tools recommend your business when a local customer asks this exact question.
                 </p>
               </div>
 
@@ -259,11 +344,11 @@ export default function DiagnosticEngine() {
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
                   <span className="text-xs font-bold text-purple-400 font-mono block">2. Live Signal Audit</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Real-time scan of your schema markup, local signals &amp; vector distance.</p>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">We evaluate your schema, citations, and content formatting to test how LLMs extract your answers.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
                   <span className="text-xs font-bold text-emerald-400 font-mono block">3. Instant On-Screen Report</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Receive immediate on-screen scores + optional consultative exploration with AI Bill.</p>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Get your instant visibility score, citation gaps, and immediate action items on-screen.</p>
                 </div>
               </div>
             </div>
@@ -477,6 +562,128 @@ export default function DiagnosticEngine() {
         )}
 
       </div>
+
+      {/* ============================================================================== */}
+      {/* WHAT THE SCAN CHECKS (5 Diagnostic Dimensions Accordion) */}
+      {/* ============================================================================== */}
+      <section className="w-full max-w-3xl mt-12 space-y-6 text-left">
+        <div className="space-y-2 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+            <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Inspection Framework</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+            What the Scan Checks: The Five Dimensions
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+            Our diagnostic pipeline audits five core layers required for generative answer engines to extract and cite your business accurately.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {DIAGNOSTIC_DIMENSIONS.map((dim) => {
+            const Icon = dim.icon;
+            return (
+              <details
+                key={dim.id}
+                className="group bg-zinc-950/70 border border-white/10 rounded-xl p-4 sm:p-5 transition-colors open:bg-zinc-900/80 cursor-pointer"
+              >
+                <summary className="font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4 outline-none list-none group-open:text-cyan-300">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-cyan-400 shrink-0">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="block font-bold">{dim.title}</span>
+                      <span className="text-xs text-zinc-400 font-normal font-serif block mt-0.5">
+                        {dim.benefit}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronDown className="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                </summary>
+                <div className="mt-3 pt-3 border-t border-white/5 text-xs text-zinc-300 font-serif leading-relaxed pl-11">
+                  <p className="text-zinc-400 mb-1 font-mono uppercase text-[10px] tracking-wider text-cyan-400">
+                    Technical Layer Details:
+                  </p>
+                  <p>{dim.details}</p>
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ============================================================================== */}
+      {/* BENEFIT & ASSURANCE BLOCK */}
+      {/* ============================================================================== */}
+      <section className="w-full max-w-3xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+        <div className="p-5 bg-zinc-950/70 border border-white/10 rounded-xl space-y-2.5">
+          <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <Eye className="w-4 h-4" />
+          </div>
+          <h3 className="font-bold text-white text-sm">Beat &ldquo;Zero-Click&rdquo; Drop-Off</h3>
+          <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+            Capture prospective clients who get answers directly from ChatGPT, Perplexity, and Google AI Overviews without visiting traditional blue links.
+          </p>
+        </div>
+
+        <div className="p-5 bg-zinc-950/70 border border-white/10 rounded-xl space-y-2.5">
+          <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+            <Zap className="w-4 h-4" />
+          </div>
+          <h3 className="font-bold text-white text-sm">Fix Invisible Blind Spots</h3>
+          <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+            Uncover why competitors get recommended over your services and how to close the data gap before customer inquiries are lost.
+          </p>
+        </div>
+
+        <div className="p-5 bg-zinc-950/70 border border-white/10 rounded-xl space-y-2.5">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <Lock className="w-4 h-4" />
+          </div>
+          <h3 className="font-bold text-white text-sm">Safe, Fast &amp; Read-Only</h3>
+          <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+            Lightweight, read-only external audit that takes under 30 seconds with no software installation, tracking codes, or passwords required.
+          </p>
+        </div>
+      </section>
+
+      {/* ============================================================================== */}
+      {/* FREQUENTLY ASKED QUESTIONS (FAQ) */}
+      {/* ============================================================================== */}
+      <section className="w-full max-w-3xl mt-12 mb-8 space-y-6 text-left">
+        <div className="space-y-2 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-xs font-mono text-purple-300">
+            <CircleHelp className="w-3.5 h-3.5 text-purple-400" />
+            <span>Common Questions</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+            Answers to common questions regarding how the AI visibility scan operates.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {DIAGNOSTIC_FAQ_ITEMS.map((item, idx) => (
+            <details
+              key={idx}
+              className="group bg-zinc-950/70 border border-white/10 rounded-xl p-4 sm:p-5 transition-colors open:bg-zinc-900/80 cursor-pointer"
+            >
+              <summary className="font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4 outline-none list-none group-open:text-cyan-300">
+                <span>{item.q}</span>
+                <ChevronDown className="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+              </summary>
+              <p className="mt-3 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed pl-2 border-l-2 border-cyan-400/40">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }

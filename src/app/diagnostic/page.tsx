@@ -80,6 +80,52 @@ export default function DiagnosticPage() {
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/diagnostic#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is AI Search (AEO) different from regular SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional SEO optimises for keywords, blue links, and search rankings. Answer Engine Optimisation (AEO) structures your content, schema, and entity relationships so generative AI engines (like ChatGPT, Perplexity, and Gemini) extract and cite your business as the definitive answer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this scan affect my live website speed or uptime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The diagnostic scan is a safe, lightweight, read-only external query. It inspects public HTML, schema markup, and vector distance without impacting server load or uptime."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after I run the scan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You receive an instant on-screen diagnostic report showing your 0–100 AI Readiness Score, simulated AI impression, and factual grounding breakdown. You can also chat directly with AI Bill to explore specific remediation steps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need technical skills to understand the report?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every diagnostic evaluation provides plain-English summaries alongside technical specifics, categorising findings into quick wins and structural improvements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to jump on a sales call to get my report?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Your report generates directly on-screen with zero sales pressure, zero lock-in contracts, and transparent fixed-price remediation options."
+            }
+          }
+        ]
       }
     ]
   };
