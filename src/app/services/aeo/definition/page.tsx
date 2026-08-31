@@ -112,7 +112,7 @@ export default function AEODefinitionPage() {
         "inLanguage": "en-AU",
         "mainEntityOfPage": "https://aeobility.com.au/services/aeo/definition",
         "datePublished": "2026-08-31T10:56:41+08:00",
-        "dateModified": "2026-08-31T11:05:00+08:00",
+        "dateModified": "2026-08-31T11:20:00+08:00",
         "author": {
           "@type": "Person",
           "@id": "https://aeobility.com.au/#vince-baker",
@@ -266,19 +266,22 @@ export default function AEODefinitionPage() {
               />
             </div>
             <p className="text-[11px] text-white/50 italic mb-8 font-light">
-              Conceptual architecture model illustrating semantic chunking, embeddings, and vector similarity in AI retrieval. Actual system pipelines vary by platform.
+              Figure 1: A conceptual model of multi-engine retrieval pathways. Actual retrieval, ranking, and synthesis cycles are platform-specific and depend on diverse, platform-managed evidence signals.
             </p>
             
-            {/* Meta Trust Badge */}
+            {/* Hero Trust Signals */}
             <div className="flex flex-wrap items-center gap-3 text-xs text-white/60 mb-4 font-mono">
               <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-aeo-cyan font-semibold">
                 Technical Reference
               </span>
-              <span>Author: Vince Baker</span>
+              <span>Author: Vince Baker, Founder &amp; Principal Consultant</span>
               <span>&bull;</span>
-              <span>Last Reviewed: August 2026</span>
+              <span>Last Reviewed: Aug 31, 2026</span>
               <span>&bull;</span>
-              <span>8 min read</span>
+              <Link href="/diagnostic" className="text-aeo-cyan hover:underline inline-flex items-center gap-1">
+                <span>Methodology Baseline</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
@@ -297,29 +300,35 @@ export default function AEODefinitionPage() {
             </div>
 
             {/* What AEO is NOT (Epistemic Boundary Block) */}
-            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl mb-8 space-y-3">
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl mb-8 space-y-4">
               <h2 className="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
                 <XCircle className="w-4 h-4 text-rose-400" />
                 <span>What AEO is not</span>
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-white/70 font-light leading-relaxed">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-white/70 font-light leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="text-rose-400 mt-0.5">&times;</span>
-                  <span>Not a substitute for technical SEO, quality services, reputation, or credible third-party evidence.</span>
+                  <span><strong className="text-white font-medium">Not a replacement for SEO:</strong> It is an extension of technical and content SEO, relying on the same foundations of fast load speeds, mobile responsiveness, and high-quality content.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-400 mt-0.5">&times;</span>
-                  <span>Does not guarantee a citation, AI Overview placement, or platform recommendation.</span>
+                  <span><strong className="text-white font-medium">Not a visibility guarantee:</strong> It does not guarantee a citation, an AI Overview feature, or a conversational recommendation.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-400 mt-0.5">&times;</span>
-                  <span>Not just injecting FAQ schema or repeating keywords without useful context.</span>
+                  <span><strong className="text-white font-medium">Not just schema or keyword repetition:</strong> Simply adding FAQ schema or repeating keywords without adding useful context fails modern retrieval tests.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-400 mt-0.5">&times;</span>
-                  <span>Not limited to RAG models; AI search products deploy varying retrieval, ranking, and generation approaches.</span>
+                  <span><strong className="text-white font-medium">Not limited to a single retrieval model:</strong> AI search products use highly diverse, platform-specific approaches to parse, rank, and synthesise web sources.</span>
                 </li>
               </ul>
+              <div className="pt-2 border-t border-white/5 text-xs text-white/60 font-light flex items-center justify-between flex-wrap gap-2">
+                <span>Looking for clear sprint deliverables and pricing?</span>
+                <Link href="/services/aeo/costs-timing" className="text-aeo-cyan hover:underline font-medium">
+                  Review our fixed-scope AEO service costs &rarr;
+                </Link>
+              </div>
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl font-light mb-8">
@@ -337,7 +346,7 @@ export default function AEODefinitionPage() {
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
                 <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">1. Search has expanded from whole pages to passage retrieval</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>SEO helps search engines discover, understand, and rank full web pages. AI search systems may additionally retrieve and synthesise passages, structured data, and other trusted sources to compose an answer, so each important section should state a complete, well-scoped fact.</p>
+                  <p>SEO helps search engines discover, understand, and rank pages. AI search systems may additionally retrieve passages, structured data, and other trusted sources to compose an answer, so each important section should state a complete, well-scoped fact.</p>
                 </div>
               </div>
 
@@ -369,7 +378,7 @@ export default function AEODefinitionPage() {
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
                 <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">5. Context clarity and evidence verification</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>Unstructured or fragmented copy can lead to ambiguity during answer synthesis. Organising information with explicit headings, verified claims, and linked credentials helps models evaluate factual accuracy.</p>
+                  <p>Structured data makes important relationships (such as your business, service, location, offer, and FAQ) more explicit for systems that support it. It improves clarity, but does not guarantee a rich result, citation, or recommendation.</p>
                 </div>
               </div>
             </div>
@@ -384,36 +393,31 @@ export default function AEODefinitionPage() {
                 <table className="w-full text-left text-sm text-white/70">
                   <thead className="bg-white/5 text-white/90">
                     <tr>
-                      <th className="px-6 py-4 font-bold border-b border-white/10">Dimension</th>
-                      <th className="px-6 py-4 font-bold border-b border-white/10">Traditional SEO</th>
-                      <th className="px-6 py-4 font-bold border-b border-white/10 text-aeo-cyan">Answer Engine Optimisation (AEO)</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">Area</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">SEO</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10 text-aeo-cyan">AEO</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5 font-light">
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Primary Goal</td>
-                      <td className="px-6 py-4">Improve organic discoverability across search results</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Improve how clearly business information can be retrieved and represented in AI-mediated answers</td>
+                      <td className="px-6 py-4">Improve organic discoverability across search engine results pages.</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Improve how clearly business information can be retrieved and represented in AI-mediated answers.</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Key Assets</td>
-                      <td className="px-6 py-4">Crawlable pages, technical foundations, useful content, links, and page authority</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">The same SEO foundations, plus concise answer-ready sections, explicit entities, structured data, and sourceable evidence</td>
+                      <td className="px-6 py-4">Crawlable pages, technical foundations, useful content, internal links, and authority.</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">The same SEO foundations, plus concise answer-ready sections, explicit entities, structured data, and sourceable evidence.</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Typical Outputs</td>
-                      <td className="px-6 py-4">Organic listings, rich results, local map visibility, and organic traffic</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">AI answer mentions, citations, summaries, and referral traffic where platforms support them</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium text-white/80">Optimisation Focus</td>
-                      <td className="px-6 py-4">Whole URL hierarchy, page layout, technical health, and backlinks</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Atomic answer passages, explicit entity graphs, and machine-readable schema</td>
+                      <td className="px-6 py-4">Organic listings, rich results, local map visibility, and organic search traffic.</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">AI answer mentions, citations, summaries, and referral traffic where platforms support external links.</td>
                     </tr>
                     <tr className="bg-white/[0.01]">
                       <td className="px-6 py-4 font-medium text-white/80">Important Caveat</td>
-                      <td className="px-6 py-4 text-white/60">Rankings are not guaranteed</td>
-                      <td className="px-6 py-4 text-amber-300/80 font-medium">Citations and recommendations are not guaranteed</td>
+                      <td className="px-6 py-4 text-white/60">Search rankings are not guaranteed.</td>
+                      <td className="px-6 py-4 text-amber-300/80 font-medium">Citations and system recommendations are not guaranteed.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -431,6 +435,11 @@ export default function AEODefinitionPage() {
                   <div key={idx} className={`p-5 bg-white/[0.02] border border-white/5 rounded-2xl space-y-2 ${idx === 4 ? 'md:col-span-2' : ''}`}>
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-mono font-bold text-aeo-cyan uppercase tracking-wider">{s.step} &bull; {s.title}</span>
+                      {idx === 0 && (
+                        <Link href="/diagnostic" className="text-[10px] text-aeo-cyan hover:underline font-mono">
+                          Run Diagnostic &rarr;
+                        </Link>
+                      )}
                       {idx === 3 && (
                         <Link href="/solutions/aeo-blueprint" className="text-[10px] text-aeo-purple hover:underline font-mono">
                           Explore Blueprint &rarr;
@@ -447,8 +456,8 @@ export default function AEODefinitionPage() {
                   <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">
                     AEObility Blueprint &rarr;
                   </Link>
-                  <Link href="/solutions/aeo-sprint" className="text-aeo-purple hover:underline">
-                    Book an AEO content and schema audit &rarr;
+                  <Link href="/contact" className="text-aeo-purple hover:underline">
+                    Book an AEO Content &amp; Schema Audit &rarr;
                   </Link>
                 </div>
               </div>
@@ -486,7 +495,7 @@ export default function AEODefinitionPage() {
                 </Link>
               </div>
 
-              <h2 className="text-xl font-bold text-white">Case Study: E-Commerce Structure & AI Answer Retrievability</h2>
+              <h2 className="text-xl font-bold text-white">Case Study: E-Commerce Structure &amp; AI Answer Retrievability</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-light text-white/70 pt-2">
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1.5">
@@ -503,7 +512,7 @@ export default function AEODefinitionPage() {
                 </div>
               </div>
               <p className="text-[11px] text-white/40 italic pt-1">
-                Note: Results vary based on domain authority, product category, and platform updates. See full case study for detailed methodology and measurement period.
+                Results vary; see methodology and measurement period in <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline">Baby Bento case study</Link>.
               </p>
             </div>
 
@@ -522,7 +531,7 @@ export default function AEODefinitionPage() {
                 />
               </div>
               <p className="text-[11px] text-white/50 italic mb-4 font-light">
-                Video Overview: A conceptual explanation of semantic retrieval, embedding models, and passage chunking. External platform retrieval algorithms evolve continuously.
+                Video Summary: Vince Baker outlines the core elements of answer-ready content and breaks down how AEObility’s fixed-scope audits evaluate local business entity signals.
               </p>
 
               <ul className="list-disc pl-5 space-y-2 text-sm text-white/70 font-light mb-4 marker:text-aeo-cyan">
@@ -544,7 +553,7 @@ export default function AEODefinitionPage() {
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
                   <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 1: Repeating Keywords Without Adding Useful Context</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
-                    Repeating keywords without building high-dimensional semantic relationships fails to satisfy vector similarity metrics in dense retrieval models.
+                    Repeating keywords without building clear semantic relationships fails to satisfy vector similarity metrics in dense retrieval models.
                   </p>
                 </div>
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
@@ -554,7 +563,7 @@ export default function AEODefinitionPage() {
                   </p>
                 </div>
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
-                  <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 3: Neglecting Local & Entity Boundaries</h3>
+                  <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 3: Neglecting Local &amp; Entity Boundaries</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
                     Omitting explicit geographic coordinates, operating regions, and verified service credentials weakens local retrieval accuracy.
                   </p>
@@ -570,7 +579,7 @@ export default function AEODefinitionPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="btn-primary">
-                  Let&apos;s Talk AEO
+                  Book an AEO Content &amp; Schema Audit
                 </Link>
                 <Link href="/book" className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-xs hover:bg-white/10 transition-all">
                   Jump on a Quick Call
@@ -582,7 +591,7 @@ export default function AEODefinitionPage() {
             </div>
           </div>
 
-          {/* Synchronised Accessible FAQ Section */}
+          {/* Synchronised Accessible FAQ Section (Server Rendered HTML) */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
             {faqData.map((faq, idx) => (
@@ -598,15 +607,25 @@ export default function AEODefinitionPage() {
             ))}
           </div>
 
-          {/* Semantic Connections (Corridor Links) */}
+          {/* Related Knowledge Resources (Cluster Support) */}
           <div className="border-t border-white/5 pt-6 mt-6 flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Semantic Connections</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan font-mono">Related Knowledge Resources</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium">
               <Link href="/services/aeo/comparison" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Is AEO just SEO with a new name? (SEO vs AEO vs GEO)
+                <strong className="text-white block mb-1">AEO vs SEO vs GEO Comparison</strong>
+                <span className="text-white/60 font-light">Explore the differences and overlapping signals across traditional search, answer engines, and generative search engines.</span>
               </Link>
               <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-cyan/20 hover:text-aeo-cyan transition-colors">
-                Best AEO Strategies: Making Your Business AI-Readable
+                <strong className="text-white block mb-1">Best AEO Strategies &amp; Procedures</strong>
+                <span className="text-white/60 font-light">Detailed technical procedures for making website architecture and data passages machine-readable.</span>
+              </Link>
+              <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-purple/20 hover:text-aeo-purple transition-colors">
+                <strong className="text-white block mb-1">Understanding RAG in Search</strong>
+                <span className="text-white/60 font-light">How Retrieval-Augmented Generation processes semantic chunks and extracts context for real-time answer generation.</span>
+              </Link>
+              <Link href="/knowledge-hub/articles/entity-authority-building" className="p-4 bg-white/[0.01] border border-white/5 rounded-xl hover:border-aeo-purple/20 hover:text-aeo-purple transition-colors">
+                <strong className="text-white block mb-1">Building Entity Authority for AI Search</strong>
+                <span className="text-white/60 font-light">Techniques for establishing corroborated entity identities and knowledge graph anchors across the web.</span>
               </Link>
             </div>
           </div>

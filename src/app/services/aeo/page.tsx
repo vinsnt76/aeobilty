@@ -331,7 +331,7 @@ export default function AEORootPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Looking for specialized solutions? Explore <Link href="/services/aeo/shopify" className="text-cyan-400 hover:underline font-medium">Shopify AEO Services</Link> or <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link>.
+              Looking for foundational concepts? Read our guide on <Link href="/services/aeo/definition" className="text-cyan-400 font-semibold hover:underline">What is AEO (Answer Engine Optimisation)?</Link> or explore specialized solutions like <Link href="/services/aeo/shopify" className="text-cyan-400 hover:underline font-medium">Shopify AEO Services</Link> and <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link>.
             </p>
           </section>
 

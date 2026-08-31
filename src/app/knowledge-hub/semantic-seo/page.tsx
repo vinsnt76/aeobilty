@@ -286,7 +286,7 @@ export default function SemanticSEONodePage() {
               AI Semantic <span className="text-gradient-aeo">SEO</span> &amp; Entity‑Based Layout Frameworks
             </h1>
             <p className="text-white/80 text-lg leading-relaxed font-light">
-              Semantic SEO is about helping search engines and AI understand what your business actually offers: not just the keywords on the page. Instead of matching strings, modern systems look at how your topics connect and how clearly your main ideas are expressed. Aligning with <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> reinforces this shift.
+              Semantic SEO is about helping search engines and AI understand what your business actually offers: not just the keywords on the page. Instead of matching strings, modern systems look at how your topics connect and how clearly your main ideas are expressed. Aligning with our <Link href="/services/aeo/definition" className="text-aeo-cyan hover:underline font-semibold">foundational AEO definition</Link> and <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> reinforces this shift.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-4 mt-6">

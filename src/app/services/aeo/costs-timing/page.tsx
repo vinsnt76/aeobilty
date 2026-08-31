@@ -336,7 +336,7 @@ export default function AEOPricingPage() {
 
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
                   <strong className="text-zinc-200 font-sans block text-[11px] mb-0.5">Best For:</strong>
-                  Businesses requiring an actionable, jargon-free 90-day technical roadmap before committing to developer implementation hours.
+                  Businesses requiring an actionable, jargon-free 90-day technical roadmap and structured <Link href="/services/aeo/definition" className="text-aeo-purple hover:underline">AEO entity definitions</Link> before committing to developer implementation hours.
                 </p>
               </div>
 
