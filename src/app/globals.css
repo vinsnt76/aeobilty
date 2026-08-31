@@ -157,6 +157,8 @@ body {
   .md\:flex {
     display: flex !important;
   }
+}
+
 @media print {
   nav, footer, button, .no-print, #companion-widget-toggle {
     display: none !important;
