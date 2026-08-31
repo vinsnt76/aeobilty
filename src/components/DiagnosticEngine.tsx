@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Circle, Loader2, Sparkles, AlertTriangle, ShieldCheck, MessageSquare, Compass, Cpu } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
 import { BRAND_PRICING_SCHEMA, calculateFactCoverageScore, BRAND_IDENTITY, PRICING_CONFIG } from '@/lib/brandFacts';
@@ -144,7 +144,7 @@ export default function DiagnosticEngine() {
           See How Your Business Appears Across ChatGPT, Perplexity &amp; Google AI
         </h1>
         <h2 className="text-zinc-300 text-sm sm:text-base font-light leading-relaxed font-serif">
-          Run a real-time diagnostic scan to uncover how AI search engines extract, summarise, and recommend your services to local Australian customers.
+          Check how your business is understood, cited, and recommended across ChatGPT, Perplexity, and Google AI.
         </h2>
       </div>
 
@@ -192,9 +192,37 @@ export default function DiagnosticEngine() {
                   What phrase do your ideal clients search? Identifies how AI assistants match user queries to your business.
                 </p>
               </div>
+
+              {/* 4-Pillar Live Audit Preview Strip (Placed ABOVE CTA) */}
+              <div className="col-span-12 p-4 bg-zinc-950/70 border border-white/10 rounded-xl space-y-2.5">
+                <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                  <span className="flex items-center gap-1.5 text-cyan-400 font-bold uppercase tracking-wider">
+                    <Cpu className="w-3.5 h-3.5" /> What This Scan Audits:
+                  </span>
+                  <span className="text-[10px] text-zinc-500 hidden sm:inline">4 Real-Time Diagnostic Dimensions</span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-mono text-zinc-300">
+                  <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 text-cyan-400 shrink-0" />
+                    <span>Schema Markup</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 text-purple-400 shrink-0" />
+                    <span>AI Citation Match</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                    <span>Local Entity Graph</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 text-amber-400 shrink-0" />
+                    <span>Answer Formatting</span>
+                  </div>
+                </div>
+              </div>
               
               {/* Submission Action & Tightly Coupled Trust Stack */}
-              <div className="col-span-12 pt-2 space-y-3">
+              <div className="col-span-12 pt-1 space-y-3">
                 <button
                   type="submit"
                   className="w-full group min-h-[48px] py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm sm:text-base transition-all shadow-[0_0_20px_rgba(6,182,212,0.25)] flex items-center justify-center gap-2 cursor-pointer"
@@ -204,8 +232,8 @@ export default function DiagnosticEngine() {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
 
-                {/* Law of Proximity Trust Anchor */}
-                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-zinc-400 font-mono text-center pt-1">
+                {/* Law of Proximity Trust Anchor with Mobile Breakpoint Clearance */}
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] text-zinc-400 font-mono text-center pt-1">
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Instant on-screen report
                   </span>
@@ -226,16 +254,16 @@ export default function DiagnosticEngine() {
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-left">
                 <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter website details</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Enter your website URL and primary customer search query.</p>
+                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter Business URL</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Add your website domain and primary local search phrase.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
-                  <span className="text-xs font-bold text-purple-400 font-mono block">2. Receive simulated AI Impression</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Our scanner reviews your local signals and generates your AI visibility impression.</p>
+                  <span className="text-xs font-bold text-purple-400 font-mono block">2. Live Signal Audit</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Real-time scan of your schema markup, local signals &amp; vector distance.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
-                  <span className="text-xs font-bold text-emerald-400 font-mono block">3. Instant On-Screen Reveal</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Review your factual grounding scores immediately on-screen, with optional interactive exploration via AI Bill.</p>
+                  <span className="text-xs font-bold text-emerald-400 font-mono block">3. Instant On-Screen Report</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Receive immediate on-screen scores + optional consultative exploration with AI Bill.</p>
                 </div>
               </div>
             </div>
