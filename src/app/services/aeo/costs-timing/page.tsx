@@ -11,26 +11,29 @@ import {
   Sparkles, 
   HelpCircle, 
   Layers, 
-  TrendingUp, 
+  Calendar, 
   Check, 
   ChevronRight,
   Target,
   FileText,
   Boxes,
-  FileCheck
+  FileCheck,
+  Code,
+  Terminal,
+  Activity
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How Much Does AEO Cost and What Do I Get? | AEObility',
-  description: 'Transparent pricing structures, Strategic Blueprint details ($995 AUD), Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
+  title: 'AEO Costs & Project Timing | AI Search Optimisation Pricing | AEObility',
+  description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
   alternates: {
     canonical: 'https://aeobility.com.au/services/aeo/costs-timing',
   },
   openGraph: {
-    title: 'How Much Does AEO Cost and What Do I Get? | AEObility',
-    description: 'Transparent pricing structures, Strategic Blueprint details ($995 AUD), Foundation Implementation ($3,195 AUD), credit-back terms, and delivery timelines for AEO services.',
+    title: 'AEO Costs & Project Timing | AI Search Optimisation Pricing | AEObility',
+    description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
     url: 'https://aeobility.com.au/services/aeo/costs-timing',
     type: 'website',
   },
@@ -176,14 +179,55 @@ export default function AEOPricingPage() {
     ]
   };
 
-  const keywords = [
-    { term: 'ai search', volume: '1,900', MoM: '0%', YoY: '+85%', comp: 'Medium', cpcLow: 'A$0.43', cpcHigh: 'A$3.54' },
-    { term: 'aeo', volume: '1,300', MoM: '+26%', YoY: '+140%', comp: 'Low', cpcLow: 'A$2.26', cpcHigh: 'A$16.43' },
-    { term: 'geo marketing', volume: '90', MoM: '+27%', YoY: '+367%', comp: 'Low', cpcLow: 'A$5.75', cpcHigh: 'A$26.52' },
-    { term: 'geo services', volume: '70', MoM: '-59%', YoY: '+40%', comp: 'Low', cpcLow: 'A$2.52', cpcHigh: 'A$10.92' },
-    { term: 'ai search marketing', volume: '50', MoM: '-75%', YoY: '-91%', comp: 'Low', cpcLow: 'A$1.20', cpcHigh: 'A$8.50' },
-    { term: 'aeo services', volume: '50', MoM: '-67%', YoY: '+50%', comp: 'Medium', cpcLow: 'A$13.97', cpcHigh: 'A$40.73' },
-    { term: 'aeo marketing', volume: '50', MoM: '+25%', YoY: '+150%', comp: 'Medium', cpcLow: 'A$11.39', cpcHigh: 'A$39.26' },
+  const ganttMilestones = [
+    {
+      sprintNumber: 1,
+      title: 'Sprint 1: Structured Data Refactoring',
+      weekLabel: 'Week 1',
+      weekIndex: 0,
+      color: 'from-aeo-cyan/20 to-aeo-cyan/40 border-aeo-cyan text-aeo-cyan',
+      barColor: 'bg-aeo-cyan',
+      deliverables: [
+        'DOM Schema Graph Nesting (Organization, Service, Offer, LocalBusiness)',
+        'Wikidata Node Reference Connections & Absolute Canonical URIs'
+      ]
+    },
+    {
+      sprintNumber: 2,
+      title: 'Sprint 2: Atomic Answer Block Engineering',
+      weekLabel: 'Week 2',
+      weekIndex: 1,
+      color: 'from-aeo-purple/20 to-aeo-purple/40 border-aeo-purple text-aeo-purple',
+      barColor: 'bg-aeo-purple',
+      deliverables: [
+        'High-Salience Block Content Compiling (80–120 Word Heuristics)',
+        'Primacy Attention Window Optimisation across Priority H2 Headings'
+      ]
+    },
+    {
+      sprintNumber: 3,
+      title: 'Sprint 3: Semantic Internal Linking Framework',
+      weekLabel: 'Week 3',
+      weekIndex: 2,
+      color: 'from-emerald-500/20 to-emerald-500/40 border-emerald-500 text-emerald-400',
+      barColor: 'bg-emerald-500',
+      deliverables: [
+        'Bidirectional Lattice Anchoring Network between Commercial & Concept Nodes',
+        'Authority Routing Equity Dispersal with Contextual Anchor Text'
+      ]
+    },
+    {
+      sprintNumber: 4,
+      title: 'Sprint 4: Citation & Provenance Alignment',
+      weekLabel: 'Week 4',
+      weekIndex: 3,
+      color: 'from-amber-500/20 to-amber-500/40 border-amber-500 text-amber-400',
+      barColor: 'bg-amber-500',
+      deliverables: [
+        'Source Verification Link Logging & First-Party Evidence Grounding',
+        'Telemetric Verification Run, Validation Reports & Complete Handover Notes'
+      ]
+    }
   ];
 
   return (
@@ -360,7 +404,7 @@ export default function AEOPricingPage() {
                   Limited capacity • Selected projects
                 </div>
                 <Link
-                  href="/contact"
+                  href="/contact?inquiry=custom-application"
                   className="group flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/10 transition-all text-center"
                 >
                   <span>Apply for Custom Scope</span>
@@ -411,45 +455,105 @@ export default function AEOPricingPage() {
           </p>
         </section>
 
-        {/* Market Indicators Reference Table (Collapsible / Non-Intrusive) */}
-        <section className="bg-zinc-950/60 border border-white/5 rounded-2xl p-5 sm:p-6 space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 font-mono flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-aeo-cyan" />
-              <span>Market Context: AI Search &amp; AEO Search Demand Indicators</span>
-            </h3>
-            <span className="text-[10px] text-zinc-500 font-mono">Australian Market Search Data</span>
+        {/* Structured Gantt Chart Timeline Component (Replaces Legacy Keyword Table) */}
+        <section aria-label="Foundation Implementation Gantt Chart Timeline" className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-7 space-y-6 shadow-2xl overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-[10px] text-aeo-cyan font-mono font-semibold">
+                <Calendar className="w-3 h-3" />
+                <span>Execution Schedule</span>
+              </div>
+              <h2 className="text-base sm:text-lg font-bold text-white font-soehne-breit">
+                Comprehensive 4-Week Foundation Implementation Gantt Chart Timeline
+              </h2>
+            </div>
+            <span className="text-[11px] font-mono text-zinc-400">Fixed-Scope • Milestone Driven</span>
           </div>
-          <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-            Commercial search behaviour is shifting rapidly as users transition toward conversational search queries:
-          </p>
-          <div className="overflow-x-auto pt-2">
-            <table className="w-full text-left text-xs font-mono border-collapse">
-              <thead>
-                <tr className="border-b border-white/10 text-zinc-400 font-semibold">
-                  <th className="py-2.5 px-2">Keyword Term</th>
-                  <th className="py-2.5 px-2">Monthly Vol</th>
-                  <th className="py-2.5 px-2">MoM Growth</th>
-                  <th className="py-2.5 px-2">YoY Growth</th>
-                  <th className="py-2.5 px-2">Competition</th>
-                  <th className="py-2.5 px-2">Low CPC (AUD)</th>
-                  <th className="py-2.5 px-2">High CPC (AUD)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5 text-zinc-300">
-                {keywords.map((kw, i) => (
-                  <tr key={i} className="hover:bg-white/[0.02] transition-colors">
-                    <td className="py-2 px-2 font-medium text-white">{kw.term}</td>
-                    <td className="py-2 px-2">{kw.volume}</td>
-                    <td className={`py-2 px-2 ${kw.MoM.startsWith('+') ? 'text-emerald-400' : kw.MoM.startsWith('-') ? 'text-rose-400' : ''}`}>{kw.MoM}</td>
-                    <td className={`py-2 px-2 ${kw.YoY.startsWith('+') ? 'text-emerald-400' : kw.YoY.startsWith('-') ? 'text-rose-400' : ''}`}>{kw.YoY}</td>
-                    <td className="py-2 px-2">{kw.comp}</td>
-                    <td className="py-2 px-2">{kw.cpcLow}</td>
-                    <td className="py-2 px-2">{kw.cpcHigh}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          {/* Interactive Visual Timeline Track */}
+          <div className="space-y-4">
+            {/* Week Column Header Row */}
+            <div className="hidden md:grid grid-cols-12 gap-3 text-xs font-mono text-zinc-400 border-b border-white/5 pb-2">
+              <div className="col-span-5 font-bold uppercase tracking-wider text-white/80">Weeks &amp; Deployment Milestones</div>
+              <div className="col-span-7 grid grid-cols-4 gap-2 text-center">
+                <div className="p-1 rounded bg-white/5 border border-white/5 text-aeo-cyan font-bold">[ WEEK 1 ]</div>
+                <div className="p-1 rounded bg-white/5 border border-white/5 text-aeo-purple font-bold">[ WEEK 2 ]</div>
+                <div className="p-1 rounded bg-white/5 border border-white/5 text-emerald-400 font-bold">[ WEEK 3 ]</div>
+                <div className="p-1 rounded bg-white/5 border border-white/5 text-amber-400 font-bold">[ WEEK 4 ]</div>
+              </div>
+            </div>
+
+            {/* Milestones List & Gantt Bars */}
+            <div className="space-y-3.5">
+              {ganttMilestones.map((m) => (
+                <div 
+                  key={m.sprintNumber}
+                  className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all space-y-3"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+                    {/* Left: Sprint Description & Deliverables */}
+                    <div className="md:col-span-5 space-y-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold text-white">{m.title}</span>
+                        <span className="md:hidden text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-zinc-300">
+                          {m.weekLabel}
+                        </span>
+                      </div>
+                      <ul className="text-xs text-zinc-400 font-serif space-y-1 list-disc pl-4">
+                        {m.deliverables.map((d, i) => (
+                          <li key={i} className="leading-relaxed">{d}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Right: Gantt Visual Bar */}
+                    <div className="md:col-span-7 grid grid-cols-4 gap-2 items-center">
+                      {[0, 1, 2, 3].map((weekCol) => (
+                        <div key={weekCol} className="h-9 rounded-lg bg-black/40 border border-white/5 flex items-center justify-center p-1 relative overflow-hidden">
+                          {weekCol === m.weekIndex ? (
+                            <div className={`w-full h-full rounded-md ${m.barColor} text-black font-mono font-extrabold text-[10px] flex items-center justify-center tracking-wider shadow-sm animate-pulse`}>
+                              ACTIVE
+                            </div>
+                          ) : (
+                            <span className="text-[9px] font-mono text-zinc-700 select-none">···</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Clean Text-Based ASCII Representation for Engineering Verification */}
+          <div className="space-y-2 pt-2 border-t border-white/5">
+            <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span className="flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5 text-aeo-cyan" />
+                <span>Text-Based Architecture Gantt Specification</span>
+              </span>
+              <span className="text-[10px] text-zinc-500">ASCII Architecture Layout</span>
+            </div>
+            <pre className="p-4 rounded-xl bg-black/80 border border-white/10 text-[11px] font-mono text-zinc-300 leading-relaxed overflow-x-auto whitespace-pre">
+{`WEEKS & DEPLOYMENT MILESTONES             [ WEEK 1 ]   [ WEEK 2 ]   [ WEEK 3 ]   [ WEEK 4 ]
+─────────────────────────────────────────────────────────────────────────────────────────
+Sprint 1: Structured Data Refactoring     ██████████
+  - DOM Schema Graph Nesting              [Active]
+  - Wikidata Node Reference Connections
+
+Sprint 2: Atomic Answer Block Engineering              ██████████
+  - High-Salience Block Content Compiling              [Active]
+  - Primacy Attention Window Optimisation
+
+Sprint 3: Semantic Internal Linking Framework                       ██████████
+  - Bidirectional Lattice Anchoring Network                          [Active]
+  - Authority Routing Equity Dispersal
+
+Sprint 4: Citation & Provenance Alignment                                         ██████████
+  - Source Verification Link Logging                                              [Active]
+  - Telemetric Verification Run & Handover                                        [Active]`}
+            </pre>
           </div>
         </section>
 
@@ -484,7 +588,7 @@ export default function AEOPricingPage() {
                 Can AEObility support larger or more complex implementations?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Yes. For multi-location brands, extensive ecommerce catalogues, or multi-entity networks, custom implementation may be available by application. Every engagement is assessed after Blueprint review to confirm strategic fit, technical readiness, delivery scope, and capacity. You can <Link href="/contact" className="text-aeo-cyan hover:underline">apply for custom implementation with our team</Link>.
+                Yes. For multi-location brands, extensive ecommerce catalogues, or multi-entity networks, custom implementation may be available by application. Every engagement is assessed after Blueprint review to confirm strategic fit, technical readiness, delivery scope, and capacity. You can <Link href="/contact?inquiry=custom-application" className="text-aeo-cyan hover:underline">apply for custom implementation with our team</Link>.
               </p>
             </div>
 
@@ -522,7 +626,7 @@ export default function AEOPricingPage() {
             </Link>
 
             <Link 
-              href="/contact" 
+              href="/contact?inquiry=custom-application" 
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-emerald-400/40 hover:text-emerald-400 transition-all space-y-1 block"
             >
               <div className="font-bold text-white">Custom Implementation Application</div>
