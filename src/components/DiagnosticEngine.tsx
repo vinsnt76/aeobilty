@@ -40,7 +40,7 @@ export const DIAGNOSTIC_FAQ_ITEMS = [
   },
   {
     q: "What happens after I run the scan?",
-    a: "You receive an instant on-screen diagnostic report showing your 0–100 AI Readiness Score, simulated AI impression, and factual grounding breakdown. You can also chat directly with AI Bill to explore specific remediation steps."
+    a: "You receive an instant on-screen diagnostic report showing your 0–100 AI Visibility Score, simulated AI impression, and factual grounding breakdown. You can also chat directly with AI Bill to explore specific remediation steps."
   },
   {
     q: "Do I need technical skills to understand the report?",
@@ -55,42 +55,42 @@ export const DIAGNOSTIC_FAQ_ITEMS = [
 export const DIAGNOSTIC_DIMENSIONS = [
   {
     id: "dim-1",
-    title: "1. Technical & Ingestion Structure",
+    title: "1. Crawlability & Technical Access",
     icon: Globe,
     badge: "Layer 01",
-    benefit: "Checks if AI search crawlers can read your pages without hitting structural roadblocks.",
+    benefit: "Can search engines and AI systems access and interpret important pages?",
     details: "Inspects raw HTML DOM structures, analyzes text-to-code density, verifies heading hierarchies (H1/H2/H3), evaluates Core Web Vitals (LCP/CLS), and checks robots.txt access rights for major LLM scraping bots (GPTBot, ClaudeBot, PerplexityBot)."
   },
   {
     id: "dim-2",
-    title: "2. Entity & Local Clarity",
+    title: "2. Business & Location Clarity",
     icon: Compass,
     badge: "Layer 02",
-    benefit: "Verifies that your business name, address, phone number, and service areas match consistently across the web.",
+    benefit: "Is your business identity, location and service area consistent?",
     details: "Audits NAP consistency, geographic coordinate grounding, and regional service boundary signals against external map nodes and semantic knowledge graphs to detect regional footprint gaps."
   },
   {
     id: "dim-3",
-    title: "3. Structured Data Coverage",
+    title: "3. Structured Service Information",
     icon: FileCode,
     badge: "Layer 03",
-    benefit: "Reviews the hidden code that translates your service list into direct facts for machine reading.",
+    benefit: "Does your website give machines reliable facts about your services?",
     details: "Audits and validates nested JSON-LD schema graphs, verifying interconnected relationships between @type: Organization, LocalBusiness, and Service arrays with Wikidata sameAs entity disambiguation."
   },
   {
     id: "dim-4",
-    title: "4. Answer Readiness & RAG Survival",
+    title: "4. Answer-Ready Content",
     icon: Layers,
     badge: "Layer 04",
-    benefit: "Tests how easily AI tools can extract short, direct text blocks to answer buyer questions.",
+    benefit: "Can AI systems extract clear, useful answers to customer questions?",
     details: "Runs a simulated Retrieval-Augmented Generation (RAG) loop to test how passages survive token context limits, sentence boundary chunking, and transformer positional attention bias (the opening 150 characters under H2/H3 headings)."
   },
   {
     id: "dim-5",
-    title: "5. Trust & Citation Readiness",
+    title: "5. Trust & Citation Signals",
     icon: ShieldCheck,
     badge: "Layer 05",
-    benefit: "Checks for corporate credentials and verified authorship links that prove your business is a trusted source.",
+    benefit: "Are there enough credibility signals to support confident recommendations?",
     details: "Audits schema records for corporate identifiers (such as Australian ABN registration) and explicit linkage to verified person graphs (e.g. /vince-baker#author) to anchor machine trust."
   }
 ];
@@ -212,7 +212,7 @@ export default function DiagnosticEngine() {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open_bill_with_query', {
         detail: {
-          query: `Analyse diagnostic scan for ${url} (Search Query: "${intent}")`,
+          query: `Analyse diagnostic scan for ${url} (Customer Question: "${intent}")`,
           mode: 'telemetry'
         }
       }));
@@ -223,13 +223,13 @@ export default function DiagnosticEngine() {
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
       
-      {/* Hero Block - Compact Above-The-Fold Layout */}
+      {/* Hero Block - Outcome Focused Above-The-Fold Layout */}
       <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">
         <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
-          See How Your Business Appears Across ChatGPT, Perplexity &amp; Google AI
+          See Whether AI Search Recommends Your Business
         </h1>
         <h2 className="text-zinc-300 text-xs sm:text-sm font-normal leading-relaxed font-serif">
-          Discover citation gaps, test structured schema, and see where AI answer engines recommend your competitors instead.
+          Run a free AI Visibility Scan to discover whether ChatGPT, Perplexity and Google AI understand, trust and surface your business for the services you provide.
         </h2>
       </div>
 
@@ -243,7 +243,7 @@ export default function DiagnosticEngine() {
               {/* Field 1: Website URL */}
               <div className="col-span-12 space-y-1">
                 <label htmlFor="diag-url-input" className="block text-xs sm:text-sm font-semibold text-white">
-                  Website URL
+                  Your website address
                 </label>
                 <input
                   id="diag-url-input"
@@ -255,14 +255,14 @@ export default function DiagnosticEngine() {
                   className="w-full bg-black/70 border border-white/20 hover:border-white/30 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
                 />
                 <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
-                  Enter your domain (with or without https://). Checks structured data, location signals, and service formatting.
+                  Enter your main website address. We&apos;ll check the signals AI search tools use to understand your business.
                 </p>
               </div>
 
-              {/* Field 2: Primary Customer Search Query */}
+              {/* Field 2: What Would a Customer Ask AI? */}
               <div className="col-span-12 space-y-1">
                 <label htmlFor="diag-intent-input" className="block text-xs sm:text-sm font-semibold text-white">
-                  Primary customer search query
+                  What would a customer ask AI to find you?
                 </label>
                 <input
                   id="diag-intent-input"
@@ -270,38 +270,38 @@ export default function DiagnosticEngine() {
                   required
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
-                  placeholder='e.g. "solar installer Perth"'
+                  placeholder='e.g. "best electrician in Dianella" or "physiotherapist Perth"'
                   className="w-full bg-black/70 border border-white/20 hover:border-white/30 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
                 />
                 <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
-                  See if AI tools recommend your business when a local customer asks this exact question.
+                  Enter a typical question or search phrase. We&apos;ll test how well your website answers that need.
                 </p>
               </div>
 
-              {/* 4-Pillar Live Audit Preview Strip (Compact Pre-CTA Affordance) */}
+              {/* 4-Pillar Live Audit Preview Strip */}
               <div className="col-span-12 p-2.5 sm:p-3 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1.5">
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <span className="flex items-center gap-1.5 text-cyan-400 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
-                    <Cpu className="w-3.5 h-3.5" /> What This Scan Audits:
+                    <Cpu className="w-3.5 h-3.5" /> Your free scan checks four AI visibility signals:
                   </span>
-                  <span className="text-[10px] text-zinc-400 hidden sm:inline">4 Real-Time Diagnostic Dimensions</span>
+                  <span className="text-[10px] text-zinc-400 hidden sm:inline">Real-Time Analysis</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[11px] font-mono text-zinc-200">
                   <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-cyan-400 shrink-0" />
-                    <span className="truncate">Schema Markup</span>
+                    <span className="truncate">Structured Data</span>
                   </div>
                   <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-purple-400 shrink-0" />
-                    <span className="truncate">AI Citation Match</span>
+                    <span className="truncate">Local Consistency</span>
                   </div>
                   <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span className="truncate">Local Entity Graph</span>
+                    <span className="truncate">Answer Content</span>
                   </div>
                   <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-amber-400 shrink-0" />
-                    <span className="truncate">Answer Formatting</span>
+                    <span className="truncate">Trust Signals</span>
                   </div>
                 </div>
               </div>
@@ -317,16 +317,16 @@ export default function DiagnosticEngine() {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
 
-                {/* Law of Proximity Trust Anchor with Mobile Breakpoint Clearance */}
+                {/* Law of Proximity Trust Anchor */}
                 <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] text-zinc-300 font-mono text-center pt-0.5">
                   <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Instant on-screen report
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Instant on-screen results
                   </span>
                   <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> 100% Free &bull; No credit card
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Free to run &bull; No credit card
                   </span>
                   <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Australian data
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> No login or site access needed
                   </span>
                 </div>
               </div>
@@ -339,16 +339,16 @@ export default function DiagnosticEngine() {
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-left">
                 <div className="bg-black/40 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter Business URL</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Add your website domain and primary local search phrase.</p>
+                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Add your website &amp; question</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Enter your website address and the question a prospective customer would ask when looking for your service.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-purple-400 font-mono block">2. Live Signal Audit</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">We evaluate your schema, citations, and content formatting to test how LLMs extract your answers.</p>
+                  <span className="text-xs font-bold text-purple-400 font-mono block">2. We check your AI signals</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">The scan reviews business clarity, structured data, answer formatting and trust signals.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-emerald-400 font-mono block">3. Instant On-Screen Report</span>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Get your instant visibility score, citation gaps, and immediate action items on-screen.</p>
+                  <span className="text-xs font-bold text-emerald-400 font-mono block">3. See your results instantly</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Get an AI Visibility Score, the most important gaps, and practical next actions on screen.</p>
                 </div>
               </div>
             </div>
@@ -564,7 +564,7 @@ export default function DiagnosticEngine() {
       </div>
 
       {/* ============================================================================== */}
-      {/* WHAT THE SCAN CHECKS (5 Diagnostic Dimensions Accordion) */}
+      {/* WHAT THE SCAN CHECKS (A Closer Look at What We Assess) */}
       {/* ============================================================================== */}
       <section className="w-full max-w-3xl mt-12 space-y-6 text-left">
         <div className="space-y-2 text-center sm:text-left">
@@ -573,10 +573,10 @@ export default function DiagnosticEngine() {
             <span>Inspection Framework</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            What the Scan Checks: The Five Dimensions
+            A Closer Look at What We Assess
           </h2>
           <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-            Our diagnostic pipeline audits five core layers required for generative answer engines to extract and cite your business accurately.
+            Our diagnostic pipeline audits the five core layers required for AI search engines to interpret and recommend your business accurately.
           </p>
         </div>
 
