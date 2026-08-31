@@ -251,16 +251,22 @@ export default function ServicesPage() {
     {
       title: "Answer Engine Optimisation (AEO)",
       icon: Bot,
-      tagline: "Be the answer LLMs retrieve.",
-      desc: "AEO Services for Perth, Australia SMBs. Optimise your digital footprint so modern LLMs (ChatGPT, Claude, Perplexity) easily extract, cite, and recommend your services. Read our guide on Answer Engine Optimisation Core Principles for technical mechanics.",
-      bullets: ["Structured schema markup", "Neural vector alignment", "Semantic question architecture"],
-      ctaText: "Explore AEO Services",
+      isFeatured: true,
+      badge: "Canonical Service Hub",
+      tagline: "Be the answer AI engines cite.",
+      priceTag: "Micro-Sprints from $495 ex. GST",
+      desc: "Canonical AEO Services for Australian SMBs. Restructure your digital footprint so modern LLMs (ChatGPT, Perplexity, Gemini) extract, cite, and recommend your services with confidence.",
+      bullets: ["Nested JSON-LD schema graphs", "Atomic answer block rewrites", "Multi-engine citation alignment"],
+      ctaText: "Explore AEO Services & Pricing",
       href: "/services/aeo"
     },
     {
       title: "GEO Marketing",
       icon: MapPin,
+      isFeatured: false,
+      badge: "Local Map Authority",
       tagline: "Put your business on the map.",
+      priceTag: "Sprint Packages Available",
       desc: "GEO Marketing for local service businesses in Perth, Australia. Ensure high visibility across Google Maps, Apple Maps, and immediate regional intent queries.",
       bullets: ["Optimised pins & citations", "GBP profile authority", "Local entity link building"],
       ctaText: "Explore GEO Marketing",
@@ -269,7 +275,10 @@ export default function ServicesPage() {
     {
       title: "AI Search Strategy",
       icon: Search,
-      tagline: "Own the conversational search corridors.",
+      isFeatured: false,
+      badge: "Conversational Strategy",
+      tagline: "Own conversational search corridors.",
+      priceTag: "Strategic Advisory",
       desc: "AI Search Strategy for Australian SMBs. Design a long-term strategy to capture conversational queries, aligning your brand with complex search parameters.",
       bullets: ["Intent-to-product mapping", "LLM indexing checks", "Competitor gap analysis"],
       ctaText: "Explore AI Search Strategy",
@@ -349,18 +358,39 @@ export default function ServicesPage() {
                   <Link
                     key={idx}
                     href={layer.href}
-                    className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-aeo-cyan/30 transition-all flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-aeo-cyan/5"
+                    className={`p-6 rounded-2xl transition-all flex flex-col justify-between group cursor-pointer shadow-lg ${
+                      layer.isFeatured
+                        ? 'bg-zinc-950/90 border border-cyan-500/40 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] ring-1 ring-cyan-500/20'
+                        : 'bg-white/[0.02] border border-white/5 hover:border-white/20 hover:shadow-aeo-cyan/5'
+                    }`}
                   >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <div className="p-3 rounded-xl bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan group-hover:bg-aeo-cyan/20 transition-colors">
+                        <div className={`p-3 rounded-xl border transition-colors ${
+                          layer.isFeatured
+                            ? 'bg-cyan-950/60 border-cyan-500/30 text-cyan-300'
+                            : 'bg-aeo-cyan/10 border-aeo-cyan/20 text-aeo-cyan group-hover:bg-aeo-cyan/20'
+                        }`}>
                           <IconComponent className="w-6 h-6" />
                         </div>
-                        <ArrowRight className="w-5 h-5 text-white/25 group-hover:text-aeo-cyan group-hover:translate-x-1 transition-all" />
+                        <span className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded border ${
+                          layer.isFeatured
+                            ? 'bg-cyan-950/80 border-cyan-500/40 text-cyan-300'
+                            : 'bg-white/5 border-white/10 text-zinc-400'
+                        }`}>
+                          {layer.badge}
+                        </span>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors">{layer.title}</h3>
-                        <p className="text-xs text-aeo-cyan font-medium uppercase tracking-wider mt-1">{layer.tagline}</p>
+                        <h3 className={`text-xl font-bold transition-colors ${
+                          layer.isFeatured ? 'text-white group-hover:text-cyan-300' : 'text-white group-hover:text-aeo-cyan'
+                        }`}>
+                          {layer.title}
+                        </h3>
+                        <div className="flex items-center justify-between mt-1">
+                          <p className="text-xs text-aeo-cyan font-medium uppercase tracking-wider">{layer.tagline}</p>
+                          <span className="text-[11px] font-mono text-zinc-400">{layer.priceTag}</span>
+                        </div>
                       </div>
                       <p className="text-sm text-white/60 font-light leading-relaxed">{layer.desc}</p>
                     </div>

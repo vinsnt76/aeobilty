@@ -38,7 +38,8 @@ import {
   Compass,
   DollarSign,
   Activity,
-  Target
+  Target,
+  Bot
 } from 'lucide-react';
 
 export const AEO_CANONICAL_INTERNAL_LINKS = [
@@ -49,7 +50,7 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/services/aeo/comparison",
-    anchorText: "AEO vs SEO Comparison",
+    anchorText: "AEO vs SEO Comparison Matrix",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -59,17 +60,17 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/services/aeo/local-business",
-    anchorText: "Local Business AEO",
+    anchorText: "Local Business Visibility",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
     targetSlug: "/knowledge-hub/aeo",
-    anchorText: "AEO Core Principles & Mechanics",
+    anchorText: "AEO Core Principles & Machine Mechanics",
     entityRelation: "http://schema.org/subjectOf"
   },
   {
-    targetSlug: "/knowledge-hub/articles/positional-bias-in-retrieval",
-    anchorText: "Positional Bias Audit & Mitigation",
+    targetSlug: "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
+    anchorText: "Multi-Engine AI Retrieval Guide",
     entityRelation: "http://schema.org/subjectOf"
   },
   {
@@ -78,19 +79,24 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
     entityRelation: "http://schema.org/subjectOf"
   },
   {
-    targetSlug: "/solutions/aeo-sprint",
-    anchorText: "focused micro-sprints",
-    entityRelation: "http://schema.org/isRelatedTo"
-  },
-  {
-    targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
-    entityRelation: "http://schema.org/isRelatedTo"
-  },
-  {
-    targetSlug: "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
-    anchorText: "Fix AI Brand Hallucinations & Evidence Gaps",
+    targetSlug: "/knowledge-hub/articles/structured-data-query-fan-out",
+    anchorText: "Structured Data & Query Fan-Out",
     entityRelation: "http://schema.org/subjectOf"
+  },
+  {
+    targetSlug: "/knowledge-hub/articles/positional-bias-in-retrieval",
+    anchorText: "Positional Bias Audit & Mitigation",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
+    targetSlug: "/knowledge-hub/articles/entity-authority-building",
+    anchorText: "Entity Authority Guide",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
+    targetSlug: "/brand-facts",
+    anchorText: "Canonical Brand Facts & SKU Pricing Registry",
+    entityRelation: "http://schema.org/isRelatedTo"
   }
 ];
 
@@ -637,6 +643,133 @@ export default function AEORootPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* 2.5 Multi-Engine Retrieval Capability Module */}
+          <section id="multi-engine-capabilities" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+                <Bot className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Multi-Engine Citation Readiness</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                Engineered for Every Major AI Answer Engine
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif">
+                Different AI models evaluate content through different retrieval mechanisms. We structure your assets so each engine extracts clean, uncompromised facts.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Perplexity Pro Card */}
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300">
+                <div className="space-y-4">
+                  <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded border border-cyan-500/40 bg-cyan-950/20 text-cyan-300">
+                    Deep Research &amp; Synthesis
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Perplexity Pro Search</h3>
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed mt-1">
+                      Extracts numerical data, pricing tables, and factual comparisons to construct research briefs with attributed footnotes.
+                    </p>
+                  </div>
+                  <div className="space-y-2 pt-2 border-t border-white/5">
+                    <strong className="text-[11px] text-white block font-sans">Sprint Deliverables:</strong>
+                    <ul className="space-y-1.5 text-xs text-zinc-300 font-serif">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Structured HTML tables</strong> with explicit dimensions &amp; pricing</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Direct provenance links</strong> connecting claims to case studies</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
+                  <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider block">Citation Outcome</span>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Direct footnote attribution linking searchers to your primary service page.</p>
+                </div>
+              </div>
+
+              {/* ChatGPT Search Card */}
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl flex flex-col justify-between space-y-5 hover:border-purple-500/40 transition-all duration-300">
+                <div className="space-y-4">
+                  <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded border border-purple-500/40 bg-purple-950/20 text-purple-300">
+                    Conversational Intent Matching
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">ChatGPT Search &amp; Operator</h3>
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed mt-1">
+                      Matches conversational queries directly against verified business facts and schema catalog offerings.
+                    </p>
+                  </div>
+                  <div className="space-y-2 pt-2 border-t border-white/5">
+                    <strong className="text-[11px] text-white block font-sans">Sprint Deliverables:</strong>
+                    <ul className="space-y-1.5 text-xs text-zinc-300 font-serif">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Atomic Q&amp;A blocks</strong> positioned directly beneath H2 headers</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Nested Schema catalogs</strong> linking verified deliverables</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
+                  <span className="text-[10px] font-mono text-purple-300 uppercase tracking-wider block">Citation Outcome</span>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Direct brand recommendation when users ask for service providers.</p>
+                </div>
+              </div>
+
+              {/* Google AI Overviews Card */}
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-400/50 transition-all duration-300">
+                <div className="space-y-4">
+                  <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded border border-cyan-400/50 bg-cyan-950/30 text-cyan-200">
+                    Knowledge Graph Salience
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Google AI Overviews &amp; Gemini</h3>
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed mt-1">
+                      Evaluates relational triples against external authority registries (ABN, ASIC, Wikidata) for high-salience passage extraction.
+                    </p>
+                  </div>
+                  <div className="space-y-2 pt-2 border-t border-white/5">
+                    <strong className="text-[11px] text-white block font-sans">Sprint Deliverables:</strong>
+                    <ul className="space-y-1.5 text-xs text-zinc-300 font-serif">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Triple-linked JSON-LD</strong> referencing Wikidata entity nodes</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Passage extraction tuning</strong> to prevent context window dilution</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
+                  <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider block">Citation Outcome</span>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Dominant passage extraction in AI Overview snapshots above organic SERPs.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center pt-2">
+              <p className="text-xs text-zinc-400 font-serif">
+                Learn how each search bot extracts and parses website data in our technical guide:{' '}
+                <Link
+                  href="/knowledge-hub/articles/optimising-for-different-ai-search-engines"
+                  className="text-cyan-400 hover:underline font-medium"
+                >
+                  How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content
+                </Link>
+                .
+              </p>
             </div>
           </section>
 
