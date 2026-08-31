@@ -157,8 +157,31 @@ body {
   .md\:flex {
     display: flex !important;
   }
-  .md\:block {
-    display: block !important;
+@media print {
+  nav, footer, button, .no-print, #companion-widget-toggle {
+    display: none !important;
+  }
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .bg-zinc-950, .bg-black, .bg-zinc-900, .bg-zinc-950\/90, .bg-zinc-950\/80, .bg-zinc-950\/70, .bg-white\/\[0\.02\] {
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+    box-shadow: none !important;
+  }
+  .text-white, .text-zinc-200, .text-zinc-300, .text-zinc-400 {
+    color: #1f2937 !important;
+  }
+  .text-aeo-cyan, .text-cyan-400, .text-cyan-300 {
+    color: #0891b2 !important;
+  }
+  .text-amber-400, .text-amber-300 {
+    color: #b45309 !important;
+  }
+  .text-emerald-400, .text-emerald-300 {
+    color: #047857 !important;
   }
 }
 

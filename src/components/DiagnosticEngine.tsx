@@ -20,7 +20,8 @@ import {
   Zap,
   Eye,
   ChevronDown,
-  CircleHelp
+  CircleHelp,
+  Printer
 } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
@@ -489,19 +490,19 @@ export default function DiagnosticEngine() {
               <div className="bg-amber-950/15 p-5 rounded-2xl border border-amber-500/30 space-y-2 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-400 font-mono uppercase tracking-wider font-bold">Current AI Perception</span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Unoptimised</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">Brand-Led, Not Category-Led</span>
                 </div>
                 <p className="text-sm text-white/90 font-serif leading-relaxed">
-                  {telemetry.insightResult?.diagnosis?.currentState || "AI search models treat your business as a generic provider without explicit target-location priority."}
+                  {telemetry.insightResult?.diagnosis?.currentState || "AI models recognise your brand and core products, but are less likely to cite your business as a leading destination for broader high-intent category searches."}
                 </p>
               </div>
               <div className="bg-emerald-950/15 p-5 rounded-2xl border border-emerald-500/30 space-y-2 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-emerald-400 font-mono uppercase tracking-wider font-bold">Target Visibility State</span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">AEO Target</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">AEO Target</span>
                 </div>
                 <p className="text-sm text-white/90 font-serif leading-relaxed">
-                  {telemetry.insightResult?.diagnosis?.desiredState || "AI engines recommend your business as the definitive, verified answer for high-intent customer queries in your service area."}
+                  {telemetry.insightResult?.diagnosis?.desiredState || "AI engines cite and recommend your business as the definitive, verified answer for high-intent customer queries across your service area."}
                 </p>
               </div>
             </div>
@@ -520,25 +521,25 @@ export default function DiagnosticEngine() {
                 </span>
               </div>
 
-              {/* 1-2-3 Priority Roadmap Steps */}
+              {/* 1-2-3-4 Priority Roadmap Steps */}
               <div className="space-y-3 font-serif">
                 <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">1</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Anchor Regional Entity Schema</h4>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Define &amp; Anchor Category Entities</h4>
                   </div>
                   <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Inject nested <code className="text-cyan-300 font-mono">LocalBusiness</code> and <code className="text-cyan-300 font-mono">serviceArea</code> schema nodes tied to target regional Wikidata <code className="text-cyan-300 font-mono">sameAs</code> references.
+                    Establish category-level relevance and inject nested <code className="text-cyan-300 font-mono">LocalBusiness</code> and <code className="text-cyan-300 font-mono">serviceArea</code> schema nodes linked to verified Wikidata <code className="text-cyan-300 font-mono">sameAs</code> records.
                   </p>
                 </div>
 
                 <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">2</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Publish Location-Specific Evidence</h4>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Strengthen Commercial Topic Coverage</h4>
                   </div>
                   <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Deploy structured case studies and proof points directly addressing target regional Australian customer queries.
+                    Deploy structured category, comparison, FAQ, and buying-guide content answering the specific questions Australian customers ask.
                   </p>
                 </div>
 
@@ -549,6 +550,16 @@ export default function DiagnosticEngine() {
                   </div>
                   <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
                     Restructure core service sections with direct, high-density 150-character answer blocks positioned immediately under H2 and H3 tags.
+                  </p>
+                </div>
+
+                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">4</span>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Execute 10-Day Implementation Roadmap</h4>
+                  </div>
+                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
+                    Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.
                   </p>
                 </div>
               </div>
@@ -707,9 +718,19 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* Subordinated Restart Action */}
-            <div className="text-center pt-2">
+            {/* Subordinated Utility Actions */}
+            <div className="flex flex-wrap items-center justify-center gap-4 text-center pt-2">
               <button
+                type="button"
+                onClick={() => window.print()}
+                className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-cyan-300 transition-colors font-mono cursor-pointer"
+              >
+                <Printer className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Print / Save report as PDF</span>
+              </button>
+              <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+              <button
+                type="button"
                 onClick={() => {
                   setStep('INPUT');
                   setTelemetry(null);
