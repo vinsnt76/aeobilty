@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText } from 'lucide-react';
 
 export const metadata = {
-  title: "What is AEO in Digital Marketing? Meaning & Concepts — AEObility",
+  title: "What is AEO in Digital Marketing? Meaning & Concepts | AEObility",
   description: "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/definition",
@@ -34,7 +34,7 @@ export default function AEODefinitionPage() {
     },
     {
       question: "What is semantic chunking?",
-      answer: "Semantic chunking is the technique of breaking web content into concise, self-contained units of meaning that convey complete facts without losing context. Clean chunking reduces model hallucination and maximizes retrieval confidence during RAG processing."
+      answer: "Semantic chunking is the technique of breaking web content into concise, self-contained units of meaning that convey complete facts without losing context. Clean chunking reduces model hallucination and maximises retrieval confidence during RAG processing."
     },
     {
       question: "What are embeddings and why are they important?",
@@ -86,51 +86,62 @@ export default function AEODefinitionPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "DefinedTerm",
+        "@id": "https://aeobility.com.au/services/aeo/definition#definedterm",
+        "name": "Answer Engine Optimisation",
+        "alternateName": "AEO",
+        "description": "The technical engineering process of structuring and formatting digital content to maximise its retrieval accuracy, semantic salience, and citation probability across AI search engines and conversational retrieval models.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "@id": "https://www.wikidata.org/wiki/Q124314457",
+          "name": "Wikidata Knowledge Base"
+        },
+        "sameAs": "https://www.wikidata.org/wiki/Q124314457"
+      },
+      {
+        "@type": "TechArticle",
         "@id": "https://aeobility.com.au/services/aeo/definition#article",
-        "mainEntityOfPage": {
-          "@id": "https://aeobility.com.au/services/aeo/definition#webpage"
+        "isPartOf": {
+          "@type": "WebPage",
+          "@id": "https://aeobility.com.au/services/aeo/definition#webpage",
+          "url": "https://aeobility.com.au/services/aeo/definition",
+          "name": "What is AEO in Digital Marketing? Meaning & Concepts"
         },
         "headline": "What is AEO in Digital Marketing? Meaning & Concepts",
         "description": "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
         "inLanguage": "en-AU",
+        "mainEntityOfPage": "https://aeobility.com.au/services/aeo/definition",
+        "datePublished": "2026-08-31T10:56:41+08:00",
+        "dateModified": "2026-08-31T10:56:41+08:00",
         "author": {
-          "@type": "Organization",
-          "name": "AEObility"
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/#vince-baker",
+          "name": "Vince Baker",
+          "url": "https://aeobility.com.au/about/freelance-digital-specialist-perth"
         },
         "publisher": {
-          "@type": "Organization",
+          "@type": "ProfessionalService",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://aeobility.com.au/logo.png"
-          }
+          "url": "https://aeobility.com.au"
         },
         "about": [
           {
-            "@type": "Thing",
-            "@id": "https://aeobility.com.au/services/aeo#service",
-            "name": "Answer Engine Optimisation",
-            "description": "AEO is the practice of structuring business information so AI systems can read it, understand it, and cite it in generated answers."
-          },
-          {
-            "@type": "Thing",
-            "name": "Semantic Retrieval",
-            "description": "AI systems use embeddings and vector similarity to match concepts rather than keywords."
-          },
-          {
-            "@type": "Service",
-            "@id": "https://aeobility.com.au/services/aeo#service",
-            "name": "AEO Services",
-            "serviceType": "Answer Engine Optimisation",
-            "provider": {
-              "@id": "https://aeobility.com.au/#organization"
-            }
+            "@id": "https://aeobility.com.au/services/aeo/definition#definedterm"
           }
         ],
-        "mainEntity": {
-          "@id": "https://aeobility.com.au/services/aeo#service"
-        },
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Vector Space",
+            "sameAs": "https://www.wikidata.org/wiki/Q189569"
+          },
+          {
+            "@type": "Thing",
+            "name": "Retrieval-Augmented Generation",
+            "sameAs": "https://www.wikidata.org/wiki/Q124314457"
+          }
+        ],
         "articleSection": [
           "What is AEO and why does it matter?",
           "Why AEO matters for your business",
@@ -171,18 +182,24 @@ export default function AEODefinitionPage() {
           {
             "@type": "ListItem",
             "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
             "name": "Services",
             "item": "https://aeobility.com.au/services"
           },
           {
             "@type": "ListItem",
-            "position": 2,
+            "position": 3,
             "name": "AEO Services",
             "item": "https://aeobility.com.au/services/aeo"
           },
           {
             "@type": "ListItem",
-            "position": 3,
+            "position": 4,
             "name": "What is AEO (Definition)",
             "item": "https://aeobility.com.au/services/aeo/definition"
           }
@@ -232,8 +249,8 @@ export default function AEODefinitionPage() {
       <Navbar />
       <Breadcrumbs />
 
-      {/* Main Container */}
-      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 w-full flex flex-col gap-8">
+      {/* Main Container with Defensive Bottom Padding */}
+      <main className="flex-grow max-w-5xl mx-auto px-6 py-12 pb-32 sm:pb-24 w-full flex flex-col gap-8">
         <section className="flex flex-col gap-8">
           <div>
             {/* Main Header Illustration */}
@@ -252,18 +269,18 @@ export default function AEODefinitionPage() {
               What is AEO in Digital Marketing? <span className="text-gradient-aeo">Meaning & Concepts</span>
             </h1>
 
-            {/* STEP 2: Executive Summary Answer Block */}
+            {/* Primacy Token Density Direct-Answer Hero Block */}
             <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl mb-8 shadow-lg">
               <p className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider mb-2 flex items-center gap-1.5">
                 <Cpu className="w-4 h-4 text-aeo-cyan" />
-                <span>Executive Summary &bull; AEO Definition</span>
+                <span>Executive Summary &bull; Primacy Definition</span>
               </p>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Answer Engine Optimisation (AEO) is the technical discipline of engineering and structuring web content into machine-readable context chunks, verified entities, and JSON-LD schema so conversational AI engines and RAG retrieval pipelines can accurately digest, index, and cite your business in generated answers.
+                Answer Engine Optimisation (AEO) is the technical engineering process of structuring and formatting digital content to maximise its retrieval accuracy across AI search engines, conversational assistants, and large language models. While traditional SEO targets legacy lexical keyword matching to rank full web pages, AEO focuses on dense vector spaces and semantic chunking to ensure explicit text passages are directly extracted, synthesised, and cited as ground-truth answers. AEObility deploys fixed-scope implementation frameworks to align website data with modern Retrieval-Augmented Generation (RAG) pipelines.
               </p>
             </div>
 
-            <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light mb-8">
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl font-light mb-8">
               Answer Engine Optimisation (AEO) modifies raw content chunks to align with conversational query architectures. To deploy this framework effectively inside production systems, businesses utilise expert <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to structure context blocks and secure consistent engine attributions.
             </p>
 
@@ -292,7 +309,7 @@ export default function AEODefinitionPage() {
                 <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">1. Search has shifted from pages to passages</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
                   <p>Traditional SEO ranks whole pages and URLs. AI systems extract small, self-contained passages instead of digesting an entire document.</p>
-                  <p>To be included in AI-generated answers, your content requires modular answer blocks that can be easily parsed and synthesized into conversational responses.</p>
+                  <p>To be included in AI-generated answers, your content requires modular answer blocks that can be easily parsed and synthesised into conversational responses.</p>
                 </div>
               </div>
 
