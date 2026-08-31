@@ -431,17 +431,17 @@ export default function DiagnosticEngine() {
               <div className="flex flex-wrap items-center justify-between gap-2 pb-1 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-aeo-cyan" />
-                  <span className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Simulated AI Impression</span>
+                  <span className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Your AI Visibility Scan</span>
                 </div>
                 <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1">
                   <AlertTriangle className="w-3 h-3 text-amber-400" />
-                  Local Footprint Gap
+                  Target-Market Relevance Gap
                 </span>
               </div>
               
               <div className="space-y-3 font-serif text-left sm:text-center">
                 <p className="text-lg sm:text-xl text-white font-medium leading-snug">
-                  &quot;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to local search intent. You are visible nationwide, but invisible to local buyers."}&quot;
+                  &quot;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to target local search intent. You are visible broadly, but underrepresented for high-intent local queries."}&quot;
                 </p>
                 <div className="space-y-1.5 pt-1">
                   {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
@@ -459,7 +459,7 @@ export default function DiagnosticEngine() {
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Unoptimised</span>
                 </div>
                 <p className="text-sm text-white/90 font-serif leading-relaxed">
-                  {telemetry.insightResult?.diagnosis?.currentState || "AI search models treat you as a generic national provider without local geographic priority."}
+                  {telemetry.insightResult?.diagnosis?.currentState || "AI search models treat your business as a generic provider without explicit target-location priority."}
                 </p>
               </div>
               <div className="bg-emerald-950/15 p-5 rounded-2xl border border-emerald-500/30 space-y-2 shadow-sm">
@@ -468,7 +468,7 @@ export default function DiagnosticEngine() {
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">AEO Target</span>
                 </div>
                 <p className="text-sm text-white/90 font-serif leading-relaxed">
-                  {telemetry.insightResult?.diagnosis?.desiredState || "AI engines recommend your business as the definitive, trusted answer for high-intent local customer queries."}
+                  {telemetry.insightResult?.diagnosis?.desiredState || "AI engines recommend your business as the definitive, verified answer for high-intent customer queries in your service area."}
                 </p>
               </div>
             </div>
@@ -488,7 +488,7 @@ export default function DiagnosticEngine() {
               </div>
 
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                We test whether ChatGPT, Perplexity, and Google AI recite your exact business facts, services, and pricing without guessing or hallucinating.
+                We assess public website signals that help AI search systems identify, verify, and accurately represent your business facts, services, and locations.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
@@ -541,8 +541,8 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
-              <div className="pt-2 flex justify-between items-center text-xs text-zinc-400 border-t border-white/5">
-                <span>Verification Authority:</span>
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-zinc-400 border-t border-white/5 font-serif">
+                <span>Note: AI search engines are non-deterministic multi-variable systems. This scan assesses machine-readable indexation and structured data readiness.</span>
                 <Link
                   href="/brand-facts"
                   onClick={() => {
@@ -552,9 +552,9 @@ export default function DiagnosticEngine() {
                       coverage_ratio: 0.95
                     });
                   }}
-                  className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1"
+                  className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1 shrink-0"
                 >
-                  <span>View Canonical Brand Ledger</span>
+                  <span>View Brand Ledger</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -567,7 +567,7 @@ export default function DiagnosticEngine() {
               <div className="p-3 bg-cyan-950/60 border border-cyan-500/30 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
                 <span className="text-amber-300 font-bold flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  Diagnostic Finding: 1 Critical Entity Gap Identified
+                  Priority finding: target-location evidence needs anchoring
                 </span>
                 <span className="text-cyan-300">Recommended: Resolve via 10-Day Blueprint</span>
               </div>

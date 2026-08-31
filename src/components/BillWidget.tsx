@@ -106,7 +106,7 @@ export default function BillWidget() {
   }, [isOpen]);
 
 
-  // 0. Gated Lead-Capture State (Triggers on 3rd User Turn)
+  // 0. Gated Lead-Capture State (Triggers on 4th User Turn)
   const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('aeo_lead_captured') === 'true';
@@ -156,9 +156,9 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
-  // Calculate User Turn Count for Lead Gating (Triggers on 3rd turn)
+  // Calculate User Turn Count for Lead Gating (Triggers on 4th user turn)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = userTurnCount >= 3 && !isLeadCaptured;
+  const isGated = userTurnCount >= 4 && !isLeadCaptured;
 
   const handleLeadCaptureSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -324,14 +324,19 @@ export default function BillWidget() {
       }
     }
 
-    // Dynamic telemetry payload extraction from localStorage or state
+    // Dynamic structured telemetry payload extraction from localStorage or state
     let activeAudit = storedTelemetry?.result;
+    let targetWebsite = storedTelemetry?.url;
+    let targetIntent = storedTelemetry?.intent;
+
     if (typeof window !== 'undefined') {
       const raw = localStorage.getItem('aeo_telemetry_latest');
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
           activeAudit = parsed.result || activeAudit;
+          targetWebsite = parsed.url || targetWebsite;
+          targetIntent = parsed.intent || targetIntent;
         } catch (err) {
           console.error("Failed parsing localStorage audit payload:", err);
         }
@@ -345,13 +350,27 @@ export default function BillWidget() {
       {
         body: {
           intent: isTelemetryMode ? 'telemetry' : 'general',
-          audit: isTelemetryMode ? (activeAudit || {
-            entityClarityScore: 42,
-            citationSharePercent: 12,
-            retrievalConfidence: 'Low',
-            hallucinationRisk: 'High',
-            gaps: ['Missing fragment identifiers', 'Unstructured paragraph layouts']
-          }) : null
+          audit: isTelemetryMode ? {
+            targetWebsite: targetWebsite || 'Target Site',
+            targetQuery: targetIntent || 'AI Search Marketing',
+            readinessScore: activeAudit?.readinessScore ?? 77,
+            proximityScore: activeAudit?.proximityScore ?? 24,
+            status: (activeAudit?.readinessScore ?? 77) < 80 ? 'Needs Attention' : 'Optimal',
+            findings: activeAudit?.insightResult || {
+              firstImpression: "Technical foundation is clean, but local entity signals need anchoring for target search queries.",
+              diagnosis: {
+                currentState: "AI search models treat you as a generic national provider without local geographic priority.",
+                desiredState: "AI engines recommend your business as the definitive, trusted answer for high-intent local customer queries."
+              }
+            },
+            evidenceBreakdown: {
+              identityCoverage: 1.0,
+              factCoverage: 0.95,
+              relationshipCoverage: 0.92,
+              evidenceCoverage: 0.90
+            },
+            limitations: "Assesses public website signals that help AI search systems identify, verify, and represent your business. AI engines are non-deterministic multi-variable systems."
+          } : null
         }
       }
     );
@@ -692,17 +711,21 @@ export default function BillWidget() {
       {isTelemetryMode && storedTelemetry?.result && (
         <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono">
           <div className="flex justify-between items-center text-amber-400 font-bold tracking-wider uppercase text-[9px]">
-            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-amber-400" /> Live Telemetry Ingestion</span>
-            <span className="text-zinc-300 font-normal truncate max-w-[170px]">{storedTelemetry.url || 'Target Site'}</span>
+            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-amber-400" /> Scan Context Loaded</span>
+            <span className="text-zinc-300 font-normal truncate max-w-[170px]">
+              {storedTelemetry.url ? new URL(storedTelemetry.url.startsWith('http') ? storedTelemetry.url : `https://${storedTelemetry.url}`).hostname.replace('www.', '') : 'Target Site'}
+            </span>
           </div>
           <div className="grid grid-cols-2 gap-2 pt-0.5">
             <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
-              <span className="text-zinc-400 text-[9px] block">Overall AI Readiness</span>
-              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 67}/100</span>
+              <span className="text-zinc-400 text-[9px] block">AI Visibility Score</span>
+              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 77}/100</span>
+              <span className="text-[9px] text-amber-400/80 block mt-0.5">Needs attention</span>
             </div>
             <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
-              <span className="text-zinc-400 text-[9px] block">Local Entity Proximity</span>
-              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.proximityScore ?? 23}%</span>
+              <span className="text-zinc-400 text-[9px] block">Target Location Grounding</span>
+              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.proximityScore ?? 24}%</span>
+              <span className="text-[9px] text-zinc-400 block mt-0.5">Query vs local intent</span>
             </div>
           </div>
         </div>
