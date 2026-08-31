@@ -424,58 +424,59 @@ export default function DiagnosticEngine() {
             </button>
           </div>
         ) : step === 'SCORE_REVEAL' && telemetry && (
-          <div className="space-y-8 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="space-y-8 relative z-10 pt-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
             
-            <div className="text-center space-y-6 pb-8 border-b border-white/10">
+            {/* Simulated AI Impression Summary */}
+            <div className="max-w-2xl mx-auto bg-zinc-950/90 border border-aeo-cyan/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(0,205,216,0.15)] space-y-4 text-left">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-1 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-aeo-cyan" />
+                  <span className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Simulated AI Impression</span>
+                </div>
+                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+                  <AlertTriangle className="w-3 h-3 text-amber-400" />
+                  Local Footprint Gap
+                </span>
+              </div>
               
-              {/* Simulated AI Impression Summary */}
-              <div className="max-w-xl mx-auto bg-black/40 border border-aeo-cyan/30 rounded-2xl p-6 shadow-[0_0_30px_rgba(0,205,216,0.1)]">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <Sparkles className="w-5 h-5 text-aeo-cyan" />
-                  <h3 className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Simulated AI Impression</h3>
-                </div>
-                <div className="space-y-4 font-serif">
-                  <p className="text-xl text-white/90 font-medium text-center">
-                    &quot;{telemetry.insightResult?.firstImpression?.headline}&quot;
-                  </p>
-                  <div className="space-y-2">
-                    {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
-                      <p key={i} className="text-sm text-white/70 text-center">{r}</p>
-                    ))}
-                  </div>
+              <div className="space-y-3 font-serif text-left sm:text-center">
+                <p className="text-lg sm:text-xl text-white font-medium leading-snug">
+                  &quot;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to local search intent. You are visible nationwide, but invisible to local buyers."}&quot;
+                </p>
+                <div className="space-y-1.5 pt-1">
+                  {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
+                    <p key={i} className="text-xs sm:text-sm text-zinc-300">{r}</p>
+                  ))}
                 </div>
               </div>
-
-              {/* Strategic Evaluation */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-left font-serif">
-                <div className="bg-black/30 p-5 rounded-xl border border-white/5 space-y-3">
-                  <h4 className="text-xs text-white/50 font-mono uppercase tracking-wider">Current Visibility State</h4>
-                  <p className="text-sm text-white/80 leading-relaxed">{telemetry.insightResult?.diagnosis?.currentState}</p>
-                </div>
-                <div className="bg-black/30 p-5 rounded-xl border border-white/5 space-y-3">
-                  <h4 className="text-xs text-white/50 font-mono uppercase tracking-wider">Target Discovery State</h4>
-                  <p className="text-sm text-white/80 leading-relaxed">{telemetry.insightResult?.diagnosis?.desiredState}</p>
-                </div>
-              </div>
-
-              {/* Chat with AI Bill Interactive Button */}
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button
-                  type="button"
-                  onClick={openAiBill}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)] cursor-pointer"
-                >
-                  <MessageSquare className="w-5 h-5 text-black" />
-                  <span>Talk to AI Bill About Findings</span>
-                </button>
-              </div>
-
             </div>
 
-            {/* Brand Fact Coverage Ratio Card */}
-            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 shadow-xl space-y-4 text-left">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+            {/* Dual-Column Perception vs Target Comparison Card */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+              <div className="bg-amber-950/15 p-5 rounded-2xl border border-amber-500/30 space-y-2 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-amber-400 font-mono uppercase tracking-wider font-bold">Current AI Perception</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Unoptimised</span>
+                </div>
+                <p className="text-sm text-white/90 font-serif leading-relaxed">
+                  {telemetry.insightResult?.diagnosis?.currentState || "AI search models treat you as a generic national provider without local geographic priority."}
+                </p>
+              </div>
+              <div className="bg-emerald-950/15 p-5 rounded-2xl border border-emerald-500/30 space-y-2 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-emerald-400 font-mono uppercase tracking-wider font-bold">Target Visibility State</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">AEO Target</span>
+                </div>
+                <p className="text-sm text-white/90 font-serif leading-relaxed">
+                  {telemetry.insightResult?.diagnosis?.desiredState || "AI engines recommend your business as the definitive, trusted answer for high-intent local customer queries."}
+                </p>
+              </div>
+            </div>
+
+            {/* Brand Fact Coverage 4-Metric Progress Bars */}
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2.5">
                   <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
                   <h3 className="text-base font-bold text-white font-soehne-breit">
                     Canonical Fact Grounding &amp; Coverage
@@ -486,34 +487,57 @@ export default function DiagnosticEngine() {
                 </span>
               </div>
 
-              <p className="text-xs text-white/70 font-serif leading-relaxed">
-                Measures the mathematical variance between declared brand facts (corporate identities, services, pricing matrices) and what conversational retrieval engines observe during active query simulation.
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                We test whether ChatGPT, Perplexity, and Google AI recite your exact business facts, services, and pricing without guessing or hallucinating.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Identity</span>
-                  <span className="text-lg font-bold text-white">
-                    {Math.round(factCoverage.identityCoverage * 100)}%
-                  </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+                {/* Identity */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-zinc-300 font-mono font-bold">Identity</span>
+                    <span className="text-base font-bold text-white">{Math.round(factCoverage.identityCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-white h-full rounded-full" style={{ width: `${Math.round(factCoverage.identityCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Core business name, location &amp; credentials</p>
                 </div>
-                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Terminology</span>
-                  <span className="text-lg font-bold text-aeo-cyan">
-                    {Math.round(factCoverage.factCoverage * 100)}%
-                  </span>
+
+                {/* Terminology */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-cyan-400 font-mono font-bold">Terminology</span>
+                    <span className="text-base font-bold text-aeo-cyan">{Math.round(factCoverage.factCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.factCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Exact service offerings &amp; pricing clarity</p>
                 </div>
-                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Topology</span>
-                  <span className="text-lg font-bold text-aeo-purple">
-                    {Math.round(factCoverage.relationshipCoverage * 100)}%
-                  </span>
+
+                {/* Topology */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-purple-400 font-mono font-bold">Topology</span>
+                    <span className="text-base font-bold text-aeo-purple">{Math.round(factCoverage.relationshipCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-purple-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.relationshipCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Entity relationships &amp; service areas</p>
                 </div>
-                <div className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-400 uppercase font-mono block">Evidence</span>
-                  <span className="text-lg font-bold text-emerald-400">
-                    {Math.round(factCoverage.evidenceCoverage * 100)}%
-                  </span>
+
+                {/* Evidence */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-emerald-400 font-mono font-bold">Evidence</span>
+                    <span className="text-base font-bold text-emerald-400">{Math.round(factCoverage.evidenceCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.evidenceCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Case studies, credentials &amp; citations</p>
                 </div>
               </div>
 
@@ -534,44 +558,78 @@ export default function DiagnosticEngine() {
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
-
-              <div className="pt-2 text-[11px] text-zinc-400 font-serif border-t border-white/5 leading-relaxed">
-                If your telemetry scan flags a critical delta between your expected and observed parameters, explore our strategic overview on how to <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-aeo-cyan hover:underline font-medium">fix AI brand hallucinations and evidence gaps</Link> to stabilise your brand&apos;s data graph.
-              </div>
             </div>
 
-            {/* Strategic Blueprint Upsell Block (Placed Below Workflow / Results) */}
-            <div className="bg-black/40 border border-white/10 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <Compass className="w-5 h-5 text-aeo-cyan" />
-                  <h3 className="text-lg font-bold text-white">The AEObility Blueprint</h3>
-                  <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
-                    ${bpstratPrice} AUD ex. GST
-                  </span>
+            {/* Diagnostic Bridge & High-Conversion Blueprint CTA */}
+            <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/30 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5 text-left">
+              
+              {/* Explicit Bridge Summary (Law of Proximity) */}
+              <div className="p-3 bg-cyan-950/60 border border-cyan-500/30 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
+                <span className="text-amber-300 font-bold flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  Diagnostic Finding: 1 Critical Entity Gap Identified
+                </span>
+                <span className="text-cyan-300">Recommended: Resolve via 10-Day Blueprint</span>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Compass className="w-5 h-5 text-aeo-cyan" />
+                    <h3 className="text-lg font-bold text-white font-soehne-breit">The AEObility Blueprint</h3>
+                    <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-0.5 rounded">
+                      ${bpstratPrice} AUD ex. GST
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                    A fixed-scope, 10-day roadmap to anchor your entity graph, fix local signals, and get your business recommended across ChatGPT, Perplexity, and Google AI. No lock-ins.
+                  </p>
+                  
+                  {/* Reassurance Anchor */}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-zinc-400 font-mono pt-1">
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 10-business-day delivery
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 100% credited to sprints
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> Zero contract lock-in
+                    </span>
+                  </div>
                 </div>
-                <p className="text-xs text-white/70 font-serif leading-relaxed">
-                  Our background telemetry scan tracks real-time vector proximity data to determine your platform&apos;s exact machine readability score. If structural gaps are detected across your entity boundaries, they can be immediately refactored via our fixed-price <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO packages and pricing</Link> execution sprints.
-                </p>
+
+                <div className="w-full md:w-auto shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5">
+                  <Link
+                    href="/solutions/aeo-blueprint"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
+                  >
+                    <span>Get The AEObility Blueprint</span>
+                    <ArrowRight className="w-4 h-4 text-zinc-950" />
+                  </Link>
+
+                  <button
+                    type="button"
+                    onClick={openAiBill}
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-colors cursor-pointer"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Discuss Findings with AI Bill</span>
+                  </button>
+                </div>
               </div>
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm hover:bg-zinc-800 cursor-pointer"
-              >
-                <span>View Full Blueprint</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400" />
-              </Link>
             </div>
 
+            {/* Subordinated Restart Action */}
             <div className="text-center pt-2">
               <button
                 onClick={() => {
                   setStep('INPUT');
                   setTelemetry(null);
                 }}
-                className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors border border-white/10 cursor-pointer font-mono"
+                className="text-xs text-zinc-400 hover:text-white transition-colors underline cursor-pointer font-mono"
               >
-                Run Another Free Scan
+                &larr; Run another free scan with a different URL
               </button>
             </div>
 
