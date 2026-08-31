@@ -135,13 +135,14 @@ export default function DiagnosticEngine() {
     setUrl(normalizedUrl);
     setIntent(rawIntent.trim());
     
-    // Dispatch scan started event
+    // Dispatch scan started telemetry event
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('close_companion_widget'));
       window.dispatchEvent(new Event('aeo_scan_started'));
-      trackGaEvent('aeo_scan_started', {
-        event_category: 'diagnostic_engine',
+      trackGaEvent('diagnostic_scan_initiated', {
+        event_category: 'diagnostic_funnel',
         target_url: normalizedUrl,
+        intent_query: rawIntent.trim(),
       });
     }
 
@@ -190,14 +191,18 @@ export default function DiagnosticEngine() {
       }
       setTelemetry(data);
       
-      // Dispatch events to notify AI Bill (CompanionWidget)
+      // Dispatch events to notify AI Bill (CompanionWidget) & telemetry
       if (typeof window !== 'undefined') {
         localStorage.setItem('aeo_telemetry_latest', JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim(), result: data }));
         window.dispatchEvent(new Event('aeo_scan_completed'));
         window.dispatchEvent(new Event('aeo_telemetry_updated'));
-        trackGaEvent('aeo_scan_completed', {
-          event_category: 'diagnostic_engine',
+        trackGaEvent('diagnostic_scan_completed', {
+          event_category: 'diagnostic_funnel',
+          target_url: normalizedUrl,
+          intent_query: rawIntent.trim(),
           overall_score: data.readinessScore ?? 0,
+          readiness_score: data.readinessScore ?? 0,
+          proximity_score: data.proximityScore ?? 0,
           passed_checks: data.simulations ? data.simulations.filter((s: SimulationRun) => s.survived).length : (data.engineeredFeatures ? 1 : 0),
           failed_checks: data.simulations ? data.simulations.filter((s: SimulationRun) => !s.survived).length : 0,
         });
@@ -209,6 +214,12 @@ export default function DiagnosticEngine() {
       const cleanMsg = (rawMsg.includes('Unexpected token') || rawMsg.includes('JSON') || rawMsg.includes('An error'))
         ? 'We were unable to reach or analyze this website. Please verify the URL is online and publicly accessible.'
         : rawMsg;
+
+      trackGaEvent('diagnostic_scan_failed', {
+        event_category: 'diagnostic_funnel',
+        target_url: normalizedUrl,
+        error_message: cleanMsg,
+      });
 
       setTelemetry({ 
         readinessScore: 0,
@@ -237,6 +248,12 @@ export default function DiagnosticEngine() {
   };
 
   const openAiBill = () => {
+    trackGaEvent('bill_widget_opened', {
+      event_category: 'bill_assistant',
+      source: 'results_cta',
+      target_url: url,
+      intent_query: intent,
+    });
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open_bill_with_query', {
         detail: {
@@ -595,6 +612,14 @@ export default function DiagnosticEngine() {
 
                   <Link
                     href="/solutions/aeo-blueprint"
+                    onClick={() => {
+                      trackGaEvent('blueprint_cta_clicked', {
+                        event_category: 'commercial_conversion',
+                        source: 'diagnostic_priority_plan',
+                        target_url: url,
+                        price_aud: bpstratPrice,
+                      });
+                    }}
                     className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
                   >
                     <span>Get The AEObility Blueprint</span>
@@ -722,7 +747,14 @@ export default function DiagnosticEngine() {
             <div className="flex flex-wrap items-center justify-center gap-4 text-center pt-2">
               <button
                 type="button"
-                onClick={() => window.print()}
+                onClick={() => {
+                  trackGaEvent('diagnostic_report_printed', {
+                    event_category: 'diagnostic_funnel',
+                    target_url: url,
+                    format: 'pdf_print',
+                  });
+                  window.print();
+                }}
                 className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-cyan-300 transition-colors font-mono cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5 text-cyan-400" />

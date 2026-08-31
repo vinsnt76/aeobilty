@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { TelemetryResult } from '@/lib/telemetry/types';
 import BillAvatar from '@/components/BillAvatar';
+import { trackGaEvent } from '@/lib/gtag';
 
 // Explicit window type guard for GA4 gtag to prevent ESLint 'any' leaks
 declare global {
@@ -160,6 +161,18 @@ export default function BillWidget() {
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
   const isGated = userTurnCount >= 4 && !isLeadCaptured;
 
+  const hasLoggedGateRef = useRef(false);
+  useEffect(() => {
+    if (isGated && !hasLoggedGateRef.current) {
+      hasLoggedGateRef.current = true;
+      trackGaEvent('bill_gate_reached_turn_4', {
+        event_category: 'bill_conversion_funnel',
+        turn_count: 4,
+        target_url: storedTelemetry?.url || '',
+      });
+    }
+  }, [isGated, storedTelemetry]);
+
   const handleLeadCaptureSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmittingLead || !leadForm.email.trim()) return;
@@ -187,13 +200,14 @@ export default function BillWidget() {
         setIsReportDispatched(true);
         if (typeof window !== 'undefined') {
           localStorage.setItem('aeo_lead_captured', 'true');
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'bill_lead_captured', {
-              event_category: 'AI Telemetry Gating',
-              email: leadForm.email
-            });
-          }
         }
+        trackGaEvent('lead_report_dispatched', {
+          event_category: 'bill_conversion_funnel',
+          target_url: targetWebsite,
+          email_domain: leadForm.email.split('@')[1] || 'unknown',
+          readiness_score: storedTelemetry?.result?.readinessScore ?? 95,
+          proximity_score: storedTelemetry?.result?.proximityScore ?? 24,
+        });
       }
     } catch (err) {
       console.error("Lead submission error:", err);
@@ -601,6 +615,14 @@ export default function BillWidget() {
               </p>
               <Link
                 href="/solutions/aeo-blueprint"
+                onClick={() => {
+                  trackGaEvent('blueprint_cta_clicked', {
+                    event_category: 'commercial_conversion',
+                    source: 'bill_closure_card',
+                    target_url: storedTelemetry?.url || '',
+                    price_aud: 995,
+                  });
+                }}
                 className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] text-center cursor-pointer"
               >
                 <span>View The AEObility Blueprint ($995 AUD)</span>
