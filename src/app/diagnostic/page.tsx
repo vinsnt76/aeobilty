@@ -138,7 +138,7 @@ export default function DiagnosticPage() {
       />
       <Navbar />
       
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-28 sm:pb-20 flex flex-col items-center">
+      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center">
         <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
           <DiagnosticEngine />
         </Suspense>
