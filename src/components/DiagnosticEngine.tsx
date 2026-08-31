@@ -154,9 +154,9 @@ export default function DiagnosticEngine() {
       body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim() }),
     }).then(res => res.json());
 
-    // Visual progress for user feedback
+    // Visual progress for user feedback (~5 sec total)
     for (let i = 0; i < processingSteps.length; i++) {
-      await new Promise(r => setTimeout(r, 900 + Math.random() * 500));
+      await new Promise(r => setTimeout(r, 800));
       setProcessingStage(i + 1);
     }
 
@@ -356,28 +356,45 @@ export default function DiagnosticEngine() {
         )}
 
         {step === 'PROCESSING' && (
-          <div className="space-y-6 relative z-10 py-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Sparkles className="w-6 h-6 text-aeo-cyan animate-pulse" />
-              <h2 className="text-2xl font-bold text-white font-soehne-breit">Scanning Digital Signals...</h2>
+          <div className="space-y-6 relative z-10 py-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <Sparkles className="w-6 h-6 text-aeo-cyan animate-pulse shrink-0" />
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">Scanning Digital Signals...</h2>
+                  <p className="text-xs text-zinc-400 font-serif">Testing machine readability &amp; citation readiness</p>
+                </div>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/40 text-xs font-mono text-cyan-300 self-start sm:self-auto shadow-sm">
+                <Loader2 className="w-3.5 h-3.5 animate-spin text-cyan-400 shrink-0" />
+                <span>Please wait for the scan to complete (~5 sec)</span>
+              </div>
+            </div>
+
+            {/* Visual Scan Progress Bar */}
+            <div className="w-full bg-black/60 rounded-full h-1.5 border border-white/10 overflow-hidden">
+              <div
+                className="bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-300 h-full transition-all duration-700 ease-out"
+                style={{ width: `${Math.min(100, Math.round(((processingStage) / processingSteps.length) * 100))}%` }}
+              />
             </div>
             
-            <div className="space-y-3.5">
+            <div className="space-y-3 pt-1">
               {processingSteps.map((stepName, idx) => {
                 const isActive = idx === processingStage;
                 const isDone = idx < processingStage;
                 const isPending = idx > processingStage;
 
                 return (
-                  <div key={idx} className={`flex items-center gap-3 transition-opacity duration-500 ${isPending ? 'opacity-30' : 'opacity-100'}`}>
+                  <div key={idx} className={`flex items-center gap-3 transition-opacity duration-300 ${isPending ? 'opacity-30' : 'opacity-100'}`}>
                     {isDone ? (
-                      <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" />
                     ) : isActive ? (
-                      <Loader2 className="w-5 h-5 text-aeo-cyan animate-spin shrink-0" />
+                      <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 text-aeo-cyan animate-spin shrink-0" />
                     ) : (
-                      <Circle className="w-5 h-5 text-white/20 shrink-0" />
+                      <Circle className="w-4 h-4 sm:w-5 sm:h-5 text-white/20 shrink-0" />
                     )}
-                    <span className={`text-base font-serif ${isDone ? 'text-white/70' : isActive ? 'text-white font-medium' : 'text-white/40'}`}>
+                    <span className={`text-sm sm:text-base font-serif ${isDone ? 'text-white/80' : isActive ? 'text-cyan-300 font-medium' : 'text-white/40'}`}>
                       {stepName}
                     </span>
                   </div>
