@@ -506,22 +506,112 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* Brand Fact Coverage 4-Metric Progress Bars */}
+            {/* RECOMMENDED NEXT STEPS: Priority Action Plan Card */}
+            <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(6,182,212,0.15)] space-y-6 text-left">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <Compass className="w-5 h-5 text-aeo-cyan" />
+                  <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit tracking-tight">
+                    Recommended Next Steps: Priority Action Plan
+                  </h3>
+                </div>
+                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+                  Remediation Roadmap
+                </span>
+              </div>
+
+              {/* 1-2-3 Priority Roadmap Steps */}
+              <div className="space-y-3 font-serif">
+                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">1</span>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Anchor Regional Entity Schema</h4>
+                  </div>
+                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
+                    Inject nested <code className="text-cyan-300 font-mono">LocalBusiness</code> and <code className="text-cyan-300 font-mono">serviceArea</code> schema nodes tied to target regional Wikidata <code className="text-cyan-300 font-mono">sameAs</code> references.
+                  </p>
+                </div>
+
+                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">2</span>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Publish Location-Specific Evidence</h4>
+                  </div>
+                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
+                    Deploy structured case studies and proof points directly addressing target regional Australian customer queries.
+                  </p>
+                </div>
+
+                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">3</span>
+                    <h4 className="text-sm font-bold text-white font-soehne-breit">Expand Query-to-Passage Context Chunking</h4>
+                  </div>
+                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
+                    Restructure core service sections with direct, high-density 150-character answer blocks positioned immediately under H2 and H3 tags.
+                  </p>
+                </div>
+              </div>
+
+              {/* Commercial Remediation Bridge: Blueprint + AI Bill */}
+              <div className="pt-2 border-t border-white/10 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] font-mono text-zinc-400">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 10-business-day delivery
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 100% credited to sprints
+                    </span>
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> Zero contract lock-in
+                    </span>
+                  </div>
+                  <span className="text-cyan-300 font-bold sm:text-right">
+                    ${bpstratPrice} AUD ex. GST
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                  <button
+                    type="button"
+                    onClick={openAiBill}
+                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-colors cursor-pointer"
+                  >
+                    <MessageSquare className="w-4 h-4 text-cyan-400" />
+                    <span>Discuss Findings with AI Bill</span>
+                  </button>
+
+                  <Link
+                    href="/solutions/aeo-blueprint"
+                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
+                  >
+                    <span>Get The AEObility Blueprint</span>
+                    <ArrowRight className="w-4 h-4 text-zinc-950" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Global Schema & Entity Syntax Baseline Card */}
             <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
-                  <h3 className="text-base font-bold text-white font-soehne-breit">
-                    Canonical Fact Grounding &amp; Coverage
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">
+                      Global Schema &amp; Entity Syntax Baseline
+                    </h3>
+                    <span className="text-[11px] text-zinc-400 font-mono block">Query-Agnostic Structural Validation</span>
+                  </div>
                 </div>
                 <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Verified CBKL Model
+                  Verified Technical Graph
                 </span>
               </div>
 
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                We assess public website signals that help AI search systems identify, verify, and accurately represent your business facts, services, and locations.
+                Measures baseline markup completeness, DOM hierarchy, and machine-readable data structures across 4 core technical pillars.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
@@ -574,6 +664,30 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
+              {/* Explicit Target-Query Grounding Row (Explains Disparity) */}
+              <div className="p-4 bg-amber-950/20 border border-amber-500/30 rounded-xl space-y-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-amber-300">
+                      Target-Query Grounding: &quot;{intent || 'Target Search Query'}&quot;
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
+                      Needs Attention
+                    </span>
+                    <span className="text-base font-bold text-amber-300">{telemetry.proximityScore ?? 24}%</span>
+                  </div>
+                </div>
+                <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${telemetry.proximityScore ?? 24}%` }} />
+                </div>
+                <p className="text-[11px] text-zinc-300 font-serif leading-relaxed">
+                  While baseline schema syntax is AI-ready (90–100%), content signals lack direct entity linkage to customer search intent for this specific query.
+                </p>
+              </div>
+
               <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-zinc-400 border-t border-white/5 font-serif">
                 <span>Note: AI search engines are non-deterministic multi-variable systems. This scan assesses machine-readable indexation and structured data readiness.</span>
                 <Link
@@ -590,66 +704,6 @@ export default function DiagnosticEngine() {
                   <span>View Brand Ledger</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
-              </div>
-            </div>
-
-            {/* Diagnostic Bridge & High-Conversion Blueprint CTA */}
-            <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/30 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5 text-left">
-              
-              {/* Explicit Bridge Summary (Law of Proximity) */}
-              <div className="p-3 bg-cyan-950/60 border border-cyan-500/30 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
-                <span className="text-amber-300 font-bold flex items-center gap-1.5">
-                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  Priority finding: target-location evidence needs anchoring
-                </span>
-                <span className="text-cyan-300">Recommended: Resolve via 10-Day Blueprint</span>
-              </div>
-
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Compass className="w-5 h-5 text-aeo-cyan" />
-                    <h3 className="text-lg font-bold text-white font-soehne-breit">The AEObility Blueprint</h3>
-                    <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-0.5 rounded">
-                      ${bpstratPrice} AUD ex. GST
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                    A fixed-scope, 10-day roadmap to anchor your entity graph, fix local signals, and get your business recommended across ChatGPT, Perplexity, and Google AI. No lock-ins.
-                  </p>
-                  
-                  {/* Reassurance Anchor */}
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-zinc-400 font-mono pt-1">
-                    <span className="flex items-center gap-1 text-emerald-400">
-                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 10-business-day delivery
-                    </span>
-                    <span className="flex items-center gap-1 text-emerald-400">
-                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> 100% credited to sprints
-                    </span>
-                    <span className="flex items-center gap-1 text-emerald-400">
-                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" /> Zero contract lock-in
-                    </span>
-                  </div>
-                </div>
-
-                <div className="w-full md:w-auto shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5">
-                  <Link
-                    href="/solutions/aeo-blueprint"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
-                  >
-                    <span>Get The AEObility Blueprint</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-950" />
-                  </Link>
-
-                  <button
-                    type="button"
-                    onClick={openAiBill}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-colors cursor-pointer"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Discuss Findings with AI Bill</span>
-                  </button>
-                </div>
               </div>
             </div>
 

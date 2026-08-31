@@ -717,16 +717,19 @@ export default function BillWidget() {
             </span>
           </div>
           <div className="grid grid-cols-2 gap-2 pt-0.5">
-            <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
-              <span className="text-zinc-400 text-[9px] block">AI Visibility Score</span>
-              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 77}/100</span>
-              <span className="text-[9px] text-amber-400/80 block mt-0.5">Needs attention</span>
+            <div className="bg-black/50 p-2 rounded-lg border border-emerald-500/20">
+              <span className="text-zinc-400 text-[9px] block">Global Schema Baseline</span>
+              <span className="text-emerald-400 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 95}/100</span>
+              <span className="text-[9px] text-emerald-400/90 block mt-0.5 font-bold">Optimal Syntax</span>
             </div>
             <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
               <span className="text-zinc-400 text-[9px] block">Target Location Grounding</span>
               <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.proximityScore ?? 24}%</span>
-              <span className="text-[9px] text-zinc-400 block mt-0.5">Query vs local intent</span>
+              <span className="text-[9px] text-amber-400/90 block mt-0.5 font-bold">Needs Attention</span>
             </div>
+          </div>
+          <div className="text-[9px] text-zinc-400 text-center pt-0.5">
+            High Technical Readiness • Target-Market Grounding Gap
           </div>
         </div>
       )}
@@ -743,7 +746,7 @@ export default function BillWidget() {
             </p>
             <p className="text-zinc-300 text-[11px] leading-relaxed font-serif">
               {isTelemetryMode 
-                ? `Your technical foundation is solid (${storedTelemetry?.result?.readinessScore ?? 67}/100), but your local entity grounding (${storedTelemetry?.result?.proximityScore ?? 23}%) needs anchoring. What would you like to explore?`
+                ? `While your baseline Global Schema Syntax is strong (${storedTelemetry?.result?.readinessScore ?? 95}/100), your Target Location Grounding (${storedTelemetry?.result?.proximityScore ?? 24}%) needs anchoring. Let's review your 3 priority next steps.`
                 : "Ask me anything about Answer Engine Optimisation, semantic schema graphs, or run a free scan above."}
             </p>
           </div>
