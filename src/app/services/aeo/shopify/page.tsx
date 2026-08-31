@@ -30,13 +30,23 @@ import {
   Compass,
   Rocket,
   Search,
-  Sparkles
+  Sparkles,
+  Cpu,
+  AlertTriangle,
+  Database,
+  RefreshCw,
+  Check
 } from 'lucide-react';
 
 export const SHOPIFY_AEO_INTERNAL_LINKS = [
   {
-    targetSlug: "/solutions",
-    anchorText: "View current service pricing and scope",
+    targetSlug: "/services/aeo",
+    anchorText: "canonical AEO Services Hub",
+    entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/services/aeo/costs-timing",
+    anchorText: "AEO Costs & Timing",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -46,7 +56,7 @@ export const SHOPIFY_AEO_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/contact",
-    anchorText: "Request a quote",
+    anchorText: "Book an AEO Content & Schema Audit",
     entityRelation: "http://schema.org/isRelatedTo"
   }
 ];
@@ -115,28 +125,32 @@ export default function ShopifyAeoPage() {
 
   const faqs = [
     {
+      question: "How does AEO optimise Shopify collection pages?",
+      answer: "By implementing CollectionPage and ItemList schema types that organise product sub-nodes into structured indexes, allowing AI scrapers to read catalogue relationships without relying on client-side script filtering."
+    },
+    {
       question: "What is included in a $495 Shopify Product Data Micro-Sprint?",
-      answer: "One Micro-Sprint covers one agreed product, collection or structured-data priority. It includes the agreed implementation or rewrite work, validation checks, a summary of completed changes and handover notes. Additional products, collections or unrelated issues are scoped separately."
+      answer: "One Micro-Sprint covers one agreed product, collection or structured-data priority. It includes the agreed implementation or rewrite work, validation checks, a summary of completed changes, and handover notes. Additional products or collections are scoped separately."
     },
     {
       question: "How long does a Shopify AEO sprint take to deliver?",
-      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, store access and required information are confirmed. More complex requirements may need a separate scope and delivery schedule."
+      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, store access, and required product parameters are confirmed. More complex multi-collection requirements are scheduled across our 4-week Foundation track."
     },
     {
       question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash."
+      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied directly to the Foundation work. The credit does not apply to standalone Micro-Sprints."
     },
     {
       question: "Do you require ongoing monthly retainers or app subscriptions?",
-      answer: "No. Shopify Sprints are fixed-scope engagements. No ongoing retainer or AEObility app subscription is required; any third-party app or platform fees remain separate."
+      answer: "No. Shopify Sprints are fixed-scope, productised engagements. No ongoing retainer or AEObility app subscription is required; all changes are made directly within your Liquid theme and schema graphs."
     },
     {
       question: "What access is required to begin a Shopify sprint?",
-      answer: "Depending on the agreed scope, we may need your store URL, theme or theme-preview access, relevant product or collection details and access to any tools used for validation. We confirm the minimum access needed before work begins."
+      answer: "Depending on the agreed scope, we require collaborator access to your Shopify theme preview, Google Merchant Center feed access, and read-access to Google Search Console for validation. We confirm minimal necessary permissions before work begins."
     },
     {
-      question: "What makes Shopify store optimization for AI search different from traditional SEO?",
-      answer: "AI search engines (like ChatGPT, Perplexity, and Gemini) extract structured product details, price specifications, availability, and clear collection answers directly. We format your Shopify Liquid schema and product hierarchy so digital assistants can interpret your product information more accurately."
+      question: "What makes Shopify store optimisation for AI search different from traditional SEO?",
+      answer: "AI search engines (such as ChatGPT, Perplexity, Claude, and Gemini) extract structured product details, price specifications, availability, and clear collection answers directly. We format your Shopify Liquid schema, Google Merchant Center feed fields, and product hierarchy so AI assistants interpret your inventory with high confidence."
     }
   ];
 
@@ -151,7 +165,7 @@ export default function ShopifyAeoPage() {
       priceSub: "ex. GST",
       scope: "One priority collection or product schema",
       description: "Choose one focused priority for $495 AUD ex. GST: Product or Collection structured-data work, or a Single Collection Rewrite.",
-      techNote: "For technical teams: Review Product, Offer and CollectionPage schema alongside the relevant Shopify Liquid templates.",
+      techNote: "For technical teams: Review Product, Offer, and CollectionPage schema alongside the relevant Shopify Liquid templates.",
       whenToChoose: "Choose this when you have one specific product line or collection page that needs structured data or copy improvements.",
       ctaLabel: "Discuss Product Data Sprint"
     },
@@ -164,9 +178,9 @@ export default function ShopifyAeoPage() {
       price: "From $3,195 AUD",
       priceSub: "ex. GST",
       scope: "Connected improvements across priority products & collections",
-      description: "Combine agreed improvements across product data, structured data, collection pages, internal linking and selected product pages in one focused four-week engagement.",
+      description: "Combine agreed improvements across product data, structured data, collection pages, internal linking, and selected product pages in one focused four-week engagement.",
       techNote: "For technical teams: Store-wide structured data alignment, collection internal linking, and key product page rewrites.",
-      whenToChoose: "Choose this when your Shopify store has multiple connected product data, schema or collection layout priorities.",
+      whenToChoose: "Choose this when your Shopify store has multiple connected product data, schema, or collection layout priorities.",
       ctaLabel: "Discuss Shopify Foundation"
     },
     {
@@ -178,7 +192,7 @@ export default function ShopifyAeoPage() {
       price: "$995 AUD",
       priceSub: "ex. GST",
       scope: "Full store diagnostic & 90-day roadmap",
-      description: "Audit your product data, structured data, store hierarchy and collection-page intent. Receive a practical 90-day execution roadmap.",
+      description: "Audit your product data, structured data, store hierarchy, and collection-page intent. Receive a practical 90-day execution roadmap.",
       techNote: "For technical teams: Comprehensive review of Product, Offer, CollectionPage schema and Liquid template nesting.",
       whenToChoose: "Choose this when you are unsure what is limiting your store's product visibility across search engines and AI tools.",
       ctaLabel: "Discuss E-Commerce Blueprint"
@@ -199,7 +213,8 @@ export default function ShopifyAeoPage() {
       <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
+      {/* Main Container with Defensive Bottom Padding */}
+      <main className="flex-grow w-full py-12 pb-32 sm:pb-24">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
           {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
@@ -208,18 +223,47 @@ export default function ShopifyAeoPage() {
               <ShoppingBag className="w-4 h-4 text-aeo-cyan" />
               <span>Shopify E-Commerce AEO &amp; AI Search</span>
             </div>
+            
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Shopify AI Search Marketing &amp; <span className="text-gradient-aeo">Product Visibility</span>
+              Shopify AEO Services: <span className="text-gradient-aeo">AI-Ready Ingestion Architecture</span>
             </h1>
-            <div className="space-y-3 max-w-2xl mx-auto">
-              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Improve how search engines, digital assistants and AI-assisted search read your Shopify products, collections and store information. Clear scope. Flat rates.
-              </h2>
+
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+                Make your Shopify products and collections reliably discoverable across AI search interfaces, AI Overviews, digital maps, and conversational shopping surfaces.
+              </p>
+              
+              <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                This Shopify sub-node extends the canonical <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services Hub</Link> with platform-specific ingestion patterns for e-commerce.
+              </p>
+
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
                 <span>Foundation Implementation from $3,195 AUD ex. GST</span>
               </div>
+            </div>
+
+            {/* Who This Is For Qualification Matrix */}
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl max-w-2xl mx-auto text-left space-y-3 shadow-lg">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-aeo-cyan" />
+                <span>Who this is for:</span>
+              </h3>
+              <ul className="space-y-2 text-xs text-white/80 font-light">
+                <li className="flex items-start gap-2">
+                  <span className="text-aeo-cyan mt-0.5">&bull;</span>
+                  <span>Shopify store owners managing 20+ active product lines.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-aeo-cyan mt-0.5">&bull;</span>
+                  <span>E-commerce brands running synchronised Google Merchant Center feeds.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-aeo-cyan mt-0.5">&bull;</span>
+                  <span>Retailers navigating variant-rich catalogues or high-frequency stock changes.</span>
+                </li>
+              </ul>
             </div>
 
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
@@ -265,7 +309,91 @@ export default function ShopifyAeoPage() {
             </p>
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          {/* 2. Primary H2 Refactoring & Core Technical Foundations */}
+          <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Shopify Ingestion Architecture &amp; Technical Foundations</h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical engineering frameworks for product data, template rendering, and collection structure.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Card 1: Liquid Restructuring */}
+              <div id="liquid-restructuring" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                      <Code className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-cyan-400 font-bold">PILLAR 01</span>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Restructuring Shopify Liquid for LLM Scraping</h3>
+                    </div>
+                  </div>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    AI search systems and web crawlers ingest products by reading your rendered HTML code. We refactor your Shopify Liquid templates to ensure that unstructured text elements, variant pricing arrays, and product availability criteria are presented in clean, well-scoped blocks. This structure removes code friction and allows crawlers to index your content accurately.
+                  </p>
+                </div>
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  For technical teams: This process customises robots.txt accessibility and manages your crawl budget for extensive product collections.
+                </p>
+              </div>
+
+              {/* Card 2: Merchant Center Feed */}
+              <div id="merchant-center-feed" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                      <Database className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-purple-400 font-bold">PILLAR 02</span>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Google Merchant Center Feed Optimisation</h3>
+                    </div>
+                  </div>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    AI discovery engines frequently cross-reference live web scrapes with structured feed data to verify product listings. We optimise your Google Merchant Center feed fields (including id, title, link, image_link, availability, price, gtin, brand, and condition), ensuring your external feed signals align perfectly with your on-page data graph.
+                  </p>
+                </div>
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  For technical teams: Cross-validates Content API for Shopping payloads against server-rendered JSON-LD graphs.
+                </p>
+              </div>
+
+              {/* Card 3: Server-Side Conversion Integrity */}
+              <div id="server-side-conversion" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-black border border-white/10 rounded-xl">
+                      <ShieldCheck className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-cyan-400 font-bold">PILLAR 03</span>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Server-Side Conversion Integrity</h3>
+                    </div>
+                  </div>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    To protect your store&apos;s factual footprint across automated platforms, we audit your server-side conversion parameters. We structure your thank-you page scripts, dataLayer integrations, and consent mode parameters to establish complete content boundaries.
+                  </p>
+                </div>
+                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
+                  For technical teams: This secures data continuity between your internal checkout states and external ingestion points.
+                </p>
+              </div>
+            </div>
+
+            {/* Critical Conversion Warning Box */}
+            <div className="p-5 bg-amber-500/10 border-l-4 border-amber-400 rounded-r-2xl text-xs text-amber-200/90 leading-relaxed shadow-lg">
+              <p className="font-bold text-amber-300 uppercase tracking-wider font-mono mb-1 flex items-center gap-1.5">
+                <AlertTriangle className="w-4 h-4 text-amber-400" />
+                <span>Critical Conversion Warning</span>
+              </p>
+              <p>
+                Without clean product schema and feed data, AI search engines and conversational shopping assistants may misread product variants, prices, or live stock availability, excluding your store from direct product recommendations.
+              </p>
+            </div>
+          </section>
+
+          {/* 3. "Choose Your Starting Point" Engagement Grid */}
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
@@ -361,7 +489,7 @@ export default function ShopifyAeoPage() {
               <ul className="space-y-2 text-xs text-zinc-300 font-serif">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>One agreed store priority, specified product schema or collection rewrite work.</span>
+                  <span>One agreed store priority, specified product schema, or collection rewrite work.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -369,24 +497,23 @@ export default function ShopifyAeoPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Typical delivery: 4–5 business days from confirmed scope and store access. Additional collections or products scoped separately. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+                  <span>Typical delivery: 4–5 business days from confirmed scope and store access. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
                 </li>
               </ul>
             </div>
 
-            {/* Deliverables Ownership Statement */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
-                  <span>Use the completed work and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
-                </div>
+            {/* Downstream Commercial Ladder Bridge */}
+            <div className="p-4 bg-white/[0.01] border border-white/10 rounded-xl text-xs text-zinc-300 font-light leading-relaxed flex items-center justify-between flex-wrap gap-3">
+              <span>Evaluating implementation options and roadmap costs?</span>
+              <div className="flex gap-2">
+                <Link href="/services/aeo/costs-timing" className="text-aeo-cyan font-semibold hover:underline">
+                  Review our comprehensive AEO Costs &amp; Timing framework &rarr;
+                </Link>
               </div>
             </div>
           </section>
 
-          {/* 3. Streamlined 12-Column Responsive Diagnostic Form Module */}
+          {/* 4. Streamlined 12-Column Responsive Diagnostic Form Module */}
           <section id="shopify-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
@@ -398,7 +525,7 @@ export default function ShopifyAeoPage() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free Shopify Visibility Scan</h3>
                 <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your store URL to check key product-data, collection-page and AI-search readiness signals.
+                  Enter your store URL to check key product-data, collection-page, and AI-search readiness signals.
                 </p>
               </div>
 
@@ -429,7 +556,7 @@ export default function ShopifyAeoPage() {
                         placeholder="e.g. mystore.com.au or mystore.myshopify.com"
                       />
                       <p className="text-[11px] text-zinc-400 font-serif leading-tight">
-                        We check product information, structured-data setup and collection-page structure for common visibility gaps.
+                        We check product information, structured-data setup, and collection-page structure for common visibility gaps.
                       </p>
                     </div>
 
@@ -487,7 +614,7 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 4. Foundation Implementation Upgrade Block */}
+          {/* 5. Foundation Implementation Upgrade Block */}
           <section id="shopify-foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -499,14 +626,14 @@ export default function ShopifyAeoPage() {
                   Shopify Foundation Implementation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                  Combine agreed improvements across product data, structured data, collection pages, internal linking and selected product pages in one focused four-week engagement.
+                  Combine agreed improvements across product data, structured data, collection pages, internal linking, and selected product pages in one focused four-week engagement.
                 </p>
 
                 {/* Prominently Elevated Blueprint Credit Callout Box */}
                 <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
+                    If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/services/aeo/costs-timing" className="text-cyan-400 hover:underline font-medium">AEO Costs &amp; Timing</Link>.
                   </p>
                 </div>
               </div>
@@ -529,65 +656,23 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 5. Technical Building Blocks Reassurance */}
-          <section id="technical-blocks" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Core Technical Foundations</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Practical engineering areas for product data and collection page optimisation.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div id="s1-product-schema" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
-                    <Tag className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-cyan-400 font-bold">FOUNDATION S1</span>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">Product Data &amp; Schema Integration</h3>
-                  </div>
-                </div>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Structure product variants, pricing, availability and GTIN details so search systems can interpret product information more consistently. Helps reduce ambiguity and missing information across priority product pages.
-                </p>
-                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: Validate Product, Offer, and AggregateRating markup against the visible product content and Shopify Liquid templates.
-                </p>
-                <div className="pt-1">
-                  <Link href="/solutions/aeo-sprint" className="text-xs font-semibold text-cyan-400 hover:underline inline-flex items-center gap-1">
-                    <span>AEO Technical Sprints Package</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div id="s2-collection-optimisation" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-black border border-white/10 rounded-xl">
-                    <Layers className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-purple-400 font-bold">FOUNDATION S2</span>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">Collection Page &amp; Search Intent Optimisation</h3>
-                  </div>
-                </div>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Rewrite and structure collection pages so shoppers can quickly understand what the collection contains, who it is for and how related products fit together.
-                </p>
-                <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: Refactor collection headings, category descriptions and internal links around customer search intent.
-                </p>
-                <div className="pt-1">
-                  <Link href="/services/aeo/procedures" className="text-xs font-semibold text-purple-400 hover:underline inline-flex items-center gap-1">
-                    <span>Learn more about AEO Procedures</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
+          {/* 6. Customer-Facing "Atomic Answer Block" (Retail Schema Parsing) */}
+          <section id="shopify-parsing-atomic-block" className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto p-6 sm:p-8 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl shadow-xl space-y-3">
+              <p className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-1.5">
+                <Cpu className="w-4 h-4 text-aeo-cyan" />
+                <span>Direct Answer &bull; E-Commerce Ingestion</span>
+              </p>
+              <h3 className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
+                How do AI search systems parse product data on Shopify stores?
+              </h3>
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
+                AI search crawlers read Shopify store data by moving systematically from collection overview pages down to individual product nodes. Eligible AI systems extract both visible text descriptions and embedded, machine-readable JSON-LD metadata, alongside synchronised Google Merchant Center feed signals. To resolve ambiguity between complex product variants, sizes, or fluctuating price options, engines rely on explicit identity attributes (such as Global Trade Item Numbers (GTIN), manufacturer brand data, and clear stock status entries). Well-scoped code blocks ensure these product facts stay unified during retrieval, improving your visibility when platforms compose conversational shopping recommendations.
+              </p>
             </div>
           </section>
 
-          {/* 6. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 7. FAQ Accordion Section (All Answers Rendered in DOM) */}
           <section id="faq-shopify" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
@@ -628,7 +713,7 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 7. Operational 3-Step Process Flow Pipeline Graphic */}
+          {/* 8. Operational 3-Step Process Flow Pipeline Graphic */}
           <section id="process-flow" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
@@ -657,16 +742,16 @@ export default function ShopifyAeoPage() {
             </div>
           </section>
 
-          {/* 8. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 9. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="shopify-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Send Shopify Store Enquiry</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Tell us about your Shopify store and product data priorities. We will confirm the scope and price before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
+                Tell us about your Shopify store and product data priorities. We will confirm the scope and price before you commit.
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
                 <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
+                <span>You will speak directly with an AEObility specialist based in Perth.</span>
               </div>
             </div>
 
@@ -680,7 +765,7 @@ export default function ShopifyAeoPage() {
                 </span>
               </div>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
+                Select the option you are considering, or choose &quot;Not sure yet &mdash; Help me decide&quot; if you would like help deciding.
               </p>
 
               {contactSubmitted ? (
@@ -734,7 +819,7 @@ export default function ShopifyAeoPage() {
                       onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
-                      <option value="unsure">Not sure yet — Help me decide</option>
+                      <option value="unsure">Not sure yet &mdash; Help me decide</option>
                       <option value="product-data-micro-sprint">Product Data Micro-Sprint (From $495 AUD)</option>
                       <option value="shopify-foundation">Shopify Foundation Implementation (From $3,195 AUD)</option>
                       <option value="ecommerce-blueprint">E-Commerce Blueprint ($995 AUD)</option>
@@ -774,7 +859,7 @@ export default function ShopifyAeoPage() {
                     type="submit"
                     className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
                   >
-                    <span>Discuss Your Shopify Store</span>
+                    <span>Book an AEO Content &amp; Schema Audit</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
 
@@ -785,6 +870,13 @@ export default function ShopifyAeoPage() {
               )}
             </div>
           </section>
+
+          {/* Bottom-Up Link to Root Hub */}
+          <div className="pt-4 flex">
+            <Link href="/services/aeo" className="text-xs font-medium text-white/40 hover:text-white transition-colors">
+              &larr; Back to <strong className="text-white hover:underline">AEO Services Hub</strong>
+            </Link>
+          </div>
 
         </div>
       </main>
