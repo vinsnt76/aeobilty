@@ -21,7 +21,8 @@ export async function validateGraphWithWikidata(triples: EntityTriple[]): Promis
         headers: { 
           'User-Agent': 'AEO-Observability-Bot/1.0 (https://aeobility.com.au)', 
           'Accept': 'application/sparql-results+json' 
-        } 
+        },
+        signal: AbortSignal.timeout(4000)
       });
       
       if (res.ok) {

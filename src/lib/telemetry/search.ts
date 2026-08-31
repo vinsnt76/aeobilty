@@ -13,7 +13,8 @@ export class BraveSearchProvider implements SearchProvider {
         headers: {
           'Accept': 'application/json',
           'X-Subscription-Token': braveApiKey
-        }
+        },
+        signal: AbortSignal.timeout(5000)
       });
       
       if (response.ok) {
@@ -52,6 +53,7 @@ Example:
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          signal: AbortSignal.timeout(6000),
           body: JSON.stringify({
             contents: [{ role: 'user', parts: [{ text: prompt }] }],
             tools: [{ googleSearch: {} }]

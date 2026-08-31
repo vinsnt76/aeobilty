@@ -147,12 +147,34 @@ export default function DiagnosticEngine() {
     setStep('PROCESSING');
     setProcessingStage(0);
 
-    // Start background fetch
-    const fetchPromise = fetch('/api/diagnostic', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim() }),
-    }).then(res => res.json());
+    // Start background fetch with safe parsing
+    const fetchPromise = (async () => {
+      try {
+        const res = await fetch('/api/diagnostic', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: normalizedUrl, intent: rawIntent.trim() }),
+        });
+
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          const json = await res.json();
+          if (!res.ok || json.error) {
+            throw new Error(json.error || `Diagnostic request failed with status ${res.status}`);
+          }
+          return json;
+        } else {
+          const text = await res.text();
+          throw new Error(
+            text.includes('An error') || text.includes('<html>')
+              ? 'The scan timed out while reaching the website. Please verify the URL and try again.'
+              : text || `Server returned status ${res.status}`
+          );
+        }
+      } catch (err: unknown) {
+        throw err;
+      }
+    })();
 
     // Visual progress for user feedback (~5 sec total)
     for (let i = 0; i < processingSteps.length; i++) {
@@ -182,9 +204,14 @@ export default function DiagnosticEngine() {
       setStep('SCORE_REVEAL');
     } catch (e: unknown) {
       console.error('Diagnostic engine fetch error:', e);
+      const rawMsg = e instanceof Error ? e.message : 'Failed to fetch site information';
+      const cleanMsg = (rawMsg.includes('Unexpected token') || rawMsg.includes('JSON') || rawMsg.includes('An error'))
+        ? 'We were unable to reach or analyze this website. Please verify the URL is online and publicly accessible.'
+        : rawMsg;
+
       setTelemetry({ 
         readinessScore: 0,
-        error: e instanceof Error ? e.message : 'Failed to fetch site information'
+        error: cleanMsg
       } as unknown as TelemetryResult);
       setStep('SCORE_REVEAL');
     }
@@ -409,9 +436,15 @@ export default function DiagnosticEngine() {
             <div className="w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center mx-auto border border-red-500/30">
               <AlertTriangle className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">Diagnostic Scan Could Not Complete</h3>
-            <p className="text-sm text-white/70 max-w-md mx-auto font-serif">
-              {String((telemetry as unknown as Record<string, unknown>).error || 'Unable to fetch site information. Please verify the URL is publicly accessible and try again.')}
+            <h3 className="text-xl font-bold text-white font-soehne-breit">Diagnostic Scan Could Not Complete</h3>
+            <p className="text-sm text-white/70 max-w-md mx-auto font-serif leading-relaxed">
+              {(() => {
+                const raw = String((telemetry as unknown as Record<string, unknown>).error || '');
+                if (!raw || raw.includes('Unexpected token') || raw.includes('JSON') || raw.includes('An error')) {
+                  return 'We were unable to reach or analyze this website. Please verify that the URL is online and publicly accessible, and try again.';
+                }
+                return raw;
+              })()}
             </p>
             <button
               onClick={() => {

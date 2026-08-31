@@ -4,9 +4,10 @@ import { TechnicalSEO, CrawlQuality } from './types';
 
 export async function crawlUrl(url: string): Promise<{ textContent: string; technicalSEO: TechnicalSEO; schemaValidation: import('./types').SchemaValidation; crawlQuality: CrawlQuality }> {
   try {
-    // Add a reasonable timeout and pretend to be a normal browser to avoid simple blocks
+    // Add a fast 6s timeout and pretend to be a normal browser to avoid simple blocks
     const res = await fetch(url, { 
       headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+      signal: AbortSignal.timeout(6000),
       next: { revalidate: 3600 } // cache in Next.js if possible
     });
     
