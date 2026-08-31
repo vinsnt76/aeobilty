@@ -641,24 +641,28 @@ export default function CompanionWidget() {
           {billState === 'CONSULTANT' && telemetryData && (
             <div className="flex flex-wrap gap-1.5 pt-0.5">
               <button
-                onClick={() => handleSendMessage("Explain my Vector Proximity similarity score vs competitor.")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                type="button"
+                onClick={() => handleSendMessage("What is the highest priority structural gap and what should I fix first?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/80 transition-colors cursor-pointer"
               >
-                Explain Proximity
+                What to fix first
               </button>
               <button
-                onClick={() => handleSendMessage("What do these extracted Semantic Graph Triples represent?")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                type="button"
+                onClick={() => handleSendMessage("How can I improve my AI Visibility Score and entity clarity?")}
+                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/80 transition-colors cursor-pointer"
               >
-                Explain Graph Triples
+                Improve score
               </button>
               <button
-                onClick={() => handleSendMessage("Why was my content dropped in the RAG retrieval simulation?")}
-                className="text-[9px] bg-white/5 border border-white/10 hover:bg-white/10 px-2.5 py-1 rounded-lg text-white/70 transition-colors cursor-pointer"
+                type="button"
+                onClick={() => handleSendMessage("How does The AEObility Blueprint fix these local entity gaps and what are the deliverables?")}
+                className="text-[9px] bg-aeo-cyan/15 border border-aeo-cyan/40 hover:bg-aeo-cyan/25 px-2.5 py-1 rounded-lg text-aeo-cyan font-bold transition-colors cursor-pointer"
               >
-                Explain RAG Status
+                View Blueprint ($995) ➔
               </button>
               <button
+                type="button"
                 onClick={() => {
                   localStorage.removeItem('aeo_telemetry_latest');
                   setTelemetryData(null);

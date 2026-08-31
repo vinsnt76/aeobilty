@@ -357,13 +357,13 @@ export default function BillWidget() {
     );
   };
 
-  // 4. CRITICAL CHIP FIX: Safely mutates query text tokens directly into OpenAI formats
+  // 4. Conversational Outcome-Led Chip Mapping
   const handleChipClick = async (chipText: string) => {
     const queryMap: Record<string, string> = {
-      'Semantic Density': 'What is semantic density in AEO framework models?',
-      'Positional Bias': 'How does AEObility mitigate positional bias in LLMs?',
-      'Fix RAG Drops': 'How do I fix RAG retrieval drops?',
-      '90-Day Blueprint': 'What are the deliverables for the 90-Day AI Success Blueprint?'
+      'What should I fix first?': 'What is the highest priority structural gap in this scan and what should I fix first?',
+      'How do I improve my score?': 'How can I improve my AI Visibility Score and entity clarity?',
+      'Why is local grounding low?': 'Why is my local entity grounding low and how do AI engines lose local context?',
+      'How does the Blueprint fix this?': 'How does The AEObility Blueprint fix these local entity gaps and what are the deliverables?'
     };
 
     const targetPrompt = queryMap[chipText] || `Tell me about ${chipText}`;
@@ -404,7 +404,8 @@ export default function BillWidget() {
         setIsTelemetryMode(true);
       }
       if (initialQuery) {
-        setInput(initialQuery);
+        // Auto-dispatch telemetry query directly so input stays clean
+        executeQuery(initialQuery);
       }
     };
 
@@ -633,7 +634,7 @@ export default function BillWidget() {
         </div>
       )}
       {/* Header Controller Banner */}
-      <div className="bg-zinc-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+      <div className="bg-zinc-900/90 px-4 py-3 border-b border-white/10 flex items-center justify-between backdrop-blur-md">
         <div className="flex items-center gap-2.5">
           <BillAvatar size="sm" pulse={false} />
           <div>
@@ -645,7 +646,7 @@ export default function BillWidget() {
                 Online
               </span>
             </div>
-            <p className="text-[10px] text-zinc-400">AEObility Dynamic Intelligence</p>
+            <p className="text-[10px] text-zinc-400 font-serif">AEObility Dynamic Intelligence</p>
           </div>
         </div>
 
@@ -679,7 +680,7 @@ export default function BillWidget() {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="p-1 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
+            className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
             aria-label="Close Bill assistant"
           >
             <X className="w-4 h-4" />
@@ -688,20 +689,20 @@ export default function BillWidget() {
       </div>
 
       {/* Hydrated Audit Sticky Indicator Bar */}
-      {isTelemetryMode && storedTelemetry?.result?.insightResult && (
-        <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2.5 text-[10px] space-y-1.5 font-mono">
+      {isTelemetryMode && storedTelemetry?.result && (
+        <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono">
           <div className="flex justify-between items-center text-amber-400 font-bold tracking-wider uppercase text-[9px]">
-            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3" /> Site Telemetry Active</span>
-            <span className="text-zinc-400 font-normal">{storedTelemetry.url || 'Target Site'}</span>
+            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-amber-400" /> Live Telemetry Ingestion</span>
+            <span className="text-zinc-300 font-normal truncate max-w-[170px]">{storedTelemetry.url || 'Target Site'}</span>
           </div>
-          <div className="grid grid-cols-2 gap-2 pt-1">
-            <div className="bg-black/40 p-1.5 rounded border border-amber-500/10">
-              <span className="text-zinc-400 text-[8px] block">Readiness Score</span>
-              <span className="text-amber-300 font-bold">{storedTelemetry.result?.readinessScore || 42}/100</span>
+          <div className="grid grid-cols-2 gap-2 pt-0.5">
+            <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
+              <span className="text-zinc-400 text-[9px] block">Overall AI Readiness</span>
+              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 67}/100</span>
             </div>
-            <div className="bg-black/40 p-1.5 rounded border border-amber-500/10">
-              <span className="text-zinc-400 text-[8px] block">Proximity Score</span>
-              <span className="text-amber-300 font-bold">{storedTelemetry.result?.proximityScore || 12}%</span>
+            <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
+              <span className="text-zinc-400 text-[9px] block">Local Entity Proximity</span>
+              <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.proximityScore ?? 23}%</span>
             </div>
           </div>
         </div>
@@ -710,15 +711,17 @@ export default function BillWidget() {
       {/* Main Response Log Window Feed */}
       <div className="flex-1 p-4 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
-          <div className="text-center pt-6 pb-2 space-y-3 px-2">
-            <div className="w-10 h-10 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <div className="text-center pt-5 pb-2 space-y-2.5 px-3">
+            <div className="w-10 h-10 mx-auto rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
-            <p className="text-zinc-300 font-medium text-xs">
-              G&apos;day! I&apos;m Bill, AEObility&apos;s AI Agent.
+            <p className="text-white font-medium text-xs font-serif">
+              G&apos;day! I&apos;ve loaded your diagnostic telemetry{storedTelemetry?.url ? ` for ${new URL(storedTelemetry.url.startsWith('http') ? storedTelemetry.url : `https://${storedTelemetry.url}`).hostname.replace('www.', '')}` : ''}.
             </p>
-            <p className="text-zinc-400 text-[11px] leading-relaxed">
-              Enter your website URL and target search query below to launch a live telemetry diagnostic.
+            <p className="text-zinc-300 text-[11px] leading-relaxed font-serif">
+              {isTelemetryMode 
+                ? `Your technical foundation is solid (${storedTelemetry?.result?.readinessScore ?? 67}/100), but your local entity grounding (${storedTelemetry?.result?.proximityScore ?? 23}%) needs anchoring. What would you like to explore?`
+                : "Ask me anything about Answer Engine Optimisation, semantic schema graphs, or run a free scan above."}
             </p>
           </div>
         )}
@@ -751,7 +754,7 @@ export default function BillWidget() {
         })}
 
         {isLoading && (
-          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/30 border border-emerald-500/20 px-3 py-1.5 rounded-full animate-pulse">
+          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-cyan-400 bg-cyan-950/30 border border-cyan-500/20 px-3 py-1.5 rounded-full animate-pulse">
             <Bot className="w-3.5 h-3.5 animate-spin" />
             <span>Bill is scanning 41 lattice nodes...</span>
           </div>
@@ -759,19 +762,23 @@ export default function BillWidget() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Diagnostic Input Links */}
-      <div className="px-3 py-1.5 bg-zinc-900/60 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
+      {/* Quick Action Outcome-Led Prompt Pills */}
+      <div className="px-3 py-2 bg-zinc-900/70 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
         {[
-          { label: 'Semantic Density', icon: <Sparkles className="w-3 h-3" /> },
-          { label: 'Positional Bias', icon: <HelpCircle className="w-3 h-3" /> },
-          { label: 'Fix RAG Drops', icon: <Activity className="w-3 h-3" /> },
-          { label: '90-Day Blueprint', icon: <Bot className="w-3 h-3" /> }
+          { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
+          { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-cyan-400" /> },
+          { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
+          { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-cyan-300" />, highlight: true }
         ].map((chip) => (
           <button
             key={chip.label}
             type="button"
             onClick={() => handleChipClick(chip.label)}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white rounded-lg text-[10px] transition font-medium cursor-pointer"
+            className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] transition font-medium cursor-pointer ${
+              chip.highlight
+                ? 'bg-cyan-950/70 border border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.25)] hover:bg-cyan-900/80 font-bold'
+                : 'bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white'
+            }`}
           >
             {chip.icon}
             <span>{chip.label}</span>
@@ -779,25 +786,34 @@ export default function BillWidget() {
         ))}
       </div>
 
-      {/* Lower User Query Tray Element */}
-        <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2 backdrop-blur-md">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder={isTelemetryMode ? "Ask Bill to diagnose your audit variables..." : "Ask Bill about AEO semantic lattices..."}
-            className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/60 transition touch-manipulation"
-          />
-          <button 
-            type="submit" 
-            disabled={isGated || !input.trim() || isLoading}
-            className="bg-emerald-500 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-emerald-400 transition flex items-center justify-center shrink-0 cursor-pointer"
-            aria-label="Send message"
-          >
-            <Send className="w-3.5 h-3.5" />
-          </button>
-        </form>
+      {/* Persistent Reassurance Banner */}
+      <div className="px-3 py-1 bg-zinc-950 border-t border-white/5 text-[10px] font-mono text-zinc-400 flex items-center justify-center gap-2">
+        <span>✓ Read-only analysis</span>
+        <span>•</span>
+        <span>No data stored</span>
+        <span>•</span>
+        <span>Zero obligation</span>
       </div>
-    </div>,
-    document.body
-  );
+
+      {/* Lower User Query Tray Element */}
+      <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2 backdrop-blur-md">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={isTelemetryMode ? "Ask Bill about these scan results..." : "Ask Bill about AEO semantic lattices..."}
+          className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition touch-manipulation"
+        />
+        <button 
+          type="submit" 
+          disabled={isGated || !input.trim() || isLoading}
+          className="bg-cyan-400 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-300 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(6,182,212,0.3)]"
+          aria-label="Send message"
+        >
+          <Send className="w-3.5 h-3.5 text-zinc-950" />
+        </button>
+      </form>
+    </div>
+  </div>,
+  document.body
+);
 }
