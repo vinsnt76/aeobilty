@@ -140,11 +140,11 @@ export default function DiagnosticEngine() {
       
       {/* Hero Block */}
       <div className="text-center mb-10 max-w-2xl mx-auto space-y-4">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-soehne-breit">
-          Run a Free AI Visibility Scan
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
+          See How Your Business Appears Across ChatGPT, Perplexity &amp; Google AI
         </h1>
-        <h2 className="text-white/70 text-base md:text-lg font-light leading-relaxed font-serif">
-          Our diagnostic engine runs rigorous simulation loops to measure how effectively your digital footprint interfaces with AI answer engines. By analysing <strong className="text-white font-medium">high-dimensional vector embeddings</strong>, the scanner determines your business&apos;s exact proximity to target commercial intents across active conversational indices. We define exactly what your business offers so AI stops guessing.
+        <h2 className="text-zinc-300 text-sm sm:text-base font-light leading-relaxed font-serif">
+          Run a real-time diagnostic scan to uncover how AI search engines extract, summarise, and recommend your services to local Australian customers.
         </h2>
       </div>
 
@@ -153,53 +153,68 @@ export default function DiagnosticEngine() {
         {step === 'INPUT' && (
           <div className="space-y-8">
             {/* Zero-Friction 2-Field Input Form */}
-            <form onSubmit={handleStart} className="grid grid-cols-12 gap-4 relative z-10">
+            <form onSubmit={handleStart} className="grid grid-cols-12 gap-5 relative z-10">
               
-              {/* Field 1: Website URL - Full 12-Column Width */}
+              {/* Field 1: Website URL */}
               <div className="col-span-12 space-y-1.5">
-                <label className="block text-sm font-semibold text-white">Website URL</label>
+                <label htmlFor="diag-url-input" className="block text-sm font-semibold text-white">
+                  Website URL
+                </label>
                 <input
+                  id="diag-url-input"
                   type="text"
                   required
                   value={url}
                   onChange={e => setUrl(e.target.value)}
-                  placeholder="example.com.au"
-                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-colors text-sm"
+                  placeholder="e.g. yourbusiness.com.au"
+                  className="w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[48px]"
                 />
-                <p className="text-xs text-white/50 font-serif leading-normal pt-1">
-                  Checks your structured data, location signals and priority service information formatting across primary search platforms.
+                <p className="text-xs text-zinc-400 font-serif leading-normal pt-0.5">
+                  Enter your domain (with or without https://). Checks structured data, location signals, and service formatting.
                 </p>
               </div>
 
-              {/* Field 2: Primary Customer Search Query - Full 12-Column Width */}
+              {/* Field 2: Primary Customer Search Query */}
               <div className="col-span-12 space-y-1.5">
-                <label className="block text-sm font-semibold text-white">Primary customer search query</label>
+                <label htmlFor="diag-intent-input" className="block text-sm font-semibold text-white">
+                  Primary customer search query
+                </label>
                 <input
+                  id="diag-intent-input"
                   type="text"
                   required
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
-                  placeholder='e.g. "solar installers Perth"'
-                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-aeo-purple transition-colors text-sm"
+                  placeholder='e.g. "solar installer Perth"'
+                  className="w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[48px]"
                 />
-                <p className="text-xs text-white/50 font-serif leading-normal pt-1">
-                  Identifies how customer questions and local searches target your business.
+                <p className="text-xs text-zinc-400 font-serif leading-normal pt-0.5">
+                  What phrase do your ideal clients search? Identifies how AI assistants match user queries to your business.
                 </p>
               </div>
               
-              {/* Submission Action & Single Mid-Page Trust Banner */}
-              <div className="col-span-12 pt-4 space-y-4">
+              {/* Submission Action & Tightly Coupled Trust Stack */}
+              <div className="col-span-12 pt-2 space-y-3">
                 <button
                   type="submit"
-                  className="w-full group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-base transition-transform hover:scale-[1.01] shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                  className="w-full group min-h-[48px] py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm sm:text-base transition-all shadow-[0_0_20px_rgba(6,182,212,0.25)] flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>Run Free Visibility Scan</span>
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  <Sparkles className="w-4 h-4 text-zinc-950" />
+                  <span>Run Free AI Visibility Scan</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
 
-                <div className="flex items-center justify-center gap-2 text-xs text-white/60 font-serif text-center px-4">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Clear scope. Fixed pricing. No lock-in contracts. Every diagnostic evaluation maps directly to practical next steps.</span>
+                {/* Law of Proximity Trust Anchor */}
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-zinc-400 font-mono text-center pt-1">
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Instant on-screen report
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> 100% Free &bull; No credit card
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Australian data
+                  </span>
                 </div>
               </div>
             </form>
@@ -210,17 +225,17 @@ export default function DiagnosticEngine() {
                 What Happens Next
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-left">
-                <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
+                <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
                   <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter website details</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Enter your website URL and primary customer search query.</p>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Enter your website URL and primary customer search query.</p>
                 </div>
-                <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
+                <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
                   <span className="text-xs font-bold text-purple-400 font-mono block">2. Receive simulated AI Impression</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Our scanner reviews your local signals and generates your AI visibility impression.</p>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Our scanner reviews your local signals and generates your AI visibility impression.</p>
                 </div>
-                <div className="bg-black/30 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">3. Chat with AI Bill</span>
-                  <p className="text-xs text-white/70 font-serif leading-snug">Click &apos;Talk to AI Bill&apos; to explore your findings and receive a complimentary copy of your scan.</p>
+                <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-1.5">
+                  <span className="text-xs font-bold text-emerald-400 font-mono block">3. Instant On-Screen Reveal</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">Review your factual grounding scores immediately on-screen, with optional interactive exploration via AI Bill.</p>
                 </div>
               </div>
             </div>
