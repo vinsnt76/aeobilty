@@ -86,8 +86,8 @@ export default function RagArticlePage() {
         }
       },
       {
-        "@type": "Article",
-        "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation",
+        "@type": "TechArticle",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#webpage"
         },
@@ -95,28 +95,18 @@ export default function RagArticlePage() {
           "@type": "WebPage",
           "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
         },
-        "headline": "AI Search Optimisation: RAG, Answer Engines & Content",
+        "headline": "RAG, Answer Engines & Why Machine-Readable Content Matters",
         "description": "A technical guide explaining Retrieval-Augmented Generation (RAG) and its role in AI search optimisation. Learn how structured content, chunking, and entity clarity improve visibility and retrieval accuracy across answer engines.",
         "author": {
-          "@type": "Person",
-          "name": "Vinnie Baker",
-          "url": "https://aeobility.com.au/vince-baker"
+          "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://aeobility.com.au/android-chrome-512x512.png",
-            "width": 512,
-            "height": 512
-          }
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-07-23",
-        "dateModified": "2026-07-23",
+        "dateModified": "2026-08-31",
         "inLanguage": "en-AU",
-        "wordCount": "2600",
+        "wordCount": "3200",
         "keywords": [
           "AI search optimisation",
           "Retrieval-Augmented Generation",
@@ -137,7 +127,9 @@ export default function RagArticlePage() {
         },
         "articleSection": [
           "RAG Pipeline",
-          "Entity Matching & Passage Retrieval",
+          "Grounding & Preventing Vector Drift",
+          "Passage Retrieval & Semantic Chunking",
+          "Positional Bias Mitigation",
           "AI Search Optimisation",
           "RAG Misconceptions",
           "Pre-Chunking vs Post-Chunking",
@@ -168,6 +160,12 @@ export default function RagArticlePage() {
           }
         ],
         "mentions": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://aeobility.com.au/diagnostic#webapp",
+            "name": "AI Visibility Diagnostic Engine",
+            "url": "https://aeobility.com.au/diagnostic"
+          },
           {
             "@type": "Thing",
             "name": "AI Visibility",
@@ -435,8 +433,9 @@ export default function RagArticlePage() {
             <nav aria-label="Article section navigation" className="p-3 bg-white/[0.02] border border-white/10 rounded-xl font-sans text-xs flex flex-wrap items-center gap-2 text-white/70 mt-4">
               <span className="font-bold text-aeo-cyan uppercase tracking-wider text-[10px] mr-1">Quick Jump:</span>
               <a href="#rag-pipeline" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">RAG Pipeline</a>
-              <a href="#rag-misconceptions" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Misconceptions</a>
-              <a href="#rag-chunking" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Chunking</a>
+              <a href="#grounding-mechanics" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Grounding &amp; Drift</a>
+              <a href="#passage-chunking" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Atomic Chunking</a>
+              <a href="#positional-bias" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Positional Bias</a>
               <a href="#rag-faq" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">RAG FAQ</a>
             </nav>
           </div>
@@ -1027,6 +1026,170 @@ export default function RagArticlePage() {
                 You control <strong>how your content is written and formatted</strong>, not how AI platforms slice it. Descriptive headings, self-contained paragraphs, and explicit factual statements make retrieval seamless across every major search engine.
               </p>
             </div>
+
+            {/* ============================================================================== */}
+            {/* SECTION: Grounding & Canonical Data Ingestion */}
+            {/* ============================================================================== */}
+            <section id="grounding-mechanics" className="border-t border-white/10 pt-12 space-y-6 scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+                  <Database className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>RAG Layer 01: Canonical Ingestion</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  1. Grounding &amp; Preventing Vector Cosine Drift
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  How dense retrieval models convert web pages into vector representations, and why unstructured marketing prose causes retrieval failure.
+                </p>
+              </div>
+
+              <div className="p-5 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-4 font-serif text-xs text-zinc-300 leading-relaxed">
+                <p>
+                  When an AI crawler (such as GPTBot, ClaudeBot, or PerplexityBot) ingests a web page, it does not store the full HTML layout. Instead, the scraper tokenises the visible text, splits it into numerical vectors via embedding models (e.g. <code>text-embedding-004</code> or <code>Cohere Embed v3</code>), and projects those vectors into a multidimensional semantic space.
+                </p>
+                <p>
+                  If your website describes services using subjective marketing buzzwords (for example: <em>&ldquo;We craft bespoke end-to-end digital synergies&rdquo;</em>), the resulting vector drifts far from the user&apos;s actual search query (<em>&ldquo;hire an AEO consultant in Perth&rdquo;</em>). Cosine similarity measures the geometric distance between these vectors:
+                </p>
+                
+                {/* Mathematical Formulation Box */}
+                <div className="p-4 bg-black/60 border border-cyan-500/20 rounded-xl font-mono text-[11px] text-cyan-200 space-y-1">
+                  <div className="text-cyan-400 font-bold uppercase tracking-wider text-[10px]">Vector Proximity Formulation:</div>
+                  <div className="text-center py-2 text-white font-mono text-xs sm:text-sm">
+                    Similarity(Q, D) = (q &middot; d) / (||q|| &times; ||d||)
+                  </div>
+                  <p className="text-[10px] text-zinc-400 font-serif pt-1">
+                    Where Q is the user prompt vector and D is the stored document chunk vector. Vague marketing prose reduces cosine similarity below top-k retrieval thresholds.
+                  </p>
+                </div>
+
+                <p>
+                  To prevent vector drift, content must be anchored in deterministic <strong>Entity-Relationship-Evidence (ERE) triples</strong>. Explicitly declaring <code>[Subject: AEObility] &rarr; [Predicate: providesService] &rarr; [Object: Answer Engine Optimisation]</code> gives the vectoriser an unambiguous mathematical anchor.
+                </p>
+              </div>
+            </section>
+
+            {/* ============================================================================== */}
+            {/* SECTION: Passage Retrieval & Semantic Chunking */}
+            {/* ============================================================================== */}
+            <section id="passage-chunking" className="border-t border-white/10 pt-12 space-y-6 scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-xs font-mono text-purple-300">
+                  <Layers className="w-3.5 h-3.5 text-purple-400" />
+                  <span>RAG Layer 02: Dense Passage Extraction</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  2. Engineering 40–80 Token Atomic Answer Units
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  Why long text walls get truncated during sentence boundary splitting, and how to format self-contained atomic answers.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
+                {/* Failed Chunk Example */}
+                <div className="p-5 bg-rose-950/10 border border-rose-500/20 rounded-2xl space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold text-rose-400 uppercase">Legacy Prose Text Wall</span>
+                    <span className="text-[10px] font-mono text-zinc-500">&gt; 250 Tokens</span>
+                  </div>
+                  <p className="text-xs text-zinc-400 font-serif leading-relaxed italic">
+                    &ldquo;Welcome to our company where innovation meets digital passion. For over twenty years we have helped Australian clients navigate changing technology trends through our holistic service offering that encompasses modern marketing, consulting, bespoke strategies, and implementation...&rdquo;
+                  </p>
+                  <div className="p-2.5 bg-black/50 border border-rose-500/30 rounded-lg text-[11px] text-rose-300 font-serif">
+                    <strong>Retrieval Failure:</strong> Chunk boundary splits mid-paragraph. The LLM extracts vague claims with zero hard deliverables or pricing facts.
+                  </div>
+                </div>
+
+                {/* Optimized Atomic Chunk Example */}
+                <div className="p-5 bg-cyan-950/20 border border-cyan-500/40 rounded-2xl space-y-3 shadow-[0_0_20px_rgba(6,182,212,0.1)]">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase">AEObility Atomic Block</span>
+                    <span className="text-[10px] font-mono text-cyan-400">62 Tokens</span>
+                  </div>
+                  <p className="text-xs text-white font-serif leading-relaxed">
+                    &ldquo;AEObility delivers fixed-scope Answer Engine Optimisation (AEO) sprints for Australian SMBs starting from $495 AUD ex. GST. Deliverables include nested JSON-LD schema graphs, atomic passage rewrites, and multi-engine citation alignment for ChatGPT, Perplexity, and Google AI Overviews.&rdquo;
+                  </p>
+                  <div className="p-2.5 bg-black/50 border border-cyan-500/30 rounded-lg text-[11px] text-cyan-200 font-serif">
+                    <strong>Retrieval Success:</strong> 100% self-contained entity statement. Survives token budget truncation and extracts cleanly into synthesis answers.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ============================================================================== */}
+            {/* SECTION: Positional Bias & Attention Weighting */}
+            {/* ============================================================================== */}
+            <section id="positional-bias" className="border-t border-white/10 pt-12 space-y-6 scroll-mt-24">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-xs font-mono text-emerald-300">
+                  <Cpu className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>RAG Layer 03: Attention Weighting</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  3. Mitigating the &quot;Lost in the Middle&quot; Attention Curve
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  Understanding transformer attention allocation to guarantee your critical claims are prioritised during generative synthesis.
+                </p>
+              </div>
+
+              <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-5 font-serif text-xs text-zinc-300 leading-relaxed">
+                <p>
+                  Large Language Models (LLMs) suffer from empirical <strong>positional bias</strong> during synthesis. Research demonstrates a persistent U-shaped attention distribution: models allocate high attention weights to text located at the absolute beginning (primacy effect) and end (recency effect) of retrieved context chunks, while factual details buried in the middle of long sections suffer severe context dilution.
+                </p>
+
+                {/* Positional Attention Distribution Diagram */}
+                <div className="p-5 bg-black/80 border border-white/10 rounded-xl space-y-3 font-sans">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                    <span className="text-cyan-400 font-bold">1. Primacy Peak (High Attention)</span>
+                    <span className="text-rose-400 font-bold">2. Trough (Lost in the Middle)</span>
+                    <span className="text-purple-400 font-bold">3. Recency Peak (High Attention)</span>
+                  </div>
+                  <div className="h-10 w-full bg-gradient-to-r from-cyan-500/40 via-rose-500/10 to-purple-500/40 rounded-lg border border-white/10 flex items-center justify-between px-4 text-[10px] font-mono text-white">
+                    <span>Chars 0–150 (Immediate Answer)</span>
+                    <span className="text-rose-400">Chars 151–800 (Context Dilution)</span>
+                    <span>Closing Proof / Case Study CTA</span>
+                  </div>
+                </div>
+
+                <p>
+                  <strong>The AEObility Implementation Rule:</strong> Every H2 and H3 section must deliver a direct, declarative answer within the first 150 characters. Supporting evidence, technical nuances, and secondary parameters follow, concluding with an explicit entity link.
+                </p>
+              </div>
+            </section>
+
+            {/* ============================================================================== */}
+            {/* COMMERCIAL UPLINK: Bridge to Services Hub */}
+            {/* ============================================================================== */}
+            <section className="my-8 p-6 sm:p-8 bg-gradient-to-r from-cyan-950/30 via-zinc-950 to-purple-950/30 border border-cyan-500/40 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="space-y-1.5 text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-cyan-950/80 border border-cyan-500/30 text-[11px] font-mono text-cyan-300 font-bold uppercase">
+                  Commercial Execution Bridge
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                  Deploy Production-Grade AEO Structures
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif max-w-xl">
+                  Format your website for machine extraction. Explore our fixed-scope technical micro-sprints from $495 AUD ex. GST or evaluate your current score.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+                <Link
+                  href="/services/aeo"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-400 text-black font-bold text-xs hover:bg-white transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                >
+                  <span>Explore AEO Services &amp; Sprints</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/diagnostic"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all"
+                >
+                  <span>Run Diagnostic Scan</span>
+                </Link>
+              </div>
+            </section>
 
             {/* Section 7 */}
             <div id="rag-faq" className="scroll-mt-24">
