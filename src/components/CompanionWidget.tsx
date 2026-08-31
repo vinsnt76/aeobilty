@@ -339,8 +339,8 @@ export default function CompanionWidget() {
     setIsOpen(!isOpen);
   };
 
-  // Suppress AI Bill companion widget on /about and /freelance routes
-  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+  // Suppress AI Bill companion widget on /about, /freelance, and /diagnostic routes
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance') || pathname?.startsWith('/diagnostic')) {
     return null;
   }
 
