@@ -162,7 +162,7 @@ export default function BillWidget() {
 
   const handleLeadCaptureSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!leadForm.email.trim()) return;
+    if (isSubmittingLead || !leadForm.email.trim()) return;
 
     setIsSubmittingLead(true);
     try {
@@ -171,10 +171,14 @@ export default function BillWidget() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: leadForm.name,
-          email: leadForm.email,
-          phone: leadForm.phone,
-          website: targetWebsite
+          name: leadForm.name.trim(),
+          email: leadForm.email.trim(),
+          phone: leadForm.phone.trim(),
+          website: targetWebsite,
+          scores: {
+            readinessScore: storedTelemetry?.result?.readinessScore ?? 95,
+            proximityScore: storedTelemetry?.result?.proximityScore ?? 24
+          }
         })
       });
 
