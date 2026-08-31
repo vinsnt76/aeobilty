@@ -23,6 +23,7 @@ export const Forms = {
         }
 
         const resend = new Resend(process.env.RESEND_API_KEY || "re_dummykeyforbuild");
+        const fromEmail = process.env.RESEND_FROM_EMAIL || "AEObility Diagnostics <reports@aeobility.com.au>";
         const domain = website ? website.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'your website';
         const readiness = scores?.readinessScore ?? 95;
         const proximity = scores?.proximityScore ?? 24;
@@ -30,8 +31,8 @@ export const Forms = {
         // 1. Non-blocking internal notification
         try {
           await resend.emails.send({
-            from: "AEObility Telemetry <noreply@aeobility.com.au>",
-            to: "support@aeobility.com.au",
+            from: fromEmail,
+            to: process.env.TEAM_NOTIFICATION_EMAIL || "support@aeobility.com.au",
             subject: `[New Lead] AI Telemetry Audit: ${domain}`,
             html: `
               <h2>New Audit Request &amp; AI Telemetry Lead</h2>
@@ -49,7 +50,7 @@ export const Forms = {
 
         // 2. Client deliverable scorecard email
         await resend.emails.send({
-          from: "AEObility Diagnostics <reports@aeobility.com.au>",
+          from: fromEmail,
           to: email,
           subject: `Your AI Visibility Diagnostic: ${domain}`,
           html: `
