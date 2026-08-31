@@ -12,6 +12,7 @@ import { calculateReadinessScore } from '@/lib/telemetry/scoring';
 import { getTelemetryCache, setTelemetryCache } from '@/lib/telemetry/cache';
 import { extractFeatures } from '@/lib/telemetry/features';
 import { generateInsightEngineResult } from '@/lib/telemetry/insight-engine';
+import { classifyEntityState } from '@/lib/telemetry/entityClassifier';
 
 // Allow maximum duration (60s on Vercel Hobby) for telemetry processing
 export const maxDuration = 60;
@@ -76,6 +77,30 @@ export async function POST(req: NextRequest) {
       engineeredFeatures
     );
 
+    const clientImpressionEstimate = Math.max(1, Math.round((clientNode?.similarity || 0) * 100));
+    const compImpressionEstimates = compNodes.map((cn, i) => ({
+      url: competitorUrls[i] || `https://competitor-${i + 1}.com.au`,
+      impressions: Math.max(1, Math.round((cn.similarity || 0) * 100)),
+      isCommercialNode: true,
+      hasSchema: true
+    }));
+
+    const entityClassification = classifyEntityState({
+      entityTopic: intent,
+      targetIntentType: 'commercial',
+      observedNodes: [
+        {
+          url: url || 'https://client-site.com.au',
+          impressions: clientImpressionEstimate,
+          hasSchema: clientCrawl.schemaValidation?.hasValidSchema ?? false,
+          hasAtomicBlocks: (clientCrawl.technicalSEO?.headingsCount.h2 ?? 0) >= 2,
+          isCommercialNode: true
+        },
+        ...compImpressionEstimates
+      ],
+      targetCanonicalUrl: url
+    });
+
     const result: TelemetryResult = {
       clientUrl: url,
       proximityScore: Math.round((clientNode?.similarity || 0) * 100),
@@ -89,7 +114,8 @@ export async function POST(req: NextRequest) {
       performance,
       entityConfidence,
       engineeredFeatures,
-      crawlQuality: clientCrawl.crawlQuality
+      crawlQuality: clientCrawl.crawlQuality,
+      entityClassification
     };
 
     // 6. Generate Insight Engine Result

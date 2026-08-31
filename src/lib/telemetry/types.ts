@@ -122,4 +122,7 @@ export interface TelemetryResult {
   
   // Insight Engine Extension
   insightResult?: InsightEngineResult;
+
+  // 7-State Entity Classification & HHI Metric
+  entityClassification?: import('./entityClassifier').EntityClassificationResult;
 }
