@@ -1,6 +1,6 @@
 import http from 'https';
 
-const TARGET_HOST = process.env.TARGET_HOST || 'www.aeobility.com.au';
+const TARGET_HOST = process.env.TARGET_HOST || 'aeobility.com.au';
 const TARGET_PATH = '/api/search/answer';
 const SIMULATED_ORIGIN = 'https://autonomous-agent-runtime.ai';
 

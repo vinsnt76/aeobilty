@@ -12,10 +12,10 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: any[] = [
     {
       "@type": "Organization",
-      "@id": "https://www.aeobility.com.au/#organization",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "legalName": "Trekaboutoz trading as AEObility",
-      "url": "https://www.aeobility.com.au/",
+      "url": "https://aeobility.com.au/",
       "telephone": "+61480286282",
       "identifier": {
         "@type": "PropertyValue",
@@ -36,63 +36,63 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.aeobility.com.au/#website",
-      "url": "https://www.aeobility.com.au/",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "inLanguage": "en-AU"
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#breadcrumb",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.aeobility.com.au/"
+          "item": "https://aeobility.com.au/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://www.aeobility.com.au/services"
+          "item": "https://aeobility.com.au/services"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "AEO & SEO",
-          "item": "https://www.aeobility.com.au/services/aeo"
+          "item": "https://aeobility.com.au/services/aeo"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Local Business Visibility",
-          "item": "https://www.aeobility.com.au/services/aeo/local-business"
+          "item": "https://aeobility.com.au/services/aeo/local-business"
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#webpage",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#webpage",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
       "name": "Local Business Visibility across Maps & AI Search",
       "headline": "Local Search & AEO for Local Businesses",
       "description": "Fixed-scope local search and AEO services for Australian trades, clinics and local service businesses. Fix inconsistent business details, missing suburb schema, citation gaps and location mapping issues across Search, Maps and AI answers.",
       "inLanguage": "en-AU",
       "isPartOf": {
-        "@id": "https://www.aeobility.com.au/#website"
+        "@id": "https://aeobility.com.au/#website"
       },
       "publisher": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#breadcrumb"
+        "@id": "https://aeobility.com.au/services/aeo/local-business#breadcrumb"
       },
       "mainEntity": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#service"
+        "@id": "https://aeobility.com.au/services/aeo/local-business#service"
       },
       "about": [
         { "@type": "Thing", "name": "Local search optimisation" },
@@ -108,7 +108,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "name": "Request a local AEO quote",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://www.aeobility.com.au/contact",
+            "urlTemplate": "https://aeobility.com.au/contact",
             "inLanguage": "en-AU"
           }
         },
@@ -117,7 +117,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "name": "Run a free local visibility scan",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://www.aeobility.com.au/services/aeo/local-business#local-diagnostic-form",
+            "urlTemplate": "https://aeobility.com.au/services/aeo/local-business#local-diagnostic-form",
             "inLanguage": "en-AU"
           }
         }
@@ -125,7 +125,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
     },
     {
       "@type": "Service",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#service",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#service",
       "name": "Local Business Visibility across Maps & AI Search",
       "alternateName": [
         "Local Search & AEO for Local Businesses",
@@ -133,9 +133,9 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "Local Business GEO"
       ],
       "description": "Fixed-scope local search, Maps and AI search optimisation for Australian trade businesses, clinics, storefronts and regional service providers. Services address local structured data, citation consistency, Google Business Profile alignment, service-area content and multi-location internal linking.",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
       "provider": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -157,50 +157,50 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "Service-area page restructuring",
         "Multi-location internal linking"
       ],
-      "termsOfService": "https://www.aeobility.com.au/terms",
+      "termsOfService": "https://aeobility.com.au/terms",
       "hasOfferCatalog": {
-        "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-catalog"
+        "@id": "https://aeobility.com.au/services/aeo/local-business#offer-catalog"
       },
       "offers": [
-        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer" },
-        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer" },
-        { "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer" }
+        { "@id": "https://aeobility.com.au/services/aeo/local-business#micro-sprint-offer" },
+        { "@id": "https://aeobility.com.au/services/aeo/local-business#foundation-offer" },
+        { "@id": "https://aeobility.com.au/services/aeo/local-business#blueprint-offer" }
       ]
     },
     {
       "@type": "OfferCatalog",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#offer-catalog",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#offer-catalog",
       "name": "AEObility Local Business Visibility Services",
       "itemListElement": [
         {
           "@type": "OfferCatalog",
           "name": "Proximity Micro-Sprints",
           "itemListElement": [
-            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer" }
+            { "@id": "https://aeobility.com.au/services/aeo/local-business#micro-sprint-offer" }
           ]
         },
         {
           "@type": "OfferCatalog",
           "name": "Local Foundation Services",
           "itemListElement": [
-            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer" }
+            { "@id": "https://aeobility.com.au/services/aeo/local-business#foundation-offer" }
           ]
         },
         {
           "@type": "OfferCatalog",
           "name": "Local Strategy and Diagnostic Services",
           "itemListElement": [
-            { "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer" }
+            { "@id": "https://aeobility.com.au/services/aeo/local-business#blueprint-offer" }
           ]
         }
       ]
     },
     {
       "@type": "Offer",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#micro-sprint-offer",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#micro-sprint-offer",
       "name": "Proximity Micro-Sprint",
       "description": "A fixed-scope local signal repair for one priority issue, including LocalBusiness or service schema injection, or citation clean-up and NAP standardisation.",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
       "price": "495",
       "priceCurrency": "AUD",
       "priceSpecification": {
@@ -221,7 +221,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "NAP standardisation"
         ],
         "provider": {
-          "@id": "https://www.aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -231,10 +231,10 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
     },
     {
       "@type": "Offer",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#foundation-offer",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#foundation-offer",
       "name": "Unified Local Foundation",
       "description": "A four-week local visibility implementation for multi-location clinics and growing trade services, combining structured data, citation consistency and internal location-page connections.",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
       "price": "3195",
       "priceCurrency": "AUD",
       "priceSpecification": {
@@ -255,7 +255,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "Service-area optimisation"
         ],
         "provider": {
-          "@id": "https://www.aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -265,10 +265,10 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
     },
     {
       "@type": "Offer",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#blueprint-offer",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#blueprint-offer",
       "name": "Local Visibility Blueprint",
       "description": "A fixed-price local visibility audit and 90-day execution roadmap covering local profile structures, map coordinate logic and existing structured data. The Blueprint fee is credited toward Foundation work.",
-      "url": "https://www.aeobility.com.au/services/aeo/local-business",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
       "price": "995",
       "priceCurrency": "AUD",
       "priceSpecification": {
@@ -289,7 +289,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "90-day local visibility roadmap"
         ],
         "provider": {
-          "@id": "https://www.aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -302,7 +302,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/services/aeo/local-business#faq",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#faq",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,

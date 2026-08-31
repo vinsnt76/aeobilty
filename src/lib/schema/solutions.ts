@@ -12,66 +12,66 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: any[] = [
     {
       "@type": "WebPage",
-      "@id": "https://www.aeobility.com.au/solutions#webpage",
-      "url": "https://www.aeobility.com.au/solutions",
+      "@id": "https://aeobility.com.au/solutions#webpage",
+      "url": "https://aeobility.com.au/solutions",
       "name": "Transparent AEO Solutions, Sprints & Pricing | AEObility",
       "description": "Explore transparent pricing models for Australian businesses. Standalone $995 AEObility Blueprint audit, fixed-scope micro-sprints from $495 AUD ex. GST, and Foundation Implementation.",
       "inLanguage": "en-AU",
       "isPartOf": {
-        "@id": "https://www.aeobility.com.au/#website"
+        "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
-        "@id": "https://www.aeobility.com.au/solutions#breadcrumb"
+        "@id": "https://aeobility.com.au/solutions#breadcrumb"
       },
       "mainEntity": {
-        "@id": "https://www.aeobility.com.au/solutions#catalog"
+        "@id": "https://aeobility.com.au/solutions#catalog"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.aeobility.com.au/solutions#breadcrumb",
+      "@id": "https://aeobility.com.au/solutions#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.aeobility.com.au/"
+          "item": "https://aeobility.com.au/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Solutions",
-          "item": "https://www.aeobility.com.au/solutions"
+          "item": "https://aeobility.com.au/solutions"
         }
       ]
     },
     {
       "@type": "OfferCatalog",
-      "@id": "https://www.aeobility.com.au/solutions#catalog",
+      "@id": "https://aeobility.com.au/solutions#catalog",
       "name": "AEObility Master Service Solutions & Pricing Framework",
       "itemListElement": [
         {
           "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/solutions#offer-blueprint",
+          "@id": "https://aeobility.com.au/solutions#offer-blueprint",
           "name": "The AEObility Blueprint",
-          "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+          "url": "https://aeobility.com.au/solutions/aeo-blueprint",
           "sku": "BPSTRAT",
           "price": "995.00",
           "priceCurrency": "AUD",
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
           "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/solutions#offer-micro-sprints",
+          "@id": "https://aeobility.com.au/solutions#offer-micro-sprints",
           "name": "AEO Technical Micro-Sprints",
-          "url": "https://www.aeobility.com.au/solutions/aeo-sprint",
+          "url": "https://aeobility.com.au/solutions/aeo-sprint",
           "sku": "SS1-SS4-MICRO",
           "priceSpecification": {
             "@type": "PriceSpecification",
@@ -82,14 +82,14 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
           "@type": "Offer",
-          "@id": "https://www.aeobility.com.au/solutions#offer-foundation",
+          "@id": "https://aeobility.com.au/solutions#offer-foundation",
           "name": "Foundation Implementation",
-          "url": "https://www.aeobility.com.au/solutions#solutions-foundation",
+          "url": "https://aeobility.com.au/solutions#solutions-foundation",
           "sku": "SS1-SS4-MACRO",
           "priceSpecification": {
             "@type": "PriceSpecification",
@@ -100,7 +100,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week implementation engagement starting from $3,195 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://www.aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organization"
           }
         }
       ]
@@ -110,7 +110,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/solutions#faq-solutions",
+      "@id": "https://aeobility.com.au/solutions#faq-solutions",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,

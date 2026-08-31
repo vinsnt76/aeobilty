@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
   description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
   alternates: {
-    canonical: "https://www.aeobility.com.au/solutions/aeo-blueprint",
+    canonical: "https://aeobility.com.au/solutions/aeo-blueprint",
   },
   openGraph: {
     title: "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
     description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
-    url: "https://www.aeobility.com.au/solutions/aeo-blueprint",
+    url: "https://aeobility.com.au/solutions/aeo-blueprint",
     type: "website",
     siteName: "AEObility",
   },

@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Local Business Visibility across Maps & AI Search | AEObility',
   description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
   alternates: {
-    canonical: 'https://www.aeobility.com.au/services/aeo/local-business',
+    canonical: 'https://aeobility.com.au/services/aeo/local-business',
   },
   openGraph: {
     title: 'Local Business Visibility across Maps & AI Search | AEObility',
     description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
-    url: 'https://www.aeobility.com.au/services/aeo/local-business',
+    url: 'https://aeobility.com.au/services/aeo/local-business',
     siteName: 'AEObility',
     locale: 'en_AU',
     type: 'website',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Local Business Visibility across Maps & AI Search | AEObility',
     description: 'Ensure your local service business surfaces instantly in local map packs, AI assistants, and proximity engines. Built for Aussie trades and clinics.',
-    images: ['https://www.aeobility.com.au/images/services/aeo-local-business_perth_AEObility.webp'],
+    images: ['https://aeobility.com.au/images/services/aeo-local-business_perth_AEObility.webp'],
   },
   keywords: [
     'local business visibility',

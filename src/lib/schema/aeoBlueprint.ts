@@ -12,64 +12,64 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: any[] = [
     {
       "@type": "WebPage",
-      "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#webpage",
-      "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
+      "url": "https://aeobility.com.au/solutions/aeo-blueprint",
       "name": "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
       "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. Fully credited towards Foundation Implementation within 60 days of handover.",
       "inLanguage": "en-AU",
       "isPartOf": {
-        "@id": "https://www.aeobility.com.au/#website"
+        "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
-        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
+        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
       },
       "mainEntity": {
-        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#product"
+        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#breadcrumb",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.aeobility.com.au/"
+          "item": "https://aeobility.com.au/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Solutions",
-          "item": "https://www.aeobility.com.au/solutions"
+          "item": "https://aeobility.com.au/solutions"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "The AEObility Blueprint",
-          "item": "https://www.aeobility.com.au/solutions/aeo-blueprint"
+          "item": "https://aeobility.com.au/solutions/aeo-blueprint"
         }
       ]
     },
     {
       "@type": "Product",
-      "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#product",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
       "name": "The AEObility Blueprint",
-      "image": "https://www.aeobility.com.au/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp",
+      "image": "https://aeobility.com.au/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp",
       "description": "A comprehensive digital presence audit, technical gap analysis, and prioritised 90-day execution roadmap.",
       "sku": "BPSTRAT",
       "brand": {
         "@type": "Organization",
         "name": "AEObility",
-        "url": "https://www.aeobility.com.au"
+        "url": "https://aeobility.com.au"
       },
       "offers": {
         "@type": "Offer",
-        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#offer",
-        "url": "https://www.aeobility.com.au/solutions/aeo-blueprint",
+        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer",
+        "url": "https://aeobility.com.au/solutions/aeo-blueprint",
         "name": "AEObility Blueprint Strategic Audit",
         "sku": "BPSTRAT",
         "price": "995.00",
@@ -81,18 +81,18 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
           "description": "Excluding GST"
         },
         "seller": {
-          "@id": "https://www.aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     },
     {
       "@type": "Service",
-      "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#service",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#service",
       "name": "The AEObility Blueprint Strategic Audit",
       "alternateName": "BPSTRAT",
       "description": "A strategic digital presence audit and prioritised 90-day action plan covering website structure, structured data, business information, local tracking, and key service pages.",
       "provider": {
-        "@id": "https://www.aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -103,7 +103,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "audienceType": "Australian small businesses, agency teams and internal marketing teams"
       },
       "offers": {
-        "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#offer"
+        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer"
       }
     }
   ];
@@ -111,7 +111,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://www.aeobility.com.au/solutions/aeo-blueprint#faq-blueprint",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#faq-blueprint",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,
