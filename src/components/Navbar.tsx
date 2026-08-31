@@ -171,7 +171,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5 lg:hidden">
             <Link
               href="/diagnostic"
-              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black rounded-full hover:opacity-90 active:scale-95 transition-all shadow-sm"
+              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-aeo-cyan to-aeo-purple text-white rounded-full hover:opacity-90 active:scale-95 transition-all shadow-sm"
             >
               Diagnostic
             </Link>
@@ -252,7 +252,7 @@ export default function Navbar() {
           <Link
             href="/diagnostic"
             onClick={() => setIsOpen(false)}
-            className="flex items-center justify-between w-full py-3 px-4 text-xs font-bold bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black rounded-xl hover:scale-[1.01] transition-transform shadow-lg"
+            className="flex items-center justify-between w-full py-3 px-4 text-xs font-bold bg-gradient-to-r from-aeo-cyan to-aeo-purple text-white rounded-xl hover:scale-[1.01] transition-transform shadow-lg"
           >
             <span>Run Free Visibility Scan</span>
             <ArrowRight className="w-4 h-4" />
