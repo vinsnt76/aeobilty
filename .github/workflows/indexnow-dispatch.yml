@@ -1,0 +1,33 @@
+name: IndexNow Protocol Dispatch
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/app/**'
+      - 'src/lib/**'
+      - 'public/**'
+      - 'AEObility -IA & SLM.csv'
+      - 'scripts/submit-indexnow.ts'
+  workflow_dispatch:
+
+jobs:
+  indexnow-push:
+    name: Dispatch Instant IndexNow Push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set Up Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Dispatch Bulk IndexNow Push
+        run: npx tsx scripts/submit-indexnow.ts
