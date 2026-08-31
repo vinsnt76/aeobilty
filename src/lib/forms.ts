@@ -30,7 +30,7 @@ export const Forms = {
 
         // 1. Non-blocking internal notification
         try {
-          await resend.emails.send({
+          const internalResult = await resend.emails.send({
             from: fromEmail,
             to: process.env.TEAM_NOTIFICATION_EMAIL || "support@aeobility.com.au",
             subject: `[New Lead] AI Telemetry Audit: ${domain}`,
@@ -44,12 +44,17 @@ export const Forms = {
               <p><strong>Target Location Grounding:</strong> ${proximity}%</p>
             `,
           });
+          if (internalResult.error) {
+            console.error("Internal lead notification alert error (non-blocking):", internalResult.error);
+          } else {
+            console.log("Internal lead alert dispatched successfully with ID:", internalResult.data?.id);
+          }
         } catch (internalErr) {
           console.error("Internal lead notification alert failed (non-blocking):", internalErr);
         }
 
         // 2. Client deliverable scorecard email
-        await resend.emails.send({
+        const { data, error } = await resend.emails.send({
           from: fromEmail,
           to: email,
           subject: `Your AI Visibility Diagnostic: ${domain}`,
@@ -100,7 +105,13 @@ export const Forms = {
           `,
         });
 
-        return { ok: true };
+        if (error) {
+          console.error("Resend client delivery error:", error);
+          throw new Error(`Resend Error: ${error.message || JSON.stringify(error)}`);
+        }
+
+        console.log("Resend client scorecard email dispatched successfully with ID:", data?.id);
+        return { ok: true, messageId: data?.id };
       },
 
       async submitQuoteForm({

@@ -117,6 +117,7 @@ export default function BillWidget() {
   });
   const [isReportDispatched, setIsReportDispatched] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
+  const [leadError, setLeadError] = useState('');
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
 
   // 1. Session Storage Synced Data Hydration
@@ -177,6 +178,7 @@ export default function BillWidget() {
     e.preventDefault();
     if (isSubmittingLead || !leadForm.email.trim()) return;
 
+    setLeadError('');
     setIsSubmittingLead(true);
     try {
       const targetWebsite = storedTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
@@ -195,7 +197,9 @@ export default function BillWidget() {
         })
       });
 
-      if (res.ok) {
+      const json = await res.json().catch(() => ({ ok: false, error: 'Server communication error' }));
+
+      if (res.ok && json.ok) {
         setIsLeadCaptured(true);
         setIsReportDispatched(true);
         if (typeof window !== 'undefined') {
@@ -208,9 +212,12 @@ export default function BillWidget() {
           readiness_score: storedTelemetry?.result?.readinessScore ?? 95,
           proximity_score: storedTelemetry?.result?.proximityScore ?? 24,
         });
+      } else {
+        setLeadError(json.error || 'Failed to dispatch report. Please verify your email and retry.');
       }
-    } catch (err) {
+    } catch (err: unknown) {
       console.error("Lead submission error:", err);
+      setLeadError(err instanceof Error ? err.message : 'Network error. Please try again.');
     } finally {
       setIsSubmittingLead(false);
     }
@@ -705,6 +712,12 @@ export default function BillWidget() {
                   suppressHydrationWarning
                 />
               </div>
+
+              {leadError && (
+                <div className="p-2 rounded-lg bg-rose-950/60 border border-rose-500/30 text-[11px] text-rose-300">
+                  {leadError}
+                </div>
+              )}
 
               <button
                 type="submit"
