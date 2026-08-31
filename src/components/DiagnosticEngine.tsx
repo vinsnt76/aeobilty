@@ -21,7 +21,8 @@ import {
   Eye,
   ChevronDown,
   CircleHelp,
-  Printer
+  Printer,
+  Mail
 } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
@@ -262,6 +263,17 @@ export default function DiagnosticEngine() {
         }
       }));
       window.dispatchEvent(new Event('open_bill_drawer'));
+    }
+  };
+
+  const openEmailGate = () => {
+    trackGaEvent('send_report_cta_clicked', {
+      event_category: 'diagnostic_funnel',
+      source: 'diagnostic_results',
+      target_url: url,
+    });
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('open_bill_gate'));
     }
   };
 
@@ -600,14 +612,23 @@ export default function DiagnosticEngine() {
                   </span>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                  <button
+                    type="button"
+                    onClick={openEmailGate}
+                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 font-bold text-xs transition-all cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.15)] text-center"
+                  >
+                    <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Email Full Report</span>
+                  </button>
+
                   <button
                     type="button"
                     onClick={openAiBill}
-                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-colors cursor-pointer text-center"
                   >
-                    <MessageSquare className="w-4 h-4 text-cyan-400" />
-                    <span>Discuss Findings with AI Bill</span>
+                    <MessageSquare className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Discuss with AI Bill</span>
                   </button>
 
                   <Link
@@ -620,10 +641,10 @@ export default function DiagnosticEngine() {
                         price_aud: bpstratPrice,
                       });
                     }}
-                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
+                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
                   >
-                    <span>Get The AEObility Blueprint</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-950" />
+                    <span>Get Blueprint ($995)</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-zinc-950 shrink-0" />
                   </Link>
                 </div>
               </div>

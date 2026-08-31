@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle, ArrowRight } from 'lucide-react';
+import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle, ArrowRight, Mail } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { TelemetryResult } from '@/lib/telemetry/types';
@@ -116,6 +116,7 @@ export default function BillWidget() {
     return false;
   });
   const [isReportDispatched, setIsReportDispatched] = useState(false);
+  const [isGateOpenManually, setIsGateOpenManually] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
   const [leadError, setLeadError] = useState('');
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
@@ -145,8 +146,19 @@ export default function BillWidget() {
     const handleOpenDrawer = () => {
       setIsOpen(true);
     };
+    const handleOpenGate = () => {
+      window.dispatchEvent(new Event('close_companion_widget'));
+      setIsOpen(true);
+      setIsTelemetryMode(true);
+      setIsGateOpenManually(true);
+    };
+
     window.addEventListener('open_bill_drawer', handleOpenDrawer);
-    return () => window.removeEventListener('open_bill_drawer', handleOpenDrawer);
+    window.addEventListener('open_bill_gate', handleOpenGate);
+    return () => {
+      window.removeEventListener('open_bill_drawer', handleOpenDrawer);
+      window.removeEventListener('open_bill_gate', handleOpenGate);
+    };
   }, []);
 
   // 2. STABLE PROTECTED STREAM HOOK BINDINGS
@@ -158,9 +170,9 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
-  // Calculate User Turn Count for Lead Gating (Triggers on 4th user turn)
+  // Calculate User Turn Count for Lead Gating (Triggers on 4th user turn or manual trigger)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = userTurnCount >= 4 && !isLeadCaptured;
+  const isGated = (userTurnCount >= 4 || isGateOpenManually) && !isLeadCaptured;
 
   const hasLoggedGateRef = useRef(false);
   useEffect(() => {
@@ -168,11 +180,12 @@ export default function BillWidget() {
       hasLoggedGateRef.current = true;
       trackGaEvent('bill_gate_reached_turn_4', {
         event_category: 'bill_conversion_funnel',
-        turn_count: 4,
+        turn_count: userTurnCount,
+        trigger_type: isGateOpenManually ? 'manual_button_click' : 'turn_4_threshold',
         target_url: storedTelemetry?.url || '',
       });
     }
-  }, [isGated, storedTelemetry]);
+  }, [isGated, storedTelemetry, userTurnCount, isGateOpenManually]);
 
   const handleLeadCaptureSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -404,6 +417,16 @@ export default function BillWidget() {
 
   // 4. Conversational Outcome-Led Chip Mapping
   const handleChipClick = async (chipText: string) => {
+    if (chipText.includes('Email') || chipText.includes('Send')) {
+      trackGaEvent('bill_gate_triggered_manually', {
+        event_category: 'bill_conversion_funnel',
+        source: 'bill_quick_chip',
+        target_url: storedTelemetry?.url || '',
+      });
+      setIsGateOpenManually(true);
+      return;
+    }
+
     const queryMap: Record<string, string> = {
       'What should I fix first?': 'What is the highest priority structural gap in this scan and what should I fix first?',
       'How do I improve my score?': 'How can I improve my AI Visibility Score and entity clarity?',
@@ -736,7 +759,10 @@ export default function BillWidget() {
             <div className="pt-1 text-center">
               <button
                 type="button"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsGateOpenManually(false);
+                  setIsOpen(false);
+                }}
                 className="text-[11px] text-zinc-400 underline hover:text-zinc-200 transition cursor-pointer font-mono"
               >
                 Close chat for now
@@ -763,6 +789,26 @@ export default function BillWidget() {
         </div>
 
         <div className="flex items-center gap-1.5">
+          {/* Direct Email Gate Trigger CTA */}
+          {!isReportDispatched && !isLeadCaptured && (
+            <button
+              type="button"
+              onClick={() => {
+                trackGaEvent('bill_gate_triggered_manually', {
+                  event_category: 'bill_conversion_funnel',
+                  source: 'bill_header_cta',
+                  target_url: storedTelemetry?.url || '',
+                });
+                setIsGateOpenManually(true);
+              }}
+              className="px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 cursor-pointer font-bold shrink-0"
+              title="Email complete audit report"
+            >
+              <Mail className="w-3 h-3 text-emerald-400" />
+              <span>Send Report</span>
+            </button>
+          )}
+
           {/* Audio TTS Toggle */}
           <button
             type="button"
@@ -791,7 +837,10 @@ export default function BillWidget() {
 
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsGateOpenManually(false);
+              setIsOpen(false);
+            }}
             className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
             aria-label="Close Bill assistant"
           >
@@ -885,6 +934,7 @@ export default function BillWidget() {
       {!isReportDispatched && (
         <div className="px-3 py-2 bg-zinc-900/70 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
           {[
+            { label: '📧 Email Full Report', icon: <Mail className="w-3 h-3 text-emerald-400" /> },
             { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
             { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-cyan-400" /> },
             { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
