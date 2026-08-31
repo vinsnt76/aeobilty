@@ -4,8 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle } from 'lucide-react';
+import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle, ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { TelemetryResult } from '@/lib/telemetry/types';
 import BillAvatar from '@/components/BillAvatar';
 
@@ -113,10 +114,9 @@ export default function BillWidget() {
     }
     return false;
   });
+  const [isReportDispatched, setIsReportDispatched] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
-
-
 
   // 1. Session Storage Synced Data Hydration
   useEffect(() => {
@@ -180,6 +180,7 @@ export default function BillWidget() {
 
       if (res.ok) {
         setIsLeadCaptured(true);
+        setIsReportDispatched(true);
         if (typeof window !== 'undefined') {
           localStorage.setItem('aeo_lead_captured', 'true');
           if (typeof window.gtag === 'function') {
@@ -561,9 +562,58 @@ export default function BillWidget() {
   return createPortal(
     <div className="fixed inset-0 z-9999 pointer-events-none">
       <div ref={containerRef} className="pointer-events-auto fixed bottom-4 right-4 sm:bottom-6 sm:right-6 left-auto z-50 w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-md bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[80dvh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
-      {/* 0. Interstitial Gating Modal Overlay (3rd User Turn) */}
-      {isGated && (
-        <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn">
+      {/* 0. Confirmed Closure Card / Interstitial Gating Modal Overlay */}
+      {isReportDispatched ? (
+        <div className="absolute inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-3.5 right-3.5 text-zinc-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition cursor-pointer"
+            aria-label="Close Chat"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <div className="w-full max-w-sm space-y-4 text-center bg-zinc-900/90 border border-emerald-500/30 p-6 rounded-2xl shadow-2xl">
+            <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
+            </div>
+
+            <div className="space-y-1.5">
+              <h3 className="text-sm font-bold text-white font-soehne-breit">
+                Full Telemetry Report Dispatched
+              </h3>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                We&apos;ve emailed your complete entity audit report to:
+              </p>
+              <div className="inline-block text-xs font-mono font-bold text-emerald-400 bg-black/60 px-3 py-1 rounded border border-emerald-500/20">
+                {leadForm.email}
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-white/10 space-y-2.5">
+              <p className="text-[11px] text-zinc-400 font-serif">
+                Ready to implement the remediation roadmap?
+              </p>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] text-center cursor-pointer"
+              >
+                <span>View The AEObility Blueprint ($995 AUD)</span>
+                <ArrowRight className="w-3.5 h-3.5 text-zinc-950" />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="text-[11px] text-zinc-400 hover:text-zinc-200 underline transition cursor-pointer block mx-auto pt-1 font-mono"
+              >
+                Close assistant for now
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : isGated && (
+        <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           {/* Close Chat Option */}
           <button
             type="button"
@@ -574,7 +624,7 @@ export default function BillWidget() {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-full max-w-sm space-y-3.5 text-left bg-zinc-900/90 border border-emerald-500/30 p-5 rounded-2xl shadow-2xl">
+          <div className="w-full max-w-sm space-y-3.5 text-left bg-zinc-900/90 border border-emerald-500/30 p-5 rounded-2xl shadow-2xl my-auto">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                 <Sparkles className="w-4 h-4 animate-pulse" />
@@ -585,7 +635,7 @@ export default function BillWidget() {
             </div>
 
             <p className="text-[11px] text-zinc-300 leading-relaxed">
-              You&apos;ve reached the free diagnostic preview limit. Enter your details to continue your deep Q&amp;A session and receive your full entity audit report.
+              You&apos;ve reached the free diagnostic preview limit. Enter your details to receive your complete entity audit report and structured remediation roadmap.
             </p>
 
             <form onSubmit={handleLeadCaptureSubmit} className="space-y-2.5 pt-1">
@@ -611,17 +661,16 @@ export default function BillWidget() {
                   value={leadForm.email}
                   onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
                   className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
-                  placeholder="jane@company.com.au"
+                  placeholder="e.g. jane@business.com.au"
                   spellCheck={false}
                   suppressHydrationWarning
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Phone Number</label>
+                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Phone Number (Optional)</label>
                 <input
                   type="tel"
-                  required
                   value={leadForm.phone}
                   onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
                   className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
@@ -634,17 +683,22 @@ export default function BillWidget() {
               <button
                 type="submit"
                 disabled={isSubmittingLead}
-                className="w-full py-2.5 mt-1 bg-emerald-500 hover:bg-emerald-400 font-bold text-black rounded-lg text-xs transition shadow-[0_0_15px_rgba(16,185,129,0.2)] disabled:opacity-50 cursor-pointer"
+                className="w-full py-2.5 mt-1 bg-emerald-500 hover:bg-emerald-400 font-bold text-black rounded-lg text-xs transition shadow-[0_0_15px_rgba(16,185,129,0.2)] disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                {isSubmittingLead ? "Unlocking Report..." : "Unlock Full Telemetry & Continue Chat"}
+                <span>{isSubmittingLead ? "Dispatching Report..." : "Send Complete Audit Report"}</span>
+                <ArrowRight className="w-3.5 h-3.5 text-black" />
               </button>
+
+              <p className="text-[10px] text-zinc-400 text-center font-mono pt-0.5">
+                ✓ Instant delivery &bull; Zero spam &bull; Australian privacy guaranteed
+              </p>
             </form>
 
             <div className="pt-1 text-center">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="text-[11px] text-zinc-400 underline hover:text-zinc-200 transition cursor-pointer"
+                className="text-[11px] text-zinc-400 underline hover:text-zinc-200 transition cursor-pointer font-mono"
               >
                 Close chat for now
               </button>
@@ -788,29 +842,31 @@ export default function BillWidget() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Outcome-Led Prompt Pills */}
-      <div className="px-3 py-2 bg-zinc-900/70 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
-        {[
-          { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
-          { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-cyan-400" /> },
-          { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
-          { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-cyan-300" />, highlight: true }
-        ].map((chip) => (
-          <button
-            key={chip.label}
-            type="button"
-            onClick={() => handleChipClick(chip.label)}
-            className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] transition font-medium cursor-pointer ${
-              chip.highlight
-                ? 'bg-cyan-950/70 border border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.25)] hover:bg-cyan-900/80 font-bold'
-                : 'bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white'
-            }`}
-          >
-            {chip.icon}
-            <span>{chip.label}</span>
-          </button>
-        ))}
-      </div>
+      {/* Quick Action Outcome-Led Prompt Pills (Hidden when session concluded) */}
+      {!isReportDispatched && (
+        <div className="px-3 py-2 bg-zinc-900/70 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
+          {[
+            { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
+            { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-cyan-400" /> },
+            { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
+            { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-cyan-300" />, highlight: true }
+          ].map((chip) => (
+            <button
+              key={chip.label}
+              type="button"
+              onClick={() => handleChipClick(chip.label)}
+              className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] transition font-medium cursor-pointer ${
+                chip.highlight
+                  ? 'bg-cyan-950/70 border border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.25)] hover:bg-cyan-900/80 font-bold'
+                  : 'bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white'
+              }`}
+            >
+              {chip.icon}
+              <span>{chip.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Persistent Reassurance Banner */}
       <div className="px-3 py-1 bg-zinc-950 border-t border-white/5 text-[10px] font-mono text-zinc-400 flex items-center justify-center gap-2">
@@ -826,13 +882,20 @@ export default function BillWidget() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={isTelemetryMode ? "Ask Bill about these scan results..." : "Ask Bill about AEO semantic lattices..."}
-          className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition touch-manipulation"
+          disabled={isReportDispatched || isGated}
+          placeholder={
+            isReportDispatched 
+              ? "Report dispatched • Session concluded" 
+              : isTelemetryMode 
+                ? "Ask Bill about these scan results..." 
+                : "Ask Bill about AEO semantic lattices..."
+          }
+          className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed transition touch-manipulation"
         />
         <button 
           type="submit" 
-          disabled={isGated || !input.trim() || isLoading}
-          className="bg-cyan-400 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-300 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(6,182,212,0.3)]"
+          disabled={isReportDispatched || isGated || !input.trim() || isLoading}
+          className="bg-cyan-400 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-300 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(6,182,212,0.3)] disabled:cursor-not-allowed"
           aria-label="Send message"
         >
           <Send className="w-3.5 h-3.5 text-zinc-950" />
