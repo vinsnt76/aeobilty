@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText } from 'lucide-react';
+import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText, HelpCircle, XCircle } from 'lucide-react';
 
 export const metadata = {
   title: "What is AEO in Digital Marketing? Meaning & Concepts | AEObility",
@@ -18,39 +18,39 @@ export default function AEODefinitionPage() {
   const faqData = [
     {
       question: "What does AEO mean in digital marketing?",
-      answer: "AEO (Answer Engine Optimisation) is the practice of structuring your content so AI systems, Large Language Models (LLMs), and RAG retrieval pipelines can accurately parse, understand, and cite your business information. It focuses on semantic clarity rather than keyword density."
+      answer: "Answer Engine Optimisation (AEO) is the practice of making business information easy for AI-powered search and answer systems to find, interpret, and use. It combines clear, evidence-backed content, well-defined entities, structured data, accessible technical implementation, and logical internal linking."
     },
     {
       question: "How is AEO different from SEO?",
-      answer: "Traditional SEO optimises full web pages to rank in search engine results pages (SERPs). AEO refactors web content into atomic context chunks and structured schema so AI engines (like ChatGPT, Claude, Gemini, and Perplexity) can retrieve specific passages and cite your business in direct answers."
+      answer: "Traditional SEO focuses on organic discoverability, technical foundations, and ranking pages across search engine results pages (SERPs). AEO builds upon these SEO foundations by structuring content into concise answer-ready passages and explicit schema, improving how business information is retrieved and represented in AI-mediated answers."
     },
     {
-      question: "Why does AEO matter now?",
-      answer: "Conversational search and AI overviews are increasingly answering user queries directly, bypassing traditional link results. If your business information is not structured into machine-readable answer blocks, AI systems will skip your site and cite competing entities."
+      question: "Why does AEO matter for businesses today?",
+      answer: "Consumers increasingly ask conversational questions across AI search interfaces, AI Overviews, maps, and virtual assistants. Structuring information clearly helps ensure that AI systems accurately understand your services, reducing ambiguity and improving eligibility for citations where engines cite web sources."
     },
     {
-      question: "How do modern AI systems read and index content?",
-      answer: "AI engines process text using vector embeddings, breaking content into semantic chunks and storing them in vector spaces. When a user asks a question, dense retrieval algorithms match query vectors against content vectors to identify the most relevant passage for answer generation."
+      question: "How do modern AI systems retrieve and process content?",
+      answer: "AI search platforms deploy varied architectures. They may retrieve and synthesise passages, full pages, structured data, and trusted third-party sources using vector embeddings, semantic matching, and traditional lexical retrieval pipelines."
     },
     {
       question: "What is semantic chunking?",
-      answer: "Semantic chunking is the technique of breaking web content into concise, self-contained units of meaning that convey complete facts without losing context. Clean chunking reduces model hallucination and maximises retrieval confidence during RAG processing."
+      answer: "Semantic chunking is the practice of structuring text into self-contained units of meaning that convey complete facts, qualifications, and evidence together. Keeping factual context intact reduces ambiguity during machine retrieval."
     },
     {
       question: "What are embeddings and why are they important?",
-      answer: "Embeddings are mathematical vector representations of language meaning. They allow search and AI models to evaluate semantic similarity rather than exact keyword matches, ensuring your content surfaces even when user phrasing varies."
+      answer: "Embeddings are mathematical vector representations of language meaning. They allow search and AI systems to evaluate conceptual relationships alongside keyword matches, helping content surface when user phrasing varies."
     },
     {
-      question: "How does AEO help my business get cited by AI platforms?",
-      answer: "AEO reinforces entity salience, deploys granular JSON-LD schema, and structures business facts into high-density passages. This gives AI models high confidence in your content's accuracy, making your business a primary citation source."
+      question: "Does structured data guarantee AI citations or rankings?",
+      answer: "No. Structured data makes entity relationships more explicit for systems that support it. It improves interpretability and eligibility, but no provider can guarantee inclusion, rich results, or direct recommendations."
     },
     {
-      question: "Is AEO relevant for small Australian businesses?",
-      answer: "Yes. AEO is especially critical for Australian local service providers. Clear entity metadata and structured local context allow AI assistants and map engines to recommend your business for geo-targeted conversational queries in Perth and across Australia."
+      question: "Is AEO relevant for Australian small businesses?",
+      answer: "Yes. Clear entity metadata, verified business credentials, and structured service-area details help local search engines and AI assistants accurately interpret regional relevance for queries across Perth and Australia."
     },
     {
-      question: "Where should I start with AEO?",
-      answer: "Start by conducting an AI visibility scan to assess how AI search engines interpret your current web footprint. Then refactor key service content into atomic answer blocks, deploy structured Schema.org markup, and build semantic internal links across your site."
+      question: "Where should a business start with AEO?",
+      answer: "Start with a technical baseline audit to assess how search engines and AI systems interpret your current web footprint. Then structure priority service content into self-contained answer blocks, implement explicit Schema.org markup, and establish descriptive internal links."
     }
   ];
 
@@ -58,27 +58,27 @@ export default function AEODefinitionPage() {
     {
       step: "01",
       title: "Audit & Entity Mapping",
-      desc: "Scan site assets to verify how LLMs evaluate your core brand entity and service parameters. Map existing entity salience scores to uncover retrieval gaps across AI engine vectors."
+      desc: "Review digital assets to verify how search engines and AI assistants interpret your brand entity, core offerings, and credentials. Identify structural gaps across retrieval signals."
     },
     {
       step: "02",
-      title: "Semantic Chunking",
-      desc: "Break long prose into focused 40–60 word answer blocks with explicit subheadings. Clean passage boundaries protect context from model distortion and increase direct citation rates."
+      title: "Self-Contained Content Structuring",
+      desc: "Use self-contained answer blocks of the length needed to state the answer, scope, evidence, and constraints clearly under descriptive subheadings."
     },
     {
       step: "03",
-      title: "JSON-LD Schema Deployment",
-      desc: "Implement nested FAQPage, DefinedTerm, Service, and LocalBusiness schema nodes. Rich structured data feeds deterministic metadata straight to search crawlers and AI bots."
+      title: "Explicit Structured Data Deployment",
+      desc: "Implement nested DefinedTerm, Service, LocalBusiness, and FAQ schema. Structured data clarifies entity relationships for eligible systems, supporting interpretation without guaranteeing citations."
     },
     {
       step: "04",
-      title: "Internal Entity Linking",
-      desc: "Connect definition nodes directly to conversion pages like the AEObility Blueprint or AEO Packages. Interlinked semantic corridors guide crawlers through high-priority authority paths."
+      title: "Descriptive Internal Linking",
+      desc: "Build descriptive internal links that connect related topics and services, establishing logical authority paths for users and web crawlers."
     },
     {
       step: "05",
-      title: "Citation & Referral Tracking",
-      desc: "Monitor citation frequency across Perplexity, ChatGPT, Claude, and Google AI Overviews. Measure brand recommendation rates and adjust context chunks to expand query coverage."
+      title: "Citation & Referral Telemetry",
+      desc: "Track brand citations, AI Overview appearances, and referral traffic across supported platforms over time, refining passages where gaps emerge."
     }
   ];
 
@@ -90,7 +90,7 @@ export default function AEODefinitionPage() {
         "@id": "https://aeobility.com.au/services/aeo/definition#definedterm",
         "name": "Answer Engine Optimisation",
         "alternateName": "AEO",
-        "description": "The technical engineering process of structuring and formatting digital content to maximise its retrieval accuracy, semantic salience, and citation probability across AI search engines and conversational retrieval models.",
+        "description": "The practice of making business information easy for AI-powered search and answer systems to find, interpret, and use through evidence-backed content, explicit entity definitions, and structured data.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "@id": "https://www.wikidata.org/wiki/Q124314457",
@@ -112,7 +112,7 @@ export default function AEODefinitionPage() {
         "inLanguage": "en-AU",
         "mainEntityOfPage": "https://aeobility.com.au/services/aeo/definition",
         "datePublished": "2026-08-31T10:56:41+08:00",
-        "dateModified": "2026-08-31T10:56:41+08:00",
+        "dateModified": "2026-08-31T11:05:00+08:00",
         "author": {
           "@type": "Person",
           "@id": "https://aeobility.com.au/#vince-baker",
@@ -143,7 +143,8 @@ export default function AEODefinitionPage() {
           }
         ],
         "articleSection": [
-          "What is AEO and why does it matter?",
+          "What is AEO in Digital Marketing?",
+          "What AEO is not",
           "Why AEO matters for your business",
           "The core principles of Answer Engine Optimisation",
           "AEO vs SEO comparison",
@@ -221,7 +222,7 @@ export default function AEODefinitionPage() {
         "@type": "VideoObject",
         "@id": "https://aeobility.com.au/services/aeo/definition#video",
         "name": "What is AEO in Digital Marketing? Meaning & Concepts",
-        "description": "An overview of Answer Engine Optimisation (AEO), vector similarity, semantic chunking, and how AI systems retrieve business data.",
+        "description": "A conceptual overview of Answer Engine Optimisation (AEO), semantic retrieval, embedding models, and passage chunking.",
         "thumbnailUrl": [
           "https://img.youtube.com/vi/ghX_txnK7WU/hqdefault.jpg"
         ],
@@ -254,148 +255,176 @@ export default function AEODefinitionPage() {
         <section className="flex flex-col gap-8">
           <div>
             {/* Main Header Illustration */}
-            <div className="w-full relative rounded-2xl overflow-hidden mb-8 border border-white/10 bg-white/[0.02]">
+            <div className="w-full relative rounded-2xl overflow-hidden mb-3 border border-white/10 bg-white/[0.02]">
               <Image 
                 src="/what-is-definiton-of-aeo_AEObility.webp" 
-                alt="Answer Engine Optimisation (AEO) defined by AEObility. Illustration showing how AI systems and LLMs use semantic chunking, embeddings, and vector similarity to retrieve and cite business data." 
+                alt="Answer Engine Optimisation (AEO) conceptual diagram showing semantic chunking, embeddings, and vector retrieval signals." 
                 width={1200}
                 height={630}
                 className="w-full h-auto object-cover"
                 priority
               />
             </div>
+            <p className="text-[11px] text-white/50 italic mb-8 font-light">
+              Conceptual architecture model illustrating semantic chunking, embeddings, and vector similarity in AI retrieval. Actual system pipelines vary by platform.
+            </p>
             
+            {/* Meta Trust Badge */}
+            <div className="flex flex-wrap items-center gap-3 text-xs text-white/60 mb-4 font-mono">
+              <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-aeo-cyan font-semibold">
+                Technical Reference
+              </span>
+              <span>Author: Vince Baker</span>
+              <span>&bull;</span>
+              <span>Last Reviewed: August 2026</span>
+              <span>&bull;</span>
+              <span>8 min read</span>
+            </div>
+
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
               What is AEO in Digital Marketing? <span className="text-gradient-aeo">Meaning & Concepts</span>
             </h1>
 
             {/* Primacy Token Density Direct-Answer Hero Block */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl mb-8 shadow-lg">
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl mb-6 shadow-lg">
               <p className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider mb-2 flex items-center gap-1.5">
                 <Cpu className="w-4 h-4 text-aeo-cyan" />
-                <span>Executive Summary &bull; Primacy Definition</span>
+                <span>Executive Summary &bull; Core Definition</span>
               </p>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Answer Engine Optimisation (AEO) is the technical engineering process of structuring and formatting digital content to maximise its retrieval accuracy across AI search engines, conversational assistants, and large language models. While traditional SEO targets legacy lexical keyword matching to rank full web pages, AEO focuses on dense vector spaces and semantic chunking to ensure explicit text passages are directly extracted, synthesised, and cited as ground-truth answers. AEObility deploys fixed-scope implementation frameworks to align website data with modern Retrieval-Augmented Generation (RAG) pipelines.
+                Answer Engine Optimisation (AEO) is the practice of making business information easy for AI-powered search and answer systems to find, interpret, and use. It combines clear, evidence-backed content, well-defined entities, structured data, accessible technical implementation, and logical internal linking. AEO can improve a site&apos;s eligibility to appear in AI-generated answers and citations, but no provider can guarantee inclusion or recommendation.
               </p>
+            </div>
+
+            {/* What AEO is NOT (Epistemic Boundary Block) */}
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl mb-8 space-y-3">
+              <h2 className="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
+                <XCircle className="w-4 h-4 text-rose-400" />
+                <span>What AEO is not</span>
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-white/70 font-light leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-400 mt-0.5">&times;</span>
+                  <span>Not a substitute for technical SEO, quality services, reputation, or credible third-party evidence.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-400 mt-0.5">&times;</span>
+                  <span>Does not guarantee a citation, AI Overview placement, or platform recommendation.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-400 mt-0.5">&times;</span>
+                  <span>Not just injecting FAQ schema or repeating keywords without useful context.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-400 mt-0.5">&times;</span>
+                  <span>Not limited to RAG models; AI search products deploy varying retrieval, ranking, and generation approaches.</span>
+                </li>
+              </ul>
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl font-light mb-8">
-              Answer Engine Optimisation (AEO) modifies raw content chunks to align with conversational query architectures. To deploy this framework effectively inside production systems, businesses utilise expert <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to structure context blocks and secure consistent engine attributions.
+              Answer Engine Optimisation modifies how content is organised to align with AI search interfaces, AI Overviews, maps, and conversational assistants. To implement these frameworks systematically, businesses utilise structured <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> to clarify entity relationships and improve retrievability.
             </p>
-
-            {/* Why AEO matters for your business */}
-            <div className="mb-10">
-              <h2 className="text-xl font-bold mb-4">Why AEO matters for your business</h2>
-              <div className="space-y-4 text-sm text-white/70 leading-relaxed font-light">
-                <p>
-                  Modern search behaviour is shifting rapidly. Consumers ask AI assistants direct questions rather than sifting through pages of blue links. AI engines evaluate which businesses to cite as authority sources based on semantic clarity.
-                </p>
-                <p>
-                  Answer Engine Optimisation helps your business stay <strong className="text-white font-semibold">discoverable</strong>, <strong className="text-white font-semibold">understandable</strong>, and <strong className="text-white font-semibold">recommended</strong> across AI overviews, maps, and conversational search corridors.
-                </p>
-              </div>
-            </div>
 
             {/* Core Principles */}
             <div className="space-y-6 mb-10">
               <h2 className="text-xl font-bold mb-2">The core principles of Answer Engine Optimisation</h2>
               <p className="text-sm text-white/70 leading-relaxed font-light mb-6">
-                AEO focuses on how modern machine learning models read, index, and cite business information. Four technical concepts underpin the discipline: <strong className="text-white font-semibold">embeddings</strong>, <strong className="text-white font-semibold">vector similarity</strong>, <strong className="text-white font-semibold">dense retrieval</strong>, and <strong className="text-white font-semibold">passage-level extraction</strong>.
+                AEO focuses on how modern machine learning systems read, index, and cite business information. Five practical concepts underpin the discipline:
               </p>
 
               {/* Block 1 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">1. Search has shifted from pages to passages</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">1. Search has expanded from whole pages to passage retrieval</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>Traditional SEO ranks whole pages and URLs. AI systems extract small, self-contained passages instead of digesting an entire document.</p>
-                  <p>To be included in AI-generated answers, your content requires modular answer blocks that can be easily parsed and synthesised into conversational responses.</p>
+                  <p>SEO helps search engines discover, understand, and rank full web pages. AI search systems may additionally retrieve and synthesise passages, structured data, and other trusted sources to compose an answer, so each important section should state a complete, well-scoped fact.</p>
                 </div>
               </div>
 
               {/* Block 2 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">2. How modern AI systems read content</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">2. How modern AI systems interpret content</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>AI models map text into <strong className="text-white font-medium">embeddings</strong> — high-dimensional mathematical representations of meaning. They match conceptual intent rather than simple string keywords.</p>
-                  <p>This enables search engines to recognise related entity concepts even when exact phrasing differs, provided content is structured cleanly.</p>
+                  <p>AI models map text into <strong className="text-white font-medium">embeddings</strong> (mathematical vector representations of language meaning). They evaluate conceptual relationships alongside lexical signals, allowing engines to recognise related entity concepts even when user phrasing differs.</p>
                 </div>
               </div>
 
               {/* Block 3 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">3. Semantic retrieval & atomic chunking</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">3. Semantic chunking and clear content boundaries</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>Our underlying framework restructures business facts into clear semantic groups. During text conversion, long-form data segments pass through precise <strong className="text-white font-medium">atomic chunking patterns</strong> to ensure your core content fragments survive the dense retrieval phase without context loss.</p>
-                  <p>AEO applies semantic chunking to partition content into standalone information blocks, allowing RAG systems to retrieve relevant facts with minimal noise.</p>
+                  <p>Well-scoped sections reduce ambiguity by keeping the claim, subject, location, qualification, and supporting evidence together. This allows retrieval systems to extract relevant facts with minimal distortion.</p>
                 </div>
               </div>
 
               {/* Block 4 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-purple border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">4. Dense retrieval & query expansion</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">4. Query expansion and multi-intent retrieval</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>When a user asks a complex question, AI tools expand it into multiple sub-queries seeking definitions, entity relations, location constraints, and procedural steps.</p>
-                  <p>Pages engineered with structured passage responses satisfy a broader range of sub-queries, increasing total citation frequency.</p>
+                  <p>When a user asks a multifaceted question, AI engines may generate multiple internal sub-queries across definitions, specifications, geographic constraints, and procedures. Structuring content to answer these explicit needs improves overall retrievability.</p>
                 </div>
               </div>
 
               {/* Block 5 */}
               <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-2">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wider font-mono">5. Passage-level extraction & context protection</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider font-mono">5. Context clarity and evidence verification</h3>
                 <div className="space-y-2 text-sm text-white/60 leading-relaxed font-light">
-                  <p>Unstructured copy causes context fragmentation, leading to misinterpretation or hallucination during AI synthesis.</p>
-                  <p>AEO protects context boundaries, ensuring critical business facts, location relevance, and service parameters remain intact during retrieval.</p>
+                  <p>Unstructured or fragmented copy can lead to ambiguity during answer synthesis. Organising information with explicit headings, verified claims, and linked credentials helps models evaluate factual accuracy.</p>
                 </div>
               </div>
             </div>
 
             {/* AEO vs SEO Comparison Table */}
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-4">AEO vs SEO: meaning & differences</h2>
+              <h2 className="text-xl font-bold mb-4">AEO vs SEO: Complementary Disciplines</h2>
               <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">
-                SEO focuses on ranking URLs in traditional search indices. AEO focuses on engineering information so AI systems choose your business as an authoritative answer source.
+                AEO is an AI-search-oriented extension of technical and content SEO rather than a replacement discipline. Both work together across the discovery lifecycle.
               </p>
               <div className="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.02]">
                 <table className="w-full text-left text-sm text-white/70">
                   <thead className="bg-white/5 text-white/90">
                     <tr>
-                      <th className="px-6 py-4 font-bold border-b border-white/10">Concept</th>
-                      <th className="px-6 py-4 font-bold border-b border-white/10">SEO</th>
-                      <th className="px-6 py-4 font-bold border-b border-white/10 text-aeo-cyan">AEO</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">Dimension</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10">Traditional SEO</th>
+                      <th className="px-6 py-4 font-bold border-b border-white/10 text-aeo-cyan">Answer Engine Optimisation (AEO)</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5 font-light">
                     <tr>
-                      <td className="px-6 py-4 font-medium text-white/80">Retrieval Mechanism</td>
-                      <td className="px-6 py-4">Keyword-based (lexical index)</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Meaning-based (semantic embeddings)</td>
+                      <td className="px-6 py-4 font-medium text-white/80">Primary Goal</td>
+                      <td className="px-6 py-4">Improve organic discoverability across search results</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Improve how clearly business information can be retrieved and represented in AI-mediated answers</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-white/80">Ranking Target</td>
-                      <td className="px-6 py-4">Backlinks & page authority</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Entity salience & passage confidence</td>
+                      <td className="px-6 py-4 font-medium text-white/80">Key Assets</td>
+                      <td className="px-6 py-4">Crawlable pages, technical foundations, useful content, links, and page authority</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">The same SEO foundations, plus concise answer-ready sections, explicit entities, structured data, and sourceable evidence</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-white/80">Output Interface</td>
-                      <td className="px-6 py-4">Search engine result pages (SERPs)</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">AI overviews & conversational citations</td>
+                      <td className="px-6 py-4 font-medium text-white/80">Typical Outputs</td>
+                      <td className="px-6 py-4">Organic listings, rich results, local map visibility, and organic traffic</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">AI answer mentions, citations, summaries, and referral traffic where platforms support them</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium text-white/80">Optimisation Focus</td>
-                      <td className="px-6 py-4">Whole URL / Page layout</td>
-                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Atomic answer passages & JSON-LD schema</td>
+                      <td className="px-6 py-4">Whole URL hierarchy, page layout, technical health, and backlinks</td>
+                      <td className="px-6 py-4 text-aeo-cyan/90 font-semibold">Atomic answer passages, explicit entity graphs, and machine-readable schema</td>
+                    </tr>
+                    <tr className="bg-white/[0.01]">
+                      <td className="px-6 py-4 font-medium text-white/80">Important Caveat</td>
+                      <td className="px-6 py-4 text-white/60">Rankings are not guaranteed</td>
+                      <td className="px-6 py-4 text-amber-300/80 font-medium">Citations and recommendations are not guaranteed</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-            {/* STEP 3: 5-Step How to Implement AEO Framework */}
+            {/* 5-Step Practical Implementation Framework */}
             <div className="mb-10 space-y-6">
-              <h2 className="text-xl font-bold">How to Implement AEO: 5-Step Technical Framework</h2>
+              <h2 className="text-xl font-bold">How to Implement AEO: 5-Step Practical Framework</h2>
               <p className="text-sm text-white/70 leading-relaxed font-light">
-                To transform traditional web copy into an AI-retrievable asset, follow this 5-step engineering framework:
+                To prepare website content for modern AI retrieval systems, follow this 5-step engineering framework:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {implementationSteps.map((s, idx) => (
@@ -419,7 +448,7 @@ export default function AEODefinitionPage() {
                     AEObility Blueprint &rarr;
                   </Link>
                   <Link href="/solutions/aeo-sprint" className="text-aeo-purple hover:underline">
-                    Request an answer-ready content sprint or schema deployment sequence &rarr;
+                    Book an AEO content and schema audit &rarr;
                   </Link>
                 </div>
               </div>
@@ -432,16 +461,16 @@ export default function AEODefinitionPage() {
                 <div className="absolute top-0 left-0 w-1 h-full bg-aeo-purple"></div>
                 <div className="space-y-4 text-sm text-white/80 font-light leading-relaxed">
                   <p>
-                    When a user asks an AI assistant, <strong className="text-white font-medium">“Who is the best commercial electrician in Perth?”</strong> the model transforms the query into semantic vectors and searches indexed business passages.
+                    When a user asks an AI assistant, <strong className="text-white font-medium">&ldquo;Who provides commercial electrical services in Perth?&rdquo;</strong> the model transforms the query into semantic vectors and searches indexed business passages.
                   </p>
                   <p>
-                    If your website content explicitly structures who you are, your verified credentials, geographic coverage, and service capabilities into machine-readable chunks, the retrieval engine scores your passage with high vector similarity and presents your business as a cited recommendation.
+                    Clear, structured information may improve retrievability. Whether a system cites or recommends a business depends on the platform, query intent, source quality, and competing evidence across the wider web.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* STEP 4: Baby Bento Case Study (Real Proof Point) */}
+            {/* Baby Bento Case Study */}
             <div className="mb-10 p-6 bg-gradient-to-br from-white/[0.03] via-white/[0.01] to-aeo-cyan/5 border border-white/10 rounded-2xl space-y-4 relative overflow-hidden">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono tracking-widest text-aeo-cyan uppercase px-2.5 py-1 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-full inline-flex items-center gap-1">
@@ -457,30 +486,33 @@ export default function AEODefinitionPage() {
                 </Link>
               </div>
 
-              <h2 className="text-xl font-bold text-white">Case Study: How Baby Bento Dominates AI Answer Citation</h2>
+              <h2 className="text-xl font-bold text-white">Case Study: E-Commerce Structure & AI Answer Retrievability</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-light text-white/70 pt-2">
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1.5">
                   <span className="font-semibold text-white uppercase tracking-wider text-[10px] text-aeo-purple font-mono block">Background</span>
-                  <p>Baby Bento, an Australian e-commerce retail brand, struggled to capture conversational, direct-answer queries for bento boxes, food jars, and lunch accessories in AI-driven search environments.</p>
+                  <p>Baby Bento, an Australian e-commerce retail brand, sought to improve product visibility for conversational direct-answer queries around lunchware safety and sizing.</p>
                 </div>
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1.5">
                   <span className="font-semibold text-white uppercase tracking-wider text-[10px] text-aeo-cyan font-mono block">AEO Strategy</span>
-                  <p>Refactored product descriptions into semantic passages, built direct answer blocks for material safety and sizing queries, and deployed nested product and FAQ microdata.</p>
+                  <p>Refactored product descriptions into concise answer blocks for material safety questions, and deployed nested Product and FAQ structured data.</p>
                 </div>
                 <div className="p-4 bg-black/40 border border-white/5 rounded-xl space-y-1.5">
-                  <span className="font-semibold text-white uppercase tracking-wider text-[10px] text-emerald-400 font-mono block">Outcome</span>
-                  <p>Achieved a significant increase in AI platform citations and featured answer placement, driving a direct lift in qualified organic referral traffic within 60 days.</p>
+                  <span className="font-semibold text-white uppercase tracking-wider text-[10px] text-emerald-400 font-mono block">Monitored Results</span>
+                  <p>Achieved measurable improvements in AI answer mentions and category search visibility across priority product queries during the monitored 60-day sprint.</p>
                 </div>
               </div>
+              <p className="text-[11px] text-white/40 italic pt-1">
+                Note: Results vary based on domain authority, product category, and platform updates. See full case study for detailed methodology and measurement period.
+              </p>
             </div>
 
-            {/* STEP 1: Visual Breakdown & YouTube Embedded Video */}
+            {/* Video Overview & Breakdown */}
             <div className="mb-10">
               <h2 className="text-xl font-bold mb-4">How classic search compares to AI system retrieval</h2>
               
-              {/* STEP 1: YouTube Video Embedded Directly Above Technical Comparison */}
-              <div className="w-full relative rounded-2xl overflow-hidden mb-6 border border-white/10 bg-neutral-950 aspect-video shadow-[0_0_30px_rgba(0,205,216,0.15)]">
+              {/* YouTube Video Embedded */}
+              <div className="w-full relative rounded-2xl overflow-hidden mb-4 border border-white/10 bg-neutral-950 aspect-video shadow-[0_0_30px_rgba(0,205,216,0.15)]">
                 <iframe
                   src="https://www.youtube.com/embed/ghX_txnK7WU?rel=0"
                   title="What is AEO in Digital Marketing? Meaning & Concepts"
@@ -489,20 +521,17 @@ export default function AEODefinitionPage() {
                   className="w-full h-full border-0"
                 />
               </div>
-
-              <p className="text-sm text-white/70 leading-relaxed font-light mb-4">
-                Watch the video above or review the technical architecture comparison illustrating the structural shift between traditional web indexing and generative retrieval:
+              <p className="text-[11px] text-white/50 italic mb-4 font-light">
+                Video Overview: A conceptual explanation of semantic retrieval, embedding models, and passage chunking. External platform retrieval algorithms evolve continuously.
               </p>
+
               <ul className="list-disc pl-5 space-y-2 text-sm text-white/70 font-light mb-4 marker:text-aeo-cyan">
                 <li><strong className="text-white font-medium">Classic search workflow:</strong> Lexical matching &rarr; Page rank evaluation &rarr; Search result listings (SERP).</li>
-                <li><strong className="text-white font-medium">AI retrieval workflow:</strong> Context chunking &rarr; Embedding transformation &rarr; Vector similarity scoring &rarr; Synthesised answer citation.</li>
+                <li><strong className="text-white font-medium">AI retrieval workflow:</strong> Context chunking &rarr; Embedding transformation &rarr; Semantic matching &rarr; Synthesised answer citation where supported.</li>
               </ul>
-              <p className="text-sm text-white/70 leading-relaxed font-light">
-                This fundamental shift requires digital marketing strategies to move beyond surface keyword targeting toward deep entity and passage engineering.
-              </p>
             </div>
 
-            {/* STEP 5: Common AEO Implementation Mistakes */}
+            {/* Common AEO Implementation Mistakes */}
             <div className="mb-10 space-y-4">
               <h2 className="text-xl font-bold flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-400" />
@@ -513,31 +542,31 @@ export default function AEODefinitionPage() {
               </p>
               <div className="space-y-3">
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
-                  <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 1: Relying on Keyword Repetition Over Vector Context</h3>
+                  <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 1: Repeating Keywords Without Adding Useful Context</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
-                    Spatially repeating keywords without building high-dimensional semantic relationships fails to satisfy vector similarity metrics in dense retrieval models.
+                    Repeating keywords without building high-dimensional semantic relationships fails to satisfy vector similarity metrics in dense retrieval models.
                   </p>
                 </div>
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
                   <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 2: Hiding Critical Business Data in Client-Side Code</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
-                    Hiding key product specifications, hours, or pricing inside deep JavaScript accordions or image text blocks prevents LLM crawlers from extracting clean context.
+                    Burying key pricing, hours, or specifications inside deep JavaScript interactions or image-only graphics prevents crawlers from extracting clean facts.
                   </p>
                 </div>
                 <div className="p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl space-y-1">
                   <h3 className="text-xs font-bold text-amber-300 font-mono">Mistake 3: Neglecting Local & Entity Boundaries</h3>
                   <p className="text-xs text-white/70 font-light leading-relaxed">
-                    Omitting explicit geographic coordinates, verified credentials, and local service boundaries weakens GEO retrieval confidence for regional intent queries.
+                    Omitting explicit geographic coordinates, operating regions, and verified service credentials weakens local retrieval accuracy.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* STEP 6: Shifted Conversion CTA Flow */}
+            {/* Conversion CTA Flow */}
             <div className="p-8 bg-gradient-to-br from-aeo-purple/15 to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6 mb-10 shadow-2xl">
               <h3 className="text-2xl font-bold text-white font-soehne-breit">Ready to Optimise Your Business for AI Search?</h3>
               <p className="text-sm text-white/70 max-w-lg mx-auto font-light leading-relaxed">
-                Transform your digital content into high-confidence AI answer blocks. Get our $995 AUD Strategic Blueprint or book an AEO Sprint.
+                Transform your digital content into clear, answer-ready passages and structured entity graphs. Get our $995 AUD Strategic Blueprint or book an AEO content and schema audit.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="btn-primary">
@@ -553,7 +582,7 @@ export default function AEODefinitionPage() {
             </div>
           </div>
 
-          {/* Synchronised FAQ Section */}
+          {/* Synchronised Accessible FAQ Section */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
             {faqData.map((faq, idx) => (
@@ -562,7 +591,7 @@ export default function AEODefinitionPage() {
                   {faq.question}
                   <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
                 </summary>
-                <p className="mt-4 text-xs text-white/60 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                <p className="mt-4 text-xs text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
                   {faq.answer}
                 </p>
               </details>
