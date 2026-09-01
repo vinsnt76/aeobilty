@@ -9,7 +9,7 @@ export interface FaqItem {
 }
 
 export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
-  const graphNodes: any[] = [
+  const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/aeo/shopify#service",

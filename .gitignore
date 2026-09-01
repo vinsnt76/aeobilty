@@ -40,7 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# service account keys & ga4 config exports
+# service account keys & credentials
 ga4-admin-cli.json
 *.jsonkey
+antigravity-*.json
+*-*-*.json
+*.secret.json
 

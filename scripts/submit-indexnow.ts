@@ -76,7 +76,6 @@ export const CANONICAL_URL_LIST: string[] = [
   // 7. Conversational, Booking & Utility Endpoints
   `https://${HOST}/contact`,
   `https://${HOST}/book`,
-  `https://${HOST}/support`,
   `https://${HOST}/privacy`,
   `https://${HOST}/terms`
 ];

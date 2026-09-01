@@ -9,7 +9,7 @@ export interface FaqItem {
 }
 
 export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
-  const graphNodes: any[] = [
+  const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/aeo/comparison#webpage",

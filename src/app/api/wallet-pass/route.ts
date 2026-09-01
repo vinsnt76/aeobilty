@@ -79,7 +79,7 @@ export async function GET() {
       linksModuleData: {
         uris: [
           {
-            uri: "https://aeobility.com.au/my-portfolio",
+            uri: "https://aeobility.com.au/about/freelance-digital-specialist-perth",
             description: "View Portfolio"
           },
           {

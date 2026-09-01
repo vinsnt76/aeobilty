@@ -9,7 +9,7 @@ export interface FaqItem {
 }
 
 export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
-  const graphNodes: any[] = [
+  const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
       "@id": "https://aeobility.com.au/#organization",
