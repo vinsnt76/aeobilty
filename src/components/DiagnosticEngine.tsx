@@ -22,7 +22,8 @@ import {
   ChevronDown,
   CircleHelp,
   Printer,
-  Mail
+  Mail,
+  Search
 } from 'lucide-react';
 import { TelemetryResult, SimulationRun } from '@/lib/telemetry/types';
 import { trackGaEvent } from '@/lib/gtag';
@@ -301,7 +302,7 @@ export default function DiagnosticEngine() {
         </h2>
       </div>
 
-      <div className="w-full glass-panel-l1 border border-white/10 rounded-2xl p-5 sm:p-7 relative overflow-hidden shadow-2xl space-y-5">
+      <div className="w-full glass-intake-card rounded-2xl p-5 sm:p-7 relative overflow-hidden shadow-2xl space-y-5">
         
         {step === 'INPUT' && (
           <div className="space-y-6">
@@ -309,9 +310,10 @@ export default function DiagnosticEngine() {
             <form onSubmit={handleStart} className="grid grid-cols-12 gap-4 relative z-10">
               
               {/* Field 1: Website URL */}
-              <div className="col-span-12 space-y-1">
-                <label htmlFor="diag-url-input" className="block text-xs sm:text-sm font-semibold text-white">
-                  Your website address
+              <div className="col-span-12 space-y-1.5 text-left">
+                <label htmlFor="diag-url-input" className="block text-xs font-semibold tracking-wider text-slate-300 uppercase font-mono flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Website Address</span>
                 </label>
                 <input
                   id="diag-url-input"
@@ -320,17 +322,20 @@ export default function DiagnosticEngine() {
                   value={url}
                   onChange={e => setUrl(e.target.value)}
                   placeholder="e.g. yourbusiness.com.au"
-                  className="w-full bg-black/50 border border-white/15 hover:border-white/25 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
+                  className="glass-input-field w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  spellCheck={false}
+                  suppressHydrationWarning
                 />
-                <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
+                <p className="text-xs text-[#94A3B8] font-serif leading-normal pt-0.5">
                   Enter your main website address. We&apos;ll check the signals AI search tools use to understand your business.
                 </p>
               </div>
 
               {/* Field 2: What Would a Customer Ask AI? */}
-              <div className="col-span-12 space-y-1">
-                <label htmlFor="diag-intent-input" className="block text-xs sm:text-sm font-semibold text-white">
-                  What would a customer ask AI to find you?
+              <div className="col-span-12 space-y-1.5 text-left">
+                <label htmlFor="diag-intent-input" className="block text-xs font-semibold tracking-wider text-slate-300 uppercase font-mono flex items-center gap-1.5">
+                  <Search className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Customer Search Question</span>
                 </label>
                 <input
                   id="diag-intent-input"
@@ -339,9 +344,11 @@ export default function DiagnosticEngine() {
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
                   placeholder='e.g. "best electrician in Dianella" or "physiotherapist Perth"'
-                  className="w-full bg-black/50 border border-white/15 hover:border-white/25 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
+                  className="glass-input-field w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  spellCheck={false}
+                  suppressHydrationWarning
                 />
-                <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
+                <p className="text-xs text-[#94A3B8] font-serif leading-normal pt-0.5">
                   Enter a typical question or search phrase. We&apos;ll test how well your website answers that need.
                 </p>
               </div>
@@ -375,27 +382,24 @@ export default function DiagnosticEngine() {
               </div>
               
               {/* Submission Action & Tightly Coupled Trust Stack */}
-              <div className="col-span-12 pt-0.5 space-y-2.5">
+              <div className="col-span-12 pt-1 space-y-2">
                 <button
                   type="submit"
-                  className="w-full group min-h-[46px] py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm sm:text-base transition-all shadow-[0_0_20px_rgba(6,182,212,0.25)] flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={!url.trim() || !intent.trim()}
+                  className="btn-primary-gradient w-full group min-h-[48px] py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B11]"
                 >
-                  <Sparkles className="w-4 h-4 text-zinc-950" />
+                  <Sparkles className="w-4 h-4 text-white" />
                   <span>Run Free AI Visibility Scan</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
                 </button>
 
-                {/* Law of Proximity Trust Anchor */}
-                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] text-zinc-300 font-mono text-center pt-0.5">
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Instant on-screen results
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Free to run &bull; No credit card
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> No login or site access needed
-                  </span>
+                {/* Spatial Psychology Frosted Reassurance Pill (Within 8px) */}
+                <div className="py-1.5 px-3.5 rounded-full bg-white/[0.03] border border-white/[0.06] flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] sm:text-xs text-[#94A3B8] font-mono text-center">
+                  <span>🔒 Simulated framework scan</span>
+                  <span>&bull;</span>
+                  <span>Instant on-screen report</span>
+                  <span>&bull;</span>
+                  <span>Zero sales outreach</span>
                 </div>
               </div>
             </form>
