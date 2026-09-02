@@ -1,6 +1,6 @@
-# AEObility UX & Typography Styleguide
+# AEObility UX, Typography & Design System Styleguide
 
-> **Version:** 1.0.0  
+> **Version:** 1.1.0  
 > **Target Environment:** Next.js 15+ / Tailwind CSS v4 / React 19  
 > **Brand Promise:** *Get Found. Get Chosen.*  
 > **Core Tagline:** *No jargon. No pressure. Just clarity.*
@@ -144,7 +144,87 @@ export const ibmPlexSerif = IBM_Plex_Serif({
 
 ---
 
-## 5. Section Implementation Standards
+## 5. AEObility Dark Glassmorphism Design System & Implementation Guide
+
+This section establishes the architectural, visual, and accessibility standards for dark glassmorphism across the AEObility web ecosystem. AEObility uses **controlled depth** rather than decorative glassmorphism. Translucent surfaces must reinforce engineering authority, protect reading contrast, and keep conversion paths frictionless.
+
+### 1. Optical Principles & Surface Rules
+* **Progressive Enhancement:** Glassmorphism is a progressive enhancement, never a dependency. All containers must declare an opaque or near-opaque dark fallback (`#080B12` or `rgb(15 23 42 / 0.88)`) for low-power modes and older browser engines.
+* **Controlled Refraction:** Do not add floating multi-color blur meshes or ambient particle nets purely to give `backdrop-filter` something to blur. High-frequency visual noise behind text induces cognitive fatigue and slows down user scanning patterns.
+* **Directional Edge Lighting:** Real glass catches light directionally. Avoid flat, uniform 1px perimeter outlines that turn containers into 2015-era boxes. Use a subtle top-edge specular line that fades towards the bottom (`bg-gradient-to-r from-transparent via-purple-400/50 to-transparent`).
+* **No Translucency Under High-Density Content:** Multi-row comparison tables, long-form deliverable breakdowns, and form input wells must remain grounded on solid, opaque bases (`#080B12` / `#000000`).
+
+### 2. Design Tokens & Elevation Tiers
+
+#### A. Elevation Matrix
+
+| Surface Level | Background Fill | Backdrop Filter | Border & Specular Catch | Best Used For |
+| :--- | :--- | :--- | :--- | :--- |
+| **Level 0 (Canvas)** | `#0A0D14` (Deep Slate Base) | None | None | Base page background, global canvas wrapper |
+| **Level 1 (Structural Card)** | `rgba(15, 23, 42, 0.75)`<br>*(Fallback: `rgb(15 23 42 / 0.88)`)* | `blur(12px) saturate(140%)` | `1px solid rgba(168, 85, 247, 0.25)` + top highlight | Hero containers, feature overview cards, package blocks |
+| **Level 2 (Active / Focus Card)**| `rgba(15, 23, 42, 0.85)` | `blur(16px) saturate(160%)` | `1px solid rgba(168, 85, 247, 0.40)` + ambient glow | Active diagnostic cards, Blueprint risk-reversal callouts |
+| **Recessed Well (Inputs)** | `rgba(0, 0, 0, 0.45)`<br>*(Fallback: `#080B12`)* | None | `1px solid #64748B` (Slate-500) | Form fields, URL entry, search intent inputs |
+
+#### B. Semantic Status Accents
+To prevent visual clutter, purple remains the structural baseline, while cyan and amber are reserved strictly for diagnostic status conditions:
+* **Structural Baseline (Purple):** Outer modules, telemetry frames, general navigation.
+  * *Border:* `rgba(168, 85, 247, 0.30)` (`#A855F7`)
+  * *Glow:* `shadow-[0_0_20px_rgba(168,85,247,0.15)]`
+* **Validated State (Cyan):** High baseline health, resolved entity nodes, verified topology.
+  * *Border:* `rgba(6, 182, 212, 0.35)` (`#00E5FF` / `#06B6D4`)
+  * *Glow:* `shadow-[0_0_20px_rgba(6,182,212,0.18)]`
+* **Deficit State (Amber):** Critical blind spots, ungrounded queries, missing schema gaps.
+  * *Border:* `rgba(245, 158, 11, 0.40)` (`#F59E0B`)
+  * *Glow:* `shadow-[0_0_20px_rgba(245,158,11,0.20)]`
+
+### 3. CTA & Form Accessibility Standards (WCAG 2.2 Level AA)
+* **Eliminate Ghost Buttons on Primary Actions:** Never render the primary conversion trigger as a transparent or ghost button inside a glass panel. Doing so causes the CTA to blend into the background card plane. The primary CTA must feature a solid or high-luminance gradient fill (`from-purple-600 to-indigo-600` or `#00E5FF`).
+* **Input Well Boundary Contrast:** Input fields must maintain a verified 3:1 minimum contrast ratio against the surrounding card surface. Relying on translucent borders with 8%–12% opacity fails compliance. Always use a solid `#64748B` (Slate-500) border with an `#080B12` opaque fill.
+* **Persistent Input Labels:** Never replace an input `<label>` with placeholder copy. Labels must be visible, persistent, and styled in uppercase Geist Sans (`text-xs font-semibold tracking-wider text-slate-300`).
+* **Placeholder Text Luminance:** Placeholder text must be set to `#94A3B8` (Slate-400) at `opacity: 1` to achieve a 4.5:1 text contrast ratio against the dark recessed base.
+
+### 4. DOM Containment & Layer Discipline
+Interactive canvas animations and node graphs must never bleed across form controls or intercept pointer events:
+* Root hero container enforces explicit stacking isolation: `isolation: isolate;`.
+* Decorative canvas background is pinned with: `position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: clip;`.
+* Conversion cards and interactive controls are elevated with: `position: relative; z-index: 10;`.
+
+### 5. Production Component Implementation Example
+
+```tsx
+// Controlled-Depth Dark Glass Card with Directional Top Specular Light
+<div className="relative isolate rounded-2xl bg-slate-900/75 backdrop-blur-md border border-purple-500/25 shadow-2xl p-6 sm:p-8">
+  {/* Top Specular Light Catch */}
+  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none" />
+
+  {/* Form Control with High-Contrast Well */}
+  <div className="space-y-1.5">
+    <label htmlFor="target-url" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono">
+      Australian Business URL
+    </label>
+    <input
+      id="target-url"
+      type="url"
+      required
+      placeholder="https://yourbrand.com.au"
+      className="w-full h-11 px-3.5 rounded-xl bg-black/60 border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+    />
+  </div>
+</div>
+```
+
+### 6. QA Checklist: Dark Glass Verification
+- [ ] **Solid Fallback Present:** Does the element render legibly if `backdrop-filter` fails or is disabled?
+- [ ] **Single Primary Focal Point:** Does the primary CTA stand out as the dominant saturated element under the Squint/Blur Test?
+- [ ] **Input Contrast (>= 3:1):** Are form input boundaries rendered in an opaque tone (such as `#64748B`) rather than a low-opacity transparent wash?
+- [ ] **Placeholder Contrast (>= 4.5:1):** Is placeholder text set to `#94A3B8` (Slate-400) or brighter at full opacity?
+- [ ] **DOM Isolation Active:** Does the parent container carry `isolation: isolate;` with background canvas elements set to `pointer-events: none;`?
+- [ ] **Specular Edge Restraint:** Are borders rendered with a directional top specular highlight rather than a uniform neon perimeter line?
+- [ ] **Semantic Color Restriction:** Are cyan and amber accents reserved solely for validated and vulnerability states, keeping purple as the structural container baseline?
+
+---
+
+## 6. Section Implementation Standards
 
 ### 1. Hero Block
 * **Eyebrow:** Single Geist Mono pill badge (`AI Visibility Telemetry`) with subtle pulse animation dot.
@@ -189,7 +269,7 @@ export const ibmPlexSerif = IBM_Plex_Serif({
 
 ---
 
-## 6. Pre-Flight Typography QA Checklist
+## 7. Pre-Flight Typography & UI QA Checklist
 
 - [ ] **Single Eyebrow:** Exactly one eyebrow pill tag per section; no stacked labels.
 - [ ] **Semantic Single H1:** Exactly one `<h1>` per page, positioned in the Hero.
@@ -201,3 +281,4 @@ export const ibmPlexSerif = IBM_Plex_Serif({
   - Geist Mono (`font-mono`) for machine telemetry, confidence scores, and eyebrows.
 - [ ] **CTA Button Geometry:** Interactive buttons strictly capped at 2–4 words to preserve padding on mobile viewports.
 - [ ] **Australian English (AU):** Verified `optimisation`, `prioritised`, `analyse`, `behaviour` across all visible layers.
+- [ ] **Dark Glass Verification:** Solid fallback, directional specular highlights, >=3:1 input contrast, >=4.5:1 placeholder text luminance, and `isolation: isolate` verified.
