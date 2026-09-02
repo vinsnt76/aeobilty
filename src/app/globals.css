@@ -8,8 +8,14 @@
   --shadow-card: 0 4px 30px rgba(0, 205, 216, 0.08);
   --border-accent: #00cdd8;
   
-  --font-sans: "Söhne", "Söhne Breit", var(--font-geist-sans), "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Söhne Breit", "Söhne", var(--font-geist-sans), "Inter", system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
   --font-serif: var(--font-ibm-plex-serif), "Georgia", serif;
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-widest: 0.12em;
 }
 
 @utility bg-gradient-aeo {
@@ -20,6 +26,11 @@
   background-image: linear-gradient(135deg, #00cdd8, #bd00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@utility font-display {
+  font-family: "Söhne Breit", "Söhne", var(--font-geist-sans), "Inter", system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 @utility font-soehne-breit {
