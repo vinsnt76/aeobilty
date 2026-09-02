@@ -162,11 +162,11 @@ export default function Hero() {
           <div className="relative z-10 space-y-6 text-left hero-card">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wide font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-              Telemetry Engine Active
+              AI Visibility Telemetry
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-              Measure Your <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">AI Search Visibility</span>
+              Get Found on <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">Google, Maps, and AI Search</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-serif">

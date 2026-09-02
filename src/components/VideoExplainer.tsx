@@ -14,11 +14,11 @@ export default function VideoExplainer() {
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <span>Our Mission</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold font-mono">
+              <span>Clear Outcomes</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
-              Why Aussie Businesses Partner with AEObility
+              Why Australian Businesses Choose AEObility
             </h2>
             <p className="text-base text-white/60 font-light max-w-xl leading-relaxed font-serif">
               If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today. Read our <Link href="/services/aeo/definition" className="text-aeo-cyan font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.

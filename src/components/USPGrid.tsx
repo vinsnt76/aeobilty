@@ -51,10 +51,10 @@ export default function USPGrid() {
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
             <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono">
-              Why AEObility?
+              Entity Authority
             </h2>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
-              Put Your Business on the Map
+              Stop Losing Customers on Google, Maps, and AI
             </h3>
             <p className="text-base text-white/60 font-light font-serif">
               We focus on real outcomes, giving your business the foundation to get found and get chosen.

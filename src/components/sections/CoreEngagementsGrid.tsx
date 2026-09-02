@@ -16,10 +16,10 @@ export function CoreEngagementsGrid() {
         <div className="text-left mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>AEO Services & Technical Sprints</span>
+            <span>Predictable Engagements</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-            Choose the right starting point
+            Fixed-Scope Sprints. Zero Retainer Lock-In.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
             Get a clear roadmap, fix a specific issue or strengthen your local search foundations. All engagements are clearly scoped, transparently priced and designed for Australian businesses.

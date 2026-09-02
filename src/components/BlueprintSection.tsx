@@ -32,18 +32,14 @@ export default function BlueprintSection() {
             {/* Geometric Grid Background Motif */}
             <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
             <div className="relative z-10 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium font-mono">
                 <Rocket className="w-3.5 h-3.5" />
-                <span>Full Roadmap Strategy</span>
+                <span>Strategic Roadmap</span>
               </div>
 
-              <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono">
-                AI‑Ready Content from Day One
-              </h2>
-
               <h3 className="text-4xl sm:text-5xl font-extrabold leading-tight font-soehne-breit">
-                Your 90‑Day AI<br />
-                <span className="text-gradient-aeo">Success Blueprint</span>
+                The AEObility<br />
+                <span className="text-gradient-aeo">90-Day Blueprint</span>
               </h3>
 
               <p className="text-lg text-white/70 font-light leading-relaxed font-serif">

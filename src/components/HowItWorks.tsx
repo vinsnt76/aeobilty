@@ -75,11 +75,11 @@ export default function HowItWorks() {
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-light opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase">
-              The AI Visibility Telemetry Engine
+            <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono">
+              The Telemetry Engine
             </h2>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
-              How It Works
+              Four Steps to Machine-Readable Clarity
             </h2>
             <p className="text-base text-neutral-600 font-light font-serif">
               Measure, understand, and activate your AI search visibility.
@@ -162,8 +162,8 @@ export default function HowItWorks() {
 
             <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
                 <div>
-                  <h4 className="text-lg font-bold text-neutral-950">Measure Your AI Visibility</h4>
-                  <p className="text-xs text-neutral-500 font-light mt-1">
+                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Check Where Your Business Stands Across AI Search</h3>
+                  <p className="text-xs text-neutral-500 font-light mt-1 font-serif">
                     See how AI search engines understand your business today. Zero email required upfront.
                   </p>
                 </div>
