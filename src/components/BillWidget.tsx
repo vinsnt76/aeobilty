@@ -196,6 +196,18 @@ export default function BillWidget() {
     try {
       const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
       const targetWebsite = storedTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
+      const targetQuery = storedTelemetry?.intent || '';
+
+      const recs: string[] = [];
+      if (storedTelemetry?.result?.insightResult?.summary?.nextAction) {
+        recs.push(storedTelemetry.result.insightResult.summary.nextAction);
+      }
+      if (storedTelemetry?.result?.explanations && Array.isArray(storedTelemetry.result.explanations)) {
+        storedTelemetry.result.explanations.slice(0, 3).forEach(exp => {
+          if (exp.reason) recs.push(`${exp.category}: ${exp.reason}`);
+        });
+      }
+
       const res = await fetch('/api/forms/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -204,6 +216,10 @@ export default function BillWidget() {
           email: leadForm.email.trim(),
           phone: leadForm.phone.trim(),
           website: targetWebsite,
+          targetQuery,
+          recommendations: recs,
+          blindSpot: storedTelemetry?.result?.insightResult?.blindSpot?.description || storedTelemetry?.result?.insightResult?.blindSpot?.title || '',
+          firstImpression: storedTelemetry?.result?.insightResult?.firstImpression?.headline || '',
           assistantAssisted: isAssistantAssisted,
           scores: {
             readinessScore: storedTelemetry?.result?.readinessScore ?? 95,

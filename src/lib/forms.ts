@@ -9,7 +9,12 @@ export const Forms = {
         website,
         phone,
         scores,
-        findings
+        findings,
+        targetQuery,
+        recommendations,
+        blindSpot,
+        firstImpression,
+        assistantAssisted
       }: {
         name?: string;
         email: string;
@@ -17,6 +22,11 @@ export const Forms = {
         phone?: string;
         scores?: { readinessScore?: number; proximityScore?: number };
         findings?: string[];
+        targetQuery?: string;
+        recommendations?: string[];
+        blindSpot?: string;
+        firstImpression?: string;
+        assistantAssisted?: boolean;
       }) {
         if (!email) {
           throw new Error("Missing required email address");
@@ -28,6 +38,16 @@ export const Forms = {
         const readiness = scores?.readinessScore ?? 95;
         const proximity = scores?.proximityScore ?? 24;
 
+        const effectiveRecs: string[] = (recommendations && recommendations.length > 0)
+          ? recommendations
+          : (findings && findings.length > 0)
+            ? findings
+            : [
+                "Anchor Regional Entity Schema: Inject nested LocalBusiness and serviceArea nodes linked to Wikidata.",
+                "Publish Location-Specific Evidence: Deploy case studies addressing targeted Australian customer queries.",
+                "Expand Passage Context Chunking: Structure high-density 150-character answer blocks under H2/H3 headings."
+              ];
+
         // 1. Non-blocking internal notification
         try {
           const internalResult = await resend.emails.send({
@@ -35,13 +55,34 @@ export const Forms = {
             to: process.env.TEAM_NOTIFICATION_EMAIL || "support@aeobility.com.au",
             subject: `[New Lead] AI Telemetry Audit: ${domain}`,
             html: `
-              <h2>New Audit Request &amp; AI Telemetry Lead</h2>
-              <p><strong>Name:</strong> ${name || "Not provided"}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-              <p><strong>Website:</strong> ${website || "Not provided"}</p>
-              <p><strong>Global Schema Baseline:</strong> ${readiness}/100</p>
-              <p><strong>Target Location Grounding:</strong> ${proximity}%</p>
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; color: #111827; line-height: 1.6;">
+                <h2 style="color: #0f172a; border-bottom: 2px solid #00cdd8; padding-bottom: 8px; margin-bottom: 16px;">New Audit Request &amp; AI Telemetry Lead</h2>
+                
+                <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                  <h3 style="margin-top: 0; color: #0f172a; font-size: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">Lead Contact Information</h3>
+                  <p style="margin: 6px 0;"><strong>Name:</strong> ${name || "Not provided"}</p>
+                  <p style="margin: 6px 0;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #0284c7; text-decoration: none;">${email}</a></p>
+                  <p style="margin: 6px 0;"><strong>Phone:</strong> ${phone || "Not provided"}</p>
+                  <p style="margin: 6px 0;"><strong>Website:</strong> <a href="${website?.startsWith('http') ? website : `https://${website}`}" style="color: #0284c7; text-decoration: none;">${website || "Not provided"}</a></p>
+                  <p style="margin: 6px 0;"><strong>Source / Channel:</strong> ${assistantAssisted ? "Chat with AI Bill (Assistant Assisted)" : "Direct Diagnostic Scanner"}</p>
+                </div>
+
+                <div style="background-color: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                  <h3 style="margin-top: 0; color: #0f172a; font-size: 15px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">Diagnostic Scope &amp; Target Query</h3>
+                  <p style="margin: 6px 0;"><strong>Target Search Query:</strong> <span style="background-color: #e2e8f0; padding: 3px 8px; border-radius: 4px; font-family: monospace; color: #0369a1; font-weight: 600;">${targetQuery || "General AEO Baseline"}</span></p>
+                  <p style="margin: 6px 0;"><strong>Global Schema Baseline:</strong> <span style="font-weight: bold; color: #047857;">${readiness}/100</span></p>
+                  <p style="margin: 6px 0;"><strong>Target Location Grounding:</strong> <span style="font-weight: bold; color: #b45309;">${proximity}%</span></p>
+                  ${firstImpression ? `<p style="margin: 6px 0;"><strong>AI First Impression:</strong> ${firstImpression}</p>` : ''}
+                  ${blindSpot ? `<p style="margin: 6px 0;"><strong>Diagnostic Blind Spot:</strong> <span style="color: #dc2626; font-weight: 500;">${blindSpot}</span></p>` : ''}
+                </div>
+
+                <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+                  <h3 style="margin-top: 0; color: #0f172a; font-size: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">Key Telemetry Recommendations</h3>
+                  <ol style="padding-left: 20px; margin: 8px 0; color: #334155;">
+                    ${effectiveRecs.map(rec => `<li style="margin-bottom: 6px; font-size: 13px;">${rec}</li>`).join('')}
+                  </ol>
+                </div>
+              </div>
             `,
           });
           if (internalResult.error) {
