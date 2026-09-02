@@ -15,7 +15,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
       "url": "https://aeobility.com.au/solutions/aeo-blueprint",
       "name": "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
-      "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. Fully credited towards Foundation Implementation within 60 days of handover.",
+      "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -102,6 +102,17 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "@type": "Audience",
         "audienceType": "Australian small businesses, agency teams and internal marketing teams"
       },
+      "isRelatedTo": [
+        {
+          "@id": "https://aeobility.com.au/solutions/aeo-sprint#service"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/geo-marketing#service"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        }
+      ],
       "offers": {
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer"
       }
@@ -111,7 +122,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
   if (faqs && faqs.length > 0) {
     graphNodes.push({
       "@type": "FAQPage",
-      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#faq-blueprint",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#faq",
       "mainEntity": faqs.map(f => ({
         "@type": "Question",
         "name": f.question,
