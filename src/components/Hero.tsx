@@ -240,42 +240,42 @@ export default function Hero() {
                 <Link
                   href="/services/aeo"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AEO & SEO', destination: '/services/aeo' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   AEO &amp; SEO
                 </Link>
                 <Link
                   href="/services/ai-search-marketing"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Search Marketing', destination: '/services/ai-search-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   AI Search Marketing
                 </Link>
                 <Link
                   href="/services/aeo/local-business"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Local Business GEO', destination: '/services/aeo/local-business' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   Local Business GEO
                 </Link>
                 <Link
                   href="/services/geo-marketing"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'GEO Marketing', destination: '/services/geo-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   GEO Marketing
                 </Link>
                 <Link
                   href="/services/aeo/shopify"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Ecommerce AEO', destination: '/services/aeo/shopify' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   Ecommerce AEO
                 </Link>
                 <Link
                   href="/services/aeo/procedures"
                   onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Strategy', destination: '/services/aeo/procedures' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   AI Strategy
                 </Link>
