@@ -303,44 +303,6 @@ export default function Hero() {
 
         </div>
 
-        {/* Semantic Service Architecture Decoupling: Core Solutions Navigation Landmark */}
-        <nav aria-label="Core solutions" className="mt-14 w-full max-w-5xl mx-auto text-left relative z-10 border-t border-white/10 pt-8">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">Explore AI Search Support</div>
-          <h2 className="text-lg font-bold text-slate-100 mb-4 font-soehne-breit">Choose the right starting point</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <li>
-              <Link
-                href="/solutions/aeo-blueprint"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'blueprint', destination: '/solutions/aeo-blueprint' })}
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Audit &amp; Roadmap</span>
-                <span className="text-xs text-slate-400">Diagnostic gap analysis &amp; engineering plan</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/solutions/aeo-sprint"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'sprint', destination: '/solutions/aeo-sprint' })}
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Technical Implementation</span>
-                <span className="text-xs text-slate-400">Deterministic schema &amp; knowledge node deployment</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/aeo/local-business"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'local', destination: '/services/aeo/local-business' })}
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Local Visibility Support</span>
-                <span className="text-xs text-slate-400">GEO optimisation &amp; citation integrity</span>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
       </div>
     </section>
   );
