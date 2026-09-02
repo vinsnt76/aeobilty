@@ -295,14 +295,14 @@ export default function DiagnosticEngine() {
       {/* Hero Block - Outcome Focused Above-The-Fold Layout */}
       <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">
         <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
-          See Whether AI Search Recommends Your Business
+          Get My AI Visibility Score
         </h1>
         <h2 className="text-zinc-300 text-xs sm:text-sm font-normal leading-relaxed font-serif">
           Run a free AI Visibility Scan to discover whether ChatGPT, Perplexity and Google AI understand, trust and surface your business for the services you provide.
         </h2>
       </div>
 
-      <div className="w-full relative glass-purple-card rounded-2xl p-5 sm:p-7 overflow-hidden shadow-2xl space-y-5">
+      <div className="w-full relative controlled-depth-card rounded-2xl p-5 sm:p-7 overflow-hidden shadow-2xl space-y-5">
         {/* Subtle Purple Specular Top Catch */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none"></div>
 
@@ -323,8 +323,9 @@ export default function DiagnosticEngine() {
                   required
                   value={url}
                   onChange={e => setUrl(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'url' })}
                   placeholder="https://yourbrand.com.au"
-                  className="glass-input-field w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
                   spellCheck={false}
                   suppressHydrationWarning
                 />
@@ -345,8 +346,9 @@ export default function DiagnosticEngine() {
                   required
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'intent' })}
                   placeholder='e.g. Commercial Litigation Sydney or best electrician in Dianella'
-                  className="glass-input-field w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
                   spellCheck={false}
                   suppressHydrationWarning
                 />
@@ -388,21 +390,26 @@ export default function DiagnosticEngine() {
                 <button
                   type="submit"
                   disabled={!url.trim() || !intent.trim()}
-                  className="btn-primary-purple w-full group min-h-[48px] py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B11]"
+                  className="hero-primary-cta btn-primary-purple w-full group min-h-[48px] py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Sparkles className="w-4 h-4 text-white" />
-                  <span>Run Free AI Visibility Scan</span>
+                  <span>Get My AI Visibility Score</span>
                   <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
                 </button>
 
-                {/* Layer-Cake Value & Process Progression (Within 8px) */}
-                <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[11px] font-medium tracking-wide text-purple-200/70 text-center">
-                  <span>Simulated Framework Scan</span>
+                {/* Outcome-Led Reassurance Micro-Row (Within 8px-12px) */}
+                <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium text-slate-300/85 font-mono text-center">
+                  <span>Free AI visibility scan</span>
                   <span className="text-purple-500/50">&bull;</span>
-                  <span>Review Blind Spots</span>
+                  <span>No email required to start</span>
                   <span className="text-purple-500/50">&bull;</span>
-                  <span>Chat to Bill About Results</span>
+                  <span>See your biggest opportunities</span>
                 </div>
+
+                {/* Auxiliary Regulatory & Terms Statement */}
+                <p className="text-[11px] text-slate-500 font-mono text-center pt-1 leading-normal">
+                  By clicking, you agree to our terms. Scans evaluate publicly accessible entity data without storing credentials.
+                </p>
               </div>
             </form>
 

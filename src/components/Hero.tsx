@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
-import ServicePills from '@/components/homepage/ServicePills';
+import Link from 'next/link';
+import { trackGaEvent } from '@/lib/gtag';
 
 export function GraphVisual() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -133,15 +134,15 @@ export function GraphVisual() {
 
 export default function Hero() {
   return (
-    <header className="relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
+    <header className="hero relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Hero Body */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-7 text-left relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 text-left relative hero-card">
             {/* Geometric Grid Background Motif */}
             <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
             <div className="relative z-10 space-y-6">
@@ -159,27 +160,63 @@ export default function Hero() {
                 AEObility helps your business show up more often across search, social, and AI so you get more leads and more enquiries without the complexity.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                <a
-                  href="/diagnostic"
-                  className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
-                >
-                  Generate My Score
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-
-              {/* Interactive Purple Service Pills Corridor */}
+              {/* Dominant Above-The-Fold Primary CTA */}
               <div className="pt-2">
-                <ServicePills />
+                <Link
+                  href="/diagnostic"
+                  onClick={() => trackGaEvent('hero_cta_clicked', { source: 'homepage_hero' })}
+                  className="hero-primary-cta btn-primary-purple group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base tracking-wide transition-all shadow-[0_0_24px_rgba(168,85,247,0.4)] cursor-pointer"
+                >
+                  <span>Get My AI Visibility Score</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 w-full">
+          <div className="lg:col-span-5 w-full hero-visual-canvas-container relative">
             <GraphVisual />
           </div>
         </div>
+
+        {/* Semantic Service Architecture Decoupling: Core Solutions Navigation Landmark */}
+        <nav aria-label="Core solutions" className="mt-14 w-full max-w-5xl mx-auto text-left relative z-10 border-t border-white/10 pt-8">
+          <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">Explore AI Search Support</div>
+          <h2 className="text-lg font-bold text-slate-100 mb-4 font-soehne-breit">Choose the right starting point</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <li>
+              <Link
+                href="/solutions/aeo-blueprint"
+                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'blueprint', destination: '/solutions/aeo-blueprint' })}
+                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
+              >
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Audit &amp; Roadmap</span>
+                <span className="text-xs text-slate-400">Diagnostic gap analysis &amp; engineering plan</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/solutions/aeo-sprint"
+                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'sprint', destination: '/solutions/aeo-sprint' })}
+                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
+              >
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Technical Implementation</span>
+                <span className="text-xs text-slate-400">Deterministic schema &amp; knowledge node deployment</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/aeo/local-business"
+                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'local', destination: '/services/aeo/local-business' })}
+                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
+              >
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Local Visibility Support</span>
+                <span className="text-xs text-slate-400">GEO optimisation &amp; citation integrity</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
       </div>
     </header>
   );

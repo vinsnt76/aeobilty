@@ -9,6 +9,7 @@ import MobileMenuButton from '@/components/navigation/MobileMenuButton';
 import MobileMenuOverlay from '@/components/navigation/MobileMenuOverlay';
 import MobileMenuAccordion from '@/components/navigation/MobileMenuAccordion';
 import { NAVIGATION_DATA } from '@/components/navigation/NavData';
+import { trackGaEvent } from '@/lib/gtag';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -160,9 +161,10 @@ export default function Navbar() {
 
               <Link
                 href="/diagnostic"
-                className="px-4 py-2 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-pink-500 to-aeo-purple text-white rounded-full hover:opacity-90 transition-all shadow-md border-0 ml-1"
+                onClick={() => trackGaEvent('nav_diagnostic_clicked', { source: 'navbar_desktop' })}
+                className="px-4 py-2 text-xs font-semibold tracking-wide border border-purple-600/30 hover:border-purple-600/60 bg-purple-50 text-purple-900 rounded-full hover:bg-purple-100 transition-all shadow-sm ml-1"
               >
-                Visibility Score
+                Free AI Visibility Scan
               </Link>
             </div>
           </div>
@@ -171,9 +173,10 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5 lg:hidden">
             <Link
               href="/diagnostic"
-              className="px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-aeo-cyan to-aeo-purple text-white rounded-full hover:opacity-90 active:scale-95 transition-all shadow-sm"
+              onClick={() => trackGaEvent('nav_diagnostic_clicked', { source: 'navbar_mobile' })}
+              className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-purple-600/30 hover:border-purple-600/60 bg-purple-50 text-purple-900 rounded-full hover:bg-purple-100 active:scale-95 transition-all shadow-sm"
             >
-              Diagnostic
+              Free AI Visibility Scan
             </Link>
 
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />

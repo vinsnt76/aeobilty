@@ -324,4 +324,70 @@ body {
   color: #FFFFFF;
 }
 
+/* Phase 1 & Phase 2: Hero Layer Discipline, Focus Ring & Motion Safety */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-visual-canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: clip;
+  pointer-events: none;
+}
+
+.hero-card {
+  position: relative;
+  z-index: 10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-primary-cta:active {
+    transform: scale(0.99);
+  }
+}
+
+.hero-primary-cta:focus-visible {
+  outline: 3px solid #E9D5FF;
+  outline-offset: 3px;
+}
+
+/* Phase 4: Predictable Form Affordance & Contrast Verification */
+.diagnostic-input {
+  color: #F8FAFC;
+  background-color: #080B12;
+  border: 1px solid #64748B;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s ease-in-out;
+}
+
+.diagnostic-input::placeholder {
+  color: #94A3B8;
+  opacity: 1;
+}
+
+.diagnostic-input:focus-visible {
+  outline: 3px solid #C084FC;
+  outline-offset: 2px;
+  border-color: #C084FC;
+}
+
+/* Phase 5: Progressive Controlled Depth Card Architecture */
+.controlled-depth-card {
+  position: relative;
+  background: rgb(15 23 42 / 0.88);
+  border: 1px solid rgb(168 85 247 / 0.25);
+  border-radius: 1rem;
+}
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .controlled-depth-card {
+    background: rgb(15 23 42 / 0.75);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
+}
+
 
