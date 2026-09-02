@@ -165,9 +165,9 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
-  // Calculate User Turn Count for Lead Gating (Triggers on 4th user turn or manual trigger)
+  // Calculate User Turn Count for Lead Gating (Triggers on manual click or 4th user turn if uncaptured)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = (userTurnCount >= 4 || isGateOpenManually) && !isLeadCaptured;
+  const isGated = isGateOpenManually || (userTurnCount >= 4 && !isLeadCaptured);
 
   const hasLoggedGateRef = useRef(false);
   useEffect(() => {
@@ -430,12 +430,13 @@ export default function BillWidget() {
 
   // 4. Conversational Outcome-Led Chip Mapping
   const handleChipClick = async (chipText: string) => {
-    if (chipText.includes('Email') || chipText.includes('Send')) {
+    if (chipText.includes('Email') || chipText.includes('Send') || chipText.includes('Report')) {
       trackGaEvent('bill_gate_triggered_manually', {
         event_category: 'bill_conversion_funnel',
         source: 'bill_quick_chip',
         target_url: storedTelemetry?.url || '',
       });
+      setIsReportDispatched(false);
       setIsGateOpenManually(true);
       return;
     }
@@ -498,6 +499,7 @@ export default function BillWidget() {
       window.dispatchEvent(new Event('close_companion_widget'));
       setIsOpen(true);
       setIsTelemetryMode(true);
+      setIsReportDispatched(false);
       setIsGateOpenManually(true);
     };
 
@@ -690,7 +692,10 @@ export default function BillWidget() {
         <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsReportDispatched(false);
+              setIsOpen(false);
+            }}
             className="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer"
             aria-label="Close Chat"
           >
@@ -735,7 +740,10 @@ export default function BillWidget() {
               </Link>
               <button
                 type="button"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsReportDispatched(false);
+                  setIsOpen(false);
+                }}
                 className="text-[11px] text-slate-400 hover:text-slate-200 underline transition cursor-pointer block mx-auto pt-1 font-mono"
               >
                 Close assistant for now
@@ -745,12 +753,14 @@ export default function BillWidget() {
         </div>
       ) : isGated && (
         <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
-          {/* Close Chat Option */}
+          {/* Close Modal Option */}
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsGateOpenManually(false);
+            }}
             className="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer"
-            aria-label="Close Chat"
+            aria-label="Close Modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -766,7 +776,7 @@ export default function BillWidget() {
             </div>
 
             <p className="text-[11px] text-slate-300 leading-relaxed">
-              You&apos;ve reached the free diagnostic preview limit. Enter your details to receive your complete entity audit report and structured remediation roadmap.
+              Enter your details to receive your complete entity audit report, schema baseline scorecard, and structured remediation roadmap.
             </p>
 
             <form onSubmit={handleLeadCaptureSubmit} className="space-y-2.5 pt-1">
@@ -836,11 +846,10 @@ export default function BillWidget() {
                 type="button"
                 onClick={() => {
                   setIsGateOpenManually(false);
-                  setIsOpen(false);
                 }}
                 className="text-[11px] text-slate-400 underline hover:text-slate-200 transition cursor-pointer font-mono"
               >
-                Close chat for now
+                Back to conversation
               </button>
             </div>
           </div>
@@ -865,7 +874,7 @@ export default function BillWidget() {
 
         <div className="flex items-center gap-1.5">
           {/* Direct Email Gate Trigger CTA */}
-          {!isReportDispatched && !isLeadCaptured && (
+          {!isReportDispatched && (
             <button
               type="button"
               onClick={() => {
@@ -874,6 +883,7 @@ export default function BillWidget() {
                   source: 'bill_header_cta',
                   target_url: storedTelemetry?.url || '',
                 });
+                setIsReportDispatched(false);
                 setIsGateOpenManually(true);
               }}
               className="px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 bg-cyan-500/15 hover:bg-cyan-500/25 text-[#00E5FF] border border-cyan-500/30 cursor-pointer font-bold shrink-0"
