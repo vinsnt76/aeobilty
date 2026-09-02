@@ -145,7 +145,7 @@ export default function Hero() {
     trackGaEvent('hero_cta_clicked', { source: 'homepage_hero_direct_form' });
     trackGaEvent('form_start_submitted', { target_url: url.trim(), target_intent: intent.trim() });
 
-    router.push(`/diagnostic?url=${encodeURIComponent(url.trim())}&intent=${encodeURIComponent(intent.trim())}`);
+    router.push(`/diagnostic?url=${encodeURIComponent(url.trim())}&intent=${encodeURIComponent(intent.trim())}&auto=true`);
   };
 
   return (
@@ -208,7 +208,7 @@ export default function Hero() {
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
                   onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
-                  placeholder="e.g. Commercial Litigation Sydney"
+                  placeholder="e.g. Physiotherapist Near Me"
                   className="w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                   spellCheck={false}
                   suppressHydrationWarning

@@ -243,11 +243,14 @@ export default function DiagnosticEngine() {
   };
 
   useEffect(() => {
-    const auto = searchParams.get('auto') === 'true';
     const queryUrl = searchParams.get('url');
     const queryIntent = searchParams.get('intent');
+    const auto = searchParams.get('auto');
 
-    if (auto && queryUrl && queryIntent && !hasAutoRunRef.current) {
+    if (queryUrl) setUrl(queryUrl);
+    if (queryIntent) setIntent(queryIntent);
+
+    if (queryUrl && queryIntent && auto !== 'false' && !hasAutoRunRef.current) {
       hasAutoRunRef.current = true;
       runScan(queryUrl, queryIntent);
     }
@@ -347,7 +350,7 @@ export default function DiagnosticEngine() {
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
                   onFocus={() => trackGaEvent('form_field_focused', { field: 'intent' })}
-                  placeholder='e.g. Commercial Litigation Sydney or best electrician in Dianella'
+                  placeholder='e.g. Physiotherapist Near Me or best electrician in Dianella'
                   className="diagnostic-input w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
                   spellCheck={false}
                   suppressHydrationWarning
