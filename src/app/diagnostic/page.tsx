@@ -131,20 +131,55 @@ export default function DiagnosticPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
+    <div className="min-h-screen bg-[#080B11] text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative overflow-x-clip">
+      {/* 1. Under-Layer Lighting Mesh (The Refraction Engine) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Top-Right Ambient Violet/Indigo Bloom */}
+        <div 
+          className="absolute -top-32 -right-32 w-[650px] h-[650px] rounded-full blur-[120px] opacity-80"
+          style={{
+            background: 'radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, rgba(99, 102, 241, 0.04) 45%, transparent 70%)'
+          }}
+        />
+        {/* Mid-Left Electric Cyan Bloom */}
+        <div 
+          className="absolute top-[32%] -left-48 w-[720px] h-[720px] rounded-full blur-[140px] opacity-75"
+          style={{
+            background: 'radial-gradient(circle, rgba(0, 229, 255, 0.09) 0%, rgba(0, 205, 216, 0.03) 40%, transparent 65%)'
+          }}
+        />
+        {/* Bottom-Right Magenta Accent Pool */}
+        <div 
+          className="absolute bottom-10 -right-24 w-[550px] h-[550px] rounded-full blur-[130px] opacity-60"
+          style={{
+            background: 'radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, rgba(139, 92, 246, 0.03) 45%, transparent 70%)'
+          }}
+        />
+      </div>
+
+      {/* 2. Tactile SVG Noise Grain Overlay */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-[1] opacity-[0.025] mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+        }}
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <Navbar />
-      
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center">
-        <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
-          <DiagnosticEngine />
-        </Suspense>
-      </main>
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar />
+        
+        <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center">
+          <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
+            <DiagnosticEngine />
+          </Suspense>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }

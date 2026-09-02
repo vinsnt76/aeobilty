@@ -301,7 +301,7 @@ export default function DiagnosticEngine() {
         </h2>
       </div>
 
-      <div className="w-full bg-white/[0.02] border border-white/10 rounded-2xl p-5 sm:p-7 backdrop-blur-md relative overflow-hidden shadow-2xl space-y-5">
+      <div className="w-full glass-panel-l1 border border-white/10 rounded-2xl p-5 sm:p-7 relative overflow-hidden shadow-2xl space-y-5">
         
         {step === 'INPUT' && (
           <div className="space-y-6">
@@ -320,7 +320,7 @@ export default function DiagnosticEngine() {
                   value={url}
                   onChange={e => setUrl(e.target.value)}
                   placeholder="e.g. yourbusiness.com.au"
-                  className="w-full bg-black/70 border border-white/20 hover:border-white/30 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
+                  className="w-full bg-black/50 border border-white/15 hover:border-white/25 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
                 />
                 <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
                   Enter your main website address. We&apos;ll check the signals AI search tools use to understand your business.
@@ -339,7 +339,7 @@ export default function DiagnosticEngine() {
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
                   placeholder='e.g. "best electrician in Dianella" or "physiotherapist Perth"'
-                  className="w-full bg-black/70 border border-white/20 hover:border-white/30 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
+                  className="w-full bg-black/50 border border-white/15 hover:border-white/25 rounded-xl px-4 py-2.5 sm:py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors text-sm min-h-[44px]"
                 />
                 <p className="text-xs text-zinc-300 font-serif leading-normal pt-0.5">
                   Enter a typical question or search phrase. We&apos;ll test how well your website answers that need.
@@ -347,7 +347,7 @@ export default function DiagnosticEngine() {
               </div>
 
               {/* 4-Pillar Live Audit Preview Strip */}
-              <div className="col-span-12 p-2.5 sm:p-3 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1.5">
+              <div className="col-span-12 p-2.5 sm:p-3 glass-recessed-well rounded-xl space-y-1.5">
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <span className="flex items-center gap-1.5 text-cyan-400 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
                     <Cpu className="w-3.5 h-3.5" /> Your free scan checks four AI visibility signals:
@@ -355,19 +355,19 @@ export default function DiagnosticEngine() {
                   <span className="text-[10px] text-zinc-400 hidden sm:inline">Real-Time Analysis</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[11px] font-mono text-zinc-200">
-                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-cyan-400 shrink-0" />
                     <span className="truncate">Structured Data</span>
                   </div>
-                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-purple-400 shrink-0" />
                     <span className="truncate">Local Consistency</span>
                   </div>
-                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
                     <span className="truncate">Answer Content</span>
                   </div>
-                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/10 flex items-center gap-1.5">
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center gap-1.5">
                     <CheckCircle2 className="w-3 h-3 text-amber-400 shrink-0" />
                     <span className="truncate">Trust Signals</span>
                   </div>
@@ -471,7 +471,7 @@ export default function DiagnosticEngine() {
         )}
 
         {step === 'SCORE_REVEAL' && telemetry && (telemetry as unknown as Record<string, unknown>).error ? (
-          <div className="space-y-6 relative z-10 text-center py-8 bg-black/40 border border-red-500/30 rounded-2xl p-8 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+          <div className="space-y-6 relative z-10 text-center py-8 glass-panel-l1 border-red-500/30 rounded-2xl p-8 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
             <div className="w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center mx-auto border border-red-500/30">
               <AlertTriangle className="w-6 h-6" />
             </div>
@@ -490,7 +490,7 @@ export default function DiagnosticEngine() {
                 setStep('INPUT');
                 setTelemetry(null);
               }}
-              className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-colors border border-white/10 cursor-pointer"
+              className="btn-secondary-glass px-6 py-3 rounded-xl text-white font-medium text-sm cursor-pointer min-h-[44px]"
             >
               Try Another URL
             </button>
@@ -501,8 +501,8 @@ export default function DiagnosticEngine() {
             {/* 1. Executive Diagnostic Hero: AI Impression + Elevated Target-Query Grounding Metric */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 text-left">
               
-              {/* Left Column: Simulated AI Impression Summary */}
-              <div className="lg:col-span-7 bg-zinc-950/90 border border-aeo-cyan/40 rounded-2xl p-5 sm:p-6 shadow-[0_0_35px_rgba(0,205,216,0.12)] space-y-3 flex flex-col justify-between">
+              {/* Left Column: Simulated AI Impression Summary (Level 2 Focus Card with Specular Edge) */}
+              <div className="lg:col-span-7 glass-panel-l2 rounded-2xl p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] space-y-3 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 pb-2 border-b border-white/10 mb-3">
                     <Sparkles className="w-4 h-4 text-aeo-cyan shrink-0" />
@@ -519,8 +519,8 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
-              {/* Right Column: Elevated Target-Query Grounding Score Card (Squint Test Inversion) */}
-              <div className="lg:col-span-5 bg-gradient-to-b from-amber-950/30 to-zinc-950/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 shadow-[0_0_25px_rgba(245,158,11,0.12)] space-y-3 flex flex-col justify-between">
+              {/* Right Column: Elevated Target-Query Grounding Score Card (Level 2 Amber Focus Card) */}
+              <div className="lg:col-span-5 glass-panel-l2-amber rounded-2xl p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] space-y-3 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-2 pb-2 border-b border-amber-500/20 mb-3">
                     <span className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
@@ -541,16 +541,16 @@ export default function DiagnosticEngine() {
                   </div>
                 </div>
 
-                <div className="p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-zinc-300">
-                  <span className="text-zinc-500 block text-[9px] uppercase">Scanned Intent:</span>
+                <div className="glass-recessed-well p-2.5 rounded-lg text-[11px] font-mono text-zinc-300">
+                  <span className="text-zinc-500 block text-[9px] uppercase font-mono">Scanned Intent:</span>
                   <span className="text-amber-200 font-semibold truncate block">&quot;{intent || 'Target Query'}&quot;</span>
                 </div>
               </div>
             </div>
 
-            {/* 2. Dual-Column Perception vs Target Comparison Card */}
+            {/* 2. Dual-Column Perception vs Target Comparison Card (Level 1 Embedded Tiles) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-              <div className="bg-amber-950/15 p-5 rounded-2xl border border-amber-500/30 space-y-2 shadow-sm">
+              <div className="glass-panel-l1 p-5 rounded-2xl border-amber-500/30 space-y-2 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-400 font-mono uppercase tracking-wider font-bold">Current AI Perception</span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">Brand-Led, Not Category-Led</span>
@@ -559,7 +559,7 @@ export default function DiagnosticEngine() {
                   {telemetry.insightResult?.diagnosis?.currentState || "AI models recognise your brand and core products, but are less likely to cite your business as a leading destination for broader high-intent category searches."}
                 </p>
               </div>
-              <div className="bg-emerald-950/15 p-5 rounded-2xl border border-emerald-500/30 space-y-2 shadow-sm">
+              <div className="glass-panel-l1 p-5 rounded-2xl border-emerald-500/30 space-y-2 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-emerald-400 font-mono uppercase tracking-wider font-bold">Target Visibility State</span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">AEO Target</span>
@@ -570,8 +570,8 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* 3. Global Schema & Entity Syntax Baseline Card */}
-            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
+            {/* 3. Global Schema & Entity Syntax Baseline Card (Level 1 Data Tile with Recessed Wells) */}
+            <div className="glass-panel-l1 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
@@ -593,7 +593,7 @@ export default function DiagnosticEngine() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
                 {/* Identity */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-zinc-300 font-mono font-bold">Identity</span>
                     <span className="text-base font-bold text-white">{Math.round(factCoverage.identityCoverage * 100)}%</span>
@@ -605,7 +605,7 @@ export default function DiagnosticEngine() {
                 </div>
 
                 {/* Terminology */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-cyan-400 font-mono font-bold">Terminology</span>
                     <span className="text-base font-bold text-aeo-cyan">{Math.round(factCoverage.factCoverage * 100)}%</span>
@@ -617,7 +617,7 @@ export default function DiagnosticEngine() {
                 </div>
 
                 {/* Topology */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-purple-400 font-mono font-bold">Topology</span>
                     <span className="text-base font-bold text-aeo-purple">{Math.round(factCoverage.relationshipCoverage * 100)}%</span>
@@ -629,7 +629,7 @@ export default function DiagnosticEngine() {
                 </div>
 
                 {/* Evidence */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-emerald-400 font-mono font-bold">Evidence</span>
                     <span className="text-base font-bold text-emerald-400">{Math.round(factCoverage.evidenceCoverage * 100)}%</span>
@@ -660,8 +660,8 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* 4. RECOMMENDED NEXT STEPS: Priority Action Plan Card */}
-            <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(6,182,212,0.15)] space-y-6 text-left">
+            {/* 4. RECOMMENDED NEXT STEPS: Priority Action Plan Card (Level 2 Card + Strict Button Triad) */}
+            <div className="glass-panel-l2 rounded-2xl p-6 sm:p-7 shadow-[0_12px_40px_rgba(0,0,0,0.6)] space-y-6 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <Compass className="w-5 h-5 text-aeo-cyan" />
@@ -674,9 +674,9 @@ export default function DiagnosticEngine() {
                 </span>
               </div>
 
-              {/* 1-2-3-4 Priority Roadmap Steps */}
+              {/* 1-2-3-4 Priority Roadmap Steps seated in Recessed Wells */}
               <div className="space-y-3 font-serif">
-                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">1</span>
                     <h4 className="text-sm font-bold text-white font-soehne-breit">Define &amp; Anchor Category Entities</h4>
@@ -686,7 +686,7 @@ export default function DiagnosticEngine() {
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">2</span>
                     <h4 className="text-sm font-bold text-white font-soehne-breit">Strengthen Commercial Topic Coverage</h4>
@@ -696,7 +696,7 @@ export default function DiagnosticEngine() {
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">3</span>
                     <h4 className="text-sm font-bold text-white font-soehne-breit">Expand Query-to-Passage Context Chunking</h4>
@@ -706,7 +706,7 @@ export default function DiagnosticEngine() {
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-black/40 border border-white/10 rounded-xl space-y-1">
+                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">4</span>
                     <h4 className="text-sm font-bold text-white font-soehne-breit">Execute 10-Day Implementation Roadmap</h4>
@@ -717,8 +717,8 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
-              {/* Commercial Remediation Bridge: Strict Visual Action Hierarchy (Von Restorff Effect) */}
-              <div className="pt-2 border-t border-white/10 space-y-4">
+              {/* Commercial Remediation Bridge: Strict Button Architecture & Hierarchy Triad */}
+              <div className="pt-3 border-t border-white/10 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] font-mono text-zinc-400">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                     <span className="flex items-center gap-1 text-emerald-400">
@@ -736,31 +736,49 @@ export default function DiagnosticEngine() {
                   </span>
                 </div>
 
-                {/* Primary Action + Secondary & Tertiary Controls */}
-                <div className="space-y-2.5 pt-1">
-                  {/* Primary High-Contrast Gradient Action */}
-                  <Link
-                    href="/solutions/aeo-blueprint"
-                    onClick={() => {
-                      trackGaEvent('blueprint_cta_clicked', {
-                        event_category: 'commercial_conversion',
-                        source: 'diagnostic_priority_plan',
-                        target_url: url,
-                        price_aud: bpstratPrice,
-                      });
-                    }}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-300 hover:from-cyan-300 hover:to-teal-300 text-slate-950 font-extrabold text-sm transition-all shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] hover:scale-[1.01] cursor-pointer text-center"
-                  >
-                    <span>Get The AEObility Blueprint ($995 AUD)</span>
-                    <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
-                  </Link>
+                {/* Primary Conversion Anchor (Dynamic Contextual Copy) */}
+                <div className="space-y-2 pt-1">
+                  {(() => {
+                    const primaryCtaLabel = (telemetry.proximityScore ?? 24) < 40
+                      ? "Unlock Grounding Blueprint ($995 AUD)"
+                      : (factCoverage.factCoverage < 0.8)
+                        ? "Inject Missing Knowledge Nodes ($995 AUD)"
+                        : "Get The AEObility Blueprint ($995 AUD)";
 
-                  {/* Secondary Indigo & Tertiary Glass CTAs */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    return (
+                      <Link
+                        href="/solutions/aeo-blueprint"
+                        onClick={() => {
+                          trackGaEvent('blueprint_cta_clicked', {
+                            event_category: 'commercial_conversion',
+                            source: 'diagnostic_priority_plan',
+                            target_url: url,
+                            price_aud: bpstratPrice,
+                          });
+                        }}
+                        className="btn-primary-gradient w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base cursor-pointer min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B11] text-center"
+                      >
+                        <span>{primaryCtaLabel}</span>
+                        <ArrowRight className="w-4 h-4 text-white shrink-0" />
+                      </Link>
+                    );
+                  })()}
+
+                  {/* Inline Objection Pre-empts & Spatial Psychology Reassurance (within 8px) */}
+                  <p className="text-[12px] text-[#94A3B8] font-mono text-center pt-0.5 flex items-center justify-center gap-1.5 flex-wrap">
+                    <span>🔒 100% Deterministic Schema Guarantee</span>
+                    <span>&bull;</span>
+                    <span>10-Day Delivery</span>
+                    <span>&bull;</span>
+                    <span>Full Implementation Code</span>
+                  </p>
+
+                  {/* Secondary High-Intent Utility Buttons (Semi-translucent Glass) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                     <button
                       type="button"
                       onClick={openAiBill}
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 border border-indigo-500/40 text-indigo-200 hover:text-white font-bold text-xs transition-all cursor-pointer shadow-[0_0_12px_rgba(99,102,241,0.15)] text-center"
+                      className="btn-secondary-glass inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl hover:border-indigo-400/50 hover:bg-indigo-500/15 text-indigo-200 hover:text-white font-bold text-xs cursor-pointer min-h-[44px] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
                     >
                       <MessageSquare className="w-3.5 h-3.5 text-indigo-300 shrink-0" />
                       <span>Discuss with AI Bill</span>
@@ -769,9 +787,9 @@ export default function DiagnosticEngine() {
                     <button
                       type="button"
                       onClick={openEmailGate}
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 hover:text-white font-medium text-xs transition-colors cursor-pointer text-center"
+                      className="btn-secondary-glass inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl hover:border-cyan-400/50 hover:bg-cyan-500/10 text-slate-200 hover:text-white font-medium text-xs cursor-pointer min-h-[44px] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
                     >
-                      <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span>Email Full Report</span>
                     </button>
                   </div>
@@ -779,7 +797,7 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* Subordinated Utility Actions */}
+            {/* Tertiary Auxiliary Actions (Borderless Text Links) */}
             <div className="flex flex-wrap items-center justify-center gap-4 text-center pt-2">
               <button
                 type="button"
@@ -791,7 +809,7 @@ export default function DiagnosticEngine() {
                   });
                   window.print();
                 }}
-                className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-cyan-300 transition-colors font-mono cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#94A3B8] hover:text-[#F8FAFC] hover:underline transition-colors font-mono cursor-pointer py-1"
               >
                 <Printer className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Print / Save report as PDF</span>
@@ -803,7 +821,7 @@ export default function DiagnosticEngine() {
                   setStep('INPUT');
                   setTelemetry(null);
                 }}
-                className="text-xs text-zinc-400 hover:text-white underline transition-colors font-mono cursor-pointer"
+                className="text-xs text-[#94A3B8] hover:text-[#F8FAFC] hover:underline transition-colors font-mono cursor-pointer py-1"
               >
                 Run another scan
               </button>
