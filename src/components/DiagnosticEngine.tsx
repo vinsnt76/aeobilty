@@ -104,10 +104,21 @@ export default function DiagnosticEngine() {
   const [intent, setIntent] = useState('');
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
   const [processingStage, setProcessingStage] = useState(0);
+  const [isSplitRailActive, setIsSplitRailActive] = useState(false);
   const hasAutoRunRef = useRef(false);
 
   // Extract BPSTRAT product parameters from canonical schema & CBKL coverage
   const bpstratPrice = PRICING_CONFIG.blueprint.price;
+
+  // Listen for Bill Split Rail mode changes to shift desktop grid dynamically
+  useEffect(() => {
+    const handleViewModeChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ viewMode?: string }>;
+      setIsSplitRailActive(customEvent.detail?.viewMode === 'SPLIT_RAIL');
+    };
+    window.addEventListener('bill_view_mode_changed', handleViewModeChange);
+    return () => window.removeEventListener('bill_view_mode_changed', handleViewModeChange);
+  }, []);
   const factCoverage = calculateFactCoverageScore();
 
   const processingSteps = [
@@ -389,14 +400,12 @@ export default function DiagnosticEngine() {
               </div>
             </form>
 
-            {/* "What Happens Next" 3-Step Strip */}
-            <div className="border-t border-white/10 pt-5 space-y-3.5">
-              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block text-center">
-                What Happens Next
-              </span>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-left">
+            {/* Micro FAQ Accordion Below Form */}
+            <div className="pt-4 border-t border-white/10 space-y-3 text-left">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-bold">How This Scan Works</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-black/40 border border-white/5 rounded-xl p-3.5 space-y-1">
-                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Add your website &amp; question</span>
+                  <span className="text-xs font-bold text-cyan-400 font-mono block">1. Enter site details</span>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">Enter your website address and the question a prospective customer would ask when looking for your service.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 rounded-xl p-3.5 space-y-1">
@@ -489,32 +498,57 @@ export default function DiagnosticEngine() {
         ) : step === 'SCORE_REVEAL' && telemetry && (
           <div className="space-y-8 relative z-10 pt-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
             
-            {/* Simulated AI Impression Summary */}
-            <div className="max-w-2xl mx-auto bg-zinc-950/90 border border-aeo-cyan/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(0,205,216,0.15)] space-y-4 text-left">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-1 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-aeo-cyan" />
-                  <span className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Your AI Visibility Scan</span>
-                </div>
-                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1">
-                  <AlertTriangle className="w-3 h-3 text-amber-400" />
-                  Target-Market Relevance Gap
-                </span>
-              </div>
+            {/* 1. Executive Diagnostic Hero: AI Impression + Elevated Target-Query Grounding Metric */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 text-left">
               
-              <div className="space-y-3 font-serif text-left sm:text-center">
-                <p className="text-lg sm:text-xl text-white font-medium leading-snug">
-                  &quot;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to target local search intent. You are visible broadly, but underrepresented for high-intent local queries."}&quot;
-                </p>
-                <div className="space-y-1.5 pt-1">
-                  {telemetry.insightResult?.firstImpression?.reasoning?.map((r, i) => (
-                    <p key={i} className="text-xs sm:text-sm text-zinc-300">{r}</p>
+              {/* Left Column: Simulated AI Impression Summary */}
+              <div className="lg:col-span-7 bg-zinc-950/90 border border-aeo-cyan/40 rounded-2xl p-5 sm:p-6 shadow-[0_0_35px_rgba(0,205,216,0.12)] space-y-3 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 pb-2 border-b border-white/10 mb-3">
+                    <Sparkles className="w-4 h-4 text-aeo-cyan shrink-0" />
+                    <span className="text-xs uppercase tracking-wider font-bold text-aeo-cyan font-mono">Simulated AI Impression</span>
+                  </div>
+                  <p className="text-base sm:text-lg text-white font-medium font-serif leading-snug">
+                    &quot;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to target local search intent."}&quot;
+                  </p>
+                </div>
+                <div className="space-y-1.5 pt-2 border-t border-white/5 font-serif text-xs text-zinc-300">
+                  {telemetry.insightResult?.firstImpression?.reasoning?.slice(0, 2).map((r, i) => (
+                    <p key={i}>&bull; {r}</p>
                   ))}
+                </div>
+              </div>
+
+              {/* Right Column: Elevated Target-Query Grounding Score Card (Squint Test Inversion) */}
+              <div className="lg:col-span-5 bg-gradient-to-b from-amber-950/30 to-zinc-950/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 shadow-[0_0_25px_rgba(245,158,11,0.12)] space-y-3 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 pb-2 border-b border-amber-500/20 mb-3">
+                    <span className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+                      <AlertTriangle className="w-3.5 h-3.5 text-amber-400" /> Grounding Score
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
+                      Needs Attention
+                    </span>
+                  </div>
+
+                  <div className="flex items-baseline justify-between mb-1.5">
+                    <span className="text-[11px] font-mono text-zinc-400">Target Query Score:</span>
+                    <span className="text-3xl font-extrabold text-amber-400 font-mono">{telemetry.proximityScore ?? 24}%</span>
+                  </div>
+
+                  <div className="w-full bg-black/60 rounded-full h-2 overflow-hidden mb-2">
+                    <div className="bg-amber-400 h-full rounded-full transition-all duration-700" style={{ width: `${telemetry.proximityScore ?? 24}%` }} />
+                  </div>
+                </div>
+
+                <div className="p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-zinc-300">
+                  <span className="text-zinc-500 block text-[9px] uppercase">Scanned Intent:</span>
+                  <span className="text-amber-200 font-semibold truncate block">&quot;{intent || 'Target Query'}&quot;</span>
                 </div>
               </div>
             </div>
 
-            {/* Dual-Column Perception vs Target Comparison Card */}
+            {/* 2. Dual-Column Perception vs Target Comparison Card */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
               <div className="bg-amber-950/15 p-5 rounded-2xl border border-amber-500/30 space-y-2 shadow-sm">
                 <div className="flex items-center justify-between">
@@ -536,7 +570,7 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* Global Schema & Entity Syntax Baseline Card (Moved above Recommended Next Steps) */}
+            {/* 3. Global Schema & Entity Syntax Baseline Card */}
             <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
@@ -607,30 +641,6 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
-              {/* Explicit Target-Query Grounding Row (Explains Disparity) */}
-              <div className="p-4 bg-amber-950/20 border border-amber-500/30 rounded-xl space-y-2">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span className="text-xs font-mono font-bold text-amber-300">
-                      Target-Query Grounding: &quot;{intent || 'Target Search Query'}&quot;
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
-                      Needs Attention
-                    </span>
-                    <span className="text-base font-bold text-amber-300">{telemetry.proximityScore ?? 24}%</span>
-                  </div>
-                </div>
-                <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${telemetry.proximityScore ?? 24}%` }} />
-                </div>
-                <p className="text-[11px] text-zinc-300 font-serif leading-relaxed">
-                  While baseline schema syntax is AI-ready (90–100%), content signals lack direct entity linkage to customer search intent for this specific query.
-                </p>
-              </div>
-
               <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-zinc-400 border-t border-white/5 font-serif">
                 <span>Note: AI search engines are non-deterministic multi-variable systems. This scan assesses machine-readable indexation and structured data readiness.</span>
                 <Link
@@ -650,7 +660,7 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
-            {/* RECOMMENDED NEXT STEPS: Priority Action Plan Card */}
+            {/* 4. RECOMMENDED NEXT STEPS: Priority Action Plan Card */}
             <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(6,182,212,0.15)] space-y-6 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2">
@@ -707,7 +717,7 @@ export default function DiagnosticEngine() {
                 </div>
               </div>
 
-              {/* Commercial Remediation Bridge: Blueprint + AI Bill */}
+              {/* Commercial Remediation Bridge: Strict Visual Action Hierarchy (Von Restorff Effect) */}
               <div className="pt-2 border-t border-white/10 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] font-mono text-zinc-400">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
@@ -726,25 +736,9 @@ export default function DiagnosticEngine() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
-                  <button
-                    type="button"
-                    onClick={openEmailGate}
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 font-bold text-xs transition-all cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.15)] text-center"
-                  >
-                    <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Email Full Report</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={openAiBill}
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-colors cursor-pointer text-center"
-                  >
-                    <MessageSquare className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Discuss with AI Bill</span>
-                  </button>
-
+                {/* Primary Action + Secondary & Tertiary Controls */}
+                <div className="space-y-2.5 pt-1">
+                  {/* Primary High-Contrast Gradient Action */}
                   <Link
                     href="/solutions/aeo-blueprint"
                     onClick={() => {
@@ -755,11 +749,32 @@ export default function DiagnosticEngine() {
                         price_aud: bpstratPrice,
                       });
                     }}
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer text-center"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-300 hover:from-cyan-300 hover:to-teal-300 text-slate-950 font-extrabold text-sm transition-all shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] hover:scale-[1.01] cursor-pointer text-center"
                   >
-                    <span>Get Blueprint ($995)</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-zinc-950 shrink-0" />
+                    <span>Get The AEObility Blueprint ($995 AUD)</span>
+                    <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
                   </Link>
+
+                  {/* Secondary Indigo & Tertiary Glass CTAs */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button
+                      type="button"
+                      onClick={openAiBill}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 border border-indigo-500/40 text-indigo-200 hover:text-white font-bold text-xs transition-all cursor-pointer shadow-[0_0_12px_rgba(99,102,241,0.15)] text-center"
+                    >
+                      <MessageSquare className="w-3.5 h-3.5 text-indigo-300 shrink-0" />
+                      <span>Discuss with AI Bill</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={openEmailGate}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 hover:text-white font-medium text-xs transition-colors cursor-pointer text-center"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>Email Full Report</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -788,9 +803,9 @@ export default function DiagnosticEngine() {
                   setStep('INPUT');
                   setTelemetry(null);
                 }}
-                className="text-xs text-zinc-400 hover:text-white transition-colors underline cursor-pointer font-mono"
+                className="text-xs text-zinc-400 hover:text-white underline transition-colors font-mono cursor-pointer"
               >
-                &larr; Run another free scan with a different URL
+                Run another scan
               </button>
             </div>
 

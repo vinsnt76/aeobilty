@@ -4,7 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, CheckCircle2, XCircle, AlertTriangle, HelpCircle, ArrowRight, Mail } from 'lucide-react';
+import { 
+  X, Sparkles, Send, Activity, Bot, Volume2, VolumeX, ShieldAlert, 
+  CheckCircle2, XCircle, AlertTriangle, HelpCircle, ArrowRight, Mail, 
+  Minus, Maximize2, Minimize2, ChevronDown, ChevronUp 
+} from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { TelemetryResult } from '@/lib/telemetry/types';
@@ -76,6 +80,8 @@ export default function BillWidget() {
   );
 
   const [isOpen, setIsOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<'MINIMISED' | 'DRAWER' | 'SPLIT_RAIL'>('DRAWER');
+  const [showMoreChips, setShowMoreChips] = useState(false);
   const [isTelemetryMode, setIsTelemetryMode] = useState(false);
   const [input, setInput] = useState('');
   const [isMuted, setIsMuted] = useState(true);
@@ -84,11 +90,19 @@ export default function BillWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Broadcast ViewMode changes for Split-Screen Layout shifts
+  const updateViewMode = (nextMode: 'MINIMISED' | 'DRAWER' | 'SPLIT_RAIL') => {
+    setViewMode(nextMode);
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('bill_view_mode_changed', { detail: { viewMode: nextMode } }));
+    }
+  };
+
   useEffect(() => {
     if (typeof window === 'undefined' || !window.visualViewport) return;
 
     const updatePosition = () => {
-      if (!window.visualViewport || !containerRef.current) return;
+      if (!window.visualViewport || !containerRef.current || viewMode === 'SPLIT_RAIL') return;
       const vvHeight = window.visualViewport.height;
       if (window.innerWidth < 768) {
         containerRef.current.style.maxHeight = `${Math.min(vvHeight - 80, 600)}px`;
@@ -105,7 +119,7 @@ export default function BillWidget() {
       window.visualViewport?.removeEventListener('resize', updatePosition);
       window.visualViewport?.removeEventListener('scroll', updatePosition);
     };
-  }, [isOpen]);
+  }, [isOpen, viewMode]);
 
 
   // 0. Gated Lead-Capture State (Triggers on 4th User Turn)
@@ -253,130 +267,44 @@ export default function BillWidget() {
     if (!m) return '';
     const anyM = m as unknown as Record<string, unknown>;
 
-    // 1. Direct text property (@ai-sdk/react v4 UIMessage standard)
     if (typeof anyM.text === 'string' && anyM.text.trim()) {
       return anyM.text;
     }
 
-    // 2. Direct content property (string fallback)
-    if (typeof anyM.content === 'string' && anyM.content.trim()) {
-      return anyM.content;
-    }
-
-    // 3. Parts array property
     if (Array.isArray(anyM.parts)) {
-      const extracted = anyM.parts
-        .filter((p: unknown): p is { type?: string; text?: string } => 
-          typeof p === 'object' && p !== null && 'text' in p && typeof (p as { text: unknown }).text === 'string'
-        )
-        .map(p => p.text || '')
-        .join('');
-      if (extracted.trim()) return extracted;
-    }
+      const textParts = anyM.parts
+        .map((p: unknown) => {
+          if (!p || typeof p !== 'object') return '';
+          const partObj = p as Record<string, unknown>;
+          if (partObj.type === 'text' && typeof partObj.text === 'string') {
+            return partObj.text;
+          }
+          return '';
+        })
+        .filter(Boolean);
 
-    // 4. Delta property fallback
-    if (typeof anyM.delta === 'string' && anyM.delta.trim()) {
-      return anyM.delta;
+      if (textParts.length > 0) {
+        return textParts.join('\n');
+      }
     }
 
     return '';
   }, []);
 
-  // 3. Independent Effect for Analytics Event Pipelines & Audio Output Playback Stream
-  const speakText = React.useCallback((text: string) => {
-    if (isMuted || typeof window === 'undefined' || !window.speechSynthesis) return;
-    try {
-      window.speechSynthesis.cancel();
-      if (!text || typeof text !== 'string') return;
-      const cleanText = text.replace(/[*#_`]/g, '');
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      const voices = window.speechSynthesis.getVoices();
-      const auVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australian')) || voices.find(v => v.lang.startsWith('en'));
-      if (auVoice) utterance.voice = auVoice;
-      window.speechSynthesis.speak(utterance);
-    } catch (err) {
-      console.error("SpeechSynthesis runtime error:", err);
-    }
-  }, [isMuted]);
-
-  useEffect(() => {
-    if (messages.length === 0 || typeof window === 'undefined' || typeof window.gtag !== 'function') return;
-    
-    const lastMessage = messages[messages.length - 1];
-    if (lastMessage.role !== 'assistant') return;
-
-    const content = getMessageText(lastMessage).toLowerCase();
-    if (!content) return;
-    
-    speakText(getMessageText(lastMessage));
-
-    // GA4: Commercial Conversational Funnel Analytics Tracker
-    if (content.includes('blueprint') || content.includes('995')) {
-      const prevUserMessage = [...messages].reverse().find(m => m.role === 'user');
-      const userText = prevUserMessage ? getMessageText(prevUserMessage) : 'Unknown';
-
-      window.gtag('event', 'bill_funnel_conversion_step', {
-        event_category: 'AI Assistant Funnel',
-        funnel_step: 'Commercial Offer Exposed',
-        trigger_query: userText
-      });
-    }
-
-    // GA4: 41-Node Semantic Lattice Hit Tracker
-    if (content.includes('lattice') || content.includes('bias') || content.includes('density') || content.includes('schema')) {
-      window.gtag('event', 'bill_lattice_node_hit', {
-        event_category: 'AI Assistant Knowledge',
-        matched_concept: content.includes('density') ? 'Semantic Density' : content.includes('bias') ? 'Positional Bias' : 'Semantic Lattice'
-      });
-    }
-  }, [messages, speakText, getMessageText]);
-
-  // Telemetry Hook: Dispatches GA4 metrics when Bill switches active skills
-  const toggleTelemetryMode = () => {
-    const nextMode = !isTelemetryMode;
-    setIsTelemetryMode(nextMode);
-
-    if (typeof window !== 'undefined') {
-      const win = window as unknown as {
-        dataLayer?: Array<Record<string, unknown>>;
-        gtag?: (...args: unknown[]) => void;
-      };
-      win.dataLayer = win.dataLayer || [];
-      win.dataLayer.push({
-        event: 'bill_mode_toggle',
-        event_category: 'AI Assistant',
-        event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
-        value: nextMode ? 1 : 0
-      });
-      if (typeof win.gtag === 'function') {
-        win.gtag('event', 'bill_mode_toggle', {
-          event_category: 'AI Assistant',
-          event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
-          value: nextMode ? 1 : 0
-        });
-      }
-    }
-  };
-
-  // Custom submit interceptor to stream to Vercel and track intent simultaneously
   const executeQuery = async (queryText: string) => {
     if (!queryText.trim() || isLoading) return;
 
     if (typeof window !== 'undefined') {
-      const win = window as unknown as {
-        gtag?: (...args: unknown[]) => void;
-      };
-      if (typeof win.gtag === 'function') {
-        win.gtag('event', 'bill_query_submitted', {
-          event_category: 'AI Assistant',
-          search_term: queryText,
-          active_skill: isTelemetryMode ? 'Telemetry Guide' : 'Knowledge Explainer',
-          query_length: queryText.length
+      sessionStorage.setItem('aeo_assistant_assisted', 'true');
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'bill_query_submitted', {
+          event_category: 'AI Assistant UI',
+          query: queryText,
+          mode: isTelemetryMode ? 'telemetry' : 'general'
         });
       }
     }
 
-    // Dynamic structured telemetry payload extraction from localStorage or state
     let activeAudit = storedTelemetry?.result;
     let targetWebsite = storedTelemetry?.url;
     let targetIntent = storedTelemetry?.intent;
@@ -428,7 +356,6 @@ export default function BillWidget() {
     );
   };
 
-  // 4. Conversational Outcome-Led Chip Mapping
   const handleChipClick = async (chipText: string) => {
     if (chipText.includes('Email') || chipText.includes('Send') || chipText.includes('Report')) {
       trackGaEvent('bill_gate_triggered_manually', {
@@ -460,17 +387,29 @@ export default function BillWidget() {
     await executeQuery(targetPrompt);
   };
 
+  const toggleTelemetryMode = () => {
+    const nextMode = !isTelemetryMode;
+    setIsTelemetryMode(nextMode);
+
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'bill_mode_toggle', {
+        event_category: 'AI Assistant',
+        event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
+        value: nextMode ? 1 : 0
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await executeQuery(input);
   };
 
-  // Listen for Handoff Events from search modals or CTA triggers
   useEffect(() => {
     const handleOpenBillDrawer = () => {
-      // Suppress companion widget first to avoid z-index race conditions
       window.dispatchEvent(new Event('close_companion_widget'));
       setIsOpen(true);
+      setViewMode('DRAWER');
       setIsTelemetryMode(true);
     };
 
@@ -479,25 +418,26 @@ export default function BillWidget() {
       const initialQuery = customEvent.detail?.query;
       const mode = customEvent.detail?.mode;
 
-      // Close CompanionWidget to prevent drawer overlay collision
       window.dispatchEvent(new Event('close_companion_widget'));
       setIsOpen(true);
+      setViewMode('DRAWER');
       if (mode === 'telemetry') {
         setIsTelemetryMode(true);
       }
       if (initialQuery) {
-        // Auto-dispatch telemetry query directly so input stays clean
         executeQuery(initialQuery);
       }
     };
 
     const handleCloseBillWidget = () => {
       setIsOpen(false);
+      updateViewMode('DRAWER');
     };
 
     const handleOpenBillGate = () => {
       window.dispatchEvent(new Event('close_companion_widget'));
       setIsOpen(true);
+      setViewMode('DRAWER');
       setIsTelemetryMode(true);
       setIsReportDispatched(false);
       setIsGateOpenManually(true);
@@ -515,15 +455,17 @@ export default function BillWidget() {
     };
   }, []);
 
-  // Dynamic Focus Trap using :not([disabled]) filtering & Escape Key
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || viewMode === 'MINIMISED') return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
-        setIsOpen(false);
-        setIsGateOpenManually(false);
+        if (isGateOpenManually) {
+          setIsGateOpenManually(false);
+        } else {
+          updateViewMode('MINIMISED');
+        }
       }
     };
 
@@ -560,50 +502,29 @@ export default function BillWidget() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keydown', handleTabKey);
     };
-  }, [isOpen]);
+  }, [isOpen, viewMode, isGateOpenManually]);
 
-  // Auto-scroll messages container on update
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && viewMode !== 'MINIMISED') {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages, isOpen, isLoading]);
+  }, [messages, isOpen, viewMode, isLoading]);
 
-  // 4. INLINE TELEMETRY CARD EXTRACTOR (Isolated from state mutations)
   const renderMessageBubbleContent = (msgId: string, text: string) => {
-    // 👉 STEP B: RAW STREAM TEXT DIAGNOSTIC BLOCK (Set to true for streaming text debugging)
-    const renderRawDiagnostic = false;
-
-    if (renderRawDiagnostic) {
-      return (
-        <div className="space-y-1.5 w-full pt-1 font-mono">
-          <span className="text-[9px] uppercase tracking-wider text-emerald-400 font-bold block">👉 STEP B: RAW STREAM TEXT</span>
-          <pre className="whitespace-pre-wrap text-[10px] text-emerald-200 bg-black/80 p-2 rounded-lg border border-emerald-500/30 overflow-x-auto">
-            {text || '(Empty Stream Buffer)'}
-          </pre>
-        </div>
-      );
-    }
-
     const parsed = parseTelemetryText(text);
 
-    // Multi-turn UI Alignment:
-    // First turn: expect cards (hasAnyMatch = true) -> render structured diagnostic card container
-    // Follow-up turns: expect plain text (hasAnyMatch = false) -> render normal assistant bubble (no card container)
     if (!parsed.hasAnyMatch) {
       if (!text || !text.trim()) {
         return (
-          <div className="inline-flex items-center gap-2 py-1 text-[10px] font-mono text-emerald-400">
-            <Sparkles className="w-3.5 h-3.5 animate-spin text-emerald-400" />
-            <span>Scanning 41 semantic lattice nodes...</span>
+          <div className="inline-flex items-center gap-2 py-1 text-[10px] font-mono text-indigo-300">
+            <Sparkles className="w-3.5 h-3.5 animate-spin text-indigo-400" />
+            <span>Scanning semantic lattice nodes...</span>
           </div>
         );
       }
-      // Follow-up turn / plain-text fallback: render as normal assistant bubble without card container
-      return <p className="whitespace-pre-wrap text-[11px] text-zinc-300 leading-relaxed">{text}</p>;
+      return <p className="whitespace-pre-wrap text-[11px] text-slate-200 leading-relaxed font-sans">{text}</p>;
     }
 
-    // Fire Card Render Event Tracking completely decoupled from React state renders
     if (typeof window !== 'undefined' && typeof window.gtag === 'function' && !reportedCardIds.has(msgId)) {
       reportedCardIds.add(msgId);
       window.gtag('event', 'bill_telemetry_card_rendered', {
@@ -613,21 +534,19 @@ export default function BillWidget() {
       });
     }
 
-    // Clean, stable card layout rendering strictly from parsed block fields (ignoring any preambles or out-of-block text)
     return (
       <div className="space-y-3 w-full pt-1">
-        {/* Dynamic Metric Grid Panels */}
         {(parsed.clarityScore !== null || parsed.citationShare !== null) && (
           <div className="grid grid-cols-2 gap-2 font-mono">
             {parsed.clarityScore !== null && (
-              <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
-                <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Clarity Index</span>
+              <div className="bg-slate-950 border border-slate-800 rounded-lg p-2 text-center">
+                <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Clarity Index</span>
                 <span className="text-sm font-bold text-emerald-400">{parsed.clarityScore}%</span>
               </div>
             )}
             {parsed.citationShare !== null && (
-              <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-2 text-center">
-                <span className="text-[9px] uppercase tracking-wider text-zinc-500 block">Citation Share</span>
+              <div className="bg-slate-950 border border-slate-800 rounded-lg p-2 text-center">
+                <span className="text-[9px] uppercase tracking-wider text-slate-400 block">Citation Share</span>
                 <span className="text-sm font-bold text-amber-400">{parsed.citationShare}%</span>
               </div>
             )}
@@ -635,16 +554,16 @@ export default function BillWidget() {
         )}
 
         {parsed.firstImpression && (
-          <div className="bg-black/60 border border-emerald-500/30 rounded-lg p-2.5 space-y-1 font-mono">
+          <div className="bg-slate-950/80 border border-emerald-500/30 rounded-lg p-2.5 space-y-1 font-mono">
             <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wide block">AI First Impression</span>
-            <p className="text-[11px] text-zinc-200 leading-normal italic">&quot;{parsed.firstImpression}&quot;</p>
+            <p className="text-[11px] text-slate-200 leading-normal italic">&quot;{parsed.firstImpression}&quot;</p>
           </div>
         )}
 
         {parsed.blindSpot && (
-          <div className="bg-black/60 border border-rose-500/30 rounded-lg p-2.5 space-y-1 font-mono">
+          <div className="bg-slate-950/80 border border-rose-500/30 rounded-lg p-2.5 space-y-1 font-mono">
             <span className="text-[9px] font-bold text-rose-400 uppercase tracking-wide block">Biggest Blind Spot</span>
-            <p className="text-[11px] text-zinc-200 leading-normal">{parsed.blindSpot}</p>
+            <p className="text-[11px] text-slate-200 leading-normal">{parsed.blindSpot}</p>
           </div>
         )}
 
@@ -669,7 +588,6 @@ export default function BillWidget() {
     );
   };
 
-  // Suppress AI Bill widget on /about and /freelance routes
   if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
     return null;
   }
@@ -678,18 +596,46 @@ export default function BillWidget() {
     return null;
   }
 
+  if (viewMode === 'MINIMISED') {
+    return createPortal(
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] pointer-events-auto animate-fadeIn">
+        <button
+          type="button"
+          onClick={() => updateViewMode('DRAWER')}
+          className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#0B0F19]/95 border border-indigo-500/40 shadow-[0_12px_32px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.12)] hover:border-indigo-400 hover:scale-105 transition-all text-white font-sans text-xs backdrop-blur-md cursor-pointer group"
+          aria-label="Expand AI Bill Assistant"
+        >
+          <BillAvatar size="sm" status={isLoading ? 'analysing' : 'online'} pulse={false} />
+          <div className="flex items-center gap-1.5 font-mono">
+            <span className="font-bold text-indigo-300 group-hover:text-white transition-colors">AI Bill</span>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            {storedTelemetry?.url && (
+              <span className="text-[10px] text-slate-400 border-l border-white/15 pl-1.5 font-normal hidden sm:inline">
+                [Scan Loaded]
+              </span>
+            )}
+          </div>
+        </button>
+      </div>,
+      document.body
+    );
+  }
+
+  const containerClasses = viewMode === 'SPLIT_RAIL'
+    ? "pointer-events-auto fixed top-0 right-0 h-screen w-full sm:w-[460px] z-[9999] bg-[#0B0F19]/98 border-l border-indigo-500/30 flex flex-col shadow-[0_0_60px_rgba(0,0,0,0.85)] text-slate-100 font-sans backdrop-blur-2xl transition-all animate-fadeIn"
+    : "pointer-events-auto fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-[calc(1rem+env(safe-area-inset-right,0px))] left-auto z-[9999] w-[calc(100vw-2rem)] sm:w-[400px] max-w-sm sm:max-w-md bg-[#0B0F19]/95 border border-indigo-500/30 rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.12)] flex flex-col h-135 max-h-[82dvh] overflow-hidden text-slate-100 font-sans backdrop-blur-xl transition-all animate-fadeIn";
+
   return createPortal(
-    <div className="fixed inset-0 z-[9999] pointer-events-none">
+    <div className={viewMode === 'SPLIT_RAIL' ? "fixed inset-0 z-[9999] pointer-events-none" : "fixed inset-0 z-[9999] pointer-events-none"}>
       <div 
         ref={containerRef} 
         role="dialog"
         aria-modal="true"
         aria-label="AI Bill Diagnostic Consultant"
-        className="pointer-events-auto fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-[calc(1rem+env(safe-area-inset-right,0px))] left-auto z-50 w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-md bg-[#0A0F1D]/95 border border-cyan-500/30 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[82dvh] overflow-hidden text-slate-100 font-sans backdrop-blur-xl transition-all animate-fadeIn"
+        className={containerClasses}
       >
-      {/* 0. Confirmed Closure Card / Interstitial Gating Modal Overlay */}
       {isReportDispatched ? (
-        <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
+        <div className="absolute inset-0 bg-[#0B0F19]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           <button
             type="button"
             onClick={() => {
@@ -702,8 +648,8 @@ export default function BillWidget() {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-full max-w-sm space-y-4 text-center bg-slate-900/90 border border-cyan-500/30 p-6 rounded-2xl shadow-2xl">
-            <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] mx-auto shadow-[0_0_15px_rgba(0,229,255,0.2)]">
+          <div className="w-full max-w-sm space-y-4 text-center bg-slate-900/90 border border-indigo-500/30 p-6 rounded-2xl shadow-2xl">
+            <div className="w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-300 mx-auto shadow-[0_0_15px_rgba(99,102,241,0.2)]">
               <CheckCircle2 className="w-6 h-6" />
             </div>
 
@@ -714,7 +660,7 @@ export default function BillWidget() {
               <p className="text-xs text-slate-300 font-serif leading-relaxed">
                 We&apos;ve emailed your complete entity audit report to:
               </p>
-              <div className="inline-block text-xs font-mono font-bold text-[#00E5FF] bg-slate-950 px-3 py-1 rounded-lg border border-cyan-500/30">
+              <div className="inline-block text-xs font-mono font-bold text-indigo-300 bg-slate-950 px-3 py-1 rounded-lg border border-indigo-500/30">
                 {leadForm.email}
               </div>
             </div>
@@ -733,7 +679,7 @@ export default function BillWidget() {
                     price_aud: 995,
                   });
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] text-center cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] text-center cursor-pointer"
               >
                 <span>View The AEObility Blueprint ($995 AUD)</span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
@@ -752,8 +698,7 @@ export default function BillWidget() {
           </div>
         </div>
       ) : isGated && (
-        <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
-          {/* Close Modal Option */}
+        <div className="absolute inset-0 bg-[#0B0F19]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           <button
             type="button"
             onClick={() => {
@@ -765,10 +710,10 @@ export default function BillWidget() {
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-full max-w-sm space-y-3.5 text-left bg-slate-900/90 border border-cyan-500/30 p-5 rounded-2xl shadow-2xl my-auto">
+          <div className="w-full max-w-sm space-y-3.5 text-left bg-slate-900/90 border border-indigo-500/30 p-5 rounded-2xl shadow-2xl my-auto">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] shrink-0">
-                <Sparkles className="w-4 h-4 animate-pulse" />
+              <div className="w-8 h-8 rounded-full bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-300 shrink-0">
+                <Sparkles className="w-4 h-4 animate-pulse text-indigo-300" />
               </div>
               <h3 className="text-xs font-bold text-white tracking-tight">
                 Unlock Complete AI Telemetry Report
@@ -787,7 +732,7 @@ export default function BillWidget() {
                   required
                   value={leadForm.name}
                   onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="Jane Doe"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -801,7 +746,7 @@ export default function BillWidget() {
                   required
                   value={leadForm.email}
                   onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="e.g. jane@business.com.au"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -814,7 +759,7 @@ export default function BillWidget() {
                   type="tel"
                   value={leadForm.phone}
                   onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="0400 000 000"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -830,10 +775,10 @@ export default function BillWidget() {
               <button
                 type="submit"
                 disabled={isSubmittingLead}
-                className="w-full py-2.5 mt-1 bg-cyan-500 hover:bg-cyan-400 font-bold text-slate-950 rounded-lg text-xs transition shadow-[0_0_15px_rgba(0,229,255,0.25)] disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full py-2.5 mt-1 bg-indigo-500 hover:bg-indigo-400 font-bold text-white rounded-lg text-xs transition shadow-[0_0_15px_rgba(99,102,241,0.3)] disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>{isSubmittingLead ? "Dispatching Report..." : "Send Complete Audit Report"}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </button>
 
               <p className="text-[10px] text-slate-400 text-center font-mono pt-0.5">
@@ -855,8 +800,9 @@ export default function BillWidget() {
           </div>
         </div>
       )}
-      {/* Header Controller Banner */}
-      <div className="bg-slate-900/90 px-4 py-3 border-b border-cyan-500/20 flex items-center justify-between backdrop-blur-md">
+
+      {/* Header Controller Banner with Tri-State Controls */}
+      <div className="bg-slate-950/90 px-4 py-3 border-b border-indigo-500/20 flex items-center justify-between backdrop-blur-md shrink-0">
         <div className="flex items-center gap-2.5">
           <BillAvatar size="sm" status={isLoading ? 'analysing' : 'online'} pulse={false} />
           <div>
@@ -864,7 +810,7 @@ export default function BillWidget() {
               <h3 className="font-semibold text-xs text-white tracking-wide uppercase font-mono">
                 System Agent: Bill
               </h3>
-              <span className="inline-flex items-center rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] text-[#00E5FF] font-mono border border-cyan-500/30">
+              <span className="inline-flex items-center rounded-full bg-indigo-500/15 px-2 py-0.5 text-[10px] text-indigo-300 font-mono border border-indigo-500/30">
                 Online
               </span>
             </div>
@@ -872,29 +818,7 @@ export default function BillWidget() {
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5">
-          {/* Direct Email Gate Trigger CTA */}
-          {!isReportDispatched && (
-            <button
-              type="button"
-              onClick={() => {
-                trackGaEvent('bill_gate_triggered_manually', {
-                  event_category: 'bill_conversion_funnel',
-                  source: 'bill_header_cta',
-                  target_url: storedTelemetry?.url || '',
-                });
-                setIsReportDispatched(false);
-                setIsGateOpenManually(true);
-              }}
-              className="px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 bg-cyan-500/15 hover:bg-cyan-500/25 text-[#00E5FF] border border-cyan-500/30 cursor-pointer font-bold shrink-0"
-              title="Email complete audit report"
-            >
-              <Mail className="w-3 h-3 text-[#00E5FF]" />
-              <span>Send Report</span>
-            </button>
-          )}
-
-          {/* Audio TTS Toggle */}
+        <div className="flex items-center gap-1">
           <button
             type="button"
             onClick={() => setIsMuted(!isMuted)}
@@ -902,22 +826,41 @@ export default function BillWidget() {
             title={isMuted ? "Enable Voice Feedback (AU)" : "Mute Voice Feedback"}
             aria-label="Toggle voice output"
           >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#00E5FF]" />}
+            {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-indigo-400" />}
           </button>
 
-          {/* Telemetry Switcher Mode */}
           <button 
             type="button"
             onClick={toggleTelemetryMode}
-            className={`px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 border cursor-pointer ${
+            className={`px-2 py-1 rounded-md text-[10px] font-mono transition flex items-center gap-1 border cursor-pointer ${
               isTelemetryMode 
-                ? 'bg-cyan-500/20 text-[#00E5FF] border-cyan-500/40 font-bold shadow-[0_0_10px_rgba(0,229,255,0.2)]' 
+                ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40 font-bold shadow-[0_0_10px_rgba(99,102,241,0.2)]' 
                 : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:text-slate-200'
             }`}
             title="Toggle Live Telemetry Diagnostics"
           >
             <Activity className="w-3 h-3" />
-            {isTelemetryMode ? 'Telemetry: Active' : 'Telemetry Mode'}
+            <span className="hidden sm:inline">{isTelemetryMode ? 'Telemetry' : 'General'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => updateViewMode('MINIMISED')}
+            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer"
+            title="Minimize to floating pill"
+            aria-label="Minimize assistant"
+          >
+            <Minus className="w-3.5 h-3.5" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => updateViewMode(viewMode === 'SPLIT_RAIL' ? 'DRAWER' : 'SPLIT_RAIL')}
+            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer hidden sm:inline-flex"
+            title={viewMode === 'SPLIT_RAIL' ? "Switch to Floating Drawer" : "Pin Side-by-Side Split View"}
+            aria-label="Toggle split-screen panel"
+          >
+            {viewMode === 'SPLIT_RAIL' ? <Minimize2 className="w-3.5 h-3.5 text-indigo-300" /> : <Maximize2 className="w-3.5 h-3.5" />}
           </button>
 
           <button
@@ -925,6 +868,7 @@ export default function BillWidget() {
             onClick={() => {
               setIsGateOpenManually(false);
               setIsOpen(false);
+              updateViewMode('DRAWER');
             }}
             className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer"
             aria-label="Close Bill assistant"
@@ -934,17 +878,16 @@ export default function BillWidget() {
         </div>
       </div>
 
-      {/* Hydrated Audit Sticky Indicator Bar */}
       {isTelemetryMode && storedTelemetry?.result && (
-        <div className="bg-cyan-950/30 border-b border-cyan-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono">
-          <div className="flex justify-between items-center text-[#00E5FF] font-bold tracking-wider uppercase text-[9px]">
-            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-[#00E5FF]" /> Scan Context Loaded</span>
+        <div className="bg-indigo-950/40 border-b border-indigo-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono shrink-0">
+          <div className="flex justify-between items-center text-indigo-300 font-bold tracking-wider uppercase text-[9px]">
+            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-indigo-400" /> Scan Context Loaded</span>
             <span className="text-slate-300 font-normal truncate max-w-[170px]">
               {storedTelemetry.url ? new URL(storedTelemetry.url.startsWith('http') ? storedTelemetry.url : `https://${storedTelemetry.url}`).hostname.replace('www.', '') : 'Target Site'}
             </span>
           </div>
           <div className="grid grid-cols-2 gap-2 pt-0.5">
-            <div className="bg-slate-950/80 p-2 rounded-lg border border-cyan-500/30">
+            <div className="bg-slate-950/80 p-2 rounded-lg border border-indigo-500/30">
               <span className="text-slate-400 text-[9px] block">Global Schema Baseline</span>
               <span className="text-emerald-400 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 95}/100</span>
               <span className="text-[9px] text-emerald-400/90 block mt-0.5 font-bold">Optimal Syntax</span>
@@ -955,17 +898,13 @@ export default function BillWidget() {
               <span className="text-[9px] text-amber-400/90 block mt-0.5 font-bold">Needs Attention</span>
             </div>
           </div>
-          <div className="text-[9px] text-slate-400 text-center pt-0.5">
-            High Technical Readiness • Target-Market Grounding Gap
-          </div>
         </div>
       )}
 
-      {/* Main Response Log Window Feed */}
       <div className="flex-1 p-4 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
           <div className="text-center pt-5 pb-2 space-y-2.5 px-3">
-            <div className="w-10 h-10 mx-auto rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.15)]">
+            <div className="w-10 h-10 mx-auto rounded-full bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-300 shadow-[0_0_15px_rgba(99,102,241,0.2)]">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
             <p className="text-white font-medium text-xs font-serif">
@@ -973,7 +912,7 @@ export default function BillWidget() {
             </p>
             <p className="text-slate-300 text-[11px] leading-relaxed font-serif">
               {isTelemetryMode 
-                ? `While your baseline Global Schema Syntax is strong (${storedTelemetry?.result?.readinessScore ?? 95}/100), your Target Location Grounding (${storedTelemetry?.result?.proximityScore ?? 24}%) needs anchoring. Let's review your 3 priority next steps.`
+                ? `While your baseline Global Schema Syntax is strong (${storedTelemetry?.result?.readinessScore ?? 95}/100), your Target Location Grounding (${storedTelemetry?.result?.proximityScore ?? 24}%) needs anchoring. Let's review your priority next steps.`
                 : "Ask me anything about Answer Engine Optimisation, semantic schema graphs, or run a free scan above."}
             </p>
           </div>
@@ -981,7 +920,6 @@ export default function BillWidget() {
 
         {messages.map((m: UIMessage) => {
           const text = getMessageText(m);
-          // Message Pipeline Integrity: Only skip user messages if text is missing; assistant bubbles MUST ALWAYS render
           if (m.role === 'user' && !text) return null;
 
           return (
@@ -990,7 +928,7 @@ export default function BillWidget() {
               className={`p-3.5 rounded-xl max-w-[88%] leading-relaxed ${
                 m.role === 'user' 
                   ? 'bg-slate-900/90 border border-slate-800 ml-auto text-slate-100 rounded-tr-none shadow-sm' 
-                  : 'bg-cyan-950/20 border border-cyan-500/30 mr-auto text-slate-200 rounded-tl-none w-full shadow-[0_0_15px_rgba(0,229,255,0.05)]'
+                  : 'bg-indigo-950/25 border border-indigo-500/30 mr-auto text-slate-200 rounded-tl-none w-full shadow-[0_0_15px_rgba(99,102,241,0.06)]'
               }`}
             >
               {m.role === 'user' ? (
@@ -1002,12 +940,12 @@ export default function BillWidget() {
                 </>
               ) : (
                 <>
-                  <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-cyan-500/20">
+                  <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-indigo-500/20">
                     <BillAvatar size="sm" pulse={false} />
-                    <span className="text-[10px] font-semibold text-[#00E5FF] uppercase font-mono">
+                    <span className="text-[10px] font-semibold text-indigo-300 uppercase font-mono">
                       AI Bill
                     </span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-[#00E5FF] border border-cyan-500/30">
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
                       Telemetry
                     </span>
                   </div>
@@ -1019,7 +957,7 @@ export default function BillWidget() {
         })}
 
         {isLoading && (
-          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#00E5FF] bg-cyan-950/30 border border-cyan-500/30 px-3 py-1.5 rounded-full animate-pulse">
+          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-indigo-300 bg-indigo-950/40 border border-indigo-500/30 px-3 py-1.5 rounded-full animate-pulse">
             <Bot className="w-3.5 h-3.5 animate-spin" />
             <span>Bill is scanning 41 lattice nodes...</span>
           </div>
@@ -1027,45 +965,68 @@ export default function BillWidget() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Outcome-Led Prompt Pills (Hidden when session concluded) */}
       {!isReportDispatched && (
-        <div className="px-3 py-2.5 bg-slate-950/80 border-t border-cyan-500/10 flex flex-wrap gap-1.5 text-[10px]">
-          {[
-            { label: '📧 Email Full Report', icon: <Mail className="w-3 h-3 text-emerald-400" /> },
-            { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
-            { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-[#00E5FF]" /> },
-            { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
-            { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-[#00E5FF]" />, highlight: true }
-          ].map((chip) => (
+        <div className="px-3.5 py-2.5 bg-slate-950/90 border-t border-indigo-500/10 space-y-1.5 text-[10px] shrink-0">
+          <div className="flex flex-wrap items-center gap-1.5">
             <button
-              key={chip.label}
               type="button"
-              onClick={() => handleChipClick(chip.label)}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] transition-all duration-150 font-medium cursor-pointer ${
-                chip.highlight
-                  ? 'bg-cyan-500/20 text-[#00E5FF] border border-cyan-500/50 shadow-[0_0_10px_rgba(0,229,255,0.2)] font-semibold'
-                  : 'bg-slate-900/60 text-slate-300 border border-slate-800 hover:border-cyan-500/30 hover:text-slate-100'
-              }`}
+              onClick={() => handleChipClick('What should I fix first?')}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-indigo-500/15 text-indigo-200 border border-indigo-500/40 hover:bg-indigo-500/25 transition-all font-medium cursor-pointer"
             >
-              {chip.icon}
-              <span>{chip.label}</span>
-              <ArrowRight className="w-2.5 h-2.5 opacity-50 ml-0.5" />
+              <AlertTriangle className="w-3 h-3 text-amber-400" />
+              <span>What should I fix first?</span>
+              <ArrowRight className="w-2.5 h-2.5 opacity-60 ml-0.5" />
             </button>
-          ))}
+
+            <button
+              type="button"
+              onClick={() => handleChipClick('📧 Email Full Report')}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/30 text-slate-200 hover:text-white transition-all font-medium cursor-pointer"
+            >
+              <Mail className="w-3 h-3 text-emerald-400" />
+              <span>Email Full Report</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setShowMoreChips(!showMoreChips)}
+              className="p-1.5 text-slate-400 hover:text-indigo-300 transition-colors cursor-pointer ml-auto flex items-center gap-1 font-mono text-[9px]"
+              title="Toggle additional prompt suggestions"
+            >
+              <span>{showMoreChips ? 'Less' : '+3 more'}</span>
+              {showMoreChips ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+            </button>
+          </div>
+
+          {showMoreChips && (
+            <div className="flex flex-wrap gap-1.5 pt-1 border-t border-slate-800/60 animate-fadeIn">
+              {[
+                { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-indigo-300" /> },
+                { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
+                { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-indigo-300" /> }
+              ].map((chip) => (
+                <button
+                  key={chip.label}
+                  type="button"
+                  onClick={() => handleChipClick(chip.label)}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-indigo-500/30 hover:text-white text-[10px] transition-all cursor-pointer"
+                >
+                  {chip.icon}
+                  <span>{chip.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
-      {/* Persistent Reassurance Banner */}
-      <div className="px-3 py-1 bg-slate-950 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 flex items-center justify-center gap-2">
+      <div className="px-3 py-1 bg-slate-950 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 flex items-center justify-center gap-2 shrink-0">
         <span>✓ Read-only analysis</span>
-        <span>•</span>
-        <span>No data stored</span>
         <span>•</span>
         <span>Zero obligation</span>
       </div>
 
-      {/* Lower User Query Tray Element */}
-      <form onSubmit={handleSubmit} className="p-3 bg-slate-900/90 border-t border-cyan-500/20 flex gap-2 backdrop-blur-md">
+      <form onSubmit={handleSubmit} className="p-3 bg-slate-900/90 border-t border-indigo-500/20 flex gap-2 backdrop-blur-md shrink-0">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -1077,15 +1038,15 @@ export default function BillWidget() {
                 ? "Ask Bill about these scan results..." 
                 : "Ask Bill about AEO semantic lattices..."
           }
-          className="flex-1 bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed transition touch-manipulation"
+          className="flex-1 bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition touch-manipulation"
         />
         <button 
           type="submit" 
           disabled={isReportDispatched || isGated || !input.trim() || isLoading}
-          className="bg-cyan-500 disabled:opacity-40 text-slate-950 px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-400 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(0,229,255,0.3)] disabled:cursor-not-allowed"
+          className="bg-indigo-500 disabled:opacity-40 text-white px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-indigo-400 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_15px_rgba(99,102,241,0.35)] disabled:cursor-not-allowed"
           aria-label="Send message"
         >
-          <Send className="w-3.5 h-3.5 text-slate-950" />
+          <Send className="w-3.5 h-3.5 text-white" />
         </button>
       </form>
     </div>
