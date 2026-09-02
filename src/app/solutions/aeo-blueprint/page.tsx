@@ -154,21 +154,21 @@ export default function AEOBlueprintPage() {
 
           {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-              <Compass className="w-4 h-4 text-aeo-cyan" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-semibold uppercase tracking-wider text-cyan-300">
+              <Compass className="w-4 h-4 text-cyan-400" />
               <span>Strategic Diagnostic Audit &amp; 90-Day Roadmap</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               The AEObility <span className="text-gradient-aeo">Blueprint</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
-              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Get a deep technical audit and a practical 90-day strategic roadmap for your business. Fully credited back if you choose AEObility for Foundation Implementation.
-              </h2>
+              <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed font-sans">
+                Get a deep technical audit and a practical 90-day strategic roadmap for your business. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.
+              </p>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Standalone Audit: $995 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>100% Fee Credited to Foundation Work</span>
+                <span>100% Fee Credited to Eligible Sprints</span>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function AEOBlueprintPage() {
               {/* Overlaid Hero CTAs */}
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
                 <div className="text-left space-y-0.5 sm:space-y-1">
-                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Audit Your Digital Footprint &amp; Get a 90-Day Roadmap</span>
+                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Audit your digital footprint &amp; get a 90-day roadmap</span>
                   <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 7–10 business days from confirmed access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
@@ -196,13 +196,13 @@ export default function AEOBlueprintPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Order Your $995 Blueprint</span>
+                    <span>Order $995 Blueprint</span>
                   </a>
                   <Link
                     href="/diagnostic"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <span>Run a free audit scan</span>
+                    <span>Run a free visibility scan</span>
                     <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
                   </Link>
                 </div>
@@ -218,7 +218,7 @@ export default function AEOBlueprintPage() {
           <section id="decision-strip" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3 scroll-mt-24">
             <div className="flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-cyan-400" />
-              <h3 className="text-base font-bold text-white font-soehne-breit">Which option fits your current priority?</h3>
+              <h2 className="text-base font-bold text-white font-soehne-breit">Which option fits your current priority?</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif pt-1">
               <div className="p-4 bg-black/60 border border-cyan-500/40 rounded-xl space-y-1">
@@ -243,7 +243,7 @@ export default function AEOBlueprintPage() {
           {/* 3. Deliverables Grid (4 Self-Contained Cards with Passage @id Anchors) */}
           <section id="bpstrat-deliverables" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">What Is Included in Your Blueprint</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">What is included in your Blueprint</h2>
               <p className="text-xs sm:text-sm text-white/60 font-serif">Every Blueprint provides four core audit deliverables to guide your next 90 days.</p>
             </div>
 
@@ -302,7 +302,7 @@ export default function AEOBlueprintPage() {
                 <span>100% Risk-Reversal Implementation Credit Policy</span>
               </div>
               <p>
-                If you have completed the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we will apply the full $995 Blueprint fee to the Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
+                100% of your $995 Blueprint fee is credited toward eligible implementation sprints booked within 60 days of handover. The credit applies to agreed implementation work and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.
               </p>
             </div>
 
@@ -322,46 +322,48 @@ export default function AEOBlueprintPage() {
           <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How the Blueprint Audit Works</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How the Blueprint audit works</h2>
               <p className="text-xs text-white/60 font-serif">Clear sequence from initial digital presence review to strategic walkthrough.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">1</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Digital Assessment</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Digital assessment</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">Submit your website URL and confirm business objectives with our audit team.</p>
               </div>
 
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-purple-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-purple-950 border border-purple-500/40 text-purple-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(168,85,247,0.2)]">2</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">7–10 Day Audit &amp; Roadmap</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">7–10 day audit &amp; roadmap</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">We audit your structured data, content clarity, local signals, and technical gap analysis.</p>
               </div>
 
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">3</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Walkthrough &amp; Credit-Back</h3>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Receive your 90-day roadmap in a 45-minute walkthrough. Credit $995 if booking Foundation Implementation.</p>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Walkthrough &amp; credit-back</h3>
+                <p className="text-xs text-zinc-300 font-serif leading-relaxed">Receive your 90-day roadmap in a 45-minute walkthrough. 100% of your $995 fee is credited toward eligible implementation sprints.</p>
               </div>
             </div>
           </section>
 
           {/* 5. Streamlined 12-Column Responsive Form & Enquiry Module */}
           <section id="blueprint-contact-form" className="border-t border-white/10 pt-16 scroll-mt-24">
-            <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
+            <div className="relative isolate max-w-3xl mx-auto bg-slate-900/80 border border-purple-500/25 p-6 sm:p-10 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md">
+              {/* Top Specular Light Catch */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
               <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
 
               <div className="text-center space-y-3 mb-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
                   <Compass className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Order Strategic Audit</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Order Your AEObility Blueprint ($995 ex. GST)</h3>
-                <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Order your AEObility Blueprint ($995 ex. GST)</h2>
+                <p className="text-xs sm:text-sm text-slate-300 font-serif max-w-xl mx-auto leading-relaxed">
                   Enter your business details below to request your standalone AEObility Blueprint strategic audit and 90-day execution roadmap.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
+                <div className="flex items-center justify-center gap-2 text-xs text-slate-400 font-mono pt-1">
                   <Users className="w-4 h-4 text-cyan-400 shrink-0" />
                   <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
                 </div>
@@ -370,8 +372,8 @@ export default function AEOBlueprintPage() {
               {contactSubmitted ? (
                 <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-                  <h4 className="font-bold text-white text-base">Blueprint Order Request Received</h4>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                  <h3 className="font-bold text-white text-base font-soehne-breit">Blueprint order request received</h3>
+                  <p className="text-xs text-slate-300 font-serif leading-relaxed">
                     Thank you. Our AEObility strategy team will review your website details and get in touch within 24 business hours to confirm your audit scope.
                   </p>
                 </div>
@@ -381,7 +383,7 @@ export default function AEOBlueprintPage() {
                   <div className="grid grid-cols-12 gap-4">
                     {/* Store URL Field - Col Span 12 */}
                     <div className="col-span-12 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="bp-store-url">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono" htmlFor="bp-store-url">
                         Website URL
                       </label>
                       <input
@@ -390,17 +392,17 @@ export default function AEOBlueprintPage() {
                         required
                         value={contactData.website}
                         onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                         placeholder="e.g. mybusiness.com.au"
                       />
-                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                      <p className="text-[11px] text-slate-400 font-serif leading-tight">
                         We check website structure, structured-data markup, content clarity, and local search signals.
                       </p>
                     </div>
 
                     {/* Full Name Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
                     <div className="col-span-12 md:col-span-6 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="bp-name">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono" htmlFor="bp-name">
                         Full Name
                       </label>
                       <input
@@ -409,14 +411,14 @@ export default function AEOBlueprintPage() {
                         required
                         value={contactData.name}
                         onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                         placeholder="e.g. Vince Baker"
                       />
                     </div>
 
                     {/* Primary Email Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
                     <div className="col-span-12 md:col-span-6 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="bp-email">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono" htmlFor="bp-email">
                         Primary Email
                       </label>
                       <input
@@ -425,21 +427,21 @@ export default function AEOBlueprintPage() {
                         required
                         value={contactData.email}
                         onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                         placeholder="vince@example.com.au"
                       />
                     </div>
 
                     {/* Service Type Selector */}
                     <div className="col-span-12 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="bp-service-type">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono" htmlFor="bp-service-type">
                         What would you like to discuss?
                       </label>
                       <select
                         id="bp-service-type"
                         value={contactData.serviceType}
                         onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
+                        className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all font-medium"
                       >
                         <option value="blueprint">AEObility Blueprint Strategic Audit ($995 AUD)</option>
                         <option value="micro-sprint">Micro-Sprint (From $495 AUD)</option>
@@ -450,7 +452,7 @@ export default function AEOBlueprintPage() {
 
                     {/* Notes Textarea */}
                     <div className="col-span-12 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="bp-message">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono" htmlFor="bp-message">
                         What would you like help with?
                       </label>
                       <textarea
@@ -459,13 +461,13 @@ export default function AEOBlueprintPage() {
                         rows={3}
                         value={contactData.message}
                         onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                        className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                         placeholder="Tell us about your business goals, key service pages, or visibility priorities..."
                       />
                     </div>
 
                     <div className="col-span-12">
-                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
+                      <p className="text-[11px] text-slate-400 font-serif leading-tight">
                         We use your details to deliver your strategic audit and roadmap. We will not add you to marketing communications without your consent.
                       </p>
                     </div>
@@ -477,13 +479,13 @@ export default function AEOBlueprintPage() {
                       type="submit"
                       className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
                     >
-                      <span>Order $995 AEObility Blueprint</span>
+                      <span>Order $995 Blueprint</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
 
                     {/* Risk Reversal Banner */}
-                    <div className="p-3 bg-black/50 border border-white/10 rounded-xl text-center text-xs text-zinc-300 font-serif leading-relaxed">
-                      Fixed $995 AUD price. No ongoing retainer. 100% credited towards Foundation Implementation booked within 60 days.
+                    <div className="p-3 bg-black/50 border border-white/10 rounded-xl text-center text-xs text-slate-300 font-serif leading-relaxed">
+                      Fixed $995 AUD price. No ongoing retainer. 100% credited towards eligible implementation sprints booked within 60 days.
                     </div>
                   </div>
                 </form>
