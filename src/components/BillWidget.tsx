@@ -121,7 +121,14 @@ export default function BillWidget() {
   const [leadError, setLeadError] = useState('');
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
 
-  // 1. Session Storage Synced Data Hydration
+  // 2. STABLE PROTECTED STREAM HOOK BINDINGS
+  const { messages, sendMessage, status, setMessages } = useChat({
+    transport: new DefaultChatTransport({
+      api: '/api/bill'
+    })
+  });
+
+  // 1. Session Storage Synced Data Hydration on Fresh Scans
   useEffect(() => {
     const hydrateAudit = () => {
       if (typeof window === 'undefined') return;
@@ -129,7 +136,17 @@ export default function BillWidget() {
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
-          setStoredTelemetry(parsed);
+          setStoredTelemetry((prev) => {
+            const isFreshScan = !prev || prev.url !== parsed.url || prev.intent !== parsed.intent || JSON.stringify(prev.result) !== JSON.stringify(parsed.result);
+            if (isFreshScan) {
+              setMessages([]);
+              setIsReportDispatched(false);
+              setIsGateOpenManually(false);
+              setLeadError('');
+              reportedCardIds.clear();
+            }
+            return parsed;
+          });
           setIsTelemetryMode(true);
         } catch (err) {
           console.error("Failed to parse local telemetry data framework:", err);
@@ -139,34 +156,12 @@ export default function BillWidget() {
 
     hydrateAudit();
     window.addEventListener('aeo_telemetry_updated', hydrateAudit);
-    return () => window.removeEventListener('aeo_telemetry_updated', hydrateAudit);
-  }, []);
-
-  useEffect(() => {
-    const handleOpenDrawer = () => {
-      setIsOpen(true);
-    };
-    const handleOpenGate = () => {
-      window.dispatchEvent(new Event('close_companion_widget'));
-      setIsOpen(true);
-      setIsTelemetryMode(true);
-      setIsGateOpenManually(true);
-    };
-
-    window.addEventListener('open_bill_drawer', handleOpenDrawer);
-    window.addEventListener('open_bill_gate', handleOpenGate);
+    window.addEventListener('aeo_scan_completed', hydrateAudit);
     return () => {
-      window.removeEventListener('open_bill_drawer', handleOpenDrawer);
-      window.removeEventListener('open_bill_gate', handleOpenGate);
+      window.removeEventListener('aeo_telemetry_updated', hydrateAudit);
+      window.removeEventListener('aeo_scan_completed', hydrateAudit);
     };
-  }, []);
-
-  // 2. STABLE PROTECTED STREAM HOOK BINDINGS
-  const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({
-      api: '/api/bill'
-    })
-  });
+  }, [setMessages, reportedCardIds]);
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
@@ -499,11 +494,20 @@ export default function BillWidget() {
       setIsOpen(false);
     };
 
+    const handleOpenBillGate = () => {
+      window.dispatchEvent(new Event('close_companion_widget'));
+      setIsOpen(true);
+      setIsTelemetryMode(true);
+      setIsGateOpenManually(true);
+    };
+
     window.addEventListener('open_bill_drawer', handleOpenBillDrawer);
+    window.addEventListener('open_bill_gate', handleOpenBillGate);
     window.addEventListener('open_bill_with_query', handleOpenBillWithQuery);
     window.addEventListener('close_bill_widget', handleCloseBillWidget);
     return () => {
       window.removeEventListener('open_bill_drawer', handleOpenBillDrawer);
+      window.removeEventListener('open_bill_gate', handleOpenBillGate);
       window.removeEventListener('open_bill_with_query', handleOpenBillWithQuery);
       window.removeEventListener('close_bill_widget', handleCloseBillWidget);
     };
