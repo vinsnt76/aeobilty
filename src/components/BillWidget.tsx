@@ -86,6 +86,7 @@ export default function BillWidget() {
   const [input, setInput] = useState('');
   const [isMuted, setIsMuted] = useState(true);
   const [storedTelemetry, setStoredTelemetry] = useState<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
+  const storedTelemetryRef = useRef<{ url?: string; intent?: string; result?: TelemetryResult } | null>(null);
   const [reportedCardIds] = useState(() => new Set<string>());
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -150,17 +151,19 @@ export default function BillWidget() {
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
-          setStoredTelemetry((prev) => {
-            const isFreshScan = !prev || prev.url !== parsed.url || prev.intent !== parsed.intent || JSON.stringify(prev.result) !== JSON.stringify(parsed.result);
-            if (isFreshScan) {
-              setMessages([]);
-              setIsReportDispatched(false);
-              setIsGateOpenManually(false);
-              setLeadError('');
-              reportedCardIds.clear();
-            }
-            return parsed;
-          });
+          const prev = storedTelemetryRef.current;
+          const isFreshScan = !prev || prev.url !== parsed.url || prev.intent !== parsed.intent || JSON.stringify(prev.result) !== JSON.stringify(parsed.result);
+          
+          storedTelemetryRef.current = parsed;
+          setStoredTelemetry(parsed);
+
+          if (isFreshScan) {
+            setMessages([]);
+            setIsReportDispatched(false);
+            setIsGateOpenManually(false);
+            setLeadError('');
+            reportedCardIds.clear();
+          }
           setIsTelemetryMode(true);
         } catch (err) {
           console.error("Failed to parse local telemetry data framework:", err);
