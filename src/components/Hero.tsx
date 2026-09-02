@@ -137,8 +137,6 @@ export default function Hero() {
   const router = useRouter();
   const [url, setUrl] = useState('');
   const [intent, setIntent] = useState('');
-  const [isIntentPulsing, setIsIntentPulsing] = useState(false);
-  const intentInputRef = useRef<HTMLInputElement>(null);
 
   const handleHeroScanSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,14 +146,6 @@ export default function Hero() {
     trackGaEvent('form_start_submitted', { target_url: url.trim(), target_intent: intent.trim() });
 
     router.push(`/diagnostic?url=${encodeURIComponent(url.trim())}&intent=${encodeURIComponent(intent.trim())}`);
-  };
-
-  const handlePresetClick = (presetQuery: string, presetName: string) => {
-    setIntent(presetQuery);
-    setIsIntentPulsing(true);
-    setTimeout(() => setIsIntentPulsing(false), 1200);
-    intentInputRef.current?.focus();
-    trackGaEvent('preset_intent_pill_clicked', { preset: presetName, query: presetQuery });
   };
 
   return (
@@ -212,7 +202,6 @@ export default function Hero() {
                   <span>Primary Search Intent</span>
                 </label>
                 <input
-                  ref={intentInputRef}
                   id="hero-intent-input"
                   type="text"
                   required
@@ -220,9 +209,7 @@ export default function Hero() {
                   onChange={e => setIntent(e.target.value)}
                   onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
                   placeholder="e.g. Commercial Litigation Sydney"
-                  className={`w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] ${
-                    isIntentPulsing ? 'ring-2 ring-purple-400 border-purple-400' : ''
-                  }`}
+                  className="w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                   spellCheck={false}
                   suppressHydrationWarning
                 />
@@ -244,31 +231,54 @@ export default function Hero() {
               </div>
             </form>
 
-            {/* Quick-Path Preset Pills (Guided Intent Injection) */}
-            <div className="pt-1">
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 font-mono">Preset Search Scenarios</div>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={() => handlePresetClick('B2B SaaS Cloud Architecture Melbourne', 'SaaS Enterprise')}
-                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
+            {/* Quick-Path Service Hub Links (Full Width Desktop / 2-Column Mobile Stack) */}
+            <div className="pt-2 w-full">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 font-mono">
+                Explore Service Hubs
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full">
+                <Link
+                  href="/services/aeo"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AEO & SEO', destination: '/services/aeo' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
-                  SaaS Enterprise
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handlePresetClick('Emergency Commercial Plumbing Brisbane', 'Local Business GEO')}
-                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
+                  AEO &amp; SEO
+                </Link>
+                <Link
+                  href="/services/ai-search-marketing"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Search Marketing', destination: '/services/ai-search-marketing' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                >
+                  AI Search Marketing
+                </Link>
+                <Link
+                  href="/services/aeo/local-business"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Local Business GEO', destination: '/services/aeo/local-business' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   Local Business GEO
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handlePresetClick('Sustainable Luxury Fashion Australia', 'Ecommerce AEO')}
-                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
+                </Link>
+                <Link
+                  href="/services/geo-marketing"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'GEO Marketing', destination: '/services/geo-marketing' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                >
+                  GEO Marketing
+                </Link>
+                <Link
+                  href="/services/aeo/shopify"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Ecommerce AEO', destination: '/services/aeo/shopify' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
                 >
                   Ecommerce AEO
-                </button>
+                </Link>
+                <Link
+                  href="/services/aeo/procedures"
+                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Strategy', destination: '/services/aeo/procedures' })}
+                  className="w-full py-2 px-2.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                >
+                  AI Strategy
+                </Link>
               </div>
             </div>
           </div>
