@@ -91,4 +91,12 @@ test.describe('AI Modal Assistant & Suppression Suite', () => {
       await expect(trigger).toBeVisible();
     }
   });
+
+  test('should automatically suppress floating launcher on /diagnostic route', async ({ page }) => {
+    await page.goto('/diagnostic');
+    await page.waitForLoadState('domcontentloaded');
+
+    const trigger = page.locator('#ai-assistant-trigger');
+    await expect(trigger).not.toBeVisible();
+  });
 });

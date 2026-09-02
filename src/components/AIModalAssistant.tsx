@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Bot, Command, X, ArrowRight, CornerDownLeft, Loader2, ArrowUpRight, Sparkles, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useAssistantSuppression } from '@/hooks/useAssistantSuppression';
 import { trackGaEvent } from '@/lib/gtag';
 
@@ -63,11 +64,16 @@ export default function AIModalAssistant({
   const [activePillId, setActivePillId] = useState<string | null>(null);
   const [hasEngaged, setHasEngaged] = useState(false);
 
+  const pathname = usePathname();
+  const isDiagnosticRoute = pathname?.startsWith('/diagnostic');
+
   const { isSuppressed } = useAssistantSuppression({
     highIntentSelectors,
     formSelector,
     threshold: 0.15
   });
+
+  const shouldSuppressLauncher = isSuppressed || isDiagnosticRoute;
 
   const modalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -315,7 +321,7 @@ export default function AIModalAssistant({
   return (
     <>
       {/* Floating Assistant Launcher with iOS Safe-Area Inset Handling */}
-      {!isSuppressed && (
+      {!shouldSuppressLauncher && (
         <aside
           aria-label="AI Assistant Quick Launch"
           className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))] right-[calc(1.5rem+env(safe-area-inset-right,0px))] z-40 transition-all duration-300"
