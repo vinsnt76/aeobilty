@@ -27,10 +27,15 @@ export default function QuoteFormSection() {
     setErrorMessage('');
 
     try {
+      const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
+
       const res = await fetch('/api/forms/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          assistantAssisted: isAssistantAssisted
+        })
       });
 
       const data = await res.json();
@@ -43,6 +48,7 @@ export default function QuoteFormSection() {
         form_id: 'quote_form_section',
         lead_type: 'quote_request',
         service_requested: formData.service || 'general',
+        assistant_assisted: isAssistantAssisted,
         value: 5,
       });
 

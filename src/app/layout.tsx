@@ -3,9 +3,8 @@ import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import GlobalConsentBanner from "@/components/GlobalConsentBanner";
-import CompanionWidget from "@/components/CompanionWidget";
-import AnswerSearchModal from "@/components/AnswerSearchModal";
 import BillWidget from "@/components/BillWidget";
+import AIModalAssistant from "@/components/AIModalAssistant";
 import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
 import SiteNavigationSchema from "@/components/navigation/SiteNavigationSchema";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -303,9 +302,8 @@ export default function RootLayout({
 
         {children}
         <GlobalConsentBanner />
-        <CompanionWidget />
-        <AnswerSearchModal />
         <BillWidget />
+        <AIModalAssistant />
         <SpeedInsights />
       </body>
     </html>

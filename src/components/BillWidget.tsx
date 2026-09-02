@@ -194,6 +194,7 @@ export default function BillWidget() {
     setLeadError('');
     setIsSubmittingLead(true);
     try {
+      const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
       const targetWebsite = storedTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
       const res = await fetch('/api/forms/audit', {
         method: 'POST',
@@ -203,6 +204,7 @@ export default function BillWidget() {
           email: leadForm.email.trim(),
           phone: leadForm.phone.trim(),
           website: targetWebsite,
+          assistantAssisted: isAssistantAssisted,
           scores: {
             readinessScore: storedTelemetry?.result?.readinessScore ?? 95,
             proximityScore: storedTelemetry?.result?.proximityScore ?? 24

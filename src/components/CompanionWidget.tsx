@@ -71,14 +71,20 @@ export default function CompanionWidget() {
     window.dispatchEvent(new Event('bill_email_submitted'));
     trackGaEvent('bill_email_submitted', { event_category: 'AI Assistant', email });
     try {
+      const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
       await fetch('/api/forms/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website: telemetryData?.url, intent: telemetryData?.intent })
+        body: JSON.stringify({
+          email,
+          website: telemetryData?.url,
+          intent: telemetryData?.intent,
+          assistantAssisted: isAssistantAssisted
+        })
       });
       setBillState('CONSULTANT');
       window.dispatchEvent(new Event('bill_consultation_started'));
-      trackGaEvent('bill_consultation_started', { event_category: 'AI Assistant' });
+      trackGaEvent('bill_consultation_started', { event_category: 'AI Assistant', assistant_assisted: isAssistantAssisted });
       setMessages(prev => [
         ...prev,
         { sender: 'assistant', text: `Thanks! I've sent the full insights to ${email}.\n\nYou can now ask me:\n• Why is my score low?\n• What should I fix first?\n• How do I compare to competitors?\n• Explain my AI First Impression` }

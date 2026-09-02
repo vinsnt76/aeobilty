@@ -17,10 +17,12 @@ export function HomepageContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim()) return;
+    const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
     trackGaEvent('generate_lead', {
       event_category: 'lead_generation',
       form_id: 'homepage_contact_form',
       lead_type: 'general_contact',
+      assistant_assisted: isAssistantAssisted,
       value: 1,
     });
     setSubmitted(true);
