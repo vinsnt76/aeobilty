@@ -9,7 +9,7 @@ export default function VideoExplainer() {
       <div className="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-aeo-purple/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center space-y-10">
+      <div className="max-w-4xl mx-auto px-6 text-left space-y-10">
         <div className="relative py-4">
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
@@ -20,7 +20,7 @@ export default function VideoExplainer() {
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
               Why Aussie Businesses Partner with AEObility
             </h2>
-            <p className="text-base text-white/60 font-light max-w-xl mx-auto leading-relaxed font-serif">
+            <p className="text-base text-white/60 font-light max-w-xl leading-relaxed font-serif">
               If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today. Read our <Link href="/services/aeo/definition" className="text-aeo-cyan font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
             </p>
           </div>

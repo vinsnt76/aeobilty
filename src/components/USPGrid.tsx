@@ -46,11 +46,11 @@ export default function USPGrid() {
       <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="relative text-center max-w-2xl mx-auto mb-16">
+        <div className="relative text-left max-w-2xl mb-16">
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
+            <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono">
               Why AEObility?
             </h2>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
