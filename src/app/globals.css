@@ -390,4 +390,22 @@ body {
   }
 }
 
+.hero-conversion-card {
+  position: relative;
+  background: rgb(15 23 42 / 0.85);
+  border: 1px solid rgb(168 85 247 / 0.35);
+  border-radius: 1rem;
+  box-shadow: 
+    0 20px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 35px -5px rgba(168, 85, 247, 0.25);
+}
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .hero-conversion-card {
+    background: rgb(15 23 42 / 0.75);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+  }
+}
+
 

@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Sparkles, ArrowRight, Globe, Search } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { trackGaEvent } from '@/lib/gtag';
 
 export function GraphVisual() {
@@ -119,64 +120,177 @@ export function GraphVisual() {
   }, []);
 
   return (
-    <div className="relative w-full h-[350px] md:h-[480px] flex items-center justify-center">
+    <div className="relative w-full h-full min-h-[400px] flex items-center justify-center">
       {/* Decorative blurred background glows inside the graph container */}
       <div className="absolute top-1/4 left-1/4 w-48 h-48 rounded-full bg-aeo-cyan glow-blur opacity-20 pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-aeo-purple glow-blur opacity-25 pointer-events-none"></div>
       
       <canvas
         ref={canvasRef}
-        className="w-full h-full border border-white/5 rounded-2xl bg-white/[0.02] backdrop-blur-3xl"
+        className="w-full h-full rounded-2xl"
       />
     </div>
   );
 }
 
 export default function Hero() {
+  const router = useRouter();
+  const [url, setUrl] = useState('');
+  const [intent, setIntent] = useState('');
+  const [isIntentPulsing, setIsIntentPulsing] = useState(false);
+  const intentInputRef = useRef<HTMLInputElement>(null);
+
+  const handleHeroScanSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!url.trim() || !intent.trim()) return;
+
+    trackGaEvent('hero_cta_clicked', { source: 'homepage_hero_direct_form' });
+    trackGaEvent('form_start_submitted', { target_url: url.trim(), target_intent: intent.trim() });
+
+    router.push(`/diagnostic?url=${encodeURIComponent(url.trim())}&intent=${encodeURIComponent(intent.trim())}`);
+  };
+
+  const handlePresetClick = (presetQuery: string, presetName: string) => {
+    setIntent(presetQuery);
+    setIsIntentPulsing(true);
+    setTimeout(() => setIsIntentPulsing(false), 1200);
+    intentInputRef.current?.focus();
+    trackGaEvent('preset_intent_pill_clicked', { preset: presetName, query: presetQuery });
+  };
+
   return (
-    <header className="hero relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
+    <section className="hero relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-        {/* Hero Body */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 text-left relative hero-card">
-            {/* Geometric Grid Background Motif */}
-            <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
-            <div className="relative z-10 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/80 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
-                <span>AI Search Engine Marketing</span>
+        {/* 50% Desktop Split Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Column (50%): Value Prop & Conversion Plane */}
+          <div className="relative z-10 space-y-6 text-left hero-card">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wide font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+              Telemetry Engine Active
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
+              Measure Your <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">AI Search Visibility</span>
+            </h1>
+
+            <p className="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-serif">
+              Evaluate how language models and answer engines index, retrieve, and ground your business entities against target commercial queries.
+            </p>
+
+            {/* Embedded Telemetry Form Card with Sprint Glow */}
+            <form onSubmit={handleHeroScanSubmit} className="hero-conversion-card p-6 rounded-2xl relative space-y-4">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none"></div>
+
+              <div>
+                <label htmlFor="hero-url-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Australian Business URL</span>
+                </label>
+                <input
+                  id="hero-url-input"
+                  type="text"
+                  required
+                  value={url}
+                  onChange={e => setUrl(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
+                  placeholder="https://yourbrand.com.au"
+                  className="w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
               </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight font-soehne-breit">
-                Measure Your<br />
-                <span className="text-gradient-aeo">AI Search</span> Visibility
-              </h1>
 
-              <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-xl font-serif">
-                AEObility helps your business show up more often across search, social, and AI so you get more leads and more enquiries without the complexity.
-              </p>
+              <div>
+                <label htmlFor="hero-intent-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
+                  <Search className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Primary Search Intent</span>
+                </label>
+                <input
+                  ref={intentInputRef}
+                  id="hero-intent-input"
+                  type="text"
+                  required
+                  value={intent}
+                  onChange={e => setIntent(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
+                  placeholder="e.g. Commercial Litigation Sydney"
+                  className={`w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] ${
+                    isIntentPulsing ? 'ring-2 ring-purple-400 border-purple-400' : ''
+                  }`}
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
+              </div>
 
-              {/* Dominant Above-The-Fold Primary CTA */}
-              <div className="pt-2">
-                <Link
-                  href="/diagnostic"
-                  onClick={() => trackGaEvent('hero_cta_clicked', { source: 'homepage_hero' })}
-                  className="hero-primary-cta btn-primary-purple group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base tracking-wide transition-all shadow-[0_0_24px_rgba(168,85,247,0.4)] cursor-pointer"
+              {/* Primary Pill Button (AI Bill Continuity) */}
+              <button
+                type="submit"
+                disabled={!url.trim() || !intent.trim()}
+                className="hero-primary-cta w-full h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-white/20 text-white font-semibold text-sm tracking-wide shadow-lg shadow-purple-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <span>Get My AI Visibility Score</span>
+                <ArrowRight className="w-4 h-4 text-purple-200" />
+              </button>
+
+              {/* Frictionless Reassurance Micro-Row */}
+              <div className="pt-1 text-center text-xs font-medium text-slate-400 font-mono">
+                Free AI visibility scan &bull; No email required to start &bull; See your biggest opportunities
+              </div>
+            </form>
+
+            {/* Quick-Path Preset Pills (Guided Intent Injection) */}
+            <div className="pt-1">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 font-mono">Preset Search Scenarios</div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => handlePresetClick('B2B SaaS Cloud Architecture Melbourne', 'SaaS Enterprise')}
+                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
-                  <span>Get My AI Visibility Score</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                  SaaS Enterprise
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handlePresetClick('Emergency Commercial Plumbing Brisbane', 'Local Business GEO')}
+                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
+                >
+                  Local Business GEO
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handlePresetClick('Sustainable Luxury Fashion Australia', 'Ecommerce AEO')}
+                  className="px-3.5 py-1.5 rounded-full bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/50 text-xs font-medium text-purple-200/90 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] cursor-pointer"
+                >
+                  Ecommerce AEO
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 w-full hero-visual-canvas-container relative">
-            <GraphVisual />
+          {/* Right Column (50%): Contained Node Animation */}
+          <div className="relative w-full h-[480px] lg:h-[580px] rounded-2xl overflow-clip isolate bg-slate-950/40 border border-slate-800/60 flex items-center justify-center hero-visual-canvas-container">
+            {/* Ambient Canvas Glow Backplate */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.12)_0%,transparent_70%)] pointer-events-none"></div>
+            
+            {/* Interactive Graph Mount */}
+            <div
+              id="hero-node-canvas"
+              className="relative z-10 w-full h-full pointer-events-auto"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent, black 15%)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)',
+              }}
+            >
+              <GraphVisual />
+            </div>
           </div>
+
         </div>
 
         {/* Semantic Service Architecture Decoupling: Core Solutions Navigation Landmark */}
@@ -218,6 +332,6 @@ export default function Hero() {
         </nav>
 
       </div>
-    </header>
+    </section>
   );
 }
