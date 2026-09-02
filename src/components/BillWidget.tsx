@@ -123,13 +123,9 @@ export default function BillWidget() {
   }, [isOpen, viewMode]);
 
 
-  // 0. Gated Lead-Capture State (Triggers on 4th User Turn)
-  const [isLeadCaptured, setIsLeadCaptured] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('aeo_lead_captured') === 'true';
-    }
-    return false;
-  });
+  // 0. Gated Lead-Capture State (Triggers on 3rd User Turn)
+  const [isLeadCaptured, setIsLeadCaptured] = useState(false);
+  const [isGateDismissed, setIsGateDismissed] = useState(false);
   const [isReportDispatched, setIsReportDispatched] = useState(false);
   const [isGateOpenManually, setIsGateOpenManually] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: '', email: '', phone: '' });
@@ -161,6 +157,8 @@ export default function BillWidget() {
             setMessages([]);
             setIsReportDispatched(false);
             setIsGateOpenManually(false);
+            setIsGateDismissed(false);
+            setIsLeadCaptured(false);
             setLeadError('');
             reportedCardIds.clear();
           }
@@ -184,7 +182,7 @@ export default function BillWidget() {
 
   // Calculate User Turn Count for Lead Gating (Triggers on manual click or 3rd user turn if uncaptured)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = isGateOpenManually || (userTurnCount >= 3 && !isLeadCaptured);
+  const isGated = !isReportDispatched && (isGateOpenManually || (userTurnCount >= 3 && !isLeadCaptured && !isGateDismissed));
 
   const hasLoggedGateRef = useRef(false);
   useEffect(() => {
@@ -367,6 +365,7 @@ export default function BillWidget() {
         target_url: storedTelemetry?.url || '',
       });
       setIsReportDispatched(false);
+      setIsGateDismissed(false);
       setIsGateOpenManually(true);
       return;
     }
@@ -443,6 +442,7 @@ export default function BillWidget() {
       setViewMode('DRAWER');
       setIsTelemetryMode(true);
       setIsReportDispatched(false);
+      setIsGateDismissed(false);
       setIsGateOpenManually(true);
     };
 
@@ -705,6 +705,7 @@ export default function BillWidget() {
           <button
             type="button"
             onClick={() => {
+              setIsGateDismissed(true);
               setIsGateOpenManually(false);
             }}
             className="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer"
@@ -793,6 +794,7 @@ export default function BillWidget() {
               <button
                 type="button"
                 onClick={() => {
+                  setIsGateDismissed(true);
                   setIsGateOpenManually(false);
                 }}
                 className="text-[11px] text-slate-400 underline hover:text-slate-200 transition cursor-pointer font-mono"
