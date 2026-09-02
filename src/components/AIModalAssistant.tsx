@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Bot, Command, X, ArrowRight, CornerDownLeft, Loader2, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Bot, Command, X, ArrowRight, CornerDownLeft, Loader2, ArrowUpRight, Sparkles, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { useAssistantSuppression } from '@/hooks/useAssistantSuppression';
 import { trackGaEvent } from '@/lib/gtag';
@@ -10,6 +10,15 @@ interface PromptPill {
   id: string;
   label: string;
   query: string;
+}
+
+interface TopMatch {
+  pageName: string;
+  url: string;
+  h1?: string;
+  focusKeyphrase?: string;
+  schemaType?: string;
+  description?: string;
 }
 
 const DEFAULT_SUGGESTION_PILLS: PromptPill[] = [
@@ -49,6 +58,7 @@ export default function AIModalAssistant({
   const [isOpen, setIsOpen] = useState(initialOpen);
   const [query, setQuery] = useState('');
   const [response, setResponse] = useState<string | null>(null);
+  const [topMatch, setTopMatch] = useState<TopMatch | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [activePillId, setActivePillId] = useState<string | null>(null);
   const [hasEngaged, setHasEngaged] = useState(false);
@@ -96,6 +106,7 @@ export default function AIModalAssistant({
     setIsOpen(false);
     setQuery('');
     setResponse(null);
+    setTopMatch(null);
     setIsLoading(false);
     setActivePillId(null);
     setHasEngaged(false);
@@ -199,6 +210,7 @@ export default function AIModalAssistant({
     setHasEngaged(true);
     setIsLoading(true);
     setResponse(null);
+    setTopMatch(null);
 
     trackGaEvent('search', {
       search_term: targetQuery,
@@ -223,14 +235,21 @@ export default function AIModalAssistant({
       if (res.ok) {
         const data = await res.json();
         setResponse(data.answer || data.summary || 'Clear entity insights retrieved.');
+        setTopMatch(data.topMatch || null);
         trackGaEvent('assistant_response_received', {
           event_category: 'AI Assistant',
           status: 'success',
           latency_ms: latencyMs,
-          result_type: data.resultType || 'knowledge_graph'
+          result_type: data.resultType || 'knowledge_graph',
+          matched_page: data.topMatch?.pageName || 'None'
         });
       } else {
         setResponse('We specialises in building verifiable entity authority so AI answer engines recognise your brand without ambiguity. Lock in a diagnostic sprint to evaluate your visibility.');
+        setTopMatch({
+          pageName: 'AEO Technical Sprints',
+          url: '/solutions/aeo-sprint',
+          schemaType: 'Service'
+        });
         trackGaEvent('assistant_response_received', {
           event_category: 'AI Assistant',
           status: 'fallback',
@@ -239,6 +258,7 @@ export default function AIModalAssistant({
       }
     } catch {
       setResponse('Our optimisation framework structures your site as a machine-readable knowledge graph, giving LLMs verified data to cite.');
+      setTopMatch(null);
       trackGaEvent('assistant_response_received', {
         event_category: 'AI Assistant',
         status: 'error'
@@ -272,6 +292,21 @@ export default function AIModalAssistant({
       event_category: 'AI Assistant',
       conversion_target: target,
       conversion_label: label
+    });
+
+    closeModal();
+  };
+
+  const handleGuideClick = (match: TopMatch) => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('aeo_assistant_assisted', 'true');
+    }
+
+    trackGaEvent('assistant_guide_click', {
+      event_category: 'AI Assistant',
+      guide_name: match.pageName,
+      target_url: match.url,
+      schema_type: match.schemaType || 'Article'
     });
 
     closeModal();
@@ -392,24 +427,67 @@ export default function AIModalAssistant({
 
               {response && !isLoading && (
                 <div className="p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/30 text-slate-200 text-sm leading-relaxed space-y-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#00E5FF] uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    Synthesised Entity Insight
+                  <div className="flex items-center justify-between gap-2 border-b border-cyan-500/20 pb-2.5">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-[#00E5FF] uppercase tracking-wider">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      Synthesised Entity Insight
+                    </div>
+                    {topMatch?.schemaType && (
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-[#00E5FF] border border-cyan-500/30">
+                        {topMatch.schemaType}
+                      </span>
+                    )}
                   </div>
-                  <p className="whitespace-pre-line text-slate-300 font-sans">{response}</p>
-                  <div className="pt-2 border-t border-cyan-500/20 flex flex-wrap gap-3 items-center">
+
+                  {/* Grounded Response Body with In-Text Linking */}
+                  {topMatch && topMatch.pageName && response.includes(topMatch.pageName) ? (
+                    <p className="whitespace-pre-line text-slate-300 font-sans leading-relaxed">
+                      {response.split(topMatch.pageName).map((part, i, arr) => (
+                        <React.Fragment key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <Link
+                              href={topMatch.url}
+                              onClick={() => handleGuideClick(topMatch)}
+                              className="text-[#00E5FF] underline underline-offset-4 hover:text-cyan-300 font-medium transition-colors cursor-pointer"
+                            >
+                              {topMatch.pageName}
+                            </Link>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </p>
+                  ) : (
+                    <p className="whitespace-pre-line text-slate-300 font-sans leading-relaxed">{response}</p>
+                  )}
+
+                  {/* Action Link CTAs */}
+                  <div className="pt-3 border-t border-cyan-500/20 flex flex-wrap gap-2.5 items-center">
+                    {topMatch?.url && (
+                      <Link
+                        href={topMatch.url}
+                        onClick={() => handleGuideClick(topMatch)}
+                        className="inline-flex min-h-[36px] items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-[#00E5FF] border border-cyan-500/40 transition-colors shadow-[0_0_12px_rgba(0,229,255,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer"
+                      >
+                        <BookOpen className="w-3.5 h-3.5" />
+                        <span>Read Guide: {topMatch.pageName}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
+
                     <Link
                       href="#diagnostic-scanner"
                       onClick={() => handleConversionClick('#diagnostic-scanner', 'Run Free Diagnostic Scan')}
-                      className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-[#00E5FF] border border-cyan-500/40 transition-colors"
+                      className="inline-flex min-h-[36px] items-center gap-1.5 text-xs font-medium px-3.5 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer"
                     >
                       <span>Run Free Diagnostic Scan</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
+
                     <Link
                       href="/solutions/aeo-sprint"
                       onClick={() => handleConversionClick('/solutions/aeo-sprint', 'Explore Fixed-Scope Sprints')}
-                      className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors"
+                      className="inline-flex min-h-[36px] items-center gap-1.5 text-xs font-medium px-3.5 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer"
                     >
                       <span>Explore Fixed-Scope Sprints</span>
                       <ArrowRight className="w-3.5 h-3.5" />
