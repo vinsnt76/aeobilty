@@ -290,7 +290,7 @@ export default function DiagnosticEngine() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
+    <div className={`w-full max-w-3xl mx-auto flex flex-col items-center transition-all duration-300 ${isSplitRailActive ? 'xl:mr-[420px]' : ''}`}>
       
       {/* Hero Block - Outcome Focused Above-The-Fold Layout */}
       <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">

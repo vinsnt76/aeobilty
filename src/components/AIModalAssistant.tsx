@@ -207,12 +207,12 @@ export default function AIModalAssistant({
     };
   }, [isOpen]);
 
-  const handleSubmit = async (e?: React.FormEvent, directQuery?: string) => {
+  const handleSubmit = useCallback(async (e?: React.FormEvent, directQuery?: string) => {
     if (e) e.preventDefault();
     const targetQuery = (directQuery || query).trim();
     if (!targetQuery || isLoading) return;
 
-    const startTime = Date.now();
+    const startTime = typeof performance !== 'undefined' ? performance.now() : 0;
     setHasEngaged(true);
     setIsLoading(true);
     setResponse(null);
@@ -236,7 +236,7 @@ export default function AIModalAssistant({
         body: JSON.stringify({ query: targetQuery })
       });
 
-      const latencyMs = Date.now() - startTime;
+      const latencyMs = Math.round((typeof performance !== 'undefined' ? performance.now() : 0) - startTime);
 
       if (res.ok) {
         const data = await res.json();
@@ -272,7 +272,7 @@ export default function AIModalAssistant({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [query, isLoading]);
 
   const handlePillClick = (pill: PromptPill) => {
     if (isLoading) return;
