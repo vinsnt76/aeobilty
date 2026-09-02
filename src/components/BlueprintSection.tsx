@@ -17,7 +17,7 @@ export default function BlueprintSection() {
     {
       icon: <Layers className="w-5 h-5 text-aeo-cyan" />,
       title: 'Days 61-90: Scaling Authority & AI Citations',
-      description: 'Acquire high-quality local mentions and citations across search engines, directories, and AI assistants to solidify your top ranking positions.',
+      description: 'Acquire high-quality local mentions and citations across search engines, directories, and AI assistants to strengthen your ongoing visibility.',
     },
   ];
 
@@ -37,7 +37,7 @@ export default function BlueprintSection() {
                 <span>Full Roadmap Strategy</span>
               </div>
 
-              <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase">
+              <h2 className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono">
                 AI‑Ready Content from Day One
               </h2>
 
@@ -55,12 +55,12 @@ export default function BlueprintSection() {
                   href="/book"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 text-zinc-950 font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)]"
                 >
-                  <span>Schedule a Discovery Call</span>
+                  <span>Book a 15-Minute Diagnostic</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
                 <p className="text-xs text-zinc-400 leading-relaxed font-light max-w-sm">
-                  Curious about cost? No commitment required — stay informed and see how the $995 blueprint fee is credited back into your plan.
+                  100% of your $995 Blueprint fee is credited toward eligible implementation sprints.
                 </p>
               </div>
             </div>

@@ -143,7 +143,7 @@ export function HomepageContactForm() {
                 type="submit"
                 className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 text-zinc-950 font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
               >
-                <span>Send Enquiry</span>
+                <span>Request Sprint Scope</span>
                 <Send className="w-4 h-4" />
               </button>
             </div>

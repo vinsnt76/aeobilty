@@ -26,17 +26,17 @@ export default function USPGrid() {
     {
       icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,205,216,0.4)]" />,
       title: 'Stop Losing Traffic on Google, Maps and AI',
-      description: 'We get your brand positioned clearly across Google, Maps, and emerging AI answer engines so local customers actually see your name first.',
+      description: 'Improve how Search, Maps, and AI platforms interpret and choose your business facts so relevant local customers find you when they search.',
     },
     {
       icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
-      title: 'Get Consistent Enquiries',
-      description: 'No more relying on outdated tricks. We construct a clear, understandable digital presence that turns online searches into real customer enquiries.',
+      title: 'Strengthen Visibility Signals',
+      description: 'Strengthen the structured signals and answer-ready content that support your relevant local search visibility and ongoing discovery.',
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
-      title: 'Straight to Your Inbox',
-      description: 'We focus on real outcomes. Receive direct phone calls, email enquiries, and booking requests straight to your day-to-day business pipeline.',
+      title: 'Build a Machine-Readable Foundation',
+      description: 'Build a clean, verified data foundation that makes it easier for customers to assess your services and connect directly with your day-to-day pipeline.',
     },
   ];
 

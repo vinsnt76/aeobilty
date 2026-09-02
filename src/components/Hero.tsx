@@ -170,7 +170,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-serif">
-              Evaluate how language models and answer engines index, retrieve, and ground your business entities against target commercial queries.
+              Discover how Search engines, Google Maps, and AI answer engines understand and recommend your business for the services you provide.
             </p>
 
             {/* Embedded Telemetry Form Card with Sprint Glow */}
@@ -221,13 +221,13 @@ export default function Hero() {
                 disabled={!url.trim() || !intent.trim()}
                 className="hero-primary-cta w-full h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-white/20 text-white font-semibold text-sm tracking-wide shadow-lg shadow-purple-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                <span>Get My AI Visibility Score</span>
+                <span>Run Free Visibility Scan</span>
                 <ArrowRight className="w-4 h-4 text-purple-200" />
               </button>
 
               {/* Frictionless Reassurance Micro-Row */}
               <div className="pt-1 text-center text-xs font-medium text-slate-400 font-mono">
-                Free AI visibility scan &bull; No email required to start &bull; See your biggest opportunities
+                Free visibility scan &bull; No email required to start &bull; See your biggest opportunities
               </div>
             </form>
 

@@ -396,7 +396,7 @@ export default function DiagnosticEngine() {
                   className="hero-primary-cta btn-primary-purple w-full group min-h-[48px] py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Sparkles className="w-4 h-4 text-white" />
-                  <span>Get My AI Visibility Score</span>
+                  <span>Run Free Visibility Scan</span>
                   <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
                 </button>
 

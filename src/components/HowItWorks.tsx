@@ -135,9 +135,9 @@ export default function HowItWorks() {
                 04
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Create Your AI Growth Blueprint</h4>
+                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Turn Insights into a 90-Day Plan</h4>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Turn your insights into an actionable 90-day roadmap.
+                  Use your findings to identify the highest-priority visibility gaps and decide what to fix next.
                 </p>
               </div>
             </div>

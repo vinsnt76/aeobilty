@@ -63,7 +63,7 @@ export function CoreEngagementsGrid() {
                 </li>
                 <li className="flex items-start gap-2 font-medium text-cyan-300">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Fee credited towards eligible implementation work</span>
+                  <span>100% of your $995 Blueprint fee is credited toward eligible implementation sprints.</span>
                 </li>
               </ul>
             </div>
@@ -71,11 +71,11 @@ export function CoreEngagementsGrid() {
             <div className="pt-8">
               <Link
                 href="/solutions/aeo-blueprint"
-                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
-                title="Explore the prioritised 90-day action plan with the AEObility Blueprint"
+                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left"
+                title="Explore the 90-Day Blueprint strategic audit and roadmap"
               >
-                <span>Explore the Blueprint (90-Day Plan)</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1" />
+                <span>Explore the 90-Day Blueprint</span>
+                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
           </div>
@@ -124,10 +124,10 @@ export function CoreEngagementsGrid() {
               <div className="pt-8">
                 <Link
                   href="/solutions/aeo-sprint"
-                  className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                  className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] text-left"
                 >
-                  <span>Explore AEO Sprints</span>
-                  <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1" />
+                  <span>Explore AEO Technical Sprints</span>
+                  <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
                 </Link>
               </div>
             </div>
@@ -172,10 +172,10 @@ export function CoreEngagementsGrid() {
             <div className="pt-8">
               <Link
                 href="/services/aeo/local-business"
-                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800"
-                title="Explore our focused GEO services sprints to enhance local visibility signals"
+                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left"
+                title="Explore Local Visibility Sprints"
               >
-                <span>Explore our focused GEO services sprints to enhance local visibility signals</span>
+                <span>Explore Local Visibility Sprints</span>
                 <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
