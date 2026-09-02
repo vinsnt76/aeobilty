@@ -179,18 +179,18 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
-  // Calculate User Turn Count for Lead Gating (Triggers on manual click or 4th user turn if uncaptured)
+  // Calculate User Turn Count for Lead Gating (Triggers on manual click or 3rd user turn if uncaptured)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = isGateOpenManually || (userTurnCount >= 4 && !isLeadCaptured);
+  const isGated = isGateOpenManually || (userTurnCount >= 3 && !isLeadCaptured);
 
   const hasLoggedGateRef = useRef(false);
   useEffect(() => {
     if (isGated && !hasLoggedGateRef.current) {
       hasLoggedGateRef.current = true;
-      trackGaEvent('bill_gate_reached_turn_4', {
+      trackGaEvent('bill_gate_reached_turn_3', {
         event_category: 'bill_conversion_funnel',
         turn_count: userTurnCount,
-        trigger_type: isGateOpenManually ? 'manual_button_click' : 'turn_4_threshold',
+        trigger_type: isGateOpenManually ? 'manual_button_click' : 'turn_3_threshold',
         target_url: storedTelemetry?.url || '',
       });
     }
