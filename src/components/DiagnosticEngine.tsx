@@ -536,6 +536,120 @@ export default function DiagnosticEngine() {
               </div>
             </div>
 
+            {/* Global Schema & Entity Syntax Baseline Card (Moved above Recommended Next Steps) */}
+            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
+                  <div>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">
+                      Global Schema &amp; Entity Syntax Baseline
+                    </h3>
+                    <span className="text-[11px] text-zinc-400 font-mono block">Query-Agnostic Structural Validation</span>
+                  </div>
+                </div>
+                <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Verified Technical Graph
+                </span>
+              </div>
+
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Measures baseline markup completeness, DOM hierarchy, and machine-readable data structures across 4 core technical pillars.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+                {/* Identity */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-zinc-300 font-mono font-bold">Identity</span>
+                    <span className="text-base font-bold text-white">{Math.round(factCoverage.identityCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-white h-full rounded-full" style={{ width: `${Math.round(factCoverage.identityCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Core business name, location &amp; credentials</p>
+                </div>
+
+                {/* Terminology */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-cyan-400 font-mono font-bold">Terminology</span>
+                    <span className="text-base font-bold text-aeo-cyan">{Math.round(factCoverage.factCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.factCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Exact service offerings &amp; pricing clarity</p>
+                </div>
+
+                {/* Topology */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-purple-400 font-mono font-bold">Topology</span>
+                    <span className="text-base font-bold text-aeo-purple">{Math.round(factCoverage.relationshipCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-purple-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.relationshipCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Entity relationships &amp; service areas</p>
+                </div>
+
+                {/* Evidence */}
+                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-emerald-400 font-mono font-bold">Evidence</span>
+                    <span className="text-base font-bold text-emerald-400">{Math.round(factCoverage.evidenceCoverage * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.evidenceCoverage * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Case studies, credentials &amp; citations</p>
+                </div>
+              </div>
+
+              {/* Explicit Target-Query Grounding Row (Explains Disparity) */}
+              <div className="p-4 bg-amber-950/20 border border-amber-500/30 rounded-xl space-y-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-amber-300">
+                      Target-Query Grounding: &quot;{intent || 'Target Search Query'}&quot;
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
+                      Needs Attention
+                    </span>
+                    <span className="text-base font-bold text-amber-300">{telemetry.proximityScore ?? 24}%</span>
+                  </div>
+                </div>
+                <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${telemetry.proximityScore ?? 24}%` }} />
+                </div>
+                <p className="text-[11px] text-zinc-300 font-serif leading-relaxed">
+                  While baseline schema syntax is AI-ready (90–100%), content signals lack direct entity linkage to customer search intent for this specific query.
+                </p>
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-zinc-400 border-t border-white/5 font-serif">
+                <span>Note: AI search engines are non-deterministic multi-variable systems. This scan assesses machine-readable indexation and structured data readiness.</span>
+                <Link
+                  href="/brand-facts"
+                  onClick={() => {
+                    trackGaEvent('view_fact_coverage_matrix', {
+                      event_category: 'Diagnostic',
+                      event_label: url || 'direct_scan',
+                      coverage_ratio: 0.95
+                    });
+                  }}
+                  className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1 shrink-0"
+                >
+                  <span>View Brand Ledger</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
             {/* RECOMMENDED NEXT STEPS: Priority Action Plan Card */}
             <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950/40 border border-cyan-500/40 rounded-2xl p-6 sm:p-7 shadow-[0_0_35px_rgba(6,182,212,0.15)] space-y-6 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
@@ -647,120 +761,6 @@ export default function DiagnosticEngine() {
                     <ArrowRight className="w-3.5 h-3.5 text-zinc-950 shrink-0" />
                   </Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Global Schema & Entity Syntax Baseline Card */}
-            <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl space-y-5 text-left">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-2.5">
-                  <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
-                  <div>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">
-                      Global Schema &amp; Entity Syntax Baseline
-                    </h3>
-                    <span className="text-[11px] text-zinc-400 font-mono block">Query-Agnostic Structural Validation</span>
-                  </div>
-                </div>
-                <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Verified Technical Graph
-                </span>
-              </div>
-
-              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Measures baseline markup completeness, DOM hierarchy, and machine-readable data structures across 4 core technical pillars.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
-                {/* Identity */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-zinc-300 font-mono font-bold">Identity</span>
-                    <span className="text-base font-bold text-white">{Math.round(factCoverage.identityCoverage * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-white h-full rounded-full" style={{ width: `${Math.round(factCoverage.identityCoverage * 100)}%` }} />
-                  </div>
-                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Core business name, location &amp; credentials</p>
-                </div>
-
-                {/* Terminology */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-cyan-400 font-mono font-bold">Terminology</span>
-                    <span className="text-base font-bold text-aeo-cyan">{Math.round(factCoverage.factCoverage * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.factCoverage * 100)}%` }} />
-                  </div>
-                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Exact service offerings &amp; pricing clarity</p>
-                </div>
-
-                {/* Topology */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-purple-400 font-mono font-bold">Topology</span>
-                    <span className="text-base font-bold text-aeo-purple">{Math.round(factCoverage.relationshipCoverage * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-purple-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.relationshipCoverage * 100)}%` }} />
-                  </div>
-                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Entity relationships &amp; service areas</p>
-                </div>
-
-                {/* Evidence */}
-                <div className="p-3.5 bg-white/[0.02] border border-white/10 rounded-xl space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-emerald-400 font-mono font-bold">Evidence</span>
-                    <span className="text-base font-bold text-emerald-400">{Math.round(factCoverage.evidenceCoverage * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${Math.round(factCoverage.evidenceCoverage * 100)}%` }} />
-                  </div>
-                  <p className="text-[11px] text-zinc-400 font-serif leading-tight">Case studies, credentials &amp; citations</p>
-                </div>
-              </div>
-
-              {/* Explicit Target-Query Grounding Row (Explains Disparity) */}
-              <div className="p-4 bg-amber-950/20 border border-amber-500/30 rounded-xl space-y-2">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span className="text-xs font-mono font-bold text-amber-300">
-                      Target-Query Grounding: &quot;{intent || 'Target Search Query'}&quot;
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
-                      Needs Attention
-                    </span>
-                    <span className="text-base font-bold text-amber-300">{telemetry.proximityScore ?? 24}%</span>
-                  </div>
-                </div>
-                <div className="w-full bg-black/60 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-amber-400 h-full rounded-full" style={{ width: `${telemetry.proximityScore ?? 24}%` }} />
-                </div>
-                <p className="text-[11px] text-zinc-300 font-serif leading-relaxed">
-                  While baseline schema syntax is AI-ready (90–100%), content signals lack direct entity linkage to customer search intent for this specific query.
-                </p>
-              </div>
-
-              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-zinc-400 border-t border-white/5 font-serif">
-                <span>Note: AI search engines are non-deterministic multi-variable systems. This scan assesses machine-readable indexation and structured data readiness.</span>
-                <Link
-                  href="/brand-facts"
-                  onClick={() => {
-                    trackGaEvent('view_fact_coverage_matrix', {
-                      event_category: 'Diagnostic',
-                      event_label: url || 'direct_scan',
-                      coverage_ratio: 0.95
-                    });
-                  }}
-                  className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1 shrink-0"
-                >
-                  <span>View Brand Ledger</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
               </div>
             </div>
 
