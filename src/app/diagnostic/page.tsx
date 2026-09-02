@@ -40,12 +40,43 @@ export default function DiagnosticPage() {
       {
         "@type": "WebApplication",
         "@id": "https://aeobility.com.au/diagnostic#webapp",
-        "name": "AI Visibility Diagnostic Engine",
+        "name": "Automated Web Optimisation & Signal Diagnostic",
         "url": "https://aeobility.com.au/diagnostic",
         "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "SEOAuditTool",
         "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
         "description": "Interactive visibility diagnostic tool evaluating structured data, location signals, and service information formatting across primary search platforms.",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "Live 6-Stage Technical Crawl of Raw HTML DOM",
+          "Entity Extraction & Wikidata sameAs Node Verification",
+          "Semantic Alignment & Vector Distance Calculation",
+          "Competitor Visibility & Overlap Benchmarking",
+          "JSON-LD Schema & Local Signal Validation",
+          "AI Readiness Score & Simulated AI First Impression Computation"
+        ],
+        "potentialAction": {
+          "@type": "UseAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aeobility.com.au/diagnostic?url={url}&intent={intent}",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          "query-input": [
+            "required name=url",
+            "required name=intent"
+          ]
+        },
         "about": [
           {
             "@type": "Thing",
@@ -85,6 +116,22 @@ export default function DiagnosticPage() {
         "@type": "FAQPage",
         "@id": "https://aeobility.com.au/diagnostic#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the real-time telemetry scan calculate my AI Readiness Score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The core diagnostic pipeline executes a sequential 6-stage crawl of your raw HTML DOM, parsing organisation and service triples, computing high-dimensional vector embeddings, and evaluating your visibility across modern digital maps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What causes multi-node intent dilution on local business websites?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Intent dilution occurs when high-impression commercial queries split authority between duplicate landing paths, inducing internal cannibalisation that blocks AI answer engine citation selection."
+            }
+          },
           {
             "@type": "Question",
             "name": "How is AI Search (AEO) different from regular SEO?",
