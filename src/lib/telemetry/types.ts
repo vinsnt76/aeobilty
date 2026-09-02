@@ -91,6 +91,13 @@ export interface AIRecommendationTest {
   reasoning: string;
 }
 
+export interface RemediationStep {
+  step: number;
+  title: string;
+  description: string;
+  codeChip?: string;
+}
+
 export interface InsightEngineResult {
   verdict: 'Highly Visible' | 'Visible' | 'Growing' | 'Limited' | 'At Risk';
   measurementConfidence: { score: number; reasons: string[] };
@@ -100,6 +107,7 @@ export interface InsightEngineResult {
   diagnosis: BusinessDiagnosis;
   summary: StrategicSummary;
   recommendationTest: AIRecommendationTest;
+  actionPlan?: RemediationStep[];
 }
 
 export interface TelemetryResult {

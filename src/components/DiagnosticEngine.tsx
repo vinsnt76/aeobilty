@@ -653,45 +653,52 @@ export default function DiagnosticEngine() {
 
               {/* 1-2-3-4 Priority Roadmap Steps seated in Recessed Wells */}
               <div className="space-y-3 font-serif">
-                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">1</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Define &amp; Anchor Category Entities</h4>
-                  </div>
-                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Establish category-level relevance and inject nested <code className="text-cyan-300 font-mono">LocalBusiness</code> and <code className="text-cyan-300 font-mono">serviceArea</code> schema nodes linked to verified Wikidata <code className="text-cyan-300 font-mono">sameAs</code> records.
-                  </p>
-                </div>
+                {(() => {
+                  const dynamicSteps = telemetry.insightResult?.actionPlan && telemetry.insightResult.actionPlan.length > 0
+                    ? telemetry.insightResult.actionPlan
+                    : [
+                        {
+                          step: 1,
+                          title: telemetry.schemaValidation?.hasValidSchema
+                            ? `Anchor & Interlink Schema Nodes for "${intent || 'Core Services'}"`
+                            : `Inject Nested Schema & Wikidata Grounding for "${intent || 'Core Services'}"`,
+                          description: telemetry.schemaValidation?.hasValidSchema
+                            ? `Establish category-level relevance and inject nested LocalBusiness and serviceArea schema nodes linked to verified Wikidata sameAs records.`
+                            : `Deploy structured Schema.org/LocalBusiness markup with nested serviceArea and Wikidata sameAs entity anchors for ${intent || 'target queries'}.`
+                        },
+                        {
+                          step: 2,
+                          title: `Strengthen Commercial Topic Coverage for "${intent || 'High-Intent Searches'}"`,
+                          description: `Deploy structured category, comparison, FAQ, and buying-guide content answering the specific questions Australian customers ask about ${intent || 'your offerings'}.`
+                        },
+                        {
+                          step: 3,
+                          title: `Expand Query-to-Passage Context Chunking`,
+                          description: `Restructure core ${intent || 'service'} sections with direct, high-density 150-character answer blocks positioned immediately under H2 and H3 tags.`
+                        },
+                        {
+                          step: 4,
+                          title: `Execute 10-Day Implementation Roadmap`,
+                          description: `Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
+                        }
+                      ];
 
-                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">2</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Strengthen Commercial Topic Coverage</h4>
-                  </div>
-                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Deploy structured category, comparison, FAQ, and buying-guide content answering the specific questions Australian customers ask.
-                  </p>
-                </div>
-
-                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">3</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Expand Query-to-Passage Context Chunking</h4>
-                  </div>
-                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Restructure core service sections with direct, high-density 150-character answer blocks positioned immediately under H2 and H3 tags.
-                  </p>
-                </div>
-
-                <div className="glass-recessed-well p-3.5 rounded-xl space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">4</span>
-                    <h4 className="text-sm font-bold text-white font-soehne-breit">Execute 10-Day Implementation Roadmap</h4>
-                  </div>
-                  <p className="text-xs text-zinc-300 pl-7 leading-relaxed">
-                    Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.
-                  </p>
-                </div>
+                  return dynamicSteps.map((stepItem, idx) => (
+                    <div key={idx} className="glass-recessed-well p-3.5 rounded-xl space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-cyan-500/30">
+                          {stepItem.step || idx + 1}
+                        </span>
+                        <h4 className="text-sm font-bold text-white font-soehne-breit">
+                          {stepItem.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-zinc-300 pl-7 leading-relaxed font-sans">
+                        {stepItem.description}
+                      </p>
+                    </div>
+                  ));
+                })()}
               </div>
 
               {/* Commercial Remediation Bridge: Strict Button Architecture & Hierarchy Triad */}

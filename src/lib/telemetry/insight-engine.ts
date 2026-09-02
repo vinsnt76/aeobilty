@@ -111,7 +111,34 @@ export async function generateInsightEngineResult(
       reasoning: telemetry.readinessScore > 70 
         ? `${domainLabel} provides solid structural signals for "${intent}".` 
         : `Although AI understands your category, ${domainLabel} does not yet present sufficient structured evidence to be cited as the leading authority.`
-    }
+    },
+    actionPlan: [
+      {
+        step: 1,
+        title: telemetry.schemaValidation?.hasValidSchema
+          ? `Anchor & Interlink Schema Nodes for "${intent}"`
+          : `Deploy Schema Graph & Wikidata sameAs for "${intent}"`,
+        description: telemetry.schemaValidation?.hasValidSchema
+          ? `Inject nested LocalBusiness and serviceArea schema definitions on ${domainLabel} linked to verified Wikidata sameAs category entities.`
+          : `Deploy structured Schema.org/LocalBusiness markup on ${domainLabel} with nested serviceArea and Wikidata sameAs entity anchors for ${intent}.`,
+        codeChip: telemetry.schemaValidation?.hasValidSchema ? 'Schema.org/serviceArea' : 'Schema.org/LocalBusiness'
+      },
+      {
+        step: 2,
+        title: `Strengthen Commercial Topic Coverage for "${intent}"`,
+        description: `Deploy structured comparison, FAQ, and service breakdown pages on ${domainLabel} answering the specific questions Australian customers ask about ${intent}.`
+      },
+      {
+        step: 3,
+        title: `Expand Query-to-Passage Context Chunking`,
+        description: `Restructure core ${intent} sections on ${domainLabel} with high-density 150-character direct answer blocks positioned under H2/H3 tags to survive RAG extraction.`
+      },
+      {
+        step: 4,
+        title: `Execute 10-Day Implementation Roadmap`,
+        description: `Use the 10-Day AEObility Blueprint to resolve the "${blindSpotTitle}" gap on ${domainLabel} and lock in top AI search recommendations.`
+      }
+    ]
   };
 
   if (!apiKey) return dynamicFallback;
@@ -153,7 +180,7 @@ export async function generateInsightEngineResult(
 
   // 3. Generate Insight via LLM
   try {
-    const prompt = `You are the AEObility Insight Engine. Your job is to translate pre-computed feature flags about ${domainLabel} into a highly structured strategic summary.
+    const prompt = `You are the AEObility Insight Engine. Your job is to translate pre-computed feature flags about ${domainLabel} into a highly structured strategic summary and dynamic priority action plan for the intent: "${intent}".
 
     Engineered Context:
     ${JSON.stringify(engineeredContext, null, 2)}
@@ -182,7 +209,30 @@ export async function generateInsightEngineResult(
         "wouldRecommend": false,
         "verdict": "Conversational verdict (e.g. 'Today? Probably not.', 'Yes, absolutely.', 'Only for niche queries.')",
         "reasoning": "A 2-3 sentence explanation of why."
-      }
+      },
+      "actionPlan": [
+        {
+          "step": 1,
+          "title": "Action title 1 specific to ${domainLabel} and ${intent}",
+          "description": "Concrete 1-2 sentence implementation action explaining what to fix.",
+          "codeChip": "LocalBusiness"
+        },
+        {
+          "step": 2,
+          "title": "Action title 2 specific to ${domainLabel} and ${intent}",
+          "description": "Concrete 1-2 sentence implementation action for Australian customers."
+        },
+        {
+          "step": 3,
+          "title": "Action title 3 specific to ${domainLabel} and ${intent}",
+          "description": "Concrete 1-2 sentence passage chunking/RAG action."
+        },
+        {
+          "step": 4,
+          "title": "Execute 10-Day Implementation Roadmap",
+          "description": "How the 10-Day AEObility Blueprint prioritises and resolves ${domainLabel}'s high-impact gaps."
+        }
+      ]
     }
 
     Respond ONLY with valid JSON. No markdown tags.`;
