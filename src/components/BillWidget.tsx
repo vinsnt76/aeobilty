@@ -509,6 +509,53 @@ export default function BillWidget() {
     };
   }, []);
 
+  // Dynamic Focus Trap using :not([disabled]) filtering & Escape Key
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setIsOpen(false);
+        setIsGateOpenManually(false);
+      }
+    };
+
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !containerRef.current) return;
+
+      const focusableElements = Array.from(
+        containerRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
+        )
+      );
+
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleTabKey);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleTabKey);
+    };
+  }, [isOpen]);
+
   // Auto-scroll messages container on update
   useEffect(() => {
     if (isOpen) {
@@ -626,22 +673,28 @@ export default function BillWidget() {
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-9999 pointer-events-none">
-      <div ref={containerRef} className="pointer-events-auto fixed bottom-4 right-4 sm:bottom-6 sm:right-6 left-auto z-50 w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-md bg-zinc-950/95 border border-white/15 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[80dvh] overflow-hidden text-zinc-100 font-sans backdrop-blur-xl transition-all animate-fadeIn">
+    <div className="fixed inset-0 z-[9999] pointer-events-none">
+      <div 
+        ref={containerRef} 
+        role="dialog"
+        aria-modal="true"
+        aria-label="AI Bill Diagnostic Consultant"
+        className="pointer-events-auto fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-[calc(1rem+env(safe-area-inset-right,0px))] left-auto z-50 w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-md bg-[#0A0F1D]/95 border border-cyan-500/30 rounded-2xl shadow-2xl flex flex-col h-135 max-h-[82dvh] overflow-hidden text-slate-100 font-sans backdrop-blur-xl transition-all animate-fadeIn"
+      >
       {/* 0. Confirmed Closure Card / Interstitial Gating Modal Overlay */}
       {isReportDispatched ? (
-        <div className="absolute inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
+        <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="absolute top-3.5 right-3.5 text-zinc-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition cursor-pointer"
+            className="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer"
             aria-label="Close Chat"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-full max-w-sm space-y-4 text-center bg-zinc-900/90 border border-emerald-500/30 p-6 rounded-2xl shadow-2xl">
-            <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mx-auto">
+          <div className="w-full max-w-sm space-y-4 text-center bg-slate-900/90 border border-cyan-500/30 p-6 rounded-2xl shadow-2xl">
+            <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] mx-auto shadow-[0_0_15px_rgba(0,229,255,0.2)]">
               <CheckCircle2 className="w-6 h-6" />
             </div>
 
@@ -649,16 +702,16 @@ export default function BillWidget() {
               <h3 className="text-sm font-bold text-white font-soehne-breit">
                 Full Telemetry Report Dispatched
               </h3>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+              <p className="text-xs text-slate-300 font-serif leading-relaxed">
                 We&apos;ve emailed your complete entity audit report to:
               </p>
-              <div className="inline-block text-xs font-mono font-bold text-emerald-400 bg-black/60 px-3 py-1 rounded border border-emerald-500/20">
+              <div className="inline-block text-xs font-mono font-bold text-[#00E5FF] bg-slate-950 px-3 py-1 rounded-lg border border-cyan-500/30">
                 {leadForm.email}
               </div>
             </div>
 
-            <div className="pt-2 border-t border-white/10 space-y-2.5">
-              <p className="text-[11px] text-zinc-400 font-serif">
+            <div className="pt-2 border-t border-slate-800 space-y-2.5">
+              <p className="text-[11px] text-slate-400 font-serif">
                 Ready to implement the remediation roadmap?
               </p>
               <Link
@@ -671,15 +724,15 @@ export default function BillWidget() {
                     price_aud: 995,
                   });
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] text-center cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] text-center cursor-pointer"
               >
                 <span>View The AEObility Blueprint ($995 AUD)</span>
-                <ArrowRight className="w-3.5 h-3.5 text-zinc-950" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
               </Link>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="text-[11px] text-zinc-400 hover:text-zinc-200 underline transition cursor-pointer block mx-auto pt-1 font-mono"
+                className="text-[11px] text-slate-400 hover:text-slate-200 underline transition cursor-pointer block mx-auto pt-1 font-mono"
               >
                 Close assistant for now
               </button>
@@ -687,20 +740,20 @@ export default function BillWidget() {
           </div>
         </div>
       ) : isGated && (
-        <div className="absolute inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
+        <div className="absolute inset-0 bg-[#0A0F1D]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center p-5 text-center animate-fadeIn overflow-y-auto">
           {/* Close Chat Option */}
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="absolute top-3.5 right-3.5 text-zinc-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition cursor-pointer"
+            className="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition cursor-pointer"
             aria-label="Close Chat"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="w-full max-w-sm space-y-3.5 text-left bg-zinc-900/90 border border-emerald-500/30 p-5 rounded-2xl shadow-2xl my-auto">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <div className="w-full max-w-sm space-y-3.5 text-left bg-slate-900/90 border border-cyan-500/30 p-5 rounded-2xl shadow-2xl my-auto">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] shrink-0">
                 <Sparkles className="w-4 h-4 animate-pulse" />
               </div>
               <h3 className="text-xs font-bold text-white tracking-tight">
@@ -708,19 +761,19 @@ export default function BillWidget() {
               </h3>
             </div>
 
-            <p className="text-[11px] text-zinc-300 leading-relaxed">
+            <p className="text-[11px] text-slate-300 leading-relaxed">
               You&apos;ve reached the free diagnostic preview limit. Enter your details to receive your complete entity audit report and structured remediation roadmap.
             </p>
 
             <form onSubmit={handleLeadCaptureSubmit} className="space-y-2.5 pt-1">
               <div>
-                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Full Name</label>
+                <label className="text-[10px] font-medium text-slate-400 block mb-1">Full Name</label>
                 <input
                   type="text"
                   required
                   value={leadForm.name}
                   onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="Jane Doe"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -728,13 +781,13 @@ export default function BillWidget() {
               </div>
 
               <div>
-                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Work Email</label>
+                <label className="text-[10px] font-medium text-slate-400 block mb-1">Work Email</label>
                 <input
                   type="email"
                   required
                   value={leadForm.email}
                   onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="e.g. jane@business.com.au"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -742,12 +795,12 @@ export default function BillWidget() {
               </div>
 
               <div>
-                <label className="text-[10px] font-medium text-zinc-400 block mb-1">Phone Number (Optional)</label>
+                <label className="text-[10px] font-medium text-slate-400 block mb-1">Phone Number (Optional)</label>
                 <input
                   type="tel"
                   value={leadForm.phone}
                   onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                  className="w-full bg-black/60 border border-zinc-700 focus:border-emerald-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-colors touch-manipulation"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-lg p-2 text-base sm:text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors touch-manipulation"
                   placeholder="0400 000 000"
                   spellCheck={false}
                   suppressHydrationWarning
@@ -763,13 +816,13 @@ export default function BillWidget() {
               <button
                 type="submit"
                 disabled={isSubmittingLead}
-                className="w-full py-2.5 mt-1 bg-emerald-500 hover:bg-emerald-400 font-bold text-black rounded-lg text-xs transition shadow-[0_0_15px_rgba(16,185,129,0.2)] disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full py-2.5 mt-1 bg-cyan-500 hover:bg-cyan-400 font-bold text-slate-950 rounded-lg text-xs transition shadow-[0_0_15px_rgba(0,229,255,0.25)] disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>{isSubmittingLead ? "Dispatching Report..." : "Send Complete Audit Report"}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-black" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
               </button>
 
-              <p className="text-[10px] text-zinc-400 text-center font-mono pt-0.5">
+              <p className="text-[10px] text-slate-400 text-center font-mono pt-0.5">
                 ✓ Instant delivery &bull; Zero spam &bull; Australian privacy guaranteed
               </p>
             </form>
@@ -781,7 +834,7 @@ export default function BillWidget() {
                   setIsGateOpenManually(false);
                   setIsOpen(false);
                 }}
-                className="text-[11px] text-zinc-400 underline hover:text-zinc-200 transition cursor-pointer font-mono"
+                className="text-[11px] text-slate-400 underline hover:text-slate-200 transition cursor-pointer font-mono"
               >
                 Close chat for now
               </button>
@@ -790,19 +843,19 @@ export default function BillWidget() {
         </div>
       )}
       {/* Header Controller Banner */}
-      <div className="bg-zinc-900/90 px-4 py-3 border-b border-white/10 flex items-center justify-between backdrop-blur-md">
+      <div className="bg-slate-900/90 px-4 py-3 border-b border-cyan-500/20 flex items-center justify-between backdrop-blur-md">
         <div className="flex items-center gap-2.5">
-          <BillAvatar size="sm" pulse={false} />
+          <BillAvatar size="sm" status={isLoading ? 'analysing' : 'online'} pulse={false} />
           <div>
             <div className="flex items-center gap-2">
               <h3 className="font-semibold text-xs text-white tracking-wide uppercase font-mono">
                 System Agent: Bill
               </h3>
-              <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-400 font-mono border border-emerald-500/20">
+              <span className="inline-flex items-center rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] text-[#00E5FF] font-mono border border-cyan-500/30">
                 Online
               </span>
             </div>
-            <p className="text-[10px] text-zinc-400 font-serif">AEObility Dynamic Intelligence</p>
+            <p className="text-[10px] text-slate-400 font-serif">AEObility Diagnostic Consultant</p>
           </div>
         </div>
 
@@ -819,10 +872,10 @@ export default function BillWidget() {
                 });
                 setIsGateOpenManually(true);
               }}
-              className="px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 cursor-pointer font-bold shrink-0"
+              className="px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 bg-cyan-500/15 hover:bg-cyan-500/25 text-[#00E5FF] border border-cyan-500/30 cursor-pointer font-bold shrink-0"
               title="Email complete audit report"
             >
-              <Mail className="w-3 h-3 text-emerald-400" />
+              <Mail className="w-3 h-3 text-[#00E5FF]" />
               <span>Send Report</span>
             </button>
           )}
@@ -831,11 +884,11 @@ export default function BillWidget() {
           <button
             type="button"
             onClick={() => setIsMuted(!isMuted)}
-            className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
+            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer"
             title={isMuted ? "Enable Voice Feedback (AU)" : "Mute Voice Feedback"}
             aria-label="Toggle voice output"
           >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-emerald-400" />}
+            {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#00E5FF]" />}
           </button>
 
           {/* Telemetry Switcher Mode */}
@@ -844,8 +897,8 @@ export default function BillWidget() {
             onClick={toggleTelemetryMode}
             className={`px-2.5 py-1 rounded-full text-[10px] font-mono transition flex items-center gap-1 border cursor-pointer ${
               isTelemetryMode 
-                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold' 
-                : 'bg-white/5 text-zinc-400 border-white/10 hover:text-zinc-200'
+                ? 'bg-cyan-500/20 text-[#00E5FF] border-cyan-500/40 font-bold shadow-[0_0_10px_rgba(0,229,255,0.2)]' 
+                : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:text-slate-200'
             }`}
             title="Toggle Live Telemetry Diagnostics"
           >
@@ -859,7 +912,7 @@ export default function BillWidget() {
               setIsGateOpenManually(false);
               setIsOpen(false);
             }}
-            className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
+            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer"
             aria-label="Close Bill assistant"
           >
             <X className="w-4 h-4" />
@@ -869,26 +922,26 @@ export default function BillWidget() {
 
       {/* Hydrated Audit Sticky Indicator Bar */}
       {isTelemetryMode && storedTelemetry?.result && (
-        <div className="bg-amber-950/30 border-b border-amber-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono">
-          <div className="flex justify-between items-center text-amber-400 font-bold tracking-wider uppercase text-[9px]">
-            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-amber-400" /> Scan Context Loaded</span>
-            <span className="text-zinc-300 font-normal truncate max-w-[170px]">
+        <div className="bg-cyan-950/30 border-b border-cyan-500/20 px-3.5 py-2 text-[10px] space-y-1.5 font-mono">
+          <div className="flex justify-between items-center text-[#00E5FF] font-bold tracking-wider uppercase text-[9px]">
+            <span className="flex items-center gap-1"><ShieldAlert className="w-3 h-3 text-[#00E5FF]" /> Scan Context Loaded</span>
+            <span className="text-slate-300 font-normal truncate max-w-[170px]">
               {storedTelemetry.url ? new URL(storedTelemetry.url.startsWith('http') ? storedTelemetry.url : `https://${storedTelemetry.url}`).hostname.replace('www.', '') : 'Target Site'}
             </span>
           </div>
           <div className="grid grid-cols-2 gap-2 pt-0.5">
-            <div className="bg-black/50 p-2 rounded-lg border border-emerald-500/20">
-              <span className="text-zinc-400 text-[9px] block">Global Schema Baseline</span>
+            <div className="bg-slate-950/80 p-2 rounded-lg border border-cyan-500/30">
+              <span className="text-slate-400 text-[9px] block">Global Schema Baseline</span>
               <span className="text-emerald-400 font-bold text-xs">{storedTelemetry.result?.readinessScore ?? 95}/100</span>
               <span className="text-[9px] text-emerald-400/90 block mt-0.5 font-bold">Optimal Syntax</span>
             </div>
-            <div className="bg-black/50 p-2 rounded-lg border border-amber-500/20">
-              <span className="text-zinc-400 text-[9px] block">Target Location Grounding</span>
+            <div className="bg-slate-950/80 p-2 rounded-lg border border-amber-500/30">
+              <span className="text-slate-400 text-[9px] block">Target Location Grounding</span>
               <span className="text-amber-300 font-bold text-xs">{storedTelemetry.result?.proximityScore ?? 24}%</span>
               <span className="text-[9px] text-amber-400/90 block mt-0.5 font-bold">Needs Attention</span>
             </div>
           </div>
-          <div className="text-[9px] text-zinc-400 text-center pt-0.5">
+          <div className="text-[9px] text-slate-400 text-center pt-0.5">
             High Technical Readiness • Target-Market Grounding Gap
           </div>
         </div>
@@ -898,13 +951,13 @@ export default function BillWidget() {
       <div className="flex-1 p-4 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] space-y-3.5 text-xs scrollbar-thin">
         {messages.length === 0 && (
           <div className="text-center pt-5 pb-2 space-y-2.5 px-3">
-            <div className="w-10 h-10 mx-auto rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <div className="w-10 h-10 mx-auto rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00E5FF] shadow-[0_0_15px_rgba(0,229,255,0.15)]">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
             <p className="text-white font-medium text-xs font-serif">
               G&apos;day! I&apos;ve loaded your diagnostic telemetry{storedTelemetry?.url ? ` for ${new URL(storedTelemetry.url.startsWith('http') ? storedTelemetry.url : `https://${storedTelemetry.url}`).hostname.replace('www.', '')}` : ''}.
             </p>
-            <p className="text-zinc-300 text-[11px] leading-relaxed font-serif">
+            <p className="text-slate-300 text-[11px] leading-relaxed font-serif">
               {isTelemetryMode 
                 ? `While your baseline Global Schema Syntax is strong (${storedTelemetry?.result?.readinessScore ?? 95}/100), your Target Location Grounding (${storedTelemetry?.result?.proximityScore ?? 24}%) needs anchoring. Let's review your 3 priority next steps.`
                 : "Ask me anything about Answer Engine Optimisation, semantic schema graphs, or run a free scan above."}
@@ -922,25 +975,37 @@ export default function BillWidget() {
               key={m.id} 
               className={`p-3.5 rounded-xl max-w-[88%] leading-relaxed ${
                 m.role === 'user' 
-                  ? 'bg-emerald-600/20 border border-emerald-500/30 ml-auto text-emerald-50 rounded-tr-none' 
-                  : 'bg-zinc-900 border border-white/10 mr-auto text-zinc-200 rounded-tl-none w-full'
+                  ? 'bg-slate-900/90 border border-slate-800 ml-auto text-slate-100 rounded-tr-none shadow-sm' 
+                  : 'bg-cyan-950/20 border border-cyan-500/30 mr-auto text-slate-200 rounded-tl-none w-full shadow-[0_0_15px_rgba(0,229,255,0.05)]'
               }`}
             >
-              <span className="block text-[9px] uppercase tracking-wider font-mono text-zinc-500 mb-1">
-                {m.role === 'user' ? 'Local Requestor' : 'Bill'}
-              </span>
-
               {m.role === 'user' ? (
-                <p className="whitespace-pre-wrap text-[11px] text-zinc-300">{text}</p>
+                <>
+                  <span className="block text-[9px] uppercase tracking-wider font-mono text-slate-400 mb-1">
+                    You
+                  </span>
+                  <p className="whitespace-pre-wrap text-[11px] text-slate-200">{text}</p>
+                </>
               ) : (
-                renderMessageBubbleContent(m.id, text || (isLoading ? "Scanning lattice nodes..." : "..."))
+                <>
+                  <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-cyan-500/20">
+                    <BillAvatar size="sm" pulse={false} />
+                    <span className="text-[10px] font-semibold text-[#00E5FF] uppercase font-mono">
+                      AI Bill
+                    </span>
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-[#00E5FF] border border-cyan-500/30">
+                      Telemetry
+                    </span>
+                  </div>
+                  {renderMessageBubbleContent(m.id, text || (isLoading ? "Scanning lattice nodes..." : "..."))}
+                </>
               )}
             </div>
           );
         })}
 
         {isLoading && (
-          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-cyan-400 bg-cyan-950/30 border border-cyan-500/20 px-3 py-1.5 rounded-full animate-pulse">
+          <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#00E5FF] bg-cyan-950/30 border border-cyan-500/30 px-3 py-1.5 rounded-full animate-pulse">
             <Bot className="w-3.5 h-3.5 animate-spin" />
             <span>Bill is scanning 41 lattice nodes...</span>
           </div>
@@ -950,33 +1015,34 @@ export default function BillWidget() {
 
       {/* Quick Action Outcome-Led Prompt Pills (Hidden when session concluded) */}
       {!isReportDispatched && (
-        <div className="px-3 py-2 bg-zinc-900/70 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px]">
+        <div className="px-3 py-2.5 bg-slate-950/80 border-t border-cyan-500/10 flex flex-wrap gap-1.5 text-[10px]">
           {[
             { label: '📧 Email Full Report', icon: <Mail className="w-3 h-3 text-emerald-400" /> },
             { label: 'What should I fix first?', icon: <AlertTriangle className="w-3 h-3 text-amber-400" /> },
-            { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-cyan-400" /> },
+            { label: 'How do I improve my score?', icon: <Sparkles className="w-3 h-3 text-[#00E5FF]" /> },
             { label: 'Why is local grounding low?', icon: <HelpCircle className="w-3 h-3 text-purple-400" /> },
-            { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-cyan-300" />, highlight: true }
+            { label: 'How does the Blueprint fix this?', icon: <Bot className="w-3 h-3 text-[#00E5FF]" />, highlight: true }
           ].map((chip) => (
             <button
               key={chip.label}
               type="button"
               onClick={() => handleChipClick(chip.label)}
-              className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] transition font-medium cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] transition-all duration-150 font-medium cursor-pointer ${
                 chip.highlight
-                  ? 'bg-cyan-950/70 border border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.25)] hover:bg-cyan-900/80 font-bold'
-                  : 'bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white'
+                  ? 'bg-cyan-500/20 text-[#00E5FF] border border-cyan-500/50 shadow-[0_0_10px_rgba(0,229,255,0.2)] font-semibold'
+                  : 'bg-slate-900/60 text-slate-300 border border-slate-800 hover:border-cyan-500/30 hover:text-slate-100'
               }`}
             >
               {chip.icon}
               <span>{chip.label}</span>
+              <ArrowRight className="w-2.5 h-2.5 opacity-50 ml-0.5" />
             </button>
           ))}
         </div>
       )}
 
       {/* Persistent Reassurance Banner */}
-      <div className="px-3 py-1 bg-zinc-950 border-t border-white/5 text-[10px] font-mono text-zinc-400 flex items-center justify-center gap-2">
+      <div className="px-3 py-1 bg-slate-950 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 flex items-center justify-center gap-2">
         <span>✓ Read-only analysis</span>
         <span>•</span>
         <span>No data stored</span>
@@ -985,7 +1051,7 @@ export default function BillWidget() {
       </div>
 
       {/* Lower User Query Tray Element */}
-      <form onSubmit={handleSubmit} className="p-3 bg-zinc-900/90 border-t border-white/10 flex gap-2 backdrop-blur-md">
+      <form onSubmit={handleSubmit} className="p-3 bg-slate-900/90 border-t border-cyan-500/20 flex gap-2 backdrop-blur-md">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -997,15 +1063,15 @@ export default function BillWidget() {
                 ? "Ask Bill about these scan results..." 
                 : "Ask Bill about AEO semantic lattices..."
           }
-          className="flex-1 bg-zinc-950 border border-white/15 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed transition touch-manipulation"
+          className="flex-1 bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl px-3 py-2 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed transition touch-manipulation"
         />
         <button 
           type="submit" 
           disabled={isReportDispatched || isGated || !input.trim() || isLoading}
-          className="bg-cyan-400 disabled:opacity-40 text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-300 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(6,182,212,0.3)] disabled:cursor-not-allowed"
+          className="bg-cyan-500 disabled:opacity-40 text-slate-950 px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-cyan-400 transition flex items-center justify-center shrink-0 cursor-pointer shadow-[0_0_10px_rgba(0,229,255,0.3)] disabled:cursor-not-allowed"
           aria-label="Send message"
         >
-          <Send className="w-3.5 h-3.5 text-zinc-950" />
+          <Send className="w-3.5 h-3.5 text-slate-950" />
         </button>
       </form>
     </div>
