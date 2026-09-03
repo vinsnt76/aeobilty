@@ -317,7 +317,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <span>Why Clarity Matters for AI Visibility</span>
                   </span>
                   <p className="text-[11px] text-white/80 font-serif leading-relaxed">
-                    When AI search engines (like Perplexity, ChatGPT, or Google AI Overviews) answer user questions, they extract precise, unambiguous information blocks. If a website&apos;s copy is diluted or lacks explicit entity structure, AI models bypass it in favor of clearer competitor sources.
+                    When AI search engines (like Perplexity, ChatGPT, or Google AI Overviews) answer user questions, they extract precise, unambiguous information blocks. If a website&apos;s copy is diluted or lacks explicit entity structure, AI models bypass it in favour of clearer competitor sources.
                   </p>
                 </div>
               </div>
@@ -1020,7 +1020,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div>&bull; <code className="text-white">T</code>: Technical Readiness score (0-100)</div>
                 <div>&bull; <code className="text-purple-300">E</code>: Entity Clarity score (0-100)</div>
                 <div>&bull; <code className="text-amber-300">C</code>: Competitor Coverage score (0-100)</div>
-                <div>&bull; <code className="text-emerald-400">K</code>: Knowledge Graph Corroboration score (0-100) &mdash; a measure of whether extracted entity information can be matched against open knowledge graphs.</div>
+                <div>&bull; <code className="text-emerald-400">K</code>: Knowledge Graph Corroboration score (0-100), measuring whether extracted entity information can be matched against open knowledge graphs.</div>
               </div>
             </div>
 
