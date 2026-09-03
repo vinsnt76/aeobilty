@@ -329,7 +329,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   <span>For Technical Readers &amp; Engineers</span>
                 </div>
                 <p className="text-white/80 font-light leading-relaxed font-sans text-xs">
-                  This document provides an open technical specification of AEObility Architecture v2.5 (last tested September 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
+                  This document provides an open technical specification of AEObility Architecture v2.6 (last tested September 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
                 </p>
                 <div className="text-[11px] text-aeo-cyan pt-1 border-t border-white/10">
                   Stack: Next.js App Router &bull; Google Gemini text-embedding-004 &bull; gemini-3.7-flash &bull; Wikidata SPARQL
@@ -358,7 +358,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <span>&bull;</span>
               <span>Location: <strong className="text-white">Perth, Western Australia</strong></span>
               <span>&bull;</span>
-              <span>Architecture Version: <strong className="text-white">v2.5 (Last tested September 2026)</strong></span>
+              <span>Architecture Version: <strong className="text-white">v2.6 (Last tested September 2026)</strong></span>
               <span>&bull;</span>
               <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker (Chief AEO Architect)</Link></span>
             </div>
