@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { extractFeatures } from '../features';
+import { extractFeatures, computeSemanticDominance } from '../features';
 import { VectorNode, EntityConfidence } from '../types';
 
 describe('Feature Engineering Layer', () => {
@@ -33,8 +33,8 @@ describe('Feature Engineering Layer', () => {
 
     const features = extractFeatures(clientNode, competitorNodes, clientCrawl, competitorCrawls, entityConfidence);
 
-    // Semantic Dominance: (0.9 - 0.7) * 100 = 20
-    expect(features.semanticDominance).toBeCloseTo(20);
+    // Semantic Dominance: 50 + (250 * (0.9 - 0.7)) = 50 + 50 = 100
+    expect(features.semanticDominance).toBe(100);
     
     // Technical Advantage: 15 > 7.5 = 10
     expect(features.technicalAdvantage).toBe(10);
@@ -73,7 +73,7 @@ describe('Feature Engineering Layer', () => {
 
     const features = extractFeatures(clientNode, competitorNodes, clientCrawl, competitorCrawls, entityConfidence);
 
-    // Semantic Dominance: 0.5 < 0.8 -> 0
+    // Semantic Dominance: 50 + (250 * (0.5 - 0.8)) = 50 - 75 = -25 -> Clamped to 0
     expect(features.semanticDominance).toBe(0);
     
     // Technical Advantage: 2 < 20 -> 0
@@ -105,8 +105,8 @@ describe('Feature Engineering Layer', () => {
 
     const features = extractFeatures(clientNode, competitorNodes, clientCrawl, competitorCrawls, entityConfidence);
 
-    // Semantic Dominance: 0.8 > 0 -> 80
-    expect(features.semanticDominance).toBeCloseTo(80);
+    // Semantic Dominance: 50 + (250 * 0.8) = 250 -> Clamped to 100
+    expect(features.semanticDominance).toBe(100);
     
     // Technical Advantage: 10 > 0 -> 10
     expect(features.technicalAdvantage).toBe(10);
@@ -119,5 +119,65 @@ describe('Feature Engineering Layer', () => {
     
     // Entity Authority: 100 * 1.0 = 100
     expect(features.entityAuthority).toBe(100);
+  });
+
+  it('Scenario 4: Realistic Delta Sensitivity & Centered Parity Spread', () => {
+    const emptyCrawl = { textContent: 'sample', technicalSEO: undefined, schemaValidation: undefined };
+    const dummyConf: EntityConfidence = { score: 100, type: 'Brand' };
+
+    // 1. Exact Parity (Delta = 0.00) -> 50
+    const fParity = extractFeatures(
+      { label: 'Client', text: '...', similarity: 0.70 },
+      [{ label: 'Comp 1', text: '...', similarity: 0.70 }],
+      emptyCrawl, [emptyCrawl], dummyConf
+    );
+    expect(fParity.semanticDominance).toBe(50);
+
+    // 2. Subtle Lead (+0.02) -> 50 + 250*(0.02) = 55
+    const fSubtleLead = extractFeatures(
+      { label: 'Client', text: '...', similarity: 0.72 },
+      [{ label: 'Comp 1', text: '...', similarity: 0.70 }],
+      emptyCrawl, [emptyCrawl], dummyConf
+    );
+    expect(fSubtleLead.semanticDominance).toBe(55);
+
+    // 3. Moderate Lead (+0.04) -> 50 + 250*(0.04) = 60
+    const fModLead = extractFeatures(
+      { label: 'Client', text: '...', similarity: 0.74 },
+      [{ label: 'Comp 1', text: '...', similarity: 0.70 }],
+      emptyCrawl, [emptyCrawl], dummyConf
+    );
+    expect(fModLead.semanticDominance).toBe(60);
+
+    // 4. Strong Lead (+0.10) -> 50 + 250*(0.10) = 75
+    const fStrongLead = extractFeatures(
+      { label: 'Client', text: '...', similarity: 0.80 },
+      [{ label: 'Comp 1', text: '...', similarity: 0.70 }],
+      emptyCrawl, [emptyCrawl], dummyConf
+    );
+    expect(fStrongLead.semanticDominance).toBe(75);
+
+    // 5. Moderate Lag (-0.04) -> 50 + 250*(-0.04) = 40
+    const fModLag = extractFeatures(
+      { label: 'Client', text: '...', similarity: 0.66 },
+      [{ label: 'Comp 1', text: '...', similarity: 0.70 }],
+      emptyCrawl, [emptyCrawl], dummyConf
+    );
+    expect(fModLag.semanticDominance).toBe(40);
+  });
+
+  it('Scenario 5: Competitor Average Outlier Protection (Trimmed Mean for N >= 5)', () => {
+    const clientSimilarity = 0.70;
+    // 4 legitimate competitors (~0.68) and 1 failed scrape/outlier (0.15)
+    const competitorSimilarities = [0.69, 0.68, 0.67, 0.68, 0.15];
+
+    const result = computeSemanticDominance(clientSimilarity, competitorSimilarities);
+
+    // With trimmed mean (dropping min 0.15 and max 0.69):
+    // Remaining are [0.67, 0.68, 0.68] -> avg = 0.6766...
+    // Effective competitor baseline remains ~0.677 (delta ~+0.023 -> score ~56)
+    expect(result.effectiveCompAvg).toBeGreaterThan(0.67);
+    expect(result.score).toBeLessThan(65);
+    expect(result.score).toBeGreaterThanOrEqual(53);
   });
 });

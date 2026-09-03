@@ -13,10 +13,16 @@ vi.mock('ai', () => {
       headers: { 'Content-Type': 'text/plain' },
       status: 200
     }),
-    toUIMessageStreamResponse: () => new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'text/plain' },
-      status: 200
-    })
+    toUIMessageStreamResponse: (options?: { headers?: Record<string, string> }) => {
+      const headers = new Headers({ 'Content-Type': 'text/plain' });
+      if (options?.headers) {
+        Object.entries(options.headers).forEach(([k, v]) => headers.set(k, v));
+      }
+      return new Response(JSON.stringify({ success: true }), {
+        headers,
+        status: 200
+      });
+    }
   }));
   return {
     streamText: mockStreamText
@@ -112,5 +118,131 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
 
     const data = await response.json();
     expect(data.error).toBe('Bill pipeline dynamic data retrieval error.');
+  });
+
+  describe('Tier 0.2: Server-Side Stateless Turn-Limit & HMAC Integration', () => {
+    it('Scenario 1: Turn 1 issues a valid HMAC turn token in response headers', async () => {
+      const mockReq = createMockRequest({
+        messages: [{ role: 'user', content: 'What does this mean?' }],
+        intent: 'telemetry',
+        audit: { clientUrl: 'https://sarahclinic.com.au', clarityScore: 42 }
+      });
+
+      const response = await POST(mockReq);
+      expect(response.status).toBe(200);
+
+      const turnToken = response.headers.get('x-turn-token');
+      expect(turnToken).toBeTruthy();
+
+      const { verifyTurnToken } = await import('@/lib/security/turn-token');
+      const verification = verifyTurnToken(turnToken!);
+      expect(verification.valid).toBe(true);
+      expect(verification.payload?.turnCount).toBe(1);
+    });
+
+    it('Scenario 2: Turn 2 consumes valid token and returns next turnCount (2)', async () => {
+      const { createTurnToken } = await import('@/lib/security/turn-token');
+      const turn1Token = createTurnToken('https://sarahclinic.com.au', 1);
+
+      const mockReq = new NextRequest('https://aeobility.com.au', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-turn-token': turn1Token
+        },
+        body: JSON.stringify({
+          messages: [
+            { role: 'user', content: 'Diagnose me' },
+            { role: 'assistant', content: 'Report...' },
+            { role: 'user', content: 'How do I fix this?' }
+          ],
+          intent: 'telemetry',
+          audit: { clientUrl: 'https://sarahclinic.com.au' }
+        })
+      });
+
+      const response = await POST(mockReq);
+      expect(response.status).toBe(200);
+
+      const nextToken = response.headers.get('x-turn-token');
+      expect(nextToken).toBeTruthy();
+
+      const { verifyTurnToken } = await import('@/lib/security/turn-token');
+      const verification = verifyTurnToken(nextToken!);
+      expect(verification.valid).toBe(true);
+      expect(verification.payload?.turnCount).toBe(2);
+    });
+
+    it('Scenario 3: Turn 3 (Turn count > 2) is blocked with status 403 TURN_LIMIT_EXCEEDED', async () => {
+      const { createTurnToken } = await import('@/lib/security/turn-token');
+      const turn2Token = createTurnToken('https://sarahclinic.com.au', 2);
+
+      const mockReq = new NextRequest('https://aeobility.com.au', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-turn-token': turn2Token
+        },
+        body: JSON.stringify({
+          messages: [
+            { role: 'user', content: 'Turn 3 question' }
+          ],
+          intent: 'telemetry',
+          audit: { clientUrl: 'https://sarahclinic.com.au' }
+        })
+      });
+
+      const response = await POST(mockReq);
+      expect(response.status).toBe(403);
+
+      const body = await response.json();
+      expect(body.code).toBe('TURN_LIMIT_EXCEEDED');
+    });
+
+    it('Scenario 4: Tampered turn token is rejected with status 401 INVALID_TURN_TOKEN', async () => {
+      const mockReq = new NextRequest('https://aeobility.com.au', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-turn-token': 'forged-tampered-token.invalid-sig'
+        },
+        body: JSON.stringify({
+          messages: [{ role: 'user', content: 'Hello' }],
+          intent: 'telemetry'
+        })
+      });
+
+      const response = await POST(mockReq);
+      expect(response.status).toBe(401);
+
+      const body = await response.json();
+      expect(body.code).toBe('INVALID_TURN_TOKEN');
+    });
+
+    it('Scenario 5: Client storage reset bypass attempt with multi-turn messages is gated with 403', async () => {
+      const mockReq = new NextRequest('https://aeobility.com.au', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // No token provided (client cleared localStorage/headers)
+        },
+        body: JSON.stringify({
+          messages: [
+            { role: 'user', content: 'Msg 1' },
+            { role: 'assistant', content: 'Reply 1' },
+            { role: 'user', content: 'Msg 2' },
+            { role: 'assistant', content: 'Reply 2' },
+            { role: 'user', content: 'Msg 3' }
+          ],
+          intent: 'telemetry'
+        })
+      });
+
+      const response = await POST(mockReq);
+      expect(response.status).toBe(403);
+
+      const body = await response.json();
+      expect(body.code).toBe('TURN_LIMIT_EXCEEDED');
+    });
   });
 });

@@ -392,7 +392,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
       name: "3. Semantic Dominance Module",
       codeFile: "src/lib/telemetry/features.ts",
       whatItDoes: "Determines whether your website commands stronger AI clarity than rival local businesses.",
-      howItWorks: "Calculates the net vector differential between client similarity and average competitor similarity: Math.max(0, Math.min(100, (ClientSim - CompAvgSim) * 100)).",
+      howItWorks: "Calculates the scaled vector differential centered at neutral 50 parity: Math.min(100, Math.max(0, Math.round(50 + 250 * (ClientSim - CompAvgSim)))).",
       inputs: "Client vector similarity score and competitor vector similarity array.",
       outputs: "Semantic Dominance Score (0 to 100% net differential).",
       actionImplications: "A positive score indicates market advantage; a negative score signals risk of being overlooked in AI summaries.",

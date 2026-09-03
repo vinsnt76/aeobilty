@@ -43,7 +43,7 @@ import {
 
 export const metadata = {
   title: "Telemetry Diagnostic Tool: Technical Architecture Guide | AEObility",
-  description: "An open technical specification of AEObility Architecture v2.4 detailing dual-vector hashing, text-embedding-004 RAG tests, and structured JSON triples.",
+  description: "An open technical specification of AEObility Architecture v2.5 detailing dual-vector hashing, text-embedding-004 RAG tests, and structured JSON triples.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
   },
@@ -91,7 +91,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#article",
         "url": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "headline": "Telemetry Diagnostic Tool: Technical Architecture Guide",
-        "description": "An open technical specification of AEObility Architecture v2.4 detailing dual-vector hashing, text-embedding-004 RAG simulations, and Subject-Predicate-Object entity triple extraction.",
+        "description": "An open technical specification of AEObility Architecture v2.5 detailing dual-vector hashing, text-embedding-004 RAG simulations, and Subject-Predicate-Object entity triple extraction.",
         "inLanguage": "en-AU",
         "educationalLevel": "Advanced",
         "proficiencyLevel": "Expert",
@@ -104,7 +104,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-08-13",
-        "dateModified": "2026-08-13",
+        "dateModified": "2026-09-03",
         "about": [
           {
             "@type": "SoftwareApplication",
@@ -112,7 +112,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             "name": "AEObility Telemetry Diagnostic Engine",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Web",
-            "softwareVersion": "2.4"
+            "softwareVersion": "2.5"
           },
           {
             "@type": "Thing",
@@ -270,7 +270,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           <header className="space-y-6 border-b border-white/10 pb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-semibold font-mono tracking-wide">
               <Cpu className="w-3.5 h-3.5 animate-pulse" />
-              <span>Technical Architecture Spec &bull; v2.4 (Last tested August 2026)</span>
+              <span>Technical Architecture Spec &bull; v2.5 (Last tested September 2026)</span>
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -294,7 +294,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <div className="text-white/70 font-light">Crawl &rarr; Semantic Comparison &rarr; Entity Checks &rarr; RAG Simulation &rarr; AI Bill Handoff</div>
                   </div>
                   <div className="px-3 py-1 bg-black/80 backdrop-blur border border-aeo-cyan/30 rounded-lg text-aeo-cyan font-mono text-[11px] font-bold">
-                    Architecture v2.4 Spec
+                    Architecture v2.5 Spec
                   </div>
                 </div>
               </div>
@@ -329,7 +329,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   <span>For Technical Readers &amp; Engineers</span>
                 </div>
                 <p className="text-white/80 font-light leading-relaxed font-sans text-xs">
-                  This document provides an open technical specification of AEObility Architecture v2.4 (last tested August 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
+                  This document provides an open technical specification of AEObility Architecture v2.5 (last tested September 2026). It details our dual vector hashing infrastructure, text-embedding-004 RAG simulation testing, 5-category scoring math, AI Bill ingestion pipeline, and NLWeb/MCP protocols.
                 </p>
                 <div className="text-[11px] text-aeo-cyan pt-1 border-t border-white/10">
                   Stack: Next.js App Router &bull; Google Gemini text-embedding-004 &bull; gemini-3.7-flash &bull; Wikidata SPARQL
@@ -358,7 +358,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <span>&bull;</span>
               <span>Location: <strong className="text-white">Perth, Western Australia</strong></span>
               <span>&bull;</span>
-              <span>Architecture Version: <strong className="text-white">v2.4 (Last tested August 2026)</strong></span>
+              <span>Architecture Version: <strong className="text-white">v2.5 (Last tested September 2026)</strong></span>
               <span>&bull;</span>
               <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker (Chief AEO Architect)</Link></span>
             </div>
@@ -779,7 +779,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-aeo-cyan uppercase font-mono">1. Dense Representation Model</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    AEObility uses <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.4, last tested in August 2026.
+                    AEObility uses <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.5, last tested in September 2026.
                   </p>
                 </div>
 
@@ -1032,11 +1032,11 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
                 <h3 className="text-sm font-bold text-white font-mono uppercase text-aeo-cyan">Semantic Dominance Bounded Score</h3>
                 <p className="text-xs text-white/75 font-light font-serif leading-relaxed">
-                  Relative similarity difference is calculated with a signed delta and mapped to a neutral 50 midpoint to avoid harsh zero floors:
+                  Relative similarity difference is calculated with a signed delta and scaled around a neutral 50 midpoint across the competitive spread:
                 </p>
                 <div className="p-3 bg-neutral-950 border border-white/10 rounded-xl font-mono text-[11px] text-aeo-cyan space-y-1 text-center overflow-x-auto">
-                  <div>RelativeDelta = 100 &times; (Sim_client - Sim_competitors_avg)</div>
-                  <div>DominanceScore = clamp(0, 100, 50 + (RelativeDelta / 2))</div>
+                  <div>Delta = Sim_client - Sim_competitors_avg</div>
+                  <div>DominanceScore = clamp(0, 100, Math.round(50 + (250 &times; Delta)))</div>
                 </div>
               </div>
 
@@ -1053,6 +1053,48 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   <li>No conflict with page copy.</li>
                   <li>Accessible to search crawlers.</li>
                 </ol>
+              </div>
+            </div>
+
+            {/* Verdict Precedence Cascade */}
+            <div className="p-5 bg-neutral-950 border border-white/10 rounded-2xl space-y-4 shadow-xl">
+              <div className="space-y-1">
+                <h3 className="text-sm font-bold text-white font-mono uppercase text-aeo-cyan">Diagnostic Verdict &amp; Blind Spot Precedence Cascade</h3>
+                <p className="text-xs text-white/75 font-light font-serif leading-relaxed">
+                  The diagnostic engine evaluates client telemetry through an explicit multi-tier decision hierarchy:
+                </p>
+              </div>
+
+              <div className="space-y-2 text-xs">
+                <div className="font-bold text-white uppercase font-mono text-[11px] text-purple-300">Phase 1: Blind Spot Cascade (Highest Priority Match Wins)</div>
+                <ul className="text-white/80 space-y-1.5 font-mono">
+                  <li>&bull; <strong className="text-amber-400">Level 1 (Topical Proximity Drop):</strong> <code className="text-aeo-cyan">proximityScore &lt; 45</code> &rarr; Flags <strong className="text-white">Intent Misalignment</strong> (overrides schema and dominance).</li>
+                  <li>&bull; <strong className="text-amber-400">Level 2 (Missing Schema Graph):</strong> <code className="text-aeo-cyan">!schemaValidation.hasValidSchema</code> &rarr; Flags <strong className="text-white">Missing Schema Entity Graph</strong> (overrides dominance deficit).</li>
+                  <li>&bull; <strong className="text-amber-400">Level 3 (Semantic Dominance Deficit):</strong> <code className="text-aeo-cyan">semanticDominance &lt; 40</code> (where 40 corresponds to &Delta; = -0.04) &rarr; Flags <strong className="text-white">Low Semantic Entity Density</strong>.</li>
+                  <li>&bull; <strong className="text-emerald-400">Level 4 (Transition &amp; Baseline Parity):</strong> <code className="text-aeo-cyan">semanticDominance &ge; 40</code> (including the 40&ndash;49 transition zone and &ge; 50 parity) &rarr; Falls through to <strong className="text-white">Vague Value Proposition (Default Baseline)</strong>.</li>
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-white/10 text-xs">
+                <div className="space-y-1.5 font-mono">
+                  <div className="font-bold text-white uppercase text-[11px] text-aeo-cyan">Phase 2: Readiness Verdict Ladder</div>
+                  <ul className="text-white/75 space-y-1">
+                    <li>&bull; <code className="text-aeo-cyan">&gt; 85</code>: <strong className="text-emerald-400">Highly Visible</strong></li>
+                    <li>&bull; <code className="text-aeo-cyan">&gt; 65</code>: <strong className="text-emerald-400">Visible</strong></li>
+                    <li>&bull; <code className="text-aeo-cyan">&gt; 45</code>: <strong className="text-amber-300">Growing</strong></li>
+                    <li>&bull; <code className="text-aeo-cyan">&gt; 25</code>: <strong className="text-amber-400">Limited</strong></li>
+                    <li>&bull; <code className="text-aeo-cyan">&le; 25</code>: <strong className="text-rose-400">At Risk</strong></li>
+                  </ul>
+                </div>
+
+                <div className="space-y-1.5 font-mono">
+                  <div className="font-bold text-white uppercase text-[11px] text-purple-300">Phase 3: Recommendation Test Ladder</div>
+                  <ul className="text-white/75 space-y-1">
+                    <li>&bull; <code className="text-aeo-cyan">&gt; 70</code>: <span className="text-emerald-400">Yes, for core intent (wouldRecommend: true)</span></li>
+                    <li>&bull; <code className="text-aeo-cyan">46&ndash;70</code>: <span className="text-amber-300">Only for niche queries (wouldRecommend: false)</span></li>
+                    <li>&bull; <code className="text-aeo-cyan">&le; 45</code>: <span className="text-rose-400">Today? Probably not (wouldRecommend: false)</span></li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -1328,12 +1370,12 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
 
             <p className="text-white/80 text-sm font-light leading-relaxed font-serif">
-              AEObility Architecture v2.4 provides a controlled, reproducible diagnostic baseline. Transparency requires defining both current scope bounds and planned architectural improvements:
+              AEObility Architecture v2.5 provides a controlled, reproducible diagnostic baseline. Transparency requires defining both current scope bounds and planned architectural improvements:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
-                <h3 className="font-bold text-white text-sm font-mono text-aeo-cyan">Current Scope Bounds (v2.4)</h3>
+                <h3 className="font-bold text-white text-sm font-mono text-aeo-cyan">Current Scope Bounds (v2.5)</h3>
                 <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
                   <li>&bull; <strong>Single-Page Analysis:</strong> Audits target URL copy and schema; site-wide crawl checks are evaluated via fan-out sampling.</li>
                   <li>&bull; <strong>Text &amp; Schema Focus:</strong> Evaluates text block embeddings and JSON-LD markup; image/video embeddings are excluded from vector proximity tests.</li>
@@ -1342,7 +1384,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               </div>
 
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
-                <h3 className="font-bold text-white text-sm font-mono text-purple-300">Planned Architectural Roadmap (v2.5+)</h3>
+                <h3 className="font-bold text-white text-sm font-mono text-purple-300">Planned Architectural Roadmap (v2.6+)</h3>
                 <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
                   <li>&bull; <strong>Multimodal Passage Embeddings:</strong> Stress-testing image captioning and tabular data vector representation.</li>
                   <li>&bull; <strong>Cross-Model Ensemble Comparison:</strong> Evaluating chunk survival rates across multiple open-weights embedding models simultaneously.</li>

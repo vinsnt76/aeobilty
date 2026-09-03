@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
+import { createTurnToken, verifyTurnToken } from '@/lib/security/turn-token';
 
 export const runtime = 'nodejs';
 
@@ -118,15 +119,49 @@ export async function POST(req: NextRequest) {
       finalNormalizedQuery: userQuery
     });
 
-    let systemPrompt = BILL_BASE_PERSONA;
-    let injectionContext = '';
     const userMessages = normalizedMessages.filter((m) => m.role === 'user');
     const isTelemetryActive = !!(audit || intent === 'telemetry' || normalizedQuery.includes('measure visibility') || normalizedQuery.includes('citation share') || normalizedQuery.includes('telemetry'));
+
+    // Server-Side Stateless Turn Gate Validation (HMAC Token Security Boundary)
+    const incomingTurnToken = req.headers.get('x-turn-token');
+    const auditId = audit?.clientUrl || 'session-' + (userMessages[0]?.content?.slice(0, 16) || 'anonymous');
+    let sessionTurn = 1;
+
+    if (incomingTurnToken) {
+      const tokenVerification = verifyTurnToken(incomingTurnToken);
+      if (!tokenVerification.valid) {
+        return new Response(JSON.stringify({ error: 'Invalid or expired session turn token.', code: 'INVALID_TURN_TOKEN' }), {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+      sessionTurn = (tokenVerification.payload?.turnCount || 1) + 1;
+    } else if (isTelemetryActive && userMessages.length > 1) {
+      // Secondary Sanity Check: Client provided multi-turn message history but lacked a valid signed turn token (e.g. storage wipe / bypass)
+      sessionTurn = userMessages.length;
+    }
+
+    // Enforce 2-turn limit for unauthenticated diagnostic consultation
+    if (isTelemetryActive && sessionTurn > 2) {
+      return new Response(JSON.stringify({ 
+        error: 'Turn limit reached for unauthenticated diagnostic session. Please lock in a 15-minute diagnostic review or explore the Blueprint.',
+        code: 'TURN_LIMIT_EXCEEDED',
+        turnCount: sessionTurn
+      }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    const nextTurnToken = createTurnToken(auditId, sessionTurn);
+
+    let systemPrompt = BILL_BASE_PERSONA;
+    let injectionContext = '';
     
     // Multi-turn Skill Routing:
-    // First turn (userMessages.length <= 1) -> Telemetry Diagnostic Skill (emits card block)
-    // Later turn (userMessages.length > 1) -> Telemetry Consultant Skill (plain conversational text)
-    const isDiagnosticTurn = userMessages.length <= 1;
+    // First turn (sessionTurn <= 1) -> Telemetry Diagnostic Skill (emits card block)
+    // Later turn (sessionTurn > 1) -> Telemetry Consultant Skill (plain conversational text)
+    const isDiagnosticTurn = sessionTurn <= 1;
 
     if (isTelemetryActive && isDiagnosticTurn) {
       systemPrompt += `\n\n[ACTIVE SKILL: Telemetry Guide]
@@ -224,7 +259,11 @@ Hallucination Risk: <Low | Medium | High>
       maxOutputTokens: targetMaxTokens,
     });
 
-    return result.toUIMessageStreamResponse();
+    return result.toUIMessageStreamResponse({
+      headers: {
+        'x-turn-token': nextTurnToken
+      }
+    });
   } catch (error) {
     console.error('Bill route runtime error:', error);
     return new Response(JSON.stringify({ error: 'Bill pipeline dynamic data retrieval error.' }), {

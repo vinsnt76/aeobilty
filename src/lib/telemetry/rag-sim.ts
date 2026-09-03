@@ -1,5 +1,6 @@
 import { SimulationRun } from './types';
 import { cosineSimilarity } from './proximity';
+import { SIMILARITY_THRESHOLDS } from './config';
 
 async function generateSyntheticQueries(intent: string): Promise<string[]> {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -92,8 +93,8 @@ export async function runSimulation(intent: string, clientText: string): Promise
         }
       }
 
-      // Check if it survived selection threshold (e.g. 0.65 similarity)
-      const survived = bestSimilarity > 0.62;
+      // Check if it survived selection threshold (e.g. 0.62 similarity benchmark)
+      const survived = bestSimilarity >= SIMILARITY_THRESHOLDS.RAG_SURVIVAL_THRESHOLD;
 
       simulations.push({
         syntheticQuery: query,

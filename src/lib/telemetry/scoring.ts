@@ -9,7 +9,7 @@ import {
   EntityConfidence,
   EngineeredFeatures
 } from './types';
-import { SCORING_WEIGHTS } from './config';
+import { SCORING_WEIGHTS, SIMILARITY_THRESHOLDS, SCORE_CONSTANTS } from './config';
 
 export function calculateReadinessScore(
   proximityNodes: VectorNode[],
@@ -26,14 +26,18 @@ export function calculateReadinessScore(
 
   // 1. Semantic Proximity (Competitor context) - Weight based
   const semanticMax = 100 * SCORING_WEIGHTS.semantic;
-  if (features.semanticDominance > 0) {
+  if (features.semanticDominance > SCORE_CONSTANTS.DOMINANCE_NEUTRAL_MIDPOINT) {
     const delta = semanticMax * 0.8; // e.g. 32
     explanations.push({ category: 'Semantic', delta, reason: 'Strong vector proximity compared to competitors', confidence: 95 });
     totalScore += delta;
+  } else if (features.semanticDominance === SCORE_CONSTANTS.DOMINANCE_NEUTRAL_MIDPOINT) {
+    const delta = semanticMax * 0.6; // e.g. 24
+    explanations.push({ category: 'Semantic', delta, reason: 'Competitive vector parity with industry competitors', confidence: 90 });
+    totalScore += delta;
   } else {
     const clientNode = proximityNodes.find(n => n.label === 'Client');
-    if (clientNode && clientNode.similarity > 0.6) {
-       const delta = semanticMax * 0.5;
+    if (clientNode && clientNode.similarity >= SIMILARITY_THRESHOLDS.MACRO_RELEVANCE_BASELINE) {
+       const delta = semanticMax * 0.4;
        explanations.push({ category: 'Semantic', delta, reason: 'Moderate vector proximity, but lags top competitors', confidence: 85 });
        totalScore += delta;
     } else {

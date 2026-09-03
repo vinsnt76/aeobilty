@@ -1,4 +1,5 @@
 import { TelemetryResult, InsightEngineResult } from './types';
+import { VERDICT_THRESHOLDS, SCORE_CONSTANTS } from './config';
 
 export async function generateInsightEngineResult(
   intent: string,
@@ -55,22 +56,22 @@ export async function generateInsightEngineResult(
   mConfScore = Math.max(10, Math.min(99, mConfScore));
   rConfScore = Math.max(10, Math.min(99, rConfScore));
 
-  const verdictRank = telemetry.readinessScore > 85 ? 'Highly Visible' : 
-                      telemetry.readinessScore > 65 ? 'Visible' : 
-                      telemetry.readinessScore > 45 ? 'Growing' : 
-                      telemetry.readinessScore > 25 ? 'Limited' : 'At Risk';
+  const verdictRank = telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_HIGH_VISIBILITY_THRESHOLD ? 'Highly Visible' : 
+                      telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_VISIBLE_THRESHOLD ? 'Visible' : 
+                      telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_GROWING_THRESHOLD ? 'Growing' : 
+                      telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_LIMITED_THRESHOLD ? 'Limited' : 'At Risk';
 
-  // Dynamic Blind Spot Computation based on actual telemetry features
+  // Dynamic Blind Spot Precedence Cascade (Level 1: Proximity < 45 -> Level 2: Schema missing -> Level 3: Dominance < 40 -> Level 4: Default)
   let blindSpotTitle = "Vague Value Proposition";
   let blindSpotDesc = `AI understands your general category on ${domainLabel}, but lacks strong evidence of why customers choose you over competitors for "${intent}".`;
 
-  if (telemetry.proximityScore < 45) {
+  if (telemetry.proximityScore < VERDICT_THRESHOLDS.PROXIMITY_CRITICAL_DROP_THRESHOLD) {
     blindSpotTitle = "Intent Misalignment";
     blindSpotDesc = `AI indexes content on ${domainLabel}, but fails to strongly associate your page content with semantic queries for "${intent}".`;
   } else if (!telemetry.schemaValidation?.hasValidSchema) {
     blindSpotTitle = "Missing Schema Entity Graph";
     blindSpotDesc = `AI crawlers cannot parse machine-readable JSON-LD Schema definitions on ${domainLabel}, reducing structured graph confidence.`;
-  } else if (telemetry.engineeredFeatures?.semanticDominance && telemetry.engineeredFeatures.semanticDominance < 40) {
+  } else if (telemetry.engineeredFeatures?.semanticDominance && telemetry.engineeredFeatures.semanticDominance < VERDICT_THRESHOLDS.DOMINANCE_DEFICIT_THRESHOLD) {
     blindSpotTitle = "Low Semantic Entity Density";
     blindSpotDesc = `Competitor sites display denser, entity-rich subject-predicate triples for "${intent}" than ${domainLabel}.`;
   }
@@ -106,9 +107,9 @@ export async function generateInsightEngineResult(
       nextAction: `Deploy the $995 AUD 90-Day AI Blueprint to restructure ${domainLabel}'s semantic entity lattice.`
     },
     recommendationTest: {
-      wouldRecommend: telemetry.readinessScore > 70,
-      verdict: telemetry.readinessScore > 70 ? "Yes, for core intent." : telemetry.readinessScore > 45 ? "Only for niche queries." : "Today? Probably not.",
-      reasoning: telemetry.readinessScore > 70 
+      wouldRecommend: telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_RECOMMENDATION_THRESHOLD,
+      verdict: telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_RECOMMENDATION_THRESHOLD ? "Yes, for core intent." : telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_GROWING_THRESHOLD ? "Only for niche queries." : "Today? Probably not.",
+      reasoning: telemetry.readinessScore > VERDICT_THRESHOLDS.READINESS_RECOMMENDATION_THRESHOLD 
         ? `${domainLabel} provides solid structural signals for "${intent}".` 
         : `Although AI understands your category, ${domainLabel} does not yet present sufficient structured evidence to be cited as the leading authority.`
     },
@@ -160,7 +161,7 @@ export async function generateInsightEngineResult(
     strengths.push("Website structure is technically healthy and easily readable by AI.");
   }
 
-  if (telemetry.engineeredFeatures?.semanticDominance && telemetry.engineeredFeatures.semanticDominance < 50) {
+  if (telemetry.engineeredFeatures?.semanticDominance && telemetry.engineeredFeatures.semanticDominance < SCORE_CONSTANTS.DOMINANCE_NEUTRAL_MIDPOINT) {
     competitorGap.push("Competitors have significantly more semantic authority for this intent.");
   } else {
     competitorGap.push("You are holding strong semantic ground against competitors.");
