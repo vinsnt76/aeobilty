@@ -43,7 +43,7 @@ import {
 
 export const metadata = {
   title: "Telemetry Diagnostic Tool: Technical Architecture Guide | AEObility",
-  description: "An open technical specification of AEObility Architecture v2.5 detailing dual-vector hashing, text-embedding-004 RAG tests, and structured JSON triples.",
+  description: "An open technical specification of AEObility Architecture v2.6 detailing dual-vector hashing, text-embedding-004 RAG simulations, Subject-Predicate-Object entity triples, and server-side HMAC session security.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
   },
@@ -91,7 +91,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#article",
         "url": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "headline": "Telemetry Diagnostic Tool: Technical Architecture Guide",
-        "description": "An open technical specification of AEObility Architecture v2.5 detailing dual-vector hashing, text-embedding-004 RAG simulations, and Subject-Predicate-Object entity triple extraction.",
+        "description": "An open technical specification of AEObility Architecture v2.6 detailing dual-vector hashing, text-embedding-004 RAG simulations, Subject-Predicate-Object entity triple extraction, and server-side HMAC session security.",
         "inLanguage": "en-AU",
         "educationalLevel": "Advanced",
         "proficiencyLevel": "Expert",
@@ -112,7 +112,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             "name": "AEObility Telemetry Diagnostic Engine",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Web",
-            "softwareVersion": "2.5"
+            "softwareVersion": "2.6"
           },
           {
             "@type": "Thing",
@@ -270,7 +270,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           <header className="space-y-6 border-b border-white/10 pb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-semibold font-mono tracking-wide">
               <Cpu className="w-3.5 h-3.5 animate-pulse" />
-              <span>Technical Architecture Spec &bull; v2.5 (Last tested September 2026)</span>
+              <span>Technical Architecture Spec &bull; v2.6 (Last tested September 2026)</span>
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -294,7 +294,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                     <div className="text-white/70 font-light">Crawl &rarr; Semantic Comparison &rarr; Entity Checks &rarr; RAG Simulation &rarr; AI Bill Handoff</div>
                   </div>
                   <div className="px-3 py-1 bg-black/80 backdrop-blur border border-aeo-cyan/30 rounded-lg text-aeo-cyan font-mono text-[11px] font-bold">
-                    Architecture v2.5 Spec
+                    Architecture v2.6 Spec
                   </div>
                 </div>
               </div>
@@ -779,7 +779,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                 <div className="p-5 bg-white/[0.02] border border-white/5 rounded-xl space-y-2">
                   <div className="text-xs font-bold text-aeo-cyan uppercase font-mono">1. Dense Representation Model</div>
                   <p className="text-xs text-white/75 font-light leading-relaxed">
-                    AEObility uses <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.5, last tested in September 2026.
+                    AEObility uses <code className="px-1.5 py-0.5 rounded bg-neutral-900 border border-white/10 text-aeo-cyan font-mono text-xs">text-embedding-004</code> as its selected dense representation model for semantic comparison. Model identifiers and provider availability may change. This page describes Architecture v2.6, last tested in September 2026.
                   </p>
                 </div>
 
@@ -1193,6 +1193,38 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   </li>
                 </ul>
               </div>
+
+              {/* Architecture v2.6 Security & Algorithmic Upgrades */}
+              <div className="p-5 bg-neutral-950 border border-white/10 rounded-xl space-y-3 font-sans text-xs pt-4">
+                <span className="font-bold text-aeo-cyan uppercase font-mono text-[11px] block flex items-center gap-1.5">
+                  <Lock className="w-3.5 h-3.5" />
+                  <span>Architecture v2.6 Security &amp; Outlier Hardening</span>
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/80">
+                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg space-y-1">
+                    <strong className="text-white block font-mono text-[11px]">Stateless HMAC Turn Gating</strong>
+                    <p className="font-serif leading-relaxed text-[11px] text-white/75">
+                      Session state is cryptographically signed using HMAC-SHA256 tokens (<code className="text-aeo-cyan font-mono">x-turn-token</code>). This authoritative server-side boundary prevents client storage-wipe exploits while maintaining strict 2-turn consultation limits.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg space-y-1">
+                    <strong className="text-white block font-mono text-[11px]">Trimmed-Mean Outlier Protection</strong>
+                    <p className="font-serif leading-relaxed text-[11px] text-white/75">
+                      When parsing competitor cohorts (<code className="text-aeo-cyan font-mono">N &ge; 5</code>), the engine trims the highest and lowest similarity values, shielding client dominance scores against broken competitor crawls.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px]">
+                  <span className="text-white/80 font-serif">Explore the full mathematical model for competitive dominance and banding:</span>
+                  <Link 
+                    href="/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework"
+                    className="text-aeo-cyan hover:underline font-mono font-semibold shrink-0"
+                  >
+                    Competitor Overlap &amp; Semantic Dominance Framework &rarr;
+                  </Link>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -1370,21 +1402,22 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </div>
 
             <p className="text-white/80 text-sm font-light leading-relaxed font-serif">
-              AEObility Architecture v2.5 provides a controlled, reproducible diagnostic baseline. Transparency requires defining both current scope bounds and planned architectural improvements:
+              AEObility Architecture v2.6 provides a controlled, reproducible diagnostic baseline. Transparency requires defining both current scope bounds and planned architectural improvements:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
-                <h3 className="font-bold text-white text-sm font-mono text-aeo-cyan">Current Scope Bounds (v2.5)</h3>
+                <h3 className="font-bold text-white text-sm font-mono text-aeo-cyan">Current Scope Bounds (v2.6)</h3>
                 <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
                   <li>&bull; <strong>Single-Page Analysis:</strong> Audits target URL copy and schema; site-wide crawl checks are evaluated via fan-out sampling.</li>
                   <li>&bull; <strong>Text &amp; Schema Focus:</strong> Evaluates text block embeddings and JSON-LD markup; image/video embeddings are excluded from vector proximity tests.</li>
                   <li>&bull; <strong>Directional Pass Thresholds:</strong> Internal simulation benchmark threshold of 0.62 applies to the Gemini text-embedding-004 configuration.</li>
+                  <li>&bull; <strong>Stateless HMAC Turn Gating:</strong> Enforces 2-turn diagnostic consultation limits independently of browser storage.</li>
                 </ul>
               </div>
 
               <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
-                <h3 className="font-bold text-white text-sm font-mono text-purple-300">Planned Architectural Roadmap (v2.6+)</h3>
+                <h3 className="font-bold text-white text-sm font-mono text-purple-300">Planned Architectural Roadmap (v2.7+)</h3>
                 <ul className="space-y-2 text-white/75 font-serif leading-relaxed">
                   <li>&bull; <strong>Multimodal Passage Embeddings:</strong> Stress-testing image captioning and tabular data vector representation.</li>
                   <li>&bull; <strong>Cross-Model Ensemble Comparison:</strong> Evaluating chunk survival rates across multiple open-weights embedding models simultaneously.</li>
@@ -1405,6 +1438,11 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 font-sans text-xs">
+              <Link href="/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1.5 transition-all">
+                <span className="text-aeo-cyan font-bold block">Competitor Overlap &amp; Semantic Dominance</span>
+                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Explore the mathematical model, outlier-trimmed cohort parsing, and qualitative banding.</span>
+              </Link>
+
               <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="p-4 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-xl space-y-1.5 transition-all">
                 <span className="text-aeo-cyan font-bold block">Positional Bias in Retrieval</span>
                 <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Learn how the position and structure of information can affect retrieval.</span>
@@ -1428,11 +1466,6 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
               <Link href="/solutions/aeo-sprint" className="p-4 bg-white/[0.02] border border-white/10 hover:border-purple-400/40 rounded-xl space-y-1.5 transition-all">
                 <span className="text-purple-300 font-bold block">AEO Implementation Sprints</span>
                 <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Find out how schema, content, and technical improvements can be implemented.</span>
-              </Link>
-
-              <Link href="/services/aeo/procedures" className="p-4 bg-white/[0.02] border border-white/10 hover:border-emerald-400/40 rounded-xl space-y-1.5 transition-all">
-                <span className="text-emerald-400 font-bold block">AEO Procedures and Refactoring</span>
-                <span className="text-white/70 block leading-relaxed font-serif text-[11px]">Learn how to structure content into clear, answer-focused sections.</span>
               </Link>
             </div>
           </section>
