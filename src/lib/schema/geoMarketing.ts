@@ -13,8 +13,8 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/geo-marketing#webpage",
       "url": "https://aeobility.com.au/services/geo-marketing",
-      "name": "GEO Marketing Specialist & Services | AEObility",
-      "description": "Target geographic engine optimisation (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
+      "name": "Generative Engine Optimisation (GEO) Services in Perth | AEObility",
+      "description": "AEObility helps Perth and Australian businesses improve visibility, brand accuracy, and citation consistency across Google AI features, ChatGPT Search, Perplexity and Gemini.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -112,9 +112,9 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/geo-marketing#service",
-      "name": "GEO Marketing Services",
-      "alternateName": "Geographic Engine Optimisation (GEO) Services",
-      "description": "Location-aware semantic web solutions anchoring physical business coordinates and verified local entity facts across map systems and conversational AI directories.",
+      "name": "Generative Engine Optimisation (GEO) Services",
+      "alternateName": "Generative Engine Optimisation for Local & Regional Businesses",
+      "description": "Diagnostic-led Generative Engine Optimisation (GEO) extending sound SEO foundations for AI-assisted search experiences including Google AI features, ChatGPT Search, Perplexity, and Gemini.",
       "provider": {
         "@id": "https://aeobility.com.au/services/geo-marketing#perth-entity"
       },
@@ -155,9 +155,14 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Australian trade operators, medical clinics, multi-location companies, and local service providers"
+        "audienceType": "Perth and Australian trade operators, medical practices, professional services, and multi-location SMBs"
       },
       "about": [
+        {
+          "@type": "Thing",
+          "name": "Generative Engine Optimisation",
+          "sameAs": "https://en.wikipedia.org/wiki/Generative_engine_optimization"
+        },
         {
           "@type": "Thing",
           "name": "Local Search (Internet)",
@@ -219,8 +224,23 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "position": 1,
-          "name": "Local Citation Clean-Up Sprint",
-          "sku": "GEO-CITATION-SPRINT",
+          "name": "GEO Visibility Diagnostic",
+          "sku": "GEO-DIAGNOSTIC-AUDIT",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "995.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Primary diagnostic gateway testing high-intent buyer prompts across AI search engines, auditing brand accuracy and citation gaps, with 100% of fee credited toward Foundation Implementation. Price excludes GST.",
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+        },
+        {
+          "@type": "Offer",
+          "position": 2,
+          "name": "Business Facts & Citation Clean-Up Sprint",
+          "sku": "GEO-S1-CITATION",
           "priceSpecification": {
             "@type": "PriceSpecification",
             "price": "495.00",
@@ -228,14 +248,29 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "Fixed-scope micro-sprint resolving directory alignment issues, inconsistent phone entries, and unstructured address variations. Price excludes GST.",
+          "description": "Fixed-scope micro-sprint resolving conflicting business details, NAP errors, and profile inconsistencies across priority local platforms. Price excludes GST.",
           "seller": { "@id": "https://aeobility.com.au/#organisation" }
         },
         {
           "@type": "Offer",
-          "position": 2,
-          "name": "Local Internal-Linking Lattice Sprint",
-          "sku": "GEO-LATTICE-SPRINT",
+          "position": 3,
+          "name": "AI-Ready Service Page Sprint",
+          "sku": "GEO-S2-SERVICE-PAGE",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "495.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Enhance priority service pages with structured answer scaffolding, explicit eligibility criteria, and verified local proof. Price excludes GST.",
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+        },
+        {
+          "@type": "Offer",
+          "position": 4,
+          "name": "Local Entity Architecture Sprint",
+          "sku": "GEO-S3-LOCAL-ENTITY",
           "priceSpecification": {
             "@type": "PriceSpecification",
             "price": "695.00",
@@ -243,14 +278,44 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "Structured deployment connecting high-ranking technical articles with local commercial conversion pages using precise geographic intent mapping. Price excludes GST.",
+          "description": "Deploy semantic internal linking lattices connecting regional location hubs with core commercial services. Price excludes GST.",
           "seller": { "@id": "https://aeobility.com.au/#organisation" }
         },
         {
           "@type": "Offer",
-          "position": 3,
-          "name": "Local GEO Foundation Tier",
-          "sku": "GEO-FOUNDATION-MACRO",
+          "position": 5,
+          "name": "Structured Data Validation Sprint",
+          "sku": "GEO-S4-SCHEMA-VAL",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "495.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Validate eligible, visible Schema.org markup and resolve implementation errors across key site paths. Price excludes GST.",
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+        },
+        {
+          "@type": "Offer",
+          "position": 6,
+          "name": "AI Visibility Reporting Setup Sprint",
+          "sku": "GEO-S5-REPORTING-SETUP",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "495.00",
+            "priceCurrency": "AUD",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Establish an auditable baseline prompt set and recurring AI mention and citation tracking setup. Price excludes GST.",
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+        },
+        {
+          "@type": "Offer",
+          "position": 7,
+          "name": "Foundation Implementation",
+          "sku": "GEO-FOUNDATION-4WK",
           "priceSpecification": {
             "@type": "PriceSpecification",
             "price": "3195.00",
@@ -258,7 +323,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "A comprehensive four-week implementation building nested local business schema, verified map pins, and token-optimised coordinate boundaries. Price excludes GST.",
+          "description": "Four-week structured deployment covering priority page improvements, Brand Facts page, internal linking, structured data validation, profile consistency, and measurement setup. Price excludes GST.",
           "seller": { "@id": "https://aeobility.com.au/#organisation" }
         }
       ]
@@ -285,3 +350,4 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
     "@graph": graphNodes
   };
 };
+
