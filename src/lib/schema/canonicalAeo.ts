@@ -20,80 +20,10 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
       },
-      "about": {
-        "@id": "https://aeobility.com.au/#organisation"
-      },
-      "breadcrumb": {
-        "@id": "https://aeobility.com.au/services/aeo#breadcrumb"
-      },
-      "mainEntity": {
-        "@id": "https://aeobility.com.au/services/aeo#service"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://aeobility.com.au/services/aeo#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aeobility.com.au/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://aeobility.com.au/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "AEO Services",
-          "item": "https://aeobility.com.au/services/aeo"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://aeobility.com.au/services/aeo#service",
-      "name": "AEO Services",
-      "alternateName": "Answer Engine Optimisation (AEO) Services",
-      "description": "Canonical AEO services restructuring digital presence for machine discovery, RAG retrieval accuracy, entity salience, and conversion rate optimisation.",
-      "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
-      },
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "Australia",
-          "sameAs": [
-            "https://www.wikidata.org/wiki/Q408",
-            "https://www.geonames.org/2077456/australia.html"
-          ]
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Western Australia",
-          "sameAs": [
-            "https://www.wikidata.org/wiki/Q3205",
-            "https://www.geonames.org/2058645/western-australia.html"
-          ]
-        },
-        {
-          "@type": "City",
-          "name": "Perth",
-          "sameAs": [
-            "https://www.wikidata.org/wiki/Q3183",
-            "https://www.geonames.org/2063523/perth.html"
-          ]
-        }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Australian small businesses, e-commerce brands, trades, clinics, and professional service teams"
-      },
       "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
         {
           "@type": "Thing",
           "name": "Entity Authority",
@@ -149,41 +79,82 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Thing",
           "name": "JSON-LD",
-          "sameAs": "https://www.wikidata.org/wiki/Q15858694"
-        },
-        {
-          "@type": "Thing",
-          "name": "Vector Space Model",
-          "sameAs": "https://www.wikidata.org/wiki/Q792224"
-        },
-        {
-          "@type": "Thing",
-          "name": "Software Diagnostic",
-          "sameAs": "https://www.wikidata.org/wiki/Q1061524"
+          "sameAs": "https://www.wikidata.org/wiki/Q15298912"
         }
       ],
+      "breadcrumb": {
+        "@id": "https://aeobility.com.au/services/aeo#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://aeobility.com.au/services/aeo#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aeobility.com.au/services/aeo#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aeobility.com.au/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://aeobility.com.au/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AEO Services",
+          "item": "https://aeobility.com.au/services/aeo"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://aeobility.com.au/services/aeo#service",
+      "name": "Answer Engine Optimisation (AEO) Services",
+      "alternateName": "Generative AI Search & Entity Optimisation Services",
+      "description": "Structured digital infrastructure solutions that help search engines, LLMs, and conversational AI interfaces index, verify, and reference your organisation accurately.",
+      "provider": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Western Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
+        },
+        {
+          "@type": "City",
+          "name": "Perth",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Australian small businesses, e-commerce brands, trades, clinics, and professional service teams"
+      },
       "subjectOf": [
         {
           "@type": "WebPage",
-          "@id": "https://aeobility.com.au/services/aeo/definition",
-          "name": "What is AEO (Definition)",
-          "url": "https://aeobility.com.au/services/aeo/definition"
-        },
-        {
-          "@type": "WebApplication",
-          "@id": "https://aeobility.com.au/diagnostic#webapp",
-          "name": "AI Visibility Diagnostic Engine",
-          "url": "https://aeobility.com.au/diagnostic"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://aeobility.com.au/brand-facts#webpage",
-          "name": "Verified Brand Facts & Canonical Entity Directory",
-          "url": "https://aeobility.com.au/brand-facts"
-        },
-        {
-          "@type": "TechArticle",
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps#article",
           "name": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
           "url": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps"
         },

@@ -19,9 +19,38 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
       },
-      "about": {
-        "@id": "https://aeobility.com.au/#organisation"
-      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Generative Engine Optimisation",
+          "sameAs": "https://en.wikipedia.org/wiki/Generative_engine_optimization"
+        },
+        {
+          "@type": "Thing",
+          "name": "Local Search (Internet)",
+          "sameAs": "https://www.wikidata.org/wiki/Q6664287"
+        },
+        {
+          "@type": "Thing",
+          "name": "Perth, Western Australia",
+          "sameAs": "https://www.wikidata.org/wiki/Q3183"
+        },
+        {
+          "@type": "Thing",
+          "name": "Search Engine Optimisation",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Knowledge Graph",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        }
+      ],
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/geo-marketing#breadcrumb"
       },
@@ -144,48 +173,10 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           ]
         }
       ],
-      "spatialCoverage": {
-        "@type": "Place",
-        "name": "AEObility HQ Footprint",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -31.9505,
-          "longitude": 115.8605
-        }
-      },
       "audience": {
         "@type": "Audience",
         "audienceType": "Perth and Australian trade operators, medical practices, professional services, and multi-location SMBs"
       },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "Generative Engine Optimisation",
-          "sameAs": "https://en.wikipedia.org/wiki/Generative_engine_optimization"
-        },
-        {
-          "@type": "Thing",
-          "name": "Local Search (Internet)",
-          "sameAs": "https://www.wikidata.org/wiki/Q6664287"
-        },
-        {
-          "@type": "Thing",
-          "name": "Perth, Western Australia",
-          "sameAs": "https://www.wikidata.org/wiki/Q3183"
-        },
-        {
-          "@type": "Thing",
-          "name": "Search Engine Optimisation",
-          "sameAs": "https://www.wikidata.org/wiki/Q180711"
-        }
-      ],
-      "mentions": [
-        {
-          "@type": "Thing",
-          "name": "Knowledge Graph",
-          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "WebPage",
@@ -223,7 +214,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "itemListElement": [
         {
           "@type": "Offer",
-          "position": 1,
           "name": "GEO Visibility Diagnostic",
           "sku": "GEO-DIAGNOSTIC-AUDIT",
           "priceSpecification": {
@@ -238,7 +228,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 2,
           "name": "Business Facts & Citation Clean-Up Sprint",
           "sku": "GEO-S1-CITATION",
           "priceSpecification": {
@@ -253,7 +242,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 3,
           "name": "AI-Ready Service Page Sprint",
           "sku": "GEO-S2-SERVICE-PAGE",
           "priceSpecification": {
@@ -268,7 +256,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 4,
           "name": "Local Entity Architecture Sprint",
           "sku": "GEO-S3-LOCAL-ENTITY",
           "priceSpecification": {
@@ -283,7 +270,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 5,
           "name": "Structured Data Validation Sprint",
           "sku": "GEO-S4-SCHEMA-VAL",
           "priceSpecification": {
@@ -298,7 +284,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 6,
           "name": "AI Visibility Reporting Setup Sprint",
           "sku": "GEO-S5-REPORTING-SETUP",
           "priceSpecification": {
@@ -313,7 +298,6 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "position": 7,
           "name": "Foundation Implementation",
           "sku": "GEO-FOUNDATION-4WK",
           "priceSpecification": {
