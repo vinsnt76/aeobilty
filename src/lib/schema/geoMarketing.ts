@@ -20,7 +20,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/geo-marketing#breadcrumb"
@@ -54,28 +54,94 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       ]
     },
     {
+      "@type": "LocalBusiness",
+      "@id": "https://aeobility.com.au/services/geo-marketing#perth-entity",
+      "name": "AEObility GEO Marketing Perth Hub",
+      "url": "https://aeobility.com.au/services/geo-marketing",
+      "telephone": "+61480286282",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Perth",
+        "addressRegion": "Western Australia",
+        "postalCode": "6000",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.9505,
+        "longitude": 115.8605
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Western Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
+        },
+        {
+          "@type": "City",
+          "name": "Perth",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/geo-marketing#service",
       "name": "GEO Marketing Services",
       "alternateName": "Geographic Engine Optimisation (GEO) Services",
       "description": "Location-aware semantic web solutions anchoring physical business coordinates and verified local entity facts across map systems and conversational AI directories.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/services/geo-marketing#perth-entity"
       },
       "areaServed": [
         {
           "@type": "Country",
-          "name": "Australia"
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
         },
         {
           "@type": "AdministrativeArea",
           "name": "Western Australia",
-          "sameAs": "https://www.wikidata.org/wiki/Q3205"
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
         },
         {
           "@type": "City",
           "name": "Perth",
-          "sameAs": "https://www.wikidata.org/wiki/Q3183"
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
         }
       ],
       "spatialCoverage": {
@@ -104,7 +170,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Thing",
-          "name": "Search Engine Optimization",
+          "name": "Search Engine Optimisation",
           "sameAs": "https://www.wikidata.org/wiki/Q180711"
         }
       ],
@@ -163,7 +229,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprint resolving directory alignment issues, inconsistent phone entries, and unstructured address variations. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organization" }
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
         },
         {
           "@type": "Offer",
@@ -178,7 +244,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Structured deployment connecting high-ranking technical articles with local commercial conversion pages using precise geographic intent mapping. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organization" }
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
         },
         {
           "@type": "Offer",
@@ -193,7 +259,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "A comprehensive four-week implementation building nested local business schema, verified map pins, and token-optimised coordinate boundaries. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organization" }
+          "seller": { "@id": "https://aeobility.com.au/#organisation" }
         }
       ]
     }

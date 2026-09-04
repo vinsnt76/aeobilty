@@ -121,7 +121,7 @@ export default function AEODefinitionPage() {
         },
         "publisher": {
           "@type": "ProfessionalService",
-          "@id": "https://aeobility.com.au/#organization",
+          "@id": "https://aeobility.com.au/#organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         },

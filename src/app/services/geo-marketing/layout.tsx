@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GEO Marketing Services & Local Visibility Sprints | AEObility",
-  description: "Improve your local signal consistency across Search, Maps, and AI. Clean citations, fix internal linking, and deploy a Brand Facts page from $495 ex. GST.",
+  title: "Geographic Engine Optimisation (GEO) Services in Perth | AEObility",
+  description: "AEObility provides specialised Geographic Engine Optimisation (GEO) Services in Perth, structuring location-aware business facts, verified coordinates, and local entity signals across Search, Maps, and AI.",
   alternates: {
     canonical: "https://aeobility.com.au/services/geo-marketing",
   },

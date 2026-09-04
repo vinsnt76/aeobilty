@@ -105,7 +105,7 @@ export default function PositionalBiasArticlePage() {
           },
           {
             "@type": "Thing",
-            "name": "Search Engine Optimization",
+            "name": "Search Engine Optimisation",
             "sameAs": "https://www.wikidata.org/wiki/Q180711"
           }
         ],
@@ -133,7 +133,7 @@ export default function PositionalBiasArticlePage() {
         "description": "Author of AEObility’s technical guides on retrieval, semantic SEO, and answer engine optimisation.",
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -151,7 +151,7 @@ export default function PositionalBiasArticlePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",

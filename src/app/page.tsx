@@ -37,14 +37,34 @@ export default function Home() {
     "@type": "Service",
     "name": "AI Search Optimisation Services",
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au"
+      "@id": "https://aeobility.com.au/#perth-local-business"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Australia"
-    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Australia",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q408",
+          "https://www.geonames.org/2077456/australia.html"
+        ]
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Western Australia",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q3205",
+          "https://www.geonames.org/2058645/western-australia.html"
+        ]
+      },
+      {
+        "@type": "City",
+        "name": "Perth",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q3183",
+          "https://www.geonames.org/2063523/perth.html"
+        ]
+      }
+    ],
     "serviceType": "Search, Maps & AI Visibility",
     "url": "https://aeobility.com.au",
     "offers": {
@@ -74,21 +94,57 @@ export default function Home() {
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://aeobility.com.au/#perth-local-business",
     "name": "AEObility",
     "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
     "url": "https://aeobility.com.au",
-    "telephone": "0480 286 282",
+    "telephone": "+61480286282",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Perth",
       "addressRegion": "Western Australia",
-      "addressCountry": "Australia"
+      "postalCode": "6000",
+      "addressCountry": "AU"
     },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -31.9505,
       "longitude": 115.8605
-    }
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Australia",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q408",
+          "https://www.geonames.org/2077456/australia.html"
+        ]
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Western Australia",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q3205",
+          "https://www.geonames.org/2058645/western-australia.html"
+        ]
+      },
+      {
+        "@type": "City",
+        "name": "Perth",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q3183",
+          "https://www.geonames.org/2063523/perth.html"
+        ]
+      }
+    ]
   };
 
   const organizationJsonLd = {

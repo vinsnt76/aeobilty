@@ -60,7 +60,7 @@ export default function VinceBakerClientPage() {
     ],
     "worksFor": {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organization",
+      "@id": "https://aeobility.com.au/#organisation",
       "name": "AEObility",
       "legalName": "Trekaboutoz",
       "url": "https://aeobility.com.au"

@@ -73,7 +73,7 @@ export default function ContactPage() {
             "Friday"
           ],
           "opens": "09:00",
-          "closes": "17:00"
+          "closes": "18:00"
         }
       }
     ]

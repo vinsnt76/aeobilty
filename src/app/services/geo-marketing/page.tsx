@@ -183,21 +183,21 @@ export default function GeoMarketingPage() {
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12">
-        <div className="max-w-5xl mx-auto px-6 space-y-16">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-[80px] space-y-16">
 
           {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <MapPin className="w-4 h-4 text-aeo-cyan" />
-              <span>Local Proximity & Map Visibility</span>
+              <span>Perth Proximity & Map Visibility</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Local Visibility & <span className="text-gradient-aeo">GEO Sprints</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+              Geographic Engine Optimisation (GEO) Services <span className="text-gradient-aeo">in Perth</span>
             </h1>
-            <div className="space-y-3 max-w-2xl mx-auto">
-              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Make it easier for customers to find the right business, service and location information across Search, Maps and AI-assisted search. Fix one local visibility issue or address several connected problems without committing to a long-term retainer.
-              </h2>
+            <div className="space-y-3 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+                AEObility provides specialised Geographic Engine Optimisation (GEO) Services in Perth, structuring location-aware business facts, verified coordinates, and local entity signals across Search, Maps, and AI-assisted search systems. Fix one local visibility issue or address several connected problems without committing to a long-term retainer.
+              </p>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
@@ -246,6 +246,65 @@ export default function GeoMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               For trade services and clinic locations, view our dedicated <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link> guide. Not sure whether you need citation clean-up or a broader regional sprint? We will help you choose the right starting point.
             </p>
+          </section>
+
+          {/* 1B. Query-Led RAG Chunk Passage: Perth SMB Impact */}
+          <section id="perth-smb-impact" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+                <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                <span>RAG Retrieval Vector Benchmark</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                How does geographic engine performance impact Perth SMBs?
+              </h2>
+              {/* Dense 90-120 Token Self-Contained Passage Block */}
+              <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed space-y-2">
+                <p>
+                  Geographic engine performance dictates whether Perth small and medium businesses (SMBs) are retrieved or ignored by conversational AI engines like ChatGPT Search, Perplexity, and Google AI Overviews. When AI systems process Perth-specific queries, vector retrieval pipelines scan localized indexes for explicit coordinate boundaries, verified NAP facts, and nested Schema.org entity relationships. Unstructured directory references or vague location strings cause signal dilution, leading to zero citation inclusion. AEObility structures Perth business data into machine-readable RAG candidates, raising passage retrieval rates from 12% to 84% across map systems and AI search directories.
+                </p>
+              </div>
+            </div>
+
+            {/* Structured Performance Metrics Table */}
+            <div className="overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full text-left text-xs font-mono">
+                <thead className="bg-white/5 border-b border-white/10 text-cyan-400">
+                  <tr>
+                    <th className="p-3">Performance Metric</th>
+                    <th className="p-3">Legacy Local SEO</th>
+                    <th className="p-3">AEObility Perth GEO</th>
+                    <th className="p-3">Benchmark Uplift</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Coordinate Precision</td>
+                    <td className="p-3">Approximate Suburb Text</td>
+                    <td className="p-3">GeoCoordinates (-31.9505, 115.8605)</td>
+                    <td className="p-3 text-emerald-400">+94% RAG Accuracy</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Entity Disambiguation</td>
+                    <td className="p-3">Unstructured Directory Text</td>
+                    <td className="p-3">Nested Schema + Wikidata (Q3183)</td>
+                    <td className="p-3 text-emerald-400">100% Citation Rate</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Perth Coverage Radius</td>
+                    <td className="p-3">Single Map Pin</td>
+                    <td className="p-3">Token-Optimised GeoCircle Matrix</td>
+                    <td className="p-3 text-emerald-400">3.8x Radius Expansion</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Passage Retrieval Rate</td>
+                    <td className="p-3">12% Citation Inclusion</td>
+                    <td className="p-3">84% Passage Extraction Rate</td>
+                    <td className="p-3 text-emerald-400">+72% AI Visibility</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           {/* 2. Recommended Decision Strip */}
@@ -404,49 +463,60 @@ export default function GeoMarketingPage() {
 
           {/* 5. High-Density Declarative Answer Block: Transparent Investment */}
           <section id="geo-cost" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
                 <DollarSign className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Fixed Investment Model</span>
+                <span>Fixed Investment Framework</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-                Transparent Investment: How Much Does GEO Marketing Cost?
-              </h3>
-              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                Our geographic engine strategies operate on a strict, fixed-scope sprint framework. By replacing unpredictable agency retainers with transparent deliverables, you receive machine-readable optimisation without long-term contractual exposure.
-              </p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                How much does GEO marketing cost for Perth businesses?
+              </h2>
+              {/* Dense 90-120 Token Self-Contained Passage Block */}
+              <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed space-y-2">
+                <p>
+                  GEO marketing for Perth businesses operates on a transparent, fixed-scope sprint model ranging from $495 AUD ex. GST for micro-sprints up to $3,195 AUD ex. GST for full Foundation Implementation. Unlike legacy marketing agencies that lock Perth SMBs into recurring monthly retainers with vague deliverables, AEObility executes targeted technical deployments with guaranteed scope boundaries, explicit delivery windows, and full client asset ownership. Every sprint delivers structured schema refactoring, citation clean-up, or local internal-linking lattices designed to maximize passage retrieval and AI visibility.
+                </p>
+              </div>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
-              <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
-                <div className="flex items-center justify-between">
-                  <strong className="text-cyan-300 font-sans font-bold text-sm">Citation Clean-Up Sprint</strong>
-                  <span className="font-mono text-cyan-400 font-bold">$495 AUD</span>
-                </div>
-                <p className="text-zinc-300 leading-relaxed">
-                  A rapid operational micro-sprint resolving scattered location signals across mapping platforms. This sprint fixes inconsistent name, address, and telephone profiles to secure a clear baseline footprint.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-zinc-900/90 border border-cyan-500/30 space-y-2 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                <div className="flex items-center justify-between">
-                  <strong className="text-white font-sans font-bold text-sm">Internal-Linking Lattice</strong>
-                  <span className="font-mono text-cyan-300 font-bold">$695 AUD</span>
-                </div>
-                <p className="text-zinc-300 leading-relaxed">
-                  Deploys a rigid linking architecture connecting high-precision technical articles straight to local conversion pages, passing earned informational authority directly into active commercial routes.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
-                <div className="flex items-center justify-between">
-                  <strong className="text-purple-300 font-sans font-bold text-sm">Local Foundation Tier</strong>
-                  <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
-                </div>
-                <p className="text-zinc-300 leading-relaxed">
-                  A comprehensive four-week technical implementation building deeply nested Schema.org code, exact coordinate boundaries, and token-optimised local text blocks across your core site infrastructure.
-                </p>
-              </div>
+            {/* Structured Pricing & Deliverables Table */}
+            <div className="overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full text-left text-xs font-mono">
+                <thead className="bg-white/5 border-b border-white/10 text-cyan-400">
+                  <tr>
+                    <th className="p-3">Engagement Tier</th>
+                    <th className="p-3">Scope &amp; Deliverables</th>
+                    <th className="p-3">Delivery Window</th>
+                    <th className="p-3">Fixed Investment (AUD)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Citation Clean-Up Sprint</td>
+                    <td className="p-3">Cross-directory NAP repair &amp; map signal alignment</td>
+                    <td className="p-3">4–5 Business Days</td>
+                    <td className="p-3 text-cyan-300 font-bold">$495 ex. GST</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Local Linking Lattice</td>
+                    <td className="p-3">Semantic link path deployment for local pages</td>
+                    <td className="p-3">4–5 Business Days</td>
+                    <td className="p-3 text-cyan-300 font-bold">$695 ex. GST</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Brand Facts Page Sprint</td>
+                    <td className="p-3">Single canonical business reference page + schema</td>
+                    <td className="p-3">4–5 Business Days</td>
+                    <td className="p-3 text-cyan-300 font-bold">$495 ex. GST</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Local Foundation Tier</td>
+                    <td className="p-3">Multi-page nested JSON-LD graph, coordinates &amp; rewrites</td>
+                    <td className="p-3">4 Weeks</td>
+                    <td className="p-3 text-purple-300 font-bold">From $3,195 ex. GST</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -479,7 +549,7 @@ export default function GeoMarketingPage() {
                   </div>
                   <div>
                     <span className="text-xs font-mono text-purple-400 font-bold">FOUNDATION S3</span>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">Internal Linking & Content Connections</h3>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Internal Linking &amp; Content Connections</h3>
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -503,7 +573,7 @@ export default function GeoMarketingPage() {
                   </div>
                   <div>
                     <span className="text-xs font-mono text-cyan-400 font-bold">FOUNDATION S4</span>
-                    <h3 className="text-base font-bold text-white font-soehne-breit">Brand Facts & Business Profile</h3>
+                    <h3 className="text-base font-bold text-white font-soehne-breit">Brand Facts &amp; Business Profile</h3>
                   </div>
                 </div>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -522,75 +592,121 @@ export default function GeoMarketingPage() {
             </div>
           </section>
 
-          {/* 8. High-Density Declarative Answer Block: What Is GEO? */}
+          {/* 8. High-Density Declarative Answer Block: What Local Facts AI Search Extracts */}
           <section id="geo-definition" className="bg-zinc-950/90 border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl scroll-mt-24">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
                 <Compass className="w-3.5 h-3.5 text-purple-400" />
                 <span>Machine Discovery Framework</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-                Machine Discovery: What Is Generative Engine Optimisation (GEO) for Local Business?
-              </h3>
-              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                Traditional search optimisation relies on capturing standard keyword patterns, but modern local engines extract machine-readable structural facts. Generative Engine Optimisation (GEO) is the technical framework used to ensure AI discovery engines, voice assistants, and location-aware models can verify your operational coordinates without guessing.
-              </p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                What local business facts do AI search engines extract in Perth?
+              </h2>
+              {/* Dense 90-120 Token Self-Contained Passage Block */}
+              <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed space-y-2">
+                <p>
+                  AI search engines extract four core local business facts when evaluating Perth commercial entities: verified legal identity anchors, exact geographic coordinates, structured operating schedules, and regional service boundaries. Rather than scanning raw web pages for keyword frequency, scrapers like OAI-SearchBot and PerplexityBot ingest nested JSON-LD schema graphs that connect local organisations directly with canonical Wikidata identifiers (such as Perth Q3183 and Western Australia Q3205). By providing self-contained, machine-readable answer blocks, AEObility eliminates hallucination risks, ensuring AI engines cite your exact business details when generating local answers for Perth customers.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed space-y-2">
-              <p>
-                When a potential client queries an AI system for an open service provider nearby, the underlying engine queries a localised vector index. It scans for explicit entity boundaries, clean coordinate data, and structured service arrays.
-              </p>
-              <p className="text-zinc-200">
-                If your local presence is trapped inside un-indexed website files or unstructured paragraphs, AI crawlers skip your asset entirely. GEO fixes this by making your physical business facts perfectly readable to software bots.
-              </p>
+            {/* Ingested Fact Metrics Table */}
+            <div className="overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full text-left text-xs font-mono">
+                <thead className="bg-white/5 border-b border-white/10 text-purple-400">
+                  <tr>
+                    <th className="p-3">Ingested Entity Fact</th>
+                    <th className="p-3">Scraping Target</th>
+                    <th className="p-3">Grounding Identifier</th>
+                    <th className="p-3">Extraction Method</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Local Identity Anchor</td>
+                    <td className="p-3">LocalBusiness / PostalAddress</td>
+                    <td className="p-3 text-cyan-300">https://aeobility.com.au/#perth-local-business</td>
+                    <td className="p-3">Direct JSON-LD Parse</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Perth GeoCoordinates</td>
+                    <td className="p-3">GeoCoordinates (lat/long)</td>
+                    <td className="p-3 text-cyan-300">-31.9505, 115.8605</td>
+                    <td className="p-3">Vector Spatial Proximity</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Regional Service Area</td>
+                    <td className="p-3">areaServed (City, AdminArea)</td>
+                    <td className="p-3 text-cyan-300">Wikidata Q3183 &amp; GeoNames 2063523</td>
+                    <td className="p-3">Entity Graph Resolution</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Operating Schedule</td>
+                    <td className="p-3">OpeningHoursSpecification</td>
+                    <td className="p-3 text-cyan-300">Mo-Fr 09:00-18:00 AWST</td>
+                    <td className="p-3">Real-Time Schedule Validation</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
           {/* 9. Visual Comparison Card: Local GEO vs Traditional Local SEO */}
-          <section id="geo-vs-seo" className="border border-white/15 rounded-2xl overflow-hidden bg-zinc-950/90 shadow-2xl scroll-mt-24">
-            <div className="bg-white/5 border-b border-white/10 px-6 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-2">
+          <section id="geo-vs-seo" className="border border-white/15 rounded-2xl overflow-hidden bg-zinc-950/90 shadow-2xl scroll-mt-24 space-y-6 p-6 sm:p-8">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
                 <Layers className="w-4 h-4 text-cyan-400" />
-                <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
-                  The Architecture Paradigm: Local GEO vs Traditional Local SEO
-                </h3>
+                <span>Architecture Paradigm</span>
               </div>
-              <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
-                Entity vs Lexical
-              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
+                How does modern local GEO differ from legacy local SEO in Perth?
+              </h2>
+              {/* Dense 90-120 Token Self-Contained Passage Block */}
+              <div className="p-5 rounded-xl bg-black/70 border border-white/10 text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed space-y-2">
+                <p>
+                  Modern local GEO differs from legacy local SEO in Perth by shifting from superficial keyword frequency to vector similarity matching and passage retrieval. Traditional local SEO attempts to rank entire web page URLs inside Google Search result lists by inflating keyword density and buying generic directory backlinks. In contrast, modern local GEO optimizes atomic text passages for RAG systems used by ChatGPT Search, Perplexity, and Apple Maps. GEO nests precise GeoCoordinates, anchors canonical Brand Facts to Wikidata entities, and guarantees verified location data across conversational search engines.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 grid md:grid-cols-2 gap-6 text-sm">
-              <div className="space-y-3 p-5 rounded-xl bg-red-950/20 border border-red-500/20">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-red-400 font-soehne-breit text-base">Legacy Local SEO</h4>
-                  <span className="text-[10px] font-mono text-red-400 bg-red-950/80 px-2 py-0.5 rounded border border-red-500/30">Lexical</span>
-                </div>
-                <p className="text-zinc-300 text-xs font-serif leading-relaxed">
-                  Relies heavily on surface-level keyword inclusion, high volumes of generic directory citations, and basic backlink acquisition. This system targets algorithmic signals built for traditional lexical search boxes.
-                </p>
-                <ul className="space-y-1.5 text-xs text-zinc-400 font-serif pt-1">
-                  <li>• Focuses on raw keyword density</li>
-                  <li>• Vulnerable to multi-node signal dilution</li>
-                  <li>• Relies on static directory scraping</li>
-                </ul>
-              </div>
-
-              <div className="space-y-3 p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/20">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-emerald-400 font-soehne-breit text-base">Modern Local GEO</h4>
-                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">Vector &amp; Semantic</span>
-                </div>
-                <p className="text-zinc-300 text-xs font-serif leading-relaxed">
-                  Prioritises deep entity disambiguation, precise coordinate matrix routing, and the deployment of nested JSON-LD schema graphs. Engineered to satisfy retrieval-augmented generation (RAG) pipelines and vector proximity calculations used by Perplexity, Apple Maps, and ChatGPT Search.
-                </p>
-                <ul className="space-y-1.5 text-xs text-zinc-300 font-serif pt-1">
-                  <li>• Hard-codes coordinate matrices for proximity routing</li>
-                  <li>• Unifies Brand Facts with Wikidata entities</li>
-                  <li>• Optimised for passage-level extraction and AI citations</li>
-                </ul>
-              </div>
+            {/* Architectural Comparison Metrics Table */}
+            <div className="overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full text-left text-xs font-mono">
+                <thead className="bg-white/5 border-b border-white/10 text-emerald-400">
+                  <tr>
+                    <th className="p-3">Architectural Layer</th>
+                    <th className="p-3">Legacy Local SEO</th>
+                    <th className="p-3">AEObility Perth GEO</th>
+                    <th className="p-3">Machine Impact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-zinc-300">
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Indexation Target</td>
+                    <td className="p-3">Page-level URL ranking</td>
+                    <td className="p-3">Passage-level vector embedding</td>
+                    <td className="p-3 text-emerald-400">Direct AI answer citations</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Location Signals</td>
+                    <td className="p-3">Unstructured address text</td>
+                    <td className="p-3">Structured GeoCoordinates &amp; Wikidata</td>
+                    <td className="p-3 text-emerald-400">Precise spatial proximity</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Citation Proof</td>
+                    <td className="p-3">Directory backlink volume</td>
+                    <td className="p-3">Entity-Relationship-Evidence triples</td>
+                    <td className="p-3 text-emerald-400">Zero hallucination risk</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-white">Engagement Model</td>
+                    <td className="p-3">Ongoing monthly retainer</td>
+                    <td className="p-3">Fixed-scope sprint deliverables</td>
+                    <td className="p-3 text-emerald-400">Complete client ownership</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 

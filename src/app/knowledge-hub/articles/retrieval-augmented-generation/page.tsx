@@ -45,7 +45,7 @@ export default function RagArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -59,7 +59,7 @@ export default function RagArticlePage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -69,7 +69,7 @@ export default function RagArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Founder & AI Search Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -101,7 +101,7 @@ export default function RagArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-07-23",
         "dateModified": "2026-08-31",
@@ -178,7 +178,7 @@ export default function RagArticlePage() {
           },
           {
             "@type": "Thing",
-            "name": "Search Engine Optimization",
+            "name": "Search Engine Optimisation",
             "sameAs": "https://www.wikidata.org/wiki/Q180711"
           },
           {
@@ -1101,7 +1101,7 @@ export default function RagArticlePage() {
                   </div>
                 </div>
 
-                {/* Optimized Atomic Chunk Example */}
+                {/* Optimised Atomic Chunk Example */}
                 <div className="p-5 bg-cyan-950/20 border border-cyan-500/40 rounded-2xl space-y-3 shadow-[0_0_20px_rgba(6,182,212,0.1)]">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase">AEObility Atomic Block</span>

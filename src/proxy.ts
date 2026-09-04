@@ -23,7 +23,7 @@ export const config = {
     /*
      * Match all request paths except for:
      * - _next/static (static files)
-     * - _next/image (image optimization files)
+     * - _next/image (image optimisation files)
      * - favicon.ico (favicon file)
      * - static assets
      */

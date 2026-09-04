@@ -21,7 +21,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/solutions#breadcrumb"
@@ -64,7 +64,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         },
         {
@@ -82,7 +82,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         },
         {
@@ -100,7 +100,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week implementation engagement starting from $3,195 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         }
       ]

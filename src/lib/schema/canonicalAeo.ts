@@ -21,7 +21,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo#breadcrumb"
@@ -61,17 +61,32 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": "Answer Engine Optimisation (AEO) Services",
       "description": "Canonical AEO services restructuring digital presence for machine discovery, RAG retrieval accuracy, entity salience, and conversion rate optimisation.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "areaServed": [
         {
           "@type": "Country",
-          "name": "Australia"
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
         },
         {
           "@type": "AdministrativeArea",
           "name": "Western Australia",
-          "sameAs": "https://www.wikidata.org/wiki/Q3205"
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
+        },
+        {
+          "@type": "City",
+          "name": "Perth",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
         }
       ],
       "audience": {
@@ -96,7 +111,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Thing",
-          "name": "Search Engine Optimization",
+          "name": "Search Engine Optimisation",
           "sameAs": "https://www.wikidata.org/wiki/Q180711"
         },
         {
@@ -244,7 +259,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         },
         {
@@ -257,7 +272,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         },
         {
@@ -274,7 +289,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week implementation engagement starting from $3,195 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organization"
+            "@id": "https://aeobility.com.au/#organisation"
           }
         }
       ]

@@ -37,7 +37,7 @@ export default function EntityAuthorityArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -57,7 +57,7 @@ export default function EntityAuthorityArticlePage() {
         "name": "Vince Baker",
         "jobTitle": "AEO & Semantic Search Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "address": {
@@ -113,7 +113,7 @@ export default function EntityAuthorityArticlePage() {
           },
           {
             "@type": "Thing",
-            "name": "Search Engine Optimization",
+            "name": "Search Engine Optimisation",
             "sameAs": "https://www.wikidata.org/wiki/Q180711"
           }
         ],
@@ -121,7 +121,7 @@ export default function EntityAuthorityArticlePage() {
           {
             "@type": "Thing",
             "name": "Entity Salience Score",
-            "description": "The mathematical extraction confidence metric assigned to an organization by a dense retrieval model."
+            "description": "The mathematical extraction confidence metric assigned to an organisation by a dense retrieval model."
           },
           {
             "@type": "Thing",

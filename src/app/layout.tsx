@@ -121,7 +121,7 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://aeobility.com.au/#organization",
+                  "@id": "https://aeobility.com.au/#organisation",
                   "name": "AEObility",
                   "alternateName": [
                     "AEO Bility",
@@ -246,7 +246,7 @@ export default function RootLayout({
                     "https://github.com/vinsnt76"
                   ],
                   "worksFor": {
-                    "@id": "https://aeobility.com.au/#organization"
+                    "@id": "https://aeobility.com.au/#organisation"
                   },
                   "knowsAbout": [
                     "Answer Engine Optimisation",

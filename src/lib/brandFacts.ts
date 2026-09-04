@@ -281,7 +281,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
   '@graph': [
     {
       '@type': 'ProfessionalService',
-      '@id': 'https://aeobility.com.au/#organization',
+      '@id': 'https://aeobility.com.au/#organisation',
       name: BRAND_IDENTITY.name,
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,
@@ -300,6 +300,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
         '@type': 'PostalAddress',
         addressLocality: BRAND_IDENTITY.location.city,
         addressRegion: BRAND_IDENTITY.location.state,
+        postalCode: '6000',
         addressCountry: BRAND_IDENTITY.location.country
       },
       geo: {
@@ -307,14 +308,38 @@ export const PUBLIC_SCHEMA_GRAPH = {
         latitude: BRAND_IDENTITY.location.coordinates.latitude,
         longitude: BRAND_IDENTITY.location.coordinates.longitude
       },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '18:00'
+        }
+      ],
       areaServed: [
         {
           '@type': 'Country',
-          name: 'Australia'
+          name: 'Australia',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q408',
+            'https://www.geonames.org/2077456/australia.html'
+          ]
         },
         {
           '@type': 'AdministrativeArea',
-          name: 'Western Australia'
+          name: 'Western Australia',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q3205',
+            'https://www.geonames.org/2058645/western-australia.html'
+          ]
+        },
+        {
+          '@type': 'City',
+          name: 'Perth',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q3183',
+            'https://www.geonames.org/2063523/perth.html'
+          ]
         }
       ],
       priceRange: '$$',
@@ -323,6 +348,62 @@ export const PUBLIC_SCHEMA_GRAPH = {
         'Generative Engine Optimisation',
         'Entity Resolution',
         'Structured Data & Schema.org'
+      ]
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://aeobility.com.au/#perth-local-business',
+      name: 'AEObility Perth HQ',
+      url: BRAND_IDENTITY.website,
+      telephone: '+61480286282',
+      parentOrganization: {
+        '@id': 'https://aeobility.com.au/#organisation'
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Perth',
+        addressRegion: 'Western Australia',
+        postalCode: '6000',
+        addressCountry: 'AU'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: -31.9505,
+        longitude: 115.8605
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '18:00'
+        }
+      ],
+      areaServed: [
+        {
+          '@type': 'Country',
+          name: 'Australia',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q408',
+            'https://www.geonames.org/2077456/australia.html'
+          ]
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Western Australia',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q3205',
+            'https://www.geonames.org/2058645/western-australia.html'
+          ]
+        },
+        {
+          '@type': 'City',
+          name: 'Perth',
+          sameAs: [
+            'https://www.wikidata.org/wiki/Q3183',
+            'https://www.geonames.org/2063523/perth.html'
+          ]
+        }
       ]
     },
     {
@@ -335,10 +416,10 @@ export const PUBLIC_SCHEMA_GRAPH = {
         '@id': 'https://aeobility.com.au/#website'
       },
       about: {
-        '@id': 'https://aeobility.com.au/#organization'
+        '@id': 'https://aeobility.com.au/#organisation'
       },
       mainEntity: {
-        '@id': 'https://aeobility.com.au/#organization'
+        '@id': 'https://aeobility.com.au/#organisation'
       }
     }
   ]

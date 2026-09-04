@@ -97,7 +97,7 @@ export default function GEOKnowledgeNodePage() {
 
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "description": "Optimising Australian small businesses for the future of search across maps, SERPs, and generative AI corridors.",
@@ -125,7 +125,7 @@ export default function GEOKnowledgeNodePage() {
         "name": "GEO vs Local SEO Framework Banner",
         "description": "Framework diagram comparing Local SEO and Geographic Engine Optimisation (GEO) signals across physical proximity and AI entity discovery by AEObility.",
         "creator": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "contentUrl": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp",
         "contentLocation": {
@@ -155,7 +155,7 @@ export default function GEOKnowledgeNodePage() {
           "Service Boundaries"
         ],
         "author": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "image": {
           "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp"
@@ -210,7 +210,7 @@ export default function GEOKnowledgeNodePage() {
   const jsonLdExample = `{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://aeobility.com.au/#organization",
+  "@id": "https://aeobility.com.au/#organisation",
   "name": "AEObility",
   "address": {
     "@type": "PostalAddress",

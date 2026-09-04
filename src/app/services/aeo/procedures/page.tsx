@@ -120,7 +120,7 @@ export default function AEOProceduresPage() {
   const faqs = [
     {
       question: "What are the most effective AEO procedures for Australian businesses?",
-      answer: "The most effective procedures include structuring content with question-based H2/H3 headings, writing 40–60 word self-contained atomic answer summaries, deploying nested JSON-LD schema (Organization, Service, Offer, LocalBusiness), and building contextual internal links."
+      answer: "The most effective procedures include structuring content with question-based H2/H3 headings, writing 40–60 word self-contained atomic answer summaries, deploying nested JSON-LD schema (Organisation, Service, Offer, LocalBusiness), and building contextual internal links."
     },
     {
       question: "How does RAG chunking affect website content?",
@@ -161,7 +161,7 @@ export default function AEOProceduresPage() {
       id: "strategy3",
       number: "03",
       title: "Nested JSON-LD Schema Graphs",
-      description: "Inject explicit machine-readable context connecting Organization, LocalBusiness, Service, and Offer nodes to establish entity authority."
+      description: "Inject explicit machine-readable context connecting Organisation, LocalBusiness, Service, and Offer nodes to establish entity authority."
     },
     {
       id: "strategy4",

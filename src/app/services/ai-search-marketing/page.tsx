@@ -128,7 +128,7 @@ export default function AISearchMarketingPage() {
     },
     {
       question: "Does structured schema markup help AI engines find my business?",
-      answer: "Yes. Schema markup (such as LocalBusiness, Service, Offer, and Organization) provides explicit machine-readable context. It reduces ambiguity during passage retrieval, making your business data significantly easier for scrapers and AI agents to ingest."
+      answer: "Yes. Schema markup (such as LocalBusiness, Service, Offer, and Organisation) provides explicit machine-readable context. It reduces ambiguity during passage retrieval, making your business data significantly easier for scrapers and AI agents to ingest."
     },
     {
       question: "What is included in the $995 AEObility Blueprint?",

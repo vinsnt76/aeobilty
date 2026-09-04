@@ -21,7 +21,7 @@ export const getAeoProceduresSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/procedures#breadcrumb"
@@ -85,7 +85,7 @@ export const getAeoProceduresSchemaGraph = (faqs?: FaqItem[]) => {
           "@type": "HowToStep",
           "position": 3,
           "name": "Deploy Nested JSON-LD Schema Markup",
-          "text": "Provide machine-readable entity context connecting Organization, LocalBusiness, Service, and Offer nodes.",
+          "text": "Provide machine-readable entity context connecting Organisation, LocalBusiness, Service, and Offer nodes.",
           "url": "https://aeobility.com.au/services/aeo/procedures#strategy3"
         }
       ]

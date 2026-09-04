@@ -123,10 +123,10 @@ export default function WhatIsSEOOptimisationPage() {
           "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#primaryimage"
         },
         "author": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-02-15T00:00:00+10:00",
         "dateModified": "2026-08-16T16:00:00+10:00",
@@ -245,7 +245,7 @@ export default function WhatIsSEOOptimisationPage() {
         "width": 1200,
         "height": 800,
         "copyrightHolder": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       }
     ]

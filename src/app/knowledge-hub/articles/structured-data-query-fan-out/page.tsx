@@ -108,7 +108,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Vince Baker specialises in structured data engineering, entity SEO architecture, and AI vector retrieval context for Australian enterprises.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -119,7 +119,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",

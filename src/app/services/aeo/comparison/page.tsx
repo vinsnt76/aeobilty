@@ -621,7 +621,7 @@ export default function AEOVsSEOPage() {
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">1. Entity</div>
                 <h3 className="text-sm font-bold text-white">What You Are</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Explicit schema naming your organization, services, and locations without ambiguity.
+                  Explicit schema naming your organisation, services, and locations without ambiguity.
                 </p>
               </div>
 

@@ -12,7 +12,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organization",
+      "@id": "https://aeobility.com.au/#organisation",
       "name": "AEObility",
       "legalName": "Trekaboutoz trading as AEObility",
       "url": "https://aeobility.com.au/",
@@ -40,7 +40,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "inLanguage": "en-AU"
     },
@@ -86,7 +86,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/local-business#breadcrumb"
@@ -124,6 +124,62 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ]
     },
     {
+      "@type": "LocalBusiness",
+      "@id": "https://aeobility.com.au/services/aeo/local-business#perth-entity",
+      "name": "AEObility Local Business Perth Hub",
+      "url": "https://aeobility.com.au/services/aeo/local-business",
+      "telephone": "+61480286282",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Perth",
+        "addressRegion": "Western Australia",
+        "postalCode": "6000",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.9505,
+        "longitude": 115.8605
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Western Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
+        },
+        {
+          "@type": "City",
+          "name": "Perth",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/aeo/local-business#service",
       "name": "Local Business Visibility across Maps & AI Search",
@@ -135,12 +191,34 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "description": "Fixed-scope local search, Maps and AI search optimisation for Australian trade businesses, clinics, storefronts and regional service providers. Services address local structured data, citation consistency, Google Business Profile alignment, service-area content and multi-location internal linking.",
       "url": "https://aeobility.com.au/services/aeo/local-business",
       "provider": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/services/aeo/local-business#perth-entity"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q408",
+            "https://www.geonames.org/2077456/australia.html"
+          ]
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Western Australia",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3205",
+            "https://www.geonames.org/2058645/western-australia.html"
+          ]
+        },
+        {
+          "@type": "City",
+          "name": "Perth",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q3183",
+            "https://www.geonames.org/2063523/perth.html"
+          ]
+        }
+      ],
       "audience": [
         { "@type": "BusinessAudience", "audienceType": "Australian trade and mobile service businesses" },
         { "@type": "BusinessAudience", "audienceType": "Australian clinics and local storefront businesses" },
@@ -221,7 +299,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "NAP standardisation"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -255,7 +333,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "Service-area optimisation"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -289,7 +367,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "90-day local visibility roadmap"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",

@@ -103,12 +103,12 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         },
         "author": {
           "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organization",
+          "@id": "https://aeobility.com.au/#organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au/"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "datePublished": "2026-08-10T00:00:00+08:00",
         "dateModified": "2026-08-11T00:00:00+08:00",
@@ -285,7 +285,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {

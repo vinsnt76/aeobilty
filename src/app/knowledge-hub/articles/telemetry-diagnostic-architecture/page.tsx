@@ -55,7 +55,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "legalName": "Trekaboutoz",
         "url": "https://aeobility.com.au",
@@ -83,7 +83,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "https://aeobility.com.au/about/freelance-seo-consultant-perth"
         ],
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {

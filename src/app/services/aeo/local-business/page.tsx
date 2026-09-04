@@ -563,7 +563,7 @@ export default function LocalBusinessAEOPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white font-soehne-breit">Home-Based &amp; Regional Operations</h3>
-                    <p className="text-xs text-zinc-400 font-serif">Consultants, Regional Contractors, Specialized Services &amp; Hybrid Operations</p>
+                    <p className="text-xs text-zinc-400 font-serif">Consultants, Regional Contractors, Specialised Services &amp; Hybrid Operations</p>
                   </div>
                 </div>
 

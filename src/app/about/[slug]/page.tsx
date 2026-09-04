@@ -102,7 +102,7 @@ export default async function Page({ params }: PageProps) {
         "width": 1200,
         "height": 1200,
         "copyrightHolder": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -129,7 +129,7 @@ export default async function Page({ params }: PageProps) {
           "longitude": "115.8500"
         },
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "founder": {
           "@id": "https://aeobility.com.au/#person"
@@ -143,7 +143,7 @@ export default async function Page({ params }: PageProps) {
         "image": imageUrl,
         "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       }
     ]

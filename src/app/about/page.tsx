@@ -32,7 +32,7 @@ export default function AboutPage() {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://aeobility.com.au/#organization",
+    "@id": "https://aeobility.com.au/#organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
     "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",

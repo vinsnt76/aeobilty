@@ -78,7 +78,7 @@ export const DIAGNOSTIC_DIMENSIONS = [
     icon: FileCode,
     badge: "Layer 03",
     benefit: "Does your website give machines reliable facts about your services?",
-    details: "Audits and validates nested JSON-LD schema graphs, verifying interconnected relationships between @type: Organization, LocalBusiness, and Service arrays with Wikidata sameAs entity disambiguation."
+    details: "Audits and validates nested JSON-LD schema graphs, verifying interconnected relationships between @type: Organisation, LocalBusiness, and Service arrays with Wikidata sameAs entity disambiguation."
   },
   {
     id: "dim-4",
@@ -225,7 +225,7 @@ export default function DiagnosticEngine() {
       console.error('Diagnostic engine fetch error:', e);
       const rawMsg = e instanceof Error ? e.message : 'Failed to fetch site information';
       const cleanMsg = (rawMsg.includes('Unexpected token') || rawMsg.includes('JSON') || rawMsg.includes('An error'))
-        ? 'We were unable to reach or analyze this website. Please verify the URL is online and publicly accessible.'
+        ? 'We were unable to reach or analyse this website. Please verify the URL is online and publicly accessible.'
         : rawMsg;
 
       trackGaEvent('diagnostic_scan_failed', {
@@ -496,7 +496,7 @@ export default function DiagnosticEngine() {
               {(() => {
                 const raw = String((telemetry as unknown as Record<string, unknown>).error || '');
                 if (!raw || raw.includes('Unexpected token') || raw.includes('JSON') || raw.includes('An error')) {
-                  return 'We were unable to reach or analyze this website. Please verify that the URL is online and publicly accessible, and try again.';
+                  return 'We were unable to reach or analyse this website. Please verify that the URL is online and publicly accessible, and try again.';
                 }
                 return raw;
               })()}

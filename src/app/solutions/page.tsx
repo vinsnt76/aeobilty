@@ -190,7 +190,7 @@ export default function SolutionsPage() {
       code: "SS1MICRO1 / SS1MICRO2",
       title: "Content & Entity Schema Micro-Sprint",
       price: "$495 AUD ex. GST",
-      description: "Structured schema markup deployment (Organization, Service, Offer, LocalBusiness) for machine readability."
+      description: "Structured schema markup deployment (Organisation, Service, Offer, LocalBusiness) for machine readability."
     },
     {
       code: "SS2MICRO1 / SS2MICRO2",

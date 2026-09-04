@@ -21,7 +21,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
@@ -81,7 +81,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
           "description": "Excluding GST"
         },
         "seller": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       }
     },
@@ -92,7 +92,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": "BPSTRAT",
       "description": "A strategic digital presence audit and prioritised 90-day action plan covering website structure, structured data, business information, local tracking, and key service pages.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organization"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "areaServed": {
         "@type": "Country",

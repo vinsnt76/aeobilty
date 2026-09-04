@@ -59,12 +59,12 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/",
         "name": "AEObility",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -102,7 +102,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Senior Information Architect & AEO Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {

@@ -104,7 +104,7 @@ export default function AEOGuideWhitepaperPage() {
         },
         'publisher': {
           '@type': 'ProfessionalService',
-          '@id': 'https://aeobility.com.au/#organization',
+          '@id': 'https://aeobility.com.au/#organisation',
           'name': 'AEObility',
           'url': 'https://aeobility.com.au'
         },
@@ -419,7 +419,7 @@ export default function AEOGuideWhitepaperPage() {
               Traditional search engines and modern AI answer engines rely on overlapping information retrieval signals. Both evaluate domain trust, technical accessibility, crawlability, topic relevance, and structured markup. For an in-depth breakdown of how ranking factors diverge, explore our comparative analysis on <Link href="/knowledge-hub/articles/aeo-vs-seo" className="text-aeo-cyan hover:underline">AEO vs Traditional SEO Mechanics</Link>.
             </p>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              Where traditional SEO focuses primarily on earning rankings on traditional search engine results pages (SERPs) through keyword targeting and authority signals, <strong>Answer Engine Optimisation (AEO)</strong> focuses on the machine interpretability of your core facts, ensuring that conversational agents and Retrieval-Augmented Generation (RAG) pipelines can cleanly extract, synthesize, and cite specific business claims without ambiguity.
+              Where traditional SEO focuses primarily on earning rankings on traditional search engine results pages (SERPs) through keyword targeting and authority signals, <strong>Answer Engine Optimisation (AEO)</strong> focuses on the machine interpretability of your core facts, ensuring that conversational agents and Retrieval-Augmented Generation (RAG) pipelines can cleanly extract, synthesise, and cite specific business claims without ambiguity.
             </p>
 
             {/* Key Terms at a Glance Box */}
@@ -487,7 +487,7 @@ export default function AEOGuideWhitepaperPage() {
 
           <div className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-              How AI Retrieval Pipelines Process and Synthesize Web Content
+              How AI Retrieval Pipelines Process and Synthesise Web Content
             </h2>
             
             {/* Humanization Bridge for RAG */}
@@ -612,7 +612,7 @@ export default function AEOGuideWhitepaperPage() {
             </p>
 
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              Research in language model evaluation (notably by Liu et al., 2023) has documented that transformer-based models exhibit positional bias: performance is typically highest when critical information is located at the beginning (primacy effect) or end (recency effect) of an input context, with lower retrieval accuracy for information situated in the middle of long contexts. For a specialized study of this effect, see our research article on <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-purple hover:underline">Positional Bias in AI Retrieval</Link>.
+              Research in language model evaluation (notably by Liu et al., 2023) has documented that transformer-based models exhibit positional bias: performance is typically highest when critical information is located at the beginning (primacy effect) or end (recency effect) of an input context, with lower retrieval accuracy for information situated in the middle of long contexts. For a specialised study of this effect, see our research article on <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-aeo-purple hover:underline">Positional Bias in AI Retrieval</Link>.
             </p>
           </div>
 
@@ -1129,7 +1129,7 @@ export default function AEOGuideWhitepaperPage() {
                 Canonical Node-to-Edge Mapping Table
               </h3>
               <p className="text-xs text-zinc-400 font-serif">
-                Note: Relationship labels (e.g. <em>implements</em>, <em>identityOf</em>, <em>offers</em>) are internal AEObility content governance terms used to organize internal link architecture, not official Schema.org property names.
+                Note: Relationship labels (e.g. <em>implements</em>, <em>identityOf</em>, <em>offers</em>) are internal AEObility content governance terms used to organise internal link architecture, not official Schema.org property names.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs font-mono border border-white/10 rounded-xl overflow-hidden">

@@ -23,7 +23,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
           "@id": "https://aeobility.com.au/#website"
         },
         "about": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/solutions/aeo-sprint#breadcrumb"
@@ -62,7 +62,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "name": "AEO Technical Sprints",
         "description": "Fixed-scope implementation services for structured data, priority-page content and page structure. Available as individual Micro-Sprints or a broader Foundation Implementation engagement.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -99,7 +99,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#schema-sprint"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organization"
+                  "@id": "https://aeobility.com.au/#organisation"
                 }
               },
               {
@@ -116,7 +116,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#content-sprint"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organization"
+                  "@id": "https://aeobility.com.au/#organisation"
                 }
               },
               {
@@ -133,7 +133,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#page-structure-sprint"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organization"
+                  "@id": "https://aeobility.com.au/#organisation"
                 }
               }
             ]
@@ -160,7 +160,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-implementation"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organization"
+                  "@id": "https://aeobility.com.au/#organisation"
                 }
               }
             ]
@@ -174,7 +174,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "alternateName": "SS1",
         "description": "Structured data implementation or improvement for one key service or location page.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -192,7 +192,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "alternateName": "SS2",
         "description": "A focused rewrite of one client-facing page to make services, answers and proof points easier for customers to understand.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -210,7 +210,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "alternateName": "SS3",
         "description": "A focused restructuring of headings, sections and information hierarchy for one critical landing page.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",
@@ -227,7 +227,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "name": "Foundation Implementation",
         "description": "A structured implementation engagement for businesses with multiple connected priorities across technical setup, priority pages, internal linking and local business information.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "Country",

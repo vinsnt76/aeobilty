@@ -119,7 +119,7 @@ export default function SemanticSEONodePage() {
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Author of AEObility’s technical guides on Semantic SEO, entity optimisation, and AI search architecture.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "address": {
           "@type": "PostalAddress",
@@ -130,7 +130,7 @@ export default function SemanticSEONodePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/android-chrome-512x512.png",

@@ -21,7 +21,7 @@ export default function AeoVsSeoArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -45,7 +45,7 @@ export default function AeoVsSeoArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Founder & AI Search Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {

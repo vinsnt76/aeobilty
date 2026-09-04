@@ -63,7 +63,7 @@ export default function AEOPricingPage() {
               'description': 'Automated 6-stage telemetry diagnostic checking entity clarity, structured schema coverage, and machine readability within 24 hours.',
               'provider': {
                 '@type': 'ProfessionalService',
-                '@id': 'https://aeobility.com.au/#organization',
+                '@id': 'https://aeobility.com.au/#organisation',
                 'name': 'AEObility'
               },
               'offers': {
@@ -84,7 +84,7 @@ export default function AEOPricingPage() {
               'description': 'Standalone 90-day operational roadmap and technical gap analysis. 100% credited back into implementation if booked within 60 days.',
               'provider': {
                 '@type': 'ProfessionalService',
-                '@id': 'https://aeobility.com.au/#organization',
+                '@id': 'https://aeobility.com.au/#organisation',
                 'name': 'AEObility'
               },
               'offers': {
@@ -106,7 +106,7 @@ export default function AEOPricingPage() {
               'description': 'A 4-week structured deployment executing connected schema graphs, atomic page rewrites, and internal link architecture.',
               'provider': {
                 '@type': 'ProfessionalService',
-                '@id': 'https://aeobility.com.au/#organization',
+                '@id': 'https://aeobility.com.au/#organisation',
                 'name': 'AEObility'
               },
               'offers': {
@@ -128,7 +128,7 @@ export default function AEOPricingPage() {
               'description': 'Custom multi-entity and complex network implementation available by application following Blueprint review.',
               'provider': {
                 '@type': 'ProfessionalService',
-                '@id': 'https://aeobility.com.au/#organization',
+                '@id': 'https://aeobility.com.au/#organisation',
                 'name': 'AEObility'
               },
               'offers': {

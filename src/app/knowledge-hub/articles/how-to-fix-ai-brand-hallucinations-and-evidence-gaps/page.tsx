@@ -44,7 +44,7 @@ export default function AISeachArchitectureArticle() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "legalName": "Trekaboutoz trading as AEObility",
         "taxID": "61 029 803 255",
@@ -66,7 +66,7 @@ export default function AISeachArchitectureArticle() {
         "name": "Vinnie Baker",
         "jobTitle": "Founder & AEO Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "url": "https://aeobility.com.au/vince-baker"
       },
@@ -87,7 +87,7 @@ export default function AISeachArchitectureArticle() {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
         "image": "https://aeobility.com.au/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",

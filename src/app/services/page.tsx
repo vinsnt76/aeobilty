@@ -41,7 +41,7 @@ export default function ServicesPage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organization",
+        "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "description": "AEObility is an Australian AEO consultancy helping local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
@@ -62,7 +62,7 @@ export default function ServicesPage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         }
       },
       {
@@ -112,7 +112,7 @@ export default function ServicesPage() {
         ],
         "description": "AEObility provides AEO Services, AI Search Strategy and GEO Marketing for Australian SMBs in Perth, Australia. We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "areaServed": {
           "@type": "AdministrativeArea",
