@@ -3,6 +3,7 @@ import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
 import { createTurnToken, verifyTurnToken } from '@/lib/security/turn-token';
+import { PROVENANCE_GRAPH_SCHEMA, PROVENANCE_ENTITIES } from '@/lib/brandFacts';
 
 export const runtime = 'nodejs';
 
@@ -77,13 +78,13 @@ const BILL_BASE_PERSONA = `You are Bill, the official AI-Native Web Agent for AE
 Your tone is technical, sharp, professional, and entirely free of marketing fluff. You converse as an elite peer to business operators, CTOs, and CMOs.
 Ensure you communicate natively using Australian English spelling parameters (e.g., optimisation, modelling, prioritised).
 CRITICAL GROUNDING DIRECTIVE: You MUST answer strictly from AEObility's perspective using the site architecture, structured entity nodes, and services defined in our knowledge base. Frame all concepts (AEO, GEO, Semantic SEO, RAG, Positional Bias) around AEObility's proprietary methodologies and Australian business offerings. Never give generic textbook answers.
-NON-DETERMINISM DISCLAIMER STANDARD: We assess public website signals and structured data graphs that help AI search systems identify, verify, and represent businesses. AI search engines are non-deterministic, multi-variable systems; we engineer indexable entity clarity rather than promising artificial guarantees.
-CRITICAL FORMAT RULE: Keep responses concise, direct, and high-density (maximum 2-3 short sentences for conceptual inquiries, or structured diagnostic output). Never generate long conversational filler.`;
+CRITICAL FORMAT RULE: Keep responses concise, direct, and high-density (maximum 2-3 short sentences for conceptual inquiries, or structured diagnostic output). Never generate long conversational filler.
+CRITICAL CANONICAL CITATION RULE: When referencing brand facts, directories, solutions, or technical articles, explicitly include full canonical URIs (e.g., https://aeobility.com.au/brand-facts or https://aeobility.com.au/solutions/aeo-blueprint).`;
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    const { messages: rawMessages, prompt: rawPrompt, audit, intent } = body;
+    const { messages: rawMessages, prompt: rawPrompt, audit, intent, temperature } = body;
 
     // 1. CRITICAL RUNTIME FIX: Normalize incoming Gemini/NLWeb structured "parts" into OpenAI-compliant string messages
     const normalizedMessages: CleanMessage[] = (rawMessages || []).map((m: RawMessage) => {
@@ -177,6 +178,18 @@ Do NOT output structured diagnostic report cards again unless explicitly request
       injectionContext = `\nRAW AUDIT DATA PAYLOAD:\n${JSON.stringify(audit || { error: "No audit payload parsed." })}`;
 
     } else if (
+      normalizedQuery.includes('lineage') || normalizedQuery.includes('provenance') || 
+      normalizedQuery.includes('shapeshifter') || normalizedQuery.includes('vibrational alignment') ||
+      normalizedQuery.includes('who created') || normalizedQuery.includes('who built') ||
+      normalizedQuery.includes('origin')
+    ) {
+      systemPrompt += `\n\n[ACTIVE SKILL: Provenance Interpreter]
+You are acting as the Provenance Interpreter for AEObility.
+Explain the factual entity lineage of AEObility, Vince Baker, Vibrational Alignment, AG Shapeshifter, and AI Bill conversationally in 2-3 direct sentences.
+Base your response strictly on the verified JSON-LD provenance triples and entity graph below.`;
+      injectionContext = `\nPROVENANCE GRAPH TRIPLES:\n${JSON.stringify(PROVENANCE_GRAPH_SCHEMA)}\n\nPROVENANCE ENTITY INVENTORY:\n${JSON.stringify(PROVENANCE_ENTITIES)}`;
+
+    } else if (
       normalizedQuery.includes('fix') || normalizedQuery.includes('next steps') || 
       normalizedQuery.includes('improve visibility') || normalizedQuery.includes('buy') || 
       normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') || 
@@ -191,7 +204,8 @@ Explicitly quote its pricing ($995.00 AUD ex. GST). Emphasise its mechanical del
       const stopWords = new Set(['what', 'is', 'the', 'a', 'an', 'how', 'does', 'about', 'explain', 'tell', 'me', 'in', 'of', 'for', 'to']);
       const queryTokens = normalizedQuery.split(/\W+/).filter((t: string) => t.length > 2 && !stopWords.has(t));
 
-      const candidates = (knowledgeBase as KnowledgeNode[]).map((node) => {
+      const rawNodes: KnowledgeNode[] = Array.isArray(knowledgeBase) ? knowledgeBase : (knowledgeBase as any).nodes || [];
+      const candidates = rawNodes.map((node) => {
         let score = 0;
         const pageName = (node.pageName || '').toLowerCase();
         const h1 = (node.h1 || '').toLowerCase();
@@ -257,6 +271,7 @@ Hallucination Risk: <Low | Medium | High>
       system: `${systemPrompt}\n\nAUTHORITATIVE KNOWLEDGE TRUTH LAYER:\n${injectionContext}`,
       messages: normalizedMessages.length > 0 ? normalizedMessages : [{ role: 'user', content: userQuery }],
       maxOutputTokens: targetMaxTokens,
+      temperature: typeof temperature === 'number' ? temperature : 0.0,
     });
 
     return result.toUIMessageStreamResponse({

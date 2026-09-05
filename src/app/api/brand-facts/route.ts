@@ -5,7 +5,9 @@ import {
   BRAND_KNOWLEDGE_LATTICE, 
   PRICING_CONFIG, 
   BRAND_TEMPORAL_STATE,
-  calculateFactCoverageScore 
+  calculateFactCoverageScore,
+  PROVENANCE_ENTITIES,
+  PROVENANCE_GRAPH_SCHEMA
 } from '@/lib/brandFacts';
 
 export const runtime = 'edge';
@@ -20,6 +22,8 @@ export async function GET() {
       identity: BRAND_IDENTITY,
       definitions: BRAND_DEFINITIONS,
       provenanceLattice: BRAND_KNOWLEDGE_LATTICE,
+      provenanceEntities: PROVENANCE_ENTITIES,
+      provenanceGraphSchema: PROVENANCE_GRAPH_SCHEMA,
       commercialManifest: PRICING_CONFIG,
       temporalState: BRAND_TEMPORAL_STATE,
       metrics: {

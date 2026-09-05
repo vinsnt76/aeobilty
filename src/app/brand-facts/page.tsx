@@ -8,7 +8,8 @@ import {
   BRAND_DEFINITIONS, 
   PRICING_CONFIG, 
   BRAND_KNOWLEDGE_LATTICE,
-  PUBLIC_SCHEMA_GRAPH 
+  PUBLIC_SCHEMA_GRAPH,
+  PROVENANCE_ENTITIES
 } from '@/lib/brandFacts';
 import { ShieldCheck, Tag, CheckCircle2, BookOpen, Layers, Sparkles, HelpCircle, Cpu, Database, Search, Bot, Activity, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -120,6 +121,41 @@ export default function HumanBrandFactsPage() {
                   Australia, with delivery focused on Western Australia and major capital cities.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 1.5 Provenance Lineage & Entity Graph */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-cyan">
+            <Activity className="w-4 h-4" />
+            <span>1.5 Canonical Provenance &amp; Entity Lineage Graph</span>
+          </div>
+          <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 shadow-xl space-y-6">
+            <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+              Historical and operational entities mapped across the AEObility lineage. Every commercial offering and interactive system is bound to verifiable entity triples and canonical absolute URIs.
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {PROVENANCE_ENTITIES.map((entity) => (
+                <div 
+                  key={entity.id} 
+                  id={entity.canonicalUri.includes('#') ? entity.canonicalUri.split('#')[1] : undefined}
+                  className="bg-white/[0.02] border border-white/10 rounded-xl p-4 space-y-2 hover:border-aeo-cyan/50 transition-colors scroll-mt-24"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-aeo-cyan/10 text-aeo-cyan border border-aeo-cyan/20">
+                      {entity.layer}
+                    </span>
+                    <span className="text-[10px] font-mono text-zinc-500">{entity.schemaType}</span>
+                  </div>
+                  <h3 className="text-sm font-bold text-white font-soehne-breit">{entity.name}</h3>
+                  <p className="text-xs text-zinc-400 font-serif leading-relaxed line-clamp-2">{entity.description}</p>
+                  <Link href={entity.canonicalUri.replace('https://aeobility.com.au', '') || '/'} className="inline-flex items-center gap-1 text-[11px] font-mono text-aeo-cyan hover:underline pt-1">
+                    <span>Inspect URI</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>

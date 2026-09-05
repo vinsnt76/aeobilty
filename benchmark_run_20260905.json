@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "benchmarkVersion": "1.0.0",
+    "runTimestamp": "2026-09-05T08:57:27.062Z",
+    "evaluationProtocol": "Internal RAG Grounding Fidelity Benchmark (Milestone 3.5)",
+    "modelConfig": {
+      "modelId": "openai/gpt-4o-mini",
+      "temperature": 0,
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.5.0-canonical-directed"
+    },
+    "summary": {
+      "totalQueries": 10,
+      "tier0SystemMandates": 0,
+      "tier1CanonicalUrls": 8,
+      "tier2VerifiableTriples": 1,
+      "tier3PartialOrUnverified": 1,
+      "applicableGroundingQueries": 10,
+      "citationGroundingAccuracyPercent": 90
+    }
+  },
+  "evaluations": [
+    {
+      "queryId": "Q01",
+      "targetLayer": "Lineage",
+      "query": "Who built AG Shapeshifter and how is it related to AI Bill?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "AG Shapeshifter was developed by Vince Baker, the founder and principal technical architect of AEObility. It serves as a transitional research persona from which AI Bill evolved, with AI Bill being a revision of AG Shapeshifter that incorporates enhanced functionalities for telemetry ingestion and diagnostic evaluation. For further details, refer to the respective URIs: [AG Shapeshifter](https://aeobility.com.au/brand-facts#ag-shapeshifter) and [AI Bill](https://aeobility.com.au/services/aeo#ai-bill)."
+    },
+    {
+      "queryId": "Q02",
+      "targetLayer": "Core Entity",
+      "query": "What is AEObility's core brand promise and where is it base located?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 2,
+      "citationLabel": "Tier 2: Verifiable Entity Triple Match",
+      "outputResponse": "AEObility's core brand promise is to define the standard for Answer Engine Optimisation (AEO) in Australia, ensuring businesses effectively engage with AI-driven search technologies. The agency is based in Australia, with its operations detailed at [AEObility](https://aeobility.com.au)."
+    },
+    {
+      "queryId": "Q03",
+      "targetLayer": "Concept",
+      "query": "How does Answer Engine Optimisation differ from legacy SEO according to AEObility?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "Answer Engine Optimisation (AEO) shifts focus from traditional keyword-centric strategies to relational topic graphs and entity-based optimisation. AEO leverages AI-driven methodologies, such as RAG retrieval and semantic chunking, to enhance content relevance and contextual understanding, contrasting with legacy SEO's reliance on static keyword placements. For a detailed comparison, refer to our article on [AEO Principles & Machine Mechanics](https://aeobility.com.au/knowledge-hub/aeo)."
+    },
+    {
+      "queryId": "Q04",
+      "targetLayer": "Commercial",
+      "query": "What products and pricing frameworks does AEObility offer in Australia?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "AEObility offers the **90-Day AI Success Blueprint** for **$995.00 AUD ex. GST**. This service focuses on AI readiness optimisation, converting loose content into verified semantic entity schemas and local grounding anchors. For more details, visit our offerings at [AEObility Solutions](https://aeobility.com.au/solutions/aeo-blueprint)."
+    },
+    {
+      "queryId": "Q05",
+      "targetLayer": "Offer/SKU",
+      "query": "What is the Strategic Blueprint and how much does it cost in AUD?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "The Strategic Blueprint, known as the AEObility Blueprint, is a mechanical delivery service that converts loose content into verified semantic entity schemas and local grounding anchors. It is priced at $995.00 AUD ex. GST. For more details, visit https://aeobility.com.au/solutions/aeo-blueprint."
+    },
+    {
+      "queryId": "Q06",
+      "targetLayer": "Person Entity",
+      "query": "Who is Vince Baker and what is his role at AEObility?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "Vince Baker is the founder and Principal AEO Architect at AEObility. He specialises in AI search marketing, SEO, and the development of digital strategies tailored for Australian businesses. For more details, visit his profile at https://aeobility.com.au/vince-baker."
+    },
+    {
+      "queryId": "Q07",
+      "targetLayer": "Technical Schema",
+      "query": "How does AEObility structure machine-readable entity graphs for AI retrieval?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "AEObility structures machine-readable entity graphs through a comprehensive schema framework that enhances semantic relevance and entity authority. This involves utilising structured data to provide clear identity signals, ensuring consistency across knowledge graphs, which facilitates improved AI retrieval and visibility in search systems. For further details, refer to our article on [Structured Data & Query Fan-Out](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out) and the [Entity Authority Guide](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building)."
+    },
+    {
+      "queryId": "Q08",
+      "targetLayer": "Ideation Document",
+      "query": "What is Vibrational Alignment and what entity layer does it represent?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "Vibrational Alignment is a foundational theoretical paper that establishes principles of machine legibility and intentional alignment. It represents the Ideation layer within AEObility's entity structure. For further details, refer to the canonical URI: [Vibrational Alignment](https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment)."
+    },
+    {
+      "queryId": "Q09",
+      "targetLayer": "Agent Runtime",
+      "query": "How does AI Bill execute grounded context handoffs for telemetry diagnostics?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 3,
+      "citationLabel": "Tier 3: Partial / Unverified Citation",
+      "outputResponse": "AI Bill executes grounded context handoffs for telemetry diagnostics by leveraging structured entity nodes to maintain continuity in data interpretation. Each diagnostic turn is informed by the previous context, ensuring that telemetry data is accurately parsed and evaluated against AEObility's proprietary methodologies. This approach minimises ambiguity and enhances the precision of insights derived from the telemetry payload."
+    },
+    {
+      "queryId": "Q10",
+      "targetLayer": "Directory",
+      "query": "Where can I find AEObility's canonical brand facts and machine interface directory?",
+      "unprimedZeroHistory": true,
+      "temperature": 0,
+      "modelId": "openai/gpt-4o-mini",
+      "webSearchEnabled": false,
+      "systemPromptVersion": "v2.4.0-provenance-interpreter",
+      "citationTier": 1,
+      "citationLabel": "Tier 1: Canonical URL Citation",
+      "outputResponse": "You can access AEObility's canonical brand facts and machine-readable interface directory at the following URL: [https://aeobility.com.au/brand-facts](https://aeobility.com.au/brand-facts). This catalog includes service offerings, SKUs, and pricing details."
+    }
+  ]
+}

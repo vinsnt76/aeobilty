@@ -140,6 +140,11 @@ async function main() {
       process.exit(1);
     }
 
+    if (!pageName) {
+      console.error(`❌ Missing PageName at CSV row ${i + 2}. Entity schema validation failed!`);
+      process.exit(1);
+    }
+
     const focusKeyphrase = toAustralianEnglish(row[4] ? row[4].trim() : '');
     const description = toAustralianEnglish(row[7] ? row[7].trim() : '');
     const h1 = toAustralianEnglish(row[9] ? row[9].trim() : (row[5] ? row[5].trim() : pageName));
@@ -176,15 +181,48 @@ async function main() {
     });
   }
 
+  // Calculate baseline pairwise vector similarity distribution for Z-score thresholding.
+  // Population Definition: Entire site-wide Information Architecture & SLM lattice (N=48 nodes across 5 layers),
+  // generating N*(N-1)/2 = 1,128 unique inter-node similarity pair comparisons.
+  // Recalibration Cadence: Dynamically recomputed on every `npm run build` prebuild execution.
+  const similarities = [];
+  for (let i = 0; i < compiledNodes.length; i++) {
+    for (let j = i + 1; j < compiledNodes.length; j++) {
+      const vA = compiledNodes[i].embedding;
+      const vB = compiledNodes[j].embedding;
+      let dot = 0;
+      for (let k = 0; k < VECTOR_DIM; k++) dot += vA[k] * vB[k];
+      similarities.push(dot);
+    }
+  }
+
+  const muBase = similarities.reduce((a, b) => a + b, 0) / (similarities.length || 1);
+  const variance = similarities.reduce((a, b) => a + Math.pow(b - muBase, 2), 0) / (similarities.length || 1);
+  const sigmaBase = Math.sqrt(variance);
+
+  const outputPayload = {
+    calibration: {
+      muBase: Number(muBase.toFixed(4)),
+      sigmaBase: Number(sigmaBase.toFixed(4)),
+      vectorDim: VECTOR_DIM,
+      zScoreThreshold: 1.0,
+      totalNodes: compiledNodes.length,
+      pairCount: similarities.length,
+      populationScope: 'Site-wide IA/SLM pairwise inter-node lattice (N=48, 1128 pairs)',
+      recalibrationCadence: 'Dynamic build-time prebuild hook (recomputed on every build)'
+    },
+    nodes: compiledNodes
+  };
+
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  fs.writeFileSync(targetJson, JSON.stringify(compiledNodes, null, 2), 'utf-8');
-  console.log(`✅ Successfully compiled ${compiledNodes.length} vector nodes to: ${targetJson}`);
+  fs.writeFileSync(targetJson, JSON.stringify(outputPayload, null, 2), 'utf-8');
+  console.log(`✅ Successfully compiled ${compiledNodes.length} vector nodes and baseline calibration (mu=${muBase.toFixed(4)}, sigma=${sigmaBase.toFixed(4)}) to: ${targetJson}`);
 }
 
-main().catch(err => {
-  console.error('Fatal error in build-knowledge-base script:', err);
+main().catch((err) => {
+  console.error('❌ Build script execution failed:', err);
   process.exit(1);
 });

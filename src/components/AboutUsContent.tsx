@@ -54,15 +54,88 @@ export default function AboutUsContent() {
         <div className="md:col-span-7 space-y-4">
           <h2 className="text-2xl font-bold text-white font-soehne-breit">AI Systems Architect</h2>
           <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
-            specialty is Google Search Console, Bing Webmaster Tools, SEMrush, and structured data validators. SEO → AEO transition frameworks, focusing on entity clarity, local intent, and machine‑readable content.
+            Specialised in Google Search Console, Bing Webmaster Tools, SEMrush, and structured data validators. Developing SEO to AEO transition frameworks that focus on entity clarity, local intent, and machine-readable content.
           </p>
           <div className="text-xs text-white/50 font-mono space-y-1">
-            <div>Tech Architecture: Search Engine APIs & Semantic Mappers</div>
+            <div>Tech Architecture: Search Engine APIs &amp; Semantic Mappers</div>
             <div>Clear Background Credentials: Certified Systems Architects</div>
           </div>
         </div>
         <div className="md:col-span-5">
           <TransitionFlowChart />
+        </div>
+      </section>
+
+      {/* Atomic Monotopical Narrative Blocks Layer */}
+      <section className="border-t border-white/5 pt-12 space-y-8">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-xs text-aeo-cyan font-mono">
+            <Compass className="w-3.5 h-3.5" />
+            <span>Monotopical Narrative &amp; System Provenance</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+            Engineered Provenance &amp; System Lineage
+          </h2>
+          <p className="text-xs text-white/60 font-serif">
+            Single-topic narrative blocks structured for passage-level vector chunking and high retrieval salience.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {/* Block 1: Brand Origin Thesis */}
+          <section data-entity-id="aeobility:about:block-1" data-monotopical="true" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-2 shadow-xl hover:border-aeo-cyan/30 transition-colors">
+            <div className="flex items-center justify-between text-xs font-mono text-aeo-cyan">
+              <span>Block 1: Brand Origin Thesis</span>
+              <span className="text-[10px] text-zinc-500">aeobility:about:block-1</span>
+            </div>
+            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
+              In 2024, as generative search engines altered how local business information is retrieved and recommended, traditional keyword-centric SEO transitioned to passage-level RAG extraction. AEObility was established in Perth, Western Australia, to provide a machine-readable foundation for small and medium enterprises. By structuring web content into verifiable entity graphs and focused answer blocks, AEObility ensures Australian businesses are clearly understood, trusted, and cited across Search, Maps, and AI platforms.
+            </p>
+          </section>
+
+          {/* Block 2: Foundational Roots */}
+          <section data-entity-id="aeobility:about:block-2" data-monotopical="true" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-2 shadow-xl hover:border-aeo-purple/30 transition-colors">
+            <div className="flex items-center justify-between text-xs font-mono text-aeo-purple">
+              <span>Block 2: Foundational Roots</span>
+              <span className="text-[10px] text-zinc-500">aeobility:about:block-2</span>
+            </div>
+            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
+              Early exploration into machine legibility and data alignment began with the &ldquo;Vibrational Alignment&rdquo; research paper, which investigated how large language models interpret semantic context and infer entity relationships. Rather than relying on unverified marketing assertions, the study focused on representing first-party facts as deterministic RDF triples and Schema.org graphs. This initial work established the core principle that machine legibility should be engineered into site information architecture from the ground up.
+            </p>
+          </section>
+
+          {/* Block 3: Agent Evolution */}
+          <section data-entity-id="aeobility:about:block-3" data-monotopical="true" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-2 shadow-xl hover:border-emerald-400/30 transition-colors">
+            <div className="flex items-center justify-between text-xs font-mono text-emerald-400">
+              <span>Block 3: Agent Evolution</span>
+              <span className="text-[10px] text-zinc-500">aeobility:about:block-3</span>
+            </div>
+            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
+              Machine legibility concepts advanced into software execution through the research persona &ldquo;AG Shapeshifter&rdquo;, where adaptive conversational loops and diagnostic evaluation were first prototyped. AG Shapeshifter evolved into &ldquo;AI Bill&rdquo;, AEObility&apos;s production interactive web agent. Designed to ingest telemetry audit payloads and execute grounded context handoffs, AI Bill evaluates search readiness signals while demonstrating the exact provenance architecture deployed for Australian business clients.
+            </p>
+          </section>
+
+          {/* Block 4: System Provenance */}
+          <section data-entity-id="aeobility:about:block-4" data-monotopical="true" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-2 shadow-xl hover:border-amber-400/30 transition-colors">
+            <div className="flex items-center justify-between text-xs font-mono text-amber-400">
+              <span>Block 4: System Provenance</span>
+              <span className="text-[10px] text-zinc-500">aeobility:about:block-4</span>
+            </div>
+            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
+              AEObility documents system provenance across every commercial offering. Core components, service blueprints, and client deliverables are structured as triples connecting entity, relationship, and evidence. By publishing canonical brand facts at /brand-facts and maintaining explicit schema boundaries, AEObility exposes first-party entity structures for direct machine inspection. Structuring brand facts into machine-readable entity graphs provides explicit context markers intended to reduce context dilution during answer engine retrieval.
+            </p>
+          </section>
+
+          {/* Block 5: Core Directive */}
+          <section data-entity-id="aeobility:about:block-5" data-monotopical="true" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-2 shadow-xl hover:border-aeo-cyan/30 transition-colors">
+            <div className="flex items-center justify-between text-xs font-mono text-aeo-cyan">
+              <span>Block 5: Core Directive</span>
+              <span className="text-[10px] text-zinc-500">aeobility:about:block-5</span>
+            </div>
+            <p className="text-sm text-zinc-300 font-serif leading-relaxed">
+              AEObility focuses on engineering structured context for search engine retrieval. Traditional digital marketing relies on high page volume and keyword repetition. AEObility replaces legacy techniques with structured entity salience and positional context. When core business facts are organised into focused, single-topic segments, answer engines can more effectively parse and index the brand as a verified source. AEObility delivers these optimisations through fixed-scope implementation sprints with zero contract lock-in.
+            </p>
+          </section>
         </div>
       </section>
 

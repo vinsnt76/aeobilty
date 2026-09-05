@@ -276,9 +276,161 @@ export const BRAND_PRICING_SCHEMA = {
   ]
 };
 
+// ============================================================================
+// 4.5 PROVENANCE ENTITIES & HISTORICAL LINEAGE GRAPH
+// ============================================================================
+export interface ProvenanceEntity {
+  id: string;
+  name: string;
+  schemaType: string;
+  layer: 'Ideation' | 'Transitional' | 'Execution' | 'Production' | 'Origin';
+  description: string;
+  canonicalUri: string;
+  dateCreated: string;
+  dateModified: string;
+  version: string;
+  sameAs?: string[];
+}
+
+export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
+  {
+    id: 'aeobility:vibrational-alignment',
+    name: 'Vibrational Alignment',
+    schemaType: 'DigitalDocument',
+    layer: 'Ideation',
+    description: 'Foundational theoretical paper establishing machine legibility and intentional alignment principles.',
+    canonicalUri: 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment',
+    dateCreated: '2024-03-15',
+    dateModified: '2026-08-29',
+    version: '1.0.0'
+  },
+  {
+    id: 'aeobility:ag-shapeshifter',
+    name: 'AG Shapeshifter',
+    schemaType: 'SoftwareApplication',
+    layer: 'Transitional',
+    description: 'Transitional research persona where adaptive conversation and diagnostic scoring were first prototyped.',
+    canonicalUri: 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
+    dateCreated: '2024-11-01',
+    dateModified: '2026-08-29',
+    version: '0.8.4'
+  },
+  {
+    id: 'aeobility:ai-bill',
+    name: 'AI Bill',
+    schemaType: 'SoftwareApplication',
+    layer: 'Execution',
+    description: 'Production interactive agent runtime handling telemetry ingestion, diagnostic evaluation, and user consultation.',
+    canonicalUri: 'https://aeobility.com.au/services/aeo#ai-bill',
+    dateCreated: '2025-06-10',
+    dateModified: '2026-08-29',
+    version: '2.4.0',
+    sameAs: ['https://github.com/vinsnt76/aeobilty']
+  },
+  {
+    id: 'aeobility:diagnostic-system',
+    name: 'AEObility Diagnostic System',
+    schemaType: 'SoftwareApplication',
+    layer: 'Production',
+    description: 'Automated AEO/GEO scoring engine evaluating 5-category search readiness signals.',
+    canonicalUri: 'https://aeobility.com.au/diagnostic#system',
+    dateCreated: '2026-01-15',
+    dateModified: '2026-08-29',
+    version: '3.1.0'
+  },
+  {
+    id: 'aeobility:organization',
+    name: 'AEObility',
+    schemaType: 'Organization',
+    layer: 'Production',
+    description: 'Australian Answer Engine Optimisation consultancy and legal brand holder.',
+    canonicalUri: 'https://aeobility.com.au/#organisation',
+    dateCreated: '2011-03-15',
+    dateModified: '2026-08-29',
+    version: '2026.3'
+  },
+  {
+    id: 'aeobility:vince-baker',
+    name: 'Vince Baker',
+    schemaType: 'Person',
+    layer: 'Origin',
+    description: 'Founder and principal technical architect of AEObility and AI Bill.',
+    canonicalUri: 'https://aeobility.com.au/vince-baker#person',
+    dateCreated: '2011-03-15',
+    dateModified: '2026-08-29',
+    version: '1.0.0',
+    sameAs: [
+      'https://github.com/vinsnt76'
+    ]
+  }
+];
+
+export const PROVENANCE_GRAPH_SCHEMA = {
+  '@context': {
+    '@vocab': 'https://schema.org/',
+    'prov': 'http://www.w3.org/ns/prov#',
+    'originatedFrom': { '@id': 'schema:isBasedOn', '@type': '@id' },
+    'evolvedFrom': { '@id': 'schema:isBasedOn', '@type': '@id' },
+    'integratedInto': { '@id': 'schema:isPartOf', '@type': '@id' },
+    'utilisesAgent': { '@id': 'schema:agent', '@type': '@id' },
+    'comprises': { '@id': 'schema:hasPart', '@type': '@id' },
+    'hasSpecialty': { '@id': 'schema:knowsAbout', '@type': '@id' }
+  },
+  '@graph': [
+    {
+      '@type': 'DigitalDocument',
+      '@id': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment',
+      name: 'Vibrational Alignment',
+      description: 'Foundational theoretical paper establishing machine legibility and intentional alignment principles.',
+      dateCreated: '2024-03-15',
+      dateModified: '2026-08-29',
+      version: '1.0.0',
+      author: { '@id': 'https://aeobility.com.au/vince-baker#person' }
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
+      name: 'AG Shapeshifter',
+      applicationCategory: 'BusinessApplication',
+      description: 'Transitional research persona where adaptive conversation and diagnostic scoring were first prototyped.',
+      dateCreated: '2024-11-01',
+      dateModified: '2026-08-29',
+      version: '0.8.4',
+      'prov:wasDerivedFrom': { '@id': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment' },
+      'schema:isBasedOn': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment'
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://aeobility.com.au/services/aeo#ai-bill',
+      name: 'AI Bill',
+      applicationCategory: 'BusinessApplication',
+      description: 'Production interactive agent runtime handling telemetry ingestion, diagnostic evaluation, and user consultation.',
+      dateCreated: '2025-06-10',
+      dateModified: '2026-08-29',
+      version: '2.4.0',
+      sameAs: ['https://github.com/vinsnt76/aeobilty'],
+      'prov:wasRevisionOf': { '@id': 'https://aeobility.com.au/brand-facts#ag-shapeshifter' },
+      'schema:isBasedOn': 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
+      'schema:isPartOf': 'https://aeobility.com.au/diagnostic#system'
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://aeobility.com.au/diagnostic#system',
+      name: 'AEObility Diagnostic System',
+      applicationCategory: 'BusinessApplication',
+      description: 'Automated AEO/GEO scoring engine evaluating 5-category search readiness signals.',
+      dateCreated: '2026-01-15',
+      dateModified: '2026-08-29',
+      version: '3.1.0',
+      'schema:agent': { '@id': 'https://aeobility.com.au/services/aeo#ai-bill' }
+    }
+  ]
+};
+
 export const PUBLIC_SCHEMA_GRAPH = {
   '@context': 'https://schema.org',
   '@graph': [
+    ...PROVENANCE_GRAPH_SCHEMA['@graph'],
     {
       '@type': 'ProfessionalService',
       '@id': 'https://aeobility.com.au/#organisation',

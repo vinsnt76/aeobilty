@@ -108,7 +108,7 @@ export default function VinceBakerClientPage() {
           <div className="vince-profile-section">
             <div className="vince-avatar-wrapper">
               <Image
-                src="/vinnie-baker.jpg"
+                src="/Profile-Picture-Vinnie.png"
                 alt="Vinnie Baker - Founder of AEObility"
                 width={112}
                 height={112}
@@ -139,7 +139,7 @@ export default function VinceBakerClientPage() {
           {/* Action Links Grid */}
           <div className="vince-links-grid">
             <a
-              href="/vcard.vcf"
+              href="/vince-baker.vcf"
               download="Vinnie_Baker_AEObility.vcf"
               className="vince-link-btn vince-btn-primary"
             >

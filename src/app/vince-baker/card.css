@@ -1,220 +1,317 @@
-/* CSS CARD */
+/* AEObility Digital Business Card — Vinnie Baker (/vince-baker) */
 
-/* CONTAINER */
-.card-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #030303;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    padding: 40px 20px;
+.vince-card-page {
+  min-height: 100vh;
+  background-color: #030303;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* CARD WRAPPER */
-.card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 440px;
-    background: linear-gradient(135deg, #07070a 0%, #150821 100%);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.05), 0 0 0 1px rgba(0, 240, 255, 0.15) inset;
-    padding: 40px 32px;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(0, 240, 255, 0.1);
+/* Background Ambient Glows */
+.vince-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.25;
+  pointer-events: none;
 }
 
-/* IMAGE */
-.card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 24px;
-    flex-shrink: 0;
+.vince-glow-purple {
+  width: 320px;
+  height: 320px;
+  top: -50px;
+  left: -50px;
+  background: radial-gradient(circle, #a855f7 0%, transparent 70%);
 }
 
-.card-image img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #00f0ff;
-    box-shadow: 0 8px 24px rgba(0, 240, 255, 0.15);
-    flex-shrink: 0;
+.vince-glow-cyan {
+  width: 360px;
+  height: 360px;
+  bottom: -60px;
+  right: -60px;
+  background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
 }
 
-/* IDENTITY */
-.card-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    color: #ffffff;
+/* Card Container */
+.vince-card-container {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.75rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 229, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
 
-.card-description h1 {
-    font-size: 26px;
-    font-weight: 700;
-    margin: 0 0 6px 0;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+/* Action Bar Header */
+.vince-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.card-description h2 {
-    font-size: 14px;
-    font-weight: 500;
-    color: #00f0ff;
-    margin: 0;
-    letter-spacing: 0.2px;
+.vince-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  font-size: 0.725rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
 }
 
-/* VALUE / ABOUT SECTION */
-.card-about {
-    margin-top: 15px; /* Spacing: 12-16px between title -> greeting */
-    width: 100%;
+.vince-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: vince-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.card-about .greeting {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 10px; /* Spacing: 8-12px between greeting -> paragraph */
-    letter-spacing: -0.1px;
+@keyframes vince-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
-.card-about .value-statement {
-    font-size: 13.5px;
-    font-weight: 300;
-    line-height: 1.5; /* Line-height: 1.45-1.55 */
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    letter-spacing: 0.1px;
+.vince-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #d4d4d8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* ACTIONS / ICON ROW */
-.card-description .icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-top: 18px; /* Spacing: 16-20px between paragraph -> icon row */
-    width: 100%;
+.vince-share-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: #00e5ff;
 }
 
-.card-description .icons a,
-.card-description .icons button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(0, 240, 255, 0.05);
-    color: #ffffff;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 240, 255, 0.15);
-    cursor: pointer;
-    outline: none;
-    box-sizing: border-box;
+/* Profile Section */
+.vince-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: left;
 }
 
-.card-description .icons a:hover,
-.card-description .icons button:hover {
-    transform: translateY(-3px);
-    background: rgba(0, 240, 255, 0.15);
-    box-shadow: 0 6px 12px rgba(0, 240, 255, 0.2);
-    border-color: rgba(0, 240, 255, 0.4);
-    color: #00f0ff;
+.vince-avatar-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
 }
 
-.card-description .icons svg {
-    width: 20px; /* Reduced icon size for visual balance */
-    height: 20px;
-    fill: currentColor;
-    display: block;
+.vince-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
 }
 
-/* TOOLTIP */
-.card-hover-text {
-    position: relative;
+.vince-avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(168, 85, 247, 0.4);
+  pointer-events: none;
+  animation: vince-spin 20s linear infinite;
 }
 
-.card-tooltip-text {
-    position: absolute;
-    bottom: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    white-space: nowrap;
-    color: #ffffff;
-    font-size: 11px;
-    background-color: #bd00ff;
-    border-radius: 6px;
-    padding: 4px 8px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s, bottom 0.2s;
-    box-shadow: 0 4px 8px rgba(189, 0, 255, 0.2);
+@keyframes vince-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.card-hover-text:hover .card-tooltip-text {
-    opacity: 1;
-    bottom: -36px;
+.vince-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-/* RESPONSIVE */
+.vince-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.vince-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00e5ff;
+}
+
+.vince-location {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  margin-top: 0.15rem;
+}
+
+/* Bio */
+.vince-bio {
+  font-size: 0.875rem;
+  color: #d4d4d8;
+  line-height: 1.55;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.875rem 1rem;
+  border-radius: 1rem;
+}
+
+/* Links Grid */
+.vince-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.vince-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.875rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.vince-btn-primary {
+  background: linear-gradient(135deg, #00e5ff 0%, #00a8ff 100%);
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.vince-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.45);
+}
+
+.vince-btn-wallet {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.vince-btn-wallet:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #a855f7;
+  transform: translateY(-2px);
+}
+
+.vince-btn-secondary {
+  background: rgba(18, 18, 26, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.vince-btn-secondary:hover {
+  background: rgba(24, 24, 36, 1);
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+}
+
+/* Social Links */
+.vince-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vince-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #a1a1aa;
+  font-size: 0.775rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vince-social-link:hover {
+  color: #00e5ff;
+}
+
+/* Footer Brand */
+.vince-footer-brand {
+  font-size: 0.725rem;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.vince-footer-brand a {
+  color: #a1a1aa;
+  text-decoration: none;
+}
+
+/* Responsive tweaks */
 @media (max-width: 480px) {
-    .card-page-container {
-        padding: 20px 12px;
-    }
-    
-    .card-container {
-        padding: 32px 20px;
-        border-radius: 20px;
-    }
-    
-    .card-image img {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .card-description h1 {
-        font-size: 23px;
-    }
-    
-    .card-description h2 {
-        font-size: 13px;
-    }
-    
-    .card-about .value-statement {
-        font-size: 13px;
-    }
-}
+  .vince-card-container {
+    padding: 1.5rem 1.15rem;
+    border-radius: 1.25rem;
+  }
 
-.google-wallet-btn-container {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+  .vince-profile-section {
+    gap: 1rem;
+  }
 
-.google-wallet-btn {
-    display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
+  .vince-avatar-wrapper {
+    width: 75px;
+    height: 75px;
+  }
 
-.google-wallet-btn:hover {
-    transform: scale(1.02);
-    opacity: 0.95;
-}
+  .vince-name {
+    font-size: 1.35rem;
+  }
 
-.google-wallet-btn img {
-    height: 44px;
-    width: auto;
-    display: block;
+  .vince-title {
+    font-size: 0.8rem;
+  }
 }

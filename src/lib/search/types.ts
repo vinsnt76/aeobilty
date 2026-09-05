@@ -11,6 +11,22 @@ export interface KnowledgeNode {
   embedding: number[];
 }
 
+export interface KnowledgeBasePayload {
+  calibration: {
+    muBase: number;
+    sigmaBase: number;
+    vectorDim: number;
+    zScoreThreshold: number;
+    totalNodes: number;
+    pairCount?: number;
+    populationScope?: string;
+    recalibrationCadence?: string;
+  };
+  nodes: KnowledgeNode[];
+}
+
+export type KnowledgeBaseExport = KnowledgeBasePayload | KnowledgeNode[];
+
 export type SearchQueryResultType = 
   | 'visibility'
   | 'general_knowledge'

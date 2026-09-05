@@ -47,5 +47,6 @@ ga4-admin-cli.json
 *.jsonkey
 antigravity-*.json
 *-*-*.json
-*.secret.json
+# scratch scripts
+scratch/
 

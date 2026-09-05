@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { corsHeaders, handleCorsOptions } from '@/lib/cors';
-import { KnowledgeNode, SearchQueryResponse } from '@/lib/search/types';
+import { KnowledgeNode, KnowledgeBaseExport, SearchQueryResponse } from '@/lib/search/types';
 import { 
   computeUncappedScore, 
   classifyQueryIntent, 
@@ -12,7 +12,8 @@ import {
 import { toAustralianEnglish } from '@/lib/search/auEnglish';
 import knowledgeBaseData from '@/lib/search/knowledgeBase.json';
 
-const knowledgeBase = knowledgeBaseData as KnowledgeNode[];
+const rawData = knowledgeBaseData as unknown as KnowledgeBaseExport;
+const knowledgeBase: KnowledgeNode[] = Array.isArray(rawData) ? rawData : rawData.nodes;
 
 export async function OPTIONS() {
   return handleCorsOptions();
