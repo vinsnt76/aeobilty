@@ -64,6 +64,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/articles/structured-data-query-fan-out`,
   `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
+  `https://${HOST}/knowledge-hub/articles/vibrational-alignment`,
 
   // 6. About & Consulting Profiles
   `https://${HOST}/about`,

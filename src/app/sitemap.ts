@@ -222,6 +222,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/knowledge-hub/articles/vibrational-alignment`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/case-studies`,
       lastModified: currentDate,
       changeFrequency: "weekly",
