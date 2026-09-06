@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Privacy Policy | AEObility",
   description: "Learn how AEObility protects your personal information in accordance with the Australian Privacy Principles (APPs) under the Privacy Act 1988 (Cth).",
   alternates: {

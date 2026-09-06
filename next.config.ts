@@ -209,6 +209,11 @@ const nextConfig: NextConfig = {
         destination: '/solutions/aeo-sprint',
         permanent: true,
       },
+      {
+        source: '/solutions/geo-services',
+        destination: '/services/geo-marketing',
+        permanent: true,
+      },
     ];
   },
 };

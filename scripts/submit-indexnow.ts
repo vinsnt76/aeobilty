@@ -39,7 +39,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/solutions`,
   `https://${HOST}/solutions/aeo-blueprint`,
   `https://${HOST}/solutions/aeo-sprint`,
-  `https://${HOST}/solutions/geo-services`,
+  `https://${HOST}/services/geo-marketing`,
 
   // 4. Knowledge Hub Indexes & Core Theory
   `https://${HOST}/knowledge-hub`,
