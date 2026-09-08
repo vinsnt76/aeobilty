@@ -141,7 +141,7 @@ export default function AISearchMarketingPage() {
       key: "micro-sprint",
       anchorId: "ai-micro-sprints",
       icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
-      title: "AEO Technical Micro-Sprint",
+      title: "AEO technical micro-sprint",
       code: "SS1 / SS2",
       price: "From $495 AUD",
       priceSub: "ex. GST",
@@ -155,7 +155,7 @@ export default function AISearchMarketingPage() {
       key: "foundation",
       anchorId: "ai-foundation",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
-      title: "Foundation Implementation",
+      title: "Foundation implementation",
       code: "MACRO TIER",
       price: "From $3,195 AUD",
       priceSub: "ex. GST",
@@ -169,7 +169,7 @@ export default function AISearchMarketingPage() {
       key: "blueprint",
       anchorId: "ai-blueprint",
       icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
-      title: "The AEObility Blueprint",
+      title: "The AEObility blueprint",
       code: "BPSTRAT",
       price: "$995 AUD",
       priceSub: "ex. GST",
@@ -308,7 +308,7 @@ export default function AISearchMarketingPage() {
               <span>AI Search Marketing &amp; Generative Strategy</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI Search Marketing for <span className="text-gradient-aeo">Perth Businesses</span>
+              AI search marketing for <span className="text-gradient-aeo">Perth businesses</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
@@ -371,10 +371,10 @@ export default function AISearchMarketingPage() {
             </p>
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          {/* 2. "Choose your starting point" Engagement Grid */}
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose your starting point</h2>
               <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
             </div>
 
@@ -493,11 +493,11 @@ export default function AISearchMarketingPage() {
           </section>
 
           
-            {/* Action Entity Resolution Framework CTA */}
+            {/* Action entity resolution framework CTA */}
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action Entity Resolution Framework</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
                 <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
                   Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+perth" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
                 </p>
@@ -509,14 +509,14 @@ export default function AISearchMarketingPage() {
           <section id="ai-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How AI Search Optimisation Works</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How AI search optimisation works</h2>
               <p className="text-xs text-white/60 font-serif">Clear sequence from initial readiness scan to complete handover notes.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">1</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Readiness Audit</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Readiness audit</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run a free scan or confirm your site priorities with our strategy team.</p>
               </div>
 
@@ -528,7 +528,7 @@ export default function AISearchMarketingPage() {
 
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">3</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Validation &amp; Handover</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Validation &amp; handover</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">Run validation checks and receive complete documentation &amp; ownership notes.</p>
               </div>
             </div>
@@ -537,7 +537,7 @@ export default function AISearchMarketingPage() {
           {/* 5. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="ai-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss Your AI Search Strategy</h2>
+              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss your AI search strategy</h2>
               <p className="text-sm text-zinc-400 leading-relaxed font-serif">
                 Tell us about your business goals and AI search priorities. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
               </p>
@@ -551,7 +551,7 @@ export default function AISearchMarketingPage() {
             <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
               <div className="flex items-center justify-between gap-4 mb-1.5">
-                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss AI Search Optimisation</h3>
+                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss AI search optimisation</h3>
                 <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
                   AI Search Sprint
                 </span>
@@ -563,7 +563,7 @@ export default function AISearchMarketingPage() {
               {contactSubmitted ? (
                 <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
                   <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-                  <h4 className="font-bold text-white text-base">Enquiry Received</h4>
+                  <h4 className="font-bold text-white text-base">Enquiry received</h4>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                     Thank you for reaching out. Our AEObility strategy team will review your details and get in touch within 24 business hours.
                   </p>
