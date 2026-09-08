@@ -30,7 +30,10 @@ import {
   Rocket,
   Boxes,
   FileCheck,
-  Code
+  Code,
+  Building2,
+  Activity,
+  Wrench
 } from 'lucide-react';
 
 export const AI_MARKETING_INTERNAL_LINKS = [
@@ -312,8 +315,11 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Western Australia's isolated market creates unique indexing challenges. From mining and resources sectors to local trade networks, Perth businesses require high-fidelity semantic clustering to dominate local mapping and conversational search engines like ChatGPT and Gemini.
+                WA is unique because of its isolation. That geographical divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG). From specialised mining corridors to local medical practices and tradies, Perth businesses need clear, structured data so AI systems understand who you are and recommend you with confidence.
               </h2>
+              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed mt-4">
+                AEObility builds the bridge between your brand and generative search. As your local visibility partner, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
+              </p>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
                   <p className="text-sm text-cyan-50 font-serif leading-relaxed">
@@ -369,6 +375,90 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* New Copy Section: Who We Represent & Industry Focus */}
+          <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
+            <div className="max-w-4xl mx-auto space-y-16">
+              
+              {/* Who we represent block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Who we represent and how AI sees you
+                </h2>
+                <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                  When setting up your Perth presence for AI search, five foundational elements shape how engines interpret your brand:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you are</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">AEObility acts as your trusted, first-party authority for AI search optimisation across Western Australia.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">What you offer</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">Our core service is custom AI search optimisation (AEO/GEO), designed to improve how often you are cited across ChatGPT, Google AI Overviews, Gemini, and Perplexity.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors md:col-span-2">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Where you operate</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">We centre your service area on the City of Perth, WA, extending across Western Australia to cover key metro corridors like Joondalup, Fremantle, Mandurah, and Subiaco.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you serve</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed mb-3">We focus on three core groups:</p>
+                    <ul className="space-y-2 text-sm text-zinc-400 font-serif list-disc pl-4 marker:text-cyan-500">
+                      <li>Mining, resources, and industrial services operators in WA</li>
+                      <li>Allied health clinics and practices across Perth suburbs</li>
+                      <li>Trade and home-services businesses (plumbing, electrical, HVAC) targeting local "near me" demand</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">How you are represented</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">In structured data and AI knowledge graphs, your Perth entity is modelled as a LocalBusiness with a ProfessionalService subtype, ensuring answer engines and AI assistants clearly identify you as a verified, location-based service provider.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industry Focus block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Industry focus
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Mining, resources and industrial services</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Helping WA operators show up first when corporate procurement teams ask AI assistants about industrial execution, automation, safety, and compliance.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-purple-950/40 rounded-lg text-purple-400 shrink-0 mt-0.5">
+                      <Activity className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Allied health clinics and practices</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Setting up clear practitioner profiles, verified local addresses, and precise proximity data so patients find you when they search for care in their local Perth suburb.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Wrench className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Trade and home services</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Fixing unverified listings and unclear service boundaries so local plumbers, electricians, and HVAC specialists stay trusted and visible in map packs and voice search.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                    Traditional digital marketing relies on churning out extra web pages and repeating keywords. AEObility replaces keyword-dense tactics with structured facts that make your services crystal clear to modern answer engines. When your core business details are neatly organised into single-topic segments, AI models can easily verify your brand and point people straight to you. We roll out these technical upgrades in fast, fixed-scope sprints, with zero lock-in contracts.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2. "Choose your starting point" Engagement Grid */}
@@ -497,10 +587,16 @@ export default function AISearchMarketingPage() {
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+perth" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                  Are your local listings getting lost in the algorithms? Run a live scan through our diagnostic portal to see how easily search engines can read your site and spot the gaps holding back your visibility. In minutes, you will see which AI platforms can (and cannot) find you, alongside a short list of fixes to prioritise.
                 </p>
+                <div className="pt-2">
+                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+perth" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                    <Search className="w-4 h-4 text-black" />
+                    <span>Run a live scan</span>
+                  </Link>
+                </div>
               </div>
             </section>
   
