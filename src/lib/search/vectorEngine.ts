@@ -207,7 +207,7 @@ export function classifyCompanion5Intent(
       targetTitle = 'The AEObility Blueprint ($995 AUD)';
       desc = 'Complete 90-day AEO roadmap & entity audit (100% credited back on implementation).';
     } else if (clean.includes('geo') || clean.includes('maps') || clean.includes('local')) {
-      targetUrl = '/solutions/geo-services';
+      targetUrl = '/services/geo-marketing';
       targetTitle = 'GEO Services & Local Map Matrix';
       desc = 'Local coordinate mapping and spatial vector alignment for Google & Apple Maps.';
     } else if (clean.includes('contact') || clean.includes('touch') || clean.includes('book') || clean.includes('quote')) {
@@ -263,7 +263,7 @@ export function classifyCompanion5Intent(
         },
         {
           title: "3. GEO & Local Map Marketing",
-          url: "/solutions/geo-services",
+          url: "/services/geo-marketing",
           type: "service",
           description: "Spatial vector alignment & local coordinate mapping for voice search and map packs.",
           ctaText: "Explore GEO ➔"

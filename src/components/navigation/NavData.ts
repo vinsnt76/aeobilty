@@ -145,19 +145,6 @@ export const NAVIGATION_DATA: NavItemL1[] = [
           "blueprint",
           "contact"
         ]
-      },
-      {
-        "title": "GEO Services Sprint",
-        "href": "/solutions/geo-services",
-        "description": "Deploy location-aware optimisation rules. Clean coordinates, nested maps schema, and hyper-local citation structures to dominate regional search.",
-        "entityName": "GEO Services Sprint",
-        "isServicePillar": false,
-        "isKnowledgeCapsule": false,
-        "corridors": [
-          "phone",
-          "scan",
-          "contact"
-        ]
       }
     ]
   },
@@ -354,7 +341,7 @@ export const HUB_SUBNAV_MAPS: Record<string, SubNavPillItem[]> = {
     },
     {
       "title": "GEO Services",
-      "url": "/solutions/geo-services"
+      "url": "/services/geo-marketing"
     },
     {
       "title": "Visibility Scan",

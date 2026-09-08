@@ -26,7 +26,7 @@
 - [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.
 - [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The Strategic Blueprint Method ($995 AUD standalone clarity phase deep audit & 90-day roadmap, 100% credited back into implementation).
 - [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Technical Sprints (JSON-LD graph nesting, HTML refactoring rules, passage level extraction, token optimisation passes, no lock-in contracts).
-- [`/solutions/geo-services`](https://aeobility.com.au/solutions/geo-services): GEO Services Sprint (coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation).
+- [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): GEO Services Sprint (coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation).
 
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
@@ -51,6 +51,7 @@
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
 - [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
   - [`/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`](https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps): How to Fix AI Brand Hallucinations & Evidence Gaps: The Entity, Evidence, and Semantic Triples Architecture.
+  - [`/knowledge-hub/articles/vibrational-alignment`](https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment): Foundational paper on machine legibility, deterministic entity relationships, and intentional data structures for AI search.
   - [`/knowledge-hub/articles/optimising-for-different-ai-search-engines`](https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines): How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content.
   - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
   - [`/knowledge-hub/articles/positional-bias-in-retrieval`](https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval): What Is Positional Bias in Retrieval and Answer Engines?

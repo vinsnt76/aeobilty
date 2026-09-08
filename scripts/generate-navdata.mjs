@@ -257,7 +257,7 @@ export function generateNavData() {
       { title: "Packages Overview", url: "/solutions" },
       { title: "AEO Blueprint", url: "/solutions/aeo-blueprint" },
       { title: "AEO Sprints", url: "/solutions/aeo-sprint" },
-      { title: "GEO Services", url: "/solutions/geo-services" },
+      { title: "GEO Services", url: "/services/geo-marketing" },
       { title: "Visibility Scan", url: "/diagnostic" }
     ]
   };

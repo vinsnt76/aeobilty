@@ -559,11 +559,13 @@ export const PUBLIC_SCHEMA_GRAPH = {
       ]
     },
     {
-      '@type': 'WebPage',
+      '@type': ['WebPage', 'CollectionPage'],
       '@id': 'https://aeobility.com.au/brand-facts#webpage',
       url: 'https://aeobility.com.au/brand-facts',
       name: 'Canonical Brand Facts & Machine Interface Directory | AEObility',
       description: "AEObility's canonical business knowledge layer, publishing verified first-party business facts, entity graphs, provenance evidence, and machine interface endpoints.",
+      inLanguage: 'en-AU',
+      dateModified: '2026-08-29',
       isPartOf: {
         '@id': 'https://aeobility.com.au/#website'
       },

@@ -23,13 +23,20 @@ export const metadata: Metadata = {
 export default function VibrationalAlignmentArticlePage() {
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "DigitalDocument",
+    "@type": ["Article", "DigitalDocument"],
     "@id": "https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment",
     "name": "Vibrational Alignment: Machine Legibility & Intentional Data Structures",
+    "headline": "Vibrational Alignment: Machine Legibility & Intentional Data Structures",
     "description": "Foundational theoretical paper establishing machine legibility and intentional alignment principles.",
+    "url": "https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment",
+    "inLanguage": "en-AU",
     "datePublished": "2024-03-15",
     "dateModified": "2026-08-29",
     "version": "1.0.0",
+    "articleSection": "AI Search and Entity Architecture",
+    "mainEntityOfPage": {
+      "@id": "https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment"
+    },
     "author": {
       "@type": "Person",
       "@id": "https://aeobility.com.au/vince-baker#person",
@@ -41,7 +48,12 @@ export default function VibrationalAlignmentArticlePage() {
       "@id": "https://aeobility.com.au/#organisation",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
-    }
+    },
+    "about": [
+      "Machine legibility",
+      "Entity relationship modelling",
+      "Answer Engine Optimisation"
+    ]
   };
 
   return (

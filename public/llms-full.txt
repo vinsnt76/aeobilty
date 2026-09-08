@@ -42,7 +42,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Focus**: Execution Sprints (No Lock-in Contracts)
 - **Deliverables**: JSON-LD graph nesting, HTML refactoring rules, passage level extraction setup, token optimisation passes.
 
-### Tier 3: GEO Services Sprint (`/solutions/geo-services`)
+### Tier 3: GEO Services Sprint (`/services/geo-marketing`)
 - **Focus**: Location Domination (Map Focus)
 - **Deliverables**: Coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation.
 
@@ -75,6 +75,10 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Title**: How to Fix AI Brand Hallucinations & Evidence Gaps
 - **H1**: How to Fix AI Brand Hallucinations and Evidence Gaps in AI Search
 - **Summary**: Architectural methodology for eliminating hallucinations in LLM retrieval through unambiguous Entity-Relationship-Evidence triples, verified first-party ledgers, and nested JSON-LD schema graphs.
+
+### Node: `/knowledge-hub/articles/vibrational-alignment`
+- **Title**: Vibrational Alignment: Machine Legibility & Intentional Data Structures
+- **Summary**: Foundational paper connecting machine legibility, deterministic entity relationships, and intentional data structures for AI search.
 
 ### Case Study Node: `/knowledge-hub/case-studies/baby-bento`
 - **Title**: E-Commerce AEO Case Study: Baby Bento

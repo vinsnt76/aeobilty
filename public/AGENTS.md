@@ -44,7 +44,7 @@ AEObility structures its digital presence across verified entity nodes grounded 
 ### Core Engagements & Solutions
 1. **The Strategic Blueprint Method**: Standalone $995 AUD Clarity Phase deep technical audit and 90-day strategic roadmap. (`https://aeobility.com.au/solutions/aeo-blueprint`)
 2. **AEO Technical Sprints**: Programmatic schema graph nesting, code refactoring, and atomic block rewrites. (`https://aeobility.com.au/solutions/aeo-sprint`)
-3. **GEO Services Sprint**: Location-aware optimisation rules, coordinate precision mapping, and regional intent frameworks. (`https://aeobility.com.au/solutions/geo-services`)
+3. **GEO Services Sprint**: Location-aware optimisation rules, coordinate precision mapping, and regional intent frameworks. (`https://aeobility.com.au/services/geo-marketing`)
 
 ### Primary Service Corridors
 1. **AEO Services & Procedures**: Best AEO strategies for refactoring web content into 90-120 token atomic answer blocks and FAQ Knowledge Graph topologies to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo/procedures`)

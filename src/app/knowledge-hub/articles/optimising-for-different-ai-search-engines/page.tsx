@@ -235,7 +235,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
             "@type": "ListItem",
             "position": 3,
             "name": "Articles",
-            "item": "https://aeobility.com.au/knowledge-hub/articles/"
+            "item": "https://aeobility.com.au/knowledge-hub/articles"
           },
           {
             "@type": "ListItem",
