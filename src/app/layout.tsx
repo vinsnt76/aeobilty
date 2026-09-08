@@ -147,16 +147,23 @@ export default function RootLayout({
                     {
                       "@type": "City",
                       "name": "Perth",
-                      "sameAs": "https://en.wikipedia.org/wiki/Perth"
+                      "sameAs": [
+                        "https://www.wikidata.org/wiki/Q3183",
+                        "https://en.wikipedia.org/wiki/Perth"
+                      ]
                     },
                     {
                       "@type": "AdministrativeArea",
                       "name": "Western Australia",
-                      "sameAs": "https://en.wikipedia.org/wiki/Western_Australia"
+                      "sameAs": [
+                        "https://www.wikidata.org/wiki/Q3205",
+                        "https://en.wikipedia.org/wiki/Western_Australia"
+                      ]
                     },
                     {
                       "@type": "Country",
-                      "name": "Australia"
+                      "name": "Australia",
+                      "sameAs": "https://www.wikidata.org/wiki/Q408"
                     }
                   ],
                   "hasOfferCatalog": {
@@ -233,6 +240,76 @@ export default function RootLayout({
                       "url": "https://aeobility.com.au/api/mcp"
                     }
                   ]
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://aeobility.com.au/#perth-local-business",
+                  "name": "AEObility",
+                  "url": "https://aeobility.com.au",
+                  "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+                  "telephone": "+61480286282",
+                  "parentOrganization": {
+                    "@id": "https://aeobility.com.au/#organisation"
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Perth",
+                    "addressRegion": "Western Australia",
+                    "postalCode": "6000",
+                    "addressCountry": "AU"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -31.9505,
+                    "longitude": 115.8605
+                  },
+                  "serviceArea": [
+                    {
+                      "@type": "City",
+                      "@id": "https://aeobility.com.au/#service-area-perth",
+                      "name": "Perth",
+                      "sameAs": "https://www.wikidata.org/wiki/Q3183"
+                    },
+                    {
+                      "@type": "AdministrativeArea",
+                      "@id": "https://aeobility.com.au/#service-area-western-australia",
+                      "name": "Western Australia",
+                      "sameAs": "https://www.wikidata.org/wiki/Q3205"
+                    },
+                    {
+                      "@type": "Country",
+                      "@id": "https://aeobility.com.au/#service-area-australia",
+                      "name": "Australia",
+                      "sameAs": "https://www.wikidata.org/wiki/Q408"
+                    }
+                  ],
+                  "sameAs": [
+                    "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+                  ]
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://aeobility.com.au/services/ai-search-marketing#perth-service",
+                  "name": "AI Search Optimisation Perth",
+                  "serviceType": "AI search optimisation",
+                  "url": "https://aeobility.com.au/services/ai-search-marketing",
+                  "provider": {
+                    "@id": "https://aeobility.com.au/#perth-local-business"
+                  },
+                  "serviceArea": [
+                    {
+                      "@id": "https://aeobility.com.au/#service-area-perth"
+                    },
+                    {
+                      "@id": "https://aeobility.com.au/#service-area-western-australia"
+                    },
+                    {
+                      "@id": "https://aeobility.com.au/#service-area-australia"
+                    }
+                  ],
+                  "areaServed": {
+                    "@id": "https://aeobility.com.au/#service-area-perth"
+                  }
                 },
                 {
                   "@type": "Person",
