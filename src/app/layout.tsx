@@ -312,6 +312,46 @@ export default function RootLayout({
                   }
                 },
                 {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://aeobility.com.au/#ai-bill",
+                  "name": "AI Bill",
+                  "alternateName": "AEObility AI Bill",
+                  "description": "A web-based AI diagnostic assistant from AEObility that analyses AEO, GEO, local search, and AI visibility signals using grounded site knowledge and telemetry audit context.",
+                  "applicationCategory": "BusinessApplication",
+                  "applicationSubCategory": "AI visibility diagnostic assistant",
+                  "operatingSystem": "Web",
+                  "url": "https://aeobility.com.au",
+                  "featureList": [
+                    "Grounded conversational answers about AEObility services and methodologies",
+                    "AI visibility telemetry audit analysis",
+                    "Citation share, clarity score, and hallucination risk interpretation",
+                    "Provenance and entity graph explanations"
+                  ],
+                  "creator": {
+                    "@id": "https://aeobility.com.au/#person"
+                  },
+                  "publisher": {
+                    "@id": "https://aeobility.com.au/#organisation"
+                  },
+                  "isAccessibleForFree": true,
+                  "potentialAction": [
+                    {
+                      "@type": "CommunicateAction",
+                      "name": "Chat with AI Bill",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://aeobility.com.au/api/bill",
+                        "actionPlatform": [
+                          "https://schema.org/DesktopWebPlatform",
+                          "https://schema.org/MobileWebPlatform"
+                        ],
+                        "httpMethod": "POST",
+                        "contentType": "application/json"
+                      }
+                    }
+                  ]
+                },
+                {
                   "@type": "Person",
                   "@id": "https://aeobility.com.au/#person",
                   "name": "Vinnie Baker",
