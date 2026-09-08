@@ -181,3 +181,45 @@ All page entities on AEObility strictly follow Schema.org valid type definitions
 - **Interactive Scan**: https://aeobility.com.au/diagnostic
 - **Direct Booking**: https://aeobility.com.au/book
 - **Brand Facts Directory**: https://aeobility.com.au/brand-facts
+
+
+# AI Search Optimisation Services for Perth Businesses
+
+URL: https://aeobility.com.au/services/ai-search-marketing/perth
+
+## Regional Service Specialisations and Local Entities
+AEObility provides highly specialised AI search marketing for Perth businesses. We improve RAG retrieval, citation share, and machine readability across Perplexity, ChatGPT, Gemini, and AI Overviews. 
+Our Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services are tailored for the Perth market to ensure local businesses dominate proximity algorithms and conversational discovery.
+
+# AI Search Optimisation Services for Melbourne Businesses
+
+URL: https://aeobility.com.au/services/ai-search-marketing/melbourne
+
+## Regional Service Specialisations and Local Entities
+AEObility provides highly specialised AI search marketing for Melbourne businesses. We improve RAG retrieval, citation share, and machine readability across Perplexity, ChatGPT, Gemini, and AI Overviews. 
+Our Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services are tailored for the Melbourne market to ensure local businesses dominate proximity algorithms and conversational discovery.
+
+# AI Search Optimisation Services for Sydney Businesses
+
+URL: https://aeobility.com.au/services/ai-search-marketing/sydney
+
+## Regional Service Specialisations and Local Entities
+AEObility provides highly specialised AI search marketing for Sydney businesses. We improve RAG retrieval, citation share, and machine readability across Perplexity, ChatGPT, Gemini, and AI Overviews. 
+Our Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services are tailored for the Sydney market to ensure local businesses dominate proximity algorithms and conversational discovery.
+
+# AI Search Optimisation Services for Adelaide Businesses
+
+URL: https://aeobility.com.au/services/ai-search-marketing/adelaide
+
+## Regional Service Specialisations and Local Entities
+AEObility provides highly specialised AI search marketing for Adelaide businesses. We improve RAG retrieval, citation share, and machine readability across Perplexity, ChatGPT, Gemini, and AI Overviews. 
+Our Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services are tailored for the Adelaide market to ensure local businesses dominate proximity algorithms and conversational discovery.
+
+# AI Search Optimisation Services for Brisbane Businesses
+
+URL: https://aeobility.com.au/services/ai-search-marketing/brisbane
+
+## Regional Service Specialisations and Local Entities
+AEObility provides highly specialised AI search marketing for Brisbane businesses. We improve RAG retrieval, citation share, and machine readability across Perplexity, ChatGPT, Gemini, and AI Overviews. 
+Our Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services are tailored for the Brisbane market to ensure local businesses dominate proximity algorithms and conversational discovery.
+

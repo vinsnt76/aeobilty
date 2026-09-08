@@ -42,6 +42,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/services/ai-search-marketing/perth`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/ai-search-marketing/melbourne`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/ai-search-marketing/sydney`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/ai-search-marketing/adelaide`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/ai-search-marketing/brisbane`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/services/geo-marketing`,
       lastModified: currentDate,
       changeFrequency: "weekly",

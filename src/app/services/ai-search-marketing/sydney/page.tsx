@@ -9,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { trackGaEvent } from '@/lib/gtag';
-import { getAiSearchMarketingSchemaGraph } from '@/lib/schema/aiSearchMarketing';
+
 import {
   ArrowRight,
   Layers,
@@ -115,30 +115,26 @@ export default function AISearchMarketingPage() {
 
   const faqs = [
     {
-      question: "Is AI search marketing different from traditional SEO?",
-      answer: "AI search marketing builds on sound SEO; it does not replace it. Traditional SEO helps pages rank for keyword strings. AI search marketing restructures your business details, credentials, services, and evidence so search engines, digital assistants, and generative platforms (like ChatGPT, Gemini, and Perplexity) can extract and reference your information accurately."
+        "question": "Is AI search optimisation worth it in a competitive market like Sydney?",
+        "answer": "Absolutely. In a hyper-competitive landscape like Sydney, AI citations serve as a critical differentiator. Early movers who establish semantic authority gain disproportionate visibility while competitors rely on saturated traditional search channels."
     },
     {
-      question: "Can anyone guarantee citations in ChatGPT, Gemini, or Perplexity?",
-      answer: "No — and no honest agency should promise guaranteed AI search placements. Generative search engines select citations based on data clarity, entity consistency, and verified evidence. Our work focuses on eliminating technical gaps, structuring atomic answer units, and validating signal consistency."
+        "question": "How do we get recommended when buyers compare Sydney agencies in AI tools?",
+        "answer": "AI tools excel at aggregating comparison data. To get recommended, you must publish clear comparison content, robust case studies, and explicit positioning that states exactly who your services are for, and who they are not for."
     },
     {
-      question: "How do you measure AI search visibility and citation share?",
-      answer: "We establish a documented query set based on your core services, locations, and high-intent customer prompts. Citation share is tracked as the percentage of responses where your business is cited, referenced, or linked across agreed platforms under consistent reporting rules."
+        "question": "What should we prioritise first for AI search in Sydney?",
+        "answer": "Begin with absolute entity clarity by harmonising your NAP (Name, Address, Phone) and deploying LocalBusiness schema. Next, refine your top service pages with answer-first copy, followed by detailed FAQs and structured comparison pages."
     },
     {
-      question: "Does structured schema markup help AI engines find my business?",
-      answer: "Yes. Schema markup (such as LocalBusiness, Service, Offer, and Organisation) provides explicit machine-readable context. It reduces ambiguity during passage retrieval, making your business data significantly easier for scrapers and AI agents to ingest."
+        "question": "How does AI search fit with our existing SEO and paid media in NSW?",
+        "answer": "These channels are complementary, not mutually exclusive. Traditional SEO secures rankings, paid media captures immediate transactional demand, and AEO drives generative citations, ensuring you dominate the entire modern discovery funnel."
     },
     {
-      question: "What is included in the $995 AEObility Blueprint?",
-      answer: "The Blueprint includes a complete digital presence audit, technical gap analysis, visibility scorecard, and a practical 90-day execution roadmap. If you proceed with Foundation Implementation within 60 days, the full $995 Blueprint fee is credited toward your implementation cost."
-    },
-    {
-      question: "How long does an AI search marketing sprint take to deliver?",
-      answer: "Most targeted Micro-Sprints are delivered within 4–5 business days after scope and access are confirmed. Foundation Implementation is delivered across a structured four-week schedule with agreed milestones."
+        "question": "What results can Sydney businesses realistically expect from AI search optimisation?",
+        "answer": "Focus on qualitative improvements rather than raw traffic spikes. Expect steady citation growth, higher-intent traffic from users who have already validated your brand via AI, and shorter sales cycles for complex enterprise decisions."
     }
-  ];
+];
 
   const engagementPaths = [
     {
@@ -185,7 +181,110 @@ export default function AISearchMarketingPage() {
     }
   ];
 
-  const jsonLdGraph = getAiSearchMarketingSchemaGraph(faqs);
+      const jsonLdGraph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#webpage",
+        "url": "https://aeobility.com.au/services/ai-search-marketing/sydney",
+        "name": "AI Search Optimisation Services Sydney | AEObility",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://aeobility.com.au/#website",
+          "url": "https://aeobility.com.au/"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#professional-service",
+        "name": "AEObility AI Search Optimisation Sydney",
+        "description": "Professional AI search marketing, GEO, and answer engine optimisation services for businesses and clinics throughout the Sydney metropolitan region.",
+        "url": "https://aeobility.com.au/services/ai-search-marketing/sydney",
+        "telephone": "+61-8-XXXX-XXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sydney",
+          "addressRegion": "NSW",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-33.8688",
+          "longitude": "151.2093"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Sydney",
+          "sameAs": "https://en.wikipedia.org/wiki/Sydney"
+        },
+        "sameAs": [
+          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
+          "https://www.linkedin.com/company/133445734/"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#service",
+        "name": "AI Search Optimisation Sydney",
+        "serviceType": "AI Search Optimisation",
+        "provider": {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Sydney",
+          "sameAs": "https://en.wikipedia.org/wiki/Sydney"
+          }
+        },
+        {
+                "@type": "FAQPage",
+                "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#faq",
+                "mainEntity": [
+                        {
+                                "@type": "Question",
+                                "name": "Is AI search optimisation worth it in a competitive market like Sydney?",
+                                "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Absolutely. In a hyper-competitive landscape like Sydney, AI citations serve as a critical differentiator. Early movers who establish semantic authority gain disproportionate visibility while competitors rely on saturated traditional search channels."
+                                }
+                        },
+                        {
+                                "@type": "Question",
+                                "name": "How do we get recommended when buyers compare Sydney agencies in AI tools?",
+                                "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "AI tools excel at aggregating comparison data. To get recommended, you must publish clear comparison content, robust case studies, and explicit positioning that states exactly who your services are for, and who they are not for."
+                                }
+                        },
+                        {
+                                "@type": "Question",
+                                "name": "What should we prioritise first for AI search in Sydney?",
+                                "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Begin with absolute entity clarity by harmonising your NAP (Name, Address, Phone) and deploying LocalBusiness schema. Next, refine your top service pages with answer-first copy, followed by detailed FAQs and structured comparison pages."
+                                }
+                        },
+                        {
+                                "@type": "Question",
+                                "name": "How does AI search fit with our existing SEO and paid media in NSW?",
+                                "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "These channels are complementary, not mutually exclusive. Traditional SEO secures rankings, paid media captures immediate transactional demand, and AEO drives generative citations, ensuring you dominate the entire modern discovery funnel."
+                                }
+                        },
+                        {
+                                "@type": "Question",
+                                "name": "What results can Sydney businesses realistically expect from AI search optimisation?",
+                                "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Focus on qualitative improvements rather than raw traffic spikes. Expect steady citation growth, higher-intent traffic from users who have already validated your brand via AI, and shorter sales cycles for complex enterprise decisions."
+                                }
+                        }
+                ]
+        }
+      ]
+    };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
@@ -209,12 +308,19 @@ export default function AISearchMarketingPage() {
               <span>AI Search Marketing &amp; Generative Strategy</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI Search Marketing &amp; <span className="text-gradient-aeo">Generative Strategy</span>
+              AI Search Marketing for <span className="text-gradient-aeo">Sydney Businesses</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Make your business easier for search engines, digital assistants and AI search platforms to identify, understand, and reference. Clear scope. Flat rates.
+                Operating in New South Wales' most saturated market requires aggressive entity disambiguation. For Sydney-based enterprises and SMBs, establishing a flawless schema lattice ensures AI models bypass generic competitors and explicitly cite your localized business authority.
               </h2>
+
+                <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
+                  <p className="text-sm text-cyan-50 font-serif leading-relaxed">
+                    See how machine-readable identity architecture reduces context dilution in our <Link href="/knowledge-hub/guides" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300">Information Architecture & Lattice Overview</Link>.
+                  </p>
+                </div>
+  
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
@@ -386,106 +492,18 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 3. Streamlined 12-Column Responsive Diagnostic Form Module */}
-          <section id="ai-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
-            <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-
-              <div className="text-center space-y-3 mb-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
-                  <Search className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Instant AI Readiness Scan</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Run a Free AI Readiness Scan</h3>
-                <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your website URL to check structured data, entity clarity, and AI search readiness signals.
+          
+            {/* Action Entity Resolution Framework CTA */}
+            <section className="border-t border-white/10 pt-16 scroll-mt-24">
+              <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action Entity Resolution Framework</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
+                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+sydney" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
                 </p>
               </div>
-
-              {diagnosticSubmitted ? (
-                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
-                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-                  <h4 className="font-bold text-white text-base">AI Readiness Scan Submitted</h4>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you. Our AEObility strategy team will audit your digital footprint and send your gap report within 24 business hours.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleDiagnosticSubmit} className="space-y-6">
-                  {/* Strict 12-Column Grid Layout */}
-                  <div className="grid grid-cols-12 gap-4">
-                    {/* Website URL Field - Col Span 12 */}
-                    <div className="col-span-12 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="ai-diag-url">
-                        Website URL
-                      </label>
-                      <input
-                        type="text"
-                        id="ai-diag-url"
-                        required
-                        value={diagnosticData.websiteUrl}
-                        onChange={(e) => setDiagnosticData({ ...diagnosticData, websiteUrl: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="e.g. mybusiness.com.au"
-                      />
-                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
-                        We check website structure, structured-data setup, and content clarity for common visibility gaps.
-                      </p>
-                    </div>
-
-                    {/* First Name Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
-                    <div className="col-span-12 md:col-span-6 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="ai-diag-name">
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        id="ai-diag-name"
-                        required
-                        value={diagnosticData.name}
-                        onChange={(e) => setDiagnosticData({ ...diagnosticData, name: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="e.g. Sarah"
-                      />
-                    </div>
-
-                    {/* Primary Email Field - Col Span 12 on Mobile, Col Span 6 on Desktop */}
-                    <div className="col-span-12 md:col-span-6 space-y-1.5">
-                      <label className="block text-xs font-semibold text-zinc-300" htmlFor="ai-diag-email">
-                        Primary Email
-                      </label>
-                      <input
-                        type="email"
-                        id="ai-diag-email"
-                        required
-                        value={diagnosticData.email}
-                        onChange={(e) => setDiagnosticData({ ...diagnosticData, email: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="sarah@mybusiness.com.au"
-                      />
-                    </div>
-
-                    <div className="col-span-12">
-                      <p className="text-[11px] text-zinc-400 font-serif leading-tight">
-                        We use your details to deliver your readiness score and gap report. We will not add you to marketing communications without your consent.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Submission Action Button */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
-                    >
-                      <span>Run Free AI Readiness Scan</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
-                  </div>
-                </form>
-              )}
-            </div>
-          </section>
+            </section>
+  
 
           {/* 4. Operational 3-Step Process Flow Pipeline Graphic */}
           <section id="ai-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
@@ -516,60 +534,7 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 5. Regional Service Specialisations and Local Entities */}
-          <section id="ai-regional-specialisations" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-aeo-purple font-bold uppercase tracking-wider">L3 Hyper-Local Node Corridors</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Regional Service Specialisations and Local Entities</h2>
-              <p className="text-xs text-white/60 font-serif">Explore our targeted AI search marketing capabilities across major Australian markets.</p>
-            </div>
-            
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/services/ai-search-marketing/perth" className="block p-5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.02] transition-all group">
-                <span className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">AI Search Optimisation Services for Perth Businesses</span>
-                <span className="flex items-center gap-1 text-[11px] text-zinc-500 mt-2 font-mono uppercase tracking-wider">
-                  View Local Node <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="/services/ai-search-marketing/melbourne" className="block p-5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.02] transition-all group">
-                <span className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">AI Search Optimisation Services for Melbourne Businesses</span>
-                <span className="flex items-center gap-1 text-[11px] text-zinc-500 mt-2 font-mono uppercase tracking-wider">
-                  View Local Node <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="/services/ai-search-marketing/sydney" className="block p-5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.02] transition-all group">
-                <span className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">AI Search Optimisation Services for Sydney Businesses</span>
-                <span className="flex items-center gap-1 text-[11px] text-zinc-500 mt-2 font-mono uppercase tracking-wider">
-                  View Local Node <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="/services/ai-search-marketing/adelaide" className="block p-5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.02] transition-all group">
-                <span className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">AI Search Optimisation Services for Adelaide Businesses</span>
-                <span className="flex items-center gap-1 text-[11px] text-zinc-500 mt-2 font-mono uppercase tracking-wider">
-                  View Local Node <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="/services/ai-search-marketing/brisbane" className="block p-5 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.02] transition-all group">
-                <span className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">AI Search Optimisation Services for Brisbane Businesses</span>
-                <span className="flex items-center gap-1 text-[11px] text-zinc-500 mt-2 font-mono uppercase tracking-wider">
-                  View Local Node <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            </div>
-
-            <div className="mt-8 text-center text-sm text-zinc-400">
-              Learn how these optimisation frameworks are verified in our active{' '}
-              <Link href="/knowledge-hub/case-studies/baby-bento" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300">
-                E-Commerce AEO Case Study
-              </Link>.
-            </div>
-          </section>
-
-          {/* 6. Bottom Conversion CTA Block + Direct Contact Form */}
+          {/* 5. Bottom Conversion CTA Block + Direct Contact Form */}
           <section id="ai-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
             <div className="max-w-md mx-auto space-y-4">
               <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss Your AI Search Strategy</h2>
@@ -698,7 +663,7 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 7. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 6. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
           <section id="faq-ai" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
@@ -746,3 +711,5 @@ export default function AISearchMarketingPage() {
     </div>
   );
 }
+
+

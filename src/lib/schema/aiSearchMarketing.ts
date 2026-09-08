@@ -63,10 +63,17 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        { "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#service" },
+        { "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#service" },
+        { "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#service" },
+        { "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#service" },
+        { "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#service" }
+      ],
       "audience": {
         "@type": "Audience",
         "audienceType": "Australian small businesses, internal marketing teams, and enterprise brand managers"

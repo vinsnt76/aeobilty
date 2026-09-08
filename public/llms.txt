@@ -38,7 +38,12 @@
   - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures, milestones, and sprint deliverables. (Child Corridor Node)
   - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring. (Sibling Radial Node)
   - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimisation. (Sibling Radial Node)
-- [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
+- [/services/ai-search-marketing](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
+  - [/services/ai-search-marketing/perth](https://aeobility.com.au/services/ai-search-marketing/perth): Perth L3 AI Search Optimisation Service Node.
+  - [/services/ai-search-marketing/melbourne](https://aeobility.com.au/services/ai-search-marketing/melbourne): Melbourne L3 AI Search Optimisation Service Node.
+  - [/services/ai-search-marketing/sydney](https://aeobility.com.au/services/ai-search-marketing/sydney): Sydney L3 AI Search Optimisation Service Node.
+  - [/services/ai-search-marketing/adelaide](https://aeobility.com.au/services/ai-search-marketing/adelaide): Adelaide L3 AI Search Optimisation Service Node.
+  - [/services/ai-search-marketing/brisbane](https://aeobility.com.au/services/ai-search-marketing/brisbane): Brisbane L3 AI Search Optimisation Service Node.
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
 
 ### Knowledge Hub (Our Research & Tutorial Nodes)
@@ -97,3 +102,4 @@ We utilise schema.org vocabulary mapped via unified `@graph` JSON-LD configurati
 - **Brand ID**: `https://aeobility.com.au/#organization`
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
 - **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
+

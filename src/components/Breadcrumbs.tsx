@@ -12,9 +12,17 @@ export default function Breadcrumbs() {
   // Split paths and build breadcrumb trail
   const pathParts = pathname.split('/').filter(Boolean);
   
-  // Format labels to match the literal lowercase path segments as requested
+  // Format labels to match the literal lowercase path segments or specific overrides
   const formatLabel = (part: string) => {
-    return part.toLowerCase();
+    const overrideMap: Record<string, string> = {
+      'ai-search-marketing': 'AI Search Marketing Hub',
+      'perth': 'AI Search Optimisation Perth',
+      'melbourne': 'AI Search Optimisation Melbourne',
+      'sydney': 'AI Search Optimisation Sydney',
+      'adelaide': 'AI Search Optimisation Adelaide',
+      'brisbane': 'AI Search Optimisation Brisbane'
+    };
+    return overrideMap[part] || part.toLowerCase();
   };
 
   const breadcrumbs = pathParts.map((part, index) => {

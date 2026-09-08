@@ -213,12 +213,12 @@ export default function RootLayout({
                     ]
                   },
                   "taxID": "61029803255",
-                  "sameAs": [
-                    "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
-                    "https://www.linkedin.com/company/133445734/",
-                    "https://www.instagram.com/aeo.bility/",
-                    "https://www.facebook.com/profile.php?id=61591781069830",
-                    "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
+                  "knowsAbout": [
+                    "Answer Engine Optimisation",
+                    "AI Search Optimisation Australia",
+                    "Generative Engine Optimization",
+                    "Retrieval-Augmented Generation",
+                    "Structured Data Graphs"
                   ],
                   "potentialAction": {
                     "@type": "SearchAction",
@@ -350,6 +350,53 @@ export default function RootLayout({
                       }
                     }
                   ]
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://aeobility.com.au/services/aeo#service",
+                  "name": "Answer Engine Optimisation (AEO)",
+                  "provider": {
+                    "@id": "https://aeobility.com.au/#organisation"
+                  },
+                  "areaServed": {
+                    "@id": "https://aeobility.com.au/#service-area-australia"
+                  },
+                  "serviceType": "Technical SEO & Data Graph Refactoring",
+                  "description": "Structuring and connecting business data across conversational search engines, AI platforms, and digital maps to improve machine readability and entity consistency.",
+                  "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "AEObility Core Offers",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Strategic Blueprint",
+                          "description": "A comprehensive visibility diagnostic and 90-day implementation roadmap covering entity indexing and schema continuity.",
+                          "offers": {
+                            "@type": "PriceSpecification",
+                            "price": "995.00",
+                            "priceCurrency": "AUD",
+                            "valueAddedTaxIncluded": "false"
+                          }
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Schema and Semantic Mapping Sprint",
+                          "description": "Foundation tier implementation establishing machine-readable identity graphs and resolving entity confusion.",
+                          "offers": {
+                            "@type": "PriceSpecification",
+                            "price": "3177.00",
+                            "priceCurrency": "AUD",
+                            "valueAddedTaxIncluded": "false"
+                          }
+                        }
+                      }
+                    ]
+                  }
                 },
                 {
                   "@type": "Person",
