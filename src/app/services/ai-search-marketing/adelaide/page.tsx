@@ -30,7 +30,10 @@ import {
   Rocket,
   Boxes,
   FileCheck,
-  Code
+  Code,
+  Building2,
+  Activity,
+  Wrench
 } from 'lucide-react';
 
 export const AI_MARKETING_INTERNAL_LINKS = [
@@ -312,8 +315,14 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                South Australia's evolving digital landscape offers a massive early-adopter advantage. By structuring your entity data for conversational AI, Adelaide businesses can secure foundational citation share across search engines before regional competitors catch up.
+                Adelaide is one of the most winnable AI search markets in Australia. Compared with Sydney and Melbourne, there is less noise, fewer agencies doing advanced AEO and GEO work, and a lot of businesses still relying on basic SEO or word-of-mouth. That is a challenge for some, but a genuine opportunity for Adelaide businesses that move early.
               </h2>
+              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed mt-4">
+                Conversational search engines like ChatGPT, Google AI Overviews, and Perplexity do not just match keywords. They read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG). For local clinics, tradies, and professional services across Adelaide and greater South Australia, that means businesses with clear, structured data are the ones AI systems understand and recommend with confidence.
+              </p>
+              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed mt-4">
+                AEObility builds the bridge between your brand and generative search. As your local visibility partner, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
+              </p>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
                   <p className="text-sm text-cyan-50 font-serif leading-relaxed">
@@ -369,6 +378,90 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* New Copy Section: Who We Represent & Industry Focus */}
+          <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
+            <div className="max-w-4xl mx-auto space-y-16">
+              
+              {/* Who we represent block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Who we represent and how AI sees you
+                </h2>
+                <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                  When we set up your Adelaide presence for AI search, we are deliberate about five things:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you are</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">AEObility acts as your trusted, first-party authority for AI search optimisation across South Australia.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">What you offer</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">Our core service is custom AI search optimisation (AEO/GEO) that improves how often you are cited in tools like ChatGPT, Google AI Overviews, Gemini, and Perplexity.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors md:col-span-2">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Where you operate</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">We centre your service area on the City of Adelaide, SA, then extend it across South Australia to cover key suburbs and regions like Adelaide CBD, Norwood, Glenelg, and Prospect.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you serve</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed mb-3">We focus on three main groups:</p>
+                    <ul className="space-y-2 text-sm text-zinc-400 font-serif list-disc pl-4 marker:text-cyan-500">
+                      <li>South Australian SMBs and local service businesses that want more high-intent enquiries</li>
+                      <li>Professional services (accountants, lawyers, clinics, and consultancies) targeting SA clients</li>
+                      <li>Businesses looking for a low-competition, high-opportunity AI search market where early movers can dominate</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">How you are represented</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">In structured data and AI knowledge graphs, your Adelaide entity is modelled as a LocalBusiness (subtype: ProfessionalService) so search engines and AI assistants can clearly identify you as a verified, location-based service provider.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industry Focus block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Industry focus
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Local SMBs and service businesses</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Helping Adelaide operators show up when locals ask AI for recommendations, whether that is &quot;best accountant in Adelaide&quot;, &quot;reliable plumber near Norwood&quot;, or &quot;who can help with X in Glenelg&quot;.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-purple-950/40 rounded-lg text-purple-400 shrink-0 mt-0.5">
+                      <Activity className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Professional services and clinics</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Setting up clear practitioner profiles, verified local addresses, and precise proximity data so patients and clients find you when they search for care or advice in their local Adelaide suburb.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Wrench className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Multi-location and growth-focused brands</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Fixing inconsistent listings and unclear service boundaries so businesses with multiple SA locations stay trusted and visible in map packs, voice search, and AI-generated shortlists.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                    Traditional digital marketing relies on churning out extra web pages and repeating keywords. AEObility replaces keyword-dense tactics with structured facts that make your services crystal clear to modern answer engines. When your core business details are neatly organised into single-topic segments, AI models can easily verify your brand and point people straight to you. We roll out these technical upgrades in fast, fixed-scope sprints, with zero lock-in contracts.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2. "Choose your starting point" Engagement Grid */}
@@ -497,10 +590,16 @@ export default function AISearchMarketingPage() {
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+adelaide" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                  Are your Adelaide listings getting lost in the algorithms? Run a live scan through our diagnostic portal to see how easily search engines can read your site and spot the gaps holding back your visibility. In minutes, you will see which AI platforms can and cannot find you, plus a short list of fixes to prioritise for the SA market.
                 </p>
+                <div className="pt-2">
+                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+adelaide" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                    <Search className="w-4 h-4 text-black" />
+                    <span>Run a live scan</span>
+                  </Link>
+                </div>
               </div>
             </section>
   
