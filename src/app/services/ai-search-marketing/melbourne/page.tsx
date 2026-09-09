@@ -30,7 +30,8 @@ import {
   Rocket,
   Boxes,
   FileCheck,
-  Code
+  Code,
+  Building2
 } from 'lucide-react';
 
 export const AI_MARKETING_INTERNAL_LINKS = [
@@ -312,7 +313,9 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Victoria’s competitive service sectors—particularly in clinical health, professional services, and local trades—demand precise entity resolution. We help Melbourne businesses restructure their digital footprints to stand out in densely populated local map packs and generative search prompts.
+                Melbourne is Australia’s most competitive, fast-moving digital market. In a city packed with tech scale-ups, national headquarters, and top-tier consultancies, old-school keyword-heavy SEO is no longer enough to win attention. Conversational search engines like ChatGPT, Google AI Overviews, Gemini, and Perplexity do not simply scan for keyword matches. They read, chunk, and piece together actual facts using retrieval-augmented generation (RAG).
+                <br /><br />
+                For Melbourne operators, businesses with clear, structured data are the ones AI platforms actually understand and recommend with confidence.
               </h2>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
@@ -331,8 +334,8 @@ export default function AISearchMarketingPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/ai-search-marketing-strategy_AEObility.webp"
-                alt="AEObility AI search marketing strategy interface illustrating vector retrieval accuracy, prompt citation tracking, and structured entity verification."
+                src="/images/services/ai-search-optimisation-melbourne_AEObility.webp"
+                alt="Technical overview of the AEObility AI search optimisation framework designed for local service trades and SMBs in Melbourne, Victoria. This dashboard demonstrates structural optimization, machine-readable semantic data models, and localized entity authority layers engineered to prevent positional bias and improve citation accuracy across modern retrieval engines, conversational platforms, and map applications."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -369,6 +372,99 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* AEObility Bridge Section */}
+          <section className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
+                AEObility builds the bridge between your brand and generative search. As your visibility partner, we organise your business data across search engines, AI models, and digital maps so decision-makers find you at the exact moment of intent. We structure your content so machine scrapers can cleanly read, verify, and cite your real-world credentials across conversational interfaces and digital mapping networks.
+              </p>
+            </div>
+          </section>
+
+          {/* New Copy Section: Who We Represent & Industry Focus */}
+          <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
+            <div className="max-w-4xl mx-auto space-y-16">
+              
+              {/* Who we represent block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Who we represent and how AI sees you
+                </h2>
+                <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                  When setting up your Melbourne presence for AI search, five core entity signals anchor your digital footprint:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you are</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">AEObility acts as your trusted first-party authority source for AI search optimisation across Victoria.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">What you offer</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">Our core service is custom AI Search Optimisation (AEO/GEO), engineered to improve citations and recommendations across ChatGPT, Google AI Overviews, Gemini, and Perplexity.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors md:col-span-2">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Where you operate</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">We centre your primary service area in the City of Melbourne, VIC, extending across Victoria to cover vital commercial and metro hubs like the Melbourne CBD, Richmond, Fitzroy, South Yarra, and St Kilda.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you serve</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed mb-3">We focus on three core sectors:</p>
+                    <ul className="space-y-2 text-sm text-zinc-400 font-serif list-disc pl-4 marker:text-cyan-500">
+                      <li>Fintech, SaaS, and high-growth tech startups in Melbourne looking to lead category-defining AI queries</li>
+                      <li>Professional services (agencies, consultancies, legal, and accounting firms) targeting Victorian corporate clients</li>
+                      <li>Multi-location brands with headquarters or major operational teams based in Melbourne</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">How you are represented to machines</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">In structured data and knowledge graphs, your Victorian presence is classified as a LocalBusiness with a ProfessionalService subtype, ensuring AI search engines verify you as an authentic, location-based service provider.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industry Focus block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Industry focus
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Code className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Fintech, SaaS and tech startups</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Helping Victorian tech innovators show up when buyers and investors query AI engines about specialized software features, integrations, compliance, and enterprise workflows.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-purple-950/40 rounded-lg text-purple-400 shrink-0 mt-0.5">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Professional services and consultancies</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Structuring verified partner credentials, case evidence, and core capabilities so corporate decision-makers get your firm recommended in AI-generated vendor shortlists.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Layers className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Multi-location and headquartered brands</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Resolving fragmented corporate data across multiple Victorian offices so answer engines associate your locations with the central brand entity accurately.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                    Traditional digital marketing relies on churning out endless blog posts and repeating the same keywords. AEObility replaces keyword-dense tactics with structured entity facts that make your capabilities crystal clear to answer engines. When your core business data is neatly organised into single-topic segments, AI models can verify your brand and point users straight to you. We deliver these technical upgrades in fast, fixed-scope sprints with zero contract lock-ins.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2. "Choose your starting point" Engagement Grid */}
@@ -497,10 +593,16 @@ export default function AISearchMarketingPage() {
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+melbourne" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                  Are your Melbourne operations getting buried under algorithmic noise? Run a live scan through our diagnostic portal to see how easily AI platforms read your site and pinpoint the technical gaps holding back your visibility. Within minutes, you will see exactly which conversational engines recommend you and get a clear punch list of fixes to improve your standing.
                 </p>
+                <div className="pt-2">
+                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+melbourne" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                    <Search className="w-4 h-4 text-black" />
+                    <span>Run a live scan</span>
+                  </Link>
+                </div>
               </div>
             </section>
   
