@@ -192,6 +192,10 @@ export default function AISearchMarketingPage() {
         "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/perth",
         "name": "AI Search Optimisation Services Perth | AEObility",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp"
+        },
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",
