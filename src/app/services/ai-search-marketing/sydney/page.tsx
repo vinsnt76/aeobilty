@@ -190,6 +190,10 @@ export default function AISearchMarketingPage() {
         "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/sydney",
         "name": "AI Search Optimisation Services Sydney | AEObility",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-sydney_AEObility.webp"
+        },
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",

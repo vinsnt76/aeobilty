@@ -192,6 +192,10 @@ export default function AISearchMarketingPage() {
         "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/adelaide",
         "name": "AI Search Optimisation Services Adelaide | AEObility",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-adelaide_AEObility.webp"
+        },
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",

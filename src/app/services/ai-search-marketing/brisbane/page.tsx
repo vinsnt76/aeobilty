@@ -190,6 +190,10 @@ export default function AISearchMarketingPage() {
         "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/brisbane",
         "name": "AI Search Optimisation Services Brisbane | AEObility",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-brisbane_AEObility.webp"
+        },
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://aeobility.com.au/#website",
