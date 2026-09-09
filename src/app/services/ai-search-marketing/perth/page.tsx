@@ -315,11 +315,10 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                WA is unique because of its isolation. That geographical divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG). From specialised mining corridors to local medical practices and tradies, Perth businesses need clear, structured data so AI systems understand who you are and recommend you with confidence.
+                WA is unique because of its isolation. That geographical divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG).
+                <br /><br />
+                From specialised mining corridors to local medical practices and tradies, Perth businesses need clear, structured data so AI systems understand who you are and recommend you with confidence.
               </h2>
-              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed mt-4">
-                AEObility builds the bridge between your brand and generative search. As your local visibility partner, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
-              </p>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
                   <p className="text-sm text-cyan-50 font-serif leading-relaxed">
@@ -337,8 +336,8 @@ export default function AISearchMarketingPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/ai-search-marketing-strategy_AEObility.webp"
-                alt="AEObility AI search marketing strategy interface illustrating vector retrieval accuracy, prompt citation tracking, and structured entity verification."
+                src="/images/services/ai-search-optimisation-perth_AEObility.webp"
+                alt="AEObility modern AI search visibility dashboard interface showing Technical overview of the AEObility AI search optimisation framework designed for local service trades and SMBs in Perth, Western Australia. This dashboard demonstrates structural optimisation, machine-readable semantic data models, and localised entity authority layers engineered to prevent positional bias and improve citation accuracy across modern retrieval engines, conversational platforms, and map applications."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -375,6 +374,15 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* AEObility Bridge Section */}
+          <section className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
+                AEObility builds the bridge between your brand and generative search. As your local visibility partner, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
+              </p>
+            </div>
           </section>
 
           {/* New Copy Section: Who We Represent & Industry Focus */}
