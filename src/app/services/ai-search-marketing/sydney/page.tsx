@@ -30,7 +30,8 @@ import {
   Rocket,
   Boxes,
   FileCheck,
-  Code
+  Code,
+  Building2
 } from 'lucide-react';
 
 export const AI_MARKETING_INTERNAL_LINKS = [
@@ -312,7 +313,9 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Operating in New South Wales' most saturated market requires aggressive entity disambiguation. For Sydney-based enterprises and SMBs, establishing a flawless schema lattice ensures AI models bypass generic competitors and explicitly cite your localized business authority.
+                Sydney is Australia’s most crowded, high-stakes commercial market. From Martin Place boardrooms to fast-moving agency hubs in North Sydney and Surry Hills, businesses face intense competition for client attention. In an environment this saturated, traditional keyword-dense SEO simply cannot keep up. Modern conversational engines such as ChatGPT, Google AI Overviews, Gemini, and Perplexity do not just scan pages for matching phrases; they read, pull apart, and reconstruct verified facts using retrieval-augmented generation (RAG).
+                <br /><br />
+                For Sydney brands, having clear, structured business data is the difference between being cited as the definitive answer or being bypassed for a competitor.
               </h2>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
@@ -331,8 +334,8 @@ export default function AISearchMarketingPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/ai-search-marketing-strategy_AEObility.webp"
-                alt="AEObility AI search marketing strategy interface illustrating vector retrieval accuracy, prompt citation tracking, and structured entity verification."
+                src="/images/services/ai-search-optimisation-sydney_AEObility.webp"
+                alt="Technical overview of the AEObility AI search optimisation framework designed for local service trades and SMBs in Sydney, New South Wales. This dashboard demonstrates structural optimisation, machine-readable semantic data models, and localised entity authority layers engineered to prevent positional bias and improve citation accuracy across modern retrieval engines, conversational platforms, and map applications."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -369,6 +372,99 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* AEObility Bridge Section */}
+          <section className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
+                AEObility bridges the gap between your brand and generative search. As your local entity visibility partner, we organise your core commercial information across search platforms, digital maps, and AI models so qualified buyers find you the moment they are ready to make a decision. We translate messy web presences into machine-readable structure, ensuring your business credentials stay accurate, verified, and recommended across everyday chat interfaces and navigation apps.
+              </p>
+            </div>
+          </section>
+
+          {/* New Copy Section: Who We Represent & Industry Focus */}
+          <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
+            <div className="max-w-4xl mx-auto space-y-16">
+              
+              {/* Who we represent block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Who we represent and how AI sees you
+                </h2>
+                <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                  When structuring your Sydney operations for modern AI search engines, five primary entity signals define your market footprint:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you are</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">AEObility acts as your trusted first-party authority source for AI search optimisation across New South Wales.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">What you offer</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">Our core service is custom AI Search Optimisation (AEO/GEO), engineered to improve citations and commercial recommendations across ChatGPT, Google AI Overviews, Gemini, and Perplexity.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors md:col-span-2">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Where you operate</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">We anchor your primary service area in the City of Sydney, NSW, extending coverage across Greater Sydney and New South Wales to incorporate key business districts like the Sydney CBD, North Sydney, Parramatta, Bondi, and Chatswood.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you serve</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed mb-3">We focus on three high-demand commercial groups:</p>
+                    <ul className="space-y-2 text-sm text-zinc-400 font-serif list-disc pl-4 marker:text-cyan-500">
+                      <li>Enterprise and mid-market brands across NSW looking to protect market share inside AI-generated summaries</li>
+                      <li>Professional services firms (agencies, legal practices, finance, and accounting) competing in crowded Sydney markets</li>
+                      <li>National brands that rely on Sydney as their primary decision-maker and procurement hub</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">How you are represented to machines</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">In structured data schema and AI knowledge graphs, your regional presence is mapped as a LocalBusiness with a ProfessionalService subtype, confirming to search engines and AI assistants that your firm is a verified, location-grounded service provider.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industry Focus block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Industry focus
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Enterprise and mid-market brands</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Helping large NSW organisations maintain authoritative voice share when corporate procurement teams and institutional buyers query AI engines for enterprise-grade solutions, compliance, and vendor credibility.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-purple-950/40 rounded-lg text-purple-400 shrink-0 mt-0.5">
+                      <Code className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Saturated professional services</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Structuring clear partner profiles, case proof, and service specialisations so top-tier accounting firms, commercial legal teams, and specialist consultancies stand out above the noise in synthesised B2B recommendations.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Layers className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">National brands in Sydney hubs</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Unifying multi-branch information and executive leadership data under a cohesive corporate entity, making sure conversational engines accurately attribute services across all operational arms to the central Sydney headquarters.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                    Legacy digital marketing relies on churning out high-volume blog posts and repeating the same keywords. AEObility replaces keyword-heavy habits with structured entity data that makes your firm's real capability immediately clear to answer engines. When your core business facts are neatly segmented and easy to parse, AI models can verify your authority and point prospects straight to your team. We deliver these upgrades in focused, fixed-scope implementation sprints with zero contract lock-ins.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2. "Choose your starting point" Engagement Grid */}
@@ -497,10 +593,16 @@ export default function AISearchMarketingPage() {
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+sydney" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                  Are your Sydney operations getting lost in algorithmic retrieval bottlenecks? Run a live scan through our diagnostic portal to check how machine models read your site and identify the structural gaps limiting your visibility. In minutes, you will see exactly which AI platforms can and cannot find your business, backed by a practical list of fixes to secure your citations.
                 </p>
+                <div className="pt-2">
+                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+sydney" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                    <Search className="w-4 h-4 text-black" />
+                    <span>Run a live scan</span>
+                  </Link>
+                </div>
               </div>
             </section>
   
