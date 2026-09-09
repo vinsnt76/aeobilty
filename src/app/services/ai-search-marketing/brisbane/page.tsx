@@ -186,13 +186,21 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-brisbane_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-brisbane_AEObility.webp"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/brisbane",
         "name": "AI Search Optimisation Services Brisbane | AEObility",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#primaryimage"
+        },
         "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-brisbane_AEObility.webp"
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#primaryimage"
         },
         "isPartOf": {
           "@type": "WebSite",

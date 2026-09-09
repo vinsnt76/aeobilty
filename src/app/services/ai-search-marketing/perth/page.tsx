@@ -188,13 +188,21 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/perth",
         "name": "AI Search Optimisation Services Perth | AEObility",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage"
+        },
         "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp"
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage"
         },
         "isPartOf": {
           "@type": "WebSite",

@@ -188,13 +188,21 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-adelaide_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-adelaide_AEObility.webp"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/adelaide",
         "name": "AI Search Optimisation Services Adelaide | AEObility",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#primaryimage"
+        },
         "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-adelaide_AEObility.webp"
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#primaryimage"
         },
         "isPartOf": {
           "@type": "WebSite",

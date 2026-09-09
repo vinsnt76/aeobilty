@@ -186,13 +186,21 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-melbourne_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-melbourne_AEObility.webp"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/melbourne",
         "name": "AI Search Optimisation Services Melbourne | AEObility",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#primaryimage"
+        },
         "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-melbourne_AEObility.webp"
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#primaryimage"
         },
         "isPartOf": {
           "@type": "WebSite",

@@ -186,13 +186,21 @@ export default function AISearchMarketingPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#primaryimage",
+        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-sydney_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-sydney_AEObility.webp"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#webpage",
         "url": "https://aeobility.com.au/services/ai-search-marketing/sydney",
         "name": "AI Search Optimisation Services Sydney | AEObility",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#primaryimage"
+        },
         "image": {
-          "@type": "ImageObject",
-          "url": "https://aeobility.com.au/images/services/ai-search-optimisation-sydney_AEObility.webp"
+          "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#primaryimage"
         },
         "isPartOf": {
           "@type": "WebSite",
