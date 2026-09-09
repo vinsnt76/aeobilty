@@ -68,11 +68,31 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "@type": "Country",
           "name": "Australia"
         },
-        { "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#service" },
-        { "@id": "https://aeobility.com.au/services/ai-search-marketing/melbourne#service" },
-        { "@id": "https://aeobility.com.au/services/ai-search-marketing/sydney#service" },
-        { "@id": "https://aeobility.com.au/services/ai-search-marketing/adelaide#service" },
-        { "@id": "https://aeobility.com.au/services/ai-search-marketing/brisbane#service" }
+        {
+          "@type": "City",
+          "name": "Perth",
+          "url": "https://aeobility.com.au/services/ai-search-marketing/perth"
+        },
+        {
+          "@type": "City",
+          "name": "Melbourne",
+          "url": "https://aeobility.com.au/services/ai-search-marketing/melbourne"
+        },
+        {
+          "@type": "City",
+          "name": "Sydney",
+          "url": "https://aeobility.com.au/services/ai-search-marketing/sydney"
+        },
+        {
+          "@type": "City",
+          "name": "Adelaide",
+          "url": "https://aeobility.com.au/services/ai-search-marketing/adelaide"
+        },
+        {
+          "@type": "City",
+          "name": "Brisbane",
+          "url": "https://aeobility.com.au/services/ai-search-marketing/brisbane"
+        }
       ],
       "audience": {
         "@type": "Audience",
