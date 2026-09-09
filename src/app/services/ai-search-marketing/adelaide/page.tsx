@@ -208,7 +208,7 @@ export default function AISearchMarketingPage() {
         "name": "AEObility AI Search Optimisation Adelaide",
         "description": "Professional AI search marketing, GEO, and answer engine optimisation services for businesses and clinics throughout the Adelaide metropolitan region.",
         "url": "https://aeobility.com.au/services/ai-search-marketing/adelaide",
-        "telephone": "+61-8-XXXX-XXXX",
+        "telephone": "+61-480 286 282",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Adelaide",

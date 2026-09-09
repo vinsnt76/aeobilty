@@ -208,7 +208,7 @@ export default function AISearchMarketingPage() {
         "name": "AEObility AI Search Optimisation Perth",
         "description": "Professional AI search marketing, GEO, and answer engine optimisation services for businesses and clinics throughout the Perth metropolitan region.",
         "url": "https://aeobility.com.au/services/ai-search-marketing/perth",
-        "telephone": "+61-8-XXXX-XXXX",
+        "telephone": "+61-480 286 282",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Perth",
