@@ -30,7 +30,8 @@ import {
   Rocket,
   Boxes,
   FileCheck,
-  Code
+  Code,
+  Building2
 } from 'lucide-react';
 
 export const AI_MARKETING_INTERNAL_LINKS = [
@@ -312,7 +313,9 @@ export default function AISearchMarketingPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Queensland's rapidly expanding commercial corridors require hyper-local coordinate mapping. We deploy structured data strategies for Brisbane businesses to ensure seamless discovery across local search applications, generative AI assistants, and traditional search engines.
+                Brisbane is experiencing unprecedented commercial expansion across South East Queensland. With new infrastructure, expanding business corridors, and shifting consumer habits, traditional keyword-dense SEO is no longer enough to stay competitive. Modern conversational search engines like ChatGPT, Google AI Overviews, Gemini, and Perplexity do not just match search strings on a webpage. They read, extract, and synthesise verifiable facts using retrieval-augmented generation (RAG).
+                <br /><br />
+                For businesses across Brisbane and the wider SEQ region, having clean, structured data is what allows AI platforms to understand your capabilities and recommend your brand with confidence.
               </h2>
 
                 <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
@@ -331,8 +334,8 @@ export default function AISearchMarketingPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/ai-search-marketing-strategy_AEObility.webp"
-                alt="AEObility AI search marketing strategy interface illustrating vector retrieval accuracy, prompt citation tracking, and structured entity verification."
+                src="/images/services/ai-search-optimisation-brisbane_AEObility.webp"
+                alt="Technical overview of the AEObility AI search optimisation framework designed for local service trades and SMBs in Brisbane, Queensland. This dashboard demonstrates structural optimisation, machine-readable semantic data models, and localised entity authority layers engineered to prevent positional bias and improve citation accuracy across modern retrieval engines, conversational platforms, and map applications."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -369,6 +372,99 @@ export default function AISearchMarketingPage() {
             <p className="text-xs text-zinc-400 font-serif">
               Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
             </p>
+          </section>
+
+          {/* AEObility Bridge Section */}
+          <section className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
+                AEObility builds the bridge between your brand and generative search. As your local entity visibility partner, we organise your business details across search engines, AI platforms, and digital mapping networks so qualified buyers find you at the exact moment of intent. We structure your content so machine scrapers can easily read and verify your real-world credentials, keeping your business discoverable and accurate across chat interfaces and map frameworks.
+              </p>
+            </div>
+          </section>
+
+          {/* New Copy Section: Who We Represent & Industry Focus */}
+          <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
+            <div className="max-w-4xl mx-auto space-y-16">
+              
+              {/* Who we represent block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Who we represent and how AI sees you
+                </h2>
+                <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                  When setting up your Brisbane presence for AI search, five primary entity signals define your digital footprint:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you are</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">AEObility serves as your trusted, first-party authority source for AI search optimisation across Queensland.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">What you offer</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">Our core service is custom AI Search Optimisation (AEO/GEO), designed to improve direct citations in tools like ChatGPT, Google AI Overviews, Gemini, and Perplexity.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors md:col-span-2">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Where you operate</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">We anchor your service area in the City of Brisbane, QLD, extending across Queensland to cover key commercial and suburban hubs like the Brisbane CBD, Fortitude Valley, Carindale, North Lakes, and the Gold Coast.</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">Who you serve</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed mb-3">We focus on three core groups:</p>
+                    <ul className="space-y-2 text-sm text-zinc-400 font-serif list-disc pl-4 marker:text-cyan-500">
+                      <li>Brisbane-based professional services (agencies, accounting firms, commercial legal teams, and specialist clinics)</li>
+                      <li>Multi-location brands with branches and operational offices distributed across SEQ</li>
+                      <li>Growing SMBs focused on capturing high-intent "near me" AI recommendations across greater Brisbane</li>
+                    </ul>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 font-mono text-cyan-400">How you are represented to machines</h3>
+                    <p className="text-sm text-zinc-400 font-serif leading-relaxed">In structured schema data and AI knowledge graphs, your Brisbane presence is explicitly modelled as a LocalBusiness with a ProfessionalService subtype, confirming to search engines and AI assistants that you are an authentic, location-based service provider.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Industry Focus block */}
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                  Industry focus
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Code className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Professional services and clinics</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Setting up verified practitioner profiles, location coordinates, and clear service lines so legal, financial, and healthcare practices get recommended when clients ask AI for qualified local advice.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-purple-950/40 rounded-lg text-purple-400 shrink-0 mt-0.5">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Multi-location SEQ networks</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Resolving inconsistent data, duplicate listings, and overlapping territory boundaries so regional branch networks remain visible across voice search, local map packs, and AI syntheses.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-black/40 border border-white/5 items-start">
+                    <div className="p-3 bg-cyan-950/40 rounded-lg text-cyan-400 shrink-0 mt-0.5">
+                      <Layers className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white font-soehne-breit mb-1">Local SMBs and suburban services</h3>
+                      <p className="text-sm text-zinc-400 font-serif leading-relaxed">Structuring high-trust business facts and proximity signals to capture local customers asking conversational search tools for reputable providers in their specific Brisbane suburb.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-base text-zinc-300 font-sans leading-relaxed">
+                    Traditional digital marketing relies on churning out endless web pages and repeating keywords. AEObility replaces keyword-dense tactics with structured entity facts that make your services crystal clear to modern answer engines. When your core business details are neatly organised into single-topic segments, AI models can easily verify your brand and point prospects straight to you. We roll out these technical upgrades in fast, fixed-scope sprints with zero ongoing contract lock-in.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2. "Choose your starting point" Engagement Grid */}
@@ -497,10 +593,16 @@ export default function AISearchMarketingPage() {
             <section className="border-t border-white/10 pt-16 scroll-mt-24">
               <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Action entity resolution framework</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Are your local brand coordinates hidden behind answer engine retrieval bottlenecks? Execute a live telemetry scan via our <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+brisbane" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300 font-semibold">Interactive AI Search Diagnostic Gateway</Link>.
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                  Are your Brisbane business listings getting lost in the algorithms? Run a live scan through our diagnostic portal to see how easily search engines can read your site and spot the structural gaps holding back your visibility. In minutes, you will see which AI platforms can and cannot find your business, alongside a short list of high-priority fixes for the Queensland market.
                 </p>
+                <div className="pt-2">
+                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+brisbane" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                    <Search className="w-4 h-4 text-black" />
+                    <span>Run a live scan</span>
+                  </Link>
+                </div>
               </div>
             </section>
   
