@@ -110,6 +110,14 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-08-29"
   },
   {
+    statement: "AEO/GEO Blueprint case study documents a 90-day execution on a new domain",
+    source: "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
+    evidenceType: "CaseStudy",
+    status: "verified",
+    firstPublished: "2026-09-14",
+    lastVerified: "2026-09-14"
+  },
+  {
     statement: "The Telemetry Diagnostic assesses selected AI-search visibility and fact-coverage signals",
     source: "https://aeobility.com.au/diagnostic",
     evidenceType: "TechnicalDocumentation",
@@ -210,7 +218,7 @@ export const BRAND_TEMPORAL_STATE = {
   fiscalCycle: "FY27",
   activeSprintsAvailable: true,
   lastRegistrySync: "2026-08-29T21:18:00+08:00",
-  currentCaseStudies: ["case-studies/baby-bento", "case-studies/allied-health"]
+  currentCaseStudies: ["case-studies/baby-bento", "case-studies/allied-health", "case-studies/aeo-geo-blueprint-90-days"]
 };
 
 // ============================================================================

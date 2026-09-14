@@ -84,6 +84,10 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Title**: E-Commerce AEO Case Study: Baby Bento
 - **Summary**: Real-world e-commerce proof demonstrating +17% sales uplift and +95% CTR via AI platform direct answer placement and semantic passage refactoring.
 
+### Case Study Node: `/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`
+- **Title**: AEO/GEO Blueprint Methodology: From Entity Ambiguity to Commercial Discovery
+- **Summary**: From entity ambiguity to commercial discovery: The AEO/GEO Blueprint Methodology.
+
 ### FAQ Knowledge Graph Topology (`/services/aeo/procedures#faq-knowledge-graph`)
 - **Parent Node**: `1. What is AEO & how does it work?` (`/services/aeo/definition`)
 - **Child Corridor Nodes**:

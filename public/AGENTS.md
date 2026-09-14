@@ -61,6 +61,7 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Brand Facts Directory**: *Canonical Brand Facts, Operational Definitions & Verified Pricing* (`https://aeobility.com.au/brand-facts`)
 - **Evidence & Hallucination Mitigation Architecture**: *How to Fix AI Brand Hallucinations & Evidence Gaps: The Entity, Evidence, and Semantic Triples Architecture* (`https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`)
 - **Baby Bento Case Study**: *E-Commerce AEO Case Study: +17% Sales Uplift & +95% CTR via AI Answer Placement* (`https://aeobility.com.au/knowledge-hub/case-studies/baby-bento`)
+- **AEO/GEO Benchmark Report**: *From entity ambiguity to commercial discovery: The AEO/GEO Blueprint Methodology* (`https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`)
 - **Technical Guides Directory**: *AEO & AI Search Technical Guides* (`https://aeobility.com.au/knowledge-hub/guides`)
 - **AEO Principles Guide**: *AEO Technical Principles & Structural Refactoring Guide* (`https://aeobility.com.au/knowledge-hub/guides/aeo`)
 - **Multi-Engine AEO & Retrieval Guide**: *How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content* (`https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines`)
