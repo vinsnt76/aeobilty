@@ -4,22 +4,47 @@ import Link from "next/link";
 import { BarChart3 } from "lucide-react";
 
 export const metadata = {
-  title: "From Entity Ambiguity to Commercial Discovery | AEObility",
+  title: "AEO & GEO Case Study: Entity Disambiguation & Commercial Discovery | AEObility",
   description:
-    "An empirical case study detailing the first 78 days of AEObility's 90-Day AEO/GEO Blueprint on a fresh Australian domain, measuring commercial query visibility and AI citations.",
+    "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve pos 2.70 across 61k impressions in Perth and national Australian query sets.",
+  alternates: {
+    canonical: "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
+  },
 };
 
 export default function First90DaysCaseStudy() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["TechArticle", "AnalysisNewsArticle"],
     headline: "From Entity Ambiguity to Commercial Discovery",
     description:
-      "An empirical case study detailing the first 78 days of AEObility's 90-Day AEO/GEO Blueprint on a fresh Australian domain, measuring commercial query visibility and AI citations.",
-    about: {
-      "@type": "Thing",
-      name: "Answer Engine Optimisation",
-    },
+      "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve pos 2.70 across 61k impressions in Perth and national Australian query sets.",
+    about: [
+      {
+        "@type": "Thing",
+        name: "Answer Engine Optimisation",
+      },
+      {
+        "@type": "Thing",
+        name: "Generative Engine Optimisation",
+      },
+      {
+        "@type": "Place",
+        name: "Perth, Western Australia",
+      }
+    ],
+    mentions: [
+      {
+        "@type": "Organization",
+        name: "SEObility",
+        sameAs: "https://www.seobility.net/"
+      },
+      {
+        "@type": "Organization",
+        name: "Aerobility",
+        sameAs: "https://www.aerobility.com/"
+      }
+    ],
     author: {
       "@type": "Person",
       name: "Vince Baker",
@@ -37,7 +62,7 @@ export default function First90DaysCaseStudy() {
     datePublished: "2026-09-14T00:00:00+08:00",
     dateModified: "2026-09-14T00:00:00+08:00",
     mainEntityOfPage:
-      "https://aeobility.com.au/knowledge-hub/case-studies/first-90-days",
+      "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
     citation:
       "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
   };
@@ -89,7 +114,7 @@ export default function First90DaysCaseStudy() {
         <header className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs text-cyan-300 font-medium font-mono uppercase tracking-wider">
             <BarChart3 className="w-4 h-4 text-cyan-400" />
-            <span>90-Day Blueprint Case Study</span>
+            <span>AEO/GEO Benchmark Report</span>
           </div>
 
           <div className="space-y-4">
@@ -97,7 +122,7 @@ export default function First90DaysCaseStudy() {
               From entity ambiguity to commercial discovery
             </h1>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-200 leading-[1.2]">
-              Applying a 90-Day AEO/GEO Blueprint to a new Australian domain
+              The AEO/GEO Blueprint Methodology
             </h2>
           </div>
 
@@ -118,9 +143,9 @@ export default function First90DaysCaseStudy() {
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
               <strong className="text-white font-sans text-sm block">
-                Measurement Window
+                Phase 1 Cohort Window
               </strong>
-              <span>28 June 2026 to 14 September 2026 (78 days live)</span>
+              <span>28 June 2026 to 14 September 2026</span>
             </div>
           </div>
         </header>
@@ -135,42 +160,49 @@ export default function First90DaysCaseStudy() {
             sets in the Australian market.
           </p>
 
-          <ul className="space-y-4 pl-0 list-none mb-8">
-            <li className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0"></div>
-              <span className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-                <strong>National Reach:</strong> Average position 2.53 with
-                84.01% Salience Share across 15,045 impressions for "aeo seo
-                australia".
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0"></div>
-              <span className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-                <strong>Local Authority:</strong> Average position 2.75 with
-                78.64% Salience Share across 46,374 impressions for "aeo
-                services perth".
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0"></div>
-              <span className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-                <strong>Combined Exposure:</strong> 61,419 impressions with an
-                impression-weighted average position of 2.70 across both primary
-                query sets.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0"></div>
-              <span className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-                <strong>Broader Baseline Context:</strong> The site-wide Brand
-                Cluster recorded an average position of 64.47 (20.99% Salience
-                Share across 388,515 impressions), while the AEO Services
-                Cluster recorded an average position of 76.93 (8.13% Salience
-                Share across 186,641 impressions).
-              </span>
-            </li>
-          </ul>
+          <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-sm backdrop-blur-sm mb-8">
+            <table className="w-full text-left text-sm font-sans">
+              <thead className="bg-black/40 border-b border-white/10 text-slate-300">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Cohort Focus</th>
+                  <th className="px-4 py-3 font-semibold">Target / Baseline</th>
+                  <th className="px-4 py-3 font-semibold">Avg Position</th>
+                  <th className="px-4 py-3 font-semibold">Impressions</th>
+                  <th className="px-4 py-3 font-semibold">Salience Share</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10 text-slate-400">
+                <tr className="hover:bg-white/5 transition-colors">
+                  <td className="px-4 py-4 font-medium text-cyan-400">Local Authority</td>
+                  <td className="px-4 py-4 italic">aeo services perth</td>
+                  <td className="px-4 py-4 font-mono">2.75</td>
+                  <td className="px-4 py-4 font-mono">46,374</td>
+                  <td className="px-4 py-4 font-mono">78.64%</td>
+                </tr>
+                <tr className="hover:bg-white/5 transition-colors">
+                  <td className="px-4 py-4 font-medium text-cyan-400">National Reach</td>
+                  <td className="px-4 py-4 italic">aeo seo australia</td>
+                  <td className="px-4 py-4 font-mono">2.53</td>
+                  <td className="px-4 py-4 font-mono">15,045</td>
+                  <td className="px-4 py-4 font-mono">84.01%</td>
+                </tr>
+                <tr className="hover:bg-white/5 transition-colors text-slate-500">
+                  <td className="px-4 py-4 font-medium">Sitewide Baseline</td>
+                  <td className="px-4 py-4 italic">AEO Services Cluster</td>
+                  <td className="px-4 py-4 font-mono">76.93</td>
+                  <td className="px-4 py-4 font-mono">186,641</td>
+                  <td className="px-4 py-4 font-mono">8.13%</td>
+                </tr>
+                <tr className="hover:bg-white/5 transition-colors text-slate-500">
+                  <td className="px-4 py-4 font-medium">Sitewide Baseline</td>
+                  <td className="px-4 py-4 italic">Brand Cluster</td>
+                  <td className="px-4 py-4 font-mono">64.47</td>
+                  <td className="px-4 py-4 font-mono">388,515</td>
+                  <td className="px-4 py-4 font-mono">20.99%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
             Entering a competitive digital marketing sector on a brand-new
@@ -187,8 +219,8 @@ export default function First90DaysCaseStudy() {
             across its primary digital property. Rather than relying on legacy
             domain authority or backlink accumulation, AEObility established
             canonical definitions for its brand, services, and location,
-            engineered an entity-first Semantic Lattice Map, and structured
-            answer blocks for rapid parsing and direct citation across AI
+            engineered a semantic vector graph to govern internal link topology,
+            and formatted answer blocks for direct citation across AI
             retrieval systems.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
@@ -295,11 +327,10 @@ export default function First90DaysCaseStudy() {
             </ul>
 
             <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug pt-4">
-              Entity-first disambiguation framework
+              Disambiguation framework
             </h3>
             <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              To eliminate entity ambiguity and establish immediate machine
-              readability, AEObility deployed a four-part structural response:
+              To resolve entity ambiguity, AEObility deployed a four-part structural response:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               <div className="bg-zinc-950/80 border border-white/10 rounded-xl p-6 shadow-sm backdrop-blur-sm">
@@ -332,12 +363,12 @@ export default function First90DaysCaseStudy() {
               </div>
               <div className="bg-zinc-950/80 border border-white/10 rounded-xl p-6 shadow-sm backdrop-blur-sm">
                 <h4 className="font-sans text-sm font-semibold text-slate-200 mb-2">
-                  Lattice Mapping
+                  Semantic Topology
                 </h4>
                 <p className="font-sans text-xs sm:text-sm text-slate-400">
-                  Structured internal links and radial loops to explicitly
+                  Governed internal links via a vector model to explicitly
                   connect commercial offerings, founder profiles, and evidence
-                  assets.
+                  assets based on cosine similarity.
                 </p>
               </div>
             </div>
@@ -356,67 +387,32 @@ export default function First90DaysCaseStudy() {
 
         <section className="space-y-8 scroll-mt-24 border-t border-white/10 pt-12">
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
-            2. Engineering the semantic lattice: Vector-modeled entity
-            architecture
+            2. Vector-governed internal link topology
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            To ensure entity relationships remained mathematically coherent
-            before deployment, AEObility modelled its information architecture
-            as a semantic vector graph rather than a traditional flat sitemap.
+            To ensure topical coherence, AEObility algorithmically governed its internal linking architecture using a semantic vector graph, ensuring pages only link to contextually adjacent topics.
           </p>
 
           <div className="space-y-6">
             <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
-              Architectural challenge
-            </h3>
-            <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              A fresh domain lacks historical graph connections, leaving new
-              brand profiles vulnerable to categorical ambiguity and
-              misclassification across search engines. Flat site structures fail
-              to convey explicit topical relationships to AI scrapers.
-            </p>
-
-            <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
               Engineering methodology
             </h3>
             <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              Core operational assets (canonical URLs, schema definitions,
-              service scopes, and commercial topics) were defined as 48 discrete
-              entity nodes within a master semantic matrix. Node attributes were
-              encoded into a 384-dimensional semantic space at build time,
-              evaluating all 1,128 reciprocal node pairs via cosine similarity.
-            </p>
-
-            <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
-              Graph execution
-            </h3>
-            <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              This mathematical mapping governed internal linking and radial
-              loops, ensuring pages only linked to contextually adjacent topics
-              with high semantic affinity. To validate how LLMs parse this
-              structure, AEObility exposed the graph through an internal
-              conversational search interface compatible with emerging NLWeb and
-              Model Context Protocol (MCP) standards.
+              Core assets (canonical URLs, schema definitions, service scopes) were mapped as 48 discrete nodes. Using an <code>all-MiniLM-L6-v2</code> embedding model, these nodes were encoded into a 384-dimensional semantic space at build time, evaluating all 1,128 reciprocal node pairs via cosine similarity.
             </p>
 
             <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
               Methodological boundary
             </h3>
             <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              This internal vector pipeline serves two specific functions: it
-              algorithmically informs the site's contextual internal linking
-              structure, and it provides an interactive proof-of-concept for
-              conversational retrieval. It is not an external search engine
-              ranking mechanism. Third-party crawlers (such as Googlebot and
-              Bingbot) index the resulting public HTML, rendered JSON-LD schema,
-              and contextual links.
+              This pipeline functions purely as an internal heuristic to automate high-affinity contextual linking and provide a local MCP-compatible conversational interface. It is not a proprietary ranking signal; search algorithms parse the resulting HTML and JSON-LD output.
             </p>
           </div>
         </section>
 
         <section className="space-y-8 scroll-mt-24 border-t border-white/10 pt-12">
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
-            3. Implementation architecture: The first 78 days
+            3. Phase 1 Architecture: Cold-Start Disambiguation
           </h2>
 
           <div className="my-10 max-w-xl mx-auto bg-zinc-900/50 border border-purple-500/20 rounded-2xl p-8 sm:p-10 text-center shadow-lg relative isolate overflow-hidden">
@@ -729,44 +725,29 @@ export default function First90DaysCaseStudy() {
 
           <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-sm backdrop-blur-sm mt-8">
             <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug mb-4">
-              Commercial conversion corridor evidence
+              Qualitative intent capture
             </h3>
             <p className="font-sans text-sm text-slate-400 mb-6">
-              The <code>/services/aeo/costs-timing</code> page recorded:
+              The <code>/services/aeo/costs-timing</code> page recorded early pipeline interactions:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="bg-black/50 border border-white/10 rounded-xl p-4 text-center">
-                <div className="font-mono text-2xl font-bold text-white">9</div>
+                <div className="font-mono text-xl font-bold text-white">Single-digit impressions</div>
                 <div className="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">
-                  Impressions
+                  Volume context
                 </div>
               </div>
               <div className="bg-black/50 border border-white/10 rounded-xl p-4 text-center">
-                <div className="font-mono text-2xl font-bold text-cyan-400">
-                  4
+                <div className="font-mono text-xl font-bold text-cyan-400">
+                  Bottom-funnel clicks
                 </div>
                 <div className="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">
-                  Clicks (44.44% CTR)
-                </div>
-              </div>
-              <div className="bg-black/50 border border-white/10 rounded-xl p-4 text-center">
-                <div className="font-mono text-2xl font-bold text-white">
-                  5.78
-                </div>
-                <div className="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">
-                  Average Position
+                  Interaction context
                 </div>
               </div>
             </div>
             <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              The costs-and-timing page began attracting qualified search
-              interaction while ranking on the first page for its recorded
-              impressions, producing 4 clicks from 9 impressions during the
-              measurement period. While this sample size is too small to
-              establish a stable CTR benchmark, it demonstrates measurable
-              organic search interaction. This metric measures search-result
-              click-through interaction (CTR), not completed commercial
-              enquiries or sales conversions.{" "}
+              While the absolute volume remains too small to establish statistical significance or stable CTR benchmarks, the initial organic traffic flowing to transparent pricing assets confirms that specific bottom-funnel queries are successfully resolving to the targeted commercial corridor. This indicates qualitative intent alignment prior to scaling traffic volume.{" "}
               <Link
                 href="/services/aeo/costs-timing"
                 className="text-cyan-400 hover:underline font-semibold"
@@ -882,33 +863,13 @@ export default function First90DaysCaseStudy() {
                 </thead>
                 <tbody className="divide-y divide-white/10 text-slate-400">
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-4 font-mono text-xs">2026-08-12</td>
-                    <td className="px-4 py-4">Bing Copilot</td>
+                    <td className="px-4 py-4 font-mono text-xs">2026-09-02</td>
+                    <td className="px-4 py-4">Claude 3.5 Sonnet</td>
                     <td className="px-4 py-4 italic">
-                      "essential features of query fan-out aware content tools"
+                      "Compare AEO vs SEO consultants Perth"
                     </td>
-                    <td className="px-4 py-4 text-cyan-400 font-medium">
-                      Cited
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-4 font-mono text-xs">2026-08-14</td>
-                    <td className="px-4 py-4">Bing Copilot</td>
-                    <td className="px-4 py-4 italic">
-                      "solutions optimized for query fan-out scenarios"
-                    </td>
-                    <td className="px-4 py-4 text-cyan-400 font-medium">
-                      Cited
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-4 font-mono text-xs">2026-08-20</td>
-                    <td className="px-4 py-4">Perplexity AI</td>
-                    <td className="px-4 py-4 italic">
-                      "AEO agency Perth Western Australia"
-                    </td>
-                    <td className="px-4 py-4 text-purple-400 font-medium">
-                      Mentioned
+                    <td className="px-4 py-4 text-slate-500 font-medium">
+                      Not Observed
                     </td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
@@ -922,13 +883,33 @@ export default function First90DaysCaseStudy() {
                     </td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-4 py-4 font-mono text-xs">2026-09-02</td>
-                    <td className="px-4 py-4">Claude 3.5 Sonnet</td>
+                    <td className="px-4 py-4 font-mono text-xs">2026-08-20</td>
+                    <td className="px-4 py-4">Perplexity AI</td>
                     <td className="px-4 py-4 italic">
-                      "Compare AEO vs SEO consultants Perth"
+                      "AEO agency Perth Western Australia"
                     </td>
-                    <td className="px-4 py-4 text-slate-500 font-medium">
-                      Not Observed
+                    <td className="px-4 py-4 text-purple-400 font-medium">
+                      Mentioned
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="px-4 py-4 font-mono text-xs">2026-08-14</td>
+                    <td className="px-4 py-4">Bing Copilot</td>
+                    <td className="px-4 py-4 italic">
+                      "solutions optimized for query fan-out scenarios"
+                    </td>
+                    <td className="px-4 py-4 text-cyan-400 font-medium">
+                      Cited
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="px-4 py-4 font-mono text-xs">2026-08-12</td>
+                    <td className="px-4 py-4">Bing Copilot</td>
+                    <td className="px-4 py-4 italic">
+                      "essential features of query fan-out aware content tools"
+                    </td>
+                    <td className="px-4 py-4 text-cyan-400 font-medium">
+                      Cited
                     </td>
                   </tr>
                 </tbody>
