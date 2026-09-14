@@ -97,6 +97,11 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
     targetSlug: "/brand-facts",
     anchorText: "Canonical Brand Facts & SKU Pricing Registry",
     entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/knowledge-hub/case-studies/first-90-days",
+    anchorText: "first 90 days case study",
+    entityRelation: "http://schema.org/subjectOf"
   }
 ];
 
@@ -466,7 +471,7 @@ export default function AEORootPage() {
               <div className="space-y-1">
                 <span className="text-[11px] font-mono uppercase font-bold text-cyan-300 tracking-wider block">Deep Mechanics &amp; Algorithmic Grounding</span>
                 <p className="text-xs text-white/90">
-                  <strong>Deep Mechanics:</strong> Explore how retrieval-augmented engines deconstruct conversational queries via our <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-semibold hover:underline">RAG &amp; Answer Engine Search</Link> index or review our operational <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-purple-400 font-semibold hover:underline">Positional Bias Audit</Link> to safeguard content density.
+                  <strong>Deep Mechanics:</strong> Explore how retrieval-augmented engines deconstruct conversational queries via our <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 font-semibold hover:underline">RAG &amp; Answer Engine Search</Link> index or review our operational <Link href="/knowledge-hub/case-studies/first-90-days" className="text-purple-400 font-semibold hover:underline">first 90 days case study</Link> to safeguard content density.
                 </p>
               </div>
               <Link

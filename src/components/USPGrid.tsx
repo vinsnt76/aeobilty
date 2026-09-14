@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Eye, Target, MessageSquare } from 'lucide-react';
 
 interface USPCardProps {
@@ -57,7 +58,7 @@ export default function USPGrid() {
               Stop Losing Customers on Google, Maps, and AI
             </h3>
             <p className="text-base text-white/60 font-light font-serif">
-              We focus on real outcomes, giving your business the foundation to get found and get chosen.
+              We focus on real outcomes, giving your business the foundation to get found and get chosen. Read our <Link href="/knowledge-hub/case-studies/first-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
             </p>
           </div>
         </div>

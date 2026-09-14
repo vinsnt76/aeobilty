@@ -51,6 +51,11 @@ export const BLUEPRINT_INTERNAL_LINKS = [
     targetSlug: "/solutions",
     anchorText: "View current service pricing and scope",
     entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/knowledge-hub/case-studies/first-90-days",
+    anchorText: "blueprint execution timeline",
+    entityRelation: "http://schema.org/subjectOf"
   }
 ];
 
@@ -163,7 +168,7 @@ export default function AEOBlueprintPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed font-sans">
-                Get a deep technical audit and a practical 90-day strategic roadmap for your business. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.
+                Get a deep technical audit and a practical 90-day strategic roadmap for your business. Read our <Link href="/knowledge-hub/case-studies/first-90-days" className="text-cyan-400 hover:underline font-semibold">blueprint execution timeline</Link> to see this in action. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.
               </p>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Standalone Audit: $995 AUD ex. GST</span>
