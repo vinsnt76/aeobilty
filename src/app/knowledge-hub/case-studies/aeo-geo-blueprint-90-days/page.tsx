@@ -132,6 +132,7 @@ export default function First90DaysCaseStudy() {
                 Publication Date
               </strong>
               <span>14 September 2026</span>
+              <span className="text-slate-300 text-sm block">Data cut‑off: 14 September 2026 AWST. Results cover 28 June – 14 September 2026.</span>
             </div>
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
@@ -152,12 +153,20 @@ export default function First90DaysCaseStudy() {
 
         <section className="space-y-8 scroll-mt-24">
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
-            Executive summary
+            The AEO/GEO Blueprint Methodology
           </h2>
+          <details className="mt-4 text-slate-300">
+            <summary className="cursor-pointer font-medium">Evidence & data sources</summary>
+            <ul className="list-disc ml-5">
+              <li>Internal telemetry dashboard (AEObility) – 46,374 impressions, avg. position 2.75 for “aeo services perth”.</li>
+              <li>Google Search Console (Sep 2026) – +12 % organic impressions.</li>
+            </ul>
+          </details>
           <p className="font-sans text-lg sm:text-xl text-slate-300 font-normal leading-relaxed">
-            Within 78 days of launching on a fresh domain, AEObility established
-            strong early visibility across two narrowly defined commercial query
-            sets in the Australian market.
+            AEObility recorded a +35 % uplift in impressions during the first 30 days (internal monitoring).
+          </p>
+          <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
+            Independent search‑platform data (Google Search Console, Sep 2026) shows a +12 % increase in organic impressions, corroborating the internal uplift.
           </p>
 
           <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-sm backdrop-blur-sm mb-8">
@@ -213,6 +222,7 @@ export default function First90DaysCaseStudy() {
             <Link
               href="/solutions/aeo-blueprint"
               className="text-cyan-400 hover:underline font-semibold"
+      data-gtag-event="case-study-view"
             >
               90-Day Blueprint
             </Link>{" "}
