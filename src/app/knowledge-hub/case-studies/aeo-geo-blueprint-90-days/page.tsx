@@ -471,7 +471,7 @@ export default function First90DaysCaseStudy() {
           </div>
 
           <p className="font-sans text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
-            To eliminate ambiguity across AI search engines and RAG retrieval pipelines, AEObility drives its entire site architecture from a unified <strong>Single Source of Truth (SSOT)</strong>. Every page, commercial service, and technical article is mapped into a machine-readable Information Architecture (IA) and Small Language Model (SLM) matrix.
+            To eliminate ambiguity across AI search engines and RAG retrieval pipelines, AEObility drives its entire site architecture from a unified <strong>Single Source of Truth (SSOT)</strong>. Every page, commercial service, and technical article is mapped into a <strong>Semantic lattice map</strong> that uses a parent-child-sibling linking structure for conversion corridors and radial loops for L3 nodes to pass link equity back into the conversion corridors.
           </p>
 
           {/* Tri-Graph & SPO Visual Card Grid */}
