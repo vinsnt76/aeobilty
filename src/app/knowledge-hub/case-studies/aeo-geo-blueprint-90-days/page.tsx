@@ -461,27 +461,101 @@ export default function First90DaysCaseStudy() {
         </section>
 
         <section className="space-y-8 scroll-mt-24 border-t border-white/10 pt-12">
-          <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
-            2. Vector-governed internal link topology
-          </h2>
-          <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            To ensure topical coherence, AEObility algorithmically governed its internal linking architecture using a semantic vector graph, ensuring pages only link to contextually adjacent topics.
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs text-cyan-300 font-medium font-mono uppercase tracking-wider">
+              <span>Tri-Graph Architecture</span>
+            </div>
+            <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
+              2. Vector-governed topology & SPO triple graph architecture
+            </h2>
+          </div>
+
+          <p className="font-sans text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+            To eliminate ambiguity across AI search engines and RAG retrieval pipelines, AEObility drives its entire site architecture from a unified <strong>Single Source of Truth (SSOT)</strong>. Every page, commercial service, and technical article is mapped into a machine-readable Information Architecture (IA) and Small Language Model (SLM) matrix.
           </p>
 
-          <div className="space-y-6">
+          {/* Tri-Graph & SPO Visual Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+            <div className="bg-zinc-950/80 border border-cyan-500/20 rounded-2xl p-6 flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider">
+                  01. Entity Graph
+                </div>
+                <h3 className="font-display text-lg font-bold text-white">What Exists</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Defines canonical identity, organisation metadata, and Schema.org types bound to fully-qualified canonical URIs (<code className="text-cyan-300">@id</code>).
+                </p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 text-[11px] font-mono text-cyan-300/80">
+                Subject Node: Canonical Entity
+              </div>
+            </div>
+
+            <div className="bg-zinc-950/80 border border-purple-500/20 rounded-2xl p-6 flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="text-xs font-mono font-semibold text-purple-400 uppercase tracking-wider">
+                  02. Semantic / Intent Graph
+                </div>
+                <h3 className="font-display text-lg font-bold text-white">How Concepts Link</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Algorithmically governs RAG retrieval space, contextual sub-nav topology, and high-affinity inter-node vector similarity.
+                </p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 text-[11px] font-mono text-purple-300/80">
+                Predicate: Contextual Relationship
+              </div>
+            </div>
+
+            <div className="bg-zinc-950/80 border border-emerald-500/20 rounded-2xl p-6 flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider">
+                  03. Evidence Graph
+                </div>
+                <h3 className="font-display text-lg font-bold text-white">Where Claims Are Proven</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Connects commercial offerings directly to empirical proof nodes, telemetry reports, and Looker Studio data.
+                </p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10 text-[11px] font-mono text-emerald-300/80">
+                Object: Verifiable Evidence Node
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-zinc-950/90 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
             <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
-              Engineering methodology
+              Subject-Predicate-Object (SPO) Machine-Readable Triples
             </h3>
             <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              Core assets (canonical URLs, schema definitions, service scopes) were mapped as 48 discrete nodes. Using an <code>all-MiniLM-L6-v2</code> embedding model, these nodes were encoded into a 384-dimensional semantic space at build time, evaluating all 1,128 reciprocal node pairs via cosine similarity.
+              Rather than presenting disconnected content, every commercial offering and technical claim is structured as an explicit machine-readable triple:
+            </p>
+            <div className="bg-black/60 border border-white/10 rounded-xl p-4 font-mono text-xs text-slate-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <span className="text-cyan-400 block font-semibold uppercase text-[10px]">Subject (Entity)</span>
+                <span className="text-white">/services/aeo#service</span>
+              </div>
+              <div className="text-cyan-500 font-bold hidden sm:block">➔</div>
+              <div className="text-center sm:text-left">
+                <span className="text-purple-400 block font-semibold uppercase text-[10px]">Predicate (Relationship)</span>
+                <span className="text-white">/services/aeo/definition</span>
+              </div>
+              <div className="text-purple-500 font-bold hidden sm:block">➔</div>
+              <div className="text-center sm:text-left">
+                <span className="text-emerald-400 block font-semibold uppercase text-[10px]">Object (Evidence)</span>
+                <span className="text-white">/case-studies/aeo-geo-blueprint-90-days</span>
+              </div>
+            </div>
+
+            <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug pt-4">
+              Vector Space Encoding & Topology Control
+            </h3>
+            <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
+              At build time, entity nodes are encoded into a high-dimensional semantic vector space, evaluating pairwise inter-node similarity across the Information Architecture lattice. This pre-build hook automatically calibrates contextual link affinity and sub-navigation topology, ensuring LLMs and search crawlers traverse clean, topical pathways.
             </p>
 
-            <h3 className="font-display text-lg sm:text-xl font-bold text-slate-100 leading-snug">
-              Methodological boundary
-            </h3>
-            <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              This pipeline functions purely as an internal heuristic to automate high-affinity contextual linking and provide a local MCP-compatible conversational interface. It is not a proprietary ranking signal; search algorithms parse the resulting HTML and JSON-LD output.
-            </p>
+            <div className="pt-2 text-xs text-slate-500 font-mono italic">
+              Note: This graph pipeline functions as an internal heuristic to structure high-affinity contextual linking and RAG answer extraction. Search crawlers and LLM engines parse the resulting deterministic HTML and structured JSON-LD output.
+            </div>
           </div>
         </section>
 
