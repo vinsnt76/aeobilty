@@ -245,7 +245,7 @@ export default function AEOGuideWhitepaperPage() {
       <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-32 sm:pb-20 w-full space-y-8 sm:space-y-12">
         
         {/* Header Block with Low-Contrast Geometric Background */}
-        <header className="relative border border-white/10 rounded-3xl p-5 sm:p-8 md:p-10 overflow-hidden bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-black shadow-2xl space-y-5">
+        <header className="relative isolate border border-white/10 rounded-3xl p-5 sm:p-8 md:p-10 overflow-hidden bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-black shadow-2xl space-y-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,229,255,0.06),transparent_60%)] pointer-events-none" />
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-aeo-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -286,7 +286,7 @@ export default function AEOGuideWhitepaperPage() {
         </header>
 
         {/* Featured Guide Banner with Glassmorphic CTA Overlay */}
-        <figure className="relative w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-zinc-950 group min-h-[360px] sm:min-h-[440px] md:min-h-[480px]">
+        <figure className="relative isolate w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-zinc-950 group min-h-[360px] sm:min-h-[440px] md:min-h-[480px]">
           <div className="relative w-full h-[360px] sm:h-[440px] md:h-[480px]">
             <Image
               src="/images/aeo-guide_AEObility.webp"
@@ -307,10 +307,7 @@ export default function AEOGuideWhitepaperPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/15 border border-aeo-cyan/30 text-aeo-cyan text-[11px] font-mono font-semibold">
                     <Activity className="w-3 h-3" />
-                    <span>AI Telemetry Engine</span>
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-400">
-                    6-Stage Retrieval Audit
+                    <span>AI visibility telemetry • 6-stage audit</span>
                   </span>
                 </div>
                 <h2 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-tight">
@@ -326,14 +323,14 @@ export default function AEOGuideWhitepaperPage() {
                   href="/diagnostic"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs font-sans hover:opacity-90 transition-opacity shadow-lg shadow-aeo-cyan/20"
                 >
-                  <span>Run Free Diagnostic</span>
+                  <span>Run Free Scan</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   href="/solutions/aeo-sprint"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs border border-white/15 transition-colors"
                 >
-                  <span>Foundation Package</span>
+                  <span>Explore Sprints</span>
                   <ArrowRight className="w-3 h-3 text-zinc-400" />
                 </Link>
               </div>
@@ -1105,7 +1102,7 @@ export default function AEOGuideWhitepaperPage() {
               The Node &amp; Edge Information Architecture Model
             </h2>
             <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-              To support both human navigation and automated AI entity extraction, AEObility organizes website content as a network of typed nodes connected by explicit semantic relationships:
+              To support both human navigation and automated AI entity extraction, AEObility organises website content as a network of typed nodes connected by explicit semantic relationships:
             </p>
 
             <div className="grid sm:grid-cols-3 gap-4 pt-2 text-xs font-mono">
