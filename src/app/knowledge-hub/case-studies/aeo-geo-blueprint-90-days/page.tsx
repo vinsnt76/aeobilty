@@ -1,7 +1,7 @@
 import React from "react";
 import Script from "next/script";
 import Link from "next/link";
-import { BarChart3 } from "lucide-react";
+import { BarChart3, FileText, Download, ExternalLink } from "lucide-react";
 
 export const metadata = {
   title: "AEO & GEO Case Study: Entity Disambiguation & Commercial Discovery | AEObility",
@@ -178,12 +178,55 @@ export default function First90DaysCaseStudy() {
             </div>
           </div>
 
-          <details className="mt-4 text-slate-300">
-            <summary className="cursor-pointer font-medium">Evidence & data sources</summary>
-            <ul className="list-disc ml-5 space-y-1">
-              <li>Internal telemetry dashboard (Looker Studio) – 58K impressions, avg. position 9 for “aeo services perth” (Salience Score: 44,117); 17K impressions, avg. position 4 for “aeo seo australia” (Salience Score: 14,626).</li>
-              <li>Google Search Console (Sep 2026) – +12% organic impressions across core query corridors.</li>
-            </ul>
+          <details className="mt-6 text-slate-300 bg-zinc-950/80 border border-white/10 rounded-2xl p-5 shadow-md">
+            <summary className="cursor-pointer font-semibold text-white flex items-center gap-2 hover:text-cyan-400 transition-colors">
+              <BarChart3 className="w-4 h-4 text-cyan-400" />
+              <span>Evidence & Data Sources (Looker Studio Telemetry Report PDF)</span>
+            </summary>
+            <div className="mt-4 space-y-4 pt-4 border-t border-white/10">
+              <ul className="list-disc ml-5 space-y-1.5 text-sm text-slate-300">
+                <li>
+                  <strong>Internal Telemetry Dashboard (Looker Studio)</strong>: 58K impressions, avg. position 9 for “aeo services perth” (Salience Score: 44,117); 17K impressions, avg. position 4 for “aeo seo australia” (Salience Score: 14,626).
+                </li>
+                <li>
+                  <strong>Google Search Console (1 July – 15 September 2026)</strong>: +12% organic impressions across core query corridors.
+                </li>
+              </ul>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="/AI_Visibility_Report_AEObility.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-xs text-cyan-300 font-mono font-medium hover:bg-cyan-900/60 hover:text-white transition-all shadow-sm"
+                >
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>Open Full PDF Report</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-cyan-400/80" />
+                </a>
+                <a
+                  href="/AI_Visibility_Report_AEObility.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-mono font-medium hover:bg-white/10 hover:text-white transition-all shadow-sm"
+                >
+                  <Download className="w-4 h-4 text-slate-400" />
+                  <span>Download PDF Document</span>
+                </a>
+              </div>
+
+              {/* Embedded PDF Viewer */}
+              <div className="mt-4 rounded-xl border border-white/10 overflow-hidden bg-black/60 shadow-lg">
+                <div className="bg-black/80 px-4 py-2.5 text-xs font-mono text-slate-400 border-b border-white/10 flex items-center justify-between">
+                  <span>Looker Studio Evidence Telemetry PDF (Jul 1 – Sep 15, 2026)</span>
+                  <span className="text-cyan-400 font-semibold">Verified Proof Document</span>
+                </div>
+                <iframe
+                  src="/AI_Visibility_Report_AEObility.pdf#toolbar=0"
+                  className="w-full h-[650px] bg-zinc-900 border-none"
+                  title="AEObility Looker Studio AI Visibility Evidence Report"
+                />
+              </div>
+            </div>
           </details>
           <p className="font-sans text-lg sm:text-xl text-slate-300 font-normal leading-relaxed">
             AEObility recorded a +35% uplift in search exposure during the first 30 days of structural graph deployment.
