@@ -6,7 +6,7 @@ import { BarChart3, FileText, Download, ExternalLink } from "lucide-react";
 export const metadata = {
   title: "AEO & GEO Case Study: Entity Disambiguation & Commercial Discovery | AEObility",
   description:
-    "77-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
+    "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
   },
@@ -18,7 +18,7 @@ export default function First90DaysCaseStudy() {
     "@type": ["TechArticle", "AnalysisNewsArticle"],
     headline: "From Entity Ambiguity to Commercial Discovery",
     description:
-      "77-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
+      "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
     about: [
       {
         "@type": "Thing",
@@ -59,8 +59,8 @@ export default function First90DaysCaseStudy() {
         url: "https://aeobility.com.au/logo.png",
       },
     },
-    datePublished: "2026-09-15T00:00:00+08:00",
-    dateModified: "2026-09-15T00:00:00+08:00",
+    datePublished: "2026-09-16T00:00:00+08:00",
+    dateModified: "2026-09-16T00:00:00+08:00",
     mainEntityOfPage:
       "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
     citation:
@@ -133,22 +133,22 @@ export default function First90DaysCaseStudy() {
               <strong className="text-white font-sans text-sm block">
                 Publication Date
               </strong>
-              <span>15 September 2026</span>
-              <span className="text-slate-300 text-sm block">Data cut‑off: 15 September 2026 AWST. Results cover 1 July – 15 September 2026 (77 days).</span>
+              <span>16 September 2026</span>
+              <span className="text-slate-300 text-sm block">Data cut‑off: 16 September 2026 AWST. Results cover 1 July – 16 September 2026 (78 days).</span>
             </div>
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
               <strong className="text-white font-sans text-sm block">
                 Reporting Window
               </strong>
-              <span>1 July 2026 to 15 September 2026</span>
+              <span>1 July 2026 to 16 September 2026</span>
             </div>
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
               <strong className="text-white font-sans text-sm block">
                 Phase 1 Cohort Window
               </strong>
-              <span>1 July 2026 to 15 September 2026 (Q3 Window)</span>
+              <span>1 July 2026 to 16 September 2026 (Q3 Window)</span>
             </div>
           </div>
         </header>
@@ -189,7 +189,7 @@ export default function First90DaysCaseStudy() {
                   <strong>Internal Telemetry Dashboard (Looker Studio)</strong>: 58K impressions, avg. position 9 for “aeo services perth” (Salience Score: 44,117); 17K impressions, avg. position 4 for “aeo seo australia” (Salience Score: 14,626).
                 </li>
                 <li>
-                  <strong>Google Search Console (1 July – 15 September 2026)</strong>: +12% organic impressions across core query corridors.
+                  <strong>Google Search Console (1 July – 16 September 2026)</strong>: +12% organic impressions across core query corridors.
                 </li>
               </ul>
 
@@ -217,7 +217,7 @@ export default function First90DaysCaseStudy() {
               {/* Embedded PDF Viewer */}
               <div className="mt-4 rounded-xl border border-white/10 overflow-hidden bg-black/60 shadow-lg">
                 <div className="bg-black/80 px-4 py-2.5 text-xs font-mono text-slate-400 border-b border-white/10 flex items-center justify-between">
-                  <span>Looker Studio Evidence Telemetry PDF (Jul 1 – Sep 15, 2026)</span>
+                  <span>Looker Studio Evidence Telemetry PDF (Jul 1 – Sep 16, 2026)</span>
                   <span className="text-cyan-400 font-semibold">Verified Proof Document</span>
                 </div>
                 <iframe
@@ -232,7 +232,7 @@ export default function First90DaysCaseStudy() {
             AEObility recorded a +35% uplift in search exposure during the first 30 days of structural graph deployment.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            Independent search-platform telemetry (Google Search Console, 1 July – 15 September 2026) confirms 75,000 total impressions across primary commercial queries, corroborating internal graph salience scores.
+            Independent search-platform telemetry (Google Search Console, 1 July – 16 September 2026) confirms 75,000 total impressions across primary commercial query sets (58K for &quot;aeo services perth&quot; and 17K for &quot;aeo seo australia&quot;), corroborating internal graph salience scores.
           </p>
 
           <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-sm backdrop-blur-sm mb-8">
@@ -282,8 +282,8 @@ export default function First90DaysCaseStudy() {
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
             Entering a competitive digital marketing sector on a brand-new
             domain requires explicit machine readability, clear entity
-            disambiguation, and structured retrieval readiness. Between 1 July 2026 and 15 September 2026, AEObility executed the
-            opening 77 days of its{" "}
+            disambiguation, and structured retrieval readiness. Between 1 July 2026 and 16 September 2026, AEObility executed the
+            opening 78 days of its{" "}
             <Link
               href="/solutions/aeo-blueprint"
               className="text-cyan-400 hover:underline font-semibold"
@@ -299,7 +299,7 @@ export default function First90DaysCaseStudy() {
             retrieval systems.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            Across this initial 77-day window, internal query reports recorded
+            Across this initial 78-day window, internal query reports recorded
             strong early visibility across core commercial terms, generating a
             combined 75,000 impressions. Broader cluster data demonstrates
             established market visibility while defining a clear baseline for

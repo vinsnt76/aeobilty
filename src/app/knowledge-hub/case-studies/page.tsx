@@ -47,7 +47,7 @@ export default function CaseStudiesHubPage() {
     {
       title: "From Entity Ambiguity to Commercial Discovery",
       client: "AEObility",
-      description: "An empirical case study detailing the first 77 days of AEObility's 90-Day AEO/GEO Blueprint on a fresh Australian domain (1 July – 15 September 2026), measuring commercial query visibility and AI citations.",
+      description: "An empirical case study detailing the first 78 days of AEObility's 90-Day AEO/GEO Blueprint on a fresh Australian domain (1 July – 16 September 2026), measuring commercial query visibility and AI citations.",
       href: "/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
       image: "/aeo-geo-case-study_AEObilty.webp",
       alt: "Abstract telemetry visualisation of semantic graphs representing AEObility's AEO and GEO architecture, demonstrating entity resolution and commercial search intent indexing.",
