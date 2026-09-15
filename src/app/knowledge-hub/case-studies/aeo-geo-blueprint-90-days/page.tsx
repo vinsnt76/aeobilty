@@ -6,7 +6,7 @@ import { BarChart3 } from "lucide-react";
 export const metadata = {
   title: "AEO & GEO Case Study: Entity Disambiguation & Commercial Discovery | AEObility",
   description:
-    "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve pos 2.70 across 61k impressions in Perth and national Australian query sets.",
+    "77-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
   },
@@ -18,7 +18,7 @@ export default function First90DaysCaseStudy() {
     "@type": ["TechArticle", "AnalysisNewsArticle"],
     headline: "From Entity Ambiguity to Commercial Discovery",
     description:
-      "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve pos 2.70 across 61k impressions in Perth and national Australian query sets.",
+      "77-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
     about: [
       {
         "@type": "Thing",
@@ -59,8 +59,8 @@ export default function First90DaysCaseStudy() {
         url: "https://aeobility.com.au/logo.png",
       },
     },
-    datePublished: "2026-09-14T00:00:00+08:00",
-    dateModified: "2026-09-14T00:00:00+08:00",
+    datePublished: "2026-09-15T00:00:00+08:00",
+    dateModified: "2026-09-15T00:00:00+08:00",
     mainEntityOfPage:
       "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
     citation:
@@ -70,27 +70,29 @@ export default function First90DaysCaseStudy() {
   const queries = [
     {
       query: "aeo services perth",
-      impressions: 46374,
-      position: 2.75,
-      salience: 78.64,
+      impressions: 58000,
+      position: 9.0,
+      salience: 75.99,
+      salienceScore: 44117,
     },
     {
       query: "aeo seo australia",
-      impressions: 15045,
-      position: 2.53,
-      salience: 84.01,
+      impressions: 17000,
+      position: 4.0,
+      salience: 83.69,
+      salienceScore: 14626,
     },
     {
-      query: "Brand Cluster",
-      impressions: 388515,
-      position: 64.47,
-      salience: 20.99,
+      query: "Homepage Baseline (/)",
+      impressions: 422000,
+      position: 64.6,
+      salience: 21.18,
     },
     {
-      query: "AEO Services Cluster",
-      impressions: 186641,
-      position: 76.93,
-      salience: 8.13,
+      query: "AEO Services (/services/aeo)",
+      impressions: 77000,
+      position: 80.8,
+      salience: 5.3,
     },
   ];
 
@@ -131,22 +133,22 @@ export default function First90DaysCaseStudy() {
               <strong className="text-white font-sans text-sm block">
                 Publication Date
               </strong>
-              <span>14 September 2026</span>
-              <span className="text-slate-300 text-sm block">Data cut‑off: 14 September 2026 AWST. Results cover 28 June – 14 September 2026.</span>
+              <span>15 September 2026</span>
+              <span className="text-slate-300 text-sm block">Data cut‑off: 15 September 2026 AWST. Results cover 1 July – 15 September 2026 (77 days).</span>
             </div>
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
               <strong className="text-white font-sans text-sm block">
-                Site Launch Date
+                Reporting Window
               </strong>
-              <span>28 June 2026</span>
+              <span>1 July 2026 to 15 September 2026</span>
             </div>
             <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
             <div className="space-y-1">
               <strong className="text-white font-sans text-sm block">
                 Phase 1 Cohort Window
               </strong>
-              <span>28 June 2026 to 14 September 2026</span>
+              <span>1 July 2026 to 15 September 2026 (Q3 Window)</span>
             </div>
           </div>
         </header>
@@ -155,18 +157,39 @@ export default function First90DaysCaseStudy() {
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-[1.2]">
             The AEO/GEO Blueprint Methodology
           </h2>
+
+          {/* Macro Cluster Architecture Telemetry Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+            <div className="bg-zinc-950/80 border border-white/10 p-4 rounded-xl text-center shadow-sm">
+              <div className="text-3xl font-mono font-extrabold text-cyan-400">41</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Entities Mapped</div>
+            </div>
+            <div className="bg-zinc-950/80 border border-white/10 p-4 rounded-xl text-center shadow-sm">
+              <div className="text-3xl font-mono font-extrabold text-cyan-400">7</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Topic Clusters</div>
+            </div>
+            <div className="bg-zinc-950/80 border border-white/10 p-4 rounded-xl text-center shadow-sm">
+              <div className="text-3xl font-mono font-extrabold text-cyan-400">43</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">URLs Analysed</div>
+            </div>
+            <div className="bg-zinc-950/80 border border-white/10 p-4 rounded-xl text-center shadow-sm">
+              <div className="text-3xl font-mono font-extrabold text-cyan-400">0.95</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider font-mono mt-1">Avg Semantic Pos</div>
+            </div>
+          </div>
+
           <details className="mt-4 text-slate-300">
             <summary className="cursor-pointer font-medium">Evidence & data sources</summary>
-            <ul className="list-disc ml-5">
-              <li>Internal telemetry dashboard (AEObility) – 46,374 impressions, avg. position 2.75 for “aeo services perth”.</li>
-              <li>Google Search Console (Sep 2026) – +12 % organic impressions.</li>
+            <ul className="list-disc ml-5 space-y-1">
+              <li>Internal telemetry dashboard (Looker Studio) – 58K impressions, avg. position 9 for “aeo services perth” (Salience Score: 44,117); 17K impressions, avg. position 4 for “aeo seo australia” (Salience Score: 14,626).</li>
+              <li>Google Search Console (Sep 2026) – +12% organic impressions across core query corridors.</li>
             </ul>
           </details>
           <p className="font-sans text-lg sm:text-xl text-slate-300 font-normal leading-relaxed">
-            AEObility recorded a +35 % uplift in impressions during the first 30 days (internal monitoring).
+            AEObility recorded a +35% uplift in search exposure during the first 30 days of structural graph deployment.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            Independent search‑platform data (Google Search Console, Sep 2026) shows a +12 % increase in organic impressions, corroborating the internal uplift.
+            Independent search-platform telemetry (Google Search Console, 1 July – 15 September 2026) confirms 75,000 total impressions across primary commercial queries, corroborating internal graph salience scores.
           </p>
 
           <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-sm backdrop-blur-sm mb-8">
@@ -184,30 +207,30 @@ export default function First90DaysCaseStudy() {
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="px-4 py-4 font-medium text-cyan-400">Local Authority</td>
                   <td className="px-4 py-4 italic">aeo services perth</td>
-                  <td className="px-4 py-4 font-mono">2.75</td>
-                  <td className="px-4 py-4 font-mono">46,374</td>
-                  <td className="px-4 py-4 font-mono">78.64%</td>
+                  <td className="px-4 py-4 font-mono">9.0</td>
+                  <td className="px-4 py-4 font-mono">58,000 (58K)</td>
+                  <td className="px-4 py-4 font-mono">75.99%</td>
                 </tr>
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="px-4 py-4 font-medium text-cyan-400">National Reach</td>
                   <td className="px-4 py-4 italic">aeo seo australia</td>
-                  <td className="px-4 py-4 font-mono">2.53</td>
-                  <td className="px-4 py-4 font-mono">15,045</td>
-                  <td className="px-4 py-4 font-mono">84.01%</td>
+                  <td className="px-4 py-4 font-mono">4.0</td>
+                  <td className="px-4 py-4 font-mono">17,000 (17K)</td>
+                  <td className="px-4 py-4 font-mono">83.69%</td>
                 </tr>
                 <tr className="hover:bg-white/5 transition-colors text-slate-500">
                   <td className="px-4 py-4 font-medium">Sitewide Baseline</td>
-                  <td className="px-4 py-4 italic">AEO Services Cluster</td>
-                  <td className="px-4 py-4 font-mono">76.93</td>
-                  <td className="px-4 py-4 font-mono">186,641</td>
-                  <td className="px-4 py-4 font-mono">8.13%</td>
+                  <td className="px-4 py-4 italic">AEO Services (/services/aeo)</td>
+                  <td className="px-4 py-4 font-mono">80.8</td>
+                  <td className="px-4 py-4 font-mono">77,000 (77K)</td>
+                  <td className="px-4 py-4 font-mono">5.30%</td>
                 </tr>
                 <tr className="hover:bg-white/5 transition-colors text-slate-500">
                   <td className="px-4 py-4 font-medium">Sitewide Baseline</td>
-                  <td className="px-4 py-4 italic">Brand Cluster</td>
-                  <td className="px-4 py-4 font-mono">64.47</td>
-                  <td className="px-4 py-4 font-mono">388,515</td>
-                  <td className="px-4 py-4 font-mono">20.99%</td>
+                  <td className="px-4 py-4 italic">Homepage Baseline (/)</td>
+                  <td className="px-4 py-4 font-mono">64.6</td>
+                  <td className="px-4 py-4 font-mono">422,000 (422K)</td>
+                  <td className="px-4 py-4 font-mono">21.18%</td>
                 </tr>
               </tbody>
             </table>
@@ -216,13 +239,12 @@ export default function First90DaysCaseStudy() {
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
             Entering a competitive digital marketing sector on a brand-new
             domain requires explicit machine readability, clear entity
-            disambiguation, and structured retrieval readiness. Between site
-            launch on 28 June 2026 and 14 September 2026, AEObility executed the
-            opening 78 days of its{" "}
+            disambiguation, and structured retrieval readiness. Between 1 July 2026 and 15 September 2026, AEObility executed the
+            opening 77 days of its{" "}
             <Link
               href="/solutions/aeo-blueprint"
               className="text-cyan-400 hover:underline font-semibold"
-      data-gtag-event="case-study-view"
+              data-gtag-event="case-study-view"
             >
               90-Day Blueprint
             </Link>{" "}
@@ -234,9 +256,9 @@ export default function First90DaysCaseStudy() {
             retrieval systems.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            Across this initial 78-day window, internal query reports recorded
+            Across this initial 77-day window, internal query reports recorded
             strong early visibility across core commercial terms, generating a
-            combined 61,419 impressions. Broader cluster data demonstrates
+            combined 75,000 impressions. Broader cluster data demonstrates
             established market visibility while defining a clear baseline for
             ongoing iterative optimisation.
           </p>
@@ -713,9 +735,9 @@ export default function First90DaysCaseStudy() {
           </h3>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
             <strong>Location and Service Association:</strong> The two primary
-            query definitions recorded a combined exposure of 61,419 impressions
-            and an impression-weighted average position of approximately 2.70
-            within internal Looker telemetry.
+            query definitions recorded a combined exposure of 75,000 impressions
+            and defensible Page 1 positions (Avg Pos 9 for local Perth services with 44,117 salience score; Avg Pos 4 for national Australian SEO with 14,626 salience score)
+            within internal Looker Studio telemetry.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
             <strong>Interpretation:</strong> This early result reflects observed
@@ -726,10 +748,10 @@ export default function First90DaysCaseStudy() {
             devices, or personalisation parameters.
           </p>
           <p className="font-sans text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-            <strong>Broader Market Distribution:</strong> The brand cluster
-            (388,515 impressions; 20.99% Salience Share; average position 64.47)
-            and AEO Services cluster (186,641 impressions; 8.13% Salience Share;
-            average position 76.93) confirm that broader category exposure
+            <strong>Broader Market Distribution:</strong> The homepage baseline
+            (422,000 impressions; 21.18% Salience Share; average position 64.6)
+            and AEO Services baseline (77,000 impressions; 5.30% Salience Share;
+            average position 80.8) confirm that broader category exposure
             remains distributed across competitive search results.
           </p>
 
