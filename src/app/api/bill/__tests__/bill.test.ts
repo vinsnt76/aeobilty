@@ -173,19 +173,19 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
       expect(verification.payload?.turnCount).toBe(2);
     });
 
-    it('Scenario 3: Turn 3 (Turn count > 2) is blocked with status 403 TURN_LIMIT_EXCEEDED', async () => {
+    it('Scenario 3: Turn 5 (Turn count > 4) is blocked with status 403 TURN_LIMIT_EXCEEDED', async () => {
       const { createTurnToken } = await import('@/lib/security/turn-token');
-      const turn2Token = createTurnToken('https://sarahclinic.com.au', 2);
+      const turn4Token = createTurnToken('https://sarahclinic.com.au', 4);
 
       const mockReq = new NextRequest('https://aeobility.com.au', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-turn-token': turn2Token
+          'x-turn-token': turn4Token
         },
         body: JSON.stringify({
           messages: [
-            { role: 'user', content: 'Turn 3 question' }
+            { role: 'user', content: 'Turn 5 question' }
           ],
           intent: 'telemetry',
           audit: { clientUrl: 'https://sarahclinic.com.au' }
@@ -219,7 +219,7 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
       expect(body.code).toBe('INVALID_TURN_TOKEN');
     });
 
-    it('Scenario 5: Client storage reset bypass attempt with multi-turn messages is gated with 403', async () => {
+    it('Scenario 5: Client storage reset bypass attempt with multi-turn messages (>4) is gated with 403', async () => {
       const mockReq = new NextRequest('https://aeobility.com.au', {
         method: 'POST',
         headers: {
@@ -232,7 +232,11 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
             { role: 'assistant', content: 'Reply 1' },
             { role: 'user', content: 'Msg 2' },
             { role: 'assistant', content: 'Reply 2' },
-            { role: 'user', content: 'Msg 3' }
+            { role: 'user', content: 'Msg 3' },
+            { role: 'assistant', content: 'Reply 3' },
+            { role: 'user', content: 'Msg 4' },
+            { role: 'assistant', content: 'Reply 4' },
+            { role: 'user', content: 'Msg 5' }
           ],
           intent: 'telemetry'
         })

@@ -1,7 +1,14 @@
 {
   "name": "AEObility Cloud Dev",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm install && npm run prebuild",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "AEObility Web App",
+      "onAutoForward": "notify"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [

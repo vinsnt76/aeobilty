@@ -123,7 +123,7 @@ export default function BillWidget() {
   }, [isOpen, viewMode]);
 
 
-  // 0. Gated Lead-Capture State (Triggers on 3rd User Turn)
+  // 0. Gated Lead-Capture State (Triggers on 4th User Turn)
   const [isLeadCaptured, setIsLeadCaptured] = useState(false);
   const [isGateDismissed, setIsGateDismissed] = useState(false);
   const [isReportDispatched, setIsReportDispatched] = useState(false);
@@ -180,18 +180,18 @@ export default function BillWidget() {
 
   const isLoading = status === 'submitted' || status === 'streaming';
 
-  // Calculate User Turn Count for Lead Gating (Triggers on manual click or 3rd user turn if uncaptured)
+  // Calculate User Turn Count for Lead Gating (Triggers on manual click or 4th user turn if uncaptured)
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
-  const isGated = !isReportDispatched && (isGateOpenManually || (userTurnCount >= 3 && !isLeadCaptured && !isGateDismissed));
+  const isGated = !isReportDispatched && (isGateOpenManually || (userTurnCount >= 4 && !isLeadCaptured && !isGateDismissed));
 
   const hasLoggedGateRef = useRef(false);
   useEffect(() => {
     if (isGated && !hasLoggedGateRef.current) {
       hasLoggedGateRef.current = true;
-      trackGaEvent('bill_gate_reached_turn_3', {
+      trackGaEvent('bill_gate_reached_turn_4', {
         event_category: 'bill_conversion_funnel',
         turn_count: userTurnCount,
-        trigger_type: isGateOpenManually ? 'manual_button_click' : 'turn_3_threshold',
+        trigger_type: isGateOpenManually ? 'manual_button_click' : 'turn_4_threshold',
         target_url: storedTelemetry?.url || '',
       });
     }

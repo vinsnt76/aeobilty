@@ -142,8 +142,8 @@ export async function POST(req: NextRequest) {
       sessionTurn = userMessages.length;
     }
 
-    // Enforce 2-turn limit for unauthenticated diagnostic consultation
-    if (isTelemetryActive && sessionTurn > 2) {
+    // Enforce 4-turn limit for unauthenticated diagnostic consultation
+    if (isTelemetryActive && sessionTurn > 4) {
       return new Response(JSON.stringify({ 
         error: 'Turn limit reached for unauthenticated diagnostic session. Please lock in a 15-minute diagnostic review or explore the Blueprint.',
         code: 'TURN_LIMIT_EXCEEDED',
