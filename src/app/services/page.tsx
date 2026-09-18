@@ -18,7 +18,7 @@ const SERVICES_PILLS = [
 
 export const metadata: Metadata = {
   title: "AI Search Strategy & GEO Marketing Consultancy | AEObility",
-  description: "Access custom AEO, GEO, and hyper-local tracking audits tailored for Australian SMBs.",
+  description: "Explore custom AEO, GEO, and AI search strategy services for Australian SMBs. Optimise your digital presence across Search, Maps, and AI answer engines.",
   alternates: {
     canonical: "https://aeobility.com.au/services",
   },

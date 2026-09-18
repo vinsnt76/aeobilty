@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BarChart3, FileText, Download, ExternalLink } from "lucide-react";
 
 export const metadata = {
-  title: "AEO & GEO Case Study: Entity Disambiguation & Commercial Discovery | AEObility",
+  title: "90-Day AEO & GEO Case Study: Commercial Discovery | AEObility",
   description:
     "78-day AEO & GEO case study on a fresh domain. Resolving entity ambiguity to achieve Page 1 positions (pos 4–9) across 75k core commercial impressions in Perth and national Australian query sets.",
   alternates: {

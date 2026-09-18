@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
         ],
       },
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown"' },
+        ],
+      },
     ];
   },
 
@@ -224,6 +230,11 @@ const nextConfig: NextConfig = {
       {
         source: '/solutions/geo-services',
         destination: '/services/geo-marketing',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/case-studies/first-90-days',
+        destination: '/knowledge-hub/case-studies/aeo-geo-blueprint-90-days',
         permanent: true,
       },
     ];

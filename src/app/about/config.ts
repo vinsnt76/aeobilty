@@ -30,7 +30,7 @@ export const roleConfigs: Record<string, RoleConfig> = {
     slug: 'freelance-google-ads-consultant-perth',
     metadata: {
       title: 'Freelance Google Ads Consultant Perth | Vince Baker',
-      description: 'Freelance Google Ads Consultant in Perth. Optimising feeds, tracking, and campaign architectures.',
+      description: 'Freelance Google Ads consultant in Perth. Optimise shopping feeds, server-side conversion tracking, and PPC campaigns to maximise ROI for local WA brands.',
     },
     hero: {
       titlePart1: 'Freelance Google Ads ',
@@ -43,7 +43,7 @@ export const roleConfigs: Record<string, RoleConfig> = {
     slug: 'freelance-digital-specialist-perth',
     metadata: {
       title: 'Freelance Digital Specialist Perth | Vince Baker',
-      description: 'Perth Freelance Digital Specialist building digital infrastructure and automation systems.',
+      description: 'Perth freelance digital specialist building robust web infrastructure, custom automations, and AEO search systems. Book a free consultation call today.',
     },
     hero: {
       titlePart1: 'Freelance Digital ',
@@ -56,7 +56,7 @@ export const roleConfigs: Record<string, RoleConfig> = {
     slug: 'freelance-ai-consultant-perth',
     metadata: {
       title: 'Freelance AI Consultant Perth | Vince Baker',
-      description: 'Freelance AI & Automation Consultant in Perth. n8n workflows, APIs & chatbots.',
+      description: 'Freelance AI and automation consultant in Perth specialising in custom n8n workflows, API integrations, and LLM answer engine search optimisation strategy.',
     },
     hero: {
       titlePart1: 'Freelance AI ',

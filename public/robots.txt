@@ -112,8 +112,3 @@ Allow: /
 
 # Indexing Resources & Machine Maps
 Sitemap: https://aeobility.com.au/sitemap.xml
-LLMs-txt: https://aeobility.com.au/llms.txt
-LLMs-full-txt: https://aeobility.com.au/llms-full.txt
-FullLLMs-txt: https://aeobility.com.au/fullllms.txt
-Agents-md: https://aeobility.com.au/AGENTS.md
-Brand-Facts: https://aeobility.com.au/brand-facts

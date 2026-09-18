@@ -294,17 +294,6 @@ export default function DiagnosticEngine() {
 
   return (
     <div className={`w-full max-w-3xl mx-auto flex flex-col items-center transition-all duration-300 ${isSplitRailActive ? 'xl:mr-[420px]' : ''}`}>
-      
-      {/* Hero Block - Outcome Focused Above-The-Fold Layout */}
-      <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
-          Get My AI Visibility Score
-        </h1>
-        <h2 className="text-zinc-300 text-xs sm:text-sm font-normal leading-relaxed font-serif">
-          Run a free AI Visibility Scan to discover whether ChatGPT, Perplexity and Google AI understand, trust and surface your business for the services you provide.
-        </h2>
-      </div>
-
       <div className="w-full relative controlled-depth-card rounded-2xl p-5 sm:p-7 overflow-hidden shadow-2xl space-y-5">
         {/* Subtle Purple Specular Top Catch */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none"></div>
@@ -328,7 +317,7 @@ export default function DiagnosticEngine() {
                   onChange={e => setUrl(e.target.value)}
                   onFocus={() => trackGaEvent('form_field_focused', { field: 'url' })}
                   placeholder="https://yourbrand.com.au"
-                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-base placeholder:text-zinc-500 min-h-[46px]"
                   spellCheck={false}
                   suppressHydrationWarning
                 />
@@ -351,7 +340,7 @@ export default function DiagnosticEngine() {
                   onChange={e => setIntent(e.target.value)}
                   onFocus={() => trackGaEvent('form_field_focused', { field: 'intent' })}
                   placeholder='e.g. Physiotherapist Near Me or best electrician in Dianella'
-                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-sm sm:text-base min-h-[46px]"
+                  className="diagnostic-input w-full rounded-xl px-4 py-3 text-base placeholder:text-zinc-500 min-h-[46px]"
                   spellCheck={false}
                   suppressHydrationWarning
                 />

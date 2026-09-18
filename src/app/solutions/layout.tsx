@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
-  description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
+  description: "Discover transparent AEO solutions, fixed-scope strategic blueprints, and rapid schema implementation sprints for Australian SMBs with zero contract lock-in.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions",
   },
   openGraph: {
     title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
-    description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
+    description: "Discover transparent AEO solutions, fixed-scope strategic blueprints, and rapid schema implementation sprints for Australian SMBs with zero contract lock-in.",
     url: "https://aeobility.com.au/solutions",
     siteName: "AEObility",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
-    description: "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
+    description: "Discover transparent AEO solutions, fixed-scope strategic blueprints, and rapid schema implementation sprints for Australian SMBs with zero contract lock-in.",
     images: ["https://aeobility.com.au/images/solutions/aeo-solutions-and-pricing-framework_AEObility.webp"],
   },
   keywords: [

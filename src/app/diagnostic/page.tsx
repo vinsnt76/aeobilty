@@ -220,6 +220,16 @@ export default function DiagnosticPage() {
         <Navbar />
         
         <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center">
+          {/* Main Server-Side Rendered H1 Header Block */}
+          <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
+              Run a Free AI Visibility Scan
+            </h1>
+            <p className="text-zinc-300 text-xs sm:text-sm font-normal leading-relaxed font-serif">
+              Discover whether ChatGPT, Perplexity, and Google AI search engines understand, trust, and surface your business for the services you provide.
+            </p>
+          </div>
+
           <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
             <DiagnosticEngine />
           </Suspense>

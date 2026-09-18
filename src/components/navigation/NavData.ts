@@ -111,7 +111,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "AEO Packages",
         "href": "/solutions",
-        "description": "Clear deliverables, fixed-price MVP blueprints, and rapid deployment schema execution sprints.",
+        "description": "Discover transparent AEO solutions, fixed-scope strategic blueprints, and rapid schema implementation sprints for Australian SMBs with zero contract lock-in.",
         "entityName": "AEO Packages",
         "isServicePillar": false,
         "isKnowledgeCapsule": false,

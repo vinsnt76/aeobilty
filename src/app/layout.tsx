@@ -14,7 +14,6 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 
@@ -86,7 +85,7 @@ export default function RootLayout({
         <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-clip">
         <SiteNavigationSchema />
         <SSRFallbackNav />
         {/* Direct GA4 Script Loading via next/script */}

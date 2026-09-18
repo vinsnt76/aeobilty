@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
+      <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300 will-change-transform transform-gpu">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" aria-label="AEObility Home" className="flex items-center group">
