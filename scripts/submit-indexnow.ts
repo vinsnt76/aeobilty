@@ -52,6 +52,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/what-is-seo-optimisation`,
   `https://${HOST}/knowledge-hub/case-studies`,
   `https://${HOST}/knowledge-hub/case-studies/baby-bento`,
+  `https://${HOST}/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`,
 
   // 5. Canonical Technical Research Articles
   `https://${HOST}/knowledge-hub/articles`,
