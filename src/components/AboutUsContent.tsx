@@ -15,11 +15,6 @@ import {
   FileCode,
   UserCheck,
   BarChart3,
-  Layers,
-  Sparkles,
-  MapPin,
-  Clock,
-  Briefcase,
   FileText,
   Download,
   ExternalLink
@@ -88,12 +83,12 @@ export default function AboutUsContent() {
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white font-soehne-breit tracking-tight">
-          Help search engines and AI <br />
-          <span className="text-gradient-aeo">understand your business.</span>
+          Make your business legible <br />
+          <span className="text-gradient-aeo">to Google and AI models.</span>
         </h1>
 
         <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed max-w-2xl mx-auto">
-          AEObility helps Australian businesses become easier to find, understand and recommend across Google Search, Maps and AI search experiences. We turn unclear website information into structured, connected business facts—without the jargon or long-term lock-ins.
+          AEObility cleans up how Australian businesses are referenced across Google Search, Maps, and generative platforms like ChatGPT and Gemini. We turn scattered web pages into verifiable, connected business facts. No agency retainers, jargon, or lock-in contracts.
         </p>
 
         {/* Hero CTAs */}
@@ -106,7 +101,7 @@ export default function AboutUsContent() {
             <span>Get Your Free AI Visibility Scan</span>
           </Link>
           <a
-            href="#what-we-improve"
+            href="#why-misread"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-zinc-400 hover:text-white font-medium text-sm transition-colors group"
           >
             <span>How Our AEO System Works</span>
@@ -126,31 +121,27 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* Who We Work With */}
-      <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Ideal Client Profile</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Who We Work With</h2>
-        </div>
+      {/* Target Audience Section */}
+      <section className="border-t border-white/10 pt-12 space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Who this work is for</h2>
         <div className="p-6 bg-zinc-950/80 border border-cyan-500/30 rounded-2xl space-y-3 max-w-3xl shadow-xl">
           <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
-            AEObility works with Australian service businesses, local operators and growth-focused SMEs that need clearer visibility across Google Search, Maps and emerging AI search experiences. We are especially useful when your business has strong expertise but an unclear, inconsistent or underperforming digital footprint.
+            We work with Australian service operators, trade businesses, and growing regional firms that have established reputations offline but patchy visibility online. If your website describes what you do in ways search crawlers and large language models struggle to parse, we fix the underlying data.
           </p>
         </div>
       </section>
 
-      {/* Outcome-Led "What We Improve" Section */}
-      <section id="what-we-improve" className="border-t border-white/10 pt-12 space-y-8">
-        <div className="space-y-3 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Outcome-Driven Architecture</span>
+      {/* Core Explanation Section */}
+      <section id="why-misread" className="border-t border-white/10 pt-12 space-y-8">
+        <div className="space-y-4 max-w-2xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Built to make your business easier to understand
+            Why search engines misread good businesses
           </h2>
           <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
-            Search engines and AI tools need more than keywords to interpret what a business does, where it operates and why it is credible. When the information on a website is incomplete, inconsistent or disconnected, it becomes harder for those systems to confidently surface the business in relevant results.
+            Modern search engines and AI assistants do not evaluate websites by counting keywords anymore. They look for verifiable facts: what you charge, where you physically operate, who runs the business, and whether third parties corroborate those details.
           </p>
           <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
-            AEObility connects the facts that matter—your services, locations, expertise, proof points and brand details—so your digital presence is clearer for both people and machines.
+            When that information is fragmented across different pages or hidden in vague marketing copy, retrieval systems skip your site. We connect those details directly in your site code and on-page content so algorithms do not have to guess.
           </p>
         </div>
 
@@ -197,26 +188,26 @@ export default function AboutUsContent() {
           </div>
         </div>
 
-        {/* Optional Accordion for Technical Teams */}
+        {/* Technical Explainer Accordion */}
         <div className="pt-4">
           <details className="group bg-zinc-950/90 border border-white/10 rounded-2xl p-6 cursor-pointer hover:border-cyan-500/30 transition-all">
             <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-sm font-soehne-breit">
               <span className="flex items-center gap-2">
                 <FileCode className="w-4 h-4 text-cyan-400" />
-                For technical teams: how the architecture works
+                For technical leads: the mechanics under the hood
               </span>
               <span className="text-cyan-400 group-open:rotate-45 transition-transform duration-300">+</span>
             </summary>
             <div className="mt-4 pt-4 border-t border-white/10 space-y-4 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
               <p>
-                AEObility deploys machine-readable frameworks that translate core business offerings into structured data triples and vector-friendly content blocks:
+                AEObility deploys machine-readable frameworks that translate core business offerings into structured data graphs and vector-friendly content blocks:
               </p>
-              <ul className="space-y-2 list-disc list-inside text-zinc-300">
-                <li><strong className="text-white">Structured Data &amp; Schema.org Markup:</strong> Nested JSON-LD microdata graph definitions for LocalBusiness, Person, Service, and DefinedTerm schemas.</li>
-                <li><strong className="text-white">Entity Relationships &amp; Knowledge-Graph Signals:</strong> Explicit entity mapping linking brand facts directly to canonical Wikidata and Google Knowledge Graph URIs.</li>
-                <li><strong className="text-white">Content Architecture &amp; Topic Coverage:</strong> 90–120 token atomic answer blocks formatted to mitigate Lost in the Middle context dilution in LLM context windows.</li>
-                <li><strong className="text-white">Search Console &amp; Visibility Diagnostics:</strong> Telemetry evaluation simulating dense retrieval cosine similarity and prompt fan-out behavior across ChatGPT, Perplexity, and Gemini.</li>
-                <li><strong className="text-white">First-Party Evidence &amp; Fact Governance:</strong> Canonical brand facts hosted at <Link href="/brand-facts" className="text-aeo-cyan underline">/brand-facts</Link> with explicit proof triples connecting entity, relationship, and evidence.</li>
+              <ul className="space-y-2.5 list-disc list-inside text-zinc-300">
+                <li><strong className="text-white">Structured data graphs:</strong> Nested JSON-LD schemas linking LocalBusiness, Person, and Service entities without broken hierarchy.</li>
+                <li><strong className="text-white">Wikidata &amp; Knowledge Graph reconciliation:</strong> Explicit entity URIs that tie your brand name to verified external registries.</li>
+                <li><strong className="text-white">Atomic answer blocks:</strong> 90 to 120-word self-contained content passages engineered for easy retrieval and attribution in model context windows.</li>
+                <li><strong className="text-white">Retrieval testing:</strong> Evaluating how search bots and model scrapers extract your primary facts under simulated retrieval conditions.</li>
+                <li><strong className="text-white">First-party fact ledgers:</strong> Canonical business data hosted at <Link href="/brand-facts" className="text-aeo-cyan underline">/brand-facts</Link> to give AI scrapers a single source of truth.</li>
               </ul>
               <div className="pt-2">
                 <Link href="/brand-facts" className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-aeo-cyan hover:underline">
@@ -229,52 +220,57 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* Practical Note on AI Visibility (Boundary Reassurance) */}
+      {/* Practical Note on AI Visibility */}
       <section className="p-6 rounded-2xl bg-zinc-900/90 border border-amber-500/30 text-left space-y-2">
         <div className="flex items-center gap-2 text-amber-400 text-xs font-mono font-bold uppercase">
           <ShieldCheck className="w-4 h-4" />
           <span>A Practical Note on AI Visibility</span>
         </div>
         <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-          No consultant can guarantee rankings, AI citations or recommendations from third-party platforms. Our work improves the clarity, accuracy, structure and evidence behind your digital presence—factors that help search systems interpret your business with greater confidence.
+          No consultant can guarantee rankings, AI citations or recommendations from third-party platforms. Our work improves the clarity, accuracy, structure and evidence behind your digital presence: factors that help search systems interpret your business with greater confidence.
         </p>
       </section>
 
-      {/* Evidence & Case Study Proof Module */}
+      {/* Case Study Callout & Empirical Evidence */}
       <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Proven Results &amp; Evidence</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Client Evidence &amp; Case Studies</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+          What this looks like in practice: AEObility 90-day blueprint
+        </h2>
 
         {/* Case Study Card */}
         <div className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
             <div>
-              <span className="text-xs font-mono text-aeo-cyan font-semibold block">Case Study Highlight</span>
-              <h3 className="text-xl font-bold text-white font-soehne-breit">Baby Bento / Australian E-Commerce Entity Refactoring</h3>
+              <span className="text-xs font-mono text-aeo-cyan font-semibold block">Empirical Benchmark Study</span>
+              <h3 className="text-xl font-bold text-white font-soehne-breit">AEObility 90-Day Blueprint Execution</h3>
             </div>
             <span className="text-xs font-mono text-zinc-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-              Timeframe: 30-Day Sprint
+              78-Day Initial Window
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm font-serif">
-            <div className="space-y-1">
-              <strong className="text-white font-soehne-breit block text-sm">The Problem</strong>
-              <p className="text-zinc-300 leading-relaxed">Inconsistent product entity schemas and unlinked location signals led to zero-click attrition and poor AI answer engine citations.</p>
+            <div className="space-y-1.5">
+              <strong className="text-white font-soehne-breit block text-sm">The Scenario</strong>
+              <p className="text-zinc-300 leading-relaxed">
+                Launching a new domain triggers cold-start ambiguity. Without historical authority, retrieval engines often conflate new brands with similar names or miss their local context entirely. For AEObility, early indexing risked lexical confusion with global platforms while needing to establish regional relevance in Perth.
+              </p>
             </div>
-            <div className="space-y-1">
-              <strong className="text-white font-soehne-breit block text-sm">Work Completed</strong>
-              <p className="text-zinc-300 leading-relaxed">Structured JSON-LD entity triples, deployed 90–120 token atomic answer blocks, and mapped canonical brand facts.</p>
+            <div className="space-y-1.5">
+              <strong className="text-white font-soehne-breit block text-sm">The Fix</strong>
+              <p className="text-zinc-300 leading-relaxed">
+                We implemented the foundation phases of <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline">The AEObility Blueprint</Link>. This included nested Schema.org ProfessionalService graphs tied to Perth coordinates, ABN validation, a semantic internal linking lattice, and self-contained 80 to 120-word answer blocks.
+              </p>
             </div>
-            <div className="space-y-1">
-              <strong className="text-white font-soehne-breit block text-sm">Measurable Result</strong>
-              <p className="text-cyan-300 font-bold leading-relaxed">+340% increase in generative AI citations &amp; 100% machine-readable schema validation score.</p>
+            <div className="space-y-1.5">
+              <strong className="text-white font-soehne-breit block text-sm">The Outcome</strong>
+              <p className="text-cyan-300 font-bold leading-relaxed">
+                75,000 impressions across priority search corridors: Pos 9.0 for &quot;aeo services perth&quot; (58K impr) and Pos 4.0 for &quot;aeo seo australia&quot; (17K impr), with zero schema errors.
+              </p>
             </div>
           </div>
 
-          {/* Dropdown for Looker Report / Telemetry Dashboard */}
+          {/* Telemetry Dropdown */}
           <details className="group bg-black/50 border border-white/10 rounded-xl p-4 cursor-pointer hover:border-cyan-400/40 transition-all">
             <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-xs font-mono">
               <span className="flex items-center gap-2">
@@ -337,19 +333,16 @@ export default function AboutUsContent() {
               </div>
 
               <p className="text-[11px] text-zinc-400 font-serif italic pt-1">
-                * Data compiled from Google Search Console &amp; Looker Studio telemetry (1 July – 16 September 2026 AWST). Verified in full PDF benchmark report.
+                * Observed telemetry from Google Search Console and Looker Studio. While structured data improves retrieval conditions, it does not guarantee permanent rankings or universal AI engine inclusion. <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan underline">Read the full 90-day case study</Link>.
               </p>
             </div>
           </details>
         </div>
       </section>
 
-      {/* Company Trust Details Block */}
+      {/* Company Details Block */}
       <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Company Credibility</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Perth-Founded. Australia-Wide.</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Perth-founded. Australia-wide.</h2>
         <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-4 max-w-3xl">
           <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
             AEObility is a Perth, Western Australia consultancy led by Vinnie Baker. We work directly with business owners and internal marketing teams through focused, fixed-scope engagements.
@@ -375,35 +368,32 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* 3-Step Practical Engagement Model */}
+      {/* 3-Step Engagement Model */}
       <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Practical Delivery</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How We Work: 3-Step Engagement</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How an AEO sprint runs</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 relative overflow-hidden">
             <div className="text-3xl font-extrabold text-cyan-400/30 font-mono">01</div>
-            <h3 className="text-lg font-bold text-white font-soehne-breit">Diagnose</h3>
+            <h3 className="text-lg font-bold text-white font-soehne-breit">Audit and map</h3>
             <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-              Assess your current website, business facts, search signals and priority gaps using live vector parsers.
+              We inspect what search engines and language models currently extract from your website, identifying conflicting claims and missing data points.
             </p>
           </div>
 
           <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 relative overflow-hidden">
             <div className="text-3xl font-extrabold text-cyan-400/30 font-mono">02</div>
-            <h3 className="text-lg font-bold text-white font-soehne-breit">Prioritise</h3>
+            <h3 className="text-lg font-bold text-white font-soehne-breit">Isolate the priorities</h3>
             <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-              Turn the findings into a focused plan matched to your commercial goals and available resources.
+              We build an ordered implementation punchlist tailored to your market, focusing on changes that improve retrieval conditions first.
             </p>
           </div>
 
           <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 relative overflow-hidden">
             <div className="text-3xl font-extrabold text-cyan-400/30 font-mono">03</div>
-            <h3 className="text-lg font-bold text-white font-soehne-breit">Implement</h3>
+            <h3 className="text-lg font-bold text-white font-soehne-breit">Deploy and verify</h3>
             <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-              Deliver agreed improvements, schema documentation and clear next steps through a defined sprint.
+              We ship the schema markup, rewrite priority answer passages, test the code live, and hand over the documentation. You own every asset produced.
             </p>
           </div>
         </div>
@@ -411,10 +401,7 @@ export default function AboutUsContent() {
 
       {/* Operational Differentiators */}
       <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Operational Distinction</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Why Choose AEObility?</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Why choose AEObility?</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-serif">
           <div className="p-5 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1">
@@ -436,19 +423,16 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* Reframed Origin Story Section ("Why AEObility Exists") */}
+      {/* Origin Story Section ("Why AEObility exists") */}
       <section className="border-t border-white/10 pt-12 space-y-6">
-        <div className="space-y-2 max-w-2xl">
-          <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Our Origin &amp; Purpose</span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Why AEObility Exists</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Why AEObility exists</h2>
 
         <div className="space-y-4 text-sm sm:text-base text-zinc-300 font-serif leading-relaxed max-w-3xl">
           <p>
             As AI-driven search changed how people discover local businesses, many established Australian operators were left with websites that explained their services to humans but not clearly enough to modern search systems.
           </p>
           <p>
-            AEObility was built in Perth to solve that gap. We help businesses organise their digital information into clear, connected and verifiable signals—so the right details can be understood across search, maps and AI-generated answers.
+            AEObility was built in Perth to solve that gap. We help businesses organise their digital information into clear, connected and verifiable signals, ensuring the right details can be understood across search, maps and AI-generated answers.
           </p>
         </div>
 
@@ -462,11 +446,11 @@ export default function AboutUsContent() {
         {/* Diagnostic Assistant Spotlight ("Meet AI Bill") */}
         <div className="p-6 rounded-2xl bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 space-y-3 max-w-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 uppercase">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
               <Bot className="w-4 h-4" />
               <span>Diagnostic Assistant</span>
             </div>
-            <h4 className="text-base font-bold text-white font-soehne-breit">Meet AI Bill</h4>
+            <h3 className="text-base font-bold text-white font-soehne-breit">Meet AI Bill</h3>
             <p className="text-xs text-zinc-300 font-serif">
               Use our diagnostic assistant to identify gaps in your website&apos;s AI-search readiness and understand where clearer business signals may improve visibility.
             </p>
@@ -481,13 +465,13 @@ export default function AboutUsContent() {
         </div>
       </section>
 
-      {/* Founder Section ("Meet Vinnie Baker") */}
+      {/* Founder Section ("Built by a practitioner, not an account team") */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start border-t border-white/10 pt-12">
         <div className="md:col-span-4 flex justify-center md:justify-start order-2 md:order-1">
           <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-xl">
             <Image
               src="/Profile-Picture-Vinnie.png"
-              alt="Vinnie Baker — Founder & Principal Consultant at AEObility"
+              alt="Vinnie Baker, Founder & Principal Consultant at AEObility"
               fill
               priority
               className="object-cover"
@@ -498,24 +482,18 @@ export default function AboutUsContent() {
         
         <div className="md:col-span-8 order-1 md:order-2 space-y-5">
           <div>
-            <h2 className="text-3xl font-bold text-white font-soehne-breit">Meet Vinnie Baker</h2>
-            <p className="text-sm font-semibold text-aeo-cyan">Founder &amp; Principal Consultant</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Built by a practitioner, not an account team</h2>
+            <p className="text-sm font-semibold text-aeo-cyan mt-1">Vinnie Baker, Founder &amp; Principal Consultant</p>
           </div>
 
-          <blockquote className="border-l-2 border-aeo-purple pl-4 my-4">
-            <p className="text-sm md:text-base text-white/80 italic font-serif leading-relaxed">
-              &ldquo;The internet is changing. I founded AEObility to ensure Australian small and medium businesses are found inside AI answers—not lost behind their competitors.&rdquo;
+          <blockquote className="border-l-2 border-aeo-purple pl-4 my-4 space-y-3">
+            <p className="text-sm md:text-base text-white/90 italic font-serif leading-relaxed">
+              &ldquo;I started AEObility in Perth after watching solid local businesses disappear from search results simply because their websites spoke marketing fluff rather than clear data.&rdquo;
+            </p>
+            <p className="text-sm md:text-base text-white/90 italic font-serif leading-relaxed">
+              &ldquo;Models and modern search engines are essentially retrieval machines. If your site makes them work hard to figure out what you do, they recommend someone else. I run every audit, write the schema, and test the outputs myself. When you book a sprint, you work directly with me.&rdquo;
             </p>
           </blockquote>
-
-          <div className="space-y-3">
-            <p className="text-sm sm:text-base text-white/80 font-light leading-relaxed font-serif">
-              After seeing capable local businesses struggle to explain their value online, Vinnie built AEObility around a simpler principle: your website should make it obvious what you do, who you help and why customers should trust you. The technical work matters, but it should always lead to clearer decisions and practical business outcomes.
-            </p>
-            <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed font-serif">
-              With more than 15 years of commercial and sales-development experience, Vinnie combines practical business thinking with technical SEO, structured data and entity strategy. Clients work directly with him to turn complicated digital requirements into focused actions that support visibility, trust and growth.
-            </p>
-          </div>
 
           {/* Proof Strip */}
           <div className="p-3 bg-zinc-950/80 border border-white/10 rounded-xl text-xs font-mono text-zinc-300 flex flex-wrap items-center gap-2">
