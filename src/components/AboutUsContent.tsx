@@ -37,15 +37,20 @@ export default function AboutUsContent() {
         <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
         <div className="relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-            <span>Digital Marketing Specialist Perth</span>
+            <span>Digital Marketing Specialists in Perth</span>
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight text-white font-soehne-breit">
             Digital Marketing <br />
             <span className="text-gradient-aeo font-extrabold">Specialists in Perth</span>
           </h1>
-          <p className="text-white/60 text-lg leading-relaxed font-light max-w-2xl mx-auto font-serif">
-            Meet the technical architects behind AEObility. Over several years engineering custom code, business automations, and AEO systems in Perth.
-          </p>
+          <div className="space-y-4 max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg sm:text-xl leading-relaxed font-light font-serif">
+              Meet Vince Baker and the technical architects behind AEObility Pty Ltd. Founded in 2026 in Perth, WA, Australia, we help Australian businesses get found and chosen across modern search engines.
+            </p>
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-serif">
+              Most businesses lose visibility because AI answer engines cannot interpret messy, unlinked website text. We replace confusing SEO jargon with structured Answer Engine Optimisation (AEO) and clean entity maps. By translating what your business offers into machine-readable facts, we ensure platforms like ChatGPT, Google Gemini, and Perplexity understand, retrieve, and cite your business accurately. No jargon. No pressure. Just clarity.
+            </p>
+          </div>
         </div>
       </div>
 
