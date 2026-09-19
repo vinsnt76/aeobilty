@@ -1,7 +1,12 @@
 import React from "react";
 import Script from "next/script";
 import Link from "next/link";
-import { BarChart3, FileText, Download, ExternalLink } from "lucide-react";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import SubNavPills from "@/components/navigation/SubNavPills";
+import { HUB_SUBNAV_MAPS } from "@/components/navigation/NavData";
+import { BarChart3, FileText, Download, ExternalLink, ArrowLeft } from "lucide-react";
 
 export const metadata = {
   title: "90-Day AEO & GEO Case Study: Commercial Discovery | AEObility",
@@ -104,15 +109,30 @@ export default function First90DaysCaseStudy() {
   const maxCitations = Math.max(...aiCitations.map((c) => c.citations));
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black pt-24 pb-16 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gradient-to-b from-aeo-cyan/10 to-transparent blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gradient-to-b from-aeo-cyan/10 to-transparent blur-3xl pointer-events-none -z-10" />
+
+      <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
+      <Breadcrumbs />
 
       <Script
         id="case-study-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <article className="max-w-4xl mx-auto px-6 w-full space-y-16 relative z-10">
+      <article className="max-w-4xl mx-auto px-6 py-8 w-full space-y-16 relative z-10 flex-grow">
+        {/* Back Link to Case Studies Index */}
+        <div className="pt-2">
+          <Link
+            href="/knowledge-hub/case-studies"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-cyan-400 hover:text-white hover:bg-white/10 transition-all group"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-cyan-400 group-hover:-translate-x-0.5 transition-transform" />
+            <span>Back to Case Studies</span>
+          </Link>
+        </div>
+
         <header className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs text-cyan-300 font-medium font-mono uppercase tracking-wider">
             <BarChart3 className="w-4 h-4 text-cyan-400" />
@@ -1164,6 +1184,7 @@ export default function First90DaysCaseStudy() {
           </div>
         </section>
       </article>
+      <Footer />
     </div>
   );
 }
