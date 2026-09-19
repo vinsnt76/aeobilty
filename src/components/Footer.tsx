@@ -150,6 +150,16 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/services/perth/seo-specialist" className="hover:text-white transition-colors">
+                Perth SEO Specialist
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/ai-search-agency" className="hover:text-white transition-colors">
+                AI Search Agency
+              </Link>
+            </li>
+            <li>
               <Link href="/about/freelance-seo-consultant-perth" className="hover:text-white transition-colors">
                 Freelance SEO Consultant Perth
               </Link>
@@ -174,6 +184,16 @@ export default function Footer() {
             <li>
               <Link href="/knowledge-hub/articles" className="hover:text-white transition-colors">
                 Articles &amp; Guides
+              </Link>
+            </li>
+            <li>
+              <Link href="/knowledge-hub/ai-seo-tools" className="hover:text-white transition-colors">
+                AI SEO Tools
+              </Link>
+            </li>
+            <li>
+              <Link href="/knowledge-hub/what-is-aeo" className="hover:text-white transition-colors">
+                What is AEO?
               </Link>
             </li>
             <li>
