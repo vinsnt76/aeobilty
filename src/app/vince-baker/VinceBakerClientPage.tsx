@@ -2,6 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import Footer from '@/components/Footer';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import './card.css';
 
 export default function VinceBakerClientPage() {
@@ -74,13 +80,34 @@ export default function VinceBakerClientPage() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <div className="vince-card-page font-sans">
-        {/* Background Glows */}
+      <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
+      <Breadcrumbs />
+
+      <main className="flex-grow flex flex-col items-center py-10 px-4 w-full relative">
+        {/* Back Link to Knowledge Hub & About */}
+        <div className="max-w-md w-full mb-6 flex items-center justify-between text-xs font-mono">
+          <Link
+            href="/knowledge-hub"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-cyan-400 hover:text-white hover:bg-white/10 transition-all group"
+          >
+            <span>&larr; Back to Knowledge Hub</span>
+          </Link>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-400 hover:text-white hover:bg-white/10 transition-all"
+          >
+            <span>About AEObility &rarr;</span>
+          </Link>
+        </div>
+
+        <div className="vince-card-page font-sans w-full !bg-transparent !min-h-0 !p-0">
+          {/* Background Glows */}
         <div className="vince-glow vince-glow-purple" />
         <div className="vince-glow vince-glow-cyan" />
 
@@ -240,7 +267,8 @@ export default function VinceBakerClientPage() {
           </div>
 
         </div>
-      </div>
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }
