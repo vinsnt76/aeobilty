@@ -153,10 +153,10 @@ export default function HowItWorks() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link 
-                href="/knowledge-hub/guides/aeo" 
-                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-600 hover:text-aeo-purple transition-colors"
+                href="/knowledge-hub/ai-seo-tools" 
+                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-700 hover:text-aeo-purple transition-colors"
               >
-                <span>AEO Technical Guides</span>
+                <span>AI search tools and scraper vector parsers comparison</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
