@@ -5,19 +5,19 @@ import DiagnosticEngine from '@/components/DiagnosticEngine';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Run a Free AI Visibility Scan | AEObility",
-  description: "Test your business details today. Run a free visibility scan to check your structured data, location signals and service information formatting.",
+  title: "Free AI Search Diagnostic & GEO Reporting Tool | AEObility",
+  description: "Run a free AI search diagnostic on your website. Audit entity indexing, local maps schema, and generative search citation readiness.",
   alternates: {
     canonical: "https://aeobility.com.au/diagnostic",
   },
   keywords: [
+    "geo reporting",
+    "ai search optimisation",
     "free AI visibility scan",
     "AEO diagnostic tool",
     "structured data check Australia",
     "local signals audit",
-    "AI search audit",
-    "search visibility score",
-    "service information formatting"
+    "AI search audit"
   ]
 };
 

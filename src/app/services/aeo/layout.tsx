@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AEO Services & Answer Engine Optimisation | AEObility",
-  description: "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Micro-sprints from $495 ex. GST, Blueprint $995 ex. GST, Foundation from $3,195 ex. GST.",
+  title: "AEO Services & Answer Engine Marketing | AEObility",
+  description: "Structure your business data for direct RAG passage retrieval. Expert AEO services built to capture conversational AI search queries.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo",
   },
   openGraph: {
-    title: "AEO Services & Answer Engine Optimisation | AEObility",
-    description: "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Four foundational AEO pillars and transparent sprint pricing.",
+    title: "AEO Services & Answer Engine Marketing | AEObility",
+    description: "Structure your business data for direct RAG passage retrieval. Expert AEO services built to capture conversational AI search queries.",
     url: "https://aeobility.com.au/services/aeo",
     siteName: "AEObility",
     images: [
@@ -24,12 +24,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AEO Services & Answer Engine Optimisation | AEObility",
-    description: "Restructure your digital footprint for AI-first search engines and modern discovery platforms.",
+    title: "AEO Services & Answer Engine Marketing | AEObility",
+    description: "Structure your business data for direct RAG passage retrieval. Expert AEO services built to capture conversational AI search queries.",
     images: ["https://aeobility.com.au/images/services/canonical-aeo-services-hub_AEObility.webp"],
   },
   keywords: [
     "aeo services",
+    "aeo marketing",
+    "aeo company",
     "answer engine optimisation",
     "aeo consultant",
     "structured content services",

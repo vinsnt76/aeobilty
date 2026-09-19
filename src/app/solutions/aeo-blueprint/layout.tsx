@@ -1,29 +1,25 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
-  description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.",
+  title: "The $995 AEO Blueprint & Technical Diagnostic | AEObility",
+  description: "Get a complete 90-day AEO execution blueprint for $995 AUD. Full implementation cost offset if AEObility executes setup.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions/aeo-blueprint",
   },
   openGraph: {
-    title: "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
-    description: "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.",
+    title: "The $995 AEO Blueprint & Technical Diagnostic | AEObility",
+    description: "Get a complete 90-day AEO execution blueprint for $995 AUD. Full implementation cost offset if AEObility executes setup.",
     url: "https://aeobility.com.au/solutions/aeo-blueprint",
     type: "website",
     siteName: "AEObility",
   },
   keywords: [
+    "aeo services",
+    "aeo consultant australia",
     "AEObility Blueprint",
     "marketing audit with strategic roadmap",
     "aeo consultant perth",
-    "conversion rate optimisation specialist perth",
-    "90-day marketing roadmap",
-    "website visibility audit checklist",
-    "transparent marketing audit",
-    "technical gap analysis",
-    "entity optimisation review",
-    "local tracking audit"
+    "90-day marketing roadmap"
   ]
 };
 

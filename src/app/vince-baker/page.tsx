@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import VinceBakerClientPage from './VinceBakerClientPage';
 
 export const metadata: Metadata = {
-  title: "Vinnie Baker | Founder & AEO Specialist | AEObility",
-  description: "Digital business card and profile for Vinnie Baker, Founder and AEO Specialist at AEObility in Perth, Western Australia.",
+  title: "Vince Baker (Vinnie Baker) | Lead AEO & SEO Specialist",
+  description: "Vince Baker (Vinnie Baker) is the founder of AEObility & Lead AEO Specialist in Perth, WA, specialising in semantic lattice mapping.",
   alternates: {
     canonical: "https://aeobility.com.au/vince-baker",
   },
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "Vince Baker",
     "AEO Specialist Perth",
     "AI Search Consultant",
-    "AEObility Founder"
+    "AEObility Founder",
+    "seo specialist perth"
   ]
 };
 
