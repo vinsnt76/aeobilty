@@ -1,22 +1,22 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AI Search Agency & AEO Marketing Consultancy | AEObility",
-  description: "Deploy custom AI search marketing strategies for generative engines (Gemini, ChatGPT, Perplexity). Elevate enterprise brand citation scores.",
+  title: "AI Search Agency & AEO Consultancy Australia | AEObility",
+  description: "Specialist Australian AI search agency and AEO consultancy. We help growth-focused businesses optimize entity schema and content for Google AI Overviews, ChatGPT, and Perplexity.",
   alternates: {
     canonical: "https://aeobility.com.au/services/ai-search-agency",
   },
   openGraph: {
-    title: "AI Search Agency & AEO Marketing Consultancy | AEObility",
-    description: "Deploy custom AI search marketing strategies for generative engines (Gemini, ChatGPT, Perplexity). Elevate enterprise brand citation scores.",
+    title: "AI Search Agency & AEO Consultancy Australia | AEObility",
+    description: "Specialist Australian AI search agency and AEO consultancy. We help growth-focused businesses optimize entity schema and content for Google AI Overviews, ChatGPT, and Perplexity.",
     url: "https://aeobility.com.au/services/ai-search-agency",
     type: "website",
     siteName: "AEObility",
   },
   keywords: [
-    "aeo agency",
-    "ai search agency",
-    "ai search marketing",
+    "aeo agency perth",
+    "ai search agency australia",
+    "ai search marketing consultancy",
     "generative engine optimisation agency",
     "AEO marketing consultancy"
   ]
