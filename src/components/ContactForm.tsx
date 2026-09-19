@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { trackGaEvent } from '@/lib/gtag';
 import { 
@@ -10,13 +9,13 @@ import {
   Clock, 
   ShieldCheck, 
   CheckCircle2, 
-  ArrowRight, 
   HelpCircle, 
   ExternalLink,
   MessageSquare,
   Globe,
-  Briefcase,
-  Bot
+  MapPin,
+  Building2,
+  Lock
 } from 'lucide-react';
 
 export default function ContactForm() {
@@ -71,7 +70,7 @@ export default function ContactForm() {
     },
     {
       question: "Is the $995 Blueprint price inclusive of GST and how is the credit applied?",
-      answer: "Yes, the $995 price is GST-inclusive for Australian clients. If you choose to transition to a full AEO implementation sprint within 60 days of receiving your Blueprint, the full $995 is credited directly against your sprint fee."
+      answer: "Yes, the $995 price is 100% GST-inclusive for Australian clients. If you choose to transition to a full AEO implementation sprint within 60 days of receiving your Blueprint, the full $995 is credited directly against your sprint fee."
     },
     {
       question: "What should I prepare for a 15-minute clarity call?",
@@ -100,22 +99,22 @@ export default function ContactForm() {
   ];
 
   return (
-    <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-16">
+    <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 w-full flex flex-col gap-14 sm:gap-20">
       
-      {/* Page Header */}
-      <header className="max-w-3xl space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-medium">
-          <MessageSquare className="w-4 h-4 text-aeo-cyan" />
-          <span>Contact &amp; Technical Support</span>
+      {/* Hero Header Section */}
+      <header className="max-w-3xl space-y-5 isolation isolate relative">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs text-aeo-cyan font-mono font-medium shadow-[0_0_12px_rgba(0,229,255,0.15)]">
+          <span className="w-2 h-2 rounded-full bg-aeo-cyan animate-pulse" />
+          <span>AEO CONSULTANT · PERTH, AUSTRALIA</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-soehne-breit tracking-tight leading-tight">
-          Get in touch with <br />
-          <span className="text-gradient-aeo">the AEObility team.</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-soehne-breit tracking-tight leading-[1.1]">
+          Let's Talk Strategy. <br />
+          <span className="text-gradient-aeo">No Jargon. No Pressure. Just Clarity.</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
-          Whether you want to audit your AI visibility, book a 15-minute clarity call, or request technical support for an active sprint, we are here to help. No jargon. No pressure. Just clarity.
+        <p className="text-base sm:text-lg text-slate-300 font-sans leading-relaxed max-w-2xl">
+          Whether you want to audit your AI visibility, book a 15-minute clarity call, or request technical support for an active sprint, we are here to help. Speak directly with founder Vinnie Baker.
         </p>
 
         {/* Dual CTA Jump Buttons */}
@@ -124,55 +123,57 @@ export default function ContactForm() {
             href="https://cal.com/vince-baker-aeo-call/15min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-xs transition-all hover:-translate-y-0.5 shadow-[0_0_18px_rgba(0,229,255,0.35)] hover:shadow-[0_0_28px_rgba(0,229,255,0.55)]"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-xs uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,229,255,0.35)] hover:shadow-[0_0_30px_rgba(0,229,255,0.55)] cursor-pointer"
           >
             <Calendar className="w-4 h-4 text-[#050811]" />
-            <span>Book 15-Min Clarity Call</span>
+            <span>Book 15-Minute Clarity Call</span>
           </a>
           <a
             href="#enquiry-form"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-300 hover:text-white font-medium text-xs transition-colors hover:bg-white/10"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900/70 border border-slate-700 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-slate-800/80 hover:border-slate-500"
           >
             <Mail className="w-4 h-4 text-aeo-cyan" />
-            <span>Send an Enquiry</span>
+            <span>Send Written Enquiry</span>
           </a>
         </div>
       </header>
 
-      {/* Main Grid: Direct Booking + Form Routing */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      {/* Main Grid: Level 1 Glass Modules */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
-        {/* Left Column: Direct Booking & Target Audience */}
+        {/* Left Column: Direct Booking Pathway & Operational Context (Level 1 + Level 2 Glass) */}
         <section className="lg:col-span-6 flex flex-col gap-8">
           
-          {/* Direct Booking Pathway Card */}
-          <div className="p-8 bg-zinc-950/90 border border-cyan-500/30 rounded-3xl space-y-6 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full filter blur-2xl pointer-events-none" />
+          {/* Level 1 Primary Glass: Direct Booking Pathway Card */}
+          <div className="relative isolate rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-cyan-500/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] p-6 sm:p-8 space-y-6 overflow-hidden">
+            {/* Directional Top Specular Edge Highlight */}
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-40 h-40 bg-cyan-500/10 rounded-full filter blur-3xl pointer-events-none" />
             
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Direct Booking Pathway</span>
-              <h2 className="text-2xl font-bold text-white font-soehne-breit">Book a 15-Minute Clarity Call</h2>
-              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Speak directly with Vinnie Baker (Founder &amp; Principal Consultant). Review how search engines and AI models perceive your business with zero sales pressure.
+              <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Booking Pathway</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Book a 15-Minute Clarity Call</h2>
+              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                Speak directly with Vinnie Baker (Founder &amp; Principal Consultant). Review live search engine and AI model signals for your business with zero sales pressure.
               </p>
             </div>
 
-            <div className="space-y-3 pt-2 text-xs font-mono text-zinc-300 border-t border-white/10">
-              <div className="flex items-center gap-2.5">
+            <div className="space-y-3 pt-4 text-xs font-mono text-slate-200 border-t border-white/10">
+              <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
                 <span>Format: 1-on-1 Video Call (Google Meet) or Phone</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
-                <span>Host: Vinnie Baker (Founder &amp; Lead AEO Specialist)</span>
+                <span>Host: Vinnie Baker (Founder &amp; Lead Specialist)</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
-                <span>Timezone: AWST (Perth, WA) with automatic conversion</span>
+                <span>Timezone: AWST (Perth, WA) with auto conversion</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
-                <span>Preparation: Zero prep required (have website URL ready)</span>
+                <span>Preparation: Zero prep required (have URL ready)</span>
               </div>
             </div>
 
@@ -181,69 +182,95 @@ export default function ContactForm() {
                 href="https://cal.com/vince-baker-aeo-call/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-sm transition-all hover:-translate-y-0.5 shadow-[0_0_24px_rgba(0,229,255,0.35)] hover:shadow-[0_0_32px_rgba(0,229,255,0.55)]"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-sm uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-[0_0_24px_rgba(0,229,255,0.4)] hover:shadow-[0_0_36px_rgba(0,229,255,0.6)] cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-[#050811]" />
-                <span>Open Live Booking Calendar</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#050811]" />
+                <span>Open Live Calendar Availability</span>
+                <ExternalLink className="w-4 h-4 text-[#050811]" />
               </a>
             </div>
           </div>
 
-          {/* Who This Is For (Client Fit) */}
-          <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3">
+          {/* Level 2 Glass: Who We Work With */}
+          <div className="relative isolate rounded-2xl bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 space-y-3">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="flex items-center gap-2 text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider">
+              <Building2 className="w-4 h-4 text-aeo-cyan" />
+              <span>Target Audience Fit</span>
+            </div>
             <h3 className="text-lg font-bold text-white font-soehne-breit">Who we work with</h3>
-            <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-              AEObility is best suited to Australian service businesses, local operators, trade firms, and growth-focused SMEs that want stronger, clearer visibility across Google Search, Maps, and AI answer engines like ChatGPT and Gemini.
+            <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+              AEObility is engineered specifically for Australian service businesses, local operators, trade firms, and growth-focused SMEs seeking legible, high-confidence visibility across Google Search, Maps, and AI platforms like ChatGPT and Gemini.
             </p>
-            <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-              We specialize in structured schema engineering, atomic answer blocks, and entity relationship mapping. We do not offer generic low-cost SEO packages, link-spam schemes, or unverified ranking guarantees.
+            <p className="text-xs text-slate-400 font-sans leading-relaxed">
+              We specialize in verified schema architecture, structured entity graphs, and atomic answer rewrites. We do not offer generic low-cost SEO packages or speculative link-spam schemes.
             </p>
           </div>
 
-          {/* Location & Remote Service Area Clarification */}
-          <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3">
-            <h3 className="text-lg font-bold text-white font-soehne-breit">Headquarters &amp; Service Area</h3>
-            <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+          {/* Level 2 Glass: Headquarters & Operational Metadata */}
+          <div className="relative isolate rounded-2xl bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 space-y-4">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+            <div className="flex items-center gap-2 text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider">
+              <MapPin className="w-4 h-4 text-aeo-cyan" />
+              <span>Headquarters &amp; Service Region</span>
+            </div>
+            <h3 className="text-lg font-bold text-white font-soehne-breit">Based in Perth, servicing nationwide</h3>
+            <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
               Based in Perth, Western Australia, AEObility operates remotely to service clients across Australia. Consultations and technical support are delivered via 1-on-1 video call and direct email.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-zinc-400 pt-2 border-t border-white/10">
-              <div>Legal Entity: Trekaboutoz (AEObility)</div>
-              <div>ABN: 61 029 803 255</div>
-              <div>Location: Perth, WA 6000</div>
-              <div>Hours: Mon–Fri 9:00 AM – 5:00 PM AWST</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300 pt-3 border-t border-white/10">
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>support@aeobility.com.au</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>Mon–Fri 9:00 AM – 5:00 PM AWST</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>Perth, WA 6000 (Australia-wide)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>ABN: 61 029 803 255</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Right Column: Categorised Enquiry Form */}
-        <section id="enquiry-form" className="lg:col-span-6 bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm self-start shadow-xl scroll-mt-24">
-          <div className="space-y-2 mb-6">
-            <h2 className="text-2xl font-bold text-white font-soehne-breit">Send an Enquiry or Support Request</h2>
-            <p className="text-xs text-zinc-400 font-serif">
+        {/* Right Column: Level 1 Glass Categorised Enquiry Form */}
+        <section id="enquiry-form" className="lg:col-span-6 relative isolate rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-cyan-500/30 p-6 sm:p-8 space-y-6 shadow-[0_0_30px_rgba(0,0,0,0.5)] self-start scroll-mt-24">
+          {/* Top Specular Edge Highlight */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
+
+          <div className="space-y-2">
+            <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Implementation</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Send an Enquiry or Support Request</h2>
+            <p className="text-xs sm:text-sm text-slate-300 font-sans">
               Select your category below to ensure your message is routed to the right pathway.
             </p>
           </div>
 
           {formSubmitted ? (
-            <div className="p-6 bg-cyan-950/60 border border-cyan-500/40 rounded-2xl flex flex-col items-center text-center gap-4 animate-fade-in">
+            <div className="p-6 bg-cyan-950/70 border border-cyan-500/40 rounded-2xl flex flex-col items-center text-center gap-4 animate-fade-in">
               <CheckCircle2 className="w-12 h-12 text-aeo-cyan" />
-              <h3 className="font-bold text-lg text-white font-soehne-breit">Enquiry Received</h3>
-              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                Thank you for reaching out! Vinnie Baker normally responds within 1 business day (Monday to Friday, 9:00 AM – 5:00 PM AWST) from <strong className="text-white">support@aeobility.com.au</strong>.
+              <h3 className="font-bold text-xl text-white font-soehne-breit">Enquiry Received</h3>
+              <p className="text-xs sm:text-sm text-slate-200 font-sans leading-relaxed">
+                Thank you for reaching out. Vinnie Baker normally responds within 1 business day (Monday to Friday, 9:00 AM – 5:00 PM AWST) from <strong className="text-white">support@aeobility.com.au</strong>.
               </p>
-              <p className="text-xs text-zinc-400 font-serif">
-                Need immediate assistance? You can also <a href="https://cal.com/vince-baker-aeo-call/15min" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan underline">book a 15-minute clarity call directly</a>.
+              <p className="text-xs text-slate-300 font-sans">
+                Need immediate assistance? You can also <a href="https://cal.com/vince-baker-aeo-call/15min" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan underline font-semibold">book a 15-minute clarity call directly</a>.
               </p>
               <button
                 onClick={() => setFormSubmitted(false)}
-                className="mt-2 text-xs font-mono text-cyan-400 hover:underline"
+                className="mt-2 text-xs font-mono text-aeo-cyan hover:underline cursor-pointer"
               >
                 Send another message
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               
               {/* Invisible Honeypot Field */}
               <input
@@ -257,7 +284,7 @@ export default function ContactForm() {
               />
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="name">
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="name">
                   Full Name <span className="text-aeo-cyan">*</span>
                 </label>
                 <input
@@ -267,13 +294,13 @@ export default function ContactForm() {
                   autoComplete="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all"
+                  className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                   placeholder="Vince Baker"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="email">
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="email">
                   Email Address <span className="text-aeo-cyan">*</span>
                 </label>
                 <input
@@ -283,50 +310,50 @@ export default function ContactForm() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all"
+                  className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                   placeholder="vince@example.com.au"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="website">
-                    Website URL <span className="text-zinc-500 font-normal lowercase">(optional)</span>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="website">
+                    Website URL <span className="text-slate-400 font-normal lowercase">(optional)</span>
                   </label>
                   <input
                     type="url"
                     id="website"
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all"
+                    className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                     placeholder="https://yourbusiness.com.au"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="businessName">
-                    Business Name <span className="text-zinc-500 font-normal lowercase">(optional)</span>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="businessName">
+                    Business Name <span className="text-slate-400 font-normal lowercase">(optional)</span>
                   </label>
                   <input
                     type="text"
                     id="businessName"
                     value={formData.businessName}
                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all"
+                    className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                     placeholder="Your Business Pty Ltd"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="category">
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="category">
                   Enquiry Category <span className="text-aeo-cyan">*</span>
                 </label>
                 <select
                   id="category"
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                  className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all"
+                  className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] cursor-pointer"
                 >
                   <option value="New AEO or SEO Enquiry">New AEO or SEO Enquiry</option>
                   <option value="Book / Review $995 AEO Blueprint">Book / Review $995 AEO Blueprint</option>
@@ -338,7 +365,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" htmlFor="message">
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="message">
                   How can we help? <span className="text-aeo-cyan">*</span>
                 </label>
                 <textarea
@@ -347,19 +374,22 @@ export default function ContactForm() {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-aeo-cyan focus:ring-1 focus:ring-aeo-cyan transition-all resize-none"
+                  className="w-full p-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                   placeholder="Briefly describe your enquiry, current website challenge, or support requirement..."
                 />
               </div>
 
               {/* Privacy & Consent Statement */}
-              <p className="text-[11px] text-zinc-400 font-serif leading-normal pt-1">
-                By submitting this form, you agree that AEObility may use your details to respond to your enquiry in accordance with our <Link href="/privacy-policy" className="text-aeo-cyan underline">Privacy Policy</Link>. Zero marketing spam.
-              </p>
+              <div className="flex items-start gap-2 pt-1 text-[11px] text-slate-400 font-sans leading-relaxed">
+                <Lock className="w-3.5 h-3.5 text-aeo-cyan shrink-0 mt-0.5" />
+                <span>
+                  By submitting this form, you agree that AEObility may process your details to respond to your enquiry in accordance with our <Link href="/privacy" className="text-aeo-cyan underline hover:text-white transition-colors">Privacy Policy</Link>. Zero marketing spam.
+                </span>
+              </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#00E5FF] text-[#050811] font-bold text-sm py-3.5 px-6 rounded-xl hover:shadow-[0_0_24px_rgba(0,229,255,0.4)] transition-all cursor-pointer text-center mt-2 shadow-md"
+                className="w-full bg-[#00E5FF] text-[#050811] font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-xl hover:shadow-[0_0_28px_rgba(0,229,255,0.5)] transition-all cursor-pointer text-center mt-2 shadow-lg"
               >
                 Submit Enquiry
               </button>
@@ -367,38 +397,38 @@ export default function ContactForm() {
           )}
 
           {/* Compact Trust Proof Box */}
-          <div className="mt-8 pt-6 border-t border-white/10 space-y-2 text-xs font-serif text-zinc-300">
-            <div className="font-bold text-white font-soehne-breit flex items-center gap-1.5">
+          <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs font-sans text-slate-300">
+            <div className="font-bold text-white font-soehne-breit flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
               <span>Founder-Led Quality &amp; Blueprint Guarantee</span>
             </div>
-            <p className="text-zinc-400 leading-relaxed text-[12px]">
-              You work 100% directly with founder Vinnie Baker. The $995 Strategic Blueprint is GST-inclusive and 100% credited toward your full AEO implementation sprint if booked within 60 days of delivery.
+            <p className="text-slate-400 leading-relaxed text-[12px]">
+              You work 100% directly with founder Vinnie Baker. The $995 Strategic Blueprint is 100% GST-inclusive and fully credited toward your implementation sprint if booked within 60 days.
             </p>
           </div>
         </section>
       </div>
 
-      {/* Expanded FAQ Accordion Section */}
+      {/* Expanded FAQ Accordion Section (Level 3 Quiet Surface) */}
       <section className="border-t border-white/10 pt-12 space-y-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan font-semibold uppercase tracking-wider">
             <HelpCircle className="w-4 h-4" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Contact &amp; Support Questions</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Contact &amp; Support Questions</h2>
         </div>
 
         <div className="space-y-3 max-w-4xl">
           {faqs.map((faq, index) => {
             const isOpen = activeFaq === index;
             return (
-              <div key={index} className="bg-zinc-950/80 border border-white/10 rounded-xl overflow-hidden transition-all">
+              <div key={index} className="bg-slate-950/70 border border-white/10 rounded-xl overflow-hidden transition-all">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-white/[0.02] transition-colors"
+                  className="w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-white/[0.02] transition-colors cursor-pointer"
                 >
-                  <span className="font-bold text-sm sm:text-base text-white font-soehne-breit pr-4">{faq.question}</span>
+                  <span className="font-bold text-sm sm:text-base text-slate-100 font-soehne-breit pr-4">{faq.question}</span>
                   <svg
                     className={`w-4 h-4 text-aeo-cyan shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                     fill="none"
@@ -410,9 +440,9 @@ export default function ContactForm() {
                   </svg>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-60 border-t border-white/10 bg-black/40' : 'max-h-0'}`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-60 border-t border-white/10 bg-black/50' : 'max-h-0'}`}
                 >
-                  <p className="p-5 text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">{faq.answer}</p>
+                  <p className="p-5 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">{faq.answer}</p>
                 </div>
               </div>
             );
