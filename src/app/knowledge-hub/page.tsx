@@ -152,13 +152,20 @@ export default function KnowledgeHubPage() {
               <p className="text-lg text-white/70 font-light leading-relaxed max-w-xl">
                 Master modern SEO frameworks, discover concrete AI search marketing examples, and access professional answer engine optimisation tools.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   href="/diagnostic"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
                 >
                   <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/knowledge-hub/what-is-aeo"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-base transition-all hover:bg-zinc-800"
+                >
+                  <span>What is AEO?</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400" />
                 </Link>
               </div>
             </div>
@@ -309,13 +316,20 @@ export default function KnowledgeHubPage() {
               <p className="text-sm text-white/60 font-light max-w-sm mx-auto">
                 Get a free manual audit analysing your brand readability across AI platforms today.
               </p>
-              <div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
                   href="/diagnostic"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-semibold rounded-xl hover:bg-neutral-100 transition-all duration-300"
                 >
                   <span>Get Visibility Score</span>
                   <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/knowledge-hub/what-is-aeo"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-zinc-800"
+                >
+                  <span>What is AEO?</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400" />
                 </Link>
               </div>
             </div>

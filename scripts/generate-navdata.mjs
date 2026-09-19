@@ -248,6 +248,8 @@ export function generateNavData() {
     ],
     knowledgeHub: [
       { title: "Knowledge Hub", url: "/knowledge-hub" },
+      { title: "AI SEO Tools", url: "/knowledge-hub/ai-seo-tools" },
+      { title: "What is AEO?", url: "/knowledge-hub/what-is-aeo" },
       { title: "Articles", url: "/knowledge-hub/articles" },
       { title: "Guides", url: "/knowledge-hub/guides" },
       { title: "Case Studies", url: "/knowledge-hub/case-studies" },

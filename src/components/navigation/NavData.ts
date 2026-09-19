@@ -310,6 +310,14 @@ export const HUB_SUBNAV_MAPS: Record<string, SubNavPillItem[]> = {
       "url": "/knowledge-hub"
     },
     {
+      "title": "AI SEO Tools",
+      "url": "/knowledge-hub/ai-seo-tools"
+    },
+    {
+      "title": "What is AEO?",
+      "url": "/knowledge-hub/what-is-aeo"
+    },
+    {
       "title": "Articles",
       "url": "/knowledge-hub/articles"
     },
