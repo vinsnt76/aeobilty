@@ -97,29 +97,29 @@ export default function AboutUsContent() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <Link
             href="/diagnostic"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.3)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-sm transition-all hover:-translate-y-0.5 shadow-[0_0_24px_rgba(0,229,255,0.35)] hover:shadow-[0_0_32px_rgba(0,229,255,0.55)]"
           >
-            <Search className="w-4 h-4 text-black" />
+            <Search className="w-4 h-4 text-[#050811]" />
             <span>Get Your Free AI Visibility Scan</span>
           </Link>
           <a
             href="#what-we-improve"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-semibold text-sm transition-all hover:bg-zinc-800"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-zinc-400 hover:text-white font-medium text-sm transition-colors group"
           >
             <span>How Our AEO System Works</span>
-            <ArrowRight className="w-4 h-4 text-cyan-400" />
+            <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-aeo-cyan transition-colors" />
           </a>
         </div>
 
-        {/* Hero Proof Bar */}
-        <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-400 font-mono">
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan" /> Perth-based</span>
+        {/* Anchored Hero Proof Container */}
+        <div className="mt-6 inline-flex items-center justify-center gap-3 sm:gap-4 flex-wrap bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full px-5 py-2.5 text-xs text-zinc-300 font-sans tracking-wide">
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan shrink-0" /> Perth-based</span>
           <span className="text-zinc-600">•</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan" /> Built for Australian businesses</span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan shrink-0" /> Built for Australian businesses</span>
           <span className="text-zinc-600">•</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan" /> Fixed-scope sprints</span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan shrink-0" /> Fixed-scope sprints</span>
           <span className="text-zinc-600">•</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan" /> No lock-in contracts</span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan shrink-0" /> No lock-in contracts</span>
         </div>
       </section>
 
@@ -153,7 +153,7 @@ export default function AboutUsContent() {
 
         {/* 4 Outcome Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 hover:border-aeo-cyan/40 transition-all">
+          <div className="p-6 bg-gradient-to-br from-cyan-950/30 via-zinc-950/90 to-zinc-950/80 border border-aeo-cyan/50 rounded-2xl space-y-3 shadow-[0_0_20px_rgba(0,229,255,0.15)] transition-all">
             <div className="p-2.5 w-fit rounded-xl bg-cyan-950/60 border border-cyan-500/30 text-aeo-cyan">
               <Compass className="w-5 h-5" />
             </div>
@@ -494,9 +494,9 @@ export default function AboutUsContent() {
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-105 shadow-[0_0_15px_rgba(0,205,216,0.2)]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-xs transition-all hover:-translate-y-0.5 shadow-[0_0_18px_rgba(0,229,255,0.35)] hover:shadow-[0_0_28px_rgba(0,229,255,0.55)]"
             >
-              <UserCheck className="w-4 h-4 text-black" />
+              <UserCheck className="w-4 h-4 text-[#050811]" />
               <span>Talk to Vinnie</span>
             </Link>
 
@@ -504,9 +504,9 @@ export default function AboutUsContent() {
               href="https://www.linkedin.com/in/vince-baker/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-aeo-cyan hover:underline hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-white transition-colors"
             >
-              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 fill-current shrink-0 text-zinc-400" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
               <span>Connect on LinkedIn</span>
@@ -574,10 +574,10 @@ export default function AboutUsContent() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/diagnostic"
-            className="group flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.3)]"
+            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#00E5FF] text-[#050811] font-bold text-sm transition-all hover:-translate-y-0.5 shadow-[0_0_24px_rgba(0,229,255,0.35)] hover:shadow-[0_0_32px_rgba(0,229,255,0.55)]"
           >
             <span>Generate Visibility Score</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-[#050811]" />
           </Link>
         </div>
       </section>
