@@ -105,16 +105,16 @@ export default function ContactForm() {
       <header className="max-w-3xl space-y-5 isolation isolate relative">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs text-aeo-cyan font-mono font-medium shadow-[0_0_12px_rgba(0,229,255,0.15)]">
           <span className="w-2 h-2 rounded-full bg-aeo-cyan animate-pulse" />
-          <span>AEO CONSULTANT · PERTH, AUSTRALIA</span>
+          <span>Direct Advisory &amp; Technical Support</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-soehne-breit tracking-tight leading-[1.1]">
-          Let's Talk Strategy. <br />
-          <span className="text-gradient-aeo">No Jargon. No Pressure. Just Clarity.</span>
+          Speak directly with AEObility <br />
+          <span className="text-gradient-aeo">about search visibility and entity engineering.</span>
         </h1>
 
         <p className="text-base sm:text-lg text-slate-300 font-sans leading-relaxed max-w-2xl">
-          Whether you want to audit your AI visibility, book a 15-minute clarity call, or request technical support for an active sprint, we are here to help. Speak directly with founder Vinnie Baker.
+          AEObility provides technical Answer Engine Optimisation (AEO), schema graph engineering, and AI retrieval consulting for Australian businesses from Perth, Western Australia. Whether you need a baseline audit of how generative engines like Google AI Overviews and ChatGPT parse your brand, want to review your technical data architecture, or require sprint support from founder Vinnie Baker, you can book a direct consultation below. We review your actual site code and entity footprint on the call, with zero sales pressure.
         </p>
 
         {/* Dual CTA Jump Buttons */}
@@ -151,8 +151,8 @@ export default function ContactForm() {
             <div className="absolute -top-12 -right-12 w-40 h-40 bg-cyan-500/10 rounded-full filter blur-3xl pointer-events-none" />
             
             <div className="space-y-2">
-              <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Booking Pathway</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Book a 15-Minute Clarity Call</h2>
+              <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">15-Minute Clarity Call</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Book an introductory consult with Vinnie Baker in Perth.</h2>
               <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
                 Speak directly with Vinnie Baker (Founder &amp; Principal Consultant). Review live search engine and AI model signals for your business with zero sales pressure.
               </p>
@@ -246,7 +246,7 @@ export default function ContactForm() {
 
           <div className="space-y-2">
             <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Implementation</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Send an Enquiry or Support Request</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Send an engineering enquiry or project brief.</h2>
             <p className="text-xs sm:text-sm text-slate-300 font-sans">
               Select your category below to ensure your message is routed to the right pathway.
             </p>
@@ -416,7 +416,7 @@ export default function ContactForm() {
             <HelpCircle className="w-4 h-4" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Contact &amp; Support Questions</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Frequently asked questions about AEO consulting and sprints.</h2>
         </div>
 
         <div className="space-y-3 max-w-4xl">
