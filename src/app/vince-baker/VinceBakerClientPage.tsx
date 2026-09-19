@@ -267,6 +267,7 @@ export default function VinceBakerClientPage() {
           </div>
 
         </div>
+      </div>
       </main>
       <Footer />
     </div>
