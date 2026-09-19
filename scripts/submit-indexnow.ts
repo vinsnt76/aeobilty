@@ -15,7 +15,7 @@ const INDEXNOW_ENDPOINTS = [
   "https://yandex.com/indexnow"
 ];
 
-// Complete 49-Node Canonical Directory Matrix (1:1 with AEObility -IA & SLM.csv)
+// Complete Canonical Directory Matrix (1:1 with sitemap.ts & AEObility IA/SLM)
 export const CANONICAL_URL_LIST: string[] = [
   // 1. Root & Diagnostic Core
   `https://${HOST}`,
@@ -32,18 +32,27 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/services/aeo/costs-timing`,
   `https://${HOST}/services/aeo/shopify`,
   `https://${HOST}/services/aeo/local-business`,
+  `https://${HOST}/services/ai-search-agency`,
   `https://${HOST}/services/ai-search-marketing`,
+  `https://${HOST}/services/ai-search-marketing/perth`,
+  `https://${HOST}/services/ai-search-marketing/sydney`,
+  `https://${HOST}/services/ai-search-marketing/melbourne`,
+  `https://${HOST}/services/ai-search-marketing/adelaide`,
+  `https://${HOST}/services/ai-search-marketing/brisbane`,
+  `https://${HOST}/services/perth/seo-specialist`,
   `https://${HOST}/services/geo-marketing`,
 
   // 3. Solutions & Fixed-Scope Sprints
   `https://${HOST}/solutions`,
   `https://${HOST}/solutions/aeo-blueprint`,
   `https://${HOST}/solutions/aeo-sprint`,
-  `https://${HOST}/services/geo-marketing`,
+  `https://${HOST}/solutions/geo-services`,
 
   // 4. Knowledge Hub Indexes & Core Theory
   `https://${HOST}/knowledge-hub`,
   `https://${HOST}/knowledge-hub/aeo`,
+  `https://${HOST}/knowledge-hub/ai-seo-tools`,
+  `https://${HOST}/knowledge-hub/what-is-aeo`,
   `https://${HOST}/knowledge-hub/guides`,
   `https://${HOST}/knowledge-hub/guides/aeo`,
   `https://${HOST}/knowledge-hub/tutorials`,
