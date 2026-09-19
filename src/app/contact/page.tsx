@@ -4,17 +4,18 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata: Metadata = {
-  title: "Contact an Expert AEO Consultant in Perth | AEObility",
-  description: "Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.",
+  title: "Contact & Technical Support | AEObility Perth",
+  description: "Book a 15-minute clarity call or submit an enquiry for AEO, SEO, and AI search visibility support. Direct founder-led assistance with zero pressure.",
   keywords: [
     "aeo consultant perth",
-    "aeo consultant",
-    "aeo marketers near me",
+    "contact aeobility",
     "book a digital marketing consultation",
     "small business optimisation support",
-    "aeobility contact information"
+    "aeo technical support"
   ],
   alternates: {
     canonical: "https://aeobility.com.au/contact",
@@ -29,8 +30,8 @@ export default function ContactPage() {
         "@type": "ContactPage",
         "@id": "https://aeobility.com.au/contact#webpage",
         "url": "https://aeobility.com.au/contact",
-        "name": "Contact an Expert AEO Consultant in Perth | AEObility",
-        "description": "Get in touch to review your visibility performance. Submit questions about our technical sprints or book a review call for your $995 audit.",
+        "name": "Contact & Technical Support | AEObility Perth",
+        "description": "Book a 15-minute clarity call or submit an enquiry for AEO, SEO, and AI search visibility support. Direct founder-led assistance with zero pressure.",
         "publisher": {
           "@type": "Organization",
           "name": "AEObility",
@@ -44,7 +45,6 @@ export default function ContactPage() {
         "legalName": "Trekaboutoz trading as AEObility",
         "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
         "url": "https://aeobility.com.au/contact",
-        "telephone": "0480 286 282",
         "email": "support@aeobility.com.au",
         "taxID": "61029803255",
         "sameAs": [
@@ -52,7 +52,6 @@ export default function ContactPage() {
         ],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Perth St",
           "addressLocality": "Perth",
           "addressRegion": "Western Australia",
           "postalCode": "6000",
@@ -73,7 +72,7 @@ export default function ContactPage() {
             "Friday"
           ],
           "opens": "09:00",
-          "closes": "18:00"
+          "closes": "17:00"
         }
       }
     ]
@@ -92,6 +91,7 @@ export default function ContactPage() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
       <Navbar />
+      <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
       <ContactForm />
       <Footer />
