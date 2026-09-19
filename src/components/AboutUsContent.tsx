@@ -84,11 +84,11 @@ export default function AboutUsContent() {
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white font-soehne-breit tracking-tight">
           Make your business legible <br />
-          <span className="text-gradient-aeo">to Google and AI models.</span>
+          <span className="text-gradient-aeo">to Google and generative AI models</span>
         </h1>
 
         <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed max-w-2xl mx-auto">
-          AEObility cleans up how Australian businesses are referenced across Google Search, Maps, and generative platforms like ChatGPT and Gemini. We turn scattered web pages into verifiable, connected business facts. No agency retainers, jargon, or lock-in contracts.
+          Founded in Perth in 2026 by digital specialist Vince Baker, AEObility helps Australian businesses become discoverable, understandable, and recommended across Google Search, Maps, and generative platforms like ChatGPT and Gemini. We specialise in Answer Engine Optimisation (AEO) and entity architecture, converting fragmented web content into verified, structured business facts. Instead of speculative search tactics or locked-in agency retainers, we build direct schema graphs and self-contained answer blocks that improve retrieval conditions for both human buyers and machine scrapers.
         </p>
 
         {/* Hero CTAs */}
