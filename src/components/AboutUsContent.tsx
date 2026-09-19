@@ -19,7 +19,10 @@ import {
   Sparkles,
   MapPin,
   Clock,
-  Briefcase
+  Briefcase,
+  FileText,
+  Download,
+  ExternalLink
 } from 'lucide-react';
 
 export default function AboutUsContent() {
@@ -276,31 +279,65 @@ export default function AboutUsContent() {
             <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center text-xs font-mono">
               <span className="flex items-center gap-2">
                 <BarChart3 className="w-4 h-4 text-cyan-400" />
-                View Interactive Telemetry &amp; Looker Report Summary
+                <span>View Interactive Telemetry &amp; Looker Report Summary (PDF)</span>
               </span>
               <span className="text-cyan-400 group-open:rotate-45 transition-transform duration-300">+</span>
             </summary>
-            <div className="mt-4 pt-4 border-t border-white/10 space-y-3 text-xs text-zinc-300 font-mono">
-              <div className="p-3 bg-zinc-900/90 rounded-lg border border-cyan-500/20 space-y-2">
-                <div className="flex justify-between text-cyan-300 font-bold">
-                  <span>Telemetry Metric</span>
-                  <span>Baseline vs Post-Sprint</span>
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-4 text-xs text-zinc-300 font-mono">
+              <div className="p-3.5 bg-zinc-900/90 rounded-lg border border-cyan-500/20 space-y-2">
+                <div className="flex justify-between text-cyan-300 font-bold border-b border-white/10 pb-1.5">
+                  <span>Query / Telemetry Corridor</span>
+                  <span>Avg Pos / Impressions / Salience</span>
                 </div>
                 <div className="flex justify-between border-t border-white/5 pt-1">
-                  <span>Gemini Vector Cosine Similarity</span>
-                  <span className="text-emerald-400">0.41 → 0.88 (+114%)</span>
+                  <span className="text-zinc-200">Local Authority (&quot;aeo services perth&quot;)</span>
+                  <span className="text-emerald-400 font-bold">Pos 9.0 | 58,000 Impr | 75.99%</span>
                 </div>
                 <div className="flex justify-between border-t border-white/5 pt-1">
-                  <span>ChatGPT Citation Ingestion Rate</span>
-                  <span className="text-emerald-400">12% → 89% (+641%)</span>
+                  <span className="text-zinc-200">National Reach (&quot;aeo seo australia&quot;)</span>
+                  <span className="text-emerald-400 font-bold">Pos 4.0 | 17,000 Impr | 83.69%</span>
                 </div>
                 <div className="flex justify-between border-t border-white/5 pt-1">
-                  <span>Perplexity Multi-Query Fan-Out Pass</span>
-                  <span className="text-emerald-400">Passed (100% Accuracy)</span>
+                  <span className="text-zinc-200">AI Citation Ingestion (Fan-Out Block)</span>
+                  <span className="text-emerald-400 font-bold">1,052 Citations Logged</span>
+                </div>
+                <div className="flex justify-between border-t border-white/5 pt-1">
+                  <span className="text-zinc-200">Search Exposure Uplift (30 Days)</span>
+                  <span className="text-emerald-400 font-bold">+35% Organic Exposure</span>
                 </div>
               </div>
-              <p className="text-[11px] text-zinc-400 font-serif italic">
-                * Looker Studio telemetry logs compiled live during the 30-day AEO Sprint execution.
+
+              {/* Action Buttons for PDF Report */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <a
+                  href="/AI_Visibility_Report_AEObility.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-xs text-cyan-300 font-mono font-medium hover:bg-cyan-900/60 hover:text-white transition-all shadow-sm"
+                >
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>Open Full PDF Report</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-cyan-400/80" />
+                </a>
+                <a
+                  href="/AI_Visibility_Report_AEObility.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-mono font-medium hover:bg-white/10 hover:text-white transition-all shadow-sm"
+                >
+                  <Download className="w-4 h-4 text-slate-400" />
+                  <span>Download PDF Document</span>
+                </a>
+                <Link
+                  href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-semibold text-aeo-cyan hover:underline ml-auto"
+                >
+                  <span>Read 90-Day Case Study</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <p className="text-[11px] text-zinc-400 font-serif italic pt-1">
+                * Data compiled from Google Search Console &amp; Looker Studio telemetry (1 July – 16 September 2026 AWST). Verified in full PDF benchmark report.
               </p>
             </div>
           </details>
