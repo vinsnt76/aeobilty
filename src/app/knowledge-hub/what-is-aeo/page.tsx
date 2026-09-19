@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -12,14 +13,50 @@ import {
   HelpCircle, 
   CheckCircle2, 
   ArrowRight, 
-  Layers, 
   Brain, 
   Search, 
   Sparkles,
-  FileText
+  Database,
+  Cpu,
+  Globe,
+  X,
+  Layers,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function WhatIsAeoPage() {
+  const router = useRouter();
+  const [heroUrl, setHeroUrl] = useState('');
+  const [showStickyBanner, setShowStickyBanner] = useState(false);
+  const [dismissSticky, setDismissSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      const scrollPercentage = window.scrollY / scrollHeight;
+      if (scrollPercentage > 0.4 && !dismissSticky) {
+        setShowStickyBanner(true);
+      } else if (scrollPercentage <= 0.4) {
+        setShowStickyBanner(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [dismissSticky]);
+
+  const handleHeroSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!heroUrl.trim()) return;
+
+    let formatted = heroUrl.trim();
+    if (!formatted.startsWith('http://') && !formatted.startsWith('https://')) {
+      formatted = `https://${formatted}`;
+    }
+    router.push(`/diagnostic?url=${encodeURIComponent(formatted)}&auto=true`);
+  };
+
   const faqs = [
     {
       question: "What does AEO stand for in digital marketing?",
@@ -104,7 +141,7 @@ export default function WhatIsAeoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
@@ -133,32 +170,45 @@ export default function WhatIsAeoPage() {
             </p>
 
             <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              Answer Engine Optimisation (AEO) is the evolution of search marketing. While traditional SEO aims to rank web links in search engine results pages, AEO formats digital facts into machine-readable entity graphs so conversational search engines can synthesise accurate direct answers.
+              Answer Engine Optimisation (AEO) represents the structural evolution of digital marketing. While legacy SEO targets link indexation in search results, AEO structures facts into verified entity graphs using the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> so AI models cite your business directly.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link
-                href="/services/aeo"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.4)]"
-              >
-                <Brain className="w-4 h-4 text-black" />
-                <span>Explore AEO Services</span>
-              </Link>
-              <Link
-                href="/diagnostic"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-sm transition-all hover:bg-zinc-800"
-              >
-                <span>Run AI Visibility Diagnostic</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400" />
-              </Link>
+            {/* Interactive Hero Web Banner (Top of Page) */}
+            <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-[#00E5FF] shadow-[0_0_30px_rgba(0,229,255,0.15)] text-left max-w-3xl mx-auto space-y-4">
+              <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-aeo-cyan animate-pulse" />
+                <span>Instant AI Visibility Check</span>
+              </div>
+              <p className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
+                Wondering how AI models cite your business? Run a free 60-second diagnostic.
+              </p>
+              <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row gap-3 pt-2">
+                <div className="relative flex-grow">
+                  <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your website URL (e.g. example.com.au)"
+                    value={heroUrl}
+                    onChange={(e) => setHeroUrl(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3.5 rounded-xl bg-zinc-900/90 border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] transition-all"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Audit My Brand →</span>
+                </button>
+              </form>
             </div>
           </section>
 
-          {/* Definition Box */}
+          {/* Definition Box (Atomic Answer Block 1) */}
           <section className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 space-y-4 shadow-2xl">
-            <span className="text-xs text-cyan-300 font-mono font-bold uppercase tracking-wider block">Official Definition</span>
+            <span className="text-xs text-cyan-300 font-mono font-bold uppercase tracking-wider block">Atomic Definition Block</span>
             <h2 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit leading-snug">
-              Answer Engine Optimisation (AEO)
+              Answer Engine Optimisation (AEO) Defined
             </h2>
             <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
               <strong>Answer Engine Optimisation (AEO)</strong> is the technical and structural discipline of structuring web content, business facts, and entity relationship graphs so Large Language Models (LLMs) and generative search systems can retrieve, verify, and cite a brand as a primary authoritative source when generating direct answers.
@@ -213,6 +263,56 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
+          {/* Mid-Page In-Line Callout Card (Contextual CTA) */}
+          <section className="my-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-zinc-900 via-neutral-900 to-zinc-900 border border-aeo-cyan/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl text-left">
+              <span className="text-xs font-mono font-bold text-aeo-cyan uppercase tracking-wider block">AEO Strategic Blueprint</span>
+              <p className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">
+                Ready to upgrade your web presence for conversational search? See how our $995 AEO Strategic Blueprint delivers actionable schema and entity maps.
+              </p>
+            </div>
+            <Link
+              href="/solutions/aeo-blueprint"
+              className="shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.3)] whitespace-nowrap flex items-center gap-2"
+            >
+              <span>Explore $995 Blueprint</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </section>
+
+          {/* Local AEO & Regional Implementation Section */}
+          <section className="space-y-6 border-t border-white/10 pt-12">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Regional Authority</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Local AEO &amp; Australian Entity Salience</h2>
+              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                For commercial enterprises in Australia, establishing clear local entity context prevents AI hallucination. Working alongside a <Link href="/services/perth/seo-specialist" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">Perth SEO specialist and local AEO consultant</Link> guarantees your NAP (Name, Address, Phone) and service definitions align cleanly across Google Maps, Apple Intelligence, and ChatGPT search nodes.
+              </p>
+            </div>
+          </section>
+
+          {/* Implementation & Agency Sprint Section */}
+          <section className="space-y-6 border-t border-white/10 pt-12">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Execution Framework</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Deploying AEO in Your Business</h2>
+              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                Executing a complete Answer Engine Optimisation strategy requires decoupling traditional web content into decoupled entity graphs, RAG-friendly atomic passages, and explicit schema triples. Engaging in a <Link href="/services/ai-search-agency" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">dedicated AI search agency engagement</Link> ensures your digital assets achieve high vector salience across all major search models.
+              </p>
+            </div>
+          </section>
+
+          {/* Tools & Technology Comparison Reference */}
+          <section className="space-y-6 border-t border-white/10 pt-12">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Technology Stack</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AEO vs. AI SEO Software Tools</h2>
+              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                Evaluating the software platforms needed to audit, monitor, and refine your LLM citations is straightforward when consulting our <Link href="/knowledge-hub/ai-seo-tools" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AI SEO tools and technology comparison hub</Link>, which benchmarks real-time vector crawlers and schema generators.
+              </p>
+            </div>
+          </section>
+
           {/* FAQ Section */}
           <section className="border-t border-white/10 pt-12 space-y-6">
             <div className="space-y-2">
@@ -236,7 +336,39 @@ export default function WhatIsAeoPage() {
         </div>
       </main>
 
+      {/* Sticky Footer Banner / Article Sticky Rail */}
+      {showStickyBanner && !dismissSticky && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0A0F1C]/95 backdrop-blur-md border-t border-[#00E5FF]/40 p-4 shadow-[0_-5px_25px_rgba(0,229,255,0.2)] transition-all duration-300 animate-in slide-in-from-bottom-4">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 px-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-aeo-cyan hidden sm:block">
+                <Brain className="w-5 h-5" />
+              </div>
+              <p className="text-sm font-semibold text-white font-soehne-breit">
+                Unsure if your schema graph is LLM-ready?
+              </p>
+            </div>
+            <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+              <Link
+                href="/diagnostic"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,229,255,0.4)] text-center cursor-pointer"
+              >
+                Get Free Visibility Score
+              </Link>
+              <button
+                onClick={() => setDismissSticky(true)}
+                className="p-1.5 text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer"
+                aria-label="Dismiss banner"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );
 }
+

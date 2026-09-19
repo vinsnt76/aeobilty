@@ -142,14 +142,21 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            {/* Inbound Link to AEO Technical Guide */}
-            <div className="pt-4 border-t border-neutral-200">
+            {/* Inbound Links to Educational Resources */}
+            <div className="pt-4 border-t border-neutral-200 flex flex-wrap gap-4 items-center justify-between">
               <Link 
-                href="/knowledge-hub/guides/aeo" 
+                href="/knowledge-hub/what-is-aeo" 
                 className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-aeo-purple transition-colors"
               >
                 <BookOpen className="w-4 h-4 text-aeo-purple" />
-                <span>Read our AEO Technical Guides for deep system mechanics</span>
+                <span>What is AEO? Read our comprehensive definition guide</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link 
+                href="/knowledge-hub/guides/aeo" 
+                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-600 hover:text-aeo-purple transition-colors"
+              >
+                <span>AEO Technical Guides</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
