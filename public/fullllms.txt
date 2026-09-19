@@ -55,6 +55,11 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **H1**: Brand Facts & Canonical Entity Directory
 - **Summary**: Consolidated public canonical brand knowledge layer detailing corporate identities, entity relationships, operational definitions, and itemised service deliverables.
 
+### Node: `/services/ai-search-agency`
+- **Title**: AI Search Agency & AEO Consultancy Australia | AEObility
+- **H1**: AI Search Agency & AEO Consultancy
+- **Summary**: Specialist Australian AI search agency & AEO consultancy based in Perth, Western Australia. Refactors website content, nested JSON-LD schema graphs, and canonical brand facts so AI search engines (ChatGPT, Google AI Overviews, Perplexity) accurately cite and recommend Australian businesses.
+
 ### Node: `/services/aeo/definition`
 - **Title**: What is AEO in Digital Marketing? Meaning & Concepts
 - **H1**: What is AEO in Digital Marketing? Meaning & Concepts
@@ -85,7 +90,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Summary**: Real-world e-commerce proof demonstrating +17% sales uplift and +95% CTR via AI platform direct answer placement and semantic passage refactoring.
 
 ### Case Study Node: `/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`
-- **Title**: AEO/GEO Blueprint Methodology: From Entity Ambiguity to Commercial Discovery
+- **Title**: AEO/GEO Blueprint Case Study: 90 Days to Commercial Discovery
 - **Summary**: From entity ambiguity to commercial discovery: The AEO/GEO Blueprint Methodology.
 
 ### FAQ Knowledge Graph Topology (`/services/aeo/procedures#faq-knowledge-graph`)

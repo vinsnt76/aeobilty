@@ -48,8 +48,9 @@ AEObility structures its digital presence across verified entity nodes grounded 
 
 ### Primary Service Corridors
 1. **AEO Services & Procedures**: Best AEO strategies for refactoring web content into 90-120 token atomic answer blocks and FAQ Knowledge Graph topologies to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo/procedures`)
-2. **GEO Marketing**: Aligning local coordinate data, map packs, and location proximity signals for Apple Maps, Google Maps, and local voice queries. (`https://aeobility.com.au/services/geo-marketing`)
-3. **AI Search Strategy**: Strategy for Perplexity, ChatGPT, Google AI Overviews, and Gemini generative search results. (`https://aeobility.com.au/services/ai-search-marketing`)
+2. **AI Search Agency & Consultancy**: Australia's specialist AI search agency & AEO consultancy. We help growth-focused businesses optimize entity schema and content for Google AI Overviews, ChatGPT, and Perplexity. (`https://aeobility.com.au/services/ai-search-agency`)
+3. **GEO Marketing**: Aligning local coordinate data, map packs, and location proximity signals for Apple Maps, Google Maps, and local voice queries. (`https://aeobility.com.au/services/geo-marketing`)
+4. **AI Search Strategy**: Strategy for Perplexity, ChatGPT, Google AI Overviews, and Gemini generative search results. (`https://aeobility.com.au/services/ai-search-marketing`)
    - Local Nodes: [Perth](`https://aeobility.com.au/services/ai-search-marketing/perth`), [Melbourne](`https://aeobility.com.au/services/ai-search-marketing/melbourne`), [Sydney](`https://aeobility.com.au/services/ai-search-marketing/sydney`), [Adelaide](`https://aeobility.com.au/services/ai-search-marketing/adelaide`), [Brisbane](`https://aeobility.com.au/services/ai-search-marketing/brisbane`)
 
 ### FAQ Knowledge Graph Topology

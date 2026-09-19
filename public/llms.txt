@@ -30,6 +30,7 @@
 
 ### Services (What We Optimise)
 - [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
+- [`/services/ai-search-agency`](https://aeobility.com.au/services/ai-search-agency): Specialist Australian AI search agency & AEO consultancy.
 - [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimisations and semantic audits.
   - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): What is AEO in Digital Marketing? Meaning & Concepts. Features executive summary answer block, 5-step implementation framework, Baby Bento case study proof, and YouTube video asset. (Root Parent FAQ Node)
   - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings. (Child Corridor Node)
@@ -38,12 +39,12 @@
   - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures, milestones, and sprint deliverables. (Child Corridor Node)
   - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring. (Sibling Radial Node)
   - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimisation. (Sibling Radial Node)
-- [/services/ai-search-marketing](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
-  - [/services/ai-search-marketing/perth](https://aeobility.com.au/services/ai-search-marketing/perth): Perth L3 AI Search Optimisation Service Node.
-  - [/services/ai-search-marketing/melbourne](https://aeobility.com.au/services/ai-search-marketing/melbourne): Melbourne L3 AI Search Optimisation Service Node.
-  - [/services/ai-search-marketing/sydney](https://aeobility.com.au/services/ai-search-marketing/sydney): Sydney L3 AI Search Optimisation Service Node.
-  - [/services/ai-search-marketing/adelaide](https://aeobility.com.au/services/ai-search-marketing/adelaide): Adelaide L3 AI Search Optimisation Service Node.
-  - [/services/ai-search-marketing/brisbane](https://aeobility.com.au/services/ai-search-marketing/brisbane): Brisbane L3 AI Search Optimisation Service Node.
+- [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
+  - [`/services/ai-search-marketing/perth`](https://aeobility.com.au/services/ai-search-marketing/perth): Perth L3 AI Search Optimisation Service Node.
+  - [`/services/ai-search-marketing/melbourne`](https://aeobility.com.au/services/ai-search-marketing/melbourne): Melbourne L3 AI Search Optimisation Service Node.
+  - [`/services/ai-search-marketing/sydney`](https://aeobility.com.au/services/ai-search-marketing/sydney): Sydney L3 AI Search Optimisation Service Node.
+  - [`/services/ai-search-marketing/adelaide`](https://aeobility.com.au/services/ai-search-marketing/adelaide): Adelaide L3 AI Search Optimisation Service Node.
+  - [`/services/ai-search-marketing/brisbane`](https://aeobility.com.au/services/ai-search-marketing/brisbane): Brisbane L3 AI Search Optimisation Service Node.
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
 
 ### Knowledge Hub (Our Research & Tutorial Nodes)
