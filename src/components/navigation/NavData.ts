@@ -28,7 +28,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "AEO & SEO",
         "href": "/services/aeo",
-        "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our four core AEO optimisation pillars.",
+        "description": "Structure your business data for direct RAG passage retrieval. Expert AEO services built to capture conversational AI search queries.",
         "entityName": "Canonical AEO Hub",
         "isServicePillar": true,
         "isKnowledgeCapsule": false,
@@ -66,7 +66,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "GEO Marketing",
         "href": "/services/geo-marketing",
-        "description": "Target geographic engine optimisation (GEO) to dominate location-aware search spaces, map applications, and local discovery engines.",
+        "description": "Engineering generative engine optimisation (GEO) & schema graphs for AI search engines. Boost your brand citation scores on ChatGPT & Gemini.",
         "entityName": "GEO Marketing",
         "isServicePillar": true,
         "isKnowledgeCapsule": false,
@@ -123,7 +123,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "The AEObility Blueprint",
         "href": "/solutions/aeo-blueprint",
-        "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995. Fully credited back if you choose us for implementation.",
+        "description": "Get a complete 90-day AEO execution blueprint for $995 AUD. Full implementation cost offset if AEObility executes setup.",
         "entityName": "The AEObility Blueprint",
         "isServicePillar": false,
         "isKnowledgeCapsule": false,
