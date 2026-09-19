@@ -188,7 +188,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/knowledge-hub/ai-seo-tools" className="hover:text-white transition-colors">
-                AI SEO Tools
+                AI SEO Tools &amp; Comparison
               </Link>
             </li>
             <li>

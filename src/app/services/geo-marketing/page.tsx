@@ -294,7 +294,7 @@ export default function GeoMarketingPage() {
                 Understanding GEO vs SEO: How AI Search Builds on Organic Foundations
               </h2>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Generative Engine Optimisation does not replace SEO—it extends sound SEO practices for generative search engines that synthesise answers instead of simply returning links.
+                While traditional SEO focuses on keyword positions and backlink volume, Generative Engine Optimisation (GEO) focuses on vector similarity and factual verification. To understand how AI search models digest structured facts, review our <Link href="/knowledge-hub/what-is-aeo" className="text-cyan-400 underline hover:text-cyan-300 font-medium">comprehensive Answer Engine Optimisation definition guide</Link>.
               </p>
             </div>
 

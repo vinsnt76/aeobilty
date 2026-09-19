@@ -722,31 +722,34 @@ export default function EntityAuthorityArticlePage() {
           </div>
 
           {/* Author Entity Bio Box */}
-          <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-aeo-cyan/50 shrink-0 shadow-lg">
-              <Image
-                src="/Profile-Picture-Vinnie.png"
-                alt="Vince Baker - AEO & Semantic Search Specialist Perth"
-                fill
-                className="object-cover"
-                sizes="64px"
-              />
-            </div>
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-2">
-                <h3 className="text-base font-bold text-white">Vince Baker</h3>
-                <span className="text-xs text-aeo-cyan font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10">AEO &amp; Semantic Search Specialist</span>
+          <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="flex items-start sm:items-center gap-4">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-aeo-cyan/50 shrink-0 shadow-lg">
+                <Image
+                  src="/Profile-Picture-Vinnie.png"
+                  alt="Vince Baker - AEO & Semantic Search Specialist Perth"
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
               </div>
-              <p className="text-xs text-white/70 font-light leading-relaxed">
-                Vince Baker is an Answer Engine Optimisation (AEO) consultant based in Perth, Western Australia. He specialises in knowledge graph architecture, entity salience building, and AI search retrieval for Australian businesses.
-              </p>
-              <div className="pt-1 text-xs">
-                <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold flex items-center gap-1">
-                  <span>View Author Entity Profile</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
+              <div className="space-y-1.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-base font-bold text-white">Vince Baker</h3>
+                  <span className="text-xs text-aeo-cyan font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10">AEO &amp; Semantic Search Specialist</span>
+                </div>
+                <p className="text-xs text-white/70 font-light leading-relaxed max-w-md">
+                  Founder &amp; Lead AEO Specialist at AEObility. Helping Australian businesses structure data for AI search.
+                </p>
               </div>
             </div>
+
+            <Link
+              href="/services/perth/seo-specialist"
+              className="bg-aeo-cyan text-black font-bold px-5 py-2.5 rounded-xl hover:bg-white transition-all text-xs shrink-0 whitespace-nowrap shadow-md"
+            >
+              book a Perth SEO specialist consultation
+            </Link>
           </section>
 
           {/* CTA Banner */}
@@ -755,13 +758,19 @@ export default function EntityAuthorityArticlePage() {
             <p className="text-sm text-white/70 max-w-lg mx-auto font-light leading-relaxed">
               Discover how AI search engines parse your brand identity today. Get a free, manual AI visibility audit for your Australian business.
             </p>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-semibold text-base transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.3)]"
               >
                 <span>Get Visibility Score</span>
                 <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/services/perth/seo-specialist"
+                className="inline-flex items-center gap-2 px-6 py-4 bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-sm transition-all hover:bg-zinc-800"
+              >
+                <span>Book a Perth SEO specialist consultation</span>
               </Link>
             </div>
           </section>

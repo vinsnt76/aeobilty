@@ -22,7 +22,7 @@ export function CoreEngagementsGrid() {
             Fixed-Scope Sprints. Zero Retainer Lock-In.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
-            Get a clear roadmap, fix a specific issue or strengthen your local search foundations. All engagements are clearly scoped, transparently priced and designed for Australian businesses.
+            Work directly with a qualified <Link href="/services/perth/seo-specialist" className="text-cyan-400 underline hover:text-cyan-300 font-medium">Perth SEO specialist &amp; local AEO consultant</Link> to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
           </p>
         </div>
 

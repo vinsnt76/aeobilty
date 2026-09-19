@@ -349,7 +349,7 @@ export default function ServicesPage() {
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider block">Connected Delivery</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">Our core service layers</h2>
               <p className="text-slate-400 font-normal leading-relaxed text-sm sm:text-base">
-                We combine deep technical structure with semantic brand authority to secure top recommendation placements.
+                We combine deep technical structure with semantic brand authority to secure top recommendation placements. Looking for enterprise agency engagements? Partner with a <Link href="/services/ai-search-agency" className="text-cyan-400 underline hover:text-cyan-300 font-medium">dedicated AI search agency &amp; AEO consultancy</Link>.
               </p>
             </div>
 

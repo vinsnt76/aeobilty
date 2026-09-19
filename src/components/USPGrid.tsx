@@ -58,7 +58,7 @@ export default function USPGrid() {
               Stop Losing Customers on Google, Maps, and AI
             </h3>
             <p className="text-base text-white/60 font-light font-serif">
-              We focus on real outcomes, giving your business the foundation to get found and get chosen. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
+              We structure business data into machine-readable knowledge graphs. Explore our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">entity authority building framework for AI search</Link> to understand how conversational models evaluate brand salience. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
             </p>
           </div>
         </div>
