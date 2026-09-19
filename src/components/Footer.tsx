@@ -150,6 +150,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/about/freelance-seo-consultant-perth" className="hover:text-white transition-colors">
+                Freelance SEO Consultant Perth
+              </Link>
+            </li>
+            <li>
               <Link href="/solutions/aeo-blueprint" className="hover:text-white transition-colors">
                 The AEObility Blueprint
               </Link>

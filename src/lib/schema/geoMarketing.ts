@@ -132,6 +132,22 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "https://www.wikidata.org/wiki/Q3183",
             "https://www.geonames.org/2063523/perth.html"
           ]
+        },
+        {
+          "@type": "City",
+          "name": "Joondalup"
+        },
+        {
+          "@type": "City",
+          "name": "Fremantle"
+        },
+        {
+          "@type": "City",
+          "name": "Mandurah"
+        },
+        {
+          "@type": "City",
+          "name": "Subiaco"
         }
       ],
       "parentOrganization": {
@@ -171,6 +187,22 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "https://www.wikidata.org/wiki/Q3183",
             "https://www.geonames.org/2063523/perth.html"
           ]
+        },
+        {
+          "@type": "City",
+          "name": "Joondalup"
+        },
+        {
+          "@type": "City",
+          "name": "Fremantle"
+        },
+        {
+          "@type": "City",
+          "name": "Mandurah"
+        },
+        {
+          "@type": "City",
+          "name": "Subiaco"
         }
       ],
       "audience": {

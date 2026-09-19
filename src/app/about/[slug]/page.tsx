@@ -128,6 +128,47 @@ export default async function Page({ params }: PageProps) {
           "latitude": "-31.9167",
           "longitude": "115.8500"
         },
+        "areaServed": [
+          {
+            "@type": "City",
+            "@id": "https://www.wikidata.org/wiki/Q3183",
+            "name": "Perth, WA"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "@id": "https://www.wikidata.org/wiki/Q3206",
+            "name": "Western Australia"
+          },
+          {
+            "@type": "City",
+            "name": "Joondalup"
+          },
+          {
+            "@type": "City",
+            "name": "Fremantle"
+          },
+          {
+            "@type": "City",
+            "name": "Mandurah"
+          },
+          {
+            "@type": "City",
+            "name": "Subiaco"
+          }
+        ],
+        "knowsAbout": [
+          "Generative Engine Optimisation",
+          "Answer Engine Optimisation",
+          "Local Business Entity Graphs",
+          "Schema.org Structured Data",
+          "Retrieval-Augmented Generation (RAG)"
+        ],
+        "sameAs": [
+          "https://www.google.com/maps?cid=aeobility",
+          "https://www.linkedin.com/company/aeobility",
+          "https://github.com/vinsnt76/aeobility",
+          "https://aeobility.com.au/brand-facts"
+        ],
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
