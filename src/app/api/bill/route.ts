@@ -201,7 +201,7 @@ Explicitly quote its pricing ($995.00 AUD ex. GST). Emphasise its mechanical del
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
     } else {
-      const stopWords = new Set(['what', 'is', 'the', 'a', 'an', 'how', 'does', 'about', 'explain', 'tell', 'me', 'in', 'of', 'for', 'to']);
+      const stopWords = new Set(['what', 'is', 'the', 'a', 'an', 'how', 'does', 'about', 'explain', 'tell', 'me', 'in', 'of', 'for', 'to', 'vs']);
       const queryTokens = normalizedQuery.split(/\W+/).filter((t: string) => t.length > 2 && !stopWords.has(t));
 
       const rawNodes: KnowledgeNode[] = Array.isArray(knowledgeBase) ? knowledgeBase : (knowledgeBase as any).nodes || [];
@@ -211,17 +211,38 @@ Explicitly quote its pricing ($995.00 AUD ex. GST). Emphasise its mechanical del
         const h1 = (node.h1 || '').toLowerCase();
         const keyphrase = (node.focusKeyphrase || '').toLowerCase();
         const description = (node.description || '').toLowerCase();
+        const keywords = ((node.primaryKeywords || '') + ' ' + (node.secondaryKeywords || '') + ' ' + (node.latentKeywords || '')).toLowerCase();
 
-        if (keyphrase && normalizedQuery.includes(keyphrase)) score += 50;
-        if (h1 && normalizedQuery.includes(h1)) score += 40;
-        if (pageName && normalizedQuery.includes(pageName)) score += 30;
+        // Exact keyphrase or full query match
+        if (keyphrase && (normalizedQuery === keyphrase || (keyphrase.length > 3 && normalizedQuery.includes(keyphrase)))) {
+          score += 50;
+        }
+        if (h1 && (normalizedQuery.includes(h1) || h1.includes(normalizedQuery))) score += 40;
+        if (pageName && (normalizedQuery.includes(pageName) || pageName.includes(normalizedQuery))) score += 30;
 
+        let matchedTokens = 0;
         queryTokens.forEach((token: string) => {
-          if (pageName.includes(token)) score += 10;
-          if (h1.includes(token)) score += 10;
-          if (keyphrase.includes(token)) score += 10;
-          if (description.includes(token)) score += 5;
+          let tokenMatched = false;
+          if (pageName.includes(token)) { score += 15; tokenMatched = true; }
+          if (h1.includes(token)) { score += 15; tokenMatched = true; }
+          if (keyphrase.includes(token)) { score += 10; tokenMatched = true; }
+          if (keywords.includes(token)) { score += 10; tokenMatched = true; }
+          if (description.includes(token)) { score += 5; tokenMatched = true; }
+
+          // Domain acronym resolution: 'aeo' <-> 'answer engine'
+          if (token === 'aeo' && (pageName.includes('answer engine') || h1.includes('answer engine') || keywords.includes('answer engine'))) {
+            score += 20;
+            tokenMatched = true;
+          }
+
+          if (tokenMatched) matchedTokens++;
         });
+
+        // Coordination factor: reward nodes matching multiple distinct query tokens
+        score += matchedTokens * 20;
+        if (queryTokens.length > 1 && matchedTokens === queryTokens.length) {
+          score += 40;
+        }
 
         return { node, score };
       });
