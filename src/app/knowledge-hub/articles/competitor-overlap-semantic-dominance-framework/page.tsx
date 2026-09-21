@@ -218,6 +218,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           "Module Breakdown",
           "Blind Spot Matrix",
           "Worked Example",
+          "Diagnostic Boundaries",
           "Readiness Score Tiers",
           "FAQ"
         ],
@@ -367,7 +368,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
     { step: "06", title: "Build a Prioritised Action Plan", desc: "We turn your score into step-by-step recommendations on what to fix first.", icon: <ShieldCheck className="w-5 h-5 text-aeo-purple" /> }
   ];
 
-  const standardizedModules = [
+  const standardisedModules = [
     {
       name: "1. Competitor Ingestion Module",
       codeFile: "src/lib/telemetry/search.ts",
@@ -382,7 +383,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
       name: "2. Vector Proximity Module",
       codeFile: "src/lib/telemetry/proximity.ts",
       whatItDoes: "Measures how closely your content's underlying meaning matches what prospective clients are asking AI search engines.",
-      howItWorks: "Converts text content into 768-dimensional vector embeddings using Google text-embedding-004 and calculates normalized Cosine Similarity.",
+      howItWorks: "Converts text content into 768-dimensional vector embeddings using Google text-embedding-004 and calculates normalised Cosine Similarity.",
       inputs: "Search intent string, client page text, and competitor page text chunks.",
       outputs: "Individual similarity scores (0.00 to 1.00) for client and each competitor node.",
       actionImplications: "Reveals whether your content is conceptually relevant or if your messaging drifts away from user intent.",
@@ -392,7 +393,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
       name: "3. Semantic Dominance Module",
       codeFile: "src/lib/telemetry/features.ts",
       whatItDoes: "Determines whether your website commands stronger AI clarity than rival local businesses.",
-      howItWorks: "Calculates the scaled vector differential centered at neutral 50 parity: Math.min(100, Math.max(0, Math.round(50 + 250 * (ClientSim - CompAvgSim)))).",
+      howItWorks: "Calculates the scaled vector differential centred at neutral 50 parity: Math.min(100, Math.max(0, Math.round(50 + 250 * (ClientSim - CompAvgSim)))). The 250 multiplier normalises subtle cosine variances in narrow service verticals, where a ±0.20 delta represents a decisive competitive gap.",
       inputs: "Client vector similarity score and competitor vector similarity array.",
       outputs: "Semantic Dominance Score (0 to 100% net differential).",
       actionImplications: "A positive score indicates market advantage; a negative score signals risk of being overlooked in AI summaries.",
@@ -497,7 +498,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </h1>
 
           <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl font-light">
-            A technical guide by AEObility, built for Australian businesses seeking clarity in how modern AI systems interpret, rank, and recommend local service providers. This framework shows how businesses across Perth, Australia, and New Zealand can measure competitor overlap, semantic dominance, and vector proximity using advanced AEO diagnostics such as cosine similarity, entity clarity scoring, and RAG survival testing.
+            Measuring AI search visibility requires moving past traditional keyword rank tracking. Generative engines do not evaluate entire URLs equally; they retrieve discrete, high-relevance text passages based on semantic vector proximity, entity clarity, and retrieval-augmented generation (RAG) retention. This framework provides an intent-specific diagnostic method to benchmark your website&apos;s structural depth and topical clarity directly against active local competitors, identifying where your content survives synthesis and where it gets dropped.
           </p>
 
           {/* Core Diagnostic Rule Callout Banner */}
@@ -554,7 +555,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </header>
 
-        {/* SECTION 1 — What AEObility Checks (Two-Layer Intro) */}
+        {/* SECTION 1: What AEObility Checks (Two-Layer Intro) */}
         <section className="atomic-answer-block p-6 sm:p-8 bg-white/[0.02] border border-white/5 rounded-2xl border-l-aeo-cyan border-l-4 space-y-4">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-aeo-cyan" />
@@ -563,7 +564,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             </h2>
           </div>
           <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-            AEObility compares your business against the competitors currently showing up for your target search queries. It checks whether your content is clear enough, structured enough, and relevant enough for AI systems—like ChatGPT, Google Gemini, and Perplexity—to understand and recommend your services.
+            AEObility compares your business against the competitors currently showing up for your target search queries. It checks whether your content is clear enough, structured enough, and relevant enough for AI systems (e.g. ChatGPT, Google Gemini, and Perplexity) to understand and recommend your services.
           </p>
           
           <div className="pt-3 border-t border-white/5 text-xs text-white/60 space-y-1 font-mono">
@@ -574,7 +575,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 2 — Four Core Diagnostic Pillars */}
+        {/* SECTION 2: Four Core Diagnostic Pillars */}
         <section className="space-y-6">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Target className="w-6 h-6 text-aeo-cyan" />
@@ -619,7 +620,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </ul>
         </section>
 
-        {/* SECTION 3 — Who This Article Is For */}
+        {/* SECTION 3: Who This Article Is For */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Users className="w-6 h-6 text-aeo-purple" />
@@ -683,18 +684,18 @@ export default function CompetitorOverlapFrameworkArticlePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-aeo-purple flex-shrink-0 mt-0.5" />
-                  <span><strong>Objective Metrics:</strong> Deliver standardized AI readiness scorecards for client reporting.</span>
+                  <span><strong>Objective Metrics:</strong> Deliver standardised AI readiness scorecards for client reporting.</span>
                 </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* SECTION 4 — The 6-Step Audit Sequence */}
+        {/* SECTION 4: The 6-Step Audit Sequence */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Layers className="w-6 h-6 text-aeo-cyan" />
-            <span>How the Audit Works: Step-by-Step Sequence</span>
+            <span>How to audit query readiness in six repeatable steps</span>
           </h2>
           <p className="text-xs text-white/60 font-light">
             Instead of dumping raw technical data, AEObility follows a clear 6-step audit process:
@@ -718,7 +719,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* Horizontal Step Flow Chart — 6 Cards */}
+        {/* Horizontal Step Flow Chart: 6 Cards */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
@@ -846,7 +847,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 5 — Standardised Component Deep-Dive Modules */}
+        {/* SECTION 5: Standardised Component Deep-Dive Modules */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <div className="space-y-2">
             <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Technical Breakdown</span>
@@ -864,16 +865,16 @@ export default function CompetitorOverlapFrameworkArticlePage() {
             <div className="flex items-center gap-2">
               <Network className="w-4 h-4 text-aeo-purple" />
               <h3 className="text-xs font-bold text-aeo-purple font-mono uppercase tracking-wider">
-                Why Cosine Similarity Matters for Vector Proximity
+                Why cosine similarity prevents content length from distorting topical relevance
               </h3>
             </div>
             <p className="text-xs text-white/80 leading-relaxed font-light">
-              Cosine similarity computes the dot product of two normalized 768-dimensional vectors divided by their magnitudes. Because it measures the angle between vectors rather than their spatial distance, it evaluates pure semantic direction—ensuring content length variations do not distort relevance measurement against competitors.
+              Cosine similarity computes the dot product of two normalised 768-dimensional vectors divided by their magnitudes. Because it measures the angle between vectors rather than their spatial distance, it evaluates pure semantic direction, ensuring content length variations do not distort relevance measurement against competitors.
             </p>
           </div>
 
           <div className="space-y-6">
-            {standardizedModules.map((m, idx) => (
+            {standardisedModules.map((m, idx) => (
               <div key={idx} className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4 hover:border-white/20 transition-colors">
                 <div className="flex flex-wrap justify-between items-center gap-2 border-b border-white/5 pb-3">
                   <div className="flex items-center gap-3">
@@ -945,7 +946,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-white/80">
-                  {standardizedModules.map((mod, i) => (
+                  {standardisedModules.map((mod, i) => (
                     <tr key={i} className="hover:bg-white/[0.02]">
                       <td className="p-3 font-semibold text-white">{mod.name.replace(/^\d+\.\s*/, '')}</td>
                       <td className="p-3 font-mono text-aeo-purple text-[11px]">{mod.codeFile}</td>
@@ -960,7 +961,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 6 — Dedicated Code Architecture & File Mapping */}
+        {/* SECTION 6: Dedicated Code Architecture & File Mapping */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <div className="space-y-2">
             <span className="text-xs font-mono text-aeo-purple uppercase tracking-wider block font-semibold">Codebase Traceability</span>
@@ -988,25 +989,34 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
 
           {/* Developer Notes Collapsible / Callout Box */}
-          <div className="p-5 bg-black/60 border border-white/10 rounded-xl space-y-3 font-mono text-xs">
+          <div className="p-5 bg-black/60 border border-white/10 rounded-xl space-y-4 font-mono text-xs">
             <div className="flex items-center gap-2 text-aeo-cyan font-bold">
               <Terminal className="w-4 h-4" />
-              <span>Developer Notes &amp; Engine Constants</span>
+              <span>Developer Notes, Engine Constants &amp; Dominance Scaling</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-white/70">
               <div>• <code>RAG_RETENTION_THRESHOLD</code> = 0.62</div>
               <div>• <code>EMBEDDING_MODEL</code> = text-embedding-004</div>
               <div>• <code>VECTOR_DIMENSION</code> = 768</div>
-              <div>• <code>WEIGHTS</code> = Semantic 40%, Technical 20%, Entity 15%</div>
+              <div>• <code>WEIGHTS</code> = Semantic 40%, Technical 20%, Entity 15%, Competitor 15%, Authority 10%</div>
+            </div>
+            <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg space-y-1.5 text-[11px] font-mono text-white/80">
+              <span className="text-aeo-purple font-semibold block">Scalar Dominance Formula:</span>
+              <p className="text-aeo-cyan font-bold">
+                Math.min(100, Math.max(0, Math.round(50 + 250 * (ClientSim - CompAvgSim))))
+              </p>
+              <p className="text-white/60 font-sans text-xs leading-relaxed font-light">
+                This formula sets neutral parity at 50, where a ±0.20 delta in cosine similarity pushes the score to the 0 or 100 boundaries. The 250 multiplier normalises subtle cosine variances in narrow service niches, scaling granular semantic distance into a readable, comparative benchmark.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 7 — Competitor Overlap & Prioritised Blind Spot Detection */}
+        {/* SECTION 7: Competitor Overlap & Prioritised Blind Spot Detection */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <AlertTriangle className="w-6 h-6 text-aeo-purple" />
-            <span>Competitor Overlap &amp; Prioritised Blind Spots</span>
+            <span>Why semantic overlap without structured entities dilutes machine visibility</span>
           </h2>
           <div className="space-y-4 text-sm text-white/80 leading-relaxed font-light">
             <p>
@@ -1021,10 +1031,10 @@ export default function CompetitorOverlapFrameworkArticlePage() {
               <div className="p-4 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="space-y-1">
                   <span className="text-red-400 font-mono font-bold text-[10px] uppercase block">Blind Spot 1: Missing Structured Schema</span>
-                  <p className="text-white/80">Competitors provide explicit JSON-LD data while your site relies on plain text prose.</p>
+                  <p className="text-white/80">Competitors provide explicit JSON-LD data while your site relies on plain text prose, leaving entity relationships ambiguous to scrapers.</p>
                 </div>
                 <div className="p-2.5 bg-aeo-cyan/10 border border-aeo-cyan/20 rounded-lg text-aeo-cyan font-mono text-[11px] font-semibold sm:w-64">
-                  Action: Deploy nested JSON-LD FAQPage &amp; Service schema graphs.
+                  Action: Deploy nested JSON-LD FAQPage &amp; Service graphs to establish entity clarity alongside direct on-page answers.
                 </div>
               </div>
 
@@ -1061,7 +1071,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 8 — Worked Case Study Walkthrough */}
+        {/* SECTION 8: Worked Case Study Walkthrough */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <BarChart3 className="w-6 h-6 text-aeo-cyan" />
@@ -1109,14 +1119,14 @@ export default function CompetitorOverlapFrameworkArticlePage() {
               <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1">
                 <span className="font-bold text-yellow-400 font-mono text-[10px] uppercase block">Step 3: Blind Spots Identified</span>
                 <p className="text-white/80 leading-relaxed">
-                  Although the client possessed positive semantic dominance (+9.3%), feature extraction revealed two key blind spots: initial Readiness Score was capped at 62 due to 0% Schema Completeness and unformatted prose paragraphs dropping out during synthetic prompt tests.
+                  Although the client possessed positive semantic dominance (+9.3%), feature extraction revealed two key blind spots: initial Readiness Score was capped at 62 due to missing structured schema and unformatted prose paragraphs dropping out during synthetic prompt tests. Schema is not a magic visibility switch, but without machine-readable entity context and direct atomic answers, answer engines struggle to disambiguate service offerings.
                 </p>
               </div>
 
               <div className="p-4 bg-aeo-cyan/5 border border-aeo-cyan/20 rounded-xl space-y-1">
                 <span className="font-bold text-aeo-cyan font-mono text-[10px] uppercase block">Step 4: Executed Next Actions &amp; Results</span>
                 <p className="text-white/90 leading-relaxed">
-                  Deployed nested JSON-LD microdata and restructured key service sections into atomic answer blocks. Outcome: Readiness Score climbed from 62 to 88, securing top citation placement in ChatGPT and Gemini local recommendation summaries within 30 days.
+                  Deployed nested JSON-LD microdata to establish entity clarity and restructured key service sections into concise atomic answer blocks grounded by corroborating on-page prose. Outcome: Readiness Score climbed from 62 to 88, significantly improving atomic passage retrieval and leading to consistent brand citation across target Gemini and ChatGPT local test prompts over the following 30 days.
                 </p>
               </div>
 
@@ -1166,7 +1176,34 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 9 — What the Score Means */}
+        {/* SECTION 9: Diagnostic Limits & Operational Boundaries */}
+        <section className="p-6 sm:p-7 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+          <div className="flex items-center gap-2.5">
+            <AlertTriangle className="w-5 h-5 text-yellow-400" />
+            <h2 className="text-sm sm:text-base font-bold text-white font-mono uppercase tracking-wider">
+              Diagnostic Limits &amp; Operational Boundaries
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">
+            While this framework delivers rigorous telemetry across vector proximity, schema density, and retrieval survival, clear operational boundaries govern what automated diagnostics can and cannot control:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light pt-1">
+            <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1.5">
+              <span className="text-yellow-400 font-mono font-bold text-[11px] block uppercase">1. Stochastic Model Behaviour</span>
+              <p className="text-white/80 leading-relaxed">
+                The tool simulates vector similarity and query fan-out retrieval, but cannot predict proprietary, closed-box model changes or real-time stochastic outputs across LLMs.
+              </p>
+            </div>
+            <div className="p-4 bg-black/40 rounded-xl border border-white/5 space-y-1.5">
+              <span className="text-yellow-400 font-mono font-bold text-[11px] block uppercase">2. Crawl Cycles &amp; External Corroboration</span>
+              <p className="text-white/80 leading-relaxed">
+                Real-world citations depend on continuous engine-side crawl cycles, external corroboration (citations, local reviews, third-party mentions), and index freshness.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 10: What the Score Means */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Award className="w-6 h-6 text-aeo-cyan" />
@@ -1204,7 +1241,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 10 — Frequently Asked Questions */}
+        {/* SECTION 11: Frequently Asked Questions */}
         <section className="space-y-6 border-t border-white/5 pt-10">
           <div className="space-y-2">
             <span className="text-xs font-mono text-aeo-cyan uppercase tracking-wider block font-semibold">Common Questions</span>
@@ -1253,7 +1290,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           </div>
         </section>
 
-        {/* SECTION 11 — Strategic CTA */}
+        {/* SECTION 12: Strategic CTA */}
         <section className="p-8 bg-gradient-to-br from-aeo-purple/10 via-black to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono">
             <span>Ready to measure your query readiness score?</span>
