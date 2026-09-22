@@ -61,9 +61,16 @@ export const Forms = {
 
         // 1. Non-blocking internal notification
         try {
+          const defaultRecipients = ["support@aeobility.com.au", "vince@aeobility.com.au"];
+          const teamEnv = process.env.TEAM_NOTIFICATION_EMAIL;
+          const internalRecipients = teamEnv
+            ? teamEnv.split(/[,;]+/).map((e) => e.trim()).filter(Boolean)
+            : defaultRecipients;
+          const targetRecipients = internalRecipients.length > 0 ? internalRecipients : defaultRecipients;
+
           const internalResult = await resend.emails.send({
             from: fromEmail,
-            to: process.env.TEAM_NOTIFICATION_EMAIL || "support@aeobility.com.au",
+            to: targetRecipients,
             subject: `[New Lead] AI Telemetry Audit: ${domain}`,
             html: `
               <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 650px; color: #111827; line-height: 1.6;">
@@ -322,9 +329,16 @@ export const Forms = {
 
         const resend = new Resend(process.env.RESEND_API_KEY || "re_dummykeyforbuild");
 
+        const defaultRecipients = ["support@aeobility.com.au", "vince@aeobility.com.au"];
+        const teamEnv = process.env.TEAM_NOTIFICATION_EMAIL;
+        const internalRecipients = teamEnv
+          ? teamEnv.split(/[,;]+/).map((e) => e.trim()).filter(Boolean)
+          : defaultRecipients;
+        const targetRecipients = internalRecipients.length > 0 ? internalRecipients : defaultRecipients;
+
         await resend.emails.send({
           from: "AEObility <noreply@aeobility.com.au>",
-          to: "support@aeobility.com.au",
+          to: targetRecipients,
           subject: "New AEObility Quote Request",
           html: `
             <h2>New Quote Request</h2>
