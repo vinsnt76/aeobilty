@@ -178,9 +178,9 @@ export default function DiagnosticPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080B11] text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative overflow-x-clip">
+    <div className="min-h-screen bg-[#080B11] text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative overflow-x-clip print:min-h-0 print:bg-white print:text-slate-900 print:overflow-visible">
       {/* 1. Under-Layer Lighting Mesh (The Refraction Engine) */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden no-print">
         {/* Top-Right Ambient Violet/Indigo Bloom */}
         <div 
           className="absolute -top-32 -right-32 w-[650px] h-[650px] rounded-full blur-[120px] opacity-80"
@@ -206,7 +206,7 @@ export default function DiagnosticPage() {
 
       {/* 2. Tactile SVG Noise Grain Overlay */}
       <div 
-        className="fixed inset-0 pointer-events-none z-[1] opacity-[0.025] mix-blend-overlay"
+        className="fixed inset-0 pointer-events-none z-[1] opacity-[0.025] mix-blend-overlay no-print"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
         }}
@@ -216,12 +216,12 @@ export default function DiagnosticPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-screen print:min-h-0 print:overflow-visible">
         <Navbar />
         
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center">
+        <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center print:p-0 print:m-0 print:max-w-full print:block">
           {/* Main Server-Side Rendered H1 Header Block */}
-          <div className="text-center mb-6 max-w-2xl mx-auto space-y-2">
+          <div className="text-center mb-6 max-w-2xl mx-auto space-y-2 no-print">
             <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-soehne-breit leading-tight">
               Run a Free AI Visibility Scan
             </h1>
@@ -230,7 +230,7 @@ export default function DiagnosticPage() {
             </p>
           </div>
 
-          <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12">Initialising Free Visibility Scanner...</div>}>
+          <Suspense fallback={<div className="text-zinc-400 text-sm animate-pulse font-mono py-12 no-print">Initialising Free Visibility Scanner...</div>}>
             <DiagnosticEngine />
           </Suspense>
         </main>

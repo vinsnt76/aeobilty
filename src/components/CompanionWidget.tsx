@@ -79,7 +79,8 @@ export default function CompanionWidget() {
           email,
           website: telemetryData?.url,
           intent: telemetryData?.intent,
-          assistantAssisted: isAssistantAssisted
+          assistantAssisted: isAssistantAssisted,
+          telemetry: telemetryData?.result || null
         })
       });
       setBillState('CONSULTANT');

@@ -101,8 +101,8 @@ export const DIAGNOSTIC_DIMENSIONS = [
 export default function DiagnosticEngine() {
   const searchParams = useSearchParams();
   const [step, setStep] = useState<Step>('INPUT');
-  const [url, setUrl] = useState('');
-  const [intent, setIntent] = useState('');
+  const [url, setUrl] = useState(() => searchParams.get('url') || '');
+  const [intent, setIntent] = useState(() => searchParams.get('intent') || '');
   const [telemetry, setTelemetry] = useState<TelemetryResult | null>(null);
   const [processingStage, setProcessingStage] = useState(0);
   const [isSplitRailActive, setIsSplitRailActive] = useState(false);
@@ -247,9 +247,6 @@ export default function DiagnosticEngine() {
     const queryIntent = searchParams.get('intent');
     const auto = searchParams.get('auto');
 
-    if (queryUrl) setUrl(queryUrl);
-    if (queryIntent) setIntent(queryIntent);
-
     if (queryUrl && queryIntent && auto !== 'false' && !hasAutoRunRef.current) {
       hasAutoRunRef.current = true;
       runScan(queryUrl, queryIntent);
@@ -294,7 +291,7 @@ export default function DiagnosticEngine() {
 
   return (
     <div className={`w-full max-w-3xl mx-auto flex flex-col items-center transition-all duration-300 ${isSplitRailActive ? 'xl:mr-[420px]' : ''}`}>
-      <div className="w-full relative controlled-depth-card rounded-2xl p-5 sm:p-7 overflow-hidden shadow-2xl space-y-5">
+      <div className="w-full relative controlled-depth-card rounded-2xl p-5 sm:p-7 overflow-hidden shadow-2xl space-y-5 print:hidden">
         {/* Subtle Purple Specular Top Catch */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none"></div>
 
@@ -806,9 +803,230 @@ export default function DiagnosticEngine() {
       </div>
 
       {/* ============================================================================== */}
+      {/* DEDICATED SINGLE-PAGE PRINT REPORT (Captures complete scan on exactly 1 page) */}
+      {/* ============================================================================== */}
+      {step === 'SCORE_REVEAL' && telemetry && (
+        <div className="diagnostic-print-report hidden print:flex print:flex-col w-full bg-white text-slate-900 font-sans border border-slate-300 rounded-xl p-4 my-0 space-y-2.5 text-left shadow-none">
+          {/* 1. Print Header Bar */}
+          <div className="flex items-center justify-between pb-2.5 border-b-2 border-slate-900">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-extrabold tracking-tight text-slate-950 font-sans">
+                  AEO<span className="text-cyan-600">bility</span>
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-bold uppercase border border-slate-300">
+                  AI Visibility Diagnostic Report
+                </span>
+              </div>
+              <p className="text-[10px] text-slate-500 font-mono mt-0.5">
+                Answer Engine Optimisation &amp; Entity Grounding Audit • aeobility.com.au
+              </p>
+            </div>
+            <div className="text-right font-mono text-[9px] text-slate-600 space-y-0.5">
+              <div>
+                <span className="font-bold text-slate-900">Target URL:</span> <span className="text-slate-800">{url}</span>
+              </div>
+              <div>
+                <span className="font-bold text-slate-900">Search Intent:</span> <span className="text-cyan-700 font-semibold">&ldquo;{intent || 'Primary Search Intent'}&rdquo;</span>
+              </div>
+              <div className="text-slate-500 text-[8px]">
+                Audited via AEObility Real-Time Telemetry Engine
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Executive KPIs & Simulated AI First Impression */}
+          <div className="grid grid-cols-12 gap-2.5">
+            {/* Overall Score Badge */}
+            <div className="col-span-4 p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col justify-between">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] font-mono uppercase font-bold text-slate-500 tracking-wider">AI Readiness</span>
+                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded font-mono ${
+                  (telemetry.readinessScore ?? 0) >= 70 
+                    ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' 
+                    : (telemetry.readinessScore ?? 0) >= 45 
+                      ? 'bg-amber-100 text-amber-800 border border-amber-300' 
+                      : 'bg-rose-100 text-rose-800 border border-rose-300'
+                }`}>
+                  {(telemetry.readinessScore ?? 0) >= 70 ? 'Visible' : (telemetry.readinessScore ?? 0) >= 45 ? 'Needs Alignment' : 'Low Discovery'}
+                </span>
+              </div>
+              <div className="flex items-baseline gap-1 my-1">
+                <span className="text-3xl font-black text-slate-950 font-mono">{telemetry.readinessScore ?? 0}</span>
+                <span className="text-xs text-slate-500 font-medium font-mono">/100</span>
+              </div>
+              <div className="flex items-center justify-between text-[9px] text-slate-600 border-t border-slate-200 pt-1 font-mono">
+                <span>Target Query Proximity:</span>
+                <span className="font-bold text-slate-900">{telemetry.proximityScore ?? 24}%</span>
+              </div>
+            </div>
+
+            {/* Simulated AI Impression */}
+            <div className="col-span-8 p-2.5 rounded-lg border border-indigo-200 bg-indigo-50/40 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-1.5 pb-1 mb-1 border-b border-indigo-100">
+                  <span className="text-[9px] uppercase font-mono font-bold text-indigo-900">
+                    Simulated AI First Impression
+                  </span>
+                </div>
+                <p className="text-[11px] font-semibold text-slate-900 leading-snug">
+                  &ldquo;{telemetry.insightResult?.firstImpression?.headline || "Your technical foundation is clean, but AI models cannot tie your services directly to target local search intent."}&rdquo;
+                </p>
+              </div>
+              <div className="space-y-0.5 pt-1 text-[9px] text-slate-600">
+                {(telemetry.insightResult?.firstImpression?.reasoning?.slice(0, 2) || [
+                  'Entity boundaries lack local Wikidata sameAs disambiguation.',
+                  'Missing structured service triples for category-level customer queries.'
+                ]).map((reason, idx) => (
+                  <p key={idx} className="truncate">• {reason}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Global Schema Baseline & Semantic Blind Spot */}
+          <div className="grid grid-cols-2 gap-2.5">
+            {/* Schema Baseline */}
+            <div className="p-2.5 rounded-lg border border-cyan-200 bg-cyan-50/30 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] uppercase font-mono font-bold text-cyan-950">
+                  Global Schema Baseline
+                </span>
+                <span className="text-[9px] font-bold text-cyan-900 font-mono">
+                  {Math.round((factCoverage.identityCoverage + factCoverage.factCoverage + factCoverage.relationshipCoverage + factCoverage.evidenceCoverage) / 4 * 100)}% Optimal
+                </span>
+              </div>
+              <div className="grid grid-cols-4 gap-1 text-center font-mono">
+                <div className="p-1 rounded bg-white border border-cyan-200">
+                  <span className="block text-[7px] uppercase text-slate-500 font-semibold">Identity</span>
+                  <span className="text-[11px] font-bold text-slate-900">{Math.round(factCoverage.identityCoverage * 100)}%</span>
+                </div>
+                <div className="p-1 rounded bg-white border border-cyan-200">
+                  <span className="block text-[7px] uppercase text-slate-500 font-semibold">Terms</span>
+                  <span className="text-[11px] font-bold text-slate-900">{Math.round(factCoverage.factCoverage * 100)}%</span>
+                </div>
+                <div className="p-1 rounded bg-white border border-cyan-200">
+                  <span className="block text-[7px] uppercase text-slate-500 font-semibold">Topology</span>
+                  <span className="text-[11px] font-bold text-slate-900">{Math.round(factCoverage.relationshipCoverage * 100)}%</span>
+                </div>
+                <div className="p-1 rounded bg-white border border-cyan-200">
+                  <span className="block text-[7px] uppercase text-slate-500 font-semibold">Evidence</span>
+                  <span className="text-[11px] font-bold text-slate-900">{Math.round(factCoverage.evidenceCoverage * 100)}%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Semantic Blind Spot */}
+            <div className="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 space-y-1">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] uppercase font-mono font-bold text-amber-950">
+                  Target-Query Grounding Gap
+                </span>
+                <span className="text-[9px] font-bold text-amber-900 font-mono">
+                  Blind Spot
+                </span>
+              </div>
+              <p className="text-[11px] font-bold text-slate-900">
+                {telemetry.insightResult?.blindSpot?.title || "Major Semantic Blind Spot Detected"}
+              </p>
+              <p className="text-[9px] text-slate-600 leading-normal font-serif">
+                {telemetry.insightResult?.blindSpot?.description || `Content lacks machine-readable vectors linking target query entities to local authority nodes for "${intent || 'Target Query'}".`}
+              </p>
+            </div>
+          </div>
+
+          {/* 4. Current AI Perception vs Target Visibility State */}
+          <div className="grid grid-cols-2 gap-2.5">
+            <div className="p-2 rounded-lg border border-slate-200 bg-slate-50 space-y-0.5">
+              <span className="text-[8px] uppercase font-mono font-bold text-slate-500">Current AI Perception</span>
+              <p className="text-[9px] text-slate-700 leading-relaxed font-serif">
+                {telemetry.insightResult?.diagnosis?.currentState || "AI models recognise your brand and core products, but are less likely to cite your business as a leading destination for broader high-intent category searches."}
+              </p>
+            </div>
+            <div className="p-2 rounded-lg border border-emerald-200 bg-emerald-50/40 space-y-0.5">
+              <span className="text-[8px] uppercase font-mono font-bold text-emerald-800">Target Visibility State</span>
+              <p className="text-[9px] text-slate-700 leading-relaxed font-serif">
+                {telemetry.insightResult?.diagnosis?.desiredState || "AI engines cite and recommend your business as the definitive, verified answer for high-intent customer queries across your service area."}
+              </p>
+            </div>
+          </div>
+
+          {/* 5. Recommended Priority Remediation Roadmap */}
+          <div className="p-2.5 rounded-lg border border-purple-200 bg-purple-50/20 space-y-1.5">
+            <div className="flex items-center justify-between border-b border-purple-100 pb-1">
+              <span className="text-[9px] uppercase font-mono font-bold text-purple-950">
+                Recommended Priority Remediation Roadmap
+              </span>
+              <span className="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-800">
+                Sequential Implementation
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-1.5 text-left">
+              {(telemetry.insightResult?.actionPlan && telemetry.insightResult.actionPlan.length > 0
+                ? telemetry.insightResult.actionPlan
+                : [
+                    {
+                      step: 1,
+                      title: telemetry.schemaValidation?.hasValidSchema
+                        ? `Anchor & Interlink Schema Nodes for "${intent || 'Core Services'}"`
+                        : `Inject Nested Schema & Wikidata Grounding for "${intent || 'Core Services'}"`,
+                      description: telemetry.schemaValidation?.hasValidSchema
+                        ? `Establish category-level relevance and inject nested LocalBusiness and serviceArea schema nodes linked to verified Wikidata sameAs records.`
+                        : `Deploy structured Schema.org/LocalBusiness markup with nested serviceArea and Wikidata sameAs entity anchors for ${intent || 'target queries'}.`
+                    },
+                    {
+                      step: 2,
+                      title: `Strengthen Commercial Topic Coverage for "${intent || 'High-Intent Searches'}"`,
+                      description: `Deploy structured category, comparison, FAQ, and buying-guide content answering the specific questions Australian customers ask about ${intent || 'your offerings'}.`
+                    },
+                    {
+                      step: 3,
+                      title: `Expand Query-to-Passage Context Chunking`,
+                      description: `Restructure core ${intent || 'service'} sections with direct, high-density 150-character answer blocks positioned immediately under H2 and H3 tags.`
+                    },
+                    {
+                      step: 4,
+                      title: `Execute 10-Day Implementation Roadmap`,
+                      description: `Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
+                    }
+                  ]
+              ).slice(0, 4).map((stepItem, idx) => (
+                <div key={idx} className="p-1.5 rounded bg-white border border-purple-100 space-y-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3.5 h-3.5 rounded-full bg-cyan-600 text-white font-mono font-bold text-[8px] flex items-center justify-center shrink-0">
+                      {stepItem.step || idx + 1}
+                    </span>
+                    <span className="text-[9px] font-bold text-slate-900 truncate">
+                      {stepItem.title}
+                    </span>
+                  </div>
+                  <p className="text-[8px] text-slate-600 leading-normal pl-5">
+                    {stepItem.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 6. Commercial Resolution & Verification Footer */}
+          <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[8px] text-slate-600 font-mono">
+            <div>
+              <span className="font-bold text-slate-900">Recommended Next Step:</span> 10-Day AEObility Blueprint (${bpstratPrice} AUD ex. GST) • 10-day delivery • 100% credited to sprints
+            </div>
+            <div className="text-right">
+              <span className="font-bold text-slate-900">Direct Link:</span> https://aeobility.com.au/solutions/aeo-blueprint
+            </div>
+          </div>
+          <div className="text-center text-[7px] text-slate-400 font-mono border-t border-slate-100 pt-0.5">
+            AEObility • Get Found. Get Chosen. • No jargon. No pressure. Just clarity. • All rights reserved.
+          </div>
+        </div>
+      )}
+
+      {/* ============================================================================== */}
       {/* WHAT THE SCAN CHECKS (A Closer Look at What We Assess) */}
       {/* ============================================================================== */}
-      <section className="w-full max-w-3xl mt-12 space-y-6 text-left">
+      <section className="w-full max-w-3xl mt-12 space-y-6 text-left no-print">
         <div className="space-y-2 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Cpu className="w-3.5 h-3.5 text-cyan-400" />
@@ -859,7 +1077,7 @@ export default function DiagnosticEngine() {
       {/* ============================================================================== */}
       {/* BENEFIT & ASSURANCE BLOCK */}
       {/* ============================================================================== */}
-      <section className="w-full max-w-3xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+      <section className="w-full max-w-3xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-left no-print">
         <div className="p-5 bg-zinc-950/70 border border-white/10 rounded-xl space-y-2.5">
           <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
             <Eye className="w-4 h-4" />
@@ -894,7 +1112,7 @@ export default function DiagnosticEngine() {
       {/* ============================================================================== */}
       {/* FREQUENTLY ASKED QUESTIONS (FAQ) */}
       {/* ============================================================================== */}
-      <section className="w-full max-w-3xl mt-12 mb-8 space-y-6 text-left">
+      <section className="w-full max-w-3xl mt-12 mb-8 space-y-6 text-left no-print">
         <div className="space-y-2 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-xs font-mono text-purple-300">
             <CircleHelp className="w-3.5 h-3.5 text-purple-400" />

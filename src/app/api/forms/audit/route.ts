@@ -18,7 +18,8 @@ export async function POST(req: Request) {
       recommendations,
       blindSpot,
       firstImpression,
-      assistantAssisted
+      assistantAssisted,
+      telemetry
     } = body;
 
     const cleanEmail = typeof email === "string" ? email.trim().toLowerCase() : "";
@@ -36,6 +37,7 @@ export async function POST(req: Request) {
     const cleanBlindSpot = typeof blindSpot === "string" ? blindSpot.trim() : "";
     const cleanFirstImpression = typeof firstImpression === "string" ? firstImpression.trim() : "";
     const cleanRecommendations = Array.isArray(recommendations) ? recommendations : Array.isArray(findings) ? findings : undefined;
+    const cleanTelemetry = (telemetry && typeof telemetry === "object") ? telemetry as Record<string, unknown> : undefined;
 
     await forms.submitAuditForm({
       name: cleanName,
@@ -48,7 +50,8 @@ export async function POST(req: Request) {
       recommendations: cleanRecommendations,
       blindSpot: cleanBlindSpot,
       firstImpression: cleanFirstImpression,
-      assistantAssisted: !!assistantAssisted
+      assistantAssisted: !!assistantAssisted,
+      telemetry: cleanTelemetry
     });
 
     return NextResponse.json({ ok: true });

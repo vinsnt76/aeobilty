@@ -171,21 +171,59 @@ body {
 }
 
 @media print {
-  nav, footer, button, .no-print, #companion-widget-toggle {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main, div {
+    overflow: visible !important;
+  }
+
+  /* Completely suppress navigation, footer, interactive chrome, modals, and overlays */
+  nav, footer, button, .no-print, #companion-widget-toggle,
+  [role="dialog"], #global-consent-banner, .fixed.inset-0,
+  aside, iframe {
     display: none !important;
   }
-  body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-  }
+
+  /* Clean background overrides for print cards */
   .bg-zinc-950, .bg-black, .bg-zinc-900, .bg-zinc-950\/90, .bg-zinc-950\/80, .bg-zinc-950\/70, .bg-white\/\[0\.02\] {
-    background-color: #f9fafb !important;
+    background-color: #f8fafc !important;
     color: #111827 !important;
-    border-color: #e5e7eb !important;
+    border-color: #e2e8f0 !important;
     box-shadow: none !important;
   }
-  .text-white, .text-zinc-200, .text-zinc-300, .text-zinc-400 {
-    color: #1f2937 !important;
+
+  .text-white, .text-zinc-200, .text-zinc-300, .text-zinc-400, .text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400 {
+    color: #1e293b !important;
+  }
+
+  /* Single-page print report container rules */
+  .diagnostic-print-report {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    overflow: hidden !important;
   }
 }
 

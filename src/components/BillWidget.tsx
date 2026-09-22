@@ -205,15 +205,25 @@ export default function BillWidget() {
     setIsSubmittingLead(true);
     try {
       const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
-      const targetWebsite = storedTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
-      const targetQuery = storedTelemetry?.intent || '';
+      let currentTelemetry = storedTelemetry;
+      if (!currentTelemetry && typeof window !== 'undefined') {
+        try {
+          const raw = localStorage.getItem('aeo_telemetry_latest');
+          if (raw) currentTelemetry = JSON.parse(raw);
+        } catch {
+          // ignore
+        }
+      }
+
+      const targetWebsite = currentTelemetry?.url || (typeof window !== 'undefined' ? window.location.origin : '');
+      const targetQuery = currentTelemetry?.intent || '';
 
       const recs: string[] = [];
-      if (storedTelemetry?.result?.insightResult?.summary?.nextAction) {
-        recs.push(storedTelemetry.result.insightResult.summary.nextAction);
+      if (currentTelemetry?.result?.insightResult?.summary?.nextAction) {
+        recs.push(currentTelemetry.result.insightResult.summary.nextAction);
       }
-      if (storedTelemetry?.result?.explanations && Array.isArray(storedTelemetry.result.explanations)) {
-        storedTelemetry.result.explanations.slice(0, 3).forEach(exp => {
+      if (currentTelemetry?.result?.explanations && Array.isArray(currentTelemetry.result.explanations)) {
+        currentTelemetry.result.explanations.slice(0, 3).forEach(exp => {
           if (exp.reason) recs.push(`${exp.category}: ${exp.reason}`);
         });
       }
@@ -228,13 +238,14 @@ export default function BillWidget() {
           website: targetWebsite,
           targetQuery,
           recommendations: recs,
-          blindSpot: storedTelemetry?.result?.insightResult?.blindSpot?.description || storedTelemetry?.result?.insightResult?.blindSpot?.title || '',
-          firstImpression: storedTelemetry?.result?.insightResult?.firstImpression?.headline || '',
+          blindSpot: currentTelemetry?.result?.insightResult?.blindSpot?.description || currentTelemetry?.result?.insightResult?.blindSpot?.title || '',
+          firstImpression: currentTelemetry?.result?.insightResult?.firstImpression?.headline || '',
           assistantAssisted: isAssistantAssisted,
           scores: {
-            readinessScore: storedTelemetry?.result?.readinessScore ?? 95,
-            proximityScore: storedTelemetry?.result?.proximityScore ?? 24
-          }
+            readinessScore: currentTelemetry?.result?.readinessScore ?? 95,
+            proximityScore: currentTelemetry?.result?.proximityScore ?? 24
+          },
+          telemetry: currentTelemetry?.result || null
         })
       });
 

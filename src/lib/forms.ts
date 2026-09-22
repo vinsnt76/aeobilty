@@ -1,5 +1,14 @@
 import { Resend } from "resend";
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export const Forms = {
   wire() {
     return {
@@ -14,7 +23,8 @@ export const Forms = {
         recommendations,
         blindSpot,
         firstImpression,
-        assistantAssisted
+        assistantAssisted,
+        telemetry
       }: {
         name?: string;
         email: string;
@@ -27,6 +37,7 @@ export const Forms = {
         blindSpot?: string;
         firstImpression?: string;
         assistantAssisted?: boolean;
+        telemetry?: Record<string, unknown> | null;
       }) {
         if (!email) {
           throw new Error("Missing required email address");
@@ -35,8 +46,8 @@ export const Forms = {
         const resend = new Resend(process.env.RESEND_API_KEY || "re_dummykeyforbuild");
         const fromEmail = process.env.RESEND_FROM_EMAIL || "AEObility Diagnostics <reports@aeobility.com.au>";
         const domain = website ? website.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'your website';
-        const readiness = scores?.readinessScore ?? 95;
-        const proximity = scores?.proximityScore ?? 24;
+        const readiness = scores?.readinessScore ?? (typeof telemetry?.readinessScore === 'number' ? telemetry.readinessScore : 95);
+        const proximity = scores?.proximityScore ?? (typeof telemetry?.proximityScore === 'number' ? telemetry.proximityScore : 24);
 
         const effectiveRecs: string[] = (recommendations && recommendations.length > 0)
           ? recommendations
@@ -55,7 +66,7 @@ export const Forms = {
             to: process.env.TEAM_NOTIFICATION_EMAIL || "support@aeobility.com.au",
             subject: `[New Lead] AI Telemetry Audit: ${domain}`,
             html: `
-              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; color: #111827; line-height: 1.6;">
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 650px; color: #111827; line-height: 1.6;">
                 <h2 style="color: #0f172a; border-bottom: 2px solid #00cdd8; padding-bottom: 8px; margin-bottom: 16px;">New Audit Request &amp; AI Telemetry Lead</h2>
                 
                 <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
@@ -84,12 +95,22 @@ export const Forms = {
                   ${blindSpot ? `<p style="margin: 6px 0;"><strong>Diagnostic Blind Spot:</strong> <span style="color: #dc2626; font-weight: 500;">${blindSpot}</span></p>` : ''}
                 </div>
 
-                <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+                <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
                   <h3 style="margin-top: 0; color: #0f172a; font-size: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">Key Telemetry Recommendations</h3>
                   <ol style="padding-left: 20px; margin: 8px 0; color: #334155;">
                     ${effectiveRecs.map(rec => `<li style="margin-bottom: 6px; font-size: 13px;">${rec}</li>`).join('')}
                   </ol>
                 </div>
+
+                ${telemetry ? `
+                <div style="background-color: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; margin-top: 16px; color: #f8fafc;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 8px; margin-bottom: 12px;">
+                    <h3 style="margin: 0; color: #38bdf8; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">Full Telemetry Scan Payload (JSON)</h3>
+                    <span style="font-size: 11px; color: #94a3b8; font-family: monospace;">Machine Diagnostics</span>
+                  </div>
+                  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; line-height: 1.5; color: #cbd5e1; white-space: pre-wrap; word-break: break-all; max-height: 500px; overflow-y: auto;">${escapeHtml(JSON.stringify(telemetry, null, 2))}</pre>
+                </div>
+                ` : ''}
               </div>
             `,
           });
