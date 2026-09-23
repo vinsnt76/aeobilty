@@ -390,9 +390,9 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       '@id': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance',
       name: 'Machine Legibility & Data Provenance',
       description: 'Foundational theoretical paper establishing machine legibility, data provenance, and intentional alignment principles.',
-      dateCreated: '2024-03-15',
+      dateCreated: '2026-06-28',
       dateModified: '2026-09-23',
-      version: '1.1.0',
+      version: '1.2.0',
       author: { '@id': 'https://aeobility.com.au/vince-baker#person' }
     },
     {
