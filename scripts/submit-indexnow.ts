@@ -55,6 +55,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/guides`,
   `https://${HOST}/knowledge-hub/guides/aeo`,
   `https://${HOST}/knowledge-hub/tutorials`,
+  `https://${HOST}/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`,
   `https://${HOST}/knowledge-hub/semantic-seo`,
   `https://${HOST}/knowledge-hub/geo`,
   `https://${HOST}/knowledge-hub/what-is-seo-optimisation`,

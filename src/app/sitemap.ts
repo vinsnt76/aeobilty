@@ -216,6 +216,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/articles/optimising-for-different-ai-search-engines`,
       lastModified: currentDate,
       changeFrequency: "weekly",

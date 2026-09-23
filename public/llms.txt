@@ -52,6 +52,7 @@
 - [`/knowledge-hub/guides`](https://aeobility.com.au/knowledge-hub/guides): Technical guides index covering Answer Engine Optimisation, vector search, and RAG architectures.
   - [`/knowledge-hub/guides/aeo`](https://aeobility.com.au/knowledge-hub/guides/aeo): AEO technical principles, vector indexing, and structural refactoring guide.
 - [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.
+  - [`/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`](https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo): How to Build Entity Density for AI Search (Step-by-Step SOP). 5-step framework and Google Sheet diagnostic tool to audit 80%+ entity density.
 - [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
 - [`/knowledge-hub/what-is-seo-optimisation`](https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation): What Is SEO Optimisation? Guide for Modern Search.
 - [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.

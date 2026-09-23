@@ -273,6 +273,36 @@ const nextConfig: NextConfig = {
         destination: '/knowledge-hub/articles/machine-legibility-data-provenance',
         permanent: true,
       },
+      {
+        source: '/knowledge-hub/tutorials/how-to-build-entity-density/:path*',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/tutorials/how-to-build-entity-density',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/tutorials/how-bulid-entity-density/:path*',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/tutorials/how-bulid-entity-density',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/tutorials/entity-density/:path*',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/tutorials/entity-density',
+        destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
+        permanent: true,
+      },
     ];
   },
 };

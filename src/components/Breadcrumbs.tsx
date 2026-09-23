@@ -21,7 +21,8 @@ export default function Breadcrumbs() {
       'sydney': 'AI Search Optimisation Sydney',
       'adelaide': 'AI Search Optimisation Adelaide',
       'brisbane': 'AI Search Optimisation Brisbane',
-      'machine-legibility-data-provenance': 'Machine Legibility & Data Provenance'
+      'machine-legibility-data-provenance': 'Machine Legibility & Data Provenance',
+      'how-to-audit-and-build-entity-density-for-aeo': 'How to Audit & Build Entity Density for AEO'
     };
     return overrideMap[part] || part.toLowerCase();
   };

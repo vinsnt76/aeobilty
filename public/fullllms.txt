@@ -85,6 +85,11 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Title**: Machine Legibility & Data Provenance: Intentional Data Structures
 - **Summary**: Foundational paper connecting machine legibility, data provenance, deterministic entity relationships, and intentional data structures for AI search.
 
+### Tutorial Node: `/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`
+- **Title**: How to Build Entity Density for AI Search (Step-by-Step SOP)
+- **H1**: How to Build Entity Density into Your On-Page Copy for AI Search (Step-by-Step Guide)
+- **Summary**: Comprehensive tutorial and standard operating procedure for auditing, mapping, and engineering 80%+ entity density into structural headers and opening copy for Answer Engine Optimisation. Includes free Google Sheet diagnostic template.
+
 ### Case Study Node: `/knowledge-hub/case-studies/baby-bento`
 - **Title**: E-Commerce AEO Case Study: Baby Bento
 - **Summary**: Real-world e-commerce proof demonstrating +17% sales uplift and +95% CTR via AI platform direct answer placement and semantic passage refactoring.
