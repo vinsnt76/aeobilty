@@ -1,6 +1,5 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -205,21 +204,6 @@ export default function HowToAuditAndBuildEntityDensityPage() {
           </div>
         </header>
 
-        {/* Featured Hero Thumbnail */}
-        <div className="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-2xl">
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none z-10" />
-          <div className="relative aspect-[16/10] sm:aspect-[12/8] w-full">
-            <Image
-              src="/how-to-build-entity-density-thumbnail_AEObility.webp"
-              alt="How to Build Entity Density tutorial thumbnail showing AI Search Optimization workflow and AEObility specialist guide."
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 896px"
-              className="object-cover rounded-2xl"
-            />
-          </div>
-        </div>
-
         {/* The Core Definition Anchor (Level 2 Validated Dark Glass Card) */}
         <section 
           aria-label="Core Definition" 
@@ -311,11 +295,11 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         {/* Tutorial Body Sections */}
         <article className="space-y-12 font-serif text-base leading-relaxed text-slate-300">
           
-          {/* Section 1: Why AI Search Skips Fluff */}
+          {/* Section 1: Why AI Search Skips The Small Talk */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-white font-soehne-breit tracking-tight flex items-center gap-3">
               <span className="text-aeo-cyan font-mono text-base font-normal">01.</span>
-              <span>Why AI Search Skips Fluff</span>
+              <span>Why AI Search Skips The Small Talk</span>
             </h2>
             <p>
               Old search engines acted like calculators: mention &ldquo;commercial refrigeration repairs&rdquo; six times in 800 words, and you got a gold star.
