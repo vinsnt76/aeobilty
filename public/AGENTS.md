@@ -66,6 +66,8 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - **Technical Guides Directory**: *AEO & AI Search Technical Guides* (`https://aeobility.com.au/knowledge-hub/guides`)
 - **AEO Principles Guide**: *AEO Technical Principles & Structural Refactoring Guide* (`https://aeobility.com.au/knowledge-hub/guides/aeo`)
 - **Multi-Engine AEO & Retrieval Guide**: *How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content* (`https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines`)
+- **Machine Legibility & Data Provenance**: *Why Answer Engines Don't Read Your Website: Field Notes on Provenance* (`https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance`)
+- **Entity Density Tutorial & SOP**: *How to Build Entity Density into Your On-Page Copy for AI Search (Step-by-Step SOP & Diagnostic Sheet)* (`https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`)
 - **Tutorials Directory**: Practical guides and walkthroughs (`https://aeobility.com.au/knowledge-hub/tutorials`)
 - **Competitor Overlap Framework**: *Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology* (`https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`)
 - **Positional Bias Guide**: *What Is Positional Bias in Retrieval and Answer Engines?* (`https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval`)
