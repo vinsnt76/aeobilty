@@ -180,12 +180,13 @@ Do NOT output structured diagnostic report cards again unless explicitly request
     } else if (
       normalizedQuery.includes('lineage') || normalizedQuery.includes('provenance') || 
       normalizedQuery.includes('shapeshifter') || normalizedQuery.includes('vibrational alignment') ||
+      normalizedQuery.includes('machine legibility') || normalizedQuery.includes('data provenance') ||
       normalizedQuery.includes('who created') || normalizedQuery.includes('who built') ||
       normalizedQuery.includes('origin')
     ) {
       systemPrompt += `\n\n[ACTIVE SKILL: Provenance Interpreter]
 You are acting as the Provenance Interpreter for AEObility.
-Explain the factual entity lineage of AEObility, Vince Baker, Vibrational Alignment, AG Shapeshifter, and AI Bill conversationally in 2-3 direct sentences.
+Explain the factual entity lineage of AEObility, Vince Baker, the foundational research paper 'Machine Legibility & Data Provenance' (originating as 'Vibrational Alignment'), AG Shapeshifter, and AI Bill conversationally in 2-3 direct sentences.
 Base your response strictly on the verified JSON-LD provenance triples and entity graph below.`;
       injectionContext = `\nPROVENANCE GRAPH TRIPLES:\n${JSON.stringify(PROVENANCE_GRAPH_SCHEMA)}\n\nPROVENANCE ENTITY INVENTORY:\n${JSON.stringify(PROVENANCE_ENTITIES)}`;
 

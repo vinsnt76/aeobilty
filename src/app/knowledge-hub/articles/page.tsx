@@ -32,12 +32,12 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
-      title: "Vibrational Alignment: Machine Legibility & Intentional Data Structures",
+      title: "Machine Legibility & Data Provenance: Intentional Data Structures",
       category: "Foundational Theory / Entity Architecture",
-      description: "Explore the foundational paper connecting machine legibility, deterministic entity relationships, and intentional data structures for AI search.",
-      href: "/knowledge-hub/articles/vibrational-alignment",
+      description: "Explore the foundational paper connecting machine legibility, verifiable data provenance, deterministic entity relationships, and intentional data structures for AI search.",
+      href: "/knowledge-hub/articles/machine-legibility-data-provenance",
       image: "/structured-data-query-fan-out_AEObility.webp",
-      alt: "Vibrational Alignment: machine legibility and intentional data structures for AI search by AEObility in Perth, Western Australia.",
+      alt: "Machine Legibility & Data Provenance: intentional data structures for AI search by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Foundational Paper" },
         { label: "Read Time", value: "4 min" }

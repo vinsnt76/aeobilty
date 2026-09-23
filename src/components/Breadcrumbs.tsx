@@ -20,7 +20,8 @@ export default function Breadcrumbs() {
       'melbourne': 'AI Search Optimisation Melbourne',
       'sydney': 'AI Search Optimisation Sydney',
       'adelaide': 'AI Search Optimisation Adelaide',
-      'brisbane': 'AI Search Optimisation Brisbane'
+      'brisbane': 'AI Search Optimisation Brisbane',
+      'machine-legibility-data-provenance': 'Machine Legibility & Data Provenance'
     };
     return overrideMap[part] || part.toLowerCase();
   };

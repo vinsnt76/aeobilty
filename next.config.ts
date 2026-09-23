@@ -38,6 +38,22 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.aeobility.com.au',
+          },
+        ],
+        destination: 'https://aeobility.com.au/:path*',
+        permanent: true,
+      },
+      {
+        source: '/vcard.vcf',
+        destination: '/vince-baker.vcf',
+        permanent: true,
+      },
+      {
         source: '/my-portfolio',
         destination: '/about/freelance-digital-specialist-perth',
         permanent: true,
@@ -235,6 +251,26 @@ const nextConfig: NextConfig = {
       {
         source: '/knowledge-hub/case-studies/first-90-days',
         destination: '/knowledge-hub/case-studies/aeo-geo-blueprint-90-days',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/vibrational-alignment/:path*',
+        destination: '/knowledge-hub/articles/machine-legibility-data-provenance',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/articles/vibrational-alignment',
+        destination: '/knowledge-hub/articles/machine-legibility-data-provenance',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/vibrational-alignment/:path*',
+        destination: '/knowledge-hub/articles/machine-legibility-data-provenance',
+        permanent: true,
+      },
+      {
+        source: '/knowledge-hub/vibrational-alignment',
+        destination: '/knowledge-hub/articles/machine-legibility-data-provenance',
         permanent: true,
       },
     ];

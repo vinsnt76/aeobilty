@@ -302,15 +302,15 @@ export interface ProvenanceEntity {
 
 export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
   {
-    id: 'aeobility:vibrational-alignment',
-    name: 'Vibrational Alignment',
+    id: 'aeobility:machine-legibility-data-provenance',
+    name: 'Machine Legibility & Data Provenance',
     schemaType: 'DigitalDocument',
     layer: 'Ideation',
-    description: 'Foundational theoretical paper establishing machine legibility and intentional alignment principles.',
-    canonicalUri: 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment',
+    description: 'Foundational theoretical paper establishing machine legibility, data provenance, and intentional alignment principles.',
+    canonicalUri: 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance',
     dateCreated: '2024-03-15',
-    dateModified: '2026-08-29',
-    version: '1.0.0'
+    dateModified: '2026-09-23',
+    version: '1.1.0'
   },
   {
     id: 'aeobility:ag-shapeshifter',
@@ -387,12 +387,12 @@ export const PROVENANCE_GRAPH_SCHEMA = {
   '@graph': [
     {
       '@type': 'DigitalDocument',
-      '@id': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment',
-      name: 'Vibrational Alignment',
-      description: 'Foundational theoretical paper establishing machine legibility and intentional alignment principles.',
+      '@id': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance',
+      name: 'Machine Legibility & Data Provenance',
+      description: 'Foundational theoretical paper establishing machine legibility, data provenance, and intentional alignment principles.',
       dateCreated: '2024-03-15',
-      dateModified: '2026-08-29',
-      version: '1.0.0',
+      dateModified: '2026-09-23',
+      version: '1.1.0',
       author: { '@id': 'https://aeobility.com.au/vince-baker#person' }
     },
     {
@@ -404,8 +404,8 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       dateCreated: '2024-11-01',
       dateModified: '2026-08-29',
       version: '0.8.4',
-      'prov:wasDerivedFrom': { '@id': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment' },
-      'schema:isBasedOn': 'https://aeobility.com.au/knowledge-hub/articles/vibrational-alignment'
+      'prov:wasDerivedFrom': { '@id': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance' },
+      'schema:isBasedOn': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance'
     },
     {
       '@type': 'SoftwareApplication',

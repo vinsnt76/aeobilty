@@ -439,7 +439,7 @@ export default function AboutUsContent() {
         <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 max-w-3xl">
           <h3 className="text-base font-bold text-white font-soehne-breit">From Research to Practical Delivery</h3>
           <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-            Our work began with a simple question: how can a business publish facts online in a way that is accurate, consistent and easy for machines to interpret? That research now informs practical AEO sprints, structured-data implementations and entity-mapping work for Australian businesses.
+            Our work began with the &apos;Vibrational Alignment&apos; research paper (now published as <Link href="/knowledge-hub/articles/machine-legibility-data-provenance" className="text-aeo-cyan hover:underline font-semibold">Machine Legibility &amp; Data Provenance</Link>): exploring how businesses can publish first-party facts online in a way that is verified, consistent, and deterministic for machines to interpret. That foundational framework now powers our practical AEO sprints, structured-data implementations, and entity-mapping architecture across Australia.
           </p>
         </div>
 

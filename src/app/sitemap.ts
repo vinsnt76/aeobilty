@@ -270,7 +270,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/knowledge-hub/articles/vibrational-alignment`,
+      url: `${baseUrl}/knowledge-hub/articles/machine-legibility-data-provenance`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.85,

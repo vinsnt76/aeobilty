@@ -46,7 +46,6 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/solutions`,
   `https://${HOST}/solutions/aeo-blueprint`,
   `https://${HOST}/solutions/aeo-sprint`,
-  `https://${HOST}/solutions/geo-services`,
 
   // 4. Knowledge Hub Indexes & Core Theory
   `https://${HOST}/knowledge-hub`,
@@ -74,7 +73,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/articles/retrieval-augmented-generation`,
   `https://${HOST}/knowledge-hub/articles/structured-data-query-fan-out`,
   `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
-  `https://${HOST}/knowledge-hub/articles/vibrational-alignment`,
+  `https://${HOST}/knowledge-hub/articles/machine-legibility-data-provenance`,
 
   // 6. About & Consulting Profiles
   `https://${HOST}/about`,

@@ -81,9 +81,9 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **H1**: How to Fix AI Brand Hallucinations and Evidence Gaps in AI Search
 - **Summary**: Architectural methodology for eliminating hallucinations in LLM retrieval through unambiguous Entity-Relationship-Evidence triples, verified first-party ledgers, and nested JSON-LD schema graphs.
 
-### Node: `/knowledge-hub/articles/vibrational-alignment`
-- **Title**: Vibrational Alignment: Machine Legibility & Intentional Data Structures
-- **Summary**: Foundational paper connecting machine legibility, deterministic entity relationships, and intentional data structures for AI search.
+### Node: `/knowledge-hub/articles/machine-legibility-data-provenance`
+- **Title**: Machine Legibility & Data Provenance: Intentional Data Structures
+- **Summary**: Foundational paper connecting machine legibility, data provenance, deterministic entity relationships, and intentional data structures for AI search.
 
 ### Case Study Node: `/knowledge-hub/case-studies/baby-bento`
 - **Title**: E-Commerce AEO Case Study: Baby Bento
