@@ -12,8 +12,6 @@ import {
   Sparkles, 
   CheckCircle2, 
   XCircle, 
-  Layers, 
-  Workflow, 
   AlertCircle 
 } from 'lucide-react';
 
@@ -92,36 +90,44 @@ export default function MachineLegibilityDataProvenancePage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-soehne-breit leading-tight">
               Machine Legibility &amp; Data Provenance: Intentional Data Structures
             </h1>
-            <p className="text-xl sm:text-2xl text-zinc-300 font-serif italic border-l-2 border-aeo-cyan pl-4 py-1 leading-snug">
+            <p className="text-xl sm:text-2xl text-slate-200 font-serif italic border-l-2 border-aeo-cyan pl-4 py-1 leading-snug">
               Why Answer Engines Don&apos;t Read Your Website: Field Notes on Provenance
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs font-mono text-zinc-400 pt-2">
+          <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs font-mono text-slate-400 pt-2">
             <div>By: <strong className="text-white">Vinnie Baker</strong></div>
-            <div>Published: <span className="text-zinc-300">28/06/2026</span></div>
-            <div>Updated: <span className="text-zinc-300">23 Sep 2026</span></div>
+            <div>Published: <span className="text-slate-300">28/06/2026</span></div>
+            <div>Updated: <span className="text-slate-300">23 Sep 2026</span></div>
             <div>Version: <span className="text-aeo-cyan font-bold">1.2.0</span></div>
             <div>Classification: <span className="text-aeo-purple font-bold">Foundational Spec</span></div>
           </div>
         </header>
 
-        {/* Calibrated 100-Word Opening Answer Box */}
-        <section aria-label="Opening Answer" className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-900/90 to-zinc-950 border border-aeo-cyan/30 p-6 sm:p-8 shadow-2xl shadow-aeo-cyan/5">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-aeo-cyan/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Calibrated 100-Word Opening Answer Box (Level 2 Active/Validated Dark Glass Card) */}
+        <section 
+          aria-label="Opening Answer" 
+          className="relative isolate overflow-hidden rounded-2xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/30 shadow-[0_0_30px_rgba(0,229,255,0.08)] p-6 sm:p-8"
+        >
+          {/* Top Specular Light Catch */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent pointer-events-none" />
+          
+          {/* Ambient Radial Mesh Anchor */}
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
           <div className="relative space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono text-aeo-cyan uppercase tracking-wider">
               <Sparkles className="w-4 h-4" />
               <span>Opening Answer &bull; Machine Salience</span>
             </div>
-            <p className="text-base sm:text-lg text-zinc-200 font-serif leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-100 font-serif leading-relaxed">
               Traditional search asks how to get a webpage found through keywords and rankings. Generative search asks a much harder question: how does an answer engine determine what an entity is, what it knows, where it originated, and whether it can be trusted? When systems like ChatGPT, Perplexity, or Google AI Overviews encounter a business, they do not read a site the way a human does. They reconstruct meaning from fragmented relationships, evidence, and provenance. Optimising for AI is not about manufacturing claims; it is about engineering the machine-readable conditions that allow an engine to correctly infer who you are.
             </p>
           </div>
         </section>
 
         {/* Core Narrative Sections */}
-        <article className="space-y-12 font-serif text-base leading-relaxed text-zinc-300">
+        <article className="space-y-12 font-serif text-base leading-relaxed text-slate-300">
           
           {/* Section 1: The Misconception */}
           <section className="space-y-4">
@@ -150,11 +156,14 @@ export default function MachineLegibilityDataProvenancePage() {
               The future of search is not simply about optimising content. It is about making meaning reconstructible.
             </p>
             
-            {/* Visual Shift Diagram */}
-            <div className="bg-zinc-950 border border-white/10 rounded-xl p-5 space-y-3 font-mono text-xs sm:text-sm text-zinc-300">
+            {/* Visual Shift Diagram (Level 1 Structural Glass Well) */}
+            <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/75 backdrop-blur-md border border-purple-500/25 shadow-xl p-5 space-y-3 font-mono text-xs sm:text-sm text-slate-300">
+              {/* Directional Specular Line */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none" />
+              
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="text-zinc-500 w-28 uppercase font-bold text-[11px]">Legacy SEO:</span>
-                <span className="text-zinc-400">[Keyword Query] &rarr; [Match Webpage] &rarr; [Ranked 10 Blue Links]</span>
+                <span className="text-slate-500 w-28 uppercase font-bold text-[11px]">Legacy SEO:</span>
+                <span className="text-slate-400">[Keyword Query] &rarr; [Match Webpage] &rarr; [Ranked 10 Blue Links]</span>
               </div>
               <div className="h-px bg-white/5" />
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -167,28 +176,36 @@ export default function MachineLegibilityDataProvenancePage() {
               Answer engines increasingly assemble responses out of three core elements rather than raw documents:
             </p>
 
+            {/* 3 Core Elements (Tri-Graph Structural Glass Cards) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose font-sans">
-              <div className="bg-zinc-950/70 border border-white/10 rounded-xl p-4 space-y-2">
+              <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-cyan-500/30 transition-all duration-300 p-4 space-y-2 shadow-lg">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent pointer-events-none" />
                 <span className="text-xs font-mono text-aeo-cyan uppercase font-bold">1. The Entity</span>
-                <p className="text-xs text-zinc-300 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   What distinct business, person, or tool is being discussed? Unambiguous disambiguation.
                 </p>
               </div>
-              <div className="bg-zinc-950/70 border border-white/10 rounded-xl p-4 space-y-2">
+
+              <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300 p-4 space-y-2 shadow-lg">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent pointer-events-none" />
                 <span className="text-xs font-mono text-aeo-purple uppercase font-bold">2. The Relationships</span>
-                <p className="text-xs text-zinc-300 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   How does this entity connect to specific services, locations, and practitioners?
                 </p>
               </div>
-              <div className="bg-zinc-950/70 border border-white/10 rounded-xl p-4 space-y-2">
+
+              <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-emerald-500/30 transition-all duration-300 p-4 space-y-2 shadow-lg">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent pointer-events-none" />
                 <span className="text-xs font-mono text-emerald-400 uppercase font-bold">3. The Provenance</span>
-                <p className="text-xs text-zinc-300 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   Where did this information originate, and is there connecting evidence across third-party sources to corroborate it?
                 </p>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-aeo-cyan/5 border border-aeo-cyan/20 text-sm text-zinc-200 font-serif italic">
+            {/* Core Principle Callout (Elevated Glass Well) */}
+            <div className="relative isolate overflow-hidden rounded-xl bg-cyan-950/20 backdrop-blur-sm border border-cyan-500/25 p-5 text-sm text-slate-200 font-serif italic shadow-[0_0_20px_rgba(0,229,255,0.04)]">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent pointer-events-none" />
               &ldquo;The strongest generative engine optimisation is not about forcing an AI to repeat your marketing claims. It is about building an entity whose actual provenance naturally yields the correct answer.&rdquo;
             </div>
           </section>
@@ -216,17 +233,18 @@ export default function MachineLegibilityDataProvenancePage() {
               Later, while building AEObility&apos;s automated diagnostic system, we found that diagnostic scans alone were not enough. The platform required an interactive conversational layer capable of interpreting audit gaps for business owners. AG Shapeshifter was refactored into AI Bill, and Bill became an integral part of our diagnostic runtime.
             </p>
 
-            {/* Sequence Block */}
-            <div className="bg-zinc-950 border border-white/10 rounded-xl p-5 text-center font-mono text-xs sm:text-sm text-zinc-300 space-y-2">
-              <span className="text-zinc-500 uppercase tracking-widest text-[11px] block">The Architectural Evolution</span>
+            {/* Sequence Block (Level 1 Specular Glass Well) */}
+            <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/80 backdrop-blur-md border border-purple-500/25 shadow-xl p-6 text-center font-mono text-xs sm:text-sm text-slate-300 space-y-2">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none" />
+              <span className="text-slate-500 uppercase tracking-widest text-[11px] block">The Architectural Evolution</span>
               <div className="flex flex-wrap items-center justify-center gap-2 font-bold text-white">
-                <span className="text-zinc-400">Vibrational Alignment</span>
+                <span className="text-slate-400">Vibrational Alignment</span>
                 <span className="text-aeo-cyan">&rarr;</span>
-                <span className="text-zinc-400">AG Shapeshifter</span>
+                <span className="text-slate-400">AG Shapeshifter</span>
                 <span className="text-aeo-cyan">&rarr;</span>
                 <span className="text-white">AI Bill</span>
                 <span className="text-aeo-cyan">&rarr;</span>
-                <span className="text-zinc-300">Diagnostic System</span>
+                <span className="text-slate-300">Diagnostic System</span>
                 <span className="text-aeo-cyan">&rarr;</span>
                 <span className="text-aeo-cyan">AEObility</span>
               </div>
@@ -236,9 +254,9 @@ export default function MachineLegibilityDataProvenancePage() {
               A human conversation became a persona, the persona became a software system, the system became part of a brand, and the brand produced machine-readable signals. When search engines encountered those signals, they began reconstructing the entity accurately.
             </p>
 
-            {/* Technical Receipts and Provenance Artifacts */}
+            {/* Technical Receipts and Provenance Artifacts (Directional Specular Cards) */}
             <div className="space-y-3 pt-2">
-              <h3 className="text-xs font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-2">
+              <h3 className="text-xs font-mono text-slate-400 uppercase tracking-wider flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
                 <span>Primary Technical Receipts &amp; Provenance Artifacts</span>
               </h3>
@@ -247,57 +265,61 @@ export default function MachineLegibilityDataProvenancePage() {
                   href="https://notebook.google.com/notebook/d07f8fc9-9b06-4a47-82ad-ef7993048f53"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-zinc-900 border border-white/10 hover:border-aeo-cyan/50 transition-colors flex items-center justify-between group"
+                  className="relative isolate overflow-hidden p-4 rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.12)] transition-all duration-300 flex items-center justify-between group"
                 >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-cyan-400/50 to-transparent pointer-events-none transition-all duration-300" />
                   <div className="space-y-1">
-                    <span className="text-[10px] text-zinc-500 uppercase block">Primary Research</span>
-                    <span className="text-zinc-200 group-hover:text-aeo-cyan transition-colors font-medium">NotebookLM &bull; The Art of Vibrational Alignment</span>
+                    <span className="text-[10px] text-slate-500 uppercase block font-semibold">Primary Research</span>
+                    <span className="text-slate-200 group-hover:text-aeo-cyan transition-colors font-medium">NotebookLM &bull; The Art of Vibrational Alignment</span>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-aeo-cyan transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-aeo-cyan transition-colors flex-shrink-0 ml-2" />
                 </a>
 
                 <a
                   href="https://vinniebakeraeoinsights.substack.com/p/the-irony-of-trying-to-be-found"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-zinc-900 border border-white/10 hover:border-aeo-cyan/50 transition-colors flex items-center justify-between group"
+                  className="relative isolate overflow-hidden p-4 rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.12)] transition-all duration-300 flex items-center justify-between group"
                 >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-cyan-400/50 to-transparent pointer-events-none transition-all duration-300" />
                   <div className="space-y-1">
-                    <span className="text-[10px] text-zinc-500 uppercase block">Architectural Strategy</span>
-                    <span className="text-zinc-200 group-hover:text-aeo-cyan transition-colors font-medium">Substack &bull; The Irony of Trying to Be Found</span>
+                    <span className="text-[10px] text-slate-500 uppercase block font-semibold">Architectural Strategy</span>
+                    <span className="text-slate-200 group-hover:text-aeo-cyan transition-colors font-medium">Substack &bull; The Irony of Trying to Be Found</span>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-aeo-cyan transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-aeo-cyan transition-colors flex-shrink-0 ml-2" />
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/vince-baker/details/projects/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-zinc-900 border border-white/10 hover:border-aeo-cyan/50 transition-colors flex items-center justify-between group"
+                  className="relative isolate overflow-hidden p-4 rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.12)] transition-all duration-300 flex items-center justify-between group"
                 >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-cyan-400/50 to-transparent pointer-events-none transition-all duration-300" />
                   <div className="space-y-1">
-                    <span className="text-[10px] text-zinc-500 uppercase block">Prototype History</span>
-                    <span className="text-zinc-200 group-hover:text-aeo-cyan transition-colors font-medium">LinkedIn &bull; AG Shapeshifter Architecture</span>
+                    <span className="text-[10px] text-slate-500 uppercase block font-semibold">Prototype History</span>
+                    <span className="text-slate-200 group-hover:text-aeo-cyan transition-colors font-medium">LinkedIn &bull; AG Shapeshifter Architecture</span>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-aeo-cyan transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-aeo-cyan transition-colors flex-shrink-0 ml-2" />
                 </a>
 
                 <a
                   href="https://lnkd.in/p/gh9Z-v7X"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-zinc-900 border border-white/10 hover:border-aeo-cyan/50 transition-colors flex items-center justify-between group"
+                  className="relative isolate overflow-hidden p-4 rounded-xl bg-slate-950/70 backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.12)] transition-all duration-300 flex items-center justify-between group"
                 >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-cyan-400/50 to-transparent pointer-events-none transition-all duration-300" />
                   <div className="space-y-1">
-                    <span className="text-[10px] text-zinc-500 uppercase block">Production Runtime</span>
-                    <span className="text-zinc-200 group-hover:text-aeo-cyan transition-colors font-medium">AI Bill &bull; NLWeb Ingestion &amp; UI</span>
+                    <span className="text-[10px] text-slate-500 uppercase block font-semibold">Production Runtime</span>
+                    <span className="text-slate-200 group-hover:text-aeo-cyan transition-colors font-medium">AI Bill &bull; NLWeb Ingestion &amp; UI</span>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-aeo-cyan transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-aeo-cyan transition-colors flex-shrink-0 ml-2" />
                 </a>
               </div>
             </div>
 
-            <p className="pt-2 text-sm text-zinc-400">
+            <p className="pt-2 text-sm text-slate-400">
               This full circle proved our working hypothesis: provenance is not a manufactured story. It is a verifiable chain of evidence that machines can discover and reconstruct.
             </p>
           </section>
@@ -313,31 +335,33 @@ export default function MachineLegibilityDataProvenancePage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose font-sans">
-              {/* Content-Only Approach */}
-              <div className="bg-zinc-950 border border-red-500/20 rounded-xl p-5 space-y-3">
-                <div className="flex items-center gap-2 text-red-400 text-xs font-mono font-bold uppercase">
+              {/* Content-Only Approach (Deficit State Glass Card) */}
+              <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/80 backdrop-blur-md border border-amber-500/30 shadow-[0_0_25px_rgba(245,158,11,0.06)] p-6 space-y-3">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent pointer-events-none" />
+                <div className="flex items-center gap-2 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
                   <XCircle className="w-4 h-4" />
                   <span>The Content-Only Approach</span>
                 </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-serif">
+                <p className="text-xs text-slate-300 leading-relaxed font-serif">
                   The clinic publishes a general post titled &ldquo;Our Approach to Wellness.&rdquo; It mentions treating sports injuries in passing, but fails to tie practitioners to their registration records or define exact treatment modalities.
                 </p>
-                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-zinc-400">
-                  <strong className="text-red-300">Failure Mode:</strong> When a patient queries &ldquo;AHPRA-registered sports physiotherapists in Subiaco with weekend availability,&rdquo; the model cannot verify eligibility. The practice is omitted.
+                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-slate-400">
+                  <strong className="text-amber-300">Failure Mode:</strong> When a patient queries &ldquo;AHPRA-registered sports physiotherapists in Subiaco with weekend availability,&rdquo; the model cannot verify eligibility. The practice is omitted.
                 </div>
               </div>
 
-              {/* Provenance Approach */}
-              <div className="bg-zinc-950 border border-emerald-500/20 rounded-xl p-5 space-y-3">
-                <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono font-bold uppercase">
+              {/* Provenance Approach (Validated State Glass Card) */}
+              <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/30 shadow-[0_0_25px_rgba(0,229,255,0.08)] p-6 space-y-3">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
+                <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>The Provenance Approach</span>
                 </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-serif">
+                <p className="text-xs text-slate-300 leading-relaxed font-serif">
                   The clinic establishes an explicit entity graph. It isolates single-topic answer blocks defining clinical services, links practitioners to AHPRA credentials via Schema.org properties, specifies geo-coordinates for its Subiaco rooms, and corroborates facts across health registries.
                 </p>
-                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-zinc-400">
-                  <strong className="text-emerald-300">Outcome:</strong> The model does not have to guess. The clinic&apos;s history, expertise, and operational boundaries are fully reconstructible.
+                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-slate-400">
+                  <strong className="text-aeo-cyan">Outcome:</strong> The model does not have to guess. The clinic&apos;s history, expertise, and operational boundaries are fully reconstructible.
                 </div>
               </div>
             </div>
@@ -353,56 +377,62 @@ export default function MachineLegibilityDataProvenancePage() {
               Structuring your digital footprint for answer engines follows four disciplined architectural steps:
             </p>
 
-            <div className="overflow-x-auto not-prose">
-              <table className="w-full text-left text-xs font-sans border-collapse">
-                <thead>
-                  <tr className="border-b border-white/15 bg-zinc-950 text-zinc-400 font-mono uppercase tracking-wider">
-                    <th className="py-3 px-4">Step</th>
-                    <th className="py-3 px-4">Focus Area</th>
-                    <th className="py-3 px-4">Implementation Mechanism</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/10 text-zinc-300">
-                  <tr className="hover:bg-white/[0.02]">
-                    <td className="py-3 px-4 font-mono font-bold text-white whitespace-nowrap">1. Isolate Monosemantic Blocks</td>
-                    <td className="py-3 px-4 font-mono text-aeo-cyan">Passage Retrieval</td>
-                    <td className="py-3 px-4 leading-relaxed font-serif">Structure service descriptions into 80&ndash;120 word self-contained sections that answer one specific query without contextual bleed.</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02]">
-                    <td className="py-3 px-4 font-mono font-bold text-white whitespace-nowrap">2. Define Explicit Triples</td>
-                    <td className="py-3 px-4 font-mono text-aeo-purple">Semantic Relationships</td>
-                    <td className="py-3 px-4 leading-relaxed font-serif">Map core business facts as direct statements: <code className="text-aeo-cyan font-mono text-xs">[Entity] &rarr; [Relationship] &rarr; [Evidence]</code>.</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02]">
-                    <td className="py-3 px-4 font-mono font-bold text-white whitespace-nowrap">3. Publish Machine-Readable Schema</td>
-                    <td className="py-3 px-4 font-mono text-emerald-400">Machine Layer</td>
-                    <td className="py-3 px-4 leading-relaxed font-serif">Expose first-party JSON-LD graphs (LocalBusiness, Service, Person) so crawlers ingest structured facts before parsing HTML.</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02]">
-                    <td className="py-3 px-4 font-mono font-bold text-white whitespace-nowrap">4. Corroborate External Evidence</td>
-                    <td className="py-3 px-4 font-mono text-amber-400">Provenance Integrity</td>
-                    <td className="py-3 px-4 leading-relaxed font-serif">Ensure corporate registries, licensing databases, and local citations align identically with your on-page data.</td>
-                  </tr>
-                </tbody>
-              </table>
+            {/* Implementation Matrix (Opaque Base Glass Enclosure per Section 5.1 Rules) */}
+            <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/90 backdrop-blur-md border border-purple-500/20 shadow-2xl not-prose">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none" />
+              
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs font-sans border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10 bg-slate-900/60 text-slate-400 font-mono uppercase tracking-wider">
+                      <th className="py-3.5 px-4 font-semibold">Step</th>
+                      <th className="py-3.5 px-4 font-semibold">Focus Area</th>
+                      <th className="py-3.5 px-4 font-semibold">Implementation Mechanism</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/10 text-slate-300">
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">1. Isolate Monosemantic Blocks</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-cyan font-medium">Passage Retrieval</td>
+                      <td className="py-3.5 px-4 leading-relaxed font-serif text-slate-300">Structure service descriptions into 80&ndash;120 word self-contained sections that answer one specific query without contextual bleed.</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">2. Define Explicit Triples</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-purple font-medium">Semantic Relationships</td>
+                      <td className="py-3.5 px-4 leading-relaxed font-serif text-slate-300">Map core business facts as direct statements: <code className="text-aeo-cyan font-mono text-xs px-1.5 py-0.5 rounded bg-black/50 border border-cyan-500/20">[Entity] &rarr; [Relationship] &rarr; [Evidence]</code>.</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">3. Publish Machine-Readable Schema</td>
+                      <td className="py-3.5 px-4 font-mono text-emerald-400 font-medium">Machine Layer</td>
+                      <td className="py-3.5 px-4 leading-relaxed font-serif text-slate-300">Expose first-party JSON-LD graphs (LocalBusiness, Service, Person) so crawlers ingest structured facts before parsing HTML.</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">4. Corroborate External Evidence</td>
+                      <td className="py-3.5 px-4 font-mono text-amber-400 font-medium">Provenance Integrity</td>
+                      <td className="py-3.5 px-4 leading-relaxed font-serif text-slate-300">Ensure corporate registries, licensing databases, and local citations align identically with your on-page data.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </section>
 
-          {/* Section 6: Limits and Caveats */}
+          {/* Section 6: Limits and Caveats (Deficit State Glass Well) */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-white font-soehne-breit tracking-tight flex items-center gap-3">
               <span className="text-aeo-cyan font-mono text-base font-normal">06.</span>
               <span>Limits and Caveats</span>
             </h2>
-            <div className="bg-zinc-950/80 border border-white/10 rounded-xl p-5 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase font-bold">
+            <div className="relative isolate overflow-hidden rounded-xl bg-slate-950/80 backdrop-blur-md border border-amber-500/25 shadow-lg p-6 space-y-3">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent pointer-events-none" />
+              <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase font-bold tracking-wider">
                 <AlertCircle className="w-4 h-4" />
                 <span>Deterministic Structures vs Probabilistic Retrieval</span>
               </div>
-              <p className="text-sm text-zinc-300 leading-relaxed font-serif">
+              <p className="text-sm text-slate-300 leading-relaxed font-serif">
                 Structuring your provenance does not guarantee automated citations or perpetual visibility.
               </p>
-              <p className="text-sm text-zinc-300 leading-relaxed font-serif">
+              <p className="text-sm text-slate-300 leading-relaxed font-serif">
                 Large language models are probabilistic systems. Retrieval thresholds, context window limits, and synthetic ranking weights shift regularly across platforms. Clean data structures cannot compensate for a lack of real-world authority, absent customer reviews, or broken local trust signals. Engineering machine legibility simply ensures that when an engine evaluates your industry, your business facts are coherent enough to survive retrieval.
               </p>
             </div>
@@ -413,7 +443,7 @@ export default function MachineLegibilityDataProvenancePage() {
             <h2 className="text-xl font-bold text-white font-soehne-breit tracking-tight">
               Next Steps &amp; Canonical Verification
             </h2>
-            <p className="text-sm text-zinc-300">
+            <p className="text-sm text-slate-300">
               If you want to evaluate how conversational search engines and maps ecosystems interpret your digital footprint, run a <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-semibold">Free AI Visibility Scan</Link> or inspect our public <Link href="/brand-facts" className="text-aeo-cyan hover:underline font-semibold">Canonical Brand Facts</Link> to review the exact schema structures we maintain in production.
             </p>
           </section>
