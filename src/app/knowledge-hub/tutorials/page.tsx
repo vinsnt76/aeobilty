@@ -36,8 +36,8 @@ export default function TutorialsHubPage() {
       category: "Entity SEO & On-Page Architecture",
       description: "Step-by-step standard operating procedure for auditing, mapping, and engineering 80%+ entity density into structural headers and opening copy for Answer Engine Optimisation. Includes free Google Sheet diagnostic template.",
       href: "/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
-      image: "/entity-visibilty-semantic-SEO_AEObility.webp",
-      alt: "Diagram showing entity visibility and semantic SEO architecture by AEObility.",
+      image: "/how-to-build-entity-density-thumbnail_AEObility.webp",
+      alt: "How to Build Entity Density tutorial thumbnail with AEObility specialist guide and AI search optimisation workflow.",
       isLive: true,
       metrics: [
         { label: "Level", value: "Intermediate" },

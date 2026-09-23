@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -27,6 +28,20 @@ export const metadata: Metadata = {
     description: "Audit and engineer 80%+ entity density into on-page copy for modern answer engines. Free Google Sheet diagnostic template included.",
     url: "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
     type: "article",
+    images: [
+      {
+        url: "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "How to Build Entity Density tutorial thumbnail with AEObility specialist guide and AI search optimisation workflow.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Build Entity Density for AI Search | AEObility Tutorial",
+    description: "Audit and engineer 80%+ entity density into on-page copy for modern answer engines.",
+    images: ["https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp"],
   },
 };
 
@@ -41,6 +56,7 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         "headline": "How to Build Entity Density into Your On-Page Copy for AI Search (Step-by-Step Guide)",
         "description": "Tactical standard operating procedure for auditing, mapping, and engineering 80%+ entity density into on-page structural zones for Answer Engine Optimisation.",
         "url": "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
+        "image": "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
         "inLanguage": "en-AU",
         "datePublished": "2026-09-24",
         "dateModified": "2026-09-24",
@@ -69,6 +85,7 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         "@id": "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo#howto",
         "name": "How to Audit and Build Entity Density for AEO",
         "description": "A 5-step workflow to audit opening copy and hit the 80% entity coverage threshold that turns ambiguous pages into cited sources.",
+        "image": "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
         "totalTime": "PT25M",
         "step": [
           {
@@ -187,6 +204,21 @@ export default function HowToAuditAndBuildEntityDensityPage() {
             <div>Format: <span className="text-emerald-400 font-bold">Interactive SOP</span></div>
           </div>
         </header>
+
+        {/* Featured Hero Thumbnail */}
+        <div className="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-2xl">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none z-10" />
+          <div className="relative aspect-[16/10] sm:aspect-[12/8] w-full">
+            <Image
+              src="/how-to-build-entity-density-thumbnail_AEObility.webp"
+              alt="How to Build Entity Density tutorial thumbnail showing AI Search Optimization workflow and AEObility specialist guide."
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 896px"
+              className="object-cover rounded-2xl"
+            />
+          </div>
+        </div>
 
         {/* The Core Definition Anchor (Level 2 Validated Dark Glass Card) */}
         <section 
