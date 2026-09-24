@@ -28,12 +28,8 @@ export function CoreEngagementsGrid() {
 
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {/* Card 1: Strategic Audit (Elevated with Von Restorff Isolation) */}
-          <div 
-            data-aos="zoom-in-up"
-            data-aos-duration="400"
-            className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-cyan-400/40 backdrop-blur-xl shadow-[0_0_35px_rgba(0,229,255,0.18)] hover:border-cyan-300 transition-all duration-300 group relative"
-          >
+          {/* Card 1: Strategic Audit */}
+          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400 transition-all duration-300 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 uppercase tracking-wider font-mono">
@@ -48,7 +44,7 @@ export function CoreEngagementsGrid() {
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">The AEObility Blueprint</h3>
                 <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-serif">
-                  A strategic audit and 90-day roadmap to improve how search engines, Maps, and AI systems understand your business.
+                  A strategic audit and 90-day roadmap to improve how search engines, Maps and AI systems understand your business.
                 </p>
               </div>
 
@@ -65,8 +61,7 @@ export function CoreEngagementsGrid() {
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <span>Prioritised implementation roadmap</span>
                 </li>
-                {/* De-nested Risk-Reversal Callout with CSS transition */}
-                <li className="flex items-start gap-2 font-medium text-cyan-300 bg-cyan-950/40 p-2.5 rounded-lg border border-cyan-500/25 transition-all">
+                <li className="flex items-start gap-2 font-medium text-cyan-300">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <span>100% of your $995 Blueprint fee is credited toward eligible implementation sprints.</span>
                 </li>
@@ -76,21 +71,17 @@ export function CoreEngagementsGrid() {
             <div className="pt-8">
               <Link
                 href="/solutions/aeo-blueprint"
-                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-bold text-xs transition-all duration-300 shadow-md group-hover:bg-cyan-300 text-left"
+                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left"
                 title="Explore the 90-Day Blueprint strategic audit and roadmap"
               >
                 <span>Explore the 90-Day Blueprint</span>
-                <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
+                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
           </div>
 
           {/* Card 2: Technical Execution (Featured Gradient Border) */}
-          <div 
-            data-aos="fade-up"
-            data-aos-delay="150"
-            className="relative p-0.5 rounded-2xl bg-gradient-to-b from-cyan-400 via-purple-500 to-cyan-500 shadow-[0_0_30px_rgba(168,85,247,0.25)] transition-all duration-300 group"
-          >
+          <div className="relative p-0.5 rounded-2xl bg-gradient-to-b from-cyan-400 via-purple-500 to-cyan-500 shadow-[0_0_30px_rgba(168,85,247,0.25)] transition-all duration-300 group">
             <div className="flex flex-col justify-between h-full p-6 md:p-8 rounded-[15px] bg-zinc-950/95 backdrop-blur-xl">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -113,20 +104,20 @@ export function CoreEngagementsGrid() {
                 <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>Schema implementation - from $495</span>
+                    <span>Schema implementation — from $495</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>Single-page content rewrite - from $495</span>
+                    <span>Single-page content rewrite — from $495</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>Foundation Implementation - from $3,195</span>
+                    <span>Foundation Implementation — from $3,195</span>
                   </li>
                 </ul>
 
                 <p className="text-[11px] text-zinc-400 font-mono italic pt-1 border-t border-white/5">
-                  Typically delivered over 4-5 working days across a four-week period.
+                  Typically delivered over 4–5 working days across a four-week period.
                 </p>
               </div>
 
@@ -143,11 +134,7 @@ export function CoreEngagementsGrid() {
           </div>
 
           {/* Card 3: Local Visibility */}
-          <div 
-            data-aos="fade-up"
-            data-aos-delay="250"
-            className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group"
-          >
+          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-400 uppercase tracking-wider font-mono">
@@ -169,15 +156,15 @@ export function CoreEngagementsGrid() {
               <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Business information and citation clean-up - from $495</span>
+                  <span>Business information and citation clean-up — from $495</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Local internal-linking improvements - from $695</span>
+                  <span>Local internal-linking improvements — from $695</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Brand Facts Page - from $495</span>
+                  <span>Brand Facts Page — from $495</span>
                 </li>
               </ul>
             </div>

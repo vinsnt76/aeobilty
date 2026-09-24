@@ -91,11 +91,7 @@ export default function HowItWorks() {
           {/* Steps */}
           <div className="lg:col-span-7 space-y-10">
             {/* Step 1 */}
-            <div 
-              className="flex gap-6 items-start"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 01
               </div>
@@ -108,11 +104,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Step 2 */}
-            <div 
-              className="flex gap-6 items-start"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 02
               </div>
@@ -125,11 +117,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Step 3 */}
-            <div 
-              className="flex gap-6 items-start"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <div className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 03
               </div>
@@ -142,11 +130,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Step 4 */}
-            <div 
-              className="flex gap-6 items-start"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
+            <div className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 04
               </div>

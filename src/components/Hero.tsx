@@ -1,21 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import dynamic from 'next/dynamic';
 import { Sparkles, ArrowRight, Globe, Search } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { trackGaEvent } from '@/lib/gtag';
-
-const LiquidGlass = dynamic(
-  () => import('liquid-glass-react').then((mod) => mod.default),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="absolute inset-0 rounded-2xl bg-zinc-950/80 backdrop-blur-md border border-cyan-500/20" />
-    ),
-  }
-);
 
 export function GraphVisual() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -184,87 +173,63 @@ export default function Hero() {
               Discover how Search engines, Google Maps, and AI answer engines understand and recommend your business for the services you provide.
             </p>
 
-            {/* Embedded Telemetry Form Card with Decoupled LiquidGlass Underlay */}
-            <div
-              className="relative rounded-2xl p-6 sm:p-7 overflow-hidden group shadow-2xl shadow-purple-950/20"
-              data-aos="fade-up"
-              data-aos-duration="400"
-            >
-              {/* Layer 0: Decorative Liquid Glass Underlay */}
-              <div className="absolute inset-0 pointer-events-none z-0">
-                <LiquidGlass
-                  blurAmount={18}
-                  displacementScale={18}
-                  saturation={115}
-                  cornerRadius={16}
-                  className="w-full h-full rounded-2xl bg-zinc-950/70"
-                >
-                  <div className="w-full h-full" />
-                </LiquidGlass>
-                {/* Specular top highlight runner */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
+            {/* Embedded Telemetry Form Card with Sprint Glow */}
+            <form onSubmit={handleHeroScanSubmit} className="hero-conversion-card p-6 rounded-2xl relative space-y-4">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none"></div>
+
+              <div>
+                <label htmlFor="hero-url-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Australian Business URL</span>
+                </label>
+                <input
+                  id="hero-url-input"
+                  type="text"
+                  required
+                  value={url}
+                  onChange={e => setUrl(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
+                  placeholder="https://yourbrand.com.au"
+                  className="w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
               </div>
 
-              {/* Layer 1: Un-refracted Semantic Form Elements */}
-              <form onSubmit={handleHeroScanSubmit} className="relative z-10 space-y-4">
-                <div>
-                  <label htmlFor="hero-url-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-1.5 flex items-center gap-1.5">
-                    <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Australian Business URL</span>
-                  </label>
-                  <input
-                    id="hero-url-input"
-                    type="text"
-                    required
-                    value={url}
-                    onChange={e => setUrl(e.target.value)}
-                    onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
-                    placeholder="https://yourbrand.com.au"
-                    className="w-full h-11 px-3.5 rounded-xl bg-black/85 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]"
-                    spellCheck={false}
-                    suppressHydrationWarning
-                  />
-                </div>
+              <div>
+                <label htmlFor="hero-intent-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
+                  <Search className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Primary Search Intent</span>
+                </label>
+                <input
+                  id="hero-intent-input"
+                  type="text"
+                  required
+                  value={intent}
+                  onChange={e => setIntent(e.target.value)}
+                  onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
+                  placeholder="e.g. Physiotherapist Near Me"
+                  className="w-full h-11 px-3.5 rounded-xl bg-black/50 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                  spellCheck={false}
+                  suppressHydrationWarning
+                />
+              </div>
 
-                <div>
-                  <label htmlFor="hero-intent-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-1.5 flex items-center gap-1.5">
-                    <Search className="w-3.5 h-3.5 text-purple-400" />
-                    <span>Primary Search Intent</span>
-                  </label>
-                  <input
-                    id="hero-intent-input"
-                    type="text"
-                    required
-                    value={intent}
-                    onChange={e => setIntent(e.target.value)}
-                    onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
-                    placeholder="e.g. Perth Emergency Plumber"
-                    className="w-full h-11 px-3.5 rounded-xl bg-black/85 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]"
-                    spellCheck={false}
-                    suppressHydrationWarning
-                  />
-                </div>
+              {/* Primary Pill Button (AI Bill Continuity) */}
+              <button
+                type="submit"
+                disabled={!url.trim() || !intent.trim()}
+                className="hero-primary-cta w-full h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-white/20 text-white font-semibold text-sm tracking-wide shadow-lg shadow-purple-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <span>Run Free Visibility Scan</span>
+                <ArrowRight className="w-4 h-4 text-purple-200" />
+              </button>
 
-                {/* Primary Pill Button with Von Restorff Isolation */}
-                <button
-                  type="submit"
-                  disabled={!url.trim() || !intent.trim()}
-                  className="hero-primary-cta w-full h-12 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-white/20 text-white font-bold text-sm tracking-wide shadow-lg shadow-cyan-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  <span>Run Free Visibility Scan</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-200" />
-                </button>
-
-                {/* Frictionless Reassurance Micro-Row */}
-                <div 
-                  className="pt-1 text-center text-xs font-medium text-slate-400 font-mono"
-                  data-aos="fade-up"
-                  data-aos-delay="150"
-                >
-                  Free visibility scan &bull; No email required &bull; Direct diagnostic findings
-                </div>
-              </form>
-            </div>
+              {/* Frictionless Reassurance Micro-Row */}
+              <div className="pt-1 text-center text-xs font-medium text-slate-400 font-mono">
+                Free visibility scan &bull; No email required to start &bull; See your biggest opportunities
+              </div>
+            </form>
 
             {/* Quick-Path Service Hub Links (Full Width Desktop / 2-Column Mobile Stack) */}
             <div className="pt-2 w-full">
