@@ -8,6 +8,7 @@ import HowItWorks from '@/components/HowItWorks';
 import BlueprintSection from '@/components/BlueprintSection';
 import HomepageContactForm from '@/components/forms/HomepageContactForm';
 import Footer from '@/components/Footer';
+import FloatingGlassBar from '@/components/FloatingGlassBar';
 import { Metadata } from 'next';
 
 
@@ -217,6 +218,7 @@ export default function Home() {
       <HowItWorks />
       <BlueprintSection />
       <HomepageContactForm />
+      <FloatingGlassBar />
       <Footer />
     </div>
   );

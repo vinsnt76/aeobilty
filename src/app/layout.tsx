@@ -7,6 +7,7 @@ import BillWidget from "@/components/BillWidget";
 import AIModalAssistant from "@/components/AIModalAssistant";
 import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
 import SiteNavigationSchema from "@/components/navigation/SiteNavigationSchema";
+import AOSProvider from "@/components/providers/AOSProvider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
@@ -463,7 +464,9 @@ export default function RootLayout({
         />
 
 
-        {children}
+        <AOSProvider>
+          {children}
+        </AOSProvider>
         <GlobalConsentBanner />
         <BillWidget />
         <AIModalAssistant />
