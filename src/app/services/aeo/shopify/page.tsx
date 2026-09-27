@@ -241,8 +241,8 @@ export default function ShopifyAeoPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Card 1: Liquid Restructuring */}
-              <div id="liquid-restructuring" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
+              {/* Card 1: Liquid Template Structure */}
+              <div id="liquid-template-structure" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 bg-black border border-white/10 rounded-xl">
@@ -250,19 +250,19 @@ export default function ShopifyAeoPage() {
                     </div>
                     <div>
                       <span className="text-xs font-mono text-cyan-400 font-bold">PILLAR 01</span>
-                      <h3 className="text-base font-bold text-white font-soehne-breit">Restructuring Shopify Liquid for LLM Scraping</h3>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Liquid Template Structure</h3>
                     </div>
                   </div>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    AI search systems and web crawlers ingest products by reading your rendered HTML code. We refactor your Shopify Liquid templates to ensure that unstructured text elements, variant pricing arrays, and product availability criteria are presented in clean, well-scoped blocks. This structure removes code friction and allows crawlers to index your content accurately.
+                    AI crawlers ingest products by parsing rendered HTML. We refactor your Shopify Liquid templates so descriptions, variant prices, and live availability appear in predictable, server-rendered blocks rather than delayed client-side scripts.
                   </p>
                 </div>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: This process customises robots.txt accessibility and manages your crawl budget for extensive product collections.
+                  For developers: We ensure product variants render cleanly in the initial DOM without script dependencies that cause crawler timeouts.
                 </p>
               </div>
 
-              {/* Card 2: Merchant Center Feed */}
+              {/* Card 2: Merchant Feed and Schema Alignment */}
               <div id="merchant-center-feed" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
@@ -271,20 +271,20 @@ export default function ShopifyAeoPage() {
                     </div>
                     <div>
                       <span className="text-xs font-mono text-purple-400 font-bold">PILLAR 02</span>
-                      <h3 className="text-base font-bold text-white font-soehne-breit">Google Merchant Center Feed Optimisation</h3>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Merchant Feed and Schema Alignment</h3>
                     </div>
                   </div>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    AI discovery engines frequently cross-reference live web scrapes with structured feed data to verify product listings. We optimise your Google Merchant Center feed fields (including id, title, link, image_link, availability, price, gtin, brand, and condition), ensuring your external feed signals align perfectly with your on-page data graph.
+                    Conversational search engines verify product claims by cross-referencing on-page JSON-LD against external feeds. We align your Google Merchant Center data with your store schema, keeping identifiers like GTIN, brand, price, and stock status identical across both sources.
                   </p>
                 </div>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: Cross-validates Content API for Shopping payloads against server-rendered JSON-LD graphs.
+                  For developers: Eliminates Content API payload discrepancies against server-rendered Product and Offer schema graphs.
                 </p>
               </div>
 
-              {/* Card 3: Server-Side Conversion Integrity */}
-              <div id="server-side-conversion" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
+              {/* Card 3: Inventory and Variant Reconciliation */}
+              <div id="inventory-variant-reconciliation" className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl space-y-4 text-left scroll-mt-24 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 bg-black border border-white/10 rounded-xl">
@@ -292,15 +292,15 @@ export default function ShopifyAeoPage() {
                     </div>
                     <div>
                       <span className="text-xs font-mono text-cyan-400 font-bold">PILLAR 03</span>
-                      <h3 className="text-base font-bold text-white font-soehne-breit">Server-Side Conversion Integrity</h3>
+                      <h3 className="text-base font-bold text-white font-soehne-breit">Inventory and Variant Reconciliation</h3>
                     </div>
                   </div>
                   <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    To protect your store&apos;s factual footprint across automated platforms, we audit your server-side conversion parameters. We structure your thank-you page scripts, dataLayer integrations, and consent mode parameters to establish complete content boundaries.
+                    Mismatched variant data causes AI shopping engines to misquote prices or drop out-of-stock items from recommendations. We audit your variant arrays and collection hierarchies to ensure bots read live inventory states accurately without hallucinating archived options.
                   </p>
                 </div>
                 <p className="text-[11px] text-zinc-400 font-serif italic border-t border-white/5 pt-2">
-                  For technical teams: This secures data continuity between your internal checkout states and external ingestion points.
+                  For developers: Synchronises multi-variant availability states directly with collection indexes and parent entity IDs.
                 </p>
               </div>
             </div>
