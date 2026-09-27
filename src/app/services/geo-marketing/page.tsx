@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -8,74 +7,69 @@ import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { trackGaEvent } from '@/lib/gtag';
 import { getGeoMarketingSchemaGraph } from '@/lib/schema/geoMarketing';
+import FaqAccordion from '@/components/FaqAccordion';
+import AeoContactSection from '@/components/services/AeoContactSection';
+import AeoStartingPointGrid from '@/components/services/AeoStartingPointGrid';
 import { 
   CheckCircle2, 
   ArrowRight, 
   MapPin, 
-  Globe, 
-  Link as LinkIcon, 
+  Building2, 
   FileText, 
-  ShieldCheck, 
-  Calendar, 
+  Navigation, 
   Code, 
-  HelpCircle, 
-  ChevronDown, 
-  Users,
-  Boxes,
-  FileCheck,
-  Building2,
-  Navigation,
-  DollarSign,
-  Layers,
-  Search,
-  BarChart3,
-  AlertTriangle,
-  XCircle,
-  Sparkles,
-  Check
+  BarChart3, 
+  AlertTriangle, 
+  Layers, 
+  Search, 
+  Calendar, 
+  Boxes, 
+  Check, 
+  Users, 
+  XCircle 
 } from 'lucide-react';
 
+export const metadata: Metadata = {
+  title: "Generative Engine Optimisation (GEO) Services Perth | AEObility",
+  description: "AEObility helps Perth and Australian businesses improve visibility across Google AI Overviews, ChatGPT Search, and Perplexity. Scoped micro-sprints from $495 AUD ex. GST.",
+  alternates: {
+    canonical: "https://aeobility.com.au/services/geo-marketing",
+  },
+  openGraph: {
+    title: "Generative Engine Optimisation (GEO) Services Perth | AEObility",
+    description: "Fix structured signals, business facts, and entity architecture to improve discovery across Google AI features, ChatGPT Search, and Perplexity.",
+    url: "https://aeobility.com.au/services/geo-marketing",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "website",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/services/geo-marketing-services_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "Diagram explaining how Generative Engine Optimisation extends local SEO foundations to improve AI search visibility.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Generative Engine Optimisation (GEO) Services Perth | AEObility",
+    description: "Fix structured signals, business facts, and entity architecture to improve discovery across Google AI features, ChatGPT Search, and Perplexity.",
+    images: ["https://aeobility.com.au/images/services/geo-marketing-services_AEObility.webp"],
+  },
+  keywords: [
+    "generative engine optimisation perth",
+    "geo services perth",
+    "ai search optimisation",
+    "chatgpt search marketing perth",
+    "google ai overviews optimisation",
+    "business facts clean up",
+    "local entity architecture"
+  ]
+};
+
 export default function GeoMarketingPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [contactData, setContactData] = useState({
-    name: '',
-    email: '',
-    website: '',
-    serviceType: 'geo-diagnostic',
-    message: ''
-  });
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  const selectSprintForForm = (typeKey: string) => {
-    setContactData(prev => ({ ...prev, serviceType: typeKey }));
-    const formElement = document.getElementById('geo-contact-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'geo_marketing_contact_form',
-      lead_type: 'geo_enquiry',
-      service_selected: contactData.serviceType,
-      value: 1,
-    });
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setContactSubmitted(false);
-      setContactData({ name: '', email: '', website: '', serviceType: 'geo-diagnostic', message: '' });
-    }, 6000);
-  };
-
   const faqs = [
     {
       question: "Is GEO different from SEO?",
@@ -91,7 +85,7 @@ export default function GeoMarketingPage() {
     },
     {
       question: "Do I need to replace my existing SEO provider?",
-      answer: "No. Our GEO services are designed to work alongside your in-house team, existing SEO agency, web developer, or content partner. We deliver scoped technical implementation, validated structured facts, and practical handover documentation."
+      answer: "No. Our GEO services are designed to work alongside your in-house team, existing SEO partner, web developer, or content partner. We deliver scoped technical implementation, validated structured facts, and practical handover documentation."
     },
     {
       question: "How long does a GEO sprint take?",
@@ -103,73 +97,10 @@ export default function GeoMarketingPage() {
     }
   ];
 
-  const microSprints = [
-    {
-      key: "s1-citation",
-      anchorId: "s1-citation",
-      icon: <Building2 className="w-6 h-6 text-aeo-cyan" />,
-      title: "Business Facts & Citation Clean-Up",
-      code: "SPRINT S1",
-      price: "$495 AUD",
-      priceSub: "ex. GST",
-      scope: "Priority directory profiles & NAP references",
-      description: "Identify and resolve conflicting business names, addresses, phone numbers, and profile details across primary Australian directories and map platforms.",
-      buyerOutcome: "Reduces conflicting business information across priority sources so AI engines can verify core facts without ambiguity.",
-      ctaLabel: "Select Citation Clean-Up"
-    },
-    {
-      key: "s2-service-page",
-      anchorId: "s2-service-page",
-      icon: <FileText className="w-6 h-6 text-aeo-purple" />,
-      title: "AI-Ready Service Page Sprint",
-      code: "SPRINT S2",
-      price: "$495 AUD",
-      priceSub: "ex. GST",
-      scope: "Priority commercial service page",
-      description: "Restructure key service pages with direct answer scaffolding, clear eligibility requirements, location context, and structured proof blocks.",
-      buyerOutcome: "Makes core services, target location relevance, and business differentiation easy for AI search scrapers to extract and cite.",
-      ctaLabel: "Select Service Page Sprint"
-    },
-    {
-      key: "s3-entity-arch",
-      anchorId: "s3-entity-arch",
-      icon: <Navigation className="w-6 h-6 text-aeo-cyan" />,
-      title: "Local Entity Architecture Sprint",
-      code: "SPRINT S3",
-      price: "$695 AUD",
-      priceSub: "ex. GST",
-      scope: "Location hubs & service relationships",
-      description: "Deploy semantic internal linking lattices connecting regional location pages with core commercial services to establish explicit entity relationships.",
-      buyerOutcome: "Clarifies structural relationships between physical locations, service areas, and commercial offerings across your website.",
-      ctaLabel: "Select Entity Architecture"
-    },
-    {
-      key: "s4-schema-val",
-      anchorId: "s4-schema-val",
-      icon: <Code className="w-6 h-6 text-aeo-purple" />,
-      title: "Structured Data Validation Sprint",
-      code: "SPRINT S4",
-      price: "$495 AUD",
-      priceSub: "ex. GST",
-      scope: "Eligible Schema.org JSON-LD nodes",
-      description: "Audit and validate eligible, visible JSON-LD structured data (LocalBusiness, Service, areaServed) and resolve syntax or cross-reference errors.",
-      buyerOutcome: "Validates eligible structured data so search engines receive clean, error-free machine-readable facts backed by visible content.",
-      ctaLabel: "Select Schema Validation"
-    },
-    {
-      key: "s5-reporting-setup",
-      anchorId: "s5-reporting-setup",
-      icon: <BarChart3 className="w-6 h-6 text-aeo-cyan" />,
-      title: "AI Visibility Reporting Setup",
-      code: "SPRINT S5",
-      price: "$495 AUD",
-      priceSub: "ex. GST",
-      scope: "Auditable prompt set & tracking baseline",
-      description: "Establish a customised, auditable baseline prompt set covering your core services, locations, and buyer questions, with recurring citation tracking.",
-      buyerOutcome: "Establishes an auditable baseline to monitor brand inclusion, citation accuracy, and competitor presence over time.",
-      ctaLabel: "Select Reporting Setup"
-    }
-  ];
+  const formattedFaqs = faqs.map((f) => ({
+    q: f.question,
+    a: f.answer,
+  }));
 
   const jsonLdGraph = getGeoMarketingSchemaGraph(faqs);
 
@@ -185,27 +116,27 @@ export default function GeoMarketingPage() {
       <SubNavPills items={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
-      <main className="flex-grow w-full py-12">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-[80px] space-y-16">
+      <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
+        <div className="max-w-5xl mx-auto px-6 space-y-16">
 
           {/* 1. Hero Block */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
               <MapPin className="w-4 h-4 text-aeo-cyan" />
-              <span>Perth & Regional AI Search Optimisation</span>
+              <span>Perth &amp; Regional AI Search Optimisation</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               Generative Engine Optimisation (GEO) Services <span className="text-gradient-aeo">in Perth</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
-              Find out why your business is missing, misrepresented or uncited in AI search—and fix the content, entity and local visibility signals that make it easier to verify.
+              Find out why your business is missing, misrepresented or uncited in AI search, and fix the content, entity and local visibility signals that make it easier to verify.
             </p>
 
             <div className="space-y-3 max-w-3xl mx-auto text-base text-zinc-300 font-serif leading-relaxed">
               <p>
-                AEObility helps Perth and Australian businesses improve how they are understood across Google AI features, ChatGPT Search, Perplexity and other AI-assisted discovery experiences. We start by testing the buyer questions that matter, identifying visibility and accuracy gaps, then implementing practical fixes across your website, business facts, structured data and supporting local signals. GEO is not a replacement for SEO—it is a focused extension of it for search experiences that synthesise answers instead of simply ranking links.
+                AEObility helps Perth and Australian businesses improve how they are understood across Google AI features, ChatGPT Search, and Perplexity. We test the buyer questions that matter, identify visibility gaps, and fix the structured signals that make your services easy to verify. GEO does not replace SEO. It extends your existing organic foundations for search engines that synthesise answers instead of listing links.
               </p>
             </div>
 
@@ -218,21 +149,17 @@ export default function GeoMarketingPage() {
                 <Search className="w-4 h-4 text-black" />
                 <span>Run an AI Visibility Scan</span>
               </Link>
-              <button
-                type="button"
-                onClick={() => {
-                  const element = document.getElementById('local-sprints');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <a
+                href="#local-sprints"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-semibold text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap"
               >
                 <span>View GEO Micro-Sprints</span>
                 <ArrowRight className="w-4 h-4 text-cyan-400" />
-              </button>
+              </a>
             </div>
 
             <p className="text-xs text-zinc-400 font-mono pt-1">
-              Fixed scope, practical deliverables, no long-term retainer required.
+              Fixed scope, practical deliverables, zero ongoing retainer required.
             </p>
 
             {/* Featured Image Hero Graphic */}
@@ -295,6 +222,14 @@ export default function GeoMarketingPage() {
               </h2>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
                 While traditional SEO focuses on keyword positions and backlink volume, Generative Engine Optimisation (GEO) focuses on vector similarity and factual verification. To understand how AI search models digest structured facts, review our <Link href="/knowledge-hub/what-is-aeo" className="text-cyan-400 underline hover:text-cyan-300 font-medium">comprehensive Answer Engine Optimisation definition guide</Link>.
+              </p>
+            </div>
+
+            {/* Practical Evidence Block: 90-Day Build */}
+            <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs sm:text-sm text-cyan-200 font-serif leading-relaxed space-y-1">
+              <strong className="text-white font-semibold font-sans block text-sm">How We Proved This: Our 90-Day Build</strong>
+              <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                We built this service framework by troubleshooting our own business footprint over 90 days. By connecting our ABN registration (ABN: 61 029 803 255), physical Perth entity coordinates, and atomic service definitions, we eliminated brand confusion across generative benchmark runs. We use this exact audit workflow on client sites.
               </p>
             </div>
 
@@ -379,129 +314,23 @@ export default function GeoMarketingPage() {
                   <span className="text-3xl font-extrabold text-cyan-300 font-mono block">$995 AUD</span>
                   <span className="text-xs text-zinc-400 font-mono block mt-0.5">ex. GST • Standalone Audit &amp; Roadmap</span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => selectSprintForForm('geo-diagnostic')}
+                <a
+                  href="#geo-contact-form"
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
                   <span>Book GEO Diagnostic</span>
-                </button>
+                </a>
               </div>
             </div>
           </section>
 
-          {/* 5. GEO Micro-Sprints Catalogue */}
-          <section id="local-sprints" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-300 font-mono">
-                <span>Fixed Scope Sprints</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">GEO Micro-Sprints</h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Fixed-scope, fast turnaround implementations focused on specific local and entity outcomes.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {microSprints.slice(0, 3).map((sprint, idx) => (
-                <div id={sprint.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
-                        {sprint.icon}
-                      </div>
-                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
-                        {sprint.code}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{sprint.title}</h3>
-                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
-                        {sprint.price} <span className="text-[10px] text-zinc-400 font-normal">{sprint.priceSub}</span>
-                      </div>
-                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {sprint.scope}</span>
-                    </div>
-
-                    <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                      {sprint.description}
-                    </p>
-
-                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-300 font-serif leading-relaxed">
-                      <strong className="text-cyan-300 block mb-0.5 font-mono font-bold">Buyer Outcome:</strong>
-                      <span>{sprint.buyerOutcome}</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/5">
-                    <button
-                      type="button"
-                      onClick={() => selectSprintForForm(sprint.key)}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
-                    >
-                      <span>{sprint.ctaLabel}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {microSprints.slice(3).map((sprint, idx) => (
-                <div id={sprint.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
-                        {sprint.icon}
-                      </div>
-                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
-                        {sprint.code}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{sprint.title}</h3>
-                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
-                        {sprint.price} <span className="text-[10px] text-zinc-400 font-normal">{sprint.priceSub}</span>
-                      </div>
-                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {sprint.scope}</span>
-                    </div>
-
-                    <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                      {sprint.description}
-                    </p>
-
-                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-300 font-serif leading-relaxed">
-                      <strong className="text-cyan-300 block mb-0.5 font-mono font-bold">Buyer Outcome:</strong>
-                      <span>{sprint.buyerOutcome}</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/5">
-                    <button
-                      type="button"
-                      onClick={() => selectSprintForForm(sprint.key)}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
-                    >
-                      <span>{sprint.ctaLabel}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Deliverables Ownership Callout */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">Full Deliverable Ownership</strong>
-                  <span>You own all completed page modifications, schema code, and handover notes. Deliverables can be implemented by AEObility or handed directly to your internal team or web developer.</span>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* 5. GEO Micro-Sprints Grid */}
+          <AeoStartingPointGrid
+            id="local-sprints"
+            contactAnchor="#geo-contact-form"
+            diagnosticAnchor="#geo-diagnostic"
+          />
 
           {/* 6. Foundation Implementation Section */}
           <section id="foundation-implementation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
@@ -555,14 +384,13 @@ export default function GeoMarketingPage() {
                   <span className="text-2xl sm:text-3xl font-extrabold text-purple-300 font-mono block">From $3,195 AUD ex. GST</span>
                   <span className="text-xs text-zinc-400 font-mono block mt-0.5 font-normal">Delivered across 4 business weeks</span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => selectSprintForForm('foundation')}
+                <a
+                  href="#geo-contact-form"
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
                   <span>Discuss Foundation Scope</span>
-                </button>
+                </a>
               </div>
             </div>
           </section>
@@ -711,175 +539,27 @@ export default function GeoMarketingPage() {
           {/* 9. FAQ Accordion Section */}
           <section id="faq" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently Asked Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
               <p className="text-xs sm:text-sm text-zinc-400 font-serif">Direct answers to common questions about AEObility GEO services.</p>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-3">
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaqIndex === idx;
-                return (
-                  <div
-                    key={idx}
-                    className="border border-white/10 rounded-xl bg-zinc-950/80 overflow-hidden transition-colors"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(idx)}
-                      className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-sm text-white hover:text-cyan-300 font-soehne-breit focus:outline-none"
-                    >
-                      <span>{faq.question}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 text-cyan-400 shrink-0 transition-transform duration-200 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    <div
-                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
-                        isOpen ? 'block' : 'hidden'
-                      }`}
-                    >
-                      {faq.answer}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="max-w-3xl mx-auto">
+              <FaqAccordion faqs={formattedFaqs} />
             </div>
           </section>
 
           {/* 10. Direct Contact / Enquiry Form Section */}
-          <section id="geo-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
-            <div className="max-w-md mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-white font-soehne-breit">Send a GEO Enquiry</h2>
-              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Tell us about your business services and AI search priorities. We will review your details and confirm the scope and investment before you commit.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
-                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak with an AEObility specialist based in Perth.</span>
-              </div>
-            </div>
-
-            {/* Inline Contact Form */}
-            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
-              <div className="flex items-center justify-between gap-4 mb-1.5">
-                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss Your GEO Priority</h3>
-                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
-                  Fixed Scope
-                </span>
-              </div>
-              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Select the diagnostic or sprint option you are considering, or select &quot;Help me decide&quot;.
-              </p>
-
-              {contactSubmitted ? (
-                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
-                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-                  <h4 className="font-bold text-white text-base">GEO Enquiry Received</h4>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you for reaching out. Our AEObility team will review your website details and get in touch within 24 business hours.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-name">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="geo-name"
-                        required
-                        value={contactData.name}
-                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
-                        placeholder="e.g. Sarah Jenkins"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/15 text-white text-xs placeholder:text-zinc-600 focus:outline-none focus:border-cyan-400"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-email">
-                        Work Email
-                      </label>
-                      <input
-                        type="email"
-                        id="geo-email"
-                        required
-                        value={contactData.email}
-                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
-                        placeholder="sarah@example.com.au"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/15 text-white text-xs placeholder:text-zinc-600 focus:outline-none focus:border-cyan-400"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-website">
-                        Website URL
-                      </label>
-                      <input
-                        type="url"
-                        id="geo-website"
-                        required
-                        value={contactData.website}
-                        onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
-                        placeholder="https://example.com.au"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/15 text-white text-xs placeholder:text-zinc-600 focus:outline-none focus:border-cyan-400"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-service">
-                        Option Under Consideration
-                      </label>
-                      <select
-                        id="geo-service"
-                        value={contactData.serviceType}
-                        onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/15 text-white text-xs focus:outline-none focus:border-cyan-400"
-                      >
-                        <option value="geo-diagnostic">GEO Visibility Diagnostic ($995 AUD ex. GST)</option>
-                        <option value="s1-citation">Sprint S1: Business Facts Clean-Up ($495 AUD ex. GST)</option>
-                        <option value="s2-service-page">Sprint S2: AI-Ready Service Page ($495 AUD ex. GST)</option>
-                        <option value="s3-entity-arch">Sprint S3: Local Entity Architecture ($695 AUD ex. GST)</option>
-                        <option value="s4-schema-val">Sprint S4: Schema Validation ($495 AUD ex. GST)</option>
-                        <option value="s5-reporting-setup">Sprint S5: AI Reporting Setup ($495 AUD ex. GST)</option>
-                        <option value="foundation">Foundation Implementation (From $3,195 AUD ex. GST)</option>
-                        <option value="unsure">Not sure yet — Help me decide</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="geo-message">
-                      Details or Buyer Questions to Test
-                    </label>
-                    <textarea
-                      id="geo-message"
-                      rows={3}
-                      value={contactData.message}
-                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
-                      placeholder="Tell us about your services, locations, or current AI visibility concerns..."
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/15 text-white text-xs placeholder:text-zinc-600 focus:outline-none focus:border-cyan-400 resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs hover:scale-[1.01] transition-transform shadow-[0_0_15px_rgba(0,205,216,0.3)] cursor-pointer"
-                  >
-                    Submit Enquiry
-                  </button>
-
-                  <p className="text-[10px] text-zinc-400 text-center font-mono pt-1">
-                    AEObility respects your privacy. Zero ongoing contract lock-in.
-                  </p>
-                </form>
-              )}
-            </div>
-          </section>
+          <AeoContactSection
+            id="geo-contact-form"
+            badgeTitle="GEO Sprint"
+            heading="Discuss Your GEO Priority"
+            subheading="Tell us about your business services and AI search priorities. We will review your details and confirm scope and pricing before you commit."
+            formId="geo_marketing_contact_form"
+            leadType="geo_enquiry"
+            buttonText="Submit Enquiry"
+            receivedHeading="GEO Enquiry Received"
+            founderCallout="You will speak directly with Vinnie Baker in Perth to confirm feasibility before any work starts."
+          />
 
         </div>
       </main>

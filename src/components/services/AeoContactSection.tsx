@@ -14,6 +14,7 @@ interface AeoContactSectionProps {
   leadType?: string;
   buttonText?: string;
   receivedHeading?: string;
+  founderCallout?: string;
 }
 
 export default function AeoContactSection({
@@ -24,7 +25,8 @@ export default function AeoContactSection({
   formId = "canonical_aeo_contact_form",
   leadType = "aeo_services_enquiry",
   buttonText = "Discuss AEO Services",
-  receivedHeading = "AEO Enquiry Received"
+  receivedHeading = "AEO Enquiry Received",
+  founderCallout = "You will speak directly with Vinnie Baker in Perth to confirm feasibility before any work starts."
 }: AeoContactSectionProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactData, setContactData] = useState({
@@ -72,7 +74,7 @@ export default function AeoContactSection({
         </p>
         <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
           <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-          <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
+          <span>{founderCallout}</span>
         </div>
       </div>
 
