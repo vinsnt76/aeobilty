@@ -1,12 +1,12 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
+import FaqAccordion from '@/components/FaqAccordion';
 import { 
   Building2, 
   Search, 
@@ -14,32 +14,60 @@ import {
   ArrowRight, 
   ShieldCheck, 
   HelpCircle,
-  FileCheck,
   Zap,
-  Sparkles,
-  Layers,
-  ChevronDown
+  Layers
 } from 'lucide-react';
 
+export const metadata: Metadata = {
+  title: "AI Search Agency & AEO Consultancy | AEObility Australia",
+  description: "Australia's specialist AI search marketing consultancy. Generative Engine Optimisation, nested JSON-LD schema graph engineering, and brand citation strategy.",
+  alternates: {
+    canonical: "https://aeobility.com.au/services/ai-search-agency",
+  },
+  openGraph: {
+    title: "AI Search Agency & AEO Consultancy | AEObility Australia",
+    description: "Australia's specialist AI search marketing consultancy. Generative Engine Optimisation, nested JSON-LD schema graph engineering, and brand citation strategy.",
+    url: "https://aeobility.com.au/services/ai-search-agency",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "website",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/services/ai-search-marketing_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "AEObility AI Search Agency consulting interface mapping entity relationship graphs and AI search retrieval pipelines.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Search Agency & AEO Consultancy | AEObility Australia",
+    description: "Australia's specialist AI search marketing consultancy. Generative Engine Optimisation, nested JSON-LD schema graph engineering, and brand citation strategy.",
+    images: ["https://aeobility.com.au/images/services/ai-search-marketing_AEObility.webp"],
+  },
+  keywords: [
+    "ai search agency",
+    "aeo consultancy australia",
+    "generative engine optimisation agency",
+    "schema graph engineering",
+    "ai search marketing perth"
+  ]
+};
+
 export default function AiSearchAgencyPage() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
-
   const sprintOffers = [
     {
       sku: "GEO-DIAGNOSTIC-AUDIT",
       title: "GEO Visibility Diagnostic",
       price: "$995 AUD",
-      priceSub: "100% GST-Inclusive • Standalone Audit & Strategic Roadmap",
+      priceSub: "ex. GST • Standalone Audit & Strategic Roadmap",
       description: "Diagnostic starting point evaluating how conversational search engines parse and recommend your business.",
       deliverables: [
         "Live prompt testing across ChatGPT Search, Google AI Overviews, and Perplexity.",
         "Competitor citation overlap and authority gap analysis.",
         "Nested JSON-LD schema audit and structured data roadmap.",
-        "100% of $995 fee credited toward Foundation Implementation within 60 days."
+        "100% of $995 AUD fee credited toward Foundation Implementation within 60 days."
       ],
       link: "/diagnostic",
       ctaLabel: "Book Diagnostic Scan"
@@ -48,12 +76,12 @@ export default function AiSearchAgencyPage() {
       sku: "GEO-FOUNDATION-4WK",
       title: "Foundation Implementation Sprint",
       price: "From $3,195 AUD",
-      priceSub: "100% GST-Inclusive • 4 Structured Business Weeks",
+      priceSub: "ex. GST • 4 Structured Business Weeks",
       description: "Full implementation sprint engineering your digital footprint for high-confidence AI engine retrieval.",
       deliverables: [
         "Service page atomic answer block rewrites for LLM extraction.",
         "Canonical Brand Facts directory setup with entity relationship mapping.",
-        "Nested JSON-LD schema graph implementation (Organization, Service, FAQ).",
+        "Nested JSON-LD schema graph implementation (Organisation, Service, FAQ).",
         "Internal semantic linking lattice and baseline citation tracking setup."
       ],
       link: "/solutions/aeo-sprint",
@@ -82,7 +110,7 @@ export default function AiSearchAgencyPage() {
   const faqs = [
     {
       question: "What does an AI Search Agency do?",
-      answer: "An AI Search Agency specializes in Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO). We refactor website content, nested JSON-LD schema markup, and canonical business fact directories so conversational search engines (Google AI Overviews, ChatGPT, Perplexity) accurately cite and recommend your brand."
+      answer: "An AI Search Agency specialises in Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO). We refactor website content, nested JSON-LD schema markup, and canonical business fact directories so conversational search engines (Google AI Overviews, ChatGPT, Perplexity) accurately cite and recommend your brand."
     },
     {
       question: "Why choose AEObility over a traditional SEO agency?",
@@ -97,14 +125,19 @@ export default function AiSearchAgencyPage() {
       answer: "The standalone GEO Visibility Diagnostic is delivered within 5 business days. The full Foundation Implementation Sprint is executed across 4 structured business weeks."
     },
     {
-      question: "Is the $995 Diagnostic price credited toward full implementation?",
-      answer: "Yes. 100% of your $995 Diagnostic fee is credited directly toward your Foundation Implementation Sprint if booked within 60 days of audit delivery."
+      question: "Is the $995 AUD Diagnostic price credited toward full implementation?",
+      answer: "Yes. 100% of your $995 AUD Diagnostic fee is credited directly toward your Foundation Implementation Sprint if booked within 60 days of audit delivery."
     },
     {
       question: "Do you guarantee #1 rankings or ChatGPT citations?",
-      answer: "No consultant can guarantee citations or rankings in third-party AI platforms. AEObility optimizes entity clarity, structured data, and verifiable evidence so search engines have maximum confidence to cite your business accurately."
+      answer: "No consultant can guarantee citations or rankings in third-party AI platforms. AEObility optimises entity clarity, structured data, and verifiable evidence so search engines have maximum confidence to cite your business accurately."
     }
   ];
+
+  const formattedFaqs = faqs.map((f) => ({
+    q: f.question,
+    a: f.answer,
+  }));
 
   const schemaGraph = {
     "@context": "https://schema.org",
@@ -114,9 +147,9 @@ export default function AiSearchAgencyPage() {
         "@id": "https://aeobility.com.au/services/ai-search-agency#service",
         "name": "AEObility AI Search Agency & Consultancy",
         "url": "https://aeobility.com.au/services/ai-search-agency",
-        "description": "Australia's specialist AI search agency offering Generative Engine Optimisation, schema graph engineering, and brand citation strategy.",
+        "description": "Australia's specialist AI search marketing consultancy offering Generative Engine Optimisation, schema graph engineering, and brand citation strategy.",
         "provider": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         },
@@ -297,7 +330,7 @@ export default function AiSearchAgencyPage() {
             </div>
           </section>
 
-          {/* Expanded FAQ Section (Level 3 Quiet Surface) */}
+          {/* Expanded FAQ Section */}
           <section className="border-t border-white/10 pt-12 space-y-6">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan font-semibold uppercase tracking-wider">
@@ -307,28 +340,8 @@ export default function AiSearchAgencyPage() {
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Frequently asked questions about AI Search Agency consulting</h2>
             </div>
 
-            <div className="space-y-3 max-w-4xl">
-              {faqs.map((faq, idx) => {
-                const isOpen = activeFaq === idx;
-                return (
-                  <div key={idx} className="bg-slate-950/70 border border-white/10 rounded-xl overflow-hidden transition-all">
-                    <button
-                      onClick={() => toggleFaq(idx)}
-                      className="w-full text-left p-5 flex justify-between items-center gap-4 hover:bg-white/[0.02] transition-colors cursor-pointer"
-                    >
-                      <span className="font-bold text-sm sm:text-base text-slate-100 font-soehne-breit pr-4">{faq.question}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 text-aeo-cyan shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                      />
-                    </button>
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-60 border-t border-white/10 bg-black/50' : 'max-h-0'}`}
-                    >
-                      <p className="p-5 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">{faq.answer}</p>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="max-w-4xl">
+              <FaqAccordion items={formattedFaqs} />
             </div>
           </section>
 

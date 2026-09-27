@@ -9,10 +9,12 @@ interface FaqItem {
 }
 
 interface FaqAccordionProps {
-  faqs: FaqItem[];
+  faqs?: FaqItem[];
+  items?: FaqItem[];
 }
 
-export default function FaqAccordion({ faqs }: FaqAccordionProps) {
+export default function FaqAccordion({ faqs, items }: FaqAccordionProps) {
+  const faqList = faqs || items || [];
   // Questions 0 and 1 open by default for optimal initial scan
   const [openSet, setOpenSet] = useState<Set<number>>(new Set([0, 1]));
 
@@ -30,7 +32,7 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
 
   return (
     <div className="space-y-3 w-full">
-      {faqs.map((faq, idx) => {
+      {faqList.map((faq, idx) => {
         const isOpen = openSet.has(idx);
         return (
           <div

@@ -1,6 +1,5 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -11,16 +10,47 @@ import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   MapPin, 
   Search, 
-  CheckCircle2, 
   ArrowRight, 
-  UserCheck, 
-  ShieldCheck, 
   Phone, 
-  Mail,
-  Building2,
-  Award,
   HelpCircle
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Freelance SEO Specialist Perth WA | Vince Baker | AEObility",
+  description: "Senior Perth freelance SEO specialist Vince Baker. Local SEO, Schema.org microdata, technical site audits, and Generative Engine Optimisation (GEO) for WA businesses.",
+  alternates: {
+    canonical: "https://aeobility.com.au/services/perth/seo-specialist",
+  },
+  openGraph: {
+    title: "Freelance SEO Specialist Perth WA | Vince Baker | AEObility",
+    description: "Senior Perth freelance SEO specialist Vince Baker. Local SEO, Schema.org microdata, technical site audits, and Generative Engine Optimisation (GEO) for WA businesses.",
+    url: "https://aeobility.com.au/services/perth/seo-specialist",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "website",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+        width: 1200,
+        height: 800,
+        alt: "Vince Baker - Lead Freelance SEO & AEO Specialist in Perth, Western Australia.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freelance SEO Specialist Perth WA | Vince Baker | AEObility",
+    description: "Senior Perth freelance SEO specialist Vince Baker. Local SEO, Schema.org microdata, and Generative Engine Optimisation (GEO).",
+    images: ["https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png"],
+  },
+  keywords: [
+    "freelance seo specialist perth",
+    "seo specialist perth wa",
+    "vince baker seo consultant perth",
+    "local seo perth",
+    "aeo specialist perth"
+  ]
+};
 
 export default function PerthSeoSpecialistPage() {
   const suburbs = ["Perth, WA", "Joondalup", "Fremantle", "Mandurah", "Subiaco", "Osborne Park", "Balcatta", "Cannington"];

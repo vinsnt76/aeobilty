@@ -15,6 +15,7 @@ interface AeoContactSectionProps {
   buttonText?: string;
   receivedHeading?: string;
   founderCallout?: string;
+  defaultService?: string;
 }
 
 export default function AeoContactSection({
@@ -26,14 +27,15 @@ export default function AeoContactSection({
   leadType = "aeo_services_enquiry",
   buttonText = "Discuss AEO Services",
   receivedHeading = "AEO Enquiry Received",
-  founderCallout = "You will speak directly with Vinnie Baker in Perth to confirm feasibility before any work starts."
+  founderCallout = "You will speak directly with Vinnie Baker in Perth to confirm feasibility before any work starts.",
+  defaultService = "unsure"
 }: AeoContactSectionProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactData, setContactData] = useState({
     name: '',
     email: '',
     website: '',
-    serviceType: 'unsure',
+    serviceType: defaultService,
     message: '',
   });
 
