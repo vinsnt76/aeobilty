@@ -52,7 +52,7 @@ export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
       className={`w-full sticky top-16 z-30 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 relative transition-all duration-300 ease-in-out ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+        isVisible ? 'transform-none opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
       }`}
     >
       {/* Subtle Right Edge Fade for Mobile Horizontal Scroll Discovery */}
