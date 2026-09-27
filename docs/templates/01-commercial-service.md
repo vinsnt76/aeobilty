@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 * **IA & SLM Focus Keyphrase Alignment:** `aeo services` (from `AEObility -IA & SLM.csv` row 6).
 * **Intent Family:** *Commercial Decision Intent* (Evaluative & Transactional prompts: *"how much does answer engine optimisation cost", "AEO agency Australia", "AEO vs SEO comparison", "Shopify AEO services"*).
 * **Atomic Answer Block (First-Fold Retrieval Anchor):**
-  - **Position:** Housed directly beneath H1/H2 within the first 100 words above the fold.
+  - **Position:** Housed immediately beneath the featured hero banner and primary CTAs (or directly beneath H1/H2) to anchor the top fold.
   - **Formula:** 
     1. *Verdict:* "Answer Engine Optimisation (AEO) restructures your digital footprint, business facts, and credentials so AI answer engines (ChatGPT, Perplexity, Google AI Overviews) retrieve and cite your brand accurately."
     2. *Mechanism:* "AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema graphs and atomic content blocks."
