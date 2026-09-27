@@ -1,0 +1,697 @@
+[
+  {
+    "route": "/about",
+    "file": "src/app/about/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      }
+    ]
+  },
+  {
+    "route": "/about/[slug]",
+    "file": "src/app/about/[slug]/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      }
+    ]
+  },
+  {
+    "route": "/book",
+    "file": "src/app/book/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/brand-facts",
+    "file": "src/app/brand-facts/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/contact",
+    "file": "src/app/contact/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      }
+    ]
+  },
+  {
+    "route": "/diagnostic",
+    "file": "src/app/diagnostic/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/aeo",
+    "file": "src/app/knowledge-hub/aeo/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/ai-seo-tools",
+    "file": "src/app/knowledge-hub/ai-seo-tools/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: optimization -> optimisation"
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/articles/aeo-vs-seo",
+    "file": "src/app/knowledge-hub/articles/aeo-vs-seo/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 8 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework",
+    "file": "src/app/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/entity-authority-building",
+    "file": "src/app/knowledge-hub/articles/entity-authority-building/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 1 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
+    "file": "src/app/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/machine-legibility-data-provenance",
+    "file": "src/app/knowledge-hub/articles/machine-legibility-data-provenance/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
+    "file": "src/app/knowledge-hub/articles/optimising-for-different-ai-search-engines/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles",
+    "file": "src/app/knowledge-hub/articles/page.tsx",
+    "archetype": "07-hub-index",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/positional-bias-in-retrieval",
+    "file": "src/app/knowledge-hub/articles/positional-bias-in-retrieval/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/retrieval-augmented-generation",
+    "file": "src/app/knowledge-hub/articles/retrieval-augmented-generation/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/structured-data-query-fan-out",
+    "file": "src/app/knowledge-hub/articles/structured-data-query-fan-out/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/articles/telemetry-diagnostic-architecture",
+    "file": "src/app/knowledge-hub/articles/telemetry-diagnostic-architecture/page.tsx",
+    "archetype": "04-concept-article",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
+    "file": "src/app/knowledge-hub/case-studies/aeo-geo-blueprint-90-days/page.tsx",
+    "archetype": "05-evidence-case-study",
+    "issues": [
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: optimized -> optimised, Organization -> organisation"
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/case-studies/baby-bento",
+    "file": "src/app/knowledge-hub/case-studies/baby-bento/page.tsx",
+    "archetype": "05-evidence-case-study",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 6 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/case-studies",
+    "file": "src/app/knowledge-hub/case-studies/page.tsx",
+    "archetype": "07-hub-index",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/geo",
+    "file": "src/app/knowledge-hub/geo/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 8 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/guides/aeo",
+    "file": "src/app/knowledge-hub/guides/aeo/page.tsx",
+    "archetype": "06-practical-tutorial",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/guides",
+    "file": "src/app/knowledge-hub/guides/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub",
+    "file": "src/app/knowledge-hub/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/semantic-seo",
+    "file": "src/app/knowledge-hub/semantic-seo/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
+    "file": "src/app/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo/page.tsx",
+    "archetype": "06-practical-tutorial",
+    "issues": [
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: Organization -> organisation"
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/tutorials",
+    "file": "src/app/knowledge-hub/tutorials/page.tsx",
+    "archetype": "07-hub-index",
+    "issues": []
+  },
+  {
+    "route": "/knowledge-hub/what-is-aeo",
+    "file": "src/app/knowledge-hub/what-is-aeo/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      }
+    ]
+  },
+  {
+    "route": "/knowledge-hub/what-is-seo-optimisation",
+    "file": "src/app/knowledge-hub/what-is-seo-optimisation/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 7 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "file": "src/app/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: Optimization -> optimisation"
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "file": "src/app/privacy/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/services/aeo/comparison",
+    "file": "src/app/services/aeo/comparison/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/aeo/constraints",
+    "file": "src/app/services/aeo/constraints/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 1 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/services/aeo/costs-timing",
+    "file": "src/app/services/aeo/costs-timing/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": []
+  },
+  {
+    "route": "/services/aeo/definition",
+    "file": "src/app/services/aeo/definition/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": []
+  },
+  {
+    "route": "/services/aeo/local-business",
+    "file": "src/app/services/aeo/local-business/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 4 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/aeo",
+    "file": "src/app/services/aeo/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 3 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/aeo/procedures",
+    "file": "src/app/services/aeo/procedures/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/aeo/shopify",
+    "file": "src/app/services/aeo/shopify/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-agency",
+    "file": "src/app/services/ai-search-agency/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: optimizes -> optimises, specializes -> specialises, Organization -> organisation"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing/adelaide",
+    "file": "src/app/services/ai-search-marketing/adelaide/page.tsx",
+    "archetype": "03-local-intent",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 6 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing/brisbane",
+    "file": "src/app/services/ai-search-marketing/brisbane/page.tsx",
+    "archetype": "03-local-intent",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing/melbourne",
+    "file": "src/app/services/ai-search-marketing/melbourne/page.tsx",
+    "archetype": "03-local-intent",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: optimization -> optimisation, behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing",
+    "file": "src/app/services/ai-search-marketing/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 3 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing/perth",
+    "file": "src/app/services/ai-search-marketing/perth/page.tsx",
+    "archetype": "03-local-intent",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 6 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/ai-search-marketing/sydney",
+    "file": "src/app/services/ai-search-marketing/sydney/page.tsx",
+    "archetype": "03-local-intent",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services/geo-marketing",
+    "file": "src/app/services/geo-marketing/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 3 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/services",
+    "file": "src/app/services/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/services/perth/seo-specialist",
+    "file": "src/app/services/perth/seo-specialist/page.tsx",
+    "archetype": "01-commercial-service",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      }
+    ]
+  },
+  {
+    "route": "/solutions/aeo-blueprint",
+    "file": "src/app/solutions/aeo-blueprint/page.tsx",
+    "archetype": "02-commercial-solution",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 1 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      }
+    ]
+  },
+  {
+    "route": "/solutions/aeo-sprint",
+    "file": "src/app/solutions/aeo-sprint/page.tsx",
+    "archetype": "02-commercial-solution",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/solutions/geo-services",
+    "file": "src/app/solutions/geo-services/page.tsx",
+    "archetype": "02-commercial-solution",
+    "issues": [
+      {
+        "rule": "Metadata Export",
+        "severity": "MEDIUM",
+        "message": "Missing direct metadata or generateMetadata export on server component."
+      },
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      }
+    ]
+  },
+  {
+    "route": "/solutions",
+    "file": "src/app/solutions/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Next.js 15 Server Component Root",
+        "severity": "HIGH",
+        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
+      },
+      {
+        "rule": "Brand Style: No Em Dashes",
+        "severity": "LOW",
+        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
+      },
+      {
+        "rule": "Australian English (AU)",
+        "severity": "MEDIUM",
+        "message": "Potential US English variants detected in prose: behavior -> behaviour"
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "file": "src/app/terms/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": []
+  },
+  {
+    "route": "/vince-baker",
+    "file": "src/app/vince-baker/page.tsx",
+    "archetype": "08-core-utility",
+    "issues": [
+      {
+        "rule": "Strict Semantic Single H1",
+        "severity": "HIGH",
+        "message": "No <h1> tag detected in page.tsx."
+      }
+    ]
+  }
+]
