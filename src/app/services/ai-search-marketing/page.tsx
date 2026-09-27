@@ -136,9 +136,7 @@ export default function AISearchMarketingPage() {
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
-        <div className="max-w-5xl mx-auto px-6 space-y-16">
-
-          {/* 1. Hero Block (Entity Disambiguation) */}
+        <div className="max-w-5xl mx-auto px-6 space-y-16">          {/* 1. Hero Block (Entity Disambiguation) */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-aeo-cyan uppercase tracking-widest font-semibold">
               <Cpu className="w-4 h-4 text-aeo-cyan" />
@@ -151,7 +149,7 @@ export default function AISearchMarketingPage() {
 
             <div className="space-y-4 max-w-3xl mx-auto">
               <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
-                AEObility structures your brand facts so AI search engines, Google Maps, and conversational models accurately understand, cite, and recommend your services.
+                <strong className="text-white font-semibold font-sans">AI Search Marketing (Perth):</strong> AEObility is an independent digital business in Perth that prepares websites for answer-led search. We structure brand facts, publish self-contained answer blocks, and resolve entity ambiguity so generative models and local maps can reliably cite your services.
               </p>
 
               <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs sm:text-sm text-cyan-200 font-serif leading-relaxed">
@@ -217,7 +215,7 @@ export default function AISearchMarketingPage() {
           <section id="atomic-answer-unit" className="scroll-mt-24">
             <div className="atomic-answer-block bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-8 rounded-2xl space-y-4 shadow-[0_0_25px_rgba(0,229,255,0.1)]" data-entity-type="AnswerBlock">
               <p className="atomic-declaration text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
-                <strong className="text-white font-bold font-soehne-breit">AI Search Marketing (Perth):</strong> AEObility is a technical AI search marketing firm in Perth that executes native Answer Engine Optimisation (AEO) using proprietary NLP workflows, automated multimedia video generation, and open-standard Model Context Protocol (MCP) servers managed via our diagnostic assistant, AI Bill.
+                <strong className="text-white font-bold font-soehne-breit">AI Search Marketing (Perth):</strong> AEObility is an independent digital business in Perth that prepares websites for answer-led search. We structure brand facts, publish self-contained answer blocks, and resolve entity ambiguity so generative models and local maps can reliably cite your services.
               </p>
               <ul className="atomic-supporting-points space-y-2 text-xs sm:text-sm text-zinc-300 font-serif list-disc pl-5 marker:text-cyan-400">
                 <li><strong className="text-white font-semibold">Entity Disambiguation:</strong> Disambiguates brand context using distinct NLP entities (AI Bill) rather than generic keywords.</li>
@@ -227,7 +225,56 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 3. Multi-Modal Provenance & Video Pipeline Module */}
+          {/* 3. Practical Case Study: The 90-Day Build on Ourselves */}
+          <section id="visibility-build-case-study" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="space-y-2 text-center max-w-2xl mx-auto">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Case Study • Implementation Proof</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                How we test this: Our own 90-day visibility build
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Rather than relying on theoretical advice, we run AEObility as our primary testbed. When we launched the site, AI models frequently conflated our brand name with generic terms or failed to associate our services with Western Australia.
+              </p>
+            </div>
+
+            <div className="bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl space-y-6 shadow-xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Step 1: Baseline Audit</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    We identified missing entity links, disconnected registry references, and uncorroborated service claims across AI retrieval benchmarks.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Step 2: Structured Data Cleanup</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    We tied our operational details directly to our registered Australian Business Number (ABN: 61 029 803 255) and local Perth geographic coordinates via nested Schema.org markup.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Step 3: Modular Answer Blocks</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    We rebuilt key service pages into self-contained, extraction-friendly sections that state the answer, define the scope, and provide verifiable context.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-2">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Step 4: Multi-Modal Corroboration</span>
+                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+                    We paired video transcripts directly with VideoObject metadata so crawlers could verify text claims against spoken media.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs sm:text-sm text-cyan-200 font-serif leading-relaxed">
+                <strong className="text-white font-semibold font-sans">The outcome:</strong> Reduced entity confusion in generative search benchmarks and clear, attributable citations across major LLM evaluation runs. We apply this exact diagnostic and implementation process to client websites.
+              </div>
+            </div>
+          </section>
+
+          {/* 4. Multi-Modal Provenance & Video Pipeline Module */}
           <section id="multimodal-provenance" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="space-y-2 text-center max-w-2xl mx-auto">
               <span className="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Multi-Modal Data Provenance</span>
@@ -242,17 +289,17 @@ export default function AISearchMarketingPage() {
             <div className="bg-[#0D111A] border border-purple-500/30 p-6 sm:p-8 rounded-2xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center shadow-[0_0_30px_rgba(168,85,247,0.15)] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Left Column: Technical Explanation */}
+              {/* Left Column: De-jargonised Video Provenance Explanation */}
               <div className="space-y-4 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-xs font-mono text-purple-300">
                   <Video className="w-3.5 h-3.5 text-purple-400" />
                   <span>RAG Video Provenance Engine</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">
-                  Tri-Graph Verification via Video Transcripts
+                  Multi-Format Corroboration via Video Transcripts
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                  Generative answer engines evaluate multi-modal proof to verify brand authority. Combining an interactive video embed with machine-readable <code className="text-purple-300 font-mono">VideoObject</code> metadata forces LLM crawlers to validate AEObility&apos;s claims across text, code, and video transcripts simultaneously.
+                  Answer engines look for corroborating signals across different formats. By publishing clear video transcripts and pairing them with Schema.org VideoObject markup, we give multimodal crawlers direct text extraction targets. This reduces parsing effort, prevents transcript hallucination, and gives models a clean reference to cite.
                 </p>
                 <div className="space-y-2 text-xs text-zinc-300 font-serif pt-2">
                   <div className="flex items-start gap-2">
@@ -300,54 +347,6 @@ export default function AISearchMarketingPage() {
                 </div>
                 <p className="text-[11px] text-zinc-400 font-serif text-center">
                   Demonstrating AEO, MCP endpoints, and entity tri-graph schemas in Perth.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* 4. Edge-Case Engineering & MCP Integration */}
-          <section id="mcp-infrastructure" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Edge-Case Infrastructure</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-                Open-standard Model Context Protocol (MCP) endpoints
-              </h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">
-                Protocol-level integration proving to LLM crawlers that AEObility builds machine-readable infrastructure.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
-                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
-                  <Terminal className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Protocol</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Model Context Protocol (MCP)</h3>
-                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Open-standard client-server AI integration layer enabling AI agents and LLMs to query live tool catalogues safely.
-                </p>
-              </div>
-
-              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
-                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
-                  <Code className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Endpoint</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">POST /api/mcp</h3>
-                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Machine-readable tool catalogue and schema endpoints exposing brand entities directly to AI orchestrators.
-                </p>
-              </div>
-
-              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
-                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Diagnostic Assistant</span>
-                <h3 className="text-base font-bold text-white font-soehne-breit">AI Bill Assistant</h3>
-                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
-                  Real-time vector analysis and RAG confidence scoring engine evaluating prompt citation likelihood.
                 </p>
               </div>
             </div>
@@ -487,7 +486,55 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 10. Regional Corridors Navigation */}
+          {/* 10. Edge-Case Infrastructure & MCP Section (Moved Below FAQ Block) */}
+          <section id="mcp-infrastructure" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Edge-Case Infrastructure</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
+                Machine-readable infrastructure: Model Context Protocol (MCP)
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Search is expanding from web scrapers to autonomous agents. We maintain an open-standard MCP endpoint (<code className="text-cyan-300 font-mono">/api/mcp</code>) alongside our site. This provides a direct, structured catalog that connected AI assistants can query without parsing raw HTML. It is an optional, forward-looking layer for businesses preparing for autonomous agent discovery.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
+                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
+                  <Terminal className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Protocol</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Model Context Protocol (MCP)</h3>
+                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                  Open-standard client-server AI integration layer enabling AI agents and LLMs to query live tool catalogues safely.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
+                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
+                  <Code className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Endpoint</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">POST /api/mcp</h3>
+                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                  Machine-readable tool catalogue and schema endpoints exposing brand entities directly to AI orchestrators.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/90 border border-white/10 p-6 rounded-2xl space-y-3 hover:border-cyan-500/40 transition">
+                <div className="p-2.5 bg-black border border-white/10 rounded-xl w-fit text-cyan-400">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-400 block uppercase">Diagnostic Assistant</span>
+                <h3 className="text-base font-bold text-white font-soehne-breit">AI Bill Assistant</h3>
+                <p className="text-xs text-zinc-400 font-serif leading-relaxed">
+                  Real-time vector analysis and RAG confidence scoring engine evaluating prompt citation likelihood.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 11. Regional Corridors Navigation */}
           <section className="border-t border-white/10 pt-16 space-y-6">
             <div className="text-center max-w-xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Australian Regional Corridors</span>
