@@ -38,7 +38,19 @@ export const metadata: Metadata = {
 
 ## 2. AEO & GEO Retrieval Grounding Specifications
 
+* **IA & SLM Focus Keyphrase Alignment:** `aeo services` (from `AEObility -IA & SLM.csv` row 6).
 * **Intent Family:** *Commercial Decision Intent* (Evaluative & Transactional prompts: *"how much does answer engine optimisation cost", "AEO agency Australia", "AEO vs SEO comparison", "Shopify AEO services"*).
+* **Atomic Answer Block (First-Fold Retrieval Anchor):**
+  - **Position:** Housed directly beneath H1/H2 within the first 100 words above the fold.
+  - **Formula:** 
+    1. *Verdict:* "Answer Engine Optimisation (AEO) restructures your digital footprint, business facts, and credentials so AI answer engines (ChatGPT, Perplexity, Google AI Overviews) retrieve and cite your brand accurately."
+    2. *Mechanism:* "AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema graphs and atomic content blocks."
+    3. *Entity Binding:* "All engagements tie directly into authoritative registries (`ABN`, `LocalBusiness`, `Schema.org`) with zero ongoing lock-in contracts."
+  - **Token Budget:** Exactly 84 words (~105 tokens), matching bi-encoder vector similarity sweet spot.
+* **Dual-Reader E-E-A-T Framework:**
+  - **Mechanical Credibility (LLMs & Graphs):** Linked `Service` schema connected to root `Organization` (`https://aeobility.com.au/#organisation`), named practitioner provenance (`Person` schema for Vince Baker, Founder & Principal), timestamped recrawl validation.
+  - **Human-Centred Usability (Buyers):** U.S. grade 8–9 plain English, zero agency jargon, transparent flat-rate pricing, risk-reducing operational reassurance (*"Zero lock-in"*, *"4–5 day turnaround"*) adjacent to CTAs.
+  - **The Hybrid Rule:** Answer-first H2 lead paragraphs under every section; explicit naming of entities (`AEObility`, `Perplexity Pro`, `ChatGPT Search`, `Google AI Overviews`).
 * **Semantic Density Architecture:**
   - High density of tangible deliverable specifications and fixed pricing (`Micro-Sprints from $495 AUD ex. GST`, `Foundation Tier from $3,195 AUD ex. GST`).
   - Strict delivery turnarounds explicitly declared (`4–5 business days from confirmed scope and access`).

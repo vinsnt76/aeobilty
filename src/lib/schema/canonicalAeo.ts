@@ -11,6 +11,32 @@ export interface FaqItem {
 export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/aeo#webpage",
       "url": "https://aeobility.com.au/services/aeo",
@@ -121,6 +147,9 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "description": "Structured digital infrastructure solutions that help search engines, LLMs, and conversational AI interfaces index, verify, and reference your organisation accurately.",
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
+      },
+      "creator": {
+        "@id": "https://aeobility.com.au/#vince-baker"
       },
       "areaServed": [
         {
