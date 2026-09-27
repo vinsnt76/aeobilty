@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
+        url: "https://aeobility.com.au/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp",
         width: 1200,
         height: 800,
         alt: "How to Build Entity Density tutorial thumbnail with AEObility specialist guide and AI search optimisation workflow.",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "How to Build Entity Density for AI Search | AEObility Tutorial",
     description: "Audit and engineer 80%+ entity density into on-page copy for modern answer engines.",
-    images: ["https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp"],
+    images: ["https://aeobility.com.au/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp"],
   },
 };
 
@@ -55,7 +55,7 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         "headline": "How to Build Entity Density into Your On-Page Copy for AI Search (Step-by-Step Guide)",
         "description": "Tactical standard operating procedure for auditing, mapping, and engineering 80%+ entity density into on-page structural zones for Answer Engine Optimisation.",
         "url": "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
-        "image": "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
+        "image": "https://aeobility.com.au/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp",
         "inLanguage": "en-AU",
         "datePublished": "2026-09-24",
         "dateModified": "2026-09-24",
@@ -84,7 +84,7 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         "@id": "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo#howto",
         "name": "How to Audit and Build Entity Density for AEO",
         "description": "A 5-step workflow to audit opening copy and hit the 80% entity coverage threshold that turns ambiguous pages into cited sources.",
-        "image": "https://aeobility.com.au/how-to-build-entity-density-thumbnail_AEObility.webp",
+        "image": "https://aeobility.com.au/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp",
         "totalTime": "PT25M",
         "step": [
           {

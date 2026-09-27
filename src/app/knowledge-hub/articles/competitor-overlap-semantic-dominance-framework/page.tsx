@@ -118,7 +118,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/competitor-overlap-and-semantic-dominance_AEObility.webp"
+          "url": "https://aeobility.com.au/images/knowledge-hub/competitor-overlap-and-semantic-dominance_AEObility.webp"
         },
         "about": [
           {
@@ -539,7 +539,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           {/* Article Banner Image */}
           <div className="relative w-full h-[260px] sm:h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-950 my-6 group">
             <Image
-              src="/competitor-overlap-and-semantic-dominance_AEObility.webp"
+              src="/images/knowledge-hub/competitor-overlap-and-semantic-dominance_AEObility.webp"
               alt="AEObility Competitor Overlap and Semantic Dominance Framework diagram illustrating AI search vector proximity, RAG retrieval survival, and Schema.org entity clarity scoring for local service businesses in Perth Australia"
               fill
               priority

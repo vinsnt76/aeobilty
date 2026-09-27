@@ -153,7 +153,7 @@ export default function BabyBentoCaseStudyPage() {
             
             <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950">
               <Image
-                src="/case-study-aeo-lifts-traffic.webp"
+                src="/images/knowledge-hub/case-study-aeo-lifts-traffic.webp"
                 alt="Graph illustrating improved CTR, ranking position, and qualified organic traffic following AEObility’s structural optimisation."
                 fill
                 priority

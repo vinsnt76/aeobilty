@@ -105,7 +105,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/assets/geo-banner',
-        destination: '/fix-local-discovery-with-geo-seo_AEObility.webp',
+        destination: '/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp',
         permanent: true,
       },
       {

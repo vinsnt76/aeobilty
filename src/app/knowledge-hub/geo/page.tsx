@@ -63,7 +63,7 @@ export default function GEOKnowledgeNodePage() {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
         "primaryImageOfPage": {
-          "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp"
+          "@id": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/geo/breadcrumb"
@@ -121,13 +121,13 @@ export default function GEOKnowledgeNodePage() {
 
       {
         "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp",
         "name": "GEO vs Local SEO Framework Banner",
         "description": "Framework diagram comparing Local SEO and Geographic Engine Optimisation (GEO) signals across physical proximity and AI entity discovery by AEObility.",
         "creator": {
           "@id": "https://aeobility.com.au/#organisation"
         },
-        "contentUrl": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp",
         "contentLocation": {
           "@type": "Place",
           "name": "Perth, Western Australia",
@@ -158,7 +158,7 @@ export default function GEOKnowledgeNodePage() {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "image": {
-          "@id": "https://aeobility.com.au/fix-local-discovery-with-geo-seo_AEObility.webp"
+          "@id": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
         }
       },
 
@@ -304,7 +304,7 @@ export default function GEOKnowledgeNodePage() {
             {/* Hero Banner Image */}
             <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
               <Image
-                src="/fix-local-discovery-with-geo-seo_AEObility.webp"
+                src="/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
                 alt="GEO vs Local SEO framework diagram showing physical location signals and AI entity verification by AEObility in Perth, Western Australia."
                 fill
                 className="object-cover"

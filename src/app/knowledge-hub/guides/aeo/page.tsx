@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
+        url: 'https://aeobility.com.au/images/knowledge-hub/aeo-guide_AEObility.webp',
         width: 1200,
         height: 800,
         alt: 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
@@ -63,8 +63,8 @@ export default function AEOGuideWhitepaperPage() {
       {
         '@type': 'ImageObject',
         '@id': 'https://aeobility.com.au/knowledge-hub/guides/aeo#primaryimage',
-        'url': 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
-        'contentUrl': 'https://aeobility.com.au/images/aeo-guide_AEObility.webp',
+        'url': 'https://aeobility.com.au/images/knowledge-hub/aeo-guide_AEObility.webp',
+        'contentUrl': 'https://aeobility.com.au/images/knowledge-hub/aeo-guide_AEObility.webp',
         'caption': 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
         'description': 'Answer Engine Optimisation (AEO) system architecture guide banner illustrating RAG retrieval pipelines, schema entity graphs, and AI search visibility by AEObility',
         'width': 1200,
@@ -284,7 +284,7 @@ export default function AEOGuideWhitepaperPage() {
         <figure className="relative isolate w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-zinc-950 group min-h-[360px] sm:min-h-[440px] md:min-h-[480px]">
           <div className="relative w-full h-[360px] sm:h-[440px] md:h-[480px]">
             <Image
-              src="/images/aeo-guide_AEObility.webp"
+              src="/images/knowledge-hub/aeo-guide_AEObility.webp"
               alt="Answer Engine Optimisation (AEO) system architecture diagram and guide banner by AEObility illustrating RAG retrieval pipelines, schema entity graphs, and conversational AI search visibility."
               width={1200}
               height={800}

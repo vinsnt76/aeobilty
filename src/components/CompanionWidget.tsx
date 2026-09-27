@@ -448,7 +448,7 @@ export default function CompanionWidget() {
                   >
                     {!isUser && (
                       <div className="flex-shrink-0 relative h-6 w-6 rounded-full overflow-hidden border border-white/10 bg-neutral-900 mt-1">
-                        <Image src="/char-mouth-closed.png" alt="AI Bill" fill sizes="24px" className="object-cover" />
+                        <Image src="/images/brand/char-mouth-closed.png" alt="AI Bill" fill sizes="24px" className="object-cover" />
                       </div>
                     )}
                     <div className="flex flex-col flex-grow">

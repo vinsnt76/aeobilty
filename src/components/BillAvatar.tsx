@@ -38,7 +38,7 @@ export default function BillAvatar({
       } ${className}`}
     >
       <Image
-        src="/char-mouth-closed.png"
+        src="/images/brand/char-mouth-closed.png"
         alt="AI Bill Avatar"
         fill
         sizes="(max-width: 768px) 32px, 56px"

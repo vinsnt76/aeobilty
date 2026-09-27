@@ -257,7 +257,7 @@ export default function AEODefinitionPage() {
             {/* Main Header Illustration */}
             <div className="w-full relative rounded-2xl overflow-hidden mb-3 border border-white/10 bg-white/[0.02]">
               <Image 
-                src="/what-is-definiton-of-aeo_AEObility.webp" 
+                src="/images/services/what-is-definiton-of-aeo_AEObility.webp" 
                 alt="Answer Engine Optimisation (AEO) conceptual diagram showing semantic chunking, embeddings, and vector retrieval signals." 
                 width={1200}
                 height={630}

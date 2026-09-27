@@ -55,7 +55,7 @@ export default function VideoExplainer({
               className="relative w-full h-full text-left group cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black rounded-2xl overflow-hidden block"
             >
               <img
-                src="/aeobility-video-explainer.webp"
+                src="/images/brand/aeobility-video-explainer.webp"
                 alt="Why Aussie Businesses Partner with AEObility - AEO & GEO Marketing"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

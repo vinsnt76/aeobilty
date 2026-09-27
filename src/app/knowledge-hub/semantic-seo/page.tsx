@@ -82,8 +82,8 @@ export default function SemanticSEONodePage() {
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/knowledge-hub/semantic-seo#imageobject",
-        "url": "https://aeobility.com.au/semantic-seo-for-aeo-entities_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/semantic-seo-for-aeo-entities_AEObility.webp",
+        "url": "https://aeobility.com.au/images/knowledge-hub/semantic-seo-for-aeo-entities_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/semantic-seo-for-aeo-entities_AEObility.webp",
         "encodingFormat": "image/webp",
         "name": "Cyberpunk Abstract Semantic SEO Visualisation",
         "description": "An abstract cyberpunk artwork visualising Semantic SEO relationships: cause->effect, problem->solution, feature->benefit, and prerequisite->outcome: using neon gradients and geometric shapes.",
@@ -302,7 +302,7 @@ export default function SemanticSEONodePage() {
             {/* Page Banner Image */}
             <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl mt-6">
               <Image
-                src="/semantic-seo-for-aeo-entities_AEObility.webp"
+                src="/images/knowledge-hub/semantic-seo-for-aeo-entities_AEObility.webp"
                 alt="High-tech AI Semantic SEO and entity-based layout framework diagram illustrating RDF triple mapping, topic vector graphs, and Answer Engine Optimisation (AEO) entity salience by AEObility in Perth, Western Australia."
                 fill
                 className="object-cover"

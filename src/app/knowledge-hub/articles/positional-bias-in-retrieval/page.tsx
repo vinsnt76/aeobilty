@@ -79,7 +79,7 @@ export default function PositionalBiasArticlePage() {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval",
-        "image": "https://aeobility.com.au/positional-bias-retrieval-AEObility.webp",
+        "image": "https://aeobility.com.au/images/knowledge-hub/positional-bias-retrieval-AEObility.webp",
         "keywords": [
           "positional bias",
           "retrieval bottleneck",
@@ -438,7 +438,7 @@ export default function PositionalBiasArticlePage() {
           {/* Main Diagram Banner */}
           <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/positional-bias-retrieval-AEObility.webp"
+              src="/images/knowledge-hub/positional-bias-retrieval-AEObility.webp"
               alt="Positional bias architecture diagram depicting AI search dense vector retrieval, LLM context window attention dilution, primacy and recency spikes, and Answer Engine Optimisation (AEO) entity salience by AEObility in Perth, Western Australia."
               fill
               className="object-cover"
@@ -894,7 +894,7 @@ export default function PositionalBiasArticlePage() {
           <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-aeo-cyan/50 shrink-0 shadow-lg">
               <Image
-                src="/Profile-Picture-Vinnie.png"
+                src="/images/about/Profile-Picture-Vinnie.png"
                 alt="Vince Baker - AEO &amp; Semantic Search Specialist Perth"
                 fill
                 className="object-cover"

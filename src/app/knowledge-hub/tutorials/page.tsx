@@ -36,7 +36,7 @@ export default function TutorialsHubPage() {
       category: "Entity SEO & On-Page Architecture",
       description: "Step-by-step standard operating procedure for auditing, mapping, and engineering 80%+ entity density into structural headers and opening copy for Answer Engine Optimisation. Includes free Google Sheet diagnostic template.",
       href: "/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
-      image: "/how-to-build-entity-density-thumbnail_AEObility.webp",
+      image: "/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp",
       alt: "How to Build Entity Density tutorial thumbnail with AEObility specialist guide and AI search optimisation workflow.",
       isLive: true,
       metrics: [
@@ -50,7 +50,7 @@ export default function TutorialsHubPage() {
       category: "Vector Embeddings & Semantic Density",
       description: "Step-by-step tutorial on optimising chunk semantic density, RDF triple salience, and vector embedding proximity for AI engine citations.",
       href: "/knowledge-hub/tutorials/semantic-density",
-      image: "/coming-soon-placeholder.svg",
+      image: "/images/brand/coming-soon-placeholder.svg",
       alt: "Semantic density tutorial placeholder graphic depicting AI vector retrieval by AEObility.",
       isLive: false,
       metrics: [
@@ -63,7 +63,7 @@ export default function TutorialsHubPage() {
       category: "LLM Context Windows & Attention",
       description: "Technical tutorial on structuring long-form document passages to maximize primacy and recency attention spikes during RAG retrieval.",
       href: "/knowledge-hub/tutorials/positional-bias",
-      image: "/coming-soon-placeholder.svg",
+      image: "/images/brand/coming-soon-placeholder.svg",
       alt: "Positional bias tutorial placeholder graphic depicting LLM context window attention by AEObility.",
       isLive: false,
       metrics: [

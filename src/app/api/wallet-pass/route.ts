@@ -61,7 +61,7 @@ export async function GET() {
       hexBackgroundColor: "#07070a",
       heroImage: {
         sourceUri: {
-          uri: "https://aeobility.com.au/Profile-Picture-Vinnie.png"
+          uri: "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png"
         }
       },
       textModulesData: [

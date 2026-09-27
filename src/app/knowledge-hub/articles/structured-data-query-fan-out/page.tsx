@@ -91,8 +91,8 @@ export default function StructuredDataQueryFanOutArticlePage() {
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out#imageobject",
-        "url": "https://aeobility.com.au/structured-data-query-fan-out_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/structured-data-query-fan-out_AEObility.webp",
+        "url": "https://aeobility.com.au/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
         "encodingFormat": "image/webp",
         "name": "Query Fan-Out Visualisation Banner",
         "description": "Abstract landscape visualisation showing query fan-out constrained within a strong data structure using azure, green, and orange gradients.",
@@ -326,7 +326,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
           {/* Hero Banner Image */}
           <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/structured-data-query-fan-out_AEObility.webp"
+              src="/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp"
               alt="Structured data and query fan-out architecture visualising machine-readable Schema.org entity anchors and multi-intent retrieval by AEObility in Perth, Western Australia."
               fill
               className="object-cover"
@@ -801,7 +801,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
           <section className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-aeo-cyan/50 shrink-0 shadow-lg">
               <Image
-                src="/Profile-Picture-Vinnie.png"
+                src="/images/about/Profile-Picture-Vinnie.png"
                 alt="Vince Baker - Senior Information Architect &amp; AEO Strategist Perth"
                 fill
                 className="object-cover"

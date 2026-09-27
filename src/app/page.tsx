@@ -97,7 +97,7 @@ export default function Home() {
     "@type": "LocalBusiness",
     "@id": "https://aeobility.com.au/#perth-local-business",
     "name": "AEObility",
-    "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+    "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
     "url": "https://aeobility.com.au",
     "alternateName": [
       "AI Search Optimisation Australia",
@@ -159,7 +159,7 @@ export default function Home() {
     "@type": "Organization",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
-    "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+    "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
     "founder": {
       "@type": "Person",
       "name": "Vinnie Baker"
@@ -178,7 +178,7 @@ export default function Home() {
     "name": "Our Approach to Answer Engine Search",
     "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
     "thumbnailUrl": [
-      "https://aeobility.com.au/aeobility-video-explainer.webp"
+      "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
     ],
     "uploadDate": "2026-07-05T00:00:00+08:00",
     "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",

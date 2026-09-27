@@ -38,7 +38,7 @@ const Welcome: React.FC<WelcomeProps> = ({ config }) => {
           
           <div className="group relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-800 ring-offset-4 ring-offset-aeo-cyan/20">
             <img
-              src="/Profile-Picture-Vinnie.png" 
+              src="/images/about/Profile-Picture-Vinnie.png" 
               alt="Vinnie Baker"
               className="object-cover w-full h-full scale-105 transition-transform duration-1000 ease-out group-hover:scale-110"
             />

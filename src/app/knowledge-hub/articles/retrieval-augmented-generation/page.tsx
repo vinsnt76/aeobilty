@@ -121,7 +121,7 @@ export default function RagArticlePage() {
         ],
         "image": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
+          "url": "https://aeobility.com.au/images/knowledge-hub/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
           "width": 1200,
           "height": 630
         },
@@ -415,7 +415,7 @@ export default function RagArticlePage() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/60 font-sans border-b border-white/10 pb-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden relative border border-white/20">
-                  <Image src="/Profile-Picture-Vinnie.png" alt="Vinnie Baker" fill sizes="32px" className="object-cover" />
+                  <Image src="/images/about/Profile-Picture-Vinnie.png" alt="Vinnie Baker" fill sizes="32px" className="object-cover" />
                 </div>
                 <span className="font-semibold text-white/90">Vinnie Baker</span>
               </div>
@@ -445,7 +445,7 @@ export default function RagArticlePage() {
             <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/10 group">
               <div className="absolute inset-0 bg-gradient-to-tr from-aeo-cyan/20 via-black/40 to-aeo-purple/20 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
               <Image
-                src="/ai-search-optimisation-why-RAG-matters-AEObilty.webp"
+                src="/images/knowledge-hub/ai-search-optimisation-why-RAG-matters-AEObilty.webp"
                 alt="AI Search Optimisation and Retrieval-Augmented Generation (RAG) visual diagram depicting vector retrieval, passage chunking, and semantic entity grounding by AEObility."
                 fill
                 className="object-cover"
@@ -1425,7 +1425,7 @@ export default function RagArticlePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                 <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
                   <Image 
-                    src="/traditional-seo-vs-aeo_AEObility.webp" 
+                    src="/images/knowledge-hub/traditional-seo-vs-aeo_AEObility.webp" 
                     alt="AEO vs SEO technical comparison" 
                     fill 
                     sizes="(max-width: 768px) 100vw, 33vw" 
@@ -1447,7 +1447,7 @@ export default function RagArticlePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                 <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
                   <Image 
-                    src="/structured-search-audit-wireframe.png" 
+                    src="/images/knowledge-hub/structured-search-audit-wireframe.png" 
                     alt="Semantic SEO entity graph architecture" 
                     fill 
                     sizes="(max-width: 768px) 100vw, 33vw" 
@@ -1469,7 +1469,7 @@ export default function RagArticlePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                 <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
                   <Image 
-                    src="/case-study-aeo-lifts-traffic.webp" 
+                    src="/images/knowledge-hub/case-study-aeo-lifts-traffic.webp" 
                     alt="Baby Bento AEO Case Study" 
                     fill 
                     sizes="(max-width: 768px) 100vw, 33vw" 

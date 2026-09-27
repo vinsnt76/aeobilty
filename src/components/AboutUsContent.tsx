@@ -470,7 +470,7 @@ export default function AboutUsContent() {
         <div className="md:col-span-4 flex justify-center md:justify-start order-2 md:order-1">
           <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-xl">
             <Image
-              src="/Profile-Picture-Vinnie.png"
+              src="/images/about/Profile-Picture-Vinnie.png"
               alt="Vinnie Baker, Founder & Principal Consultant at AEObility"
               fill
               priority

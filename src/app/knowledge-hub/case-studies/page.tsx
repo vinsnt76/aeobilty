@@ -36,7 +36,7 @@ export default function CaseStudiesHubPage() {
       client: "Baby Bento",
       description: "A real-world ecommerce case study showing how AEObility rebuilt clarity, intent alignment, and organic momentum to reverse declining traffic trends.",
       href: "/knowledge-hub/case-studies/baby-bento",
-      image: "/case-study-aeo-lifts-traffic.webp",
+      image: "/images/knowledge-hub/case-study-aeo-lifts-traffic.webp",
       alt: "Graph illustrating improved CTR, ranking position, and qualified organic traffic following AEObility’s structural optimisation.",
       metrics: [
         { label: "Sales Uplift", value: "+17%" },
@@ -49,7 +49,7 @@ export default function CaseStudiesHubPage() {
       client: "AEObility",
       description: "An empirical case study detailing the first 78 days of AEObility's 90-Day AEO/GEO Blueprint on a fresh Australian domain (1 July – 16 September 2026), measuring commercial query visibility and AI citations.",
       href: "/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
-      image: "/aeo-geo-case-study_AEObilty.webp",
+      image: "/images/knowledge-hub/aeo-geo-case-study_AEObilty.webp",
       alt: "Abstract telemetry visualisation of semantic graphs representing AEObility's AEO and GEO architecture, demonstrating entity resolution and commercial search intent indexing.",
       metrics: [
         { label: "Core Exposure", value: "75k" },

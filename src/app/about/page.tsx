@@ -35,7 +35,7 @@ export default function AboutPage() {
     "@id": "https://aeobility.com.au/#organisation",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
-    "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+    "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
     "founder": {
       "@type": "Person",
       "name": "Vinnie Baker",
@@ -53,7 +53,7 @@ export default function AboutPage() {
     "@type": "LocalBusiness",
     "@id": "https://aeobility.com.au/#localbusiness",
     "name": "AEObility",
-    "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+    "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
     "url": "https://aeobility.com.au/about",
     "telephone": "0480 286 282",
     "address": {

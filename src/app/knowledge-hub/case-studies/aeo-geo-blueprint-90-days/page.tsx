@@ -61,7 +61,7 @@ export default function First90DaysCaseStudy() {
       identifier: "ABN 61 029 803 255",
       logo: {
         "@type": "ImageObject",
-        url: "https://aeobility.com.au/logo.png",
+        url: "https://aeobility.com.au/images/brand/logo.png",
       },
     },
     datePublished: "2026-09-16T00:00:00+08:00",

@@ -43,7 +43,7 @@ export default function ContactPage() {
         "@id": "https://aeobility.com.au/#localbusiness",
         "name": "AEObility",
         "legalName": "Trekaboutoz trading as AEObility",
-        "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+        "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
         "url": "https://aeobility.com.au/contact",
         "email": "support@aeobility.com.au",
         "taxID": "61029803255",

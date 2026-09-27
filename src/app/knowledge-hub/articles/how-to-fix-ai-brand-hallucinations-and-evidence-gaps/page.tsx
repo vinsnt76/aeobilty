@@ -90,7 +90,7 @@ export default function AISeachArchitectureArticle() {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
-        "image": "https://aeobility.com.au/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
+        "image": "https://aeobility.com.au/images/knowledge-hub/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
         "about": [
           {
             "@type": "Service",
@@ -217,7 +217,7 @@ export default function AISeachArchitectureArticle() {
         {/* Featured Image with CTA Overlay */}
         <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video shadow-2xl bg-zinc-950 group">
           <Image
-            src="/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp"
+            src="/images/knowledge-hub/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp"
             alt="Fix AI Brand Hallucinations and Evidence Gaps: Semantic Propositions, Entity-Relationship-Evidence Framework, and AEO Services by AEObility in Perth, Western Australia"
             fill
             className="object-cover group-hover:scale-[1.02] transition-transform duration-700"

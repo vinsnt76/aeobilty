@@ -95,8 +95,8 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "image": {
           "@type": "ImageObject",
           "@id": "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines#primaryimage",
-          "url": "https://aeobility.com.au/optimising-for-different-ai-web-search-engines_AEObility.webp",
-          "contentUrl": "https://aeobility.com.au/optimising-for-different-ai-web-search-engines_AEObility.webp",
+          "url": "https://aeobility.com.au/images/knowledge-hub/optimising-for-different-ai-web-search-engines_AEObility.webp",
+          "contentUrl": "https://aeobility.com.au/images/knowledge-hub/optimising-for-different-ai-web-search-engines_AEObility.webp",
           "width": 1200,
           "height": 630,
           "caption": "How Perplexity, ChatGPT, Google, and Copilot find and cite web content"
@@ -290,7 +290,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "url": "https://aeobility.com.au/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/og-image.png"
+          "url": "https://aeobility.com.au/images/brand/og-image.png"
         },
         "description": "AEObility helps Australian businesses improve visibility across search, maps and AI answer engines.",
         "address": {
@@ -423,7 +423,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
           {/* Hero Visual Graphic */}
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl mt-8">
             <Image
-              src="/optimising-for-different-ai-web-search-engines_AEObility.webp"
+              src="/images/knowledge-hub/optimising-for-different-ai-web-search-engines_AEObility.webp"
               alt="Abstract high‑velocity gradient artwork depicting multi‑engine retrieval convergence"
               fill
               priority
@@ -669,7 +669,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         {/* Mid-Page Visual Graphic (1:1 Infographic) */}
         <div className="relative w-full max-w-[760px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl my-8">
           <Image
-            src="/optimising-ai-search-engines_AEObility.webp"
+            src="/images/knowledge-hub/optimising-ai-search-engines_AEObility.webp"
             alt="Diagram showing multi-engine query processing and answer synthesis"
             width={1000}
             height={1000}

@@ -160,7 +160,7 @@ export default function PerthSeoSpecialistPage() {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
               <div className="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-cyan-500/40 shrink-0">
                 <Image
-                  src="/Profile-Picture-Vinnie.png"
+                  src="/images/about/Profile-Picture-Vinnie.png"
                   alt="Vince Baker - Perth SEO Specialist & Founder at AEObility"
                   fill
                   className="object-cover"

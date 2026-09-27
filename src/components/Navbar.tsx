@@ -38,7 +38,7 @@ export default function Navbar() {
           <Link href="/" aria-label="AEObility Home" className="flex items-center group">
             {/* Desktop Full Logo */}
             <Image
-              src="/aeobility-logo-light.svg"
+              src="/images/brand/aeobility-logo-light.svg"
               alt="AEObility Logo"
               width={180}
               height={40}
@@ -48,7 +48,7 @@ export default function Navbar() {
             {/* Mobile Standalone Circular Logo Badge (32px x 32px) */}
             <div className="flex lg:hidden h-[32px] w-[32px] items-center justify-center rounded-full bg-[#1e1e1e] backdrop-blur-md border border-cyan-500/30 group-hover:border-cyan-400 active:scale-95 transition-all shadow-[0_0_10px_rgba(6,182,212,0.15)] shrink-0 overflow-hidden">
               <Image
-                src="/aeobility-icon-dark.svg"
+                src="/images/brand/aeobility-icon-dark.svg"
                 alt="AEObility Icon"
                 width={28}
                 height={28}
@@ -190,7 +190,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center border-b border-white/10 pb-4">
           <div className="flex items-center">
             <Image
-              src="/aeobility-logo-dark.svg"
+              src="/images/brand/aeobility-logo-dark.svg"
               alt="AEObility Logo"
               width={140}
               height={32}

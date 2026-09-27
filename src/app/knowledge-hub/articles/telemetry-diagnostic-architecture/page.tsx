@@ -281,7 +281,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl space-y-2">
               <div className="relative aspect-[16/9] w-full">
                 <Image
-                  src="/images/telemetry_architecture_hero.jpg"
+                  src="/images/knowledge-hub/telemetry_architecture_hero.jpg"
                   alt="AEObility Telemetry Diagnostic Engine Pipeline Architecture Diagram"
                   fill
                   className="object-cover"

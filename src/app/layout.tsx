@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/brand/og-image.png",
         width: 1200,
         height: 630,
         alt: "AEObility | Get Found. Get Chosen.",
@@ -130,7 +130,7 @@ export default function RootLayout({
                   ],
                   "legalName": "Trekaboutoz trading as AEObility",
                   "url": "https://aeobility.com.au",
-                  "logo": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+                  "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
                   "telephone": "0480286282",
                   "address": {
                     "@type": "PostalAddress",
@@ -245,7 +245,7 @@ export default function RootLayout({
                   "@id": "https://aeobility.com.au/#perth-local-business",
                   "name": "AEObility",
                   "url": "https://aeobility.com.au",
-                  "image": "https://aeobility.com.au/Profile-Picture-Vinnie.png",
+                  "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
                   "telephone": "+61480286282",
                   "parentOrganization": {
                     "@id": "https://aeobility.com.au/#organisation"
@@ -449,7 +449,7 @@ export default function RootLayout({
                   "@id": "https://aeobility.com.au/#video",
                   "name": "Our Approach to Answer Engine Search",
                   "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
-                  "thumbnailUrl": "https://aeobility.com.au/aeobility-video-explainer.webp", 
+                  "thumbnailUrl": "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp", 
                   "uploadDate": "2026-01-01T08:00:00Z",
                   "contentUrl": "https://aeobility.com.au/videos/explainer.mp4", 
                   "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",

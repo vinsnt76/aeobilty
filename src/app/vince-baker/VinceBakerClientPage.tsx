@@ -135,7 +135,7 @@ export default function VinceBakerClientPage() {
           <div className="vince-profile-section">
             <div className="vince-avatar-wrapper">
               <Image
-                src="/Profile-Picture-Vinnie.png"
+                src="/images/about/Profile-Picture-Vinnie.png"
                 alt="Vinnie Baker - Founder of AEObility"
                 width={112}
                 height={112}

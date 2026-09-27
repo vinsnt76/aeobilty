@@ -74,7 +74,7 @@ export default function AeoVsSeoArticlePage() {
         "description": "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
         "image": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/traditional-seo-vs-aeo_AEObility.webp"
+          "url": "https://aeobility.com.au/images/knowledge-hub/traditional-seo-vs-aeo_AEObility.webp"
         },
         "author": {
           "@id": "https://aeobility.com.au/vince-baker#author"
@@ -256,7 +256,7 @@ export default function AeoVsSeoArticlePage() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/60 font-sans border-b border-white/10 pb-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden relative border border-white/20">
-                  <Image src="/Profile-Picture-Vinnie.png" alt="Vinnie Baker" fill sizes="32px" className="object-cover" />
+                  <Image src="/images/about/Profile-Picture-Vinnie.png" alt="Vinnie Baker" fill sizes="32px" className="object-cover" />
                 </div>
                 <span className="font-semibold text-white/90">Vinnie Baker</span>
               </div>
@@ -276,7 +276,7 @@ export default function AeoVsSeoArticlePage() {
             <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/10 group">
               <div className="absolute inset-0 bg-gradient-to-tr from-aeo-cyan/20 via-black/50 to-aeo-purple/20 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
               <Image
-                src="/traditional-seo-vs-aeo_AEObility.webp"
+                src="/images/knowledge-hub/traditional-seo-vs-aeo_AEObility.webp"
                 alt="Abstract visualisation of traditional SEO versus AEO semantic retrieval using AEObility gradient palette."
                 fill
                 className="object-cover"
@@ -569,7 +569,7 @@ export default function AeoVsSeoArticlePage() {
                   <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="group flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-aeo-cyan/30 transition-all duration-300 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                     <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
-                      <Image src="/ai-search-optimisation-why-RAG-matters-AEObilty.webp" alt="RAG & Answer Engines Guide" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                      <Image src="/images/knowledge-hub/ai-search-optimisation-why-RAG-matters-AEObilty.webp" alt="RAG & Answer Engines Guide" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                     </div>
                     <div className="p-6 relative z-10 flex-grow">
                       <div className="text-[10px] text-aeo-cyan uppercase font-bold tracking-wider mb-2">Technical Guide</div>
@@ -590,7 +590,7 @@ export default function AeoVsSeoArticlePage() {
                   <Link href="/knowledge-hub/semantic-seo" className="group flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-aeo-cyan/30 transition-all duration-300 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-aeo-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
                     <div className="relative aspect-video w-full overflow-hidden z-10 border-b border-white/5 bg-neutral-950">
-                      <Image src="/structured-search-audit-wireframe.png" alt="Semantic SEO Audit Wireframe" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                      <Image src="/images/knowledge-hub/structured-search-audit-wireframe.png" alt="Semantic SEO Audit Wireframe" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                     </div>
                     <div className="p-6 relative z-10 flex-grow">
                       <h3 className="font-semibold text-white group-hover:text-aeo-cyan mb-3 transition-colors">Semantic SEO Node</h3>

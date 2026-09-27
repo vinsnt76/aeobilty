@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!config) return {};
   
   const pageUrl = `https://aeobility.com.au/about/${slug}`;
-  const imageUrl = "https://aeobility.com.au/Profile-Picture-Vinnie.png";
+  const imageUrl = "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png";
 
   return {
     title: config.metadata.title,
@@ -70,7 +70,7 @@ export default async function Page({ params }: PageProps) {
   }
 
   const pageUrl = `https://aeobility.com.au/about/${config.slug}`;
-  const imageUrl = "https://aeobility.com.au/Profile-Picture-Vinnie.png";
+  const imageUrl = "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png";
 
   const schema = {
     "@context": "https://schema.org",

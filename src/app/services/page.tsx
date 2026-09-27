@@ -68,16 +68,16 @@ export default function ServicesPage() {
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/services#primaryimage",
-        "url": "https://aeobility.com.au/aeo-services-and-geo-marketing_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/aeo-services-and-geo-marketing_AEObility.webp",
+        "url": "https://aeobility.com.au/images/services/aeo-services-and-geo-marketing_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/aeo-services-and-geo-marketing_AEObility.webp",
         "caption": "AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth, Australia SMB performance metrics across digital channels",
         "description": "AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth, Australia SMB performance metrics across digital channels"
       },
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/services#matriximage",
-        "url": "https://aeobility.com.au/aeo-services-geo-intent-matrix_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/aeo-services-geo-intent-matrix_AEObility.webp",
+        "url": "https://aeobility.com.au/images/services/aeo-services-geo-intent-matrix_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/services/aeo-services-geo-intent-matrix_AEObility.webp",
         "caption": "AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs",
         "description": "AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs"
       },
@@ -332,7 +332,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-cyan-500/30 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/aeo-services-and-geo-marketing_AEObility.webp"
+                  src="/images/services/aeo-services-and-geo-marketing_AEObility.webp"
                   alt="AEObility AEO Services dashboard showing AI Search optimisation, GEO Marketing visibility signals and Perth Australia SMB performance metrics across digital channels"
                   fill
                   priority
@@ -440,7 +440,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/aeo-services-geo-intent-matrix_AEObility.webp"
+                  src="/images/services/aeo-services-geo-intent-matrix_AEObility.webp"
                   alt="AEObility AEO Services intent matrix diagram mapping search queries, vector embeddings, and GEO Marketing signals for Perth, Australia SMBs"
                   fill
                   className="object-cover"

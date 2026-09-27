@@ -2,10 +2,10 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const srcJpg = path.resolve('public/images/how-to-build-entity-density-thumbnail_AEObility.jpg');
-const destWebpPublic = path.resolve('public/how-to-build-entity-density-thumbnail_AEObility.webp');
-const destWebpImages = path.resolve('public/images/how-to-build-entity-density-thumbnail_AEObility.webp');
-const destJpgPublic = path.resolve('public/how-to-build-entity-density-thumbnail_AEObility.jpg');
+const srcJpg = path.resolve('public/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.jpg');
+const destWebpPublic = path.resolve('public/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp');
+const destWebpImages = path.resolve('public/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.webp');
+const destJpgPublic = path.resolve('public/images/knowledge-hub/how-to-build-entity-density-thumbnail_AEObility.jpg');
 
 async function convert() {
   console.log('Reading:', srcJpg);

@@ -36,7 +36,7 @@ export default function ArticlesHubPage() {
       category: "Foundational Theory / Entity Architecture",
       description: "Explore the foundational paper connecting machine legibility, verifiable data provenance, deterministic entity relationships, and intentional data structures for AI search.",
       href: "/knowledge-hub/articles/machine-legibility-data-provenance",
-      image: "/structured-data-query-fan-out_AEObility.webp",
+      image: "/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
       alt: "Machine Legibility & Data Provenance: intentional data structures for AI search by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Foundational Paper" },
@@ -48,7 +48,7 @@ export default function ArticlesHubPage() {
       category: "Grounding & Provenance / CBKL",
       description: "Learn how to eliminate AI factual drift, missing citations, and incorrect pricing by deploying semantic propositions and the 5-stage verification loop.",
       href: "/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps",
-      image: "/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
+      image: "/images/knowledge-hub/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp",
       alt: "Fix AI Brand Hallucinations and Evidence Gaps: Semantic Propositions and Entity Architecture by AEObility in Perth, Western Australia",
       metrics: [
         { label: "Type", value: "Technical Guide" },
@@ -60,7 +60,7 @@ export default function ArticlesHubPage() {
       category: "Technical Architecture / Spec",
       description: "Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
       href: "/knowledge-hub/articles/telemetry-diagnostic-architecture",
-      image: "/structured-data-query-fan-out_AEObility.webp",
+      image: "/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
       alt: "Telemetry Diagnostic Engine architecture visualization showing vector map infrastructure and RAG simulation by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Technical Spec" },
@@ -72,7 +72,7 @@ export default function ArticlesHubPage() {
       category: "Multi-Engine AEO & Retrieval",
       description: "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
       href: "/knowledge-hub/articles/optimising-for-different-ai-search-engines",
-      image: "/optimising-for-different-ai-web-search-engines_AEObility.webp",
+      image: "/images/knowledge-hub/optimising-for-different-ai-web-search-engines_AEObility.webp",
       alt: "Abstract high‑velocity gradient artwork depicting multi‑engine retrieval convergence",
       metrics: [
         { label: "Type", value: "Strategic Deep Dive" },
@@ -84,7 +84,7 @@ export default function ArticlesHubPage() {
       category: "AEO / Structured Data",
       description: "Learn how structured data helps brands survive query fan-out in AI search by improving entity clarity, retrieval, and citation accuracy.",
       href: "/knowledge-hub/articles/structured-data-query-fan-out",
-      image: "/structured-data-query-fan-out_AEObility.webp",
+      image: "/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
       alt: "High-tech structured data and query fan-out architecture diagram visualising Schema.org entity anchors and AI search vector retrieval by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Technical Guide" },
@@ -96,7 +96,7 @@ export default function ArticlesHubPage() {
       category: "Dense Retrieval & LLM Bias",
       description: "Learn how positional bias and the 'lost in the middle' phenomenon affect search visibility, and how Answer Engine Optimisation (AEO) structures content for machine clarity.",
       href: "/knowledge-hub/articles/positional-bias-in-retrieval",
-      image: "/positional-bias-retrieval-AEObility.webp",
+      image: "/images/knowledge-hub/positional-bias-retrieval-AEObility.webp",
       alt: "Positional bias architecture diagram depicting AI search dense vector retrieval, LLM context window attention dilution, primacy and recency spikes, and Answer Engine Optimisation (AEO) entity salience by AEObility in Perth, Western Australia.",
       metrics: [
         { label: "Type", value: "Technical Guide" },
@@ -108,7 +108,7 @@ export default function ArticlesHubPage() {
       category: "Entity Authority & AEO",
       description: "Learn how entity authority building strengthens semantic search visibility, improves Answer Engine Optimisation and helps AI systems recognise and recommend your business.",
       href: "/knowledge-hub/articles/entity-authority-building",
-      image: "/entity-visibilty-semantic-SEO_AEObility.webp",
+      image: "/images/knowledge-hub/entity-visibilty-semantic-SEO_AEObility.webp",
       alt: "Entity visibility and AI semantic SEO architecture diagram illustrating Answer Engine Optimisation (AEO) entity node authority, Knowledge Graph relationships, and RAG retrieval vectors for Australian businesses by AEObility.",
       metrics: [
         { label: "Type", value: "Core Guide" },
@@ -120,7 +120,7 @@ export default function ArticlesHubPage() {
       category: "Vector Retrieval & RAG",
       description: "Learn how Retrieval-Augmented Generation (RAG) works, why machine-readable content matters for AEO, and how chunking affects AI search visibility.",
       href: "/knowledge-hub/articles/retrieval-augmented-generation",
-      image: "/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
+      image: "/images/knowledge-hub/ai-search-optimisation-why-RAG-matters-AEObilty.webp",
       alt: "AI Search Optimisation and Retrieval-Augmented Generation (RAG) visual diagram depicting vector retrieval, passage chunking, and semantic entity grounding by AEObility.",
       metrics: [
         { label: "Type", value: "Technical Guide" },
@@ -132,7 +132,7 @@ export default function ArticlesHubPage() {
       category: "Foundational Search Infrastructure",
       description: "Understand traditional lexical search, sparse BM25 indexing, technical SEO pillars, and how page-level structure feeds AI Knowledge Graphs and RAG pipelines.",
       href: "/knowledge-hub/what-is-seo-optimisation",
-      image: "/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+      image: "/images/knowledge-hub/seo-optimisation-ai-search_AEObility.webp",
       alt: "Abstract hyper-gradient illustration showing SEO as the foundational input layer for modern search.",
       metrics: [
         { label: "Type", value: "Foundational Guide" },
@@ -144,7 +144,7 @@ export default function ArticlesHubPage() {
       category: "Generative Search",
       description: "Discover the shifting search landscape from lexical retrieval to semantic retrieval and learn how Answer Engine Optimisation (AEO) gets your brand into AI answers.",
       href: "/knowledge-hub/articles/aeo-vs-seo",
-      image: "/traditional-seo-vs-aeo_AEObility.webp",
+      image: "/images/knowledge-hub/traditional-seo-vs-aeo_AEObility.webp",
       alt: "Abstract visualisation of traditional SEO versus AEO semantic retrieval using AEObility gradient palette.",
       metrics: [
         { label: "Type", value: "Technical Guide" },

@@ -39,7 +39,7 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+        url: "/images/knowledge-hub/seo-optimisation-ai-search_AEObility.webp",
         width: 1200,
         height: 800,
         alt: "What Is SEO Optimisation? AEObility Knowledge Hub",
@@ -238,8 +238,8 @@ export default function WhatIsSEOOptimisationPage() {
       {
         "@type": "ImageObject",
         "@id": "https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation#primaryimage",
-        "url": "https://aeobility.com.au/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp",
+        "url": "https://aeobility.com.au/images/knowledge-hub/seo-optimisation-ai-search_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/seo-optimisation-ai-search_AEObility.webp",
         "caption": "Abstract representation of traditional SEO input-layer indexing feeding generative AI search and vector retrieval.",
         "representativeOfPage": true,
         "width": 1200,
@@ -276,7 +276,7 @@ export default function WhatIsSEOOptimisationPage() {
             <div className="relative h-[280px] sm:h-[420px] lg:h-[500px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/50 via-transparent to-teal-500/10 mix-blend-overlay z-10 pointer-events-none group-hover:opacity-75 transition-opacity duration-500" />
               <Image
-                src="/images/knowledge%20hub/seo-optimisation-ai-search_AEObility.webp"
+                src="/images/knowledge-hub/seo-optimisation-ai-search_AEObility.webp"
                 alt="Abstract hyper‑gradient illustration showing SEO as the foundational input layer for modern search, with a glowing structural grid representing crawlable architecture, rising lexical signal ribbons symbolising keywords and metadata, and floating semantic nodes depicting entity relationships used by AI search, AEO and RAG systems."
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

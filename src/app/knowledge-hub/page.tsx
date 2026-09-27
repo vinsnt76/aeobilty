@@ -173,7 +173,7 @@ export default function KnowledgeHubPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[16/10] w-full max-w-lg mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/60 shadow-[0_0_40px_rgba(0,205,216,0.2)] group transition-all">
                 <Image
-                  src="/ai-search-knowledge-hub.webp"
+                  src="/images/knowledge-hub/ai-search-knowledge-hub.webp"
                   alt="AEObility AI Search Knowledge Hub banner interface illustrating Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), structured content schemas, and RAG entity indexing matrices for Australian businesses"
                   fill
                   priority
@@ -261,7 +261,7 @@ export default function KnowledgeHubPage() {
             <div className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950/50 shadow-2xl">
                 <Image
-                  src="/structured-search-audit-wireframe.png"
+                  src="/images/knowledge-hub/structured-search-audit-wireframe.png"
                   alt="Wireframe diagram of a structured search optimisation audit"
                   fill
                   className="object-cover"

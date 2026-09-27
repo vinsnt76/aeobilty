@@ -659,7 +659,7 @@ const About: React.FC = () => {
                   { label: "AI Handover", highlight: true }
                 ],
                 skills: ["Next.js", "React", "Antigravity"],
-                imageSrc: "/aeobility-logo-dark.svg"
+                imageSrc: "/images/brand/aeobility-logo-dark.svg"
               },
               {
                 title: "Baby Bento — Structural Search Alignment",
@@ -672,7 +672,7 @@ const About: React.FC = () => {
                   { label: "Clicks +55%", highlight: true }
                 ],
                 skills: ["Shopify AEO", "Schema Injection", "Intent Routing", "E-commerce Uplift"],
-                imageSrc: "/case-study-aeo-lifts-traffic.webp"
+                imageSrc: "/images/knowledge-hub/case-study-aeo-lifts-traffic.webp"
               },
               {
                 title: "Baby Bento — Brand Book & Messaging Framework",
