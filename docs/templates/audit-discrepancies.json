@@ -211,7 +211,7 @@
   {
     "route": "/knowledge-hub",
     "file": "src/app/knowledge-hub/page.tsx",
-    "archetype": "08-core-utility",
+    "archetype": "07-hub-index",
     "issues": []
   },
   {
@@ -480,23 +480,7 @@
     "route": "/services/ai-search-marketing",
     "file": "src/app/services/ai-search-marketing/page.tsx",
     "archetype": "01-commercial-service",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 3 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-marketing/perth",
@@ -567,13 +551,13 @@
   {
     "route": "/services",
     "file": "src/app/services/page.tsx",
-    "archetype": "08-core-utility",
+    "archetype": "07-hub-index",
     "issues": []
   },
   {
     "route": "/services/perth/seo-specialist",
     "file": "src/app/services/perth/seo-specialist/page.tsx",
-    "archetype": "01-commercial-service",
+    "archetype": "03-local-intent",
     "issues": [
       {
         "rule": "Next.js 15 Server Component Root",
@@ -641,7 +625,7 @@
   {
     "route": "/solutions",
     "file": "src/app/solutions/page.tsx",
-    "archetype": "08-core-utility",
+    "archetype": "07-hub-index",
     "issues": [
       {
         "rule": "Next.js 15 Server Component Root",

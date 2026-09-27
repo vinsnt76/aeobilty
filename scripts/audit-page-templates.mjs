@@ -11,13 +11,13 @@ function classifyArchetype(routePath) {
   if (routePath.includes('knowledge-hub/articles/')) return '04-concept-article';
   if (routePath.includes('knowledge-hub/case-studies/')) return '05-evidence-case-study';
   if (routePath.includes('knowledge-hub/tutorials/') || routePath.includes('knowledge-hub/guides/')) return '06-practical-tutorial';
-  if (routePath.includes('services/ai-search-marketing/')) return '03-local-intent';
+  if (routePath !== '/services/ai-search-marketing' && (routePath.startsWith('/services/ai-search-marketing/') || routePath.startsWith('/services/perth/'))) return '03-local-intent';
   if (routePath.includes('solutions/')) return '02-commercial-solution';
   if (routePath.includes('services/')) return '01-commercial-service';
   if (
-    routePath === 'knowledge-hub' || 
-    routePath === 'services' || 
-    routePath === 'solutions' ||
+    routePath === '/knowledge-hub' || 
+    routePath === '/services' || 
+    routePath === '/solutions' ||
     routePath.endsWith('/articles') || 
     routePath.endsWith('/case-studies') || 
     routePath.endsWith('/tutorials')

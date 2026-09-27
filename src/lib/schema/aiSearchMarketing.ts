@@ -11,6 +11,41 @@ export interface FaqItem {
 export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/ai-search-marketing#webpage",
       "url": "https://aeobility.com.au/services/ai-search-marketing",
@@ -20,9 +55,14 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
       },
-      "about": {
-        "@id": "https://aeobility.com.au/#organisation"
-      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#service"
+        }
+      ],
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/ai-search-marketing#breadcrumb"
       },
@@ -62,6 +102,9 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "description": "Fixed-scope strategy and optimisation services that help Australian businesses improve machine discovery, vector retrieval accuracy, and citation share across AI platforms.",
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
+      },
+      "creator": {
+        "@id": "https://aeobility.com.au/#vince-baker"
       },
       "areaServed": [
         {

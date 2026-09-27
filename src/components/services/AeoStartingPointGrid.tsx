@@ -63,11 +63,17 @@ const engagementPaths: EngagementPath[] = [
   }
 ];
 
-export default function AeoStartingPointGrid() {
+interface AeoStartingPointGridProps {
+  targetFormId?: string;
+}
+
+export default function AeoStartingPointGrid({
+  targetFormId = "aeo-contact-form"
+}: AeoStartingPointGridProps) {
   const handleSelectSprint = (key: string) => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('select-aeo-sprint', { detail: key }));
-      const formElement = document.getElementById('aeo-contact-form');
+      const formElement = document.getElementById(targetFormId);
       if (formElement) {
         formElement.scrollIntoView({ behavior: 'smooth' });
       }

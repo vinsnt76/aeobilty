@@ -4,7 +4,23 @@ import React, { useState } from 'react';
 import { Search, CheckCircle2, ArrowRight } from 'lucide-react';
 import { trackGaEvent } from '@/lib/gtag';
 
-export default function AeoDiagnosticSection() {
+interface AeoDiagnosticSectionProps {
+  id?: string;
+  badgeTitle?: string;
+  heading?: string;
+  subheading?: string;
+  formId?: string;
+  leadType?: string;
+}
+
+export default function AeoDiagnosticSection({
+  id = "aeo-diagnostic-form",
+  badgeTitle = "Instant AEO Visibility Scan",
+  heading = "Run a Free AEO Visibility Scan",
+  subheading = "Enter your website URL to check structured data, entity clarity, and AI search readiness signals.",
+  formId = "canonical_aeo_diagnostic_form",
+  leadType = "aeo_visibility_scan",
+}: AeoDiagnosticSectionProps) {
   const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
   const [diagnosticData, setDiagnosticData] = useState({
     websiteUrl: '',
@@ -16,8 +32,8 @@ export default function AeoDiagnosticSection() {
     e.preventDefault();
     trackGaEvent('generate_lead', {
       event_category: 'lead_generation',
-      form_id: 'canonical_aeo_diagnostic_form',
-      lead_type: 'aeo_visibility_scan',
+      form_id: formId,
+      lead_type: leadType,
       value: 1,
     });
     setDiagnosticSubmitted(true);
@@ -28,20 +44,20 @@ export default function AeoDiagnosticSection() {
   };
 
   return (
-    <section id="aeo-diagnostic-form" className="border-t border-white/10 pt-16 scroll-mt-24">
+    <section id={id} className="border-t border-white/10 pt-16 scroll-mt-24">
       <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-6 sm:p-10 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
         <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
 
         <div className="text-center space-y-3 mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
             <Search className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Instant AEO Visibility Scan</span>
+            <span>{badgeTitle}</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">
-            Run a Free AEO Visibility Scan
+            {heading}
           </h3>
           <p className="text-xs sm:text-sm text-zinc-400 font-serif max-w-xl mx-auto leading-relaxed">
-            Enter your website URL to check structured data, entity clarity, and AI search readiness signals.
+            {subheading}
           </p>
         </div>
 

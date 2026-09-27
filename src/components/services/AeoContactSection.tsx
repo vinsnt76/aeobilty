@@ -5,7 +5,27 @@ import Link from 'next/link';
 import { Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import { trackGaEvent } from '@/lib/gtag';
 
-export default function AeoContactSection() {
+interface AeoContactSectionProps {
+  id?: string;
+  badgeTitle?: string;
+  heading?: string;
+  subheading?: string;
+  formId?: string;
+  leadType?: string;
+  buttonText?: string;
+  receivedHeading?: string;
+}
+
+export default function AeoContactSection({
+  id = "aeo-contact-form",
+  badgeTitle = "AEO Sprint",
+  heading = "Discuss AEO Services",
+  subheading = "Tell us about your business goals and Answer Engine Optimisation priorities. We will confirm scope and pricing before you commit.",
+  formId = "canonical_aeo_contact_form",
+  leadType = "aeo_services_enquiry",
+  buttonText = "Discuss AEO Services",
+  receivedHeading = "AEO Enquiry Received"
+}: AeoContactSectionProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactData, setContactData] = useState({
     name: '',
@@ -31,8 +51,8 @@ export default function AeoContactSection() {
     e.preventDefault();
     trackGaEvent('generate_lead', {
       event_category: 'lead_generation',
-      form_id: 'canonical_aeo_contact_form',
-      lead_type: 'aeo_services_enquiry',
+      form_id: formId,
+      lead_type: leadType,
       service_selected: contactData.serviceType,
       value: 1,
     });
@@ -44,11 +64,11 @@ export default function AeoContactSection() {
   };
 
   return (
-    <section id="aeo-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
+    <section id={id} className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
       <div className="max-w-md mx-auto space-y-4">
-        <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss AEO Services</h2>
+        <h2 className="text-3xl font-bold text-white font-soehne-breit">{heading}</h2>
         <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-          Tell us about your business goals and Answer Engine Optimisation priorities. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
+          {subheading} <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
         </p>
         <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
           <Users className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -59,9 +79,9 @@ export default function AeoContactSection() {
       <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
         <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
         <div className="flex items-center justify-between gap-4 mb-1.5">
-          <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss AEO Services</h3>
+          <h3 className="text-xl font-bold text-white font-soehne-breit">{heading}</h3>
           <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
-            AEO Sprint
+            {badgeTitle}
           </span>
         </div>
         <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
@@ -71,7 +91,7 @@ export default function AeoContactSection() {
         {contactSubmitted ? (
           <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
             <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-            <h4 className="font-bold text-white text-base">AEO Enquiry Received</h4>
+            <h4 className="font-bold text-white text-base">{receivedHeading}</h4>
             <p className="text-xs text-zinc-300 font-serif leading-relaxed">
               Thank you for reaching out. Our AEObility team will review your details and get in touch within 24 business hours.
             </p>
@@ -159,7 +179,7 @@ export default function AeoContactSection() {
               type="submit"
               className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
             >
-              <span>Discuss AEO Services</span>
+              <span>{buttonText}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
