@@ -33,13 +33,13 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "AEO Services: Answer Engine Optimisation Australia | AEObility",
-  description: "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Predictable fixed-scope sprints from $495 AUD ex. GST.",
+  title: "Answer Engine Optimisation (AEO) Services | AEObility",
+  description: "Structure your digital footprint for AI-first search engines and modern discovery platforms. Predictable fixed-scope sprints from $495 AUD ex. GST.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo",
   },
   openGraph: {
-    title: "AEO Services: Get Found. Get Chosen. | AEObility",
+    title: "Answer Engine Optimisation (AEO) Services | AEObility",
     description: "Fixed-scope Answer Engine Optimisation sprints for Australian businesses. Micro-sprints from $495 AUD ex. GST.",
     url: "https://aeobility.com.au/services/aeo",
     siteName: "AEObility",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AEO Services: Get Found. Get Chosen. | AEObility",
+    title: "Answer Engine Optimisation (AEO) Services | AEObility",
     description: "Fixed-scope Answer Engine Optimisation sprints for Australian businesses. Micro-sprints from $495 AUD ex. GST.",
     images: ["https://aeobility.com.au/images/services/canonical-aeo-services-hub_AEObility.webp"],
   },
@@ -200,11 +200,11 @@ export default function AEORootPage() {
               <span>Answer Engine Optimisation (AEO) Services</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AEO Services: <span className="text-gradient-aeo">Get Found. Get Chosen.</span>
+              Answer Engine Optimisation: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Restructure your digital footprint for AI-first search engines and modern discovery platforms. Clear scope. Flat rates.
+                We restructure your business facts, services, and credentials so AI answer engines stop guessing and start citing you accurately. Clear scope. Flat rates.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
@@ -248,6 +248,17 @@ export default function AEORootPage() {
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Grounded Real-World Practitioner Field Note */}
+            <div className="p-4 sm:p-5 rounded-xl bg-zinc-950/90 border border-cyan-500/30 text-xs text-zinc-300 font-serif leading-relaxed shadow-lg text-left relative overflow-hidden">
+              <div className="flex items-center gap-2 mb-1.5 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Field Note: Local WA Trade Recovery</span>
+              </div>
+              <p className="text-xs text-zinc-300 leading-relaxed">
+                In a recent audit for a WA commercial trade, mismatched ABN registry names and unstructured PDF price sheets meant Perplexity hallucinated legacy rates. Converting that data into an atomic HTML table with nested LocalBusiness schema corrected the citation within two search engine recrawls.
+              </p>
             </div>
 
             <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs text-zinc-300 font-serif leading-relaxed">
@@ -394,7 +405,7 @@ export default function AEORootPage() {
                     <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
                   </div>
                   <p className="text-zinc-300 leading-relaxed">
-                    A comprehensive four-week technical engagement delivering connected, multi-page schema mapping, token-optimised HTML restructuring, and bidirectional entity routing.
+                    A comprehensive four-week technical engagement delivering connected multi-page schema mapping, modular HTML blocks formatted for clear passage extraction, and contextual internal links.
                   </p>
                 </div>
               </div>
@@ -498,23 +509,23 @@ export default function AEORootPage() {
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
                   <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
-                    <strong className="text-white font-sans font-bold text-sm block">1. Direct GeoCoordinate Grounding</strong>
+                    <strong className="text-white font-sans font-bold text-sm block">1. Local Coordinate Consistency</strong>
                     <p className="text-zinc-300 leading-relaxed">
-                      We hard-code precise geographic coordinate matrices into your template headers to anchor local proximity routing.
+                      We align hard-coded geographic coordinates and NAP data to verify local proximity signals across AI answer systems.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
-                    <strong className="text-white font-sans font-bold text-sm block">2. Atomic Content Refactoring</strong>
+                    <strong className="text-white font-sans font-bold text-sm block">2. Atomic Content Formatting</strong>
                     <p className="text-zinc-300 leading-relaxed">
-                      Multi-line text walls are broken down into short, declarative, information-dense thoughts optimised for passage extraction.
+                      Unstructured text walls are broken down into clear, modular answer blocks formatted around the exact questions your buyers ask.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
-                    <strong className="text-white font-sans font-bold text-sm block">3. Automated Verification Loops</strong>
+                    <strong className="text-white font-sans font-bold text-sm block">3. Structured Ingestion Testing</strong>
                     <p className="text-zinc-300 leading-relaxed">
-                      We run prebuild vector compilation scripts to test how smoothly AI search crawlers ingest, verify, and cite your business facts.
+                      We test how cleanly AI search crawlers ingest, verify, and cite your business facts before deploying to production.
                     </p>
                   </div>
                 </div>
@@ -566,7 +577,7 @@ export default function AEORootPage() {
                 </div>
                 <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
                   <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider block">Citation Outcome</span>
-                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Direct footnote attribution linking searchers to your primary service page.</p>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Increases the probability of footnote attribution by providing retrieval models with verified tabular data and clear citation links.</p>
                 </div>
               </div>
 
@@ -587,7 +598,7 @@ export default function AEORootPage() {
                     <ul className="space-y-1.5 text-xs text-zinc-300 font-serif">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white">Atomic Q&amp;A blocks</strong> positioned directly beneath H2 headers</span>
+                        <span><strong className="text-white">Atomic Q&amp;A blocks</strong> positioned beneath headers to improve direct brand citation</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
@@ -598,7 +609,7 @@ export default function AEORootPage() {
                 </div>
                 <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
                   <span className="text-[10px] font-mono text-purple-300 uppercase tracking-wider block">Citation Outcome</span>
-                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Direct brand recommendation when users ask for service providers.</p>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Improves the likelihood of direct brand recommendation when users ask conversational discovery questions.</p>
                 </div>
               </div>
 
@@ -630,7 +641,7 @@ export default function AEORootPage() {
                 </div>
                 <div className="p-3 bg-black/60 border border-white/5 rounded-xl space-y-1">
                   <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider block">Citation Outcome</span>
-                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Dominant passage extraction in AI Overview snapshots above organic SERPs.</p>
+                  <p className="text-[11px] text-zinc-300 font-serif leading-tight">Increases the likelihood of passage extraction in AI Overview snapshots above organic search results.</p>
                 </div>
               </div>
             </div>

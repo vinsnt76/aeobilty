@@ -29,7 +29,7 @@ const engagementPaths: EngagementPath[] = [
     priceSub: "ex. GST",
     scope: "One priority page or schema fix",
     description: "Choose one focused priority for $495 AUD ex. GST: Structured Schema Deployment, Single Page Atomic Rewrite, or Category Answer Unit.",
-    techNote: "For technical teams: Deployment of nested JSON-LD graphs and atomic HTML passage markup.",
+    techNote: "For technical teams: We implement schema graphs that tie your business facts directly to authoritative registries, paired with modular HTML blocks designed for accurate extraction.",
     whenToChoose: "Choose this when you have one specific page or schema gap limiting AI search readability.",
     ctaLabel: "Discuss Micro-Sprint"
   },
@@ -43,7 +43,7 @@ const engagementPaths: EngagementPath[] = [
     priceSub: "ex. GST",
     scope: "Connected multi-page & entity improvements",
     description: "Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures in a focused four-week engagement.",
-    techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
+    techNote: "For technical teams: Multi-page schema integration, restructuring internal contextual links to pass explicit topical relevance, and aligning citation records.",
     whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
     ctaLabel: "Discuss Foundation Tier"
   },
@@ -57,7 +57,7 @@ const engagementPaths: EngagementPath[] = [
     priceSub: "ex. GST",
     scope: "Full digital audit & 90-day roadmap",
     description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work.",
-    techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
+    techNote: "For technical teams: Practical audit of structured data gaps, entity clarity review, and query intent mapping.",
     whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
     ctaLabel: "Discuss $995 Blueprint"
   }
