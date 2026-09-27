@@ -40,7 +40,10 @@ Every page on AEObility, regardless of archetype, must pass these 5 rules withou
 1. **Exact Single Eyebrow:** Exactly one mono context badge anchors each section (`font-mono text-xs uppercase tracking-widest text-aeo-cyan`). Never stack multiple eyebrow pills or competing tags above a headline.
 2. **Strict Semantic Single H1:** Exactly one `<h1>` per page, positioned inside the Hero block. In-flow tools or mid-page sections drop to an `<h2>` or `<h3>` with distinct action-led phrasing.
 3. **Australian English (AU) Only:** Enforce AU spelling across all visible text, meta descriptions, schema text, and image alt attributes (`optimisation`, `specialises`, `organisation`, `behaviour`, `maximise`, `analysing`). Banned: US variants (`optimization`, `behavior`).
-4. **Button Geometry Standard:** Primary interactive button labels are strictly capped at **2–4 words** (`Run Free Visibility Scan`, `Discuss AEO Services`, `Order $995 Blueprint`) to preserve geometric padding on 320px mobile screens.
+4. **Button Hierarchy & Canonical CTA Taxonomy:**
+   - **Primary Action (Dominant Fill):** Exactly one unmistakable solid breakout button per module (`Run Free Scan` or `Run Visibility Scan`), set in solid white/cyan fill with dark text and subtle cyan glow.
+   - **Secondary Action (Subordinate Ghost):** Styled as a low-luminance recessed dark button with a subtle 1px border (`Discuss AEO Services`), never competing for primary fill luminance.
+   - **Canonical CTA Vocabulary:** Button labels adhere strictly to the 2–4 word canonical dictionary (`Run Free Scan`, `Run Visibility Scan`, `Free AI Visibility Scan`, `Free Visibility Scan`, `Discuss AEO Services`, `Discuss Micro-Sprint`, `Order $995 Blueprint`).
 5. **Absolute Canonical Schema URIs:** All `@id` tags and node references in JSON-LD must use fully-qualified canonical URIs (`https://aeobility.com.au/...`). Relative paths in schema are strictly prohibited.
 
 ---
@@ -54,13 +57,18 @@ To guarantee SEO compliance and prevent Next.js 15 metadata compilation failures
 
 ---
 
-## 5. Dark Glassmorphism & The Solid Breakout Rule
+## 5. Dark Glassmorphism, Typography & The Solid Breakout Rule
 
 All templates follow the controlled-depth dark glassmorphism system codified in [UX_STYLEGUIDE.md](file:///c:/Users/vince/agy2/projects/aeobility/UX_STYLEGUIDE.md):
 - **Base Canvas:** Deep off-black `#0C0D12` / `#030303` with subtle ambient cyan/violet underlay orbs.
 - **Glass Panel Recipe:** Low-opacity white fill (`rgba(255,255,255,0.04)`), `backdrop-filter: blur(16px) saturate(140%)`, 1px directional top specular catch, and `transform: translateZ(0)`.
-- **The Solid Breakout Rule:** Primary CTAs, form input wells, and pricing guarantees must remain **solid opaque** or vibrant solid gradients. Ghost buttons on glass panels are strictly banned.
-- **Body Text Minimum:** Continuous body prose must never drop below **16px (1rem)**, styled in `#E2E8F0` / `#E4E4E7` Geist Sans Medium (500 weight) for character definition.
+- **The Solid Breakout Rule & Attention Budget:** Primary conversion triggers (`Run Free Scan`), form input wells, and pricing guarantees must remain **solid opaque** or vibrant high-contrast fills. Dual competing primary fills are strictly prohibited under Hick's Law.
+- **Typography Scale & Weights:**
+  - Hero subhead (lead value prop) sized at **18–20px desktop** in **Medium 500** (`text-zinc-100`) to anchor F-pattern reading.
+  - Operational reassurance micro-copy beneath CTAs sized at **14–15px Medium 500+** (`text-zinc-200`).
+  - Continuous body prose strictly $\ge$ **16px (1rem)**, styled in `#E2E8F0` / `#E4E4E7` Geist Sans Medium (500 weight).
+  - Field note and practitioner callouts enforce minimum **14px**, **1.6 line-height**, and **60–75 characters maximum line measure**.
+  - Diagram node labels enforce minimum **14px bold**, or are treated as illustrative abstract visuals with adjacent structured tables.
 - **Viewport Blur Budget:** Maximum **2 active blurred layers per viewport** to prevent mobile GPU frame drops.
 
 ---

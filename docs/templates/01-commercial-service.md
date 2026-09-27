@@ -78,21 +78,24 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
 2. **Breadcrumbs (`<Breadcrumbs />`)**
 3. **Hero Section (`<section id="hero">`)**:
    - Single Geist Mono eyebrow badge with `Sparkles` icon (`font-mono text-xs uppercase text-aeo-cyan`).
-   - Single `<h1>` in Söhne Bold with gradient accent: `AEO Services — <span className="text-gradient-aeo">Get Found. Get Chosen.</span>`
-   - Outcome subhead (`h2` styled as lead paragraph, max 2 lines): Concise explanation of digital footprint restructuring.
-   - Price indicator subtitle in Geist Mono: `Micro-Sprints from $495 AUD ex. GST | Foundation from $3,195 AUD ex. GST`.
+   - Single `<h1>` in Söhne Bold with gradient accent: `Answer Engine Optimisation: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>`
+   - Outcome subhead (`h2` styled as lead paragraph, 18–20px / Medium 500, max 2 lines): Clear explanation of digital footprint restructuring for modern AI retrieval.
+   - Price indicator subtitle in Geist Mono: `Micro-Sprints from $495 AUD ex. GST | Foundation from $3,195 AUD ex. GST` (`font-mono font-bold text-cyan-300 text-sm sm:text-base`).
    - Featured 1200x800 `.webp` hero banner with overlaid dark glass CTA card:
-     - Left: Delivery timeline statement (`Typical delivery: 4–5 business days`).
-     - Right: Dual action buttons (Primary: `Discuss AEO Services`, Secondary: `Run Free Scan`).
+     - Reassurance micro-copy: `Typical delivery: 4–5 business days from confirmed scope and access` (14–15px Medium 500, high contrast).
+     - Dominant Primary Fill Button: `Run Free Scan` (Tier 1 Solid Breakout with dark text and cyan glow).
+     - Secondary Ghost Button: `Discuss AEO Services` (Tier 2 recessed dark surface with white text).
+   - Grounded Practitioner Field Note Callout (`max-w-2xl` measure / 60–75 chars per line, 14px minimum font size, 1.6 leading, local WA trade recovery).
    - Contextual guide recommendation alert well.
 4. **"Choose Your Starting Point" Engagement Grid (`<section id="engagement-paths">`)**:
    - Section heading (`h2`): `Choose Your Starting Point`.
    - 3 equal-height sprint cards:
-     - Card 1: `AEO Technical Micro-Sprint` (`#aeo-micro-sprints` • $495 AUD ex. GST)
-     - Card 2: `Foundation Implementation` (`#aeo-foundation` • $3,195 AUD ex. GST)
-     - Card 3: `The AEObility Blueprint` (`#aeo-blueprint` • $995 AUD ex. GST)
+     - Card 1: `AEO Technical Micro-Sprint` (`#aeo-micro-sprints` • $495 AUD ex. GST • Button: `Discuss Micro-Sprint`)
+     - Card 2: `Foundation Implementation` (`#aeo-foundation` • $3,195 AUD ex. GST • Button: `Discuss Foundation Tier`)
+     - Card 3: `The AEObility Blueprint` (`#aeo-blueprint` • $995 AUD ex. GST • Button: `Discuss $995 Blueprint`)
 5. **Technical Architecture / Four Pillars Grid (`<section id="pillars">`)**:
    - 4 discrete capability cards: `1. Machine-Readable Structure`, `2. Atomic Content Clarity`, `3. Internal Linking Lattice`, `4. Corroborated Brand Authority`.
+   - Diagram elements adhere to minimum 14px bold node labels or are treated as illustrative abstract schematics with adjacent data tables.
 6. **Deliverables & Execution Scope Table**:
    - Solid opaque table (`bg-[#080B12]`) detailing tangible sprint outputs, timelines, and deliverables.
 7. **Problem & Symptom Matrix**:
@@ -103,7 +106,8 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
    - Minimum 6 service-specific questions wrapped in `FAQPage` schema.
 10. **Lead Capture & Consultation Form (`<section id="aeo-contact-form">`)**:
     - Sprint selector form triggering `trackGaEvent('generate_lead')`.
-11. **Final Diagnostic CTA Banner & Footer (`<Footer />`)**.
+11. **Final Diagnostic CTA Banner & Footer (`<Footer />`)**:
+    - Diagnostic card titled `Free AI Visibility Scan` with primary button `Run Visibility Scan`.
 
 ---
 
@@ -111,11 +115,17 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
 
 * **Eyebrow:** `font-mono text-xs font-semibold uppercase tracking-widest text-aeo-cyan` (Geist Mono 500, `+0.12em`).
 * **Page H1:** `font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1]` (Söhne Bold 700).
+* **Hero Subhead (Lead Value Prop):** `font-sans text-lg sm:text-xl font-medium text-zinc-100 leading-relaxed` (Geist Sans 500, high contrast to anchor F-pattern scanning).
 * **Section H2:** `font-display text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug` (Söhne Bold 700).
 * **Card H3:** `font-display text-base sm:text-lg font-bold text-slate-100 leading-snug` (Söhne Halbfett 600).
 * **Body Prose:** `font-sans text-base text-slate-200 leading-relaxed font-medium` (Geist Sans 500, strictly $\ge$ 16px).
-* **Pricing & Metrics:** `font-mono text-xl sm:text-2xl font-bold text-white tracking-tight` (Geist Mono 600).
-* **CTA Button Labels:** `font-sans text-xs sm:text-sm font-bold tracking-wide text-black uppercase` (2–4 words max).
+* **Operational Reassurance Micro-Copy:** `font-sans text-sm sm:text-[15px] font-medium text-zinc-200` (Geist Sans 500, >= 14–15px).
+* **Field Note Body:** `font-sans text-sm text-zinc-200 leading-relaxed max-w-prose` (Geist Sans 450–500, 14px minimum, 60–75 char measure).
+* **Diagram / Schematic Node Labels:** `font-sans text-sm font-bold text-white` (Minimum 14px bold for non-abstract diagrams).
+* **Pricing & Metrics:** `font-mono text-sm sm:text-base font-bold text-cyan-300 tracking-tight` (Geist Mono 600).
+* **CTA Buttons (Canonical Taxonomy):**
+  - **Dominant Primary Fill (`Run Free Scan`):** `bg-white hover:bg-cyan-300 text-slate-950 font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.4)]`.
+  - **Secondary Ghost / Border (`Discuss AEO Services`):** `bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-zinc-100 hover:text-white font-semibold text-xs sm:text-sm px-4 py-3 rounded-xl`.
 
 ---
 
@@ -124,8 +134,8 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
 * **Canvas Root:** Deep Slate / Obsidian Black `#030303` with ambient cyan (`#00cdd8/10`) and purple (`#bd00ff/10`) diffuse neon orbs.
 * **Tier 1 (Strong Glass):** Overlaid Hero CTA container: `bg-zinc-950/90 backdrop-blur-md border border-white/15 shadow-2xl p-6 rounded-2xl transform translate-z-0`.
 * **Tier 2 (Mid Glass):** Engagement starting point cards: `bg-zinc-950/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-cyan-500/40 transition-all`.
-* **The Solid Breakout Rule:**
-  - Primary button: Solid gradient `bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold shadow-[0_0_15px_rgba(0,205,216,0.4)]`.
+* **The Solid Breakout Rule & Attention Budget:**
+  - Exactly ONE dominant primary fill button (`Run Free Scan` in solid white/cyan fill) paired with a subordinate ghost/outline button (`Discuss AEO Services`). Never use competing dual primary fills.
   - Form input wells: Solid recessed `#080B12` base with solid `#64748B` border (3:1 contrast ratio guaranteed).
 
 ---

@@ -202,13 +202,13 @@ export default function AEORootPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               Answer Engine Optimisation: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>
             </h1>
-            <div className="space-y-3 max-w-2xl mx-auto">
-              <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
+            <div className="space-y-3 max-w-3xl mx-auto">
+              <h2 className="text-lg sm:text-xl text-zinc-100 font-medium leading-relaxed font-soehne-breit">
                 We restructure your business facts, services, and credentials so AI answer engines stop guessing and start citing you accurately. Clear scope. Flat rates.
               </h2>
-              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
+              <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
-                <span className="text-zinc-600">|</span>
+                <span className="text-zinc-500">|</span>
                 <span>Foundation Implementation from $3,195 AUD ex. GST</span>
               </div>
             </div>
@@ -226,37 +226,39 @@ export default function AEORootPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
               {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
-                <div className="text-left space-y-0.5 sm:space-y-1">
-                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AEO foundation.</span>
-                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
+                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AEO foundation.</span>
+                  <span className="text-xs sm:text-[14px] text-zinc-200 font-medium block">
+                    Typical delivery: <strong className="text-white font-semibold">4–5 business days</strong> from confirmed scope and access.
+                  </span>
                 </div>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
-                  <a
-                    href="#aeo-contact-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Discuss AEO Services</span>
-                  </a>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
                   <a
                     href="#aeo-diagnostic-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white hover:bg-cyan-300 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <span>Run Free Scan</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
+                  </a>
+                  <a
+                    href="#aeo-contact-form"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-zinc-100 hover:text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Discuss AEO Services</span>
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Grounded Real-World Practitioner Field Note */}
-            <div className="p-4 sm:p-5 rounded-xl bg-zinc-950/90 border border-cyan-500/30 text-xs text-zinc-300 font-serif leading-relaxed shadow-lg text-left relative overflow-hidden">
-              <div className="flex items-center gap-2 mb-1.5 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
-                <MapPin className="w-3.5 h-3.5" />
+            <div className="p-5 sm:p-6 rounded-xl bg-zinc-950/90 border border-cyan-500/30 shadow-lg text-left relative overflow-hidden max-w-3xl mx-auto">
+              <div className="flex items-center gap-2 mb-2 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
+                <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>Field Note: Local WA Trade Recovery</span>
               </div>
-              <p className="text-xs text-zinc-300 leading-relaxed">
+              <p className="text-sm text-zinc-200 font-sans leading-relaxed max-w-prose">
                 In a recent audit for a WA commercial trade, mismatched ABN registry names and unstructured PDF price sheets meant Perplexity hallucinated legacy rates. Converting that data into an atomic HTML table with nested LocalBusiness schema corrected the citation within two search engine recrawls.
               </p>
             </div>
