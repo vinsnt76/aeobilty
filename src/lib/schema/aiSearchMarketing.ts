@@ -16,12 +16,32 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "description": "AEObility is a technical AI search marketing firm in Perth executing native Answer Engine Optimisation (AEO) using proprietary NLP workflows, automated multimedia video generation, and open-standard Model Context Protocol (MCP) servers.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Perth",
+        "addressRegion": "WA",
+        "addressCountry": "AU"
+      },
       "founder": {
         "@id": "https://aeobility.com.au/#vince-baker"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/aeobility"
+        "https://m.youtube.com/@aeobility",
+        "https://www.linkedin.com/company/aeobility",
+        "https://aeobility.substack.com"
       ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://aeobility.com.au/#ai-bill",
+      "name": "AI Bill",
+      "applicationCategory": "Diagnostic Assistant",
+      "operatingSystem": "Web",
+      "author": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "description": "Proprietary NLP diagnostic assistant and RAG telemetry engine for AEObility."
     },
     {
       "@type": "Person",
@@ -43,14 +63,15 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "name": "AEObility",
       "publisher": {
         "@id": "https://aeobility.com.au/#organisation"
-      }
+      },
+      "inLanguage": "en-AU"
     },
     {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/ai-search-marketing#webpage",
       "url": "https://aeobility.com.au/services/ai-search-marketing",
-      "name": "AI Search Marketing & Strategy | AEObility",
-      "description": "Make your business easier for search engines, digital assistants and AI search systems to identify, understand, and reference. Strategy, audits and AEO sprints from $495 AUD ex. GST.",
+      "name": "AI Search Marketing Services Perth | AEObility",
+      "description": "Engineered AI search marketing and answer engine optimisation in Perth. Make your business easier for search engines, digital assistants, and AI search systems to identify, understand, and reference.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -60,7 +81,13 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "@id": "https://aeobility.com.au/#organisation"
         },
         {
+          "@id": "https://aeobility.com.au/#ai-bill"
+        },
+        {
           "@id": "https://aeobility.com.au/services/ai-search-marketing#service"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#ai-bill-overview-video"
         }
       ],
       "breadcrumb": {
@@ -95,17 +122,43 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       ]
     },
     {
+      "@type": "VideoObject",
+      "@id": "https://aeobility.com.au/services/ai-search-marketing#ai-bill-overview-video",
+      "name": "AI Bill: Demonstrating AEO, MCP, and AI Search Marketing in Perth",
+      "description": "See how AEObility's NLP diagnostic assistant, AI Bill, audits entity clarity, connects to Model Context Protocol (MCP) endpoints, and drives AI search visibility for Australian businesses.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/ghX_txnK7WU/maxresdefault.jpg"
+      ],
+      "uploadDate": "2026-09-27",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/ghX_txnK7WU",
+      "contentUrl": "https://www.youtube.com/watch?v=ghX_txnK7WU",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#ai-bill"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#service"
+        }
+      ],
+      "transcript": "AI Bill is AEObility's proprietary NLP diagnostic assistant in Perth. In this video, we demonstrate how Model Context Protocol endpoints and entity tri-graph schemas eliminate ambiguity in generative AI search engines, ensuring Australian businesses get found and chosen across Google Maps, Perplexity, and AI search interfaces."
+    },
+    {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/ai-search-marketing#service",
-      "name": "AI Search Marketing & Strategy",
+      "name": "AI Search Marketing & AEO Sprints",
       "alternateName": "Generative Search Strategy",
-      "description": "Fixed-scope strategy and optimisation services that help Australian businesses improve machine discovery, vector retrieval accuracy, and citation share across AI platforms.",
+      "description": "Technical AEO, MCP server integration, multi-modal video provenance, and schema architecture for Australian businesses.",
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
       },
       "creator": {
         "@id": "https://aeobility.com.au/#vince-baker"
       },
+      "mainEntityOfPage": "https://aeobility.com.au/services/ai-search-marketing",
       "areaServed": [
         {
           "@type": "Country",
@@ -141,6 +194,12 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         "@type": "Audience",
         "audienceType": "Australian small businesses, internal marketing teams, and enterprise brand managers"
       },
+      "offers": {
+        "@type": "Offer",
+        "price": "995.00",
+        "priceCurrency": "AUD",
+        "description": "AEObility 90-Day Blueprint: 100% of your Blueprint fee is credited toward eligible technical implementation sprints."
+      },
       "hasOfferCatalog": {
         "@id": "https://aeobility.com.au/services/ai-search-marketing#catalog"
       }
@@ -148,8 +207,17 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "OfferCatalog",
       "@id": "https://aeobility.com.au/services/ai-search-marketing#catalog",
-      "name": "AEObility AI Search Marketing Services",
+      "name": "Model Context Protocol & Technical Services",
       "itemListElement": [
+        {
+          "@type": "Offer",
+          "@id": "https://aeobility.com.au/services/ai-search-marketing#offer-mcp-integration",
+          "name": "MCP Endpoint Integration & Schema Deployment",
+          "description": "Open-standard Model Context Protocol endpoint deployment, machine-readable tool catalogues, and structured schema integration.",
+          "seller": {
+            "@id": "https://aeobility.com.au/#organisation"
+          }
+        },
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/ai-search-marketing#offer-micro-sprints",
