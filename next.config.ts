@@ -303,6 +303,42 @@ const nextConfig: NextConfig = {
         destination: '/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo',
         permanent: true,
       },
+      // Public Asset Reorganisation Redirects
+      {
+        source: '/AI_Visibility_Report_AEObility.pdf',
+        destination: '/files/AI_Visibility_Report_AEObility.pdf',
+        permanent: true,
+      },
+      {
+        source: '/fullllms.txt',
+        destination: '/llms-full.txt',
+        permanent: true,
+      },
+      {
+        source: '/apple-touch-icon.png',
+        destination: '/icons/apple-touch-icon.png',
+        permanent: true,
+      },
+      {
+        source: '/android-chrome-192x192.png',
+        destination: '/icons/android-chrome-192x192.png',
+        permanent: true,
+      },
+      {
+        source: '/android-chrome-512x512.png',
+        destination: '/icons/android-chrome-512x512.png',
+        permanent: true,
+      },
+      {
+        source: '/favicon-16x16.png',
+        destination: '/icons/favicon-16x16.png',
+        permanent: true,
+      },
+      {
+        source: '/favicon-32x32.png',
+        destination: '/icons/favicon-32x32.png',
+        permanent: true,
+      },
     ];
   },
 };

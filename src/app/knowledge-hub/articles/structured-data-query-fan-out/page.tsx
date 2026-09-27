@@ -122,7 +122,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
-        "logo": "https://aeobility.com.au/android-chrome-512x512.png",
+        "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
         "description": "AEObility helps Australian small businesses become discoverable, understandable, and recommended across search, maps, and generative AI.",
         "address": {
           "@type": "PostalAddress",

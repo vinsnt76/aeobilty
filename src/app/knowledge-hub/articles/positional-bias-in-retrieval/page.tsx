@@ -154,7 +154,7 @@ export default function PositionalBiasArticlePage() {
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
-        "logo": "https://aeobility.com.au/android-chrome-512x512.png",
+        "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
         "description": "AEObility optimises Australian small businesses for visibility, understanding and selection across search, maps and generative AI corridors.",
         "address": {
           "@type": "PostalAddress",

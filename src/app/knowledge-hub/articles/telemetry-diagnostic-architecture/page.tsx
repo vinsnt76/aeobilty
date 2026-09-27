@@ -62,7 +62,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "telephone": "+61 480 286 282",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/android-chrome-512x512.png"
+          "url": "https://aeobility.com.au/icons/android-chrome-512x512.png"
         },
         "description": "AEObility helps Australian small-to-medium businesses become discoverable, understandable, and recommended across AI search, maps, and RAG systems.",
         "address": {

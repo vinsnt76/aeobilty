@@ -26,7 +26,7 @@ export default function AeoVsSeoArticlePage() {
         "url": "https://aeobility.com.au/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/android-chrome-512x512.png"
+          "url": "https://aeobility.com.au/icons/android-chrome-512x512.png"
         }
       },
       {

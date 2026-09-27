@@ -133,7 +133,7 @@ export default function SemanticSEONodePage() {
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
-        "logo": "https://aeobility.com.au/android-chrome-512x512.png",
+        "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
         "description": "AEObility helps Australian businesses appear, make sense, and stand out across Search, Maps & AI. Get Found. Get Chosen.",
         "address": {
           "@type": "PostalAddress",

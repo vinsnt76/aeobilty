@@ -215,7 +215,7 @@ export default function First90DaysCaseStudy() {
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href="/AI_Visibility_Report_AEObility.pdf"
+                  href="/files/AI_Visibility_Report_AEObility.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-xs text-cyan-300 font-mono font-medium hover:bg-cyan-900/60 hover:text-white transition-all shadow-sm"
@@ -225,7 +225,7 @@ export default function First90DaysCaseStudy() {
                   <ExternalLink className="w-3.5 h-3.5 text-cyan-400/80" />
                 </a>
                 <a
-                  href="/AI_Visibility_Report_AEObility.pdf"
+                  href="/files/AI_Visibility_Report_AEObility.pdf"
                   download
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-mono font-medium hover:bg-white/10 hover:text-white transition-all shadow-sm"
                 >
@@ -241,7 +241,7 @@ export default function First90DaysCaseStudy() {
                   <span className="text-cyan-400 font-semibold">Verified Proof Document</span>
                 </div>
                 <iframe
-                  src="/AI_Visibility_Report_AEObility.pdf#toolbar=0"
+                  src="/files/AI_Visibility_Report_AEObility.pdf#toolbar=0"
                   className="w-full h-[650px] bg-zinc-900 border-none"
                   title="AEObility Looker Studio AI Visibility Evidence Report"
                 />

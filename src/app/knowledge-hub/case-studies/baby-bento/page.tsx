@@ -54,7 +54,7 @@ export default function BabyBentoCaseStudyPage() {
       "name": "AEObility",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://aeobility.com.au/android-chrome-192x192.png"
+        "url": "https://aeobility.com.au/icons/android-chrome-192x192.png"
       }
     },
 

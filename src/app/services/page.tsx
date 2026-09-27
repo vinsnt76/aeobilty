@@ -47,7 +47,7 @@ export default function ServicesPage() {
         "description": "AEObility is an Australian AEO consultancy helping local service businesses and SMBs in Perth, Australia become discoverable, understandable and recommended across Search, Maps and AI.",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aeobility.com.au/android-chrome-512x512.png"
+          "url": "https://aeobility.com.au/icons/android-chrome-512x512.png"
         },
         "address": {
           "@type": "PostalAddress",
