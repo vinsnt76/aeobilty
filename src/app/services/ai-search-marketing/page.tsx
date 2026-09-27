@@ -149,7 +149,7 @@ export default function AISearchMarketingPage() {
 
             <div className="space-y-4 max-w-3xl mx-auto">
               <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
-                <strong className="text-white font-semibold font-sans">AI Search Marketing (Perth):</strong> AEObility is an independent digital business in Perth that prepares websites for answer-led search. We structure brand facts, publish self-contained answer blocks, and resolve entity ambiguity so generative models and local maps can reliably cite your services.
+                AEObility structures commercial brand facts, nested Schema.org entity graphs, and self-contained answer units for Perth businesses. We bridge the gap between traditional search engine optimisation and generative AI discovery, ensuring ChatGPT, Claude, Perplexity, and Google AI Overviews accurately cite and recommend your services.
               </p>
 
               <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs sm:text-sm text-cyan-200 font-serif leading-relaxed">
