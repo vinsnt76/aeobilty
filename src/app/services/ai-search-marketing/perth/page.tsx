@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -8,33 +7,62 @@ import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
-import { trackGaEvent } from '@/lib/gtag';
-
+import { getLocalMetroSchemaGraph, METRO_CONFIGS } from '@/lib/schema/localMetroAeo';
+import FaqAccordion from '@/components/FaqAccordion';
+import AeoDiagnosticSection from '@/components/services/AeoDiagnosticSection';
+import AeoContactSection from '@/components/services/AeoContactSection';
+import AeoStartingPointGrid from '@/components/services/AeoStartingPointGrid';
 import {
   ArrowRight,
-  Layers,
   Cpu,
-  Search,
   CheckCircle2,
-  Zap,
-  ShieldCheck,
-  Compass,
-  Share2,
-  BarChart3,
-  Sparkles,
-  FileText,
-  ChevronDown,
-  HelpCircle,
-  Users,
   Calendar,
-  Rocket,
-  Boxes,
-  FileCheck,
-  Code,
   Building2,
   Activity,
-  Wrench
+  Wrench,
+  Search,
+  FileCheck,
+  Code,
+  MapPin
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "AI Search Optimisation Perth: AEO & AI SEO Services | AEObility",
+  description: "AI search optimisation in Perth for businesses that want citations in AI Overviews, ChatGPT, and Perplexity. AEO, AI SEO, and GEO services. Book a free audit.",
+  alternates: {
+    canonical: "https://aeobility.com.au/services/ai-search-marketing/perth",
+  },
+  openGraph: {
+    title: "AI Search Optimisation Perth: AEO & AI SEO Services | AEObility",
+    description: "AI search optimisation in Perth for businesses that want citations in AI Overviews, ChatGPT, and Perplexity. AEO, AI SEO, and GEO services. Book a free audit.",
+    url: "https://aeobility.com.au/services/ai-search-marketing/perth",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "website",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "AEObility AI search optimisation framework dashboard for local service trades and SMBs in Perth, Western Australia.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Search Optimisation Perth: AEO & AI SEO Services | AEObility",
+    description: "AI search optimisation in Perth for businesses that want citations in AI Overviews, ChatGPT, and Perplexity.",
+    images: ["https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp"],
+  },
+  keywords: [
+    "ai search marketing perth",
+    "ai search strategy perth",
+    "aeo perth",
+    "answer engine optimisation perth",
+    "ai seo specialist perth",
+    "geo marketing perth"
+  ]
+};
 
 export const AI_MARKETING_INTERNAL_LINKS = [
   {
@@ -54,252 +82,36 @@ export const AI_MARKETING_INTERNAL_LINKS = [
   }
 ];
 
-export default function AISearchMarketingPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-
-  const [diagnosticData, setDiagnosticData] = useState({
-    websiteUrl: '',
-    name: '',
-    email: ''
-  });
-
-  const [contactData, setContactData] = useState({
-    name: '',
-    email: '',
-    website: '',
-    serviceType: 'unsure',
-    message: ''
-  });
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  const selectSprintForForm = (typeKey: string) => {
-    setContactData(prev => ({ ...prev, serviceType: typeKey }));
-    const formElement = document.getElementById('ai-contact-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleDiagnosticSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'ai_diagnostic_scan_form',
-      lead_type: 'ai_readiness_scan',
-      value: 1,
-    });
-    setDiagnosticSubmitted(true);
-    setTimeout(() => {
-      setDiagnosticSubmitted(false);
-      setDiagnosticData({ websiteUrl: '', name: '', email: '' });
-    }, 6000);
-  };
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'ai_search_contact_form',
-      lead_type: 'ai_marketing_enquiry',
-      service_selected: contactData.serviceType,
-      value: 1,
-    });
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setContactSubmitted(false);
-      setContactData({ name: '', email: '', website: '', serviceType: 'unsure', message: '' });
-    }, 6000);
-  };
-
-  const faqs = [
+export default function PerthAISearchMarketingPage() {
+  const rawFaqs = [
     {
-        "question": "What is AI search optimisation for Perth businesses?",
-        "answer": "AI search optimisation ensures your business data, services, and operational facts are structured so platforms like ChatGPT, Perplexity, and AI Overviews can discover and cite them. Perth businesses are currently under-represented in generative answers, making early adoption a significant advantage."
+      question: "What is AI search optimisation for Perth businesses?",
+      answer: "AI search optimisation ensures your business data, services, and operational facts are structured so platforms like ChatGPT, Perplexity, and Google AI Overviews can discover and cite them. Perth businesses are currently under-represented in generative answers, making early adoption a significant advantage."
     },
     {
-        "question": "How is AI search different from traditional SEO in WA?",
-        "answer": "Traditional SEO relies on keyword rankings and backlinks, whereas AI search prioritises entity clarity, citations, and structured local facts. A local, answer-first content structure matters more for AI recommendations than generic high-volume keywords."
+      question: "How is AI search different from traditional SEO in WA?",
+      answer: "Traditional SEO relies on keyword rankings and backlinks, whereas AI search prioritises entity clarity, citations, and structured local facts. A local, answer-first content structure matters more for AI recommendations than generic high-volume keywords."
     },
     {
-        "question": "Do we need separate pages for Perth suburbs (Joondalup, Mandurah, Fremantle)?",
-        "answer": "You only need dedicated suburb pages if you have a physical presence or distinct service offerings in those areas. Otherwise, a single, strongly-optimised Perth entity page with clear service-area signals is sufficient for AI extraction."
+      question: "Do we need separate pages for Perth suburbs (Joondalup, Mandurah, Fremantle)?",
+      answer: "You only need dedicated suburb pages if you have a physical presence or distinct service offerings in those areas. Otherwise, a single, strongly optimised Perth entity page with clear service-area signals is sufficient for AI extraction."
     },
     {
-        "question": "Can AI search help us reach mining and resources decision-makers?",
-        "answer": "Yes. Procurement teams increasingly use AI tools to solve complex operational challenges like 'automation for mine sites' or 'safety compliance software WA'. Targeted, technical FAQs and case studies are highly likely to be cited in these generative responses."
+      question: "Can AI search help us reach mining and resources decision-makers?",
+      answer: "Yes. Procurement teams increasingly use AI tools to solve complex operational challenges like automation for mine sites or safety compliance software in WA. Targeted, technical FAQs and case studies are highly likely to be cited in these generative responses."
     },
     {
-        "question": "How long does it take to see results from AI search optimisation in Perth?",
-        "answer": "While AI models index changes rapidly, achieving semantic authority typically takes several weeks to months. The foundational steps—entity clarity, structured data, and GBP alignment—can trigger visibility improvements in subsequent LLM training runs."
-    }
-];
-
-  const engagementPaths = [
-    {
-      key: "micro-sprint",
-      anchorId: "ai-micro-sprints",
-      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
-      title: "AEO technical micro-sprint",
-      code: "SS1 / SS2",
-      price: "From $495 AUD",
-      priceSub: "ex. GST",
-      scope: "One priority page or schema fix",
-      description: "Choose one focused priority for $495 AUD ex. GST: Schema Markup Deployment, Single Page Atomic Rewrite, or Category Answer Unit.",
-      techNote: "For technical teams: Deployment of nested JSON-LD graphs and atomic HTML passage markup.",
-      whenToChoose: "Choose this when you have one specific page or schema gap limiting AI search readability.",
-      ctaLabel: "Discuss Micro-Sprint"
-    },
-    {
-      key: "foundation",
-      anchorId: "ai-foundation",
-      icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
-      title: "Foundation implementation",
-      code: "MACRO TIER",
-      price: "From $3,195 AUD",
-      priceSub: "ex. GST",
-      scope: "Connected improvements across key service pages & entity data",
-      description: "Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures in a focused four-week engagement.",
-      techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
-      whenToChoose: "Choose this when your business requires connected improvements across multiple service pages.",
-      ctaLabel: "Discuss Foundation Tier"
-    },
-    {
-      key: "blueprint",
-      anchorId: "ai-blueprint",
-      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
-      title: "The AEObility blueprint",
-      code: "BPSTRAT",
-      price: "$995 AUD",
-      priceSub: "ex. GST",
-      scope: "Full digital audit & 90-day roadmap",
-      description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work.",
-      techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
-      whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
-      ctaLabel: "Discuss $995 Blueprint"
+      question: "How long does it take to see results from AI search optimisation in Perth?",
+      answer: "While AI models index changes rapidly, achieving semantic authority typically takes several weeks to months. The foundational steps: entity clarity, structured data, and GBP alignment: can trigger visibility improvements in subsequent LLM training runs."
     }
   ];
 
-      const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage",
-        "url": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp",
-        "contentUrl": "https://aeobility.com.au/images/services/ai-search-optimisation-perth_AEObility.webp"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#webpage",
-        "url": "https://aeobility.com.au/services/ai-search-marketing/perth",
-        "name": "AI Search Optimisation Services Perth | AEObility",
-        "primaryImageOfPage": {
-          "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage"
-        },
-        "image": {
-          "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#primaryimage"
-        },
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://aeobility.com.au/#website",
-          "url": "https://aeobility.com.au/"
-        }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#professional-service",
-        "name": "AEObility AI Search Optimisation Perth",
-        "description": "Professional AI search marketing, GEO, and answer engine optimisation services for businesses and clinics throughout the Perth metropolitan region.",
-        "url": "https://aeobility.com.au/services/ai-search-marketing/perth",
-        "telephone": "+61-480 286 282",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Perth",
-          "addressRegion": "WA",
-          "addressCountry": "AU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "-31.9505",
-          "longitude": "115.8605"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Perth",
-          "sameAs": "https://en.wikipedia.org/wiki/Perth"
-        },
-        "sameAs": [
-          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
-          "https://www.linkedin.com/company/133445734/"
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#service",
-        "name": "AI Search Optimisation Perth",
-        "serviceType": "AI Search Optimisation",
-        "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Perth",
-          "sameAs": "https://en.wikipedia.org/wiki/Perth"
-          }
-        },
-        {
-                "@type": "FAQPage",
-                "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#faq",
-                "mainEntity": [
-                        {
-                                "@type": "Question",
-                                "name": "What is AI search optimisation for Perth businesses?",
-                                "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "AI search optimisation ensures your business data, services, and operational facts are structured so platforms like ChatGPT, Perplexity, and AI Overviews can discover and cite them. Perth businesses are currently under-represented in generative answers, making early adoption a significant advantage."
-                                }
-                        },
-                        {
-                                "@type": "Question",
-                                "name": "How is AI search different from traditional SEO in WA?",
-                                "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Traditional SEO relies on keyword rankings and backlinks, whereas AI search prioritises entity clarity, citations, and structured local facts. A local, answer-first content structure matters more for AI recommendations than generic high-volume keywords."
-                                }
-                        },
-                        {
-                                "@type": "Question",
-                                "name": "Do we need separate pages for Perth suburbs (Joondalup, Mandurah, Fremantle)?",
-                                "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "You only need dedicated suburb pages if you have a physical presence or distinct service offerings in those areas. Otherwise, a single, strongly-optimised Perth entity page with clear service-area signals is sufficient for AI extraction."
-                                }
-                        },
-                        {
-                                "@type": "Question",
-                                "name": "Can AI search help us reach mining and resources decision-makers?",
-                                "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Yes. Procurement teams increasingly use AI tools to solve complex operational challenges like 'automation for mine sites' or 'safety compliance software WA'. Targeted, technical FAQs and case studies are highly likely to be cited in these generative responses."
-                                }
-                        },
-                        {
-                                "@type": "Question",
-                                "name": "How long does it take to see results from AI search optimisation in Perth?",
-                                "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "While AI models index changes rapidly, achieving semantic authority typically takes several weeks to months. The foundational steps—entity clarity, structured data, and GBP alignment—can trigger visibility improvements in subsequent LLM training runs."
-                                }
-                        }
-                ]
-        }
-      ]
-    };
+  const formattedFaqs = rawFaqs.map((f) => ({
+    q: f.question,
+    a: f.answer,
+  }));
+
+  const jsonLdGraph = getLocalMetroSchemaGraph(METRO_CONFIGS.perth, rawFaqs);
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
@@ -318,27 +130,27 @@ export default function AISearchMarketingPage() {
 
           {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
-              <Cpu className="w-4 h-4 text-aeo-cyan" />
-              <span>AI Search Marketing &amp; Generative Strategy</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-aeo-cyan uppercase tracking-widest font-semibold">
+              <MapPin className="w-4 h-4 text-aeo-cyan" />
+              <span>Perth AI Search Marketing &amp; Strategy</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               AI search marketing for <span className="text-gradient-aeo">Perth businesses</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                WA is unique because of its isolation. That geographical divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG).
+                WA is unique because of its geographical isolation. That divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG).
                 <br /><br />
                 From specialised mining corridors to local medical practices and tradies, Perth businesses need clear, structured data so AI systems understand who you are and recommend you with confidence.
               </h2>
 
-                <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
-                  <p className="text-sm text-cyan-50 font-serif leading-relaxed">
-                    Review our execution guardrails for local trades and service networks in our productised <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300">Technical Optimisation Sprints Overview</Link>.
-                  </p>
-                </div>
-  
-              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
+              <div className="mt-6 p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/20">
+                <p className="text-sm text-cyan-50 font-serif leading-relaxed">
+                  Review our execution guardrails for local trades and service networks in our productised <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-400/30 hover:decoration-cyan-300">Technical Optimisation Sprints Overview</Link>.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
                 <span>Foundation Implementation from $3,195 AUD ex. GST</span>
@@ -349,7 +161,7 @@ export default function AISearchMarketingPage() {
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/services/ai-search-optimisation-perth_AEObility.webp"
-                alt="AEObility modern AI search visibility dashboard interface showing Technical overview of the AEObility AI search optimisation framework designed for local service trades and SMBs in Perth, Western Australia. This dashboard demonstrates structural optimisation, machine-readable semantic data models, and localised entity authority layers engineered to prevent positional bias and improve citation accuracy across modern retrieval engines, conversational platforms, and map applications."
+                alt="AEObility AI search optimisation framework dashboard for local service trades and SMBs in Perth, Western Australia."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
@@ -358,26 +170,27 @@ export default function AISearchMarketingPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
 
               {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
-                <div className="text-left space-y-0.5 sm:space-y-1">
-                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AI search foundation.</span>
-                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-4 shadow-2xl">
+                <div className="text-left space-y-1">
+                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AI search foundation.</span>
+                  <span className="text-xs sm:text-[14px] text-zinc-200 font-medium block">
+                    Typical delivery: <strong className="text-white font-semibold">4–5 business days</strong> from confirmed scope and access.
+                  </span>
                 </div>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => selectSprintForForm('micro-sprint')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Discuss AI Search Strategy</span>
-                  </button>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
                   <a
                     href="#ai-diagnostic-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white hover:bg-cyan-300 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <span>Run a free readiness scan</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Run Free Scan</span>
+                    <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
+                  </a>
+                  <a
+                    href="#ai-contact-form"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-zinc-100 hover:text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                  >
+                    <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Discuss Perth Sprints</span>
                   </a>
                 </div>
               </div>
@@ -397,7 +210,7 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* New Copy Section: Who We Represent & Industry Focus */}
+          {/* Who We Represent & Industry Focus */}
           <section className="border-t border-white/10 pt-16 space-y-12 scroll-mt-24">
             <div className="max-w-4xl mx-auto space-y-16">
               
@@ -481,147 +294,98 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 2. "Choose your starting point" Engagement Grid */}
-          <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose your starting point</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
+          {/* 2. Choose Your Starting Point */}
+          <AeoStartingPointGrid
+            id="engagement-paths"
+            contactAnchor="#ai-contact-form"
+            diagnosticAnchor="#ai-diagnostic-form"
+          />
+
+          {/* Clean 3-Tier Comparison Matrix Table */}
+          <div id="ai-comparison" className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md scroll-mt-24">
+            <table className="w-full text-left text-xs font-serif border-collapse min-w-[580px]">
+              <thead>
+                <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
+                  <th className="p-3.5 sm:p-4">Service / Tier</th>
+                  <th className="p-3.5 sm:p-4">Target Scope</th>
+                  <th className="p-3.5 sm:p-4">Best For</th>
+                  <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 text-zinc-300">
+                <tr className="hover:bg-white/[0.02] transition">
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Micro-Sprint</td>
+                  <td className="p-3.5 sm:p-4">1 Defined Priority Page / Schema Fix</td>
+                  <td className="p-3.5 sm:p-4">Quick fix for one technical issue</td>
+                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02] transition">
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                  <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
+                  <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
+                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02] transition">
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
+                  <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
+                  <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
+                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Inclusions Box */}
+          <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-3 shadow-sm">
+            <div className="flex items-center gap-2 font-bold text-white text-sm">
+              <FileCheck className="w-4 h-4 text-cyan-400" />
+              <span>Every AEObility Engagement includes:</span>
             </div>
+            <ul className="space-y-2 text-xs text-zinc-300 font-serif">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                <span>One agreed business priority, specified schema deployment, or page rewrite work.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                <span>Validation checks, summary of completed changes, and complete handover notes.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                <span>Typical delivery: 4–5 business days for Micro-Sprints. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+              </li>
+            </ul>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {engagementPaths.map((path, idx) => (
-                <div id={path.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
-                        {path.icon}
-                      </div>
-                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
-                        {path.code}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{path.title}</h3>
-                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
-                        {path.price} <span className="text-[10px] text-zinc-400 font-normal">{path.priceSub}</span>
-                      </div>
-                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {path.scope}</span>
-                    </div>
-
-                    <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
-                      {path.description}
-                    </p>
-
-                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
-                      <strong className="text-white block mb-0.5">When to choose:</strong>
-                      <span>{path.whenToChoose}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 pt-3 border-t border-white/5">
-                    <p className="text-[10px] text-zinc-500 font-mono leading-tight">{path.techNote}</p>
-                    <button
-                      type="button"
-                      onClick={() => selectSprintForForm(path.key)}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
-                    >
-                      <span>{path.ctaLabel}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Clean 3-Tier Comparison Matrix Table */}
-            <div id="ai-comparison" className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md scroll-mt-24">
-              <table className="w-full text-left text-xs font-serif border-collapse min-w-[580px]">
-                <thead>
-                  <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
-                    <th className="p-3.5 sm:p-4">Service / Tier</th>
-                    <th className="p-3.5 sm:p-4">Target Scope</th>
-                    <th className="p-3.5 sm:p-4">Best For</th>
-                    <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5 text-zinc-300">
-                  <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Micro-Sprint</td>
-                    <td className="p-3.5 sm:p-4">1 Defined Priority Page / Schema Fix</td>
-                    <td className="p-3.5 sm:p-4">Quick fix for one technical issue</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
-                    <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
-                    <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
-                    <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
-                    <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* Inclusions Box */}
-            <div className="bg-cyan-950/20 border border-cyan-500/30 rounded-xl p-5 text-xs text-zinc-300 font-serif leading-relaxed space-y-3 shadow-sm">
-              <div className="flex items-center gap-2 font-bold text-white text-sm">
-                <FileCheck className="w-4 h-4 text-cyan-400" />
-                <span>Every AEObility Engagement includes:</span>
+          {/* Deliverables Ownership Statement */}
+          <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+            <div className="flex items-start gap-3">
+              <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
+                <span>Use completed code and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
               </div>
-              <ul className="space-y-2 text-xs text-zinc-300 font-serif">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>One agreed business priority, specified schema deployment, or page rewrite work.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Validation checks, summary of completed changes, and complete handover notes.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Typical delivery: 4–5 business days for Micro-Sprints. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
-                </li>
-              </ul>
             </div>
+          </div>
 
-            {/* Deliverables Ownership Statement */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">You own the agreed deliverables</strong>
-                  <span>Use completed code and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
-                </div>
+          {/* Check your AI search footprint CTA */}
+          <section className="border-t border-white/10 pt-16 scroll-mt-24">
+            <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
+              <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
+                Are your local listings getting lost in the algorithms? Run a live scan through our diagnostic portal to see how easily search engines can read your site and spot the gaps holding back your visibility. In minutes, you will see which AI platforms can (and cannot) find you, alongside a short list of fixes to prioritise.
+              </p>
+              <div className="pt-2">
+                <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+perth" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+                  <Search className="w-4 h-4 text-black" />
+                  <span>Run a live scan</span>
+                </Link>
               </div>
             </div>
           </section>
 
-          
-            {/* Action entity resolution framework CTA */}
-            <section className="border-t border-white/10 pt-16 scroll-mt-24">
-              <div className="max-w-3xl mx-auto bg-zinc-950/90 border border-cyan-500/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md text-center space-y-6">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/5 rounded-full filter blur-3xl -z-10" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Check your AI search footprint</h3>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif max-w-2xl mx-auto leading-relaxed">
-                  Are your local listings getting lost in the algorithms? Run a live scan through our diagnostic portal to see how easily search engines can read your site and spot the gaps holding back your visibility. In minutes, you will see which AI platforms can (and cannot) find you, alongside a short list of fixes to prioritise.
-                </p>
-                <div className="pt-2">
-                  <Link href="/diagnostic?auto=true&intent=ai+search+optimisation+perth" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)]">
-                    <Search className="w-4 h-4 text-black" />
-                    <span>Run a live scan</span>
-                  </Link>
-                </div>
-              </div>
-            </section>
-  
-
-          {/* 4. Operational 3-Step Process Flow Pipeline Graphic */}
+          {/* Operational 3-Step Process Flow */}
           <section id="ai-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
@@ -650,173 +414,62 @@ export default function AISearchMarketingPage() {
             </div>
           </section>
 
-          {/* 5. Bottom Conversion CTA Block + Direct Contact Form */}
-          <section id="ai-contact-form" className="border-t border-white/10 pt-16 text-center space-y-8 scroll-mt-24">
-            <div className="max-w-md mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-white font-soehne-breit">Discuss your AI search strategy</h2>
-              <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-                Tell us about your business goals and AI search priorities. We will confirm scope and pricing before you commit. <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
-                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>You will speak with an AEObility specialist based in Perth. Complex scopes or strategic requirements may be reviewed by senior AEObility specialists.</span>
-              </div>
-            </div>
+          {/* Diagnostic Section */}
+          <AeoDiagnosticSection
+            id="ai-diagnostic-form"
+            badgeTitle="Instant Perth AI Readiness Scan"
+            heading="Run a Free Perth AI Search Readiness Scan"
+            subheading="Enter your website URL to check structured data, entity clarity, and AI search readiness signals for Perth searchers."
+            formId="ai_diagnostic_scan_form_perth"
+            leadType="ai_readiness_scan"
+          />
 
-            {/* Inline AI Search Contact Form */}
-            <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
-              <div className="flex items-center justify-between gap-4 mb-1.5">
-                <h3 className="text-xl font-bold text-white font-soehne-breit">Discuss AI search optimisation</h3>
-                <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
-                  AI Search Sprint
-                </span>
-              </div>
-              <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
-              </p>
+          {/* Contact Form Section */}
+          <AeoContactSection
+            id="ai-contact-form"
+            badgeTitle="Perth AI Search Sprint"
+            heading="Discuss Perth AI Search Strategy"
+            subheading="Tell us about your business goals and local AI search priorities in Perth. We will confirm scope and pricing before you commit."
+            formId="ai_search_contact_form_perth"
+            leadType="ai_marketing_enquiry"
+            buttonText="Discuss Perth AI Search Strategy"
+            receivedHeading="Perth AI Search Enquiry Received"
+          />
 
-              {contactSubmitted ? (
-                <div className="p-6 bg-cyan-950/40 border border-cyan-500/30 rounded-xl text-center space-y-3 animate-fade-in">
-                  <CheckCircle2 className="w-10 h-10 text-cyan-400 mx-auto" />
-                  <h4 className="font-bold text-white text-base">Enquiry received</h4>
-                  <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                    Thank you for reaching out. Our AEObility strategy team will review your details and get in touch within 24 business hours.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="ai-name">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="ai-name"
-                        required
-                        value={contactData.name}
-                        onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="e.g. Vince Baker"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="ai-email">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="ai-email"
-                        required
-                        value={contactData.email}
-                        onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                        placeholder="vince@example.com.au"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="ai-service-type">
-                      What would you like to discuss?
-                    </label>
-                    <select
-                      id="ai-service-type"
-                      value={contactData.serviceType}
-                      onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
-                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
-                    >
-                      <option value="unsure">Not sure yet — Help me decide</option>
-                      <option value="micro-sprint">AEO Micro-Sprint (From $495 AUD)</option>
-                      <option value="blueprint">The AEObility Blueprint ($995 AUD)</option>
-                      <option value="foundation">Foundation Implementation (From $3,195 AUD)</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="ai-website">
-                      Website URL (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      id="ai-website"
-                      value={contactData.website}
-                      onChange={(e) => setContactData({ ...contactData, website: e.target.value })}
-                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors"
-                      placeholder="mybusiness.com.au"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5" htmlFor="ai-message">
-                      What would you like help with?
-                    </label>
-                    <textarea
-                      id="ai-message"
-                      required
-                      rows={3}
-                      value={contactData.message}
-                      onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
-                      className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                      placeholder="For example: schema markup deployment, restructuring a key service page, or an audit of our AI visibility..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
-                  >
-                    <span>Discuss AI Search Strategy</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-
-                  <p className="text-[11px] text-zinc-500 text-center font-serif">
-                    Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
-                  </p>
-                </form>
-              )}
-            </div>
-          </section>
-
-          {/* 6. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* FAQ Accordion Section */}
           <section id="faq-ai" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
-              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility AI search marketing services.</p>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility AI search marketing services in Perth.</p>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-3">
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaqIndex === idx;
-                return (
-                  <div
-                    key={idx}
-                    className="bg-zinc-950/80 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(idx)}
-                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition"
-                      aria-expanded={isOpen}
-                    >
-                      <span className="text-sm font-bold text-white">{faq.question}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 text-cyan-400 transition-transform duration-300 shrink-0 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    <div
-                      className={`px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-white/5 pt-3 font-serif transition-all duration-200 ${
-                        isOpen ? 'block' : 'hidden'
-                      }`}
-                    >
-                      {faq.answer}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="max-w-3xl mx-auto">
+              <FaqAccordion faqs={formattedFaqs} />
+            </div>
+          </section>
+
+          {/* Regional Corridors Navigation */}
+          <section className="border-t border-white/10 pt-16 space-y-6">
+            <div className="text-center max-w-xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Australian Regional Corridors</span>
+              <h3 className="text-xl font-bold text-white font-soehne-breit">AI search marketing across Australia</h3>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/services/ai-search-marketing" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
+                National Overview
+              </Link>
+              <Link href="/services/ai-search-marketing/sydney" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
+                Sydney AI Search
+              </Link>
+              <Link href="/services/ai-search-marketing/melbourne" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
+                Melbourne AI Search
+              </Link>
+              <Link href="/services/ai-search-marketing/brisbane" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
+                Brisbane AI Search
+              </Link>
+              <Link href="/services/ai-search-marketing/adelaide" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
+                Adelaide AI Search
+              </Link>
             </div>
           </section>
 
@@ -827,5 +480,3 @@ export default function AISearchMarketingPage() {
     </div>
   );
 }
-
-

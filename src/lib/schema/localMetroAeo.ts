@@ -1,0 +1,300 @@
+/**
+ * AEObility Local Metro AI Search Marketing Schema.org Graph Builder
+ * Path: src/lib/schema/localMetroAeo.ts
+ */
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface LocalMetroConfig {
+  city: string;
+  state: string;
+  stateFull: string;
+  postcode?: string;
+  latitude: number;
+  longitude: number;
+  slug: string;
+  wikiUrl: string;
+}
+
+export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
+  perth: {
+    city: "Perth",
+    state: "WA",
+    stateFull: "Western Australia",
+    postcode: "6000",
+    latitude: -31.9505,
+    longitude: 115.8605,
+    slug: "perth",
+    wikiUrl: "https://en.wikipedia.org/wiki/Perth"
+  },
+  sydney: {
+    city: "Sydney",
+    state: "NSW",
+    stateFull: "New South Wales",
+    postcode: "2000",
+    latitude: -33.8688,
+    longitude: 151.2093,
+    slug: "sydney",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sydney"
+  },
+  melbourne: {
+    city: "Melbourne",
+    state: "VIC",
+    stateFull: "Victoria",
+    postcode: "3000",
+    latitude: -37.8136,
+    longitude: 144.9631,
+    slug: "melbourne",
+    wikiUrl: "https://en.wikipedia.org/wiki/Melbourne"
+  },
+  brisbane: {
+    city: "Brisbane",
+    state: "QLD",
+    stateFull: "Queensland",
+    postcode: "4000",
+    latitude: -27.4698,
+    longitude: 153.0251,
+    slug: "brisbane",
+    wikiUrl: "https://en.wikipedia.org/wiki/Brisbane"
+  },
+  adelaide: {
+    city: "Adelaide",
+    state: "SA",
+    stateFull: "South Australia",
+    postcode: "5000",
+    latitude: -34.9285,
+    longitude: 138.6007,
+    slug: "adelaide",
+    wikiUrl: "https://en.wikipedia.org/wiki/Adelaide"
+  }
+};
+
+export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqItem[]) => {
+  const pageUrl = `https://aeobility.com.au/services/ai-search-marketing/${config.slug}`;
+
+  const graphNodes: Record<string, unknown>[] = [
+    {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "legalName": "Trekaboutoz trading as AEObility",
+      "url": "https://aeobility.com.au/",
+      "telephone": "+61480286282",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ABN",
+        "value": "61 029 803 255"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility",
+        "https://www.instagram.com/aeo.bility/",
+        "https://www.facebook.com/profile.php?id=61591781069830",
+        "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg",
+        "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": `AI Search Marketing & Optimisation ${config.city} | AEObility`,
+      "description": `Professional AI search marketing, GEO, and answer engine optimisation services for businesses in ${config.city}, ${config.stateFull}.`,
+      "inLanguage": "en-AU",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@id": `${pageUrl}#professional-service`
+        },
+        {
+          "@id": `${pageUrl}#service`
+        }
+      ],
+      "breadcrumb": {
+        "@id": `${pageUrl}#breadcrumb`
+      },
+      "mainEntity": {
+        "@id": `${pageUrl}#service`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aeobility.com.au/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://aeobility.com.au/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Search Marketing",
+          "item": "https://aeobility.com.au/services/ai-search-marketing"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": config.city,
+          "item": pageUrl
+        }
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${pageUrl}#professional-service`,
+      "name": `AEObility AI Search Optimisation ${config.city}`,
+      "description": `Professional AI search marketing, GEO, and answer engine optimisation services for businesses throughout the ${config.city} metropolitan region.`,
+      "url": pageUrl,
+      "telephone": "+61480286282",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": config.city,
+        "addressRegion": config.state,
+        "postalCode": config.postcode || "",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": config.latitude,
+        "longitude": config.longitude
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": config.city,
+          "sameAs": config.wikiUrl
+        },
+        {
+          "@type": "State",
+          "name": config.stateFull
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "sameAs": [
+        "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": `AI Search Marketing & Optimisation ${config.city}`,
+      "serviceType": "AI Search Optimisation",
+      "provider": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": config.city,
+        "sameAs": config.wikiUrl
+      },
+      "isRelatedTo": {
+        "@id": "https://aeobility.com.au/services/aeo#service"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `AEO Sprints & Foundations - ${config.city}`,
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AEO Technical Micro-Sprint",
+              "description": "One priority page or structured schema deployment fix."
+            },
+            "price": "495.00",
+            "priceCurrency": "AUD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "The AEObility Blueprint",
+              "description": "Comprehensive digital audit, entity gap review, and 90-day roadmap."
+            },
+            "price": "995.00",
+            "priceCurrency": "AUD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Foundation Implementation",
+              "description": "Connected multi-page schema integration and citation alignment."
+            },
+            "price": "3195.00",
+            "priceCurrency": "AUD"
+          }
+        ]
+      }
+    }
+  ];
+
+  if (faqs && faqs.length > 0) {
+    graphNodes.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graphNodes
+  };
+};

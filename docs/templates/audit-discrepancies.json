@@ -414,67 +414,19 @@
     "route": "/services/ai-search-marketing/adelaide",
     "file": "src/app/services/ai-search-marketing/adelaide/page.tsx",
     "archetype": "03-local-intent",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 6 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-marketing/brisbane",
     "file": "src/app/services/ai-search-marketing/brisbane/page.tsx",
     "archetype": "03-local-intent",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-marketing/melbourne",
     "file": "src/app/services/ai-search-marketing/melbourne/page.tsx",
     "archetype": "03-local-intent",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: optimization -> optimisation, behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-marketing",
@@ -486,45 +438,13 @@
     "route": "/services/ai-search-marketing/perth",
     "file": "src/app/services/ai-search-marketing/perth/page.tsx",
     "archetype": "03-local-intent",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 6 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-marketing/sydney",
     "file": "src/app/services/ai-search-marketing/sydney/page.tsx",
     "archetype": "03-local-intent",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 2 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/geo-marketing",
