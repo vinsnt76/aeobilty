@@ -64,16 +64,24 @@ const engagementPaths: EngagementPath[] = [
 ];
 
 interface AeoStartingPointGridProps {
+  id?: string;
   targetFormId?: string;
+  contactAnchor?: string;
+  diagnosticAnchor?: string;
 }
 
 export default function AeoStartingPointGrid({
-  targetFormId = "aeo-contact-form"
+  id,
+  targetFormId = "aeo-contact-form",
+  contactAnchor,
+  diagnosticAnchor,
 }: AeoStartingPointGridProps) {
+  const effectiveFormId = contactAnchor ? contactAnchor.replace('#', '') : targetFormId;
+
   const handleSelectSprint = (key: string) => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('select-aeo-sprint', { detail: key }));
-      const formElement = document.getElementById(targetFormId);
+      const formElement = document.getElementById(effectiveFormId);
       if (formElement) {
         formElement.scrollIntoView({ behavior: 'smooth' });
       }
@@ -81,7 +89,7 @@ export default function AeoStartingPointGrid({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div id={id} className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {engagementPaths.map((path) => (
         <div
           key={path.key}
