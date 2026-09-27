@@ -134,13 +134,64 @@ export const metadata: Metadata = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
+      "url": "https://aeobility.com.au/solutions/aeo-blueprint",
+      "name": "The AEObility Blueprint — Strategic AEO Diagnostic Audit | AEObility",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product"
+        }
+      ]
+    },
+    {
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
       "name": "The AEObility Blueprint",
       "description": "Comprehensive digital presence audit, technical gap analysis, visibility scorecard, and 90-day action plan for Australian businesses.",
       "brand": {
-        "@type": "Brand",
-        "name": "AEObility"
+        "@id": "https://aeobility.com.au/#organisation"
       },
       "offers": {
         "@type": "Offer",

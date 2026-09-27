@@ -137,15 +137,64 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#webpage",
+      "url": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation",
+      "name": "RAG, Answer Engines & Why Machine-Readable Content Matters | AEObility",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article"
+        }
+      ]
+    },
+    {
       "@type": "TechArticle",
       "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
       "headline": "RAG, Answer Engines & Why Machine-Readable Content Matters",
       "description": "A technical guide explaining Retrieval-Augmented Generation (RAG) and its role in AI search optimisation.",
       "author": {
-        "@type": "Person",
-        "@id": "https://aeobility.com.au/vince-baker#author",
-        "name": "Vinnie Baker",
-        "url": "https://aeobility.com.au/vince-baker"
+        "@id": "https://aeobility.com.au/#vince-baker"
       },
       "publisher": {
         "@id": "https://aeobility.com.au/#organisation"

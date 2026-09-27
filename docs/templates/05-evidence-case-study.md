@@ -133,25 +133,87 @@ export const metadata: Metadata = {
 ```json
 {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
-  "headline": "Case Study: Baby Bento — Structural Search Alignment & AI Visibility Recovery",
-  "description": "Discover how AEObility restored structural clarity and lifted Baby Bento's AI search visibility, resulting in a +17% sales uplift and 95% CTR improvement.",
-  "datePublished": "2026-07-16",
-  "inLanguage": "en-AU",
-  "mainEntity": {
-    "@id": "https://aeobility.com.au/services/aeo#service"
-  },
-  "about": [
+  "@graph": [
     {
-      "@type": "Thing",
-      "@id": "https://aeobility.com.au/services/aeo#service",
-      "name": "Answer Engine Optimisation"
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
     },
     {
-      "@type": "Thing",
-      "name": "Baby Bento",
-      "description": "Australian ecommerce brand specialising in kids' lunchboxes and insulated food jars."
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento#webpage",
+      "url": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento",
+      "name": "Case Study: Baby Bento — Structural Search Alignment | AEObility",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento#case-study",
+      "headline": "Case Study: Baby Bento — Structural Search Alignment & AI Visibility Recovery",
+      "description": "Discover how AEObility restored structural clarity and lifted Baby Bento's AI search visibility, resulting in a +17% sales uplift and 95% CTR improvement.",
+      "author": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "datePublished": "2026-07-16",
+      "inLanguage": "en-AU",
+      "mainEntity": {
+        "@id": "https://aeobility.com.au/services/aeo#service"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "@id": "https://aeobility.com.au/services/aeo#service",
+          "name": "Answer Engine Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Baby Bento",
+          "description": "Australian ecommerce brand specialising in kids' lunchboxes and insulated food jars."
+        }
+      ]
     }
   ]
 }

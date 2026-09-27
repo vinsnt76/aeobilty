@@ -114,10 +114,54 @@ export const metadata: Metadata = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
       "@type": "CollectionPage",
-      "@id": "https://aeobility.com.au/knowledge-hub",
+      "@id": "https://aeobility.com.au/knowledge-hub#webpage",
+      "url": "https://aeobility.com.au/knowledge-hub",
       "name": "AEObility Knowledge Hub",
       "description": "Technical articles, empirical case studies, and playbooks on answer engine optimisation.",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
+        }
+      ],
       "hasPart": [
         {
           "@type": "TechArticle",

@@ -104,19 +104,55 @@ export const metadata: Metadata = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organisation",
+      "name": "AEObility",
+      "url": "https://aeobility.com.au/",
+      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aeobility"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vince-baker",
+      "name": "Vince Baker",
+      "jobTitle": "Founder & Principal AEO Specialist",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "url": "https://aeobility.com.au/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aeobility.com.au/#website",
+      "url": "https://aeobility.com.au/",
+      "name": "AEObility",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      }
+    },
+    {
       "@type": "AboutPage",
       "@id": "https://aeobility.com.au/brand-facts#webpage",
-      "name": "Canonical Brand Facts & SKU Registry",
-      "mainEntity": {
-        "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au/",
-        "founder": {
-          "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker"
+      "url": "https://aeobility.com.au/brand-facts",
+      "name": "Canonical Brand Facts & SKU Registry | AEObility",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/#organisation"
         }
+      ],
+      "mainEntity": {
+        "@id": "https://aeobility.com.au/#organisation"
       }
     }
   ]
