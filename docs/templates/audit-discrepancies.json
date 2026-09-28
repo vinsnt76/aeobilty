@@ -330,23 +330,7 @@
     "route": "/services/aeo/local-business",
     "file": "src/app/services/aeo/local-business/page.tsx",
     "archetype": "01-commercial-service",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 4 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/aeo",
@@ -380,18 +364,7 @@
     "route": "/services/aeo/shopify",
     "file": "src/app/services/aeo/shopify/page.tsx",
     "archetype": "01-commercial-service",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services/ai-search-agency",
@@ -450,23 +423,7 @@
     "route": "/services/geo-marketing",
     "file": "src/app/services/geo-marketing/page.tsx",
     "archetype": "01-commercial-service",
-    "issues": [
-      {
-        "rule": "Next.js 15 Server Component Root",
-        "severity": "HIGH",
-        "message": "'use client' directive found at root of page.tsx. Move interactive client state to leaf components so server metadata can be exported."
-      },
-      {
-        "rule": "Brand Style: No Em Dashes",
-        "severity": "LOW",
-        "message": "Found 3 em dash (—) character(s). Replace with standard hyphens, colons, or commas."
-      },
-      {
-        "rule": "Australian English (AU)",
-        "severity": "MEDIUM",
-        "message": "Potential US English variants detected in prose: behavior -> behaviour"
-      }
-    ]
+    "issues": []
   },
   {
     "route": "/services",
