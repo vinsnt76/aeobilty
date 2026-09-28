@@ -5,13 +5,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Calendar, ArrowRight, X, Phone, Search } from 'lucide-react';
+import SubNavPills, { PillItem } from '@/components/navigation/SubNavPills';
 import MobileMenuButton from '@/components/navigation/MobileMenuButton';
 import MobileMenuOverlay from '@/components/navigation/MobileMenuOverlay';
 import MobileMenuAccordion from '@/components/navigation/MobileMenuAccordion';
 import { NAVIGATION_DATA } from '@/components/navigation/NavData';
 import { trackGaEvent } from '@/lib/gtag';
 
-export default function Navbar() {
+interface NavbarProps {
+  subnavItems?: PillItem[];
+  subnavTitle?: string;
+}
+
+export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -32,8 +38,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5 sticky top-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <header className="w-full sticky top-0 z-50 transition-all duration-300">
+        <nav className="w-full bg-white/95 backdrop-blur-md border-b border-black/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" aria-label="AEObility Home" className="flex items-center group">
             {/* Desktop Full Logo */}
@@ -183,6 +190,10 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      {subnavItems && subnavItems.length > 0 && (
+        <SubNavPills items={subnavItems} sectionTitle={subnavTitle} isEmbedded />
+      )}
+    </header>
 
       {/* Mobile Drawer Overlay Island (Mounted to document.body via Portal at z-[10000]) */}
       <MobileMenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)}>

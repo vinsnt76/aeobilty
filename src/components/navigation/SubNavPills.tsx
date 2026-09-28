@@ -15,9 +15,10 @@ export interface PillItem {
 interface SubNavPillsProps {
   sectionTitle?: string;
   items: PillItem[];
+  isEmbedded?: boolean;
 }
 
-export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
+export function SubNavPills({ sectionTitle, items, isEmbedded = false }: SubNavPillsProps) {
   const pathname = usePathname();
 
   if (!items || !Array.isArray(items) || items.length === 0) {
@@ -27,7 +28,9 @@ export function SubNavPills({ sectionTitle, items }: SubNavPillsProps) {
   return (
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
-      className="w-full sticky top-16 z-30 border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 relative shadow-md"
+      className={`w-full border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 relative shadow-md ${
+        isEmbedded ? 'relative' : 'sticky top-16 z-30'
+      }`}
     >
       {/* Subtle Right Edge Fade for Mobile Horizontal Scroll Discovery */}
       <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-neutral-950/90 to-transparent pointer-events-none z-10 sm:hidden" />
