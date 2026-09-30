@@ -485,8 +485,8 @@ export default function AEORootPage() {
             </div>
 
             {/* Proof Card Near Evidence */}
-            <div className="max-w-4xl mx-auto p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-3 shadow-2xl backdrop-blur-xl">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-5 shadow-2xl backdrop-blur-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-800/80">
                 <div className="flex items-center gap-2 text-teal-400 font-mono font-bold text-xs uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
                   <span>Verified Client Evidence &amp; Case Results</span>
@@ -495,9 +495,77 @@ export default function AEORootPage() {
                   View 90-Day Case Study &rarr;
                 </Link>
               </div>
-              <p className="text-sm text-slate-200 leading-relaxed">
-                <strong className="text-white">Real-world impact:</strong> In a recent audit for a Western Australian commercial trade provider, inconsistent NAP details and unstructured PDF price sheets caused Perplexity Search to hallucinate outdated rates. Restructuring their service copy into atomic HTML tables with nested <code className="text-teal-300 font-mono text-xs">LocalBusiness</code> schema restored citation accuracy across 2 recrawl cycles.
+
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                We tested this framework on AEObility over 90 days. When we launched, models conflated our services and overlooked our Western Australian location.
               </p>
+
+              <div className="space-y-2.5">
+                <p className="text-xs sm:text-sm font-semibold text-white">We executed three core fixes:</p>
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Registry binding:</strong> Tied our business data to our Australian Business Number (ABN) using Schema.org graphs.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Atomic blocks:</strong> Rebuilt key pages into 40 to 60 word standalone answer blocks under clear headings.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Machine endpoints:</strong> Connected an interactive assistant, &quot;AI Bill&quot;, via Model Context Protocol (MCP) and NLWeb standards.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-3.5 sm:p-4 rounded-xl bg-teal-950/40 border border-teal-500/30 text-xs sm:text-sm text-teal-200 font-medium">
+                <strong className="text-teal-300">The outcome:</strong> Consistent citations across evaluation benchmarks, verified local retrieval, and zero brand confusion. We apply this exact setup to client sites.
+              </div>
+            </div>
+
+            {/* High-Density Q&A Block */}
+            <div className="max-w-4xl mx-auto space-y-4 pt-4">
+              <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-teal-400 shrink-0" />
+                <span>Frequently Clarified Technical Mechanics</span>
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                  <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
+                    Why is AI SEO the &quot;layer above&quot; traditional SEO?
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Traditional SEO ensures search engines can crawl, index, and load your pages. AI SEO sits on top, formatting your facts into standalone passages that AI systems can extract, verify, and quote in conversational answers.
+                  </p>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                  <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
+                    How does Natural Language Processing (NLP) work with AI Bill?
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Test it directly on this page. Ask AI Bill a joke or a complex technical question. He matches the meaning of your prompt using semantic vector similarity, bypassing rigid keyword matching to provide a direct answer and guide you to the right resource.
+                  </p>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                  <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
+                    What is the site diagnostic tool doing behind the scenes?
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    When you submit your website URL, our background audit tool parses your technical markup using NLWeb and MCP patterns. It passes those findings to AI Bill, who translates complex schema and crawl data into a plain-English action list.
+                  </p>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                  <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
+                    Why install MCP ahead of the Universal Commerce Protocol (UCP)?
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    We recently deployed a custom MCP server for an e-commerce client to expose live product data and tools directly to AI clients. This prepares the store for UCP, the emerging standard co-developed by Shopify and Google that lets autonomous bots discover products and complete purchases programmatically.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Deep Mechanics Evidence Bridge */}
