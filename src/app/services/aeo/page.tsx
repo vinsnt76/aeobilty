@@ -28,7 +28,9 @@ import {
   Target,
   Bot,
   FileCheck,
-  BarChart3
+  BarChart3,
+  Video,
+  ExternalLink
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -565,6 +567,70 @@ export default function AEORootPage() {
                     We recently deployed a custom MCP server for an e-commerce client to expose live product data and tools directly to AI clients. This prepares the store for UCP, the emerging standard co-developed by Shopify and Google that lets autonomous bots discover products and complete purchases programmatically.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* RAG Video & Multi-Modal Corroboration Module */}
+            <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8">
+              {/* Left Column: Explanation */}
+              <div className="lg:col-span-6 space-y-4 text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-300 font-medium">
+                  <Video className="w-3.5 h-3.5 text-purple-400" />
+                  <span>RAG Video Provenance Engine</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug">
+                  Why AEObility Framework Works for All Engines
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <strong className="text-white">Multi-modal corroboration:</strong> We synchronised video transcripts directly with VideoObject metadata, giving retrieval bots explicit text targets to cross-verify against media assets.
+                </p>
+                <div className="space-y-2 text-xs text-slate-300 pt-1">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <span>Cross-verifies video transcripts directly with Schema.org <code className="text-purple-300 font-mono">VideoObject</code> nodes.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <span>Eliminates speech-to-text inference errors across Google AI Overviews, ChatGPT Search, and Perplexity.</span>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <a
+                    href="https://m.youtube.com/@aeobility"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-mono text-purple-400 hover:text-purple-300 underline underline-offset-4 font-semibold"
+                  >
+                    <span>View AEObility YouTube Channel</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Embedded YouTube Player Glass Card */}
+              <div className="lg:col-span-6 bg-slate-900/75 backdrop-blur-md border border-purple-500/25 relative rounded-2xl overflow-hidden p-4 space-y-3 shadow-2xl">
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/50 to-transparent" />
+                <div className="flex items-center justify-between px-1">
+                  <span className="text-[11px] font-mono text-purple-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                    <Video className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Multi-Modal Telemetry</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-400">16:9 Provenance</span>
+                </div>
+
+                <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 relative bg-black">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/_ynQCnTVsGw?si=tkSRoI8DlcK42Xnh"
+                    title="Why AEObility Framework Works for All Engines: Multi-Modal Corroboration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-[11px] text-slate-400 text-center">
+                  Multi-modal transcript synchronisation and VideoObject schema cross-verification.
+                </p>
               </div>
             </div>
 
