@@ -210,7 +210,7 @@ export default function AEORootPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white">
-              AI SEO Services: <span className="text-gradient-aeo">Update your site for Modern Answer Retrieval</span>
+              AI SEO Services: <span className="text-gradient-aeo">Update Your Site for Modern Answer Retrieval</span>
             </h1>
 
             <div className="space-y-3 max-w-3xl mx-auto">
