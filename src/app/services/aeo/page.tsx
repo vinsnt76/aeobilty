@@ -900,25 +900,60 @@ export default function AEORootPage() {
             </div>
           </section>
 
-          {/* 8. Canonical Internal Links Lattice */}
-          <section id="aeo-lattice" className="border-t border-slate-800/80 pt-16 space-y-6 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-400">
-                <Eye className="w-3.5 h-3.5 text-teal-400" />
-                <span>Machine-Readable Internal Links Lattice</span>
+          {/* 8. Canonical Internal Links Lattice / Entity Mesh SEO */}
+          <section id="aeo-lattice" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">
+                <Eye className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                <span>INTERNAL LINKS &amp; SITE STRUCTURE</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-white tracking-tight">Connected Concepts &amp; Related Nodes</h3>
-              <p className="text-xs sm:text-sm text-slate-300">
-                Direct contextual links anchoring this service hub to core definitions, technical guides, and verified case studies.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Entity Mesh SEO: How Semantic Triples Connect Your Facts for AI
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Clear internal links connect this service page to our core definitions, technical guides, and field notes using clean semantic triples:
               </p>
             </div>
 
+            {/* Semantic Triples Breakdown Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-xs sm:text-sm">
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                <strong className="text-teal-400 font-mono font-bold block text-sm sm:text-base">[Subject]</strong>
+                <p className="text-slate-300 leading-relaxed text-xs">
+                  Your business entity, including your brand name, core services, locations, and founder profiles.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-purple-500/30 space-y-2 backdrop-blur-xl">
+                <strong className="text-purple-300 font-mono font-bold block text-sm sm:text-base">[Predicate]</strong>
+                <p className="text-slate-300 leading-relaxed text-xs">
+                  The relationship linking them, showing which service solves which problem, serves which location, or costs which rate.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
+                <strong className="text-cyan-300 font-mono font-bold block text-sm sm:text-base">[Object]</strong>
+                <p className="text-slate-300 leading-relaxed text-xs">
+                  The verified target, such as a concrete answer block, technical guide, or pricing table.
+                </p>
+              </div>
+            </div>
+
+            {/* Retrieval Explanation Callout */}
+            <div className="max-w-4xl mx-auto p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-teal-500/30 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-lg backdrop-blur-xl space-y-1 text-left">
+              <strong className="text-teal-300 block font-sans text-sm sm:text-base">How AI retrieves this:</strong>
+              <p className="text-slate-300">
+                When systems like ChatGPT or Perplexity crawl your site, they read these <code className="text-teal-300 font-mono text-xs font-bold">[Subject] &rarr; [Predicate] &rarr; [Object]</code> connections directly. This gives models unambiguous paths to verify your claims and quote your services with confidence. Look at the examples below:
+              </p>
+            </div>
+
+            {/* Link Matrix Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {AEO_CANONICAL_INTERNAL_LINKS.map((link, idx) => (
                 <Link
                   key={idx}
                   href={link.targetSlug}
-                  className="p-3.5 bg-slate-950/60 border border-slate-800/80 rounded-xl hover:border-teal-400 hover:bg-slate-900/80 transition-all flex flex-col justify-between group shadow-sm"
+                  className="p-3.5 bg-slate-950/60 border border-slate-800/80 rounded-xl hover:border-teal-400 hover:bg-slate-900/80 transition-all flex flex-col justify-between group shadow-sm text-left"
                 >
                   <span className="text-xs font-semibold text-slate-200 group-hover:text-teal-300 transition-colors">
                     {link.anchorText}
