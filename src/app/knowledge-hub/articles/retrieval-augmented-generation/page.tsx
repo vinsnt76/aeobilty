@@ -32,8 +32,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "AI Search Optimisation: RAG, Answer Engines & Content | AEObility",
-  description: "Master AI Search Optimisation with Retrieval-Augmented Generation (RAG). Learn how vector retrieval, passage chunking, and semantic schemas power brand visibility across ChatGPT, Gemini, and Perplexity.",
+  title: "AI SEO & RAG Search Optimisation Australia | AEObility",
+  description: "Master AI SEO and Retrieval-Augmented Generation (RAG) across AI Australia search engines. Learn how vector retrieval and passage chunking drive brand citations.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation",
   },
@@ -405,7 +405,7 @@ export default function RagArticlePage() {
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              RAG, Answer Engines & Why Machine-Readable Content Matters
+              AI SEO &amp; RAG: Why Machine-Readable Content Matters
             </h1>
             <p className="text-xl text-aeo-cyan font-semibold tracking-wide">
               AI Search Optimisation: Get Found. Get Chosen.
@@ -415,9 +415,9 @@ export default function RagArticlePage() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/60 font-sans border-b border-white/10 pb-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden relative border border-white/20">
-                  <Image src="/images/about/Profile-Picture-Vinnie.png" alt="Vinnie Baker" fill sizes="32px" className="object-cover" />
+                  <Image src="/images/about/Profile-Picture-Vinnie.png" alt="Vince Baker" fill sizes="32px" className="object-cover" />
                 </div>
-                <span className="font-semibold text-white/90">Vinnie Baker</span>
+                <span className="font-semibold text-white/90">Vince Baker</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-white/40">&bull;</span>
@@ -438,6 +438,17 @@ export default function RagArticlePage() {
               <a href="#positional-bias" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">Positional Bias</a>
               <a href="#rag-faq" className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-white/10 hover:text-white transition-colors">RAG FAQ</a>
             </nav>
+
+            {/* Top Quadrant Atomic Answer Block */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-aeo-cyan/30 text-left space-y-2.5 shadow-[0_0_25px_rgba(0,229,255,0.1)]">
+              <div className="flex items-center gap-2 text-aeo-cyan font-mono font-bold text-xs uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>Atomic Summary: Retrieval-Augmented Generation &amp; AI Search</span>
+              </div>
+              <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
+                Retrieval-Augmented Generation (RAG) is the foundational retrieval mechanism powering modern <strong>AI SEO</strong>, generative answer engines, and search assistants across <strong>AI Australia</strong> ecosystems. By converting structured content into vector embeddings, RAG pipelines extract high-relevance passage chunks to synthesize evidence-backed answers in Perplexity, ChatGPT, and Google AI Overviews. Structuring your website content into 90–120 token atomic blocks ensures higher citation probability and prevents entity drift under vector search.
+              </p>
+            </div>
           </div>
 
           {/* Article Banner Image */}

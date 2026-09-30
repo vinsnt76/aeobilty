@@ -33,8 +33,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "What Is Positional Bias in Retrieval and Answer Engines? | AEObility",
-  description: "Positional bias is the tendency for retrieval and answer engines to favour information at the beginning or end of a passage, reducing the reliability of middle-placed content.",
+  title: "Positional Bias in AI SEO & Vector Retrieval | AEObility",
+  description: "Understand positional bias in AI SEO, dense retrieval, and LLM answer engines. Learn how Atomic Answer Blocks eliminate lost-in-the-middle context degradation.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval",
   },
@@ -311,7 +311,7 @@ export default function PositionalBiasArticlePage() {
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              What Is <span className="text-gradient-aeo">Positional Bias</span> in Retrieval and Answer Engines?
+              Positional Bias in <span className="text-gradient-aeo">AI SEO &amp; Answer Engines</span>
             </h1>
 
             <p className="text-white/80 text-lg md:text-xl font-light font-serif leading-relaxed">
@@ -331,6 +331,17 @@ export default function PositionalBiasArticlePage() {
               <span>5 min read</span>
               <span>&bull;</span>
               <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker</Link></span>
+            </div>
+
+            {/* Atomic Answer Block for Positional Bias */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-aeo-cyan/30 text-left space-y-2.5 shadow-[0_0_25px_rgba(0,229,255,0.1)] mt-4">
+              <div className="flex items-center gap-2 text-aeo-cyan font-mono font-bold text-xs uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>Atomic Summary: Positional Bias &amp; AI Retrieval Alignment</span>
+              </div>
+              <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
+                Positional bias is a critical factor in technical <strong>AI SEO</strong> and <strong>AEO SEO</strong>, where vector retrieval algorithms and Large Language Models exhibit attention degradation in the middle of long passages (&ldquo;lost in the middle&rdquo; phenomenon). AEObility mitigates positional bias by deploying 80&ndash;120 token Atomic Answer Blocks in top document quadrants, ensuring high-priority entity facts are captured during initial vector embedding scans and RAG synthesis.
+              </p>
             </div>
           </div>
 

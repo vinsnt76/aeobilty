@@ -33,14 +33,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Answer Engine Optimisation (AEO) Services | AEObility",
-  description: "Structure your digital footprint for AI-first search engines and modern discovery platforms. Predictable fixed-scope sprints from $495 AUD ex. GST.",
+  title: "AI SEO Agency & AEO Services Australia | AEObility",
+  description: "Australia's specialist AI SEO agency for AEO SEO, Answer Engine Optimisation, and structured entity graph architecture. Fixed-scope sprints from $495 AUD ex. GST.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo",
   },
   openGraph: {
-    title: "Answer Engine Optimisation (AEO) Services | AEObility",
-    description: "Fixed-scope Answer Engine Optimisation sprints for Australian businesses. Micro-sprints from $495 AUD ex. GST.",
+    title: "AI SEO Agency & AEO Services Australia | AEObility",
+    description: "Australia's specialist AI SEO agency for AEO SEO, Answer Engine Optimisation, and structured entity graph architecture. Fixed-scope sprints from $495 AUD ex. GST.",
     url: "https://aeobility.com.au/services/aeo",
     siteName: "AEObility",
     locale: "en_AU",
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
         url: "https://aeobility.com.au/images/services/canonical-aeo-services-hub_AEObility.webp",
         width: 1200,
         height: 800,
-        alt: "AEObility canonical Answer Engine Optimisation dashboard mapping 4 foundational pillars, structured content deliverables, and AEO sprint execution.",
+        alt: "AEObility canonical AI SEO agency and Answer Engine Optimisation dashboard mapping 4 foundational pillars, structured content deliverables, and AEO sprint execution.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Answer Engine Optimisation (AEO) Services | AEObility",
-    description: "Fixed-scope Answer Engine Optimisation sprints for Australian businesses. Micro-sprints from $495 AUD ex. GST.",
+    title: "AI SEO Agency & AEO Services Australia | AEObility",
+    description: "Australia's specialist AI SEO agency for AEO SEO, Answer Engine Optimisation, and structured entity graph architecture. Fixed-scope sprints from $495 AUD ex. GST.",
     images: ["https://aeobility.com.au/images/services/canonical-aeo-services-hub_AEObility.webp"],
   },
 };
@@ -199,7 +199,7 @@ export default function AEORootPage() {
               <span>Answer Engine Optimisation (AEO) Services</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Answer Engine Optimisation: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>
+              AI SEO Agency &amp; AEO Services: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>
             </h1>
             <div className="space-y-3 max-w-3xl mx-auto">
               <h2 className="text-lg sm:text-xl text-zinc-100 font-medium leading-relaxed font-soehne-breit">
@@ -251,14 +251,14 @@ export default function AEORootPage() {
               </div>
             </div>
 
-            {/* IA & SLM Atomic Answer Block (Row 6 Focus Keyphrase: aeo services) */}
+            {/* IA & SLM Atomic Answer Block (Row 6 Focus Keyphrase: aeo services, ai seo agency, aeo seo) */}
             <div className="max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 text-left space-y-2.5 shadow-[0_0_25px_rgba(6,182,212,0.12)]">
               <div className="flex items-center gap-2 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Executive Summary: AEO Services Architecture</span>
+                <span>Executive Summary: AEO & AI SEO Services Architecture</span>
               </div>
               <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
-                <strong className="text-white font-semibold">Answer Engine Optimisation (AEO)</strong> restructures your digital footprint, business facts, and credentials so AI answer engines (ChatGPT, Perplexity, Google AI Overviews) retrieve and cite your brand accurately. AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema graphs and atomic content blocks. All engagements tie directly into authoritative registries (ABN, LocalBusiness, Schema.org) with zero ongoing lock-in contracts.
+                AEObility is a specialist <strong className="text-white font-semibold">AI SEO agency</strong> in Australia focusing on <strong className="text-white font-semibold">AEO SEO</strong>, Answer Engine Optimisation, and structured entity graph architecture. Our AEO services restructure your digital footprint, business facts, and credentials so AI search engines and modern discovery tools (ChatGPT, Perplexity, Claude, and Google AI Overviews) retrieve, verify, and cite your brand accurately. AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema microdata and atomic content blocks. All engagements tie directly into authoritative registries (ABN, LocalBusiness, Schema.org) with zero ongoing contract lock-in.
               </p>
             </div>
 

@@ -25,8 +25,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Structured Data & Query Fan-Out: Entity Clarity in AI Search | AEObility",
-  description: "Learn how structured data provides machine-readable entity context during query fan-out in search systems, and why Schema supports rather than guarantees AI retrieval.",
+  title: "Structured Data & Query Fan-Out: AI SEO Architecture | AEObility",
+  description: "Learn how structured data provides machine-readable entity context during query fan-out in AI SEO and AEO SEO search systems. Technical guide by Vince Baker.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
   },
@@ -299,11 +299,11 @@ export default function StructuredDataQueryFanOutArticlePage() {
             </div>
             
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Structured Data &amp; <span className="text-gradient-aeo">Query Fan-Out</span> in AI Search
+              Structured Data &amp; <span className="text-gradient-aeo">Query Fan-Out</span> in AI SEO
             </h1>
 
             <p className="text-lg md:text-xl font-light text-white/80 font-serif leading-relaxed">
-              Structured data provides explicit machine-readable entity context when search systems expand complex user queries into multiple sub-intents. This guide examines how structured data supports technical SEO under query fan-out, while clarifying what Schema can and cannot do for AI search visibility.
+              Structured data provides explicit machine-readable entity context when search engines and AI search assistants expand complex user queries into multiple sub-intents. Author Vince Baker details how structured data and Schema.org microdata support technical <strong>AI SEO</strong> and <strong>AEO SEO</strong> under query fan-out, while clarifying what Schema can and cannot do for generative search visibility.
             </p>
 
             <p className="text-base sm:text-lg font-light text-white/90 font-serif leading-relaxed">
@@ -369,6 +369,37 @@ export default function StructuredDataQueryFanOutArticlePage() {
               </li>
             </ul>
           </div>
+
+          {/* Radial Conversion Corridor Callout Card */}
+          <aside className="my-4 p-6 bg-gradient-to-r from-slate-900 via-slate-900 to-teal-950/60 border-l-4 border-aeo-cyan rounded-r-2xl shadow-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-aeo-cyan uppercase tracking-widest block">
+                  Commercial Sprint Corridor
+                </span>
+                <h3 className="text-lg sm:text-xl font-bold text-white">
+                  Deploy Query Fan-Out Architecture on Your Business Site
+                </h3>
+                <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
+                  Translate query fan-out theory into a validated, machine-readable entity graph for your organisation with the <strong>$995 AUD Strategic Blueprint</strong> or targeted <strong>AEO Technical Sprints</strong>.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="px-5 py-3 rounded-xl bg-aeo-cyan text-slate-950 font-bold text-sm hover:bg-cyan-300 transition-colors text-center shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                >
+                  Explore $995 Blueprint
+                </Link>
+                <Link
+                  href="/solutions/aeo-sprint"
+                  className="px-5 py-3 rounded-xl bg-white/10 text-white font-semibold text-sm hover:bg-white/20 border border-white/15 transition-colors text-center"
+                >
+                  AEO Technical Sprints
+                </Link>
+              </div>
+            </div>
+          </aside>
 
           {/* Section 1: How Query Fan-Out Impacts Technical SEO and Entity Clarity */}
           <section id="what-is-fanout" className="space-y-6 scroll-mt-24">

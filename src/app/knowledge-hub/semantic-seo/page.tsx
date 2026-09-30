@@ -20,8 +20,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "AI Semantic SEO & Entity-Based Layout Frameworks | AEObility",
-  description: "AI Semantic SEO helps organisations move from legacy keyword strings to relational topic graphs. Map RDF triples, strengthen entity clarity and build contextual salience.",
+  title: "AI Semantic SEO & AEO SEO Frameworks Australia | AEObility",
+  description: "AI Semantic SEO and AEO SEO frameworks to transition from legacy keyword strings to relational topic graphs. Map RDF triples and build machine-readable entity salience.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/semantic-seo",
   },
@@ -283,7 +283,7 @@ export default function SemanticSEONodePage() {
               <span>AI Semantic SEO &amp; Entity Based Optimisation</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-              AI Semantic <span className="text-gradient-aeo">SEO</span> &amp; Entity‑Based Layout Frameworks
+              AI Semantic SEO &amp; AEO SEO: <span className="text-gradient-aeo">Entity‑Based Frameworks</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed font-light">
               Semantic SEO is about helping search engines and AI understand what your business actually offers: not just the keywords on the page. Instead of matching strings, modern systems look at how your topics connect and how clearly your main ideas are expressed. Aligning with our <Link href="/services/aeo/definition" className="text-aeo-cyan hover:underline font-semibold">foundational AEO definition</Link> and <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> reinforces this shift.
@@ -297,6 +297,17 @@ export default function SemanticSEONodePage() {
               <span>Service / Topic: <strong className="text-white">Semantic SEO</strong></span>
               <span>&bull;</span>
               <span>Author: <Link href="/about/freelance-seo-consultant-perth" className="text-aeo-cyan hover:underline font-semibold">Vince Baker</Link></span>
+            </div>
+
+            {/* Atomic Answer Block for AI Retrieval */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-aeo-cyan/30 text-left space-y-2.5 shadow-[0_0_25px_rgba(0,229,255,0.1)] mt-6">
+              <div className="flex items-center gap-2 text-aeo-cyan font-mono font-bold text-xs uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-aeo-cyan shrink-0" />
+                <span>Atomic Summary: AI Semantic SEO &amp; Entity Relationships</span>
+              </div>
+              <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
+                AI Semantic SEO replaces legacy keyword stuffing with machine-readable RDF triples (Subject &rarr; Predicate &rarr; Object) to establish high-salience topic graphs. In modern <strong>AEO SEO</strong> and <strong>AI SEO</strong>, search engines evaluate entity relationships rather than isolated keywords. AEObility structures business facts, services, and credentials into verifiable content lattices so Large Language Models and vector search engines across Australia can index and cite your brand with high confidence.
+              </p>
             </div>
 
             {/* Page Banner Image */}
