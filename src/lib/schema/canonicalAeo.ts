@@ -163,7 +163,19 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "mainEntity": {
         "@id": "https://aeobility.com.au/services/aeo#service"
-      }
+      },
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "@id": "https://aeobility.com.au/services/aeo/definition",
+          "name": "Answer Engine Optimisation Core Definition Model"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://aeobility.com.au/diagnostic#webapp",
+          "name": "AI Visibility Diagnostic Measurement Suite"
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -197,9 +209,6 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "description": "Structured digital infrastructure solutions that help search engines, LLMs, and conversational AI interfaces index, verify, and reference your organisation accurately.",
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
-      },
-      "creator": {
-        "@id": "https://aeobility.com.au/#vince-baker"
       },
       "areaServed": [
         {
@@ -278,18 +287,6 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article",
           "name": "AI Search Optimisation with Retrieval-Augmented Generation (RAG)",
           "url": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation"
-        }
-      ],
-      "hasPart": [
-        {
-          "@type": "WebPage",
-          "@id": "https://aeobility.com.au/services/aeo/definition",
-          "name": "Answer Engine Optimisation Core Definition Model"
-        },
-        {
-          "@type": "WebApplication",
-          "@id": "https://aeobility.com.au/diagnostic#webapp",
-          "name": "AI Visibility Diagnostic Measurement Suite"
         }
       ],
       "hasOfferCatalog": {

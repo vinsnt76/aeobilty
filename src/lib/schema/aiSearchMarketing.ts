@@ -155,9 +155,6 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
       },
-      "creator": {
-        "@id": "https://aeobility.com.au/#vince-baker"
-      },
       "mainEntityOfPage": "https://aeobility.com.au/services/ai-search-marketing",
       "areaServed": [
         {
