@@ -529,7 +529,7 @@ export default function AEORootPage() {
             <div className="max-w-4xl mx-auto space-y-4 pt-4">
               <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-teal-400 shrink-0" />
-                <span>Frequently Clarified Technical Mechanics</span>
+                <span>The Agentic Layer Above SEO</span>
               </h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2 backdrop-blur-xl">
