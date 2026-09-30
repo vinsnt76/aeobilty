@@ -270,11 +270,11 @@ export default function AEORootPage() {
                 On this page:
               </span>
               <div className="flex flex-wrap items-center gap-2">
-                <a href="#engagement-paths" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                  Engagement Paths
+                <a href="#how-ai-retrieves" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  AI Retrieval
                 </a>
-                <a href="#aeo-comparison" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                  Comparison Matrix
+                <a href="#case-study" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Case Study
                 </a>
                 <a href="#aeo-cost" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
                   Investment Model
@@ -287,6 +287,9 @@ export default function AEORootPage() {
                 </a>
                 <a href="#faq-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
                   FAQs
+                </a>
+                <a href="#aeo-lattice" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Site Structure
                 </a>
               </div>
             </nav>
@@ -314,7 +317,7 @@ export default function AEORootPage() {
             </div>
 
             {/* How AI Search Chooses What to Quote */}
-            <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-6 shadow-2xl backdrop-blur-xl">
+            <div id="how-ai-retrieves" className="scroll-mt-24 max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-6 shadow-2xl backdrop-blur-xl">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-400 uppercase tracking-wider font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-teal-400" />
@@ -479,7 +482,7 @@ export default function AEORootPage() {
           </section>
 
           {/* 2. "The Evidence: Running the 90-Day Blueprint on Ourselves" */}
-          <section id="engagement-paths" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
+          <section id="case-study" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider">Real-World Execution Data</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center justify-center gap-3">
