@@ -129,27 +129,35 @@ export default function AEORootPage() {
   const faqs = [
     {
       question: "What is the difference between AEO and traditional SEO?",
-      answer: "Traditional SEO focuses on improving discoverability, technical quality, and organic rankings in search engines. Answer Engine Optimisation (AEO) builds on SEO by making key business facts, services, and decision-stage answers clearer and more structured for answer-led search experiences and AI search assistants."
+      answer: "Traditional SEO focuses on keyword rankings and organic search traffic. Answer Engine Optimisation (AEO) structures your business information, content, and schema so AI search systems (Google AI Overviews, ChatGPT Search, and Perplexity) can easily understand, verify, and cite your brand in direct answer responses."
     },
     {
-      question: "Does comparison content help AEO?",
-      answer: "Comparison content helps when it answers real customer decision prompts clearly and objectively. Explaining service options, comparison criteria, trade-offs, and target suitability gives search platforms and AI agents clear structured evidence to reference."
+      question: "Which AI search engines do AEObility services optimise for?",
+      answer: "We structure your web footprint for major AI search engines and discovery tools including Google AI Overviews, ChatGPT Search, Perplexity Pro, and Gemini."
     },
     {
-      question: "Is AEO a replacement for traditional SEO?",
-      answer: "No. AEO complements SEO. Technical SEO, helpful content, fast page speed, site usability, local visibility, and domain authority remain essential foundations of search performance."
+      question: "What is the difference between a Micro-Sprint and Foundation Implementation?",
+      answer: "A Micro-Sprint is a quick fix for one specific issue (e.g. structured schema deployment or a single atomic page rewrite) delivered in 4–5 business days for $495 AUD ex. GST. Foundation Implementation is a connected four-week engagement addressing multi-page schema, internal link lattices, and citation alignment."
+    },
+    {
+      question: "How long do AEObility engagements take to deliver?",
+      answer: "Delivery timeframes depend on service scope: Micro-Sprints are delivered in 4–5 business days after scope and access are confirmed, while Foundation Implementations run across a four-week schedule."
+    },
+    {
+      question: "How does the $995 Strategic Blueprint credit work?",
+      answer: "The Blueprint provides a complete digital presence audit and prioritised 90-day roadmap for $995 AUD ex. GST. The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days."
+    },
+    {
+      question: "Do I own all code and schema deliverables?",
+      answer: "Yes. All completed schema markup, atomic content blocks, and handover documentation belong 100% to your organisation with zero ongoing contract lock-in."
     },
     {
       question: "Does AEO help with local search and Google Maps?",
       answer: "Yes. AEO strengthens local business detail consistency (name, address, phone number, services, and operating regions), improving local search visibility and voice assistant accuracy across Maps and local search packs."
     },
     {
-      question: "What is included in the $995 AEObility Blueprint?",
-      answer: "The Blueprint includes a complete digital presence audit, technical gap analysis, visibility scorecard, and a practical 90-day execution roadmap. If you proceed with Foundation Implementation within 60 days, the full $995 Blueprint fee is credited toward your implementation cost."
-    },
-    {
-      question: "How long does an AEO sprint take to deliver?",
-      answer: "Most targeted Micro-Sprints are delivered within 4–5 business days after scope and access are confirmed. Foundation Implementation is delivered across a structured four-week schedule with agreed milestones."
+      question: "What industries benefit most from Answer Engine Optimisation?",
+      answer: "AEO is most effective for commercial services, trade providers, B2B companies, e-commerce stores, and local professional services where prospective buyers use search or AI assistants to compare options before purchasing."
     }
   ];
 
@@ -199,17 +207,25 @@ export default function AEORootPage() {
               <span>Answer Engine Optimisation (AEO) Services</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI SEO Agency &amp; AEO Services: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>
+              AEO Services: <span className="text-gradient-aeo">Get Found and Chosen in AI Search.</span>
             </h1>
             <div className="space-y-3 max-w-3xl mx-auto">
               <h2 className="text-lg sm:text-xl text-zinc-100 font-medium leading-relaxed font-soehne-breit">
-                We restructure your business facts, services, and credentials so AI answer engines stop guessing and start citing you accurately. Clear scope. Flat rates.
+                Make your business easier for AI search to understand, trust, and cite. AEObility improves the structure, clarity, and verification of your website content for Google AI Overviews, ChatGPT Search, and Perplexity. Clear scope. Fixed pricing. No lock-in contracts.
               </h2>
               <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
-                <span>Micro-Sprints from $495 AUD ex. GST</span>
+                <span>Micro-Sprints: $495 AUD ex. GST</span>
                 <span className="text-zinc-500">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation: From $3,195 AUD ex. GST</span>
               </div>
+            </div>
+
+            {/* Concise Definition Block */}
+            <div className="max-w-3xl mx-auto p-4 sm:p-5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-left space-y-1.5 shadow-sm">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">What is Answer Engine Optimisation (AEO)?</span>
+              <p className="text-sm text-zinc-200 font-sans leading-relaxed">
+                Answer Engine Optimisation (AEO) is the practice of structuring business information, content, and schema so AI search systems (Google AI Overviews, ChatGPT Search, and Perplexity) can understand, verify, and cite it when prospective buyers ask purchasing questions.
+              </p>
             </div>
 
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
@@ -227,9 +243,9 @@ export default function AEORootPage() {
               {/* Overlaid Hero CTAs */}
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-4 shadow-2xl">
                 <div className="text-left space-y-1">
-                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a comprehensive AEO foundation.</span>
+                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a connected AEO foundation.</span>
                   <span className="text-xs sm:text-[14px] text-zinc-200 font-medium block">
-                    Typical delivery: <strong className="text-white font-semibold">4–5 business days</strong> from confirmed scope and access.
+                    Delivery timeframes: <strong className="text-white font-semibold">Micro-Sprints in 4–5 business days</strong>; Foundation Implementations across 4 weeks.
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
@@ -245,7 +261,7 @@ export default function AEORootPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-zinc-100 hover:text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Discuss AEO Services</span>
+                    <span>Book Scope Call</span>
                   </a>
                 </div>
               </div>
@@ -255,10 +271,10 @@ export default function AEORootPage() {
             <div className="max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 text-left space-y-2.5 shadow-[0_0_25px_rgba(6,182,212,0.12)]">
               <div className="flex items-center gap-2 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Executive Summary: AEO & AI SEO Services Architecture</span>
+                <span>Executive Summary: AEO &amp; AI SEO Services Architecture</span>
               </div>
               <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
-                AEObility is a specialist <strong className="text-white font-semibold">AI SEO agency</strong> in Australia focusing on <strong className="text-white font-semibold">AEO SEO</strong>, Answer Engine Optimisation, and structured entity graph architecture. Our AEO services restructure your digital footprint, business facts, and credentials so AI search engines and modern discovery tools (ChatGPT, Perplexity, Claude, and Google AI Overviews) retrieve, verify, and cite your brand accurately. AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema microdata and atomic content blocks. All engagements tie directly into authoritative registries (ABN, LocalBusiness, Schema.org) with zero ongoing contract lock-in.
+                AEObility is a specialist <strong className="text-white font-semibold">AI SEO agency</strong> in Australia focusing on <strong className="text-white font-semibold">AEO SEO</strong>, Answer Engine Optimisation, and structured entity graph architecture. Our AEO services restructure your digital footprint, business facts, and credentials so AI search engines (Google AI Overviews, ChatGPT Search, and Perplexity) can easily understand, verify, and cite your brand. AEObility delivers fixed-scope Micro-Sprints for $495 AUD ex. GST and Foundation Implementations across four-week schedules, replacing speculative SEO with verifiable schema microdata and atomic content blocks. All engagements tie directly into authoritative registries (ABN, LocalBusiness, Schema.org) with zero ongoing contract lock-in.
               </p>
             </div>
 
@@ -290,6 +306,22 @@ export default function AEORootPage() {
               <p className="text-xs sm:text-sm text-white/60 font-serif">Fixed pricing and clear scopes. No lock-in contracts.</p>
             </div>
 
+            {/* Proof Card Near Pricing */}
+            <div className="max-w-4xl mx-auto p-5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 text-left space-y-3 shadow-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-2 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>Verified Client Evidence &amp; Case Results</span>
+                </div>
+                <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-xs font-mono text-cyan-300 hover:underline font-bold">
+                  View 90-Day Case Study &rarr;
+                </Link>
+              </div>
+              <p className="text-sm text-zinc-200 font-sans leading-relaxed">
+                <strong className="text-white">Real-world impact:</strong> In a recent audit for a Western Australian commercial trade provider, inconsistent NAP details and unstructured PDF price sheets caused Perplexity Search to hallucinate outdated rates. Restructuring their service copy into atomic HTML tables with nested <code className="text-cyan-300 font-mono text-xs">LocalBusiness</code> schema restored citation accuracy across 2 recrawl cycles.
+              </p>
+            </div>
+
             <AeoStartingPointGrid />
 
             {/* Clean 3-Tier Comparison Matrix Table */}
@@ -299,7 +331,7 @@ export default function AEORootPage() {
                   <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
                     <th className="p-3.5 sm:p-4">Service / Tier</th>
                     <th className="p-3.5 sm:p-4">Target Scope</th>
-                    <th className="p-3.5 sm:p-4">Best For</th>
+                    <th className="p-3.5 sm:p-4">Expected Outcome</th>
                     <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
                   </tr>
                 </thead>
@@ -307,19 +339,19 @@ export default function AEORootPage() {
                   <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Technical Micro-Sprint</td>
                     <td className="p-3.5 sm:p-4">1 Defined Priority Page / Schema Fix</td>
-                    <td className="p-3.5 sm:p-4">Quick fix for one specific issue</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
+                    <td className="p-3.5 sm:p-4 text-cyan-200">Fix one high-impact AEO gap quickly</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$495 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
                     <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
-                    <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
+                    <td className="p-3.5 sm:p-4 text-cyan-200">Understand what limits AI search visibility before investing</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
                     <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
-                    <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
+                    <td className="p-3.5 sm:p-4 text-cyan-200">Implement connected improvements across priority pages</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
                   </tr>
                 </tbody>
@@ -343,7 +375,7 @@ export default function AEORootPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Typical delivery: 4–5 business days for Micro-Sprints. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+                  <span>Delivery timeframes vary by service: Micro-Sprints are typically 4–5 business days; Foundation Implementations run across four weeks. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
                 </li>
               </ul>
             </div>
@@ -413,7 +445,7 @@ export default function AEORootPage() {
 
                 <div className="p-4 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2">
                   <div className="flex items-center justify-between">
-                    <strong className="text-purple-300 font-sans font-bold text-sm">Foundation Tier</strong>
+                    <strong className="text-purple-300 font-sans font-bold text-sm">Foundation Implementation</strong>
                     <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
                   </div>
                   <p className="text-zinc-300 leading-relaxed">
@@ -430,7 +462,7 @@ export default function AEORootPage() {
                     <span>The 100% Risk-Reversal Credit</span>
                   </strong>
                   <p className="text-xs text-zinc-300 font-serif">
-                    Every dollar invested in your $995 Strategic Blueprint is fully credited back if you choose us for your implementation sprints.
+                    The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 shrink-0">
@@ -484,7 +516,7 @@ export default function AEORootPage() {
                     <span>Entity Relationship Mapping</span>
                   </div>
                   <p className="text-zinc-300 leading-relaxed">
-                    Our team reviews your underlying code to uncover missing schema ties, unverified coordinates, and hidden brand facts.
+                    Our team reviews your underlying code to uncover missing schema ties, inconsistent NAP details, and hidden brand facts.
                   </p>
                 </div>
 
@@ -494,7 +526,7 @@ export default function AEORootPage() {
                     <span>90-Day Operational Timeline</span>
                   </div>
                   <p className="text-zinc-300 leading-relaxed">
-                    You receive a sequential, line-by-line engineering guide detailing what to fix first to ensure accurate AI indexing.
+                    You receive a prioritised implementation roadmap detailing what to fix first to ensure accurate AI indexing.
                   </p>
                 </div>
               </div>
@@ -511,7 +543,7 @@ export default function AEORootPage() {
                   Verified Ingestion: AI AEO Services for Perth and Australian Businesses
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                  Traditional SEO models match static keyword strings, but modern conversational platforms extract structured facts. Our specialised AI AEO services build the definitive entity authority your business needs to survive and scale within modern RAG pipelines.
+                  Traditional SEO models match static keyword strings, but modern conversational platforms extract structured facts. Our specialised AEO services help AI search systems understand, verify, and cite your business information across Google AI Overviews, ChatGPT Search, and Perplexity.
                 </p>
               </div>
 
@@ -521,9 +553,9 @@ export default function AEORootPage() {
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4 text-xs font-serif">
                   <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
-                    <strong className="text-white font-sans font-bold text-sm block">1. Local Coordinate Consistency</strong>
+                    <strong className="text-white font-sans font-bold text-sm block">1. Local Detail Consistency</strong>
                     <p className="text-zinc-300 leading-relaxed">
-                      We align hard-coded geographic coordinates and NAP data to verify local proximity signals across AI answer systems.
+                      Strengthen local entity signals through consistent location data, schema, and corroborating business-profile references.
                     </p>
                   </div>
 

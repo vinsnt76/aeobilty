@@ -24,42 +24,42 @@ const engagementPaths: EngagementPath[] = [
     anchorId: "aeo-micro-sprints",
     icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
     title: "AEO Technical Micro-Sprint",
-    code: "SS1 / SS2",
-    price: "From $495 AUD",
-    priceSub: "ex. GST",
+    code: "Quick Fix",
+    price: "$495 AUD",
+    priceSub: "ex. GST per sprint",
     scope: "One priority page or schema fix",
-    description: "Choose one focused priority for $495 AUD ex. GST: Structured Schema Deployment, Single Page Atomic Rewrite, or Category Answer Unit.",
-    techNote: "For technical teams: We implement schema graphs that tie your business facts directly to authoritative registries, paired with modular HTML blocks designed for accurate extraction.",
-    whenToChoose: "Choose this when you have one specific page or schema gap limiting AI search readability.",
-    ctaLabel: "Discuss Micro-Sprint"
+    description: "Fix one high-impact AEO gap quickly: Structured Schema Deployment, Single Page Atomic Rewrite, or Category Answer Unit. Typically delivered in 4–5 business days.",
+    techNote: "For technical teams: We implement nested JSON-LD schema graphs that tie your business facts directly to authoritative registries, paired with modular HTML blocks for clean passage extraction.",
+    whenToChoose: "Outcome: Fix one high-impact AEO gap quickly. Ideal when you have a specific page or schema issue limiting AI search readability.",
+    ctaLabel: "Book Micro-Sprint"
   },
   {
     key: "foundation",
     anchorId: "aeo-foundation",
     icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
     title: "Foundation Implementation",
-    code: "MACRO TIER",
+    code: "Full Implementation",
     price: "From $3,195 AUD",
     priceSub: "ex. GST",
     scope: "Connected multi-page & entity improvements",
-    description: "Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures in a focused four-week engagement.",
-    techNote: "For technical teams: Multi-page schema integration, restructuring internal contextual links to pass explicit topical relevance, and aligning citation records.",
-    whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
-    ctaLabel: "Discuss Foundation Tier"
+    description: "Implement connected improvements across structured data, atomic page rewrites, internal linking, and citation structures in a structured four-week engagement.",
+    techNote: "For technical teams: Multi-page schema integration, restructuring internal contextual links to pass explicit topical salience, and aligning citation records across platforms.",
+    whenToChoose: "Outcome: Implement connected improvements across your priority pages. Ideal when your business requires systematic AI visibility across multiple core services.",
+    ctaLabel: "Book Foundation Implementation"
   },
   {
     key: "blueprint",
     anchorId: "aeo-blueprint",
     icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
     title: "The AEObility Blueprint",
-    code: "BPSTRAT",
+    code: "Diagnostic",
     price: "$995 AUD",
     priceSub: "ex. GST",
     scope: "Full digital audit & 90-day roadmap",
-    description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work.",
+    description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day prioritised implementation roadmap. The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days.",
     techNote: "For technical teams: Practical audit of structured data gaps, entity clarity review, and query intent mapping.",
-    whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
-    ctaLabel: "Discuss $995 Blueprint"
+    whenToChoose: "Outcome: Understand what is limiting AI visibility before investing. Ideal when you need a clear diagnostic plan before committing to implementation.",
+    ctaLabel: "Book Blueprint Diagnostic"
   }
 ];
 

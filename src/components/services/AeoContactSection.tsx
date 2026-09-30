@@ -20,14 +20,14 @@ interface AeoContactSectionProps {
 
 export default function AeoContactSection({
   id = "aeo-contact-form",
-  badgeTitle = "AEO Sprint",
-  heading = "Discuss AEO Services",
+  badgeTitle = "AEO Scope Call",
+  heading = "Discuss Your AEO Priorities",
   subheading = "Tell us about your business goals and Answer Engine Optimisation priorities. We will confirm scope and pricing before you commit.",
   formId = "canonical_aeo_contact_form",
   leadType = "aeo_services_enquiry",
-  buttonText = "Discuss AEO Services",
-  receivedHeading = "AEO Enquiry Received",
-  founderCallout = "You will speak directly with Vinnie Baker in Perth to confirm feasibility before any work starts.",
+  buttonText = "Book Scope Call",
+  receivedHeading = "AEO Scope Request Received",
+  founderCallout = "You will speak directly with Vince Baker in Perth to confirm feasibility before any work starts.",
   defaultService = "unsure"
 }: AeoContactSectionProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
@@ -72,7 +72,7 @@ export default function AeoContactSection({
       <div className="max-w-md mx-auto space-y-4">
         <h2 className="text-3xl font-bold text-white font-soehne-breit">{heading}</h2>
         <p className="text-sm text-zinc-400 leading-relaxed font-serif">
-          {subheading} <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Request a quote</Link>.
+          {subheading} <Link href="/contact" className="text-cyan-400 hover:underline font-medium">Confirm scope and pricing</Link>.
         </p>
         <div className="flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono pt-1">
           <Users className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -83,7 +83,7 @@ export default function AeoContactSection({
       <div className="max-w-xl mx-auto bg-zinc-950/90 border border-white/10 p-6 sm:p-8 rounded-2xl text-left shadow-2xl relative overflow-hidden backdrop-blur-md">
         <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full filter blur-2xl -z-10" />
         <div className="flex items-center justify-between gap-4 mb-1.5">
-          <h3 className="text-xl font-bold text-white font-soehne-breit">{heading}</h3>
+          <h3 className="text-xl font-bold text-white font-soehne-breit">Send Your Project Details</h3>
           <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-0.5 rounded">
             {badgeTitle}
           </span>
