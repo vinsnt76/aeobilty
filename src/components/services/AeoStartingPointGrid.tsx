@@ -94,46 +94,46 @@ export default function AeoStartingPointGrid({
         <div
           key={path.key}
           id={path.anchorId}
-          className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-6 hover:border-cyan-500/40 transition-all duration-300 relative group scroll-mt-28"
+          className="bg-slate-900/60 border border-slate-800/80 p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 hover:border-teal-500/40 transition-all duration-300 relative group scroll-mt-28 backdrop-blur-xl shadow-xl"
         >
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <div className="p-2.5 bg-black border border-white/10 rounded-xl group-hover:border-cyan-500/30 transition-colors">
+              <div className="p-2.5 bg-slate-950 border border-slate-800 rounded-xl group-hover:border-teal-500/40 transition-colors">
                 {path.icon}
               </div>
-              <span className="text-[10px] font-mono text-zinc-400 bg-white/5 border border-white/10 px-2 py-0.5 rounded">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2.5 py-1 rounded-full">
                 {path.code}
               </span>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-white font-soehne-breit">{path.title}</h3>
+              <h3 className="text-lg font-extrabold text-white tracking-tight">{path.title}</h3>
               <div className="flex items-baseline gap-1.5 mt-1">
-                <span className="text-xl font-bold font-mono text-cyan-300">{path.price}</span>
-                <span className="text-[11px] text-zinc-400 font-mono">{path.priceSub}</span>
+                <span className="text-2xl font-extrabold font-mono text-white">{path.price}</span>
+                <span className="text-xs text-slate-400 font-mono">{path.priceSub}</span>
               </div>
-              <p className="text-xs text-cyan-400/90 font-mono mt-1">{path.scope}</p>
+              <p className="text-xs text-teal-400 font-mono font-medium mt-1">{path.scope}</p>
             </div>
 
-            <p className="text-xs text-zinc-300 font-serif leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               {path.description}
             </p>
 
-            <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
-              <strong className="text-white block mb-0.5">When to choose:</strong>
+            <div className="bg-slate-950/80 border border-slate-800/80 p-3 rounded-xl text-xs text-slate-300 leading-relaxed">
+              <strong className="text-teal-300 font-semibold block mb-0.5">When to choose:</strong>
               <span>{path.whenToChoose}</span>
             </div>
           </div>
 
-          <div className="space-y-3 pt-3 border-t border-white/5">
-            <p className="text-[10px] text-zinc-500 font-mono leading-tight">{path.techNote}</p>
+          <div className="space-y-3 pt-3 border-t border-slate-800/80">
+            <p className="text-xs text-slate-400 font-mono leading-relaxed">{path.techNote}</p>
             <button
               type="button"
               onClick={() => handleSelectSprint(path.key)}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer"
             >
               <span>{path.ctaLabel}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
