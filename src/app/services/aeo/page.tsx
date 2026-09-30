@@ -11,7 +11,6 @@ import { getCanonicalAeoSchemaGraph } from '@/lib/schema/canonicalAeo';
 import FaqAccordion from '@/components/FaqAccordion';
 import AeoDiagnosticSection from '@/components/services/AeoDiagnosticSection';
 import AeoContactSection from '@/components/services/AeoContactSection';
-import AeoStartingPointGrid from '@/components/services/AeoStartingPointGrid';
 import {
   ArrowRight,
   Eye,
@@ -475,18 +474,17 @@ export default function AEORootPage() {
 
           </section>
 
-          {/* 2. "Choose Your Starting Point" Engagement Grid */}
+          {/* 2. "The Evidence: Running the 90-Day Blueprint on Ourselves" */}
           <section id="engagement-paths" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider">Predictable Fixed-Scope Delivery</span>
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider">Real-World Execution Data</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center justify-center gap-3">
-                <Target className="w-6 h-6 text-teal-400" />
-                Choose Your Starting Point
+                <ShieldCheck className="w-6 h-6 text-teal-400 shrink-0" />
+                <span>The Evidence: Running the 90-Day Blueprint on Ourselves</span>
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300">Fixed pricing and clear scopes. No lock-in contracts.</p>
             </div>
 
-            {/* Proof Card Near Pricing */}
+            {/* Proof Card Near Evidence */}
             <div className="max-w-4xl mx-auto p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-3 shadow-2xl backdrop-blur-xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-teal-400 font-mono font-bold text-xs uppercase tracking-wider">
@@ -500,53 +498,6 @@ export default function AEORootPage() {
               <p className="text-sm text-slate-200 leading-relaxed">
                 <strong className="text-white">Real-world impact:</strong> In a recent audit for a Western Australian commercial trade provider, inconsistent NAP details and unstructured PDF price sheets caused Perplexity Search to hallucinate outdated rates. Restructuring their service copy into atomic HTML tables with nested <code className="text-teal-300 font-mono text-xs">LocalBusiness</code> schema restored citation accuracy across 2 recrawl cycles.
               </p>
-            </div>
-
-            <AeoStartingPointGrid />
-
-            {/* Clean 3-Tier Comparison Matrix Table */}
-            <div id="aeo-comparison" className="overflow-x-auto rounded-2xl border border-slate-800/80 bg-slate-950/80 shadow-2xl scroll-mt-24">
-              <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[580px]">
-                <thead>
-                  <tr className="bg-slate-950 text-teal-300 border-b border-slate-800 font-mono text-xs uppercase tracking-wider">
-                    <th className="p-3.5 sm:p-4 border-r border-slate-800">Service / Tier</th>
-                    <th className="p-3.5 sm:p-4 border-r border-slate-800">Target Scope</th>
-                    <th className="p-3.5 sm:p-4 border-r border-slate-800">Expected Outcome</th>
-                    <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-800/60 bg-slate-900/40 text-slate-300">
-                  <tr className="hover:bg-slate-800/40 transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white border-r border-slate-800">AEO Technical Micro-Sprint</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800">1 Defined Priority Page / Schema Fix</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800 text-teal-200">Fix one high-impact AEO gap quickly</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-teal-400">$495 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-slate-800/40 transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white border-r border-slate-800">AEObility Blueprint</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800">Full Digital Audit &amp; 90-Day Roadmap</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800 text-cyan-200">Understand what limits AI search visibility before investing</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-teal-400">$995 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-slate-800/40 transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white border-r border-slate-800">Foundation Implementation</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800">Connected Multi-Page &amp; Entity Fixes</td>
-                    <td className="p-3.5 sm:p-4 border-r border-slate-800 text-teal-200">Implement connected improvements across priority pages</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-teal-400">From $3,195 AUD</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* Deliverables Ownership Statement */}
-            <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-300 shadow-xl">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-bold block mb-0.5 text-sm sm:text-base">You own the agreed deliverables</strong>
-                  <span>Use completed code and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
-                </div>
-              </div>
             </div>
 
             {/* Deep Mechanics Evidence Bridge */}
@@ -860,6 +811,17 @@ export default function AEORootPage() {
                 </Link>
                 .
               </p>
+            </div>
+
+            {/* Deliverables Ownership Statement */}
+            <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-300 shadow-xl backdrop-blur-xl">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-bold block mb-0.5 text-sm sm:text-base">You own the agreed deliverables</strong>
+                  <span>Use completed code and handover notes with your internal developer, or ask AEObility to implement the agreed changes.</span>
+                </div>
+              </div>
             </div>
           </section>
 
