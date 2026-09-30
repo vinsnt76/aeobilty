@@ -37,14 +37,56 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       ]
     },
     {
+      "@type": "ImageObject",
+      "@id": "https://aeobility.com.au/services/aeo#primaryimage",
+      "url": "https://aeobility.com.au/images/services/ai-seo-example-of-multimodal-seo_AEObility.webp",
+      "contentUrl": "https://aeobility.com.au/images/services/ai-seo-example-of-multimodal-seo_AEObility.webp",
+      "caption": "3D avatar standing next to a glowing holographic matrix comparing ChatGPT, Google, Copilot, and Claude for Answer Engine Optimisation (AEO).",
+      "description": "3D avatar standing next to a glowing holographic matrix comparing ChatGPT, Google, Copilot, and Claude for Answer Engine Optimisation (AEO).",
+      "width": 1200,
+      "height": 800,
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://aeobility.com.au/services/aeo#video",
+      "name": "Why AEObility Framework Works for All Engines: Multi-Modal Corroboration",
+      "description": "Demonstrating multi-modal transcript synchronisation and VideoObject schema cross-verification for AI answer engines including Google AI Overviews, ChatGPT Search, and Perplexity.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/_ynQCnTVsGw/maxresdefault.jpg"
+      ],
+      "uploadDate": "2026-09-28",
+      "embedUrl": "https://www.youtube.com/embed/_ynQCnTVsGw?si=tkSRoI8DlcK42Xnh",
+      "contentUrl": "https://www.youtube.com/watch?v=_ynQCnTVsGw",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
+      "about": [
+        {
+          "@id": "https://aeobility.com.au/services/aeo#service"
+        }
+      ],
+      "transcript": "Why AEObility framework works for all engines — Multi-modal corroboration: We synchronised video transcripts directly with VideoObject metadata, giving retrieval bots explicit text targets to cross-verify against media assets."
+    },
+    {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/services/aeo#webpage",
       "url": "https://aeobility.com.au/services/aeo",
-      "name": "AEO Services & Answer Engine Optimisation | AEObility",
+      "name": "AI SEO Services: Update Your Site for Modern Answer Retrieval | AEObility",
       "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our core AEO pillars, micro-sprints from $495 AUD ex. GST, and Foundation Implementation.",
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://aeobility.com.au/services/aeo#primaryimage"
+      },
+      "image": {
+        "@id": "https://aeobility.com.au/services/aeo#primaryimage"
+      },
+      "video": {
+        "@id": "https://aeobility.com.au/services/aeo#video"
       },
       "about": [
         {
@@ -182,6 +224,12 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "audienceType": "Australian small businesses, e-commerce brands, trades, clinics, and professional service teams"
       },
       "subjectOf": [
+        {
+          "@id": "https://aeobility.com.au/services/aeo#primaryimage"
+        },
+        {
+          "@id": "https://aeobility.com.au/services/aeo#video"
+        },
         {
           "@type": "WebPage",
           "name": "Why This Architecture Is Correct for AI Search: Entities, Evidence, and Semantic Propositions",
