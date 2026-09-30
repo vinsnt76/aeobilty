@@ -76,6 +76,14 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "name": "AI SEO Services: Update Your Site for Modern Answer Retrieval | AEObility",
       "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our core AEO pillars, micro-sprints from $495 AUD ex. GST, and Foundation Implementation.",
       "inLanguage": "en-AU",
+      "datePublished": "2026-09-01T00:00:00+08:00",
+      "dateModified": "2026-10-01T00:00:00+08:00",
+      "author": {
+        "@id": "https://aeobility.com.au/#vince-baker"
+      },
+      "publisher": {
+        "@id": "https://aeobility.com.au/#organisation"
+      },
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
       },

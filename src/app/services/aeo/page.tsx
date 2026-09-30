@@ -217,6 +217,16 @@ export default function AEORootPage() {
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
                 Make your business easier for AI search to understand, trust, and cite. AEObility improves the structure, clarity, and verification of your website content for Google AI Overviews, ChatGPT Search, and Perplexity. Clear scope. Fixed pricing. No lock-in contracts.
               </p>
+
+              {/* Author & Timestamp Provenance Bar */}
+              <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs text-slate-400 font-mono pt-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/80 border border-slate-800 text-slate-300">
+                  Author: <Link href="/about" className="text-white hover:text-teal-300 font-semibold underline decoration-slate-700">Vince Baker</Link> (Founder &amp; Principal AEO Specialist)
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900/80 border border-slate-800 text-slate-300">
+                  Last Reviewed: <strong className="text-teal-400 font-semibold">1 October 2026</strong>
+                </span>
+              </div>
             </div>
 
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
