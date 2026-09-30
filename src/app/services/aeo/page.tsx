@@ -254,21 +254,21 @@ export default function AEORootPage() {
               </div>
             </div>
 
-            {/* How search engines choose what to quote in AI answers */}
+            {/* How AI Search Chooses What to Quote */}
             <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-6 shadow-2xl backdrop-blur-xl">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-400 uppercase tracking-wider font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-                  <span>AI Citation Mechanics</span>
+                  <span>How Search Engines Choose What to Quote</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                  How search engines choose what to quote in AI answers
+                  How AI Search Chooses What to Quote
                 </h2>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-                  Traditional SEO focuses on getting your whole webpage to show up for a specific search term. AI search works differently: tools like ChatGPT, Google AI Overviews, and Perplexity look for direct, bite-sized answers to quote in their summary paragraphs.
+                  ChatGPT, Google, and Perplexity do not just rank links. They answer questions directly and quote the websites that are easiest to verify. If your site is full of vague sales copy, AI tools simply quote your competitors instead.
                 </p>
                 <p className="text-sm font-semibold text-white">
-                  Here is how to make your website easy for these systems to find and cite:
+                  Here is how AEObility helps your business get cited:
                 </p>
               </div>
 
@@ -276,42 +276,47 @@ export default function AEORootPage() {
                 <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                    <span>Focus on meaning, not just exact keywords</span>
+                    <span>Clear, bite-sized answers</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    AI search tools do not just scan for matching words. They try to understand what the searcher actually means, matching user questions to the clearest explanations on your website.
+                    We write direct two-sentence answers under clear headings, giving AI tools clean text to pull straight into their summaries.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center gap-2 text-cyan-300 font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Write short, direct answer blocks</span>
+                    <span>Matching real questions</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    AI models prefer to pull out short, standalone answers. Placing a clear two-to-three-sentence answer directly below a simple heading makes it easy for the system to grab and credit your text.
+                    We structure your pages around the specific problems buyers ask about, rather than chasing outdated keyword tricks.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center gap-2 text-purple-300 font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
-                    <span>Answer obvious follow-up questions</span>
+                    <span>Answering the next step</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    When someone asks an AI an open-ended question, the tool quietly checks several related questions behind the scenes to build a complete answer. Covering common next steps and practical details on your page gives you a better chance of being quoted.
+                    AI tools quietly check related questions to build full answers. We cover those natural follow-ups so you stay in the final summary.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center gap-2 text-emerald-300 font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Make your business details easy to verify</span>
+                    <span>Verified business details</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Adding standard, machine-readable labels behind the scenes helps AI systems confirm simple facts like your business name, address, services, and pricing. When search engines can easily double-check your details, they are far more likely to trust and reference your advice.
+                    We add standard background labels to prove your services, pricing, and location. When an AI can verify your facts instantly, it can trust and recommend you.
                   </p>
                 </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-teal-950/30 border border-teal-500/30 text-xs sm:text-sm text-slate-200 font-sans font-medium shadow-md flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-teal-400 shrink-0" />
+                <span>AI search rewards clear, proven facts. We make your business simple for search engines to find, trust, and quote.</span>
               </div>
             </div>
 
