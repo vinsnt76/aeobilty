@@ -222,8 +222,8 @@ export default function AEORootPage() {
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-slate-800/80 shadow-2xl my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
-                src="/images/services/canonical-aeo-services-hub_AEObility.webp"
-                alt="AEObility canonical Answer Engine Optimisation dashboard mapping 4 foundational pillars, structured content deliverables, and AEO sprint execution."
+                src="/images/services/ai-seo-example-of-multimodal-seo_AEObility.webp"
+                alt="3D avatar standing next to a glowing holographic matrix comparing ChatGPT, Google, Copilot, and Claude for Answer Engine Optimisation (AEO)."
                 width={1200}
                 height={800}
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
