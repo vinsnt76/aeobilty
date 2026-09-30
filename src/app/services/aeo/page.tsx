@@ -9,8 +9,6 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { getCanonicalAeoSchemaGraph } from '@/lib/schema/canonicalAeo';
 import FaqAccordion from '@/components/FaqAccordion';
-import AeoDiagnosticSection from '@/components/services/AeoDiagnosticSection';
-import AeoContactSection from '@/components/services/AeoContactSection';
 import {
   ArrowRight,
   Eye,
@@ -244,13 +242,13 @@ export default function AEORootPage() {
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
-                  <a
-                    href="#aeo-contact-form"
+                  <Link
+                    href="/contact"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer whitespace-nowrap shrink-0"
                   >
                     <Calendar className="w-4 h-4 text-slate-950 shrink-0" />
                     <span>Discuss Services</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -277,14 +275,8 @@ export default function AEORootPage() {
                 <a href="#pillars" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
                   4 Pillars
                 </a>
-                <a href="#aeo-process" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                  3-Step Process
-                </a>
                 <a href="#faq-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
                   FAQs
-                </a>
-                <a href="#aeo-contact-form" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-teal-500/40 text-teal-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                  Discuss Scope
                 </a>
               </div>
             </nav>
@@ -892,44 +884,6 @@ export default function AEORootPage() {
               ))}
             </div>
           </section>
-
-          {/* 4. Streamlined 12-Column Responsive Diagnostic Form Module */}
-          <AeoDiagnosticSection />
-
-          {/* 5. Operational 3-Step Process Flow Pipeline Graphic */}
-          <section id="aeo-process" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center justify-center gap-3">
-                <Compass className="w-6 h-6 text-cyan-400" />
-                How AEO Sprints Work
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300">Clear sequence from initial scan to complete handover notes.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="p-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl space-y-3 relative hover:border-teal-500/40 transition shadow-xl backdrop-blur-xl">
-                <div className="w-10 h-10 rounded-full bg-slate-950 border border-teal-500/40 text-teal-400 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-md">1</div>
-                <h3 className="text-base sm:text-lg font-bold text-white">Scan &amp; Access</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Run a free scan or confirm your site priorities with our AEO team.</p>
-              </div>
-
-              <div className="p-6 bg-slate-900/60 border border-purple-500/30 rounded-2xl space-y-3 relative hover:border-purple-500/40 transition shadow-xl backdrop-blur-xl">
-                <div className="w-10 h-10 rounded-full bg-slate-950 border border-purple-500/40 text-purple-400 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-md">2</div>
-                <h3 className="text-base sm:text-lg font-bold text-white">4–5 Day Execution</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Deploy agreed schema markup, atomic page rewrites, or internal linking.</p>
-              </div>
-
-              <div className="p-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl space-y-3 relative hover:border-teal-500/40 transition shadow-xl backdrop-blur-xl">
-                <div className="w-10 h-10 rounded-full bg-slate-950 border border-teal-500/40 text-teal-400 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-md">3</div>
-                <h3 className="text-base sm:text-lg font-bold text-white">Validation &amp; Handover</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Run validation checks and receive complete documentation &amp; ownership notes.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* 6. Bottom Conversion CTA Block + Direct Contact Form */}
-          <AeoContactSection />
 
           {/* 7. FAQ Accordion Section */}
           <section id="faq-aeo" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
