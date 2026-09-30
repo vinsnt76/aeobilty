@@ -374,13 +374,36 @@ export default function AEORootPage() {
             </div>
 
             {/* Grounded Real-World Practitioner Field Note */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-teal-500/30 shadow-xl text-left relative overflow-hidden max-w-3xl mx-auto backdrop-blur-xl">
-              <div className="flex items-center gap-2 mb-2 text-teal-400 font-mono font-bold text-xs uppercase tracking-wider">
+            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-teal-500/30 shadow-xl text-left relative overflow-hidden max-w-3xl mx-auto backdrop-blur-xl space-y-4">
+              <div className="flex items-center gap-2 text-teal-400 font-mono font-bold text-xs uppercase tracking-wider">
                 <MapPin className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>Field Note: Local WA Trade Recovery</span>
+                <span>Field Note: Fixing AI Hallucinations for a WA Trade</span>
               </div>
-              <p className="text-sm text-slate-200 leading-relaxed max-w-prose">
-                In a recent audit for a WA commercial trade, mismatched ABN registry names and unstructured PDF price sheets meant Perplexity hallucinated legacy rates. Converting that data into an atomic HTML table with nested LocalBusiness schema corrected the citation within two search engine recrawls.
+
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                When AI search engines get confused by messy data, they guess. In a recent audit for a Western Australian commercial trade business, outdated PDF price lists and mismatched business registry details caused Perplexity to quote legacy, incorrect rates to prospective clients.
+              </p>
+
+              <div className="space-y-2 pt-1">
+                <p className="text-xs sm:text-sm font-semibold text-white">We fixed the underlying evidence:</p>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Removed the guesswork:</strong> We converted buried PDF pricing into a clean, readable on-page table.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Verified the facts:</strong> We added structured local business code that tied the website directly to its official Australian Business Number (ABN).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-3.5 sm:p-4 rounded-xl bg-teal-950/40 border border-teal-500/30 text-xs sm:text-sm text-teal-200 font-medium">
+                <strong className="text-teal-300">The result:</strong> Perplexity corrected its citations within two crawl cycles.
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-1">
+                When your business data is clear, verified, and easy to parse, AI tools stop hallucinating your prices and start quoting you with confidence. We make sure they get your details right the first time.
               </p>
             </div>
 
