@@ -254,21 +254,74 @@ export default function AEORootPage() {
               </div>
             </div>
 
+            {/* Visual "On This Page" Subnav Bar */}
+            <nav aria-label="On this page navigation" className="max-w-3xl mx-auto my-6 p-4 bg-slate-950/80 border border-slate-800/80 rounded-2xl flex flex-wrap items-center gap-3 shadow-lg">
+              <span className="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1.5">
+                <Compass className="w-3.5 h-3.5 text-teal-400" />
+                On this page:
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <a href="#engagement-paths" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Engagement Paths
+                </a>
+                <a href="#aeo-comparison" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Comparison Matrix
+                </a>
+                <a href="#aeo-cost" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Investment Model
+                </a>
+                <a href="#multi-engine-capabilities" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-emerald-400 text-slate-300 hover:text-emerald-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  AI Engines
+                </a>
+                <a href="#pillars" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  4 Pillars
+                </a>
+                <a href="#aeo-process" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  3-Step Process
+                </a>
+                <a href="#faq-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  FAQs
+                </a>
+                <a href="#aeo-contact-form" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-teal-500/40 text-teal-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
+                  Discuss Scope
+                </a>
+              </div>
+            </nav>
+
+            {/* Inclusions Box */}
+            <div className="max-w-3xl mx-auto bg-teal-950/30 border border-teal-500/30 rounded-2xl p-6 text-sm text-slate-300 text-left leading-relaxed space-y-3 shadow-md">
+              <div className="flex items-center gap-2 font-bold text-white text-base">
+                <FileCheck className="w-5 h-5 text-teal-400" />
+                <span>Every AEObility Engagement includes:</span>
+              </div>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span>One agreed business priority, specified schema deployment, or page rewrite work.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span>Validation checks, summary of completed changes, and handover notes.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span>Delivery timeframes vary by service: Micro-Sprints are typically 4–5 business days; Foundation Implementations run across four weeks. View <Link href="/solutions" className="text-teal-400 hover:underline font-semibold">current service pricing and scope</Link>.</span>
+                </li>
+              </ul>
+            </div>
+
             {/* How AI Search Chooses What to Quote */}
             <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-left space-y-6 shadow-2xl backdrop-blur-xl">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono text-teal-400 uppercase tracking-wider font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-                  <span>How Search Engines Choose What to Quote</span>
+                  <span>Here is how AEObility helps your business get cited:</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
                   How AI Search Chooses What to Quote
                 </h2>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
                   ChatGPT, Google, and Perplexity do not just rank links. They answer questions directly and quote the websites that are easiest to verify. If your site is full of vague sales copy, AI tools simply quote your competitors instead.
-                </p>
-                <p className="text-sm font-semibold text-white">
-                  Here is how AEObility helps your business get cited:
                 </p>
               </div>
 
@@ -340,40 +393,6 @@ export default function AEORootPage() {
             </p>
           </section>
 
-          {/* Visual "On This Page" Subnav Bar */}
-          <nav aria-label="On this page navigation" className="mb-12 p-4 bg-slate-950/80 border border-slate-800/80 rounded-2xl flex flex-wrap items-center gap-3 shadow-lg">
-            <span className="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1.5">
-              <Compass className="w-3.5 h-3.5 text-teal-400" />
-              On this page:
-            </span>
-            <div className="flex flex-wrap items-center gap-2">
-              <a href="#engagement-paths" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                Engagement Paths
-              </a>
-              <a href="#aeo-comparison" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                Comparison Matrix
-              </a>
-              <a href="#aeo-cost" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                Investment Model
-              </a>
-              <a href="#multi-engine-capabilities" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-emerald-400 text-slate-300 hover:text-emerald-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                AI Engines
-              </a>
-              <a href="#pillars" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-teal-400 text-slate-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                4 Pillars
-              </a>
-              <a href="#aeo-process" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 hover:text-cyan-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                3-Step Process
-              </a>
-              <a href="#faq-aeo" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-purple-400 text-slate-300 hover:text-purple-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                FAQs
-              </a>
-              <a href="#aeo-contact-form" className="px-3.5 py-1.5 rounded-full bg-slate-900 border border-teal-500/40 text-teal-300 hover:text-teal-200 transition-all font-mono text-xs shadow-sm flex items-center gap-1 hover:bg-slate-800/80">
-                Discuss Scope
-              </a>
-            </div>
-          </nav>
-
           {/* 2. "Choose Your Starting Point" Engagement Grid */}
           <section id="engagement-paths" className="border-t border-slate-800/80 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -435,28 +454,6 @@ export default function AEORootPage() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-
-            {/* Inclusions Box */}
-            <div className="bg-teal-950/30 border border-teal-500/30 rounded-2xl p-6 text-sm text-slate-300 leading-relaxed space-y-3 shadow-md">
-              <div className="flex items-center gap-2 font-bold text-white text-base">
-                <FileCheck className="w-5 h-5 text-teal-400" />
-                <span>Every AEObility Engagement includes:</span>
-              </div>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <span>One agreed business priority, specified schema deployment, or page rewrite work.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <span>Validation checks, summary of completed changes, and handover notes.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <span>Delivery timeframes vary by service: Micro-Sprints are typically 4–5 business days; Foundation Implementations run across four weeks. View <Link href="/solutions" className="text-teal-400 hover:underline font-semibold">current service pricing and scope</Link>.</span>
-                </li>
-              </ul>
             </div>
 
             {/* Deliverables Ownership Statement */}
