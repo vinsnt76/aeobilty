@@ -220,14 +220,6 @@ export default function AEORootPage() {
               </p>
             </div>
 
-            {/* Concise Definition Block */}
-            <div className="max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl bg-slate-950/80 border border-teal-500/30 text-left space-y-2 shadow-inner">
-              <span className="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider block">What is Answer Engine Optimisation (AEO)?</span>
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-                Answer Engine Optimisation (AEO) is the practice of structuring business information, content, and schema so AI search systems (Google AI Overviews, ChatGPT Search, and Perplexity) can understand, verify, and cite it when prospective buyers ask purchasing questions.
-              </p>
-            </div>
-
             {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-slate-800/80 shadow-2xl my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
