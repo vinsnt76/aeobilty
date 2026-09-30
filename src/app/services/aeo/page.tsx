@@ -407,6 +407,78 @@ export default function AEORootPage() {
               </p>
             </div>
 
+            {/* Comparison Section: SEO vs AI Search */}
+            <div className="mt-12 space-y-6 max-w-5xl mx-auto">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-mono text-teal-400 font-bold uppercase tracking-wider">Strategic Comparison</span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight flex items-center justify-center gap-2.5">
+                  <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400 shrink-0" />
+                  <span>SEO vs AI Search: Why the Old Playbook Leaves Money on the Table</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  Traditional SEO was built to get people to click a blue link. AI search works differently: engines like ChatGPT, Perplexity, and Google AI Overviews read your site, pull out the facts, and answer buyers directly.
+                </p>
+                <div className="p-3 sm:p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-xs sm:text-sm text-amber-200 font-medium">
+                  If your website is not structured for machine extraction, AI tools will simply cite a competitor who is easier to read.
+                </div>
+              </div>
+
+              {/* Responsive Comparison Table */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl shadow-2xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                    <thead>
+                      <tr className="border-b border-slate-800 bg-slate-950/80 text-slate-200 font-mono text-xs uppercase tracking-wider">
+                        <th scope="col" className="p-3.5 sm:p-4 min-w-[140px] text-slate-400 font-bold">What You Are Looking At</th>
+                        <th scope="col" className="p-3.5 sm:p-4 min-w-[180px] text-slate-300 font-bold">Traditional SEO</th>
+                        <th scope="col" className="p-3.5 sm:p-4 min-w-[200px] text-teal-400 font-bold bg-teal-950/30 border-x border-teal-500/20">AI Search (AEO / GEO)</th>
+                        <th scope="col" className="p-3.5 sm:p-4 min-w-[200px] text-slate-300 font-bold">Why It Matters to Your Bottom Line</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-800/80 text-slate-300">
+                      <tr className="hover:bg-slate-800/30 transition-colors">
+                        <td className="p-3.5 sm:p-4 font-semibold text-white bg-slate-900/40">Where you compete</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">The standard list of ten blue search links.</td>
+                        <td className="p-3.5 sm:p-4 text-teal-200 bg-teal-950/20 border-x border-teal-500/20 font-medium">Direct AI summaries, ChatGPT answers, and voice assistants.</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Buyers increasingly read the synthesised answer instead of clicking through five different websites.</td>
+                      </tr>
+                      <tr className="hover:bg-slate-800/30 transition-colors">
+                        <td className="p-3.5 sm:p-4 font-semibold text-white bg-slate-900/40">What engines read</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Your entire webpage as one big block of text.</td>
+                        <td className="p-3.5 sm:p-4 text-teal-200 bg-teal-950/20 border-x border-teal-500/20 font-medium">Short, bite-sized answer blocks and specific facts.</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">If your key service details are buried in long marketing paragraphs, AI models skip right past you.</td>
+                      </tr>
+                      <tr className="hover:bg-slate-800/30 transition-colors">
+                        <td className="p-3.5 sm:p-4 font-semibold text-white bg-slate-900/40">How search tools match you</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Matching the exact words someone typed into a search bar.</td>
+                        <td className="p-3.5 sm:p-4 text-teal-200 bg-teal-950/20 border-x border-teal-500/20 font-medium">Understanding what the buyer actually means and looking for verified proof.</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">You do not have to guess every weird search phrase. Clear, helpful answers get picked up automatically.</td>
+                      </tr>
+                      <tr className="hover:bg-slate-800/30 transition-colors">
+                        <td className="p-3.5 sm:p-4 font-semibold text-white bg-slate-900/40">The customer experience</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Search &rarr; Click a link &rarr; Hunt through your website.</td>
+                        <td className="p-3.5 sm:p-4 text-teal-200 bg-teal-950/20 border-x border-teal-500/20 font-medium">A buyer asks a conversational question &rarr; The AI gives an instant answer quoting your business.</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Being the trusted, quoted recommendation puts you straight into the buyer&apos;s final decision.</td>
+                      </tr>
+                      <tr className="hover:bg-slate-800/30 transition-colors">
+                        <td className="p-3.5 sm:p-4 font-semibold text-white bg-slate-900/40">How you measure success</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Keyword ranking position and clicks to your page.</td>
+                        <td className="p-3.5 sm:p-4 text-teal-200 bg-teal-950/20 border-x border-teal-500/20 font-medium">How often AI tools quote your brand, recommend your services, and name you as the source.</td>
+                        <td className="p-3.5 sm:p-4 text-slate-300">Ranking #1 for a keyword means little if an AI answer sits on top of the page answering the question without you.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Concluding Footer Statement */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-teal-950/40 border border-teal-500/30 text-center max-w-3xl mx-auto shadow-lg backdrop-blur-xl">
+                <p className="text-xs sm:text-sm font-semibold text-teal-100 leading-relaxed">
+                  Traditional SEO brings people to your door; AI search makes sure you are the business the machine recommends in the first place. We help you win both.
+                </p>
+              </div>
+            </div>
+
           </section>
 
           {/* 2. "Choose Your Starting Point" Engagement Grid */}
