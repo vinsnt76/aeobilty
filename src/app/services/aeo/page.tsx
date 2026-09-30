@@ -204,20 +204,15 @@ export default function AEORootPage() {
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-aeo-cyan uppercase tracking-widest font-semibold">
               <Sparkles className="w-4 h-4 text-aeo-cyan" />
-              <span>Answer Engine Optimisation (AEO) Services</span>
+              <span>AI SEO for Modern Answer Engines</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AEO Services: <span className="text-gradient-aeo">Get Found and Chosen in AI Search.</span>
+              AI SEO Services: <span className="text-gradient-aeo">Update your site for Modern Answer Retrieval</span>
             </h1>
             <div className="space-y-3 max-w-3xl mx-auto">
               <h2 className="text-lg sm:text-xl text-zinc-100 font-medium leading-relaxed font-soehne-breit">
                 Make your business easier for AI search to understand, trust, and cite. AEObility improves the structure, clarity, and verification of your website content for Google AI Overviews, ChatGPT Search, and Perplexity. Clear scope. Fixed pricing. No lock-in contracts.
               </h2>
-              <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
-                <span>Micro-Sprints: $495 AUD ex. GST</span>
-                <span className="text-zinc-500">|</span>
-                <span>Foundation Implementation: From $3,195 AUD ex. GST</span>
-              </div>
             </div>
 
             {/* Concise Definition Block */}
@@ -243,25 +238,20 @@ export default function AEORootPage() {
               {/* Overlaid Hero CTAs */}
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-4 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-4 shadow-2xl">
                 <div className="text-left space-y-1">
-                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">Fix one technical gap or build a connected AEO foundation.</span>
-                  <span className="text-xs sm:text-[14px] text-zinc-200 font-medium block">
-                    Delivery timeframes: <strong className="text-white font-semibold">Micro-Sprints in 4–5 business days</strong>; Foundation Implementations across 4 weeks.
+                  <span className="text-xs sm:text-sm font-mono text-cyan-300 font-bold block uppercase tracking-wider">
+                    AI SEO Structures your content for AI discovery
+                  </span>
+                  <span className="text-xs sm:text-[14px] text-zinc-200 font-medium block leading-relaxed">
+                    We refine your web pages for data clarity so generative search engines (including Google AI Overviews, ChatGPT Search, Perplexity, and Gemini) can reliably retrieve, understand, and recommend your business in its answers.
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
                   <a
-                    href="#aeo-diagnostic-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white hover:bg-cyan-300 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <span>Run Free Scan</span>
-                    <ArrowRight className="w-4 h-4 text-slate-950 shrink-0" />
-                  </a>
-                  <a
                     href="#aeo-contact-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-zinc-100 hover:text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-cyan-300 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Book Scope Call</span>
+                    <Calendar className="w-4 h-4 text-slate-950 shrink-0" />
+                    <span>Discuss Services</span>
                   </a>
                 </div>
               </div>
