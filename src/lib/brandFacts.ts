@@ -377,12 +377,12 @@ export const PROVENANCE_GRAPH_SCHEMA = {
   '@context': {
     '@vocab': 'https://schema.org/',
     'prov': 'http://www.w3.org/ns/prov#',
-    'originatedFrom': { '@id': 'schema:isBasedOn', '@type': '@id' },
-    'evolvedFrom': { '@id': 'schema:isBasedOn', '@type': '@id' },
-    'integratedInto': { '@id': 'schema:isPartOf', '@type': '@id' },
-    'utilisesAgent': { '@id': 'schema:agent', '@type': '@id' },
-    'comprises': { '@id': 'schema:hasPart', '@type': '@id' },
-    'hasSpecialty': { '@id': 'schema:knowsAbout', '@type': '@id' }
+    'originatedFrom': { '@id': 'https://schema.org/isBasedOn', '@type': '@id' },
+    'evolvedFrom': { '@id': 'https://schema.org/isBasedOn', '@type': '@id' },
+    'integratedInto': { '@id': 'https://schema.org/isPartOf', '@type': '@id' },
+    'utilisesAgent': { '@id': 'https://schema.org/agent', '@type': '@id' },
+    'comprises': { '@id': 'https://schema.org/hasPart', '@type': '@id' },
+    'hasSpecialty': { '@id': 'https://schema.org/knowsAbout', '@type': '@id' }
   },
   '@graph': [
     {
