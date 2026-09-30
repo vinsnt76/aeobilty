@@ -384,13 +384,6 @@ export default function AEORootPage() {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-teal-950/30 border border-teal-500/30 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-md">
-              To review the underlying data structures that govern passage extraction, read our technical guide on how to <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-teal-400 font-semibold hover:underline">fix AI brand hallucinations and evidence gaps</Link> using verified provenance networks.
-            </div>
-
-            <p className="text-xs text-slate-400 font-mono">
-              Looking for foundational concepts? Read our guide on <Link href="/services/aeo/definition" className="text-teal-400 font-semibold hover:underline">What is AEO (Answer Engine Optimisation)?</Link> or explore specialised solutions like <Link href="/services/aeo/shopify" className="text-cyan-400 hover:underline font-medium">Shopify AEO Services</Link> and <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link>.
-            </p>
           </section>
 
           {/* 2. "Choose Your Starting Point" Engagement Grid */}
@@ -889,6 +882,17 @@ export default function AEORootPage() {
               ))}
             </div>
           </section>
+
+          {/* Technical Guide Callout & Foundational Concepts */}
+          <div className="space-y-4 pt-8 max-w-3xl mx-auto text-center">
+            <div className="p-5 rounded-2xl bg-teal-950/30 border border-teal-500/30 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-md text-left">
+              To review the underlying data structures that govern passage extraction, read our technical guide on how to <Link href="/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps" className="text-teal-400 font-semibold hover:underline">fix AI brand hallucinations and evidence gaps</Link> using verified provenance networks.
+            </div>
+
+            <p className="text-xs text-slate-400 font-mono">
+              Looking for foundational concepts? Read our guide on <Link href="/services/aeo/definition" className="text-teal-400 font-semibold hover:underline">What is AEO (Answer Engine Optimisation)?</Link> or explore specialised solutions like <Link href="/services/aeo/shopify" className="text-cyan-400 hover:underline font-medium">Shopify AEO Services</Link> and <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link>.
+            </p>
+          </div>
 
         </div>
       </main>
