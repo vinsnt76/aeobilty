@@ -69,6 +69,12 @@ export default function WhatIsAeoPage() {
         "name": "What is AEO? Answer Engine Optimisation Guide | AEObility",
         "description": "Discover what Answer Engine Optimisation (AEO) means in digital marketing. Learn how machine learning models ingest, verify, and cite business information.",
         "inLanguage": "en-AU",
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp#primaryimage"
+        },
+        "image": {
+          "@id": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp#primaryimage"
+        },
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
         },
@@ -126,6 +132,66 @@ export default function WhatIsAeoPage() {
             "text": f.answer
           }
         }))
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp#primaryimage",
+        "url": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp",
+        "headline": "AI Visibility Scanner – Connecting User Prompts to Business Entities via AEO",
+        "name": "AI Visibility Scanner – Connecting User Prompts to Business Entities via AEO",
+        "caption": "Conceptual graphic illustrating Answer Engine Optimization (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
+        "description": "Conceptual graphic illustrating Answer Engine Optimization (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vincent Baker (AEObility)"
+        },
+        "creator": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vincent Baker (AEObility)"
+        },
+        "copyrightNotice": "© 2026 AEObility. All rights reserved.",
+        "copyrightHolder": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "creditText": "AEObility",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
+          "name": "AEObility"
+        },
+        "keywords": [
+          "AEO",
+          "Answer Engine Optimization",
+          "AI Visibility Scanner",
+          "Business Entity",
+          "Vector Space",
+          "AI Search Optimization",
+          "GEO",
+          "Prompt Retrieval",
+          "Aeobility",
+          "Entity SEO"
+        ],
+        "contentLocation": {
+          "@type": "Place",
+          "name": "Perth, Western Australia, Australia",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Perth",
+            "addressRegion": "Western Australia",
+            "addressCountry": "Australia"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -31.9505,
+            "longitude": 115.8605
+          }
+        },
+        "fileFormat": "image/webp",
+        "width": 1200,
+        "height": 800
       }
     ]
   };
