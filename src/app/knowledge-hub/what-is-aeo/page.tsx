@@ -293,46 +293,6 @@ export default function WhatIsAeoPage() {
                   </p>
                 </div>
 
-                {/* Methodology & Diagnostic Scope Cards */}
-                <div className="space-y-4 border-t border-slate-700/60 pt-5">
-                  <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed drop-shadow">
-                    AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
-                  </p>
-
-                  {/* 3 Glassmorphic Coverage Cards Overlayed */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
-                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                        <span>Entity and Schema Health</span>
-                      </div>
-                      <p className="text-[11px] text-slate-300 leading-snug">
-                        Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
-                      </p>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
-                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                        <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                        <span>Retrieval Survival</span>
-                      </div>
-                      <p className="text-[11px] text-slate-300 leading-snug">
-                        Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
-                      </p>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
-                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                        <Target className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                        <span>AI Citation Share</span>
-                      </div>
-                      <p className="text-[11px] text-slate-300 leading-snug">
-                        Identifies whether generative models cite your brand or default to a competitor for your priority topics.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Overlaid Form Controls */}
                 <form onSubmit={handleHeroSubmit} className="border-t border-slate-700/60 pt-5 space-y-5">
                   {/* Left-Aligned Input Stack */}
@@ -391,6 +351,46 @@ export default function WhatIsAeoPage() {
                     </div>
                   </div>
                 </form>
+              </div>
+            </div>
+
+            {/* SEPARATE MODULE: Diagnostic Methodology & 3 Coverage Cards (Positioned Directly Beneath the Scan Container) */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-cyan-500/30 text-left max-w-5xl mx-auto space-y-4 shadow-xl">
+              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
+              </p>
+
+              {/* 3 Diagnostic Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Entity and Schema Health</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Retrieval Survival</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <Target className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>AI Citation Share</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Identifies whether generative models cite your brand or default to a competitor for your priority topics.
+                  </p>
+                </div>
               </div>
             </div>
 
