@@ -272,8 +272,8 @@ export default function WhatIsAeoPage() {
             {/* Commercial Impact & 3 Key Benefits (Positioned Above the Scan Module) */}
             <div className="max-w-5xl mx-auto space-y-4 text-left border-t border-white/10 pt-8 mt-6">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/40 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
-                  <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/60 text-purple-400 text-xs font-mono font-bold uppercase tracking-wider">
+                  <Building2 className="w-3.5 h-3.5 text-purple-400" />
                   <span>Commercial Impact</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
