@@ -277,7 +277,7 @@ export default function WhatIsAeoPage() {
               {/* Overlaid Form & Content Layer */}
               <div className="relative z-10 p-6 sm:p-8 md:p-10 space-y-6">
                 {/* Header & Title Stack */}
-                <div className="space-y-4 max-w-2xl">
+                <div className="space-y-3 text-left max-w-md">
                   {/* Single Context Eyebrow Pill */}
                   <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/90 border border-cyan-500/50 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
                     <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
@@ -285,11 +285,11 @@ export default function WhatIsAeoPage() {
                   </div>
 
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-soehne-breit leading-tight drop-shadow-md">
-                    Free 45-Second AI Visibility Diagnostic
+                    AI Visibility Scan
                   </h2>
 
-                  <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed drop-shadow">
-                    Find out if artificial intelligence search engines understand what your business actually does. Enter your website address and the core service or topic you want AI systems to know you for.
+                  <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed drop-shadow max-w-sm">
+                    Check if AI search engines understand what your business sells. Enter your website and the main service you want to be recommended for.
                   </p>
                 </div>
 
