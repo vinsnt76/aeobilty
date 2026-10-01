@@ -156,8 +156,8 @@ export default function WhatIsAeoPage() {
             {/* Lean Author & Provenance Bar */}
             <div className="flex items-center justify-center gap-3 py-1">
               <Image
-                src="/images/about/profile2.webp"
-                alt="Vince Baker"
+                src="/images/about/vince-baker-profile_AEObility.webp"
+                alt="Vince Baker - Technical Search Architect"
                 width={36}
                 height={36}
                 className="w-9 h-9 rounded-full border border-cyan-400/50 object-cover shadow-sm"
