@@ -109,7 +109,7 @@ export default function WhatIsAeoPage() {
           "@type": "DefinedTerm",
           "@id": "https://aeobility.com.au/knowledge-hub/what-is-aeo#definition",
           "name": "Answer Engine Optimisation (AEO)",
-          "description": "Answer Engine Optimisation (AEO) is the technical and structural practice of formatting digital content, business facts, and entity relationship graphs so Large Language Models and AI search engines can ingest, verify, and reference a brand as an explicit source when synthesising answers.",
+          "description": "Answer Engine Optimisation (AEO) is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.",
           "inDefinedTermSet": "https://aeobility.com.au/knowledge-hub/what-is-aeo#termset"
         }
       },
@@ -144,13 +144,13 @@ export default function WhatIsAeoPage() {
           
           {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK (Text-First) */}
           <section className="text-center max-w-4xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-medium">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
               <BookOpen className="w-4 h-4 text-aeo-cyan" />
-              <span>Core AEO Definition &amp; Educational Guide</span>
+              <span>CONCEPT DEFINITION // AEO</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              What is <span className="text-gradient-aeo">Answer Engine Optimisation (AEO)?</span>
+              What is <span className="text-gradient-aeo">Answer Engine Optimisation?</span>
             </h1>
 
             {/* Lean Author & Provenance Bar */}
@@ -176,15 +176,17 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
+            {/* 1. Introductory Hook (Human & Top-of-Funnel Intent) */}
             <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
-              AEO is the process of organising your business details so AI tools like ChatGPT, Perplexity, and Google AI Overviews can easily read, trust, and recommend your business when customers search.
+              Answer Engine Optimisation (AEO) is the process of structuring business facts so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can easily discover, verify, and recommend a brand when prospective clients search.
             </p>
 
+            {/* 2. Evolutionary Framing (SEO vs. AEO Comparison) */}
             <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              Answer Engine Optimisation (AEO) represents the structural evolution of digital marketing. While traditional SEO focuses on earning links and keyword positions in 10 blue link search result pages, AEO formats your core business facts into clean, verified entity graphs and direct answer passages that AI models can quote with confidence.
+              Answer Engine Optimisation represents the structural evolution of organic search. While traditional SEO focuses on earning links and keyword positions for 10 blue link search results, AEO formats core business facts into clean, verified entity graphs and direct answer passages that AI models cite with confidence.
             </p>
 
-            {/* Atomic Answer Block 1 (80-120 Tokens for RAG Extraction) */}
+            {/* 3. Atomic Answer Block (High-Density Vector Retrieval Target) */}
             <div className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 text-left space-y-3 shadow-2xl">
               <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
                 <Target className="w-4 h-4 text-cyan-400" />
@@ -193,8 +195,8 @@ export default function WhatIsAeoPage() {
               <h2 className="text-xl font-bold text-white font-soehne-breit">
                 Answer Engine Optimisation (AEO) Defined
               </h2>
-              <p className="text-sm text-zinc-200 font-serif leading-relaxed">
-                <strong>Answer Engine Optimisation (AEO)</strong> is the technical and structural discipline of formatting web content, business facts, and entity relationship graphs so Large Language Models (LLMs) and generative search systems can retrieve, verify, and cite a brand as a primary authoritative source when generating direct answers.
+              <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
+                <strong>Answer Engine Optimisation (AEO)</strong> is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.
               </p>
             </div>
 
