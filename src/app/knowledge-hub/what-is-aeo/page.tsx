@@ -473,15 +473,15 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
-          {/* SECTION 3: TECHNICAL MECHANICS (HOW IT WORKS - 3 GLASS CARDS WITH INTEGRATED BUSINESS IMPACT) */}
+          {/* SECTION 3: TECHNICAL MECHANICS (HOW IT WORKS - 3 GLASS CARDS + MACHINE INGESTION LIFECYCLE) */}
           <section className="space-y-8 border-t border-white/10 pt-12">
             <div className="space-y-3 text-left max-w-5xl mx-auto">
-              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Execution Mechanics</span>
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Execution Mechanics &amp; Machine Ingestion</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
                 How Answer Engine Optimisation Works: The Three Pillars
               </h2>
               <p className="text-sm sm:text-base text-slate-200 font-serif leading-relaxed max-w-3xl">
-                We refactor your website copy into three structured pillars engineered for artificial intelligence retrieval systems.
+                We refactor your website copy into three structured pillars engineered for artificial intelligence retrieval systems, dense vector spaces, and Retrieval-Augmented Generation (RAG) pipelines.
               </p>
             </div>
 
@@ -492,7 +492,7 @@ export default function WhatIsAeoPage() {
                 <span className="text-xs font-semibold tracking-wider text-cyan-400 uppercase">Pillar 1</span>
                 <h3 className="text-lg font-semibold text-white font-soehne-breit">Positional Bias (Lead Placement)</h3>
                 <p className="text-sm leading-relaxed text-slate-300 font-serif">
-                  Position core services, locations, and pricing at the immediate top of structural passages where neural attention weights peak.
+                  Position core services, locations, and pricing at the immediate top of structural passages where neural attention weights peak during dense retrieval.
                 </p>
 
                 {/* Integrated Business Impact */}
@@ -504,28 +504,69 @@ export default function WhatIsAeoPage() {
               {/* Pillar 2 */}
               <div className="group relative rounded-xl border border-slate-800/80 bg-slate-900/40 p-6 backdrop-blur-md transition-colors hover:border-slate-700/80 space-y-3 text-left">
                 <span className="text-xs font-semibold tracking-wider text-cyan-400 uppercase">Pillar 2</span>
-                <h3 className="text-lg font-semibold text-white font-soehne-breit">Atomic Passages (Direct Answers)</h3>
+                <h3 className="text-lg font-semibold text-white font-soehne-breit">Atomic Passages (Semantic Chunking)</h3>
                 <p className="text-sm leading-relaxed text-slate-300 font-serif">
-                  Write clear, 2–3 sentence direct answer passages (80–120 tokens) under clean headings, giving conversational AI systems extractable text.
+                  Engineer 80–120 token direct answer blocks under clear entity headings. This semantic chunking pattern aligns perfectly with vector embedding boundaries.
                 </p>
 
                 {/* Integrated Business Impact */}
                 <div className="mt-4 rounded-lg border border-slate-800 bg-slate-950/50 p-3 text-xs leading-relaxed text-slate-300">
-                  <strong className="font-semibold text-cyan-300">Business Impact:</strong> Allows AI assistants to parse pricing and service terms verbatim without paraphrasing errors.
+                  <strong className="font-semibold text-cyan-300">Business Impact:</strong> High vector similarity score allows AI models to extract pricing and service terms verbatim.
                 </div>
               </div>
 
               {/* Pillar 3 */}
               <div className="group relative rounded-xl border border-slate-800/80 bg-slate-900/40 p-6 backdrop-blur-md transition-colors hover:border-slate-700/80 space-y-3 text-left">
                 <span className="text-xs font-semibold tracking-wider text-cyan-400 uppercase">Pillar 3</span>
-                <h3 className="text-lg font-semibold text-white font-soehne-breit">Entity Mesh (JSON-LD Mesh)</h3>
+                <h3 className="text-lg font-semibold text-white font-soehne-breit">Entity Mesh (JSON-LD Graph)</h3>
                 <p className="text-sm leading-relaxed text-slate-300 font-serif">
-                  Link business name, address, phone number, ABN, and licences into a consistent JSON-LD entity graph verified across registries.
+                  Link business name, address, phone number, ABN, and licences into a consistent JSON-LD entity graph verified across external registries.
                 </p>
 
                 {/* Integrated Business Impact */}
                 <div className="mt-4 rounded-lg border border-slate-800 bg-slate-950/50 p-3 text-xs leading-relaxed text-slate-300">
                   <strong className="font-semibold text-cyan-300">Business Impact:</strong> Stops conversational AI assistants from confusing your brand identity with competitors.
+                </div>
+              </div>
+            </div>
+
+            {/* Machine Ingestion Lifecycle Sub-Block */}
+            <div className="max-w-5xl mx-auto p-6 sm:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-md space-y-6 shadow-xl text-left">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Machine Learning Ingestion Pipeline</span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">How AI Engines Read, Index &amp; Cite Your Data</h3>
+                <p className="text-xs sm:text-sm text-slate-200 font-serif leading-relaxed">
+                  Generative models use dense vector embeddings and Retrieval-Augmented Generation (RAG) to answer user prompts in four distinct stages:
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                  <div className="text-cyan-400 font-mono text-xs font-bold uppercase">1. Ingestion &amp; Chunking</div>
+                  <p className="text-xs text-slate-300 font-serif leading-relaxed">
+                    Crawlers slice web copy into 90-token atomic blocks, stripping HTML chrome to focus strictly on factual text.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                  <div className="text-cyan-400 font-mono text-xs font-bold uppercase">2. Vector Embedding</div>
+                  <p className="text-xs text-slate-300 font-serif leading-relaxed">
+                    Bi-encoder neural nets map passage semantics into high-dimensional vector space to calculate prompt cosine similarity.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                  <div className="text-cyan-400 font-mono text-xs font-bold uppercase">3. Entity Verification</div>
+                  <p className="text-xs text-slate-300 font-serif leading-relaxed">
+                    JSON-LD schema graphs and ABN registry triples confirm brand identity and eliminate hallucination risks.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                  <div className="text-cyan-400 font-mono text-xs font-bold uppercase">4. Direct Citation</div>
+                  <p className="text-xs text-slate-300 font-serif leading-relaxed">
+                    AI assistants synthesise verified passages into direct recommendations with clickable source citations.
+                  </p>
                 </div>
               </div>
             </div>
