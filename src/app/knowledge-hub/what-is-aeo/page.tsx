@@ -251,7 +251,7 @@ export default function WhatIsAeoPage() {
               </p>
 
               <p className="text-sm sm:text-base text-slate-300 font-serif leading-relaxed">
-                While traditional SEO focuses on earning links and keyword positions for 10 blue links, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
+                While SEO focuses on winning keyword rankings in standard search results, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
               </p>
             </div>
 
