@@ -263,12 +263,12 @@ export default function WhatIsAeoPage() {
                   alt="AI Engine Optimization Visibility Scanner - AEObility"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1200px"
-                  className="object-cover object-center opacity-65 md:opacity-80 transition-opacity duration-700"
+                  className="object-cover object-center opacity-35 md:opacity-50 transition-opacity duration-700"
                   priority
                 />
-                {/* Gradient Masks to Guarantee Readability across all Screen Sizes */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-[#0A0F1C]/80 to-[#0A0F1C]/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-transparent to-[#0A0F1C]/70" />
+                {/* Lighter Gradient Overlay Masks for Maximum Artwork Visibility */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/75 via-[#0A0F1C]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 via-transparent to-[#0A0F1C]/30" />
               </div>
 
               {/* Specular Edge Glow Top Line */}
