@@ -220,9 +220,19 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-left w-full">
-              What is <span className="text-gradient-aeo">Answer Engine Optimisation?</span>
-            </h1>
+            <div className="space-y-2 text-left w-full">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-white text-left">
+                What is AEO?
+              </h1>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-soehne-breit text-gradient-aeo text-left">
+                The Complete Guide to Answer Engine Optimisation
+              </h3>
+            </div>
+
+            {/* 2 points (2px) Gradient Underline */}
+            <div className="w-full py-2">
+              <div className="h-[2px] w-full max-w-md bg-gradient-to-r from-[#00E5FF] via-purple-500 to-transparent rounded-full" />
+            </div>
 
             {/* Lean Author & Provenance Bar (Single Line Left-Aligned) */}
             <div className="flex items-center justify-start gap-3 py-1 text-left w-full">
