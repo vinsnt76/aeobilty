@@ -115,13 +115,13 @@ export default function AEODefinitionPage() {
         "dateModified": "2026-08-31T11:20:00+08:00",
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/#vince-baker",
+          "@id": "https://aeobility.com.au/vince-baker#person",
           "name": "Vince Baker",
-          "url": "https://aeobility.com.au/about/freelance-digital-specialist-perth"
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
           "@type": "ProfessionalService",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         },
