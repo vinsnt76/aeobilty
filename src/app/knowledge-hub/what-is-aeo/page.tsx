@@ -313,6 +313,83 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
+          {/* Internal Radial Links & Entity Mesh */}
+          <section className="space-y-6 border-t border-white/10 pt-12">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Internal Links &amp; Site Structure</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Entity Mesh: Related AEO Resources &amp; Service Hubs</h2>
+              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                Connect your understanding of Answer Engine Optimisation with our technical guides, machine definition triples, and commercial execution sprints:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <Link
+                href="/services/aeo"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Hub</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Services &amp; Digital Infrastructure
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Explore our core commercial service offerings, micro-sprint options, and fixed-scope delivery timelines.
+                </p>
+              </Link>
+
+              <Link
+                href="/services/aeo/definition"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Core Definition Model</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Definition &amp; Machine Triple Schema
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Review the structured machine-readable triple model linking entity, relationship, and evidence.
+                </p>
+              </Link>
+
+              <Link
+                href="/knowledge-hub/aeo"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Technical Deep Dive</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Principles &amp; Machine Mechanics
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Learn how RAG pipelines, token weight distributions, and positional bias rules shape LLM citation ranking.
+                </p>
+              </Link>
+
+              <Link
+                href="/solutions/aeo-sprint"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Sprint</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  Fixed-Scope AEO Micro-Sprints
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Rapid 4 to 5 business day implementation sprints addressing structured data, atomic rewrites, and MCP setup.
+                </p>
+              </Link>
+            </div>
+          </section>
+
           {/* FAQ Section */}
           <section className="border-t border-white/10 pt-12 space-y-6">
             <div className="space-y-2">

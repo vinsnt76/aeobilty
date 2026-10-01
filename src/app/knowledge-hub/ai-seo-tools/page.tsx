@@ -312,7 +312,7 @@ export default function AiSeoToolsPage() {
             <div className="space-y-2">
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Software Evaluation</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI Search Tools &amp; Vector Parsers Comparison</h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Benchmarking software capabilities for AI search optimization.</p>
+              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Benchmarking software capabilities for AI search optimisation.</p>
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80">

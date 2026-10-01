@@ -976,7 +976,7 @@ export default function First90DaysCaseStudy() {
                 </li>
                 <li className="font-sans text-sm text-slate-400 flex justify-between">
                   <span className="italic">
-                    "solutions optimized for query fan-out scenarios"
+                    "solutions optimised for query fan-out scenarios"
                   </span>
                   <span className="font-mono text-xs text-slate-500 whitespace-nowrap ml-4">
                     334 citations (7.40%)
@@ -1065,7 +1065,7 @@ export default function First90DaysCaseStudy() {
                     <td className="px-4 py-4 font-mono text-xs">2026-08-14</td>
                     <td className="px-4 py-4">Bing Copilot</td>
                     <td className="px-4 py-4 italic">
-                      "solutions optimized for query fan-out scenarios"
+                      "solutions optimised for query fan-out scenarios"
                     </td>
                     <td className="px-4 py-4 text-cyan-400 font-medium">
                       Cited

@@ -227,6 +227,12 @@ export default function AEOKnowledgeNodePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link
+                href="/knowledge-hub/what-is-aeo"
+                className="px-5 py-3 bg-white/10 border border-aeo-cyan/40 text-aeo-cyan text-xs font-bold rounded-xl hover:bg-aeo-cyan hover:text-black transition-all"
+              >
+                What is AEO? Guide
+              </Link>
+              <Link
                 href="/services/aeo"
                 className="px-5 py-3 bg-aeo-cyan text-black text-xs font-bold rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(0,205,216,0.2)]"
               >
