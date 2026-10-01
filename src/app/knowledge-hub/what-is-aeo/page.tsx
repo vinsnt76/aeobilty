@@ -244,14 +244,9 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            {/* 1. Introductory Hook (Human & Top-of-Funnel Intent) */}
-            <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
-              Answer Engine Optimisation (AEO) is the process of structuring business facts so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can easily discover, verify, and recommend a brand when prospective clients search.
-            </p>
-
-            {/* 2. Evolutionary Framing (SEO vs. AEO Comparison) */}
-            <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              Answer Engine Optimisation represents the structural evolution of organic search. While traditional SEO focuses on earning links and keyword positions for 10 blue link search results, AEO formats core business facts into clean, verified entity graphs and direct answer passages that AI models cite with confidence.
+            {/* Merged Single Punchy Introductory Block */}
+            <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit leading-relaxed">
+              Answer Engine Optimisation (AEO) is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand. While traditional SEO focuses on earning links and keyword positions for 10 blue links, AEO formats your data into verified entity graphs and direct answer passages that AI models cite with confidence.
             </p>
 
             {/* Low-Friction Primary Hero CTA Container (Overlaid directly on top of the Brand Scanner Image) */}
