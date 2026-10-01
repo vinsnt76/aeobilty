@@ -221,8 +221,8 @@ export default function WhatIsAeoPage() {
               What is <span className="text-gradient-aeo">Answer Engine Optimisation?</span>
             </h1>
 
-            {/* Lean Author & Provenance Bar */}
-            <div className="flex items-center justify-center gap-3 py-1">
+            {/* Lean Author & Provenance Bar (Left-Aligned) */}
+            <div className="flex items-center justify-start gap-3 py-1 max-w-3xl mx-auto text-left">
               <Image
                 src="/images/about/vince-baker-profile_AEObility.webp"
                 alt="Vince Baker - Technical Search Architect"
