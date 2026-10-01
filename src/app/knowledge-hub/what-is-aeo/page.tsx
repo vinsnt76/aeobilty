@@ -254,21 +254,7 @@ export default function WhatIsAeoPage() {
               Answer Engine Optimisation represents the structural evolution of organic search. While traditional SEO focuses on earning links and keyword positions for 10 blue link search results, AEO formats core business facts into clean, verified entity graphs and direct answer passages that AI models cite with confidence.
             </p>
 
-            {/* 3. Atomic Answer Block (High-Density Vector Retrieval Target) */}
-            <div className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 text-left space-y-3 shadow-2xl">
-              <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
-                <Target className="w-4 h-4 text-cyan-400" />
-                <span>WHY ANSWER ENGINE OPTIMISATION IS IMPORTANT FOR YOUR BUSINESS</span>
-              </div>
-              <h2 className="text-xl font-bold text-white font-soehne-breit">
-                Answer Engine Optimisation (AEO)
-              </h2>
-              <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
-                <strong>Answer Engine Optimisation (AEO)</strong> is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.
-              </p>
-            </div>
-
-            {/* Low-Friction Primary Hero CTA Container */}
+            {/* Low-Friction Primary Hero CTA Container (Moved Up Above Definition Block) */}
             <div className="mt-8 p-6 sm:p-8 md:p-10 rounded-2xl bg-[#0A0F1C] border border-[#00E5FF]/40 shadow-[0_0_35px_rgba(0,229,255,0.15)] text-left max-w-4xl mx-auto space-y-6 isolate relative overflow-hidden">
               {/* Top Specular Edge Glow */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00E5FF]/60 to-transparent pointer-events-none" />
@@ -350,9 +336,9 @@ export default function WhatIsAeoPage() {
 
               {/* Form & Input Fields */}
               <form onSubmit={handleHeroSubmit} className="border-t border-slate-800/80 pt-5 space-y-5">
-                {/* Inputs Row - Aligned Left */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Website Domain URL */}
+                {/* Inputs Stacked Vertically - Each Aligned Left on a New Line */}
+                <div className="space-y-4 max-w-xl">
+                  {/* Line 1: Website Domain URL */}
                   <div className="space-y-1.5">
                     <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
                       Website Domain URL
@@ -371,7 +357,7 @@ export default function WhatIsAeoPage() {
                     </div>
                   </div>
 
-                  {/* Core Service or Topic */}
+                  {/* Line 2: Core Service or Topic (Moved to New Line, Aligned Left) */}
                   <div className="space-y-1.5">
                     <label htmlFor="hero-scan-query" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
                       Core Service or Topic
@@ -390,10 +376,10 @@ export default function WhatIsAeoPage() {
                   </div>
                 </div>
 
-                {/* Bottom Row: AI Bill Note on Left, CTA on Bottom Right */}
+                {/* Bottom Row: Cyan Blue Sub-Text on Left, CTA on Bottom Right */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1">
-                  <p className="text-xs text-slate-400 font-mono max-w-md leading-relaxed">
-                    Once your diagnostic generates on screen, open the chat with AI Bill to review the specific gaps and discuss practical fixes for your site.
+                  <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed">
+                    Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
                   </p>
 
                   <div className="sm:self-end shrink-0">
@@ -406,6 +392,20 @@ export default function WhatIsAeoPage() {
                   </div>
                 </div>
               </form>
+            </div>
+
+            {/* 3. Atomic Answer Block (High-Density Vector Retrieval Target) */}
+            <div className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 text-left space-y-3 shadow-2xl">
+              <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
+                <Target className="w-4 h-4 text-cyan-400" />
+                <span>WHY ANSWER ENGINE OPTIMISATION IS IMPORTANT FOR YOUR BUSINESS</span>
+              </div>
+              <h2 className="text-xl font-bold text-white font-soehne-breit">
+                Answer Engine Optimisation (AEO)
+              </h2>
+              <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
+                <strong>Answer Engine Optimisation (AEO)</strong> is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.
+              </p>
             </div>
           </section>
 
