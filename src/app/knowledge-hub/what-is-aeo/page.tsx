@@ -345,8 +345,7 @@ export default function WhatIsAeoPage() {
                     <div className="md:self-end shrink-0">
                       <button
                         type="submit"
-                        className="w-full md:w-auto px-7 py-4 rounded-xl text-[#050B14] font-bold text-base sm:text-lg tracking-wide border border-white/30 shadow-[0_0_20px_rgba(0,198,255,0.35),0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(0,242,254,0.6),0_6px_16px_rgba(0,0,0,0.5)] active:translate-y-0.5 active:shadow-[0_0_12px_rgba(0,198,255,0.4)] transition-all duration-200 ease-out whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
-                        style={{ background: 'linear-gradient(135deg, #00F2FE 0%, #00C6FF 100%)' }}
+                        className="w-full md:w-auto px-7 py-4 rounded-xl bg-[#374151] hover:bg-[#4B5563] text-white font-bold text-base sm:text-lg tracking-wide border border-slate-500/50 shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(75,85,99,0.5),0_6px_16px_rgba(0,0,0,0.5)] active:translate-y-0.5 transition-all duration-200 ease-out whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
                       >
                         <span>Run Free 45-Second AI Scan →</span>
                       </button>
