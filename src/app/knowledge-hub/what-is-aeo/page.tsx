@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -15,12 +16,11 @@ import {
   ArrowRight, 
   Sparkles, 
   Globe, 
-  AlertTriangle,
   Zap,
   Target,
-  ShieldCheck,
   Building2,
-  FileCheck
+  FileCheck,
+  Search
 } from 'lucide-react';
 
 export default function WhatIsAeoPage() {
@@ -69,6 +69,13 @@ export default function WhatIsAeoPage() {
         "inLanguage": "en-AU",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vince Baker",
+          "jobTitle": "Technical Search Architect",
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -135,7 +142,7 @@ export default function WhatIsAeoPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-[80px] space-y-16">
           
-          {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK */}
+          {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK (Text-First) */}
           <section className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-medium">
               <BookOpen className="w-4 h-4 text-aeo-cyan" />
@@ -145,6 +152,29 @@ export default function WhatIsAeoPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               What is <span className="text-gradient-aeo">Answer Engine Optimisation (AEO)?</span>
             </h1>
+
+            {/* Lean Author & Provenance Bar */}
+            <div className="flex items-center justify-center gap-3 py-1">
+              <Image
+                src="/images/about/profile2.webp"
+                alt="Vince Baker"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-full border border-cyan-400/50 object-cover shadow-sm"
+              />
+              <div className="text-left text-xs font-mono">
+                <div className="text-zinc-200">
+                  By{' '}
+                  <Link href="/vince-baker" className="text-cyan-400 font-bold hover:underline">
+                    Vince Baker
+                  </Link>{' '}
+                  <span className="text-zinc-500">|</span> Technical Search Architect
+                </div>
+                <div className="text-zinc-400 text-[11px]">
+                  Reviewed &amp; Updated: 1 October 2026 <span className="text-zinc-500">|</span> Fact-Checked &amp; Entity Grounded
+                </div>
+              </div>
+            </div>
 
             <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
               AEO is the process of organising your business details so AI tools like ChatGPT, Perplexity, and Google AI Overviews can easily read, trust, and recommend your business when customers search.
@@ -210,7 +240,7 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
-          {/* SECTION 2: THE BUSINESS RISK & REAL-WORLD IMPACT (The "Why") */}
+          {/* SECTION 2: THE BUSINESS RISK & REAL-WORLD IMPACT (Mid-Article Side-by-Side Infographic) */}
           <section className="space-y-8 border-t border-white/10 pt-12">
             <div className="space-y-3 text-center max-w-3xl mx-auto">
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Commercial Impact</span>
@@ -220,33 +250,116 @@ export default function WhatIsAeoPage() {
               </p>
             </div>
 
-            {/* Side-by-Side Before & After Visual Card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="p-6 bg-red-950/20 border border-red-500/30 rounded-2xl space-y-4">
-                <div className="flex items-center gap-2 text-red-400 font-mono font-bold text-xs uppercase tracking-wider">
-                  <AlertTriangle className="w-4 h-4 text-red-400 shrink-0" />
-                  <span>Without AEO (Traditional Web Copy)</span>
-                </div>
-                <h3 className="text-lg font-bold text-white font-soehne-breit">AI Ignores or Hallucinates Your Brand</h3>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Generative engines encounter vague sales copy, unformatted paragraphs, and missing schema. When a prospective customer asks for top service providers in Perth, the AI leaves your business out or attributes outdated details.
-                </p>
-                <div className="p-3.5 bg-black/60 rounded-xl border border-red-500/20 text-xs text-red-300/90 font-mono">
-                  &quot;I could not find verified pricing or local service credentials for this business... Here are 3 recommended competitors instead.&quot;
-                </div>
+            {/* Mid-Article Infographic: Traditional 10 Blue Links vs Synthesised Gemini/ChatGPT Answer */}
+            <div className="space-y-4 max-w-4xl mx-auto">
+              <div className="text-center space-y-1">
+                <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Side-by-Side Retrieval Architecture</span>
+                <h3 className="text-xl font-bold text-white font-soehne-breit">
+                  Traditional Search Results vs. Synthesised AI Answer Engines
+                </h3>
               </div>
 
-              <div className="p-6 bg-cyan-950/30 border border-cyan-500/40 rounded-2xl space-y-4 shadow-xl">
-                <div className="flex items-center gap-2 text-cyan-400 font-mono font-bold text-xs uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>With AEObility AEO Architecture</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Left: Traditional 10 Blue Links Search Result */}
+                <div className="p-5 bg-zinc-950/90 border border-slate-800 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg text-left">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
+                      <span className="text-[11px] font-mono font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <Search className="w-3.5 h-3.5 text-zinc-400" />
+                        Traditional 10 Blue Links SERP
+                      </span>
+                      <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
+                        Keyword Match
+                      </span>
+                    </div>
+
+                    {/* Mock Search Bar */}
+                    <div className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 flex items-center justify-between">
+                      <span className="truncate">&quot;best AEO &amp; local service specialists Perth&quot;</span>
+                      <Search className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+                    </div>
+
+                    {/* Mock SERP Result Cards */}
+                    <div className="space-y-3 pt-1">
+                      <div className="space-y-1 text-left p-2.5 rounded-lg bg-zinc-900/40 border border-zinc-800/60">
+                        <div className="text-[10px] font-mono text-zinc-500">Sponsored Ad • www.generic-directory.example</div>
+                        <div className="text-xs font-bold text-blue-400 hover:underline">Top 10 Marketing Companies Perth 2026</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug line-clamp-2">
+                          Find top listed agencies, read user reviews, and compare quotes for marketing services in WA...
+                        </div>
+                      </div>
+
+                      <div className="space-y-1 text-left p-2.5 rounded-lg bg-zinc-900/40 border border-zinc-800/60">
+                        <div className="text-[10px] font-mono text-zinc-500">https://aeobility.com.au › services › aeo</div>
+                        <div className="text-xs font-bold text-blue-400 hover:underline">Answer Engine Optimisation (AEO) Services | AEObility</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug line-clamp-2">
+                          AEObility helps Australian businesses structure web data for conversational AI and search engines...
+                        </div>
+                      </div>
+
+                      <div className="space-y-1 text-left p-2.5 rounded-lg bg-zinc-900/40 border border-zinc-800/60 opacity-60">
+                        <div className="text-[10px] font-mono text-zinc-500">www.competitor-seo-agency.example</div>
+                        <div className="text-xs font-bold text-blue-400 hover:underline">SEO &amp; Digital Services Perth</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug line-clamp-2">
+                          Full service agency offering SEO, Google Ads, and social media management...
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-800/80 text-[11px] text-zinc-400 font-mono flex items-center justify-between">
+                    <span>Friction: High cognitive load</span>
+                    <span className="text-red-400 font-bold">10 Links to Click</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white font-soehne-breit">AI Quotes &amp; Recommends Your Business</h3>
-                <p className="text-xs text-zinc-200 font-serif leading-relaxed">
-                  Your website presents structured entity graphs, 90-token atomic answer blocks, and explicit schema triples. AI engines parse your exact services, pricing, ABN, and locations, citing your brand directly in synthesized answers.
-                </p>
-                <div className="p-3.5 bg-cyan-950/80 rounded-xl border border-cyan-500/30 text-xs text-cyan-200 font-mono">
-                  &quot;According to AEObility&apos;s verified service graph, they provide fixed-scope AEO Micro-Sprints in Perth, Western Australia...&quot;
+
+                {/* Right: Synthesised Gemini / ChatGPT Answer */}
+                <div className="p-5 bg-gradient-to-b from-cyan-950/40 via-zinc-950 to-zinc-950 border border-cyan-500/40 rounded-2xl space-y-4 flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
+                  <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between border-b border-cyan-500/20 pb-2.5">
+                      <span className="text-[11px] font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                        Synthesised Gemini / ChatGPT Answer
+                      </span>
+                      <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/60 flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-cyan-400" />
+                        Verified JSON-LD Graph
+                      </span>
+                    </div>
+
+                    {/* Mock AI Synthesised Response Panel */}
+                    <div className="p-3.5 rounded-xl bg-zinc-900/90 border border-cyan-500/30 text-left space-y-3 shadow-inner">
+                      <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 border-b border-white/5 pb-2">
+                        <span className="text-cyan-300 font-bold">Direct Conversational Synthesis</span>
+                        <span className="text-zinc-500">Passage Confidence: 98.4%</span>
+                      </div>
+
+                      <p className="text-xs text-zinc-200 font-serif leading-relaxed">
+                        For Australian businesses seeking Answer Engine Optimisation (AEO) in Perth, <strong className="text-white font-semibold">AEObility</strong> provides technical schema infrastructure and 90-token atomic answer passage structuring.
+                      </p>
+
+                      <div className="p-2.5 rounded-lg bg-cyan-950/60 border border-cyan-500/30 space-y-1">
+                        <div className="text-[10px] font-mono text-cyan-300 font-bold uppercase tracking-wider flex items-center justify-between">
+                          <span>Verified Entity Citation [1]</span>
+                          <span className="text-cyan-400 font-bold">Direct Recommendation</span>
+                        </div>
+                        <p className="text-[11px] text-zinc-200 font-serif leading-snug">
+                          AEObility specialises in fixed-scope AEO Micro-Sprints, binding brand identity to ABN credentials and schema graphs across Google AI Overviews and ChatGPT Search.
+                        </p>
+                        <div className="pt-1 flex items-center gap-1 text-[10px] font-mono text-cyan-400">
+                          <Globe className="w-3 h-3 text-cyan-400" />
+                          <Link href="/services/aeo" className="hover:underline font-bold">https://aeobility.com.au/services/aeo</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-cyan-500/20 text-[11px] text-cyan-300 font-mono flex items-center justify-between">
+                    <span>Outcome: Instant Verified Citation</span>
+                    <span className="text-cyan-400 font-bold">1-Click Direct Answer</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -262,7 +375,7 @@ export default function WhatIsAeoPage() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2 text-left">
                   <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
                     <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>Positional Bias</span>
@@ -272,7 +385,7 @@ export default function WhatIsAeoPage() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2 text-left">
                   <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
                     <FileCheck className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>Atomic Passages</span>
@@ -282,7 +395,7 @@ export default function WhatIsAeoPage() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2">
+                <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2 text-left">
                   <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
                     <Building2 className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>Entity Mesh Triples</span>
@@ -306,7 +419,7 @@ export default function WhatIsAeoPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3">
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 1</span>
                 <h3 className="text-lg font-bold text-white font-soehne-breit">Putting Key Facts First</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -314,7 +427,7 @@ export default function WhatIsAeoPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3">
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 2</span>
                 <h3 className="text-lg font-bold text-white font-soehne-breit">Short, Direct Answers</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -322,7 +435,7 @@ export default function WhatIsAeoPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3">
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 3</span>
                 <h3 className="text-lg font-bold text-white font-soehne-breit">Connecting Business Details</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
@@ -332,7 +445,7 @@ export default function WhatIsAeoPage() {
             </div>
 
             {/* Comparison Table: AEO vs SEO */}
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-zinc-950/80 p-6">
+            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-zinc-950/80 p-6 text-left">
               <h3 className="text-lg font-bold text-white font-soehne-breit mb-4">AEO vs. Traditional SEO: At a Glance</h3>
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
@@ -400,7 +513,7 @@ export default function WhatIsAeoPage() {
 
           {/* SECTION 5: INTERNAL RADIAL LINKS & SITE STRUCTURE (Entity Mesh) */}
           <section className="space-y-6 border-t border-white/10 pt-12">
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Internal Links &amp; Site Structure</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Entity Mesh: Related AEO Resources &amp; Service Hubs</h2>
               <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
@@ -411,7 +524,7 @@ export default function WhatIsAeoPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <Link
                 href="/services/aeo"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400">Commercial Hub</span>
@@ -427,7 +540,7 @@ export default function WhatIsAeoPage() {
 
               <Link
                 href="/services/aeo/definition"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400">Core Definition Model</span>
@@ -443,7 +556,7 @@ export default function WhatIsAeoPage() {
 
               <Link
                 href="/knowledge-hub/aeo"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400">Technical Deep Dive</span>
@@ -459,7 +572,7 @@ export default function WhatIsAeoPage() {
 
               <Link
                 href="/solutions/aeo-sprint"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400">Commercial Sprint</span>
@@ -476,7 +589,7 @@ export default function WhatIsAeoPage() {
           </section>
 
           {/* SECTION 6: FAQ SECTION */}
-          <section className="border-t border-white/10 pt-12 space-y-6">
+          <section className="border-t border-white/10 pt-12 space-y-6 text-left">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase">
                 <HelpCircle className="w-4 h-4" />
