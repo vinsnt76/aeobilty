@@ -1,7 +1,7 @@
 /**
- * AEObility IndexNow Bulk Submission Script
+ * AEObility IndexNow Bulk Submission Script (ES Module)
  * Protocol: https://www.indexnow.org/documentation
- * Path: scripts/submit-indexnow.ts
+ * Path: scripts/submit-indexnow.mjs
  */
 
 const HOST = "aeobility.com.au";
@@ -16,7 +16,7 @@ const INDEXNOW_ENDPOINTS = [
 ];
 
 // Complete Canonical Directory Matrix (1:1 with sitemap.ts & AEObility IA/SLM)
-export const CANONICAL_URL_LIST: string[] = [
+export const CANONICAL_URL_LIST = [
   // 1. Root & Diagnostic Core
   `https://${HOST}`,
   `https://${HOST}/diagnostic`,
@@ -91,15 +91,8 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/terms`
 ];
 
-interface IndexNowPayload {
-  host: string;
-  key: string;
-  keyLocation: string;
-  urlList: string[];
-}
-
 export async function submitToIndexNow() {
-  const payload: IndexNowPayload = {
+  const payload = {
     host: HOST,
     key: KEY,
     keyLocation: KEY_LOCATION,
@@ -130,7 +123,7 @@ export async function submitToIndexNow() {
         const errorText = await response.text();
         console.error(`  ⚠️ [${response.status} ${response.statusText}] Issue at ${endpoint}: ${errorText}`);
       }
-    } catch (err: unknown) {
+    } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       console.error(`  ❌ Failed to reach ${endpoint}:`, message);
     }
@@ -139,5 +132,4 @@ export async function submitToIndexNow() {
   console.log(`\n✨ IndexNow submission cycle complete.\n`);
 }
 
-// Execute directly when run
 submitToIndexNow();
