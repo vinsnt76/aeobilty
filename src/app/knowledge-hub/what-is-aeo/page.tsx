@@ -211,21 +211,21 @@ export default function WhatIsAeoPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-[80px] space-y-16">
           
-          {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK (Left-Aligned Unified Grid) */}
-          <section className="text-left max-w-5xl mx-auto space-y-6">
-            <div>
+          {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK (Strict Left Alignment) */}
+          <section className="flex flex-col items-start text-left w-full max-w-5xl mx-auto space-y-6">
+            <div className="flex justify-start text-left w-full">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
                 <BookOpen className="w-4 h-4 text-aeo-cyan" />
                 <span>WHAT IS AEO</span>
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-left w-full">
               What is <span className="text-gradient-aeo">Answer Engine Optimisation?</span>
             </h1>
 
             {/* Lean Author & Provenance Bar (Single Line Left-Aligned) */}
-            <div className="flex items-center justify-start gap-3 py-1 text-left">
+            <div className="flex items-center justify-start gap-3 py-1 text-left w-full">
               <Image
                 src="/images/about/vince-baker-profile_AEObility.webp"
                 alt="Vince Baker - Technical Search Architect"
@@ -233,7 +233,7 @@ export default function WhatIsAeoPage() {
                 height={32}
                 className="w-8 h-8 rounded-full border border-cyan-400/50 object-cover shadow-sm shrink-0"
               />
-              <div className="text-xs font-mono text-zinc-300 flex flex-wrap items-center gap-x-2 gap-y-1">
+              <div className="text-xs font-mono text-zinc-300 flex flex-wrap items-center gap-x-2 gap-y-1 text-left">
                 <span>
                   By{' '}
                   <Link href="/vince-baker" className="text-cyan-400 font-bold hover:underline">
@@ -249,12 +249,12 @@ export default function WhatIsAeoPage() {
             </div>
 
             {/* Left-Aligned 2-Paragraph Introductory Unit */}
-            <div className="space-y-3 text-left max-w-4xl">
-              <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed">
+            <div className="space-y-3 text-left w-full max-w-4xl">
+              <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed text-left">
                 <strong>Answer Engine Optimisation (AEO)</strong> is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-300 font-serif leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-300 font-serif leading-relaxed text-left">
                 While SEO focuses on winning keyword rankings in standard search results, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
               </p>
             </div>
