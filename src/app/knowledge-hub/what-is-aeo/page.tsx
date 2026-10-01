@@ -211,7 +211,7 @@ export default function WhatIsAeoPage() {
       <main className="flex-grow w-full py-12">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-[80px] space-y-16">
           
-          {/* SECTION 1: HERO / CLEAR ANSWER & INSTANT CHECK (Strict Left Alignment) */}
+          {/* SECTION 1: HEADER & DIRECT DEFINITION (Above the Fold) */}
           <section className="flex flex-col items-start text-left w-full max-w-5xl mx-auto space-y-6">
             <div className="flex justify-start text-left w-full">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
@@ -234,7 +234,7 @@ export default function WhatIsAeoPage() {
               <div className="h-[2px] w-full max-w-md bg-gradient-to-r from-[#00E5FF] via-purple-500 to-transparent rounded-full" />
             </div>
 
-            {/* Lean Author & Provenance Bar (Single Line Left-Aligned) */}
+            {/* Author & Trust Signals (Single Line Left-Aligned) */}
             <div className="flex items-center justify-start gap-3 py-1 text-left w-full">
               <Image
                 src="/images/about/vince-baker-profile_AEObility.webp"
@@ -258,8 +258,8 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            {/* Left-Aligned 2-Paragraph Introductory Unit */}
-            <div className="space-y-3 text-left w-full max-w-4xl">
+            {/* Core Definition Block (80–120 tokens) */}
+            <div className="space-y-3 text-left w-full max-w-4xl pt-2">
               <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed text-left">
                 <strong>Answer Engine Optimisation (AEO)</strong> is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand.
               </p>
@@ -268,9 +268,12 @@ export default function WhatIsAeoPage() {
                 While SEO focuses on winning keyword rankings in standard search results, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
               </p>
             </div>
+          </section>
 
-            {/* Commercial Impact & 3 Key Benefits (Positioned Above the Scan Module) */}
-            <div className="max-w-5xl mx-auto space-y-4 text-left border-t border-white/10 pt-8 mt-6">
+          {/* SECTION 2: COMMERCIAL CONTEXT & SHIFTS IN SEARCH BEHAVIOUR */}
+          <section className="space-y-12 border-t border-white/10 pt-12">
+            {/* 2A: Why AEO Matters for Your Business */}
+            <div className="max-w-5xl mx-auto space-y-4 text-left">
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/60 text-purple-400 text-xs font-mono font-bold uppercase tracking-wider">
                   <Building2 className="w-3.5 h-3.5 text-purple-400" />
@@ -279,13 +282,13 @@ export default function WhatIsAeoPage() {
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
                   Why AEO Matters for Your Business
                 </h2>
-                <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed max-w-3xl">
                   People no longer just click links on Google. They ask AI assistants like ChatGPT, Perplexity, and Google AI Overviews for direct recommendations. If your web copy is vague, AI engines simply recommend your competitor instead.
                 </p>
               </div>
 
-              {/* 3 Pointed Benefit Badges (Zero Elaboration) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+              {/* 3 Pointed Benefit Badges */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
                 {/* Benefit 1 */}
                 <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700/80 flex items-center gap-3 shadow-md">
                   <span className="p-1.5 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 shrink-0">
@@ -318,172 +321,16 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            {/* Low-Friction Primary Hero CTA Container (Overlaid directly on top of the Brand Scanner Image) */}
-            <div className="mt-8 rounded-2xl border border-[#00E5FF]/40 shadow-[0_0_40px_rgba(0,229,255,0.2)] text-left max-w-5xl mx-auto isolate relative overflow-hidden bg-slate-950">
-              {/* Background Image Layer */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <Image
-                  src="/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp"
-                  alt="AI Engine Optimization Visibility Scanner - AEObility"
-                  fill
-                  sizes="(max-width: 1280px) 100vw, 1200px"
-                  className="object-cover object-center opacity-35 md:opacity-50 transition-opacity duration-700"
-                  priority
-                />
-                {/* Lighter Gradient Overlay Masks for Maximum Artwork Visibility */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/75 via-[#0A0F1C]/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 via-transparent to-[#0A0F1C]/30" />
-              </div>
-
-              {/* Specular Edge Glow Top Line */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00E5FF]/80 to-transparent pointer-events-none z-20" />
-
-              {/* Overlaid Form & Content Layer */}
-              <div className="relative z-10 p-6 sm:p-8 md:p-10 space-y-6">
-                {/* Header & Title Stack */}
-                <div className="space-y-3 text-left max-w-md">
-                  {/* Single Context Eyebrow Pill */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/90 border border-cyan-500/50 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
-                    <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
-                    <span>Instant On-Screen Evaluation</span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-soehne-breit leading-tight drop-shadow-md">
-                    AI Visibility Scan
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed drop-shadow max-w-sm">
-                    Check if AI search engines understand what your business sells. Enter your website and the main service you want to be recommended for.
-                  </p>
-                </div>
-
-                {/* Overlaid Form Controls */}
-                <form onSubmit={handleHeroSubmit} className="border-t border-slate-700/60 pt-5 space-y-5">
-                  {/* Left-Aligned Input Stack - Aligned Width with Trust Note (max-w-md) */}
-                  <div className="space-y-4 max-w-md">
-                    {/* Line 1: Website Domain URL */}
-                    <div className="space-y-1.5">
-                      <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
-                        Website Domain URL
-                      </label>
-                      <div className="relative">
-                        <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                        <input
-                          id="hero-scan-url"
-                          type="text"
-                          required
-                          placeholder="e.g. example.com.au"
-                          value={heroUrl}
-                          onChange={(e) => setHeroUrl(e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Line 2: Core Service or Topic (On New Line, Aligned Left) */}
-                    <div className="space-y-1.5">
-                      <label htmlFor="hero-scan-query" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
-                        Core Service or Topic
-                      </label>
-                      <div className="relative">
-                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                        <input
-                          id="hero-scan-query"
-                          type="text"
-                          placeholder="e.g. Answer Engine Optimisation"
-                          value={heroQuery}
-                          onChange={(e) => setHeroQuery(e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Bar: Cyan Blue Sub-Text & Bottom Right High-Luminance CTA */}
-                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-1">
-                    <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed drop-shadow p-2.5 rounded-lg bg-slate-950/70 border border-slate-800/80 backdrop-blur-sm">
-                      Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
-                    </p>
-
-                    <div className="md:self-end shrink-0">
-                      <button
-                        type="submit"
-                        className="w-full md:w-auto px-7 py-4 rounded-xl bg-[#374151] hover:bg-[#4B5563] text-white font-bold text-base sm:text-lg tracking-wide border border-slate-500/50 shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(75,85,99,0.5),0_6px_16px_rgba(0,0,0,0.5)] active:translate-y-0.5 transition-all duration-200 ease-out whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <span>Run Free 45-Second AI Scan →</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            {/* SEPARATE MODULE: Diagnostic Methodology & 3 Coverage Cards (Positioned Directly Beneath the Scan Container) */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-cyan-500/30 text-left max-w-5xl mx-auto space-y-4 shadow-xl">
-              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
-              </p>
-
-              {/* 3 Diagnostic Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
-                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Entity and Schema Health</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
-                    <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Retrieval Survival</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
-                  </p>
-                </div>
-
-                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
-                    <Target className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>AI Citation Share</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Identifies whether generative models cite your brand or default to a competitor for your priority topics.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 3. Atomic Answer Block (High-Density Vector Retrieval Target) */}
-            <div className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 text-left space-y-3 shadow-2xl">
-              <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
-                <Target className="w-4 h-4 text-cyan-400" />
-                <span>WHY ANSWER ENGINE OPTIMISATION IS IMPORTANT FOR YOUR BUSINESS</span>
-              </div>
-              <h2 className="text-xl font-bold text-white font-soehne-breit">
-                Answer Engine Optimisation (AEO)
-              </h2>
-              <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
-                <strong>Answer Engine Optimisation (AEO)</strong> is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.
-              </p>
-            </div>
-          </section>
-
-          {/* SECTION 2: SIDE-BY-SIDE RETRIEVAL INFOGRAPHIC */}
-          <section className="space-y-8 border-t border-white/10 pt-12">
-            {/* Mid-Article Infographic: Traditional 10 Blue Links vs Synthesised Gemini/ChatGPT Answer */}
-            <div className="space-y-4 max-w-4xl mx-auto">
-              <div className="text-center space-y-2">
+            {/* 2B: Traditional Search Results vs. Synthesised AI Answer Engines */}
+            <div className="space-y-8 max-w-5xl mx-auto border-t border-white/5 pt-8">
+              <div className="text-left space-y-2">
                 <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider block">Side-by-Side Retrieval Architecture</span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
                   Traditional Search Results vs. Synthesised AI Answer Engines
                 </h2>
               </div>
 
+              {/* Side-by-Side Visual Comparison Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left: Traditional 10 Blue Links Search Result */}
                 <div className="p-5 bg-zinc-950/90 border border-slate-800 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg text-left">
@@ -587,15 +434,94 @@ export default function WhatIsAeoPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Consolidated Summary Table: AEO vs. Traditional SEO: At a Glance */}
+              <div className="overflow-x-auto rounded-2xl border border-white/10 bg-zinc-950/80 p-6 text-left shadow-xl">
+                <h3 className="text-lg font-bold text-white font-soehne-breit mb-4">AEO vs. Traditional SEO: At a Glance</h3>
+                <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10 text-cyan-400 font-mono">
+                      <th className="py-3 px-4">Feature</th>
+                      <th className="py-3 px-4">Traditional SEO</th>
+                      <th className="py-3 px-4">Answer Engine Optimisation (AEO)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/10 font-serif text-zinc-300">
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Target Destination</td>
+                      <td className="py-3 px-4">10 blue links search result pages</td>
+                      <td className="py-3 px-4 text-cyan-300 font-medium">AI synthesised summaries &amp; direct answer blocks</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Primary Metric</td>
+                      <td className="py-3 px-4">URL ranking positions &amp; organic clicks</td>
+                      <td className="py-3 px-4 text-cyan-300 font-medium">AI citation share, brand mentions &amp; recommendation frequency</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Content Structure</td>
+                      <td className="py-3 px-4">Long-form keyword dense blog posts</td>
+                      <td className="py-3 px-4 text-cyan-300 font-medium">90-token atomic answer blocks &amp; direct passage headings</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Data Format</td>
+                      <td className="py-3 px-4">Standard HTML tags &amp; basic meta tags</td>
+                      <td className="py-3 px-4 text-cyan-300 font-medium">JSON-LD entity relationship graphs &amp; verified proof triples</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 3: TECHNICAL MECHANICS (HOW IT WORKS) */}
+          <section className="space-y-8 border-t border-white/10 pt-12">
+            <div className="space-y-3 text-left max-w-5xl mx-auto">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Execution Mechanics</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
+                How Answer Engine Optimisation Works: The Three Pillars
+              </h2>
+              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                We refactor your website copy into three structured pillars engineered for artificial intelligence retrieval systems.
+              </p>
             </div>
 
-            {/* Concrete Real-World Example & Business Impact Matrix */}
-            <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 space-y-6">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Real-World Scenario</span>
-                <h3 className="text-xl font-bold text-white font-soehne-breit">Real-World Example: Winning Local Service Leads</h3>
+            {/* The Three Pillars Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Pillar 1 */}
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left shadow-lg">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 1</span>
+                <h3 className="text-lg font-bold text-white font-soehne-breit">Positional Bias (Putting Key Facts First)</h3>
                 <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                  When a customer in Perth asks ChatGPT for the best local electrician, specialist clinic, or commercial consultant, AI models select the business with clear, machine-verified details. If your details are hard for machines to parse, you lose the customer before they ever visit your website.
+                  We place your most important services, prices, and locations at the very top of structural web pages so search bots and RAG crawlers read them instantly where attention weights peak.
+                </p>
+              </div>
+
+              {/* Pillar 2 */}
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left shadow-lg">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 2</span>
+                <h3 className="text-lg font-bold text-white font-soehne-breit">Atomic Passages (Short, Extractable Direct Answers)</h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  We write clear, 2–3 sentence direct answer passages (80–120 tokens) under clean headings, giving conversational AI systems text they can extract and quote without paraphrasing.
+                </p>
+              </div>
+
+              {/* Pillar 3 */}
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left shadow-lg">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 3</span>
+                <h3 className="text-lg font-bold text-white font-soehne-breit">Entity Mesh (Connecting Business Details via JSON-LD)</h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  We link your business name, address, phone number, ABN, and licences into a consistent JSON-LD entity graph that search engines and LLMs verify across external registries.
+                </p>
+              </div>
+            </div>
+
+            {/* Real-World Scenario: Winning Local Service Leads */}
+            <div className="max-w-5xl mx-auto p-6 sm:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 space-y-6 shadow-xl">
+              <div className="space-y-2 text-left">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Real-World Scenario</span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-soehne-breit">Real-World Scenario: Winning Local Service Leads</h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  When a customer in Perth asks ChatGPT or Perplexity for the best local electrician, specialist clinic, or commercial consultant, AI models select the business with clear, machine-verified details. If your details are hard for machines to parse, you lose the customer before they ever visit your website.
                 </p>
               </div>
 
@@ -633,85 +559,243 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
-          {/* SECTION 3: HOW IT WORKS (Three Core Pillars Explained Simply) */}
-          <section className="space-y-8 border-t border-white/10 pt-12">
-            <div className="space-y-3 text-center max-w-3xl mx-auto">
-              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Execution Mechanics</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">How Answer Engine Optimisation Works</h2>
-              <p className="text-sm text-zinc-300 font-serif leading-relaxed">
-                We refactor your website copy into three structured pillars engineered for artificial intelligence retrieval systems.
+          {/* SECTION 4: INTERACTIVE DIAGNOSTIC BREAK (Mid-Page Lead Magnet) */}
+          <section className="space-y-6 border-t border-white/10 pt-12">
+            {/* Callout Container: AI Visibility Scan Form Overlaid on Brand Image */}
+            <div className="rounded-2xl border border-[#00E5FF]/40 shadow-[0_0_40px_rgba(0,229,255,0.2)] text-left max-w-5xl mx-auto isolate relative overflow-hidden bg-slate-950">
+              {/* Background Image Layer */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <Image
+                  src="/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp"
+                  alt="AI Engine Optimization Visibility Scanner - AEObility"
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1200px"
+                  className="object-cover object-center opacity-35 md:opacity-50 transition-opacity duration-700"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/75 via-[#0A0F1C]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 via-transparent to-[#0A0F1C]/30" />
+              </div>
+
+              {/* Specular Edge Glow Top Line */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00E5FF]/80 to-transparent pointer-events-none z-20" />
+
+              {/* Overlaid Form & Content Layer */}
+              <div className="relative z-10 p-6 sm:p-8 md:p-10 space-y-6">
+                <div className="space-y-3 text-left max-w-md">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/90 border border-cyan-500/50 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
+                    <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
+                    <span>Interactive AI Test</span>
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-soehne-breit leading-tight drop-shadow-md">
+                    AI Visibility Scan
+                  </h2>
+
+                  <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed drop-shadow max-w-sm">
+                    Test your website against what you just learned. Check if AI search engines understand what your business sells and cite your services.
+                  </p>
+                </div>
+
+                <form onSubmit={handleHeroSubmit} className="border-t border-slate-700/60 pt-5 space-y-5">
+                  <div className="space-y-4 max-w-md">
+                    <div className="space-y-1.5">
+                      <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
+                        Website Domain URL
+                      </label>
+                      <div className="relative">
+                        <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                        <input
+                          id="hero-scan-url"
+                          type="text"
+                          required
+                          placeholder="e.g. example.com.au"
+                          value={heroUrl}
+                          onChange={(e) => setHeroUrl(e.target.value)}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label htmlFor="hero-scan-query" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
+                        Core Service or Topic
+                      </label>
+                      <div className="relative">
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                        <input
+                          id="hero-scan-query"
+                          type="text"
+                          placeholder="e.g. Answer Engine Optimisation"
+                          value={heroQuery}
+                          onChange={(e) => setHeroQuery(e.target.value)}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-1">
+                    <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed drop-shadow p-2.5 rounded-lg bg-slate-950/70 border border-slate-800/80 backdrop-blur-sm">
+                      Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
+                    </p>
+
+                    <div className="md:self-end shrink-0">
+                      <button
+                        type="submit"
+                        className="w-full md:w-auto px-7 py-4 rounded-xl bg-[#374151] hover:bg-[#4B5563] text-white font-bold text-base sm:text-lg tracking-wide border border-slate-500/50 shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(75,85,99,0.5),0_6px_16px_rgba(0,0,0,0.5)] active:translate-y-0.5 transition-all duration-200 ease-out whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <span>Run Free 45-Second AI Scan →</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            {/* Diagnostic Scope & 3 Coverage Cards (Positioned Directly Beneath the Scan Container) */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-cyan-500/30 text-left max-w-5xl mx-auto space-y-4 shadow-xl">
+              <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
               </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
-                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 1</span>
-                <h3 className="text-lg font-bold text-white font-soehne-breit">Putting Key Facts First</h3>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  We place your most important services, prices, and locations at the very top of structural web pages so search bots and RAG crawlers read them instantly where attention weights peak.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Entity and Schema Health</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Retrieval Survival</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
+                    <Target className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>AI Citation Share</span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Identifies whether generative models cite your brand or default to a competitor for your priority topics.
+                  </p>
+                </div>
               </div>
-
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
-                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 2</span>
-                <h3 className="text-lg font-bold text-white font-soehne-breit">Short, Direct Answers</h3>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  We write clear, 2–3 sentence direct answer passages (80–120 tokens) under clean headings, giving conversational AI systems text they can extract and quote without paraphrasing.
-                </p>
-              </div>
-
-              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 text-left">
-                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Pillar 3</span>
-                <h3 className="text-lg font-bold text-white font-soehne-breit">Connecting Business Details</h3>
-                <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  We link your business name, address, phone number, ABN, and licences into a consistent JSON-LD entity graph that search engines and LLMs verify across external registries.
-                </p>
-              </div>
-            </div>
-
-            {/* Comparison Table: AEO vs SEO */}
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-zinc-950/80 p-6 text-left">
-              <h3 className="text-lg font-bold text-white font-soehne-breit mb-4">AEO vs. Traditional SEO: At a Glance</h3>
-              <table className="w-full text-left border-collapse text-xs sm:text-sm">
-                <thead>
-                  <tr className="border-b border-white/10 text-cyan-400 font-mono">
-                    <th className="py-3 px-4">Feature</th>
-                    <th className="py-3 px-4">Traditional SEO</th>
-                    <th className="py-3 px-4">Answer Engine Optimisation (AEO)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/10 font-serif text-zinc-300">
-                  <tr>
-                    <td className="py-3 px-4 font-bold text-white">Target Destination</td>
-                    <td className="py-3 px-4">10 blue links search result pages</td>
-                    <td className="py-3 px-4 text-cyan-300">AI synthesised summaries &amp; direct answer blocks</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-4 font-bold text-white">Primary Metric</td>
-                    <td className="py-3 px-4">URL ranking positions &amp; organic clicks</td>
-                    <td className="py-3 px-4 text-cyan-300">AI citation share, brand mentions &amp; recommendation frequency</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-4 font-bold text-white">Content Structure</td>
-                    <td className="py-3 px-4">Long-form keyword dense blog posts</td>
-                    <td className="py-3 px-4 text-cyan-300">90-token atomic answer blocks &amp; direct passage headings</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-4 font-bold text-white">Data Format</td>
-                    <td className="py-3 px-4">Standard HTML tags &amp; basic meta tags</td>
-                    <td className="py-3 px-4 text-cyan-300">JSON-LD entity relationship graphs &amp; verified proof triples</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </section>
 
-          {/* SECTION 4: CONVERSION HANDOFF & STREAMLINED CTAs */}
+          {/* SECTION 5: VERIFICATION & TECHNICAL DEEP DIVES (ENTITY MESH) */}
           <section className="space-y-6 border-t border-white/10 pt-12">
-            <div className="p-8 rounded-2xl bg-gradient-to-r from-zinc-900 via-neutral-900 to-zinc-900 border border-cyan-500/40 shadow-2xl space-y-6 text-left max-w-4xl mx-auto">
+            <div className="space-y-2 text-left max-w-5xl mx-auto">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Internal Links &amp; Site Structure</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Related Technical Resources &amp; Specifications</h2>
+              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
+                Connect your understanding of Answer Engine Optimisation with our technical guides, machine definition triples, and commercial execution sprints:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 max-w-5xl mx-auto">
+              <Link
+                href="/services/aeo"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left shadow-md"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Hub</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Services &amp; Digital Infrastructure
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Explore our core commercial service offerings, micro-sprint options, and fixed-scope delivery timelines.
+                </p>
+              </Link>
+
+              <Link
+                href="/services/aeo/definition"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left shadow-md"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Core Definition Model</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Definition &amp; Machine Triple Schema
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Review the structured machine-readable triple model linking entity, relationship, and evidence.
+                </p>
+              </Link>
+
+              <Link
+                href="/knowledge-hub/aeo"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left shadow-md"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Technical Deep Dive</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  AEO Principles &amp; Machine Mechanics
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Learn how RAG pipelines, token weight distributions, and positional bias rules shape LLM citation ranking.
+                </p>
+              </Link>
+
+              <Link
+                href="/solutions/aeo-sprint"
+                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left shadow-md"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Sprint</span>
+                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
+                  Fixed-Scope AEO Micro-Sprints
+                </h3>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Rapid 4 to 5 business day implementation sprints addressing structured data, atomic rewrites, and MCP setup.
+                </p>
+              </Link>
+            </div>
+          </section>
+
+          {/* SECTION 6: STRUCTURED FAQ SECTION */}
+          <section className="border-t border-white/10 pt-12 space-y-6 text-left max-w-5xl mx-auto">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase">
+                <HelpCircle className="w-4 h-4" />
+                <span>Frequently Asked Questions</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently Asked Questions</h2>
+            </div>
+
+            <div className="space-y-4 max-w-4xl">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="p-5 bg-zinc-950/80 border border-white/10 rounded-xl space-y-2 shadow-md">
+                  <h3 className="text-base font-bold text-white font-soehne-breit">{faq.question}</h3>
+                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* SECTION 7: FINAL COMMERCIAL CTA & CONVERSION BLOCK */}
+          <section className="space-y-6 border-t border-white/10 pt-12 pb-6">
+            <div className="p-8 rounded-2xl bg-gradient-to-r from-zinc-900 via-neutral-900 to-zinc-900 border border-cyan-500/40 shadow-2xl space-y-6 text-left max-w-5xl mx-auto">
               <div className="space-y-2">
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Strategic Solution Handoff</span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">Ready to Fix Your AI Visibility Gaps?</h2>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">Ready to Close Your AI Visibility Gaps?</h2>
                 <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
                   Identified missing schema or retrieval gaps during your free scan? Our fixed-scope <strong>$995 AEObility Strategic Blueprint</strong> delivers a step-by-step technical roadmap, customized entity maps, and direct passage rewrites to get your business recommended across AI search engines and local maps.
                 </p>
@@ -733,103 +817,6 @@ export default function WhatIsAeoPage() {
                   Explore Fixed-Scope Micro-Sprints
                 </Link>
               </div>
-            </div>
-          </section>
-
-          {/* SECTION 5: INTERNAL RADIAL LINKS & SITE STRUCTURE (Entity Mesh) */}
-          <section className="space-y-6 border-t border-white/10 pt-12">
-            <div className="space-y-2 text-left">
-              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Internal Links &amp; Site Structure</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Entity Mesh: Related AEO Resources &amp; Service Hubs</h2>
-              <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                Connect your understanding of Answer Engine Optimisation with our technical guides, machine definition triples, and commercial execution sprints:
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <Link
-                href="/services/aeo"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Hub</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
-                  AEO Services &amp; Digital Infrastructure
-                </h3>
-                <p className="text-xs text-zinc-400 font-serif">
-                  Explore our core commercial service offerings, micro-sprint options, and fixed-scope delivery timelines.
-                </p>
-              </Link>
-
-              <Link
-                href="/services/aeo/definition"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-cyan-400">Core Definition Model</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
-                  AEO Definition &amp; Machine Triple Schema
-                </h3>
-                <p className="text-xs text-zinc-400 font-serif">
-                  Review the structured machine-readable triple model linking entity, relationship, and evidence.
-                </p>
-              </Link>
-
-              <Link
-                href="/knowledge-hub/aeo"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-cyan-400">Technical Deep Dive</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
-                  AEO Principles &amp; Machine Mechanics
-                </h3>
-                <p className="text-xs text-zinc-400 font-serif">
-                  Learn how RAG pipelines, token weight distributions, and positional bias rules shape LLM citation ranking.
-                </p>
-              </Link>
-
-              <Link
-                href="/solutions/aeo-sprint"
-                className="p-5 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/50 transition-all space-y-2 group text-left"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-cyan-400">Commercial Sprint</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">
-                  Fixed-Scope AEO Micro-Sprints
-                </h3>
-                <p className="text-xs text-zinc-400 font-serif">
-                  Rapid 4 to 5 business day implementation sprints addressing structured data, atomic rewrites, and MCP setup.
-                </p>
-              </Link>
-            </div>
-          </section>
-
-          {/* SECTION 6: FAQ SECTION */}
-          <section className="border-t border-white/10 pt-12 space-y-6 text-left">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase">
-                <HelpCircle className="w-4 h-4" />
-                <span>Frequently Asked Questions</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AEO Questions &amp; Answers</h2>
-            </div>
-
-            <div className="space-y-4 max-w-3xl">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="p-5 bg-zinc-950/80 border border-white/10 rounded-xl space-y-2">
-                  <h3 className="text-base font-bold text-white font-soehne-breit">{faq.question}</h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
             </div>
           </section>
 
