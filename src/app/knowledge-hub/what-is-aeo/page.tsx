@@ -295,8 +295,8 @@ export default function WhatIsAeoPage() {
 
                 {/* Overlaid Form Controls */}
                 <form onSubmit={handleHeroSubmit} className="border-t border-slate-700/60 pt-5 space-y-5">
-                  {/* Left-Aligned Input Stack */}
-                  <div className="space-y-4 max-w-xl">
+                  {/* Left-Aligned Input Stack - Aligned Width with Trust Note (max-w-md) */}
+                  <div className="space-y-4 max-w-md">
                     {/* Line 1: Website Domain URL */}
                     <div className="space-y-1.5">
                       <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
@@ -335,7 +335,7 @@ export default function WhatIsAeoPage() {
                     </div>
                   </div>
 
-                  {/* Bottom Bar: Cyan Blue Sub-Text & Bottom Right CTA */}
+                  {/* Bottom Bar: Cyan Blue Sub-Text & Bottom Right High-Luminance CTA */}
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-1">
                     <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed drop-shadow p-2.5 rounded-lg bg-slate-950/70 border border-slate-800/80 backdrop-blur-sm">
                       Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
@@ -344,7 +344,8 @@ export default function WhatIsAeoPage() {
                     <div className="md:self-end shrink-0">
                       <button
                         type="submit"
-                        className="w-full md:w-auto px-7 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                        className="w-full md:w-auto px-7 py-4 rounded-xl text-[#050B14] font-bold text-base sm:text-lg tracking-wide border border-white/30 shadow-[0_0_20px_rgba(0,198,255,0.35),0_4px_12px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(0,242,254,0.6),0_6px_16px_rgba(0,0,0,0.5)] active:translate-y-0.5 active:shadow-[0_0_12px_rgba(0,198,255,0.4)] transition-all duration-200 ease-out whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                        style={{ background: 'linear-gradient(135deg, #00F2FE 0%, #00C6FF 100%)' }}
                       >
                         <span>Run Free 45-Second AI Scan →</span>
                       </button>
