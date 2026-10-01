@@ -254,144 +254,144 @@ export default function WhatIsAeoPage() {
               Answer Engine Optimisation represents the structural evolution of organic search. While traditional SEO focuses on earning links and keyword positions for 10 blue link search results, AEO formats core business facts into clean, verified entity graphs and direct answer passages that AI models cite with confidence.
             </p>
 
-            {/* Low-Friction Primary Hero CTA Container (Moved Up Above Definition Block) */}
-            <div className="mt-8 p-6 sm:p-8 md:p-10 rounded-2xl bg-[#0A0F1C] border border-[#00E5FF]/40 shadow-[0_0_35px_rgba(0,229,255,0.15)] text-left max-w-4xl mx-auto space-y-6 isolate relative overflow-hidden">
-              {/* Top Specular Edge Glow */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00E5FF]/60 to-transparent pointer-events-none" />
+            {/* Low-Friction Primary Hero CTA Container (Overlaid directly on top of the Brand Scanner Image) */}
+            <div className="mt-8 rounded-2xl border border-[#00E5FF]/40 shadow-[0_0_40px_rgba(0,229,255,0.2)] text-left max-w-5xl mx-auto isolate relative overflow-hidden bg-slate-950">
+              {/* Background Image Layer */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <Image
+                  src="/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp"
+                  alt="AI Engine Optimization Visibility Scanner - AEObility"
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1200px"
+                  className="object-cover object-center opacity-65 md:opacity-80 transition-opacity duration-700"
+                  priority
+                />
+                {/* Gradient Masks to Guarantee Readability across all Screen Sizes */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-[#0A0F1C]/80 to-[#0A0F1C]/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-transparent to-[#0A0F1C]/70" />
+              </div>
 
-              {/* Grid: Eyebrow + Header + Lead + Brand Image */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* Left Header Column */}
-                <div className="lg:col-span-7 space-y-4">
+              {/* Specular Edge Glow Top Line */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00E5FF]/80 to-transparent pointer-events-none z-20" />
+
+              {/* Overlaid Form & Content Layer */}
+              <div className="relative z-10 p-6 sm:p-8 md:p-10 space-y-6">
+                {/* Header & Title Stack */}
+                <div className="space-y-4 max-w-2xl">
                   {/* Single Context Eyebrow Pill */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/90 border border-cyan-500/50 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
                     <Sparkles className="w-3.5 h-3.5 text-aeo-cyan animate-pulse" />
                     <span>Instant On-Screen Evaluation</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-soehne-breit leading-tight drop-shadow-md">
                     Free 45-Second AI Visibility Diagnostic
                   </h2>
 
-                  <p className="text-sm sm:text-base text-zinc-200 font-medium leading-relaxed">
+                  <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed drop-shadow">
                     Find out if artificial intelligence search engines understand what your business actually does. Enter your website address and the core service or topic you want AI systems to know you for.
                   </p>
                 </div>
 
-                {/* Right Brand Graphic Column */}
-                <div className="lg:col-span-5 flex justify-center lg:justify-end">
-                  <div className="relative rounded-xl overflow-hidden border border-cyan-500/30 shadow-[0_0_25px_rgba(0,229,255,0.2)] bg-slate-950 group">
-                    <Image
-                      src="/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp"
-                      alt="AI Engine Optimization Visibility Scanner - AEObility"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 via-transparent to-transparent pointer-events-none" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Methodology & Diagnostic Scope */}
-              <div className="space-y-4 border-t border-slate-800/80 pt-5">
-                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                  AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
-                </p>
-
-                {/* 3 Diagnostic Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-                    <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span>Entity and Schema Health</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 leading-snug">
-                      Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
-                    </p>
-                  </div>
-
-                  <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-                    <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                      <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span>Retrieval Survival</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 leading-snug">
-                      Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
-                    </p>
-                  </div>
-
-                  <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-                    <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
-                      <Target className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span>AI Citation Share</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 leading-snug">
-                      Identifies whether generative models cite your brand or default to a competitor for your priority topics.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Form & Input Fields */}
-              <form onSubmit={handleHeroSubmit} className="border-t border-slate-800/80 pt-5 space-y-5">
-                {/* Inputs Stacked Vertically - Each Aligned Left on a New Line */}
-                <div className="space-y-4 max-w-xl">
-                  {/* Line 1: Website Domain URL */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
-                      Website Domain URL
-                    </label>
-                    <div className="relative">
-                      <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                      <input
-                        id="hero-scan-url"
-                        type="text"
-                        required
-                        placeholder="e.g. example.com.au"
-                        value={heroUrl}
-                        onChange={(e) => setHeroUrl(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-600 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Line 2: Core Service or Topic (Moved to New Line, Aligned Left) */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="hero-scan-query" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
-                      Core Service or Topic
-                    </label>
-                    <div className="relative">
-                      <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                      <input
-                        id="hero-scan-query"
-                        type="text"
-                        placeholder="e.g. Answer Engine Optimisation"
-                        value={heroQuery}
-                        onChange={(e) => setHeroQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-600 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Row: Cyan Blue Sub-Text on Left, CTA on Bottom Right */}
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1">
-                  <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed">
-                    Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
+                {/* Methodology & Diagnostic Scope Cards */}
+                <div className="space-y-4 border-t border-slate-700/60 pt-5">
+                  <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed drop-shadow">
+                    AEObility uses natural language processing (NLP) and Natural Language Web (NLWeb) analysis to evaluate your pages against real conversational search queries. In 45 seconds, you receive a direct on-screen diagnostic covering:
                   </p>
 
-                  <div className="sm:self-end shrink-0">
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
-                    >
-                      <span>Run Free 45-Second AI Scan →</span>
-                    </button>
+                  {/* 3 Glassmorphic Coverage Cards Overlayed */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
+                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                        <span>Entity and Schema Health</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-snug">
+                        Checks whether machine crawlers can resolve your core business facts, accreditations, and service locations.
+                      </p>
+                    </div>
+
+                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
+                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
+                        <Zap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                        <span>Retrieval Survival</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-snug">
+                        Evaluates how cleanly your key answers survive extraction by Retrieval-Augmented Generation (RAG) pipelines.
+                      </p>
+                    </div>
+
+                    <div className="p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 space-y-1.5 shadow-lg">
+                      <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
+                        <Target className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                        <span>AI Citation Share</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-snug">
+                        Identifies whether generative models cite your brand or default to a competitor for your priority topics.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </form>
+
+                {/* Overlaid Form Controls */}
+                <form onSubmit={handleHeroSubmit} className="border-t border-slate-700/60 pt-5 space-y-5">
+                  {/* Left-Aligned Input Stack */}
+                  <div className="space-y-4 max-w-xl">
+                    {/* Line 1: Website Domain URL */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="hero-scan-url" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
+                        Website Domain URL
+                      </label>
+                      <div className="relative">
+                        <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                        <input
+                          id="hero-scan-url"
+                          type="text"
+                          required
+                          placeholder="e.g. example.com.au"
+                          value={heroUrl}
+                          onChange={(e) => setHeroUrl(e.target.value)}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Line 2: Core Service or Topic (On New Line, Aligned Left) */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="hero-scan-query" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-200 drop-shadow">
+                        Core Service or Topic
+                      </label>
+                      <div className="relative">
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                        <input
+                          id="hero-scan-query"
+                          type="text"
+                          placeholder="e.g. Answer Engine Optimisation"
+                          value={heroQuery}
+                          onChange={(e) => setHeroQuery(e.target.value)}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-500 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder:text-slate-400 placeholder:opacity-100 transition-all shadow-inner"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Bar: Cyan Blue Sub-Text & Bottom Right CTA */}
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-1">
+                    <p className="text-xs text-cyan-300 font-mono max-w-md leading-relaxed drop-shadow p-2.5 rounded-lg bg-slate-950/70 border border-slate-800/80 backdrop-blur-sm">
+                      Once your diagnostic generates on screen, open the chat with <span className="text-[#00E5FF] font-bold underline decoration-cyan-500/50">AI Bill</span> to review the specific gaps and discuss practical fixes for your site.
+                    </p>
+
+                    <div className="md:self-end shrink-0">
+                      <button
+                        type="submit"
+                        className="w-full md:w-auto px-7 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <span>Run Free 45-Second AI Scan →</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
 
             {/* 3. Atomic Answer Block (High-Density Vector Retrieval Target) */}
