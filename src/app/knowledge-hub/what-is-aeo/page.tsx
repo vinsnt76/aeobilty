@@ -214,7 +214,7 @@ export default function WhatIsAeoPage() {
           <section className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
               <BookOpen className="w-4 h-4 text-aeo-cyan" />
-              <span>CONCEPT DEFINITION // AEO</span>
+              <span>WHAT IS AEO</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
@@ -258,10 +258,10 @@ export default function WhatIsAeoPage() {
             <div className="bg-gradient-to-r from-cyan-950/40 via-zinc-950 to-purple-950/40 border border-cyan-500/30 rounded-2xl p-6 text-left space-y-3 shadow-2xl">
               <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
                 <Target className="w-4 h-4 text-cyan-400" />
-                <span>Atomic Definition Block</span>
+                <span>WHY ANSWER ENGINE OPTIMISATION IS IMPORTANT FOR YOUR BUSINESS</span>
               </div>
               <h2 className="text-xl font-bold text-white font-soehne-breit">
-                Answer Engine Optimisation (AEO) Defined
+                Answer Engine Optimisation (AEO)
               </h2>
               <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
                 <strong>Answer Engine Optimisation (AEO)</strong> is a technical search discipline that structures brand identity, web content, and first-party facts into machine-readable JSON-LD entity graphs and atomic passage blocks. Built for Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), and generative search platforms like Google AI Overviews, Perplexity, and ChatGPT, AEO ensures retrieval engines can resolve entity relationships, verify authoritative proof triples, and cite the brand directly within synthesised answers.
