@@ -20,7 +20,8 @@ import {
   Target,
   Building2,
   FileCheck,
-  Search
+  Search,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function WhatIsAeoPage() {
@@ -221,26 +222,27 @@ export default function WhatIsAeoPage() {
               What is <span className="text-gradient-aeo">Answer Engine Optimisation?</span>
             </h1>
 
-            {/* Lean Author & Provenance Bar (Left-Aligned) */}
+            {/* Lean Author & Provenance Bar (Single Line Left-Aligned) */}
             <div className="flex items-center justify-start gap-3 py-1 max-w-3xl mx-auto text-left">
               <Image
                 src="/images/about/vince-baker-profile_AEObility.webp"
                 alt="Vince Baker - Technical Search Architect"
-                width={36}
-                height={36}
-                className="w-9 h-9 rounded-full border border-cyan-400/50 object-cover shadow-sm"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-full border border-cyan-400/50 object-cover shadow-sm shrink-0"
               />
-              <div className="text-left text-xs font-mono">
-                <div className="text-zinc-200">
+              <div className="text-xs font-mono text-zinc-300 flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span>
                   By{' '}
                   <Link href="/vince-baker" className="text-cyan-400 font-bold hover:underline">
                     Vince Baker
                   </Link>{' '}
                   <span className="text-zinc-500">|</span> Technical Search Architect
-                </div>
-                <div className="text-zinc-400 text-[11px]">
+                </span>
+                <span className="text-zinc-500 hidden sm:inline">|</span>
+                <span className="text-zinc-400 text-[11px]">
                   Reviewed &amp; Updated: 1 October 2026 <span className="text-zinc-500">|</span> Fact-Checked &amp; Entity Grounded
-                </div>
+                </span>
               </div>
             </div>
 
