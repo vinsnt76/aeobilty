@@ -244,10 +244,16 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            {/* Merged Single Punchy Introductory Block */}
-            <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit leading-relaxed">
-              Answer Engine Optimisation (AEO) is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand. While traditional SEO focuses on earning links and keyword positions for 10 blue links, AEO formats your data into verified entity graphs and direct answer passages that AI models cite with confidence.
-            </p>
+            {/* Left-Aligned 2-Paragraph Introductory Unit */}
+            <div className="max-w-3xl mx-auto space-y-3 text-left">
+              <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed">
+                <strong>Answer Engine Optimisation (AEO)</strong> is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand.
+              </p>
+
+              <p className="text-sm sm:text-base text-slate-300 font-serif leading-relaxed">
+                While traditional SEO focuses on earning links and keyword positions for 10 blue links, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
+              </p>
+            </div>
 
             {/* Low-Friction Primary Hero CTA Container (Overlaid directly on top of the Brand Scanner Image) */}
             <div className="mt-8 rounded-2xl border border-[#00E5FF]/40 shadow-[0_0_40px_rgba(0,229,255,0.2)] text-left max-w-5xl mx-auto isolate relative overflow-hidden bg-slate-950">
