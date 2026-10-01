@@ -255,6 +255,55 @@ export default function WhatIsAeoPage() {
               </p>
             </div>
 
+            {/* Commercial Impact & 3 Key Benefits (Positioned Above the Scan Module) */}
+            <div className="max-w-5xl mx-auto space-y-4 text-left border-t border-white/10 pt-8 mt-6">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/40 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+                  <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Commercial Impact</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
+                  Why AEO Matters for Your Business
+                </h2>
+                <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
+                  People no longer just click links on Google. They ask AI assistants like ChatGPT, Perplexity, and Google AI Overviews for direct recommendations. If your web copy is vague, AI engines simply recommend your competitor instead.
+                </p>
+              </div>
+
+              {/* 3 Pointed Benefit Badges (Zero Elaboration) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+                {/* Benefit 1 */}
+                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700/80 flex items-center gap-3 shadow-md">
+                  <span className="p-1.5 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 shrink-0">
+                    <ShieldCheck className="w-4 h-4" />
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-slate-200 leading-snug">
+                    Protecting Brand Visibility Against Zero-Click Searches
+                  </span>
+                </div>
+
+                {/* Benefit 2 */}
+                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700/80 flex items-center gap-3 shadow-md">
+                  <span className="p-1.5 rounded-lg bg-purple-950 text-purple-400 border border-purple-800/60 shrink-0">
+                    <Target className="w-4 h-4" />
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-slate-200 leading-snug">
+                    Capture Higher-Intent Buyers via Natural Language
+                  </span>
+                </div>
+
+                {/* Benefit 3 */}
+                <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-700/80 flex items-center gap-3 shadow-md">
+                  <span className="p-1.5 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800/60 shrink-0">
+                    <Zap className="w-4 h-4" />
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-slate-200 leading-snug">
+                    Capitalise on Query Fan-Out
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {/* Low-Friction Primary Hero CTA Container (Overlaid directly on top of the Brand Scanner Image) */}
             <div className="mt-8 rounded-2xl border border-[#00E5FF]/40 shadow-[0_0_40px_rgba(0,229,255,0.2)] text-left max-w-5xl mx-auto isolate relative overflow-hidden bg-slate-950">
               {/* Background Image Layer */}
@@ -410,23 +459,15 @@ export default function WhatIsAeoPage() {
             </div>
           </section>
 
-          {/* SECTION 2: THE BUSINESS RISK & REAL-WORLD IMPACT (Mid-Article Side-by-Side Infographic) */}
+          {/* SECTION 2: SIDE-BY-SIDE RETRIEVAL INFOGRAPHIC */}
           <section className="space-y-8 border-t border-white/10 pt-12">
-            <div className="space-y-3 text-center max-w-3xl mx-auto">
-              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Commercial Impact</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">Why AEO Matters for Your Business</h2>
-              <p className="text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
-                People no longer just click links on Google. They ask AI assistants like ChatGPT, Perplexity, and Google AI Overviews for direct recommendations. If your web copy is vague, AI engines simply recommend your competitor instead.
-              </p>
-            </div>
-
             {/* Mid-Article Infographic: Traditional 10 Blue Links vs Synthesised Gemini/ChatGPT Answer */}
             <div className="space-y-4 max-w-4xl mx-auto">
-              <div className="text-center space-y-1">
-                <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Side-by-Side Retrieval Architecture</span>
-                <h3 className="text-xl font-bold text-white font-soehne-breit">
+              <div className="text-center space-y-2">
+                <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider block">Side-by-Side Retrieval Architecture</span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
                   Traditional Search Results vs. Synthesised AI Answer Engines
-                </h3>
+                </h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
