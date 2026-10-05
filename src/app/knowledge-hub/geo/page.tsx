@@ -552,7 +552,103 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 5: LOCAL GEO IMPLEMENTATION CHECKLIST */}
+          {/* SECTION 5: VISUAL HIERARCHY & INFORMATION ARCHITECTURE */}
+          <div id="sec-visual-hierarchy" className="space-y-6 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-purple/10 border border-aeo-purple/30 text-xs text-aeo-purple font-semibold">
+                <Compass className="w-3.5 h-3.5" />
+                <span>UX &amp; Spatial Psychology</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Visual Hierarchy &amp; Information Architecture
+              </h2>
+              <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed max-w-3xl">
+                Demonstrated mastery in organising digital interface elements by relative importance to direct natural scanning patterns, eliminate cognitive friction, and accelerate conversion pathways.
+              </p>
+            </div>
+
+            {/* Core Competencies & Principles */}
+            <div className="space-y-4 pt-2">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Layers className="w-5 h-5 text-aeo-cyan" />
+                <span>Core Competencies &amp; Principles</span>
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="text-sm font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
+                    <span>Cognitive Load Reduction &amp; Scanning Design</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    Architect layouts around documented scanning behaviours (F-pattern, Spotted pattern, Layer-cake pattern). Apply Hick’s Law by enforcing strict attention budgets—limiting interfaces to one dominant primary CTA per decision point to prevent choice overload and decision paralysis.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="text-sm font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
+                    <span>Focal Point &amp; Contrast Engineering</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    Leverage the von Restorff (isolation) effect and scale manipulation to assign clear visual weight. Use high-contrast color treatments, rigorous typographical scales (e.g., dominant H1 value propositions vs. muted secondary body text), and distinct geometric forms to ensure high-value actions stand out instantly.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="text-sm font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
+                    <span>Spatial Psychology &amp; Trust Integration</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    Apply the Law of Proximity by placing critical reassurance copy (security badges, pricing transparency, guarantees) immediately adjacent to conversion triggers. Capitalise on the Aesthetic-Usability Effect to establish immediate credibility without sacrificing underlying task efficiency.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="text-sm font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
+                    <span>Predictable Navigation &amp; Accessibility</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    Establish cross-template visual consistency, persistent input labels, and standard interaction patterns compliant with WCAG 2.2 Level AA standards to minimise task abandonment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Practical Evaluation Methods */}
+            <div className="space-y-4 pt-4">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <CheckSquare className="w-5 h-5 text-aeo-cyan" />
+                <span>Practical Evaluation Methods</span>
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-5 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-2xl space-y-2">
+                  <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>The Squint/Blur Test</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                    Apply a visual gaussian blur to verify that primary CTAs, core value propositions, and trust anchors remain immediately identifiable without deciphering body copy.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-2xl space-y-2">
+                  <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>Attention Auditing</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                    Audit layouts to ensure secondary actions remain visually subordinate, tertiary pathways are demoted to inline text links, and extraneous visual noise is stripped from the primary conversion path.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* SECTION 6: LOCAL GEO IMPLEMENTATION CHECKLIST */}
           <div id="sec-checklist" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
