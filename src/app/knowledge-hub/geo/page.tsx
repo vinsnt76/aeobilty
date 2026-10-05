@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "GEO vs Local SEO: The Diagnostic Guide | AEObility",
+  title: "Does My Business Need GEO? A Guide to Local GEO vs Local SEO | AEObility",
   description: "Determine if your local business needs Generative Engine Optimisation (GEO). Evaluate AI Overviews, competitor LLM citations, and machine-readable entity signals.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/geo",
@@ -40,8 +40,12 @@ export const metadata = {
 export default function GEOKnowledgeNodePage() {
   const faqList = [
     {
-      question: "What is the exact difference between GEO and Local SEO?",
+      question: "What is the difference between Local SEO and GEO for local businesses?",
       answer: "Local SEO focuses on improving visibility within established Google Search and Map interfaces through relevance, prominence, reviews, and proximity signals. GEO shapes how AI models learn about, synthesise, and recommend your brand across conversational interfaces, AI Overviews, and multi-brand roundups."
+    },
+    {
+      question: "How does traditional geolocation SEO differ from Generative Engine Optimisation?",
+      answer: "Traditional geolocation SEO focuses on optimising physical rank signals (IP address, localised keywords, Google Maps pins) to rank on static 10-blue-link or map pack SERPs. GEO ensures AI systems accurately retrieve, parse, and cite your local service boundaries during multi-constraint conversational queries."
     },
     {
       question: "How do GEO and Local SEO work together to capture local market share?",
@@ -108,7 +112,7 @@ export default function GEOKnowledgeNodePage() {
       {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/geo",
-        "name": "GEO vs Local SEO: The Diagnostic Guide",
+        "name": "Does My Business Need GEO? A Guide to Local GEO vs Local SEO",
         "description": "Learn how local SEO improves visibility in Google Search and Maps, while GEO strengthens the entity, location, and service-boundary signals AI search systems need to identify and recommend a local business accurately.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
@@ -196,7 +200,7 @@ export default function GEOKnowledgeNodePage() {
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/geo#article",
-        "headline": "GEO vs Local SEO: The Diagnostic Guide",
+        "headline": "Does My Business Need GEO? A Guide to Local GEO vs Local SEO",
         "about": [
           "Generative Engine Optimisation",
           "Local SEO",
@@ -354,7 +358,7 @@ export default function GEOKnowledgeNodePage() {
           <div id="sec1" className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Field Notes on Local Discovery</span>
+              <span>Field Notes on AI Search &amp; Entity Discovery</span>
             </div>
 
             {/* Hero Banner Image */}
@@ -370,7 +374,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              GEO vs Local SEO: <span className="text-gradient-aeo">The Diagnostic Guide</span>
+              Does My Business Need GEO? <span className="text-gradient-aeo">A Guide to Local GEO vs Local SEO</span>
             </h1>
 
             {/* 1. Consolidated Quick Answer Block */}
@@ -381,6 +385,17 @@ export default function GEOKnowledgeNodePage() {
               </div>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
                 Generative Engine Optimisation (GEO) bridges local operational facts—like your address, trading hours, and service radius—with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
+              </p>
+            </div>
+
+            {/* Disambiguation Section: GEO SEO & Geolocation */}
+            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+              <h3 className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
+                <Layers className="w-4 h-4" />
+                <span>Clarifying &quot;GEO SEO&quot; and Geolocation in the AI Era</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                For years, &quot;geolocation SEO&quot; and &quot;geo-targeting&quot; meant adding suburb keywords to title tags and setting up radius targeting in ad platforms. In Generative Engine Optimisation (GEO), <strong>Local GEO</strong> is fundamentally different: it is the process of structuring your business entity—address, service areas, credentials, and real-world proof—so that generative AI models (ChatGPT, Gemini, Perplexity, and AI Overviews) can verify, cite, and recommend you in conversational local queries.
               </p>
             </div>
 
@@ -481,7 +496,49 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 3: DEFENSIBLE COMPARISON MATRIX TABLE */}
+          {/* SECTION 3: COMMON MISCONCEPTIONS */}
+          <div id="sec-misconceptions" className="space-y-6 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs text-amber-400 font-semibold">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                <span>Search Reality vs Assumptions</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Common Misconceptions About Local SEO and Geotargeting in AI Search
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white">
+                  Misconception 1: &quot;Building templated suburb landing pages covers local AI discovery.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> Search engines and LLMs view dozens of near-identical suburb pages as low-effort doorway pages. Generative models look for corroborated operational boundaries via <code className="text-aeo-cyan font-mono">areaServed</code> and real local proofs, not keyword-swapped thin text.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white">
+                  Misconception 2: &quot;If my Google Business Profile ranks in the 3-Pack, AI will automatically recommend me.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> Map Pack algorithms rely heavily on proximity and GBP categories. Conversational AI assistants perform query fan-out across multiple sources (review platforms, forums, directories, and your site) to evaluate trust and capability before synthesising a recommendation.
+                </p>
+              </div>
+
+              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+                <h3 className="text-base font-bold text-white">
+                  Misconception 3: &quot;Geo-targeting is purely a technical IP or schema task.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> While <code className="text-aeo-cyan font-mono">GeoCoordinates</code> and schema markup provide clean machine-readable data, AI engines prioritise consensus. If third-party directories or review citations contradict your on-page data, retrieval models discard the entity as ambiguous.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* SECTION 4: DEFENSIBLE COMPARISON MATRIX TABLE */}
           <div id="sec-diff" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
@@ -515,7 +572,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 4: PRACTICAL STRATEGIC DEEP DIVES */}
+          {/* SECTION 5: PRACTICAL STRATEGIC DEEP DIVES */}
           <div id="sec-deepdives" className="space-y-8 border-t border-white/5 pt-10">
             
             {/* Discovery Section */}
@@ -552,7 +609,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 5: VISUAL HIERARCHY & INFORMATION ARCHITECTURE */}
+          {/* SECTION 6: VISUAL HIERARCHY & INFORMATION ARCHITECTURE */}
           <div id="sec-visual-hierarchy" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-purple/10 border border-aeo-purple/30 text-xs text-aeo-purple font-semibold">
@@ -648,7 +705,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 6: LOCAL GEO IMPLEMENTATION CHECKLIST */}
+          {/* SECTION 7: LOCAL GEO IMPLEMENTATION CHECKLIST */}
           <div id="sec-checklist" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
@@ -688,24 +745,24 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 7: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
+          {/* SECTION 8: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
           <div id="sec-audit-panel" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Get a Local Entity Audit
+              Practical Small Business GEO Services &amp; Entity Auditing
             </h2>
             <div className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl">
               <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                 Turn Local Business Facts Into a Verifiable Entity System
               </h3>
               <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light leading-relaxed">
-                If your address, operating hours, service boundaries, or directory listings conflict, start with a Local GEO Audit. AEObility can identify factual inconsistencies, review local business schema, and prioritise the location signals most likely to create discovery friction.
+                If your local service business is losing ground to zero-click AI summaries or missing from conversational category roundups, start with an inspection of your entity clarity. Discover how AEObility&apos;s local GEO services diagnose entity drift, schema gaps, and citation inconsistencies.
               </p>
               <div className="pt-2 flex flex-wrap justify-center gap-3 sm:gap-4">
                 <Link
                   href="/diagnostic"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-bold text-xs sm:text-sm rounded-xl hover:bg-neutral-100 transition-all duration-300 shadow-lg"
                 >
-                  <span>Check Local Entity Clarity</span>
+                  <span>Run AI Visibility Scan</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
@@ -719,7 +776,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 8: LOCALBUSINESS SCHEMA EXAMPLE */}
+          {/* SECTION 9: LOCALBUSINESS SCHEMA EXAMPLE */}
           <div id="sec-schema-blueprint" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               LocalBusiness Schema Example
@@ -755,7 +812,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 9: FREQUENTLY ASKED QUESTIONS */}
+          {/* SECTION 10: FREQUENTLY ASKED QUESTIONS */}
           <div id="sec-faqs" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
