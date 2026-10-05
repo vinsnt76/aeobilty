@@ -355,30 +355,19 @@ export default function GEOKnowledgeNodePage() {
       <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         <section className="flex flex-col gap-12">
           
-          {/* HERO BLOCK */}
+          {/* HERO BLOCK (Primacy Zone) */}
           <div id="sec1" className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <MapPin className="w-3.5 h-3.5" />
               <span>Field Notes on AI Search &amp; Entity Discovery</span>
             </div>
 
-            {/* Hero Banner Image */}
-            <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
-              <Image
-                src="/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
-                alt="GEO vs Local SEO framework diagram showing physical location signals and AI entity verification by AEObility in Perth, Western Australia."
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 800px"
-                priority
-              />
-            </div>
-
+            {/* 1. Primary H1 Headline */}
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
               Does My Business Need GEO? <span className="text-gradient-aeo">A Guide to Local GEO vs Local SEO</span>
             </h1>
 
-            {/* 1. Consolidated Quick Answer Block */}
+            {/* 2. Consolidated Quick Answer Block */}
             <div className="relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 border-l-4 border-l-aeo-cyan rounded-2xl space-y-3 shadow-2xl">
               {/* Top Specular Light Catch */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/50 to-transparent pointer-events-none" />
@@ -390,6 +379,18 @@ export default function GEOKnowledgeNodePage() {
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
                 Generative Engine Optimisation (GEO) bridges local operational facts—like your address, trading hours, and service radius—with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
               </p>
+            </div>
+
+            {/* 3. Hero Banner Image Graphic */}
+            <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
+              <Image
+                src="/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
+                alt="GEO vs Local SEO framework diagram showing physical location signals and AI entity verification by AEObility in Perth, Western Australia."
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 800px"
+                priority
+              />
             </div>
 
             {/* Disambiguation Section: GEO SEO & Geolocation */}
@@ -445,7 +446,52 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 2: DIAGNOSTIC FRAMEWORK: 6 SIGNS YOUR BUSINESS NEEDS GEO */}
+          {/* SECTION 2: ELEVATED MISCONCEPTIONS SECTION (High-Intent Query Target in Primacy Zone) */}
+          <div id="sec-misconceptions" className="space-y-6 border-t border-white/5 pt-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs text-amber-400 font-semibold">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                <span>Search Reality vs Assumptions</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Common Misconceptions About Local SEO and Geotargeting in AI Search
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
+                <h3 className="text-base font-bold text-white">
+                  Misconception 1: &quot;Building templated suburb landing pages covers local AI discovery.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> Search engines and LLMs view dozens of near-identical suburb pages as low-effort doorway pages. Generative models look for corroborated operational boundaries via <code className="text-aeo-cyan font-mono">areaServed</code> and real local proofs, not keyword-swapped thin text.
+                </p>
+              </div>
+
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
+                <h3 className="text-base font-bold text-white">
+                  Misconception 2: &quot;If my Google Business Profile ranks in the 3-Pack, AI will automatically recommend me.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> Map Pack algorithms rely heavily on proximity and GBP categories. Conversational AI assistants perform query fan-out across multiple sources (review platforms, forums, directories, and your site) to evaluate trust and capability before synthesising a recommendation.
+                </p>
+              </div>
+
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
+                <h3 className="text-base font-bold text-white">
+                  Misconception 3: &quot;Geo-targeting is purely a technical IP or schema task.&quot;
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  <strong className="text-amber-400">Reality:</strong> While <code className="text-aeo-cyan font-mono">GeoCoordinates</code> and schema markup provide clean machine-readable data, AI engines prioritise consensus. If third-party directories or review citations contradict your on-page data, retrieval models discard the entity as ambiguous.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* SECTION 3: DIAGNOSTIC FRAMEWORK: 6 SIGNS YOUR BUSINESS NEEDS GEO */}
           <div id="sec-diagnostic" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-semibold">
@@ -511,51 +557,6 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 3: COMMON MISCONCEPTIONS */}
-          <div id="sec-misconceptions" className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs text-amber-400 font-semibold">
-                <AlertTriangle className="w-3.5 h-3.5" />
-                <span>Search Reality vs Assumptions</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Common Misconceptions About Local SEO and Geotargeting in AI Search
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
-                <h3 className="text-base font-bold text-white">
-                  Misconception 1: &quot;Building templated suburb landing pages covers local AI discovery.&quot;
-                </h3>
-                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                  <strong className="text-amber-400">Reality:</strong> Search engines and LLMs view dozens of near-identical suburb pages as low-effort doorway pages. Generative models look for corroborated operational boundaries via <code className="text-aeo-cyan font-mono">areaServed</code> and real local proofs, not keyword-swapped thin text.
-                </p>
-              </div>
-
-              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
-                <h3 className="text-base font-bold text-white">
-                  Misconception 2: &quot;If my Google Business Profile ranks in the 3-Pack, AI will automatically recommend me.&quot;
-                </h3>
-                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                  <strong className="text-amber-400">Reality:</strong> Map Pack algorithms rely heavily on proximity and GBP categories. Conversational AI assistants perform query fan-out across multiple sources (review platforms, forums, directories, and your site) to evaluate trust and capability before synthesising a recommendation.
-                </p>
-              </div>
-
-              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
-                <h3 className="text-base font-bold text-white">
-                  Misconception 3: &quot;Geo-targeting is purely a technical IP or schema task.&quot;
-                </h3>
-                <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                  <strong className="text-amber-400">Reality:</strong> While <code className="text-aeo-cyan font-mono">GeoCoordinates</code> and schema markup provide clean machine-readable data, AI engines prioritise consensus. If third-party directories or review citations contradict your on-page data, retrieval models discard the entity as ambiguous.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* SECTION 4: DEFENSIBLE COMPARISON MATRIX TABLE */}
           <div id="sec-diff" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
@@ -590,186 +591,90 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 5: PRACTICAL STRATEGIC DEEP DIVES */}
-          <div id="sec-deepdives" className="space-y-8 border-t border-white/5 pt-10">
-            
-            {/* Discovery Section */}
-            <div className="space-y-3">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Layers className="w-5 h-5 text-aeo-cyan" />
-                <span>How Local Search and AI Discovery Use Business Facts</span>
-              </h2>
-              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                Local search systems may weigh location, category relevance, prominence, reviews, and proximity. AI-assisted search experiences may also reconcile facts from a business website, structured data, maps profiles, directories, reviews, and other authoritative sources before presenting a recommendation or answer.
-              </div>
-            </div>
-
-            {/* Entity Signal Section */}
-            <div className="space-y-3">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
-                <span>The Local Entity Signals That Matter</span>
-              </h2>
-              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                Treat your website as the canonical source of local business facts: publish the same verifiable name, address, phone number, hours, services, and service areas in visible content, then express compatible facts in relevant structured data. Use schema to clarify content—not to introduce claims users cannot verify on the page.
-              </div>
-            </div>
-
-            {/* Failure Section */}
-            <div className="space-y-3">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-amber-400" />
-                <span>Common Local Discovery Failures</span>
-              </h2>
-              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-amber-500/30 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                Long-form content can obscure critical local facts when users—or systems—need a direct answer. Place important details such as operating hours, emergency availability, service boundaries, eligibility, and address information in concise, visible question-and-answer or fact blocks, supported by explanatory copy where needed.
-              </div>
-            </div>
-          </div>
-
-          {/* SECTION 6: VISUAL HIERARCHY & INFORMATION ARCHITECTURE */}
-          <div id="sec-visual-hierarchy" className="space-y-6 border-t border-white/5 pt-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-purple/10 border border-aeo-purple/30 text-xs text-aeo-purple font-semibold">
-                <Compass className="w-3.5 h-3.5" />
-                <span>UX &amp; Spatial Psychology</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Visual Hierarchy &amp; Information Architecture
-              </h2>
-              <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed max-w-3xl">
-                Demonstrated mastery in organising digital interface elements by relative importance to direct natural scanning patterns, eliminate cognitive friction, and accelerate conversion pathways.
-              </p>
-            </div>
-
-            {/* Core Competencies & Principles */}
-            <div className="space-y-4 pt-2">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <Layers className="w-5 h-5 text-aeo-cyan" />
-                <span>Core Competencies &amp; Principles</span>
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
-                    <span>Cognitive Load Reduction &amp; Scanning Design</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                    Architect layouts around documented scanning behaviours (F-pattern, Spotted pattern, Layer-cake pattern). Apply Hick’s Law by enforcing strict attention budgets—limiting interfaces to one dominant primary CTA per decision point to prevent choice overload and decision paralysis.
-                  </p>
-                </div>
-
-                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
-                    <span>Focal Point &amp; Contrast Engineering</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                    Leverage the von Restorff (isolation) effect and scale manipulation to assign clear visual weight. Use high-contrast color treatments, rigorous typographical scales (e.g., dominant H1 value propositions vs. muted secondary body text), and distinct geometric forms to ensure high-value actions stand out instantly.
-                  </p>
-                </div>
-
-                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
-                    <span>Spatial Psychology &amp; Trust Integration</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                    Apply the Law of Proximity by placing critical reassurance copy (security badges, pricing transparency, guarantees) immediately adjacent to conversion triggers. Capitalise on the Aesthetic-Usability Effect to establish immediate credibility without sacrificing underlying task efficiency.
-                  </p>
-                </div>
-
-                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
-                    <span>Predictable Navigation &amp; Accessibility</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
-                    Establish cross-template visual consistency, persistent input labels, and standard interaction patterns compliant with WCAG 2.2 Level AA standards to minimise task abandonment.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Practical Evaluation Methods */}
-            <div className="space-y-4 pt-4">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <CheckSquare className="w-5 h-5 text-aeo-cyan" />
-                <span>Practical Evaluation Methods</span>
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/[0.04] backdrop-blur-xl border border-aeo-cyan/30 rounded-2xl space-y-2">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/60 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>The Squint/Blur Test</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                    Apply a visual gaussian blur to verify that primary CTAs, core value propositions, and trust anchors remain immediately identifiable without deciphering body copy.
-                  </p>
-                </div>
-
-                <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/[0.04] backdrop-blur-xl border border-aeo-cyan/30 rounded-2xl space-y-2">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/60 to-transparent pointer-events-none" />
-                  <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Attention Auditing</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                    Audit layouts to ensure secondary actions remain visually subordinate, tertiary pathways are demoted to inline text links, and extraneous visual noise is stripped from the primary conversion path.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* SECTION 7: LOCAL GEO IMPLEMENTATION CHECKLIST */}
+          {/* SECTION 5: CONSOLIDATED LOCAL GEO IMPLEMENTATION CHECKLIST */}
           <div id="sec-checklist" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-semibold">
+                <CheckSquare className="w-3.5 h-3.5" />
+                <span>Actionable Deployment Guide</span>
+              </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
-                <CheckSquare className="w-6 h-6 text-aeo-cyan" />
-                <span>Local GEO Implementation Checklist</span>
+                <span>Local GEO Implementation &amp; Verification Checklist</span>
               </h2>
-              <p className="text-xs sm:text-sm text-white/70 font-light">
-                Follow this practical checklist when auditing or deploying local landing pages and entity schema.
+              <p className="text-xs sm:text-sm text-white/70 font-light max-w-3xl leading-relaxed">
+                Follow this consolidated checklist to eliminate local discovery friction, align on-page entity signals with off-page sources, and deploy verified machine-readable schema.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-3">
-              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Standardise consistent business name, address, and phone number (NAP) data across your website, Google Business Profile, and third-party directories.</span>
+            <div className="grid grid-cols-1 gap-4">
+              {/* Item 1: NAP Consistency */}
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-bold text-white">1. Canonical Business Identity &amp; NAP Reconciliation</h3>
+                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                      Standardise visible business name, physical address, local phone number, and operating hours across your canonical site, Google Business Profile, Apple Maps, Bing Places, and third-party directories to establish machine consensus.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Add structured <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD microdata with precise <code className="text-aeo-cyan font-mono">GeoCoordinates</code> matching your physical address.</span>
+              {/* Item 2: LocalBusiness & GeoCoordinates Schema */}
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-bold text-white">2. Machine-Readable Schema &amp; GeoCoordinates</h3>
+                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                      Deploy structured <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD microdata containing exact <code className="text-aeo-cyan font-mono">GeoCoordinates</code> matching your physical building location to resolve spatial ambiguity during AI query parsing.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Deploy <code className="text-aeo-cyan font-mono">areaServed</code> schema arrays declaring explicit suburb and regional service coverage boundaries.</span>
+              {/* Item 3: Operational Service Radius (areaServed) */}
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-bold text-white">3. Operational Service Radius &amp; areaServed Boundaries</h3>
+                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                      Declare explicit suburb and regional service coverage boundaries using <code className="text-aeo-cyan font-mono">areaServed</code> schema arrays paired with visible service radius copy rather than creating thin, duplicate suburb pages.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Ensure location landing pages contain unique, useful local evidence, genuine customer proofs, and distinct regional details.</span>
+              {/* Item 4: Visible Fact Blocks & Q&A Structure */}
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-bold text-white">4. High-Density Q&amp;A Blocks &amp; Emergency Facts</h3>
+                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                      Prevent long-form prose from obscuring key facts. Place trading hours, after-hours emergency availability, pricing structures, and eligibility criteria in concise, visible Q&amp;A blocks paired with <code className="text-aeo-cyan font-mono">FAQPage</code> schema.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-white/90 font-light">Embed visible Q&amp;A blocks detailing operating hours, emergency access, and service radius paired with <code className="text-aeo-cyan font-mono">FAQPage</code> JSON-LD markup.</span>
+              {/* Item 5: Authentic Regional Proof & E-E-A-T Evidence */}
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-aeo-cyan flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-bold text-white">5. Authentic Regional Proof &amp; Verified Case Evidence</h3>
+                    <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
+                      Anchor location landing pages with authentic local proof: customer case studies, local project photos, verified reviews, and regional E-E-A-T credentials that survive background retrieval sweeps during AI query fan-out.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* SECTION 8: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
+          {/* SECTION 6: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
           <div id="sec-audit-panel" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Practical Small Business GEO Services &amp; Entity Auditing
@@ -801,7 +706,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 9: LOCALBUSINESS SCHEMA EXAMPLE */}
+          {/* SECTION 7: LOCALBUSINESS SCHEMA EXAMPLE */}
           <div id="sec-schema-blueprint" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               LocalBusiness Schema Example
@@ -837,7 +742,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 10: FREQUENTLY ASKED QUESTIONS */}
+          {/* SECTION 8: FREQUENTLY ASKED QUESTIONS */}
           <div id="sec-faqs" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
