@@ -151,11 +151,27 @@ export default function GEOKnowledgeNodePage() {
       },
 
       {
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/#vince-baker",
+        "name": "Vince Baker",
+        "jobTitle": "Founder & Principal AEO Architect",
+        "worksFor": {
+          "@id": "https://aeobility.com.au/#organisation"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/vincebaker"
+        ]
+      },
+
+      {
         "@type": "Organization",
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "description": "Optimising Australian small businesses for the future of search across maps, SERPs, and generative AI corridors.",
+        "founder": {
+          "@id": "https://aeobility.com.au/#vince-baker"
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Perth",
@@ -209,7 +225,11 @@ export default function GEOKnowledgeNodePage() {
           "Spatial Intent Parsing",
           "Service Boundaries"
         ],
-        "author": {
+        "author": [
+          { "@id": "https://aeobility.com.au/#vince-baker" },
+          { "@id": "https://aeobility.com.au/#organisation" }
+        ],
+        "publisher": {
           "@id": "https://aeobility.com.au/#organisation"
         },
         "image": {
@@ -355,11 +375,17 @@ export default function GEOKnowledgeNodePage() {
       <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         <section className="flex flex-col gap-12">
           
-          {/* HERO BLOCK (Primacy Zone) */}
+          {/* HERO BLOCK (Primacy Zone & E-E-A-T Attribution) */}
           <div id="sec1" className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Field Notes on AI Search &amp; Entity Discovery</span>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 font-light">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Field Notes on AI Search &amp; Entity Discovery</span>
+              </div>
+              <span className="text-white/30 hidden sm:inline">•</span>
+              <span className="text-white/60">
+                Authored by <Link href="/brand-facts#vince-baker" className="text-aeo-cyan hover:underline font-medium">Vince Baker</Link>, Principal AEO Architect
+              </span>
             </div>
 
             {/* 1. Primary H1 Headline */}
@@ -417,14 +443,14 @@ export default function GEOKnowledgeNodePage() {
               </p>
             </div>
 
-            {/* Distinct Conceptual Sequence: GEO & AEO Integration Callout */}
+            {/* Distinct Conceptual Sequence: GEO & AEO Integration & Verifiable Empirical Case Evidence */}
             <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/10 backdrop-blur-lg border border-aeo-cyan/30 rounded-2xl space-y-2">
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider">
                 <Compass className="w-4 h-4 flex-shrink-0" />
-                <span>Conceptual Sequence: GEO &amp; AEO Integration</span>
+                <span>Conceptual Sequence &amp; Empirical Case Evidence</span>
               </div>
               <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
-                <strong>GEO verifies who and where a local business is.</strong> AEO helps shape the concise, evidence-backed content that answer engines can retrieve and present when responding to a user’s question. Explore our <Link href="/services/aeo/definition" className="text-aeo-cyan hover:underline font-semibold">AEO Definition &amp; Concepts Guide</Link> and <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link> for answer-focused content structure, question coverage, and retrieval-ready evidence.
+                <strong>GEO verifies who and where a local business is.</strong> AEO helps shape the concise, evidence-backed content that answer engines can retrieve and present when responding to a user’s question. Explore our <Link href="/services/aeo/definition" className="text-aeo-cyan hover:underline font-semibold">AEO Definition &amp; Concepts Guide</Link>, <Link href="/knowledge-hub/aeo" className="text-aeo-cyan hover:underline font-semibold">AEO Core Principles</Link>, and <Link href="/knowledge-hub/case-studies/baby-bento" className="text-aeo-cyan hover:underline font-semibold">Baby Bento Case Study</Link> for answer-focused content structure, question coverage, and empirical retrieval proof.
               </p>
             </div>
 
