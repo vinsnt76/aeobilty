@@ -217,6 +217,9 @@ export default function GEOKnowledgeNodePage() {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/geo#article",
         "headline": "Does My Business Need GEO? A Guide to Local GEO vs Local SEO",
+        "datePublished": "2026-10-01T00:00:00+08:00",
+        "dateModified": "2026-10-06T00:00:00+08:00",
+        "inLanguage": "en-AU",
         "about": [
           "Generative Engine Optimisation",
           "Local SEO",
@@ -385,6 +388,10 @@ export default function GEOKnowledgeNodePage() {
               <span className="text-white/30 hidden sm:inline">•</span>
               <span className="text-white/60">
                 Authored by <Link href="/brand-facts#vince-baker" className="text-aeo-cyan hover:underline font-medium">Vince Baker</Link>, Principal AEO Architect
+              </span>
+              <span className="text-white/30 hidden sm:inline">•</span>
+              <span className="text-white/60">
+                Updated: <time dateTime="2026-10-06" className="text-white/80 font-medium">6 October 2026</time>
               </span>
             </div>
 
