@@ -30,8 +30,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "GEO vs Local SEO: Self-Diagnostic Guide & Key Differences | AEObility",
-  description: "Determine if your business needs Generative Engine Optimisation (GEO). Compare Local SEO with GEO signals, entity reconciliation, and AI recommendation footprints.",
+  title: "GEO vs Local SEO: The Diagnostic Guide | AEObility",
+  description: "Determine if your local business needs Generative Engine Optimisation (GEO). Evaluate AI Overviews, competitor LLM citations, and machine-readable entity signals.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/geo",
   },
@@ -62,8 +62,8 @@ export default function GEOKnowledgeNodePage() {
       id: 1,
       icon: Users,
       title: "Competitors Are Cited in AI Recommendations, But Your Brand Is Missing",
-      mechanism: "Conversational tools (ChatGPT, Perplexity, Gemini) generate shortlists for your category or metro area (e.g., \"Top commercial lawyers in Perth\" or \"Best lightweight laptop bags\"), citing competitors while omitting your brand.",
-      action: "Run competitive citation overlap tests across LLMs to find AI visibility gaps."
+      mechanism: "Conversational tools generate shortlists for your category or metro area (for example, \"Top commercial lawyers in Perth\"), naming competitors while skipping your business entirely.",
+      action: "Prompt leading LLMs with your primary service category and location to identify AI visibility gaps."
     },
     {
       id: 2,
@@ -83,7 +83,7 @@ export default function GEOKnowledgeNodePage() {
       id: 4,
       icon: Search,
       title: "Buyers Search with Long, Constraint-Rich Prompts",
-      mechanism: "Users no longer query 2–3 keywords; they use complex multi-constraint prompts (e.g., \"Emergency plumber in Osborne Park open Sunday with upfront pricing\").",
+      mechanism: "Users no longer query 2–3 keywords; they use complex multi-constraint prompts (for example, \"Emergency plumber in Osborne Park open Sunday with upfront pricing\").",
       action: "Structure content into semantically rich chunks that survive background retrieval sweeps during AI query fan-out."
     },
     {
@@ -97,7 +97,7 @@ export default function GEOKnowledgeNodePage() {
       id: 6,
       icon: Network,
       title: "Discovery Relies Heavily on Aggregators and Entity Signals",
-      mechanism: "LLMs rely on third-party verification—review directories, industry listicles, Reddit discussions, and digital PR—to confirm entity validity.",
+      mechanism: "LLMs frequently cross-reference third-party sources (review directories, industry listicles, Reddit discussions, and digital PR) to verify entity details.",
       action: "Fortify off-page entity corroboration across Google Business Profile, directories, and authoritative knowledge graphs."
     }
   ];
@@ -108,7 +108,7 @@ export default function GEOKnowledgeNodePage() {
       {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/geo",
-        "name": "GEO vs Local SEO: Self-Diagnostic Guide & Key Differences",
+        "name": "GEO vs Local SEO: The Diagnostic Guide",
         "description": "Learn how local SEO improves visibility in Google Search and Maps, while GEO strengthens the entity, location, and service-boundary signals AI search systems need to identify and recommend a local business accurately.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
@@ -196,7 +196,7 @@ export default function GEOKnowledgeNodePage() {
       {
         "@type": "Article",
         "@id": "https://aeobility.com.au/knowledge-hub/geo#article",
-        "headline": "GEO vs Local SEO: Key Differences for AI and Map Discovery",
+        "headline": "GEO vs Local SEO: The Diagnostic Guide",
         "about": [
           "Generative Engine Optimisation",
           "Local SEO",
@@ -354,7 +354,7 @@ export default function GEOKnowledgeNodePage() {
           <div id="sec1" className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-semibold">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Entity Verification &amp; Local Discovery</span>
+              <span>Field Notes on Local Discovery</span>
             </div>
 
             {/* Hero Banner Image */}
@@ -370,17 +370,17 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              GEO vs Local SEO: <span className="text-gradient-aeo">Self-Diagnostic &amp; Key Differences</span>
+              GEO vs Local SEO: <span className="text-gradient-aeo">The Diagnostic Guide</span>
             </h1>
 
-            {/* 1. Consolidated Executive Summary Block */}
+            {/* 1. Consolidated Quick Answer Block */}
             <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl space-y-3 shadow-lg">
               <div className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-2">
                 <Cpu className="w-4 h-4" />
-                <span>Executive Summary</span>
+                <span>The Quick Answer</span>
               </div>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Generative Engine Optimisation (GEO) bridges local operational fact reconciliation (address, operating hours, location pins, and service area boundaries) with broader generative brand synthesis (LLM citations, AI Overviews, and multi-brand competitive roundups). While Local SEO optimises for traditional SERPs and Map Packs, GEO ensures AI models accurately learn about, represent, and recommend your business across conversational discovery corridors.
+                Generative Engine Optimisation (GEO) bridges local operational facts—like your address, trading hours, and service radius—with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
               </p>
             </div>
 
@@ -388,10 +388,10 @@ export default function GEOKnowledgeNodePage() {
             <div className="p-6 bg-white/[0.02] border border-aeo-cyan/30 rounded-2xl space-y-3 shadow-xl">
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider">
                 <FileText className="w-4 h-4 flex-shrink-0" />
-                <span>The Core Distinction: SEO vs GEO vs AEO</span>
+                <span>Where SEO Stops and GEO Starts</span>
               </div>
               <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed">
-                While traditional SEO ensures your website is findable in standard search engine indexes, Generative Engine Optimisation (GEO) shapes how AI models (ChatGPT, Google AI Overviews, Gemini, Perplexity) learn about, synthesise, and recommend your brand. Where Answer Engine Optimisation (AEO) captures direct, immediate Q&amp;A answers, GEO builds the defensive authority and citation footprint required to win broad, multi-turn AI recommendations.
+                Traditional SEO gets your website indexed for search queries. GEO shapes how conversational systems understand and recommend your whole business. Think of AEO as winning the direct answer to a single question, while GEO builds the wider authority needed to show up in broad, multi-brand shortlists.
               </p>
             </div>
 
@@ -423,10 +423,10 @@ export default function GEOKnowledgeNodePage() {
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-semibold">
                 <CheckSquare className="w-3.5 h-3.5" />
-                <span>Self-Diagnostic Matrix</span>
+                <span>Where Most Brands Get Caught Out</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
-                Self-Diagnostic: 6 Signs Your Business Needs GEO
+                6 Signs Your Business Needs GEO
               </h2>
               <p className="text-xs sm:text-sm text-white/70 font-light max-w-3xl leading-relaxed">
                 Use this 6-point self-diagnostic framework to evaluate your brand's vulnerability to zero-click AI SERPs, competitor LLM citations, and AI hallucination risk across generative engines.
@@ -446,8 +446,8 @@ export default function GEOKnowledgeNodePage() {
                         <div className="p-2.5 rounded-xl bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan group-hover:scale-105 transition-transform duration-300">
                           <IconComponent className="w-5 h-5" />
                         </div>
-                        <span className="text-xs font-mono font-bold text-white/40 group-hover:text-aeo-cyan transition-colors">
-                          SIGN 0{sign.id}
+                        <span className="text-xs font-mono font-bold text-white/40 group-hover:text-aeo-cyan transition-colors whitespace-nowrap">
+                          SIGNAL 0{sign.id}
                         </span>
                       </div>
                       <h3 className="text-lg font-bold text-white leading-snug group-hover:text-aeo-cyan transition-colors">
@@ -458,7 +458,7 @@ export default function GEOKnowledgeNodePage() {
                     <div className="space-y-3 pt-2 border-t border-white/5">
                       <div className="space-y-1">
                         <div className="text-[10px] font-mono font-bold uppercase text-white/40 tracking-wider">
-                          Mechanism
+                          What is happening under the hood
                         </div>
                         <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                           {sign.mechanism}
@@ -468,7 +468,7 @@ export default function GEOKnowledgeNodePage() {
                       <div className="p-3 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-xl space-y-1">
                         <div className="text-[10px] font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-1.5">
                           <ArrowRight className="w-3 h-3" />
-                          <span>Recommended Action</span>
+                          <span>How to test and fix this</span>
                         </div>
                         <p className="text-xs sm:text-sm text-aeo-cyan font-medium leading-relaxed">
                           {sign.action}
@@ -688,7 +688,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 6: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
+          {/* SECTION 7: GET A LOCAL ENTITY AUDIT (CLOSING CONVERSION PANEL) */}
           <div id="sec-audit-panel" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Get a Local Entity Audit
@@ -719,7 +719,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 7: LOCALBUSINESS SCHEMA EXAMPLE */}
+          {/* SECTION 8: LOCALBUSINESS SCHEMA EXAMPLE */}
           <div id="sec-schema-blueprint" className="space-y-6 border-t border-white/5 pt-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               LocalBusiness Schema Example
@@ -755,7 +755,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
           </div>
 
-          {/* SECTION 8: FREQUENTLY ASKED QUESTIONS */}
+          {/* SECTION 9: FREQUENTLY ASKED QUESTIONS */}
           <div id="sec-faqs" className="space-y-6 border-t border-white/5 pt-10">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
