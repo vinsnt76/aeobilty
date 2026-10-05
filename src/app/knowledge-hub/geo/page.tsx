@@ -335,16 +335,17 @@ export default function GEOKnowledgeNodePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
+    <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black relative overflow-x-hidden">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
+      {/* Multi-Layer Ambient Glow Mesh Orbs (Reveals Glass Translucency) */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-aeo-cyan/10 rounded-full filter blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-aeo-purple/10 rounded-full filter blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-2/3 left-1/3 w-[550px] h-[550px] bg-aeo-cyan/8 rounded-full filter blur-[150px] pointer-events-none -z-10" />
 
       <Navbar />
       <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
@@ -378,7 +379,10 @@ export default function GEOKnowledgeNodePage() {
             </h1>
 
             {/* 1. Consolidated Quick Answer Block */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl space-y-3 shadow-lg">
+            <div className="relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 border-l-4 border-l-aeo-cyan rounded-2xl space-y-3 shadow-2xl">
+              {/* Top Specular Light Catch */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/50 to-transparent pointer-events-none" />
+              
               <div className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-2">
                 <Cpu className="w-4 h-4" />
                 <span>The Quick Answer</span>
@@ -389,7 +393,8 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             {/* Disambiguation Section: GEO SEO & Geolocation */}
-            <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+            <div className="relative isolate overflow-hidden p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
               <h3 className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
                 <Layers className="w-4 h-4" />
                 <span>Clarifying &quot;GEO SEO&quot; and Geolocation in the AI Era</span>
@@ -400,7 +405,8 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             {/* Mandated Core Conceptual Distinction Callout */}
-            <div className="p-6 bg-white/[0.02] border border-aeo-cyan/30 rounded-2xl space-y-3 shadow-xl">
+            <div className="relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-aeo-cyan/30 rounded-2xl space-y-3 shadow-xl">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider">
                 <FileText className="w-4 h-4 flex-shrink-0" />
                 <span>Where SEO Stops and GEO Starts</span>
@@ -411,7 +417,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             {/* Distinct Conceptual Sequence: GEO & AEO Integration Callout */}
-            <div className="p-5 bg-aeo-cyan/10 border border-aeo-cyan/30 rounded-2xl space-y-2">
+            <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/10 backdrop-blur-lg border border-aeo-cyan/30 rounded-2xl space-y-2">
               <div className="flex items-center gap-2 text-aeo-cyan font-bold text-xs uppercase tracking-wider">
                 <Compass className="w-4 h-4 flex-shrink-0" />
                 <span>Conceptual Sequence: GEO &amp; AEO Integration</span>
@@ -421,8 +427,8 @@ export default function GEOKnowledgeNodePage() {
               </p>
             </div>
 
-            {/* Hero CTA */}
-            <div>
+            {/* Hero CTA & Spatial Psychology Proximity Reassurance */}
+            <div className="space-y-2.5 pt-1">
               <Link
                 href="/diagnostic"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm rounded-xl hover:opacity-95 transition-all duration-300 shadow-lg shadow-aeo-cyan/10"
@@ -430,6 +436,12 @@ export default function GEOKnowledgeNodePage() {
                 <span>Run AI Visibility Scan</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              
+              {/* Law of Proximity Reassurance Row */}
+              <div className="flex items-center gap-2 text-xs text-white/60 font-light">
+                <CheckCircle2 className="w-3.5 h-3.5 text-aeo-cyan flex-shrink-0" />
+                <span>Free 60-second diagnostic • No credit card required • Clear 90-day roadmap</span>
+              </div>
             </div>
           </div>
 
@@ -454,14 +466,17 @@ export default function GEOKnowledgeNodePage() {
                 return (
                   <div
                     key={sign.id}
-                    className="p-6 bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 rounded-2xl transition-all duration-300 flex flex-col justify-between space-y-5 shadow-xl hover:shadow-aeo-cyan/5 group"
+                    className="relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 hover:border-aeo-cyan/40 rounded-2xl transition-all duration-300 flex flex-col justify-between space-y-5 shadow-xl hover:shadow-aeo-cyan/5 group"
                   >
+                    {/* Top Specular Edge Highlight */}
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent pointer-events-none group-hover:via-aeo-cyan/60 transition-colors" />
+
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <div className="p-2.5 rounded-xl bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan group-hover:scale-105 transition-transform duration-300">
                           <IconComponent className="w-5 h-5" />
                         </div>
-                        <span className="text-xs font-mono font-bold text-white/40 group-hover:text-aeo-cyan transition-colors whitespace-nowrap">
+                        <span className="text-xs font-mono font-bold text-white/40 group-hover:text-aeo-cyan transition-colors whitespace-nowrap flex-shrink-0">
                           SIGNAL 0{sign.id}
                         </span>
                       </div>
@@ -509,7 +524,8 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             <div className="space-y-4">
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
                 <h3 className="text-base font-bold text-white">
                   Misconception 1: &quot;Building templated suburb landing pages covers local AI discovery.&quot;
                 </h3>
@@ -518,7 +534,8 @@ export default function GEOKnowledgeNodePage() {
                 </p>
               </div>
 
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
                 <h3 className="text-base font-bold text-white">
                   Misconception 2: &quot;If my Google Business Profile ranks in the 3-Pack, AI will automatically recommend me.&quot;
                 </h3>
@@ -527,7 +544,8 @@ export default function GEOKnowledgeNodePage() {
                 </p>
               </div>
 
-              <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2">
+              <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
                 <h3 className="text-base font-bold text-white">
                   Misconception 3: &quot;Geo-targeting is purely a technical IP or schema task.&quot;
                 </h3>
@@ -550,7 +568,7 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             {/* Defensible Comparison Matrix Table */}
-            <div className="overflow-x-auto border border-white/10 rounded-2xl bg-white/[0.01] shadow-2xl">
+            <div className="overflow-x-auto border border-white/10 rounded-2xl bg-neutral-950/90 shadow-2xl">
               <table className="w-full text-left text-xs sm:text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5 text-white">
@@ -581,7 +599,7 @@ export default function GEOKnowledgeNodePage() {
                 <Layers className="w-5 h-5 text-aeo-cyan" />
                 <span>How Local Search and AI Discovery Use Business Facts</span>
               </h2>
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                 Local search systems may weigh location, category relevance, prominence, reviews, and proximity. AI-assisted search experiences may also reconcile facts from a business website, structured data, maps profiles, directories, reviews, and other authoritative sources before presenting a recommendation or answer.
               </div>
             </div>
@@ -592,7 +610,7 @@ export default function GEOKnowledgeNodePage() {
                 <ShieldCheck className="w-5 h-5 text-aeo-cyan" />
                 <span>The Local Entity Signals That Matter</span>
               </h2>
-              <div className="p-5 bg-white/[0.02] border border-white/5 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                 Treat your website as the canonical source of local business facts: publish the same verifiable name, address, phone number, hours, services, and service areas in visible content, then express compatible facts in relevant structured data. Use schema to clarify content—not to introduce claims users cannot verify on the page.
               </div>
             </div>
@@ -603,7 +621,7 @@ export default function GEOKnowledgeNodePage() {
                 <AlertTriangle className="w-5 h-5 text-amber-400" />
                 <span>Common Local Discovery Failures</span>
               </h2>
-              <div className="p-5 bg-white/[0.02] border border-amber-500/20 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+              <div className="p-5 bg-slate-900/60 backdrop-blur-xl border border-amber-500/30 rounded-2xl text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                 Long-form content can obscure critical local facts when users—or systems—need a direct answer. Place important details such as operating hours, emergency availability, service boundaries, eligibility, and address information in concise, visible question-and-answer or fact blocks, supported by explanatory copy where needed.
               </div>
             </div>
@@ -632,7 +650,8 @@ export default function GEOKnowledgeNodePage() {
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
                     <span>Cognitive Load Reduction &amp; Scanning Design</span>
@@ -642,7 +661,8 @@ export default function GEOKnowledgeNodePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
                     <span>Focal Point &amp; Contrast Engineering</span>
@@ -652,7 +672,8 @@ export default function GEOKnowledgeNodePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
                     <span>Spatial Psychology &amp; Trust Integration</span>
@@ -662,7 +683,8 @@ export default function GEOKnowledgeNodePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                <div className="relative isolate overflow-hidden p-5 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl space-y-2 hover:border-aeo-cyan/30 transition-colors">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/40 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-aeo-cyan"></span>
                     <span>Predictable Navigation &amp; Accessibility</span>
@@ -682,7 +704,8 @@ export default function GEOKnowledgeNodePage() {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-5 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-2xl space-y-2">
+                <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/[0.04] backdrop-blur-xl border border-aeo-cyan/30 rounded-2xl space-y-2">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/60 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4" />
                     <span>The Squint/Blur Test</span>
@@ -692,7 +715,8 @@ export default function GEOKnowledgeNodePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-aeo-cyan/[0.03] border border-aeo-cyan/20 rounded-2xl space-y-2">
+                <div className="relative isolate overflow-hidden p-5 bg-aeo-cyan/[0.04] backdrop-blur-xl border border-aeo-cyan/30 rounded-2xl space-y-2">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/60 to-transparent pointer-events-none" />
                   <div className="text-sm font-bold text-aeo-cyan flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Attention Auditing</span>
@@ -718,27 +742,27 @@ export default function GEOKnowledgeNodePage() {
             </div>
 
             <div className="grid grid-cols-1 gap-3">
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
+              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-white/90 font-light">Standardise consistent business name, address, and phone number (NAP) data across your website, Google Business Profile, and third-party directories.</span>
               </div>
 
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
+              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-white/90 font-light">Add structured <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD microdata with precise <code className="text-aeo-cyan font-mono">GeoCoordinates</code> matching your physical address.</span>
               </div>
 
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
+              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-white/90 font-light">Deploy <code className="text-aeo-cyan font-mono">areaServed</code> schema arrays declaring explicit suburb and regional service coverage boundaries.</span>
               </div>
 
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
+              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-white/90 font-light">Ensure location landing pages contain unique, useful local evidence, genuine customer proofs, and distinct regional details.</span>
               </div>
 
-              <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex items-start gap-3">
+              <div className="p-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm text-white/90 font-light">Embed visible Q&amp;A blocks detailing operating hours, emergency access, and service radius paired with <code className="text-aeo-cyan font-mono">FAQPage</code> JSON-LD markup.</span>
               </div>
@@ -750,7 +774,8 @@ export default function GEOKnowledgeNodePage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Practical Small Business GEO Services &amp; Entity Auditing
             </h2>
-            <div className="p-8 bg-gradient-to-r from-aeo-cyan/15 via-neutral-950 to-aeo-purple/15 border border-aeo-cyan/30 rounded-3xl text-center space-y-4 shadow-2xl">
+            <div className="relative isolate overflow-hidden p-8 bg-gradient-to-r from-aeo-cyan/15 via-slate-900/80 to-aeo-purple/15 backdrop-blur-2xl border border-aeo-cyan/40 rounded-3xl text-center space-y-4 shadow-2xl">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/60 to-transparent pointer-events-none" />
               <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                 Turn Local Business Facts Into a Verifiable Entity System
               </h3>
@@ -790,7 +815,7 @@ export default function GEOKnowledgeNodePage() {
                 Add this <code className="text-aeo-cyan font-mono">LocalBusiness</code> JSON-LD as a script block in the page <code className="text-aeo-cyan font-mono">&lt;head&gt;</code> or body, and customise it to match visible, canonical business facts:
               </p>
 
-              <details className="group border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden transition-all duration-200" open>
+              <details className="group border border-white/10 rounded-2xl bg-slate-900/60 backdrop-blur-xl overflow-hidden transition-all duration-200" open>
                 <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-white hover:text-aeo-cyan list-none text-base transition-colors">
                   <div className="flex items-center gap-2">
                     <Code className="w-5 h-5 text-aeo-cyan" />
@@ -826,7 +851,8 @@ export default function GEOKnowledgeNodePage() {
 
             <div className="space-y-4">
               {faqList.map((faq, idx) => (
-                <div key={idx} className="border border-white/10 rounded-2xl bg-white/[0.02] p-6 space-y-3 shadow-lg">
+                <div key={idx} className="relative isolate overflow-hidden border border-white/10 rounded-2xl bg-slate-900/60 backdrop-blur-xl p-6 space-y-3 shadow-lg">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
                   <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                     <span className="text-aeo-cyan font-mono font-bold">Q{idx + 1}:</span>
                     <span>{faq.question}</span>
@@ -844,7 +870,8 @@ export default function GEOKnowledgeNodePage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-white text-center">
               Align Your Local Map &amp; AI Entity Assets
             </h2>
-            <div className="p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 border border-white/10 rounded-3xl text-center space-y-6">
+            <div className="relative isolate overflow-hidden p-8 bg-gradient-to-br from-aeo-purple/10 to-aeo-cyan/15 backdrop-blur-2xl border border-white/10 rounded-3xl text-center space-y-6">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
               <p className="text-sm text-white/80 max-w-lg mx-auto font-light leading-relaxed">
                 Help search, maps, and AI-assisted experiences find and represent your business facts more consistently. Secure your local entity clarity check today.
               </p>
