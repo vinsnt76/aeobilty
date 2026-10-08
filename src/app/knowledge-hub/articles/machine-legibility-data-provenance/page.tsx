@@ -16,13 +16,13 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Machine Legibility & Data Provenance: Intentional Data Structures | AEObility",
+  title: "Machine Legibility & Data Provenance | AEObility",
   description: "Why answer engines don't read your website: field notes on provenance, entity reconstruction, and intentional data structures for AI search.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
   },
   openGraph: {
-    title: "Machine Legibility & Data Provenance: Intentional Data Structures | AEObility",
+    title: "Machine Legibility & Data Provenance | AEObility",
     description: "Field notes on machine legibility, reconstructible entity provenance, and intentional data structures for generative answer engines.",
     url: "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
     type: "article",

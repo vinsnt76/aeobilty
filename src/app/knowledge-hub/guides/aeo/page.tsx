@@ -35,7 +35,7 @@ import {
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Answer Engine Optimisation (AEO): Core Principles & System Mechanics | AEObility',
+  title: 'Answer Engine Optimisation (AEO) Guide | AEObility',
   description: 'Evidence-based technical guide on RAG retrieval pipelines, positional bias heuristics, semantic chunking, and structured entity architecture.',
   alternates: {
     canonical: 'https://aeobility.com.au/knowledge-hub/guides/aeo',

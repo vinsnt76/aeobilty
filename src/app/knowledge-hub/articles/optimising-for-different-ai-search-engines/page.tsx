@@ -37,7 +37,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content | AEObility",
+  title: "Optimising Content for AI Search Engines | AEObility",
   description: "A practical guide to the crawlers, indexes, and content signals that shape AI search visibility - and what your business can actually do about them.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",

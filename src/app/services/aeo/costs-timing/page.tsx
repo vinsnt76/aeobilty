@@ -28,13 +28,13 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AEO Costs & Project Timing | AI Search Optimisation Pricing | AEObility',
+  title: 'AEO Service Costs & Project Timing | AEObility',
   description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
   alternates: {
     canonical: 'https://aeobility.com.au/services/aeo/costs-timing',
   },
   openGraph: {
-    title: 'AEO Costs & Project Timing | AI Search Optimisation Pricing | AEObility',
+    title: 'AEO Service Costs & Project Timing | AEObility',
     description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
     url: 'https://aeobility.com.au/services/aeo/costs-timing',
     type: 'website',

@@ -17,13 +17,13 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "How to Build Entity Density for AI Search (Step-by-Step SOP) | AEObility",
+  title: "How to Build Entity Density for AI Search | AEObility",
   description: "Stop counting keywords like it's 2015. Here is a 5-step workflow to audit and build 80%+ entity density into your headers and opening copy for ChatGPT, Perplexity, and Google AI Overviews.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
   },
   openGraph: {
-    title: "How to Build Entity Density for AI Search | AEObility Tutorial",
+    title: "How to Build Entity Density for AI Search | AEObility",
     description: "Audit and engineer 80%+ entity density into on-page copy for modern answer engines. Free Google Sheet diagnostic template included.",
     url: "https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo",
     type: "article",

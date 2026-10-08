@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Does My Business Need GEO? A Guide to Local GEO vs Local SEO | AEObility",
+  title: "Local GEO vs Local SEO Guide | AEObility",
   description: "Determine if your local business needs Generative Engine Optimisation (GEO). Evaluate AI Overviews, competitor LLM citations, and machine-readable entity signals.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/geo",
