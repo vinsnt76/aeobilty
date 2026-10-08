@@ -49,6 +49,7 @@
 
 ### Knowledge Hub (Our Research & Tutorial Nodes)
 - [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
+- [`/knowledge-hub/ai-seo-tools`](https://aeobility.com.au/knowledge-hub/ai-seo-tools): AI SEO Tools & Technology Comparison Hub. Compare AI SEO software, automated schema generators, and vector parsers.
 - [`/knowledge-hub/guides`](https://aeobility.com.au/knowledge-hub/guides): Technical guides index covering Answer Engine Optimisation, vector search, and RAG architectures.
   - [`/knowledge-hub/guides/aeo`](https://aeobility.com.au/knowledge-hub/guides/aeo): AEO technical principles, vector indexing, and structural refactoring guide.
 - [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.

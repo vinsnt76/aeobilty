@@ -85,6 +85,10 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Title**: Machine Legibility & Data Provenance: Intentional Data Structures
 - **Summary**: Foundational paper connecting machine legibility, data provenance, deterministic entity relationships, and intentional data structures for AI search.
 
+### Node: `/knowledge-hub/ai-seo-tools`
+- **Title**: AI SEO Tools Comparison: AEO & GEO Features
+- **Summary**: Comprehensive comparison of AI SEO tools specifically evaluating their Answer Engine Optimisation (AEO) and Geographic Engine Optimisation (GEO) capabilities.
+
 ### Tutorial Node: `/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`
 - **Title**: How to Build Entity Density for AI Search (Step-by-Step SOP)
 - **H1**: How to Build Entity Density into Your On-Page Copy for AI Search (Step-by-Step Guide)
