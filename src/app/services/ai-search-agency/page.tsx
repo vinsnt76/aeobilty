@@ -209,8 +209,7 @@ export default function AiSearchAgencyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
       
-      <Navbar />
-      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-10 sm:py-16">

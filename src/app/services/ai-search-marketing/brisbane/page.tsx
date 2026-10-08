@@ -120,8 +120,7 @@ export default function BrisbaneAISearchMarketingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
-      <Navbar />
-      <SubNavPills items={HUB_SUBNAV_MAPS.services} />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.services} />
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
