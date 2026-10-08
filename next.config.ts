@@ -64,6 +64,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/services/perth',
+        destination: '/services/ai-search-marketing/perth',
+        permanent: true,
+      },
+      {
         source: '/knowledge-hub/digital-services',
         destination: '/knowledge-hub/tutorials',
         permanent: true,
