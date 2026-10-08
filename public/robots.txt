@@ -3,6 +3,8 @@
 
 User-agent: *
 Allow: /
+# Prevent crawling of compiled Next.js font/media chunks
+Disallow: /_next/static/media/
 Allow: /api/search/answer
 Allow: /api/bill
 Allow: /api/mcp

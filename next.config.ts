@@ -50,7 +50,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/vcard.vcf',
-        destination: '/vince-baker.vcf',
+        destination: '/about/freelance-digital-specialist-perth',
         permanent: true,
       },
       {
@@ -110,7 +110,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/assets/geo-banner',
-        destination: '/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp',
+        destination: '/services/geo-marketing',
         permanent: true,
       },
       {
