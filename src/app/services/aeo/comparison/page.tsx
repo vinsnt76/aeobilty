@@ -131,7 +131,7 @@ export default function AEOVsSEOPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
       />
 
-      <Navbar subnavItems={HUB_SUBNAV_MAPS.services} />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.aeo} />
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12 pb-24 sm:pb-16">

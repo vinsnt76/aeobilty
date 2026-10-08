@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata = {
   title: "What stops my business from showing up? — AEObility",
@@ -49,7 +50,7 @@ export default function AEOConstraintsPage() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
-      <Navbar />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.aeo} />
       <Breadcrumbs />
 
       {/* Main Container */}

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText, HelpCircle, XCircle } from 'lucide-react';
 
 export const metadata = {
@@ -247,7 +248,7 @@ export default function AEODefinitionPage() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10" />
 
-      <Navbar />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.aeo} />
       <Breadcrumbs />
 
       {/* Main Container with Defensive Bottom Padding */}

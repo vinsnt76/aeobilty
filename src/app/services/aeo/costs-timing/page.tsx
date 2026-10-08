@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   Info, 
   ArrowRight, 
@@ -228,7 +229,7 @@ export default function AEOPricingPage() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-aeo-cyan/5 rounded-full filter blur-[100px] -z-10 pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-aeo-purple/5 rounded-full filter blur-[120px] -z-10 pointer-events-none" />
 
-      <Navbar />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.aeo} />
       <Breadcrumbs />
 
       {/* Main Container with Defensive Bottom Spacing for Floating Widgets */}

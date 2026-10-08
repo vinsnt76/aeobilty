@@ -204,8 +204,7 @@ export default function WhatIsAeoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
       
-      <Navbar />
-      <SubNavPills items={HUB_SUBNAV_MAPS.knowledge} />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12">
