@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
+import RelatedArticles from '@/components/navigation/RelatedArticles';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   Database, 
@@ -1496,6 +1497,9 @@ export default function RagArticlePage() {
 
             </div>
           </div>
+
+          {/* Reciprocal Related Articles Mesh */}
+          <RelatedArticles currentSlug="retrieval-augmented-generation" />
 
           {/* Footer Navigation */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-white/10 mt-10">

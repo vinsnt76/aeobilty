@@ -220,7 +220,7 @@ export default function GeoMarketingPage() {
                 Understanding GEO vs SEO: How AI Search Builds on Organic Foundations
               </h2>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                While traditional SEO focuses on keyword positions and backlink volume, Generative Engine Optimisation (GEO) focuses on vector similarity and factual verification. To understand how AI search models digest structured facts, review our <Link href="/knowledge-hub/what-is-aeo" className="text-cyan-400 underline hover:text-cyan-300 font-medium">comprehensive Answer Engine Optimisation definition guide</Link>.
+                While traditional SEO focuses on keyword positions and backlink volume, Generative Engine Optimisation (GEO) focuses on vector similarity and factual verification. To understand how AI search models digest structured facts, review our <Link href="/knowledge-hub/what-is-aeo" className="text-cyan-400 underline hover:text-cyan-300 font-medium">comprehensive Answer Engine Optimisation definition guide</Link>, or read our technical deep-dives on <Link href="/knowledge-hub/articles/entity-authority-building" className="text-cyan-400 underline hover:text-cyan-300 font-medium">Entity Authority Building</Link> and <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-cyan-400 underline hover:text-cyan-300 font-medium">Retrieval-Augmented Generation (RAG)</Link>.
               </p>
             </div>
 

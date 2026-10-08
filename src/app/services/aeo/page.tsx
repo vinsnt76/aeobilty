@@ -542,7 +542,7 @@ export default function AEORootPage() {
                     Why is AI SEO the &quot;layer above&quot; traditional SEO?
                   </h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Traditional SEO ensures search engines can crawl, index, and load your pages. AI SEO sits on top, formatting your facts into standalone passages that AI systems can extract, verify, and quote in conversational answers.
+                    Traditional SEO ensures search engines can crawl, index, and load your pages. AI SEO sits on top, formatting your facts into standalone passages that AI systems can extract, verify, and quote in conversational answers. Explore our guides on <Link href="/knowledge-hub/articles/entity-authority-building" className="text-teal-400 font-semibold hover:underline">Entity Authority Building</Link> and <Link href="/knowledge-hub/articles/retrieval-augmented-generation" className="text-teal-400 font-semibold hover:underline">Retrieval-Augmented Generation (RAG)</Link> to learn more.
                   </p>
                 </div>
 

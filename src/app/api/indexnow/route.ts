@@ -22,6 +22,11 @@ const DEFAULT_CANONICAL_PATHS = [
   "https://aeobility.com.au/solutions/aeo-blueprint",
   "https://aeobility.com.au/solutions/aeo-sprint",
   "https://aeobility.com.au/knowledge-hub",
+  "https://aeobility.com.au/knowledge-hub/articles",
+  "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
+  "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation",
+  "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out",
+  "https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines",
   "https://aeobility.com.au/knowledge-hub/geo",
   "https://aeobility.com.au/contact"
 ];

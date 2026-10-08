@@ -59,6 +59,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/digital-services',
+        destination: '/services',
+        permanent: true,
+      },
+      {
         source: '/knowledge-hub/digital-services',
         destination: '/knowledge-hub/tutorials',
         permanent: true,

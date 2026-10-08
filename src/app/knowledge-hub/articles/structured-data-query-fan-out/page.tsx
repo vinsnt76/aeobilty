@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
+import RelatedArticles from '@/components/navigation/RelatedArticles';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   ArrowRight, 
@@ -855,6 +856,9 @@ export default function StructuredDataQueryFanOutArticlePage() {
               </div>
             </div>
           </section>
+
+          {/* Reciprocal Related Articles Mesh */}
+          <RelatedArticles currentSlug="structured-data-query-fan-out" />
 
           {/* Bottom Audit CTA */}
           <div className="p-8 bg-gradient-to-br from-neutral-900 to-black border border-aeo-cyan/30 rounded-2xl text-center space-y-4 shadow-xl">

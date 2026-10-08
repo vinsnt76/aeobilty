@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import RelatedArticles from '@/components/navigation/RelatedArticles';
 import { 
   ArrowRight, 
   BookOpen, 
@@ -751,6 +752,9 @@ export default function EntityAuthorityArticlePage() {
               book a Perth SEO specialist consultation
             </Link>
           </section>
+
+          {/* Reciprocal Related Articles Mesh */}
+          <RelatedArticles currentSlug="entity-authority-building" />
 
           {/* CTA Banner */}
           <section className="p-8 bg-gradient-to-br from-aeo-cyan/10 via-neutral-950 to-aeo-purple/10 border border-white/15 rounded-3xl text-center space-y-6 shadow-2xl">
