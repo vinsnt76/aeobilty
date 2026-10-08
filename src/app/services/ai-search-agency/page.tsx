@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
+import RegionalCoverageCluster from '@/components/services/RegionalCoverageCluster';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import FaqAccordion from '@/components/FaqAccordion';
 import { 
@@ -329,6 +330,9 @@ export default function AiSearchAgencyPage() {
               ))}
             </div>
           </section>
+
+          {/* Regional Coverage Links Cluster */}
+          <RegionalCoverageCluster />
 
           {/* Expanded FAQ Section */}
           <section className="border-t border-white/10 pt-12 space-y-6">

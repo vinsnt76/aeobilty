@@ -537,7 +537,7 @@ export default function AISearchMarketingPage() {
           <section className="border-t border-white/10 pt-16 space-y-6">
             <div className="text-center max-w-xl mx-auto space-y-2">
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Australian Regional Corridors</span>
-              <h3 className="text-xl font-bold text-white font-soehne-breit">AI search marketing across Australia</h3>
+              <h3 className="text-xl font-bold text-white font-soehne-breit">AI search marketing &amp; local specialist services across Australia</h3>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link href="/services/ai-search-marketing/perth" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
@@ -554,6 +554,9 @@ export default function AISearchMarketingPage() {
               </Link>
               <Link href="/services/ai-search-marketing/adelaide" className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-xs font-medium text-zinc-300 hover:text-white transition">
                 Adelaide AI Search
+              </Link>
+              <Link href="/services/perth/seo-specialist" className="px-4 py-2 rounded-xl bg-cyan-950/60 border border-cyan-500/40 hover:border-cyan-300 text-xs font-semibold text-cyan-300 hover:text-white transition">
+                Perth SEO Specialist
               </Link>
             </div>
           </section>

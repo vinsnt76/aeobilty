@@ -5,6 +5,7 @@ import QuoteFormSection from '@/components/QuoteFormSection';
 import Image from 'next/image';
 import Link from 'next/link';
 import SubNavPills from '@/components/navigation/SubNavPills';
+import RegionalCoverageCluster from '@/components/services/RegionalCoverageCluster';
 import { ArrowRight, CheckCircle2, ShieldCheck, Compass, Layers, Zap, Bot, MapPin, Search } from 'lucide-react';
 import { Metadata } from 'next';
 
@@ -589,6 +590,9 @@ export default function ServicesPage() {
               </div>
             </div>
           </section>
+
+          {/* Australian Regional Coverage Link Cluster */}
+          <RegionalCoverageCluster />
 
           {/* Request a Quote Section */}
           <QuoteFormSection />

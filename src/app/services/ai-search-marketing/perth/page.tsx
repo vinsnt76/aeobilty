@@ -205,7 +205,7 @@ export default function PerthAISearchMarketingPage() {
           <section className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="max-w-3xl mx-auto text-center space-y-4">
               <p className="text-base sm:text-lg text-zinc-300 font-serif leading-relaxed">
-                AEObility builds the bridge between your brand and generative search. As your local visibility partner, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
+                AEObility builds the bridge between your brand and generative search. Led by senior <Link href="/services/perth/seo-specialist" className="text-cyan-400 font-semibold hover:underline">Perth SEO Specialist Vince Baker</Link>, we organise your business details across search engines, AI platforms, and digital maps so the right customers find you at the exact moment they need your help. We structure your content so machines can easily read and verify your real-world details, making sure your business stays visible and accurate across everyday chat interfaces and map apps.
               </p>
             </div>
           </section>
