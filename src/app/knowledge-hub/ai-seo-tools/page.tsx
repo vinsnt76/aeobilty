@@ -107,6 +107,14 @@ export default function AiSeoToolsPage() {
       answer: "AI SEO tools are specialized software applications and technical frameworks designed to analyse, generate, or optimise web content for Large Language Models (LLMs) and generative search engines (Google AI Overviews, ChatGPT Search, Perplexity). Unlike legacy SEO keyword tools, AI SEO tools focus on entity salience, vector similarity, and structured JSON-LD schemas."
     },
     {
+      question: "How do AI SEO tools compare for answer engine optimisation?",
+      answer: "Legacy SEO tools measure keyword rankings and backlink volume. AI SEO tools for AEO and GEO evaluate vector similarity, passage-level extraction accuracy, prompt fan-out sub-queries, and structured JSON-LD entity graphs. While automated schema tools validate code syntax, native telemetry engines like AEObility inspect real-time citation readiness across ChatGPT Search, Perplexity, and Google AI Overviews."
+    },
+    {
+      question: "How do I optimise technical content for AI SEO?",
+      answer: "Optimising technical content for AI search requires four disciplined steps: 1) Isolate monosemantic answer blocks into 80–120 word self-contained passages that directly address intent, 2) Define explicit Subject-Predicate-Object proof triples for all core business claims, 3) Deploy nested JSON-LD schema graphs (LocalBusiness, TechArticle, Person) with canonical URIs, and 4) Corroborate on-page facts across verified external registers and licensing databases."
+    },
+    {
       question: "How does the AEObility Telemetry Engine differ from third-party AI SEO software?",
       answer: "Third-party AI SEO tools often rely on static keyword approximations or basic scraper estimations. The AEObility Telemetry Engine executes real-time vector analysis and prompt fan-out tests directly against generative AI retrieval systems, providing exact citation readiness scores."
     },
@@ -405,21 +413,32 @@ export default function AiSeoToolsPage() {
             </div>
           </section>
 
-          {/* FAQ Section */}
+          {/* FAQ Section with Micro Comparison Header */}
           <section className="border-t border-white/10 pt-12 space-y-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase">
-                <HelpCircle className="w-4 h-4" />
-                <span>Frequently Asked Questions</span>
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">
+                <HelpCircle className="w-4 h-4 text-cyan-400" />
+                <span>Frequently Asked Questions &amp; Feature Comparison</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI SEO Tools FAQ</h2>
+              <h3 className="text-lg sm:text-xl font-bold text-cyan-300 font-soehne-breit pt-1">
+                AI SEO Tools Comparison: AEO &amp; GEO Features
+              </h3>
             </div>
 
             <div className="space-y-4 max-w-3xl">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="p-5 bg-zinc-950/80 border border-white/10 rounded-xl space-y-2">
-                  <h3 className="text-base font-bold text-white font-soehne-breit">{faq.question}</h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">{faq.answer}</p>
+                <div 
+                  key={idx} 
+                  className="p-6 bg-zinc-950/80 backdrop-blur-sm border border-white/10 hover:border-cyan-500/30 rounded-2xl space-y-3 transition-all duration-200 shadow-md"
+                >
+                  <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-aeo-cyan shrink-0" />
+                    <span>{faq.question}</span>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed pl-6">
+                    {faq.answer}
+                  </p>
                 </div>
               ))}
             </div>
