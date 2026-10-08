@@ -26,7 +26,7 @@ import {
 
 export const metadata = {
   title: "Entity Authority: Why AI Search Ranks Entities, Not Pages | AEObility",
-  description: "Entity authority is the measurable strength of your business as an identifiable, trustworthy entity in AI search systems. Learn how to build entity salience and Answer Engine Optimisation.",
+  description: "Learn why AI search ranks entities over keywords. Build entity authority, strengthen machine legibility, and secure citations with Answer Engine Optimisation.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
   },
