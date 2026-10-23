@@ -91,6 +91,77 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/terms`
 ];
 
+import { execSync } from 'child_process';
+
+function mapFileToUrl(filePath: string): string | null {
+  const norm = filePath.replace(/\\/g, '/').trim();
+  if (/^src\/app\/page\.(tsx|jsx|js|ts)$/.test(norm)) {
+    return `https://${HOST}`;
+  }
+  const appMatch = norm.match(/^src\/app\/(.+)\/page\.(tsx|jsx|js|ts)$/);
+  if (appMatch) {
+    const route = appMatch[1]
+      .split('/')
+      .filter((segment) => !segment.startsWith('(') || !segment.endsWith(')'))
+      .join('/');
+    return `https://${HOST}/${route}`;
+  }
+  if (
+    norm === 'src/lib/brandFacts.ts' ||
+    norm === 'src/app/api/brand-facts/route.ts' ||
+    norm === 'public/brand-facts.json'
+  ) {
+    return `https://${HOST}/brand-facts`;
+  }
+  const publicMatch = norm.match(/^public\/(.+\.(md|txt|json|xml|html))$/);
+  if (publicMatch) {
+    return `https://${HOST}/${publicMatch[1]}`;
+  }
+  return null;
+}
+
+export function getTargetUrls(): string[] {
+  const args = process.argv.slice(2);
+  const explicitUrls = args.filter((a) => a.startsWith('http://') || a.startsWith('https://'));
+  if (explicitUrls.length > 0) {
+    return Array.from(new Set(explicitUrls));
+  }
+
+  const isChangedOnly = args.includes('--changed') || args.includes('-c');
+  if (isChangedOnly) {
+    try {
+      const diffOutput = execSync('git diff --name-only HEAD~1', { encoding: 'utf-8' });
+      const changedFiles = diffOutput.split('\n').map((s) => s.trim()).filter(Boolean);
+
+      const isGlobal = changedFiles.some(
+        (f) =>
+          f === 'src/app/layout.tsx' ||
+          f.includes('AEObility -IA & SLM.csv') ||
+          f === 'next.config.ts'
+      );
+      if (isGlobal) {
+        console.log('🔄 Global IA/Layout change detected: submitting all canonical URLs.');
+        return CANONICAL_URL_LIST;
+      }
+
+      const detectedUrls: string[] = [];
+      for (const file of changedFiles) {
+        const url = mapFileToUrl(file);
+        if (url) detectedUrls.push(url);
+      }
+
+      if (detectedUrls.length > 0) {
+        return Array.from(new Set(detectedUrls));
+      }
+      console.log('ℹ️ No route-specific files modified in git diff. Defaulting to canonical matrix.');
+    } catch {
+      console.warn('⚠️ Could not run git diff. Falling back to canonical directory matrix.');
+    }
+  }
+
+  return CANONICAL_URL_LIST;
+}
+
 interface IndexNowPayload {
   host: string;
   key: string;
@@ -98,19 +169,25 @@ interface IndexNowPayload {
   urlList: string[];
 }
 
-export async function submitToIndexNow() {
+export async function submitToIndexNow(customUrls?: string[]) {
+  const urls = customUrls && customUrls.length > 0 ? customUrls : getTargetUrls();
   const payload: IndexNowPayload = {
     host: HOST,
     key: KEY,
     keyLocation: KEY_LOCATION,
-    urlList: CANONICAL_URL_LIST,
+    urlList: urls,
   };
 
   console.log(`\n======================================================`);
-  console.log(`⚡ Dispatching IndexNow Bulk Push for ${HOST}`);
-  console.log(`📦 Payload: ${CANONICAL_URL_LIST.length} Canonical URLs`);
+  console.log(`⚡ Dispatching IndexNow Push for ${HOST}`);
+  console.log(`📦 Payload: ${urls.length} Canonical/Changed URL(s)`);
   console.log(`🔑 Key Verification: ${KEY_LOCATION}`);
   console.log(`======================================================\n`);
+
+  for (const u of urls) {
+    console.log(`  -> ${u}`);
+  }
+  console.log('');
 
   for (const endpoint of INDEXNOW_ENDPOINTS) {
     try {
@@ -141,3 +218,4 @@ export async function submitToIndexNow() {
 
 // Execute directly when run
 submitToIndexNow();
+

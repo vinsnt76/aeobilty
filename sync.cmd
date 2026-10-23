@@ -25,8 +25,12 @@ if errorlevel 0 (
     echo SUCCESS: Latest changes pushed to GitHub!
     echo In your Codespace terminal, run: git pull
     echo -------------------------------------------------------
+    echo.
+    echo [3/3] Dispatching IndexNow push for page changes...
+    powershell -ExecutionPolicy Bypass -File "%~dp0scripts\submit-indexnow.ps1" -Changed
 ) else (
     echo.
     echo ERROR: Git push failed.
 )
+
 endlocal

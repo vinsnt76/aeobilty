@@ -24,6 +24,10 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "SUCCESS: Latest changes pushed to GitHub!" -ForegroundColor Green
     Write-Host "In your Codespace terminal, run: git pull" -ForegroundColor Cyan
     Write-Host "-------------------------------------------------------" -ForegroundColor Green
+
+    Write-Host "`n[3/3] Dispatching IndexNow push for page changes..." -ForegroundColor Yellow
+    & powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\scripts\submit-indexnow.ps1" -Changed
 } else {
     Write-Host "`nERROR: Git push encountered an issue." -ForegroundColor Red
 }
+
