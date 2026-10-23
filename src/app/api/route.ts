@@ -4,15 +4,15 @@ export const runtime = 'edge';
 
 export async function GET() {
   const x402Payload = {
-    x402Version: "0.1",
-    error: "Payment Required",
-    message: "Machine payment required via x402 protocol or OAuth bearer token.",
+    x402Version: 1,
+    error: "X-PAYMENT header is required",
     accepts: [
       {
         scheme: "exact",
         network: "base",
         asset: "USDC",
-        amount: "0.01",
+        maxAmountRequired: "1000",
+        amount: "1000",
         payTo: "0x4020000000000000000000000000000000000402",
         description: "AEObility Autonomous Agentic API Access"
       }
@@ -21,12 +21,18 @@ export async function GET() {
     documentation: "https://aeobility.com.au/auth.md"
   };
 
+  const base64PaymentRequired = Buffer.from(JSON.stringify(x402Payload)).toString('base64');
+
   return NextResponse.json(x402Payload, {
     status: 402,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
-      'WWW-Authenticate': 'x402 scheme="exact", asset="USDC", network="base", amount="0.01"',
+      'Access-Control-Expose-Headers': 'Payment-Required, PAYMENT-REQUIRED, X-Payment-Required, WWW-Authenticate',
+      'Payment-Required': base64PaymentRequired,
+      'PAYMENT-REQUIRED': base64PaymentRequired,
+      'X-Payment-Required': base64PaymentRequired,
+      'WWW-Authenticate': 'x402 scheme="exact", asset="USDC", network="base", amount="1000"',
       'Content-Type': 'application/json; charset=utf-8',
       'Cache-Control': 'no-store, must-revalidate',
     },
@@ -39,7 +45,7 @@ export async function OPTIONS() {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Payment, x402',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Payment, x402, PAYMENT-SIGNATURE',
     },
   });
 }

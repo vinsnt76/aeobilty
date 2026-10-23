@@ -27,9 +27,14 @@
   "agent": {
     "conversation_endpoint": "https://aeobility.com.au/api/chat",
     "protocols": [
-      "chat",
-      "https",
-      "a2a"
+      {
+        "type": "chat",
+        "endpoint": "https://aeobility.com.au/api/chat"
+      },
+      {
+        "type": "a2a",
+        "endpoint": "https://aeobility.com.au/api/chat"
+      }
     ]
   }
 }
