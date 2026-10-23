@@ -75,16 +75,66 @@
           },
           "400": {
             "description": "Missing required parameters."
+          },
+          "402": {
+            "description": "Payment Required - MPP / HTTP 402 payment challenge."
           }
         },
         "x-payment-info": {
+          "method": "tempo",
+          "intent": "charge",
+          "amount": "100",
+          "currency": "USD",
+          "description": "AI visibility diagnostic scan and telemetry audit",
           "offers": [
+            {
+              "method": "tempo",
+              "intent": "charge",
+              "amount": "100",
+              "currency": "USD",
+              "description": "AI visibility diagnostic scan and telemetry audit"
+            },
             {
               "method": "stripe",
               "intent": "charge",
-              "amount": "0",
-              "currency": "AUD",
-              "description": "Zero-friction diagnostic audit and fixed-scope strategy quotation"
+              "amount": "100",
+              "currency": "USD",
+              "description": "AI visibility diagnostic scan and telemetry audit"
+            }
+          ]
+        }
+      }
+    },
+    "/api/bill": {
+      "post": {
+        "summary": "Agentic Commerce Billing and Checkout",
+        "description": "Calculates charges and returns machine payment parameters.",
+        "operationId": "createBillingCharge",
+        "responses": {
+          "200": {
+            "description": "Billing session created successfully."
+          },
+          "402": {
+            "description": "Payment Required - MPP payment challenge."
+          }
+        },
+        "x-payment-info": {
+          "method": "stripe",
+          "intent": "charge",
+          "amount": "1000",
+          "currency": "USD",
+          "offers": [
+            {
+              "method": "tempo",
+              "intent": "charge",
+              "amount": "1000",
+              "currency": "USD"
+            },
+            {
+              "method": "stripe",
+              "intent": "charge",
+              "amount": "1000",
+              "currency": "USD"
             }
           ]
         }

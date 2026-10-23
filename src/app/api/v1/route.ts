@@ -1,0 +1,45 @@
+import { NextResponse } from 'next/server';
+
+export const runtime = 'edge';
+
+export async function GET() {
+  const x402Payload = {
+    x402Version: "0.1",
+    error: "Payment Required",
+    message: "Machine payment required via x402 protocol or OAuth bearer token.",
+    accepts: [
+      {
+        scheme: "exact",
+        network: "base",
+        asset: "USDC",
+        amount: "0.01",
+        payTo: "0x4020000000000000000000000000000000000402",
+        description: "AEObility Autonomous Agentic API Access v1"
+      }
+    ],
+    catalog: "https://aeobility.com.au/.well-known/api-catalog",
+    documentation: "https://aeobility.com.au/auth.md"
+  };
+
+  return NextResponse.json(x402Payload, {
+    status: 402,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
+      'WWW-Authenticate': 'x402 scheme="exact", asset="USDC", network="base", amount="0.01"',
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store, must-revalidate',
+    },
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Payment, x402',
+    },
+  });
+}

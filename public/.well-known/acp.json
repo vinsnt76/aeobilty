@@ -1,13 +1,25 @@
 {
-  "version": "2026-01-16",
-  "protocol": "acp",
+  "protocol": {
+    "name": "acp",
+    "version": "2026-01-16"
+  },
+  "api_base_url": "https://aeobility.com.au",
+  "transports": [
+    "http"
+  ],
+  "endpoints": {
+    "checkout": "https://aeobility.com.au/api/forms/quote",
+    "checkout_sessions": "https://aeobility.com.au/api/forms/quote",
+    "cart": "https://aeobility.com.au/api/bill"
+  },
+  "capabilities": {
+    "services": [
+      "checkout"
+    ]
+  },
   "merchant": {
     "name": "AEObility",
     "domain": "aeobility.com.au"
-  },
-  "endpoints": {
-    "checkout_sessions": "https://aeobility.com.au/api/forms/quote",
-    "cart": "https://aeobility.com.au/api/bill"
   },
   "supported_payment_methods": [
     "card",

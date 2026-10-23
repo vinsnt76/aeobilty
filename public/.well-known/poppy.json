@@ -14,15 +14,22 @@
     {
       "type": "openapi",
       "url": "https://aeobility.com.au/api/openapi.json",
+      "description": "AEObility AEO Intelligence and Entity Engine API",
       "label": "AEObility AEO Intelligence and Entity Engine API"
     },
     {
       "type": "mcp",
       "url": "https://aeobility.com.au/api/mcp",
+      "description": "AEObility MCP Service Server",
       "label": "AEObility MCP Service Server"
     }
   ],
   "agent": {
-    "conversation_endpoint": "https://aeobility.com.au/api/chat"
+    "conversation_endpoint": "https://aeobility.com.au/api/chat",
+    "protocols": [
+      "chat",
+      "https",
+      "a2a"
+    ]
   }
 }
