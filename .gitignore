@@ -50,4 +50,5 @@ antigravity-*.json
 *-*-*.json
 # scratch scripts
 scratch/
+scripts/keys/
 

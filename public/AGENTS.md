@@ -87,6 +87,7 @@ AEObility exposes an automated API Discovery Catalog per [RFC 9727](https://www.
 - **Agent Registration & Discovery (`auth.md`)**: `https://aeobility.com.au/auth.md` (`text/markdown`)
 - **OAuth Protected Resource Metadata (PRM)**: `https://aeobility.com.au/.well-known/oauth-protected-resource` (`application/json`)
 - **OAuth Authorization Server Metadata**: `https://aeobility.com.au/.well-known/oauth-authorization-server` (`application/json`)
+- **Web Bot Auth HTTP Signatures Directory**: `https://aeobility.com.au/.well-known/http-message-signatures-directory` (`application/http-message-signatures-directory+json`)
 - **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
 - **Developer & Agent API Reference**: `https://aeobility.com.au/docs/api`
 - **API Health & Status**: `https://aeobility.com.au/api/health`

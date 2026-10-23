@@ -191,3 +191,21 @@ Security Event Tokens (RFC 8417) pushed by upstream identity providers are inges
 `https://aeobility.com.au/api/agent/event/notify`
 Supported event:
 `https://schemas.workos.com/events/agent/auth/identity/assertion/revoked`
+
+---
+
+## 8. Web Bot Auth & Cryptographic Request Signatures (RFC 9421)
+
+AEObility participates in the IETF Web Bot Auth standard, allowing automated agents and crawlers to verify identity and authenticity via asymmetric HTTP Message Signatures.
+
+### Public Key Directory
+- Canonical URI: `https://aeobility.com.au/.well-known/http-message-signatures-directory`
+- Media Type: `application/http-message-signatures-directory+json`
+- Key Algorithm: `Ed25519` (`kty: "OKP"`, `crv: "Ed25519"`)
+- Active Key ID: `Hwf_NuD2s9odjsqQoq6xZULDLdJ5DB2FpA45XmH95xk`
+
+### Signature Verification Headers
+Outbound requests sent by AEObility agents include the following verification headers:
+- `Signature-Agent`: `"https://aeobility.com.au/.well-known/http-message-signatures-directory"`
+- `Signature-Input`: `sig1=("@authority" "signature-agent");created=<unix_timestamp>;expires=<unix_timestamp>;keyid="Hwf_NuD2s9odjsqQoq6xZULDLdJ5DB2FpA45XmH95xk";alg="ed25519";tag="web-bot-auth"`
+- `Signature`: RFC 9421 Ed25519 cryptographic signature

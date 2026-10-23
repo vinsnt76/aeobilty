@@ -1,0 +1,14 @@
+﻿{
+    "keys":  [
+                 {
+                     "kty":  "OKP",
+                     "crv":  "Ed25519",
+                     "kid":  "Hwf_NuD2s9odjsqQoq6xZULDLdJ5DB2FpA45XmH95xk",
+                     "x":  "Do6rvlJ3_gER5_Dmr3zDsJyBexeiIckhOCOxnhpWFRo",
+                     "use":  "sig",
+                     "nbf":  1704067200
+                 }
+             ],
+    "purpose":  "rag",
+    "agent":  "https://aeobility.com.au"
+}

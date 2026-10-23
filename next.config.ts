@@ -117,10 +117,19 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/.well-known/http-message-signatures-directory",
+        headers: [
+          { key: "Content-Type", value: "application/http-message-signatures-directory+json; charset=utf-8" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/:path*",
         headers: [
           { key: "Vary", value: "Accept" },
-          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://aeobility.com.au/auth.md>; rel="service-doc"; type="text/markdown", <https://aeobility.com.au/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json", <https://aeobility.com.au/.well-known/poppy.json>; rel="personal-agent-protocol"; type="application/json", <https://aeobility.com.au/.well-known/acp.json>; rel="acp"; type="application/json", <https://aeobility.com.au/.well-known/ucp>; rel="ucp"; type="application/json", <https://aeobility.com.au/index.md>; rel="alternate"; type="text/markdown"' },
+          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://aeobility.com.au/auth.md>; rel="service-doc"; type="text/markdown", <https://aeobility.com.au/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json", <https://aeobility.com.au/.well-known/http-message-signatures-directory>; rel="http-message-signatures-directory"; type="application/http-message-signatures-directory+json", <https://aeobility.com.au/.well-known/poppy.json>; rel="personal-agent-protocol"; type="application/json", <https://aeobility.com.au/.well-known/acp.json>; rel="acp"; type="application/json", <https://aeobility.com.au/.well-known/ucp>; rel="ucp"; type="application/json", <https://aeobility.com.au/index.md>; rel="alternate"; type="text/markdown"' },
         ],
       },
     ];
@@ -132,6 +141,10 @@ const nextConfig: NextConfig = {
       {
         source: '/.well-known/api-catalog',
         destination: '/api/api-catalog',
+      },
+      {
+        source: '/.well-known/http-message-signatures-directory',
+        destination: '/api/http-message-signatures-directory',
       },
       {
         source: '/.well-known/oauth-protected-resource',

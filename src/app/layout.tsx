@@ -90,6 +90,7 @@ export default function RootLayout({
         <link rel="personal-agent-protocol" href="https://aeobility.com.au/.well-known/poppy.json" />
         <link rel="acp" href="https://aeobility.com.au/.well-known/acp.json" />
         <link rel="ucp" href="https://aeobility.com.au/.well-known/ucp" />
+        <link rel="http-message-signatures-directory" href="https://aeobility.com.au/.well-known/http-message-signatures-directory" />
         <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
         <link rel="mcp" href="https://aeobility.com.au/api/mcp" />
