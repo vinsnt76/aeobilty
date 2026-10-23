@@ -1,0 +1,16 @@
+{
+  "version": "2026-01-16",
+  "protocol": "acp",
+  "merchant": {
+    "name": "AEObility",
+    "domain": "aeobility.com.au"
+  },
+  "endpoints": {
+    "checkout_sessions": "https://aeobility.com.au/api/forms/quote",
+    "cart": "https://aeobility.com.au/api/bill"
+  },
+  "supported_payment_methods": [
+    "card",
+    "stripe"
+  ]
+}

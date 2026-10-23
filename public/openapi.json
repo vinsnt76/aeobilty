@@ -76,6 +76,17 @@
           "400": {
             "description": "Missing required parameters."
           }
+        },
+        "x-payment-info": {
+          "offers": [
+            {
+              "method": "stripe",
+              "intent": "charge",
+              "amount": "0",
+              "currency": "AUD",
+              "description": "Zero-friction diagnostic audit and fixed-scope strategy quotation"
+            }
+          ]
         }
       }
     },

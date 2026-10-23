@@ -1,0 +1,28 @@
+{
+  "protocol_version": "0.2",
+  "organization": {
+    "name": "AEObility",
+    "domain": "aeobility.com.au"
+  },
+  "auth": {
+    "issuer": "https://aeobility.com.au",
+    "sign_in_types": [
+      "oauth2_redirect"
+    ]
+  },
+  "apis": [
+    {
+      "type": "openapi",
+      "url": "https://aeobility.com.au/api/openapi.json",
+      "label": "AEObility AEO Intelligence and Entity Engine API"
+    },
+    {
+      "type": "mcp",
+      "url": "https://aeobility.com.au/api/mcp",
+      "label": "AEObility MCP Service Server"
+    }
+  ],
+  "agent": {
+    "conversation_endpoint": "https://aeobility.com.au/api/chat"
+  }
+}

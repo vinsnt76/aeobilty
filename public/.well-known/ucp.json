@@ -1,0 +1,40 @@
+{
+  "ucp": {
+    "version": "2026-08-25",
+    "services": {
+      "dev.ucp.shopping": [
+        {
+          "version": "2026-08-25",
+          "spec": "https://ucp.dev/2026-08-25/specification/shopping",
+          "transport": "rest",
+          "endpoint": "https://aeobility.com.au/api/forms/quote",
+          "schema": "https://aeobility.com.au/openapi.json"
+        },
+        {
+          "version": "2026-08-25",
+          "spec": "https://ucp.dev/2026-08-25/specification/shopping",
+          "transport": "mcp",
+          "endpoint": "https://aeobility.com.au/api/mcp",
+          "schema": "https://aeobility.com.au/.well-known/mcp/server-card.json"
+        }
+      ]
+    },
+    "capabilities": {
+      "dev.ucp.shopping.checkout": [
+        {
+          "version": "2026-08-25",
+          "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout",
+          "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+        }
+      ]
+    },
+    "payment_handlers": [
+      {
+        "id": "stripe",
+        "version": "2026-08-25",
+        "spec": "https://ucp.dev/2026-08-25/specification/payments/stripe",
+        "schema": "https://ucp.dev/2026-08-25/schemas/payments/stripe.json"
+      }
+    ]
+  }
+}

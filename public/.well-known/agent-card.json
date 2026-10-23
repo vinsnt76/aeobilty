@@ -21,11 +21,27 @@
       "description": "Model Context Protocol tools and brand knowledge graph resources."
     }
   ],
-  "capabilities": [
-    "search-synthesis",
-    "telemetry-auditing",
-    "schema-validation",
-    "vector-answering"
+  "capabilities": {
+    "features": [
+      "search-synthesis",
+      "telemetry-auditing",
+      "schema-validation",
+      "vector-answering"
+    ],
+    "extensions": [
+      {
+        "uri": "https://github.com/google-agentic-commerce/ap2/v1",
+        "description": "Supports the Agent Payments Protocol (AP2) for autonomous payment mandates and checkout.",
+        "required": true
+      }
+    ]
+  },
+  "extensions": [
+    {
+      "uri": "https://github.com/google-agentic-commerce/ap2/v1",
+      "description": "Supports the Agent Payments Protocol (AP2) for autonomous payment mandates and checkout.",
+      "required": true
+    }
   ],
   "skills": [
     {
