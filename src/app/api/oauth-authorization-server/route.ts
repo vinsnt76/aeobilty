@@ -41,6 +41,9 @@ const OAUTH_AUTHORIZATION_SERVER_METADATA = {
   ui_locales_supported: [
     'en-AU'
   ],
+  poppy_domains: [
+    'aeobility.com.au'
+  ],
   agent_auth: {
     skill: 'https://aeobility.com.au/auth.md',
     register_uri: 'https://aeobility.com.au/api/agent/register',
