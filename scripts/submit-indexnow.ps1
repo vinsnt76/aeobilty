@@ -105,8 +105,10 @@ $CanonicalUrls = @(
     "https://$HostDomain/terms"
 )
 
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseApprovedVerbs', '')]
 function Resolve-FileToUrl([string]$filePath) {
     $norm = $filePath.Replace("\", "/").Trim()
+
 
     if ($norm -match "^src/app/page\.(tsx|jsx|js|ts)$") {
         return "https://$HostDomain"
