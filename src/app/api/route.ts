@@ -5,18 +5,18 @@ export const runtime = 'edge';
 export async function GET() {
   const x402Payload = {
     x402Version: 1,
-    error: "X-PAYMENT header is required",
     accepts: [
       {
         scheme: "exact",
         network: "base",
         asset: "USDC",
-        maxAmountRequired: "1000",
         amount: "1000",
+        maxAmountRequired: "1000",
         payTo: "0x4020000000000000000000000000000000000402",
         description: "AEObility Autonomous Agentic API Access"
       }
     ],
+    error: "X-PAYMENT header is required",
     catalog: "https://aeobility.com.au/.well-known/api-catalog",
     documentation: "https://aeobility.com.au/auth.md"
   };
@@ -28,10 +28,8 @@ export async function GET() {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,HEAD',
-      'Access-Control-Expose-Headers': 'Payment-Required, PAYMENT-REQUIRED, X-Payment-Required, WWW-Authenticate',
-      'Payment-Required': base64PaymentRequired,
+      'Access-Control-Expose-Headers': 'PAYMENT-REQUIRED, WWW-Authenticate',
       'PAYMENT-REQUIRED': base64PaymentRequired,
-      'X-Payment-Required': base64PaymentRequired,
       'WWW-Authenticate': 'x402 scheme="exact", asset="USDC", network="base", amount="1000"',
       'Content-Type': 'application/json; charset=utf-8',
       'Cache-Control': 'no-store, must-revalidate',
