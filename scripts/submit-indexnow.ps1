@@ -105,9 +105,9 @@ $CanonicalUrls = @(
     "https://$HostDomain/terms"
 )
 
-[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseApprovedVerbs', '')]
 function Resolve-FileToUrl([string]$filePath) {
     $norm = $filePath.Replace("\", "/").Trim()
+
 
 
     if ($norm -match "^src/app/page\.(tsx|jsx|js|ts)$") {
@@ -131,12 +131,12 @@ function Resolve-FileToUrl([string]$filePath) {
     return $null
 }
 
-
 $TargetUrls = @()
 
 if ($Urls -and $Urls.Count -gt 0) {
     $TargetUrls = $Urls
-} elseif ($Changed) {
+}
+elseif ($Changed) {
     Write-Host "Detecting changed pages via git diff against $Since..." -ForegroundColor Cyan
     try {
         $diffFiles = git diff --name-only $Since
@@ -158,24 +158,30 @@ if ($Urls -and $Urls.Count -gt 0) {
             if ($url) {
                 $detectedUrls += $url
             }
+
         }
 
         if ($globalTrigger) {
             Write-Host "  Detected global site layout / IA change: Submitting all canonical URLs." -ForegroundColor Yellow
             $TargetUrls = $CanonicalUrls
-        } elseif ($detectedUrls.Count -gt 0) {
+        }
+        elseif ($detectedUrls.Count -gt 0) {
             $TargetUrls = $detectedUrls | Select-Object -Unique
-        } else {
+        }
+        else {
             Write-Host "  No route-specific files modified in git diff. Defaulting to canonical directory matrix." -ForegroundColor Gray
             $TargetUrls = $CanonicalUrls
         }
-    } catch {
+    }
+    catch {
         Write-Host "  Failed to query git diff. Defaulting to canonical matrix." -ForegroundColor Red
         $TargetUrls = $CanonicalUrls
     }
-} elseif ($All) {
+}
+elseif ($All) {
     $TargetUrls = $CanonicalUrls
-} else {
+}
+else {
     try {
         $recentChanges = git diff --name-only HEAD~1
         $detected = @()
@@ -183,13 +189,16 @@ if ($Urls -and $Urls.Count -gt 0) {
             $u = Resolve-FileToUrl $f
             if ($u) { $detected += $u }
         }
+
         if ($detected.Count -gt 0) {
             Write-Host "Auto-detected $($detected.Count) recently modified page(s) in HEAD~1." -ForegroundColor Cyan
             $TargetUrls = $detected | Select-Object -Unique
-        } else {
+        }
+        else {
             $TargetUrls = $CanonicalUrls
         }
-    } catch {
+    }
+    catch {
         $TargetUrls = $CanonicalUrls
     }
 }
@@ -237,14 +246,17 @@ foreach ($endpoint in $IndexNowEndpoints) {
         if ($response.StatusCode -eq 200 -or $response.StatusCode -eq 202) {
             Write-Host " [PASS: $($response.StatusCode) $($response.StatusDescription)]" -ForegroundColor Green
             $successCount++
-        } else {
+        }
+        else {
             Write-Host " [STATUS: $($response.StatusCode)]" -ForegroundColor Yellow
         }
-    } catch {
+    }
+    catch {
         Write-Host " [FAIL: $($_.Exception.Message)]" -ForegroundColor Red
     }
 }
 
 Write-Host ""
 Write-Host "IndexNow cycle complete: $successCount of $totalEndpoints endpoints responded successfully." -ForegroundColor Green
+Write-Host ""
 Write-Host ""
