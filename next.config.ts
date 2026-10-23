@@ -23,6 +23,42 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/auth.md",
+        headers: [
+          { key: "Content-Type", value: "text/markdown; charset=utf-8" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
+        source: "/.well-known/oauth-protected-resource",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
+        source: "/.well-known/oauth-authorization-server",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
+        source: "/.well-known/openid-configuration",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/openapi.json",
         headers: [
           { key: "Content-Type", value: "application/json" },
@@ -46,18 +82,34 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
-          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"' },
+          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://aeobility.com.au/auth.md>; rel="service-doc"; type="text/markdown", <https://aeobility.com.au/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json"' },
         ],
       },
     ];
   },
 
-  // 1.5. RFC 9727 api-catalog and OpenAPI rewrites
+  // 1.5. RFC 9727 api-catalog, auth.md, and OAuth metadata rewrites
   async rewrites() {
     return [
       {
         source: '/.well-known/api-catalog',
         destination: '/api/api-catalog',
+      },
+      {
+        source: '/.well-known/oauth-protected-resource',
+        destination: '/api/oauth-protected-resource',
+      },
+      {
+        source: '/.well-known/oauth-authorization-server',
+        destination: '/api/oauth-authorization-server',
+      },
+      {
+        source: '/.well-known/openid-configuration',
+        destination: '/api/oauth-authorization-server',
+      },
+      {
+        source: '/auth.md',
+        destination: '/api/auth-md',
       },
       {
         source: '/api/openapi.json',

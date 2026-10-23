@@ -1,0 +1,20 @@
+{
+  "resource": "https://aeobility.com.au",
+  "resource_name": "AEObility AI Engine & Knowledge Graph",
+  "resource_purpose": "AI Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and Brand Semantic Discovery APIs",
+  "authorization_servers": [
+    "https://aeobility.com.au"
+  ],
+  "scopes_supported": [
+    "read",
+    "diagnostic",
+    "search",
+    "aeo:read",
+    "diagnostic:execute",
+    "knowledge:query"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://aeobility.com.au/docs/api"
+}

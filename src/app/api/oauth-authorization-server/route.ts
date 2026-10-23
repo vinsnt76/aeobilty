@@ -1,0 +1,103 @@
+import { NextResponse } from 'next/server';
+import { handleCorsOptions, corsHeaders } from '@/lib/cors';
+
+export const runtime = 'edge';
+
+const OAUTH_AUTHORIZATION_SERVER_METADATA = {
+  issuer: 'https://aeobility.com.au',
+  authorization_endpoint: 'https://aeobility.com.au/contact',
+  token_endpoint: 'https://aeobility.com.au/api/auth/token',
+  token_endpoint_auth_methods_supported: [
+    'none',
+    'client_secret_post',
+    'private_key_jwt'
+  ],
+  revocation_endpoint: 'https://aeobility.com.au/api/auth/revoke',
+  revocation_endpoint_auth_methods_supported: [
+    'none',
+    'client_secret_post'
+  ],
+  grant_types_supported: [
+    'urn:ietf:params:oauth:grant-type:jwt-bearer',
+    'urn:workos:agent-auth:grant-type:claim',
+    'client_credentials',
+    'anonymous'
+  ],
+  response_types_supported: [
+    'token'
+  ],
+  scopes_supported: [
+    'read',
+    'diagnostic',
+    'search',
+    'aeo:read',
+    'diagnostic:execute',
+    'knowledge:query'
+  ],
+  bearer_methods_supported: [
+    'header'
+  ],
+  service_documentation: 'https://aeobility.com.au/docs/api',
+  ui_locales_supported: [
+    'en-AU'
+  ],
+  agent_auth: {
+    skill: 'https://aeobility.com.au/auth.md',
+    register_uri: 'https://aeobility.com.au/api/agent/register',
+    identity_endpoint: 'https://aeobility.com.au/api/agent/identity',
+    claim_endpoint: 'https://aeobility.com.au/api/agent/identity/claim',
+    claim_uri: 'https://aeobility.com.au/contact/agent-claim',
+    revocation_uri: 'https://aeobility.com.au/api/auth/revoke',
+    events_endpoint: 'https://aeobility.com.au/api/agent/event/notify',
+    identity_types_supported: [
+      'identity_assertion',
+      'anonymous',
+      'service_auth'
+    ],
+    identity_assertion: {
+      assertion_types_supported: [
+        'urn:ietf:params:oauth:token-type:id-jag',
+        'verified_email'
+      ],
+      credential_types_supported: [
+        'bearer_token',
+        'bearer'
+      ]
+    },
+    anonymous: {
+      credential_types_supported: [
+        'bearer_token',
+        'bearer'
+      ]
+    },
+    events_supported: [
+      'https://schemas.workos.com/events/agent/auth/identity/assertion/revoked'
+    ]
+  }
+};
+
+export async function OPTIONS() {
+  return handleCorsOptions();
+}
+
+export async function GET() {
+  return new NextResponse(JSON.stringify(OAUTH_AUTHORIZATION_SERVER_METADATA, null, 2), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      ...corsHeaders,
+    },
+  });
+}
+
+export async function HEAD() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      ...corsHeaders,
+    },
+  });
+}

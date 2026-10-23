@@ -240,5 +240,32 @@
         }
       }
     }
+  },
+  "components": {
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "description": "OAuth 2.0 and ID-JAG Agent Authorisation per auth.md and RFC 8414",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://aeobility.com.au/api/auth/token",
+            "scopes": {
+              "read": "Read public entity definitions and brand facts",
+              "diagnostic": "Execute AI Search Visibility diagnostic scans",
+              "search": "Semantic vector search and hybrid queries",
+              "aeo:read": "Retrieve raw machine-readable knowledge graph triples",
+              "diagnostic:execute": "Request complete multi-page automated telemetry audits",
+              "knowledge:query": "High-frequency vector similarity queries against AEO Corpus"
+            }
+          }
+        }
+      },
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Bearer token authentication obtained via /api/agent/register or /api/auth/token"
+      }
+    }
   }
 }

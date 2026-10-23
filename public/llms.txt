@@ -87,6 +87,9 @@
 ## Programmatic Answer, Chat & Form API Endpoints
 AEObility exposes automated discovery and vector-grounded Answer & Form APIs:
 - **API Catalog (RFC 9727)**: `https://aeobility.com.au/.well-known/api-catalog` (`application/linkset+json`)
+- **Agent Registration & Discovery (`auth.md`)**: `https://aeobility.com.au/auth.md`
+- **OAuth Protected Resource Metadata (PRM)**: `https://aeobility.com.au/.well-known/oauth-protected-resource`
+- **OAuth Authorization Server Metadata**: `https://aeobility.com.au/.well-known/oauth-authorization-server`
 - **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
 - **Developer Documentation**: [`/docs/api`](https://aeobility.com.au/docs/api): Official reference for all public APIs and agent endpoints.
 - **System Health**: `https://aeobility.com.au/api/health`

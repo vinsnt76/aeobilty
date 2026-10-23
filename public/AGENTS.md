@@ -84,6 +84,9 @@ AEObility structures its digital presence across verified entity nodes grounded 
 
 AEObility exposes an automated API Discovery Catalog per [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727):
 - **API Catalog (RFC 9727 Linkset)**: `https://aeobility.com.au/.well-known/api-catalog` (`application/linkset+json`)
+- **Agent Registration & Discovery (`auth.md`)**: `https://aeobility.com.au/auth.md` (`text/markdown`)
+- **OAuth Protected Resource Metadata (PRM)**: `https://aeobility.com.au/.well-known/oauth-protected-resource` (`application/json`)
+- **OAuth Authorization Server Metadata**: `https://aeobility.com.au/.well-known/oauth-authorization-server` (`application/json`)
 - **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
 - **Developer & Agent API Reference**: `https://aeobility.com.au/docs/api`
 - **API Health & Status**: `https://aeobility.com.au/api/health`
