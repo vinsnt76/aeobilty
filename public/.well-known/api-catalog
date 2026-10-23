@@ -1,0 +1,109 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://aeobility.com.au/api",
+      "service-desc": [
+        {
+          "href": "https://aeobility.com.au/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aeobility.com.au/docs/api",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://aeobility.com.au/api/health",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://aeobility.com.au/api/diagnostic",
+      "service-desc": [
+        {
+          "href": "https://aeobility.com.au/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aeobility.com.au/docs/api#diagnostic",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://aeobility.com.au/api/health",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://aeobility.com.au/api/brand-facts",
+      "service-desc": [
+        {
+          "href": "https://aeobility.com.au/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aeobility.com.au/docs/api#brand-facts",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://aeobility.com.au/api/health",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://aeobility.com.au/api/mcp",
+      "service-desc": [
+        {
+          "href": "https://aeobility.com.au/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aeobility.com.au/docs/api#mcp",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://aeobility.com.au/api/health",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://aeobility.com.au/api/search",
+      "service-desc": [
+        {
+          "href": "https://aeobility.com.au/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aeobility.com.au/docs/api#search",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://aeobility.com.au/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AEObility Public Discovery & Telemetry APIs",
+    "version": "1.0.0",
+    "description": "Machine-readable interfaces and agent tools provided by AEObility for AI search visibility, canonical brand consensus, semantic retrieval, and Model Context Protocol (MCP).",
+    "contact": {
+      "name": "AEObility Technical Operations",
+      "url": "https://aeobility.com.au/contact",
+      "email": "vince@aeobility.com.au"
+    },
+    "license": {
+      "name": "Open Data / Attribution 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://aeobility.com.au",
+      "description": "Production canonical endpoint"
+    }
+  ],
+  "paths": {
+    "/api/diagnostic": {
+      "post": {
+        "summary": "Run AI Search Visibility Diagnostic Scan",
+        "description": "Executes a 6-stage telemetry diagnostic evaluating entity clarity, structured schema coverage, vector proximity, and AI search readiness.",
+        "operationId": "runDiagnosticScan",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["intent"],
+                "properties": {
+                  "intent": {
+                    "type": "string",
+                    "description": "Search query, buyer question, or target commercial topic.",
+                    "example": "AEO consultant Perth"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Target website domain or page URL to crawl and audit.",
+                    "example": "https://example.com.au"
+                  },
+                  "clientText": {
+                    "type": "string",
+                    "description": "Fallback text content to analyse if domain crawling is blocked."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Telemetry analysis result with readiness scores and entity graph.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "intent": { "type": "string" },
+                    "readinessScore": { "type": "number" },
+                    "entitySalience": { "type": "object" },
+                    "recommendations": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing required parameters."
+          }
+        }
+      }
+    },
+    "/api/brand-facts": {
+      "get": {
+        "summary": "Retrieve Brand Facts and Consensus Knowledge Lattice",
+        "description": "Returns machine-readable first-party business facts, official service definitions, pricing catalog, and historical provenance graph.",
+        "operationId": "getBrandFacts",
+        "responses": {
+          "200": {
+            "description": "Canonical brand facts payload.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account": { "type": "string" },
+                    "lastSynced": { "type": "string" },
+                    "payload": {
+                      "type": "object",
+                      "properties": {
+                        "identity": { "type": "object" },
+                        "definitions": { "type": "object" },
+                        "commercialManifest": { "type": "object" },
+                        "provenanceLattice": { "type": "object" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp": {
+      "get": {
+        "summary": "Model Context Protocol (MCP) Tool Directory",
+        "description": "Exposes MCP v1.0.0 tools and execution schemas for autonomous AI agents.",
+        "operationId": "getMcpTools",
+        "responses": {
+          "200": {
+            "description": "MCP server manifest with discoverable tools.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mcpVersion": { "type": "string" },
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": { "type": "string" },
+                          "description": { "type": "string" },
+                          "inputSchema": { "type": "object" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Search AEObility Knowledge Base (Vector & Lexical)",
+        "description": "Retrieves high-density Atomic Answer Blocks and semantic concepts matching customer queries.",
+        "operationId": "searchKnowledgeBaseGet",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search term or concept query.",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Grounded answer with citations and similarity score.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": { "type": "string" },
+                    "similarityScore": { "type": "number" },
+                    "topMatch": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Search AEObility Knowledge Base with Context",
+        "description": "Submits a query with conversational context to the grounded vector retrieval engine.",
+        "operationId": "searchKnowledgeBasePost",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["query"],
+                "properties": {
+                  "query": { "type": "string" },
+                  "previousOffTopicCount": { "type": "number" },
+                  "routeContext": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Grounded answer response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": { "type": "string" },
+                    "similarityScore": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "API Health and Status Endpoint",
+        "description": "Returns system availability, timestamp, and discovery catalog links.",
+        "operationId": "getHealthStatus",
+        "responses": {
+          "200": {
+            "description": "System operational status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "service": { "type": "string" },
+                    "version": { "type": "string" },
+                    "timestamp": { "type": "string" },
+                    "system": { "type": "string", "example": "operational" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

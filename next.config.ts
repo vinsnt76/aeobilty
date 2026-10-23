@@ -14,6 +14,24 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/.well-known/api-catalog",
+        headers: [
+          { key: "Content-Type", value: "application/linkset+json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
+        source: "/openapi.json",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/vcard.vcf",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
@@ -28,8 +46,22 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
-          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown"' },
+          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"' },
         ],
+      },
+    ];
+  },
+
+  // 1.5. RFC 9727 api-catalog and OpenAPI rewrites
+  async rewrites() {
+    return [
+      {
+        source: '/.well-known/api-catalog',
+        destination: '/api/api-catalog',
+      },
+      {
+        source: '/api/openapi.json',
+        destination: '/openapi.json',
       },
     ];
   },

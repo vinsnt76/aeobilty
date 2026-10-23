@@ -85,7 +85,11 @@
 ---
 
 ## Programmatic Answer, Chat & Form API Endpoints
-AEObility exposes vector-grounded Answer & Form APIs for real-time site search & agent transactions:
+AEObility exposes automated discovery and vector-grounded Answer & Form APIs:
+- **API Catalog (RFC 9727)**: `https://aeobility.com.au/.well-known/api-catalog` (`application/linkset+json`)
+- **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
+- **Developer Documentation**: [`/docs/api`](https://aeobility.com.au/docs/api): Official reference for all public APIs and agent endpoints.
+- **System Health**: `https://aeobility.com.au/api/health`
 - **Vector Search Endpoint**: `POST https://aeobility.com.au/api/search/answer`
   - **Request Body**: `{ "query": "<user_search_string>" }`
   - **Response Format**: Returns similarity score, grounded 2-sentence response, matched entity node, and intent classification.
@@ -98,6 +102,9 @@ AEObility exposes vector-grounded Answer & Form APIs for real-time site search &
 - **AI Telemetry Diagnostic Endpoint**: `POST https://aeobility.com.au/api/diagnostic`
   - **Request Body**: `{ "url": "...", "intent": "..." }`
   - **Response Format**: Returns 5-dimensional diagnostic audit metrics (schema completeness, entity authority, positional bias, vector proximity, RAG survival probability).
+- **Brand Facts & MCP Tools**:
+  - `GET https://aeobility.com.au/api/brand-facts`
+  - `GET https://aeobility.com.au/api/mcp`
 
 ---
 

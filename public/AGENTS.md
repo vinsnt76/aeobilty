@@ -82,6 +82,12 @@ AEObility structures its digital presence across verified entity nodes grounded 
 
 ## 3. Real-Time Vector Answer, Chat & Form API Endpoints
 
+AEObility exposes an automated API Discovery Catalog per [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727):
+- **API Catalog (RFC 9727 Linkset)**: `https://aeobility.com.au/.well-known/api-catalog` (`application/linkset+json`)
+- **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
+- **Developer & Agent API Reference**: `https://aeobility.com.au/docs/api`
+- **API Health & Status**: `https://aeobility.com.au/api/health`
+
 Autonomous AI agents can query AEObility's live search, chat, & quote APIs via REST:
 
 1. **Vector Answer API**:
@@ -107,6 +113,10 @@ Autonomous AI agents can query AEObility's live search, chat, & quote APIs via R
    - **Headers**: `Content-Type: application/json`
    - **Body**: `{ "url": "https://example.com.au", "intent": "perth plumbing services" }`
    - **Output**: Returns 5-dimensional diagnostic audit metrics (schema completeness, entity authority, positional bias, vector proximity, RAG survival probability).
+
+5. **Brand Facts & Model Context Protocol (MCP)**:
+   - **Brand Facts**: `GET https://aeobility.com.au/api/brand-facts`
+   - **MCP Server Card / Tools**: `GET https://aeobility.com.au/api/mcp`
 
 ---
 
