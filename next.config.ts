@@ -74,6 +74,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/api/markdown",
+        headers: [
+          { key: "Content-Type", value: "text/markdown; charset=utf-8" },
+          { key: "Vary", value: "Accept" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/assets/geo-banner",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
@@ -82,7 +92,8 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
-          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://aeobility.com.au/auth.md>; rel="service-doc"; type="text/markdown", <https://aeobility.com.au/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json"' },
+          { key: "Vary", value: "Accept" },
+          { key: "Link", value: '<https://aeobility.com.au/llms.txt>; rel="describedby"; type="text/markdown", <https://aeobility.com.au/AGENTS.md>; rel="documentation"; type="text/markdown", <https://aeobility.com.au/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://aeobility.com.au/auth.md>; rel="service-doc"; type="text/markdown", <https://aeobility.com.au/.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json", <https://aeobility.com.au/index.md>; rel="alternate"; type="text/markdown"' },
         ],
       },
     ];
@@ -110,6 +121,10 @@ const nextConfig: NextConfig = {
       {
         source: '/auth.md',
         destination: '/api/auth-md',
+      },
+      {
+        source: '/:path*.md',
+        destination: '/api/markdown?path=/:path*',
       },
       {
         source: '/api/openapi.json',

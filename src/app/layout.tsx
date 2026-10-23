@@ -83,6 +83,8 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="TlRAYGi_c4DdLtiNq7_LpYCCS7XE-OInAQaOxQJ66QY" />
+        <link rel="alternate" type="text/markdown" href="https://aeobility.com.au/index.md" />
+        <link rel="service-doc" type="text/markdown" href="https://aeobility.com.au/auth.md" />
         <link rel="nlweb-ask" href="https://aeobility.com.au/api/search/answer" />
         <link rel="nlweb-mcp" href="https://aeobility.com.au/api/mcp" />
       </head>
