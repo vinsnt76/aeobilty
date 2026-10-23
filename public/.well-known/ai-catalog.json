@@ -1,0 +1,52 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "AEObility Systems",
+    "identifier": "did:web:aeobility.com.au"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:aeobility.com.au:server:mcp",
+      "displayName": "AEObility MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://aeobility.com.au/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "what is AEObility brand facts",
+        "query AEObility knowledge hub concept node",
+        "get AEO blueprint and sprint pricing"
+      ]
+    },
+    {
+      "identifier": "urn:air:aeobility.com.au:agent:diagnostic",
+      "displayName": "AEObility A2A Agent",
+      "type": "application/agent-card+json",
+      "url": "https://aeobility.com.au/.well-known/agent-card.json",
+      "representativeQueries": [
+        "audit website for AI search visibility",
+        "calculate entity density and schema completeness",
+        "score RAG retrieval probability"
+      ]
+    },
+    {
+      "identifier": "urn:air:aeobility.com.au:skills:catalog",
+      "displayName": "AEObility Agent Skills Index",
+      "type": "application/agent-skills-index+json",
+      "url": "https://aeobility.com.au/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "discover AEObility agent skills",
+        "run AEO visibility audit skill",
+        "authenticate agent with AEObility"
+      ]
+    },
+    {
+      "identifier": "urn:air:aeobility.com.au:api:catalog",
+      "displayName": "AEObility RFC 9727 API Catalog",
+      "type": "application/linkset+json",
+      "url": "https://aeobility.com.au/.well-known/api-catalog",
+      "representativeQueries": [
+        "discover AEObility REST APIs",
+        "access OpenAPI spec and health endpoints"
+      ]
+    }
+  ]
+}

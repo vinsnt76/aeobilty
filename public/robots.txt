@@ -1,7 +1,12 @@
 # AEObility Robots.txt - Optimized for Web & AI Answer Engine Indexing
 # https://aeobility.com.au
 
+# AI Content Usage Preferences per Content Signals (IETF draft-romm-aipref-contentsignals)
+# https://contentsignals.org/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 # Prevent crawling of compiled Next.js font/media chunks
 Disallow: /_next/static/media/
@@ -14,9 +19,11 @@ Allow: /api/forms/audit
 Allow: /api/diagnostic
 Allow: /api/wallet-pass
 Allow: /api/brand-facts
+Allow: /api/markdown
 
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Allow: /api/search/answer
 Allow: /api/bill
@@ -114,3 +121,5 @@ Allow: /
 
 # Indexing Resources & Machine Maps
 Sitemap: https://aeobility.com.au/sitemap.xml
+Agentmap: https://aeobility.com.au/.well-known/ai-catalog.json
+

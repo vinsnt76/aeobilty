@@ -1,0 +1,47 @@
+{
+  "$schema": "https://a2a-protocol.org/latest/schemas/agent-card.json",
+  "name": "aeobility-agent",
+  "version": "1.0.0",
+  "description": "AEObility Autonomous Agent for Answer Engine Optimisation (AEO), AI Search Visibility Auditing, and Brand Consensus Discovery.",
+  "url": "https://aeobility.com.au",
+  "supportedInterfaces": [
+    {
+      "url": "https://aeobility.com.au/api/search/answer",
+      "protocol": "rest",
+      "description": "Grounded vector answer generation and entity matching."
+    },
+    {
+      "url": "https://aeobility.com.au/api/diagnostic",
+      "protocol": "rest",
+      "description": "AI visibility and entity density diagnostic audit engine."
+    },
+    {
+      "url": "https://aeobility.com.au/api/mcp",
+      "protocol": "mcp",
+      "description": "Model Context Protocol tools and brand knowledge graph resources."
+    }
+  ],
+  "capabilities": [
+    "search-synthesis",
+    "telemetry-auditing",
+    "schema-validation",
+    "vector-answering"
+  ],
+  "skills": [
+    {
+      "id": "aeo-audit",
+      "name": "AEO Visibility Audit",
+      "description": "Executes a 5-dimensional audit evaluating entity density, structured schema coverage, vector proximity, and RAG survival probability."
+    },
+    {
+      "id": "brand-consensus",
+      "name": "Brand Consensus Ledger",
+      "description": "Retrieves verified canonical brand facts, pricing parameters, and operational definitions to mitigate AI hallucinations."
+    },
+    {
+      "id": "vector-answer",
+      "name": "Vector Answer Grounding",
+      "description": "Performs cosine similarity searches against the 60-node AEObility Information Architecture and SLM knowledge base."
+    }
+  ]
+}

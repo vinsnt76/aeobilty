@@ -1,0 +1,66 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card/v1.json",
+  "serverInfo": {
+    "name": "aeobility-mcp-server",
+    "version": "1.0.0",
+    "description": "Model Context Protocol (MCP) server for AEObility AEO knowledge graphs, brand consensus facts, and semantic telemetry."
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://aeobility.com.au/api/mcp"
+  },
+  "endpoint": "https://aeobility.com.au/api/mcp",
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "get_organization_entity",
+      "description": "Retrieves canonical consensus facts, brand graphs, and identifiers for AEObility.",
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "get_founder_entity",
+      "description": "Retrieves the personal entity profile for Vince Baker, linking him to AEObility corporate graph.",
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "query_knowledge_hub_node",
+      "description": "Searches semantic lattice links and Atomic Answer Blocks within the Knowledge Hub.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "conceptNode": {
+            "type": "string",
+            "enum": [
+              "AEO", "Semantic Lattice", "Atomic Answer Blocks", "Brand Consensus",
+              "Query Fan-out", "Structured Data", "Semantic SEO", "Positional Bias",
+              "AI Visibility Telemetry", "Entity Modelling"
+            ]
+          }
+        },
+        "required": ["conceptNode"]
+      }
+    },
+    {
+      "name": "get_service_module",
+      "description": "Fetches technical specs and commercial blueprints for AEObility frameworks.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "framework": { "type": "string", "enum": ["90-Day AI Success Blueprint", "Schema Validation Audit"] }
+        },
+        "required": ["framework"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "aeo-audit",
+      "type": "skill-md",
+      "description": "Execute a real-time AI search visibility and entity density audit via the AEObility Diagnostic API.",
+      "url": "https://aeobility.com.au/.well-known/agent-skills/aeo-audit/SKILL.md",
+      "digest": "sha256:bcc9012dcaa52903ee8216298f6c63c97ed130c88e1694ba4d8ef4c715127c66"
+    },
+    {
+      "name": "auth-md",
+      "type": "skill-md",
+      "description": "Discover agentic registration, OAuth token exchange, and user claim procedures for AEObility services.",
+      "url": "https://aeobility.com.au/.well-known/agent-skills/auth-md/SKILL.md",
+      "digest": "sha256:34e0cea2b0ff53281bca969898e8d464d7786260d2aeba2a6c462e92dfd5bcc"
+    },
+    {
+      "name": "mcp-tools",
+      "type": "skill-md",
+      "description": "Connect to AEObility Model Context Protocol tools for brand consensus facts, founder entities, and knowledge hub queries.",
+      "url": "https://aeobility.com.au/.well-known/agent-skills/mcp-tools/SKILL.md",
+      "digest": "sha256:7f770c0292264aa20274ea318eeacf9978bb549abf5bb67ad773145c383757ab"
+    }
+  ]
+}
