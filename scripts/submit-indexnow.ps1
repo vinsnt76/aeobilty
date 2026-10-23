@@ -105,7 +105,7 @@ $CanonicalUrls = @(
     "https://$HostDomain/terms"
 )
 
-function Map-FileToUrl([string]$filePath) {
+function Resolve-FileToUrl([string]$filePath) {
     $norm = $filePath.Replace("\", "/").Trim()
 
     if ($norm -match "^src/app/page\.(tsx|jsx|js|ts)$") {
@@ -129,6 +129,7 @@ function Map-FileToUrl([string]$filePath) {
     return $null
 }
 
+
 $TargetUrls = @()
 
 if ($Urls -and $Urls.Count -gt 0) {
@@ -151,7 +152,7 @@ if ($Urls -and $Urls.Count -gt 0) {
                 break
             }
 
-            $url = Map-FileToUrl $file
+            $url = Resolve-FileToUrl $file
             if ($url) {
                 $detectedUrls += $url
             }
@@ -177,7 +178,7 @@ if ($Urls -and $Urls.Count -gt 0) {
         $recentChanges = git diff --name-only HEAD~1
         $detected = @()
         foreach ($f in $recentChanges) {
-            $u = Map-FileToUrl $f
+            $u = Resolve-FileToUrl $f
             if ($u) { $detected += $u }
         }
         if ($detected.Count -gt 0) {
