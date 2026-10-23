@@ -9,9 +9,10 @@ import {
   PRICING_CONFIG, 
   BRAND_KNOWLEDGE_LATTICE,
   PUBLIC_SCHEMA_GRAPH,
-  PROVENANCE_ENTITIES
+  PROVENANCE_ENTITIES,
+  TECHNICAL_AUDITS
 } from '@/lib/brandFacts';
-import { ShieldCheck, Tag, CheckCircle2, BookOpen, Layers, Sparkles, HelpCircle, Cpu, Database, Search, Bot, Activity, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Tag, CheckCircle2, BookOpen, Layers, Sparkles, HelpCircle, Cpu, Database, Search, Bot, Activity, ArrowRight, Award, ExternalLink, Check } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -189,8 +190,156 @@ export default function HumanBrandFactsPage() {
                 AEObility operates from Perth and delivers projects remotely across Australia.
               </div>
             </div>
+            <div className="p-4 grid md:grid-cols-3 gap-4 text-sm hover:bg-white/[0.02] transition-colors">
+              <div className="font-semibold text-white md:col-span-1 text-xs font-mono text-aeo-cyan">
+                {TECHNICAL_AUDITS.agentReadiness.atomicAnswer.question}
+              </div>
+              <div className="text-zinc-300 md:col-span-2 font-serif text-xs leading-relaxed">
+                {TECHNICAL_AUDITS.agentReadiness.atomicAnswer.answer}
+              </div>
+            </div>
           </div>
         </section>
+
+        {/* 2.5 Third-Party Technical Audits & Benchmark Ledger */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-aeo-cyan">
+            <Award className="w-4 h-4" />
+            <span>2.5 Third-Party Technical Audits &amp; Benchmark Ledger</span>
+          </div>
+
+          <div className="bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 border border-aeo-cyan/30 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-aeo-cyan/5 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Benchmark Header */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-6 border-b border-white/10 relative">
+              <div className="space-y-2 max-w-xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono">
+                  <Check className="w-3.5 h-3.5" />
+                  <span>{TECHNICAL_AUDITS.agentReadiness.classification}</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">
+                  Agent Readiness Benchmark Audit
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  Independent third-party evaluation measuring crawler accessibility, markdown content negotiation, bot authorization, and autonomous agent protocol discovery.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-start md:items-end shrink-0 bg-black/50 border border-white/10 rounded-2xl p-4 sm:px-6">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400">Overall Score</div>
+                <div className="text-4xl sm:text-5xl font-black font-mono text-aeo-cyan tracking-tight">
+                  {TECHNICAL_AUDITS.agentReadiness.overallScore}
+                  <span className="text-xl sm:text-2xl text-zinc-500 font-normal">/{TECHNICAL_AUDITS.agentReadiness.scaleMax}</span>
+                </div>
+                <div className="text-xs font-mono text-emerald-400 mt-1 font-semibold">Maximum Tier (Level 5)</div>
+              </div>
+            </div>
+
+            {/* Audit Metadata Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 space-y-1">
+                <span className="text-[10px] uppercase text-zinc-500">Evaluation Platform</span>
+                <p className="text-white font-semibold truncate">{TECHNICAL_AUDITS.agentReadiness.evaluator}</p>
+                <a 
+                  href={TECHNICAL_AUDITS.agentReadiness.evaluationUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1 text-[11px] text-aeo-cyan hover:underline pt-0.5"
+                >
+                  <span>Verify Report</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 space-y-1">
+                <span className="text-[10px] uppercase text-zinc-500">Evaluation Date</span>
+                <p className="text-white font-semibold">{TECHNICAL_AUDITS.agentReadiness.testDate}</p>
+                <span className="text-[10px] text-emerald-400 font-bold block pt-0.5">{TECHNICAL_AUDITS.agentReadiness.status}</span>
+              </div>
+
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 space-y-1">
+                <span className="text-[10px] uppercase text-zinc-500">Audit Cadence</span>
+                <p className="text-white font-semibold">{TECHNICAL_AUDITS.agentReadiness.reviewCadenceDays} Days</p>
+                <span className="text-[10px] text-zinc-400 block pt-0.5">Next: {TECHNICAL_AUDITS.agentReadiness.nextReviewDate}</span>
+              </div>
+
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 space-y-1">
+                <span className="text-[10px] uppercase text-zinc-500">Target Entity</span>
+                <p className="text-white font-semibold truncate">aeobility.com.au</p>
+                <span className="text-[10px] text-aeo-cyan block pt-0.5">Canonical Apex</span>
+              </div>
+            </div>
+
+            {/* Category Scores Breakdown */}
+            <div className="space-y-3">
+              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400">Category Score Breakdown</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-300 font-semibold">Discoverability</span>
+                    <span className="text-aeo-cyan font-bold">{TECHNICAL_AUDITS.agentReadiness.categoryScores.discoverability.score}%</span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-serif">
+                    Robots.txt, XML sitemap, link relation headers ({TECHNICAL_AUDITS.agentReadiness.categoryScores.discoverability.metric})
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-300 font-semibold">Content Structure</span>
+                    <span className="text-emerald-400 font-bold">{TECHNICAL_AUDITS.agentReadiness.categoryScores.content.score}%</span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-serif">
+                    RFC 7231 markdown content negotiation ({TECHNICAL_AUDITS.agentReadiness.categoryScores.content.metric})
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-300 font-semibold">Bot Access Control</span>
+                    <span className="text-emerald-400 font-bold">{TECHNICAL_AUDITS.agentReadiness.categoryScores.botAccessControl.score}%</span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-serif">
+                    Crawler rules, Content Signals, Web Bot Auth ({TECHNICAL_AUDITS.agentReadiness.categoryScores.botAccessControl.metric})
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-300 font-semibold">API &amp; Protocol Discovery</span>
+                    <span className="text-emerald-400 font-bold">{TECHNICAL_AUDITS.agentReadiness.categoryScores.apiAuthMcpSkillDiscovery.score}%</span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-serif">
+                    RFC 9727, OAuth PRM, MCP Server, A2A, Skills ({TECHNICAL_AUDITS.agentReadiness.categoryScores.apiAuthMcpSkillDiscovery.metric})
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="text-zinc-300 font-semibold">Agent Commerce</span>
+                    <span className="text-zinc-300 font-bold">{TECHNICAL_AUDITS.agentReadiness.categoryScores.commerce.score}%</span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 font-serif">
+                    UCP, ACP, MPP, AP2, x402 payment tiers ({TECHNICAL_AUDITS.agentReadiness.categoryScores.commerce.status})
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Retrieval Statement & Claim Discipline */}
+            <div className="bg-black/60 border border-white/10 rounded-xl p-4 space-y-2">
+              <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Canonical Retrieval Statement</div>
+              <p className="text-xs text-white font-mono bg-white/[0.02] p-2.5 rounded border border-white/5">
+                &ldquo;{TECHNICAL_AUDITS.agentReadiness.retrievalStatement}&rdquo;
+              </p>
+              <p className="text-[11px] text-zinc-400 font-serif pt-1 leading-relaxed">
+                <strong className="text-zinc-300 font-sans">Claim Discipline &amp; Scope Boundary:</strong> {TECHNICAL_AUDITS.agentReadiness.claimDisciplineNote}
+              </p>
+            </div>
+          </div>
+        </section>
+
 
         {/* 3. Glossary Blocks */}
         <section className="space-y-4">

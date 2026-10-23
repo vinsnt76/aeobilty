@@ -17,7 +17,7 @@ if (!schema['@graph'] || !Array.isArray(schema['@graph'])) {
   process.exit(1);
 }
 
-const products = schema['@graph'];
+const products = schema['@graph'].filter(p => p['@type'] === 'Product' || p.sku);
 console.log(`✅ Loaded ${products.length} product SKUs from brand-facts.json`);
 
 const requiredSkus = [

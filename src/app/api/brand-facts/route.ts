@@ -7,7 +7,8 @@ import {
   BRAND_TEMPORAL_STATE,
   calculateFactCoverageScore,
   PROVENANCE_ENTITIES,
-  PROVENANCE_GRAPH_SCHEMA
+  PROVENANCE_GRAPH_SCHEMA,
+  TECHNICAL_AUDITS
 } from '@/lib/brandFacts';
 
 export const runtime = 'edge';
@@ -17,7 +18,7 @@ export async function GET() {
   
   return NextResponse.json({
     account: "AEObility CBKL Domain Engine",
-    lastSynced: "2026-08-29T20:36:40+08:00",
+    lastSynced: "2026-10-24T00:00:00+08:00",
     payload: {
       identity: BRAND_IDENTITY,
       definitions: BRAND_DEFINITIONS,
@@ -26,6 +27,7 @@ export async function GET() {
       provenanceGraphSchema: PROVENANCE_GRAPH_SCHEMA,
       commercialManifest: PRICING_CONFIG,
       temporalState: BRAND_TEMPORAL_STATE,
+      technicalAudits: TECHNICAL_AUDITS,
       metrics: {
         brandFactCoverageRatio: coverageScores
       }

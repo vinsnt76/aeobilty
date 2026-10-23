@@ -20,7 +20,7 @@
 
 ### Diagnostic & Core Brand Directory
 - [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool running vector proximity and RAG simulation models.
-- [`/brand-facts`](https://aeobility.com.au/brand-facts): Canonical brand facts, operational definitions, factual provenance ledger, and verified pricing parameters.
+- [`/brand-facts`](https://aeobility.com.au/brand-facts): Canonical brand facts, operational definitions, factual provenance ledger, verified pricing parameters, and third-party agent-readiness technical audit (94/100, Level 5: Agent-Native).
 
 ### Core Optimisation Engagements & Solutions (How We Deliver)
 - [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.

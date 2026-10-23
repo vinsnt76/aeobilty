@@ -14,7 +14,7 @@
 AEObility refactors digital content and schema graphs so AI search engines (ChatGPT, Google Search AI Overviews, Gemini, Perplexity, Claude) and spatial map assistants (Google Maps, Apple Maps) can discover, parse, understand, and cite Australian small and medium businesses.
 
 ### Canonical Brand Facts & Entity Directory
-`https://aeobility.com.au/brand-facts` maintains our public canonical brand knowledge layer, including verified ABN details, operational definitions, service matrices, and published pricing.
+`https://aeobility.com.au/brand-facts` maintains our public canonical brand knowledge layer, including verified ABN details, operational definitions, service matrices, published pricing, and third-party agent-readiness benchmark audits (94/100, Level 5: Agent-Native).
 
 ---
 
@@ -53,7 +53,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 ### Node: `/brand-facts`
 - **Title**: Brand Facts & Canonical Entity Directory
 - **H1**: Brand Facts & Canonical Entity Directory
-- **Summary**: Consolidated public canonical brand knowledge layer detailing corporate identities, entity relationships, operational definitions, and itemised service deliverables.
+- **Summary**: Consolidated public canonical brand knowledge layer detailing corporate identities, entity relationships, operational definitions, itemised service deliverables, and third-party agent readiness score (94/100, Level 5: Agent-Native).
 
 ### Node: `/services/ai-search-agency`
 - **Title**: AI Search Agency & AEO Consultancy Australia | AEObility

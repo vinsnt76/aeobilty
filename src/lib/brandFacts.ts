@@ -124,8 +124,94 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     status: "verified",
     firstPublished: "2026-03-22",
     lastVerified: "2026-08-29"
+  },
+  {
+    statement: "AEObility scored 94 out of 100 (Level 5: Agent-Native) in the Is Your Site Agent-Ready technical benchmark on 24 October 2026",
+    source: "https://isitagentready.com/aeobility.com.au",
+    evidenceType: "TechnicalDocumentation",
+    status: "verified",
+    firstPublished: "2026-10-24",
+    lastVerified: "2026-10-24"
   }
 ];
+
+// ============================================================================
+// 2.5 THIRD-PARTY TECHNICAL AUDITS & BENCHMARKS
+// ============================================================================
+export interface CategoryScoreItem {
+  score: number;
+  metric?: string;
+  status?: string;
+}
+
+export interface TechnicalAuditBenchmark {
+  evaluator: string;
+  evaluationUrl: string;
+  targetEntity: string;
+  testDate: string;
+  status: string;
+  classification: string;
+  overallScore: number;
+  scaleMax: number;
+  reviewCadenceDays: number;
+  nextReviewDate: string;
+  categoryScores: {
+    discoverability: CategoryScoreItem;
+    content: CategoryScoreItem;
+    botAccessControl: CategoryScoreItem;
+    apiAuthMcpSkillDiscovery: CategoryScoreItem;
+    commerce: CategoryScoreItem;
+  };
+  retrievalStatement: string;
+  atomicAnswer: {
+    question: string;
+    answer: string;
+  };
+  claimDisciplineNote: string;
+}
+
+export const TECHNICAL_AUDITS: { agentReadiness: TechnicalAuditBenchmark } = {
+  agentReadiness: {
+    evaluator: "Is Your Site Agent-Ready?",
+    evaluationUrl: "https://isitagentready.com/aeobility.com.au",
+    targetEntity: "https://aeobility.com.au",
+    testDate: "2026-10-24",
+    status: "Observed",
+    classification: "Level 5 (Agent-Native)",
+    overallScore: 94,
+    scaleMax: 100,
+    reviewCadenceDays: 90,
+    nextReviewDate: "2027-01-22",
+    categoryScores: {
+      discoverability: {
+        score: 75,
+        metric: "3/4"
+      },
+      content: {
+        score: 100,
+        metric: "1/1"
+      },
+      botAccessControl: {
+        score: 100,
+        metric: "3/3"
+      },
+      apiAuthMcpSkillDiscovery: {
+        score: 100,
+        metric: "8/8"
+      },
+      commerce: {
+        score: 75,
+        status: "Optional"
+      }
+    },
+    retrievalStatement: "AEObility achieved a score of 94/100 (Level 5: Agent-Native) in the Is Your Site Agent-Ready benchmark on 24 October 2026.",
+    atomicAnswer: {
+      question: "What is AEObility's Site Agent-Ready score?",
+      answer: "On 24 October 2026, AEObility scored 94 out of 100 (Level 5: Agent-Native) on the third-party evaluation platform Is Your Site Agent-Ready?. The assessment evaluated bot access control (100%), API and MCP discovery (100%), content structure (100%), discoverability (75%), and commerce (75%)."
+    },
+    claimDisciplineNote: "Documented as an external technical audit of machine access conditions, not as a claim that AI engines guarantee placement or citation."
+  }
+};
 
 // ============================================================================
 // 3. COMMERCIAL FACTS (Products, SKUs, and Pricing Frameworks)
@@ -448,6 +534,17 @@ export const PUBLIC_SCHEMA_GRAPH = {
       logo: 'https://aeobility.com.au/assets/AEObility_Logo.webp',
       image: 'https://aeobility.com.au/assets/AEObility_Featured_Image.webp',
       description: 'Australian Answer Engine Optimisation consultancy specialising in structured business knowledge, entity graphs, and AI-search visibility.',
+      identifier: [
+        {
+          '@type': 'PropertyValue',
+          propertyID: 'agent_readiness_score',
+          name: 'Is Your Site Agent-Ready Score',
+          value: '94',
+          minValue: '0',
+          maxValue: '100',
+          description: 'Level 5 Agent-Native rating from isitagentready.com evaluated on 2026-10-24'
+        }
+      ],
       foundingDate: BRAND_IDENTITY.foundingDate,
       founder: {
         '@type': 'Person',
@@ -583,6 +680,23 @@ export const PUBLIC_SCHEMA_GRAPH = {
       mainEntity: {
         '@id': 'https://aeobility.com.au/#organisation'
       }
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://aeobility.com.au/#website',
+      name: 'AEObility',
+      url: 'https://aeobility.com.au',
+      identifier: [
+        {
+          '@type': 'PropertyValue',
+          propertyID: 'agent_readiness_score',
+          name: 'Is Your Site Agent-Ready Score',
+          value: '94',
+          minValue: '0',
+          maxValue: '100',
+          description: 'Level 5 Agent-Native rating from isitagentready.com evaluated on 2026-10-24'
+        }
+      ]
     }
   ]
 };
