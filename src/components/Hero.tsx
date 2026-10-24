@@ -225,9 +225,14 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4 text-purple-200" />
               </button>
 
-              {/* Frictionless Reassurance Micro-Row */}
-              <div className="pt-1 text-center text-xs font-medium text-slate-400 font-mono">
-                Free visibility scan &bull; No email required to start &bull; See your biggest opportunities
+              {/* Disclaimer & Reassurance Micro-Row */}
+              <div className="pt-1 text-center space-y-1 font-mono">
+                <p className="text-[11px] text-purple-300/80 font-medium">
+                  * The scan executes a real-time vector analysis using Gemini.
+                </p>
+                <p className="text-xs text-slate-400">
+                  Free visibility scan &bull; No email required to start &bull; 100% private &amp; secure
+                </p>
               </div>
             </form>
 

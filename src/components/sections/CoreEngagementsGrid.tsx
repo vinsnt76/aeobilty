@@ -69,10 +69,10 @@ export function CoreEngagementsGrid() {
               {/* High-Contrast Badge & Guarantee Line */}
               <div className="space-y-1.5">
                 <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
-                  100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
+                  100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days) • Zero Setup Fees
                 </div>
                 <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation when activated within {GOVERNANCE_RULES.creditWindowDays} days)
+                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days • Read-only diagnostic discovery requires zero setup fees)
                 </p>
               </div>
 
@@ -133,7 +133,7 @@ export function CoreEngagementsGrid() {
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                   <div className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong>Delivery Turnaround SLA:</strong> 5–7 Business Days from kickoff and credential verification.</span>
+                    <span><strong>Delivery Turnaround SLA:</strong> 5–7 Business Days from kickoff and credential access (includes 4–6 hours of dedicated engineering diagnostic analysis).</span>
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -184,9 +184,18 @@ export function CoreEngagementsGrid() {
                     <span className="text-sm font-semibold text-zinc-300 font-mono">Direct / {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey</span>
                     <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
                   </div>
-                  <p className="mt-1 text-xs text-zinc-400 font-sans">
-                    Turnkey deployment across up to {GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages
-                  </p>
+
+                  {/* Direct vs. Turnkey Operational Definition */}
+                  <div className="mt-2.5 p-2.5 rounded-xl bg-zinc-900/80 border border-white/10 space-y-1.5 text-[11px] font-sans">
+                    <div className="leading-snug">
+                      <span className="font-mono font-bold text-cyan-300">Direct ($1,990):</span>{' '}
+                      <span className="text-zinc-300">Engineered schema, atomic copy &amp; link maps provided as production-ready code/PRs for your in-house team to deploy.</span>
+                    </div>
+                    <div className="leading-snug pt-1 border-t border-white/5">
+                      <span className="font-mono font-bold text-purple-300">Turnkey ($3,195):</span>{' '}
+                      <span className="text-zinc-300">End-to-end CMS code injection and live production deployment handled directly by AEObility engineers across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages.</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* High-Contrast Badge & Waiver Line */}
@@ -195,7 +204,7 @@ export function CoreEngagementsGrid() {
                     $250 Setup Fee Waived
                   </div>
                   <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                    (Complimentary Technical Onboarding &amp; Telemetry initialisation included at $0)
+                    (Standard $250 AUD technical onboarding &amp; credential integration fee is 100% waived with package deployment)
                   </p>
                 </div>
 
@@ -314,10 +323,10 @@ export function CoreEngagementsGrid() {
               {/* High-Contrast Badge & Reassurance */}
               <div className="space-y-1.5">
                 <div className="inline-block px-2.5 py-1 rounded-md bg-purple-950/80 border border-purple-400/50 text-[11px] font-mono font-bold text-purple-300">
-                  {tier3.badge || 'Zero Contract Lock-In'}
+                  {tier3.badge || 'Zero Contract Lock-In'} • Setup Fee Waived
                 </div>
                 <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                  (Clear month-to-month terms with zero long-term agency lock-in)
+                  (Clear month-to-month terms with zero agency lock-in • Standard $250 onboarding setup fee is included at $0 for all Macro Sprint commitments)
                 </p>
               </div>
 

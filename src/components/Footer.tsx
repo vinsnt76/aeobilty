@@ -65,10 +65,12 @@ export default function Footer() {
               href="https://www.linkedin.com/company/133445734/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-aeo-cyan transition-colors"
-              aria-label="LinkedIn"
+              className="text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center justify-center"
+              aria-label="AEObility on LinkedIn"
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <span className="sr-only">LinkedIn</span>
+              <svg className="w-5 h-5 fill-current" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <title>LinkedIn</title>
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
@@ -78,10 +80,12 @@ export default function Footer() {
               href="https://www.instagram.com/aeo.bility/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-aeo-cyan transition-colors"
-              aria-label="Instagram"
+              className="text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center justify-center"
+              aria-label="AEObility on Instagram"
             >
-              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <span className="sr-only">Instagram</span>
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <title>Instagram</title>
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -93,10 +97,12 @@ export default function Footer() {
               href="https://www.facebook.com/profile.php?id=61591781069830"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-aeo-cyan transition-colors"
-              aria-label="Facebook"
+              className="text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center justify-center"
+              aria-label="AEObility on Facebook"
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <span className="sr-only">Facebook</span>
+              <svg className="w-5 h-5 fill-current" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <title>Facebook</title>
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8v-6.9H7.5v-2.9H10V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.24 0-1.63.77-1.63 1.56v1.8h2.7l-.43 2.9H13v6.9c4.56-.93 8-4.96 8-9.8z"/>
               </svg>
             </a>
@@ -106,10 +112,12 @@ export default function Footer() {
               href="https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-aeo-cyan transition-colors"
-              aria-label="YouTube"
+              className="text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center justify-center"
+              aria-label="AEObility on YouTube"
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <span className="sr-only">YouTube</span>
+              <svg className="w-5 h-5 fill-current" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <title>YouTube</title>
                 <path d="M23.498 6.163c-.272-1.016-1.07-1.815-2.085-2.087-1.839-.496-9.213-.496-9.213-.496s-7.373 0-9.213.496c-1.016.272-1.813 1.07-2.086 2.087-.496 1.839-.496 5.673-.496 5.673s0 3.834.496 5.673c.273 1.016 1.07 1.815 2.086 2.086 1.84.497 9.213.497 9.213.497s7.374 0 9.213-.497c1.016-.271 1.813-1.07 2.086-2.086.496-1.839.496-5.673.496-5.673s0-3.834-.496-5.673zm-14.28 9.387v-7.103l6.23 3.557-6.23 3.546z"/>
               </svg>
             </a>
@@ -119,10 +127,12 @@ export default function Footer() {
               href="https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-aeo-cyan transition-colors"
-              aria-label="Google Maps"
+              className="text-white/40 hover:text-aeo-cyan transition-colors inline-flex items-center justify-center"
+              aria-label="AEObility on Google Maps"
             >
-              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <span className="sr-only">Google Maps</span>
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <title>Google Maps</title>
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>

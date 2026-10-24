@@ -190,7 +190,7 @@ export default function HowItWorks() {
                         id="australian-business-url"
                         name="australian_business_url"
                         required
-                        placeholder="https://example.com.au"
+                        placeholder="https://yourbrand.com.au"
                         value={url}
                         onChange={(e) => {
                           setUrl(e.target.value);
@@ -218,7 +218,7 @@ export default function HowItWorks() {
                         id="target-search-intent"
                         name="target_search_intent"
                         required
-                        placeholder="e.g. best solar installer Brisbane"
+                        placeholder="e.g. Physiotherapist Near Me"
                         value={intent}
                         onChange={(e) => {
                           setIntent(e.target.value);
@@ -241,13 +241,13 @@ export default function HowItWorks() {
                     <span>Generate My AI Visibility Score</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
-                  <p className="text-[10px] text-center text-neutral-500 font-medium mt-2.5">
+                  <p className="text-[10px] text-center text-neutral-500 font-medium font-mono mt-2.5">
                     * The scan executes a real-time vector analysis using Gemini.
                   </p>
                 </div>
 
-                <p className="text-[9px] text-center text-neutral-400 font-light">
-                  By clicking, you agree to our terms. Your privacy is guaranteed.
+                <p className="text-[11px] text-center text-neutral-500 font-mono">
+                  Free visibility scan &bull; No email required to start &bull; 100% private &amp; secure
                 </p>
               </form>
           </div>

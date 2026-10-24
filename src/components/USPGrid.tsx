@@ -26,7 +26,7 @@ export default function USPGrid() {
   const usps = [
     {
       icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,205,216,0.4)]" />,
-      title: 'Stop Losing Traffic on Google, Maps and AI',
+      title: 'Capture High-Intent Local Demand',
       description: 'Improve how Search, Maps, and AI platforms interpret and choose your business facts so relevant local customers find you when they search.',
     },
     {
