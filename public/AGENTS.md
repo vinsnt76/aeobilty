@@ -42,10 +42,27 @@ AEObility structures its digital presence across verified entity nodes grounded 
 - `/knowledge-hub/articles/retrieval-augmented-generation` (RAG Knowledge Node): `0.87`
 - `/knowledge-hub/articles/entity-authority-building` (Entity Authority Node): `0.83`
 
-### Core Engagements & Solutions
-1. **The Strategic Blueprint Method**: Standalone $995 AUD Clarity Phase deep technical audit and 90-day strategic roadmap. (`https://aeobility.com.au/solutions/aeo-blueprint`)
-2. **AEO Technical Sprints**: Programmatic schema graph nesting, code refactoring, and atomic block rewrites. (`https://aeobility.com.au/solutions/aeo-sprint`)
-3. **GEO Services Sprint**: Location-aware optimisation rules, coordinate precision mapping, and regional intent frameworks. (`https://aeobility.com.au/services/geo-marketing`)
+### Technical Sprint Pricing Model & Service Ladder
+AEObility operates on a transparent, fixed-scope Technical Sprint Pricing model with zero lock-in contracts:
+1. **The AEObility Strategic Blueprint (`BPSTRAT`)**: $995 AUD ex. GST (5 business days SLA). Comprehensive site crawl, entity mapping, LLM answer-gap analysis, and prioritised 90-day action plan. 100% of the $995 fee is credited toward Foundation Implementation within 60 calendar days. (`https://aeobility.com.au/solutions/aeo-blueprint`)
+2. **Direct Modular Foundation (`AEO-FOUNDATION-DIRECT`)**: $1,980 AUD ex. GST (10 business days SLA). 4-pillar foundation deployment for organisations with existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived). (`https://aeobility.com.au/solutions/aeo-sprint`)
+3. **Foundation Turnkey Implementation (`AEO-FOUNDATION`)**: $3,195 AUD ex. GST (4-week structured deployment across up to 10 core pages). End-to-end execution across all 4 pillars. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint fee credit reversal. (`https://aeobility.com.au/solutions`)
+4. **AEO Technical Macro Sprints (`SS1MACRO`–`SS4MACRO`)**: $1,980 AUD ex. GST per 10-day sprint. Bundles 4 targeted micro-sprints across one defined pillar. Includes complimentary Technical Onboarding ($250 value waived). (`https://aeobility.com.au/solutions/aeo-sprint`)
+5. **AEO Technical Micro-Sprints (`SS1MICRO1`–`SS4MICRO4`)**: $495 AUD ex. GST per 3-day sprint (half-day units). Rapid modular execution targeting one agreed priority with zero lock-in contracts. (`https://aeobility.com.au/solutions/aeo-sprint`)
+
+### Four Core Execution Pillars
+All AEObility technical sprint deliverables are structured across four foundational pillars:
+- **Pillar SS1: Brand Identity & Schema Architecture** (`SS1MACRO`, `SS1MICRO1`–`SS1MICRO4`): Programmatic LocalBusiness and Organisation schema injection, Service schema mapping, canonical business facts consolidation, and nested JSON-LD validation and repairs.
+- **Pillar SS2: Commercial Answer Architecture** (`SS2MACRO`, `SS2MICRO1`–`SS2MICRO4`): Restructuring priority commercial pages into 90–120 token atomic answer blocks, conversational FAQ extraction and expansion, passage-level structuring, and conversational query alignment.
+- **Pillar SS3: Semantic Lattice & Query Coverage** (`SS3MACRO`, `SS3MICRO1`–`SS3MICRO4`): Building deterministic internal concept lattices, descriptive contextual anchor text routing, concept cluster reinforcement, and orphan node integration.
+- **Pillar SS4: Brand Facts & External Trust Consensus** (`SS4MACRO`, `SS4MICRO1`–`SS4MICRO4`): Hyper-local NAP profile standardisation across top directories, citation cleanup, canonical Brand Facts page deployment, and Apple Maps & Bing Places signal alignment.
+
+### Commercial Governance Rules
+- **60-Day Reversal Window**: 100% of the $995 Blueprint fee is credited back against Foundation Implementation or Macro Sprints booked within 60 calendar days.
+- **Onboarding Fee Waiver**: The $250 Technical Onboarding (`ONBOARD`) fee is 100% waived ($0.00) when bundled into Turnkey Foundation or Macro Sprints.
+- **Out-of-Scope Developer Rate**: Standard $220 AUD ex. GST per hour (`HOURLY-DEV`) for custom edge routing, CMS modifications, or bespoke API integration.
+- **Monthly Retainer Cadence**: Governed 30-day sprint cycles ($1,980/month MRR) with zero lock-in contracts.
+- **Intellectual Property Ownership**: Clients own 100% of all schemas, content, and code upon final invoice settlement.
 
 ### Primary Service Corridors
 1. **AEO Services & Procedures**: Best AEO strategies for refactoring web content into 90-120 token atomic answer blocks and FAQ Knowledge Graph topologies to maximise positional bias and citation likelihood in AI answers. (`https://aeobility.com.au/services/aeo/procedures`)

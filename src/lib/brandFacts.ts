@@ -5,6 +5,11 @@
  */
 
 export { AEOBILITY_TONE_OF_VOICE } from './brandGuidelines';
+import {
+  TECHNICAL_SPRINT_CATALOG,
+  GOVERNANCE_RULES,
+  formatAudCurrency,
+} from '@/lib/pricing';
 
 export interface FactProvenance {
   statement: string;
@@ -132,6 +137,46 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     status: "verified",
     firstPublished: "2026-10-24",
     lastVerified: "2026-10-24"
+  },
+  {
+    statement: "The AEObility Blueprint fee of $995 AUD is 100% credited toward Foundation Implementation within 60 calendar days",
+    source: "https://aeobility.com.au/solutions/aeo-blueprint",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-01-15",
+    lastVerified: "2026-10-24"
+  },
+  {
+    statement: "AEObility waives the $250 Technical Onboarding fee on Turnkey Foundation and Macro Sprint packages",
+    source: "https://aeobility.com.au/solutions",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-10-24",
+    lastVerified: "2026-10-24"
+  },
+  {
+    statement: "AEObility offers fixed-scope Macro Sprints at $1,980 AUD ex. GST and Micro-Sprints at $495 AUD ex. GST with zero contract lock-in",
+    source: "https://aeobility.com.au/solutions/aeo-sprint",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-10-24",
+    lastVerified: "2026-10-24"
+  },
+  {
+    statement: "AEObility's standard out-of-scope developer rate is $220 AUD ex. GST per hour",
+    source: "https://aeobility.com.au/solutions",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-10-24",
+    lastVerified: "2026-10-24"
+  },
+  {
+    statement: "AEObility provides governed 30-day sprint retainer cycles ($1,980/month MRR) with zero lock-in contracts",
+    source: "https://aeobility.com.au/solutions",
+    evidenceType: "FirstPartyPage",
+    status: "verified",
+    firstPublished: "2026-10-24",
+    lastVerified: "2026-10-24"
   }
 ];
 
@@ -221,77 +266,124 @@ export const PRICING_CONFIG = {
   currency: 'AUD',
   taxExclusive: true,
   guarantee: null,
+  governance: {
+    creditWindowDays: GOVERNANCE_RULES.creditWindowDays,
+    creditAmountAud: GOVERNANCE_RULES.creditAmountExGst,
+    onboardingWaiverAud: TECHNICAL_SPRINT_CATALOG['ONBOARD'].priceExGst,
+    hourlyDevRateAud: GOVERNANCE_RULES.hourlyRateExGst,
+    turnkeyPageLimit: GOVERNANCE_RULES.turnkeyPageLimit,
+    retainerCadenceDays: GOVERNANCE_RULES.retainerCadenceDays,
+    monthlyRetainerAud: TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst,
+    ipOwnership: GOVERNANCE_RULES.ipOwnership
+  },
   blueprint: {
-    code: 'BPSTRAT',
-    sku: 'AEO-BP-STRAT',
+    code: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].code,
+    sku: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].code,
     title: 'The AEObility Strategic Blueprint',
-    name: 'Strategic AEO Blueprint and Diagnostic Scan',
-    price: 995,
-    priceAUD: 995,
-    duration: '10 business days',
+    name: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name,
+    price: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst,
+    duration: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverySla,
     creditBackEligible: true,
-    description: 'A standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit.',
+    description: `${TECHNICAL_SPRINT_CATALOG['BPSTRAT'].purpose} 100% of the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)} Blueprint fee is credited back into Foundation Implementation if booked within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
     deliverables: [
-      'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
-      'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
-      'Entity and schema gap assessment to address structural indexing friction points',
-      '100% credited back into Foundation Implementation if booked within 60 days'
+      ...TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverables,
+      `100% credited back into Foundation Implementation if booked within ${GOVERNANCE_RULES.creditWindowDays} days`
     ]
   },
   StrategicBlueprint: {
-    sku: 'AEO-BP-STRAT',
-    name: 'Strategic AEO Blueprint & Diagnostic Review',
-    priceAUD: 995,
-    duration: '10 business days',
-    description: 'Standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit identifying exact structural indexing friction points.',
+    sku: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].code,
+    name: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst,
+    duration: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverySla,
+    creditBackEligible: true,
+    description: `Standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit. 100% credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
     deliverables: [
-      'Multi-platform location signal review to identify inconsistencies across relevant map and location-data surfaces',
-      'Content answer-readiness review to improve how effectively AI search systems surface relevant business answers',
-      'Entity and schema gap assessment to address information and evidence gaps',
-      '100% credited back into Foundation Implementation if booked within 60 days'
+      ...TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverables,
+      `100% credited back into Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days`
+    ]
+  },
+  FoundationImplementationDirect: {
+    sku: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].code,
+    name: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].name,
+    priceFromAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].priceExGst,
+    duration: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].deliverySla,
+    description: `${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].purpose} Includes complimentary Technical Onboarding ($250 value waived).`,
+    deliverables: [
+      ...TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].deliverables,
+      'Complimentary Technical Onboarding ($250 value waived)'
     ]
   },
   FoundationImplementation: {
-    sku: 'AEO-FOUNDATION',
-    name: 'Foundation Implementation',
-    priceFromAUD: 3195,
-    duration: '4-week structured deployment',
-    description: 'Deploys a connected information layer designed to make core business facts, services, and key entities clearer and more retrievable to supported AI systems and answer engines.',
+    sku: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].code,
+    name: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name,
+    priceFromAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst,
+    duration: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].deliverySla,
+    description: `${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].purpose} Turnkey 4-pillar deployment across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint fee credit reversal.`,
     deliverables: [
-      'Structured Data: Refine, nest, and connect key business identity and service schemas within the page source DOM',
-      'Atomic Page Rewrites: Restructure priority content blocks into focused, retrieval-ready answer segments',
-      'Internal Linking: Strengthen semantic lattice paths and contextual linking relationships between primary entity hubs',
-      'Citation Structures: Standardise evidence, provenance linkages, and source documentation across core pages'
+      ...TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].deliverables,
+      'Complimentary Technical Onboarding ($250 value waived)',
+      `Eligible for 100% Blueprint fee credit reversal within ${GOVERNANCE_RULES.creditWindowDays} days`
+    ]
+  },
+  MacroSprints: {
+    sku: 'SS1-SS4-MACRO',
+    name: 'AEO Technical Macro Sprints (4-Pillar Bundles)',
+    priceFromAUD: TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst,
+    duration: '10 business days',
+    description: `Fixed-scope 10-day macro sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)} AUD ex. GST each) bundling 4 micro-sprints across Identity & Schema, Answer Architecture, Semantic Lattice, or Brand Facts & Trust. Includes complimentary Technical Onboarding ($250 value waived).`,
+    deliverables: [
+      'SS1MACRO: Identity & Schema Architecture (10 days)',
+      'SS2MACRO: Answer Engine Architecture (10 days)',
+      'SS3MACRO: Semantic Lattice & Internal Linking (10 days)',
+      'SS4MACRO: Brand Facts & External Trust Consensus (10 days)',
+      'Complimentary Technical Onboarding ($250 value waived on bundles)'
+    ]
+  },
+  MicroSprints: {
+    sku: 'SS1-SS4-MICRO',
+    name: 'AEO Technical Micro-Sprints',
+    priceFromAUD: TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst,
+    duration: '3 business days (half-day units)',
+    description: `Rapid modular engineering sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst)} AUD ex. GST each) targeting a single agreed priority with clear deliverables and zero lock-in contracts.`,
+    deliverables: [
+      'SS1MICRO: Schema injection, validation & NAP standardisation',
+      'SS2MICRO: Single-page atomic rewrites & query intent mapping',
+      'SS3MICRO: Semantic lattice patches & anchor optimisation',
+      'SS4MICRO: Citation cleanup & Brand Facts page creation'
     ]
   },
   microSprints: {
     codeSeries: 'SS1-SS4-MICRO',
-    basePriceFrom: 495,
+    basePriceFrom: TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst,
     catalog: [
-      { id: 'schema', name: 'Schema Sprint', price: 495 },
-      { id: 'content', name: 'Content Sprint', price: 495 },
-      { id: 'citations', name: 'Citation Clean-Up', price: 495 },
-      { id: 'linking', name: 'Local Linking Sprint', price: 695 },
-      { id: 'brand-facts', name: 'Brand Facts Page', price: 495 },
-    ]
-  },
-  MicroSprints: {
-    sku: 'AEO-SS-MICRO',
-    name: 'Targeted Optimisation Sprints',
-    priceFromAUD: 495,
-    duration: '3 to 5 business days',
-    description: 'Rapid iterative engineering sprints to continually lift middle-tier search telemetry positions into primary citation layers.',
-    deliverables: [
-      'Rapid schema refactoring and nested JSON-LD graph generation to support clearer entity relationships',
-      'Server-side infrastructure and token optimisation based on real-time telemetry data',
-      'GeoCoordinate and location-data alignment across relevant web and map surfaces'
+      { id: 'SS1MICRO1', name: 'Location Schema Injection', price: 495 },
+      { id: 'SS1MICRO2', name: 'Service Schema Injection', price: 495 },
+      { id: 'SS1MICRO3', name: 'Canonical Business Facts Consolidation', price: 495 },
+      { id: 'SS1MICRO4', name: 'JSON-LD Validation & Repair', price: 495 },
+      { id: 'SS2MICRO1', name: 'Single Page Atomic Rewrite', price: 495 },
+      { id: 'SS2MICRO2', name: 'FAQ Extraction & Expansion', price: 495 },
+      { id: 'SS2MICRO3', name: 'Passage-Level Structuring & Chunking', price: 495 },
+      { id: 'SS2MICRO4', name: 'Query Alignment & Intent Mapping', price: 495 },
+      { id: 'SS3MICRO1', name: 'Three-Node Semantic Lattice Patch', price: 495 },
+      { id: 'SS3MICRO2', name: 'Anchor Optimisation for One Page', price: 495 },
+      { id: 'SS3MICRO3', name: 'Concept Cluster Reinforcement', price: 495 },
+      { id: 'SS3MICRO4', name: 'Orphan Node Lattice Integration', price: 495 },
+      { id: 'SS4MICRO1', name: 'NAP Standardisation Across Top Directories', price: 495 },
+      { id: 'SS4MICRO2', name: 'Directory Citation Clean-Up', price: 495 },
+      { id: 'SS4MICRO3', name: 'Brand Facts Page Creation', price: 495 },
+      { id: 'SS4MICRO4', name: 'Apple Maps & Bing Places Signal Alignment', price: 495 }
     ]
   },
   foundation: {
     codeSeries: 'SS1-SS4-MACRO',
     sku: 'AEO-FOUNDATION',
     name: 'Foundation Implementation',
-    basePriceFrom: 3195,
+    basePriceFrom: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst,
     deliveryWindow: '4-week structured deployment',
     contractTerm: 'None (Fixed-scope execution)'
   }
@@ -303,7 +395,7 @@ export const PRICING_CONFIG = {
 export const BRAND_TEMPORAL_STATE = {
   fiscalCycle: "FY27",
   activeSprintsAvailable: true,
-  lastRegistrySync: "2026-08-29T21:18:00+08:00",
+  lastRegistrySync: "2026-10-24T15:00:00+08:00",
   currentCaseStudies: ["case-studies/baby-bento", "case-studies/allied-health", "case-studies/aeo-geo-blueprint-90-days"]
 };
 
@@ -318,13 +410,45 @@ export const BRAND_PRICING_SCHEMA = {
       '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#product',
       sku: 'BPSTRAT',
       name: 'The AEObility Strategic Blueprint',
-      description: 'A comprehensive 90-day diagnostic roadmap and entity salience assessment. Standalone cost is 100% credited toward implementation sprints if booked within 60 days.',
+      description: 'A comprehensive 90-day diagnostic roadmap and entity salience assessment. Standalone cost of $995 AUD is 100% credited toward Foundation Implementation if booked within 60 calendar days.',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#offer',
-        price: '995.00',
+        price: 995,
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: 995,
+          priceCurrency: 'AUD',
+          valueAddedTaxIncluded: false,
+          unitText: '5 business days'
+        },
+        seller: {
+          '@type': 'ProfessionalService',
+          name: 'AEObility'
+        }
+      }
+    },
+    {
+      '@type': 'Product',
+      '@id': 'https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-product',
+      sku: 'AEO-FOUNDATION-DIRECT',
+      name: 'Direct Modular Foundation Implementation',
+      description: 'Modular 4-pillar foundation implementation for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).',
+      offers: {
+        '@type': 'Offer',
+        '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer-foundation-direct',
+        price: 1980,
+        priceCurrency: 'AUD',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: 1980,
+          priceCurrency: 'AUD',
+          valueAddedTaxIncluded: false,
+          unitText: '10 business days'
+        },
         seller: {
           '@type': 'ProfessionalService',
           name: 'AEObility'
@@ -335,14 +459,21 @@ export const BRAND_PRICING_SCHEMA = {
       '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-foundation#product',
       sku: 'AEO-FOUNDATION',
-      name: 'Foundation Implementation',
-      description: 'Focused four-week deployment of connected information layers, structured schemas, atomic page rewrites, and citation provenance across core pages.',
+      name: 'Foundation Implementation (Turnkey)',
+      description: 'Turnkey 4-pillar deployment across up to 10 core commercial pages: connected information layers, structured schemas, atomic page rewrites, and citation provenance. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint credit reversal.',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-foundation#offer',
-        price: '3195.00',
+        price: 3195,
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: 3195,
+          priceCurrency: 'AUD',
+          valueAddedTaxIncluded: false,
+          unitText: '4-week structured deployment'
+        },
         seller: {
           '@type': 'ProfessionalService',
           name: 'AEObility'
@@ -351,16 +482,48 @@ export const BRAND_PRICING_SCHEMA = {
     },
     {
       '@type': 'Product',
-      '@id': 'https://aeobility.com.au/solutions/aeo-sprint#product',
-      sku: 'SS1-SS4-MICRO',
-      name: 'Targeted Optimisation Sprints',
-      description: 'Modular, fixed-scope engineering sprints targeting tactical priorities: custom JSON-LD schema, atomic content rewrites, or internal linking.',
+      '@id': 'https://aeobility.com.au/solutions/aeo-sprint#macro-product',
+      sku: 'SS1-SS4-MACRO',
+      name: 'AEO Technical Macro Sprints (4-Pillar Bundles)',
+      description: 'Fixed-scope 10-day macro sprints ($1,980 AUD ex. GST each) bundling 4 micro-sprints across Identity & Schema, Answer Architecture, Semantic Lattice, or Brand Facts & Trust. Includes complimentary Technical Onboarding ($250 value waived).',
       offers: {
         '@type': 'Offer',
-        '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer',
-        price: '495.00',
+        '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer-macro',
+        price: 1980,
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: 1980,
+          priceCurrency: 'AUD',
+          valueAddedTaxIncluded: false,
+          unitText: '10 business days'
+        },
+        seller: {
+          '@type': 'ProfessionalService',
+          name: 'AEObility'
+        }
+      }
+    },
+    {
+      '@type': 'Product',
+      '@id': 'https://aeobility.com.au/solutions/aeo-sprint#micro-product',
+      sku: 'SS1-SS4-MICRO',
+      name: 'AEO Technical Micro-Sprints',
+      description: 'Modular, fixed-scope engineering sprints ($495 AUD ex. GST each) targeting tactical priorities: custom JSON-LD schema, atomic content rewrites, or internal linking.',
+      offers: {
+        '@type': 'Offer',
+        '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer-micro',
+        price: 495,
+        priceCurrency: 'AUD',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: 495,
+          priceCurrency: 'AUD',
+          valueAddedTaxIncluded: false,
+          unitText: '3 business days'
+        },
         seller: {
           '@type': 'ProfessionalService',
           name: 'AEObility'

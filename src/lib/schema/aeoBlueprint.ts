@@ -1,7 +1,15 @@
 /**
- * AEObility Blueprint Strategic Audit Schema.org Graph Builder
+ * AEObility Blueprint Strategic Audit Schema.org Modular Graph Builder
  * Path: src/lib/schema/aeoBlueprint.ts
+ * Dynamically generated from Single Source of Truth (SSOT) src/lib/pricing.ts
+ * Locale: en-AU
  */
+
+import {
+  TECHNICAL_SPRINT_CATALOG,
+  GOVERNANCE_RULES,
+  formatAudCurrency,
+} from '@/lib/pricing';
 
 export interface FaqItem {
   question: string;
@@ -9,13 +17,15 @@ export interface FaqItem {
 }
 
 export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
+  const bpStrat = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
+
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
       "url": "https://aeobility.com.au/solutions/aeo-blueprint",
       "name": "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
-      "description": "Get a deep technical audit and an actionable 90-day strategic roadmap for $995 AUD ex. GST. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.",
+      "description": `Get a deep technical audit and an actionable 90-day strategic roadmap for ${formatAudCurrency(bpStrat.priceExGst)} ex. GST. 100% of your ${formatAudCurrency(bpStrat.priceExGst)} Blueprint fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -59,8 +69,8 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
       "name": "The AEObility Blueprint",
       "image": "https://aeobility.com.au/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp",
-      "description": "A comprehensive digital presence audit, technical gap analysis, and prioritised 90-day execution roadmap.",
-      "sku": "BPSTRAT",
+      "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}.`,
+      "sku": bpStrat.code,
       "brand": {
         "@type": "Organization",
         "name": "AEObility",
@@ -70,16 +80,21 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "@type": "Offer",
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer",
         "url": "https://aeobility.com.au/solutions/aeo-blueprint",
-        "name": "AEObility Blueprint Strategic Audit",
-        "sku": "BPSTRAT",
-        "price": "995.00",
+        "name": bpStrat.name,
+        "sku": bpStrat.code,
+        "price": bpStrat.priceExGst,
         "priceCurrency": "AUD",
         "availability": "https://schema.org/InStock",
         "priceSpecification": {
-          "@type": "PriceSpecification",
+          "@type": "UnitPriceSpecification",
+          "price": bpStrat.priceExGst,
+          "priceCurrency": "AUD",
           "valueAddedTaxIncluded": false,
-          "description": "Excluding GST"
+          "unitText": bpStrat.deliverySla
         },
+        "category": "AEO Strategic Diagnostic",
+        "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
+        "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
         "seller": {
           "@id": "https://aeobility.com.au/#organisation"
         }
@@ -88,9 +103,9 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Service",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#service",
-      "name": "The AEObility Blueprint Strategic Audit",
-      "alternateName": "BPSTRAT",
-      "description": "A strategic digital presence audit and prioritised 90-day action plan covering website structure, structured data, business information, local tracking, and key service pages.",
+      "name": bpStrat.name,
+      "alternateName": bpStrat.code,
+      "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
       },
@@ -100,7 +115,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Australian small businesses, agency teams and internal marketing teams"
+        "audienceType": "Australian SMBs, Allied Health Clinics, and Home Service Trades"
       },
       "isRelatedTo": [
         {

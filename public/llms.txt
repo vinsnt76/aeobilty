@@ -23,9 +23,19 @@
 - [`/brand-facts`](https://aeobility.com.au/brand-facts): Canonical brand facts, operational definitions, factual provenance ledger, verified pricing parameters, and third-party agent-readiness technical audit (94/100, Level 5: Agent-Native).
 
 ### Core Optimisation Engagements & Solutions (How We Deliver)
-- [`/solutions`](https://aeobility.com.au/solutions): Overview of flat-rate AEO solutions, technical sprints, and blueprint packages.
-- [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The Strategic Blueprint Method ($995 AUD standalone clarity phase deep audit & 90-day roadmap, 100% credited back into implementation).
-- [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Technical Sprints (JSON-LD graph nesting, HTML refactoring rules, passage level extraction, token optimisation passes, no lock-in contracts).
+- [`/solutions`](https://aeobility.com.au/solutions): Master Overview of transparent Technical Sprint Pricing packages and commercial solutions.
+- [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The AEObility Blueprint (`BPSTRAT` at $995 AUD ex. GST standalone clarity phase deep audit & 90-day roadmap, 100% credited toward Foundation Implementation within 60 calendar days).
+- [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Technical Sprints:
+  - Direct Modular Foundation (`AEO-FOUNDATION-DIRECT` at $1,980 AUD ex. GST, 10-day SLA, complimentary $250 onboarding waived).
+  - Foundation Turnkey Implementation (`AEO-FOUNDATION` at $3,195 AUD ex. GST across up to 10 core pages, 4-week SLA, complimentary $250 onboarding waived, 60-day $995 Blueprint fee credit reversal).
+  - Macro Sprints (`SS1MACRO`–`SS4MACRO` at $1,980 AUD ex. GST each, 10-day SLA, complimentary $250 onboarding waived).
+  - Micro-Sprints (`SS1MICRO1`–`SS4MICRO4` at $495 AUD ex. GST each, 3-day SLA, half-day units).
+  - Commercial Governance: Out-of-scope developer rate at $220/hr ex. GST (`HOURLY-DEV`), governed 30-day sprint retainer cycles ($1,980/month MRR) with zero lock-in contracts, and 100% client IP ownership.
+- Four Core Execution Pillars:
+  - **Pillar SS1: Brand Identity & Schema Architecture** (`SS1MACRO`, `SS1MICRO1`–`SS1MICRO4`): LocalBusiness, Organisation & Service schema nesting, canonical business facts consolidation, and JSON-LD repairs.
+  - **Pillar SS2: Commercial Answer Architecture** (`SS2MACRO`, `SS2MICRO1`–`SS2MICRO4`): 90–120 token atomic answer blocks, FAQ extraction, passage chunking, and conversational query alignment.
+  - **Pillar SS3: Semantic Lattice & Query Coverage** (`SS3MACRO`, `SS3MICRO1`–`SS3MICRO4`): Semantic concept lattices, descriptive anchor text routing, cluster reinforcement, and orphan node integration.
+  - **Pillar SS4: Brand Facts & External Trust Consensus** (`SS4MACRO`, `SS4MICRO1`–`SS4MICRO4`): NAP standardisation, directory citation cleanup, Brand Facts page creation, and Apple Maps & Bing Places alignment.
 - [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): GEO Services Sprint (coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation).
 
 ### Services (What We Optimise)

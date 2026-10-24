@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Rocket, Boxes, Compass, ArrowRight } from 'lucide-react';
+import { Rocket, Boxes, Compass, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
 
 interface EngagementPath {
   key: string;
   anchorId: string;
+  badge: string;
   icon: React.ReactNode;
   title: string;
   code: string;
@@ -13,55 +15,11 @@ interface EngagementPath {
   priceSub: string;
   scope: string;
   description: string;
+  deliverables: string[];
   techNote: string;
   whenToChoose: string;
   ctaLabel: string;
 }
-
-const engagementPaths: EngagementPath[] = [
-  {
-    key: "micro-sprint",
-    anchorId: "aeo-micro-sprints",
-    icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
-    title: "AEO Technical Micro-Sprint",
-    code: "Quick Fix",
-    price: "$495 AUD",
-    priceSub: "ex. GST per sprint",
-    scope: "One priority page or schema fix",
-    description: "Fix one high-impact AEO gap quickly: Structured Schema Deployment, Single Page Atomic Rewrite, or Category Answer Unit. Typically delivered in 4–5 business days.",
-    techNote: "For technical teams: We implement nested JSON-LD schema graphs that tie your business facts directly to authoritative registries, paired with modular HTML blocks for clean passage extraction.",
-    whenToChoose: "Outcome: Fix one high-impact AEO gap quickly. Ideal when you have a specific page or schema issue limiting AI search readability.",
-    ctaLabel: "Book Micro-Sprint"
-  },
-  {
-    key: "foundation",
-    anchorId: "aeo-foundation",
-    icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
-    title: "Foundation Implementation",
-    code: "Full Implementation",
-    price: "From $3,195 AUD",
-    priceSub: "ex. GST",
-    scope: "Connected multi-page & entity improvements",
-    description: "Implement connected improvements across structured data, atomic page rewrites, internal linking, and citation structures in a structured four-week engagement.",
-    techNote: "For technical teams: Multi-page schema integration, restructuring internal contextual links to pass explicit topical salience, and aligning citation records across platforms.",
-    whenToChoose: "Outcome: Implement connected improvements across your priority pages. Ideal when your business requires systematic AI visibility across multiple core services.",
-    ctaLabel: "Book Foundation Implementation"
-  },
-  {
-    key: "blueprint",
-    anchorId: "aeo-blueprint",
-    icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
-    title: "The AEObility Blueprint",
-    code: "Diagnostic",
-    price: "$995 AUD",
-    priceSub: "ex. GST",
-    scope: "Full digital audit & 90-day roadmap",
-    description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day prioritised implementation roadmap. The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days.",
-    techNote: "For technical teams: Practical audit of structured data gaps, entity clarity review, and query intent mapping.",
-    whenToChoose: "Outcome: Understand what is limiting AI visibility before investing. Ideal when you need a clear diagnostic plan before committing to implementation.",
-    ctaLabel: "Book Blueprint Diagnostic"
-  }
-];
 
 interface AeoStartingPointGridProps {
   id?: string;
@@ -77,6 +35,66 @@ export default function AeoStartingPointGrid({
   diagnosticAnchor,
 }: AeoStartingPointGridProps) {
   const effectiveFormId = contactAnchor ? contactAnchor.replace('#', '') : targetFormId;
+
+  const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
+  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
+  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
+
+  const tier1 = PRICING_TIERS.find((t) => t.id === 'blueprint') || PRICING_TIERS[0];
+  const tier2 = PRICING_TIERS.find((t) => t.id === 'foundation') || PRICING_TIERS[1];
+  const tier3 = PRICING_TIERS.find((t) => t.id === 'macro-sprints') || PRICING_TIERS[2];
+
+  const engagementPaths: EngagementPath[] = [
+    {
+      key: "blueprint",
+      anchorId: "aeo-blueprint",
+      badge: tier1.badge || "100% Credit Back (60 Days)",
+      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      title: tier1.name,
+      code: "Strategic Audit",
+      price: formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false }),
+      priceSub: "ex. GST",
+      scope: "Full digital audit & 90-day roadmap",
+      description: tier1.targetGoal,
+      deliverables: bpSku.deliverables,
+      techNote: "For technical teams: Comprehensive entity gap analysis, canonical schema drift auditing, and passage retrieval evaluation.",
+      whenToChoose: "Outcome: Understand what is limiting AI visibility before investing. Ideal when you need a clear diagnostic plan before committing to implementation.",
+      ctaLabel: "Book Blueprint Diagnostic"
+    },
+    {
+      key: "foundation",
+      anchorId: "aeo-foundation",
+      badge: tier2.badge || "$250 Setup Fee Waived",
+      icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
+      title: tier2.name,
+      code: "Foundation Core",
+      price: `${formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} Direct / ${formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey`,
+      priceSub: "ex. GST",
+      scope: `Connected multi-page & entity graph (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
+      description: tier2.targetGoal,
+      deliverables: foundationTurnkey.deliverables,
+      techNote: "For technical teams: Multi-page schema integration, restructuring internal links to pass explicit topical salience, and aligning citation records.",
+      whenToChoose: "Outcome: Implement connected improvements across your priority pages. Ideal when your business requires systematic AI visibility across multiple core services.",
+      ctaLabel: "Book Foundation Implementation"
+    },
+    {
+      key: "macro-sprints",
+      anchorId: "aeo-macro-sprints",
+      badge: tier3.badge || "Zero Contract Lock-In",
+      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
+      title: tier3.name,
+      code: "Ongoing Dominance",
+      price: `${formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} / mo`,
+      priceSub: "ex. GST",
+      scope: "Macro Sprint cycles (bundles 4x micro-sprints)",
+      description: tier3.targetGoal,
+      deliverables: tier3.deliverables,
+      techNote: "For technical teams: Modular sprints targeting schema nesting, answer extraction, contextual link graphs, or directory citation parity.",
+      whenToChoose: "Outcome: Target specific technical bottlenecks in focused 10-day execution blocks. Ideal for continuous optimisation with zero contract lock-in.",
+      ctaLabel: "Book Governed Sprint"
+    }
+  ];
 
   const handleSelectSprint = (key: string) => {
     if (typeof window !== 'undefined') {
@@ -106,10 +124,15 @@ export default function AeoStartingPointGrid({
               </span>
             </div>
 
+            {/* High-Contrast Badge */}
+            <div className="inline-block px-2.5 py-1 rounded-md bg-teal-950/80 border border-teal-500/30 text-[11px] font-mono font-bold text-teal-300">
+              {path.badge}
+            </div>
+
             <div>
               <h3 className="text-lg font-extrabold text-white tracking-tight">{path.title}</h3>
               <div className="flex items-baseline gap-1.5 mt-1">
-                <span className="text-2xl font-extrabold font-mono text-white">{path.price}</span>
+                <span className="text-xl sm:text-2xl font-extrabold font-mono text-white">{path.price}</span>
                 <span className="text-xs text-slate-400 font-mono">{path.priceSub}</span>
               </div>
               <p className="text-xs text-teal-400 font-mono font-medium mt-1">{path.scope}</p>
@@ -118,6 +141,16 @@ export default function AeoStartingPointGrid({
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               {path.description}
             </p>
+
+            {/* Itemized Deliverables */}
+            <ul className="space-y-2 text-xs text-slate-300 pt-2 border-t border-slate-800/60">
+              {path.deliverables.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className="bg-slate-950/80 border border-slate-800/80 p-3 rounded-xl text-xs text-slate-300 leading-relaxed">
               <strong className="text-teal-300 font-semibold block mb-0.5">When to choose:</strong>
@@ -141,3 +174,4 @@ export default function AeoStartingPointGrid({
     </div>
   );
 }
+

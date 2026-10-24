@@ -27,22 +27,29 @@ import {
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
+import { TECHNICAL_SPRINT_CATALOG, PRICING_TIERS, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
 
 export const metadata: Metadata = {
   title: 'AEO Service Costs & Project Timing | AEObility',
-  description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
+  description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and Foundation Implementation packages. Custom scope by application.`,
   alternates: {
     canonical: 'https://aeobility.com.au/services/aeo/costs-timing',
   },
   openGraph: {
     title: 'AEO Service Costs & Project Timing | AEObility',
-    description: "Explore AEObility's fixed-scope AEO service costs. Review milestones for the $995 MVP Strategic Blueprint and $3,195 Foundation Package. Custom scope by application.",
+    description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and Foundation Implementation packages. Custom scope by application.`,
     url: 'https://aeobility.com.au/services/aeo/costs-timing',
     type: 'website',
   },
 };
 
 export default function AEOPricingPage() {
+  const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
+  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
+  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
+  const onboardingSku = TECHNICAL_SPRINT_CATALOG['ONBOARD'];
+
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -82,7 +89,7 @@ export default function AEOPricingPage() {
               '@type': 'Service',
               '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#service',
               'name': 'The AEObility Strategic Blueprint',
-              'description': 'Standalone 90-day operational roadmap and technical gap analysis. 100% credited back into implementation if booked within 60 days.',
+              'description': `Standalone 90-day operational roadmap and technical gap analysis. 100% credited back into implementation if booked within ${GOVERNANCE_RULES.creditWindowDays} days.`,
               'provider': {
                 '@type': 'ProfessionalService',
                 '@id': 'https://aeobility.com.au/#organisation',
@@ -90,7 +97,7 @@ export default function AEOPricingPage() {
               },
               'offers': {
                 '@type': 'Offer',
-                'price': '995',
+                'price': `${bpSku.priceExGst}`,
                 'priceCurrency': 'AUD',
                 'priceValidUntil': '2027-06-30',
                 'availability': 'https://schema.org/InStock'
@@ -112,7 +119,7 @@ export default function AEOPricingPage() {
               },
               'offers': {
                 '@type': 'Offer',
-                'price': '3195',
+                'price': `${foundationTurnkey.priceExGst}`,
                 'priceCurrency': 'AUD',
                 'priceValidUntil': '2027-06-30',
                 'availability': 'https://schema.org/InStock'
@@ -147,18 +154,18 @@ export default function AEOPricingPage() {
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'How does the $995 Blueprint credit work?',
+            'name': `How does the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation ($3,195 AUD), or are accepted for a custom implementation engagement, the entire $995 AUD Blueprint investment is credited back against the approved implementation scope.'
+              'text': `The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation (${formatAudCurrency(foundationDirect.priceExGst)} - ${formatAudCurrency(foundationTurnkey.priceExGst)} AUD), or are accepted for a custom implementation engagement, the entire ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back against the approved implementation scope.`
             }
           },
           {
             '@type': 'Question',
-            'name': 'What is included in the $3,195 Foundation Implementation package?',
+            'name': 'What is included in the Foundation Implementation package?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The Foundation Implementation is a fixed-scope 4-week engagement. It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence across core commercial pages.'
+              'text': `The Foundation Implementation is a fixed-scope engagement available in Direct Schema (${formatAudCurrency(foundationDirect.priceExGst)}) or Turnkey Core (${formatAudCurrency(foundationTurnkey.priceExGst)}). It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. Includes complimentary onboarding (${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value).`
             }
           },
           {
@@ -249,7 +256,7 @@ export default function AEOPricingPage() {
           {/* Primacy Direct-Answer Block (45 Words) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl">
             <p className="text-sm sm:text-base md:text-lg text-white/95 font-serif font-medium leading-relaxed">
-              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs $995 AUD ex. GST</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">Foundation Implementation</Link> is a fixed-scope, four-week deployment for $3,195 AUD ex. GST.
+              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst)}</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">Foundation Implementation</Link> starts from {formatAudCurrency(foundationDirect.priceExGst)} Direct to {formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey.
             </p>
           </div>
 
@@ -327,11 +334,11 @@ export default function AEOPricingPage() {
                 <div className="space-y-1.5 text-xs text-zinc-400 font-serif">
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Price:</span>
-                    <strong className="text-white font-mono">$995 AUD</strong>
+                    <strong className="text-white font-mono">{formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD</strong>
                   </div>
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Delivery:</span>
-                    <span className="text-zinc-300 font-mono text-[11px]">14 Days</span>
+                    <span className="text-zinc-300 font-mono text-[11px]">{bpSku.deliverySla}</span>
                   </div>
                 </div>
 
@@ -343,7 +350,7 @@ export default function AEOPricingPage() {
 
               <div className="pt-3 border-t border-white/5 space-y-2">
                 <div className="p-1.5 rounded-lg bg-aeo-purple/10 border border-aeo-purple/20 text-[10px] text-purple-200 font-mono text-center">
-                  100% credited into implementation
+                  100% credited into implementation within {GOVERNANCE_RULES.creditWindowDays} days
                 </div>
                 <Link
                   href="/solutions/aeo-blueprint"
@@ -370,23 +377,23 @@ export default function AEOPricingPage() {
                 <div className="space-y-1.5 text-xs text-zinc-400 font-serif">
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Price:</span>
-                    <strong className="text-white font-mono">$3,195 AUD</strong>
+                    <strong className="text-white font-mono">{formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} - {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} AUD</strong>
                   </div>
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Delivery:</span>
-                    <span className="text-zinc-300 font-mono text-[11px]">Fixed 4-Week Timeline</span>
+                    <span className="text-zinc-300 font-mono text-[11px]">Fixed 3-4 Week Timeline</span>
                   </div>
                 </div>
 
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
                   <strong className="text-cyan-200 font-sans block text-[11px] mb-0.5">Best For:</strong>
-                  Australian SMBs, local service trades, and single-domain clinics ready to establish an authoritative, machine-readable digital footprint.
+                  Australian SMBs, local service trades, and single-domain clinics ready to establish an authoritative, machine-readable digital footprint across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages.
                 </p>
               </div>
 
               <div className="pt-3 border-t border-white/5 space-y-2">
                 <div className="p-1.5 rounded-lg bg-aeo-cyan/10 border border-aeo-cyan/20 text-[10px] text-cyan-200 font-mono text-center">
-                  $995 Blueprint fee deducted
+                  {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee deducted
                 </div>
                 <Link
                   href="/solutions/aeo-sprint"
@@ -571,19 +578,19 @@ export default function AEOPricingPage() {
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 divide-y divide-white/5 shadow-xl">
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="what-is-the-aeobility-blueprint-price" className="font-semibold text-sm sm:text-base text-white">
-                How does the $995 Blueprint credit work?
+                How does the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ($3,195 AUD)</Link>, or are accepted for a custom implementation engagement, the entire $995 AUD Blueprint investment is credited back and deducted from your approved implementation scope.
+                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} - {formatAudCurrency(foundationTurnkey.priceExGst)})</Link> within {GOVERNANCE_RULES.creditWindowDays} days, or are accepted for a custom implementation engagement, the entire {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back and deducted from your approved implementation scope.
               </p>
             </div>
 
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="what-is-included-in-foundation-implementation" className="font-semibold text-sm sm:text-base text-white">
-                What is included in the $3,195 Foundation Implementation package?
+                What is included in the Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} Direct / {formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey) packages?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Foundation Implementation is a fixed-scope 4-week engagement. It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence across core commercial pages. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation page</Link>.
+                Foundation Implementation is delivered across two pathways: Direct Schema Implementation at {formatAudCurrency(foundationDirect.priceExGst)} ({foundationDirect.deliverySla}, up to 5 core templates) or Turnkey Core at {formatAudCurrency(foundationTurnkey.priceExGst)} ({foundationTurnkey.deliverySla}, up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages including content extraction and entity grounding). Both pathways waive the {formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} onboarding fee and deploy verified JSON-LD schema graphs, atomic answer blocks, strengthened link paths, and citation evidence. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation page</Link>.
               </p>
             </div>
 
@@ -629,7 +636,7 @@ export default function AEOPricingPage() {
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-all space-y-1 block"
             >
               <div className="font-bold text-white">The AEObility Blueprint</div>
-              <p className="text-zinc-400 font-serif text-[11px]">View Blueprint inclusions, deliverables, and $995 pricing details.</p>
+              <p className="text-zinc-400 font-serif text-[11px]">View Blueprint inclusions, deliverables, and {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} pricing details.</p>
             </Link>
 
             <Link 
@@ -637,7 +644,7 @@ export default function AEOPricingPage() {
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-all space-y-1 block"
             >
               <div className="font-bold text-white">Foundation Implementation</div>
-              <p className="text-zinc-400 font-serif text-[11px]">4-week turnkey execution sprint for $3,195 AUD ex. GST.</p>
+              <p className="text-zinc-400 font-serif text-[11px]">Fixed-scope execution sprint from {formatAudCurrency(foundationDirect.priceExGst)} to {formatAudCurrency(foundationTurnkey.priceExGst)}.</p>
             </Link>
 
             <Link 

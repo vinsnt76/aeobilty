@@ -1,7 +1,17 @@
 /**
  * AEObility AEO Technical Sprints Schema.org Modular Graph Specification
  * Path: src/lib/schema/aeoSprint.ts
+ * Dynamically generated from Single Source of Truth (SSOT) src/lib/pricing.ts
+ * Locale: en-AU
  */
+
+import {
+  TECHNICAL_SPRINT_CATALOG,
+  GOVERNANCE_RULES,
+  formatAudCurrency,
+  getMacroSprints,
+  getMicroSprints,
+} from '@/lib/pricing';
 
 export interface FaqItem {
   question: string;
@@ -9,6 +19,12 @@ export interface FaqItem {
 }
 
 export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
+  const macroSprints = getMacroSprints();
+  const microSprints = getMicroSprints();
+  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
+  const defaultMicro = TECHNICAL_SPRINT_CATALOG['SS1MICRO1'];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -17,7 +33,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#webpage",
         "url": "https://aeobility.com.au/solutions/aeo-sprint",
         "name": "AEO Technical Sprints & Schema Deployments | AEObility",
-        "description": "Focused, fixed-scope implementation for websites, structured data and priority service pages. Micro-Sprints from $495 AUD ex. GST and Foundation Implementation from $3,195 AUD ex. GST.",
+        "description": `Focused, fixed-scope implementation for websites, structured data and priority service pages. Micro-Sprints from ${formatAudCurrency(defaultMicro.priceExGst)}, Macro Sprints from ${formatAudCurrency(macroSprints[0].priceExGst)}, and Foundation Implementation from ${formatAudCurrency(foundationDirect.priceExGst)}.`,
         "inLanguage": "en-AU",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
@@ -60,7 +76,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "@type": "Service",
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#service",
         "name": "AEO Technical Sprints",
-        "description": "Fixed-scope implementation services for structured data, priority-page content and page structure. Available as individual Micro-Sprints or a broader Foundation Implementation engagement.",
+        "description": "Fixed-scope implementation services for structured data, priority-page content, and page structure. Available as individual Micro-Sprints, 4-pillar Macro Sprints, or comprehensive Foundation Implementation.",
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -70,7 +86,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         },
         "audience": {
           "@type": "Audience",
-          "audienceType": "Australian small businesses, agency teams and internal marketing teams"
+          "audienceType": "Australian SMBs, Allied Health Clinics, and Home Service Trades"
         },
         "hasOfferCatalog": {
           "@id": "https://aeobility.com.au/solutions/aeo-sprint#catalog"
@@ -81,81 +97,115 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#catalog",
         "name": "AEObility Technical Sprint Catalogue",
         "itemListElement": [
+          // Sub-catalog 1: Macro Sprints
           {
             "@type": "OfferCatalog",
-            "name": "Micro-Sprints",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-schema-sprint",
-                "name": "Service or Location Schema Sprint",
-                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=schema-sprint",
-                "price": "495.00",
+            "name": "Macro Sprints (10-Day Sprints)",
+            "itemListElement": macroSprints.map((macro) => ({
+              "@type": "Offer",
+              "@id": `https://aeobility.com.au/solutions/aeo-sprint#offer-${macro.code.toLowerCase()}`,
+              "name": macro.name,
+              "sku": macro.code,
+              "url": `https://aeobility.com.au/solutions/aeo-sprint?sprint=${macro.code.toLowerCase()}`,
+              "price": macro.priceExGst,
+              "priceCurrency": "AUD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": macro.priceExGst,
                 "priceCurrency": "AUD",
-                "availability": "https://schema.org/InStock",
-                "category": "AEO Technical Micro-Sprint",
-                "description": "Fixed-scope structured data implementation or improvement for one key service or location page. Price excludes GST.",
-                "itemOffered": {
-                  "@id": "https://aeobility.com.au/solutions/aeo-sprint#schema-sprint"
-                },
-                "seller": {
-                  "@id": "https://aeobility.com.au/#organisation"
-                }
+                "valueAddedTaxIncluded": false,
+                "unitText": macro.deliverySla
               },
-              {
-                "@type": "Offer",
-                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-content-sprint",
-                "name": "Single-Page Content Sprint",
-                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=content-sprint",
-                "price": "495.00",
-                "priceCurrency": "AUD",
-                "availability": "https://schema.org/InStock",
-                "category": "AEO Technical Micro-Sprint",
-                "description": "Fixed-scope rewrite of one priority client-facing page to improve clarity of services, answers and proof points. Price excludes GST.",
-                "itemOffered": {
-                  "@id": "https://aeobility.com.au/solutions/aeo-sprint#content-sprint"
-                },
-                "seller": {
-                  "@id": "https://aeobility.com.au/#organisation"
-                }
+              "availability": "https://schema.org/InStock",
+              "category": "AEO Technical Macro-Sprint",
+              "description": `${macro.purpose} Includes: ${macro.deliverables.join('; ')}.`,
+              "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
+              "itemOffered": {
+                "@id": `https://aeobility.com.au/solutions/aeo-sprint#service-${macro.code.toLowerCase()}`
               },
-              {
-                "@type": "Offer",
-                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-page-structure-sprint",
-                "name": "Page Structure & Search Intent Sprint",
-                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=page-structure-sprint",
-                "price": "495.00",
-                "priceCurrency": "AUD",
-                "availability": "https://schema.org/InStock",
-                "category": "AEO Technical Micro-Sprint",
-                "description": "Fixed-scope restructuring of headings and content sections for one critical landing page, based on customer search intent and information hierarchy. Price excludes GST.",
-                "itemOffered": {
-                  "@id": "https://aeobility.com.au/solutions/aeo-sprint#page-structure-sprint"
-                },
-                "seller": {
-                  "@id": "https://aeobility.com.au/#organisation"
-                }
+              "seller": {
+                "@id": "https://aeobility.com.au/#organisation"
               }
-            ]
+            }))
           },
+          // Sub-catalog 2: Micro Sprints
           {
             "@type": "OfferCatalog",
-            "name": "Foundation Implementation",
+            "name": "Micro-Sprints (3-Day Half-Day Units)",
+            "itemListElement": microSprints.map((micro) => ({
+              "@type": "Offer",
+              "@id": `https://aeobility.com.au/solutions/aeo-sprint#offer-${micro.code.toLowerCase()}`,
+              "name": micro.name,
+              "sku": micro.code,
+              "url": `https://aeobility.com.au/solutions/aeo-sprint?service=${micro.code.toLowerCase()}`,
+              "price": micro.priceExGst,
+              "priceCurrency": "AUD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": micro.priceExGst,
+                "priceCurrency": "AUD",
+                "valueAddedTaxIncluded": false,
+                "unitText": micro.deliverySla
+              },
+              "availability": "https://schema.org/InStock",
+              "category": "AEO Technical Micro-Sprint",
+              "description": `${micro.purpose} Deliverables: ${micro.deliverables.join('; ')}.`,
+              "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
+              "seller": {
+                "@id": "https://aeobility.com.au/#organisation"
+              }
+            }))
+          },
+          // Sub-catalog 3: Foundation Implementation
+          {
+            "@type": "OfferCatalog",
+            "name": "Foundation Implementation Packages",
             "itemListElement": [
               {
                 "@type": "Offer",
-                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-foundation",
-                "name": "Foundation Implementation",
-                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=foundation",
+                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-foundation-direct",
+                "name": foundationDirect.name,
+                "sku": foundationDirect.code,
+                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=foundation-direct",
+                "price": foundationDirect.priceExGst,
+                "priceCurrency": "AUD",
                 "priceSpecification": {
-                  "@type": "PriceSpecification",
-                  "minPrice": "3195.00",
+                  "@type": "UnitPriceSpecification",
+                  "price": foundationDirect.priceExGst,
                   "priceCurrency": "AUD",
-                  "valueAddedTaxIncluded": false
+                  "valueAddedTaxIncluded": false,
+                  "unitText": foundationDirect.deliverySla
                 },
                 "availability": "https://schema.org/InStock",
                 "category": "AEO Foundation Implementation",
-                "description": "Starting from $3,195 AUD excluding GST. A multi-page, multi-issue engagement covering agreed technical, content, internal linking and local business information improvements. Final pricing depends on confirmed scope.",
+                "description": `${foundationDirect.purpose} Includes: ${foundationDirect.deliverables.join('; ')}.`,
+                "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
+                "itemOffered": {
+                  "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-service"
+                },
+                "seller": {
+                  "@id": "https://aeobility.com.au/#organisation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-foundation",
+                "name": foundationTurnkey.name,
+                "sku": foundationTurnkey.code,
+                "url": "https://aeobility.com.au/solutions/aeo-sprint?service=foundation",
+                "price": foundationTurnkey.priceExGst,
+                "priceCurrency": "AUD",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": foundationTurnkey.priceExGst,
+                  "priceCurrency": "AUD",
+                  "valueAddedTaxIncluded": false,
+                  "unitText": foundationTurnkey.deliverySla
+                },
+                "availability": "https://schema.org/InStock",
+                "category": "AEO Foundation Implementation",
+                "description": `${foundationTurnkey.purpose} ${GOVERNANCE_RULES.creditAmountExGst} AUD Blueprint fee is 100% credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days. Includes: ${foundationTurnkey.deliverables.join('; ')}.`,
+                "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
                 "itemOffered": {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-implementation"
                 },
@@ -167,12 +217,13 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
           }
         ]
       },
-      {
+      // Individual Macro Services
+      ...macroSprints.map((macro) => ({
         "@type": "Service",
-        "@id": "https://aeobility.com.au/solutions/aeo-sprint#schema-sprint",
-        "name": "Service or Location Schema Sprint",
-        "alternateName": "SS1",
-        "description": "Structured data implementation or improvement for one key service or location page.",
+        "@id": `https://aeobility.com.au/solutions/aeo-sprint#service-${macro.code.toLowerCase()}`,
+        "name": macro.name,
+        "alternateName": macro.code,
+        "description": macro.purpose,
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -182,15 +233,14 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         },
         "audience": {
           "@type": "Audience",
-          "audienceType": "Businesses needing structured data for a service or location page"
+          "audienceType": "Australian SMBs, Allied Health Clinics, and Home Service Trades"
         }
-      },
+      })),
       {
         "@type": "Service",
-        "@id": "https://aeobility.com.au/solutions/aeo-sprint#content-sprint",
-        "name": "Single-Page Content Sprint",
-        "alternateName": "SS2",
-        "description": "A focused rewrite of one client-facing page to make services, answers and proof points easier for customers to understand.",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-service",
+        "name": foundationDirect.name,
+        "description": foundationDirect.purpose,
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -200,32 +250,14 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         },
         "audience": {
           "@type": "Audience",
-          "audienceType": "Businesses with unclear or incomplete priority service-page content"
-        }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://aeobility.com.au/solutions/aeo-sprint#page-structure-sprint",
-        "name": "Page Structure & Search Intent Sprint",
-        "alternateName": "SS3",
-        "description": "A focused restructuring of headings, sections and information hierarchy for one critical landing page.",
-        "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Businesses whose priority page has useful content but needs clearer structure"
+          "audienceType": "Australian SMBs, Allied Health Clinics, and Home Service Trades"
         }
       },
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-implementation",
-        "name": "Foundation Implementation",
-        "description": "A structured implementation engagement for businesses with multiple connected priorities across technical setup, priority pages, internal linking and local business information.",
+        "name": foundationTurnkey.name,
+        "description": foundationTurnkey.purpose,
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -235,7 +267,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         },
         "audience": {
           "@type": "Audience",
-          "audienceType": "Businesses needing several connected website, content and local visibility improvements"
+          "audienceType": "Australian SMBs, Allied Health Clinics, and Home Service Trades"
         }
       },
       {

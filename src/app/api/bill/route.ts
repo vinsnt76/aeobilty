@@ -63,14 +63,20 @@ const orgGraph = {
 const blueprintService = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': 'https://aeobility.com.au/solutions/aeo-blueprint/#service',
+  '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#service',
   serviceType: 'AI Readiness Optimisation Consultancy',
   provider: { '@id': 'https://aeobility.com.au/#organisation' },
   offers: { 
     '@type': 'Offer', 
-    price: '995.00', 
+    price: 995, 
     priceCurrency: 'AUD', 
-    name: '90-Day AI Success Blueprint' 
+    name: 'The AEObility Blueprint Strategic Audit',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: 995,
+      priceCurrency: 'AUD',
+      valueAddedTaxIncluded: false
+    }
   }
 };
 
@@ -194,11 +200,19 @@ Base your response strictly on the verified JSON-LD provenance triples and entit
       normalizedQuery.includes('fix') || normalizedQuery.includes('next steps') || 
       normalizedQuery.includes('improve visibility') || normalizedQuery.includes('buy') || 
       normalizedQuery.includes('blueprint') || normalizedQuery.includes('pricing') || 
-      normalizedQuery.includes('cost') || normalizedQuery.includes('hire')
+      normalizedQuery.includes('cost') || normalizedQuery.includes('hire') ||
+      normalizedQuery.includes('sprint') || normalizedQuery.includes('rate') ||
+      normalizedQuery.includes('fee') || normalizedQuery.includes('package')
     ) {
-      systemPrompt += `\n\n[ACTIVE SKILL: Blueprint Funnel]
-The user wants to resolve visibility gaps or explore action steps. Smoothly funnel them into our core offering: The AEObility Blueprint.
-Explicitly quote its pricing ($995.00 AUD ex. GST). Emphasise its mechanical delivery: converting loose content into verified semantic entity schemas and local grounding anchors. Keep answer within 2-3 sentences.`;
+      systemPrompt += `\n\n[ACTIVE SKILL: Commercial Solutions & Blueprint Funnel]
+The user is inquiring about pricing, fixes, packages, or next steps. Ground your answer strictly in AEObility's Technical Sprint Pricing model:
+- Entry Diagnostic: The AEObility Blueprint ($995 AUD ex. GST) delivers a deep technical gap audit and prioritised 90-day action plan.
+- 60-Day Reversal Window: 100% of the $995 Blueprint fee is credited back against implementation sprints booked within 60 calendar days.
+- Implementation Packages: Direct Modular Foundation ($1,980 AUD ex. GST), Turnkey Foundation ($3,195 AUD ex. GST across up to 10 core pages), Macro Sprints ($1,980 AUD ex. GST per 10-day sprint), and Micro-Sprints ($495 AUD ex. GST per 3-day half-day unit).
+- Onboarding Waiver: The $250 Technical Onboarding (ONBOARD) fee is 100% waived on Turnkey Foundation and Macro Sprint packages.
+- Hourly Developer Rate: Out-of-scope custom development is billed at $220 AUD ex. GST per hour.
+- Monthly Retainer Cadence: Governed 30-day sprint cycles ($1,980/month MRR) with zero lock-in contracts.
+Explicitly quote accurate pricing in AUD ex. GST and keep answers concise within 2-3 sentences.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 
     } else {

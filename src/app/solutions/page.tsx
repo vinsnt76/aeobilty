@@ -10,6 +10,7 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { trackGaEvent } from '@/lib/gtag';
 import { getSolutionsSchemaGraph } from '@/lib/schema/solutions';
+import { TECHNICAL_SPRINT_CATALOG, PRICING_TIERS, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -113,107 +114,117 @@ export default function SolutionsPage() {
     }, 6000);
   };
 
+  const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
+  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
+  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
+  const microSku = TECHNICAL_SPRINT_CATALOG['SS1MICRO1'];
+
+  const tier1 = PRICING_TIERS.find((t) => t.id === 'blueprint') || PRICING_TIERS[0];
+  const tier2 = PRICING_TIERS.find((t) => t.id === 'foundation') || PRICING_TIERS[1];
+  const tier3 = PRICING_TIERS.find((t) => t.id === 'macro-sprints') || PRICING_TIERS[2];
+
   const faqs = [
     {
       question: "Do I need the Blueprint before booking a Micro-Sprint?",
-      answer: "No. If you already know the specific issue you want addressed, you can book a Micro-Sprint directly. If you need help identifying and prioritising technical gaps, start with the AEObility Blueprint ($995 AUD ex. GST)."
+      answer: `No. If you already know the specific issue you want addressed, you can book a Micro-Sprint directly. If you need help identifying and prioritising technical gaps, start with the AEObility Blueprint (${formatAudCurrency(bpSku.priceExGst)}).`
     },
     {
       question: "What is included in Foundation Implementation?",
-      answer: "Foundation Implementation combines agreed priority improvements across technical schema, key service pages, internal linking, and business-information consistency in a four-week engagement starting from $3,195 AUD ex. GST."
+      answer: `Foundation Implementation combines agreed priority improvements across technical schema, key service pages, internal linking, and business-information consistency in a four-week engagement starting from ${formatAudCurrency(foundationDirect.priceExGst)} Direct to ${formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey.`
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: "If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, we apply the full $995 Blueprint fee to your implementation cost. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
+      answer: `If you complete the AEObility Blueprint and book Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days of handover, we apply the full ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to your implementation cost. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash.`
     },
     {
       question: "How long does Foundation Implementation take?",
-      answer: "Most Foundation engagements are delivered over 4–5 working days across a four-week period, allowing adequate time for precise implementation, validation, and review."
+      answer: "Most Foundation engagements are delivered across a four-week period with staged milestones, allowing adequate time for precise implementation, validation, and review."
     },
     {
       question: "Are there ongoing contracts or monthly retainers?",
-      answer: "No. All work is clearly scoped and fixed-price upfront. Ongoing optimisations or support are only available where explicitly agreed upon post-handover."
+      answer: "No. All work is clearly scoped and fixed-price upfront. Our Governed Sprints operate on 30-day cycles with zero contract lock-in. Ongoing optimisations are only available where explicitly agreed upon."
     },
     {
       question: "What happens after a sprint is completed?",
-      answer: "You receive a full handover with clear documentation of all updates made. You can choose to manage the site internally, book additional targeted Micro-Sprints, or discuss ongoing support if required."
+      answer: "You receive a full handover with clear documentation of all updates made. You own 100% of the code and schema outright. You can manage the site internally, book additional targeted Micro-Sprints, or discuss ongoing governed cycles."
     }
   ];
 
   const engagementPaths = [
     {
-      key: "micro-sprint",
-      anchorId: "solutions-micro-sprints",
-      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
-      title: "AEO Technical Micro-Sprint",
-      code: "SS1 - SS4",
-      price: "From $495 AUD",
+      key: "blueprint",
+      anchorId: "solutions-blueprint",
+      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      title: tier1.name,
+      code: "BPSTRAT",
+      price: formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: "One priority page or schema fix",
-      description: "Choose one focused priority for $495 AUD ex. GST: Schema Markup Deployment, Single Page Atomic Rewrite, Citation Clean-Up, or Brand Facts Page.",
-      techNote: "For technical teams: Deployment of nested JSON-LD graphs, atomic HTML passage markup, and citation alignment.",
-      whenToChoose: "Choose this when you have one specific technical issue or page gap limiting machine readability.",
-      ctaLabel: "Discuss Micro-Sprint"
+      scope: "Full digital audit & 90-day roadmap",
+      description: `Audit website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work within ${GOVERNANCE_RULES.creditWindowDays} days.`,
+      techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
+      whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
+      ctaLabel: `Discuss ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint`
     },
     {
       key: "foundation",
       anchorId: "solutions-foundation",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
-      title: "Foundation Implementation",
-      code: "MACRO TIER",
-      price: "From $3,195 AUD",
+      title: tier2.name,
+      code: "FOUNDATION",
+      price: `From ${formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })}`,
       priceSub: "ex. GST",
-      scope: "Connected multi-page & entity improvements",
-      description: "Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures in a focused four-week engagement.",
+      scope: `Connected multi-page & entity improvements (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
+      description: `Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures. Includes complimentary onboarding (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ONBOARD'].priceExGst, { includeTaxSuffix: false })} value).`,
       techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
       whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
       ctaLabel: "Discuss Foundation Tier"
     },
     {
-      key: "blueprint",
-      anchorId: "solutions-blueprint",
-      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
-      title: "The AEObility Blueprint",
-      code: "BPSTRAT",
-      price: "$995 AUD",
+      key: "macro-sprint",
+      anchorId: "solutions-macro-sprints",
+      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
+      title: tier3.name,
+      code: "MACRO SPRINT",
+      price: `${formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} / mo`,
       priceSub: "ex. GST",
-      scope: "Full digital audit & 90-day roadmap",
-      description: "Audit your website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work.",
-      techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
-      whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
-      ctaLabel: "Discuss $995 Blueprint"
+      scope: "Governed 30-day cycles (bundles 4x micro-sprints)",
+      description: `Choose from 4 focused pillars (SS1 Identity, SS2 Answers, SS3 Lattice, SS4 Trust). Standalone half-day micro-sprints also available from ${formatAudCurrency(microSku.priceExGst)}.`,
+      techNote: "For technical teams: Deployment of nested JSON-LD graphs, atomic HTML passage markup, and citation alignment.",
+      whenToChoose: "Choose this when you have specific technical bottlenecks or want continuous monthly momentum without retainers.",
+      ctaLabel: "Discuss Governed Sprints"
     }
   ];
 
   const microSprintsCatalog = [
     {
       code: "SS1MICRO1 / SS1MICRO2",
-      title: "Content & Entity Schema Micro-Sprint",
-      price: "$495 AUD ex. GST",
+      title: `${TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].name} / ${TECHNICAL_SPRINT_CATALOG['SS1MICRO2'].name}`,
+      price: formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst),
       description: "Structured schema markup deployment (Organisation, Service, Offer, LocalBusiness) for machine readability."
     },
     {
       code: "SS2MICRO1 / SS2MICRO2",
-      title: "Single Page Rewrite / Category Answer Unit",
-      price: "$495 AUD ex. GST",
-      description: "Rewrite & restructure one priority service page or category page into atomic answer blocks for AI scrapers."
+      title: `${TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].name} / ${TECHNICAL_SPRINT_CATALOG['SS2MICRO2'].name}`,
+      price: formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].priceExGst),
+      description: "Rewrite and restructure one priority service page or category page into atomic answer blocks for AI scrapers."
     },
     {
       code: "SS3MICRO1",
-      title: "Local Proximity & Internal Linking Sprint",
-      price: "$695 AUD ex. GST",
+      title: TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].name,
+      price: formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].priceExGst),
       description: "Connect priority location hubs, service pages, and supporting regional content with structured internal linking."
     },
     {
       code: "SS4MICRO1",
-      title: "Business Details & Citation Clean-Up",
-      price: "$495 AUD ex. GST",
+      title: TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].name,
+      price: formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].priceExGst),
       description: "Review and correct core NAP details across priority local directories, website footers, and Google Business Profile."
     },
     {
       code: "SS4MICRO3",
-      title: "Brand Facts Page Creation",
-      price: "$495 AUD ex. GST",
+      title: TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].name,
+      price: formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].priceExGst),
       description: "Build one central reference page covering business identity, services, locations, and verified trust signals."
     }
   ];
@@ -246,12 +257,12 @@ export default function SolutionsPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Explore clear pricing models for Australian businesses. Standalone $995 Blueprint audit, fixed-scope micro-sprints from $495 ex. GST, and Foundation Implementation. Clear scope. Flat rates.
+                Explore clear pricing models for Australian businesses. Standalone {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint audit, fixed-scope micro-sprints from {formatAudCurrency(microSku.priceExGst)}, and Foundation Implementation. Clear scope. Flat rates.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
-                <span>Micro-Sprints from $495 AUD ex. GST</span>
+                <span>Micro-Sprints from {formatAudCurrency(microSku.priceExGst)}</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation from {formatAudCurrency(foundationDirect.priceExGst)}</span>
               </div>
             </div>
 
@@ -271,7 +282,7 @@ export default function SolutionsPage() {
               <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
                 <div className="text-left space-y-0.5 sm:space-y-1">
                   <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Choose your starting point or run a free scan.</span>
-                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 4–5 business days from confirmed scope and access.</span>
+                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 3-5 business days from confirmed scope and access.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
                   <button
@@ -302,7 +313,7 @@ export default function SolutionsPage() {
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a diagnostic audit, a comprehensive foundation implementation, or targeted governed sprints.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -351,35 +362,53 @@ export default function SolutionsPage() {
               ))}
             </div>
 
-            {/* Master 3-Tier Service Comparison Matrix Table */}
+            {/* Master 5-Tier Service Comparison Matrix Table */}
             <div id="solutions-matrix" className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md scroll-mt-24">
-              <table className="w-full text-left text-xs font-serif border-collapse min-w-[580px]">
+              <table className="w-full text-left text-xs font-serif border-collapse min-w-[620px]">
                 <thead>
                   <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
                     <th className="p-3.5 sm:p-4">Service / Tier</th>
                     <th className="p-3.5 sm:p-4">Target Scope</th>
                     <th className="p-3.5 sm:p-4">Best For</th>
+                    <th className="p-3.5 sm:p-4">Delivery SLA</th>
                     <th className="p-3.5 sm:p-4 text-right">Price (ex. GST)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-zinc-300">
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Technical Micro-Sprint</td>
-                    <td className="p-3.5 sm:p-4">1 Defined Priority Page / Schema Fix</td>
-                    <td className="p-3.5 sm:p-4">Quick fix for one specific issue</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
-                  </tr>
-                  <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">{tier1.name}</td>
                     <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
-                    <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
+                    <td className="p-3.5 sm:p-4">Diagnosing entity gaps before building</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{bpSku.deliverySla}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} (100% Credited)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
-                    <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
-                    <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">{foundationDirect.name}</td>
+                    <td className="p-3.5 sm:p-4">Core 4-Pillar Modular Deployment (Up to {GOVERNANCE_RULES.turnkeyPageLimit} Pages)</td>
+                    <td className="p-3.5 sm:p-4">Direct implementation for developer/in-house teams</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{foundationDirect.deliverySla}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })}</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">{foundationTurnkey.name}</td>
+                    <td className="p-3.5 sm:p-4">Turnkey 4-Pillar Deployment (Up to {GOVERNANCE_RULES.turnkeyPageLimit} Pages)</td>
+                    <td className="p-3.5 sm:p-4">Complete end-to-end execution across priority services</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{foundationTurnkey.deliverySla}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })}</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Governed Macro Sprints</td>
+                    <td className="p-3.5 sm:p-4">4x Bundled Micro-Sprints per Cycle (Pillars 1-4)</td>
+                    <td className="p-3.5 sm:p-4">Targeted monthly execution with zero retainer lock-in</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{macroSku.deliverySla}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} / mo</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Micro-Sprints</td>
+                    <td className="p-3.5 sm:p-4">1 Defined Priority Page or Schema Fix</td>
+                    <td className="p-3.5 sm:p-4">Quick half-day fixes for specific bottlenecks</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{microSku.deliverySla}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From {formatAudCurrency(microSku.priceExGst, { includeTaxSuffix: false })}</td>
                   </tr>
                 </tbody>
               </table>
@@ -402,7 +431,7 @@ export default function SolutionsPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>Typical delivery: 4–5 business days for Micro-Sprints. View <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.</span>
+                  <span>{GOVERNANCE_RULES.clientIpOwnership}. View <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused technical sprints</Link>.</span>
                 </li>
               </ul>
             </div>
@@ -412,7 +441,7 @@ export default function SolutionsPage() {
           <section id="solutions-catalog" className="border-t border-white/10 pt-16 space-y-10 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Targeted Micro-Sprint Catalogue</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Fixed-scope, flat-rate execution packages delivered within 4–5 business days.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Fixed-scope, flat-rate execution packages delivered within 3-5 business days.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -586,7 +615,7 @@ export default function SolutionsPage() {
                 </span>
               </div>
               <p className="text-xs text-zinc-400 font-serif mb-6 leading-relaxed">
-                Select the option you are considering, or choose &quot;Not sure yet — Help me decide&quot; if you would like help deciding.
+                Select the option you are considering, or choose &quot;Not sure yet - Help me decide&quot; if you would like help deciding.
               </p>
 
               {contactSubmitted ? (
@@ -640,10 +669,11 @@ export default function SolutionsPage() {
                       onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
-                      <option value="unsure">Not sure yet — Help me decide</option>
-                      <option value="micro-sprint">AEO Micro-Sprint (From $495 AUD)</option>
-                      <option value="blueprint">The AEObility Blueprint ($995 AUD)</option>
-                      <option value="foundation">Foundation Implementation (From $3,195 AUD)</option>
+                      <option value="unsure">Not sure yet - Help me decide</option>
+                      <option value="blueprint">The AEObility Blueprint ({formatAudCurrency(bpSku.priceExGst)})</option>
+                      <option value="foundation">Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} - {formatAudCurrency(foundationTurnkey.priceExGst)})</option>
+                      <option value="macro-sprint">Governed Macro Sprints ({formatAudCurrency(macroSku.priceExGst)} / mo)</option>
+                      <option value="micro-sprint">Targeted Micro-Sprint ({formatAudCurrency(microSku.priceExGst)})</option>
                     </select>
                   </div>
 

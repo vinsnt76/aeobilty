@@ -3,52 +3,228 @@
   "@graph": [
     {
       "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
       "sku": "BPSTRAT",
-      "name": "Strategic Blueprint",
+      "name": "The AEObility Strategic Blueprint",
       "priceCurrency": "AUD",
-      "price": "995.00",
+      "price": 995,
       "priceSpecification": {
-        "@type": "PriceSpecification",
+        "@type": "UnitPriceSpecification",
+        "price": 995,
+        "priceCurrency": "AUD",
         "valueAddedTaxIncluded": false,
+        "unitText": "5 business days",
         "description": "Excluding GST"
       },
-      "description": "Diagnose entity gaps, schema drift, and positional bias vulnerabilities.",
+      "description": "Deep technical, semantic, and competitive presence audit with prioritised 90-day execution roadmap. 100% of the $995 fee is credited toward Foundation Implementation within 60 calendar days.",
       "offers": {
         "@type": "Offer",
-        "price": "995.00",
+        "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer",
+        "price": 995,
         "priceCurrency": "AUD",
-        "eligibleDuration": "Diagnostic Audit",
+        "eligibleDuration": "5 business days",
+        "availability": "https://schema.org/InStock",
         "itemOffered": [
-          "Full diagnostic report",
-          "Entity map",
-          "Visibility scorecard",
-          "90-day sprint recommendations"
+          "Site crawl & entity mapping",
+          "LLM answer-gap analysis",
+          "Knowledge Graph entity schema specification",
+          "Prioritised 90-day action plan",
+          "Executive debrief & sprint mapping session",
+          "100% credited toward Foundation Implementation within 60 calendar days"
         ]
       }
     },
     {
       "@type": "Product",
-      "sku": "SS1MACROS1",
-      "name": "Schema and Semantic Mapping",
+      "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-product",
+      "sku": "AEO-FOUNDATION-DIRECT",
+      "name": "Direct Modular Foundation Implementation",
       "priceCurrency": "AUD",
-      "price": "3195.00",
+      "price": 1980,
       "priceSpecification": {
-        "@type": "PriceSpecification",
+        "@type": "UnitPriceSpecification",
+        "price": 1980,
+        "priceCurrency": "AUD",
         "valueAddedTaxIncluded": false,
+        "unitText": "10 business days",
         "description": "Excluding GST"
       },
-      "description": "Establish machine-readable identity and resolve entity confusion.",
+      "description": "Modular 4-pillar foundation implementation for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).",
       "offers": {
         "@type": "Offer",
-        "price": "3195.00",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-foundation-direct",
+        "price": 1980,
         "priceCurrency": "AUD",
-        "eligibleDuration": "Foundation Tier (~15 Hours)",
+        "eligibleDuration": "10 business days",
+        "availability": "https://schema.org/InStock",
         "itemOffered": [
-          "Full entity map",
-          "Canonical facts",
-          "JSON-LD graph for 10 pages",
-          "Location modelling",
-          "Deployment validation"
+          "SS1: Organisation & LocalBusiness schema injection",
+          "SS2: 5 priority-page atomic answer rewrites",
+          "SS3: 3-node semantic lattice & internal link routing",
+          "SS4: Citation standardisation & Brand Facts directory",
+          "Complimentary Technical Onboarding ($250 value waived)"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-foundation#product",
+      "sku": "AEO-FOUNDATION",
+      "name": "Foundation Implementation (Turnkey)",
+      "priceCurrency": "AUD",
+      "price": 3195,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 3195,
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "unitText": "4-week structured deployment",
+        "description": "Excluding GST"
+      },
+      "description": "Turnkey 4-pillar deployment across up to 10 core commercial pages: connected information layers, structured schemas, atomic page rewrites, and citation provenance. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint credit reversal.",
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://aeobility.com.au/solutions/aeo-foundation#offer",
+        "price": 3195,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "4-week structured deployment",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": [
+          "Turnkey execution across up to 10 core commercial pages",
+          "Full entity graph, Schema.org nesting & DOM deployment",
+          "Atomic page rewrites & answer-first content restructuring",
+          "Semantic internal link lattice & contextual anchor routing",
+          "Brand Facts page deployment & citation standardisation",
+          "Complimentary Technical Onboarding ($250 value waived)",
+          "100% of $995 Blueprint fee credited toward sprint within 60 days"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-sprint#product-ss1macro",
+      "sku": "SS1MACRO",
+      "name": "Identity & Schema Architecture Sprint",
+      "priceCurrency": "AUD",
+      "price": 1980,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "unitText": "10 business days",
+        "description": "Excluding GST"
+      },
+      "description": "10-day macro sprint bundling 4 micro-sprints to establish machine-readable entity identity, clean schema graphs, and canonical business facts. Includes complimentary Technical Onboarding ($250 value waived).",
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-ss1macro",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "10 business days",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": [
+          "SS1MICRO1: Location Schema Injection",
+          "SS1MICRO2: Service Schema Injection",
+          "SS1MICRO3: Canonical Business Facts Consolidation",
+          "SS1MICRO4: JSON-LD Validation & Repair",
+          "Complimentary Technical Onboarding ($250 value waived)"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-sprint#product-ss2macro",
+      "sku": "SS2MACRO",
+      "name": "Answer Engine Architecture Sprint",
+      "priceCurrency": "AUD",
+      "price": 1980,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "unitText": "10 business days",
+        "description": "Excluding GST"
+      },
+      "description": "10-day macro sprint restructuring core pages into high-density 90-120 token atomic answer blocks and conversational FAQ structures. Includes complimentary Technical Onboarding ($250 value waived).",
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-ss2macro",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "10 business days",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": [
+          "SS2MICRO1: Single Page Atomic Rewrite",
+          "SS2MICRO2: FAQ Extraction & Expansion",
+          "SS2MICRO3: Passage-Level Structuring & Chunking",
+          "SS2MICRO4: Query Alignment & Intent Mapping",
+          "Complimentary Technical Onboarding ($250 value waived)"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-sprint#product-ss3macro",
+      "sku": "SS3MACRO",
+      "name": "Semantic Lattice & Internal Linking Sprint",
+      "priceCurrency": "AUD",
+      "price": 1980,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "unitText": "10 business days",
+        "description": "Excluding GST"
+      },
+      "description": "10-day macro sprint connecting service hubs through contextual descriptive anchor routing, eliminating orphan pages, and building concept clusters. Includes complimentary Technical Onboarding ($250 value waived).",
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-ss3macro",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "10 business days",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": [
+          "SS3MICRO1: Three-Node Semantic Lattice Patch",
+          "SS3MICRO2: Anchor Optimisation for One Page",
+          "SS3MICRO3: Concept Cluster Reinforcement",
+          "SS3MICRO4: Orphan Node Lattice Integration",
+          "Complimentary Technical Onboarding ($250 value waived)"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://aeobility.com.au/solutions/aeo-sprint#product-ss4macro",
+      "sku": "SS4MACRO",
+      "name": "Brand Facts & External Trust Consensus Sprint",
+      "priceCurrency": "AUD",
+      "price": 1980,
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "valueAddedTaxIncluded": false,
+        "unitText": "10 business days",
+        "description": "Excluding GST"
+      },
+      "description": "10-day macro sprint standardising external business directory citations, building a canonical Brand Facts page, and aligning Apple Maps and Bing Places. Includes complimentary Technical Onboarding ($250 value waived).",
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-ss4macro",
+        "price": 1980,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "10 business days",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": [
+          "SS4MICRO1: NAP Standardisation Across Top Directories",
+          "SS4MICRO2: Directory Citation Clean-Up",
+          "SS4MICRO3: Brand Facts Page Creation",
+          "SS4MICRO4: Apple Maps & Bing Places Signal Alignment",
+          "Complimentary Technical Onboarding ($250 value waived)"
         ]
       }
     },
@@ -57,7 +233,7 @@
       "sku": "SS1MICRO1",
       "name": "Location Schema Injection",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -66,7 +242,7 @@
       "description": "Add complete location-level schema to one page.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -83,7 +259,7 @@
       "sku": "SS1MICRO2",
       "name": "Service Schema Injection",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -92,7 +268,7 @@
       "description": "Add structured Service schema to one service page.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -109,7 +285,7 @@
       "sku": "SS1MICRO3",
       "name": "Canonical Business Facts Consolidation",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -118,7 +294,7 @@
       "description": "Standardise business facts for AI engines and local directory profiles.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -133,7 +309,7 @@
       "sku": "SS1MICRO4",
       "name": "JSON-LD Validation and Repair",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -142,7 +318,7 @@
       "description": "Validate and repair broken or conflicting schema blocks.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -155,34 +331,10 @@
     },
     {
       "@type": "Product",
-      "sku": "SS2MACROS2",
-      "name": "Atomic Answer Blocks",
-      "priceCurrency": "AUD",
-      "price": "3195.00",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "valueAddedTaxIncluded": false,
-        "description": "Excluding GST"
-      },
-      "description": "Convert pages into retrieval-ready atomic content blocks.",
-      "offers": {
-        "@type": "Offer",
-        "price": "3195.00",
-        "priceCurrency": "AUD",
-        "eligibleDuration": "Foundation Tier (~15 Hours)",
-        "itemOffered": [
-          "10 core pages rewritten into atomic blocks",
-          "Conversational query alignment",
-          "Passage structuring"
-        ]
-      }
-    },
-    {
-      "@type": "Product",
       "sku": "SS2MICRO1",
       "name": "Single Page Atomic Rewrite",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -191,7 +343,7 @@
       "description": "Rewrite one critical page into atomic blocks.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -206,7 +358,7 @@
       "sku": "SS2MICRO2",
       "name": "FAQ Extraction and Expansion",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -215,7 +367,7 @@
       "description": "Build AI-ready FAQs for one service page.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -230,7 +382,7 @@
       "sku": "SS2MICRO3",
       "name": "Passage-Level Structuring and Chunking",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -239,7 +391,7 @@
       "description": "Restructure one page into machine-friendly content chunks.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -254,7 +406,7 @@
       "sku": "SS2MICRO4",
       "name": "Query Alignment and Intent Mapping",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -263,7 +415,7 @@
       "description": "Align one page with active conversational AI search queries.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -275,35 +427,10 @@
     },
     {
       "@type": "Product",
-      "sku": "SS3MACROS3",
-      "name": "Semantic Lattice Linking",
-      "priceCurrency": "AUD",
-      "price": "6359.00",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "valueAddedTaxIncluded": false,
-        "description": "Excluding GST"
-      },
-      "description": "Build internal concept relationships and cross-page structural meaning.",
-      "offers": {
-        "@type": "Offer",
-        "price": "6359.00",
-        "priceCurrency": "AUD",
-        "eligibleDuration": "Comprehensive Tier (~30 Hours)",
-        "itemOffered": [
-          "Full site semantic lattice",
-          "Descriptive anchor strategy",
-          "Relationship mapping",
-          "Pathway optimisation"
-        ]
-      }
-    },
-    {
-      "@type": "Product",
       "sku": "SS3MICRO1",
       "name": "Three-Node Semantic Lattice Patch",
       "priceCurrency": "AUD",
-      "price": "695.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -312,9 +439,9 @@
       "description": "Build a small concept lattice for one high-value service cluster.",
       "offers": {
         "@type": "Offer",
-        "price": "695.00",
+        "price": 495,
         "priceCurrency": "AUD",
-        "eligibleDuration": "Specialised Half-Day (3 Hours)",
+        "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
           "Three-node micro-lattice",
           "Descriptive anchor text optimisation",
@@ -327,7 +454,7 @@
       "sku": "SS3MICRO2",
       "name": "Anchor Optimisation for One Page",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -336,7 +463,7 @@
       "description": "Improve internal linking logic and anchor signalling for one page.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -351,7 +478,7 @@
       "sku": "SS3MICRO3",
       "name": "Concept Cluster Reinforcement",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -360,7 +487,7 @@
       "description": "Strengthen semantic meaning across a small cluster of related pages.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -372,26 +499,25 @@
     },
     {
       "@type": "Product",
-      "sku": "SS4MACROS4",
-      "name": "Brand Facts and Consensus",
+      "sku": "SS3MICRO4",
+      "name": "Orphan Node Lattice Integration",
       "priceCurrency": "AUD",
-      "price": "3195.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
         "description": "Excluding GST"
       },
-      "description": "Standardise cross-directory citations and strengthen external trust signals.",
+      "description": "Connect isolated, unlinked, or newly launched pages into existing semantic topic clusters.",
       "offers": {
         "@type": "Offer",
-        "price": "3195.00",
+        "price": 495,
         "priceCurrency": "AUD",
-        "eligibleDuration": "Foundation Tier (~15 Hours)",
+        "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
-          "Brand Facts page creation",
-          "Directory cleanup",
-          "NAP profile consistency",
-          "Bing Places alignment"
+          "Orphan page identification & crawl analysis",
+          "Bidirectional contextual link integration",
+          "Breadcrumb & navigation alignment"
         ]
       }
     },
@@ -400,7 +526,7 @@
       "sku": "SS4MICRO1",
       "name": "NAP Standardisation",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -409,7 +535,7 @@
       "description": "Correct Name, Address, and Phone inconsistencies across core directories.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -424,7 +550,7 @@
       "sku": "SS4MICRO2",
       "name": "Directory Citation Cleanup",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -433,7 +559,7 @@
       "description": "Clean up legacy citations in one major directory set.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
@@ -448,7 +574,7 @@
       "sku": "SS4MICRO3",
       "name": "Brand Facts Page Creation",
       "priceCurrency": "AUD",
-      "price": "495.00",
+      "price": 495,
       "priceSpecification": {
         "@type": "PriceSpecification",
         "valueAddedTaxIncluded": false,
@@ -457,13 +583,87 @@
       "description": "Build a canonical Brand Facts page on the client's site.",
       "offers": {
         "@type": "Offer",
-        "price": "495.00",
+        "price": 495,
         "priceCurrency": "AUD",
         "eligibleDuration": "Half-Day (3 Hours)",
         "itemOffered": [
           "Single source of truth page deployment",
           "Factual consistency checks",
           "Entity graph reinforcement"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "sku": "SS4MICRO4",
+      "name": "Apple Maps & Bing Places Signal Alignment",
+      "priceCurrency": "AUD",
+      "price": 495,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "valueAddedTaxIncluded": false,
+        "description": "Excluding GST"
+      },
+      "description": "Synchronise secondary map platform profiles to ensure geographic consistency for voice search and Siri/Copilot queries.",
+      "offers": {
+        "@type": "Offer",
+        "price": 495,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "Half-Day (3 Hours)",
+        "itemOffered": [
+          "Apple Business Connect verification & profile setup",
+          "Bing Places for Business profile alignment",
+          "Category & coordinate matching"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "sku": "ONBOARD",
+      "name": "Technical Onboarding & Verification",
+      "priceCurrency": "AUD",
+      "price": 250,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "valueAddedTaxIncluded": false,
+        "description": "Excluding GST. 100% waived on Turnkey Foundation and Macro Sprint packages."
+      },
+      "description": "Initial credential intake, CMS/Git staging setup, repository access validation, and baseline environment audit. 100% waived on Turnkey Foundation and Macro Sprint packages.",
+      "offers": {
+        "@type": "Offer",
+        "price": 250,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "1-2 business days",
+        "itemOffered": [
+          "Credential intake & 1Password secure tunnel setup",
+          "CMS / Git repository staging environment audit",
+          "Baseline analytics & telemetry snapshot",
+          "100% waived ($0.00) when bundled into Turnkey Foundation or Macro Sprints"
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "sku": "HOURLY-DEV",
+      "name": "Out-of-Scope Custom Development",
+      "priceCurrency": "AUD",
+      "price": 220,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "valueAddedTaxIncluded": false,
+        "unitText": "1 hour",
+        "description": "Excluding GST"
+      },
+      "description": "Dedicated technical execution for out-of-scope CMS customizations, edge routing rules, API adaptations, or complex backend schema injections.",
+      "offers": {
+        "@type": "Offer",
+        "price": 220,
+        "priceCurrency": "AUD",
+        "eligibleDuration": "Hourly",
+        "itemOffered": [
+          "Dedicated senior engineer execution",
+          "Direct pull request or staging deployment",
+          "Documented code diff & rollback validation"
         ]
       }
     },
@@ -481,6 +681,12 @@
           "minValue": "0",
           "maxValue": "100",
           "description": "Level 5 Agent-Native rating from isitagentready.com evaluated on 2026-10-24"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "commercial_governance",
+          "name": "Commercial Governance Rules",
+          "value": "Blueprint $995 fee is 100% credited toward Foundation Implementation within 60 calendar days. Technical Onboarding ($250 value) is waived on bundles. Out-of-scope development is $220/hr ex. GST. Governed monthly retainer cadence is $1,980/month with zero contract lock-in. Client owns 100% of IP upon settlement."
         }
       ]
     }

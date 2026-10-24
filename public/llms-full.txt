@@ -31,18 +31,42 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 ---
 
-# 3. Core Engagements & Solution Topologies
+# 3. Technical Sprint Pricing Architecture & Solution Topologies
 
 ### Tier 1: The Strategic Blueprint Method (`/solutions/aeo-blueprint`)
-- **Price**: $995 AUD standalone clarity phase
-- **Deliverables**: Risk-free visibility audit, 90-day step-by-step roadmap, full entity & schema audit, AI discovery readiness score, topical Q&A structure map, vector indexing compatibility check.
-- **Risk Reversal**: 100% credited back into implementation plan.
+- **SKU**: `BPSTRAT`
+- **Price**: $995 AUD ex. GST (5 business days SLA)
+- **Deliverables**: Comprehensive site crawl, entity mapping, LLM answer-gap analysis, schema specification, and prioritised 90-day action plan.
+- **Risk Reversal**: 100% credited toward Foundation Implementation within 60 calendar days.
 
-### Tier 2: AEO Technical Sprints (`/solutions/aeo-sprint`)
-- **Focus**: Execution Sprints (No Lock-in Contracts)
-- **Deliverables**: JSON-LD graph nesting, HTML refactoring rules, passage level extraction setup, token optimisation passes.
+### Tier 2: Foundation Implementation Packages (`/solutions`)
+- **Direct Modular Foundation (`AEO-FOUNDATION-DIRECT`)**: $1,980 AUD ex. GST (10 business days SLA). 4-pillar modular foundation deployment for organisations with existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).
+- **Foundation Turnkey Implementation (`AEO-FOUNDATION`)**: $3,195 AUD ex. GST (4-week structured deployment across up to 10 core pages). Turnkey execution across all 4 pillars, nested Schema.org deployment, atomic page rewrites, and Brand Facts directory. Includes complimentary Technical Onboarding ($250 value waived) and eligible for 100% Blueprint credit reversal ($995 credit within 60 days).
 
-### Tier 3: GEO Services Sprint (`/services/geo-marketing`)
+### Tier 3: AEO Technical Macro Sprints (`/solutions/aeo-sprint`)
+- **SKUs**: `SS1MACRO` (Identity & Schema), `SS2MACRO` (Answer Architecture), `SS3MACRO` (Semantic Lattice), `SS4MACRO` (Brand Facts & Trust)
+- **Price**: $1,980 AUD ex. GST per 10-day sprint
+- **Deliverables**: Bundles 4 targeted half-day micro-sprints across one defined pillar. Includes complimentary Technical Onboarding ($250 value waived).
+
+### Tier 4: AEO Technical Micro-Sprints (`/solutions/aeo-sprint`)
+- **SKUs**: `SS1MICRO1`–`SS4MICRO4`
+- **Price**: $495 AUD ex. GST per 3-day sprint (half-day units)
+- **Deliverables**: Rapid modular execution targeting one agreed priority with zero lock-in contracts (schema injection, single-page atomic rewrite, semantic lattice patch, or citation cleanup).
+
+### Four Core Execution Pillars
+- **Pillar SS1: Brand Identity & Schema Architecture** (`SS1MACRO`, `SS1MICRO1`–`SS1MICRO4`): Programmatic LocalBusiness and Organisation schema injection, Service schema mapping, canonical business facts consolidation, and nested JSON-LD validation and repairs.
+- **Pillar SS2: Commercial Answer Architecture** (`SS2MACRO`, `SS2MICRO1`–`SS2MICRO4`): Restructuring priority commercial pages into 90–120 token atomic answer blocks, conversational FAQ extraction and expansion, passage-level structuring, and conversational query alignment.
+- **Pillar SS3: Semantic Lattice & Query Coverage** (`SS3MACRO`, `SS3MICRO1`–`SS3MICRO4`): Building deterministic internal concept lattices, descriptive contextual anchor text routing, concept cluster reinforcement, and orphan node integration.
+- **Pillar SS4: Brand Facts & External Trust Consensus** (`SS4MACRO`, `SS4MICRO1`–`SS4MICRO4`): Hyper-local NAP profile standardisation across top directories, citation cleanup, canonical Brand Facts page deployment, and Apple Maps & Bing Places signal alignment.
+
+### Commercial Governance Rules
+- **60-Day Reversal Window**: 100% of the $995 Blueprint fee is credited back against Foundation Implementation or Macro Sprints booked within 60 calendar days.
+- **Onboarding Fee Waiver**: The $250 Technical Onboarding (`ONBOARD`) fee is 100% waived ($0.00) when bundled into Turnkey Foundation or Macro Sprints.
+- **Out-of-Scope Developer Rate**: Standard $220 AUD ex. GST per hour (`HOURLY-DEV`) for custom edge routing, CMS modifications, or bespoke API integration.
+- **Monthly Retainer Cadence**: Governed 30-day sprint cycles ($1,980/month MRR) with zero lock-in contracts.
+- **Intellectual Property Ownership**: Clients own 100% of all schemas, content, and code upon final invoice settlement.
+
+### Tier 5: GEO Services Sprint (`/services/geo-marketing`)
 - **Focus**: Location Domination (Map Focus)
 - **Deliverables**: Coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation.
 

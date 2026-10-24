@@ -3,14 +3,17 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, ShieldCheck, Sparkles, Building2, Globe, Mail, User, FileText, ChevronDown } from 'lucide-react';
 import { trackGaEvent } from '@/lib/gtag';
+import { TECHNICAL_SPRINT_CATALOG, formatAudCurrency } from '@/lib/pricing';
 
 export default function QuoteFormSection() {
+  const defaultService = `${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst)})`;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     businessName: '',
     website: '',
-    service: 'Full AEO & GEO Marketing Suite',
+    service: defaultService,
     message: ''
   });
 
@@ -58,7 +61,7 @@ export default function QuoteFormSection() {
         email: '',
         businessName: '',
         website: '',
-        service: 'Full AEO & GEO Marketing Suite',
+        service: defaultService,
         message: ''
       });
     } catch (err) {
@@ -221,10 +224,68 @@ export default function QuoteFormSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 bg-[#080B12] border border-slate-600 rounded-xl text-sm text-slate-100 appearance-none focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all pr-10 cursor-pointer"
                     >
-                      <option value="Full AEO & GEO Marketing Suite">Full AEO &amp; GEO Marketing Suite (Recommended)</option>
-                      <option value="Answer Engine Optimisation (AEO)">Answer Engine Optimisation (AEO)</option>
-                      <option value="GEO Marketing">GEO Marketing (Google &amp; Apple Maps)</option>
-                      <option value="AI Search Strategy">AI Search Strategy &amp; Vector Alignment</option>
+                      <optgroup label="Foundation Packages">
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].priceExGst)})
+                        </option>
+                      </optgroup>
+
+                      <optgroup label="Strategic Audit & Roadmap">
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)}) - 100% Credit Back
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['FREE-AUDIT'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['FREE-AUDIT'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['FREE-AUDIT'].name} (Free)
+                        </option>
+                      </optgroup>
+
+                      <optgroup label={`Governed Macro Sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})`}>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS1MACRO'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS1MACRO'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS2MACRO'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS2MACRO'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS2MACRO'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS2MACRO'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS3MACRO'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS3MACRO'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS3MACRO'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS3MACRO'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS4MACRO'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MACRO'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS4MACRO'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MACRO'].priceExGst)})
+                        </option>
+                      </optgroup>
+
+                      <optgroup label={`Micro-Sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst)})`}>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO1'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS1MICRO2'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO2'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS1MICRO2'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MICRO2'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS2MICRO1'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS3MICRO1'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO1'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS4MICRO3'].priceExGst)})
+                        </option>
+                      </optgroup>
+
+                      <optgroup label="Enterprise & Technical Engineering">
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['ADV-LATTICE'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ADV-LATTICE'].priceExGst)})`}>
+                          {TECHNICAL_SPRINT_CATALOG['ADV-LATTICE'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ADV-LATTICE'].priceExGst)})
+                        </option>
+                        <option value={`${TECHNICAL_SPRINT_CATALOG['HOURLY-DEV'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['HOURLY-DEV'].priceExGst)} / hr)`}>
+                          {TECHNICAL_SPRINT_CATALOG['HOURLY-DEV'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['HOURLY-DEV'].priceExGst)} / hr)
+                        </option>
+                      </optgroup>
                     </select>
                     <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
@@ -272,3 +333,4 @@ export default function QuoteFormSection() {
     </section>
   );
 }
+
