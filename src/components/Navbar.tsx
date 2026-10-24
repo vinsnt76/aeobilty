@@ -167,11 +167,11 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
               </button>
 
               <Link
-                href="/diagnostic"
-                onClick={() => trackGaEvent('nav_diagnostic_clicked', { source: 'navbar_desktop' })}
-                className="px-4 py-2 text-xs font-semibold tracking-wide border border-purple-600/30 hover:border-purple-600/60 bg-purple-50 text-purple-900 rounded-full hover:bg-purple-100 transition-all shadow-sm ml-1"
+                href={pathname === '/' ? '/solutions' : '/diagnostic'}
+                onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_desktop' })}
+                className="px-4 py-2 text-xs font-semibold tracking-wide border border-neutral-300 hover:border-black/30 bg-neutral-100 text-neutral-900 rounded-full hover:bg-neutral-200 transition-all shadow-sm ml-1"
               >
-                Free AI Visibility Scan
+                {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
               </Link>
             </div>
           </div>
@@ -179,11 +179,11 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
           {/* Mobile Right Action Stack: Primary Diagnostic CTA + Hamburger Menu */}
           <div className="flex items-center gap-2.5 lg:hidden">
             <Link
-              href="/diagnostic"
-              onClick={() => trackGaEvent('nav_diagnostic_clicked', { source: 'navbar_mobile' })}
-              className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-purple-600/30 hover:border-purple-600/60 bg-purple-50 text-purple-900 rounded-full hover:bg-purple-100 active:scale-95 transition-all shadow-sm"
+              href={pathname === '/' ? '/solutions' : '/diagnostic'}
+              onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_mobile' })}
+              className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-neutral-300 hover:border-black/30 bg-neutral-100 text-neutral-900 rounded-full hover:bg-neutral-200 active:scale-95 transition-all shadow-sm"
             >
-              Free AI Visibility Scan
+              {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
             </Link>
 
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />

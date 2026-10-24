@@ -181,10 +181,13 @@ export default function Hero() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none"></div>
 
               <div>
-                <label htmlFor="hero-url-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Australian Business URL</span>
-                </label>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label htmlFor="hero-url-input" className="text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-1.5">
+                    <Globe className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Australian Business URL</span>
+                  </label>
+                  <span className="text-[11px] text-slate-400 font-sans">e.g. yourbrand.com.au</span>
+                </div>
                 <input
                   id="hero-url-input"
                   type="text"
@@ -200,10 +203,13 @@ export default function Hero() {
               </div>
 
               <div>
-                <label htmlFor="hero-intent-input" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono mb-1.5 flex items-center gap-1.5">
-                  <Search className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Primary Search Intent</span>
-                </label>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label htmlFor="hero-intent-input" className="text-xs font-semibold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-1.5">
+                    <Search className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Primary Search Intent</span>
+                  </label>
+                  <span className="text-[11px] text-slate-400 font-sans">e.g. Physiotherapist Near Me</span>
+                </div>
                 <input
                   id="hero-intent-input"
                   type="text"

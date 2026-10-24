@@ -1,27 +1,23 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Globe, Search, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { trackGaEvent } from '@/lib/gtag';
 
 export default function HowItWorks() {
   const router = useRouter();
-  const [url, setUrl] = useState('');
-  const [intent, setIntent] = useState('');
-  const [started, setStarted] = useState(false);
-
   const formRef = useRef<HTMLDivElement>(null);
 
-  // 1. audit_form_view - Triggered when the audit form becomes visible in viewport
+  // audit_form_view - Triggered when the telemetry sample becomes visible in viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           if (typeof window !== 'undefined') {
             trackGaEvent('audit_form_view', {
-              form_id: 'how_it_works_audit',
+              form_id: 'how_it_works_preview',
               page_location: window.location.pathname,
             });
           }
@@ -36,37 +32,6 @@ export default function HowItWorks() {
     }
     return () => observer.disconnect();
   }, []);
-
-  // 2. audit_form_start - Triggered once when the user begins typing in any field
-  const handleFieldStart = (fieldName: string) => {
-    if (!started) {
-      setStarted(true);
-      if (typeof window !== 'undefined') {
-        trackGaEvent('audit_form_start', {
-          form_id: 'how_it_works_audit',
-          field_started: fieldName,
-        });
-      }
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!url.trim() || !intent.trim()) return;
-
-    let formattedUrl = url.trim();
-    if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {
-      formattedUrl = `https://${formattedUrl}`;
-    }
-
-    const searchParams = new URLSearchParams({
-      url: formattedUrl,
-      intent: intent.trim(),
-      auto: 'true',
-    });
-
-    router.push(`/diagnostic?${searchParams.toString()}`);
-  };
 
   return (
     <section id="how-it-works" className="py-20 bg-neutral-50 text-black">
@@ -162,94 +127,103 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Form Card */}
-          <div id="audit-form" ref={formRef} className="lg:col-span-5 bg-white p-8 rounded-2xl border border-neutral-200/80 shadow-xl relative overflow-hidden">
+          {/* Sample Telemetry Output Preview Card */}
+          <div id="audit-preview" ref={formRef} className="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-2xl relative overflow-hidden text-white space-y-5">
             {/* Top decorative stripe */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple"></div>
 
-            <form onSubmit={handleSubmit} className="space-y-4" aria-label="Local Business Visibility Audit Form">
-                <div>
-                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Check Where Your Business Stands Across AI Search</h3>
-                  <p className="text-xs text-neutral-500 font-light mt-1 font-serif">
-                    See how AI search engines understand your business today. Zero email required upfront.
-                  </p>
+            <div className="flex items-center justify-between">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300">
+                <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Telemetry Preview</span>
+              </div>
+              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+                Live Sample v4.2
+              </span>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-white font-soehne-breit">
+                Diagnostic Telemetry Sample
+              </h3>
+              <p className="text-xs text-zinc-400 font-light mt-1 font-serif leading-relaxed">
+                Empirical signals measured across your brand footprint during a live visibility scan.
+              </p>
+            </div>
+
+            {/* Score Showcase Gauge */}
+            <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 flex items-center justify-between">
+              <div className="space-y-0.5">
+                <span className="text-[10px] uppercase font-mono font-bold text-zinc-400 tracking-wider">
+                  AI Visibility Index
+                </span>
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
+                  88 <span className="text-sm text-cyan-400 font-sans font-normal">/ 100</span>
                 </div>
+              </div>
+              <div className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
+                Optimised for AI
+              </div>
+            </div>
 
-                <div className="space-y-3.5">
-                  <div>
-                    <label 
-                      htmlFor="australian-business-url"
-                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
-                    >
-                      Australian Business URL
-                    </label>
-                    <div className="relative">
-                      <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-                      <input
-                        type="text"
-                        id="australian-business-url"
-                        name="australian_business_url"
-                        required
-                        placeholder="https://yourbrand.com.au"
-                        value={url}
-                        onChange={(e) => {
-                          setUrl(e.target.value);
-                          handleFieldStart('website');
-                        }}
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
-                        aria-required="true"
-                        spellCheck={false}
-                        suppressHydrationWarning
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label 
-                      htmlFor="target-search-intent"
-                      className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5"
-                    >
-                      Primary Search Intent
-                    </label>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-                      <input
-                        type="text"
-                        id="target-search-intent"
-                        name="target_search_intent"
-                        required
-                        placeholder="e.g. Physiotherapist Near Me"
-                        value={intent}
-                        onChange={(e) => {
-                          setIntent(e.target.value);
-                          handleFieldStart('intent');
-                        }}
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-neutral-50 text-neutral-900 text-xs focus:outline-none focus:ring-2 focus:ring-aeo-cyan/50 focus:border-aeo-cyan transition-all"
-                        aria-required="true"
-                        spellCheck={false}
-                        suppressHydrationWarning
-                      />
-                    </div>
-                  </div>
+            {/* 4 Diagnostic Signals */}
+            <div className="space-y-2.5 text-xs font-sans">
+              <div className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <div className="font-semibold text-white">Entity Resolution Graph</div>
+                  <div className="text-[11px] text-zinc-400 font-serif">Wikidata &amp; Schema alignment</div>
                 </div>
+                <span className="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
+              </div>
 
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-semibold text-sm transition-all cursor-pointer"
-                  >
-                    <span>Generate My AI Visibility Score</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                  <p className="text-[10px] text-center text-neutral-500 font-medium font-mono mt-2.5">
-                    * The scan executes a real-time vector analysis using Gemini.
-                  </p>
+              <div className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <div className="font-semibold text-white">Atomic Answer Extraction</div>
+                  <div className="text-[11px] text-zinc-400 font-serif">Direct-answer passage density</div>
                 </div>
+                <span className="font-mono text-cyan-300 text-[11px] font-bold">91% Salience</span>
+              </div>
 
-                <p className="text-[11px] text-center text-neutral-500 font-mono">
-                  Free visibility scan &bull; No email required to start &bull; 100% private &amp; secure
-                </p>
-              </form>
+              <div className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <div className="font-semibold text-white">Semantic Lattice Topology</div>
+                  <div className="text-[11px] text-zinc-400 font-serif">Core services linked to proof assets</div>
+                </div>
+                <span className="font-mono text-purple-300 text-[11px] font-bold">Connected</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <div className="font-semibold text-white">Citation Provenance (NAP)</div>
+                  <div className="text-[11px] text-zinc-400 font-serif">GBP, Apple Maps &amp; Bing consistency</div>
+                </div>
+                <span className="font-mono text-cyan-300 text-[11px] font-bold">100% Parity</span>
+              </div>
+            </div>
+
+            {/* Primary Action Button */}
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  trackGaEvent('audit_cta_clicked', { source: 'how_it_works_preview' });
+                  const el = document.getElementById('hero-url-input');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.focus();
+                  } else {
+                    router.push('/diagnostic');
+                  }
+                }}
+                className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
+              >
+                <span>Run Free Live Telemetry Scan</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+              <p className="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
+                * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
+              </p>
+            </div>
           </div>
         </div>
       </div>

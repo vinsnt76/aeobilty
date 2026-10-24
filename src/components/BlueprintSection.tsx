@@ -124,22 +124,40 @@ export default function BlueprintSection() {
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/contact?tier=blueprint"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-cyan-500 text-zinc-950 font-bold text-sm hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
-                  title="Commission Strategic Blueprint"
-                >
-                  <span>Commission Strategic Blueprint ({formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}) →</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days"
-                  className="text-xs text-zinc-400 hover:text-cyan-300 font-mono underline transition-colors"
-                >
-                  Read 90-Day Case Study
-                </Link>
+              {/* Action Button & Proximity Reassurance Cluster */}
+              <div className="pt-2 space-y-3">
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link
+                    href="/contact?tier=blueprint"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-cyan-500 text-zinc-950 font-bold text-sm hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
+                    title="Commission Strategic Blueprint"
+                  >
+                    <span>Commission Strategic Blueprint ({formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}) →</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days"
+                    className="text-xs text-zinc-400 hover:text-cyan-300 font-mono underline transition-colors"
+                  >
+                    Read 90-Day Case Study
+                  </Link>
+                </div>
+
+                {/* Immediate Proximity Reassurance Row */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono pt-1">
+                  <div className="flex items-center gap-1.5 text-cyan-300 font-bold">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>100% Credited (60 Days)</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-zinc-300">
+                    <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>5–7 Business Day Turnaround SLA</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-zinc-300">
+                    <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>100% Client IP Ownership</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -172,35 +190,29 @@ export default function BlueprintSection() {
                   ))}
                 </div>
 
-                {/* Delivery SLA & Commercial Governance */}
+                {/* Staged Delivery Governance Principles */}
                 <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2.5">
                   <span className="text-xs font-mono font-bold text-cyan-300 block uppercase tracking-wider">
-                    Delivery SLA &amp; Commercial Governance:
+                    Governed Delivery Principles:
                   </span>
-                  <div className="space-y-2 text-xs text-zinc-300 font-serif">
-                    <div className="flex items-start gap-2">
-                      <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white font-sans">Delivery Turnaround SLA:</strong> 5–7 business days from access verification.
-                      </span>
+                  <div className="space-y-1.5 text-xs text-zinc-300 font-serif">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <span>Deterministic milestone sign-off for every deployed sprint</span>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white font-sans">100% Credit-Back Corridor:</strong> Fully credited toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days.
-                      </span>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <span>Zero locked-in monthly retainers or long-term contracts</span>
                     </div>
-                    <div className="flex items-start gap-2 pt-1 border-t border-white/5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white font-sans">Client IP Ownership:</strong> 100% unencumbered client ownership of all audit findings and mapping tables.
-                      </span>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <span>Open-book code PRs, schema mapping logs &amp; full IP transfer</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
-                  <span>Sprint Cadence: 30-Day Governed Cycles</span>
+                  <span>Cadence: 30-Day Governed Cycles</span>
                   <span>Turnaround: 5–7 Business Days</span>
                 </div>
               </div>

@@ -37,10 +37,10 @@ export function CoreEngagementsGrid() {
         </div>
 
         {/* 3-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-4">
           {/* Card 1: Tier 1 (Strategic Blueprint) */}
-          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400 transition-all duration-300 group">
-            <div className="space-y-4">
+          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
+            <div className="space-y-5">
               {/* Eyebrow & SKU */}
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
@@ -72,64 +72,58 @@ export function CoreEngagementsGrid() {
                   100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days) • Zero Setup Fees
                 </div>
                 <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days • Read-only diagnostic discovery requires zero setup fees)
+                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days • Diagnostic discovery requires zero setup fees)
                 </p>
               </div>
 
-              {/* Objective & Purpose */}
-              <div className="space-y-1 pt-1">
-                <span className="font-mono text-[10px] uppercase font-bold text-cyan-400 tracking-wider block">
-                  Objective &amp; Purpose
-                </span>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                  {tier1.targetGoal}
-                </p>
-              </div>
+              {/* Objective Summary */}
+              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
+                {tier1.targetGoal}
+              </p>
 
-              {/* Itemised Technical Deliverables */}
-              <div className="space-y-3 pt-2 border-t border-white/5">
-                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                  Core Deliverables &amp; Strategic Scope
-                </h4>
-                <ul className="space-y-2.5 text-xs text-zinc-300 font-sans">
+              {/* Layer-Cake Deliverables List */}
+              <div className="pt-3 border-t border-white/10 space-y-3">
+                <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Entity Architecture &amp; Gap Analysis:</strong> Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Entity Architecture &amp; Gap Analysis</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Comprehensive audit of brand entities, Wikidata, and knowledge graph alignment.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Schema Drift &amp; Syntax Report:</strong> DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and rich-result errors so search engines parse your content without confusion.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Schema Drift &amp; Syntax Diagnostic</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">DOM-level validation of JSON-LD entities and Google rich-result errors.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Retrieval &amp; Search Visibility Evaluation:</strong> Empirical evaluation of answer passage retrieval and semantic coverage to ensure your services get recommended in AI Overviews and conversational search.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Search Visibility &amp; Retrieval Check</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Passage retrieval and semantic coverage check for AI Overviews and answer engines.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">90-Day Prioritised Implementation Roadmap:</strong> Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">90-Day Prioritised Implementation Roadmap</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Chronological sprint plan detailing high-priority fixes and engineering prerequisites.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Executive Stakeholder Briefing (45 Mins):</strong> Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Executive Stakeholder Briefing (45 Mins)</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Dedicated walkthrough of findings with your marketing and engineering leads.</div>
+                    </div>
                   </li>
                 </ul>
               </div>
 
               {/* Delivery & Commercial Governance */}
-              <div className="space-y-2.5 pt-2 border-t border-white/5">
-                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                  Delivery &amp; Commercial Governance
-                </h4>
+              <div className="pt-3 border-t border-white/10">
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                   <div className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -137,11 +131,11 @@ export function CoreEngagementsGrid() {
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-zinc-200 font-sans">Commercial Credit Terms:</strong> 100% of the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} investment is deductible against <code className="text-cyan-300 font-mono text-[10px] bg-cyan-950/60 px-1 py-0.5 rounded">AEO-FOUNDATION-CORE</code> (Pathway 1) or Month 1 Retainer (Pathway 2). Valid for {GOVERNANCE_RULES.creditWindowDays} calendar days post-delivery.</span>
+                    <span><strong className="text-zinc-200 font-sans">Commercial Credit Terms:</strong> 100% of fee is deductible against Foundation or Month 1 Retainer within {GOVERNANCE_RULES.creditWindowDays} days.</span>
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 pt-1.5 border-t border-white/5 font-sans">
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-white">Client IP Ownership:</strong> 100% unencumbered client ownership of all audit findings, mapping tables, and strategic artifacts.</span>
+                    <span><strong className="text-white">Client IP Ownership:</strong> 100% unencumbered client ownership of all audit findings and mapping tables.</span>
                   </div>
                 </div>
               </div>
@@ -150,21 +144,26 @@ export function CoreEngagementsGrid() {
             <div className="pt-6">
               <Link
                 href={tier1.ctaHref}
-                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-bold text-xs transition-all duration-300 shadow-lg shadow-cyan-500/20 text-left cursor-pointer"
+                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400/60 hover:bg-zinc-800 text-white font-semibold text-xs transition-all duration-300 shadow-sm text-left cursor-pointer"
                 title="Commission Strategic Blueprint"
               >
                 <span>Commission Strategic Blueprint →</span>
-                <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
+                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
           </div>
 
-          {/* Card 2: Tier 2 (Foundation Core - Featured Gradient Border) */}
-          <div className="relative p-0.5 rounded-2xl bg-gradient-to-b from-cyan-400 via-purple-500 to-cyan-500 shadow-[0_0_30px_rgba(168,85,247,0.25)] transition-all duration-300 group">
+          {/* Card 2: Tier 2 (Foundation Core - Elevated Focal Point / Von Restorff Effect) */}
+          <div className="relative rounded-2xl bg-gradient-to-b from-cyan-400 via-cyan-500 to-purple-500 p-0.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] md:-translate-y-2 transition-all duration-300 group z-10">
+            {/* Top Recommended Floating Badge */}
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-zinc-950 font-black text-[10px] tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(6,182,212,0.5)] z-20 whitespace-nowrap">
+              Most Popular • Recommended Foundation
+            </div>
+
             <div className="flex flex-col justify-between h-full p-6 md:p-8 rounded-[15px] bg-zinc-950/95 backdrop-blur-xl">
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {/* Eyebrow & SKU */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pt-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
                     <Boxes className="w-3.5 h-3.5" />
                     <span>Foundation Core</span>
@@ -178,7 +177,7 @@ export function CoreEngagementsGrid() {
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier2.name}</h3>
                   <div className="flex flex-wrap items-baseline gap-2 mt-2">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono">
                       {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
                     </span>
                     <span className="text-sm font-semibold text-zinc-300 font-mono">Direct / {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey</span>
@@ -208,60 +207,54 @@ export function CoreEngagementsGrid() {
                   </p>
                 </div>
 
-                {/* Objective & Purpose */}
-                <div className="space-y-1 pt-1">
-                  <span className="font-mono text-[10px] uppercase font-bold text-cyan-400 tracking-wider block">
-                    Objective &amp; Purpose
-                  </span>
-                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                    Establish clean machine readability, atomic answer passages, and semantic links across priority pages to secure retrieval across AI Overviews, Perplexity, and conversational search engines.
-                  </p>
-                </div>
+                {/* Objective Summary */}
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
+                  Establish clean machine readability, atomic answer passages, and semantic links across priority pages to secure retrieval across AI search engines.
+                </p>
 
-                {/* Itemised Technical Deliverables */}
-                <div className="space-y-3 pt-2 border-t border-white/5">
-                  <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                    Core Deliverables &amp; Strategic Scope
-                  </h4>
-                  <ul className="space-y-2.5 text-xs text-zinc-300 font-sans">
+                {/* Layer-Cake Deliverables List */}
+                <div className="pt-3 border-t border-white/10 space-y-3">
+                  <ul className="space-y-3 text-xs font-sans">
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white">Pillar 1: Structured Data &amp; Schema Graph:</strong> Custom nested JSON-LD schema injected into the DOM (<em>Organisation, LocalBusiness, Service, GeoCoordinates, FAQPage</em>) with 0 syntax errors.
-                      </span>
+                      <div>
+                        <div className="font-bold text-white text-xs">Pillar 1: Structured Data &amp; Schema Graph</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Nested DOM JSON-LD (Organisation, LocalBusiness, Service, FAQ) with 0 syntax errors.</div>
+                      </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white">Pillar 2: Atomic Answer Copywriting:</strong> Answer-first restructuring across up to 10 priority pages formatted into 90–120 token extraction passages with strict H1–H3 intent hierarchy.
-                      </span>
+                      <div>
+                        <div className="font-bold text-white text-xs">Pillar 2: Atomic Answer Copywriting</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Answer-first restructuring across up to 10 priority pages formatted into 90–120 token passages.</div>
+                      </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white">Pillar 3: Semantic Lattice Mapping:</strong> Structured internal entity links that connect your core services directly to proof assets, ensuring AI models accurately verify and cite your capabilities.
-                      </span>
+                      <div>
+                        <div className="font-bold text-white text-xs">Pillar 3: Semantic Lattice Mapping</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Structured internal entity links connecting core services to proof assets for accurate AI citation.</div>
+                      </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white">Pillar 4: Citation Provenance &amp; NAP Parity:</strong> Deployed canonical Brand Facts architecture with multi-platform NAP standardisation across GBP, Apple Maps, and Bing Places.
-                      </span>
+                      <div>
+                        <div className="font-bold text-white text-xs">Pillar 4: Citation Provenance &amp; NAP Parity</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Canonical Brand Facts architecture with multi-platform parity across GBP, Apple &amp; Bing.</div>
+                      </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span>
-                        <strong className="text-white">Complimentary Telemetry &amp; Setup:</strong> Pre-sprint environment access verification, index ping baseline, and final telemetry verification audit ($250 value included).
-                      </span>
+                      <div>
+                        <div className="font-bold text-white text-xs">Complimentary Setup &amp; Onboarding</div>
+                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Pre-sprint access verification, index ping baseline, and final telemetry audit ($250 value at $0).</div>
+                      </div>
                     </li>
                   </ul>
                 </div>
 
                 {/* Delivery & Commercial Governance */}
-                <div className="space-y-2.5 pt-2 border-t border-white/5">
-                  <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                    Delivery &amp; Commercial Governance
-                  </h4>
+                <div className="pt-3 border-t border-white/10">
                   <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                     <div className="flex items-start gap-2 font-mono text-xs text-white">
                       <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -269,7 +262,7 @@ export function CoreEngagementsGrid() {
                     </div>
                     <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span><strong className="text-zinc-200 font-sans">Open-Book Resource &amp; Link Attribution:</strong> Injected directly into your CMS or provided as clean engineering pull requests with transparent schema mapping logs.</span>
+                      <span><strong className="text-zinc-200 font-sans">Open-Book Attribution:</strong> Injected directly into your CMS or provided as clean engineering pull requests with transparent schema mapping logs.</span>
                     </div>
                     <div className="flex items-start gap-2 text-[11px] text-zinc-300 pt-1.5 border-t border-white/5 font-sans">
                       <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -282,19 +275,19 @@ export function CoreEngagementsGrid() {
               <div className="pt-6">
                 <Link
                   href={tier2.ctaHref}
-                  className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-95 text-black font-bold text-xs transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] text-left cursor-pointer"
+                  className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 hover:from-cyan-300 hover:to-white text-zinc-950 font-black text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.45)] text-left cursor-pointer"
                   title="Deploy Foundation Core"
                 >
                   <span>{tier2.ctaText} →</span>
-                  <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
+                  <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Card 3: Tier 3 (Ongoing Dominance - Governed Sprints) */}
-          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
-            <div className="space-y-4">
+          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-purple-500/40 transition-all duration-300 group">
+            <div className="space-y-5">
               {/* Eyebrow & SKU */}
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-[11px] font-mono font-bold text-purple-300 uppercase tracking-wider">
@@ -330,60 +323,54 @@ export function CoreEngagementsGrid() {
                 </p>
               </div>
 
-              {/* Objective & Purpose */}
-              <div className="space-y-1 pt-1">
-                <span className="font-mono text-[10px] uppercase font-bold text-purple-400 tracking-wider block">
-                  Objective &amp; Purpose
-                </span>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                  {tier3.targetGoal}
-                </p>
-              </div>
+              {/* Objective Summary */}
+              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
+                {tier3.targetGoal}
+              </p>
 
-              {/* Core Deliverables & Strategic Scope */}
-              <div className="space-y-3 pt-2 border-t border-white/5">
-                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400">
-                  Core Deliverables &amp; Strategic Scope
-                </h4>
-                <ul className="space-y-2.5 text-xs text-zinc-300 font-sans">
+              {/* Layer-Cake Deliverables List */}
+              <div className="pt-3 border-t border-white/10 space-y-3">
+                <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">4 Focused Execution Pillars:</strong> Choose from SS1 Identity, SS2 Answers, SS3 Lattice, or SS4 Trust.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">4 Governed Execution Pillars</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Flexible allocation across Identity, Answer Copy, Semantic Lattice, or Citation Trust.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Bundled Micro-Sprints:</strong> Each Macro Sprint bundles 4 dedicated micro-sprints ({formatAudCurrency(macroSku.priceExGst)}).
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">4 Bundled Micro-Sprints per Month</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Each Macro Sprint includes 4 focused technical micro-tasks ({formatAudCurrency(macroSku.priceExGst)} total value).</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Individual Half-Day Units:</strong> Standalone micro-sprints available from $495 ex. GST for targeted remediation.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Modular Half-Day Units Available</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Targeted standalone micro-sprints available from $495 ex. GST for rapid remediation.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Telemetry &amp; Scorecard:</strong> Pre- and post-sprint vector indexing verification and entity salience logs.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Telemetry &amp; Salience Scorecard</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Pre- and post-sprint vector indexing verification and entity salience logs.</div>
+                    </div>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-white">Sprint Handover &amp; Strategy Debrief:</strong> Comprehensive walkthrough with engineering documentation.
-                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">Sprint Handover &amp; Strategy Debrief</div>
+                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Full engineering documentation, code walkthrough, and next sprint backlog review.</div>
+                    </div>
                   </li>
                 </ul>
               </div>
 
               {/* Delivery & Commercial Governance */}
-              <div className="space-y-2.5 pt-2 border-t border-white/5">
-                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400">
-                  Delivery &amp; Commercial Governance
-                </h4>
+              <div className="pt-3 border-t border-white/10">
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                   <div className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
@@ -391,11 +378,11 @@ export function CoreEngagementsGrid() {
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-zinc-200 font-sans">Clear Month-to-Month Terms:</strong> Governed 30-day sprint cycles with zero contract lock-in.</span>
+                    <span><strong className="text-zinc-200 font-sans">Flexible Scope Allocation:</strong> Re-allocate sprint focus monthly between technical schema, content rewriting, or citation alignment.</span>
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 pt-1.5 border-t border-white/5 font-sans">
                     <ShieldCheck className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                    <span><strong className="text-white">Client IP Ownership:</strong> {GOVERNANCE_RULES.clientIpOwnership}.</span>
+                    <span><strong className="text-white">Zero Lock-In:</strong> Cancel or pause sprint commitments at the conclusion of any 30-day billing cycle.</span>
                   </div>
                 </div>
               </div>
