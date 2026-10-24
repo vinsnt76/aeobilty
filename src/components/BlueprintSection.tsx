@@ -86,7 +86,7 @@ export default function BlueprintSection() {
                   <span className="text-gradient-aeo">From Diagnostic to Generative Dominance</span>
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-zinc-300 leading-relaxed font-serif">
-                  The Strategic Blueprint is not a static PDF audit. It is the operational master plan that powers your 90-day technical sprint execution. We diagnose latent entity gaps, schema drift, and retrieval vulnerabilities, then translate them into an actionable sprint backlog for your engineering team or our turnkey deployment.
+                  The Strategic Blueprint is not a static PDF audit. It is the operational master plan that powers your 90-day technical sprint execution. We diagnose missing business entities, broken citations, and schema errors across your digital footprint, translating them into an actionable sprint backlog for your engineering team or our turnkey deployment.
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ export default function BlueprintSection() {
             </div>
           </div>
 
-          {/* Right Column: 90-Day Execution Plan & Labour Transparency */}
+          {/* Right Column: 90-Day Execution Plan & Governance */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-1 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-2xl">
               <div className="p-6 sm:p-8 space-y-6 bg-neutral-950/90 rounded-xl">
@@ -172,22 +172,22 @@ export default function BlueprintSection() {
                   ))}
                 </div>
 
-                {/* Timeline & Active Labour Clarity */}
+                {/* Delivery SLA & Commercial Governance */}
                 <div className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 space-y-2.5">
                   <span className="text-xs font-mono font-bold text-cyan-300 block uppercase tracking-wider">
-                    Labour &amp; Delivery SLA Breakdown:
+                    Delivery SLA &amp; Commercial Governance:
                   </span>
                   <div className="space-y-2 text-xs text-zinc-300 font-serif">
                     <div className="flex items-start gap-2">
                       <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-white font-sans">Active Engineering Effort:</strong> {bpSku.handsOnEffort} of hands-on diagnostic crawl, Wikidata matching, and schema script authoring.
+                        <strong className="text-white font-sans">Delivery Turnaround SLA:</strong> 5–7 business days from access verification.
                       </span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-white font-sans">Delivery Turnaround SLA:</strong> {bpSku.deliverySla} from credential access (allows multi-engine validation &amp; briefing scheduling).
+                        <strong className="text-white font-sans">100% Credit-Back Corridor:</strong> Fully credited toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days.
                       </span>
                     </div>
                     <div className="flex items-start gap-2 pt-1 border-t border-white/5">
@@ -200,8 +200,8 @@ export default function BlueprintSection() {
                 </div>
 
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
-                  <span>SKU: {bpSku.code}</span>
-                  <span>Fee: {formatAudCurrency(bpSku.priceExGst)}</span>
+                  <span>Sprint Cadence: 30-Day Governed Cycles</span>
+                  <span>Turnaround: 5–7 Business Days</span>
                 </div>
               </div>
             </div>

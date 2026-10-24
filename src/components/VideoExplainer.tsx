@@ -32,7 +32,7 @@ export default function VideoExplainer({
               {title}
             </h2>
             <p className="text-base text-slate-300 font-normal max-w-xl leading-relaxed font-sans">
-              If your website traffic has dropped and the phone has stopped ringing, we fix it by getting you found where your customers are searching today. Read our <Link href="/services/aeo/definition" className="text-cyan-400 font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
+              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first. Read our <Link href="/services/aeo/definition" className="text-cyan-400 font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
             </p>
           </div>
         </div>

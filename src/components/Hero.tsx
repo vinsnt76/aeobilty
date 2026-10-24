@@ -166,11 +166,14 @@ export default function Hero() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-              Get Found on <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">Google, Maps, and AI Search</span>
+              Get Found.{' '}
+              <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
+                Get Chosen.
+              </span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-serif">
-              Discover how Search engines, Google Maps, and AI answer engines understand and recommend your business for the services you provide.
+              Position your business across Google, Maps, and AI answer engines with zero guesswork. Discover how search platforms understand and recommend your services today.
             </p>
 
             {/* Embedded Telemetry Form Card with Sprint Glow */}

@@ -26,7 +26,7 @@ export default function USPGrid() {
   const usps = [
     {
       icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,205,216,0.4)]" />,
-      title: 'Capture High-Intent Local Demand',
+      title: 'Engineered Direct-Answer Discovery',
       description: 'Improve how Search, Maps, and AI platforms interpret and choose your business facts so relevant local customers find you when they search.',
     },
     {
@@ -55,7 +55,7 @@ export default function USPGrid() {
               Entity Authority
             </h2>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
-              Stop Losing Customers on Google, Maps, and AI
+              Capture High-Intent Demand Across Google, Maps, and AI
             </h3>
             <p className="text-base text-white/60 font-light font-serif">
               We structure business data into machine-readable knowledge graphs. Explore our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">entity authority building framework for AI search</Link> to understand how conversational models evaluate brand salience. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.

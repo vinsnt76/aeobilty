@@ -101,13 +101,13 @@ export function CoreEngagementsGrid() {
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Schema Drift &amp; Syntax Report:</strong> DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.
+                      <strong className="text-white">Schema Drift &amp; Syntax Report:</strong> DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and rich-result errors so search engines parse your content without confusion.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Retrieval &amp; Positional Bias Evaluation:</strong> Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.
+                      <strong className="text-white">Retrieval &amp; Search Visibility Evaluation:</strong> Empirical evaluation of answer passage retrieval and semantic coverage to ensure your services get recommended in AI Overviews and conversational search.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -133,7 +133,7 @@ export function CoreEngagementsGrid() {
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                   <div className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                    <span><strong>Delivery Turnaround SLA:</strong> 5–7 Business Days from kickoff and credential access (includes 4–6 hours of dedicated engineering diagnostic analysis).</span>
+                    <span><strong>Delivery Turnaround SLA:</strong> 5–7 business days from access verification.</span>
                   </div>
                   <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -186,14 +186,14 @@ export function CoreEngagementsGrid() {
                   </div>
 
                   {/* Direct vs. Turnkey Operational Definition */}
-                  <div className="mt-2.5 p-2.5 rounded-xl bg-zinc-900/80 border border-white/10 space-y-1.5 text-[11px] font-sans">
-                    <div className="leading-snug">
-                      <span className="font-mono font-bold text-cyan-300">Direct ($1,990):</span>{' '}
-                      <span className="text-zinc-300">Engineered schema, atomic copy &amp; link maps provided as production-ready code/PRs for your in-house team to deploy.</span>
+                  <div className="mt-2.5 p-3 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2 text-xs font-sans">
+                    <div className="leading-relaxed">
+                      <strong className="font-mono font-bold text-cyan-300">$1,990 AUD Direct:</strong>{' '}
+                      <span className="text-zinc-300">Code &amp; schema delivered as clean pull requests and snippets for your team to deploy.</span>
                     </div>
-                    <div className="leading-snug pt-1 border-t border-white/5">
-                      <span className="font-mono font-bold text-purple-300">Turnkey ($3,195):</span>{' '}
-                      <span className="text-zinc-300">End-to-end CMS code injection and live production deployment handled directly by AEObility engineers across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages.</span>
+                    <div className="leading-relaxed pt-2 border-t border-white/10">
+                      <strong className="font-mono font-bold text-purple-300">$3,195 AUD Turnkey:</strong>{' '}
+                      <span className="text-zinc-300">End-to-end CMS deployment and live testing handled entirely by our engineering team across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages.</span>
                     </div>
                   </div>
                 </div>
@@ -201,10 +201,10 @@ export function CoreEngagementsGrid() {
                 {/* High-Contrast Badge & Waiver Line */}
                 <div className="space-y-1.5">
                   <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
-                    $250 Setup Fee Waived
+                    Complimentary Technical Setup &amp; Onboarding
                   </div>
                   <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                    (Standard $250 AUD technical onboarding &amp; credential integration fee is 100% waived with package deployment)
+                    (Standard $250 AUD technical setup, repository integration, and index baseline included at $0)
                   </p>
                 </div>
 
@@ -239,7 +239,7 @@ export function CoreEngagementsGrid() {
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-white">Pillar 3: Semantic Lattice Mapping:</strong> Bidirectional hub-and-spoke entity linking connecting core services to proof assets, mitigating crawler dead-ends and vector retrieval drift.
+                        <strong className="text-white">Pillar 3: Semantic Lattice Mapping:</strong> Structured internal entity links that connect your core services directly to proof assets, ensuring AI models accurately verify and cite your capabilities.
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">

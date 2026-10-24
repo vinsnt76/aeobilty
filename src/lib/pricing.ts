@@ -112,11 +112,11 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     handsOnEffort: '4–6 Hours',
     deliverySla: '5–7 Business Days',
     category: 'blueprint',
-    purpose: 'De-risk technical execution through comprehensive diagnostic discovery. Identify latent entity gaps, citation decay, positional bias, and schema drift across your digital footprint before deploying code.',
+    purpose: 'De-risk technical execution through comprehensive diagnostic discovery. Identify missing business entities, broken citation links, and outdated schema across your digital footprint so search engines and AI models accurately recognise your services before deploying code.',
     deliverables: [
       'Entity Architecture & Gap Analysis: Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.',
-      'Schema Drift & Syntax Report: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.',
-      'Retrieval & Positional Bias Evaluation: Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.',
+      'Schema Drift & Syntax Report: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and rich-result errors so search engines parse your content without confusion.',
+      'Retrieval & Search Visibility Evaluation: Empirical evaluation of answer passage retrieval and semantic coverage to ensure your services get recommended in AI Overviews and conversational search.',
       '90-Day Prioritised Implementation Roadmap: Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.',
       'Executive Stakeholder Briefing (45 Mins): Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.'
     ],
@@ -195,7 +195,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     deliverables: [
       'Pillar 1: Structured Data & Schema Graph Deployment: Custom nested JSON-LD schema injected into the DOM (Organisation, LocalBusiness, Service, PostalAddress, GeoCoordinates, FAQPage) with 0 syntax errors.',
       'Pillar 2: Atomic Answer Copywriting & Structuring: High-intent, answer-first content restructuring across up to 10 priority pages formatted into 90–120 token extraction passages with strict H1–H3 intent hierarchy.',
-      'Pillar 3: Semantic Lattice & Internal Knowledge Mapping: Bidirectional hub-and-spoke entity linking connecting core services to proof assets and location hubs, mitigating crawler dead-ends and vector retrieval drift.',
+      'Pillar 3: Semantic Lattice Mapping: Structured internal entity links that connect your core services directly to proof assets, ensuring AI models accurately verify and cite your capabilities.',
       'Pillar 4: Citation Provenance & NAP Parity: Deployed canonical Brand Facts architecture with multi-platform audit and standardisation of Name, Address, and Phone (NAP) across GBP, Apple Maps, Bing Places, and primary Australian directories.',
       'Complimentary Technical Setup & Telemetry: Pre-sprint environment access verification, index ping baseline, and final telemetry verification audit ($250 value included at $0.00).'
     ],
@@ -590,7 +590,7 @@ export const PRICING_TIERS: PricingTier[] = [
     priceDisplay: '$995 AUD',
     priceExGst: 995,
     sla: '5–7 Business Days',
-    targetGoal: 'De-risk technical execution through comprehensive diagnostic discovery. Identify latent entity gaps, citation decay, positional bias, and schema drift across your digital footprint before deploying code.',
+    targetGoal: 'De-risk technical execution through comprehensive diagnostic discovery. Identify missing business entities, broken citation links, and outdated schema across your digital footprint so search engines and AI models accurately recognise your services before deploying code.',
     deliverables: [
       'Entity Architecture & Gap Analysis (Wikidata, Knowledge Graph & schema coverage)',
       'Schema Drift & Syntax Report (DOM diagnostic & Rich Result error remediation)',
