@@ -261,6 +261,17 @@ export const TECHNICAL_AUDITS: { agentReadiness: TechnicalAuditBenchmark } = {
 // ============================================================================
 // 3. COMMERCIAL FACTS (Products, SKUs, and Pricing Frameworks)
 // ============================================================================
+export interface PricingConfigItem {
+  sku: string;
+  name: string;
+  priceAUD: number;
+  priceFromAUD?: number;
+  duration: string;
+  creditBackEligible?: boolean;
+  description?: string;
+  deliverables: string[];
+}
+
 export const PRICING_CONFIG = {
   meta: { currency: "AUD", taxStatus: "Excluding GST" },
   currency: 'AUD',

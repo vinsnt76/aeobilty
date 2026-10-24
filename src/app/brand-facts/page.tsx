@@ -7,6 +7,7 @@ import {
   BRAND_IDENTITY, 
   BRAND_DEFINITIONS, 
   PRICING_CONFIG, 
+  PricingConfigItem,
   BRAND_KNOWLEDGE_LATTICE,
   PUBLIC_SCHEMA_GRAPH,
   PROVENANCE_ENTITIES,
@@ -30,9 +31,11 @@ export const metadata: Metadata = {
 };
 
 export default function HumanBrandFactsPage() {
-  const pricingItems = [
+  const pricingItems: PricingConfigItem[] = [
     PRICING_CONFIG.StrategicBlueprint,
+    PRICING_CONFIG.FoundationImplementationDirect,
     PRICING_CONFIG.FoundationImplementation,
+    PRICING_CONFIG.MacroSprints,
     PRICING_CONFIG.MicroSprints,
   ];
 
@@ -406,7 +409,9 @@ export default function HumanBrandFactsPage() {
                       </td>
                       <td className="p-4 text-zinc-300 font-mono text-xs">{item.duration}</td>
                       <td className="p-4 text-right font-bold text-white text-base">
-                        ${'priceAUD' in item ? item.priceAUD : item.priceFromAUD}*
+                        {item.priceFromAUD && item.sku.includes('MICRO')
+                          ? `From $${item.priceFromAUD.toLocaleString()}*`
+                          : `$${item.priceAUD.toLocaleString()}*`}
                       </td>
                     </tr>
                   ))}
