@@ -51,4 +51,5 @@ antigravity-*.json
 # scratch scripts
 scratch/
 scripts/keys/
+benchmark_run_*.json
 
