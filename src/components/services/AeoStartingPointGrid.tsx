@@ -49,18 +49,18 @@ export default function AeoStartingPointGrid({
     {
       key: "blueprint",
       anchorId: "aeo-blueprint",
-      badge: tier1.badge || "100% Credit Back (60 Days)",
+      badge: tier1.badge || "100% Credit-Back Corridor (60 Days)",
       icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
       title: tier1.name,
-      code: "Strategic Audit",
+      code: bpSku.code,
       price: formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: "Full digital audit & 90-day roadmap",
+      scope: "Full digital audit, 90-day roadmap & stakeholder briefing",
       description: tier1.targetGoal,
       deliverables: bpSku.deliverables,
-      techNote: "For technical teams: Comprehensive entity gap analysis, canonical schema drift auditing, and passage retrieval evaluation.",
+      techNote: "For technical teams: Comprehensive entity gap analysis, canonical schema drift auditing, passage retrieval evaluation, and 45-minute executive briefing.",
       whenToChoose: "Outcome: Understand what is limiting AI visibility before investing. Ideal when you need a clear diagnostic plan before committing to implementation.",
-      ctaLabel: "Book Blueprint Diagnostic"
+      ctaLabel: "Commission Strategic Blueprint"
     },
     {
       key: "foundation",

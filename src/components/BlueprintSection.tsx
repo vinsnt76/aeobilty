@@ -63,10 +63,10 @@ export default function BlueprintSection() {
                 A clear, actionable roadmap to improve visibility, increase leads, and prepare your business for local maps and future AI search discovery.
               </p>
 
-              {/* Itemized Deliverables */}
+              {/* Itemised Deliverables */}
               <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-2.5">
                 <span className="text-xs font-mono font-bold uppercase text-zinc-400 tracking-wider block">
-                  Itemized Diagnostic Deliverables
+                  Itemised Diagnostic Deliverables
                 </span>
                 <ul className="space-y-2 text-xs text-zinc-300 font-sans">
                   {bpSku.deliverables.map((item, idx) => (

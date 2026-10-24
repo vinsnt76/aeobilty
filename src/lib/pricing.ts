@@ -110,14 +110,15 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     name: 'Strategic Blueprint',
     priceExGst: 995,
     handsOnEffort: '4–6 Hours',
-    deliverySla: '5 Business Days',
+    deliverySla: '5–7 Business Days',
     category: 'blueprint',
-    purpose: 'Diagnose entity gaps, schema drift, and positional bias vulnerabilities across search networks.',
+    purpose: 'De-risk technical execution through comprehensive diagnostic discovery. Identify latent entity gaps, citation decay, positional bias, and schema drift across your digital footprint before deploying code.',
     deliverables: [
-      'Comprehensive entity gap analysis and diagnostic scorecard',
-      'Canonical entity and schema drift report',
-      'Positional bias and passage retrieval evaluation',
-      'Prioritised 90-day implementation roadmap (100% credited within 60 days)'
+      'Entity Architecture & Gap Analysis: Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.',
+      'Schema Drift & Syntax Report: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.',
+      'Retrieval & Positional Bias Evaluation: Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.',
+      '90-Day Prioritised Implementation Roadmap: Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.',
+      'Executive Stakeholder Briefing (45 Mins): Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.'
     ],
   },
 
@@ -584,24 +585,24 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
 export const PRICING_TIERS: PricingTier[] = [
   {
     id: 'blueprint',
-    name: 'The AEObility Blueprint',
+    name: 'Strategic Blueprint',
     tagline: 'Strategic Diagnostic & Gap Discovery',
     priceDisplay: '$995 AUD',
     priceExGst: 995,
-    sla: '5 Business Days',
-    targetGoal: 'Diagnose entity gaps, positional bias, and schema drift before executing technical sprints.',
+    sla: '5–7 Business Days',
+    targetGoal: 'De-risk technical execution through comprehensive diagnostic discovery. Identify latent entity gaps, citation decay, positional bias, and schema drift across your digital footprint before deploying code.',
     deliverables: [
-      'Full technical visibility and entity audit',
-      'Schema drift and citation discrepancy scorecard',
-      'Positional bias and AI First Impression evaluation',
-      '90-day prioritised technical sprint roadmap',
-      '100% credited toward Foundation Implementation within 60 days'
+      'Entity Architecture & Gap Analysis (Wikidata, Knowledge Graph & schema coverage)',
+      'Schema Drift & Syntax Report (DOM diagnostic & Rich Result error remediation)',
+      'Retrieval & Positional Bias Evaluation (passage retrieval & token density analysis)',
+      '90-Day Prioritised Implementation Roadmap (chronological sprint planning)',
+      'Executive Stakeholder Briefing (45 mins dedicated presentation with leads)'
     ],
     skuCodes: ['BPSTRAT'],
     popular: false,
-    ctaText: 'Order $995 Blueprint',
-    ctaHref: '/solutions/aeo-blueprint',
-    badge: '100% Credit Back (60 Days)',
+    ctaText: 'Commission Strategic Blueprint',
+    ctaHref: '/contact?tier=blueprint',
+    badge: '100% Credit-Back Corridor (60 Days)',
   },
   {
     id: 'foundation',

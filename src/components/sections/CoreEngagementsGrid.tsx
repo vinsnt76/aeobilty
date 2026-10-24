@@ -38,51 +38,106 @@ export function CoreEngagementsGrid() {
 
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {/* Card 1: Tier 1 (Audit & Roadmap) */}
+          {/* Card 1: Tier 1 (Strategic Blueprint) */}
           <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-cyan-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400 transition-all duration-300 group">
             <div className="space-y-4">
+              {/* Eyebrow & SKU */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 uppercase tracking-wider font-mono">
-                  <Compass className="w-4 h-4" />
-                  <span>Strategic Audit</span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
+                  <Compass className="w-3.5 h-3.5" />
+                  <span>Strategic Blueprint</span>
                 </div>
-                <div className="text-right">
-                  <span className="text-lg font-bold text-cyan-300 font-mono">{formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}</span>
-                  <span className="text-[10px] text-zinc-500 font-mono block">ex. GST</span>
+                <span className="font-mono text-xs text-zinc-500">
+                  SKU: {bpSku.code}
+                </span>
+              </div>
+
+              {/* Title & Pricing Block */}
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier1.name}</h3>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+                    {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
+                  </span>
+                  <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
                 </div>
+                <p className="mt-1 text-xs text-zinc-400 font-sans">
+                  Standalone Investment • 100% Credited Toward Foundation
+                </p>
               </div>
 
               {/* High-Contrast Badge */}
               <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
-                {tier1.badge || '100% Credit Back (60 Days)'}
+                100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
               </div>
 
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier1.name}</h3>
-                <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-serif">
-                  {tier1.targetGoal}
+              {/* Objective */}
+              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
+                {tier1.targetGoal}
+              </p>
+
+              {/* Itemised Technical Deliverables */}
+              <div className="space-y-3 pt-2 border-t border-white/5">
+                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                  Core Deliverables &amp; Strategic Scope
+                </h4>
+                <ul className="space-y-2.5 text-xs text-zinc-300 font-sans">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">Entity Architecture &amp; Gap Analysis</strong>: Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">Schema Drift &amp; Syntax Report</strong>: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">Retrieval &amp; Positional Bias Evaluation</strong>: Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">90-Day Prioritised Implementation Roadmap</strong>: Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">Executive Stakeholder Briefing (45 Mins)</strong>: Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* SLA & Credit Terms Box */}
+              <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-1.5">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-white">
+                  <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Turnaround SLA: 5–7 Business Days</span>
+                </div>
+                <p className="text-[11px] text-zinc-400 font-serif leading-relaxed">
+                  <strong className="text-zinc-300 font-sans">Commercial Credit Terms:</strong> 100% of the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation when activated within {GOVERNANCE_RULES.creditWindowDays} calendar days post-delivery.
                 </p>
               </div>
 
-              <ul className="space-y-2.5 text-xs text-zinc-300 pt-2 font-sans">
-                {bpSku.deliverables.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-                <li className="flex items-start gap-2 font-medium text-cyan-300 pt-1">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span>100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee is credited toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days.</span>
-                </li>
-              </ul>
+              {/* Governance */}
+              <div className="flex items-center gap-2 text-xs text-zinc-400 pt-1">
+                <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>100% Client IP Ownership of all audit artifacts</span>
+              </div>
             </div>
 
-            <div className="pt-8">
+            <div className="pt-6">
               <Link
                 href={tier1.ctaHref}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left"
-                title="Explore the 90-Day Blueprint strategic audit and roadmap"
+                title="Commission the Strategic Blueprint diagnostic and roadmap"
               >
                 <span>{tier1.ctaText}</span>
                 <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />

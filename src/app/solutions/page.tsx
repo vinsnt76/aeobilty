@@ -160,11 +160,11 @@ export default function SolutionsPage() {
       code: "BPSTRAT",
       price: formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: "Full digital audit & 90-day roadmap",
-      description: `Audit website structure, entity signals, and query opportunities. Receive a practical 90-day roadmap. 100% credited toward Foundation work within ${GOVERNANCE_RULES.creditWindowDays} days.`,
-      techNote: "For technical teams: Technical gap analysis, entity salience review, and query fan-out mapping.",
+      scope: "Full digital audit, 90-day roadmap & stakeholder briefing",
+      description: tier1.targetGoal,
+      techNote: "For technical teams: Comprehensive entity gap analysis, canonical schema drift auditing, passage retrieval evaluation, and 45-minute executive briefing.",
       whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
-      ctaLabel: `Discuss ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint`
+      ctaLabel: "Commission Strategic Blueprint"
     },
     {
       key: "foundation",
