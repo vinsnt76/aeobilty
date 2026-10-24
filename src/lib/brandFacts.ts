@@ -262,14 +262,14 @@ export const TECHNICAL_AUDITS: { agentReadiness: TechnicalAuditBenchmark } = {
 // 3. COMMERCIAL FACTS (Products, SKUs, and Pricing Frameworks)
 // ============================================================================
 export interface PricingConfigItem {
-  sku: string;
-  name: string;
-  priceAUD: number;
-  priceFromAUD?: number;
-  duration: string;
-  creditBackEligible?: boolean;
-  description?: string;
-  deliverables: string[];
+  readonly sku: string;
+  readonly name: string;
+  readonly priceAUD: number;
+  readonly priceFromAUD?: number;
+  readonly duration: string;
+  readonly creditBackEligible?: boolean;
+  readonly description?: string;
+  readonly deliverables: readonly string[];
 }
 
 export const PRICING_CONFIG = {
