@@ -47,9 +47,12 @@ export interface GovernanceRules {
   creditWindowDays: number;
   creditAmountExGst: number;
   outOfScopeHourlyRate: number;
+  hourlyRateExGst: number;
   turnkeyPageLimit: number;
   clientIpOwnership: string;
+  ipOwnership: string;
   retainerCadence: string;
+  retainerCadenceDays: number;
 }
 
 // ============================================================================
@@ -60,9 +63,12 @@ export const GOVERNANCE_RULES: GovernanceRules = {
   creditWindowDays: 60,
   creditAmountExGst: 995,
   outOfScopeHourlyRate: 220,
+  hourlyRateExGst: 220,
   turnkeyPageLimit: 10,
   clientIpOwnership: "100% Outright Client IP Ownership",
+  ipOwnership: "100% Outright Client IP Ownership",
   retainerCadence: "Governed 30-Day Sprint Cycles (3x $1,980/mo MRR)",
+  retainerCadenceDays: 30,
 };
 
 // ============================================================================
