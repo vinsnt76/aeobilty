@@ -40,7 +40,7 @@ flowchart TD
 - **Onboarding Setup**:
   - `ONBOARD`: Technical Onboarding & Setup ($250 AUD ex. GST, 2 Business Days SLA, waived with packages).
 - **Foundation Offerings**:
-  - `AEO-FOUNDATION`: Foundation Core Turnkey ($3,195 AUD ex. GST, 4 Weeks SLA, 10 Priority Pages).
+  - `AEO-FOUNDATION`: Foundation Core Turnkey ($1,990 AUD ex. GST, 4 Weeks SLA, 10 Priority Pages).
   - `AEO-FOUNDATION-DIRECT`: Direct Modular Foundation ($1,990 AUD ex. GST, 2–3 Weeks SLA).
 - **Macro Sprints (`SS1MACRO`–`SS4MACRO`)**: $1,980 AUD ex. GST each, 10 Business Days SLA:
   - `SS1MACRO`: Canonical Brand Identity & Entity Resolution Graph.
@@ -117,7 +117,7 @@ flowchart TD
 1. **Core Engagement & Starting Point Grids**:
    - Import the 3 commercial tiers dynamically:
      - **Tier 1 (Audit & Roadmap)**: The AEObility Blueprint ($995 AUD ex. GST) with "100% Credit Back (60 Days)" badge.
-     - **Tier 2 (Foundation)**: Foundation Implementation ($1,990 Direct / $3,195 Turnkey Core) with "$250 Setup Waived" badge.
+     - **Tier 2 (Foundation)**: Foundation Implementation ($1,990 AUD ex. GST Fixed Turnkey) with "$250 Setup Waived" badge.
      - **Tier 3 (Ongoing Dominance)**: Governed Sprints ($1,980/month Macro Sprints) with zero contract lock-in.
    - Render itemised deliverables with Lucide icons (`CheckCircle2`).
 2. **Quote Form & Blueprint Sections**:
@@ -158,7 +158,7 @@ Instructions:
 2. Export `TECHNICAL_SPRINT_CATALOG` containing:
    - `BPSTRAT`: Strategic Blueprint ($995 AUD ex. GST, 5 Business Days SLA).
    - `ONBOARD`: Technical Onboarding & Setup ($250 AUD ex. GST, 2 Business Days SLA, `isWaivedWithPackage: true`).
-   - `AEO-FOUNDATION`: Foundation Core Turnkey ($3,195 AUD ex. GST, 4 Weeks SLA, 10 Priority Pages).
+   - `AEO-FOUNDATION`: Foundation Core Turnkey ($1,990 AUD ex. GST, 4 Weeks SLA, 10 Priority Pages).
    - `AEO-FOUNDATION-DIRECT`: Direct Modular Foundation ($1,990 AUD ex. GST).
    - Macro Sprints (`SS1MACRO` through `SS4MACRO`): $1,980 AUD ex. GST each, 10 Business Days SLA.
    - Micro Sprints (`SS1MICRO1` through `SS4MICRO4`): $495 AUD ex. GST each, 3 Business Days SLA.
@@ -194,7 +194,7 @@ Instructions:
 1. Replace hardcoded price constants, string literals, and SKU arrays in `aeoSprint.ts`, `solutions.ts`, and `aeoBlueprint.ts` with direct imports from `src/lib/pricing.ts` (`TECHNICAL_SPRINT_CATALOG`, `GOVERNANCE_RULES`).
 2. Ensure all `Offer` and `Service` JSON-LD schemas output:
    - `priceCurrency`: "AUD"
-   - `price`: Exact numerical values matching `priceExGst` (e.g., 995, 1980, 3195).
+   - `price`: Exact numerical values matching `priceExGst` (e.g., 995, 1990).
    - `priceSpecification`: Include `valueAddedTaxIncluded: false` (ex. GST).
    - `description`: Derived from SKU `purpose` and `deliverables`.
    - `eligibleCustomerType`: Australian SMBs, Allied Health Clinics, and Home Service Trades.
@@ -222,7 +222,7 @@ Instructions:
    - Monthly Retainer Cadence: 30-day governed sprint cycles ($1,980/mo MRR) with zero long-term contract lock-in.
 
 2. Update `public/AGENTS.md`, `public/llms.txt`, and `public/llms-full.txt`:
-   - Clarify the exact price list: $995 Blueprint, $1,990 Direct Modular Foundation, $3,195 Turnkey Foundation, $1,980 Macro Sprints, $495 Micro Sprints.
+   - Clarify the exact price list: $995 Blueprint, $1,990 Direct Modular Foundation, $1,990 Turnkey Foundation, $1,980 Macro Sprints, $495 Micro Sprints.
    - Add the 4 core execution pillars (`SS1` Brand Identity & Schema, `SS2` Commercial Answer Architecture, `SS3` Semantic Lattice & Query Coverage, `SS4` Brand Facts & External Trust).
 
 3. Run or trigger `scripts/build-knowledge-base.mjs` (if needed) to re-index vector knowledge sources for `src/lib/search/knowledgeBase.json`.
@@ -247,7 +247,7 @@ Instructions:
    - Import pricing tiers and SKUs from `src/lib/pricing.ts`.
    - Display the 3 core business-goal tiers:
      - Tier 1: Diagnostic & Gap Discovery ($995 AUD ex. GST).
-     - Tier 2: Foundational Machine Discovery ($1,990 ex. GST Direct / $3,195 Turnkey).
+     - Tier 2: Foundational Machine Discovery ($1,990 AUD ex. GST Fixed Turnkey).
      - Tier 3: Category & Generative Dominance ($1,980/mo MRR Macro Sprints or $6,359 ex. GST Advanced Lattice).
    - Render itemized deliverable bullet points with Lucide check icons (`lucide-react`).
    - Add high-contrast badges for "100% Credit Back (60 Days)" and "$250 Setup Fee Waived".

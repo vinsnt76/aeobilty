@@ -482,17 +482,17 @@ export const BRAND_PRICING_SCHEMA = {
       '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-foundation#product',
       sku: 'AEO-FOUNDATION',
-      name: 'Foundation Implementation (Turnkey)',
+      name: 'Foundation Implementation',
       description: 'Turnkey 4-pillar deployment across up to 10 core commercial pages: connected information layers, structured schemas, atomic page rewrites, and citation provenance. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint credit reversal.',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-foundation#offer',
-        price: 3195,
+        price: 1990,
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: 3195,
+          price: 1990,
           priceCurrency: 'AUD',
           valueAddedTaxIncluded: false,
           unitText: '4-week structured deployment'

@@ -270,7 +270,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
               "name": "Foundation Implementation",
               "description": "Connected multi-page schema integration and citation alignment."
             },
-            "price": "3195.00",
+            "price": "1990.00",
             "priceCurrency": "AUD"
           }
         ]

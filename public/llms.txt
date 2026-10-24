@@ -26,8 +26,8 @@
 - [`/solutions`](https://aeobility.com.au/solutions): Master Overview of transparent Technical Sprint Pricing packages and commercial solutions.
 - [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): The AEObility Blueprint (`BPSTRAT` at $995 AUD ex. GST standalone clarity phase deep audit & 90-day roadmap, 100% credited toward Foundation Implementation within 60 calendar days).
 - [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Technical Sprints:
-  - Direct Modular Foundation (`AEO-FOUNDATION-DIRECT` at $1,980 AUD ex. GST, 10-day SLA, complimentary $250 onboarding waived).
-  - Foundation Turnkey Implementation (`AEO-FOUNDATION` at $3,195 AUD ex. GST across up to 10 core pages, 4-week SLA, complimentary $250 onboarding waived, 60-day $995 Blueprint fee credit reversal).
+  - Direct Modular Foundation (`AEO-FOUNDATION-DIRECT` at $1,990 AUD ex. GST, 10-day SLA, complimentary $250 onboarding waived).
+  - Foundation Implementation (`AEO-FOUNDATION-CORE` at $1,990 AUD ex. GST fixed turnkey investment across up to 10 core pages, 4-week SLA, complimentary $250 onboarding waived, 60-day $995 Blueprint fee credit reversal).
   - Macro Sprints (`SS1MACRO`–`SS4MACRO` at $1,980 AUD ex. GST each, 10-day SLA, complimentary $250 onboarding waived).
   - Micro-Sprints (`SS1MICRO1`–`SS4MICRO4` at $495 AUD ex. GST each, 3-day SLA, half-day units).
   - Commercial Governance: Out-of-scope developer rate at $220/hr ex. GST (`HOURLY-DEV`), governed 30-day sprint retainer cycles ($1,980/month MRR) with zero lock-in contracts, and 100% client IP ownership.

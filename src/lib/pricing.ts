@@ -202,9 +202,9 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   },
   'AEO-FOUNDATION': {
     code: 'AEO-FOUNDATION',
-    name: 'Foundation Core (Turnkey 10-Page)',
-    priceExGst: 3195,
-    handsOnEffort: '20 Hours',
+    name: 'Foundation Implementation',
+    priceExGst: 1990,
+    handsOnEffort: '16–20 Hours',
     deliverySla: '4 Weeks (Staged Milestones)',
     category: 'foundation',
     purpose: 'Comprehensive 4-pillar turnkey implementation establishing machine-readable entity graph, atomic answer architecture, semantic lattice, and citation consistency.',

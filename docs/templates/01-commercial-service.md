@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   - **Human-Centred Usability (Buyers):** U.S. grade 8–9 plain English, zero agency jargon, transparent flat-rate pricing, risk-reducing operational reassurance (*"Zero lock-in"*, *"4–5 day turnaround"*) adjacent to CTAs.
   - **The Hybrid Rule:** Answer-first H2 lead paragraphs under every section; explicit naming of entities (`AEObility`, `Perplexity Pro`, `ChatGPT Search`, `Google AI Overviews`).
 * **Semantic Density Architecture:**
-  - High density of tangible deliverable specifications and fixed pricing (`Micro-Sprints from $495 AUD ex. GST`, `Foundation Tier from $3,195 AUD ex. GST`).
+  - High density of tangible deliverable specifications and fixed pricing (`Micro-Sprints from $495 AUD ex. GST`, `Foundation Tier $1,990 AUD ex. GST`).
   - Strict delivery turnarounds explicitly declared (`4–5 business days from confirmed scope and access`).
   - Structured multi-tier comparison table comparing scope, target suitability, and deliverables. Zero conversational padding.
 * **Positional Bias Mitigation:**
@@ -92,7 +92,7 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
    - Single Geist Mono eyebrow badge with `Sparkles` icon (`font-mono text-xs uppercase text-aeo-cyan`).
    - Single `<h1>` in Söhne Bold with gradient accent: `Answer Engine Optimisation: <span className="text-gradient-aeo">Structure Your Digital Footprint for Modern AI Retrieval.</span>`
    - Outcome subhead (`h2` styled as lead paragraph, 18–20px / Medium 500, max 2 lines): Clear explanation of digital footprint restructuring for modern AI retrieval.
-   - Price indicator subtitle in Geist Mono: `Micro-Sprints from $495 AUD ex. GST | Foundation from $3,195 AUD ex. GST` (`font-mono font-bold text-cyan-300 text-sm sm:text-base`).
+   - Price indicator subtitle in Geist Mono: `Micro-Sprints from $495 AUD ex. GST | Foundation $1,990 AUD ex. GST` (`font-mono font-bold text-cyan-300 text-sm sm:text-base`).
    - Featured 1200x800 `.webp` hero banner with overlaid dark glass CTA card:
      - Reassurance micro-copy: `Typical delivery: 4–5 business days from confirmed scope and access` (14–15px Medium 500, high contrast).
      - Dominant Primary Fill Button: `Run Free Scan` (Tier 1 Solid Breakout with dark text and cyan glow).
@@ -103,7 +103,7 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
    - Section heading (`h2`): `Choose Your Starting Point`.
    - 3 equal-height sprint cards:
      - Card 1: `AEO Technical Micro-Sprint` (`#aeo-micro-sprints` • $495 AUD ex. GST • Button: `Discuss Micro-Sprint`)
-     - Card 2: `Foundation Implementation` (`#aeo-foundation` • $3,195 AUD ex. GST • Button: `Discuss Foundation Tier`)
+     - Card 2: `Foundation Implementation` (`#aeo-foundation` • $1,990 AUD ex. GST • Button: `Discuss Foundation Tier`)
      - Card 3: `The AEObility Blueprint` (`#aeo-blueprint` • $995 AUD ex. GST • Button: `Discuss $995 Blueprint`)
 5. **Technical Architecture / Four Pillars Grid (`<section id="pillars">`)**:
    - 4 discrete capability cards: `1. Machine-Readable Structure`, `2. Atomic Content Clarity`, `3. Internal Linking Lattice`, `4. Corroborated Brand Authority`.
@@ -189,7 +189,7 @@ All implementations must invoke the canonical schema generator returning an abso
           {
             "@type": "Offer",
             "name": "Foundation Implementation",
-            "price": "3195",
+            "price": "1990",
             "priceCurrency": "AUD"
           }
         ]
@@ -283,7 +283,7 @@ export default function AEOServicePage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation $1,990 AUD ex. GST</span>
               </div>
             </div>
 

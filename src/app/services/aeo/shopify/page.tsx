@@ -164,7 +164,7 @@ export default function ShopifyAeoPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -351,7 +351,7 @@ export default function ShopifyAeoPage() {
                   <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Shopify Foundation</td>
                   <td className="p-3.5 sm:p-4">Multi-Page &amp; Collection Alignment</td>
                   <td className="p-3.5 sm:p-4">Connected improvements across entire store</td>
-                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>
                 </tr>
               </tbody>
             </table>
@@ -415,7 +415,7 @@ export default function ShopifyAeoPage() {
 
               <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
                 <div className="text-left md:text-right">
-                  <span className="text-2xl font-extrabold text-cyan-300 font-mono block">From $3,195 AUD ex. GST</span>
+                  <span className="text-2xl font-extrabold text-cyan-300 font-mono block">$1,990 AUD ex. GST</span>
                   <span className="text-xs text-zinc-400 font-mono block mt-0.5">Typical schedule: delivered across four weeks</span>
                 </div>
                 <a

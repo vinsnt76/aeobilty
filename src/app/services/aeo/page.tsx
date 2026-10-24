@@ -694,7 +694,7 @@ export default function AEORootPage() {
                 <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between">
                     <strong className="text-purple-300 font-bold text-sm sm:text-base">Foundation Implementation</strong>
-                    <span className="font-mono text-purple-400 font-bold">From $3,195 AUD</span>
+                    <span className="font-mono text-purple-400 font-bold">$1,990 AUD ex. GST</span>
                   </div>
                   <p className="text-slate-300 leading-relaxed text-xs">
                     A comprehensive four-week technical engagement delivering connected multi-page schema mapping, modular HTML blocks formatted for clear passage extraction, and contextual internal links.

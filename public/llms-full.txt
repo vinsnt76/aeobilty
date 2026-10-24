@@ -39,9 +39,8 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Deliverables**: Comprehensive site crawl, entity mapping, LLM answer-gap analysis, schema specification, and prioritised 90-day action plan.
 - **Risk Reversal**: 100% credited toward Foundation Implementation within 60 calendar days.
 
-### Tier 2: Foundation Implementation Packages (`/solutions`)
-- **Direct Modular Foundation (`AEO-FOUNDATION-DIRECT`)**: $1,980 AUD ex. GST (10 business days SLA). 4-pillar modular foundation deployment for organisations with existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).
-- **Foundation Turnkey Implementation (`AEO-FOUNDATION`)**: $3,195 AUD ex. GST (4-week structured deployment across up to 10 core pages). Turnkey execution across all 4 pillars, nested Schema.org deployment, atomic page rewrites, and Brand Facts directory. Includes complimentary Technical Onboarding ($250 value waived) and eligible for 100% Blueprint credit reversal ($995 credit within 60 days).
+- **Direct Modular Foundation (`AEO-FOUNDATION-DIRECT`)**: $1,990 AUD ex. GST (10 business days SLA). 4-pillar modular foundation deployment for organisations entering directly without prior blueprint. Includes complimentary Technical Onboarding ($250 value waived).
+- **Foundation Implementation (`AEO-FOUNDATION-CORE` / `AEO-FOUNDATION`)**: $1,990 AUD ex. GST (4-week structured deployment across up to 10 core pages). Fixed turnkey execution across all 4 pillars with flexible deployment built-in (direct CMS injection or engineering PRs at no extra charge). Includes complimentary Technical Onboarding ($250 value waived) and eligible for 100% Blueprint credit reversal ($995 credit within 60 days).
 
 ### Tier 3: AEO Technical Macro Sprints (`/solutions/aeo-sprint`)
 - **SKUs**: `SS1MACRO` (Identity & Schema), `SS2MACRO` (Answer Architecture), `SS3MACRO` (Semantic Lattice), `SS4MACRO` (Brand Facts & Trust)

@@ -241,7 +241,7 @@ export default function LocalBusinessAEOPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation $1,990 AUD ex. GST</span>
               </div>
             </div>
 

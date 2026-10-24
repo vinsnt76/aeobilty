@@ -313,14 +313,14 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "name": "Unified Local Foundation",
       "description": "A four-week local visibility implementation for multi-location clinics and growing trade services, combining structured data, citation consistency and internal location-page connections.",
       "url": "https://aeobility.com.au/services/aeo/local-business",
-      "price": "3195",
+      "price": "1990",
       "priceCurrency": "AUD",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": "3195",
+        "price": "1990",
         "priceCurrency": "AUD",
         "valueAddedTaxIncluded": false,
-        "description": "From $3,195 AUD excluding GST."
+        "description": "$1,990 AUD excluding GST."
       },
       "availability": "https://schema.org/InStock",
       "itemOffered": {

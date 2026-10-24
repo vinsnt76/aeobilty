@@ -86,7 +86,7 @@ export const metadata: Metadata = {
    - 3 triage cards mapping business situations to exact solutions:
      - Unsure what limits visibility $\rightarrow$ *The Blueprint ($995)*.
      - Single priority gap identified $\rightarrow$ *Micro-Sprint ($495)*.
-     - Connected multi-page overhaul $\rightarrow$ *Foundation Implementation ($3,195)*.
+     - Connected multi-page overhaul $\rightarrow$ *Foundation Implementation ($1,990)*.
 5. **Deliverables Breakdown Grid (`<section id="bpstrat-deliverables">`)**:
    - 4 modular cards with passage anchors: `1. Complete Digital Presence Review`, `2. Technical & Schema Gap Analysis`, `3. Visibility & Health Scorecard`, `4. 90-Day Execution Roadmap`.
 6. **3-Tier Service Comparison Matrix (`<div id="blueprint-comparison">`)**:

@@ -74,9 +74,9 @@ export default function AiSearchAgencyPage() {
       ctaLabel: "Book Diagnostic Scan"
     },
     {
-      sku: "GEO-FOUNDATION-4WK",
+      sku: "AEO-FOUNDATION-CORE",
       title: "Foundation Implementation Sprint",
-      price: "From $3,195 AUD",
+      price: "$1,990 AUD",
       priceSub: "ex. GST • 4 Structured Business Weeks",
       description: "Full implementation sprint engineering your digital footprint for high-confidence AI engine retrieval.",
       deliverables: [
@@ -173,12 +173,12 @@ export default function AiSearchAgencyPage() {
             },
             {
               "@type": "Offer",
-              "@id": "https://aeobility.com.au/services/ai-search-agency#GEO-FOUNDATION-4WK",
+              "@id": "https://aeobility.com.au/services/ai-search-agency#AEO-FOUNDATION-CORE",
               "name": "Foundation Implementation Sprint",
-              "sku": "GEO-FOUNDATION-4WK",
+              "sku": "AEO-FOUNDATION-CORE",
               "priceSpecification": {
                 "@type": "PriceSpecification",
-                "price": "3195.00",
+                "price": "1990.00",
                 "priceCurrency": "AUD",
                 "valueAddedTaxIncluded": true
               },

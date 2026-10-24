@@ -151,7 +151,7 @@ export default function BrisbaneAISearchMarketingPage() {
               <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -327,7 +327,7 @@ export default function BrisbaneAISearchMarketingPage() {
                   <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
                   <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
                   <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
-                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                  <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>
                 </tr>
               </tbody>
             </table>

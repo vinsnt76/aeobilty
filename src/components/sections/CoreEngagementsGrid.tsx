@@ -9,7 +9,6 @@ import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCur
 export function CoreEngagementsGrid() {
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
   const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
-  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
 
   const tier1 = PRICING_TIERS.find((t) => t.id === 'blueprint') || PRICING_TIERS[0];
@@ -176,31 +175,21 @@ export function CoreEngagementsGrid() {
                 {/* Title & Pricing Block */}
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier2.name}</h3>
-                  <div className="flex flex-wrap items-baseline gap-2 mt-2">
+                  <div className="flex items-baseline gap-2 mt-2">
                     <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono">
                       {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
                     </span>
-                    <span className="text-sm font-semibold text-zinc-300 font-mono">Direct / {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey</span>
                     <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
                   </div>
-
-                  {/* Direct vs. Turnkey Operational Definition */}
-                  <div className="mt-2.5 p-3 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2 text-xs font-sans">
-                    <div className="leading-relaxed">
-                      <strong className="font-mono font-bold text-cyan-300">$1,990 AUD Direct:</strong>{' '}
-                      <span className="text-zinc-300">Code &amp; schema delivered as clean pull requests and snippets for your team to deploy.</span>
-                    </div>
-                    <div className="leading-relaxed pt-2 border-t border-white/10">
-                      <strong className="font-mono font-bold text-purple-300">$3,195 AUD Turnkey:</strong>{' '}
-                      <span className="text-zinc-300">End-to-end CMS deployment and live testing handled entirely by our engineering team across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages.</span>
-                    </div>
-                  </div>
+                  <p className="mt-1 text-xs text-zinc-400 font-sans">
+                    Fixed Turnkey Investment &bull; Up to {GOVERNANCE_RULES.turnkeyPageLimit} Core Pages
+                  </p>
                 </div>
 
                 {/* High-Contrast Badge & Waiver Line */}
                 <div className="space-y-1.5">
                   <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
-                    Complimentary Technical Setup &amp; Onboarding
+                    Complimentary Technical Setup &amp; Onboarding ($250 Value Included)
                   </div>
                   <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
                     (Standard $250 AUD technical setup, repository integration, and index baseline included at $0)
@@ -209,8 +198,23 @@ export function CoreEngagementsGrid() {
 
                 {/* Objective Summary */}
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
-                  Establish clean machine readability, atomic answer passages, and semantic links across priority pages to secure retrieval across AI search engines.
+                  Full turnkey technical execution bridging strategic discovery into live production. We handle the engineering, DOM injection, answer restructuring, and telemetry validation directly.
                 </p>
+
+                {/* Flexible Deployment Built-In (No Extra Charge) Callout */}
+                <div className="p-3.5 rounded-xl bg-zinc-900/90 border border-white/10 space-y-2 text-xs font-sans">
+                  <div className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                    Flexible Deployment Built-In (No Extra Charge)
+                  </div>
+                  <div className="space-y-2 text-[11px] text-zinc-300 font-serif leading-snug">
+                    <div>
+                      <strong className="text-white font-sans">Direct CMS / Repo Injection:</strong> Our team handles complete live DOM injection, testing, and indexing pings directly in your CMS or Git staging environment.
+                    </div>
+                    <div className="pt-1.5 border-t border-white/5">
+                      <strong className="text-white font-sans">Engineering Drop-In:</strong> If enterprise security prohibits external access, we deliver clean, production-ready pull requests, validated schema test logs, and formatted copy blocks directly to your internal engineering team.
+                    </div>
+                  </div>
+                </div>
 
                 {/* Layer-Cake Deliverables List */}
                 <div className="pt-3 border-t border-white/10 space-y-3">
@@ -218,21 +222,21 @@ export function CoreEngagementsGrid() {
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-bold text-white text-xs">Pillar 1: Structured Data &amp; Schema Graph</div>
+                        <div className="font-bold text-white text-xs">Pillar 1: Structured Data &amp; Schema Graph Deployment</div>
                         <div className="text-[11px] text-zinc-400 font-serif leading-snug">Nested DOM JSON-LD (Organisation, LocalBusiness, Service, FAQ) with 0 syntax errors.</div>
                       </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-bold text-white text-xs">Pillar 2: Atomic Answer Copywriting</div>
+                        <div className="font-bold text-white text-xs">Pillar 2: Atomic Answer Copywriting &amp; Structuring</div>
                         <div className="text-[11px] text-zinc-400 font-serif leading-snug">Answer-first restructuring across up to 10 priority pages formatted into 90–120 token passages.</div>
                       </div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-bold text-white text-xs">Pillar 3: Semantic Lattice Mapping</div>
+                        <div className="font-bold text-white text-xs">Pillar 3: Semantic Lattice Mapping &amp; Entity Linking</div>
                         <div className="text-[11px] text-zinc-400 font-serif leading-snug">Structured internal entity links connecting core services to proof assets for accurate AI citation.</div>
                       </div>
                     </li>
@@ -262,7 +266,7 @@ export function CoreEngagementsGrid() {
                     </div>
                     <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span><strong className="text-zinc-200 font-sans">Open-Book Attribution:</strong> Injected directly into your CMS or provided as clean engineering pull requests with transparent schema mapping logs.</span>
+                      <span><strong className="text-zinc-200 font-sans">Flexible Deployment Included:</strong> Full CMS deployment or clean engineering pull requests with transparent schema mapping logs.</span>
                     </div>
                     <div className="flex items-start gap-2 text-[11px] text-zinc-300 pt-1.5 border-t border-white/5 font-sans">
                       <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />

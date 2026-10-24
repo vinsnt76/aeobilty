@@ -331,15 +331,15 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "name": "Foundation Implementation",
-          "sku": "GEO-FOUNDATION-4WK",
+          "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "price": "3195.00",
+            "price": "1990.00",
             "priceCurrency": "AUD",
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "Four-week structured deployment covering priority page improvements, Brand Facts page, internal linking, structured data validation, profile consistency, and measurement setup. Price excludes GST.",
+          "description": "Four-week turnkey deployment covering priority page improvements, Brand Facts page, internal linking, structured data validation, profile consistency, and measurement setup at $1,990 AUD ex. GST.",
           "seller": { "@id": "https://aeobility.com.au/#organisation" }
         }
       ]

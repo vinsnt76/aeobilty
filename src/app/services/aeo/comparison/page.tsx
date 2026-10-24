@@ -155,7 +155,7 @@ export default function AEOVsSEOPage() {
                 <span className="text-zinc-600">|</span>
                 <span>The AEObility Blueprint $995 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from $3,195 AUD ex. GST</span>
+                <span>Foundation Implementation $1,990 AUD ex. GST</span>
               </div>
             </div>
 

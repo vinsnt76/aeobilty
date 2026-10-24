@@ -76,7 +76,7 @@ export const metadata: Metadata = {
    - Single Geist Mono eyebrow badge with `MapPin` icon (`font-mono text-xs uppercase text-aeo-cyan`): `Perth AI Search Marketing`.
    - Single `<h1>` in Söhne Bold: `AI Search Marketing in Perth — <span className="text-gradient-aeo">Get Chosen Locally</span>`.
    - Localized lead subhead: Clear explanation of how answer engines, Google Maps, and Apple Intelligence recommend local Perth businesses.
-   - Price indicator: `Micro-Sprints from $495 AUD ex. GST | Local Foundation from $3,195 AUD ex. GST`.
+   - Price indicator: `Micro-Sprints from $495 AUD ex. GST | Local Foundation from $1,990 AUD ex. GST`.
    - Featured 1200x800 `.webp` localized dashboard banner with overlaid dark glass CTA card:
      - Left: Delivery commitment (`Typical delivery: 4–5 business days from confirmed access`).
      - Right: Dual action buttons (Primary: `Discuss Perth Sprints`, Secondary: `Run Free Local Scan`).
@@ -296,7 +296,7 @@ export default function PerthAISearchPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Local Foundation from $3,195 AUD ex. GST</span>
+                <span>Local Foundation from $1,990 AUD ex. GST</span>
               </div>
             </div>
 

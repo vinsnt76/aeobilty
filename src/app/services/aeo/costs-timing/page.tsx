@@ -45,8 +45,7 @@ export const metadata: Metadata = {
 
 export default function AEOPricingPage() {
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
-  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
-  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
   const onboardingSku = TECHNICAL_SPRINT_CATALOG['ONBOARD'];
 
@@ -119,7 +118,7 @@ export default function AEOPricingPage() {
               },
               'offers': {
                 '@type': 'Offer',
-                'price': `${foundationTurnkey.priceExGst}`,
+                'price': `${foundationCore.priceExGst}`,
                 'priceCurrency': 'AUD',
                 'priceValidUntil': '2027-06-30',
                 'availability': 'https://schema.org/InStock'
@@ -157,7 +156,7 @@ export default function AEOPricingPage() {
             'name': `How does the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': `The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation (${formatAudCurrency(foundationDirect.priceExGst)} - ${formatAudCurrency(foundationTurnkey.priceExGst)} AUD), or are accepted for a custom implementation engagement, the entire ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back against the approved implementation scope.`
+              'text': `The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation (${formatAudCurrency(foundationCore.priceExGst)} AUD), or are accepted for a custom implementation engagement, the entire ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back against the approved implementation scope.`
             }
           },
           {
@@ -165,7 +164,7 @@ export default function AEOPricingPage() {
             'name': 'What is included in the Foundation Implementation package?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': `The Foundation Implementation is a fixed-scope engagement available in Direct Schema (${formatAudCurrency(foundationDirect.priceExGst)}) or Turnkey Core (${formatAudCurrency(foundationTurnkey.priceExGst)}). It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. Includes complimentary onboarding (${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value).`
+              'text': `Foundation Implementation is a fixed-scope turnkey engagement at ${formatAudCurrency(foundationCore.priceExGst)} ex. GST across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence, with full deployment handled in your CMS or via engineering pull requests. Includes complimentary technical onboarding (${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value).`
             }
           },
           {
@@ -256,7 +255,7 @@ export default function AEOPricingPage() {
           {/* Primacy Direct-Answer Block (45 Words) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl">
             <p className="text-sm sm:text-base md:text-lg text-white/95 font-serif font-medium leading-relaxed">
-              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst)}</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">Foundation Implementation</Link> starts from {formatAudCurrency(foundationDirect.priceExGst)} Direct to {formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey.
+              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst)}</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">Foundation Implementation</Link> is a fixed turnkey investment of {formatAudCurrency(foundationCore.priceExGst)} ex. GST.
             </p>
           </div>
 
@@ -377,7 +376,7 @@ export default function AEOPricingPage() {
                 <div className="space-y-1.5 text-xs text-zinc-400 font-serif">
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Price:</span>
-                    <strong className="text-white font-mono">{formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} - {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} AUD</strong>
+                    <strong className="text-white font-mono">{formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD</strong>
                   </div>
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-mono text-[11px]">Delivery:</span>
@@ -581,16 +580,16 @@ export default function AEOPricingPage() {
                 How does the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} - {formatAudCurrency(foundationTurnkey.priceExGst)})</Link> within {GOVERNANCE_RULES.creditWindowDays} days, or are accepted for a custom implementation engagement, the entire {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back and deducted from your approved implementation scope.
+                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ({formatAudCurrency(foundationCore.priceExGst)})</Link> within {GOVERNANCE_RULES.creditWindowDays} days, or are accepted for a custom implementation engagement, the entire {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back and deducted from your approved implementation scope.
               </p>
             </div>
 
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="what-is-included-in-foundation-implementation" className="font-semibold text-sm sm:text-base text-white">
-                What is included in the Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} Direct / {formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey) packages?
+                What is included in the Foundation Implementation ({formatAudCurrency(foundationCore.priceExGst)}) package?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Foundation Implementation is delivered across two pathways: Direct Schema Implementation at {formatAudCurrency(foundationDirect.priceExGst)} ({foundationDirect.deliverySla}, up to 5 core templates) or Turnkey Core at {formatAudCurrency(foundationTurnkey.priceExGst)} ({foundationTurnkey.deliverySla}, up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages including content extraction and entity grounding). Both pathways waive the {formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} onboarding fee and deploy verified JSON-LD schema graphs, atomic answer blocks, strengthened link paths, and citation evidence. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation page</Link>.
+                Foundation Implementation is a complete turnkey 4-week execution bridging strategic discovery into live production across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages. It includes complimentary technical onboarding ({formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value waived) and deploys verified JSON-LD schema graphs, atomic answer blocks, strengthened link paths, and citation evidence. Flexible deployment is built-in at no extra charge: our engineering team handles direct CMS and DOM injection with live testing, or provides production-ready pull requests and copy blocks for internal engineering teams. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation page</Link>.
               </p>
             </div>
 
@@ -644,7 +643,7 @@ export default function AEOPricingPage() {
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-all space-y-1 block"
             >
               <div className="font-bold text-white">Foundation Implementation</div>
-              <p className="text-zinc-400 font-serif text-[11px]">Fixed-scope execution sprint from {formatAudCurrency(foundationDirect.priceExGst)} to {formatAudCurrency(foundationTurnkey.priceExGst)}.</p>
+              <p className="text-zinc-400 font-serif text-[11px]">Fixed-scope execution sprint at {formatAudCurrency(foundationCore.priceExGst)} ex. GST.</p>
             </Link>
 
             <Link 

@@ -120,15 +120,15 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/aeo/comparison#offer-foundation",
           "name": "Foundation Implementation",
-          "sku": "SS1-SS4-MACRO",
+          "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "minPrice": "3195.00",
+            "price": "1990.00",
             "priceCurrency": "AUD",
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "A focused four-week implementation engagement starting from $3,195 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
+          "description": "A focused four-week turnkey implementation engagement at $1,990 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
             "@id": "https://aeobility.com.au/#organisation"
           }

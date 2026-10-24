@@ -62,8 +62,7 @@ export default function AEOSprintPage() {
   });
 
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
-  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
-  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
   const microSku = TECHNICAL_SPRINT_CATALOG['SS1MICRO1'];
 
@@ -212,7 +211,7 @@ export default function AEOSprintPage() {
                 <span className="text-zinc-600">|</span>
                 <span>Macro Sprints at {formatAudCurrency(macroSku.priceExGst)} / mo</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation from {formatAudCurrency(foundationDirect.priceExGst)}</span>
+                <span>Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</span>
               </div>
             </div>
 
@@ -273,7 +272,7 @@ export default function AEOSprintPage() {
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-purple-300 font-bold block font-mono">Need several connected fixes?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Foundation Implementation from {formatAudCurrency(foundationDirect.priceExGst)}</Link>.
+                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</Link>.
                 </span>
               </div>
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
@@ -377,10 +376,10 @@ export default function AEOSprintPage() {
               <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
                 <div className="text-left md:text-right">
                   <span className="text-2xl font-extrabold text-cyan-300 font-mono block">
-                    {formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} Direct / {formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey
+                    {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
                   </span>
-                  <span className="text-xs text-zinc-400 font-mono">ex. GST | 4-Week Schedule</span>
-                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Typical schedule: delivered across a four-week period with staged milestones.</span>
+                  <span className="text-xs text-zinc-400 font-mono">ex. GST | Fixed Turnkey Investment</span>
+                  <span className="text-[11px] text-zinc-400 font-serif block mt-0.5">Four-week structured deployment across up to 10 core pages.</span>
                 </div>
                 <button
                   type="button"
@@ -567,7 +566,7 @@ export default function AEOSprintPage() {
                       <option value="structure">SS3: Semantic Lattice ({formatAudCurrency(microSku.priceExGst)})</option>
                       <option value="authority">SS4: Brand Facts & Citations ({formatAudCurrency(microSku.priceExGst)})</option>
                       <option value="macro-sprints">Governed Macro Sprints ({formatAudCurrency(macroSku.priceExGst)} / mo)</option>
-                      <option value="foundation">Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} - {formatAudCurrency(foundationTurnkey.priceExGst)})</option>
+                      <option value="foundation">Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</option>
                       <option value="unsure">Not sure yet - Help me decide</option>
                     </select>
                   </div>

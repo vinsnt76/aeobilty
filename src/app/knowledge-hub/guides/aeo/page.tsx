@@ -1060,7 +1060,7 @@ export default function AEOGuideWhitepaperPage() {
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">Stage 3: Build</span>
                 <h3 className="text-base font-bold text-white font-soehne-breit">Foundation Package</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">
-                  Comprehensive 4-week implementation (from $3,195 AUD ex. GST): schema graphs, atomic page rewrites, and linking.
+                  Comprehensive 4-week implementation ($1,990 AUD ex. GST): schema graphs, atomic page rewrites, and linking.
                 </p>
               </div>
               <Link href="/solutions/aeo-sprint" className="text-xs font-mono text-emerald-400 hover:underline inline-flex items-center gap-1 pt-2 border-t border-white/5">

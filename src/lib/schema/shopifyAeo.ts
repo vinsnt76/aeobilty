@@ -51,7 +51,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
             "itemOffered": {
               "@type": "Service",
               "name": "Foundation Implementation",
-              "price": "3195.00",
+              "price": "1990.00",
               "priceCurrency": "AUD"
             }
           }

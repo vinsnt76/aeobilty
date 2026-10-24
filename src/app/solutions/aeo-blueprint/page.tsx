@@ -239,7 +239,7 @@ export default function AEOBlueprintPage() {
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Need connected implementation?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">Foundation Implementation from $3,195 ex. GST</Link>.
+                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">Foundation Implementation ($1,990 ex. GST)</Link>.
                 </span>
               </div>
             </div>
@@ -294,7 +294,7 @@ export default function AEOBlueprintPage() {
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Tier</td>
                     <td className="p-3.5 sm:p-4">Multi-Page &amp; Connected Fixes</td>
                     <td className="p-3.5 sm:p-4">Connected improvements across entire site</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $3,195 AUD</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>
                   </tr>
                 </tbody>
               </table>
@@ -450,8 +450,8 @@ export default function AEOBlueprintPage() {
                       >
                         <option value="blueprint">AEObility Blueprint Strategic Audit ($995 AUD)</option>
                         <option value="micro-sprint">Micro-Sprint (From $495 AUD)</option>
-                        <option value="foundation">Foundation Implementation (From $3,195 AUD)</option>
-                        <option value="unsure">Not sure yet — Help me decide</option>
+                        <option value="foundation">Foundation Implementation ($1,990 AUD)</option>
+                        <option value="unsure">Not sure yet - Help me decide</option>
                       </select>
                     </div>
 

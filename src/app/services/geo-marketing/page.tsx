@@ -380,7 +380,7 @@ export default function GeoMarketingPage() {
 
               <div className="flex flex-col items-start md:items-end justify-between space-y-4 shrink-0 w-full md:w-auto">
                 <div className="text-left md:text-right">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-purple-300 font-mono block">From $3,195 AUD ex. GST</span>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-purple-300 font-mono block">$1,990 AUD ex. GST</span>
                   <span className="text-xs text-zinc-400 font-mono block mt-0.5 font-normal">Delivered across 4 business weeks</span>
                 </div>
                 <a
