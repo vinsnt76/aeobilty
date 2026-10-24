@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles, Rocket, Compass, ShieldCheck, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Rocket, Compass, ShieldCheck, Clock, Boxes } from 'lucide-react';
 import { trackGaEvent } from '@/lib/gtag';
 import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
 
