@@ -66,15 +66,25 @@ export function CoreEngagementsGrid() {
                 </p>
               </div>
 
-              {/* High-Contrast Badge */}
-              <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
-                100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
+              {/* High-Contrast Badge & Guarantee Line */}
+              <div className="space-y-1.5">
+                <div className="inline-block px-2.5 py-1 rounded-md bg-cyan-950/80 border border-cyan-400/50 text-[11px] font-mono font-bold text-cyan-300">
+                  100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
+                </div>
+                <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
+                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation when activated within {GOVERNANCE_RULES.creditWindowDays} days)
+                </p>
               </div>
 
-              {/* Objective */}
-              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                {tier1.targetGoal}
-              </p>
+              {/* Objective & Purpose */}
+              <div className="space-y-1 pt-1">
+                <span className="font-mono text-[10px] uppercase font-bold text-cyan-400 tracking-wider block">
+                  Objective &amp; Purpose
+                </span>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
+                  {tier1.targetGoal}
+                </p>
+              </div>
 
               {/* Itemised Technical Deliverables */}
               <div className="space-y-3 pt-2 border-t border-white/5">
@@ -85,62 +95,66 @@ export function CoreEngagementsGrid() {
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Entity Architecture &amp; Gap Analysis</strong>: Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.
+                      <strong className="text-white">Entity Architecture &amp; Gap Analysis:</strong> Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Schema Drift &amp; Syntax Report</strong>: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.
+                      <strong className="text-white">Schema Drift &amp; Syntax Report:</strong> DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and Google Search Console rich-result errors.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Retrieval &amp; Positional Bias Evaluation</strong>: Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.
+                      <strong className="text-white">Retrieval &amp; Positional Bias Evaluation:</strong> Empirical evaluation of passage retrieval, token density, and semantic coverage for LLM and AI Overview visibility.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">90-Day Prioritised Implementation Roadmap</strong>: Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.
+                      <strong className="text-white">90-Day Prioritised Implementation Roadmap:</strong> Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-white">Executive Stakeholder Briefing (45 Mins)</strong>: Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.
+                      <strong className="text-white">Executive Stakeholder Briefing (45 Mins):</strong> Dedicated presentation and strategic walkthrough of diagnostic findings with your marketing and engineering leads.
                     </span>
                   </li>
                 </ul>
               </div>
 
-              {/* SLA & Credit Terms Box */}
-              <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-1.5">
-                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-white">
-                  <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Turnaround SLA: 5–7 Business Days</span>
+              {/* Delivery & Commercial Governance */}
+              <div className="space-y-2.5 pt-2 border-t border-white/5">
+                <h4 className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                  Delivery &amp; Commercial Governance
+                </h4>
+                <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
+                  <div className="flex items-start gap-2 font-mono text-xs text-white">
+                    <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>Delivery Turnaround SLA:</strong> 5–7 Business Days from kickoff and credential verification.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-zinc-200 font-sans">Commercial Credit Terms:</strong> 100% of the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} investment is deductible against <code className="text-cyan-300 font-mono text-[10px] bg-cyan-950/60 px-1 py-0.5 rounded">AEO-FOUNDATION-CORE</code> (Pathway 1) or Month 1 Retainer (Pathway 2). Valid for {GOVERNANCE_RULES.creditWindowDays} calendar days post-delivery.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[11px] text-zinc-300 pt-1.5 border-t border-white/5 font-sans">
+                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Client IP Ownership:</strong> 100% unencumbered client ownership of all audit findings, mapping tables, and strategic artifacts.</span>
+                  </div>
                 </div>
-                <p className="text-[11px] text-zinc-400 font-serif leading-relaxed">
-                  <strong className="text-zinc-300 font-sans">Commercial Credit Terms:</strong> 100% of the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation when activated within {GOVERNANCE_RULES.creditWindowDays} calendar days post-delivery.
-                </p>
-              </div>
-
-              {/* Governance */}
-              <div className="flex items-center gap-2 text-xs text-zinc-400 pt-1">
-                <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>100% Client IP Ownership of all audit artifacts</span>
               </div>
             </div>
 
             <div className="pt-6">
               <Link
                 href={tier1.ctaHref}
-                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left"
-                title="Commission the Strategic Blueprint diagnostic and roadmap"
+                className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-bold text-xs transition-all duration-300 shadow-lg shadow-cyan-500/20 text-left cursor-pointer"
+                title="Commission Strategic Blueprint"
               >
-                <span>{tier1.ctaText}</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
+                <span>Commission Strategic Blueprint →</span>
+                <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
           </div>
@@ -315,7 +329,7 @@ export function CoreEngagementsGrid() {
                 onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'blueprint', destination: '/solutions/aeo-blueprint' })}
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Audit &amp; Roadmap</span>
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Blueprint &amp; Roadmap</span>
                 <span className="text-xs text-slate-400">Diagnostic gap analysis &amp; engineering plan</span>
               </Link>
             </li>
