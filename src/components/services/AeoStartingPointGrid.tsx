@@ -37,7 +37,7 @@ export default function AeoStartingPointGrid({
   const effectiveFormId = contactAnchor ? contactAnchor.replace('#', '') : targetFormId;
 
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
-  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
+  const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
   const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
 
@@ -68,15 +68,15 @@ export default function AeoStartingPointGrid({
       badge: tier2.badge || "$250 Setup Fee Waived",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
       title: tier2.name,
-      code: "Foundation Core",
-      price: `${formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} Direct / ${formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} Turnkey`,
+      code: "AEO-FOUNDATION-CORE",
+      price: formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: `Connected multi-page & entity graph (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
+      scope: `Deterministic 4-pillar deployment (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
       description: tier2.targetGoal,
-      deliverables: foundationTurnkey.deliverables,
-      techNote: "For technical teams: Multi-page schema integration, restructuring internal links to pass explicit topical salience, and aligning citation records.",
-      whenToChoose: "Outcome: Implement connected improvements across your priority pages. Ideal when your business requires systematic AI visibility across multiple core services.",
-      ctaLabel: "Book Foundation Implementation"
+      deliverables: foundationCore.deliverables,
+      techNote: "For technical teams: Nested JSON-LD DOM injection, 90–120 token extraction passages, semantic lattice mapping, and multi-platform NAP parity.",
+      whenToChoose: "Outcome: Bridge AI visibility into live production across up to 10 priority pages with 100% client IP ownership and zero retainer lock-in.",
+      ctaLabel: "Deploy Foundation Core"
     },
     {
       key: "macro-sprints",

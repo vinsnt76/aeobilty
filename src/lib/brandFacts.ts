@@ -314,6 +314,18 @@ export const PRICING_CONFIG = {
       `100% credited back into Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days`
     ]
   },
+  FoundationCore: {
+    sku: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].code,
+    name: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].name,
+    priceFromAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].priceExGst,
+    priceAUD: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].priceExGst,
+    duration: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].deliverySla,
+    description: `${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].purpose} Includes complimentary Technical Onboarding ($250 value waived).`,
+    deliverables: [
+      ...TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'].deliverables,
+      'Complimentary Technical Onboarding ($250 value waived)'
+    ]
+  },
   FoundationImplementationDirect: {
     sku: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].code,
     name: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'].name,

@@ -183,6 +183,22 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   },
 
   // Foundation Implementation Packages
+  'AEO-FOUNDATION-CORE': {
+    code: 'AEO-FOUNDATION-CORE',
+    name: 'Foundation Core',
+    priceExGst: 1990,
+    handsOnEffort: '16–20 Hours',
+    deliverySla: '4-Week Staged Sprint',
+    category: 'foundation',
+    purpose: 'Bridge strategic AI visibility into live production. Establish deterministic machine readability, high-density atomic answers, and connected entity graphs across up to 10 priority commercial pages to secure retrieval across AI Overviews, Perplexity, and conversational search engines.',
+    deliverables: [
+      'Pillar 1: Structured Data & Schema Graph Deployment: Custom nested JSON-LD schema injected into the DOM (Organisation, LocalBusiness, Service, PostalAddress, GeoCoordinates, FAQPage) with 0 syntax errors.',
+      'Pillar 2: Atomic Answer Copywriting & Structuring: High-intent, answer-first content restructuring across up to 10 priority pages formatted into 90–120 token extraction passages with strict H1–H3 intent hierarchy.',
+      'Pillar 3: Semantic Lattice & Internal Knowledge Mapping: Bidirectional hub-and-spoke entity linking connecting core services to proof assets and location hubs, mitigating crawler dead-ends and vector retrieval drift.',
+      'Pillar 4: Citation Provenance & NAP Parity: Deployed canonical Brand Facts architecture with multi-platform audit and standardisation of Name, Address, and Phone (NAP) across GBP, Apple Maps, Bing Places, and primary Australian directories.',
+      'Complimentary Technical Setup & Telemetry: Pre-sprint environment access verification, index ping baseline, and final telemetry verification audit ($250 value included at $0.00).'
+    ],
+  },
   'AEO-FOUNDATION': {
     code: 'AEO-FOUNDATION',
     name: 'Foundation Core (Turnkey 10-Page)',
@@ -589,23 +605,22 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     id: 'foundation',
-    name: 'Foundation Implementation',
-    tagline: 'Turnkey Machine Discovery',
-    priceDisplay: 'From $1,990 AUD',
+    name: 'Foundation Core',
+    tagline: 'Deterministic Machine Discovery',
+    priceDisplay: '$1,990 AUD',
     priceExGst: 1990,
-    sla: '3–4 Weeks (Staged Milestones)',
-    targetGoal: 'Establish clean machine readability, atomic answer passages, and semantic links across priority pages.',
+    sla: '4-Week Staged Sprint',
+    targetGoal: 'Bridge strategic AI visibility into live production. Establish deterministic machine readability, high-density atomic answers, and connected entity graphs across up to 10 priority commercial pages to secure retrieval across AI Overviews, Perplexity, and conversational search engines.',
     deliverables: [
-      'Turnkey deployment across up to 10 core commercial pages',
-      'Pillar 1: Nested JSON-LD schema graph injection',
-      'Pillar 2: 90–120 token atomic answer restructuring',
-      'Pillar 3: Hub-and-spoke semantic lattice and internal links',
-      'Pillar 4: Brand Facts architecture and directory citation parity',
-      'Complimentary Technical Onboarding & Setup ($250 value included)'
+      'Pillar 1: Structured Data & Schema Graph Deployment with 0 syntax errors',
+      'Pillar 2: Atomic Answer Copywriting formatted into 90–120 token passages',
+      'Pillar 3: Semantic Lattice & Internal Knowledge Mapping (hub-and-spoke)',
+      'Pillar 4: Citation Provenance & NAP Parity across primary directories',
+      'Complimentary Technical Setup & Telemetry ($250 value included at $0.00)'
     ],
-    skuCodes: ['AEO-FOUNDATION-DIRECT', 'AEO-FOUNDATION'],
+    skuCodes: ['AEO-FOUNDATION-CORE', 'AEO-FOUNDATION'],
     popular: true,
-    ctaText: 'Discuss Foundation Scope',
+    ctaText: 'Deploy Foundation Core',
     ctaHref: '/contact?tier=foundation',
     badge: '$250 Setup Fee Waived',
   },

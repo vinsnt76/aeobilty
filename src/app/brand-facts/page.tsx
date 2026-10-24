@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function HumanBrandFactsPage() {
   const pricingItems: PricingConfigItem[] = [
     PRICING_CONFIG.StrategicBlueprint,
-    PRICING_CONFIG.FoundationImplementationDirect,
+    PRICING_CONFIG.FoundationCore,
     PRICING_CONFIG.FoundationImplementation,
     PRICING_CONFIG.MacroSprints,
     PRICING_CONFIG.MicroSprints,
