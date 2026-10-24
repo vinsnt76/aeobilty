@@ -61,7 +61,7 @@ export default function TutorialsHubPage() {
     {
       title: "Mitigating Positional Bias & Lost-in-the-Middle Attention",
       category: "LLM Context Windows & Attention",
-      description: "Technical tutorial on structuring long-form document passages to maximize primacy and recency attention spikes during RAG retrieval.",
+      description: "Technical tutorial on structuring long-form document passages to maximise primacy and recency attention spikes during RAG retrieval.",
       href: "/knowledge-hub/tutorials/positional-bias",
       image: "/images/brand/coming-soon-placeholder.svg",
       alt: "Positional bias tutorial placeholder graphic depicting LLM context window attention by AEObility.",

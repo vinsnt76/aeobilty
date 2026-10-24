@@ -369,7 +369,7 @@ export default function First90DaysCaseStudy() {
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></div>
                 <span className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-                  <strong>Phonetic/Organizational Collisions:</strong> Vector
+                  <strong>Phonetic/Organisational Collisions:</strong> Vector
                   overlap with Aerobility (a UK aviation charity) and broad
                   category terms such as "mobility".
                 </span>

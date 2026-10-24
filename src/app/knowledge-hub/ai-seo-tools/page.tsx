@@ -104,7 +104,7 @@ export default function AiSeoToolsPage() {
   const faqs = [
     {
       question: "What are AI SEO tools?",
-      answer: "AI SEO tools are specialized software applications and technical frameworks designed to analyse, generate, or optimise web content for Large Language Models (LLMs) and generative search engines (Google AI Overviews, ChatGPT Search, Perplexity). Unlike legacy SEO keyword tools, AI SEO tools focus on entity salience, vector similarity, and structured JSON-LD schemas."
+      answer: "AI SEO tools are specialised software applications and technical frameworks designed to analyse, generate, or optimise web content for Large Language Models (LLMs) and generative search engines (Google AI Overviews, ChatGPT Search, Perplexity). Unlike legacy SEO keyword tools, AI SEO tools focus on entity salience, vector similarity, and structured JSON-LD schemas."
     },
     {
       question: "How do AI SEO tools compare for answer engine optimisation?",
@@ -234,7 +234,7 @@ export default function AiSeoToolsPage() {
             </p>
 
             <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              As high-intent search demand shifts toward conversational AI platforms, marketing teams require specialized software evaluation. This hub benchmark tools across AI search queries while integrating the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> for live vector evaluation.
+              As high-intent search demand shifts toward conversational AI platforms, marketing teams require specialised software evaluation. This hub benchmark tools across AI search queries while integrating the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> for live vector evaluation.
             </p>
 
             {/* Interactive Telemetry Engine Bridge Banner (Hero Section) */}

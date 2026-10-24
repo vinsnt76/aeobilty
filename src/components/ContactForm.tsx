@@ -90,7 +90,7 @@ export default function ContactForm() {
     },
     {
       question: "Can you guarantee 100% inclusion in ChatGPT, Gemini, or Google AI Overviews?",
-      answer: "No consultant can guarantee rankings or citations in third-party AI platforms. AEObility optimizes entity clarity, structured data, and evidence so search engines have maximum confidence to cite your business accurately."
+      answer: "No consultant can guarantee rankings or citations in third-party AI platforms. AEObility optimises entity clarity, structured data, and evidence so search engines have maximum confidence to cite your business accurately."
     },
     {
       question: "How long does a typical AEO sprint take?",
@@ -203,7 +203,7 @@ export default function ContactForm() {
               AEObility is engineered specifically for Australian service businesses, local operators, trade firms, and growth-focused SMEs seeking legible, high-confidence visibility across Google Search, Maps, and AI platforms like ChatGPT and Gemini.
             </p>
             <p className="text-xs text-slate-400 font-sans leading-relaxed">
-              We specialize in verified schema architecture, structured entity graphs, and atomic answer rewrites. We do not offer generic low-cost SEO packages or speculative link-spam schemes.
+              We specialise in verified schema architecture, structured entity graphs, and atomic answer rewrites. We do not offer generic low-cost SEO packages or speculative link-spam schemes.
             </p>
           </div>
 

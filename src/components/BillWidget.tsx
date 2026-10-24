@@ -863,8 +863,8 @@ export default function BillWidget() {
             type="button"
             onClick={() => updateViewMode('MINIMISED')}
             className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition cursor-pointer"
-            title="Minimize to floating pill"
-            aria-label="Minimize assistant"
+            title="Minimise to floating pill"
+            aria-label="Minimise assistant"
           >
             <Minus className="w-3.5 h-3.5" />
           </button>

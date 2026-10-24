@@ -447,7 +447,7 @@ export default function RagArticlePage() {
                 <span>Atomic Summary: Retrieval-Augmented Generation &amp; AI Search</span>
               </div>
               <p className="text-sm sm:text-base text-zinc-200 font-sans leading-relaxed">
-                Retrieval-Augmented Generation (RAG) is the foundational retrieval mechanism powering modern <strong>AI SEO</strong>, generative answer engines, and search assistants across <strong>AI Australia</strong> ecosystems. By converting structured content into vector embeddings, RAG pipelines extract high-relevance passage chunks to synthesize evidence-backed answers in Perplexity, ChatGPT, and Google AI Overviews. Structuring your website content into 90–120 token atomic blocks ensures higher citation probability and prevents entity drift under vector search.
+                Retrieval-Augmented Generation (RAG) is the foundational retrieval mechanism powering modern <strong>AI SEO</strong>, generative answer engines, and search assistants across <strong>AI Australia</strong> ecosystems. By converting structured content into vector embeddings, RAG pipelines extract high-relevance passage chunks to synthesise evidence-backed answers in Perplexity, ChatGPT, and Google AI Overviews. Structuring your website content into 90–120 token atomic blocks ensures higher citation probability and prevents entity drift under vector search.
               </p>
             </div>
           </div>
@@ -636,7 +636,7 @@ export default function RagArticlePage() {
                       <Sparkles className="w-4 h-4 text-amber-400" /> Grounded Gen
                     </div>
                     <p className="text-xs text-white/60 font-sans">
-                      Model synthesizes cited answers with source evidence.
+                      Model synthesises cited answers with source evidence.
                     </p>
                   </div>
                 </div>
@@ -808,7 +808,7 @@ export default function RagArticlePage() {
             <ul className="space-y-2 my-4 list-disc pl-5 font-sans text-sm text-white/80">
               <li>increasing the likelihood that your content is selected by vector retrieval algorithms</li>
               <li>bypassing reliance on model memory to deliver current, factual information</li>
-              <li>maximizing direct citations in generated answers</li>
+              <li>maximising direct citations in generated answers</li>
               <li>helping engines understand your service offerings consistently across diverse user queries</li>
             </ul>
 
@@ -957,14 +957,14 @@ export default function RagArticlePage() {
                 <h3 className="font-bold text-aeo-purple text-lg mb-3">Post-Chunking (After Retrieval)</h3>
                 <ul className="space-y-2 text-sm text-white/70 list-disc pl-4">
                   <li>Provides flexible, dynamic context assembly</li>
-                  <li>Customizes passage boundaries to match complex user queries</li>
+                  <li>Customises passage boundaries to match complex user queries</li>
                   <li>Useful for extensive, irregular technical documentation</li>
                 </ul>
               </div>
             </div>
 
             <p>
-              Different AI platforms utilize different chunking methodologies. The key to success is ensuring your underlying content maintains <strong>semantic clarity</strong> across both methods.
+              Different AI platforms utilise different chunking methodologies. The key to success is ensuring your underlying content maintains <strong>semantic clarity</strong> across both methods.
             </p>
 
             {/* Section 5 */}

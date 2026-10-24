@@ -81,11 +81,11 @@ export default function AEOKnowledgeNodePage() {
               What is AEO in <span className="text-gradient-aeo">Digital Marketing?</span>
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-xl font-light">
-              Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.
+              Technical guide on how search bots parse files for direct citation extraction. Learn to maximise positional bias within text fields.
             </p>
           </div>
 
-          {/* Flow visualization diagram showing raw unstructured paragraphs converted into tidy atomic blocks */}
+          {/* Flow visualisation diagram showing raw unstructured paragraphs converted into tidy atomic blocks */}
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 p-6 flex flex-col justify-between shadow-2xl">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.06),transparent_50%)]" />
             <div className="flex justify-between items-center relative z-10 border-b border-white/5 pb-3">
@@ -169,7 +169,7 @@ export default function AEOKnowledgeNodePage() {
 
           {/* Deep Dive Section */}
           <div className="space-y-6 border-t border-white/5 pt-10">
-            <h2 className="text-2xl font-bold">Maximizing Crawler Confidence and Attentional Weight</h2>
+            <h2 className="text-2xl font-bold">Maximising Crawler Confidence and Attentional Weight</h2>
             <p className="text-sm text-white/70 leading-relaxed font-light">
               Answer Engine Optimisation (AEO) deep dive guides explain how LLM text scraping metrics evaluate external sites. When search models perform context extraction, they prioritise specific structural anchors.
             </p>

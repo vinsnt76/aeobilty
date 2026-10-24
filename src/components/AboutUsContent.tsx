@@ -48,7 +48,7 @@ export default function AboutUsContent() {
     },
     {
       question: "Do I need a new website to work with AEObility?",
-      answer: "Usually no. AEObility works with your existing CMS (WordPress, Shopify, Webflow, Next.js, custom HTML) by optimizing page architecture, adding structured data, and refining content clarity.",
+      answer: "Usually no. AEObility works with your existing CMS (WordPress, Shopify, Webflow, Next.js, custom HTML) by optimising page architecture, adding structured data, and refining content clarity.",
       linkText: "Explore core AEO services",
       linkHref: "/services/aeo"
     },
@@ -561,7 +561,7 @@ export default function AboutUsContent() {
         <div className="max-w-2xl space-y-4">
           <h2 className="text-2xl font-bold text-white font-soehne-breit">Specialist Network &amp; Extended Capabilities</h2>
           <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-            AEObility pairs strategic founder leadership with a network of specialized Australian technical digital marketing consultants.
+            AEObility pairs strategic founder leadership with a network of specialised Australian technical digital marketing consultants.
           </p>
           <div className="flex flex-col gap-4">
             <Link

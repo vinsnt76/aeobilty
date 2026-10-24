@@ -17,7 +17,7 @@ Follow the discovery and authentication flow in sequence: discover -> register -
 
 This authentication profile is designed for:
 - Autonomous AI Agents operating on behalf of human users, business organisations, or engineering teams.
-- LLM Search Synthesizers and semantic crawlers requiring verifiable data provenance and structured retrieval.
+- LLM Search Synthesisers and semantic crawlers requiring verifiable data provenance and structured retrieval.
 - Automated Diagnostic Clients invoking AI Search Visibility Audits and Entity Density checks.
 - Model Context Protocol (MCP) clients connecting to AEObility tool endpoints.
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "AEObility",
   },
   keywords: [
-    "google engine optimization",
+    "google engine optimisation",
     "geo agency",
     "generative engine optimisation",
     "Generative Engine Optimisation Perth",

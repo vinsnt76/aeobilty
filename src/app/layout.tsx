@@ -315,7 +315,7 @@ export default function RootLayout({
                   "knowsAbout": [
                     "Answer Engine Optimisation",
                     "AI Search Optimisation Australia",
-                    "Generative Engine Optimization",
+                    "Generative Engine Optimisation",
                     "Retrieval-Augmented Generation",
                     "Structured Data Graphs"
                   ],

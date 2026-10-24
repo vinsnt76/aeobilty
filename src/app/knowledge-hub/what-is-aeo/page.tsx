@@ -139,10 +139,10 @@ export default function WhatIsAeoPage() {
         "@id": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp#primaryimage",
         "url": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp",
         "contentUrl": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp",
-        "headline": "AI Visibility Scanner – Connecting User Prompts to Business Entities via AEO",
-        "name": "AI Visibility Scanner – Connecting User Prompts to Business Entities via AEO",
-        "caption": "Conceptual graphic illustrating Answer Engine Optimization (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
-        "description": "Conceptual graphic illustrating Answer Engine Optimization (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
+        "headline": "AI Visibility Scanner: Connecting User Prompts to Business Entities via AEO",
+        "name": "AI Visibility Scanner: Connecting User Prompts to Business Entities via AEO",
+        "caption": "Conceptual graphic illustrating Answer Engine Optimisation (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
+        "description": "Conceptual graphic illustrating Answer Engine Optimisation (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
         "author": {
           "@type": "Person",
           "@id": "https://aeobility.com.au/vince-baker#person",
@@ -165,11 +165,11 @@ export default function WhatIsAeoPage() {
         },
         "keywords": [
           "AEO",
-          "Answer Engine Optimization",
+          "Answer Engine Optimisation",
           "AI Visibility Scanner",
           "Business Entity",
           "Vector Space",
-          "AI Search Optimization",
+          "AI Search Optimisation",
           "GEO",
           "Prompt Retrieval",
           "Aeobility",
@@ -582,7 +582,7 @@ export default function WhatIsAeoPage() {
               <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
                 <Image
                   src="/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp"
-                  alt="AI Engine Optimization Visibility Scanner - AEObility"
+                  alt="AI Engine Optimisation Visibility Scanner - AEObility"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1200px"
                   className="object-cover object-center opacity-30 transition-opacity duration-700"
@@ -814,7 +814,7 @@ export default function WhatIsAeoPage() {
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Strategic Solution Handoff</span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit">Ready to Close Your AI Visibility Gaps?</h2>
                 <p className="text-sm sm:text-base text-slate-200 font-serif leading-relaxed">
-                  Identified missing schema or retrieval gaps during your free scan? Our fixed-scope <strong>$995 AEObility Strategic Blueprint</strong> delivers a step-by-step technical roadmap, customized entity maps, and direct passage rewrites to get your business recommended across AI search engines and local maps.
+                  Identified missing schema or retrieval gaps during your free scan? Our fixed-scope <strong>$995 AEObility Strategic Blueprint</strong> delivers a step-by-step technical roadmap, customised entity maps, and direct passage rewrites to get your business recommended across AI search engines and local maps.
                 </p>
               </div>
 

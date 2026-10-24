@@ -56,7 +56,7 @@ export default function KnowledgeHubPage() {
     {
       name: "Answer Engine Optimisation Core Principles",
       href: "/knowledge-hub/aeo",
-      description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields.",
+      description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximise positional bias within text fields.",
       icon: <GraduationCap className="w-5 h-5 text-aeo-cyan" />
     },
     {

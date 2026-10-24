@@ -421,7 +421,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     handsOnEffort: '3 Hours (Half-Day)',
     deliverySla: '3 Business Days',
     category: 'micro',
-    purpose: 'Improve internal linking logic and anchor signaling for one key page.',
+    purpose: 'Improve internal linking logic and anchor signalling for one key page.',
     deliverables: [
       'Audit of inbound and outbound anchors',
       'Rewrite generic anchors into descriptive topical entity links',
@@ -653,7 +653,7 @@ export const PRICING_TIERS: PricingTier[] = [
 // ============================================================================
 
 /**
- * Format a numeric amount into a standardized Australian Dollar string.
+ * Format a numeric amount into a standardised Australian Dollar string.
  * Example: formatAudCurrency(1980) -> "$1,980 AUD ex. GST"
  */
 export function formatAudCurrency(

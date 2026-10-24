@@ -275,7 +275,7 @@ export default function AEOPricingPage() {
           </div>
         </header>
 
-        {/* 2. Standardized Four-Stage Card Architecture */}
+        {/* 2. Standardised Four-Stage Card Architecture */}
         <section aria-label="AEO Commercial Product Ladder" className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-white/10 pb-3">
             <h2 className="text-base sm:text-lg font-bold text-white font-soehne-breit flex items-center gap-2">

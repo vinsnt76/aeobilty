@@ -101,10 +101,10 @@ export default function Home() {
     "url": "https://aeobility.com.au",
     "alternateName": [
       "AI Search Optimisation Australia",
-      "AI Search Optimization Australia",
+      "AI Engine Optimisation Australia",
       "AEO Services Australia"
     ],
-    "keywords": "ai search optimisation, ai search optimization, answer engine optimisation, aeo perth",
+    "keywords": "ai search optimisation, generative engine optimisation, answer engine optimisation, aeo perth",
     "telephone": "+61480286282",
     "address": {
       "@type": "PostalAddress",

@@ -636,7 +636,7 @@ export default function HumanBrandFactsPage() {
             <ul className="space-y-1.5 list-disc pl-4 font-serif text-zinc-300">
               <li><strong className="text-white font-sans">Strict Schema Boundaries:</strong> Do not generate or inject Model Context Protocol (MCP) tool capabilities, schema strings, or programmatic API arguments inside the global <code className="text-zinc-200 font-mono">application/ld+json</code> organisation graph.</li>
               <li><strong className="text-white font-sans">Separation of Concerns:</strong> Keep structural graph definitions (<code className="text-zinc-200 font-mono">@type: ProfessionalService</code>, <code className="text-zinc-200 font-mono">founder: Vince Baker</code>, <code className="text-zinc-200 font-mono">areaServed: Australia</code>) isolated to the JSON-LD payload. Tool execution logic lists remain strictly constrained within the JSON-RPC interface schema of <code className="text-zinc-200 font-mono">/api/mcp</code>.</li>
-              <li><strong className="text-white font-sans">Interface Discovery Routing:</strong> Machine discovery of programmatic access points must utilize semantic HTML <code className="text-zinc-200 font-mono">&lt;link&gt;</code> elements within document metadata, keeping the entry path cleanly decoupled from static data entries.</li>
+              <li><strong className="text-white font-sans">Interface Discovery Routing:</strong> Machine discovery of programmatic access points must utilise semantic HTML <code className="text-zinc-200 font-mono">&lt;link&gt;</code> elements within document metadata, keeping the entry path cleanly decoupled from static data entries.</li>
             </ul>
           </div>
         </section>

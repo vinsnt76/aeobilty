@@ -62,7 +62,7 @@ export const DIAGNOSTIC_DIMENSIONS = [
     icon: Globe,
     badge: "Layer 01",
     benefit: "Can search engines and AI systems access and interpret important pages?",
-    details: "Inspects raw HTML DOM structures, analyzes text-to-code density, verifies heading hierarchies (H1/H2/H3), evaluates Core Web Vitals (LCP/CLS), and checks robots.txt access rights for major LLM scraping bots (GPTBot, ClaudeBot, PerplexityBot)."
+    details: "Inspects raw HTML DOM structures, analyses text-to-code density, verifies heading hierarchies (H1/H2/H3), evaluates Core Web Vitals (LCP/CLS), and checks robots.txt access rights for major LLM scraping bots (GPTBot, ClaudeBot, PerplexityBot)."
   },
   {
     id: "dim-2",

@@ -44,7 +44,7 @@ export default function GuidesHubPage() {
     {
       title: "Answer Engine Optimisation Core Principles",
       category: "AEO Fundamentals & RAG Mechanics",
-      description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximize positional bias within text fields and atomic answer blocks.",
+      description: "Technical guide on how search bots parse files for direct citation extraction. Learn to maximise positional bias within text fields and atomic answer blocks.",
       href: "/knowledge-hub/aeo",
       metrics: [
         { label: "Type", value: "Core Guide" },
