@@ -139,7 +139,7 @@ export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
     lastVerified: "2026-10-24"
   },
   {
-    statement: "The AEObility Blueprint fee of $995 AUD is 100% credited toward Foundation Implementation within 60 calendar days",
+    statement: "The Strategic Blueprint fee of $995 AUD is 100% credited toward AEO Foundation within 60 calendar days",
     source: "https://aeobility.com.au/solutions/aeo-blueprint",
     evidenceType: "FirstPartyPage",
     status: "verified",
@@ -296,10 +296,10 @@ export const PRICING_CONFIG = {
     priceAUD: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst,
     duration: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverySla,
     creditBackEligible: true,
-    description: `${TECHNICAL_SPRINT_CATALOG['BPSTRAT'].purpose} 100% of the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)} Blueprint fee is credited back into Foundation Implementation if booked within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
+    description: `${TECHNICAL_SPRINT_CATALOG['BPSTRAT'].purpose} 100% of the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)} Blueprint fee is credited back into AEO Foundation if booked within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
     deliverables: [
       ...TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverables,
-      `100% credited back into Foundation Implementation if booked within ${GOVERNANCE_RULES.creditWindowDays} days`
+      `100% credited back into AEO Foundation if booked within ${GOVERNANCE_RULES.creditWindowDays} days`
     ]
   },
   StrategicBlueprint: {
@@ -308,10 +308,10 @@ export const PRICING_CONFIG = {
     priceAUD: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst,
     duration: TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverySla,
     creditBackEligible: true,
-    description: `Standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit. 100% credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
+    description: `Standalone 90-day operational roadmap, technical gap analysis, entity optimisation review, and local tracking audit. 100% credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
     deliverables: [
       ...TECHNICAL_SPRINT_CATALOG['BPSTRAT'].deliverables,
-      `100% credited back into Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days`
+      `100% credited back into AEO Foundation if booked within ${GOVERNANCE_RULES.creditWindowDays} days`
     ]
   },
   FoundationCore: {
@@ -405,7 +405,7 @@ export const PRICING_CONFIG = {
   foundation: {
     codeSeries: 'SS1-SS4-MACRO',
     sku: 'AEO-FOUNDATION',
-    name: 'Foundation Implementation',
+    name: 'AEO Foundation',
     basePriceFrom: TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst,
     deliveryWindow: '4-week structured deployment',
     contractTerm: 'None (Fixed-scope execution)'
@@ -432,8 +432,8 @@ export const BRAND_PRICING_SCHEMA = {
       '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#product',
       sku: 'BPSTRAT',
-      name: 'The AEObility Strategic Blueprint',
-      description: 'A comprehensive 90-day diagnostic roadmap and entity salience assessment. Standalone cost of $995 AUD is 100% credited toward Foundation Implementation if booked within 60 calendar days.',
+      name: 'Strategic Blueprint',
+      description: 'A comprehensive 90-day diagnostic roadmap and entity salience assessment. Standalone cost of $995 AUD is 100% credited toward AEO Foundation if booked within 60 calendar days.',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#offer',
@@ -457,17 +457,17 @@ export const BRAND_PRICING_SCHEMA = {
       '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-product',
       sku: 'AEO-FOUNDATION-DIRECT',
-      name: 'Direct Modular Foundation Implementation',
-      description: 'Modular 4-pillar foundation implementation for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).',
+      name: 'AEO Foundation (Direct)',
+      description: 'Turnkey 4-pillar AEO Foundation deployment for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).',
       offers: {
         '@type': 'Offer',
         '@id': 'https://aeobility.com.au/solutions/aeo-sprint#offer-foundation-direct',
-        price: 1980,
+        price: 1990,
         priceCurrency: 'AUD',
         availability: 'https://schema.org/InStock',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: 1980,
+          price: 1990,
           priceCurrency: 'AUD',
           valueAddedTaxIncluded: false,
           unitText: '10 business days'
@@ -482,7 +482,7 @@ export const BRAND_PRICING_SCHEMA = {
       '@type': 'Product',
       '@id': 'https://aeobility.com.au/solutions/aeo-foundation#product',
       sku: 'AEO-FOUNDATION',
-      name: 'Foundation Implementation',
+      name: 'AEO Foundation',
       description: 'Turnkey 4-pillar deployment across up to 10 core commercial pages: connected information layers, structured schemas, atomic page rewrites, and citation provenance. Includes complimentary Technical Onboarding ($250 value waived) and 60-day $995 Blueprint credit reversal.',
       offers: {
         '@type': 'Offer',

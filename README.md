@@ -8,10 +8,12 @@ This repository contains the complete Next.js 16 (App Router) web platform, RAG 
 
 ## ⚡ Core Value Propositions & Offerings
 
-* **Answer Engine Optimisation (AEO)**: Restructuring content into 90–120 token atomic answer blocks, balancing token weights, and mitigating positional bias to maximize citation rates across ChatGPT, Claude, and Perplexity.
+* **Answer Engine Optimisation (AEO)**: Restructuring content into 90–120 token atomic answer blocks, balancing token weights, and mitigating positional bias to maximise citation rates across ChatGPT, Claude, and Perplexity.
 * **Geographic Engine Optimisation (GEO)**: Hyper-local coordinate mapping, spatial vector alignment, and proximity signal engineering for Google Maps, Apple Maps, and local voice search.
-* **AI Search Strategy**: Positioning brands to capture conversational queries, query fan-out behaviors, and generative AI search Overviews (Gemini, ChatGPT Search).
-* **The AEObility Blueprint**: A standalone $995 AUD Clarity Phase delivering a deep technical audit, entity visibility score, and actionable 90-day roadmap (credited 100% back if clients proceed to implementation).
+* **AI Search Strategy**: Positioning brands to capture conversational queries, query fan-out behaviours, and generative AI search Overviews (Gemini, ChatGPT Search).
+* **Strategic Blueprint**: A standalone $995 AUD Clarity Phase delivering a deep technical audit, entity visibility score, and actionable 90-day roadmap (credited 100% back if clients proceed to AEO Foundation within 60 days).
+* **AEO Foundation**: A 4-week turnkey implementation ($1,990 AUD ex. GST) establishing entity graphs, answer architecture, semantic lattice, and citation consistency.
+* **AEO Sprints**: Governed sprint execution ($1,980 AUD ex. GST per 10-day macro bundle / $495 AUD ex. GST per micro-sprint) with zero lock-in contracts.
 
 ---
 

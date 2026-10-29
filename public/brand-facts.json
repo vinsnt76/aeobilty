@@ -5,7 +5,7 @@
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
       "sku": "BPSTRAT",
-      "name": "The AEObility Strategic Blueprint",
+      "name": "Strategic Blueprint",
       "priceCurrency": "AUD",
       "price": 995,
       "priceSpecification": {
@@ -16,7 +16,7 @@
         "unitText": "5 business days",
         "description": "Excluding GST"
       },
-      "description": "Deep technical, semantic, and competitive presence audit with prioritised 90-day execution roadmap. 100% of the $995 fee is credited toward Foundation Implementation within 60 calendar days.",
+      "description": "Deep technical, semantic, and competitive presence audit with prioritised 90-day execution roadmap. 100% of the $995 fee is credited toward AEO Foundation within 60 calendar days.",
       "offers": {
         "@type": "Offer",
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#offer",
@@ -30,7 +30,7 @@
           "Knowledge Graph entity schema specification",
           "Prioritised 90-day action plan",
           "Executive debrief & sprint mapping session",
-          "100% credited toward Foundation Implementation within 60 calendar days"
+          "100% credited toward AEO Foundation within 60 calendar days"
         ]
       }
     },
@@ -38,22 +38,22 @@
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-product",
       "sku": "AEO-FOUNDATION-DIRECT",
-      "name": "Direct Modular Foundation Implementation",
+      "name": "AEO Foundation (Direct)",
       "priceCurrency": "AUD",
-      "price": 1980,
+      "price": 1990,
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": 1980,
+        "price": 1990,
         "priceCurrency": "AUD",
         "valueAddedTaxIncluded": false,
         "unitText": "10 business days",
         "description": "Excluding GST"
       },
-      "description": "Modular 4-pillar foundation implementation for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).",
+      "description": "Turnkey 4-pillar AEO Foundation deployment for businesses with pre-existing blueprints or internal developer capacity. Includes complimentary Technical Onboarding ($250 value waived).",
       "offers": {
         "@type": "Offer",
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#offer-foundation-direct",
-        "price": 1980,
+        "price": 1990,
         "priceCurrency": "AUD",
         "eligibleDuration": "10 business days",
         "availability": "https://schema.org/InStock",
@@ -70,7 +70,7 @@
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-foundation#product",
       "sku": "AEO-FOUNDATION",
-      "name": "Foundation Implementation",
+      "name": "AEO Foundation",
       "priceCurrency": "AUD",
       "price": 1990,
       "priceSpecification": {
@@ -96,7 +96,7 @@
           "Semantic internal link lattice & contextual anchor routing",
           "Brand Facts page deployment & citation standardisation",
           "Complimentary Technical Onboarding ($250 value waived)",
-          "100% of $995 Blueprint fee credited toward sprint within 60 days"
+          "100% of $995 Blueprint fee credited toward AEO Foundation within 60 days"
         ]
       }
     },
@@ -686,7 +686,7 @@
           "@type": "PropertyValue",
           "propertyID": "commercial_governance",
           "name": "Commercial Governance Rules",
-          "value": "Blueprint $995 fee is 100% credited toward Foundation Implementation within 60 calendar days. Technical Onboarding ($250 value) is waived on bundles. Out-of-scope development is $220/hr ex. GST. Governed monthly retainer cadence is $1,980/month with zero contract lock-in. Client owns 100% of IP upon settlement."
+          "value": "Blueprint $995 fee is 100% credited toward AEO Foundation within 60 calendar days. Technical Onboarding ($250 value) is waived on bundles. Out-of-scope development is $220/hr ex. GST. Governed monthly retainer cadence is $1,980/month with zero contract lock-in. Client owns 100% of IP upon settlement."
         }
       ]
     }

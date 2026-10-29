@@ -258,7 +258,7 @@ export const Forms = {
                     <!-- Primary CTA -->
                     <div style="margin-bottom: 12px;">
                       <a href="https://aeobility.com.au/solutions/aeo-blueprint" style="background-color: #00E5FF; color: #0A0F1D; padding: 13px 28px; text-decoration: none; font-weight: 700; border-radius: 8px; display: inline-block; font-size: 13px; box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);">
-                        Implement with The AEObility Blueprint ($995 AUD) &rarr;
+                        Implement with Strategic Blueprint ($995 AUD) &rarr;
                       </a>
                     </div>
 

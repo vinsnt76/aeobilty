@@ -137,7 +137,7 @@ export async function generateInsightEngineResult(
       {
         step: 4,
         title: `Execute 10-Day Implementation Roadmap`,
-        description: `Use the 10-Day AEObility Blueprint to resolve the "${blindSpotTitle}" gap on ${domainLabel} and lock in top AI search recommendations.`
+        description: `Use the Strategic Blueprint to resolve the "${blindSpotTitle}" gap on ${domainLabel} and lock in top AI search recommendations.`
       }
     ]
   };
@@ -231,7 +231,7 @@ export async function generateInsightEngineResult(
         {
           "step": 4,
           "title": "Execute 10-Day Implementation Roadmap",
-          "description": "How the 10-Day AEObility Blueprint prioritises and resolves ${domainLabel}'s high-impact gaps."
+          "description": "How the Strategic Blueprint prioritises and resolves ${domainLabel}'s high-impact gaps."
         }
       ]
     }

@@ -61,7 +61,7 @@ export function CoreEngagementsGrid() {
                   <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
                 </div>
                 <p className="mt-1 text-xs text-zinc-400 font-sans">
-                  Standalone Investment • 100% Credited Toward Foundation
+                  Standalone Investment • 100% Credited Toward AEO Foundation
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ export function CoreEngagementsGrid() {
                   100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days) • Zero Setup Fees
                 </div>
                 <p className="text-[11px] text-zinc-400 italic font-serif leading-relaxed">
-                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days • Diagnostic discovery requires zero setup fees)
+                  (100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} fee is credited directly toward AEO Foundation within {GOVERNANCE_RULES.creditWindowDays} days • Diagnostic discovery requires zero setup fees)
                 </p>
               </div>
 
@@ -152,7 +152,7 @@ export function CoreEngagementsGrid() {
             </div>
           </div>
 
-          {/* Card 2: Tier 2 (Foundation Core - Elevated Focal Point / Von Restorff Effect) */}
+          {/* Card 2: Tier 2 (AEO Foundation - Elevated Focal Point / Von Restorff Effect) */}
           <div className="relative rounded-2xl bg-gradient-to-b from-cyan-400 via-cyan-500 to-purple-500 p-0.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] md:-translate-y-2 transition-all duration-300 group z-10">
             {/* Top Recommended Floating Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-zinc-950 font-black text-[10px] tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(6,182,212,0.5)] z-20 whitespace-nowrap">
@@ -165,7 +165,7 @@ export function CoreEngagementsGrid() {
                 <div className="flex items-center justify-between pt-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
                     <Boxes className="w-3.5 h-3.5" />
-                    <span>Foundation Core</span>
+                    <span>AEO Foundation</span>
                   </div>
                   <span className="font-mono text-xs text-zinc-500">
                     SKU: {foundationCore.code}
@@ -280,7 +280,7 @@ export function CoreEngagementsGrid() {
                 <Link
                   href={tier2.ctaHref}
                   className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 hover:from-cyan-300 hover:to-white text-zinc-950 font-black text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.45)] text-left cursor-pointer"
-                  title="Deploy Foundation Core"
+                  title="Deploy AEO Foundation"
                 >
                   <span>{tier2.ctaText} →</span>
                   <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
@@ -289,14 +289,14 @@ export function CoreEngagementsGrid() {
             </div>
           </div>
 
-          {/* Card 3: Tier 3 (Ongoing Dominance - Governed Sprints) */}
+          {/* Card 3: Tier 3 (Ongoing Dominance - AEO Sprints) */}
           <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-purple-500/40 transition-all duration-300 group">
             <div className="space-y-5">
               {/* Eyebrow & SKU */}
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-[11px] font-mono font-bold text-purple-300 uppercase tracking-wider">
                   <Rocket className="w-3.5 h-3.5" />
-                  <span>Governed Sprints</span>
+                  <span>AEO Sprints</span>
                 </div>
                 <span className="font-mono text-xs text-zinc-500">
                   SKU: {macroSku.code}
@@ -396,7 +396,7 @@ export function CoreEngagementsGrid() {
               <Link
                 href={tier3.ctaHref}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-purple-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left cursor-pointer"
-                title="Explore Governed Technical Sprints"
+                title="Explore AEO Sprints"
               >
                 <span>{tier3.ctaText} →</span>
                 <ArrowRight className="w-4 h-4 text-purple-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />

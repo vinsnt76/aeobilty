@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Schema Sprint Perth",
     "Atomic Answer Blocks",
     "Passage Level Chunking",
-    "Foundation Implementation",
+    "AEO Foundation",
     "AEObility Micro-Sprints"
   ]
 };

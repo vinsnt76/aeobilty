@@ -149,7 +149,7 @@ export function generateAmbiguousClarification(_query: string): {
     options: [
       { label: 'AEO & GEO Services', query: 'What are AEObility AEO services?' },
       { label: 'Free Site Audit', query: 'Scan my website visibility' },
-      { label: 'Blueprint Pricing ($995 AUD)', query: 'How much does the AEObility Blueprint cost?' }
+      { label: 'Strategic Blueprint ($995 AUD)', query: 'How much does the Strategic Blueprint cost?' }
     ]
   };
 }
@@ -199,12 +199,12 @@ export function classifyCompanion5Intent(
   const isNavigationIntent = /\b(where|where's|find|show me|go to|link|pricing|cost|costs|contact|about|packages|solutions|knowledge hub|case studies)\b/i.test(clean);
   if (isNavigationIntent) {
     let targetUrl = '/solutions/aeo-blueprint';
-    let targetTitle = 'The AEObility Blueprint ($995 AUD)';
+    let targetTitle = 'Strategic Blueprint ($995 AUD)';
     let desc = 'Complete 90-day AEO roadmap & entity audit (100% credited back on implementation).';
 
     if (clean.includes('pricing') || clean.includes('cost') || clean.includes('packages') || clean.includes('blueprint')) {
       targetUrl = '/solutions/aeo-blueprint';
-      targetTitle = 'The AEObility Blueprint ($995 AUD)';
+      targetTitle = 'Strategic Blueprint ($995 AUD)';
       desc = 'Complete 90-day AEO roadmap & entity audit (100% credited back on implementation).';
     } else if (clean.includes('geo') || clean.includes('maps') || clean.includes('local')) {
       targetUrl = '/services/geo-marketing';
@@ -248,14 +248,14 @@ export function classifyCompanion5Intent(
       answer: "AEObility offers 3 primary AEO & AI Search marketing corridors tailored for Australian businesses:",
       cards: [
         {
-          title: "1. The AEObility Blueprint ($995 AUD)",
+          title: "1. Strategic Blueprint ($995 AUD)",
           url: "/solutions/aeo-blueprint",
           type: "service",
           description: "Clarity Phase: Deep technical audit, entity score, and 90-day roadmap.",
           ctaText: "Explore Blueprint ➔"
         },
         {
-          title: "2. AEO Implementation Sprints",
+          title: "2. AEO Sprints",
           url: "/solutions/aeo-sprint",
           type: "service",
           description: "High-density technical execution: schema injection, token rebalancing, RAG survival.",

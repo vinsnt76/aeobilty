@@ -193,12 +193,12 @@ export default function LocalBusinessAEOPage() {
       answer: "Where third-party directory listings cannot be claimed directly, we submit verified update notices, align your website footer and Google Business Profile NAP strings, and inject authoritative JSON-LD schema on your canonical domain to establish primary source authority."
     },
     {
-      question: "What is the difference between the Free Local Scan and the $995 Blueprint?",
-      answer: "The Free Local Scan provides a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next step. The AEObility Blueprint ($995 AUD ex. GST) is a full diagnostic inventory, prioritised 90-day roadmap, implementation sequence, scope assumptions and investment plan: which is 100% credited if you book Foundation Implementation within 60 days."
+      question: "What is the difference between the Free Local Scan and the $995 Strategic Blueprint?",
+      answer: "The Free Local Scan provides a quick local signal scorecard highlighting your top 3 verified technical gaps and recommended next step. The Strategic Blueprint ($995 AUD ex. GST) is a full diagnostic inventory, prioritised 90-day roadmap, implementation sequence, scope assumptions and investment plan: which is 100% credited if you book AEO Foundation within 60 days."
     },
     {
       question: "Are there any ongoing monthly contracts or agency retainers?",
-      answer: "No. All AEObility local business sprints are fixed-scope, flat-rate engagements delivered in 4–5 business days (Micro-Sprints) or 4 weeks (Foundation). No ongoing monthly retainer or locked-in contract is required."
+      answer: "No. All AEObility local business sprints are fixed-scope, flat-rate engagements delivered in 4–5 business days (Micro-Sprints) or 4 weeks (AEO Foundation). No ongoing monthly retainer or locked-in contract is required."
     }
   ];
 
@@ -241,7 +241,7 @@ export default function LocalBusinessAEOPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 

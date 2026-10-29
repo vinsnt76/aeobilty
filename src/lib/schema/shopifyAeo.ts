@@ -32,7 +32,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Technical AEO Sprints",
+              "name": "AEO Sprints",
               "price": "495.00",
               "priceCurrency": "AUD"
             }
@@ -41,7 +41,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "AEObility MVP Strategic Blueprint",
+              "name": "Strategic Blueprint",
               "price": "995.00",
               "priceCurrency": "AUD"
             }
@@ -50,7 +50,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Foundation Implementation",
+              "name": "AEO Foundation",
               "price": "1990.00",
               "priceCurrency": "AUD"
             }

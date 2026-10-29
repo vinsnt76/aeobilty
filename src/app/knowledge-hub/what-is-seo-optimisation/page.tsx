@@ -688,7 +688,7 @@ export default function WhatIsSEOOptimisationPage() {
                   </div>
                   <h3 className="text-xl font-bold text-white">See how ready your site is for AI search</h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                    Get a practical view of your technical SEO, entity clarity and answer‑ready content with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
+                    Get a practical view of your technical SEO, entity clarity and answer‑ready content with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">Strategic Blueprint</Link>.
                   </p>
                 </div>
                 <Link 
@@ -789,7 +789,7 @@ export default function WhatIsSEOOptimisationPage() {
                   <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
                     <h3 className="text-base font-bold text-teal-300">5. Can SEO or AEO guarantee that AI will cite my website?</h3>
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential — but no optimisation method can guarantee selection or citation by every AI system. The goal is to make your business easier for machines to understand and more likely to be used when they generate answers. Learn more about our technical methodology in <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link>.
+                      No. SEO, Entity SEO and AEO can improve clarity, relevance and retrieval potential — but no optimisation method can guarantee selection or citation by every AI system. The goal is to make your business easier for machines to understand and more likely to be used when they generate answers. Learn more about our technical methodology in <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">Strategic Blueprint</Link>.
                     </p>
                   </div>
                 </div>
@@ -802,7 +802,7 @@ export default function WhatIsSEOOptimisationPage() {
                   Summary: SEO Is Still Foundational
                 </h2>
                 <p className="leading-relaxed">
-                  SEO optimisation remains essential because it creates the structured, crawlable, indexable content that both search engines and AI systems rely on. In an AI-driven search landscape, SEO alone is no longer enough — but it remains the critical layer that makes AEO possible. Ready to audit your site? Get started with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">The AEObility Blueprint</Link> or review our <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO Implementation Packages</Link>.
+                  SEO optimisation remains essential because it creates the structured, crawlable, indexable content that both search engines and AI systems rely on. In an AI-driven search landscape, SEO alone is no longer enough — but it remains the critical layer that makes AEO possible. Ready to audit your site? Get started with <Link href="/solutions/aeo-blueprint" className="text-teal-400 font-semibold hover:underline">Strategic Blueprint</Link> or review our <Link href="/solutions" className="text-cyan-400 font-semibold hover:underline">AEO Implementation Packages</Link>.
                 </p>
               </section>
 
@@ -819,7 +819,7 @@ export default function WhatIsSEOOptimisationPage() {
                 </div>
 
                 <h3 className="text-xl font-bold text-white">
-                  The AEObility Blueprint
+                  Strategic Blueprint
                 </h3>
 
                 <p className="text-xs text-slate-300 leading-relaxed">

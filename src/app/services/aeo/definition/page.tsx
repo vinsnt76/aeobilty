@@ -455,7 +455,7 @@ export default function AEODefinitionPage() {
                 <span>Ready to deploy structured AEO across your business site?</span>
                 <div className="flex gap-3 font-semibold">
                   <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline">
-                    AEObility Blueprint &rarr;
+                    Strategic Blueprint &rarr;
                   </Link>
                   <Link href="/contact" className="text-aeo-purple hover:underline">
                     Book an AEO Content &amp; Schema Audit &rarr;

@@ -116,9 +116,9 @@ flowchart TD
 ### Implementation Steps
 1. **Core Engagement & Starting Point Grids**:
    - Import the 3 commercial tiers dynamically:
-     - **Tier 1 (Audit & Roadmap)**: The AEObility Blueprint ($995 AUD ex. GST) with "100% Credit Back (60 Days)" badge.
-     - **Tier 2 (Foundation)**: Foundation Implementation ($1,990 AUD ex. GST Fixed Turnkey) with "$250 Setup Waived" badge.
-     - **Tier 3 (Ongoing Dominance)**: Governed Sprints ($1,980/month Macro Sprints) with zero contract lock-in.
+     - **Tier 1 (Audit & Roadmap)**: Strategic Blueprint ($995 AUD ex. GST) with "100% Credit Back (60 Days)" badge.
+     - **Tier 2 (Foundation)**: AEO Foundation ($1,990 AUD ex. GST Fixed Turnkey) with "$250 Setup Waived" badge.
+     - **Tier 3 (Ongoing Dominance)**: AEO Sprints ($1,980/month Macro Sprints / $495 Micro-Sprints) with zero contract lock-in.
    - Render itemised deliverables with Lucide icons (`CheckCircle2`).
 2. **Quote Form & Blueprint Sections**:
    - Populate `QuoteFormSection.tsx` select dropdowns dynamically using `TECHNICAL_SPRINT_CATALOG`.

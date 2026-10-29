@@ -196,7 +196,7 @@ export default function AEOGuideWhitepaperPage() {
             'name': 'How long does a standard AEO implementation engagement typically take?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'A baseline deployment via our Foundation Implementation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.'
+              'text': 'A baseline deployment via our AEO Foundation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.'
             }
           },
           {
@@ -1209,7 +1209,7 @@ export default function AEOGuideWhitepaperPage() {
                   <span>How long does a standard AEO implementation engagement typically take?</span>
                 </h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed pl-4">
-                  A baseline deployment via our Foundation Implementation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.
+                  A baseline deployment via our AEO Foundation package typically executes over a four-week period once scope, technical access, client approvals and content dependencies are confirmed.
                 </p>
               </div>
 

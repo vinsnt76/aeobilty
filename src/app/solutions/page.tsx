@@ -32,7 +32,7 @@ import {
 export const SOLUTIONS_INTERNAL_LINKS = [
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
+    anchorText: "Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -115,8 +115,7 @@ export default function SolutionsPage() {
   };
 
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
-  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'];
-  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
   const microSku = TECHNICAL_SPRINT_CATALOG['SS1MICRO1'];
 
@@ -127,19 +126,19 @@ export default function SolutionsPage() {
   const faqs = [
     {
       question: "Do I need the Blueprint before booking a Micro-Sprint?",
-      answer: `No. If you already know the specific issue you want addressed, you can book a Micro-Sprint directly. If you need help identifying and prioritising technical gaps, start with the AEObility Blueprint (${formatAudCurrency(bpSku.priceExGst)}).`
+      answer: `No. If you already know the specific issue you want addressed, you can book a Micro-Sprint directly. If you need help identifying and prioritising technical gaps, start with the Strategic Blueprint (${formatAudCurrency(bpSku.priceExGst)}).`
     },
     {
-      question: "What is included in Foundation Implementation?",
-      answer: `Foundation Implementation combines agreed priority improvements across technical schema, key service pages, internal linking, and business-information consistency in a four-week engagement starting from ${formatAudCurrency(foundationDirect.priceExGst)} Direct to ${formatAudCurrency(foundationTurnkey.priceExGst)} Turnkey.`
+      question: "What is included in AEO Foundation?",
+      answer: `AEO Foundation combines agreed priority improvements across technical schema, key service pages, internal linking, and business-information consistency in a four-week fixed turnkey engagement at ${formatAudCurrency(foundationCore.priceExGst)} across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core pages.`
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: `If you complete the AEObility Blueprint and book Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days of handover, we apply the full ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to your implementation cost. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash.`
+      answer: `If you complete the Strategic Blueprint and book AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days of handover, we apply the full ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to your implementation cost. The credit applies to AEO Foundation only, is applied to the agreed implementation fee and cannot be exchanged for cash.`
     },
     {
-      question: "How long does Foundation Implementation take?",
-      answer: "Most Foundation engagements are delivered across a four-week period with staged milestones, allowing adequate time for precise implementation, validation, and review."
+      question: "How long does AEO Foundation take?",
+      answer: "Most AEO Foundation engagements are delivered across a four-week period with staged milestones, allowing adequate time for precise implementation, validation, and review."
     },
     {
       question: "Are there ongoing contracts or monthly retainers?",
@@ -171,14 +170,14 @@ export default function SolutionsPage() {
       anchorId: "solutions-foundation",
       icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
       title: tier2.name,
-      code: "FOUNDATION",
-      price: `From ${formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })}`,
+      code: "AEO-FOUNDATION-CORE",
+      price: formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: `Connected multi-page & entity improvements (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
+      scope: `Deterministic 4-pillar deployment (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
       description: `Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures. Includes complimentary onboarding (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ONBOARD'].priceExGst, { includeTaxSuffix: false })} value).`,
       techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
       whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
-      ctaLabel: "Discuss Foundation Tier"
+      ctaLabel: "Deploy AEO Foundation"
     },
     {
       key: "macro-sprint",
@@ -192,7 +191,7 @@ export default function SolutionsPage() {
       description: `Choose from 4 focused pillars (SS1 Identity, SS2 Answers, SS3 Lattice, SS4 Trust). Standalone half-day micro-sprints also available from ${formatAudCurrency(microSku.priceExGst)}.`,
       techNote: "For technical teams: Deployment of nested JSON-LD graphs, atomic HTML passage markup, and citation alignment.",
       whenToChoose: "Choose this when you have specific technical bottlenecks or want continuous monthly momentum without retainers.",
-      ctaLabel: "Discuss Governed Sprints"
+      ctaLabel: "Explore AEO Sprints"
     }
   ];
 
@@ -257,12 +256,12 @@ export default function SolutionsPage() {
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
-                Explore clear pricing models for Australian businesses. Standalone {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint audit, fixed-scope micro-sprints from {formatAudCurrency(microSku.priceExGst)}, and Foundation Implementation. Clear scope. Flat rates.
+                Explore clear pricing models for Australian businesses. Standalone {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Strategic Blueprint audit, fixed-scope micro-sprints from {formatAudCurrency(microSku.priceExGst)}, and AEO Foundation. Clear scope. Flat rates.
               </h2>
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from {formatAudCurrency(microSku.priceExGst)}</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation from {formatAudCurrency(foundationDirect.priceExGst)}</span>
+                <span>AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</span>
               </div>
             </div>
 
@@ -305,7 +304,7 @@ export default function SolutionsPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Looking for detailed technical sprint specs? Visit our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">Technical Sprints Portal</Link> or review <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
+              Looking for detailed technical sprint specs? Visit our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">Technical Sprints Portal</Link> or review <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Strategic Blueprint</Link>.
             </p>
           </section>
 
@@ -313,7 +312,7 @@ export default function SolutionsPage() {
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a diagnostic audit, a comprehensive foundation implementation, or targeted governed sprints.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a diagnostic audit, comprehensive AEO Foundation, or targeted AEO Sprints.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -670,9 +669,9 @@ export default function SolutionsPage() {
                       className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors font-medium"
                     >
                       <option value="unsure">Not sure yet - Help me decide</option>
-                      <option value="blueprint">The AEObility Blueprint ({formatAudCurrency(bpSku.priceExGst)})</option>
-                      <option value="foundation">Foundation Implementation ({formatAudCurrency(foundationDirect.priceExGst)} - {formatAudCurrency(foundationTurnkey.priceExGst)})</option>
-                      <option value="macro-sprint">Governed Macro Sprints ({formatAudCurrency(macroSku.priceExGst)} / mo)</option>
+                      <option value="blueprint">Strategic Blueprint ({formatAudCurrency(bpSku.priceExGst)})</option>
+                      <option value="foundation">AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</option>
+                      <option value="macro-sprint">AEO Sprints ({formatAudCurrency(macroSku.priceExGst)} / mo)</option>
                       <option value="micro-sprint">Targeted Micro-Sprint ({formatAudCurrency(microSku.priceExGst)})</option>
                     </select>
                   </div>

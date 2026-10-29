@@ -236,7 +236,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/ai-search-marketing#offer-blueprint",
-          "name": "The AEObility Blueprint",
+          "name": "Strategic Blueprint",
           "url": "https://aeobility.com.au/solutions/aeo-blueprint",
           "sku": "BPSTRAT",
           "price": "995.00",
@@ -250,7 +250,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/ai-search-marketing#offer-foundation",
-          "name": "Foundation Implementation",
+          "name": "AEO Foundation",
           "url": "https://aeobility.com.au/services/ai-search-marketing#ai-foundation",
           "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {

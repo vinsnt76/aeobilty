@@ -135,16 +135,16 @@ export default function AEORootPage() {
       answer: "We structure your web footprint for major AI search engines and discovery tools including Google AI Overviews, ChatGPT Search, Perplexity Pro, and Gemini."
     },
     {
-      question: "What is the difference between a Micro-Sprint and Foundation Implementation?",
-      answer: "A Micro-Sprint is a quick fix for one specific issue (e.g. structured schema deployment or a single atomic page rewrite) delivered in 4–5 business days for $495 AUD ex. GST. Foundation Implementation is a connected four-week engagement addressing multi-page schema, internal link lattices, and citation alignment."
+      question: "What is the difference between a Micro-Sprint and AEO Foundation?",
+      answer: "A Micro-Sprint is a quick fix for one specific issue (e.g. structured schema deployment or a single atomic page rewrite) delivered in 4–5 business days for $495 AUD ex. GST. AEO Foundation is a connected four-week engagement addressing multi-page schema, internal link lattices, and citation alignment."
     },
     {
       question: "How long do AEObility engagements take to deliver?",
-      answer: "Delivery timeframes depend on service scope: Micro-Sprints are delivered in 4–5 business days after scope and access are confirmed, while Foundation Implementations run across a four-week schedule."
+      answer: "Delivery timeframes depend on service scope: Micro-Sprints are delivered in 4–5 business days after scope and access are confirmed, while AEO Foundation runs across a four-week schedule."
     },
     {
       question: "How does the $995 Strategic Blueprint credit work?",
-      answer: "The Blueprint provides a complete digital presence audit and prioritised 90-day roadmap for $995 AUD ex. GST. The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days."
+      answer: "The Strategic Blueprint provides a complete digital presence audit and prioritised 90-day roadmap for $995 AUD ex. GST. The full $995 Blueprint fee is credited against AEO Foundation booked within 60 days."
     },
     {
       question: "Do I own all code and schema deliverables?",
@@ -311,7 +311,7 @@ export default function AEORootPage() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <span>Delivery timeframes vary by service: Micro-Sprints are typically 4–5 business days; Foundation Implementations run across four weeks. View <Link href="/solutions" className="text-teal-400 hover:underline font-semibold">current service pricing and scope</Link>.</span>
+                  <span>Delivery timeframes vary by service: Micro-Sprints are typically 4–5 business days; AEO Foundation runs across four weeks. View <Link href="/solutions" className="text-teal-400 hover:underline font-semibold">current service pricing and scope</Link>.</span>
                 </li>
               </ul>
             </div>
@@ -693,7 +693,7 @@ export default function AEORootPage() {
 
                 <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2">
                   <div className="flex items-center justify-between">
-                    <strong className="text-purple-300 font-bold text-sm sm:text-base">Foundation Implementation</strong>
+                    <strong className="text-purple-300 font-bold text-sm sm:text-base">AEO Foundation</strong>
                     <span className="font-mono text-purple-400 font-bold">$1,990 AUD ex. GST</span>
                   </div>
                   <p className="text-slate-300 leading-relaxed text-xs">
@@ -710,7 +710,7 @@ export default function AEORootPage() {
                     <span>The 100% Risk-Reversal Credit</span>
                   </strong>
                   <p className="text-xs text-slate-300">
-                    The full $995 Blueprint fee is credited against a Foundation Implementation booked within 90 days.
+                    The full $995 Blueprint fee is credited against AEO Foundation booked within 60 days.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 shrink-0">

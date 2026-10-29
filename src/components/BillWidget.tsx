@@ -385,7 +385,7 @@ export default function BillWidget() {
       'What should I fix first?': 'What is the highest priority structural gap in this scan and what should I fix first?',
       'How do I improve my score?': 'How can I improve my AI Visibility Score and entity clarity?',
       'Why is local grounding low?': 'Why is my local entity grounding low and how do AI engines lose local context?',
-      'How does the Blueprint fix this?': 'How does The AEObility Blueprint fix these local entity gaps and what are the deliverables?'
+      'How does the Blueprint fix this?': 'How does the Strategic Blueprint fix these local entity gaps and what are the deliverables?'
     };
 
     const targetPrompt = queryMap[chipText] || `Tell me about ${chipText}`;
@@ -695,7 +695,7 @@ export default function BillWidget() {
                 }}
                 className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] text-center cursor-pointer"
               >
-                <span>View The AEObility Blueprint ($995 AUD)</span>
+                <span>View Strategic Blueprint ($995 AUD)</span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
               </Link>
               <button

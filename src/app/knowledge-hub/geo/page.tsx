@@ -732,7 +732,7 @@ export default function GEOKnowledgeNodePage() {
                   href="/solutions/aeo-blueprint"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/5 border border-white/10 text-white font-bold text-xs sm:text-sm rounded-xl hover:bg-white/10 transition-all duration-300"
                 >
-                  <span>Explore The AEObility Blueprint</span>
+                  <span>Explore Strategic Blueprint</span>
                   <ArrowRight className="w-4 h-4 text-aeo-cyan" />
                 </Link>
               </div>

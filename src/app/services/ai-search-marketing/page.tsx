@@ -78,7 +78,7 @@ export const AI_MARKETING_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
+    anchorText: "Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -107,12 +107,12 @@ export default function AISearchMarketingPage() {
       answer: "Yes. Schema markup (such as LocalBusiness, Service, Offer, and Organisation) provides explicit machine-readable context. It reduces ambiguity during passage retrieval, making your business data significantly easier for scrapers and AI agents to ingest."
     },
     {
-      question: "What is included in the $995 AEObility Blueprint?",
-      answer: "The Blueprint includes a complete digital presence audit, technical gap analysis, visibility scorecard, and a practical 90-day execution roadmap. If you proceed with Foundation Implementation within 60 days, 100% of your $995 Blueprint fee is credited toward your implementation cost."
+      question: "What is included in the $995 Strategic Blueprint?",
+      answer: "The Strategic Blueprint includes a complete digital presence audit, technical gap analysis, visibility scorecard, and a practical 90-day execution roadmap. If you proceed with AEO Foundation within 60 days, 100% of your $995 Blueprint fee is credited toward your implementation cost."
     },
     {
       question: "How long does an AI search marketing sprint take to deliver?",
-      answer: "Most targeted Micro-Sprints are delivered within 4–5 business days after scope and access are confirmed. Foundation Implementation is delivered across a structured four-week schedule with agreed milestones."
+      answer: "Most targeted Micro-Sprints are delivered within 4–5 business days after scope and access are confirmed. AEO Foundation is delivered across a structured four-week schedule with agreed milestones."
     }
   ];
 
@@ -158,7 +158,7 @@ export default function AISearchMarketingPage() {
               <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -403,13 +403,13 @@ export default function AISearchMarketingPage() {
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02] transition">
-                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Strategic Blueprint</td>
                   <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
                   <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02] transition">
-                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Foundation</td>
                   <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
                   <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>

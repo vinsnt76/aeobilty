@@ -197,7 +197,7 @@ export default function BrandFactsPage() {
     { key: "Country of Registration", value: "Australia (AU)" },
     { key: "Core Service Offering", value: "Answer Engine Optimisation (AEO) & AI Search Marketing" },
     { key: "Founder & Lead Consultant", value: "Vinnie Baker" },
-    { key: "Core Productised Sprint", value: "The AEObility Blueprint ($995 AUD ex. GST)" },
+    { key: "Core Productised Sprint", value: "Strategic Blueprint ($995 AUD ex. GST)" },
     { key: "Micro-Sprint Starting Rate", value: "From $495 AUD ex. GST" }
   ];
 

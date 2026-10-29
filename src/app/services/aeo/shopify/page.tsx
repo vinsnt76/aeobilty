@@ -100,11 +100,11 @@ export default function ShopifyAeoPage() {
     },
     {
       question: "How long does a Shopify AEO sprint take to deliver?",
-      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, store access, and required product parameters are confirmed. More complex multi-collection requirements are scheduled across our 4-week Foundation track."
+      answer: "Most Micro-Sprints are delivered within 4–5 business days after the scope, store access, and required product parameters are confirmed. More complex multi-collection requirements are scheduled across our 4-week AEO Foundation track."
     },
     {
-      question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied directly to the Foundation work. The credit does not apply to standalone Micro-Sprints."
+      question: "Can I credit my Blueprint fee towards AEO Foundation?",
+      answer: "Yes. If you complete the Strategic Blueprint and book AEO Foundation within 60 days of handover, the full $995 Blueprint fee is applied directly to the Foundation work. The credit does not apply to standalone Micro-Sprints."
     },
     {
       question: "Do you require ongoing monthly retainers or app subscriptions?",
@@ -164,7 +164,7 @@ export default function ShopifyAeoPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -389,7 +389,7 @@ export default function ShopifyAeoPage() {
             leadType="shopify_audit_request"
           />
 
-          {/* Foundation Implementation Upgrade Block */}
+          {/* AEO Foundation Upgrade Block */}
           <section id="shopify-foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -398,7 +398,7 @@ export default function ShopifyAeoPage() {
                   <span>Connected improvements across priority products &amp; collections</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
-                  Shopify Foundation Implementation
+                  Shopify AEO Foundation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
                   Combine agreed improvements across product data, structured data, collection pages, internal linking, and selected product pages in one focused four-week engagement.
@@ -408,7 +408,7 @@ export default function ShopifyAeoPage() {
                 <div className="p-4 rounded-xl bg-black/70 border border-cyan-500/30 text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/services/aeo/costs-timing" className="text-cyan-400 hover:underline font-medium">AEO Costs &amp; Timing</Link>.
+                    If you complete the Strategic Blueprint and book AEO Foundation within 60 days of handover, the full $995 Blueprint fee is applied to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/services/aeo/costs-timing" className="text-cyan-400 hover:underline font-medium">AEO Costs &amp; Timing</Link>.
                   </p>
                 </div>
               </div>

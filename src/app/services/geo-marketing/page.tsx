@@ -89,7 +89,7 @@ export default function GeoMarketingPage() {
     },
     {
       question: "How long does a GEO sprint take?",
-      answer: "A single Micro-Sprint is delivered within 4–5 business days once scope, access, and business facts are confirmed. Comprehensive Foundation Implementation is delivered across a four-week structured timeframe."
+      answer: "A single Micro-Sprint is delivered within 4–5 business days once scope, access, and business facts are confirmed. Comprehensive AEO Foundation is delivered across a four-week structured timeframe."
     },
     {
       question: "Is GEO just schema markup?",
@@ -304,7 +304,7 @@ export default function GeoMarketingPage() {
                 {/* Credit Guarantee Note */}
                 <div className="p-3.5 bg-black/60 border border-cyan-500/30 rounded-lg text-xs font-serif text-cyan-300">
                   <strong className="font-mono text-white block mb-0.5 font-bold">100% Credit Guarantee:</strong>
-                  <span>The full $995 diagnostic fee is credited toward Foundation Implementation booked within 60 days of handover.</span>
+                  <span>The full $995 diagnostic fee is credited toward AEO Foundation booked within 60 days of handover.</span>
                 </div>
               </div>
 
@@ -331,7 +331,7 @@ export default function GeoMarketingPage() {
             diagnosticAnchor="#geo-diagnostic"
           />
 
-          {/* 6. Foundation Implementation Section */}
+          {/* 6. AEO Foundation Section */}
           <section id="foundation-implementation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -340,7 +340,7 @@ export default function GeoMarketingPage() {
                   <span>Four-Week Structured Engagement</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
-                  Foundation Implementation
+                  AEO Foundation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
                   A structured four-week deployment for businesses requiring comprehensive, connected improvements across content, entity architecture, and measurement.
@@ -388,7 +388,7 @@ export default function GeoMarketingPage() {
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
-                  <span>Discuss Foundation Scope</span>
+                  <span>Discuss AEO Foundation Scope</span>
                 </a>
               </div>
             </div>

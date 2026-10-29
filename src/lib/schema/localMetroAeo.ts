@@ -257,7 +257,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "The AEObility Blueprint",
+              "name": "Strategic Blueprint",
               "description": "Comprehensive digital audit, entity gap review, and 90-day roadmap."
             },
             "price": "995.00",
@@ -267,7 +267,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Foundation Implementation",
+              "name": "AEO Foundation",
               "description": "Connected multi-page schema integration and citation alignment."
             },
             "price": "1990.00",

@@ -10,13 +10,13 @@
 
 ```typescript
 export const metadata: Metadata = {
-  title: "The AEObility Blueprint — Strategic AEO Diagnostic Audit | AEObility",
+  title: "Strategic Blueprint: $995 Technical Diagnostic & Roadmap | AEObility",
   description: "Get a comprehensive technical audit and a practical 90-day strategic AEO roadmap. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions/aeo-blueprint",
   },
   openGraph: {
-    title: "The AEObility Blueprint — Fixed-Scope AEO Audit | AEObility",
+    title: "Strategic Blueprint: Fixed-Scope AEO Audit | AEObility",
     description: "Deep technical audit & 90-day execution roadmap. 100% of your $995 fee credited toward implementation.",
     url: "https://aeobility.com.au/solutions/aeo-blueprint",
     siteName: "AEObility",
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
 4. **Recommended Decision Strip (`<section id="decision-strip">`)**:
    - Section heading (`h2`): `Which option fits your current priority?`
    - 3 triage cards mapping business situations to exact solutions:
-     - Unsure what limits visibility $\rightarrow$ *The Blueprint ($995)*.
+     - Unsure what limits visibility $\rightarrow$ *Strategic Blueprint ($995)*.
      - Single priority gap identified $\rightarrow$ *Micro-Sprint ($495)*.
-     - Connected multi-page overhaul $\rightarrow$ *Foundation Implementation ($1,990)*.
+     - Connected multi-page overhaul $\rightarrow$ *AEO Foundation ($1,990)*.
 5. **Deliverables Breakdown Grid (`<section id="bpstrat-deliverables">`)**:
    - 4 modular cards with passage anchors: `1. Complete Digital Presence Review`, `2. Technical & Schema Gap Analysis`, `3. Visibility & Health Scorecard`, `4. 90-Day Execution Roadmap`.
 6. **3-Tier Service Comparison Matrix (`<div id="blueprint-comparison">`)**:
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
       "url": "https://aeobility.com.au/solutions/aeo-blueprint",
-      "name": "The AEObility Blueprint — Strategic AEO Diagnostic Audit | AEObility",
+      "name": "Strategic Blueprint: $995 Technical Diagnostic & Roadmap | AEObility",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
       },
@@ -188,7 +188,7 @@ export const metadata: Metadata = {
     {
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
-      "name": "The AEObility Blueprint",
+      "name": "Strategic Blueprint",
       "description": "Comprehensive digital presence audit, technical gap analysis, visibility scorecard, and 90-day action plan for Australian businesses.",
       "brand": {
         "@id": "https://aeobility.com.au/#organisation"
@@ -208,10 +208,10 @@ export const metadata: Metadata = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is included in the AEObility Blueprint?",
+          "name": "What is included in the Strategic Blueprint?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Blueprint includes a website visibility assessment, structured-data review, visibility scorecard, prioritised 90-day action roadmap, and an audit of key service and content pages."
+            "text": "The Strategic Blueprint includes a website visibility assessment, structured-data review, visibility scorecard, prioritised 90-day action roadmap, and an audit of key service and content pages."
           }
         }
       ]
@@ -240,7 +240,7 @@ import InteractiveFaqAccordion from '@/components/FaqAccordion'; // Client leaf
 import BlueprintContactForm from '@/components/forms/BlueprintContactForm'; // Client leaf
 
 export const metadata: Metadata = {
-  title: "The AEObility Blueprint — Strategic AEO Diagnostic Audit | AEObility",
+  title: "Strategic Blueprint: $995 Technical Diagnostic & Roadmap | AEObility",
   description: "Get a comprehensive technical audit and a practical 90-day roadmap. 100% fee credited toward eligible sprints.",
   alternates: {
     canonical: "https://aeobility.com.au/solutions/aeo-blueprint",
@@ -250,8 +250,8 @@ export const metadata: Metadata = {
 export default function AEOBlueprintPage() {
   const faqs = [
     {
-      question: "What is included in the AEObility Blueprint?",
-      answer: "The Blueprint includes a website visibility assessment, structured-data review, visibility scorecard, and a prioritised 90-day action roadmap."
+      question: "What is included in the Strategic Blueprint?",
+      answer: "The Strategic Blueprint includes a website visibility assessment, structured-data review, visibility scorecard, and a prioritised 90-day action roadmap."
     }
   ];
 
@@ -349,7 +349,7 @@ export default function AEOBlueprintPage() {
 
 - [ ] **Server Component Root:** No `'use client'` at root of `page.tsx`; standard `metadata` exported.
 - [ ] **Exact Single Eyebrow:** Exactly one mono pill badge above the hero headline.
-- [ ] **Single H1:** Exactly one `<h1>` in Söhne Bold: `The AEObility Blueprint`.
+- [ ] **Single H1:** Exactly one `<h1>` in Söhne Bold: `Strategic Blueprint`.
 - [ ] **Reserved Anchors Intact:** Verified `#hero`, `#decision-strip`, `#bpstrat-deliverables`, `#blueprint-comparison`, `#blueprint-timeline`, `#blueprint-contact-form`.
 - [ ] **AU Spelling Verified:** `optimisation`, `specialises`, `organisation`, `behaviour`.
 - [ ] **Fee Crediting Line Present:** `100% of your $995 Blueprint fee is credited toward eligible implementation sprints.`

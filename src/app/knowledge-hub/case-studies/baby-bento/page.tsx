@@ -499,7 +499,7 @@ export default function BabyBentoCaseStudyPage() {
                 href="/solutions/aeo-blueprint"
                 className="px-5 py-2.5 bg-gradient-to-r from-aeo-purple to-pink-600 text-white font-bold text-xs rounded-xl hover:opacity-90 transition-all"
               >
-                Get $995 AEObility Blueprint
+                Get Strategic Blueprint ($995 AUD)
               </Link>
               <Link
                 href="/contact"

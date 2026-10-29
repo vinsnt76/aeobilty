@@ -224,7 +224,7 @@ export default function QuoteFormSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 bg-[#080B12] border border-slate-600 rounded-xl text-sm text-slate-100 appearance-none focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all pr-10 cursor-pointer"
                     >
-                      <optgroup label="Foundation Packages">
+                      <optgroup label="AEO Foundation">
                         <option value={`${TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst)})`}>
                           {TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'].priceExGst)})
                         </option>
@@ -233,7 +233,7 @@ export default function QuoteFormSection() {
                         </option>
                       </optgroup>
 
-                      <optgroup label="Strategic Audit & Roadmap">
+                      <optgroup label="Strategic Blueprint">
                         <option value={`${TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)})`}>
                           {TECHNICAL_SPRINT_CATALOG['BPSTRAT'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst)}) - 100% Credit Back
                         </option>
@@ -242,7 +242,7 @@ export default function QuoteFormSection() {
                         </option>
                       </optgroup>
 
-                      <optgroup label={`Governed Macro Sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})`}>
+                      <optgroup label={`AEO Sprints (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})`}>
                         <option value={`${TECHNICAL_SPRINT_CATALOG['SS1MACRO'].name} (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})`}>
                           {TECHNICAL_SPRINT_CATALOG['SS1MACRO'].name} ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['SS1MACRO'].priceExGst)})
                         </option>

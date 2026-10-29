@@ -119,7 +119,7 @@ export default function KnowledgeHubPage() {
     {
       name: "How much does AEO cost & what do I get?",
       href: "/services/aeo/costs-timing",
-      description: "Transparent pricing breakdown of the AEObility Blueprint package and long-term retainer implementation plans.",
+      description: "Transparent pricing breakdown of the Strategic Blueprint, AEO Foundation, and fixed-scope AEO Sprints.",
       icon: <BadgeDollarSign className="w-5 h-5 text-aeo-cyan" />
     }
   ];

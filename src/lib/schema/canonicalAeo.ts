@@ -74,7 +74,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://aeobility.com.au/services/aeo#webpage",
       "url": "https://aeobility.com.au/services/aeo",
       "name": "AI SEO Services: Update Your Site for Modern Answer Retrieval | AEObility",
-      "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our core AEO pillars, micro-sprints from $495 AUD ex. GST, and Foundation Implementation.",
+      "description": "Restructure your digital footprint for AI-first search engines and modern discovery platforms. Explore our core AEO pillars, micro-sprints from $495 AUD ex. GST, and AEO Foundation.",
       "inLanguage": "en-AU",
       "datePublished": "2026-09-01T00:00:00+08:00",
       "dateModified": "2026-10-01T00:00:00+08:00",
@@ -318,7 +318,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/aeo#offer-blueprint",
-          "name": "The AEObility Blueprint",
+          "name": "Strategic Blueprint",
           "sku": "BPSTRAT",
           "price": "995.00",
           "priceCurrency": "AUD",
@@ -331,7 +331,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/aeo#offer-foundation",
-          "name": "Foundation Implementation",
+          "name": "AEO Foundation",
           "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {
             "@type": "PriceSpecification",

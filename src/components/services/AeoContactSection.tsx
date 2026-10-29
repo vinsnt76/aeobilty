@@ -144,9 +144,9 @@ export default function AeoContactSection({
                 className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-400 transition-colors font-medium"
               >
                 <option value="unsure">Not sure yet: Help me decide</option>
-                <option value="micro-sprint">AEO Micro-Sprint (From $495 AUD)</option>
-                <option value="blueprint">The AEObility Blueprint ($995 AUD)</option>
-                <option value="foundation">Foundation Implementation ($1,990 AUD)</option>
+                <option value="blueprint">Strategic Blueprint ($995 AUD)</option>
+                <option value="foundation">AEO Foundation ($1,990 AUD)</option>
+                <option value="sprints">AEO Sprints (From $495 AUD)</option>
               </select>
             </div>
 

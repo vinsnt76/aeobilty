@@ -33,7 +33,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#webpage",
         "url": "https://aeobility.com.au/solutions/aeo-sprint",
         "name": "AEO Technical Sprints & Schema Deployments | AEObility",
-        "description": `Focused, fixed-scope implementation for websites, structured data and priority service pages. Micro-Sprints from ${formatAudCurrency(defaultMicro.priceExGst)}, Macro Sprints from ${formatAudCurrency(macroSprints[0].priceExGst)}, and Foundation Implementation from ${formatAudCurrency(foundationDirect.priceExGst)}.`,
+        "description": `Focused, fixed-scope implementation for websites, structured data and priority service pages. Micro-Sprints from ${formatAudCurrency(defaultMicro.priceExGst)}, Macro Sprints from ${formatAudCurrency(macroSprints[0].priceExGst)}, and AEO Foundation from ${formatAudCurrency(foundationDirect.priceExGst)}.`,
         "inLanguage": "en-AU",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
@@ -76,7 +76,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "@type": "Service",
         "@id": "https://aeobility.com.au/solutions/aeo-sprint#service",
         "name": "AEO Technical Sprints",
-        "description": "Fixed-scope implementation services for structured data, priority-page content, and page structure. Available as individual Micro-Sprints, 4-pillar Macro Sprints, or comprehensive Foundation Implementation.",
+        "description": "Fixed-scope implementation services for structured data, priority-page content, and page structure. Available as individual Micro-Sprints, 4-pillar Macro Sprints, or comprehensive AEO Foundation.",
         "provider": {
           "@id": "https://aeobility.com.au/#organisation"
         },
@@ -156,10 +156,10 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
               }
             }))
           },
-          // Sub-catalog 3: Foundation Implementation
+          // Sub-catalog 3: AEO Foundation
           {
             "@type": "OfferCatalog",
-            "name": "Foundation Implementation Packages",
+            "name": "AEO Foundation Packages",
             "itemListElement": [
               {
                 "@type": "Offer",
@@ -177,7 +177,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "unitText": foundationDirect.deliverySla
                 },
                 "availability": "https://schema.org/InStock",
-                "category": "AEO Foundation Implementation",
+                "category": "AEO Foundation",
                 "description": `${foundationDirect.purpose} Includes: ${foundationDirect.deliverables.join('; ')}.`,
                 "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
                 "itemOffered": {
@@ -203,8 +203,8 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "unitText": foundationTurnkey.deliverySla
                 },
                 "availability": "https://schema.org/InStock",
-                "category": "AEO Foundation Implementation",
-                "description": `${foundationTurnkey.purpose} ${GOVERNANCE_RULES.creditAmountExGst} AUD Blueprint fee is 100% credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days. Includes: ${foundationTurnkey.deliverables.join('; ')}.`,
+                "category": "AEO Foundation",
+                "description": `${foundationTurnkey.purpose} ${GOVERNANCE_RULES.creditAmountExGst} AUD Blueprint fee is 100% credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days. Includes: ${foundationTurnkey.deliverables.join('; ')}.`,
                 "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
                 "itemOffered": {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-implementation"

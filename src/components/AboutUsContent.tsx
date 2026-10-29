@@ -259,7 +259,7 @@ export default function AboutUsContent() {
             <div className="space-y-1.5">
               <strong className="text-white font-soehne-breit block text-sm">The Fix</strong>
               <p className="text-zinc-300 leading-relaxed">
-                We implemented the foundation phases of <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline">The AEObility Blueprint</Link>. This included nested Schema.org ProfessionalService graphs tied to Perth coordinates, ABN validation, a semantic internal linking lattice, and self-contained 80 to 120-word answer blocks.
+                We implemented the foundation phases of <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline">Strategic Blueprint</Link>. This included nested Schema.org ProfessionalService graphs tied to Perth coordinates, ABN validation, a semantic internal linking lattice, and self-contained 80 to 120-word answer blocks.
               </p>
             </div>
             <div className="space-y-1.5">

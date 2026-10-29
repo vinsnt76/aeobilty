@@ -34,28 +34,37 @@
 
 ---
 
-## 4. MVP Offer: The AEObility Blueprint
+## 4. Product Offerings
 
-*   **Price:** $995 AUD.
-*   **Description:** A deeper technical audit + a 90-day strategic roadmap that shows exactly how to improve your visibility, understanding, and selection across Search, Maps & AI.
+### Tier 1: Strategic Blueprint
+*   **Price:** $995 AUD ex. GST.
+*   **Description:** A deep technical audit and a 90-day strategic roadmap that reveals exactly how to improve your visibility, understanding, and selection across Search, Maps, and AI.
 *   **What’s Included:**
     *   Full technical audit and entity optimisation review.
     *   Local intent analysis and AI-readiness scoring.
     *   Structured content recommendations and 90-day strategic roadmap.
     *   Implementation plan, priority fixes, and visibility opportunities.
-*   **Value Proposition:** You can implement it yourself — or if you choose AEObility, we deduct the $995 from your project cost.
+*   **Value Proposition:** Implement it yourself, or apply 100% of the $995 fee as credit toward AEO Foundation within 60 days.
 *   **Risk Reversal:** No lock-ins or pressure; the blueprint is your clarity document.
+
+### Tier 2: AEO Foundation
+*   **Price:** $1,990 AUD ex. GST ($250 technical onboarding waived).
+*   **Description:** Turnkey modular 4-pillar deployment across 10 priority commercial pages, establishing nested JSON-LD schema, atomic content rewrites, internal linking lattice, and NAP citation parity.
+
+### Tier 3: AEO Sprints
+*   **Price:** $1,980 AUD ex. GST per 10-day macro bundle / $495 AUD ex. GST per half-day micro-sprint.
+*   **Description:** Governed technical sprint cycles with zero contract lock-in for rapid schema engineering, HTML modularisation, and citation fortification.
 
 ---
 
 ## 5. Pricing Framework
 
-*   **Primary Line:** $995 — fully credited if you continue with AEObility.
+*   **Primary Line:** $995 AUD ex. GST Strategic Blueprint, 100% credited toward AEO Foundation within 60 calendar days.
 *   **Rationale:** Provides clarity and a structured plan without an upfront project commitment.
-*   **Anchors:** Not a retainer, contract, or standard SEO package; it is a clarity document you own.
+*   **Anchors:** Not a retainer, contract, or speculative SEO package; it is an engineered technical asset you own.
 *   **Objection Handling:**
     *   *If you don't continue:* You keep the plan and implement it yourself.
-    *   *If you do continue:* The cost is deducted from implementation.
+    *   *If you do continue:* The full $995 fee is deducted from AEO Foundation.
 
 ---
 

@@ -186,7 +186,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   // Foundation Implementation Packages
   'AEO-FOUNDATION-CORE': {
     code: 'AEO-FOUNDATION-CORE',
-    name: 'Foundation Core',
+    name: 'AEO Foundation',
     priceExGst: 1990,
     handsOnEffort: '16–20 Hours',
     deliverySla: '4-Week Staged Sprint',
@@ -202,7 +202,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   },
   'AEO-FOUNDATION': {
     code: 'AEO-FOUNDATION',
-    name: 'Foundation Implementation',
+    name: 'AEO Foundation',
     priceExGst: 1990,
     handsOnEffort: '16–20 Hours',
     deliverySla: '4 Weeks (Staged Milestones)',
@@ -219,7 +219,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   },
   'AEO-FOUNDATION-DIRECT': {
     code: 'AEO-FOUNDATION-DIRECT',
-    name: 'Direct Modular Foundation',
+    name: 'AEO Foundation (Direct)',
     priceExGst: 1990,
     handsOnEffort: '11.25 Hours',
     deliverySla: '3 Weeks',
@@ -606,7 +606,7 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     id: 'foundation',
-    name: 'Foundation Core',
+    name: 'AEO Foundation',
     tagline: 'Deterministic Machine Discovery',
     priceDisplay: '$1,990 AUD',
     priceExGst: 1990,
@@ -621,13 +621,13 @@ export const PRICING_TIERS: PricingTier[] = [
     ],
     skuCodes: ['AEO-FOUNDATION-CORE', 'AEO-FOUNDATION'],
     popular: true,
-    ctaText: 'Deploy Foundation Core',
+    ctaText: 'Deploy AEO Foundation',
     ctaHref: '/contact?tier=foundation',
     badge: '$250 Setup Fee Waived',
   },
   {
     id: 'macro-sprints',
-    name: 'Governed Technical Sprints',
+    name: 'AEO Sprints',
     tagline: 'Category & Generative Dominance',
     priceDisplay: '$1,980 AUD / mo',
     priceExGst: 1980,
@@ -642,7 +642,7 @@ export const PRICING_TIERS: PricingTier[] = [
     ],
     skuCodes: ['SS1MACRO', 'SS2MACRO', 'SS3MACRO', 'SS4MACRO'],
     popular: false,
-    ctaText: 'Explore Sprint Catalogue',
+    ctaText: 'Explore AEO Sprints',
     ctaHref: '/solutions/aeo-sprint',
     badge: 'Zero Retainer Lock-In',
   },

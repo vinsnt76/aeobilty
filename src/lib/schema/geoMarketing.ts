@@ -255,7 +255,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
             "valueAddedTaxIncluded": false
           },
           "availability": "https://schema.org/InStock",
-          "description": "Primary diagnostic gateway testing high-intent buyer prompts across AI search engines, auditing brand accuracy and citation gaps, with 100% of fee credited toward Foundation Implementation. Price excludes GST.",
+          "description": "Primary diagnostic gateway testing high-intent buyer prompts across AI search engines, auditing brand accuracy and citation gaps, with 100% of fee credited toward AEO Foundation. Price excludes GST.",
           "seller": { "@id": "https://aeobility.com.au/#organisation" }
         },
         {
@@ -330,7 +330,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         },
         {
           "@type": "Offer",
-          "name": "Foundation Implementation",
+          "name": "AEO Foundation",
           "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {
             "@type": "PriceSpecification",

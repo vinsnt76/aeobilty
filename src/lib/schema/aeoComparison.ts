@@ -106,7 +106,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/aeo/comparison#offer-blueprint",
-          "name": "The AEObility Blueprint",
+          "name": "Strategic Blueprint",
           "sku": "BPSTRAT",
           "price": "995.00",
           "priceCurrency": "AUD",
@@ -119,7 +119,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "Offer",
           "@id": "https://aeobility.com.au/services/aeo/comparison#offer-foundation",
-          "name": "Foundation Implementation",
+          "name": "AEO Foundation",
           "sku": "AEO-FOUNDATION-CORE",
           "priceSpecification": {
             "@type": "PriceSpecification",

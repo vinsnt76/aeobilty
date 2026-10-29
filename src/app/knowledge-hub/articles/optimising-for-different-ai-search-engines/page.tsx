@@ -1092,7 +1092,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
               The Unified Optimisation Framework (6 Actionable Principles)
             </h2>
             <p className="text-white/70 text-base font-light font-serif leading-relaxed">
-              Rather than attempting to hack platform-specific algorithms, businesses achieve durable multi-engine visibility by following six core engineering principles - and if you want to implement these six steps systematically across a 90-day roadmap, follow the <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline hover:text-white transition-colors font-semibold">AEObility Blueprint</Link>:
+              Rather than attempting to hack platform-specific algorithms, businesses achieve durable multi-engine visibility by following six core engineering principles - and if you want to implement these six steps systematically across a 90-day roadmap, follow the <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan underline hover:text-white transition-colors font-semibold">Strategic Blueprint</Link>:
             </p>
           </div>
 

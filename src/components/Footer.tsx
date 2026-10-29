@@ -176,7 +176,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/solutions/aeo-blueprint" className="hover:text-white transition-colors">
-                The AEObility Blueprint
+                Strategic Blueprint
               </Link>
             </li>
             <li>

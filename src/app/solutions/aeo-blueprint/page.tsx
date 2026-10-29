@@ -92,7 +92,7 @@ export default function AEOBlueprintPage() {
 
   const faqs = [
     {
-      question: "What is included in the AEObility Blueprint?",
+      question: "What is included in the Strategic Blueprint?",
       answer: "The Blueprint includes a website visibility assessment, structured-data review, visibility scorecard, prioritised 90-day action roadmap, and an audit of key service and content pages. You receive practical recommendations for technical gap analysis and entity optimisation."
     },
     {
@@ -105,11 +105,11 @@ export default function AEOBlueprintPage() {
     },
     {
       question: "Does the Blueprint include implementation work?",
-      answer: "No. The Blueprint is a standalone diagnostic audit and strategic roadmap. Technical implementation, structured-data deployment, content rewrites, citation updates, and ongoing support are scoped separately as Micro-Sprints or Foundation Implementation."
+      answer: "No. The Blueprint is a standalone diagnostic audit and strategic roadmap. Technical implementation, structured-data deployment, content rewrites, citation updates, and ongoing support are scoped separately as Micro-Sprints or AEO Foundation."
     },
     {
       question: "How does the 100% fee credit work?",
-      answer: "If you book Foundation Implementation within 60 days of receiving your Blueprint, we apply the full $995 Blueprint fee to the Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
+      answer: "If you book AEO Foundation within 60 days of receiving your Blueprint, we apply the full $995 Blueprint fee to the Foundation work. The credit applies to AEO Foundation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
     },
     {
       question: "Is the Blueprint suitable for agencies or multi-location businesses?",
@@ -164,7 +164,7 @@ export default function AEOBlueprintPage() {
               <span>Strategic Diagnostic Audit &amp; 90-Day Roadmap</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              The AEObility <span className="text-gradient-aeo">Blueprint</span>
+              Strategic <span className="text-gradient-aeo">Blueprint</span>
             </h1>
             <div className="space-y-3 max-w-2xl mx-auto">
               <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed font-sans">
@@ -228,7 +228,7 @@ export default function AEOBlueprintPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif pt-1">
               <div className="p-4 bg-black/60 border border-cyan-500/40 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Unsure what limits search visibility?</span>
-                <span className="text-zinc-300 block">Start with the standalone AEObility Blueprint ($995 ex. GST).</span>
+                <span className="text-zinc-300 block">Start with the standalone Strategic Blueprint ($995 ex. GST).</span>
               </div>
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-purple-300 font-bold block font-mono">Know the single priority issue?</span>
@@ -239,7 +239,7 @@ export default function AEOBlueprintPage() {
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Need connected implementation?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">Foundation Implementation ($1,990 ex. GST)</Link>.
+                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">AEO Foundation ($1,990 ex. GST)</Link>.
                 </span>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function AEOBlueprintPage() {
                 </thead>
                 <tbody className="divide-y divide-white/5 text-zinc-300">
                   <tr className="bg-cyan-950/20 border-l-2 border-l-cyan-400 hover:bg-cyan-950/30 transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Strategic Blueprint</td>
                     <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
                     <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
@@ -291,7 +291,7 @@ export default function AEOBlueprintPage() {
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Tier</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Foundation</td>
                     <td className="p-3.5 sm:p-4">Multi-Page &amp; Connected Fixes</td>
                     <td className="p-3.5 sm:p-4">Connected improvements across entire site</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>
@@ -364,9 +364,9 @@ export default function AEOBlueprintPage() {
                   <Compass className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Order Strategic Audit</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Order your AEObility Blueprint ($995 ex. GST)</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Order your Strategic Blueprint ($995 ex. GST)</h2>
                 <p className="text-xs sm:text-sm text-slate-300 font-serif max-w-xl mx-auto leading-relaxed">
-                  Enter your business details below to request your standalone AEObility Blueprint strategic audit and 90-day execution roadmap.
+                  Enter your business details below to request your standalone Strategic Blueprint and 90-day execution roadmap.
                 </p>
                 <div className="flex items-center justify-center gap-2 text-xs text-slate-400 font-mono pt-1">
                   <Users className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -448,9 +448,9 @@ export default function AEOBlueprintPage() {
                         onChange={(e) => setContactData({ ...contactData, serviceType: e.target.value })}
                         className="w-full bg-[#080B12] border border-slate-600 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 transition-all font-medium"
                       >
-                        <option value="blueprint">AEObility Blueprint Strategic Audit ($995 AUD)</option>
+                        <option value="blueprint">Strategic Blueprint ($995 AUD)</option>
                         <option value="micro-sprint">Micro-Sprint (From $495 AUD)</option>
-                        <option value="foundation">Foundation Implementation ($1,990 AUD)</option>
+                        <option value="foundation">AEO Foundation ($1,990 AUD)</option>
                         <option value="unsure">Not sure yet - Help me decide</option>
                       </select>
                     </div>
@@ -502,7 +502,7 @@ export default function AEOBlueprintPage() {
           <section id="faq-blueprint" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
-              <p className="text-xs text-white/60 font-serif">Everything you need to know about the AEObility Blueprint audit.</p>
+              <p className="text-xs text-white/60 font-serif">Everything you need to know about the Strategic Blueprint audit.</p>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-3">

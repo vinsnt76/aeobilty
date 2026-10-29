@@ -121,10 +121,10 @@ export const NAVIGATION_DATA: NavItemL1[] = [
         ]
       },
       {
-        "title": "The AEObility Blueprint",
+        "title": "Strategic Blueprint",
         "href": "/solutions/aeo-blueprint",
         "description": "Get a complete 90-day AEO execution blueprint for $995 AUD. Full implementation cost offset if AEObility executes setup.",
-        "entityName": "The AEObility Blueprint",
+        "entityName": "Strategic Blueprint",
         "isServicePillar": false,
         "isKnowledgeCapsule": false,
         "corridors": [

@@ -1364,11 +1364,11 @@ export default function RagArticlePage() {
                 </div>
               </div>
 
-              {/* AEObility Blueprint */}
+              {/* Strategic Blueprint */}
               <div className="p-6 bg-gradient-to-br from-white/[0.04] to-aeo-purple/10 border border-aeo-purple/30 rounded-2xl flex flex-col justify-between hover:border-aeo-purple/50 transition-all">
                 <div className="space-y-3">
                   <div className="text-xs font-bold text-aeo-purple uppercase tracking-wider">Option 02</div>
-                  <h3 className="text-xl font-bold text-white">The AEObility Blueprint</h3>
+                  <h3 className="text-xl font-bold text-white">Strategic Blueprint</h3>
                   <div className="text-2xl font-extrabold text-white">
                     $995 <span className="text-xs font-normal text-white/60">(credited if you continue)</span>
                   </div>

@@ -242,7 +242,7 @@ export default function AEOKnowledgeNodePage() {
                 href="/solutions/aeo-blueprint"
                 className="px-5 py-3 bg-gradient-to-r from-aeo-purple to-pink-600 text-white text-xs font-bold rounded-xl hover:opacity-90 transition-all"
               >
-                Get AEObility Blueprint
+                Get Strategic Blueprint
               </Link>
               <Link
                 href="/contact"

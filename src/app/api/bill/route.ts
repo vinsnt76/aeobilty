@@ -70,7 +70,7 @@ const blueprintService = {
     '@type': 'Offer', 
     price: 995, 
     priceCurrency: 'AUD', 
-    name: 'The AEObility Blueprint Strategic Audit',
+    name: 'Strategic Blueprint',
     priceSpecification: {
       '@type': 'UnitPriceSpecification',
       price: 995,
@@ -206,12 +206,12 @@ Base your response strictly on the verified JSON-LD provenance triples and entit
     ) {
       systemPrompt += `\n\n[ACTIVE SKILL: Commercial Solutions & Blueprint Funnel]
 The user is inquiring about pricing, fixes, packages, or next steps. Ground your answer strictly in AEObility's Technical Sprint Pricing model:
-- Entry Diagnostic: The AEObility Blueprint ($995 AUD ex. GST) delivers a deep technical gap audit and prioritised 90-day action plan.
-- 60-Day Reversal Window: 100% of the $995 Blueprint fee is credited back against implementation sprints booked within 60 calendar days.
-- Implementation Packages: Direct Modular Foundation ($1,990 AUD ex. GST), Foundation Implementation ($1,990 AUD ex. GST turnkey across up to 10 core pages), Macro Sprints ($1,980 AUD ex. GST per 10-day sprint), and Micro-Sprints ($495 AUD ex. GST per 3-day half-day unit).
-- Onboarding Waiver: The $250 Technical Onboarding (ONBOARD) fee is 100% waived on Foundation and Macro Sprint packages.
+- Entry Diagnostic: Strategic Blueprint ($995 AUD ex. GST) delivers a deep technical gap audit and prioritised 90-day action plan.
+- 60-Day Reversal Window: 100% of the $995 Strategic Blueprint fee is credited back against AEO Foundation booked within 60 calendar days.
+- Implementation Packages: AEO Foundation ($1,990 AUD ex. GST turnkey across up to 10 core pages), AEO Sprints ($1,980 AUD ex. GST per 10-day macro sprint), and Micro-Sprints ($495 AUD ex. GST per 3-day half-day unit).
+- Onboarding Waiver: The $250 Technical Onboarding (ONBOARD) fee is 100% waived on AEO Foundation and AEO Sprints.
 - Hourly Developer Rate: Out-of-scope custom development is billed at $220 AUD ex. GST per hour.
-- Monthly Retainer Cadence: Governed 30-day sprint cycles ($1,980/month MRR) with zero lock-in contracts.
+- Monthly Retainer Cadence: Governed AEO Sprints ($1,980/month MRR) with zero lock-in contracts.
 Explicitly quote accurate pricing in AUD ex. GST and keep answers concise within 2-3 sentences.`;
       injectionContext = `\nCOMMERCIAL SERVICE NODE:\n${JSON.stringify(blueprintService)}`;
 

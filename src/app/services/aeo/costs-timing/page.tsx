@@ -31,13 +31,13 @@ import { TECHNICAL_SPRINT_CATALOG, PRICING_TIERS, GOVERNANCE_RULES, formatAudCur
 
 export const metadata: Metadata = {
   title: 'AEO Service Costs & Project Timing | AEObility',
-  description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and Foundation Implementation packages. Custom scope by application.`,
+  description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and AEO Foundation packages. Custom scope by application.`,
   alternates: {
     canonical: 'https://aeobility.com.au/services/aeo/costs-timing',
   },
   openGraph: {
     title: 'AEO Service Costs & Project Timing | AEObility',
-    description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and Foundation Implementation packages. Custom scope by application.`,
+    description: `Explore AEObility's fixed-scope AEO service costs. Review milestones for the ${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['BPSTRAT'].priceExGst, { includeTaxSuffix: false })} Strategic Blueprint and AEO Foundation packages. Custom scope by application.`,
     url: 'https://aeobility.com.au/services/aeo/costs-timing',
     type: 'website',
   },
@@ -109,7 +109,7 @@ export default function AEOPricingPage() {
             'item': {
               '@type': 'Service',
               '@id': 'https://aeobility.com.au/solutions/aeo-sprint#service',
-              'name': 'Foundation Implementation',
+              'name': 'AEO Foundation',
               'description': 'A 4-week structured deployment executing connected schema graphs, atomic page rewrites, and internal link architecture.',
               'provider': {
                 '@type': 'ProfessionalService',
@@ -156,20 +156,20 @@ export default function AEOPricingPage() {
             'name': `How does the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': `The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with Foundation Implementation (${formatAudCurrency(foundationCore.priceExGst)} AUD), or are accepted for a custom implementation engagement, the entire ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back against the approved implementation scope.`
+              'text': `The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with AEO Foundation (${formatAudCurrency(foundationCore.priceExGst)} AUD), or are accepted for a custom implementation engagement, the entire ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back against the approved implementation scope.`
             }
           },
           {
             '@type': 'Question',
-            'name': 'What is included in the Foundation Implementation package?',
+            'name': 'What is included in the AEO Foundation package?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': `Foundation Implementation is a fixed-scope turnkey engagement at ${formatAudCurrency(foundationCore.priceExGst)} ex. GST across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence, with full deployment handled in your CMS or via engineering pull requests. Includes complimentary technical onboarding (${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value).`
+              'text': `AEO Foundation is a fixed-scope turnkey engagement at ${formatAudCurrency(foundationCore.priceExGst)} ex. GST across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. It deploys verified JSON-LD schema graphs, rewrites priority content into machine-extractable atomic answer blocks, strengthens internal link paths, and standardises citation evidence, with full deployment handled in your CMS or via engineering pull requests. Includes complimentary technical onboarding (${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value).`
             }
           },
           {
             '@type': 'Question',
-            'name': 'What is not included in Foundation Implementation?',
+            'name': 'What is not included in AEO Foundation?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'Foundation is designed for a defined, four-week scope across your priority commercial pages. It does not include full website rebuilds, ongoing blog content production, custom application development, or large multi-location and multi-entity rollouts. Where a broader scope is required, you can apply for a custom implementation path following a full Blueprint review.'
@@ -255,7 +255,7 @@ export default function AEOPricingPage() {
           {/* Primacy Direct-Answer Block (45 Words) */}
           <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl">
             <p className="text-sm sm:text-base md:text-lg text-white/95 font-serif font-medium leading-relaxed">
-              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst)}</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">Foundation Implementation</Link> is a fixed turnkey investment of {formatAudCurrency(foundationCore.priceExGst)} ex. GST.
+              AEO with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan font-semibold hover:underline">AI Visibility Score</Link>. The <Link href="/solutions/aeo-blueprint" className="text-aeo-purple font-semibold hover:underline">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst)}</Link> and is fully credited toward eligible implementation. <Link href="/solutions/aeo-sprint" className="text-emerald-400 font-semibold hover:underline">AEO Foundation</Link> is a fixed turnkey investment of {formatAudCurrency(foundationCore.priceExGst)} ex. GST.
             </p>
           </div>
 
@@ -328,7 +328,7 @@ export default function AEOPricingPage() {
                 <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-aeo-purple/15 border border-aeo-purple/30 text-[10px] text-aeo-purple font-mono font-semibold">
                   Stage 2: Define
                 </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">AEObility Blueprint</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">Strategic Blueprint</h3>
                 
                 <div className="space-y-1.5 text-xs text-zinc-400 font-serif">
                   <div className="flex justify-between items-baseline">
@@ -371,7 +371,7 @@ export default function AEOPricingPage() {
                 <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-aeo-cyan/15 border border-aeo-cyan/30 text-[10px] text-aeo-cyan font-mono font-semibold">
                   Stage 3: Build
                 </div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">Foundation Implementation</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">AEO Foundation</h3>
                 
                 <div className="space-y-1.5 text-xs text-zinc-400 font-serif">
                   <div className="flex justify-between items-baseline">
@@ -499,7 +499,7 @@ export default function AEOPricingPage() {
         </section>
 
         {/* 4. Buyer-Benefit Delivery Timeline (4-Week Foundation Scope) */}
-        <section aria-label="Foundation Implementation Timeline" className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-7 space-y-6 shadow-2xl overflow-hidden">
+        <section aria-label="AEO Foundation Timeline" className="bg-zinc-950 border border-white/10 rounded-2xl p-5 sm:p-7 space-y-6 shadow-2xl overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
             <div className="space-y-1">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-[10px] text-aeo-cyan font-mono font-semibold">
@@ -580,16 +580,16 @@ export default function AEOPricingPage() {
                 How does the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation ({formatAudCurrency(foundationCore.priceExGst)})</Link> within {GOVERNANCE_RULES.creditWindowDays} days, or are accepted for a custom implementation engagement, the entire {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back and deducted from your approved implementation scope.
+                The Blueprint is a complete 90-day strategy document that you own outright. If you proceed with <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</Link> within {GOVERNANCE_RULES.creditWindowDays} days, or are accepted for a custom implementation engagement, the entire {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Blueprint investment is credited back and deducted from your approved implementation scope.
               </p>
             </div>
 
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="what-is-included-in-foundation-implementation" className="font-semibold text-sm sm:text-base text-white">
-                What is included in the Foundation Implementation ({formatAudCurrency(foundationCore.priceExGst)}) package?
+                What is included in the AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)}) package?
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
-                Foundation Implementation is a complete turnkey 4-week execution bridging strategic discovery into live production across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages. It includes complimentary technical onboarding ({formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value waived) and deploys verified JSON-LD schema graphs, atomic answer blocks, strengthened link paths, and citation evidence. Flexible deployment is built-in at no extra charge: our engineering team handles direct CMS and DOM injection with live testing, or provides production-ready pull requests and copy blocks for internal engineering teams. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">Foundation Implementation page</Link>.
+                AEO Foundation is a complete turnkey 4-week execution bridging strategic discovery into live production across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages. It includes complimentary technical onboarding ({formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} value waived) and deploys verified JSON-LD schema graphs, atomic answer blocks, strengthened link paths, and citation evidence. Flexible deployment is built-in at no extra charge: our engineering team handles direct CMS and DOM injection with live testing, or provides production-ready pull requests and copy blocks for internal engineering teams. Learn more on our <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">AEO Foundation page</Link>.
               </p>
             </div>
 
@@ -597,7 +597,7 @@ export default function AEOPricingPage() {
             <div className="p-5 sm:p-6 space-y-2 bg-white/[0.01]">
               <h3 id="what-is-not-included-in-foundation-implementation" className="font-semibold text-sm sm:text-base text-white flex items-center gap-2">
                 <Ban className="w-4 h-4 text-rose-400 shrink-0" />
-                <span>What is not included in Foundation Implementation?</span>
+                <span>What is not included in AEO Foundation?</span>
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
                 Foundation is designed for a defined, four-week scope across your priority commercial pages. It does not include full website rebuilds, ongoing blog content production, custom application development, or large multi-location and multi-entity rollouts. Where a broader scope is required, you can <Link href="/contact?inquiry=custom-application" className="text-aeo-cyan hover:underline font-semibold">apply for a custom implementation path</Link> following a full Blueprint review.
@@ -634,7 +634,7 @@ export default function AEOPricingPage() {
               href="/solutions/aeo-blueprint" 
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-aeo-purple/40 hover:text-aeo-purple transition-all space-y-1 block"
             >
-              <div className="font-bold text-white">The AEObility Blueprint</div>
+              <div className="font-bold text-white">Strategic Blueprint</div>
               <p className="text-zinc-400 font-serif text-[11px]">View Blueprint inclusions, deliverables, and {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} pricing details.</p>
             </Link>
 
@@ -642,7 +642,7 @@ export default function AEOPricingPage() {
               href="/solutions/aeo-sprint" 
               className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl hover:border-aeo-cyan/40 hover:text-aeo-cyan transition-all space-y-1 block"
             >
-              <div className="font-bold text-white">Foundation Implementation</div>
+              <div className="font-bold text-white">AEO Foundation</div>
               <p className="text-zinc-400 font-serif text-[11px]">Fixed-scope execution sprint at {formatAudCurrency(foundationCore.priceExGst)} ex. GST.</p>
             </Link>
 

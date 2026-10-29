@@ -1,5 +1,5 @@
 /**
- * AEObility Blueprint Strategic Audit Schema.org Modular Graph Builder
+ * Strategic Blueprint Schema.org Modular Graph Builder
  * Path: src/lib/schema/aeoBlueprint.ts
  * Dynamically generated from Single Source of Truth (SSOT) src/lib/pricing.ts
  * Locale: en-AU
@@ -24,8 +24,8 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "@type": "WebPage",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
       "url": "https://aeobility.com.au/solutions/aeo-blueprint",
-      "name": "The AEObility Blueprint: Deep Audit + 90-Day Roadmap",
-      "description": `Get a deep technical audit and an actionable 90-day strategic roadmap for ${formatAudCurrency(bpStrat.priceExGst)} ex. GST. 100% of your ${formatAudCurrency(bpStrat.priceExGst)} Blueprint fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
+      "name": "Strategic Blueprint: Deep Audit + 90-Day Roadmap",
+      "description": `Get a deep technical audit and an actionable 90-day strategic roadmap for ${formatAudCurrency(bpStrat.priceExGst)} ex. GST. 100% of your ${formatAudCurrency(bpStrat.priceExGst)} Blueprint fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -59,7 +59,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "The AEObility Blueprint",
+          "name": "Strategic Blueprint",
           "item": "https://aeobility.com.au/solutions/aeo-blueprint"
         }
       ]
@@ -67,7 +67,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Product",
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product",
-      "name": "The AEObility Blueprint",
+      "name": "Strategic Blueprint",
       "image": "https://aeobility.com.au/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp",
       "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}.`,
       "sku": bpStrat.code,
@@ -93,7 +93,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
           "unitText": bpStrat.deliverySla
         },
         "category": "AEO Strategic Diagnostic",
-        "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
+        "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
         "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
         "seller": {
           "@id": "https://aeobility.com.au/#organisation"
@@ -105,7 +105,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://aeobility.com.au/solutions/aeo-blueprint#service",
       "name": bpStrat.name,
       "alternateName": bpStrat.code,
-      "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
+      "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
       "provider": {
         "@id": "https://aeobility.com.au/#organisation"
       },

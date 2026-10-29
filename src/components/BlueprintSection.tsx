@@ -119,7 +119,7 @@ export default function BlueprintSection() {
                     Commercial Guarantee: 100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
                   </span>
                   <p className="text-zinc-300 font-serif leading-relaxed">
-                    100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee is credited directly toward Foundation Implementation when activated within {GOVERNANCE_RULES.creditWindowDays} days of findings delivery.
+                    100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee is credited directly toward AEO Foundation when activated within {GOVERNANCE_RULES.creditWindowDays} days of findings delivery.
                   </p>
                 </div>
               </div>

@@ -78,7 +78,7 @@ export const AEO_COMPARISON_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
+    anchorText: "Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -107,8 +107,8 @@ export default function AEOVsSEOPage() {
       answer: "A $495 AUD Micro-Sprint targets one agreed technical priority: Schema Markup Deployment, Single Page Atomic Rewrite, or Category Answer Unit. It includes validation checks, a summary of completed changes, and handover notes."
     },
     {
-      question: "Can I credit my Blueprint fee towards Foundation Implementation?",
-      answer: "Yes. If you complete the AEObility Blueprint and book Foundation Implementation within 60 days of handover, the full $995 AUD Blueprint fee is applied to the Foundation work. The credit applies to Foundation Implementation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
+      question: "Can I credit my Blueprint fee towards AEO Foundation?",
+      answer: "Yes. If you complete the Strategic Blueprint and book AEO Foundation within 60 days of handover, the full $995 AUD Blueprint fee is applied to the Foundation work. The credit applies to AEO Foundation only, is applied to the agreed implementation fee and cannot be exchanged for cash."
     },
     {
       question: "Do you require ongoing monthly retainers or contracts?",
@@ -153,9 +153,9 @@ export default function AEOVsSEOPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>The AEObility Blueprint $995 AUD ex. GST</span>
+                <span>Strategic Blueprint $995 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -348,7 +348,7 @@ export default function AEOVsSEOPage() {
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
-              <p className="text-xs sm:text-sm text-zinc-300 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif">Select a targeted micro-sprint, comprehensive AEO Foundation, or a diagnostic audit.</p>
             </div>
 
             <AeoStartingPointGrid 

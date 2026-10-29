@@ -101,19 +101,19 @@ export default function AEOSprintPage() {
     },
     {
       question: "What is the turnaround time for a Technical Sprint?",
-      answer: "Most Micro-Sprints are delivered within 3-5 business days once the scope, required access and source information have been confirmed. Foundation Implementation is delivered across a four-week period with staged milestones."
+      answer: "Most Micro-Sprints are delivered within 3-5 business days once the scope, required access and source information have been confirmed. AEO Foundation is delivered across a four-week period with staged milestones."
     },
     {
       question: "Can my in-house team or developer implement the code?",
       answer: "Yes. Where relevant, we provide the completed schema, content recommendations, implementation notes and handover documentation for your internal team or developer. If preferred, AEObility can implement the agreed work directly."
     },
     {
-      question: "How does the Blueprint fee credit apply to Foundation Implementation?",
-      answer: `If you have completed the AEObility Blueprint and book Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} days of handover, we will apply the full ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash.`
+      question: "How does the Blueprint fee credit apply to AEO Foundation?",
+      answer: `If you have completed the Strategic Blueprint and book AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days of handover, we will apply the full ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash.`
     },
     {
       question: "Are there any ongoing retainers or lock-in contracts?",
-      answer: "No. Micro-Sprints and Foundation Implementation are scoped as individual engagements. Our Governed Sprints operate on 30-day cycles with zero contract lock-in. You receive the agreed deliverables and handover documentation, with any further work discussed separately."
+      answer: "No. Micro-Sprints and AEO Foundation are scoped as individual engagements. Our AEO Sprints operate on 30-day cycles with zero contract lock-in. You receive the agreed deliverables and handover documentation, with any further work discussed separately."
     },
     {
       question: "What access is required to start a sprint?",
@@ -211,7 +211,7 @@ export default function AEOSprintPage() {
                 <span className="text-zinc-600">|</span>
                 <span>Macro Sprints at {formatAudCurrency(macroSku.priceExGst)} / mo</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</span>
+                <span>AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</span>
               </div>
             </div>
 
@@ -254,7 +254,7 @@ export default function AEOSprintPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              For physical service locations and regional trades, view our dedicated <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link> sprint guide. Not sure whether you need a single micro-sprint or Foundation Implementation? We will help you choose the right starting point.
+              For physical service locations and regional trades, view our dedicated <Link href="/services/aeo/local-business" className="text-cyan-400 hover:underline font-medium">Local Business Visibility</Link> sprint guide. Not sure whether you need a single micro-sprint or AEO Foundation? We will help you choose the right starting point.
             </p>
           </section>
 
@@ -272,7 +272,7 @@ export default function AEOSprintPage() {
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
                 <span className="text-purple-300 font-bold block font-mono">Need several connected fixes?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</Link>.
+                  Discuss <Link href="/solutions" className="text-purple-400 hover:underline font-medium">AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</Link>.
                 </span>
               </div>
               <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
@@ -349,7 +349,7 @@ export default function AEOSprintPage() {
             </div>
           </section>
 
-          {/* 4. Foundation Implementation Upgrade Block */}
+          {/* 4. AEO Foundation Upgrade Block */}
           <section id="foundation" className="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-purple-500/30 rounded-2xl p-8 space-y-6 shadow-[0_0_30px_rgba(168,85,247,0.15)] scroll-mt-24">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -358,7 +358,7 @@ export default function AEOSprintPage() {
                   <span>Multi-Page Implementation Tier</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">
-                  Foundation Implementation
+                  AEO Foundation
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
                   For businesses that need connected multi-page improvements. Includes full 4-pillar deployment across structured data, atomic page rewrites, internal linking, and Brand Facts directory citation parity across up to {GOVERNANCE_RULES.turnkeyPageLimit} core pages. Complimentary Technical Onboarding and Setup ({formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ONBOARD'].priceExGst, { includeTaxSuffix: false })} value) included.
@@ -368,7 +368,7 @@ export default function AEOSprintPage() {
                 <div className="p-4.5 bg-black/70 border border-cyan-500/30 rounded-xl text-xs text-zinc-300 font-serif leading-relaxed space-y-1 shadow-md">
                   <strong className="text-cyan-300 font-mono text-sm block font-bold">Completed the Blueprint?</strong>
                   <p>
-                    If you have completed the AEObility Blueprint and book Foundation Implementation within {GOVERNANCE_RULES.creditWindowDays} days of handover, we will apply the full {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing</Link>.
+                    If you have completed the Strategic Blueprint and book AEO Foundation within {GOVERNANCE_RULES.creditWindowDays} days of handover, we will apply the full {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee to the Foundation work. The credit does not apply to standalone Micro-Sprints and cannot be exchanged for cash. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing</Link>.
                   </p>
                 </div>
               </div>
@@ -387,7 +387,7 @@ export default function AEOSprintPage() {
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(168,85,247,0.3)] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-black" />
-                  <span>Discuss Foundation Implementation</span>
+                  <span>Discuss AEO Foundation</span>
                 </button>
               </div>
             </div>
@@ -566,7 +566,7 @@ export default function AEOSprintPage() {
                       <option value="structure">SS3: Semantic Lattice ({formatAudCurrency(microSku.priceExGst)})</option>
                       <option value="authority">SS4: Brand Facts & Citations ({formatAudCurrency(microSku.priceExGst)})</option>
                       <option value="macro-sprints">Governed Macro Sprints ({formatAudCurrency(macroSku.priceExGst)} / mo)</option>
-                      <option value="foundation">Foundation Core ({formatAudCurrency(foundationCore.priceExGst)})</option>
+                      <option value="foundation">AEO Foundation ({formatAudCurrency(foundationCore.priceExGst)})</option>
                       <option value="unsure">Not sure yet - Help me decide</option>
                     </select>
                   </div>

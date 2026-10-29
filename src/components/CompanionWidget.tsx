@@ -663,7 +663,7 @@ export default function CompanionWidget() {
               </button>
               <button
                 type="button"
-                onClick={() => handleSendMessage("How does The AEObility Blueprint fix these local entity gaps and what are the deliverables?")}
+                onClick={() => handleSendMessage("How does the Strategic Blueprint fix these local entity gaps and what are the deliverables?")}
                 className="text-[9px] bg-aeo-cyan/15 border border-aeo-cyan/40 hover:bg-aeo-cyan/25 px-2.5 py-1 rounded-lg text-aeo-cyan font-bold transition-colors cursor-pointer"
               >
                 View Blueprint ($995) ➔

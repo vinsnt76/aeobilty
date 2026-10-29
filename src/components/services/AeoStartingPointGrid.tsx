@@ -76,7 +76,7 @@ export default function AeoStartingPointGrid({
       deliverables: foundationCore.deliverables,
       techNote: "For technical teams: Nested JSON-LD DOM injection, 90–120 token extraction passages, semantic lattice mapping, and multi-platform NAP parity.",
       whenToChoose: "Outcome: Bridge AI visibility into live production across up to 10 priority pages with 100% client IP ownership and zero retainer lock-in.",
-      ctaLabel: "Deploy Foundation Core"
+      ctaLabel: "Deploy AEO Foundation"
     },
     {
       key: "macro-sprints",
@@ -92,7 +92,7 @@ export default function AeoStartingPointGrid({
       deliverables: tier3.deliverables,
       techNote: "For technical teams: Modular sprints targeting schema nesting, answer extraction, contextual link graphs, or directory citation parity.",
       whenToChoose: "Outcome: Target specific technical bottlenecks in focused 10-day execution blocks. Ideal for continuous optimisation with zero contract lock-in.",
-      ctaLabel: "Book Governed Sprint"
+      ctaLabel: "Explore AEO Sprints"
     }
   ];
 

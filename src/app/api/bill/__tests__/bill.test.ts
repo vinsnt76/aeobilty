@@ -86,8 +86,8 @@ describe('Bill Unified Agent Endpoint - Intent Routing Matrix', () => {
 
     const { streamText } = await import('ai');
     const callArgs = (streamText as unknown as StreamTextMock).mock.calls[0][0];
-    expect(callArgs.system).toContain('[ACTIVE SKILL: Blueprint Funnel]');
-    expect(callArgs.system).toContain('995.00'); // Validates commercial mapping output target criteria
+    expect(callArgs.system).toContain('[ACTIVE SKILL: Commercial Solutions & Blueprint Funnel]');
+    expect(callArgs.system).toContain('995'); // Validates commercial mapping output target criteria
   });
 
   it('🟢 Skill 4 Check: Should invoke Dynamic Knowledge Base node loader for technical concept queries', async () => {

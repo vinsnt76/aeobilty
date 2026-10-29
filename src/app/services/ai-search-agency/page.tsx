@@ -68,14 +68,14 @@ export default function AiSearchAgencyPage() {
         "Live prompt testing across ChatGPT Search, Google AI Overviews, and Perplexity.",
         "Competitor citation overlap and authority gap analysis.",
         "Nested JSON-LD schema audit and structured data roadmap.",
-        "100% of $995 AUD fee credited toward Foundation Implementation within 60 days."
+        "100% of $995 AUD fee credited toward AEO Foundation within 60 days."
       ],
       link: "/diagnostic",
       ctaLabel: "Book Diagnostic Scan"
     },
     {
       sku: "AEO-FOUNDATION-CORE",
-      title: "Foundation Implementation Sprint",
+      title: "AEO Foundation",
       price: "$1,990 AUD",
       priceSub: "ex. GST • 4 Structured Business Weeks",
       description: "Full implementation sprint engineering your digital footprint for high-confidence AI engine retrieval.",
@@ -118,16 +118,16 @@ export default function AiSearchAgencyPage() {
       answer: "Traditional SEO agencies focus on keyword density, backlink quantity, and long-term retainer lock-ins. AEObility operates on fixed-scope sprints with zero contract lock-in. We focus on verifiable technical deliverables, clean entity schema graphs, and auditable baseline prompt tracking."
     },
     {
-      question: "Who is the Foundation Implementation Sprint best suited for?",
-      answer: "The Foundation Sprint is ideal for Australian service businesses, local operators, and growth-focused SMEs that have strong market expertise but an unclear or fragmented digital footprint across Google Maps, Search, and AI platforms."
+      question: "Who is AEO Foundation best suited for?",
+      answer: "AEO Foundation is ideal for Australian service businesses, local operators, and growth-focused SMEs that have strong market expertise but an unclear or fragmented digital footprint across Google Maps, Search, and AI platforms."
     },
     {
       question: "How long does an AEO engagement take?",
-      answer: "The standalone GEO Visibility Diagnostic is delivered within 5 business days. The full Foundation Implementation Sprint is executed across 4 structured business weeks."
+      answer: "The standalone GEO Visibility Diagnostic is delivered within 5 business days. AEO Foundation is executed across 4 structured business weeks."
     },
     {
       question: "Is the $995 AUD Diagnostic price credited toward full implementation?",
-      answer: "Yes. 100% of your $995 AUD Diagnostic fee is credited directly toward your Foundation Implementation Sprint if booked within 60 days of audit delivery."
+      answer: "Yes. 100% of your $995 AUD Diagnostic fee is credited directly toward AEO Foundation if booked within 60 days of audit delivery."
     },
     {
       question: "Do you guarantee #1 rankings or ChatGPT citations?",
@@ -174,7 +174,7 @@ export default function AiSearchAgencyPage() {
             {
               "@type": "Offer",
               "@id": "https://aeobility.com.au/services/ai-search-agency#AEO-FOUNDATION-CORE",
-              "name": "Foundation Implementation Sprint",
+              "name": "AEO Foundation",
               "sku": "AEO-FOUNDATION-CORE",
               "priceSpecification": {
                 "@type": "PriceSpecification",

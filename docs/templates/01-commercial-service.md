@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   - **Position:** Housed immediately beneath the featured hero banner and primary CTAs (or directly beneath H1/H2) to anchor the top fold.
   - **Formula:** 
     1. *Verdict:* "Answer Engine Optimisation (AEO) restructures your digital footprint, business facts, and credentials so AI answer engines (ChatGPT, Perplexity, Google AI Overviews) retrieve and cite your brand accurately."
-    2. *Mechanism:* "AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema graphs and atomic content blocks."
+    2. *Mechanism:* "AEObility delivers fixed-scope micro-sprints from $495 AUD ex. GST and AEO Foundation implementations in 4–5 business days, replacing speculative SEO with verifiable schema graphs and atomic content blocks."
     3. *Entity Binding:* "All engagements tie directly into authoritative registries (`ABN`, `LocalBusiness`, `Schema.org`) with zero ongoing lock-in contracts."
   - **Token Budget:** Exactly 84 words (~105 tokens), matching bi-encoder vector similarity sweet spot.
 * **Dual-Reader E-E-A-T Framework:**
@@ -77,7 +77,7 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
 | `#hero` | Primary hero container | Back-to-top links, subnav pills |
 | `#engagement-paths` | 3-tier starting point selector | Hero banner CTAs, external navigation |
 | `#aeo-micro-sprints` | Targeted Micro-Sprint card | Direct pricing jump links |
-| `#aeo-foundation` | Foundation Implementation card | Commercial quote links |
+| `#aeo-foundation` | AEO Foundation card | Commercial quote links |
 | `#pillars` | 4 Foundational Pillars grid | Technical reading links |
 | `#aeo-contact-form` | Sprint enquiry form | Overlaid hero CTAs, card action buttons |
 | `#aeo-diagnostic-form` | Free visibility scan form | Secondary hero CTA, final CTA banner |
@@ -102,9 +102,9 @@ To prevent breaking existing internal cross-links, Google sitelinks, and AI craw
 4. **"Choose Your Starting Point" Engagement Grid (`<section id="engagement-paths">`)**:
    - Section heading (`h2`): `Choose Your Starting Point`.
    - 3 equal-height sprint cards:
-     - Card 1: `AEO Technical Micro-Sprint` (`#aeo-micro-sprints` • $495 AUD ex. GST • Button: `Discuss Micro-Sprint`)
-     - Card 2: `Foundation Implementation` (`#aeo-foundation` • $1,990 AUD ex. GST • Button: `Discuss Foundation Tier`)
-     - Card 3: `The AEObility Blueprint` (`#aeo-blueprint` • $995 AUD ex. GST • Button: `Discuss $995 Blueprint`)
+     - Card 1: `AEO Sprints` (`#aeo-micro-sprints` • $495 AUD micro-sprint / $1,980 AUD bundle ex. GST • Button: `Discuss Micro-Sprint`)
+     - Card 2: `AEO Foundation` (`#aeo-foundation` • $1,990 AUD ex. GST • Button: `Discuss Foundation Tier`)
+     - Card 3: `Strategic Blueprint` (`#aeo-blueprint` • $995 AUD ex. GST • Button: `Discuss Strategic Blueprint`)
 5. **Technical Architecture / Four Pillars Grid (`<section id="pillars">`)**:
    - 4 discrete capability cards: `1. Machine-Readable Structure`, `2. Atomic Content Clarity`, `3. Internal Linking Lattice`, `4. Corroborated Brand Authority`.
    - Diagram elements adhere to minimum 14px bold node labels or are treated as illustrative abstract schematics with adjacent data tables.
@@ -188,7 +188,7 @@ All implementations must invoke the canonical schema generator returning an abso
           },
           {
             "@type": "Offer",
-            "name": "Foundation Implementation",
+            "name": "AEO Foundation",
             "price": "1990",
             "priceCurrency": "AUD"
           }
@@ -283,7 +283,7 @@ export default function AEOServicePage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 

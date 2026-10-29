@@ -71,7 +71,7 @@ export const AI_MARKETING_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
+    anchorText: "Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -151,7 +151,7 @@ export default function MelbourneAISearchMarketingPage() {
               <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-mono font-bold text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -195,7 +195,7 @@ export default function MelbourneAISearchMarketingPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">The AEObility Blueprint</Link>.
+              Looking for specific technical execution? Explore our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link> from $495 ex. GST or <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Strategic Blueprint</Link>.
             </p>
           </section>
 
@@ -318,13 +318,13 @@ export default function MelbourneAISearchMarketingPage() {
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02] transition">
-                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Strategic Blueprint</td>
                   <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
                   <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
                 </tr>
                 <tr className="hover:bg-white/[0.02] transition">
-                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
+                  <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Foundation</td>
                   <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
                   <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
                   <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>

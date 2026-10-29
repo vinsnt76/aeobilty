@@ -29,7 +29,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
       "@id": "https://aeobility.com.au/solutions#webpage",
       "url": "https://aeobility.com.au/solutions",
       "name": "Transparent AEO Solutions, Sprints & Pricing | AEObility",
-      "description": `Explore transparent pricing models for Australian businesses. Standalone ${formatAudCurrency(bpStrat.priceExGst)} Blueprint audit, fixed-scope micro-sprints from ${formatAudCurrency(microSample.priceExGst)}, macro sprints from ${formatAudCurrency(macroSample.priceExGst)}, and Foundation Implementation from ${formatAudCurrency(foundationDirect.priceExGst)}.`,
+      "description": `Explore transparent pricing models for Australian businesses. Standalone ${formatAudCurrency(bpStrat.priceExGst)} Blueprint audit, fixed-scope micro-sprints from ${formatAudCurrency(microSample.priceExGst)}, macro sprints from ${formatAudCurrency(macroSample.priceExGst)}, and AEO Foundation from ${formatAudCurrency(foundationDirect.priceExGst)}.`,
       "inLanguage": "en-AU",
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -84,7 +84,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "category": "AEO Strategic Diagnostic",
-          "description": `${bpStrat.purpose} Standalone digital presence audit and prioritised 90-day execution roadmap. 100% credited toward Foundation Implementation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
+          "description": `${bpStrat.purpose} Standalone digital presence audit and prioritised 90-day execution roadmap. 100% credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
             "@id": "https://aeobility.com.au/#organisation"
@@ -106,7 +106,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
             "unitText": foundationDirect.deliverySla
           },
           "availability": "https://schema.org/InStock",
-          "category": "AEO Foundation Implementation",
+          "category": "AEO Foundation",
           "description": `${foundationDirect.purpose} Includes complimentary Technical Onboarding ($250 value).`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
@@ -129,7 +129,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
             "unitText": foundationTurnkey.deliverySla
           },
           "availability": "https://schema.org/InStock",
-          "category": "AEO Foundation Implementation",
+          "category": "AEO Foundation",
           "description": `${foundationTurnkey.purpose} Turnkey 4-pillar execution across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. Includes complimentary Technical Onboarding ($250 value).`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {

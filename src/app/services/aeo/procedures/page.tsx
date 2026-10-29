@@ -71,7 +71,7 @@ export const AEO_PROCEDURES_INTERNAL_LINKS = [
   },
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "The AEObility Blueprint",
+    anchorText: "Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -101,11 +101,11 @@ export default function AEOProceduresPage() {
     },
     {
       question: "What is the difference between an AEO Micro-Sprint and the Blueprint?",
-      answer: "A Micro-Sprint ($495 AUD ex. GST) executes one specific technical fix within 4–5 business days. The AEObility Blueprint ($995 AUD ex. GST) provides a comprehensive digital presence audit and prioritised 90-day execution roadmap, which is 100% credited if you proceed with Foundation Implementation."
+      answer: "A Micro-Sprint ($495 AUD ex. GST) executes one specific technical fix within 4–5 business days. The Strategic Blueprint ($995 AUD ex. GST) provides a comprehensive digital presence audit and prioritised 90-day execution roadmap, which is 100% credited if you proceed with AEO Foundation."
     },
     {
       question: "How long do AEO procedures take to implement?",
-      answer: "Targeted Micro-Sprints are delivered within 4–5 business days after scope and access confirmation. Foundation Implementation is delivered across a structured four-week schedule."
+      answer: "Targeted Micro-Sprints are delivered within 4–5 business days after scope and access confirmation. AEO Foundation is delivered across a structured four-week schedule."
     }
   ];
 
@@ -185,7 +185,7 @@ export default function AEOProceduresPage() {
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
                 <span>Micro-Sprints from $495 AUD ex. GST</span>
                 <span className="text-zinc-600">|</span>
-                <span>Foundation Implementation $1,990 AUD ex. GST</span>
+                <span>AEO Foundation $1,990 AUD ex. GST</span>
               </div>
             </div>
 
@@ -235,7 +235,7 @@ export default function AEOProceduresPage() {
           <section id="engagement-paths" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Choose Your Starting Point</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, a comprehensive foundation implementation, or a diagnostic audit.</p>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">Select a targeted micro-sprint, comprehensive AEO Foundation, or a diagnostic audit.</p>
             </div>
 
             <AeoStartingPointGrid 
@@ -262,13 +262,13 @@ export default function AEOProceduresPage() {
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">From $495 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEObility Blueprint</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Strategic Blueprint</td>
                     <td className="p-3.5 sm:p-4">Full Digital Audit &amp; 90-Day Roadmap</td>
                     <td className="p-3.5 sm:p-4">Unclear what is limiting search visibility</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$995 AUD</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Foundation Implementation</td>
+                    <td className="p-3.5 sm:p-4 font-bold text-white font-sans">AEO Foundation</td>
                     <td className="p-3.5 sm:p-4">Connected Multi-Page &amp; Entity Fixes</td>
                     <td className="p-3.5 sm:p-4">Connected improvements across core services</td>
                     <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">$1,990 AUD</td>

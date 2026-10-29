@@ -61,8 +61,8 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
 
     const res = await POST(req);
     expect(res.status).toBe(200);
-    expect(capturedParams.system).toContain('[ACTIVE SKILL: Blueprint Funnel]');
-    expect(capturedParams.system).toContain('995.00');
+    expect(capturedParams.system).toContain('[ACTIVE SKILL: Commercial Solutions & Blueprint Funnel]');
+    expect(capturedParams.system).toContain('995');
   });
 
   it('4. Positional Bias Concept Node: Confirm "what is positional bias" pulls expanded positional bias knowledge node', async () => {
@@ -94,7 +94,7 @@ describe('Project Bill - Production Smoke & Lattice Expansion Suite', () => {
     const res = await POST(req);
     expect(res.status).toBe(200);
     expect(capturedParams.system).toContain('CANONICAL IDENTITY LAYER');
-    expect(capturedParams.system).not.toContain('[ACTIVE SKILL: Blueprint Funnel]');
+    expect(capturedParams.system).not.toContain('[ACTIVE SKILL: Commercial Solutions & Blueprint Funnel]');
   });
 
   it('7. Skill 5 Technical Concept Explainer: Confirm "what is semantic density" activates Skill 5 and retrieves lattice nodes', async () => {

@@ -665,7 +665,7 @@ export default function DiagnosticEngine() {
                         {
                           step: 4,
                           title: `Execute 10-Day Implementation Roadmap`,
-                          description: `Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
+                          description: `Use the Strategic Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
                         }
                       ];
 
@@ -713,7 +713,7 @@ export default function DiagnosticEngine() {
                       ? "Unlock Grounding Blueprint ($995 AUD)"
                       : (factCoverage.factCoverage < 0.8)
                         ? "Inject Missing Knowledge Nodes ($995 AUD)"
-                        : "Get The AEObility Blueprint ($995 AUD)";
+                        : "Get Strategic Blueprint ($995 AUD)";
 
                     return (
                       <Link
@@ -987,7 +987,7 @@ export default function DiagnosticEngine() {
                     {
                       step: 4,
                       title: `Execute 10-Day Implementation Roadmap`,
-                      description: `Use the 10-Day AEObility Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
+                      description: `Use the Strategic Blueprint to prioritise and resolve the highest-impact technical, content, and entity actions.`
                     }
                   ]
               ).slice(0, 4).map((stepItem, idx) => (
@@ -1011,7 +1011,7 @@ export default function DiagnosticEngine() {
           {/* 6. Commercial Resolution & Verification Footer */}
           <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[8px] text-slate-600 font-mono">
             <div>
-              <span className="font-bold text-slate-900">Recommended Next Step:</span> 10-Day AEObility Blueprint (${bpstratPrice} AUD ex. GST) • 10-day delivery • 100% credited to sprints
+              <span className="font-bold text-slate-900">Recommended Next Step:</span> Strategic Blueprint (${bpstratPrice} AUD ex. GST) • 10-day delivery • 100% credited to sprints
             </div>
             <div className="text-right">
               <span className="font-bold text-slate-900">Direct Link:</span> https://aeobility.com.au/solutions/aeo-blueprint
