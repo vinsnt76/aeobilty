@@ -25,10 +25,10 @@ export function CoreEngagementsGrid() {
         <div className="text-left mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>Predictable Engagements</span>
+            <span>Zero Retainer Lock-In</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
-            Fixed-Scope Sprints. Zero Retainer Lock-In.
+            Fixed-Scope Sprints.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
             Work directly with a qualified <Link href="/services/perth/seo-specialist" className="text-cyan-400 underline hover:text-cyan-300 font-medium">Perth SEO specialist &amp; local AEO consultant</Link> to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
