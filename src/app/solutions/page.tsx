@@ -116,6 +116,8 @@ export default function SolutionsPage() {
 
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
   const foundationCore = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-CORE'] || TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'];
+  const foundationDirect = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION-DIRECT'] || foundationCore;
+  const foundationTurnkey = TECHNICAL_SPRINT_CATALOG['AEO-FOUNDATION'] || foundationCore;
   const macroSku = TECHNICAL_SPRINT_CATALOG['SS1MACRO'];
   const microSku = TECHNICAL_SPRINT_CATALOG['SS1MICRO1'];
 
