@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 export default function AiSearchAgencyPage() {
   const sprintOffers = [
     {
-      sku: "GEO-DIAGNOSTIC-AUDIT",
+      category: "Diagnostic & Planning",
       title: "GEO Visibility Diagnostic",
       price: "$995 AUD",
       priceSub: "ex. GST • Standalone Audit & Strategic Roadmap",
@@ -67,23 +67,23 @@ export default function AiSearchAgencyPage() {
       deliverables: [
         "Live prompt testing across ChatGPT Search, Google AI Overviews, and Perplexity.",
         "Competitor citation overlap and authority gap analysis.",
-        "Nested JSON-LD schema audit and structured data roadmap.",
+        "Code and schema review identifying broken tags and indexing errors.",
         "100% of $995 AUD fee credited toward AEO Foundation within 60 days."
       ],
       link: "/diagnostic",
       ctaLabel: "Book Diagnostic Scan"
     },
     {
-      sku: "AEO-FOUNDATION-CORE",
+      category: "Core Setup (Recommended)",
       title: "AEO Foundation",
       price: "$1,990 AUD",
       priceSub: "ex. GST • 4 Structured Business Weeks",
-      description: "Full implementation sprint engineering your digital footprint for high-confidence AI engine retrieval.",
+      description: "Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.",
       deliverables: [
-        "Service page atomic answer block rewrites for LLM extraction.",
-        "Canonical Brand Facts directory setup with entity relationship mapping.",
-        "Nested JSON-LD schema graph implementation (Organisation, Service, FAQ).",
-        "Internal semantic linking lattice and baseline citation tracking setup."
+        "Structured data installation: Valid schema markup added directly to your site or supplied as ready-to-paste code.",
+        "Direct-answer content: Up to 10 priority service pages updated into clear, extractable answer blocks.",
+        "Internal page linking connecting core services to relevant proof points.",
+        "Directory alignment syncing business details across Google, Apple Maps, and Bing."
       ],
       link: "/solutions/aeo-sprint",
       ctaLabel: "Explore Sprint Scope"
@@ -288,7 +288,7 @@ export default function AiSearchAgencyPage() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-mono font-bold text-aeo-cyan bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-1 rounded-md">
-                        SKU: {offer.sku}
+                        {offer.category}
                       </span>
                     </div>
 

@@ -156,43 +156,61 @@ export default function SolutionsPage() {
     {
       key: "blueprint",
       anchorId: "solutions-blueprint",
-      icon: <Compass className="w-6 h-6 text-aeo-cyan" />,
+      icon: <Compass className="w-5 h-5 text-aeo-cyan" />,
+      category: "Diagnostic & Planning",
       title: tier1.name,
-      code: "BPSTRAT",
       price: formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: "Full digital audit, 90-day roadmap & stakeholder briefing",
-      description: tier1.targetGoal,
-      techNote: "For technical teams: Comprehensive entity gap analysis, canonical schema drift auditing, passage retrieval evaluation, and 45-minute executive briefing.",
-      whenToChoose: "Choose this when you need a clear diagnostic plan before committing to implementation.",
+      scopeSub: "Standalone audit • 100% credited toward implementation within 60 days",
+      description: "Find the data errors, missing business facts, and structured code issues preventing search engines and AI models from recommending your business.",
+      deliverables: [
+        { title: "Search & AI Visibility Audit", detail: "Checks how Google, Apple Maps, and AI tools extract your business details." },
+        { title: "Code & Schema Review", detail: "Identifies broken structured data, incorrect tags, and indexing errors." },
+        { title: "Prioritised 90-Day Plan", detail: "An ordered checklist of required technical fixes and page updates." },
+        { title: "45-Minute Review Call", detail: "A direct walkthrough of findings and next steps with your team." }
+      ],
+      turnaround: "5–7 business days",
+      delivery: "Complete report and fix checklist",
       ctaLabel: "Commission Strategic Blueprint"
     },
     {
       key: "foundation",
       anchorId: "solutions-foundation",
-      icon: <Boxes className="w-6 h-6 text-aeo-cyan" />,
+      icon: <Boxes className="w-5 h-5 text-aeo-cyan" />,
+      category: "Core Setup (Recommended)",
       title: tier2.name,
-      code: "AEO-FOUNDATION-CORE",
       price: formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false }),
       priceSub: "ex. GST",
-      scope: `Deterministic 4-pillar deployment (up to ${GOVERNANCE_RULES.turnkeyPageLimit} pages)`,
-      description: `Combine agreed improvements across structured data, atomic page rewrites, internal linking, and citation structures. Includes complimentary onboarding (${formatAudCurrency(TECHNICAL_SPRINT_CATALOG['ONBOARD'].priceExGst, { includeTaxSuffix: false })} value).`,
-      techNote: "For technical teams: Multi-page schema integration, internal linking lattice refactoring, and citation alignment.",
-      whenToChoose: "Choose this when your business requires connected improvements across multiple core pages.",
+      scopeSub: "Complete setup • Covers up to 10 core pages • Includes $250 onboarding setup",
+      description: "Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.",
+      deliverables: [
+        { title: "Structured Data Installation", detail: "Valid schema markup added directly to your site or supplied as ready-to-paste code." },
+        { title: "Direct-Answer Content", detail: "Up to 10 priority service pages updated into clear, extractable answer blocks." },
+        { title: "Internal Page Linking", detail: "Connects core services to relevant proof points and case studies." },
+        { title: "Directory Alignment", detail: "Syncs name, address, phone number, and services across Google, Apple Maps, and Bing." }
+      ],
+      turnaround: "4 weeks in staged milestones",
+      delivery: "Direct CMS installation or code files for your developer",
       ctaLabel: "Deploy AEO Foundation"
     },
     {
       key: "macro-sprint",
       anchorId: "solutions-macro-sprints",
-      icon: <Rocket className="w-6 h-6 text-aeo-purple" />,
+      icon: <Rocket className="w-5 h-5 text-aeo-purple" />,
+      category: "Monthly Improvements",
       title: tier3.name,
-      code: "MACRO SPRINT",
-      price: `${formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} / mo`,
-      priceSub: "ex. GST",
-      scope: "Governed 30-day cycles (bundles 4x micro-sprints)",
-      description: `Choose from 4 focused pillars (SS1 Identity, SS2 Answers, SS3 Lattice, SS4 Trust). Standalone half-day micro-sprints also available from ${formatAudCurrency(microSku.priceExGst)}.`,
-      techNote: "For technical teams: Deployment of nested JSON-LD graphs, atomic HTML passage markup, and citation alignment.",
-      whenToChoose: "Choose this when you have specific technical bottlenecks or want continuous monthly momentum without retainers.",
+      price: "From $495 AUD",
+      priceSub: "ex. GST (or $1,980/mo bundle)",
+      scopeSub: "Monthly technical cycles • No lock-in contracts • Pause anytime",
+      description: "Focused monthly technical work blocks to clear site bottlenecks, expand service pages, and adapt to search updates.",
+      deliverables: [
+        { title: "Monthly Work Focus", detail: "Dedicated execution across code fixes, content updates, or directory cleanup." },
+        { title: "Flexible 30-Day Cycles", detail: "Clear scope agreed upon each month with zero long-term commitments." },
+        { title: "Progress Verification", detail: "Verification checks on indexing health, search appearance, and data accuracy." },
+        { title: "Documentation & Handoff", detail: "Plain-English summary and review call for all completed updates." }
+      ],
+      turnaround: "10 business days per sprint cycle",
+      delivery: "Adjust priorities monthly or cancel at the end of any cycle",
       ctaLabel: "Explore AEO Sprints"
     }
   ];
@@ -319,44 +337,82 @@ export default function SolutionsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {engagementPaths.map((path, idx) => (
-                <div id={path.anchorId} key={idx} className="bg-zinc-950/80 border border-white/10 p-6 rounded-2xl flex flex-col justify-between space-y-5 hover:border-cyan-500/40 transition-all duration-300 group scroll-mt-24">
-                  <div className="space-y-3">
+                <div
+                  id={path.anchorId}
+                  key={idx}
+                  className={`bg-zinc-950/80 border p-6 rounded-2xl flex flex-col justify-between space-y-6 transition-all duration-300 group scroll-mt-24 ${
+                    path.key === 'foundation'
+                      ? 'border-cyan-500/40 shadow-lg shadow-cyan-950/30 ring-1 ring-cyan-500/20'
+                      : 'border-white/10 hover:border-cyan-500/40'
+                  }`}
+                >
+                  <div className="space-y-4">
+                    {/* Eyebrow */}
                     <div className="flex items-center justify-between">
-                      <div className="p-2.5 bg-black border border-white/10 rounded-xl shrink-0">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-300">
                         {path.icon}
+                        <span>{path.category}</span>
                       </div>
-                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
-                        {path.code}
-                      </span>
+                      {path.key === 'foundation' && (
+                        <span className="text-[10px] font-mono font-bold text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-2 py-0.5 rounded">
+                          Recommended
+                        </span>
+                      )}
                     </div>
 
+                    {/* Title & Price */}
                     <div>
-                      <h3 className="text-base font-bold text-white font-soehne-breit leading-snug">{path.title}</h3>
-                      <div className="text-sm font-bold text-cyan-300 font-mono mt-1">
-                        {path.price} <span className="text-[10px] text-zinc-400 font-normal">{path.priceSub}</span>
+                      <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">{path.title}</h3>
+                      <div className="flex items-baseline gap-1.5 mt-1">
+                        <span className="text-xl font-bold font-mono text-cyan-300">{path.price}</span>
+                        <span className="text-xs text-zinc-400 font-mono">{path.priceSub}</span>
                       </div>
-                      <span className="text-[11px] text-zinc-400 font-mono block mt-1">Scope: {path.scope}</span>
+                      <p className="text-xs text-zinc-400 font-sans mt-1">{path.scopeSub}</p>
                     </div>
 
-                    <p className="text-xs text-zinc-300 font-serif leading-relaxed pt-1">
+                    {/* Single-Sentence Scope */}
+                    <p className="text-xs text-zinc-300 font-serif leading-relaxed">
                       {path.description}
                     </p>
 
-                    <div className="bg-black/50 border border-white/5 p-2.5 rounded-lg text-[11px] text-zinc-400 font-serif leading-relaxed">
-                      <strong className="text-white block mb-0.5">When to choose:</strong>
-                      <span>{path.whenToChoose}</span>
+                    {/* 4 Scannable Deliverables */}
+                    <ul className="space-y-2.5 text-xs text-zinc-300 pt-3 border-t border-white/5 font-sans">
+                      {path.deliverables.map((item, dIdx) => (
+                        <li key={dIdx} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-bold text-white block">{item.title}</span>
+                            <span className="text-[11px] text-zinc-400 font-serif leading-snug">{item.detail}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Delivery Details */}
+                    <div className="pt-3 border-t border-white/5 font-mono text-xs">
+                      <div className="bg-black/50 border border-white/5 p-3 rounded-xl space-y-1.5">
+                        <div className="text-zinc-300 text-[11px]">
+                          <strong className="text-cyan-300">Turnaround:</strong> {path.turnaround}
+                        </div>
+                        <div className="text-zinc-300 text-[11px] pt-1 border-t border-white/5">
+                          <strong className="text-cyan-300">{path.key === 'macro-sprint' ? 'Flexibility:' : 'Delivery:'}</strong> {path.delivery}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="space-y-3 pt-3 border-t border-white/5">
-                    <p className="text-[10px] text-zinc-500 font-mono leading-tight">{path.techNote}</p>
+                  <div className="pt-3 border-t border-white/5">
                     <button
                       type="button"
                       onClick={() => selectSprintForForm(path.key)}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white font-bold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer"
+                      className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all duration-300 cursor-pointer ${
+                        path.key === 'foundation'
+                          ? 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-lg shadow-cyan-500/20'
+                          : 'bg-zinc-900 border border-white/15 hover:border-cyan-400 text-white hover:bg-zinc-800'
+                      }`}
                     >
                       <span>{path.ctaLabel}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-cyan-400" />
+                      <ArrowRight className={`w-3.5 h-3.5 ${path.key === 'foundation' ? 'text-black' : 'text-cyan-400'}`} />
                     </button>
                   </div>
                 </div>
