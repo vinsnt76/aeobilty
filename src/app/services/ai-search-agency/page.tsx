@@ -76,8 +76,8 @@ export default function AiSearchAgencyPage() {
     {
       category: "Core Setup (Recommended)",
       title: "AEO Foundation",
-      price: "$1,990 AUD",
-      priceSub: "ex. GST • 4 Structured Business Weeks",
+      price: "$1,980 AUD",
+      priceSub: "/ mo ex. GST • 90-day execution",
       description: "Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.",
       deliverables: [
         "Structured data installation: Valid schema markup added directly to your site or supplied as ready-to-paste code.",

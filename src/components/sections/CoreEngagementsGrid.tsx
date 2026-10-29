@@ -152,10 +152,10 @@ export function CoreEngagementsGrid() {
                     <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono">
                       {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
                     </span>
-                    <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
+                    <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">/ mo ex. GST</span>
                   </div>
                   <p className="mt-1 text-xs text-zinc-400 font-sans">
-                    Complete setup &bull; Covers up to 10 core pages &bull; Includes $250 onboarding setup
+                    90 day execution &bull; Covers up to 10 core pages &bull; Includes Strategic Blueprint &amp; $250 onboarding setup
                   </p>
                 </div>
 
@@ -203,7 +203,7 @@ export function CoreEngagementsGrid() {
                   <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
                     <div className="flex items-start gap-2 font-mono text-xs text-white">
                       <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span><strong>Turnaround:</strong> 4 weeks in staged milestones</span>
+                      <span><strong>Turnaround:</strong> 90 days in staged milestones</span>
                     </div>
                     <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />

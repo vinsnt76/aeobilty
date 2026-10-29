@@ -180,8 +180,8 @@ export default function SolutionsPage() {
       category: "Core Setup (Recommended)",
       title: tier2.name,
       price: formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false }),
-      priceSub: "ex. GST",
-      scopeSub: "Complete setup • Covers up to 10 core pages • Includes $250 onboarding setup",
+      priceSub: "/ mo ex. GST",
+      scopeSub: "90 day execution • Covers up to 10 core pages • Includes Strategic Blueprint & $250 onboarding setup",
       description: "Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.",
       deliverables: [
         { title: "Structured Data Installation", detail: "Valid schema markup added directly to your site or supplied as ready-to-paste code." },
@@ -189,7 +189,7 @@ export default function SolutionsPage() {
         { title: "Internal Page Linking", detail: "Connects core services to relevant proof points and case studies." },
         { title: "Directory Alignment", detail: "Syncs name, address, phone number, and services across Google, Apple Maps, and Bing." }
       ],
-      turnaround: "4 weeks in staged milestones",
+      turnaround: "90 days in staged milestones",
       delivery: "Direct CMS installation or code files for your developer",
       ctaLabel: "Deploy AEO Foundation"
     },
@@ -444,14 +444,14 @@ export default function SolutionsPage() {
                     <td className="p-3.5 sm:p-4">Core 4-Pillar Modular Deployment (Up to {GOVERNANCE_RULES.turnkeyPageLimit} Pages)</td>
                     <td className="p-3.5 sm:p-4">Direct implementation for developer/in-house teams</td>
                     <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{foundationDirect.deliverySla}</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationDirect.priceExGst, { includeTaxSuffix: false })} / mo</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">{foundationTurnkey.name}</td>
                     <td className="p-3.5 sm:p-4">Turnkey 4-Pillar Deployment (Up to {GOVERNANCE_RULES.turnkeyPageLimit} Pages)</td>
                     <td className="p-3.5 sm:p-4">Complete end-to-end execution across priority services</td>
                     <td className="p-3.5 sm:p-4 font-mono text-zinc-400">{foundationTurnkey.deliverySla}</td>
-                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })}</td>
+                    <td className="p-3.5 sm:p-4 text-right font-mono font-bold text-cyan-300">{formatAudCurrency(foundationTurnkey.priceExGst, { includeTaxSuffix: false })} / mo</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
                     <td className="p-3.5 sm:p-4 font-bold text-white font-sans">Governed Macro Sprints</td>

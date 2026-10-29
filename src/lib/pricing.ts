@@ -187,9 +187,9 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   'AEO-FOUNDATION-CORE': {
     code: 'AEO-FOUNDATION-CORE',
     name: 'AEO Foundation',
-    priceExGst: 1990,
+    priceExGst: 1980,
     handsOnEffort: '16–20 Hours',
-    deliverySla: '4-Week Staged Sprint',
+    deliverySla: '90 Days (Staged Milestones)',
     category: 'foundation',
     purpose: 'Bridge strategic AI visibility into live production. Establish deterministic machine readability, high-density atomic answers, and connected entity graphs across up to 10 priority commercial pages to secure retrieval across AI Overviews, Perplexity, and conversational search engines.',
     deliverables: [
@@ -203,9 +203,9 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   'AEO-FOUNDATION': {
     code: 'AEO-FOUNDATION',
     name: 'AEO Foundation',
-    priceExGst: 1990,
+    priceExGst: 1980,
     handsOnEffort: '16–20 Hours',
-    deliverySla: '4 Weeks (Staged Milestones)',
+    deliverySla: '90 Days (Staged Milestones)',
     category: 'foundation',
     purpose: 'Comprehensive 4-pillar turnkey implementation establishing machine-readable entity graph, atomic answer architecture, semantic lattice, and citation consistency.',
     deliverables: [
@@ -220,9 +220,9 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
   'AEO-FOUNDATION-DIRECT': {
     code: 'AEO-FOUNDATION-DIRECT',
     name: 'AEO Foundation (Direct)',
-    priceExGst: 1990,
+    priceExGst: 1980,
     handsOnEffort: '11.25 Hours',
-    deliverySla: '3 Weeks',
+    deliverySla: '90 Days (Staged Milestones)',
     category: 'foundation',
     purpose: 'Core 4-pillar modular implementation establishing entity graph, answer architecture, semantic lattice, and citation consistency across priority pages.',
     deliverables: [
@@ -607,9 +607,9 @@ export const PRICING_TIERS: PricingTier[] = [
     id: 'foundation',
     name: 'AEO Foundation',
     tagline: 'Core Setup (Recommended)',
-    priceDisplay: '$1,990 AUD',
-    priceExGst: 1990,
-    sla: '4 weeks in staged milestones',
+    priceDisplay: '$1,980 AUD / mo',
+    priceExGst: 1980,
+    sla: '90 days in staged milestones',
     targetGoal: 'Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.',
     deliverables: [
       'Structured Data Installation: Valid schema markup added directly to your site or supplied as ready-to-paste code.',
@@ -621,7 +621,7 @@ export const PRICING_TIERS: PricingTier[] = [
     popular: true,
     ctaText: 'Deploy AEO Foundation',
     ctaHref: '/contact?tier=foundation',
-    badge: 'Complete setup • Covers up to 10 core pages • Includes $250 onboarding setup',
+    badge: '90 day execution • Covers up to 10 core pages • Includes Strategic Blueprint & $250 onboarding setup',
   },
   {
     id: 'macro-sprints',

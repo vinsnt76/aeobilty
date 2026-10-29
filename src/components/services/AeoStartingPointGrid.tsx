@@ -74,13 +74,13 @@ export default function AeoStartingPointGrid({
     {
       key: "foundation",
       anchorId: "aeo-foundation",
-      badge: "Complete setup • Covers up to 10 core pages • Includes $250 onboarding setup",
+      badge: "90 day execution • Covers up to 10 core pages • Includes Strategic Blueprint & $250 onboarding setup",
       icon: <Boxes className="w-5 h-5 text-aeo-cyan" />,
       category: "Core Setup (Recommended)",
       title: tier2.name,
       price: formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false }),
-      priceSub: "ex. GST",
-      scopeSub: "Complete setup • Covers up to 10 core pages • Includes $250 onboarding setup",
+      priceSub: "/ mo ex. GST",
+      scopeSub: "90 day execution • Covers up to 10 core pages • Includes Strategic Blueprint & $250 onboarding setup",
       description: "Hands-on technical implementation to resolve code errors, rewrite key pages for direct-answer search, and align your business listings.",
       deliverables: [
         { title: "Structured Data Installation", detail: "Valid schema markup added directly to your site or supplied as ready-to-paste code." },
@@ -88,7 +88,7 @@ export default function AeoStartingPointGrid({
         { title: "Internal Page Linking", detail: "Connects core services to relevant proof points and case studies." },
         { title: "Directory Alignment", detail: "Syncs name, address, phone number, and services across Google, Apple Maps, and Bing." }
       ],
-      turnaround: "4 weeks in staged milestones",
+      turnaround: "90 days in staged milestones",
       delivery: "Direct CMS installation or code files for your developer",
       ctaLabel: "Deploy AEO Foundation"
     },
