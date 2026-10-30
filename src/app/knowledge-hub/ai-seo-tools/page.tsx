@@ -128,6 +128,71 @@ export default function AiSeoToolsPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ProfessionalService",
+        "@id": "https://aeobility.com.au/#organisation",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au",
+        "logo": "https://aeobility.com.au/assets/AEObility_Logo.webp",
+        "image": "https://aeobility.com.au/assets/AEObility_Featured_Image.webp",
+        "description": "Bespoke Answer Engine Optimisation (AEO) and generative search consultancy for Australian business entities.",
+        "abn": "61 029 803 255",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-31.9523",
+          "longitude": "115.8613"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "addressCountry": "AU"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "@id": "https://en.wikipedia.org/wiki/Perth",
+            "name": "Perth, Western Australia",
+            "sameAs": "https://www.wikidata.org/wiki/Q3183"
+          }
+        ],
+        "sameAs": [
+          "https://www.google.com/maps?cid=aeobility",
+          "https://www.linkedin.com/in/vince-baker/"
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#techarticle",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools"
+        },
+        "headline": "AI SEO Tools & Technology Comparison Hub | AEObility",
+        "description": "An exhaustive engineering comparison of automated JSON-LD generators, vector retrieval engines, and native telemetry software built for Australian local entity search visibility.",
+        "inLanguage": "en-AU",
+        "about": [
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://aeobility.com.au/knowledge-hub/what-is-aeo#definition",
+            "name": "Answer Engine Optimisation"
+          },
+          {
+            "@type": "Place",
+            "@id": "https://www.wikidata.org/wiki/Q3183",
+            "name": "Perth, Western Australia"
+          }
+        ],
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vince Baker",
+          "jobTitle": "AEO & SEO Specialist",
+          "url": "https://aeobility.com.au/vince-baker",
+          "sameAs": [
+            "https://www.linkedin.com/in/vince-baker/"
+          ]
+        }
+      },
+      {
         "@type": "CollectionPage",
         "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/ai-seo-tools",
@@ -246,6 +311,25 @@ export default function AiSeoToolsPage() {
               <p className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
                 Skip third-party approximations. Test your website directly against live AI search vector parsers and LLM retrieval engines.
               </p>
+
+              {/* Atomic Declaration Block for Semantic Parsing */}
+              <div
+                aria-label="Atomic Entity Declaration"
+                className="p-4 rounded-xl bg-black/60 border border-cyan-500/30 space-y-1.5"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">
+                    AI SEO Tools Perth
+                  </h2>
+                  <span className="text-[11px] font-mono text-zinc-400">
+                    ABN: 61 029 803 255 · Perth, WA
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                  <strong className="text-white">AEObility</strong> is a specialised digital visibility framework operated by <Link href="/vince-baker" className="text-cyan-300 underline hover:text-aeo-cyan font-semibold">Vince Baker</Link> in Perth, Western Australia (ABN: 61 029 803 255). This node explicitly anchors the regional deployment of the AEObility Telemetry Engine across the Perth metropolitan area, enabling Western Australian enterprise platforms and local allied health, trade, and professional service business structures to audit vector proximity, parse schema entity alignment, and secure reliable citations across ChatGPT Search, Perplexity, and Google AI Overviews.
+                </p>
+              </div>
+
               <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row gap-3 pt-2">
                 <div className="relative flex-grow">
                   <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
@@ -354,9 +438,15 @@ export default function AiSeoToolsPage() {
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-white">Australian Regional Calibration</td>
-                    <td className="p-4 text-cyan-300 font-semibold">AU-English Local Salience Model</td>
+                    <td className="p-4 text-cyan-300 font-semibold">AU-English Local Salience Model (Calibrated for Perth Suburbs &amp; Western Australian operational footprints)</td>
                     <td className="p-4 text-zinc-400">Generic Global Standard</td>
                     <td className="p-4 text-zinc-400">US-Default Database</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-white">Local Search Intent Disambiguation</td>
+                    <td className="p-4 text-cyan-300 font-semibold">Supported (Differentiates between global tech informational queries and local Perth transactional intents)</td>
+                    <td className="p-4 text-zinc-400">Not Supported</td>
+                    <td className="p-4 text-zinc-500">Not Supported (Relies on strict exact-match text strings)</td>
                   </tr>
                 </tbody>
               </table>
@@ -404,11 +494,11 @@ export default function AiSeoToolsPage() {
 
           {/* Regional Specialist Hub Link */}
           <section className="space-y-6 border-t border-white/10 pt-12">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Local Strategy</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Local AEO Implementation in Australia</h2>
               <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                Aligning software tools with regional business signals requires local expertise. Working alongside a <Link href="/services/perth/seo-specialist" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">Perth SEO specialist and local AEO consultant</Link> guarantees your NAP signals match across map packs and conversational search nodes.
+                Rather than executing static, three-day automated script bursts that output platform-host hallucinations (like listing Google as a commercial competitor), our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">78-day domain case study metrics</Link> prove that optimising for semantic entity graphs secures a baseline <strong className="text-white">78.64% Salience Share</strong> across real conversational search surfaces. Aligning your software tools with actual server-edge crawler requests (ClaudeBot, GPTBot) alongside a <Link href="/services/perth/seo-specialist" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">Perth SEO specialist and local AEO consultant</Link> ensures your Perth business is mapped by its operational footprint, not arbitrary keyword scraper snapshots.
               </p>
             </div>
           </section>

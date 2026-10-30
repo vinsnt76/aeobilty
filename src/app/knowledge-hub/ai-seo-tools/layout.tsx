@@ -15,11 +15,13 @@ export const metadata: Metadata = {
   },
   keywords: [
     "ai seo tools",
+    "ai seo tools perth",
     "chatgtp seo",
     "seo ai tools",
     "AEO tools",
     "schema generators",
-    "LLM vector parsers"
+    "LLM vector parsers",
+    "Perth AEO telemetry"
   ]
 };
 
