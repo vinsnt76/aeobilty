@@ -61,31 +61,31 @@ export default function AiSeoToolsPage() {
   const tools = [
     {
       name: "AEObility Telemetry Engine",
-      category: "AEO Vector & RAG Audit Engine",
+      category: "AI Search Citation & Extraction Audit",
       pricing: "Free Scan / $995 Blueprint",
       badge: "Native Standard",
-      description: "Automated vector proximity assessment, prompt fan-out simulation, and passage-level extraction audit engine built specifically for Australian local entities.",
+      description: "Built to test how generative search engines read Australian business data. It checks whether AI models can cleanly pull out key answers about your business or if your content gets lost when queries expand into sub-topics.",
       bestFor: "Measuring real brand citations across ChatGPT Search, Google AI Overviews, and Perplexity.",
       ctaText: "Run Telemetry Scan",
       ctaLink: "/diagnostic"
     },
     {
       name: "Schema.org Generator & Validator",
-      category: "JSON-LD Graph Architecture",
+      category: "Structured Business Markup",
       pricing: "Open Access / Freemium",
       badge: "Industry Standard",
-      description: "Structured data generation tool producing clean JSON-LD microdata for LocalBusiness, Person, Service, and DefinedTerm schemas without syntax drift.",
-      bestFor: "Building machine-readable entity triples that search scrapers can digest deterministically.",
+      description: "Generates clean, structured code for your business, team, and services without markup errors or broken code.",
+      bestFor: "Giving crawlers unambiguous facts (who you are, what you do, and where you operate) that do not rely on keyword guessing.",
       ctaText: "View Schema Templates",
       ctaLink: "/knowledge-hub/semantic-seo"
     },
     {
       name: "Dense Retrieval Vector Simulators",
-      category: "LLM Context Window Parsers",
+      category: "Page Answer Placement Checkers",
       pricing: "Technical Framework",
       badge: "Developer Tool",
-      description: "Embeddings calculation frameworks evaluating text-embedding-004 cosine similarity and Lost in the Middle context dilution risks.",
-      bestFor: "Mitigating positional bias in long-form technical articles and documentation.",
+      description: "Software that checks if your key answers are buried or diluted halfway down long articles.",
+      bestFor: "Making sure the most important answer sits early in the section where both readers and automated extractors can find it immediately.",
       ctaText: "Read Positional Guide",
       ctaLink: "/knowledge-hub/articles/positional-bias-in-retrieval"
     },
@@ -94,8 +94,8 @@ export default function AiSeoToolsPage() {
       category: "Conversational Query Expansion",
       pricing: "Diagnostic Integration",
       badge: "Analysis Tool",
-      description: "Deconstructs single user searches into multi-stage sub-queries to evaluate how generative engines fan out prompt requests to vector indices.",
-      bestFor: "Understanding multi-engine query processing across Perplexity, ChatGPT, and Copilot.",
+      description: "Shows how an AI model breaks one user question into three or four secondary lookups.",
+      bestFor: "Identifying follow-up questions your guides and service pages need to answer upfront.",
       ctaText: "Explore Query Fan-Out",
       ctaLink: "/knowledge-hub/articles/structured-data-query-fan-out"
     }
@@ -104,23 +104,23 @@ export default function AiSeoToolsPage() {
   const faqs = [
     {
       question: "What are AI SEO tools?",
-      answer: "AI SEO tools are specialised software applications and technical frameworks designed to analyse, generate, or optimise web content for Large Language Models (LLMs) and generative search engines (Google AI Overviews, ChatGPT Search, Perplexity). Unlike legacy SEO keyword tools, AI SEO tools focus on entity salience, vector similarity, and structured JSON-LD schemas."
+      answer: "AI SEO tools are practical software applications designed to test, structure, and improve web content for generative search engines like Google AI Overviews, ChatGPT Search, and Perplexity. Unlike legacy keyword trackers that only monitor link positions, AI SEO tools check whether AI engines can read your business facts, match your content to specific user questions, and validate your structured schema markup."
     },
     {
       question: "How do AI SEO tools compare for answer engine optimisation?",
-      answer: "Legacy SEO tools measure keyword rankings and backlink volume. AI SEO tools for AEO and GEO evaluate vector similarity, passage-level extraction accuracy, prompt fan-out sub-queries, and structured JSON-LD entity graphs. While automated schema tools validate code syntax, native telemetry engines like AEObility inspect real-time citation readiness across ChatGPT Search, Perplexity, and Google AI Overviews."
+      answer: "Legacy SEO tools measure keyword rankings and backlink volume. AI SEO tools for AEO and GEO test how clearly an AI model can extract a direct answer from your page, how your content handles follow-up sub-questions, and whether your structured business data connects cleanly. While basic schema generators only check code syntax, the AEObility Telemetry Engine tests real-time citation readiness across ChatGPT Search, Perplexity, and Google AI Overviews."
     },
     {
       question: "How do I optimise technical content for AI SEO?",
-      answer: "Optimising technical content for AI search requires four disciplined steps: 1) Isolate monosemantic answer blocks into 80–120 word self-contained passages that directly address intent, 2) Define explicit Subject-Predicate-Object proof triples for all core business claims, 3) Deploy nested JSON-LD schema graphs (LocalBusiness, TechArticle, Person) with canonical URIs, and 4) Corroborate on-page facts across verified external registers and licensing databases."
+      answer: "1) Write self-contained answers: Provide direct, 80 to 120-word answers beneath clear subheadings before expanding into secondary details. 2) State plain facts: Express who you are, what you offer, and who qualifies in clear, simple sentences that leave no room for misinterpretation. 3) Connect your structured data: Connect your business, authors, and services using clean schema markup so search crawlers recognise how they relate. 4) Back up your claims: Verify your addresses, licences, and operational credentials across reputable third-party registers (such as ASIC, ABN Lookup, and industry bodies)."
     },
     {
       question: "How does the AEObility Telemetry Engine differ from third-party AI SEO software?",
-      answer: "Third-party AI SEO tools often rely on static keyword approximations or basic scraper estimations. The AEObility Telemetry Engine executes real-time vector analysis and prompt fan-out tests directly against generative AI retrieval systems, providing exact citation readiness scores."
+      answer: "Third-party AI SEO tools often rely on static keyword estimates or generic US databases. The AEObility Telemetry Engine tests your live pages against actual answer extraction and follow-up query patterns, giving you a clear picture of what AI models can verify about your business."
     },
     {
       question: "Do automated schema generators guarantee AI search inclusion?",
-      answer: "No. Automated schema generators output code templates, but earning consistent citations requires nesting entity graphs, validating proof triples, and eliminating context dilution across page content."
+      answer: "No. Automated schema generators output basic code templates, but earning consistent citations requires connecting your business facts, keeping on-page answers clear and self-contained, and making sure your key information is not buried halfway down a long page."
     }
   ];
 
@@ -166,8 +166,8 @@ export default function AiSeoToolsPage() {
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools"
         },
-        "headline": "AI SEO Tools & Technology Comparison Hub | AEObility",
-        "description": "An exhaustive engineering comparison of automated JSON-LD generators, vector retrieval engines, and native telemetry software built for Australian local entity search visibility.",
+        "headline": "AI SEO Tools & Technology Comparison Hub",
+        "description": "Compare AI search software, schema tools, and the retrieval systems that feed conversational models for Australian businesses.",
         "inLanguage": "en-AU",
         "about": [
           {
@@ -196,8 +196,8 @@ export default function AiSeoToolsPage() {
         "@type": "CollectionPage",
         "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/ai-seo-tools",
-        "name": "AI SEO Tools & Technology Comparison Hub | AEObility",
-        "description": "Compare AI SEO tools, automated schema generators, and vector retrieval software built for Answer Engine Optimisation (AEO) and AI search marketing.",
+        "name": "AI SEO Tools & Technology Comparison Hub",
+        "description": "Compare AI search software, schema tools, and the retrieval systems that feed conversational models.",
         "inLanguage": "en-AU",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
@@ -238,7 +238,7 @@ export default function AiSeoToolsPage() {
         "subjectOf": {
           "@type": "ItemPage",
           "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#itempage",
-          "name": "AI SEO Tools & Scraper Vector Parsers Benchmarking Matrix"
+          "name": "AI SEO Tools & Technology Comparison Matrix"
         }
       },
       {
@@ -287,34 +287,34 @@ export default function AiSeoToolsPage() {
           <section className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-medium">
               <Wrench className="w-4 h-4 text-aeo-cyan" />
-              <span>AI Search Tooling &amp; RAG Architecture Hub</span>
+              <span>AI Search Tooling &amp; Practical Software Guide</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI SEO Tools &amp; <span className="text-gradient-aeo">Technology Comparison</span>
+              AI SEO Tools &amp; <span className="text-gradient-aeo">Technology Comparison Hub</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
-              Compare AI search software, automated JSON-LD generators, and vector retrieval engines engineered for LLM ingestion.
+              Compare AI search software, schema tools, and the retrieval systems that feed conversational models.
             </p>
 
             <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              As high-intent search demand shifts toward conversational AI platforms, marketing teams require specialised software evaluation. This hub benchmark tools across AI search queries while integrating the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> for live vector evaluation.
+              As people shift from traditional link search to tools like ChatGPT, Perplexity, and Google AI Overviews, legacy rank trackers stop telling the full story. We tested standard SEO software against how AI engines actually extract page information via the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> so you can see where your business data holds up and where it breaks.
             </p>
 
             {/* Interactive Telemetry Engine Bridge Banner (Hero Section) */}
             <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-[#00E5FF] shadow-[0_0_30px_rgba(0,229,255,0.15)] text-left max-w-3xl mx-auto space-y-4">
               <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider">
                 <Sparkles className="w-4 h-4 text-aeo-cyan animate-pulse" />
-                <span>Live AI Search Vector Audit</span>
+                <span>Live AI Search Visibility Audit</span>
               </div>
               <p className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
-                Skip third-party approximations. Test your website directly against live AI search vector parsers and LLM retrieval engines.
+                Skip third-party approximations. Test your website directly to see how AI search engines read and extract your business information.
               </p>
 
-              {/* Atomic Declaration Block for Semantic Parsing */}
+              {/* Local Operator & Node Box */}
               <div
-                aria-label="Atomic Entity Declaration"
+                aria-label="Local Operator Overview"
                 className="p-4 rounded-xl bg-black/60 border border-cyan-500/30 space-y-1.5"
               >
                 <div className="flex items-center justify-between gap-2">
@@ -326,7 +326,7 @@ export default function AiSeoToolsPage() {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                  <strong className="text-white">AEObility</strong> is a specialised digital visibility framework operated by <Link href="/vince-baker" className="text-cyan-300 underline hover:text-aeo-cyan font-semibold">Vince Baker</Link> in Perth, Western Australia (ABN: 61 029 803 255). This node explicitly anchors the regional deployment of the AEObility Telemetry Engine across the Perth metropolitan area, enabling Western Australian enterprise platforms and local allied health, trade, and professional service business structures to audit vector proximity, parse schema entity alignment, and secure reliable citations across ChatGPT Search, Perplexity, and Google AI Overviews.
+                  Based in Perth, Western Australia (ABN: 61 029 803 255), <strong className="text-white">AEObility</strong> (<Link href="/vince-baker" className="text-cyan-300 underline hover:text-aeo-cyan font-semibold">Vince Baker</Link>) helps local trade, allied health, and professional service businesses make their core facts readable to generative engines. We test whether platforms like ChatGPT Search, Perplexity, and Google AI Overviews can verify your service areas, licences, and operational footprint without guessing.
                 </p>
               </div>
 
@@ -356,7 +356,7 @@ export default function AiSeoToolsPage() {
           <section className="space-y-8">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI SEO Tools &amp; Technical Frameworks</h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Comparing third-party software against native telemetry engines.</p>
+              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Comparing third-party software against live answer extraction checks.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -403,8 +403,8 @@ export default function AiSeoToolsPage() {
           <section className="space-y-6 border-t border-white/10 pt-12">
             <div className="space-y-2">
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Software Evaluation</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI Search Tools &amp; Vector Parsers Comparison</h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Benchmarking software capabilities for AI search optimisation.</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI Search Tools &amp; Extraction Comparison</h2>
+              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Comparing practical capabilities across AI search and legacy SEO tools.</p>
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80">
@@ -420,7 +420,7 @@ export default function AiSeoToolsPage() {
                 <tbody className="divide-y divide-white/5 font-serif text-zinc-300">
                   <tr>
                     <td className="p-4 font-bold text-white">Live AI Citation Tracking</td>
-                    <td className="p-4 text-cyan-300 font-semibold">Real-Time Vector Multi-Engine Scan</td>
+                    <td className="p-4 text-cyan-300 font-semibold">Live Multi-Engine Answer Check</td>
                     <td className="p-4 text-zinc-400">Syntax Check Only</td>
                     <td className="p-4 text-zinc-500">Not Supported (Links Only)</td>
                   </tr>
@@ -431,22 +431,22 @@ export default function AiSeoToolsPage() {
                     <td className="p-4 text-zinc-500">Not Supported</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-white">Entity Relationship Triples</td>
-                    <td className="p-4 text-cyan-300 font-semibold">Full Graph Validation</td>
+                    <td className="p-4 font-bold text-white">Clear Fact Connections (Entity Triples)</td>
+                    <td className="p-4 text-cyan-300 font-semibold">Full Business Fact Graph Check</td>
                     <td className="p-4 text-zinc-400">Single Class Templates</td>
-                    <td className="p-4 text-zinc-500">Lexical Keyword Matching</td>
+                    <td className="p-4 text-zinc-500">Basic Keyword Matching</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold text-white">Australian Regional Calibration</td>
-                    <td className="p-4 text-cyan-300 font-semibold">AU-English Local Salience Model (Calibrated for Perth Suburbs &amp; Western Australian operational footprints)</td>
+                    <td className="p-4 text-cyan-300 font-semibold">Tested against Australian locations, local suburbs, and Western Australian business contexts rather than US-only directories</td>
                     <td className="p-4 text-zinc-400">Generic Global Standard</td>
                     <td className="p-4 text-zinc-400">US-Default Database</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-white">Local Search Intent Disambiguation</td>
-                    <td className="p-4 text-cyan-300 font-semibold">Supported (Differentiates between global tech informational queries and local Perth transactional intents)</td>
+                    <td className="p-4 font-bold text-white">Local vs Global Intent Separation</td>
+                    <td className="p-4 text-cyan-300 font-semibold">Supported (Distinguishes general technical guides from someone looking to hire a specialist in Perth)</td>
                     <td className="p-4 text-zinc-400">Not Supported</td>
-                    <td className="p-4 text-zinc-500">Not Supported (Relies on strict exact-match text strings)</td>
+                    <td className="p-4 text-zinc-500">Not Supported (Relies on exact-match text strings)</td>
                   </tr>
                 </tbody>
               </table>
@@ -456,9 +456,9 @@ export default function AiSeoToolsPage() {
           {/* Mid-Page Comparison Matrix CTA Card */}
           <section className="my-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-zinc-900 via-neutral-900 to-zinc-900 border border-aeo-cyan/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl text-left">
-              <span className="text-xs font-mono font-bold text-aeo-cyan uppercase tracking-wider block">Enterprise Agency Integration</span>
+              <span className="text-xs font-mono font-bold text-aeo-cyan uppercase tracking-wider block">Hands-On Implementation</span>
               <p className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">
-                Need automated schema graph refactoring or custom LLM citation engineering for your platform?
+                Need clean structured data or practical AI search setup for your business website?
               </p>
             </div>
             <Link
@@ -476,7 +476,7 @@ export default function AiSeoToolsPage() {
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Foundational Methodology</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Understanding AEO Methodology</h2>
               <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                Before selecting software tools, review our <Link href="/knowledge-hub/what-is-aeo" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">comprehensive Answer Engine Optimisation definition guide</Link> to understand how atomic answer blocks and proof triples operate during RAG context extraction.
+                Before selecting software tools, review our <Link href="/knowledge-hub/what-is-aeo" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">comprehensive Answer Engine Optimisation definition guide</Link> to see how self-contained, direct answer passages and clear factual statements work when AI search engines read and extract page content.
               </p>
             </div>
           </section>
@@ -487,7 +487,7 @@ export default function AiSeoToolsPage() {
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Custom Software Engineering</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Custom AI Search Agency Engineering</h2>
               <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                For complex e-commerce platforms or multi-location brands, off-the-shelf software generators fall short. Partnering with a <Link href="/services/ai-search-agency" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">dedicated AI search agency and AEO consultancy</Link> ensures bespoke vector schema alignment and multi-engine tracking.
+                For complex e-commerce platforms or multi-location brands, off-the-shelf software generators fall short. Partnering with a <Link href="/services/ai-search-agency" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">dedicated AI search agency and AEO consultancy</Link> gives you clean structured markup and consistent citation tracking across engines.
               </p>
             </div>
           </section>
@@ -498,7 +498,7 @@ export default function AiSeoToolsPage() {
               <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">Local Strategy</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Local AEO Implementation in Australia</h2>
               <p className="text-sm text-zinc-300 font-serif leading-relaxed max-w-3xl">
-                Rather than executing static, three-day automated script bursts that output platform-host hallucinations (like listing Google as a commercial competitor), our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">78-day domain case study metrics</Link> prove that optimising for semantic entity graphs secures a baseline <strong className="text-white">78.64% Salience Share</strong> across real conversational search surfaces. Aligning your software tools with actual server-edge crawler requests (ClaudeBot, GPTBot) alongside a <Link href="/services/perth/seo-specialist" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">Perth SEO specialist and local AEO consultant</Link> ensures your Perth business is mapped by its operational footprint, not arbitrary keyword scraper snapshots.
+                Short-term automated scripts often backfire, causing AI engines to hallucinate or mislabel core business details. In our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">78-day field trial</Link>, we focused on cleaning up basic entity data and structuring on-page answers. Over the test period, clear, verifiable business citations increased significantly across conversational search tools compared to unverified keyword pages. Working alongside a <Link href="/services/perth/seo-specialist" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">Perth SEO specialist and local AEO consultant</Link> ensures consistent entity facts beat keyword stuffing every time.
               </p>
             </div>
           </section>
