@@ -114,6 +114,14 @@ export default function AEOBlueprintPage() {
     {
       question: "Is the Blueprint suitable for agencies or multi-location businesses?",
       answer: "Yes. We can scope the Blueprint for agency partners, internal marketing teams, and multi-location businesses. Contact us before booking so we can confirm the scope and deliverables."
+    },
+    {
+      question: "How much does AEO cost in Australia, and how does pricing vary for single-site vs. multi-entity deployments?",
+      answer: "Fixed-scope AEO in Australia starts with our free AI Visibility Score and the $995 AUD ex. GST Strategic Blueprint (100% credited toward eligible implementation within 60 days). Single-site SMBs qualify for fixed-rate Micro-Sprints from $495 AUD ex. GST or AEO Foundation ($1,990 AUD ex. GST across up to 10 core commercial pages). Multi-entity organisations, franchise networks, and large e-commerce catalogues are scoped by application following your Blueprint audit."
+    },
+    {
+      question: "How do I run an AEO pilot with a 90-day plan and clear success criteria?",
+      answer: "The $995 AUD Strategic Blueprint is engineered specifically as the entry point for a 90-day AEO pilot. Days 1 to 10 establish your baseline visibility scorecard and lock in a prioritised 90-day execution roadmap. In Weeks 2 to 6, you can apply your 100% $995 fee credit toward AEO Foundation or targeted Micro-Sprints to deploy connected JSON-LD schema and self-contained answer passages. Weeks 7 to 12 measure pilot performance against clear success criteria: zero-error schema validation, verified AI crawler access, direct passage extraction on target buyer queries, and brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews."
     }
   ];
 
@@ -498,11 +506,13 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 6. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 6. FAQ Accordion Section (All Answers Rendered in DOM) */}
           <section id="faq-blueprint" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
-              <p className="text-xs text-white/60 font-serif">Everything you need to know about the Strategic Blueprint audit.</p>
+              <p className="text-xs text-white/60 font-serif">
+                Everything you need to know about the Strategic Blueprint audit. For full cost tiers and milestone schedules, see our <Link href="/services/aeo/costs-timing" className="text-cyan-400 hover:underline font-medium">AEO Service Costs &amp; Project Timing guide</Link>.
+              </p>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-3">

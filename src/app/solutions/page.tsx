@@ -49,6 +49,11 @@ export const SOLUTIONS_INTERNAL_LINKS = [
     targetSlug: "/services/aeo/shopify",
     anchorText: "Shopify AEO Services",
     entityRelation: "http://schema.org/isRelatedTo"
+  },
+  {
+    targetSlug: "/services/aeo/costs-timing",
+    anchorText: "AEO Service Costs & Project Timing",
+    entityRelation: "http://schema.org/isRelatedTo"
   }
 ];
 
@@ -149,6 +154,14 @@ export default function SolutionsPage() {
     {
       question: "What happens after a sprint is completed?",
       answer: "You receive a full handover with clear documentation of all updates made. You own 100% of the code and schema outright. You can manage the site internally, book additional targeted Micro-Sprints, or discuss ongoing governed cycles."
+    },
+    {
+      question: "How much does Answer Engine Optimisation (AEO) cost in Australia for single-site vs. multi-entity deployments?",
+      answer: `In Australia, fixed-scope AEO starts with our free AI Visibility Score and the standalone ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD ex. GST Strategic Blueprint (100% credited toward eligible implementation within ${GOVERNANCE_RULES.creditWindowDays} days). Single-site SMBs qualify for fixed-rate Micro-Sprints from ${formatAudCurrency(microSku.priceExGst, { includeTaxSuffix: false })} AUD ex. GST, Governed Macro Sprints at ${formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} AUD/month ex. GST, or AEO Foundation (${formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD ex. GST across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core pages). Multi-entity organisations, national networks, and complex e-commerce catalogues are scoped by application following a Strategic Blueprint review.`
+    },
+    {
+      question: "How do I run an AEO pilot with a 90-day plan and clear success criteria?",
+      answer: `Begin your 90-day AEO pilot with the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Strategic Blueprint. Days 1 to 10 establish your baseline AI Visibility Score, map entity and schema gaps, and lock in a prioritised 90-day checklist. In Weeks 2 to 6, apply your 100% ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit toward AEO Foundation or targeted Micro-Sprints to deploy connected JSON-LD schema and self-contained answer passages. In Weeks 7 to 12, measure pilot performance against four clear criteria: zero-error schema validation, verified AI crawler access (GPTBot, ClaudeBot, PerplexityBot), direct passage extraction on target buyer prompts, and measurable brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews.`
     }
   ];
 
@@ -779,11 +792,13 @@ export default function SolutionsPage() {
             </div>
           </section>
 
-          {/* 7. FAQ Accordion Section (All 6 Answers Rendered in DOM) */}
+          {/* 7. FAQ Accordion Section (All Answers Rendered in DOM) */}
           <section id="faq-solutions" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Frequently asked questions</h2>
-              <p className="text-xs text-white/60 font-serif">Everything you need to know about AEObility solutions and pricing.</p>
+              <p className="text-xs text-white/60 font-serif">
+                Everything you need to know about AEObility solutions and pricing. For full cost tiers and milestone schedules, review our <Link href="/services/aeo/costs-timing" className="text-cyan-400 hover:underline font-medium">AEO Service Costs &amp; Project Timing sub-node</Link>.
+              </p>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-3">

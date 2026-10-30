@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { 
   Wrench, 
@@ -181,6 +181,7 @@ export default function AiSeoToolsPage() {
         "headline": "AI SEO Tools & Technology Comparison Hub",
         "description": "Compare AI search software, schema tools, and the retrieval systems that feed conversational models for Australian businesses.",
         "inLanguage": "en-AU",
+        "dateModified": "2026-10-31",
         "about": [
           {
             "@type": "DefinedTerm",
@@ -211,6 +212,7 @@ export default function AiSeoToolsPage() {
         "name": "AI SEO Tools & Technology Comparison Hub",
         "description": "Compare AI search software, schema tools, and the retrieval systems that feed conversational models.",
         "inLanguage": "en-AU",
+        "dateModified": "2026-10-31",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
         },
@@ -291,8 +293,7 @@ export default function AiSeoToolsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
       
-      <Navbar />
-      <SubNavPills items={HUB_SUBNAV_MAPS.knowledge} />
+      <Navbar subnavItems={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
 
       <main className="flex-grow w-full py-12">
@@ -308,6 +309,30 @@ export default function AiSeoToolsPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
               AI SEO Tools &amp; <span className="text-gradient-aeo">Technology Comparison Hub</span>
             </h1>
+
+            {/* Author & Last Modified Stamp Under H1 */}
+            <div className="flex items-center justify-center gap-3 py-1">
+              <Image
+                src="/images/about/vince-baker-profile_AEObility.webp"
+                alt="Vince Baker - AEO & SEO Specialist"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-full border border-cyan-400/50 object-cover shadow-sm shrink-0"
+              />
+              <div className="text-xs font-mono text-zinc-300 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+                <span>
+                  By{' '}
+                  <Link href="/vince-baker" className="text-cyan-400 font-bold hover:underline">
+                    Vince Baker
+                  </Link>{' '}
+                  <span className="text-zinc-500">|</span> AEO &amp; SEO Specialist
+                </span>
+                <span className="text-zinc-500 hidden sm:inline">|</span>
+                <span className="text-zinc-300 text-[11px]">
+                  Last Modified: <time dateTime="2026-10-31">31 October 2026</time>
+                </span>
+              </div>
+            </div>
 
             <p className="text-lg sm:text-xl text-zinc-100 font-semibold max-w-3xl mx-auto font-soehne-breit">
               Compare AI search software, schema tools, and the retrieval systems that feed conversational models.

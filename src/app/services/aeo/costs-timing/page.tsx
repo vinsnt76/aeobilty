@@ -153,6 +153,30 @@ export default function AEOPricingPage() {
         'mainEntity': [
           {
             '@type': 'Question',
+            'name': 'How much does Answer Engine Optimisation (AEO) cost in Australia?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `In Australia, fixed-scope Answer Engine Optimisation (AEO) with AEObility starts with a free AI Visibility Score. The standalone Strategic Blueprint costs ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD ex. GST (100% credited toward eligible implementation within ${GOVERNANCE_RULES.creditWindowDays} days). Targeted Micro-Sprints start at $495 AUD ex. GST, Governed Macro Sprints are ${formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} AUD/month ex. GST with zero contract lock-in, and AEO Foundation is ${formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD ex. GST across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages.`
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'How does AEO pricing vary for single-site vs. multi-entity deployments?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `Single-site Australian SMBs, local trades, and clinics qualify for fixed-price packages: the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Strategic Blueprint and ${formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD AEO Foundation (covering up to ${GOVERNANCE_RULES.turnkeyPageLimit} priority pages with complimentary ${formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} technical onboarding). Multi-entity organisations, national franchise networks, and large e-commerce catalogues require parent-child schema graphs, cross-domain canonical reconciliation, and regional location nodes. These deployments are scoped by application following a Strategic Blueprint audit.`
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'How do I run an AEO pilot with a 90-day plan and clear success criteria?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `Start your 90-day AEO pilot by commissioning the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Strategic Blueprint. Days 1 to 10 establish your baseline AI Visibility Score, map entity and schema gaps, and lock in a prioritised 90-day execution checklist. In Weeks 2 to 6, apply your 100% ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit toward AEO Foundation or targeted Micro-Sprints to deploy connected JSON-LD schema, rewrite priority pages into self-contained 80 to 120-word answer blocks, and align directory facts. In Weeks 7 to 12, evaluate pilot success against four clear criteria: 100% schema validation with zero syntax errors, verified AI crawler access (GPTBot, ClaudeBot, PerplexityBot), direct passage extraction on target buyer prompts, and measurable brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews.`
+            }
+          },
+          {
+            '@type': 'Question',
             'name': `How does the ${formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?`,
             'acceptedAnswer': {
               '@type': 'Answer',
@@ -575,6 +599,33 @@ export default function AEOPricingPage() {
           </div>
 
           <div className="border border-white/10 rounded-2xl overflow-hidden bg-zinc-950/80 divide-y divide-white/5 shadow-xl">
+            <div className="p-5 sm:p-6 space-y-2">
+              <h3 id="how-much-does-aeo-cost-in-australia" className="font-semibold text-sm sm:text-base text-white">
+                How much does Answer Engine Optimisation (AEO) cost in Australia?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                In Australia, fixed-scope Answer Engine Optimisation (AEO) with AEObility starts with a free <Link href="/diagnostic" className="text-aeo-cyan hover:underline">AI Visibility Score</Link>. The standalone <Link href="/solutions/aeo-blueprint" className="text-aeo-purple hover:underline font-semibold">Strategic Blueprint costs {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD ex. GST</Link> and is 100% credited toward eligible implementation within {GOVERNANCE_RULES.creditWindowDays} days. Targeted Micro-Sprints start at $495 AUD ex. GST, Governed Macro Sprints are {formatAudCurrency(macroSku.priceExGst, { includeTaxSuffix: false })} AUD/month ex. GST with zero contract lock-in, and <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">AEO Foundation</Link> is {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD ex. GST across up to {GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages.
+              </p>
+            </div>
+
+            <div className="p-5 sm:p-6 space-y-2">
+              <h3 id="single-site-vs-multi-entity-pricing" className="font-semibold text-sm sm:text-base text-white">
+                How does AEO pricing vary for single-site vs. multi-entity deployments?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Single-site Australian SMBs, local trades, and clinics qualify for fixed-price packages: the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD <Link href="/solutions/aeo-blueprint" className="text-aeo-purple hover:underline">Strategic Blueprint</Link> and {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })} AUD <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">AEO Foundation</Link> (covering up to {GOVERNANCE_RULES.turnkeyPageLimit} priority pages with complimentary {formatAudCurrency(onboardingSku.priceExGst, { includeTaxSuffix: false })} technical onboarding). Multi-entity organisations, national franchise networks, and large e-commerce catalogues require parent-child schema graphs, cross-domain canonical reconciliation, and regional location nodes. These deployments are scoped by application following a Strategic Blueprint audit.
+              </p>
+            </div>
+
+            <div className="p-5 sm:p-6 space-y-2">
+              <h3 id="how-to-run-a-90-day-aeo-pilot" className="font-semibold text-sm sm:text-base text-white">
+                How do I run an AEO pilot with a 90-day plan and clear success criteria?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Start your 90-day AEO pilot by commissioning the <Link href="/solutions/aeo-blueprint" className="text-aeo-purple hover:underline font-semibold">{formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} AUD Strategic Blueprint</Link>. Days 1 to 10 establish your baseline AI Visibility Score, map entity and schema gaps, and lock in a prioritised 90-day execution checklist (see our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline">90-day Blueprint case study</Link>). In Weeks 2 to 6, apply your 100% {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit toward <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline">AEO Foundation</Link> or targeted Micro-Sprints to deploy connected JSON-LD schema, rewrite priority pages into self-contained 80 to 120-word answer blocks, and align directory facts. In Weeks 7 to 12, evaluate pilot success against four clear criteria: 100% schema validation with zero syntax errors, verified AI crawler access (GPTBot, ClaudeBot, PerplexityBot), direct passage extraction on target buyer prompts, and measurable brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews.
+              </p>
+            </div>
+
             <div className="p-5 sm:p-6 space-y-2">
               <h3 id="what-is-the-aeobility-blueprint-price" className="font-semibold text-sm sm:text-base text-white">
                 How does the {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint credit work?
