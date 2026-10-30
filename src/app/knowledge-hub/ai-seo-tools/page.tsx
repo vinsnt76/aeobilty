@@ -60,41 +60,45 @@ export default function AiSeoToolsPage() {
 
   const tools = [
     {
+      id: "aeobility-telemetry-engine",
       name: "AEObility Telemetry Engine",
       category: "AI Search Citation & Extraction Audit",
       pricing: "Free Scan / $995 Blueprint",
       badge: "Native Standard",
-      description: "Built to test how generative search engines read Australian business data. It checks whether AI models can cleanly pull out key answers about your business or if your content gets lost when queries expand into sub-topics.",
+      description: "The AEObility Telemetry Engine is an Australian AI search diagnostic tool that tests how generative search platforms read and cite business websites. It evaluates whether AI models can cleanly extract direct answers from your pages or if key facts get lost when user queries expand into follow-up questions. Unlike static rank trackers, it inspects live page markup and answer structure.",
       bestFor: "Measuring real brand citations across ChatGPT Search, Google AI Overviews, and Perplexity.",
       ctaText: "Run Telemetry Scan",
       ctaLink: "/diagnostic"
     },
     {
+      id: "schema-org-generator-validator",
       name: "Schema.org Generator & Validator",
       category: "Structured Business Markup",
       pricing: "Open Access / Freemium",
       badge: "Industry Standard",
-      description: "Generates clean, structured code for your business, team, and services without markup errors or broken code.",
+      description: "A Schema.org Generator and Validator is a structured data tool that produces clean JSON-LD markup for LocalBusiness, Person, Service, and FAQ entities without markup errors or broken code. It helps search crawlers verify your core business facts (such as ABN, operating location, and service scope) without relying on keyword guessing.",
       bestFor: "Giving crawlers unambiguous facts (who you are, what you do, and where you operate) that do not rely on keyword guessing.",
       ctaText: "View Schema Templates",
       ctaLink: "/knowledge-hub/semantic-seo"
     },
     {
+      id: "dense-retrieval-vector-simulators",
       name: "Dense Retrieval Vector Simulators",
       category: "Page Answer Placement Checkers",
       pricing: "Technical Framework",
       badge: "Developer Tool",
-      description: "Software that checks if your key answers are buried or diluted halfway down long articles.",
+      description: "Dense Retrieval Vector Simulators are analysis tools that test whether your core answers are buried or diluted halfway down long articles. Because AI retrieval pipelines prioritise self-contained passages near the top of a section, these checkers measure how clearly your lead paragraphs match specific buyer questions.",
       bestFor: "Making sure the most important answer sits early in the section where both readers and automated extractors can find it immediately.",
       ctaText: "Read Positional Guide",
       ctaLink: "/knowledge-hub/articles/positional-bias-in-retrieval"
     },
     {
+      id: "aeo-prompt-fan-out-simulators",
       name: "AEO Prompt Fan-Out Simulators",
       category: "Conversational Query Expansion",
       pricing: "Diagnostic Integration",
       badge: "Analysis Tool",
-      description: "Shows how an AI model breaks one user question into three or four secondary lookups.",
+      description: "AEO Prompt Fan-Out Simulators map how a conversational AI model breaks a single user prompt into three or four secondary lookups before generating an answer. By testing these sub-questions in advance, you can see which pricing, location, or qualification details your service pages need to answer upfront.",
       bestFor: "Identifying follow-up questions your guides and service pages need to answer upfront.",
       ctaText: "Explore Query Fan-Out",
       ctaLink: "/knowledge-hub/articles/structured-data-query-fan-out"
@@ -128,14 +132,21 @@ export default function AiSeoToolsPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://aeobility.com.au/#organisation",
         "name": "AEObility",
+        "legalName": "Trekaboutoz trading as AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/assets/AEObility_Logo.webp",
         "image": "https://aeobility.com.au/assets/AEObility_Featured_Image.webp",
         "description": "Bespoke Answer Engine Optimisation (AEO) and generative search consultancy for Australian business entities.",
         "abn": "61 029 803 255",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vince Baker",
+          "url": "https://aeobility.com.au/vince-baker"
+        },
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": "-31.9523",
@@ -145,6 +156,7 @@ export default function AiSeoToolsPage() {
           "@type": "PostalAddress",
           "addressLocality": "Perth",
           "addressRegion": "WA",
+          "postalCode": "6000",
           "addressCountry": "AU"
         },
         "areaServed": [
@@ -193,7 +205,7 @@ export default function AiSeoToolsPage() {
         }
       },
       {
-        "@type": "CollectionPage",
+        "@type": ["WebPage", "CollectionPage"],
         "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/ai-seo-tools",
         "name": "AI SEO Tools & Technology Comparison Hub",
@@ -201,6 +213,9 @@ export default function AiSeoToolsPage() {
         "inLanguage": "en-AU",
         "isPartOf": {
           "@id": "https://aeobility.com.au/#website"
+        },
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organisation"
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -285,8 +300,8 @@ export default function AiSeoToolsPage() {
           
           {/* Hero Section */}
           <section className="text-center max-w-4xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-mono font-medium">
-              <Wrench className="w-4 h-4 text-aeo-cyan" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 text-xs text-zinc-200 font-mono font-medium">
+              <Wrench className="w-3.5 h-3.5 text-cyan-400" />
               <span>AI Search Tooling &amp; Practical Software Guide</span>
             </div>
 
@@ -294,61 +309,74 @@ export default function AiSeoToolsPage() {
               AI SEO Tools &amp; <span className="text-gradient-aeo">Technology Comparison Hub</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-cyan-300 font-semibold max-w-3xl mx-auto font-soehne-breit">
+            <p className="text-lg sm:text-xl text-zinc-100 font-semibold max-w-3xl mx-auto font-soehne-breit">
               Compare AI search software, schema tools, and the retrieval systems that feed conversational models.
             </p>
 
-            <p className="text-base text-zinc-300 font-serif leading-relaxed max-w-3xl mx-auto">
-              As people shift from traditional link search to tools like ChatGPT, Perplexity, and Google AI Overviews, legacy rank trackers stop telling the full story. We tested standard SEO software against how AI engines actually extract page information via the <Link href="/diagnostic" className="text-aeo-cyan underline hover:text-cyan-300 font-semibold">AEObility Telemetry Diagnostic Engine</Link> so you can see where your business data holds up and where it breaks.
+            {/* Self-Contained 90-Word Lead Definition Passage (AEO Extraction Ready & WCAG 2.2 AA Contrast) */}
+            <p className="text-base text-zinc-200 font-serif leading-relaxed max-w-3xl mx-auto">
+              AI SEO tools are specialised software platforms that test, structure, and measure how conversational search engines (ChatGPT Search, Perplexity, and Google AI Overviews) read, extract, and cite business information. While legacy rank trackers only monitor blue-link keyword positions and backlink counts, AI SEO tools evaluate whether an answer engine can extract a self-contained passage from your page, verify your business credentials through structured schema markup, and connect your services to follow-up buyer questions. We benchmark standard SEO software alongside the <Link href="/diagnostic" className="text-cyan-300 underline hover:text-white font-semibold">AEObility Telemetry Diagnostic Engine</Link> so you can see where your business data holds up.
             </p>
 
-            {/* Interactive Telemetry Engine Bridge Banner (Hero Section) */}
-            <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-[#0A0F1C] border border-[#00E5FF] shadow-[0_0_30px_rgba(0,229,255,0.15)] text-left max-w-3xl mx-auto space-y-4">
-              <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-aeo-cyan animate-pulse" />
-                <span>Live AI Search Visibility Audit</span>
-              </div>
-              <p className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
-                Skip third-party approximations. Test your website directly to see how AI search engines read and extract your business information.
-              </p>
-
-              {/* Local Operator & Node Box */}
+            {/* Dark Glassmorphism Telemetry Audit Container with Ambient Refraction Glows */}
+            <div className="relative mt-8 max-w-3xl mx-auto">
+              {/* Ambient Radial Glow Blobs for Glass Refraction */}
               <div
-                aria-label="Local Operator Overview"
-                className="p-4 rounded-xl bg-black/60 border border-cyan-500/30 space-y-1.5"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan">
-                    AI SEO Tools Perth
-                  </h2>
-                  <span className="text-[11px] font-mono text-zinc-400">
-                    ABN: 61 029 803 255 · Perth, WA
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
-                  Based in Perth, Western Australia (ABN: 61 029 803 255), <strong className="text-white">AEObility</strong> (<Link href="/vince-baker" className="text-cyan-300 underline hover:text-aeo-cyan font-semibold">Vince Baker</Link>) helps local trade, allied health, and professional service businesses make their core facts readable to generative engines. We test whether platforms like ChatGPT Search, Perplexity, and Google AI Overviews can verify your service areas, licences, and operational footprint without guessing.
-                </p>
-              </div>
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-10 left-1/4 h-44 w-64 -translate-x-1/2 rounded-full bg-cyan-500/15 blur-3xl"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-10 right-1/4 h-44 w-64 translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl"
+              />
 
-              <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row gap-3 pt-2">
-                <div className="relative flex-grow">
-                  <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
-                  <input
-                    type="text"
-                    required
-                    placeholder="Enter domain (e.g. example.com.au)"
-                    value={heroUrl}
-                    onChange={(e) => setHeroUrl(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3.5 rounded-xl bg-zinc-900/90 border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#00E5FF] transition-all"
-                  />
+              {/* 1px Translucent Gradient Stroke Wrapper */}
+              <div className="relative rounded-2xl p-[1px] bg-gradient-to-b from-white/25 via-cyan-400/20 to-white/5 shadow-[0_24px_60px_rgba(0,0,0,0.65)]">
+                <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 backdrop-blur-md text-left space-y-4">
+                  <div className="flex items-center gap-2 text-zinc-200 text-xs font-mono font-semibold uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <span>Live AI Search Visibility Audit</span>
+                  </div>
+                  <p className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
+                    Skip third-party approximations. Test your website directly to see how AI search engines read and extract your business information.
+                  </p>
+                  <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
+                    AEObility evaluates how conversational AI platforms (ChatGPT, Perplexity, Google AI Overviews) extract and cite Australian business data.
+                  </p>
+
+                  <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row gap-3 pt-1">
+                    <div className="relative flex-grow">
+                      <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-300" />
+                      <input
+                        type="text"
+                        required
+                        aria-label="Enter website domain to audit"
+                        placeholder="Enter domain (e.g. example.com.au)"
+                        value={heroUrl}
+                        onChange={(e) => setHeroUrl(e.target.value)}
+                        className="w-full pl-10 pr-4 py-3.5 rounded-xl bg-black/40 shadow-inner border border-white/20 text-white placeholder:text-zinc-300 text-sm focus:outline-none focus:border-white focus:ring-2 focus:ring-white/80 transition-all"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="px-6 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_20px_rgba(0,229,255,0.35)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>Run Telemetry Audit →</span>
+                    </button>
+                  </form>
+
+                  {/* Inline Trust & Verification Markers Directly Beneath Primary CTA */}
+                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 text-xs font-mono text-zinc-300">
+                    <span className="inline-flex items-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <span>Perth, WA · ABN: 61 029 803 255</span>
+                    </span>
+                    <span>
+                      Operated by <Link href="/vince-baker" className="text-zinc-100 underline hover:text-cyan-300">Vince Baker</Link> · Free instant check
+                    </span>
+                  </div>
                 </div>
-                <button
-                  type="submit"
-                  className="px-6 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-black font-bold text-sm transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <span>Run Telemetry Audit →</span>
-                </button>
-              </form>
+              </div>
             </div>
           </section>
 
@@ -356,7 +384,7 @@ export default function AiSeoToolsPage() {
           <section className="space-y-8">
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">AI SEO Tools &amp; Technical Frameworks</h2>
-              <p className="text-xs sm:text-sm text-zinc-400 font-serif">Comparing third-party software against live answer extraction checks.</p>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif">Comparing third-party software against live answer extraction checks.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -364,22 +392,22 @@ export default function AiSeoToolsPage() {
                 <div key={idx} className="bg-zinc-950/80 border border-white/10 p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 hover:border-cyan-500/40 transition-all duration-300">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-1 rounded-full">
+                      <span className="text-xs font-mono font-bold text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-1 rounded-full">
                         {tool.badge}
                       </span>
-                      <span className="text-xs font-mono text-zinc-400">{tool.pricing}</span>
+                      <span className="text-xs font-mono text-zinc-300">{tool.pricing}</span>
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-xl font-bold text-white font-soehne-breit">{tool.name}</h3>
+                      <h3 id={tool.id} className="text-xl font-bold text-white font-soehne-breit">{tool.name}</h3>
                       <span className="text-xs text-aeo-purple font-mono font-semibold block">{tool.category}</span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                    <p className="text-xs sm:text-sm text-zinc-200 font-serif leading-relaxed">
                       {tool.description}
                     </p>
 
-                    <div className="bg-black/50 border border-white/5 p-3 rounded-xl text-xs text-zinc-300 font-serif">
+                    <div className="bg-black/50 border border-white/10 p-3 rounded-xl text-xs text-zinc-200 font-serif">
                       <strong className="text-cyan-300 block mb-0.5 font-mono font-bold">Best For:</strong>
                       <span>{tool.bestFor}</span>
                     </div>

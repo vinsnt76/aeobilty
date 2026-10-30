@@ -140,7 +140,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 href="tel:0480286282"
                 aria-label="Call AEObility (0480 286 282)"
                 title="Call AEObility (0480 286 282)"
-                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-black/5 border border-transparent hover:border-black/10 active:scale-95 transition-all"
               >
                 <Phone className="h-4 w-4" />
               </a>
@@ -150,7 +150,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 href="/book"
                 aria-label="Book Strategy Session"
                 title="Book Strategy Session"
-                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-purple-300 border border-purple-500/30 hover:bg-zinc-800 hover:text-purple-200 hover:border-purple-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-black/5 border border-transparent hover:border-black/10 active:scale-95 transition-all"
               >
                 <Calendar className="h-4 w-4" />
               </Link>
@@ -161,7 +161,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
                 aria-label="Search Site Architecture (⌘K)"
                 title="Search Site Architecture (⌘K)"
-                className="flex min-h-[40px] min-w-[40px] h-10 w-10 items-center justify-center rounded-xl bg-[#1e1e1e] backdrop-blur-md text-cyan-300 border border-cyan-500/30 hover:bg-zinc-800 hover:text-cyan-200 hover:border-cyan-400 active:scale-95 transition-all shadow-sm"
+                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-neutral-600 hover:text-neutral-950 hover:bg-black/5 border border-transparent hover:border-black/10 active:scale-95 transition-all"
               >
                 <Search className="h-4 w-4" />
               </button>
@@ -169,7 +169,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
               <Link
                 href={pathname === '/' ? '/solutions' : '/diagnostic'}
                 onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_desktop' })}
-                className="px-4 py-2 text-xs font-semibold tracking-wide border border-neutral-300 hover:border-black/30 bg-neutral-100 text-neutral-900 rounded-full hover:bg-neutral-200 transition-all shadow-sm ml-1"
+                className="px-4 py-2 text-xs font-semibold tracking-wide bg-neutral-950 text-white hover:bg-neutral-800 border border-neutral-900 rounded-full transition-all shadow-sm ml-1.5"
               >
                 {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
               </Link>
