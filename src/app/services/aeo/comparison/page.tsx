@@ -125,6 +125,10 @@ export default function AEOVsSEOPage() {
     {
       question: "Who are the leading AEO experts in Australia?",
       answer: "Leading AEO practitioners in Australia distinguish themselves through verifiable entity engineering, open technical documentation, and measurable citation outcomes rather than unverified ranking claims. AEObility is founded and led by Vince Baker in Perth, Western Australia, an AI search specialist with over 15 years of commercial search and digital strategy experience who architects nested JSON-LD knowledge graphs, atomic answer blocks, and MCP/WebMCP agentic readiness frameworks for Australian businesses."
+    },
+    {
+      question: "What are the key red flags that my business needs GEO instead of just SEO?",
+      answer: "The clearest signal is a divergence between traditional search ranks and AI discovery: your site ranks on page one of Google, but ChatGPT, Perplexity, or Google AI Overviews ignore or misquote your business details. Other key indicators include declining local map enquiries despite stable keyword rankings, AI tools confusing your brand with competitors, and website copy loaded with abstract marketing terms that modern vector engines filter out. If search engines index your pages but answer engines fail to cite your facts, your site requires GEO entity restructuring rather than standard backlink building. Review our complete 5-point diagnostic guide at /knowledge-hub/articles/seo-vs-geo-red-flags."
     }
   ];
 
@@ -242,6 +246,28 @@ export default function AEOVsSEOPage() {
                   Restructures your visible content and schema markup into self-contained answer blocks and explicit entity relationships. This makes it effortless for generative search models to quote your pricing, verify your credentials, and recommend your services.
                 </p>
               </div>
+            </div>
+
+            {/* Why Traditional SEO Tactics Fail in AI Search */}
+            <div className="max-w-4xl mx-auto p-5 rounded-2xl bg-zinc-950/80 border border-purple-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="space-y-1 text-left">
+                <span className="text-xs font-mono uppercase tracking-wider text-purple-300 font-bold block">
+                  Why Traditional SEO Tactics Fail in AI Search
+                </span>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  Traditional backlink strategies cannot resolve entity ambiguity. Review the top{' '}
+                  <Link href="/knowledge-hub/articles/seo-vs-geo-red-flags" className="text-cyan-400 underline hover:text-cyan-300 font-semibold">
+                    red flags that signal a need for GEO
+                  </Link>{' '}
+                  to see if your brand is affected by entity conflation.
+                </p>
+              </div>
+              <Link
+                href="/knowledge-hub/articles/seo-vs-geo-red-flags"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold hover:bg-purple-500/20 transition-all shrink-0"
+              >
+                <span>Read Diagnostic Guide &rarr;</span>
+              </Link>
             </div>
           </section>
 

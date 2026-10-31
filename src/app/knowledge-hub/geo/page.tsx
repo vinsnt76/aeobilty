@@ -547,7 +547,11 @@ export default function GEOKnowledgeNodePage() {
                 6 Signs Your Business Needs GEO
               </h2>
               <p className="text-xs sm:text-sm text-white/70 font-light max-w-3xl leading-relaxed">
-                Use this 6-point self-diagnostic framework to evaluate your brand's vulnerability to zero-click AI SERPs, competitor LLM citations, and AI hallucination risk across generative engines.
+                Use this 6-point self-diagnostic framework to evaluate your brand&apos;s vulnerability to zero-click AI SERPs, competitor LLM citations, and AI hallucination risk across generative engines. Before restructuring your site schema, learn how to audit your site for vector drift and client-side rendering bottlenecks by{' '}
+                <Link href="/knowledge-hub/articles/seo-vs-geo-red-flags" className="text-aeo-cyan hover:underline font-semibold">
+                  identifying AI search retrieval red flags
+                </Link>
+                .
               </p>
             </div>
 

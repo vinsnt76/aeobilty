@@ -105,7 +105,7 @@ export default function GeoMarketingPage() {
     },
     {
       question: "What are the top indicators or red flags that a business needs GEO help instead of just SEO?",
-      answer: "Key indicators that your business requires GEO include: 1) your traditional keyword rankings remain strong, but organic clicks and calls decline due to zero-click AI Overviews; 2) competitors appear in ChatGPT or Perplexity recommendations while your brand is omitted; 3) AI platforms hallucinate, providing outdated pricing, wrong business hours, or confusing your business with another entity; and 4) high-intent prospects search with long, constraint-rich conversational prompts that bypass traditional keyword match signals and depend on semantic passage retrieval."
+      answer: "The clearest signal is a divergence between traditional search ranks and AI discovery: your site ranks on page one of Google, but ChatGPT, Perplexity, or Google AI Overviews ignore or misquote your business details. Other key indicators include declining local map enquiries despite stable keyword rankings, AI tools confusing your brand with competitors, and website copy loaded with abstract marketing terms that modern vector engines filter out. If search engines index your pages but answer engines fail to cite your facts, your site requires GEO entity restructuring. For a full technical checklist, review our 5-Point Diagnostic Guide at /knowledge-hub/articles/seo-vs-geo-red-flags."
     }
   ];
 
@@ -544,6 +544,28 @@ export default function GeoMarketingPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+
+            {/* Evaluating Your AI Visibility & Diagnostic Signals */}
+            <div className="p-6 rounded-2xl bg-cyan-950/20 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="space-y-1 text-left">
+                <span className="text-xs font-mono uppercase tracking-wider text-cyan-300 font-bold block">
+                  Evaluating Your AI Visibility &amp; Diagnostic Signals
+                </span>
+                <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                  If your website ranks on page one of Google but is omitted by conversational AI search engines, review our{' '}
+                  <Link href="/knowledge-hub/articles/seo-vs-geo-red-flags" className="text-cyan-400 underline hover:text-cyan-300 font-medium">
+                    5-point diagnostic checklist on SEO vs GEO red flags
+                  </Link>{' '}
+                  to identify your site&apos;s retrieval bottlenecks.
+                </p>
+              </div>
+              <Link
+                href="/knowledge-hub/articles/seo-vs-geo-red-flags"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold hover:bg-cyan-500/20 transition-all shrink-0"
+              >
+                <span>Read Diagnostic Guide &rarr;</span>
+              </Link>
             </div>
           </section>
 
