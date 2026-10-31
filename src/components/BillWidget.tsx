@@ -602,7 +602,7 @@ export default function BillWidget() {
     );
   };
 
-  if (pathname?.startsWith('/about') || pathname?.includes('freelance')) {
+  if (pathname?.startsWith('/about') || pathname?.includes('freelance') || pathname === '/book') {
     return null;
   }
 

@@ -166,25 +166,29 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 <Search className="h-4 w-4" />
               </button>
 
-              <Link
-                href={pathname === '/' ? '/solutions' : '/diagnostic'}
-                onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_desktop' })}
-                className="px-4 py-2 text-xs font-semibold tracking-wide bg-neutral-950 text-white hover:bg-neutral-800 border border-neutral-900 rounded-full transition-all shadow-sm ml-1.5"
-              >
-                {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
-              </Link>
+              {pathname !== '/book' && (
+                <Link
+                  href={pathname === '/' ? '/solutions' : '/diagnostic'}
+                  onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_desktop' })}
+                  className="px-4 py-2 text-xs font-semibold tracking-wide bg-neutral-950 text-white hover:bg-neutral-800 border border-neutral-900 rounded-full transition-all shadow-sm ml-1.5"
+                >
+                  {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
+                </Link>
+              )}
             </div>
           </div>
 
           {/* Mobile Right Action Stack: Primary Diagnostic CTA + Hamburger Menu */}
           <div className="flex items-center gap-2.5 lg:hidden">
-            <Link
-              href={pathname === '/' ? '/solutions' : '/diagnostic'}
-              onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_mobile' })}
-              className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-neutral-300 hover:border-black/30 bg-neutral-100 text-neutral-900 rounded-full hover:bg-neutral-200 active:scale-95 transition-all shadow-sm"
-            >
-              {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
-            </Link>
+            {pathname !== '/book' && (
+              <Link
+                href={pathname === '/' ? '/solutions' : '/diagnostic'}
+                onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_mobile' })}
+                className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-neutral-300 hover:border-black/30 bg-neutral-100 text-neutral-900 rounded-full hover:bg-neutral-200 active:scale-95 transition-all shadow-sm"
+              >
+                {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
+              </Link>
+            )}
 
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />
           </div>
