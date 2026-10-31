@@ -475,7 +475,7 @@ export default function BabyBentoCaseStudyPage() {
           <div className="p-8 bg-gradient-to-r from-aeo-cyan/5 to-aeo-purple/5 border border-white/10 rounded-2xl space-y-4">
             <h3 className="text-xl font-bold text-white">Conclusion</h3>
             <p className="text-sm text-white/80 leading-relaxed font-serif font-light">
-              Our success in boosting organic impressions for Baby Bento was achieved by establishing unambiguous corporate signals. Review our core <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> framework to see how our rapid code refactoring sprints can optimise your local business visibility.
+              Our success in boosting organic impressions for Baby Bento was achieved by establishing unambiguous corporate signals and structured product feeds. For online retail stores, our specialised <Link href="/services/aeo/shopify" className="text-aeo-cyan font-semibold hover:underline">Shopify AEO and ecommerce ingestion architecture</Link> applies these exact schema graphs and liquid refactoring principles. You can also explore our canonical <Link href="/services/aeo" className="text-aeo-cyan font-semibold hover:underline">AEO Services</Link> framework to see how structured sprints elevate brand discoverability.
             </p>
             <p className="text-base text-aeo-cyan font-bold font-soehne-breit mt-2">
               &ldquo;When AI understands your business, your customers finally can.&rdquo;
@@ -518,6 +518,7 @@ export default function BabyBentoCaseStudyPage() {
             <div className="flex flex-wrap gap-4 text-xs text-white/40">
               <span>Explore primary nodes:</span>
               <Link href="/services/aeo" className="hover:text-aeo-cyan transition-colors">AEO Services</Link>
+              <Link href="/services/aeo/shopify" className="hover:text-aeo-cyan transition-colors">Shopify AEO</Link>
               <Link href="/solutions/aeo-blueprint" className="hover:text-aeo-cyan transition-colors">AEO Blueprint</Link>
               <Link href="/contact" className="hover:text-aeo-cyan transition-colors">Contact Us</Link>
             </div>

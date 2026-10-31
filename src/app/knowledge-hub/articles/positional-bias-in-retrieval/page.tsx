@@ -848,6 +848,26 @@ export default function PositionalBiasArticlePage() {
                   A structured roadmap for content chunking, entity salience, and LLM selection.
                 </p>
               </Link>
+
+              <Link href="/services/aeo/procedures" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>AEO Engineering Procedures</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Actionable technical procedures for chunking token density and passages.
+                </p>
+              </Link>
+
+              <Link href="/services/aeo/comparison" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>AEO vs SEO Comparison</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Evaluate how passage retrieval contrasts with legacy keyword ranking.
+                </p>
+              </Link>
             </div>
           </section>
 

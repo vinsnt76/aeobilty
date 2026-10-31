@@ -498,9 +498,15 @@ export default function AEORootPage() {
                   <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
                   <span>Verified Client Evidence &amp; Case Results</span>
                 </div>
-                <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-xs font-mono text-teal-300 hover:underline font-bold">
-                  View 90-Day Case Study &rarr;
-                </Link>
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-xs font-mono text-teal-300 hover:underline font-bold">
+                    View 90-Day Case Study &rarr;
+                  </Link>
+                  <span className="text-slate-600 hidden sm:inline">|</span>
+                  <Link href="/knowledge-hub/case-studies/baby-bento" className="text-xs font-mono text-purple-300 hover:underline font-bold">
+                    Baby Bento Ecommerce Case Study &rarr;
+                  </Link>
+                </div>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">

@@ -259,7 +259,10 @@ export default function AEOVsSEOPage() {
                   <Link href="/knowledge-hub/articles/seo-vs-geo-red-flags" className="text-cyan-400 underline hover:text-cyan-300 font-semibold">
                     red flags that signal a need for GEO
                   </Link>{' '}
-                  to see if your brand is affected by entity conflation.
+                  or examine our research on mitigating{' '}
+                  <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-purple-300 underline hover:text-purple-200 font-semibold">
+                    positional bias in retrieval models
+                  </Link>.
                 </p>
               </div>
               <Link

@@ -374,7 +374,7 @@ export default function ShopifyAeoPage() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                <span>Typical delivery: 4–5 business days from confirmed scope and store access. View <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">current service pricing and scope</Link>.</span>
+                <span>Typical delivery: 4–5 business days from confirmed scope and store access. Explore our productised <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">Shopify structured implementation sprints</Link> or inspect our <Link href="/knowledge-hub/case-studies/baby-bento" className="text-purple-400 hover:underline font-medium">Baby Bento ecommerce case study</Link> to review empirical sales uplift results.</span>
               </li>
             </ul>
           </div>

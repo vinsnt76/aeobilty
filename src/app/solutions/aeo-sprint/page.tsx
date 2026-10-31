@@ -623,6 +623,18 @@ export default function AEOSprintPage() {
                   <p className="text-[11px] text-zinc-500 text-center font-serif">
                     Clear scope. Fixed pricing. No lock-in contracts. Your privacy is protected.
                   </p>
+
+                  {/* Direct Consultation Link */}
+                  <div className="pt-2 text-center text-xs text-zinc-400 font-serif">
+                    <span>Have custom requirements or questions? </span>
+                    <Link href="/contact" className="text-cyan-400 hover:underline font-semibold font-sans">
+                      Contact us directly &rarr;
+                    </Link>
+                    <span className="mx-2 text-zinc-600">|</span>
+                    <Link href="/book" className="text-purple-300 hover:underline font-semibold font-sans">
+                      Book a clarity call &rarr;
+                    </Link>
+                  </div>
                 </form>
               )}
             </div>

@@ -215,6 +215,14 @@ export default function PerthSeoSpecialistPage() {
                     <span>View Freelance Consultant Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
+                  <Link href="/services/aeo/local-business" className="hover:underline flex items-center gap-1 text-cyan-300">
+                    <span>Local Business AEO System</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link href="/knowledge-hub/geo" className="hover:underline flex items-center gap-1 text-purple-300">
+                    <span>GEO Knowledge Hub</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </div>

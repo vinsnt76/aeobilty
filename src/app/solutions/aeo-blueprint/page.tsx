@@ -500,6 +500,18 @@ export default function AEOBlueprintPage() {
                     <div className="p-3 bg-black/50 border border-white/10 rounded-xl text-center text-xs text-slate-300 font-serif leading-relaxed">
                       Fixed $995 AUD price. No ongoing retainer. 100% credited towards eligible implementation sprints booked within 60 days.
                     </div>
+
+                    {/* Direct Consultation Link */}
+                    <div className="pt-2 text-center text-xs text-slate-400 font-serif">
+                      <span>Prefer to discuss requirements before purchasing? </span>
+                      <Link href="/book" className="text-cyan-400 hover:underline font-semibold font-sans">
+                        Book a 15-minute clarity call &rarr;
+                      </Link>
+                      <span className="mx-2 text-slate-600">|</span>
+                      <Link href="/contact" className="text-purple-300 hover:underline font-semibold font-sans">
+                        Submit a bespoke query &rarr;
+                      </Link>
+                    </div>
                   </div>
                 </form>
               )}

@@ -283,7 +283,7 @@ export default function LocalBusinessAEOPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Looking for our broader service catalogue? Explore <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">GEO Services Sprints</Link>, review our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical product database and uniform pricing framework</Link>, or check <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">AEObility Strategic Blueprint</Link>.
+              Looking for our broader service catalogue? Explore <Link href="/services/geo-marketing" className="text-cyan-400 hover:underline font-medium">GEO Services Sprints</Link>, consult our <Link href="/knowledge-hub/geo" className="text-purple-300 hover:underline font-medium">Generative Engine Optimisation Knowledge Hub</Link>, connect with our <Link href="/services/perth/seo-specialist" className="text-cyan-300 hover:underline font-medium">Perth Local SEO Specialist</Link>, review our <Link href="/brand-facts" className="text-cyan-400 hover:underline font-medium">canonical product database</Link>, or check the <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">AEObility Strategic Blueprint</Link>.
             </p>
           </section>
 

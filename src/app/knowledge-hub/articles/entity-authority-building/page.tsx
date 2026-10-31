@@ -672,6 +672,16 @@ export default function EntityAuthorityArticlePage() {
                   A structured roadmap for entity building, Answer Engine Optimisation, and LLM selection.
                 </p>
               </Link>
+
+              <Link href="/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo" className="p-5 rounded-xl bg-white/[0.02] border border-white/10 hover:border-aeo-cyan/40 transition-all space-y-2 block">
+                <h3 className="text-sm font-bold text-white flex items-center justify-between">
+                  <span>Build Entity Density Tutorial</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan" />
+                </h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">
+                  Step-by-step tutorial on auditing and building 80%+ entity density into on-page copy and schema.
+                </p>
+              </Link>
             </div>
           </section>
 

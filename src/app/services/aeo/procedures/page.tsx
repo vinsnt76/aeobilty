@@ -227,7 +227,7 @@ export default function AEOProceduresPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Learn how AEO differs from legacy SEO on our <Link href="/services/aeo/comparison" className="text-cyan-400 hover:underline font-medium">AEO vs SEO Comparison page</Link> or review <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.
+              Learn how AEO differs from legacy SEO on our <Link href="/services/aeo/comparison" className="text-cyan-400 hover:underline font-medium">AEO vs SEO Comparison page</Link>, review our technical research on mitigating <Link href="/knowledge-hub/articles/positional-bias-in-retrieval" className="text-purple-400 hover:underline font-medium">positional bias in retrieval models</Link>, or explore <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">focused micro-sprints</Link>.
             </p>
           </section>
 
