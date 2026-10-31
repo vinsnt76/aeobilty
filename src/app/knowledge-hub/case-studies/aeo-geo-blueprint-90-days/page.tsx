@@ -36,6 +36,10 @@ export default function First90DaysCaseStudy() {
       {
         "@type": "Place",
         name: "Perth, Western Australia",
+      },
+      {
+        "@type": "Thing",
+        name: "Australian AI Citation Index",
       }
     ],
     mentions: [
@@ -48,6 +52,11 @@ export default function First90DaysCaseStudy() {
         "@type": "Organization",
         name: "Aerobility",
         sameAs: "https://www.aerobility.com/"
+      },
+      {
+        "@type": "Organization",
+        name: "AEO Services",
+        sameAs: "https://aeoservices.com.au/"
       }
     ],
     author: {
@@ -65,7 +74,7 @@ export default function First90DaysCaseStudy() {
       },
     },
     datePublished: "2026-09-16T00:00:00+08:00",
-    dateModified: "2026-09-16T00:00:00+08:00",
+    dateModified: "2026-10-31T00:00:00+08:00",
     mainEntityOfPage:
       "https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
     citation:
@@ -210,6 +219,9 @@ export default function First90DaysCaseStudy() {
                 </li>
                 <li>
                   <strong>Google Search Console (1 July – 16 September 2026)</strong>: +12% organic impressions across core query corridors.
+                </li>
+                <li>
+                  <strong>External AI Citation Index (October 2026)</strong>: Australian AI Citation Index published by AEO Services (#8 overall, #1 in individual citation volume with 5 citations across Perplexity Sonar and OpenAI Search).
                 </li>
               </ul>
 
@@ -1083,6 +1095,78 @@ export default function First90DaysCaseStudy() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Independent External Validation - October 2026 */}
+          <div className="mt-12 rounded-2xl border border-cyan-500/20 bg-zinc-950/80 p-6 sm:p-8 shadow-sm backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              Third-Party Benchmark
+            </div>
+
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-white leading-snug mb-4">
+              Independent External Validation - October 2026
+            </h3>
+
+            <p className="font-sans text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
+              Following publication of the 90-day AEO blueprint, AEObility's AI visibility received further external validation through the October 2026 Australian AI Citation Index, published by AEO Services.
+            </p>
+
+            <div className="rounded-xl border border-white/10 bg-black/40 p-5 sm:p-6 mb-6">
+              <h4 className="font-sans text-sm font-semibold text-slate-200 mb-4">
+                In the index's commercially oriented assessment of 10 AEO agency-hiring questions:
+              </h4>
+              <ul className="space-y-3 pl-0 list-none font-sans text-sm sm:text-base text-slate-400">
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
+                  <span>
+                    <strong className="text-slate-200">AEObility ranked #8 overall</strong> among the providers listed.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
+                  <span>
+                    <strong className="text-slate-200">Highest individual citation volume:</strong> Its own domain pages received five citations, the highest individual citation volume recorded among the listed providers.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
+                  <span>
+                    <strong className="text-slate-200">Perplexity Sonar</strong> cited AEObility in two of the ten hiring-related questions.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
+                  <span>
+                    <strong className="text-slate-200">OpenAI with Web Search:</strong> A separate OpenAI model with web search also cited AEObility in one question.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4 font-sans text-sm sm:text-base text-slate-400 leading-relaxed mb-6">
+              <p>
+                The ranking prioritised coverage across distinct hiring questions, which placed AEObility behind providers appearing in three questions, despite its higher individual citation volume.
+              </p>
+              <p>
+                This is particularly relevant given the original blueprint's focus on overcoming entity ambiguity and establishing AI discoverability from a new domain.
+              </p>
+              <p>
+                The October findings provide external evidence that AEObility's own website was being retrieved and cited in commercially relevant AI provider searches following publication of the blueprint.
+              </p>
+              <div className="p-4 rounded-xl border border-cyan-500/20 bg-cyan-950/20 text-slate-300">
+                <p className="font-semibold text-white mb-1">The significance:</p>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  The exercise moved beyond demonstrating that AEObility could make itself visible in AI answers about its own brand. It recorded citations in questions where users were actively seeking AEO service providers.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-white/10 text-xs text-slate-500 font-mono">
+              Source: AEO Services, Australian AI Citation Index, October 2026. The index represents an external measurement exercise, not an independent audit of the underlying implementation or its causal impact.
             </div>
           </div>
         </section>
