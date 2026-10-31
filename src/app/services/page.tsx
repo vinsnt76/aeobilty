@@ -242,6 +242,14 @@ export default function ServicesPage() {
               "@type": "Answer",
               "text": "Absolutely. Our framework is built specifically for Australian SMBs and local service providers. Whether you operate in Perth, regional WA or across Australia, AEO improves how AI systems interpret your services and recommend your brand."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you do GEO yourself, or should you hire someone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can handle Generative Engine Optimisation yourself if you know how to write structured code (Schema.org), cut out vague marketing jargon in favour of plain facts, and keep your business details consistent across external directories. Hire a specialist if your website is full of buzzwords like \"bespoke end-to-end solutions\", which AI search tools simply ignore, or if you do not have the technical background to build clean code and check how answer engines read your pages. What a solid GEO engagement actually delivers: 1) Clear structured code: Building clean schema that tells AI engines exactly who you are, where you operate, and what you sell. 2) Direct answer blocks: Rewriting key pages into short, factual answers that AI tools can lift and cite without confusion. 3) Consistent directory data: Aligning your business name, address, and contact details across Google, Bing, and major local listings. 4) Logical internal links: Connecting your services, guides, and proof points so machines understand how your topics relate. 5) Testing and handoff: Validating the code, confirming pages are indexed, and handing over full ownership of the work."
+            }
           }
         ]
       }
@@ -583,6 +591,56 @@ export default function ServicesPage() {
                         <span>Request a Quote</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </a>
+                    </div>
+                  </div>
+                </details>
+                <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
+                    Can you do GEO yourself, or should you hire someone?
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                  </summary>
+                  <div className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30 space-y-3">
+                    <p>
+                      You can handle Generative Engine Optimisation yourself if you know how to write structured code (Schema.org), cut out vague marketing jargon in favour of plain facts, and keep your business details consistent across external directories.
+                    </p>
+                    <p>
+                      Hire a specialist if your website is full of buzzwords like &quot;bespoke end-to-end solutions&quot;, which AI search tools simply ignore, or if you don&apos;t have the technical background to build clean code and check how answer engines read your pages.
+                    </p>
+                    <div className="pt-1">
+                      <strong className="text-white block mb-2 font-medium">What a solid GEO engagement actually delivers:</strong>
+                      <ul className="space-y-2 list-none pl-0 text-xs sm:text-sm text-white/80">
+                        <li className="flex items-start gap-2">
+                          <span className="text-aeo-cyan font-bold shrink-0">&bull;</span>
+                          <span><strong className="text-white">Clear structured code:</strong> Building clean schema that tells AI engines exactly who you are, where you operate, and what you sell.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-aeo-cyan font-bold shrink-0">&bull;</span>
+                          <span><strong className="text-white">Direct answer blocks:</strong> Rewriting key pages into short, factual answers that AI tools can lift and cite without confusion.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-aeo-cyan font-bold shrink-0">&bull;</span>
+                          <span><strong className="text-white">Consistent directory data:</strong> Aligning your business name, address, and contact details across Google, Bing, and major local listings.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-aeo-cyan font-bold shrink-0">&bull;</span>
+                          <span><strong className="text-white">Logical internal links:</strong> Connecting your services, guides, and proof points so machines understand how your topics relate.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-aeo-cyan font-bold shrink-0">&bull;</span>
+                          <span><strong className="text-white">Testing and handoff:</strong> Validating the code, confirming pages are indexed, and handing over full ownership of the work.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pt-2 text-xs text-white/60 font-light flex flex-wrap items-center gap-3">
+                      <span>Explore options:</span>
+                      <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>Local &amp; GEO Map Marketing</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                      <Link href="/solutions/aeo-sprint" className="text-aeo-purple hover:underline font-semibold inline-flex items-center gap-1">
+                        <span>Fixed-Scope Technical Sprints</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   </div>
                 </details>
