@@ -75,6 +75,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/articles/structured-data-query-fan-out`,
   `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
   `https://${HOST}/knowledge-hub/articles/machine-legibility-data-provenance`,
+  `https://${HOST}/knowledge-hub/articles/seo-vs-geo-red-flags`,
 
   // 6. About & Consulting Profiles
   `https://${HOST}/about`,
@@ -87,6 +88,7 @@ export const CANONICAL_URL_LIST: string[] = [
   // 7. Conversational, Booking & Utility Endpoints
   `https://${HOST}/contact`,
   `https://${HOST}/book`,
+  `https://${HOST}/docs/api`,
   `https://${HOST}/privacy`,
   `https://${HOST}/terms`
 ];

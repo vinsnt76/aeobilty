@@ -93,6 +93,7 @@ $CanonicalUrls = @(
     "https://$HostDomain/knowledge-hub/articles/structured-data-query-fan-out",
     "https://$HostDomain/knowledge-hub/articles/telemetry-diagnostic-architecture",
     "https://$HostDomain/knowledge-hub/articles/machine-legibility-data-provenance",
+    "https://$HostDomain/knowledge-hub/articles/seo-vs-geo-red-flags",
     "https://$HostDomain/about",
     "https://$HostDomain/about/freelance-digital-specialist-perth",
     "https://$HostDomain/about/freelance-seo-consultant-perth",
@@ -101,6 +102,7 @@ $CanonicalUrls = @(
     "https://$HostDomain/vince-baker",
     "https://$HostDomain/contact",
     "https://$HostDomain/book",
+    "https://$HostDomain/docs/api",
     "https://$HostDomain/privacy",
     "https://$HostDomain/terms"
 )
