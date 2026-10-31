@@ -118,6 +118,18 @@ export default function AEOSprintPage() {
     {
       question: "What access is required to start a sprint?",
       answer: "Depending on the sprint type, we may need temporary CMS or staging access, access to current page content, or business details for schema markup. All access requirements are confirmed before work begins."
+    },
+    {
+      question: "Can I do GEO myself or do I need to hire someone, and what does a good GEO engagement actually include?",
+      answer: "You can execute foundational GEO steps in-house by claiming directory profiles, aligning business NAP data, and writing concise answers to customer questions. For technical schema deployment, semantic entity graphs, and passage chunking, specialist sprints offer faster and more reliable implementation. A high-value GEO sprint delivers a multi-platform AI visibility audit, validated JSON-LD schema, atomic content restructuring, directory reconciliation, and 100% client IP ownership with zero ongoing contracts."
+    },
+    {
+      question: "How do I evaluate a GEO agency?",
+      answer: "Evaluate prospective agencies based on technical proofs and transparent delivery models. Check if the agency scores highly on objective benchmarks like isitagentready.com and provides machine-readable schema on their own site. Avoid long-term retainers with vague deliverables, and beware of guarantees regarding ChatGPT rankings. Choose partners providing fixed-scope sprints, transparent audit baselines, and complete code handovers."
+    },
+    {
+      question: "What are the top indicators or red flags that a business needs GEO help instead of just SEO?",
+      answer: "Warning signs that indicate you need GEO rather than standard SEO include: organic traffic and inquiries dropping despite high search engine rankings due to zero-click AI Overviews; competitors appearing in ChatGPT and Perplexity recommendations while your business is omitted; generative engines outputting inaccurate pricing or outdated contact information; and buyers submitting conversational, constraint-rich prompts that bypass traditional keyword match filters."
     }
   ];
 

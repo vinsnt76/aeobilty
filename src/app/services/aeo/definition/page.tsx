@@ -52,6 +52,18 @@ export default function AEODefinitionPage() {
     {
       question: "Where should a business start with AEO?",
       answer: "Start with a technical baseline audit to assess how search engines and AI systems interpret your current web footprint. Then structure priority service content into self-contained answer blocks, implement explicit Schema.org markup, and establish descriptive internal links."
+    },
+    {
+      question: "Can I do GEO myself or do I need to hire someone, and what does a good GEO engagement actually include?",
+      answer: "Basic GEO execution can be handled internally, including auditing directory listings, aligning business NAP details, and writing concise answers to common buyer questions. Complex technical requirements, like engineering connected JSON-LD knowledge graphs, structuring content for semantic chunking, and reconciling cross-platform entity references, typically require specialist expertise. A thorough GEO engagement includes a multi-engine visibility audit, validated schema deployment, atomic content restructuring, brand facts corroboration, and complete IP handover with zero retainer lock-in."
+    },
+    {
+      question: "How do I evaluate a GEO agency?",
+      answer: "Assess potential GEO partners on their engineering transparency and technical proof. Verify whether they maintain machine-readable schema and an open brand-facts ledger on their own website, and check their agent-readiness scores on third-party benchmarks like isitagentready.com. Avoid agencies that propose open-ended monthly retainers without clear sprint deliverables or make unsubstantiated guarantees regarding AI rankings. Reputable specialists deliver fixed-scope sprints with documented validation logs."
+    },
+    {
+      question: "What are the top indicators or red flags that a business needs GEO help instead of just SEO?",
+      answer: "Key signs that traditional SEO is no longer sufficient include: organic web visits dropping despite stable keyword positions because AI Overviews answer searchers directly; competitors earning citations in ChatGPT and Perplexity recommendations while your brand is omitted; generative engines returning incorrect business facts or outdated rates; and prospective clients using conversational, constraint-heavy prompts that require semantic retrieval rather than traditional keyword indexing."
     }
   ];
 

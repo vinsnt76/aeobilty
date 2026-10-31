@@ -94,6 +94,18 @@ export default function GeoMarketingPage() {
     {
       question: "Is GEO just schema markup?",
       answer: "No. Schema markup is only one implementation layer. GEO also involves cleaning up conflicting business information across directories, restructuring priority pages for passage-level extraction, establishing clear internal entity relationships, providing verifiable proof, and tracking cross-platform visibility."
+    },
+    {
+      question: "Can I do GEO myself or do I need to hire someone, and what does a good GEO engagement actually include?",
+      answer: "You can handle foundational GEO tasks in-house, such as claiming Google Business Profiles, auditing NAP consistency across directories, publishing transparent service pricing, and structuring website answers under clear headings. However, technical GEO requires engineering nested JSON-LD knowledge graphs (LocalBusiness, GeoCoordinates, areaServed), configuring semantic passage chunking, and reconciling entity records across Wikidata and Google Knowledge Graph. A credible GEO engagement should always include: 1) a multi-platform visibility audit across ChatGPT Search, Perplexity, and Google AI Overviews; 2) validated Schema.org entity graph deployment; 3) atomic content restructuring for passage extraction; 4) directory citation alignment and a verifiable /brand-facts ledger; and 5) 100% client IP ownership with zero locked-in retainers."
+    },
+    {
+      question: "How do I evaluate a GEO agency?",
+      answer: "Evaluate a GEO agency on their technical proof rather than marketing promises. First, audit their own assets: do they score high on independent agent-readiness tests (such as isitagentready.com) and publish verifiable JSON-LD graphs alongside a clean /brand-facts ledger? Second, demand fixed-scope deliverables rather than open-ended monthly retainers: avoid agencies charging $2,000 to $5,000 per month without defined technical sprint milestones. Third, avoid anyone guaranteeing specific AI citations or ChatGPT recommendations: legitimate practitioners focus on verifiable schema architecture, entity reconciliation, and empirical prompt telemetry across AI search engines."
+    },
+    {
+      question: "What are the top indicators or red flags that a business needs GEO help instead of just SEO?",
+      answer: "Key indicators that your business requires GEO include: 1) your traditional keyword rankings remain strong, but organic clicks and calls decline due to zero-click AI Overviews; 2) competitors appear in ChatGPT or Perplexity recommendations while your brand is omitted; 3) AI platforms hallucinate, providing outdated pricing, wrong business hours, or confusing your business with another entity; and 4) high-intent prospects search with long, constraint-rich conversational prompts that bypass traditional keyword match signals and depend on semantic passage retrieval."
     }
   ];
 

@@ -58,6 +58,18 @@ export default function GEOKnowledgeNodePage() {
     {
       question: "How should local businesses handle location pages without creating thin duplicate content?",
       answer: "Avoid creating templated suburb pages that lack distinct substance. Publish location-specific landing pages only where you have genuine local value, original evidence, unique customer proofs, and distinct service context. Quality location pages with authentic regional proof support local discovery without risking thin-content penalties."
+    },
+    {
+      question: "Can I do GEO myself or do I need to hire someone, and what does a good GEO engagement actually include?",
+      answer: "In-house teams can successfully perform basic GEO tasks: claiming your Google Business Profile, updating operating hours, eliminating NAP discrepancies on local directories, and writing direct answers to frequently asked customer queries. Hiring an outside specialist becomes necessary when dealing with technical schema architecture, such as building connected JSON-LD graphs with GeoCoordinates and areaServed definitions, setting up semantic chunking for passage retrieval, and reconciling entity confusion across AI knowledge bases. A legitimate GEO engagement provides a multi-platform baseline audit, nested schema deployment, atomic content structuring, citation reconciliation, and full IP handover with zero lock-in retainers."
+    },
+    {
+      question: "How do I evaluate a GEO agency?",
+      answer: "When evaluating a GEO agency, test their own machine readability first: inspect their schema markup, verify their agent readiness on independent benchmarks like isitagentready.com, and check whether they publish a transparent brand-facts ledger. Reject agencies that propose generic monthly retainers without clear engineering milestones, and avoid providers promising guaranteed rankings or exclusive AI deals. A reliable GEO consultancy delivers fixed-scope sprints, open documentation, and verified before-and-after citation tracking across Google AI Overviews, ChatGPT Search, and Perplexity."
+    },
+    {
+      question: "What are the top indicators or red flags that a business needs GEO help instead of just SEO?",
+      answer: "The primary signs that a business has outgrown standard SEO and requires GEO include: declining organic click-through rates despite steady keyword rankings (due to zero-click AI answers); competitor brands dominating conversational recommendations in ChatGPT and Perplexity; generative models hallucinating incorrect pricing, services, or locations; and customer search behaviour shifting to complex, multi-constraint conversational queries that require vector retrieval rather than basic keyword matching."
     }
   ];
 
